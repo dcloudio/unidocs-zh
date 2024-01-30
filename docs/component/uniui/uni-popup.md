@@ -36,7 +36,7 @@ Pop-up layer component, pops up a message prompt window, prompt box, etc. in the
 - `uni-popup` 中尽量不要使用 `scroll-view` 嵌套过多的内容，可能会影响组件的性能，导致组件无法打开或者打开卡顿
 - Try not to use `scroll-view` to nest too much content in `uni-popup`, which may affect the performance of the component, causing the component to fail to open or to freeze
 - `uni-popup` 不会覆盖原生 tabbar 和原生导航栏
-- `uni-popup` does not override native tabbar and native navbar
+- `uni-popup` 为了防止快速打开关闭的情况，组件默认设置了300毫秒延迟显示，如果需要去除，可到uni_modules下修改组件代码
 - app-vue 中组件无法遮盖 video ，ad 等原生组件 ，建议使用 nvue 
 - Components in app-vue cannot cover native components such as video, ad, etc. It is recommended to use nvue
 - 组件支持 nvue ，需要在 `manifest.json > app-plus` 节点下配置 `"nvueStyleCompiler" : "uni-app"` 

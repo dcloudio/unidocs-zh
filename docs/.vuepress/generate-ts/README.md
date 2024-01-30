@@ -19,16 +19,16 @@ pnpm generate-ts
 
 ## 产物发布
 
-建议放`@dcloud/types`项目`inner-components`
+建议放`@dcloudio/types`项目`inner-components`
 
 ### 使用
 
-基于发布产物目标目录`@dcloud/types/inner-components`
+基于发布产物目标目录`@dcloudio/types/inner-components`
 
 在[quickstart-cli][quickstart-cli]中的[uni-preset-vue typescript][uni-preset-vue:ts]项目`src/shime-uni.d.ts`中增加一行
 
 ```ts
-/// <reference types="@dcloud/types/inner-components" />
+/// <reference types="@dcloudio/types/inner-components" />
 ```
 
 vscode中内置组件出现内置组件的属性和事件提示

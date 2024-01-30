@@ -249,7 +249,7 @@ At this time, the client will automatically create a notification bar message an
 When the application is online, no "notification bar message" will be created, and the client will immediately monitor the content of the message.
 
 如果你希望当应用在线时，也通过“通知栏消息”来提醒用户；可以通过以下两种方式实现：
-1. 监听到消息内容后，根据业务需要自己判断是否要创建“通知栏消息”，需要就调用创建本地消息API `uni.createPushMessage`(uni-app 框架[详情参考](/api/plugins/push.html#createpushmessage)，uni-app x 框架[详情参考](/uni-app-x/api/plugins/push.html#createpushmessage)) 手动创建通知栏消息。
+1. 监听到消息内容后，根据业务需要自己判断是否要创建“通知栏消息”，需要就调用创建本地消息API `uni.createPushMessage`(uni-app 框架[详情参考](https://uniapp.dcloud.io/api/plugins/push.html#createpushmessage)，uni-app x 框架[详情参考](https://uniapp.dcloud.io/uni-app-x/api/push.html#createpushmessage)) 手动创建通知栏消息。
 2. 服务端执行推送时，传递参数`force_notification:true`，客户端就会自动创建“通知栏消息”（此时你监听不到消息内容），当用户点击通知栏消息后，APP才能监听到消息内容。
 2. When the server executes the push, pass the parameter `force_notification:true`, and the client will automatically create a "notification bar message" (you cannot listen to the message content at this time). When the user clicks the notification bar message, the APP can listen to it. Message content.
 

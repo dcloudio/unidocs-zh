@@ -159,7 +159,7 @@ const generateRelation = (componentName, str) => {
 
         const config = generateInterfaceTableFields(table)
         if (config) {
-            return generateInterface(name, config, {str, property, exportComponent})
+            return generateInterface(name, config, {str, property, exportComponent, file: componentName})
         }
     }).filter(Boolean).join('\n\n')
 }

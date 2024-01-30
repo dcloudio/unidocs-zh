@@ -179,13 +179,13 @@ const generateEventProperty = (arr, { fieldMap, fieldCN }) => {
  * @param {string} s 字符串
  * @returns 
  */
-const toUpperCamel = s => toCamel(s).replace(/^\w/, (s) => s.toUpperCase())
+const toUpperCamel = s => toCamel(s.toString()).replace(/^\w/, (s) => s.toUpperCase())
 /**
  * 转小驼峰命名风格
  * @param {string} s 字符串
  * @returns 
  */
-const toCamel = (s) => s.replace(/-(\w)/g, (m0, m1) => m1.toUpperCase())
+const toCamel = (s) => s.toString().replace(/-(\w)/g, (m0, m1) => m1.toUpperCase())
 
 /**
  * 获取接口名称的注释说明
@@ -202,7 +202,7 @@ const getInterfaceComment = (name, str) => {
 }
 
 /**
- * @typedef {{str: string;property: import("./relation.mjs").Property; exportComponent?: 'default'| 'named'}} GenerateInterfaceOptions
+ * @typedef {{str: string;property: import("./relation.mjs").Property; exportComponent?: 'default'| 'named'; file?: string;}} GenerateInterfaceOptions
  */
 /**
  * 生成接口
@@ -211,7 +211,8 @@ const getInterfaceComment = (name, str) => {
  * @param {GenerateInterfaceOptions}
  * @returns
  */
-export const generateInterface = (interfaceName, data, { str, property, exportComponent }) => {
+export const generateInterface = (interfaceName, data, { str, property, exportComponent, file }) => {
+    const comp = file || interfaceName.toString()
 
     const { fieldMap, fieldEN, fieldCN, table: interfacePropertyTable, events } = data
 
@@ -264,7 +265,7 @@ export ${exportType} import("vue").DefineComponent<${joinProps}>;
 `
 
     if (exportDoc) {
-        addIndex(`        ${interfaceCamel}: typeof import('./${interfaceName}')['${interfaceCamel}']`)
+        addType(`        ${interfaceCamel}: typeof import('./${comp}')['${interfaceCamel}']`)
     }
 
     return [propsDoc, eventDoc, exportDoc].filter(Boolean).join('\n')
@@ -291,13 +292,19 @@ toInterface('button',str)
  */
 const toInterface = (name, str) => {
     const clearStr = str.replace(/\r?\n/gm, '\n')
-    const relationInterfaces = generateRelation(name, clearStr)
+    /**
+     * 通过配置关系解析当个md中多个组件声明
+     */
+    const relationInterfaces = generateRelation(name.toString(), clearStr)
     if (relationInterfaces) {
         return relationInterfaces
     }
+    /**
+     * 通过当个md生成声明
+     */
     const table = generateInterfaceTable(clearStr)
     if (table) {
-        return generateInterface(name, table, { str: clearStr, exportComponent: 'default' })
+        return generateInterface(name.toString(), table, { str: clearStr, exportComponent: 'default' })
     }
 }
 
@@ -307,11 +314,27 @@ const indexList = []
  * 为索引文件添加导出项
  * @param {string} str 导出项，例如: `export * from './view'`
  */
-const addIndex = (str) => {
+export const addIndex = (str) => {
     indexList.push(str)
 }
 
 export const getIndexDoc = () => {
+    return `export {}
+
+${Array.from(new Set(indexList)).join('\n')}
+`
+}
+const typeList = []
+
+/**
+ * 为索引文件添加导出项
+ * @param {string} str 导出项，例如: `export * from './view'`
+ */
+const addType = (str) => {
+    typeList.push(str)
+}
+
+export const getTypeDoc = () => {
     return `/* eslint-disable */
 /* prettier-ignore */
 // @ts-nocheck
@@ -321,7 +344,7 @@ export {}
 
 declare module 'vue' {
     export interface GlobalComponents {
-${indexList.join('\n')}
+${typeList.join('\n')}
     }
 }
 `

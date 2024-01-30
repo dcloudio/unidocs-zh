@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "fs/promises"
 import { existsSync, mkdirSync } from 'node:fs'
 import { resolve, dirname } from "path"
-import generateInterface, { getIndexDoc } from "./interface.mjs";
+import generateInterface, { addIndex, getIndexDoc, getTypeDoc } from "./interface.mjs";
 
 
 /**
@@ -27,13 +27,25 @@ const main = async (componentNames) => {
         if (!existsSync(dir)) {
             mkdirSync(dir, { recursive: true });
         }
-        tsDoc && writeFile(savePath, tsDoc, { encoding: 'utf-8' }).catch((err) => console.error(err))
-
+        if (tsDoc) {
+            addIndex(`export * from './${comp}'`)
+            writeFile(savePath, tsDoc, { encoding: 'utf-8' }).catch((err) => console.error(err))
+        }
     }
 
-    const savePath = resolve(process.cwd(), `docs/.vuepress/types/inner-components/index.d.ts`)
+    /**
+     * 生成index索引文件
+     */
+    const saveIndexPath = resolve(process.cwd(), `docs/.vuepress/types/inner-components/index.d.ts`)
     const indexDoc = getIndexDoc()
-    indexDoc && writeFile(savePath, indexDoc, { encoding: 'utf-8' }).catch((err) => console.error(err))
+    indexDoc && writeFile(saveIndexPath, indexDoc, { encoding: 'utf-8' }).catch((err) => console.error(err))
+
+    /**
+     * 生成vue Volor ide文件，自动对uniapp内置组件进行提示
+     */
+    const saveTypePath = resolve(process.cwd(), `docs/.vuepress/types/inner-components/types.d.ts`)
+    const typeDoc = getTypeDoc()
+    typeDoc && writeFile(saveTypePath, typeDoc, { encoding: 'utf-8' }).catch((err) => console.error(err))
 }
 
 const innerComponents = 'view,scroll-view,swiper,match-media,movable-area,movable-view,cover-view,cover-image,icon,text,rich-text,progress,button,checkbox,editor,form,input,label,picker,picker-view,radio,slider,switch,textarea,animation-view,audio,camera,image,video,live-player,live-pusher,map,canvas,web-view'.split(',')

@@ -21,6 +21,7 @@
 - 使用 `npm` 方式引入组件，如果确认引用正确，但是提示未注册组件或显示不正常，请尝试重新编译项目
 - `uni-popup` 中尽量不要使用 `scroll-view` 嵌套过多的内容，可能会影响组件的性能，导致组件无法打开或者打开卡顿
 - `uni-popup` 不会覆盖原生 tabbar 和原生导航栏
+- `uni-popup` 为了防止快速打开关闭的情况，组件默认设置了300毫秒延迟显示，如果需要去除，可到uni_modules下修改组件代码
 - app-vue 中组件无法遮盖 video ，ad 等原生组件 ，建议使用 nvue 
 - 组件支持 nvue ，需要在 `manifest.json > app-plus` 节点下配置 `"nvueStyleCompiler" : "uni-app"` 
 :::

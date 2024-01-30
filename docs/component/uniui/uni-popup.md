@@ -1,3 +1,4 @@
+# uni-popup 弹出层
 
 ::: tip 组件名：uni-popup
 ::: tip component name: uni-popup
@@ -7,7 +8,6 @@
 > Associated components: `uni-popup-dialog`, `uni-popup-message`, `uni-popup-share`, `uni-transition`
 
 [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-popup)
-[Click to download & install](https://ext.dcloud.net.cn/plugin?name=uni-popup)
 :::
 
 弹出层组件，在应用中弹出一个消息提示窗口、提示框等
@@ -75,8 +75,7 @@ In most scenarios, you do not need to set the `background-color` property, becau
 而也有特例，需要我们主动去设置背景色，例如 `type = 'bottom'` 的时候 ，在异型屏中遇到了底部安全区问题（如 iphone 11），因为 `uni-popup`的主要内容避开了安全区（设置`safe-area:true`），导致底部的颜色我们无法自定义，这时候使用 `background-color` 就可以解决这个问题。 
 There are also special cases that require us to actively set the background color. For example, when `type = 'bottom'`, the bottom safe area problem is encountered in the special-shaped screen (such as iphone 11), because the main content of `uni-popup` avoids The safe area is set (set `safe-area: true`), so we cannot customize the color of the bottom. At this time, using `background-color` can solve this problem.
 
-**示例**
-**Example**
+**底部弹窗示例**
 
 ```html
 <button @click="open">打开弹窗</button>
@@ -88,8 +87,7 @@ There are also special cases that require us to actively set the background colo
 在某些场景 ，可能不希望弹层有动画效果 ，只需要将 `animation` 属性设置为 `false` 即可以关闭动画。
 In some scenarios, you may not want the popup layer to animate, just set the `animation` property to `false` to turn off the animation.
 
-**示例**
-**Example**
+**居中弹窗示例**
 
 ```html
 <button @click="open">打开弹窗</button>
@@ -315,7 +313,7 @@ export default {
 |confirmText **[1.7.4新增]**|String|-|定义确定按钮文本|
 |confirmText **[New in 1.7.4]**|String|-|Define the text of the confirm button|
 |cancelText **[1.7.4新增]**|String|-|定义取消按钮文本|
-|cancelText **[New in 1.7.4]**|String|-|Define the text of the cancel button|
+|showClose **[1.8.5新增]**|Boolean|-|是否显示取消按钮|
 |value| String\Number|-|输入框默认值，input模式下生效|
 |value| String\Number|-|Default value of the input box, valid in input mode|
 |placeholder|String|-|输入框提示文字，input模式下生效|
@@ -350,8 +348,7 @@ The sharing example is not used as a final component, but only as a style compon
 将 `uni-popup` 的 `type` 属性改为 `share`，并引入对应组件即可使用 ，*该组件不支持单独使用*
 Change the `type` attribute of `uni-popup` to `share`, and import the corresponding component to use, *this component does not support separate use*
 
-**示例**
-**Example**
+#### 示例
 
 ```html
 <uni-popup ref="popup" type="share">
@@ -377,7 +374,7 @@ Change the `type` attribute of `uni-popup` to `share`, and import the correspond
 |select|选择触发|e = {item,index}：所选参数|
 |select|select trigger|e = {item,index}: selected parameter|
 
-**Tips**
+#### 注意
 - share 分享组件，只是作为一个扩展示例，如果需要修改数据源，请到组件内修改
 - share share component, just as an extension example, if you need to modify the data source, please modify it in the component
 
@@ -435,7 +432,7 @@ In the `@change` event of `uni-popup`, you can receive the open/close state of `
 
 ```
 
-**Tips**
+#### tips
 - h5 滚动穿透不需要处理 
 - h5 scroll penetration does not require processing
 - wx、app 需要 使用 page-meta 组件配合阻止滚动穿透
@@ -443,19 +440,14 @@ In the `@change` event of `uni-popup`, you can receive the open/close state of `
 - 注意 page-meta 组件，一个页面只能存在一个
 - Note the page-meta component, only one page can exist
 - 其他平台无法阻止滚动穿透，建议使用 scroll-view 滚动 ，手动设置 overflow:hidden,同 page-meta 方法一致
-- Other platforms cannot prevent scroll penetration. It is recommended to use scroll-view scrolling and manually set overflow:hidden, which is consistent with the page-meta method
 
 
 
-## 示例
-## Example
+#### 示例
 ::: warning 注意
-::: warning attention
 示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
-The example relies on multiple components such as `uni-card` `uni-section` `uni-scss`, copying the example code directly will not work properly.
 
 请到 [组件下载页面](https://ext.dcloud.net.cn/plugin?name=uni-popup) ，在页面右侧选择 `使用 HBuilderX导入示例项目` ，体验完整组件示例。
-Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name=uni-popup) , select `Import sample project using HBuilderX` on the right side of the page to experience the complete component example.
 :::
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/extUI/popup/popup

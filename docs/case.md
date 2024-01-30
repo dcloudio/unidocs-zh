@@ -167,10 +167,6 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/rongyao.png" width="200"/>
 		<span style="margin-top:15px;">H5</span>
 	</a>
-  <!-- <a href="https://appgallery1.huawei.com/#/app/C100382765" target="_blank" class="clear-style barcode-view">
-		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-alicdn/6933ea80-c55a-11ea-9dfb-6da8e309e0d8.png" width="200"/>
-		<span style="margin-top:15px;">App（部分栏目使用DCloud SDK）</span>
-	</a> -->
 </div>
 
  [App（部分栏目使用DCloud SDK）](https://os-android.liqucn.com/rj/1182416.shtml)
@@ -263,20 +259,6 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 		<span style="margin-top:15px;">Alipay MiniApp code</span>
 	</a>
 </div>
-
-<!-- <a href="https://duolingo.91ddedu.com/" target="_blank" class="clear-style"><b>登登多邻国：</b></a> 外语学习者题库。其服务端整体基于[uniCloud](https://doc.dcloud.net.cn/uniCloud/)，前端包括PC和H5网站、微信小程序，均连接uniCloud。日请求量百万级。
-<div style="display:flex;justify-content: space-around;">
-	<a href="https://duolingo.91ddedu.com/" target="_blank" class="clear-style barcode-view">
-		<img src="https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-alicdn/bda036a0-c55f-11ea-b997-9918a5dda011.png" width="200"/>
-		<span style="margin-top:15px;">Web及H5码</span>
-		<span style="margin-top:15px;">Web and H5 code</span>
-	</a>
-  <a href="javascript:;" target="_self" class="clear-style barcode-view">
-		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/miniapp-dengdengduolinguo.png" width="200"/>
-		<span style="margin-top:15px;">微信小程序码</span>
-		<span style="margin-top:15px;">WeChat MiniApp code</span>
-	</a>
-</div> -->
 
 <a href="http://ext.dcloud.net.cn/plugin?id=239" target="_blank" class="clear-style"><b>ColorUI：</b></a>ColorUI官方组件库for uni-app，高颜值示例。本项目插件市场地址：[https://ext.dcloud.net.cn/plugin?id=239](https://ext.dcloud.net.cn/plugin?id=239)
 

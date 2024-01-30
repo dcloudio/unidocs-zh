@@ -40,7 +40,7 @@ app-nvue也不支持此组件。
 |4|不合适资源|
 
 **示例：** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/audio/audio)
- 
+
 ```html
 <template>
 	<view>
@@ -62,7 +62,7 @@ export default {
 				poster: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/music-a.png',
 				name: '致爱丽丝',
 				author: '暂无',
-				src: 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-hello-uniapp/2cc220e0-c27a-11ea-9dfb-6da8e309e0d8.mp3',
+				src: 'https://web-ext-storage.dcloud.net.cn/uni-app/ForElise.mp3',
 			},
 			audioAction: {
 				method: 'pause'

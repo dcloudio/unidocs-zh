@@ -171,7 +171,7 @@ const generateEventProperty = (arr, { fieldMap, fieldCN }) => {
      * ${arr[comment]}
      * @name ${name} ${effectiveTimingLine}${platformDifferencesLine}
      */
-    ${name}: (event: ${eventType}) => void;
+    ${name}?: (event: ${eventType}) => void;
     `
 }
 /**

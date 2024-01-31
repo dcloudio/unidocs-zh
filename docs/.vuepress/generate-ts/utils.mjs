@@ -42,7 +42,7 @@ export const mustMap = {
 const mapRelation = {
     '高德': 'AMapSupported',
     'AMapSupported': '高德',
-    
+
     'google地图': 'GoogleMapSupported',
     'GoogleMapSupported': 'google地图',
 
@@ -96,3 +96,11 @@ export const getFieldMap = (fieldsEN) => {
         if (field !== '') return [field, index]
     }).filter(Boolean))
 }
+
+/**
+ * 生成泛型字符串
+ * @param {string} genericType 
+ * @param {string} paramsType 
+ * @returns 
+ */
+export const genericType = (genericType, paramsType) => `${genericType}<${paramsType}>`

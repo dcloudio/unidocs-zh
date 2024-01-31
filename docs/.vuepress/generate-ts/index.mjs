@@ -32,7 +32,8 @@ const main = async (componentNames) => {
             writeFile(savePath, tsDoc, { encoding: 'utf-8' }).catch((err) => console.error(err))
         }
     }
-
+    //并入types
+    addIndex(`export * from './types'`)
     /**
      * 生成index索引文件
      */

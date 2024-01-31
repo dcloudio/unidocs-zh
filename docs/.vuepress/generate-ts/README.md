@@ -61,7 +61,7 @@ video.d.ts
 在[quickstart-cli][quickstart-cli]中的[uni-preset-vue typescript][uni-preset-vue:ts]项目`src/shime-uni.d.ts`中增加一行
 
 ```ts
-/// <reference types="@dcloudio/types/inner-components/types" />
+/// <reference types="@dcloudio/types/inner-components" />
 ```
 
 #### IDE工具提示

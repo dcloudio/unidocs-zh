@@ -74,7 +74,7 @@ const generateInterfaceProperty = (arr, files, propertyIns) => {
     if (!relativeType) { /**
      * 处理`string/Array`
      */
-        const types = arr[type].replace(/(&#124;)|\\/, '|').split('|').map(s => s.trim())
+        const types = arr[type].replace(/(&#124;)|(\\|\/)/g, '|').split('|').map(s => s.trim())
         relativeType = types.map(t => {
             switch (t) {
                 case 'Array＜Number＞':

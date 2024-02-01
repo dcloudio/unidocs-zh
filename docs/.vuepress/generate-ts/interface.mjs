@@ -95,11 +95,29 @@ const generateInterfaceProperty = (arr, files, propertyIns) => {
 
     //处理defaultVal为字符串的情况
     let defaultVal = (arr[defaultIndex] || '').trim()
-    if (/true|false|^\d+\.?\d*$/.test(defaultVal) === false) {
-        defaultVal = defaultVal ? `"${defaultVal}"` : ''
+    // console.log({ defaultVal })
+    let defaultLine = ''
+    switch (defaultVal) {
+        case 'true':
+        case 'false':
+        case '无':
+        case '[]':
+        case '{}':
+        case 'null':
+            defaultLine = `     * @default ${defaultVal}`
+            break;
+
+        default:
+            //默认值是字符串
+            if (defaultVal && /^-?\d+\.?\d*$/.test(defaultVal) === false) {
+                const val = defaultVal.replace(/"|'/g, '').trim()
+                defaultLine = !val ? '' : `     * @default "${val}"`
+            } else {
+                defaultLine = `     * @default ${defaultVal}`
+            }
+            break;
     }
 
-    const defaultLine = defaultVal ? `     * @default ${defaultVal}` : ''
     const effectiveTimingLine = arr[effectiveTiming] ? `\n     * @effectiveTiming ${fieldCN[effectiveTiming]} ${arr[effectiveTiming]}` : ''
     const platformDifferencesLine = arr[platformDifferences] ? `\n     * @platformDifferences ${fieldCN[platformDifferences]}:${arr[platformDifferences]}` : ''
 
@@ -107,7 +125,7 @@ const generateInterfaceProperty = (arr, files, propertyIns) => {
     const mustSymbol = isMust ? '' : '?'
     return `
     /**
-     * ${[arr[comment], defaultLine].join('\n')}
+     * ${[arr[comment], defaultLine].filter(Boolean).join('\n')}
      * @name ${name} ${effectiveTimingLine}${platformDifferencesLine}
      */
     ${name}${mustSymbol}: ${relativeType}`

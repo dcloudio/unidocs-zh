@@ -30,6 +30,8 @@ const main = async (componentNames) => {
         if (tsDoc) {
             addIndex(`export * from './${comp}'`)
             writeFile(savePath, tsDoc, { encoding: 'utf-8' }).catch((err) => console.error(err))
+        } else {
+            console.warn('loss doc: ' + comp)
         }
     }
     //并入types

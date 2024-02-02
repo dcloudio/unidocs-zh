@@ -237,7 +237,7 @@ export default {
 |content|String|-|对话框内容，base模式下生效|
 |confirmText **[1.7.4新增]**|String|-|定义确定按钮文本|
 |cancelText **[1.7.4新增]**|String|-|定义取消按钮文本|
-|maxlength|**[1.8.6新增]**|Number|-|限制输入框字数（当mode="input"时生效）|
+|maxlength **[1.8.6新增]**|Number|-|限制输入框字数（当mode="input"时生效）|
 |showClose **[1.8.5新增]**|Boolean|-|是否显示取消按钮|
 |value| String\Number|-|输入框默认值，input模式下生效|
 |placeholder|String|-|输入框提示文字，input模式下生效|

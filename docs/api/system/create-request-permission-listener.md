@@ -44,14 +44,14 @@ HBuilderX (4.0+) android 平台支持
 		data() {
 			return {
 				isPermissionAlertShow: false,
-				permissionListener: null
+				//permissionListener: null
 			}
 		},
 		onReady() {
 			this.watchPermission()
 		},
 		onUnload() {
-			if (this.permissionListener != null) {
+			if (this.permissionListener) {
 				this.permissionListener.stop()
 			}
 		},

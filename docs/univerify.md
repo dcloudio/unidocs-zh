@@ -251,7 +251,9 @@ unverifyStyle data structure:
         "height": "60px"   //图标高度 默认值：60px
     },
     "closeIcon": {
-        "path": "static/xxx.png" // 自定义关闭按钮，仅支持本地图片。 HBuilderX3.3.7+版本支持
+        "path": "static/xxx.png", // 自定义显示在授权框中的logo，仅支持本地图片 默认显示App logo
+        "width":  "60px",  //图标宽度 默认值：60px (HBuilderX 4.0支持)
+        "height": "60px"   //图标高度 默认值：60px (HBuilderX 4.0支持)
     },
     "phoneNum": {
         "color": "#202020"  // 手机号文字颜色 默认值：#202020
@@ -767,8 +769,7 @@ exports.main = async(event) => {
 ## 运行基座和打包
 ## Running the dock and packing
 
-- 使用`uni一键登录`，不需要制作自定义基座，使用HBuilder标准真机运行基座即可。在云函数中配置好apiKey、apiSecret后，一样从你的账户充值中扣费。
-- Use `uni one-click login`, no need to make a custom base, just use the HBuilder standard real machine to run the base. After configuring the apiKey and apiSecret in the cloud function, the fee will be deducted from your account recharge.
+- 使用`uni一键登录`，安卓平台不需要制作自定义基座，使用HBuilder标准真机运行基座即可，在云函数中配置好apiKey、apiSecret后，一样从你的账户充值中扣费。iOS平台使用标准基座必须要用`io.dcloud.HBuilder`这个bundleId重签，其他bundleId重签无法登录。
 
 - 云端打包
 - Cloud packaging

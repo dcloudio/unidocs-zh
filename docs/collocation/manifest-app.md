@@ -283,8 +283,12 @@ iOS平台云端打包相关配置
                     "NSUserTrackingUsageDescription": ""                        //可选，字符串类型，跟踪用户活动权限描述
                 },
                 "idfa": true,                   //可选，Boolean类型，是否使用广告标识
-                "capabilities": {               //可选，JSON对象，应用的能力配置（Capabilities）
-                },
+                "capabilities": {    // 可选，JSON对象，配置应用的capabilities数据（根据XCode规范分别配置到entitlements和plist文件中）
+				    "entitlements": {    // 合并到工程entitlements文件的数据（json格式）
+				    },
+				    "plists": {    // 合并到工程Info.plist文件的数据（json格式）
+				    }
+			    },
                 "CFBundleName": "HBuilder",     //可选，字符串类型，CFBundleName名称
                 "validArchitectures": [         //可选，字符串数组类型，编译时支持的CPU指令，可取值arm64、arm64e、armv7、armv7s、x86_64
                     "arm64"

@@ -195,7 +195,9 @@ univerifyStyle 数据结构：
         "height": "60px"   //图标高度 默认值：60px
     },
     "closeIcon": {
-        "path": "static/xxx.png" // 自定义关闭按钮，仅支持本地图片。 HBuilderX3.3.7+版本支持
+        "path": "static/xxx.png", // 自定义显示在授权框中的logo，仅支持本地图片 默认显示App logo
+        "width":  "60px",  //图标宽度 默认值：60px (HBuilderX 4.0支持)
+        "height": "60px"   //图标高度 默认值：60px (HBuilderX 4.0支持)
     },
     "phoneNum": {
         "color": "#202020"  // 手机号文字颜色 默认值：#202020
@@ -626,7 +628,7 @@ exports.main = async(event) => {
 
 ## 运行基座和打包
 
-- 使用`uni一键登录`，不需要制作自定义基座，使用HBuilder标准真机运行基座即可。在云函数中配置好apiKey、apiSecret后，一样从你的账户充值中扣费。
+- 使用`uni一键登录`，安卓平台不需要制作自定义基座，使用HBuilder标准真机运行基座即可，在云函数中配置好apiKey、apiSecret后，一样从你的账户充值中扣费。iOS平台使用标准基座必须要用`io.dcloud.HBuilder`这个bundleId重签，其他bundleId重签无法登录。
 
 - 云端打包
 在项目manifest.json页面“App模块配置”项的“OAuth(登录鉴权)”下勾选“一键登录(uni-verify)”。

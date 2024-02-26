@@ -431,6 +431,19 @@ Plugin ID naming specification:
 - `uni_modules`插件可以在package.json的`uni_modules->dependencies`节点配置三方依赖（依赖的插件也必须是`uni_modules`插件），如果是依赖了三方的npm插件，可以使用标准的dependencies节点配置。
 - The `uni_modules` plug-in can be configured with three-party dependencies in the `uni_modules->dependencies` node of package.json (the dependent plug-in must also be the `uni_modules` plug-in). If it is an npm plug-in that relies on three parties, you can use the standard dependencies node configuration.
 
+```json
+// 通过 uni_modules->dependencies 配置三方uni_modules插件依赖
+{
+  "id": "uni-badge",
+  "displayName": "uni-badge 数字角标",
+  "version": "1.2.2",
+  "description": "数字角标（徽章）组件，在元素周围展示消息提醒，一般用于列表、九宫格、按钮等地方。",
+  "uni_modules": {
+    "dependencies": ["uni-scss"]
+  }
+}
+```
+
 #### 发布到插件市场
 #### Release to plug-in market
 当您的插件开发完毕，可以直接发布到[插件市场](https://ext.dcloud.net.cn/)供其他人免费或付费使用，插件市场提供了变现、评价等机制，优秀的插件作者，可以做到月入好几万。

@@ -111,13 +111,13 @@ uni.offPushMessage(callback);
 
 获取通知渠道管理器，Android 8系统以上才可以设置通知渠道。
 
-#### getChannelManager兼容性
-
 **返回值说明**
 
 |类型|
 |:-|
 |[ChannelManager](#ChannelManager)|
+
+#### getChannelManager兼容性
 
 |Android 系统版本	|Android|iOS|其他|
 |:-|:-|:-|:-|

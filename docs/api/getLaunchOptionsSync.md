@@ -21,10 +21,10 @@ There are differences in the support of different Vue versions of the web platfo
 |参数名|类型|说明|平台差异说明|
 |Parameter Name|Type|Description|Platform Difference Description|
 |:-|:-|:-|:-|
-|path|String|启动的路径(代码包路径，注意：App 端开发过程中热更新会直达当前页面，此时启动路径为当前页面路径)|其他平台均支持，`抖音小程序(1.12.0+)`|
-|scene|Number|启动时的场景值，具体值含义请查看各平台文档说明。App、web端恒为 1001。钉钉小程序在 IDE 恒为0000，真机不支持。|其他平台均支持，`抖音小程序(1.12.0+)`|
-|query|Object|启动时的 query 参数|其他平台均支持，`抖音小程序(1.12.0+)`|
-|referrerInfo|Object|来源信息。如果没有则返回 `{}`|其他平台均支持，`抖音小程序(1.15.0+)`，`飞书小程序不支持`，`钉钉小程序不支持`|
+|path|String|启动的路径(代码包路径，注意：App 端开发过程中热更新会直达当前页面，此时启动路径为当前页面路径)||
+|scene|Number|启动时的场景值，具体值含义请查看各平台文档说明。App、web端恒为 1001。钉钉小程序在 IDE 恒为0000，真机不支持。||
+|query|Object|启动时的 query 参数||
+|referrerInfo|Object|来源信息。如果没有则返回 `{}`|`飞书`和`钉钉`小程序不支持|
 |channel|String|如果应用没有设置渠道标识，则返回空字符串。取值如下|`仅 App 支持`|
 |channel|String| Returns an empty string if the app does not set a channel ID. The values are as follows |`Only App supports`|
 |launcher|String|应用启动来源。取值如下|`仅 App 支持`|
@@ -89,6 +89,4 @@ There are differences in the support of different Vue versions of the web platfo
 | miniProgram |  通过微信小程序启动应用  |
 | miniProgram | Launch the app via WeChat Mini Program |
 | shortcut | 通过快捷方式启动，iOS平台表示通过3D Touch快捷方式，Android平台表示通过桌面快捷方式启动   |
-| shortcut | Launch via shortcut, iOS platform means via 3D Touch shortcut, Android platform means via desktop shortcut |
 | barcode | 通过二维码扫描启动|
-| barcode | Start by scanning a QR code|

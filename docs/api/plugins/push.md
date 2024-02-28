@@ -113,13 +113,26 @@ uni.offPushMessage(callback);
 
 |名称|类型|必备|默认值|描述|
 |:-|:-|:-|:-|:-|
-|soundName|string|否|null|声音文件名|
+|soundName|string|否|null|声音文件名（不能带文件后缀），需要放置声音文件到Android原生的`/res/raw/`目录下 [原生资源配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#nativeresources) |
 |channelId|string|是|-|通知渠道id|
 |channelDesc|string|是|-|通知渠道描述|
 |enableLights|boolean|否|false|呼吸灯闪烁|
 |enableVibration|boolean|否|false|震动|
 |importance|number|否|3|通知的重要性级别，可选范围IMPORTANCE_LOW：2、IMPORTANCE_DEFAULT：3、IMPORTANCE_HIGH：4|
 |lockscreenVisibility|number|否|-1000|锁屏可见性，可选范围VISIBILITY_PRIVATE：0、VISIBILITY_PUBLIC：1、VISIBILITY_SECRET：-1、VISIBILITY_NO_OVERRIDE：-1000|
+
+##### 代码示例
+
+```typescript
+
+const manager = uni.getChannelManager()
+manager.setPushChannel({
+	channelId: "xxx",
+	channelDesc: "通知渠道描述",
+	soundName: "pushsound" // 已经把声音文件存储到/res/raw/pushsound.mp3
+})
+
+```
 
 
 ##### setPushChannel兼容性

@@ -90,13 +90,9 @@ WeChat MiniApp`signType` description
 6. On the App side, Apple in-app payment orderInfo is of type Object, {productid: 'productid'}.
 
 ## H5 平台@h5-payment
-## H5 Platform @h5-payment
-- 普通浏览器平台的支付，仍然是常规web做法。uni-app未封装。
-- Payment for common browser platforms, still normal web practice. uni-app is not packaged.
+- 普通浏览器平台的支付，仍然是常规web做法。uni-app未封装。但插件市场提供了uni-pay插件，解决各平台的支付问题，[详见](https://doc.dcloud.net.cn/uniCloud/uni-pay.html)
 - 在普通浏览器里也可以调起微信进行支付，这个在微信叫做H5支付，此功能未开放给普通开发者，需向微信单独申请，[详见](https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=15_1)
-- You can also use WeChat to pay in ordinary browsers. This is called H5 payment in WeChat. This function is not open to ordinary developers. You need to apply for WeChat separately. [For details](https://pay.weixin.qq .com/wiki/doc/api/H5.php?chapter=15_1)
-- 微信内嵌浏览器运行H5版时，可通过js sdk实现微信支付，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)
-- When WeChat embedded browser runs H5 version, WeChat payment can be realized through js sdk, and a separate js needs to be introduced, [see details](https://ask.dcloud.net.cn/article/35380)
+- 微信内嵌浏览器运行H5版时，可通过js sdk实现微信支付，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)，也可以直接使用[uni-pay](https://doc.dcloud.net.cn/uniCloud/uni-pay.html)，无需再单独引入其他js
 
 **各平台支持的支付情况说明**
 **Description of payment conditions supported by each platform**

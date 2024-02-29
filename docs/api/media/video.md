@@ -73,7 +73,7 @@ If you select and upload non-image and video files, please refer to: [https://un
 **示例**
 **Example**
 
-```html
+```
 <template>
 	<view>
 		<text>hello</text>
@@ -81,8 +81,6 @@ If you select and upload non-image and video files, please refer to: [https://un
 		<video :src="src"></video>
 	</view>
 </template>
-```
-```javascript
 export default {
 	data() {
 		return {
@@ -292,7 +290,7 @@ Save the video to the system album.
 **示例**
 **Example**
 
-```html
+```
 <template>
 	<view>
 		<text>hello</text>
@@ -300,8 +298,6 @@ Save the video to the system album.
 		<video :src="src"></video>
 	</view>
 </template>
-```
-```javascript
 export default {
 	data() {
 		return {

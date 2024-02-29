@@ -39,8 +39,7 @@ Get the **globally unique** recording manager ``recorderManager``.
 |onError|callback|录音错误事件, 会回调错误信息|&nbsp;|
 |offError|callback|取消监听录音错误事件|仅支付宝小程序支持|
 
-**start(options) 说明**
-**start(options) description**
+### start(options)
 
 |属性|类型|必填|说明|平台差异说明|
 |Attribute|Type|Required|Description|Platform Difference Description|
@@ -77,8 +76,7 @@ Among them, the sampling rate and code rate have certain requirements, and the s
 |44100|64000 ~ 320000|
 |48000|64000 ~ 320000|
 
-**onStop(callback) 回调结果说明**
-**onStop(callback) callback result description**
+### onStop(callback) 
 
 |属性|类型|说明|
 |Attribute|Type|Description|
@@ -88,8 +86,7 @@ Among them, the sampling rate and code rate have certain requirements, and the s
 |fileSize|Number|录音文件大小。单位：Byte。（仅支付宝10.2.90+支持）|
 
 
-**onFrameRecorded(callback) 回调结果说明**
-**onFrameRecorded(callback) callback result description**
+### onFrameRecorded(callback) 
 
 |属性|类型|说明|
 |Attribute|Type|Description|
@@ -99,8 +96,7 @@ Among them, the sampling rate and code rate have certain requirements, and the s
 |isLastFrame|Boolean|当前帧是否正常录音结束前的最后一帧|
 | isLastFrame| Boolean|Whether the current frame is the last frame before the end of normal recording|
 
-**onError(callback) 回调结果说明**
-**onError(callback) callback result description**
+### onError(callback) 
 
 |属性|类型|说明|
 |Attribute|Type|Description|
@@ -114,8 +110,7 @@ Among them, the sampling rate and code rate have certain requirements, and the s
 - 可以通过用户授权API来判断用户是否给应用授予麦克风的访问权限[https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
 - You can use the user authorization API to determine whether the user has granted the application access to the microphone [https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize )
 
-**示例**
-**example**
+### 示例
 
 ```html
 <template>

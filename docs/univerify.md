@@ -118,8 +118,6 @@ precondition:
 
 详细步骤参考：[一键登录服务开通指南](https://doc.dcloud.net.cn/uniCloud/uni-login/service)
 
-开通成功后会得到 apiKey、apiSecret。这2个信息，后续需要配置在uniCloud的云函数里。同时注意保密，这2个信息也是计费凭证。
-After the activation is successful, you will get apiKey and apiSecret. These two pieces of information need to be configured in the cloud function of uniCloud later. At the same time, pay attention to confidentiality. These two pieces of information are also billing vouchers.
 
 **注意**
 **Notice**

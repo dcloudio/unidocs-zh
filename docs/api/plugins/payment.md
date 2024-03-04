@@ -90,18 +90,14 @@ WeChat MiniApp`signType` description
 6. On the App side, Apple in-app payment orderInfo is of type Object, {productid: 'productid'}.
 
 ## H5 平台@h5-payment
-- 普通浏览器平台的支付，仍然是常规web做法。uni-app未封装。但插件市场提供了uni-pay插件，解决各平台的支付问题，[详见](https://doc.dcloud.net.cn/uniCloud/uni-pay.html)
+- 普通浏览器平台的支付，仍然是常规web做法。uni-app未封装。但DCloud提供了`uni-pay`插件，已封装了web支付，[详见](https://doc.dcloud.net.cn/uniCloud/uni-pay.html)
 - 在普通浏览器里也可以调起微信进行支付，这个在微信叫做H5支付，此功能未开放给普通开发者，需向微信单独申请，[详见](https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=15_1)
 - 微信内嵌浏览器运行H5版时，可通过js sdk实现微信支付，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)，也可以直接使用[uni-pay](https://doc.dcloud.net.cn/uniCloud/uni-pay.html)，无需再单独引入其他js
 
 **各平台支持的支付情况说明**
 **Description of payment conditions supported by each platform**
 - 微信小程序里只支持微信小程序支付，在 [微信商户平台](https://pay.weixin.qq.com) 申请支付时，选择公众号支付。
-- Only WeChat MiniApp payment is supported in WeChat MiniApp. When applying for payment on [WeChat Merchant Platform](https://pay.weixin.qq.com), select the official account to pay.
-- App 里支持微信sdk支付、支付宝sdk支付、苹果iap应用内支付，在各平台申请支付时选择 App 支付。
-- WeChat sdk payment, Alipay sdk payment, and Apple iap in-app payment are supported in the app. Choose App payment when applying for payment on each platform.
-- 其他支付（如银联）请使用web-view组件以H5方式实现。
-- For other payments (such as UnionPay), please use the web-view component to implement the H5 method.
+- App 里支持微信sdk支付、支付宝sdk支付、苹果iap应用内支付，在各平台申请支付时选择 App 支付。其他支付（如银联）请使用web-view组件以H5方式实现或在插件市场搜索相应插件。
 - 支付宝小程序只支持支付宝支付。
 - The Alipay MiniApp only supports Alipay payment.
 - 百度小程序为百度支付，其二次封装了度小满、支付宝、微信支付。

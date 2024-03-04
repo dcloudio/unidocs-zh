@@ -225,17 +225,11 @@ export default {
 
 返回值 为 string 类型
 
-|值			|描述											|
-|:-:		|:-:											|
-|wm			|uniMP激励视频						|
-|csj		|穿山甲										|
-|gm			|穿山甲gromore						|
-|gdt		|腾讯优量汇（前称广点通）	|
-|ks			|快手											|
-|sigmob	|Sigmob										|
-|bd			|百度											|
-|gg			|Google AdMob							|
-|pg			|海外穿山甲								|
+|值			|描述	|
+|:-:		|:-:	|
+|china	|国内	|
+|global	|国际	|
+
 
 **示例代码**
 
@@ -580,7 +574,7 @@ export default {
 |字段定义	|类型		|字段名称				|备注															|
 |:-:			|:-:		|:-:						|:-:															|
 |adpid		|String	|DCloud广告位id	|																	|
-|provider	|String	|广告服务商			|wm、csj、ks、gdt、sigmob					|
+|provider	|String	|广告服务商			|china、global					|
 |platform	|String	|平台						|iOS、Android											|
 |sign			|String	|签名						|																	|
 |trans_id	|String	|交易id					|完成观看的唯一交易ID							|

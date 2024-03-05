@@ -87,6 +87,27 @@ Official website address: [uniapp.dcloud.io](https://uniapp.dcloud.io)
         |流量（GB）|0.18		|
         |售价（元/月）#{colspan=2}	|5		|
         ```
+
+14. 表格支持行展开
+    md 书写格式
+    ```md
+    |				|原生语言插件				|uts插件|
+    |:------		|:-------					|:--------|
+    |开发语言		|java/oc					|uts|
+    |开发环境		|Android Studio/XCode		|[HBuilderX](https://www.baidu.com)|
+    ->|第一列|第二列				|第三列				|
+    ->|:------		|:-------:	|-------:	|
+    ->|左对齐		|[居中](https://www.baidu.com)|右对齐|
+    |打包方式		|外挂aar 等产出物			|编译时生成原生代码|
+    |js层调用方式	|uni.requireNativePlugin()	|普通的js函数/对象，可以直接 import，支持摇树优化|
+    ->|第一列|第二列				|
+    ->|:------		|:-------	|
+    ->|第一列内容		|[HBuilderX](https://www.baidu.com)|
+    |支持项目类型	|uni-app					|uni-app和uni-app x|
+    ```
+    表现为：
+    ![](https://qiniudcdn.qnqcdn.net/web-ext-storage.dcloud.net.cn/doc/subtable.png)
+
 ## 文档 Algolia 使用限额
 Included Quota:
 - Records: 1,000,000

@@ -91,9 +91,7 @@ When the WeChat login does not configure `onlyAuthorize`, the user login credent
 |authResult|登录服务商提供的登录信息，服务商不同返回的结果不完全相同|微信登录配置`onlyAuthorize:true`则此项为空，App 3.2.6+ |
 | authResult|The login information provided by the login service provider, the results returned by different service providers are not exactly the same|WeChat login configuration `onlyAuthorize:true`, this item is empty, App 3.2.6+ |
 |code|用户登录凭证。开发者需要在开发者服务器后台，使用 code 换取 openid 和 session_key 等信息|微信登录配置`onlyAuthorize:true`才会返回，App 3.2.6+、京东小程序 |
-| code| User login credentials. Developers need to use code in the background of the developer server to exchange information such as openid and session_key|WeChat login configuration `onlyAuthorize:true` will return, App 3.2.6+, JD MiniApp |
-|appleInfo|Object|否|`苹果登录`返回的信息|App 3.4.3+|
-| appleInfo| Object|No|The information returned by `Apple Login`| App 3.4.3+|
+|appleInfo|`苹果登录`返回的信息|App 3.4.3+|
 |errMsg|描述信息||
 | errMsg|Description||
 

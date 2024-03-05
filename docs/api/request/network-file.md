@@ -7,6 +7,7 @@
 **推荐开发者上传到uniCloud，uniCloud提供了免费CDN和更好的易用性，包括安全的cdn直传。**
 - uniCloud的上传API：[https://doc.dcloud.net.cn/uniCloud/storage/dev.html#uploadfile](https://doc.dcloud.net.cn/uniCloud/storage/dev.html#uploadfile)
 - 封装的更完善的[uni-file-picker组件](https://ext.dcloud.net.cn/plugin?id=4079)，文件选择、上传到uniCloud，一站式集成。
+- 推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
 
 **OBJECT 参数说明**
 

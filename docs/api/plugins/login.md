@@ -59,7 +59,7 @@ Web平台常见的登录包括用户名密码、短信验证码、pc端微信扫
 |:-|:-|:-|
 |authResult|登录服务商提供的登录信息，服务商不同返回的结果不完全相同|微信登录配置`onlyAuthorize:true`则此项为空，App 3.2.6+ |
 |code|用户登录凭证。开发者需要在开发者服务器后台，使用 code 换取 openid 和 session_key 等信息|微信登录配置`onlyAuthorize:true`才会返回，App 3.2.6+、京东小程序 |
-|appleInfo|Object|否|`苹果登录`返回的信息|App 3.4.3+|
+|appleInfo|`苹果登录`返回的信息|App 3.4.3+|
 |errMsg|描述信息||
 
 **示例**

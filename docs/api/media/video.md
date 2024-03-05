@@ -48,7 +48,7 @@
 
 **示例**
 
-```html
+```
 <template>
 	<view>
 		<text>hello</text>
@@ -56,8 +56,6 @@
 		<video :src="src"></video>
 	</view>
 </template>
-```
-```javascript
 export default {
 	data() {
 		return {
@@ -207,7 +205,7 @@ uni.chooseMedia({
 
 **示例**
 
-```html
+```
 <template>
 	<view>
 		<text>hello</text>
@@ -215,8 +213,6 @@ uni.chooseMedia({
 		<video :src="src"></video>
 	</view>
 </template>
-```
-```javascript
 export default {
 	data() {
 		return {

@@ -105,7 +105,7 @@
   * App 本地打包
     * [Android本地离线打包](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/android)
     * [iOS本地离线打包](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios)
-  * [App 加固加固](app-security.md)
+  * [App 加固](app-security.md)
   * [App 隐私合规检测](app-privacy-detect.md)
   * [App 上架注意](store.md)
     * [国内应用市场上架](android-store.md)
@@ -142,7 +142,7 @@
     * [app js/nvue文件原生混淆加密](app-sec-confusion.md)
 	* [Android安全漏洞问题解决方案](app-sec-android.md)
     * [App 安全检测API](app-sec-api.md)
-	* [App 加固加固](app-security.md)
+	* [App 加固](app-security.md)
 	* [App 隐私合规检测](app-privacy-detect.md)
   * 网络安全
     * [云端一体安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)

@@ -89,7 +89,6 @@ uni.login({
 
 详细步骤参考：[一键登录服务开通指南](https://doc.dcloud.net.cn/uniCloud/uni-login/service)
 
-开通成功后会得到 apiKey、apiSecret。这2个信息，后续需要配置在uniCloud的云函数里。同时注意保密，这2个信息也是计费凭证。
 
 **注意**
 > 应用开通uni一键登录服务后，需要等审核通过后才能正式使用。在审核期间可以使用HBuilder标准基座真机运行调用一键登录功能，调用时会从你的账户中扣费；但在审核期间不可以使用自定义基座调用一键登录功能，调用时会返回错误。
@@ -628,7 +627,7 @@ exports.main = async(event) => {
 
 ## 运行基座和打包
 
-- 使用`uni一键登录`，安卓平台不需要制作自定义基座，使用HBuilder标准真机运行基座即可，在云函数中配置好apiKey、apiSecret后，一样从你的账户充值中扣费。iOS平台使用标准基座必须要用`io.dcloud.HBuilder`这个bundleId重签，其他bundleId重签无法登录。
+- 使用`uni一键登录`，安卓平台不需要制作自定义基座，使用HBuilder标准真机运行基座即可，调用时会从你的账户中扣费。iOS平台使用标准基座必须要用`io.dcloud.HBuilder`这个bundleId重签，其他bundleId重签无法登录。
 
 - 云端打包
 在项目manifest.json页面“App模块配置”项的“OAuth(登录鉴权)”下勾选“一键登录(uni-verify)”。

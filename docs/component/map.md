@@ -64,7 +64,7 @@ The map component is used to display the map, while the positioning API only obt
 |enable-scroll|Boolean|true|是否支持拖动|App-nvue 2.1.5+、微信小程序2.3.0|
 | enable-scroll| Boolean| true|Whether to support dragging| App-nvue 2.1.5+, WeChat MiniApp 2.3.0|
 |enable-rotate|Boolean|false|是否支持旋转|App-nvue 2.1.5+、微信小程序2.3.0|
-| enable-rotate| Boolean| false|Whether to support rotation| App-nvue 2.1.5+, WeChat MiniApp 2.3.0|
+|rotate|Number|0|旋转角度(范围0-360)地图正北和设备 y 轴角度的夹角|微信小程序2.5.0|
 |enable-overlooking|Boolean|false|是否开启俯视|App-nvue 2.1.5+、微信小程序2.3.0|
 | enable-overlooking| Boolean| false|Whether to enable overlooking| App-nvue 2.1.5+, WeChat MiniApp 2.3.0|
 |enable-satellite|Boolean|false|是否开启卫星图|App-nvue 2.1.5+、微信小程序2.7.0|

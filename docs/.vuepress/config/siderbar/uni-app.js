@@ -235,7 +235,7 @@ export default {
 		},
 		{
 			number: '166188776',
-			state: 0,
+			state: 1,
 			prefix: '群28',
 			joinQQGroupHref:
 				'https://qm.qq.com/cgi-bin/qm/qr?k=jSmA3SLhDdILrUw3EMpN4iWSKgEuSLVW&jump_from=webapi&authKey=iVG0LhlB2TNKwrAf6CChQKeRddFhjjgbXqBgswaLK0UorBqZNKvu4q5XGwXThpsn',

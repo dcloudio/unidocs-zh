@@ -1,104 +1,91 @@
-# Android UTS扩展开发
-# Android UTS extension development
+# Android UTS 扩展开发
 
 > 版本要求: HBuilderX 3.6.9+
 > Version requirements: HBuilderX 3.6.9+
 
-HBuilderX 3.6.9+， 新增 uts插件 Android平台 真机运行支持三方 Gradle 仓储。
-HBuilderX 3.6.9+, new uts plug-in Android platform real machine operation supports three-party Gradle storage.
+HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持三方 Gradle 仓储。
 
-运行带有uts插件的项目到Android设备，如果您遇到以下提示，请配置[运行环境](#环境配置)
+运行带有 uts 插件的项目到 Android 设备，如果您遇到以下提示，请配置[运行环境](#环境配置)
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20221111173829.jpg" style="zoom: 50%;" />
 
-## uts扩展插件
-## uts extension
+## uts 扩展插件
 
-当您运行带有uts插件的项目到Android设备时，会自动安装【uts开发扩展 - Android】插件，请务必安装。具体如下：
-When you run the project with the uts plugin to the Android device, the [uts development extension - Android] plugin will be installed automatically, please be sure to install it. details as follows:
+当您运行带有 uts 插件的项目到 Android 设备时，会自动安装【uts 开发扩展 - Android】插件，请务必安装。具体如下：
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20221111171012.jpg" style="zoom: 50%" />
 
 ## 环境配置
-## Environment configuration
-> 下载插件后打开 HBuilderX到 【设置 - 插件配置】：如图
-> After downloading the plug-in, open HBuilderX to [Settings - Plug-in Configuration]: as shown in the figure
 
-![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E9%85%8D%E7%BD%AE.png)
+> 下载插件后打开 HBuilderX 到 【设置 - 插件配置】：如图
+
+![image](https://web-ext-storage.dcloud.net.cn/hx/uts-android-2.png)
 
 #### 上面的截图展示了以下配置：
 #### The screenshot above shows the following configuration:
 
-##### 配置Gradle
-##### Configuring Gradle
+##### 配置 Gradle
 
-1. 点击图标1的下载地址进入下载页面。如图所示，点击红圈部分下载工具包。
-1. Click the download link in icon 1 to enter the download page. As shown in the figure, click the red circled part to download the toolkit.
+1. 点击 Gradle 的下载地址进入下载页面。如图所示，点击红圈部分下载工具包。
 
- ![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gradle.png)
+![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gradle.png)
 
-2. 将步骤1下载的内容解压后，找到bin目录下的执行脚本，填入图标3处。
-2. After decompressing the content downloaded in step 1, find the execution script in the bin directory, and fill in icon 3.
+2. 将步骤 1 下载的内容解压后，找到 bin 目录下的执行脚本，填入 Gradle 可执行脚本路径处。
 
-**注意** mac为`%解压路径%/bin/gradle`；window为`%解压路径%\bin\gradle.bat`。
-**Note** mac is `%decompression path%/bin/gradle`; window is `%decompression path%\bin\gradle.bat`.
+**注意** mac 为`%解压路径%/bin/gradle`；window 为`%解压路径%\bin\gradle.bat`。
 
-##### 配置SDK
-##### Configure the SDK
+##### 配置 Gradle JDK
 
-点击图标2的下载地址进入安卓官网，提供如下两种形式。
-Click the download address of icon 2 to enter the Android official website, which provides the following two forms.
+- 不同版本 Gradle 依赖不同版本的 JDK 。HbuilderX 内置的 JDK 为 11，仅支持到 Gradle8.0 以下。如果需要配置 Gradle 版本 8.0 及以上版本需要手动下载并配置 JDK 路径。[参考文档](https://developer.android.google.cn/build/releases/past-releases?hl=zh-cn)
 
-###### ◇ 下载Android Studio
-###### ◇ Download Android Studio
-1. 如图所示，根据平台下载Android Studio
-1. As shown in the figure, download Android Studio according to the platform
+1. 点击 Gradle JDK 的下载地址进入下载页面，选择所需要的版本。（如本地已安装 JDK 可跳过此步骤）
+
+2. 将步骤 1 下载的内容解压后，找到 Home 目录，填入 Gradle JDK 处。
+
+##### 配置 SDK
+
+点击安卓 sdk 的下载地址进入安卓官网，提供如下两种形式。
+
+###### ◇ 下载 Android Studio
+
+1. 如图所示，根据平台下载 Android Studio
 
 ![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/sdk-2.png)
 
-2. 安装后获取Android Studio中sdk的路径地址填入到图标4处。
-2. After installation, obtain the path address of the sdk in Android Studio and fill it in icon 4.
+2. 安装后获取 Android Studio 中 sdk 的路径地址填入安卓 sdk 路径处。
 
-**注意** 默认路径 mac为`/Users/用户名/Library/Android/sdk`；window为`C:\Users\用户名\AppData\Local\Android\Sdk`
-**Note** The default path mac is `/Users/username/Library/Android/sdk`; window is `C:\Users\username\AppData\Local\Android\Sdk`
+**注意** 默认路径 mac 为`/Users/用户名/Library/Android/sdk`；window 为`C:\Users\用户名\AppData\Local\Android\Sdk`
 
-###### ◇ 如不需要安装Android Studio可通过下载Command line tools only
-###### ◇ If you don’t need to install Android Studio, you can download Command line tools only
-1. 如图所示，根据平台下载Command line tools only。
-1. As shown in the figure, download Command line tools only according to the platform.
+###### ◇ 如不需要安装 Android Studio 可通过下载 Command line tools only
+
+1. 如图所示，根据平台下载 Command line tools only。
 
 ![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/sdk.png)
 
-2. 下载解压后通过`%解压目录%/bin/sdkmanager脚本安装build-tools和platforms
-2. After downloading and decompressing, install build-tools and platforms through `%decompression directory%/bin/sdkmanager script
+2. 下载解压后通过`%解压目录%/bin/sdkmanager 脚本安装 build-tools 和 platforms
+
 ```
 sdkmanager --sdk_root=%sdk路径% --install "build-tools;30.0.0"
 
 sdkmanager --sdk_root=%sdk路径% --install "platforms;android-30"
 ```
 
-4. 将`%sdk路径%`配置到图标4处。
-4. Configure `%sdk path%` to icon 4.
+4. 将`%sdk路径%`配置到安卓 sdk 路径处。
 
-5. [sdkmanager使用文档](https://developer.android.google.cn/studio/command-line/sdkmanager)
-5. [sdkmanager usage documentation](https://developer.android.google.cn/studio/command-line/sdkmanager)
+5. [sdkmanager 使用文档](https://developer.android.google.cn/studio/command-line/sdkmanager)
 
-**注意** 下载Android Studio和下载Command line tools only选择一种形式下载sdk即可。
-**Note** Download Android Studio and download Command line tools only choose one form to download sdk.
+**注意** 下载 Android Studio 和下载 Command line tools only 选择一种形式下载 sdk 即可。
 
 ##### 配置示例
-##### Configuration Example
+
 配置后如下图（根据本地目录结构有所不同）
 After configuration, as shown below (depending on the local directory structure)
 
- ![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%88%90.png)
+![image](https://web-ext-storage.dcloud.net.cn/hx/uts-android-1.png)
 
 **注意**
 **Notice**
 
 - 如果环境已存在可以直接设置本地的工具包路径
-- If the environment already exists, you can directly set the local toolkit path
-- 此插件依赖sdk目录下build-tools版本不低于30.0.0
-- This plugin depends on the version of build-tools in the sdk directory not lower than 30.0.0
-- 此插件依赖sdk目录下platforms版本不低于android-30
-- This plug-in depends on the platforms version in the sdk directory not lower than android-30
+- 此插件依赖 sdk 目录下 build-tools 版本不低于 30.0.0
+- 此插件依赖 sdk 目录下 platforms 版本不低于 android-30

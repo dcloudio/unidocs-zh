@@ -42,6 +42,7 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持三方 Gr
 
 **注意**
 
+- HBuilderX 4.02+支持此配置项
 - Gradle8.0 最低要求 JDK 版本为 17。更多版本要求[参考文档](https://developer.android.google.cn/build/releases/past-releases?hl=zh-cn)
 
 ##### 配置 SDK

@@ -24,25 +24,29 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持三方 Gr
 
 ##### 配置 Gradle
 
-1. 点击 Gradle 的下载地址进入下载页面。如图所示，点击红圈部分下载工具包。
+1. 点击图标 1 的下载地址进入下载页面。如图所示，点击红圈部分下载工具包。
 
 ![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/gradle.png)
 
-2. 将步骤 1 下载的内容解压后，找到 bin 目录下的执行脚本，填入 Gradle 可执行脚本路径处。
+2. 将步骤 1 下载的内容解压后，找到 bin 目录下的执行脚本，填入图标 2 处。
 
 **注意** mac 为`%解压路径%/bin/gradle`；window 为`%解压路径%\bin\gradle.bat`。
 
 ##### 配置 Gradle JDK
 
-- 不同版本 Gradle 依赖不同版本的 JDK 。HbuilderX 内置的 JDK 为 11，仅支持到 Gradle8.0 以下。如果需要配置 Gradle 版本 8.0 及以上版本需要手动下载并配置 JDK 路径。[参考文档](https://developer.android.google.cn/build/releases/past-releases?hl=zh-cn)
+- 不同版本 Gradle 依赖不同版本的 JDK 。HbuilderX 内置的 JDK 为 11，仅支持 Gradle8.0 以下。如配置 Gradle 为 8.0 及以上版本需要手动下载并配置 JDK 路径。配置方式如下
 
-1. 点击 Gradle JDK 的下载地址进入下载页面，选择所需要的版本。（如本地已安装 JDK 可跳过此步骤）
+1. 点击图标 3 的下载地址进入下载页面，选择所需要的版本。（如本地已安装 JDK 可跳过此步骤）
 
-2. 将步骤 1 下载的内容解压后，找到 Home 目录，填入 Gradle JDK 处。
+2. 将步骤 1 下载的内容解压后，找到 Home 目录，填入图标 4 处。
+
+**注意**
+
+- Gradle8.0 最低要求 JDK 版本为 17。更多版本要求[参考文档](https://developer.android.google.cn/build/releases/past-releases?hl=zh-cn)
 
 ##### 配置 SDK
 
-点击安卓 sdk 的下载地址进入安卓官网，提供如下两种形式。
+点击图标 5 的下载地址进入安卓官网，提供如下两种形式。
 
 ###### ◇ 下载 Android Studio
 
@@ -50,9 +54,11 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持三方 Gr
 
 ![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/sdk-2.png)
 
-2. 安装后获取 Android Studio 中 sdk 的路径地址填入安卓 sdk 路径处。
+2. 安装后获取 Android Studio 中 sdk 的路径地址填入图标 6 处。
 
-**注意** 默认路径 mac 为`/Users/用户名/Library/Android/sdk`；window 为`C:\Users\用户名\AppData\Local\Android\Sdk`
+**注意**
+
+- 默认路径 mac 为`/Users/用户名/Library/Android/sdk`；window 为`C:\Users\用户名\AppData\Local\Android\Sdk`
 
 ###### ◇ 如不需要安装 Android Studio 可通过下载 Command line tools only
 
@@ -68,11 +74,13 @@ sdkmanager --sdk_root=%sdk路径% --install "build-tools;30.0.0"
 sdkmanager --sdk_root=%sdk路径% --install "platforms;android-30"
 ```
 
-4. 将`%sdk路径%`配置到安卓 sdk 路径处。
+4. 将`%sdk路径%`填入图标 6 处。
 
 5. [sdkmanager 使用文档](https://developer.android.google.cn/studio/command-line/sdkmanager)
 
-**注意** 下载 Android Studio 和下载 Command line tools only 选择一种形式下载 sdk 即可。
+**注意**
+
+- 下载 Android Studio 和下载 Command line tools only 选择一种形式下载 sdk 即可。
 
 ##### 配置示例
 

@@ -73,18 +73,10 @@
 点击“Project settings”，进入项目设置页面
 ![](https://img.cdn.aliyun.dcloud.net.cn/client/ask/unipush/fcm/settings.png)
 
-切换到“Cloud Messaging”项，获取“Server key”，**保存Server key后面需要使用**
+切换到`服务账号`项，点击`生成新的私钥`，**保存私钥json文件到本地，后面需要使用**
 
-由于新版`Firebase Cloud Messaging API (V1)`不提供`Server key`, 所以需要手动开启旧版 `Cloud Messaging API` 。
-![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_android_setup_get_server_key.png)
+![](https://web-ext-storage.dcloud.net.cn/native/unipush/img_vendor_fcm0.jpg)
 
-跳转到Api管理页面启动`Cloud Messaging API`
-
-![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_android_open_old_api.png)
-
-启动`Cloud Messaging API`后即可得到`Server key`
-
-![](https://native-res.dcloud.net.cn/images/uniapp/push/firebase/firebase_android_server_key.png)
 
 ##### UniPush后台配置FCM参数
 配置FCM需先开通UniPush，如应用未开通UniPush请先开通。
@@ -92,8 +84,8 @@
 ![](https://img.cdn.aliyun.dcloud.net.cn/client/ask/unipush/fcm/hx_unipush.png)
 
 打开DCloud的开发者中心后台进入应用列表，点击应用名称进入详情，点击上方“uniPush”选项卡，点击“厂商推送设置”按钮进入配置UniPush的FCM参数 
-[attach]94813[/attach]
 
+![](https://web-ext-storage.dcloud.net.cn/native/unipush/img_vendor_fcm1.jpg)
 
 
 保存成功后在HBuilderX中重新提交云端打包，并在“App-云打包”界面选择google play 渠道包：

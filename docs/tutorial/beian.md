@@ -37,18 +37,14 @@
 **参考资料：**
 
 - [微信小程序备案操作指引](https://developers.weixin.qq.com/miniprogram/product/record/record_guidelines.html)
-- [支付宝小程序备案操作指引](https://opendocs.alipay.com/mini/0adg3d)
+- [支付宝小程序备案操作指引](https://opendocs.alipay.com/mini/0apy22?pathHash=2cd5467d)
 - [抖音小程序ICP备案指引](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/operation/settle/ICPFiling/ICPintroduce)
 - [百度小程序备案指引](https://smartprogram.baidu.com/docs/introduction/register_filings/)
 - [京东小程序备案流程](https://mp-docs.jd.com/doc/operation/beian/2300)
+- [快手小程序备案流程](https://mp.kuaishou.com/docs/operate/specification/icp/guide.html)
 
 
+## FAQ
 
-
-
-
-
-
-
-
-
+- Q：APP备案如何获取公钥、签名MD5等特征信息？
+- A：参考[App特征信息的获取方法](https://help.aliyun.com/zh/icp-filing/fill-in-app-feature-information)或使用[App解析包工具](https://www.yimenapp.com/developer/cert_analyse_upload.cshtml)。

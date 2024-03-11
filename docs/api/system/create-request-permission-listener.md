@@ -101,4 +101,4 @@ HBuilderX (4.0+) android 平台支持
 - 如果权限已经申请并且允许之后，`onConfirm`不会触发。
 - 如果同时申请多个权限时，`onComplete`可能会触发多次。
 - 权限列表参考：[https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions)
-- 本API仅提供了权限申请监听，未提供全局弹窗
+- 全局监听权限申请可参考插件[uni-registerRequestPermissionTips](https://ext.dcloud.net.cn/plugin?name=uni-registerRequestPermissionTips)。

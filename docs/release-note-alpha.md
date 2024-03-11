@@ -1,3 +1,17 @@
+#### 4.03.2024031101-alpha
+* 【uni-app 插件】
+  + Web平台 修复 4.02 引发的 Vue3 项目 .scss 文件条件编译失效的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=912)
+* 【uni-app x 插件】
+  + 修复 3.98 引发的 pages.json 检查页面文件是否存在时，部分条件编译不生效的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=909)
+  + Web平台 调整 运行到浏览器时将script标签内代码编译为可以在低版本浏览器运行的兼容代码
+  + App-Android平台 修复 APP-PLUS 条件编译的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=910)
+  + App-Android平台 修复 4.02版引出的 组件 button 的 disabled 属性在部分场景设置无效的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=900)
+  + App-Android平台 修复 4.02版引出的 组件 button 的对象类型 `UniButtonElement` 编译报错的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=907)
+* 【uniCloud 插件】
+  + 修复 3.98版本引发的 cli项目下载云函数或公共模块时无法下载到指定位置的bug
+  + 修复 4.02版本引发的 上传公共模块时不会自动安装依赖的bug
+  + 优化 4.02版本引发的 uni_modules 插件的 package.json 配置的云厂商与uniCloud目录绑定的云厂商不匹配导致该插件不显示的Bug [详情](https://ask.dcloud.net.cn/question/187371)
+
 #### 4.02.2024030621-alpha
 * 【uni-app 插件】
   + App平台 修复 Vue2 Cli 项目 nvue 页面编译报错的Bug [详情](https://ask.dcloud.net.cn/question/186784)

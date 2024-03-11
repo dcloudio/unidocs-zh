@@ -14,11 +14,9 @@ Note that payment requires not only client-side development, but also server-sid
 比如微信有App支付、小程序支付、H5支付等不同的申请入口和使用流程，对应到uni-app，在App端要申请微信的App支付，而小程序端则申请微信的小程序支付。
 For example, WeChat has different application entrances and usage processes such as App payment, MiniApp payment, H5 payment, etc. Corresponding to uni-app, you need to apply for WeChat App Payment on the App side, while the MiniApp side applies for WeChat MiniApp Payment.
 
-如果服务端使用[uniCloud](https://uniapp.dcloud.io/uniCloud/README)，那么官方提供了[uniPay](https://uniapp.dcloud.io/uniCloud/unipay)云端统一支付服务，把App、微信小程序、支付宝小程序里的服务端支付开发进行了统一的封装。
-If the server uses [uniCloud](https://uniapp.dcloud.io/uniCloud/README),then the official provides [uniPay](https://uniapp.dcloud.io/uniCloud/unipay) cloud unified payment service, The server-side payment development in the App, WeChat MiniApp, and Alipay MiniApp has been uniformly packaged.
+如果服务端使用[uniCloud](https://uniapp.dcloud.io/uniCloud/README)，那么官方提供了[uniPay](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)云端统一支付服务，把App、微信小程序、支付宝小程序里的服务端支付开发进行了统一的封装。
 
-前端统一的`uni.requestPayment`和云端统一的`uniPay`搭配，可以极大提升支付业务的开发效率，强烈推荐给开发者使用。`uniPay`的文档另见：[https://uniapp.dcloud.io/uniCloud/unipay](https://uniapp.dcloud.io/uniCloud/unipay)
-The combination of the unified `uni.requestPayment` on the front end and the unified `uniPay` on the cloud can greatly improve the development efficiency of payment services, and is strongly recommended for developers. See also the documentation for `uniPay`: [https://uniapp.dcloud.io/uniCloud/unipay](https://uniapp.dcloud.io/uniCloud/unipay)
+前端统一的`uni.requestPayment`和云端统一的`uniPay`搭配，可以极大提升支付业务的开发效率，强烈推荐给开发者使用。`uniPay`的文档另见：[https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)
 
 **平台差异说明**
 **Platform Difference Description**
@@ -836,11 +834,8 @@ uni.requestPayment({
 ## Server related
 
 ### uniCloud开发
-### uniCloud development
-- 前端：使用`unicloud.callfunction`调用指定的云函数。
-- Frontend: Use `unicloud.callfunction` to call the specified cloud function.
-- 服务端：使用[uniPay](https://uniapp.dcloud.io/uniCloud/unipay)，该服务对应的演示工程在插件市场：[https://ext.dcloud.net.cn/plugin?id=1835](https://ext.dcloud.net.cn/plugin?id=1835)，此示例为完整的前后端支付演示，使用`uniPay`可极快的完成支付业务开发。
-- Server: Use [uniPay](https://uniapp.dcloud.io/uniCloud/unipay), the demo project corresponding to this service is in the plugin market: [https://ext.dcloud.net.cn/plugin?id =1835](https://ext.dcloud.net.cn/plugin?id=1835), this example is a complete front-end and back-end payment demonstration. Using `uniPay` can complete payment business development very quickly.
+- 前端：使用 `uni-pay` 组件发起支付。
+- 服务端：使用[uniPay](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)，该服务对应的演示工程在插件市场：[https://ext.dcloud.net.cn/plugin?id=1835](https://ext.dcloud.net.cn/plugin?id=1835)，此示例为完整的前后端支付演示，使用`uniPay`可极快的完成支付业务开发。
 
 ### php开发
 ### php development

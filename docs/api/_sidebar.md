@@ -137,7 +137,9 @@
   * [获取服务供应商](plugins/provider.md)
   * [登录](plugins/login.md)
   * [分享](plugins/share.md)
-  * [支付](plugins/payment.md)
+  * 支付```{"collapsable": true}```
+    * [requestPayment](plugins/payment.md)
+    * [requestVirtualPayment](plugins/virtualPayment.md)
   * [推送](plugins/push.md)
   * [语音](plugins/voice.md)
   * [实人认证](plugins/facialRecognitionVerify.md)

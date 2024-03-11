@@ -7,8 +7,7 @@ The App-side payment module encapsulates the mainstream three-party payment plat
 |uni-app|[uni.requestPayment(OBJECT)](/api/plugins/payment.md#requestpayment)|
 |5+ App/Wap2App|[plus.payment.*](https://www.html5plus.org/doc/zh_cn/payment.html)
 
-如果服务端使用[uniCloud](https://uniapp.dcloud.io/uniCloud/README)，官方提供了[uniPay](https://uniapp.dcloud.io/uniCloud/unipay)云端统一支付服务，极大提升支付业务的开发效率，强烈推荐给开发者使用，参考示例：[https://ext.dcloud.net.cn/plugin?id=1835](https://ext.dcloud.net.cn/plugin?id=1835)
-If the server uses [uniCloud](https://uniapp.dcloud.io/uniCloud/README), the official provides [uniPay](https://uniapp.dcloud.io/uniCloud/unipay) cloud unified payment service, extremely Greatly improve the development efficiency of payment business, it is strongly recommended for developers to use, reference example: [https://ext.dcloud.net.cn/plugin?id=1835](https://ext.dcloud.net.cn/ plugin?id=1835)
+如果服务端使用[uniCloud](https://uniapp.dcloud.io/uniCloud/README)，官方提供了[uniPay](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)云端统一支付服务，极大提升支付业务的开发效率，强烈推荐给开发者使用，参考示例：[https://ext.dcloud.net.cn/plugin?id=1835](https://ext.dcloud.net.cn/plugin?id=1835)
 
 使用支付功能需在项目manifest.json的“App模块配置”中勾选“Payment(支付)”，并根据项目实际情况勾选使用的三方支付平台：
 ![](https://native-res.dcloud.net.cn/images/uniapp/payment/modules.png)

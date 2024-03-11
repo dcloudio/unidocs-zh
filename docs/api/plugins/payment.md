@@ -9,9 +9,9 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 
 比如微信有App支付、小程序支付、H5支付等不同的申请入口和使用流程，对应到uni-app，在App端要申请微信的App支付，而小程序端则申请微信的小程序支付。
 
-如果服务端使用[uniCloud](https://uniapp.dcloud.io/uniCloud/README)，那么官方提供了[uniPay](https://uniapp.dcloud.io/uniCloud/unipay)云端统一支付服务，把App、微信小程序、支付宝小程序里的服务端支付开发进行了统一的封装。
+如果服务端使用[uniCloud](https://uniapp.dcloud.io/uniCloud/README)，那么官方提供了[uniPay](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)云端统一支付服务，把App、微信小程序、支付宝小程序里的服务端支付开发进行了统一的封装。
 
-前端统一的`uni.requestPayment`和云端统一的`uniPay`搭配，可以极大提升支付业务的开发效率，强烈推荐给开发者使用。`uniPay`的文档另见：[https://uniapp.dcloud.io/uniCloud/unipay](https://uniapp.dcloud.io/uniCloud/unipay)
+前端统一的`uni.requestPayment`和云端统一的`uniPay`搭配，可以极大提升支付业务的开发效率，强烈推荐给开发者使用。`uniPay`的文档另见：[https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)
 
 **平台差异说明**
 
@@ -695,8 +695,8 @@ uni.requestPayment({
 ## 服务器相关
 
 ### uniCloud开发
-- 前端：使用`unicloud.callfunction`调用指定的云函数。
-- 服务端：使用[uniPay](https://uniapp.dcloud.io/uniCloud/unipay)，该服务对应的演示工程在插件市场：[https://ext.dcloud.net.cn/plugin?id=1835](https://ext.dcloud.net.cn/plugin?id=1835)，此示例为完整的前后端支付演示，使用`uniPay`可极快的完成支付业务开发。
+- 前端：使用 `uni-pay` 组件发起支付。
+- 服务端：使用[uniPay](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)，该服务对应的演示工程在插件市场：[https://ext.dcloud.net.cn/plugin?id=1835](https://ext.dcloud.net.cn/plugin?id=1835)，此示例为完整的前后端支付演示，使用`uniPay`可极快的完成支付业务开发。
 
 ### php开发
 - 前端：使用 ``uni.request`` 请求服务端接口，得到订单数据，使用 ``uni.requestPayment`` 向支付平台发起支付请求，拉起支付平台的客户端进行支付。在hello uni-app里详细代码。

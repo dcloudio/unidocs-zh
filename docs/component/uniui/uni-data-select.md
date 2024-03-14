@@ -33,9 +33,7 @@ In the development of uniCloud, after configuring the enum enumeration and other
 > - 组件需要依赖 `sass` 插件 ，请自行手动安装
 > - The component needs to depend on the `sass` plugin, please install it manually
 > - 本组件为数据驱动，目的是快速投入使用，只可通过 style 覆盖有限样式，不支持自定义更多样式
-> - This component is data-driven and aims to be put into use quickly. It can only override limited styles through style, and does not support customizing more styles
-> - 如使用过程中有任何问题，或者您对 uni-ui 有一些好的建议，欢迎加入 uni-ui 交流群：871950839
-> - If you have any problems during use, or you have some good suggestions for uni-ui, welcome to join the uni-ui exchange group: 871950839
+> - 如使用过程中有任何问题，或者您对 uni-ui 有一些好的建议，欢迎加入 [uni-im](https://im.dcloud.net.cn/#/?joinGroup=65aa42e5465fe748c837da2b)
 > - 组件支持 nvue ，需要在 `manifest.json > app-plus` 节点下配置 `"nvueStyleCompiler" : "uni-app"`
 > - The component supports nvue , you need to configure `"nvueStyleCompiler" : "uni-app"` under the `manifest.json > app-plus` node
 > - 如组件显示有问题 ，请升级 `HBuilderX` 为 `v3.1.0` 以上

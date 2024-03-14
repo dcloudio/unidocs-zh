@@ -1,3 +1,4 @@
+# uni-load-more 加载更多
 
 ::: tip 组件名：uni-load-more
 > 代码块： `uLoadMore`

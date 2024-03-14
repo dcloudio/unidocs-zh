@@ -1,16 +1,16 @@
-#### checkbox-group
+## checkbox-group
 多项选择器，内部由多个 checkbox 组成。
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|默认值|说明|
 |:-|:-|:-|:-|
 |@change|EventHandle||``<checkbox-group>``中选中项发生改变是触发 change 事件，detail = {value:[选中的checkbox的value的数组]}|
 
-#### checkbox
+### checkbox
 多选项目。
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
@@ -24,7 +24,7 @@
 |activeBorderColor|Color|#d1d1d1|checkbox选中时的边框颜色|H5(3.99+)、App-Vue(3.99+)|
 |iconColor|Color|#007aff|checkbox的图标颜色|H5(3.99+)、App-Vue(3.99+)|
 
-**示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/checkbox/checkbox)
+#### 示例 [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/checkbox/checkbox)
  
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 
@@ -142,9 +142,9 @@
 :::
  
 
-**注意**
+#### 注意
 - checkbox的默认颜色，在不同平台不一样。微信小程序、360小程序是绿色的，抖音小程序为红色，其他平台是蓝色的。更改颜色使用color属性。
 - 如需调节checkbox大小，可通过css的scale方法调节，如缩小到70%`style="transform:scale(0.7)"`
 
-**扩展**
+#### 扩展
 - uni-ui提供了增强的uni-data-checkbox组件，基于[datacom规范](/component/datacom)，只需传入data数据，即可自动生成一组复选框，使用方式更简洁，并且支持[uni-forms](https://ext.dcloud.net.cn/plugin?id=2773)的表单验证。uni-data-checkbox组件详见[https://ext.dcloud.net.cn/plugin?id=3456](https://ext.dcloud.net.cn/plugin?id=3456)

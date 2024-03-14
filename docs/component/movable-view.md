@@ -1,16 +1,16 @@
-### movable-view
+## movable-view
 
 可移动的视图容器，在页面中可以拖拽滑动或双指缩放。
 
 `movable-view`必须在`movable-area`组件中，并且必须是直接子节点，否则不能移动。
 
-**平台差异说明**
+#### 平台差异说明
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|x|√|√|√|√|√|
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
@@ -43,12 +43,12 @@
 > 
 > 当movable-view小于movable-area时，movable-view的移动范围是在movable-area内；当movable-view大于movable-area时，movable-view的移动范围必须包含movable-area（x轴方向和y轴方向分开考虑）
 
-**Tips**
+#### Tips
 - movable-view必须在`<movable-area/>`组件中，并且必须是直接子节点，否则不能移动。
 - 如果遇到x、y、scale属性设置不生效的问题参考：[组件属性设置不生效解决办法](/tutorial/vue-api.md#componentsolutions)
 - 除了H5端和app-nvue端，其他平台不支持内嵌video、map等原生组件。更新：微信基础库2.4.4起支持了原生组件在 scroll-view、swiper、movable-view 中的使用
 
-**示例**[查看演示](https://hellouniapp.dcloud.net.cn/pages/component/movable-view/movable-view)
+#### 示例[查看演示](https://hellouniapp.dcloud.net.cn/pages/component/movable-view/movable-view)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可快速体验完整示例。
 

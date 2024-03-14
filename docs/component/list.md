@@ -1,4 +1,4 @@
-#### list
+## list
 
 app端nvue专用组件。在app-nvue下，如果是长列表，使用list组件的性能高于使用view或scroll-view的滚动。原因在于list在不可见部分的渲染资源回收有特殊的优化处理。
 
@@ -8,6 +8,7 @@ app端nvue专用组件。在app-nvue下，如果是长列表，使用list组件�
 
 `<list>` 组件是提供垂直列表功能的核心组件，拥有平滑的滚动和高效的内存管理，非常适合用于长列表的展示。最简单的使用方法是在 `<list>` 标签内使用一组由简单数组循环生成的 `<cell>` 标签填充。
 
+#### 示例
 ```html
 <template>
   <list>
@@ -29,7 +30,7 @@ app端nvue专用组件。在app-nvue下，如果是长列表，使用list组件�
 </script>
 ```
 
-> **注意**
+#### 注意
 > - 相同方向 `<list>` 或者 `<scroll-view>` 互相嵌套时，Android 平台子 `<list>` 不可滚动，iOS 可以，iOS 有Bounce效果， Android仅可滚动时有
 > - `<list>` 需要显式的设置其宽高，可使用 position: absolute; 定位或 width、height 设置其宽高值。
 > - list是区域滚动，不会触发页面滚动，无法触发pages.json配置的下拉刷新、页面触底onReachBottomDistance、titleNView的transparent透明渐变、style的transparentTitle导航栏透明。

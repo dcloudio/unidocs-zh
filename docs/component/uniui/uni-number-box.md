@@ -1,3 +1,4 @@
+# uni-number-box 数字输入框
 
 ::: tip 组件名：uni-number-box
 > 代码块： `uNumberBox`

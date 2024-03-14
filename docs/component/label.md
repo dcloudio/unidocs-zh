@@ -1,4 +1,4 @@
-#### label
+## label
 
 用来改进表单组件的可用性，使用for属性找到对应的id，或者将控件放在该标签下，当点击时，就会触发对应的控件。
 
@@ -6,16 +6,16 @@ for优先级高于内部控件，内部有多个控件的时候默认触发第�
 
 目前可以绑定的控件有：``<button>``, ``<checkbox>``, ``<radio>``, ``<switch>``。
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|说明|
 |:-|:-|:-|
 |for|String|绑定控件的 id|
 
-**注：**
+#### 注意
 - app-nvue平台 暂不支持for属性
 
-**示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/label/label)
+#### 示例 [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/label/label)
  
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 

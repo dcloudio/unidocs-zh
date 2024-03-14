@@ -1,10 +1,10 @@
-### cover-view
+## cover-view
 覆盖在原生组件上的文本视图。
 
 app-vue和小程序框架，渲染引擎是webview的。但为了优化体验，部分组件如map、video、textarea、canvas通过原生控件实现，原生组件层级高于前端组件（类似flash层级高于div）。为了能正常覆盖原生组件，设计了cover-view。
 
 
-**平台差异说明**
+#### 平台差异说明
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -20,7 +20,7 @@ app-vue和小程序框架，渲染引擎是webview的。但为了优化体验，
 
 
 
-**Tips**
+#### tips
 
 - app-nvue所有组件均为原生渲染，不存在前端组件无法覆盖原生组件的问题。但为了保持多端兼容，nvue里也实现了`cover-view`，作用与普通`view`一样。
 - 在App端，如果重度使用video和map，推荐使用nvue页面。
@@ -37,7 +37,7 @@ app-vue和小程序框架，渲染引擎是webview的。但为了优化体验，
 
 
 
-**微信小程序的cover-view使用注意：**
+#### 微信小程序的cover-view使用注意：
 - cover-view和cover-image的`aria-role`仅可设置为`button`，读屏模式下才可以点击，并朗读出“按钮”；为空时可以聚焦，但不可点击。
 - 基础库 2.2.4 起支持 `touch` 相关事件，也可使用 `hover-class` 设置点击态。
 - 基础库 2.1.0 起支持设置 `scale` `rotate` 的 css 样式，包括 `transition` 动画。

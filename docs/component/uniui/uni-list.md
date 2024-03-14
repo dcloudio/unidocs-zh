@@ -1,3 +1,5 @@
+# uni-list 列表
+
 ::: tip 组件名：uni-list
 > 代码块： `uList`、`uListItem`
 > 关联组件：`uni-list-item`、`uni-badge`、`uni-icons`、`uni-list-chat`
@@ -251,7 +253,7 @@ switchTab|同 uni.switchTab()
 > 开发者可以只用1个插槽，也可以3个一起使用。在插槽中可自主编写view标签，实现自己所需的效果。
 
 	
-**示例**
+#### 示例
 
 ```html
 <uni-list>

@@ -1,3 +1,5 @@
+# uni-tooltip 文字提示
+
 ::: tip 组件名：uni-tooltip
 
 > 代码块： `utooltip`

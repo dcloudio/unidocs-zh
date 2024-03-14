@@ -4,7 +4,7 @@
 
 地图组件用于展示地图，而定位API只是获取坐标，请勿混淆两者。
 
-**平台差异说明**
+#### 平台差异说明
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -19,7 +19,7 @@
 |腾讯||√|√|
 
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
@@ -212,7 +212,7 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 
 地图组件的经纬度必填，如果不填经纬度则默认值是北京的经纬度。
 
-**示例** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/map/map)
+#### 示例 [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/map/map)
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/component/map/map
 > Template

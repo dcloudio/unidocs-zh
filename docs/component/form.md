@@ -1,9 +1,9 @@
-#### form
+## form
 表单，将组件内的用户输入的``<switch>`` ``<input>`` ``<checkbox>`` ``<slider>`` ``<radio>`` ``<picker>`` 提交。
 
 当点击 ``<form>`` 表单中 formType 为 submit 的 ``<button>`` 组件时，会将表单组件中的 value 值进行提交，需要在表单组件中加上 name 来作为 key。
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|说明|平台差异说明|
 |:-|:-|:-|:-|
@@ -12,7 +12,7 @@
 |@submit|EventHandle|携带 form 中的数据触发 submit 事件，event.detail = {value : {'name': 'value'} , formId: ''}，report-submit 为 true 时才会返回 formId||
 |@reset|EventHandle|表单重置时会触发 reset 事件|&nbsp;|
 
-**示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/form/form)
+#### 示例 [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/form/form)
  
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 
@@ -104,7 +104,7 @@
 :::
 
 
-**使用内置 behaviors**
+#### 使用内置 behaviors
 
 小程序端在`form`内的自定义组件内有`input`表单控件时，或者用普通标签实现表单控件，例如``评分``等，无法在`form`的`submit`事件内获取组件内表单控件值，此时可以使用`behaviors`。
 
@@ -114,7 +114,7 @@ uni://form-field
 
 > 目前仅支持 微信小程序、QQ小程序、百度小程序、h5。
 
-**uni://form-field**
+#### uni://form-field
 
 使自定义组件有类似于表单控件的行为。 form 组件可以识别这些自定义组件，并在 submit 事件中返回组件的字段名及其对应字段值。这将为它添加以下两个属性。
 
@@ -123,7 +123,7 @@ uni://form-field
 |name|String|在表单中的字段名|
 |value|任意|在表单中的字段值|
 
-示例如下：
+#### 示例如下
 
 ```html
 <!-- /pages/index/index.vue -->

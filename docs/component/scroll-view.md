@@ -1,4 +1,4 @@
-# scroll-view
+## scroll-view
 
 可滚动视图区域。用于区域滚动。
 
@@ -35,7 +35,7 @@
 
 使用竖向滚动时，需要给 ``<scroll-view>`` 一个固定高度，通过 css 设置 height；使用横向滚动时，需要给``<scroll-view>``添加``white-space: nowrap;``样式。
 
-## 示例
+#### 示例
 
 [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/scroll-view/scroll-view)
 
@@ -147,7 +147,7 @@
 
 :::
 
-### 自定义下拉刷新
+#### 自定义下拉刷新
 
 注意，在webview渲染时，自定义下拉刷新的性能不及pages.json中配置的原生下拉刷新。
 

@@ -1,14 +1,16 @@
-所有的视图组件，包括view、swiper等，本身不显示任何可视化元素。它们的用途都是为了包裹其他真正显示的组件。
 
-### view
+
+## view
 
 视图容器。
+
+所有的视图组件，包括view、swiper等，本身不显示任何可视化元素。它们的用途都是为了包裹其他真正显示的组件。
 
 它类似于传统html中的div，用于包裹各种元素内容。
 
 如果使用[nvue](https://uniapp.dcloud.io/tutorial/nvue-outline)，则需注意，包裹文字应该使用`<text>`组件。
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|默认值|说明|
 |:-|:-|:-|:-|
@@ -17,7 +19,7 @@
 |hover-start-time|Number|50|按住后多久出现点击态，单位毫秒|
 |hover-stay-time|Number|400|手指松开后点击态保留时间，单位毫秒|
 
-**示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/view/view)
+#### 示例 [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/view/view)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可快速体验完整示例。
 
@@ -52,7 +54,7 @@
 ```
 :::
 
-**Tips**
+#### tips
 
 - 小程序平台如果使用 `<div>` ，编译时会被转换为 `<view>`。
 - App平台 Vue2 项目在节点非常多时可以尝试使用 `<div>` 替换 `<view>` 以提升渲染性能。

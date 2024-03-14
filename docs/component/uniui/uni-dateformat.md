@@ -1,3 +1,4 @@
+# uni-dateformt 日期格式化
 
 ::: tip 组件名：uni-dateformat
 > 代码块： `uDateformat`

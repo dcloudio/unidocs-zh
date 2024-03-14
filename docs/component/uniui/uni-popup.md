@@ -53,7 +53,7 @@ export default {
 
 而也有特例，需要我们主动去设置背景色，例如 `type = 'bottom'` 的时候 ，在异型屏中遇到了底部安全区问题（如 iphone 11），因为 `uni-popup`的主要内容避开了安全区（设置`safe-area:true`），导致底部的颜色我们无法自定义，这时候使用 `background-color` 就可以解决这个问题。 
 
-**底部弹窗示例**
+#### 底部弹窗示例
 
 ```html
 <button @click="open">打开弹窗</button>
@@ -63,7 +63,7 @@ export default {
 ### 禁用打开动画
 在某些场景 ，可能不希望弹层有动画效果 ，只需要将 `animation` 属性设置为 `false` 即可以关闭动画。
 
-**居中弹窗示例**
+#### 居中弹窗示例
 
 ```html
 <button @click="open">打开弹窗</button>
@@ -73,7 +73,7 @@ export default {
 ### 禁用点击遮罩关闭
 默认情况下，点击遮罩会自动关闭`uni-popup`，如不想点击关闭，只需将`mask-click`设置为`false`，这时候要关闭`uni-popup`，只能手动调用 `close` 方法。
 
-**示例**
+#### 遮罩示例
 
 ```html
 <button @click="open">打开弹窗</button>
@@ -152,7 +152,7 @@ export default {
 
 将 `uni-popup` 的`type`属性改为 `message`，并引入对应组件即可使用消息提示 ，*该组件不支持单独使用*
 
-**示例**
+#### 示例
 
 ```html
 <uni-popup ref="popup" type="message">
@@ -187,7 +187,7 @@ export default {
 
 将 `uni-popup` 的`type`属性改为 `dialog`，并引入对应组件即可使用对话框 ，*该组件不支持单独使用*
 
-**示例**
+#### 示例
 
 ```html
 <button @click="open">打开弹窗</button>

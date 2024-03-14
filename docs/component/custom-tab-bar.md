@@ -1,4 +1,4 @@
-#### custom-tab-bar
+## custom-tab-bar
 
 自定义tabBar组件。
 
@@ -12,11 +12,11 @@
 
 该组件支持所有 ``tabBar`` 相关 API，例如设置 tab 徽标、显示红点、以及 switchTab 等。
 
-**平台兼容性**
+#### 平台兼容性
 
 __仅 H5 支持__，HBuilderX 2.9.9 + 。
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|默认值|说明|
 |:-|:-|:-|:-|
@@ -35,7 +35,7 @@ __仅 H5 支持__，HBuilderX 2.9.9 + 。
 
 本组件无需配置 tabBar 的 list，每个 tabItem 仍然从 `pages.json` 中读取。避免多端编写重复代码。
 
-**示例**
+#### 示例
 
 在`hello uni-app`中，在 topWindow 中放置自定义tabBar组件，将页面一级导航放置在网页顶部。
 

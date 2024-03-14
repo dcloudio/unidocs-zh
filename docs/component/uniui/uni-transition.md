@@ -1,3 +1,5 @@
+# uni-transition 过渡动画
+
 ::: tip 组件名：uni-transition
 > 代码块： `uTransition`
 

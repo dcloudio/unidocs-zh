@@ -1,8 +1,8 @@
-#### slider
+## slider
 
 滑动选择器。
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|默认值|说明|
 |:-|:-|:-|:-|
@@ -21,12 +21,12 @@
 
 <!-- |color|Color|#e9e9e9|背景条的颜色（请使用 backgroundColor）|
 |selected-color|Color|#1aad19|已选择的颜色（请使用 activeColor）| -->
-**Tips**
+#### tips
 
 - activeColor默认值在不同平台不一样，微信是绿色(#1aad19)，头条是红色，其他平台是 #007aff（蓝色）
 - 如需要区间滑块，即一根横条上使用2个滑块选择一段范围，可见[插件市场](https://ext.dcloud.net.cn/search?q=%E5%8C%BA%E9%97%B4%E6%BB%91%E5%9D%97)
 
-**示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/slider/slider)
+#### 示例 [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/slider/slider)
  
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 
@@ -75,5 +75,5 @@ export default {
 :::
 
 
-**Tips**
+#### 注意
 - 2.6.3以前，在PC端使用`slider`，需配置[H5模版](https://uniapp.dcloud.io/collocation/manifest?id=h5-template)，并引入[touch-emulator.js](https://github.com/dcloudio/touchemulator)

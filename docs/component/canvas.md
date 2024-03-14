@@ -1,8 +1,8 @@
-#### canvas
+## canvas
 
 画布。
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
@@ -17,7 +17,7 @@
 |@longtap|EventHandle||手指长按 500ms 之后触发，触发了长按事件后进行移动不会触发屏幕的滚动|抖音小程序与飞书小程序不支持|
 |@error|EventHandle||当发生错误时触发 error 事件，detail = {errMsg: 'something wrong'}|抖音小程序与飞书小程序不支持|
 
-**注意事项：**
+#### 注意事项
 
 * canvas 标签默认宽度 300px、高度 225px，动态修改 canvas 大小后需要重新绘制。
 * h5、app-vue 中单个尺寸过大的 canvas 在 iOS/Safari 无法绘制（具体限制尺寸未公布）。
@@ -27,7 +27,8 @@
 * app-vue的canvas虽然是webview自带的canvas，但却比nvue和微信小程序的原生canvas性能更高。注意并非原生=更快。canvas动画的流畅，关键不在于渲染引擎的速度，而在于减少从逻辑层向视图层频繁通信造成的折损。
 * 小程序、app-nvue，因为通信阻塞，难以绘制非常流畅的canvas动画。h5和app-vue不存在此问题。但注意，app-vue下若想流畅的绘制canvas动画，需要使用[renderjs](https://uniapp.dcloud.io/tutorial/renderjs?id=renderjs)技术，把操作canvas的js逻辑放到视图层运行，避免逻辑层和视图层频繁通信。hello uni-app的canvas示例很典型，在相同手机运行该示例，可以看出在h5端和app端非常流畅，而小程序端由于没有renderjs技术，做不到这么流畅的动画。
 
-**示例：** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/canvas/canvas)
+#### 示例： 
+[查看演示](https://hellouniapp.dcloud.net.cn/pages/component/canvas/canvas)
  
 ::: preview https://hellouniapp.dcloud.net.cn/pages/component/canvas/canvas
 > Template
@@ -75,7 +76,7 @@ export default {
  
 相关 api：[uni.createCanvasContext](/api/canvas/createCanvasContext)
 
-**扩展阅读**
+#### 扩展阅读
 
 canvas的常用用途有图表和图片处理，在uni-app插件市场有大量基于canvas的插件，可搜索 [图表](https://ext.dcloud.net.cn/search?q=图表) 、 [头像裁剪](https://ext.dcloud.net.cn/search?q=头像裁剪) 、 [海报](https://ext.dcloud.net.cn/search?q=海报) 、 [二维码](https://ext.dcloud.net.cn/search?q=%E4%BA%8C%E7%BB%B4%E7%A0%81) 。
 
@@ -85,7 +86,7 @@ canvas的常用用途有图表和图片处理，在uni-app插件市场有大量�
 - 如不考虑小程序，那么App端和H5，也可以通过renderjs技术来使用echart、f2等web图表，功能性能比uchart更好。[什么是renderjs](https://uniapp.dcloud.io/frame?id=renderjs)、[基于renderjs使用echart的示例](https://ext.dcloud.net.cn/plugin?id=1207)
 
 
-**nvue页面如何使用canvas**
+#### nvue页面如何使用canvas
 
 HBuilderX 2.2.5 开始 nvue 页面支持 Canvas，支持 W3C WebGL API [WebGL 1.0](https://www.khronos.org/registry/webgl/specs/latest/1.0/)
 

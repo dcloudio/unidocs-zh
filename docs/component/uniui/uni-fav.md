@@ -1,3 +1,4 @@
+# uni-fav 收藏按钮
 
 ::: tip 组件名：uni-fav
 > 代码块： `uFav`

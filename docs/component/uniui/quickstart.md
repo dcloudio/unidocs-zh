@@ -1,7 +1,9 @@
+# 开始使用
+
+## 在HBuilderX 新建uni-app项目的模板中，选择uni-ui模板
+
 uni-ui支持 HBuilderX直接新建项目模板、npm安装和单独导入个别组件等多种使用方式
 
-
-### 在HBuilderX 新建uni-app项目的模板中，选择uni-ui模板
 ![HBuilderX内创建uni-ui项目](https://img.cdn.aliyun.dcloud.net.cn/uni-app/doc/create-uni-ui-project.jpg)
 
 由于uni-app独特的[easycom](https://uniapp.dcloud.io/collocation/pages?id=easycom)技术，可以免引用、注册，直接使用各种符合规则的vue组件。
@@ -12,7 +14,7 @@ uni-ui支持 HBuilderX直接新建项目模板、npm安装和单独导入个别�
 
 ![uni-ui代码块](https://img.cdn.aliyun.dcloud.net.cn/uni-app/doc/uni-ui-snippet.jpg)
 
-### 通过 uni_modules 单独安装组件
+## 通过 uni_modules 单独安装组件
 如果你没有创建uni-ui项目模板，也可以在你的工程里，通过 uni_modules 单独安装需要的某个组件。下表为uni-ui的扩展组件清单，点击每个组件在详情页面可以导入组件到项目下，导入后直接使用即可，无需import和注册。
 
 |组件名|组件说明|
@@ -61,14 +63,14 @@ uni-ui支持 HBuilderX直接新建项目模板、npm安装和单独导入个别�
 
 使用 `uni_modules` 方式安装组件库，可以直接通过插件市场导入，通过右键菜单快速更新组件，不需要引用、注册，直接在页面中使用 `uni-ui` 组件。[点击安装 uni-ui 组件库](https://ext.dcloud.net.cn/plugin?id=55)
 
-**注意：下载最新的组件目前仅支持 uni_modules ,非 uni_modules 版本最高支持到组件的1.2.10版本**
+#### 注意：下载最新的组件目前仅支持 uni_modules ,非 uni_modules 版本最高支持到组件的1.2.10版本
 
 如不能升级到 `uni_modules` 版本，可以使用 `uni_modules` 安装好对应组件，将组件拷贝到对应目录。
 
 例如需更新 `uni-list`和`uni-badge` ,将 `uni_modules>uni-list>components`和`uni_modules>uni-badege>components`下所有目录拷贝到如下目录即可：
 
 
-**目录示例**
+### 目录示例
 
 ```json
 ┌─components              组件目录
@@ -111,7 +113,7 @@ uni-ui支持 HBuilderX直接新建项目模板、npm安装和单独导入个别�
 
 
 
-**准备 sass**
+#### 准备 sass
 
 `vue-cli` 项目请先安装 sass 及 sass-loader，如在 HBuliderX 中使用，可跳过此步。
 
@@ -128,7 +130,7 @@ npm i sass-loader@10.1.1 -D   或   yarn add sass-loader@10.1.1 -D
 > 如果 `node` 版本小于 16 ，sass-loader 请使用低于 @11.0.0 的版本，[sass-loader@11.0.0 不支持 vue@2.6.12 ](https://stackoverflow.com/questions/66082397/typeerror-this-getoptions-is-not-a-function)
 > 如果 `node` 版本大于 16 ， `sass-loader` 建议使用 `v8.x` 版本
 
-**安装 uni-ui**
+#### 安装 uni-ui
 
 ```
 npm i @dcloudio/uni-ui   或   yarn add @dcloudio/uni-ui
@@ -136,7 +138,7 @@ npm i @dcloudio/uni-ui   或   yarn add @dcloudio/uni-ui
 
 
 
-**配置easycom**
+#### 配置easycom
 
 使用 `npm` 安装好 `uni-ui` 之后，需要配置 `easycom` 规则，让 `npm` 安装的组件支持  `easycom`
 
@@ -169,7 +171,7 @@ npm i @dcloudio/uni-ui   或   yarn add @dcloudio/uni-ui
 <uni-badge text="3" type="primary" :inverted="true"></uni-badge>
 ```
 
- **注意**
+ ### 注意
  - uni-ui 现在只推荐使用 `easycom` ，如自己引用组件，可能会出现组件找不到的问题
  - 使用 npm 安装的组件，默认情况下 babel-loader 会忽略所有 node_modules 中的文件 ，导致条件编译失效，需要通过配置 `vue.config.js` 解决：
 	 ```javascript

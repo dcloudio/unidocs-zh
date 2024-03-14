@@ -1,3 +1,5 @@
+# uni-search-bar
+
 ::: tip 组件名：uni-search-bar
 > 代码块： `uSearchBar`
 

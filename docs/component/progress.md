@@ -1,7 +1,7 @@
-#### progress
+## progress
 进度条。
 
-**属性说明**
+#### 属性说明
 
 |属性名			|类型		|默认值		|说明													|平台差异说明				|
 |:-				|:-			|:-			|:-														|:-						|
@@ -17,7 +17,7 @@
 |duration|Number|30|进度增加1%所需毫秒数|App-nvue2.6.1+、微信基础库2.8.2+、H5 3.1.11+、App-Vue 3.1.11+、快手小程序、京东小程序|
 |@activeend		|EventHandle|			|动画完成事件											|微信小程序、京东小程序			|
 
-**示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/progress/progress)
+#### 示例 [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/progress/progress)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 

@@ -1,8 +1,8 @@
-#### textarea
+## textarea
 
 多行输入框。
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
@@ -49,7 +49,7 @@
 |go|右下角按钮为“前往”|
 |done|右下角按钮为“完成”|
 
-**示例** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/textarea/textarea)
+#### 示例 [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/textarea/textarea)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 
@@ -84,7 +84,7 @@ export default {
 ```
 :::
 
-**Tips**
+#### tips
 
 - textarea 的 blur 事件会晚于页面上的 tap 事件，如果需要在 button 的点击事件获取 textarea，可以使用 form 的 @submit。
 - 如果遇到 value 属性设置不生效的问题参考：[组件属性设置不生效解决办法](/tutorial/vue-api.md#componentsolutions)

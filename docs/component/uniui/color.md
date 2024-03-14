@@ -1,8 +1,9 @@
-`uni-ui`为了避免视觉传达差异，使用一套特定的调色板来规定颜色，为你所搭建的产品提供一致的外观视觉感受。
+# color 颜色
 
-### 主色
+## 主色
 `uni-ui`的主色使用了令人安静并放松的蓝色。
 
+`uni-ui`为了避免视觉传达差异，使用一套特定的调色板来规定颜色，为你所搭建的产品提供一致的外观视觉感受。
 
 <div class="color-main">
 	<div class="color-main-top" style="background-color:#2979ff;">

@@ -1,7 +1,7 @@
-#### camera
+## camera
 页面内嵌的区域相机组件。注意这不是点击后全屏打开的相机。
 
-**平台差异说明**
+#### 平台差异说明
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -12,7 +12,7 @@
 * 活体检测另见文档[实人认证](/api/plugins/facialRecognitionVerify)，人脸识别另见文档[生物认证](/api/system/authentication)
 * app-nvue下支持barcode组件，可实现自定义扫码。[参考](https://uniapp.dcloud.io/component/barcode)
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
@@ -30,14 +30,14 @@
 
 
 
-**Tips：**
+#### Tips
 * camera 组件是由客户端创建的原生组件，它的层级是最高的，不能通过 z-index 控制层级。可使用 cover-view cover-image 覆盖在上面。
 * 请勿在 scroll-view、swiper、picker-view、movable-view 中使用 camera 组件。
 * 同一页面只能插入一个 camera 组件。
 * 相关API：[createCameraContext](/api/media/camera-context)
 
 
-**代码示例**
+#### 示例
 
 ```html
 <template>

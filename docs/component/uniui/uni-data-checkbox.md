@@ -1,3 +1,4 @@
+# uni-data-checkbox 数据选择器
 
 ::: tip 组件名：uni-data-checkbox
 > 代码块： `uDataCheckbox`

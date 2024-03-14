@@ -1,4 +1,4 @@
-#### navigator
+## navigator
 
 页面跳转。
 
@@ -6,7 +6,7 @@
 
 除了组件方式，API方式也可以实现页面跳转，另见：[https://uniapp.dcloud.io/api/router?id=navigateto](https://uniapp.dcloud.io/api/router?id=navigateto)
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
@@ -44,8 +44,8 @@
 - [uLink组件](https://ext.dcloud.net.cn/plugin?id=1182)是navigator组件的增强版，样式上自带下划线，功能上支持打开在线网页、其他App的schema、mailto发邮件、tel打电话。
 - Vue3 项目因 SSR 需要，H5 端会在外层嵌套 a 标签
 
-**示例** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/navigator/navigator)
-
+#### 示例 [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/navigator/navigator)
+ 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/component/navigator/navigator
 
 ```html

@@ -1,7 +1,7 @@
-#### video
+## video
 视频播放组件。
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
@@ -86,7 +86,7 @@
 |center|视频中间|
 
 
-**示例** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/video/video)
+#### 示例 [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/video/video)
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/component/video/video
 > Template

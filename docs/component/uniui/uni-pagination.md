@@ -1,3 +1,4 @@
+# uni-pagination 分页器
 
 ::: tip 组件名：uni-pagination
 > 代码块： `uPagination`

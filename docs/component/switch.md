@@ -1,8 +1,8 @@
-#### switch
+## switch
 
 开关选择器。
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|:-|
@@ -12,7 +12,7 @@
 |color|Color||switch 的颜色，同 css 的 color|&nbsp;|
 |@change|EventHandle||checked 改变时触发 change 事件，event.detail={ value:checked}||
 
-**示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/switch/switch)
+#### 示例 [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/switch/switch)
  
 ::: preview https://hellouniapp.dcloud.net.cn/pages/component/switch/switch
 > Template

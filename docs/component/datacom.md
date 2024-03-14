@@ -1,4 +1,4 @@
-### 什么是datacom
+## 什么是datacom
 
 `datacom`，全称是`data components`，数据驱动的组件。
 

@@ -4,7 +4,7 @@
 
 > 各小程序平台，web-view 加载的 url 需要在后台配置域名白名单，包括内部再次 iframe 内嵌的其他 url 。
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|说明|平台差异说明|
 |:-|:-|:-|:-|
@@ -19,7 +19,7 @@
 |@load|EventHandler|网页加载成功时候触发此事件。|微信小程序、支付宝小程序、抖音小程序、QQ小程序|
 |@error|EventHandler|网页加载失败的时候触发此事件。|微信小程序、支付宝小程序、抖音小程序、QQ小程序|
 
-**注意**
+#### 注意
 - `update-title` 仅支持 `App-vue` 。`小程序` 恒为 `true`，`H5、nvue` 恒为 `false`
 
 **src**
@@ -106,7 +106,7 @@
 	</code>
 </pre>
 
-**示例** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/web-view/web-view)
+#### 示例 [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/web-view/web-view)
 ```html
 <template>
 	<view>
@@ -130,7 +130,7 @@
 ### uni.postMessage(OBJECT)
 网页向应用发送消息，在 `<web-view>` 的 `message` 事件回调 `event.detail.data` 中接收消息。
 
-**Tips**
+#### tips
 
 - 传递的消息信息，必须写在 data 对象中。
 - `event.detail.data` 中的数据，以数组的形式接收每次 post 的消息。（注：支付宝小程序除外，支付宝小程序中以对象形式接受）
@@ -147,7 +147,7 @@
 |smartprogram|Boolean|百度小程序|
 |miniprogram|Boolean|支付宝小程序|
 
-**示例**
+#### 示例
 
 在 `<web-view>` 加载的 HTML 中，添加以下代码：
 

@@ -1,3 +1,4 @@
+# uni-grid 宫格
 
 ::: tip 组件名：uni-grid
 > 代码块： `uGrid`
@@ -60,7 +61,7 @@
 
 ### Grid Props
 
-**uni-grid 属性说明：**
+### uni-grid Props
 
 |属性名		|类型	|默认值	|说明				|
 |:-:		|:-:	|:-:	|:-:				|

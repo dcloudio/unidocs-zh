@@ -1,3 +1,4 @@
+# uni-rate 评分
 
 ::: tip 组件名：uni-rate
 > 代码块： `uRate`

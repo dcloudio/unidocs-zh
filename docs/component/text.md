@@ -1,4 +1,4 @@
-# text组件
+## text组件
 
 文本组件。用于包裹文本内容。
 
@@ -6,7 +6,7 @@
 
 虽然app-uvue中写在view的text区域的文字，也会被编译器自动包裹一层text组件，看起来也可以使用。但这样会造成无法修改该text文字的样式，详见uvue的[样式不继承](https://doc.dcloud.net.cn/uni-app-x/css/#stylenoextends)章节
 
-## 属性说明
+### 属性说明
 
 |属性名		|类型	|默认值	|说明			|平台差异说明				|
 |:-|:-			|:-		|:-		|:-				|
@@ -15,7 +15,7 @@
 |space		|String	|		|显示连续空格	|钉钉小程序不支持	|
 |decode		|Boolean|false	|是否解码		|百度、钉钉小程序不支持	|
 
-**space 值说明**
+#### space 值说明
 
 |值|说明|
 |:-|:-|
@@ -23,13 +23,13 @@
 |emsp|中文字符空格大小|
 |nbsp|根据字体设置的空格大小|
 
-## 子组件
+### 子组件
 
 text组件在web浏览器渲染（含浏览器、小程序webview渲染模式、app-vue）和uvue中，可以并只能嵌套text组件。
 
 在nvue中，text组件不能嵌套。
 
-## Tips
+### Tips
 
 - 支持 `\n` 方式换行。
 - 在app-nvue下，只有`<text>`才能包裹文本内容。无法在`<view>`组件包裹文本。
@@ -39,7 +39,7 @@ text组件在web浏览器渲染（含浏览器、小程序webview渲染模式、
 - 如果使用 `<span>` 组件编译时会被转换为 `<text>`。
 - nvue 样式 `word-wrap` 在 Android 平台暂不支持
 
-## 示例
+### 示例
 
 [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/text/text)
 

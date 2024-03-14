@@ -1,4 +1,4 @@
-#### recycle-list
+## recycle-list
 
 app端nvue专用组件。
 
@@ -12,7 +12,7 @@ app端nvue专用组件。
 #### cell-slot
 `<cell-slot>` 代表的是列表每一项的模板，它只用来描述模板的结构，并不对应实际的节点。`<cell-slot>` 的个数只表示模板的种类数，真实列表项的个数是由数据决定的。
 
-**注意**
+#### 注意
 - `<cell-slot>` 包含自定义组件时，在 Android 上有性能问题
 - recycle-list 是区域滚动，不会触发页面滚动，无法触发pages.json配置的下拉刷新、页面触底onReachBottomDistance、titleNView的transparent透明渐变。
 
@@ -26,7 +26,7 @@ key|可选属性，用于指定列表数据中可以作为唯一标识的键值�
 - warning 属性的省略 - 如果没写 `switch`，无论有没有写 `case` 或 `default`，都只使用第一个模板 - 在写了 `switch` 的情况下，`case` 和 `default` 必须写一个，否则该模板将会被忽略
 
 
-属性
+#### 属性
 
 - for
 在 `<recycle-list>` 添加 for 属性即可描述如何循环展开列表的数据，语法和 Vue 的 v-for 指令类似，但是它循环的是自己内部的子节点，并不是当前节点。写法：

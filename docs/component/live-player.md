@@ -1,10 +1,10 @@
-#### live-player
+## live-player
 
 实时音视频播放，也称直播拉流。
 
 使用live-player 组件需注意：如果发布到小程序，需要先通过各家小程序的审核。指定类目的小程序才能使用（[微信小程序类目](https://developers.weixin.qq.com/miniprogram/dev/component/live-player.html)、[百度小程序类目](https://smartprogram.baidu.com/docs/develop/component/media/#live-player/)），审核通过后在各家小程序管理后台自助开通该组件权限。
 
-**平台差异说明**
+#### 平台差异说明
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快应用|360小程序|京东小程序|
 |:-:		|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -14,7 +14,7 @@
 - H5 下可用 video 播放符合 HTML5 规范的流媒体，rtmp 等非 HTML5 标准的流媒体格式，仅在部分支持 flash 的国内手机浏览器上可播放。在 pc 浏览器上，需要安装 flash 插件才能播放 rtmp 等格式。
 
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|默认值|说明|平台差异说明|
 |:-:|:-:|:-:|:-:|:-:|
@@ -70,7 +70,7 @@ sound-mode 的合法值
 |ear|听筒|
 
 
-**Tips**
+#### tips
 
 * 百度小程序 iOS 端不支持设置 orientation 属性；
 * 微信小程序已废弃 background-mute 属性，默认为进入后台静音；
@@ -82,7 +82,7 @@ sound-mode 的合法值
 * App端使用直播，推荐nvue页面下用video组件，可避免复杂的层级问题和全屏覆盖问题。
 
 
-**状态码**
+#### 状态码
 
 |代码|说明|
 |---|---|
@@ -110,7 +110,7 @@ sound-mode 的合法值
 |3003|RTMP服务器握手失败|
 |3005|RTMP 读/写失败|
 
-**网络状态数据**
+#### 网络状态数据
 
 |键名|说明|
 |---|---|
@@ -123,7 +123,7 @@ sound-mode 的合法值
 |videoWidth|视频画面的宽度|
 |videoHeight|视频画面的高度|
 
-**示例**
+#### 示例
 
 ```html
 <live-player

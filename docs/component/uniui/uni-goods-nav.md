@@ -1,3 +1,5 @@
+# uni-goods-nav 商品导航
+
 ::: tip 组件名：uni-goods-nav
 > 代码块： `uGoodsNav`
 

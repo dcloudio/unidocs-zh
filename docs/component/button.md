@@ -2,7 +2,7 @@
 
 按钮。
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|默认值|说明|生效时机|平台差异说明|
 |:-|:-|:-|:-|:-|:-|
@@ -118,7 +118,7 @@ open-type 为 feedback时：
 - 在 App 中，开发者登录 [DCloud开发者中心](https://dev.dcloud.net.cn/) 后点击应用名称，进入左侧菜单“用户反馈”页面获取反馈内容。
 - 但推荐使用全端的、开源的、云端一体的意见反馈功能，[前端部分](https://ext.dcloud.net.cn/plugin?id=50)、[管理端部分](https://ext.dcloud.net.cn/plugin?id=4992)
 
-**注意**
+#### 注意
 
 - button组件支持style中通过css定义文字大小、颜色
 
@@ -173,7 +173,7 @@ button 组件没有 url 属性，如果要跳转页面，可以在@click中编�
 ```
 
 
-**注意**
+#### 注意
 - 点击 share 分享按钮时会触发 [onShareAppMessage](/api/plugins/share)
 - 支付宝小程序平台，获取用户手机号时，建议先通过条件编译的方式，调用支付宝原生API，[参考](https://docs.alipay.com/mini/api/getphonenumber)
 
@@ -214,7 +214,7 @@ button 组件没有 url 属性，如果要跳转页面，可以在@click中编�
 :::
 
 
-**注意**
+#### 注意
 
 事件务必使用vue语法，比如下面的获取手机号示例
 

@@ -1,10 +1,10 @@
-#### rich-text
+## rich-text
 
 富文本。
 
 支持默认事件，包括：click、touchstart、touchmove、touchcancel、touchend、longpress。
 
-**属性说明**
+#### 属性说明
 
 |属性名|类型|默认值|说明|平台兼容|
 |:-|:-|:-|:-|:-|
@@ -21,7 +21,7 @@ nodes 值为 HTML String 时，在组件内部将自动解析为节点列表，�
 
 节点列表内的节点现支持两种类型，通过 type 来区分，分别是元素节点和文本节点，默认是元素节点，在富文本区域里显示的 HTML 节点。
 
-**元素节点：type = node**
+#### 元素节点：type = node
 
 |属性|说明|类型|必填|备注|
 |:-|:-|:-|:-|:-|
@@ -29,7 +29,7 @@ nodes 值为 HTML String 时，在组件内部将自动解析为节点列表，�
 |attrs|属性|Object|否|支持部分受信任的属性，遵循 Pascal 命名法|
 |children|子节点列表|Array|否|结构和 nodes 一致|
 
-**文本节点：type = text**
+#### 文本节点：type = text
 
 |属性|说明|类型|必填|备注|
 |:-|:-|:-|:-|:-|
@@ -85,7 +85,7 @@ nodes 值为 HTML String 时，在组件内部将自动解析为节点列表，�
 |tr||
 |ul|&nbsp;|
 
-**示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/rich-text/rich-text)
+#### 示例 [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/rich-text/rich-text)
 
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 
@@ -141,7 +141,7 @@ export default {
 :::
 
 
-**Tips**
+#### tips
 
 - nodes 不推荐使用 String 类型，性能会有所下降。
 - rich-text 组件内屏蔽所有节点的事件。所以如果内容中有链接、图片需要点击，则不能使用rich-text，此时可在[uni-app插件市场](https://ext.dcloud.net.cn/search?q=parse)搜索parse插件使用。app-vue的rich-text组件支持链接图片点击。

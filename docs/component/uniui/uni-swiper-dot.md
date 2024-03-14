@@ -1,3 +1,4 @@
+# uni-swiper-dot 轮播图指示点
 
 ::: tip 组件名：uni-swiper-dot
 > 代码块： `uSwiperDot`

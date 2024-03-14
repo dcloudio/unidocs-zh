@@ -1,4 +1,4 @@
-
+# uni-collapse 折叠面板
 
 ::: tip 组件名：uni-collapse
 > 代码块： `uCollapse`

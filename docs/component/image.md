@@ -35,7 +35,7 @@
   * iOS14以下，app-vue下，iOS不支持；app-nvue/uvue下，iOS支持；微信小程序2.9.0起，配置属性webp为true时iOS支持；
   * pc浏览器上，webp在不同浏览器的支持详见：[https://caniuse.com/?search=webp](https://caniuse.com/?search=webp)
 
-**Tips**
+#### tips
 
 - `<image>` 组件未设置宽高时，默认宽度320px、高度240px。尤其注意当图片加载失败时，widthFix模式指定宽度的图片，虽然图片空白，但其高度会变成240px；`app-nvue平台，暂时默认为屏幕宽度、高度 240px；`
 - `src` 仅支持相对路径、绝对路径，支持 base64 码；

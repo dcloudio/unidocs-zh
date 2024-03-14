@@ -1,3 +1,4 @@
+# uni-nav-bar 自定义导航栏
 
 ::: tip 组件名：uni-nav-bar
 > 代码块： `uNavBar`
@@ -118,7 +119,7 @@ Tips:
 |rightWidth|Number/String|120rpx|导航栏右侧插槽宽度|
 |stat|Boolean/String|120rpx|是否开启统计标题功能。**注意：只有使用title 属性 ，且开启了统计功能才生效**|
 
-**Tips**
+#### tips
 - `leftWidth` 和 `rightWidth` 如无必要不需要设置
 - `leftWidth` 和 `rightWidth` 如需设置 ，只有两个值相同，才能保证 `title` 居中 ，如设置值过大，需要注意到 `title` 被覆盖的可能
 

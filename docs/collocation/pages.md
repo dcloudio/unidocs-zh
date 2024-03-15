@@ -839,9 +839,7 @@ It is not a full-screen page, nor a component, but a native subform. It is an nv
 |Attribute|Type|Description|
 |:- |:-  |:-|
 |id|String| subNVue 原生子窗体的标识 |
-| id| String| ID of subNVue's native subwindow |
-|path|String|配置 nvue 文件路径，nvue 文件需放置到使用 subNvue 的页面文件目录下|
-| path| String|Configure the nvue file path, the nvue file needs to be placed in the page file directory using subNvue|
+|path|String|配置 nvue 文件路径，nvue 文件需放置到使用 subNvue 的页面文件目录下，cli项目需要去掉.nvue后缀，只保留文件名|
 |type|String|原生子窗口内置样式，可取值：'popup',弹出层；"navigationBar",导航栏|
 | type| String| Built-in style of native sub-window, possible values: 'popup', popup layer; "navigationBar", navigation bar|
 |style|Object|subNVue 原生子窗体的样式，配置项参考下方 [subNVuesStyle](/collocation/pages?id=app-subNVuesStyle)|

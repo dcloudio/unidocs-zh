@@ -7,11 +7,11 @@
 {
   "plugins": {
     "uni-ad": {
-      "version": "1.1.11",
+      "version": "1.2.1",
       "provider": "wxf72d316417b6767f"
     },
     "coral-adv": {
-      "version": "1.0.18",
+      "version": "1.0.24",
       "provider": "wx0e203209e27b1e66"
     }
   }
@@ -37,10 +37,10 @@
 <!-- 信息流/视频广告 -->
 <uni-ad adpid="" class="uni-banner"></uni-ad>
 
-<!-- 插屏和激励视频需要调用组件的show方法，banner，格子类型广告不需要。只有激励视频有error和close事件。 -->
+<!-- 插屏和激励视频需要调用组件的show方法，banner，视频广告，格子类型广告不需要。 -->
 
 <!-- 激励视频 -->
-<uni-ad adpid="" class="uni-rewarded-video-ad" bind:close="onadclose" bind:error="onaderror"></uni-ad>
+<uni-ad adpid="" class="uni-rewarded-video-ad" bind:load="onadload" bind:close="onadclose" bind:error="onaderror"></uni-ad>
 <button bindtap="showRewardedVideoAd">显示激励视频</button>
 
 <!-- 
@@ -66,6 +66,9 @@ Page({
 	},
 	showInterstitialAd: function (e) {
 		this.selectComponent('.uni-interstitial-ad').show();
+	},
+	onadload: function(e) {
+		console.log('广告加载成功：', e)
 	},
 	onadclose: function(e) {
 		const detail = e.detail

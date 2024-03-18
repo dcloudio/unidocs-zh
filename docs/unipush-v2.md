@@ -264,7 +264,7 @@ The above two solutions have their own advantages and disadvantages, and the fir
 ### 客户端启用uni-push2.0
 
 - uni-app x 框架的App端  
-  标准基座不包含uni-push模块，如果需要使用此模块，应当在提交云打包时，项目代码中包含uni-push相关客户端api。[点此](/uni-app-x/collocation/manifest-modules.html#treeshaking)了解uni-app x的摇树机制
+  标准基座不包含uni-push模块，如果需要使用此模块，应当在提交云打包时，项目代码中包含uni-push相关客户端api。[点此](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#treeshaking)了解uni-app x的摇树机制
   
   所以在开发调试时，需要先写一段包含uni-push相关客户端api代码，再打一个自定义基座。  
   
@@ -358,11 +358,11 @@ export default {
 }
 ```
 
-> 先跟着示例代码简单体验，详细的uni.onPushMessage API介绍：uni-app 框架[详情参考](/api/plugins/push.html#onpushmessage)，uni-app x 框架[详情参考](/uni-app-x/api/plugins/push.html#onpushmessage)
+> 先跟着示例代码简单体验，详细的uni.onPushMessage API介绍：uni-app 框架[详情参考](api/plugins/push.md#onpushmessage)，uni-app x 框架[详情参考](https://doc.dcloud.net.cn/uni-app-x/api/push.html#onpushmessage)
 
 **APP端真机运行注意:** 
 - 如果启用了离线推送，必须：经过发行原生app云打包后，客户端才能监听到推送消息。标准HBuilder运行基座无法使用。
-- 离线推送时，Android手机厂商通道推送[需设置消息渠道id](/uniCloud/uni-cloud-push/api.md#channel)，否则会被限制频次和静默推送(静音且需下拉系统通知栏才可见)
+- 离线推送时，Android手机厂商通道推送[需设置消息渠道id](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/api.html#channel)，否则会被限制频次和静默推送(静音且需下拉系统通知栏才可见)
 - 如果Android应用进入后台后（App未销毁），点击通知消息无法拉起App，请检查设备是否有禁止后台弹出界面，路径>>设置-应用管理-测试应用-权限管理-后台弹出界面，(一般是小米、oppo、
 - If the Android app enters the background (the App is not destroyed), and the app cannot be launched by clicking the notification message, please check whether the device has a pop-up interface that prohibits the background. Path >> Settings - Application Management - Test Application - Permission Management - Background pop-up interface, ( Usually millet, oppo,
 vivo设备)。
@@ -374,7 +374,7 @@ If I want to call "Zhang San", I need to know the phone ID of the other party, t
 同理，要给某个客户端推送消息，也需要知道该设备的客户端推送标识。
 Similarly, to push a message to a client, you also need to know the client push identifier of the device.
 
-> 先跟着示例代码简单体验，详细的uni.getPushClientId API介绍：uni-app 框架[详情参考](/api/plugins/push.html#onpushmessage)，uni-app x 框架[详情参考](/uni-app-x/api/plugins/push.html#onpushmessage)
+> 先跟着示例代码简单体验，详细的uni.getPushClientId API介绍：uni-app 框架[详情参考](api/plugins/push.md#getpushclientid)，uni-app x 框架[详情参考](https://doc.dcloud.net.cn/uni-app-x/api/push.html#getpushclientid)
 代码示例：
 Code example:
 ```js

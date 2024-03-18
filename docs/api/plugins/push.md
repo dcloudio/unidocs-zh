@@ -7,7 +7,7 @@
 ## 客户端API
 ## Client API
 
-### uni.getPushClientId(OBJECT)
+### uni.getPushClientId(OBJECT)@getpushclientid
 获取客户端唯一的推送标识
 Obtain the unique push ID of the client
 

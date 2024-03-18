@@ -4,7 +4,7 @@
 
 ## 客户端API
 
-### uni.getPushClientId(OBJECT)
+### uni.getPushClientId(OBJECT)@getpushclientid
 获取客户端唯一的推送标识
 
 注意：这是一个异步的方法，且仅支持uni-push2.0；

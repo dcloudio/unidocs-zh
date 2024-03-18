@@ -284,11 +284,11 @@ style的写法与web的css基本相同。
 |onShareTimeline|监听用户点击右上角转发到朋友圈|微信小程序|2.8.1+|
 |onAddToFavorites|监听用户点击右上角收藏|微信小程序、QQ小程序|2.8.1+|
 
-## Vue2 页面及组件生命周期流程图
+## Vue2 页面及组件生命周期流程图@vue2-lifecycle-flow
 
 ![](../static/uni-app-lifecycle-vue2.png)
 
-## Vue3 页面及组件生命周期流程图
+## Vue3 页面及组件生命周期流程图@vue3-lifecycle-flow
 
 ![](../static/uni-app-lifecycle-vue3.png)
 

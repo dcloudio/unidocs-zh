@@ -160,6 +160,7 @@ In addition, since the `createApp` method returns the application instance itsel
 |renderTriggered	|当虚拟 `DOM` 重新渲染为 `triggered.Similarly` 为`renderTracked`，接收 `debugger event` 作为参数。此事件告诉你是什么操作触发了重新渲染，以及该操作的目标对象和键。[详情](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#rendertriggered)	|√	|√	| √	|
 |renderTriggered |When the virtual `DOM` is re-rendered to `triggered.Similarly` to `renderTracked`, receive a `debugger event` as a parameter. This event tells you what action triggered the re-render, and the target object and key for that action. [Details](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#rendertriggered) |√ |√ | √ |
 
+[页面及组件生命周期流程图](/tutorial/page.md#vue3-lifecycle-flow)
 
 ## 选项/资源
 ## Options/Assets

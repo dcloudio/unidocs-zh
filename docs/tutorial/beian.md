@@ -30,6 +30,8 @@
 
 注意：App备案需要填写App后端服务器域名，该域名持有人需和App备案主体保持一致，且**域名需提前备案**。关于域名备案，请参考上一章节。
 
+> 若您不熟悉App备案，需要技术指导、加急办理或三方代办服务，可到服务市场寻求帮助，[点此前往](https://market.aliyun.com/agents/yscdcloud#J_3668019490)
+
 ## 小程序备案
 
 开发者自行到各家小程序管理控制台上传相关信息，即可完成，不涉及域名及固定IP等要素。
@@ -43,6 +45,7 @@
 - [京东小程序备案流程](https://mp-docs.jd.com/doc/operation/beian/2300)
 - [快手小程序备案流程](https://mp.kuaishou.com/docs/operate/specification/icp/guide.html)
 
+> 若您不熟悉小程序备案流程，需要技术指导、加急办理或三方代办服务，可到服务市场寻求帮助，[点此前往](https://market.aliyun.com/agents/yscdcloud#J_3668019490)
 
 ## FAQ
 

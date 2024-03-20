@@ -31,7 +31,7 @@
 <template>
 	<view>
 		<button @click="open">打开弹窗</button>
-		<uni-popup ref="popup" type="bottom">底部弹出 Popup</uni-popup>
+		<uni-popup ref="popup" type="bottom" border-radius="10px 10px 0 0">底部弹出 Popup 自定义圆角</uni-popup>
 	</view>
 </template>
 <script>
@@ -113,6 +113,7 @@ export default {
 |is-mask-click **[1.7.4新增]**|Boolean|true|蒙版点击是否关闭弹窗|
 |mask-background-color **[1.7.4新增]**|rgba|rgba(0,0,0,0.4)|蒙版颜色，建议使用 rgba 颜色值|
 |background-color|String|'none'|主窗口背景色|
+|borderRadius|String|无| 设置圆角(左上、右上、右下和左下) 示例:"10px 10px 10px 10px"|
 |safe-area|Boolean|true|是否适配底部安全区|
 
 #### Type Options
@@ -241,6 +242,7 @@ export default {
 |showClose **[1.8.5新增]**|Boolean|-|是否显示取消按钮|
 |value| String\Number|-|输入框默认值，input模式下生效|
 |placeholder|String|-|输入框提示文字，input模式下生效|
+|borderRadius|String|-|四周圆角值（左上、右上、右下、左下） 示例："20px 20px 20px 20px"|
 |before-close|Boolean|false	| 是否拦截按钮事件，如为true，则不会关闭对话框，关闭需要手动执行 uni-popup 的 close 方法|
 
 #### PopupDialog Events

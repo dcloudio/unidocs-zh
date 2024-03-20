@@ -88,14 +88,15 @@ export default {
 
 ### DataSelect Props
 
-|    属性名     |     类型      | 可选值 |  默认值  |                                说明                                 |
-| :-----------: | :-----------: | :----: | :------: | :-----------------------------------------------------------------: |
-| value/v-model | String/Number |   -    |    -     |                         已选择数据的 value 值（当其值为0时不进行初始化赋值）                    |
-|   localdata   |     Array     |   -    |    -     |                           本地渲染数据                            |
-|     clear     |    Boolean    |   -    |    -     |                         是否可以清空已选项                          |
-|     label     |    String     |        |          |                              左侧标题                               |
-|  placeholder  |    String     |   -    |  请选择  |                          输入框的提示文字                           |
-|   emptyTips   |    String     |   -    | 暂无数据 |                 没有数据时显示的文字 ，本地数据无效                 |
+|    属性名     |     类型      |   可选值   |  默认值  |                         说明                         |
+| :-----------: | :-----------: | :--------: | :------: | :--------------------------------------------------: |
+| value/v-model | String/Number |     -      |    -     | 已选择数据的 value 值（当其值为0时不进行初始化赋值） |
+|   localdata   |     Array     |     -      |    -     |                     本地渲染数据                     |
+|     clear     |    Boolean    |     -      |    -     |                  是否可以清空已选项                  |
+|     label     |    String     |            |          |                       左侧标题                       |
+|  placeholder  |    String     |     -      |  请选择  |                   输入框的提示文字                   |
+|   emptyTips   |    String     |     -      | 暂无数据 |         没有数据时显示的文字 ，本地数据无效          |
+|   placement   |    String     | bottom,top |  bottom  |                      弹出时位置                      |
 
 #### DataCom Props
 

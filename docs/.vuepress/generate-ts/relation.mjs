@@ -8,12 +8,12 @@ import { generateInterface, generateInterfaceTableFields } from "./interface.mjs
 
 /**
  * json声明接口
- * @typedef {{name: string; titleName: string; titleLevel: string; property?:PropertyDefine[]}; exportComponent?: 'default'| 'named'} InterfaceDefine
+ * @typedef {{name: string; titleName: string; titleLevel: string; property?:PropertyDefine[];isComponent?:boolean}} InterfaceDefine
  */
 
 /**
  * 接口
- * @typedef {{name: string; titleName: string; titleLevel: string; property?:Property; exportComponent?: 'default'| 'named'}} Interface
+ * @typedef {{name: string; titleName: string; titleLevel: string; property?:Property;isComponent?:boolean}} Interface
  */
 
 /**
@@ -60,12 +60,12 @@ class Relation {
             /**
              * @type {Interface[]}
              */
-            const interfaceMap = interfaces.map(({ name, titleLevel, titleName, property, exportComponent }) => ({
+            const interfaceMap = interfaces.map(({ name, titleLevel, titleName, property, isComponent }) => ({
                 name,
                 titleLevel,
                 titleName,
-                property: property && Array.isArray(property) ? new Property(property) : undefined,
-                exportComponent,
+                isComponent,
+                property: property && Array.isArray(property) ? new Property(property) : undefined
             }))
             return [component, interfaceMap]
         }))
@@ -153,13 +153,13 @@ const generateRelation = (componentName, str) => {
 
     const component = relation.getComponent(componentName)
     if (!component) return
-    return component.map(({ titleName, titleLevel, name, property, exportComponent }) => {
+    return component.map(({ titleName, titleLevel, name, property, isComponent }) => {
         const table = getTableContent(str, titleName, titleLevel)
         if (!table?.length) return
 
         const config = generateInterfaceTableFields(table)
         if (config) {
-            return generateInterface(name, config, {str, property, exportComponent, file: componentName})
+            return generateInterface(name, config, { str, property, file: componentName, isComponent })
         }
     }).filter(Boolean).join('\n\n')
 }

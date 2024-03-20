@@ -77,16 +77,28 @@ const generateInterfaceProperty = (arr, files, propertyIns) => {
         const types = arr[type].replace(/(&#124;)|(\\|\/)/g, '|').split('|').map(s => s.trim())
         relativeType = types.map(t => {
             switch (t) {
+                case 'Array&lt;Number&gt;':
+                case 'Array&lt;number&gt;':
                 case 'Array＜Number＞':
                     return 'number[]';
-                case 'Array&lt;Object&gt':
+                case 'Array&lt;Object&gt;':
+                case 'Array&lt;object&gt;':
+                case 'Array＜Object＞':
                     return 'Record<propertyKey,any>[]';
+                case 'Array&lt;String&gt;':
+                case 'Array&lt;string&gt;':
+                case 'Array＜String＞':
+                    return 'string[]';
+                case 'Array&lt;Boolean&gt;':
+                case 'Array&lt;boolean&gt;':
+                case 'Array＜Boolean＞':
+                    return 'boolean[]';
                 case 'Color':
                 case 'color':
                     return 'string';
 
                 default:
-                    return t && ['String', 'Number', 'Boolean'].includes(t) ? t.toLowerCase() : t
+                    return t && ['String', 'Number', 'Boolean','Null'].includes(t) ? t.toLowerCase() : t
             }
         }).join(' | ')
     }
@@ -220,7 +232,7 @@ const getInterfaceComment = (name, str) => {
 }
 
 /**
- * @typedef {{str: string;property: import("./relation.mjs").Property; exportComponent?: 'default'| 'named'; file?: string;}} GenerateInterfaceOptions
+ * @typedef {{str: string;property: import("./relation.mjs").Property; file?: string; isComponent?: boolean}} GenerateInterfaceOptions
  */
 /**
  * 生成接口
@@ -229,7 +241,7 @@ const getInterfaceComment = (name, str) => {
  * @param {GenerateInterfaceOptions}
  * @returns
  */
-export const generateInterface = (interfaceName, data, { str, property, exportComponent, file }) => {
+export const generateInterface = (interfaceName, data, { str, property, isComponent, file }) => {
     const comp = file || interfaceName.toString()
 
     const { fieldMap, fieldEN, fieldCN, table: interfacePropertyTable, events } = data
@@ -244,7 +256,7 @@ export const generateInterface = (interfaceName, data, { str, property, exportCo
 
     const interfaceCamel = toUpperCamel(interfaceName)
 
-    const interfaceProps = `${interfaceCamel}Props`
+    const interfaceProps = isComponent === false ? interfaceCamel : `${interfaceCamel}Props`
 
 
     const eventDoc = generateEvent(interfaceName, { table: events, fieldMap, fieldEN, fieldCN })
@@ -255,38 +267,25 @@ export const generateInterface = (interfaceName, data, { str, property, exportCo
      */
     const propsLines = interfacePropertyTable.map((item) => generateInterfaceProperty(item, data, property)).filter(Boolean)
 
-    const propsDoc = !propsLines.length ? '' : `${interfaceCommentContent}
+    const propsDoc = !propsLines.length ? undefined : `${interfaceCommentContent}
 export interface ${interfaceProps}{
     ${propsLines.join('\n')}
 }`
 
 
-    const interfaceOfEvent = getEventName(interfaceCamel)
+    const interfaceOfEvent = eventDoc && getEventName(interfaceCamel)
 
-    const joinProps = [interfaceProps, interfaceOfEvent].filter(Boolean).join(' & ')
+    const joinProps = [propsDoc && interfaceProps, interfaceOfEvent].filter(Boolean).join(' & ')
 
-    const exportType = exportComponent === 'named' ? `declare const ${interfaceCamel}:` : 'default'
-
-
-    let namedDefault = ''
-    if (exportComponent === 'default') {
-        /**
-         * 以组件名的命名方式导出，为default的备份
-         */
-        namedDefault = `
-export declare const ${interfaceCamel}: import("vue").DefineComponent<${joinProps}>;
-`
-    }
-
-    const exportDoc = !exportComponent ? '' : `${namedDefault}
-export ${exportType} import("vue").DefineComponent<${joinProps}>;
+    const exportNamedComponent = `
+export declare const ${interfaceCamel}: import("vue").DefineComponent<${joinProps || 'any'}>;
 `
 
-    if (exportDoc) {
+    if (isComponent !== false) {
         addType(`        ${interfaceCamel}: typeof import('./${comp}')['${interfaceCamel}']`)
     }
 
-    return [propsDoc, eventDoc, exportDoc].filter(Boolean).join('\n')
+    return [propsDoc, eventDoc, isComponent === false ? '' : exportNamedComponent].filter(Boolean).join('\n')
 }
 
 
@@ -322,7 +321,7 @@ const toInterface = (name, str) => {
      */
     const table = generateInterfaceTable(clearStr)
     if (table) {
-        return generateInterface(name.toString(), table, { str: clearStr, exportComponent: 'default' })
+        return generateInterface(name.toString(), table, { str: clearStr })
     }
 }
 

@@ -5,53 +5,61 @@
       {
         "name": "Map",
         "titleName": "属性说明",
-        "titleLevel": "bold",
-        "exportComponent": "default"
+        "titleLevel": "bold"
       },
       {
         "name": "MapMarker",
         "titleName": "MapMarker",
-        "titleLevel": "bold"
+        "titleLevel": "bold",
+        "isComponent": false
       },
       {
         "name": "MapMarkerLabel",
         "titleName": "MapMarkerLabel",
-        "titleLevel": "bold"
+        "titleLevel": "bold",
+        "isComponent": false
       },
       {
         "name": "MapMarkerCallOut",
         "titleName": "MapMarkerCallOut",
-        "titleLevel": "bold"
+        "titleLevel": "bold",
+        "isComponent": false
       },
       {
         "name": "MapPolyLine",
         "titleName": "MapPolyLine",
-        "titleLevel": "bold"
+        "titleLevel": "bold",
+        "isComponent": false
       },
       {
         "name": "MapPolygon",
         "titleName": "MapPolygon",
-        "titleLevel": "bold"
+        "titleLevel": "bold",
+        "isComponent": false
       },
       {
         "name": "MapCircle",
         "titleName": "MapCircle",
-        "titleLevel": "bold"
+        "titleLevel": "bold",
+        "isComponent": false
       },
       {
         "name": "MapControl",
         "titleName": "MapControl",
-        "titleLevel": "bold"
+        "titleLevel": "bold",
+        "isComponent": false
       },
       {
         "name": "MapPosition",
         "titleName": "MapPosition",
-        "titleLevel": "bold"
+        "titleLevel": "bold",
+        "isComponent": false
       },
       {
         "name": "MapPoint",
         "titleName": "MapPoint",
-        "titleLevel": "bold"
+        "titleLevel": "bold",
+        "isComponent": false
       }
     ]
   },
@@ -61,14 +69,12 @@
       {
         "name": "RadioGroup",
         "titleName": "radio-group",
-        "titleLevel": "h3",
-        "exportComponent": "named"
+        "titleLevel": "h3"
       },
       {
         "name": "Radio",
         "titleName": "radio\\n",
-        "titleLevel": "h3",
-        "exportComponent": "default"
+        "titleLevel": "h3"
       }
     ]
   }

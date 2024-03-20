@@ -1,3 +1,8 @@
+#### 4.05.2024032021-alpha
+* 【uni-app-x】
+  + Web平台 修复 部分情况下picker-view、picker-view-column值显示错误并额外触发了change事件的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=1009)
+  + App-Android平台 修复 uni.createSelectorQuery 获取的组件对象调用 boundingClientRect 返回数据不准的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=948)
+
 #### 4.04.2024031519-alpha
 * 【uni-app】
   + Web平台 修复 iOS safari手势返回期间上一页面为空白的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=941)

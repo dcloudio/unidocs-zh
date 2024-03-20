@@ -49,7 +49,7 @@ Pop-up layer component, pops up a message prompt window, prompt box, etc. in the
 <template>
 	<view>
 		<button @click="open">打开弹窗</button>
-		<uni-popup ref="popup" type="bottom">底部弹出 Popup</uni-popup>
+		<uni-popup ref="popup" type="bottom" border-radius="10px 10px 0 0">底部弹出 Popup 自定义圆角</uni-popup>
 	</view>
 </template>
 <script>
@@ -146,7 +146,7 @@ export default {
 |mask-background-color **[1.7.4新增]**|rgba|rgba(0,0,0,0.4)|蒙版颜色，建议使用 rgba 颜色值|
 |mask-background-color **[New in 1.7.4]**|rgba|rgba(0,0,0,0.4)|Mask color, it is recommended to use rgba color value|
 |background-color|String|'none'|主窗口背景色|
-|background-color|String|'none'|Main window background color|
+|borderRadius|String|无| 设置圆角(左上、右上、右下和左下) 示例:"10px 10px 10px 10px"|
 |safe-area|Boolean|true|是否适配底部安全区|
 |safe-area|Boolean|true|Whether it fits the bottom safe area|
 
@@ -318,7 +318,7 @@ export default {
 |value| String\Number|-|输入框默认值，input模式下生效|
 |value| String\Number|-|Default value of the input box, valid in input mode|
 |placeholder|String|-|输入框提示文字，input模式下生效|
-|placeholder|String|-|Input box prompt text, valid in input mode|
+|borderRadius|String|-|四周圆角值（左上、右上、右下、左下） 示例："20px 20px 20px 20px"|
 |before-close|Boolean|false	| 是否拦截按钮事件，如为true，则不会关闭对话框，关闭需要手动执行 uni-popup 的 close 方法|
 |before-close|Boolean|false | Whether to intercept button events, if true, the dialog box will not be closed, and the close method of uni-popup needs to be manually executed to close |
 

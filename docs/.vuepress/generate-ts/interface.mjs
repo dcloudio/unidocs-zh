@@ -98,7 +98,7 @@ const generateInterfaceProperty = (arr, files, propertyIns) => {
                     return 'string';
 
                 default:
-                    return t && ['String', 'Number', 'Boolean','Null'].includes(t) ? t.toLowerCase() : t
+                    return t && ['String', 'Number', 'Boolean', 'Null'].includes(t) ? t.toLowerCase() : t
             }
         }).join(' | ')
     }
@@ -218,6 +218,14 @@ const toUpperCamel = s => toCamel(s.toString()).replace(/^\w/, (s) => s.toUpperC
 const toCamel = (s) => s.toString().replace(/-(\w)/g, (m0, m1) => m1.toUpperCase())
 
 /**
+ * 驼峰转下中横线风格
+ * @param {string} s 
+ * @returns 
+ */
+const toSnackCase = (s) => s.toString().replace(/[A-Z]/g, (m, i) => {
+    return i === 0 ? m.toLowerCase() : `-${m.toLowerCase()}`
+}).replace('_', '-')
+/**
  * 获取接口名称的注释说明
  * @param {string} name 
  * @param {string} str 
@@ -283,6 +291,10 @@ export declare const ${interfaceCamel}: import("vue").DefineComponent<${joinProp
 
     if (isComponent !== false) {
         addType(`        ${interfaceCamel}: typeof import('./${comp}')['${interfaceCamel}']`)
+        /**
+         * 处理一个单词命名的组件，转为小写风格，让volar也能匹配到小写时的组件，多单词组件volar会自动处理
+         */
+        interfaceCamel.match(/[A-Z]/g).length === 1 && addType(`        ${toSnackCase(interfaceCamel)}: typeof import('./${comp}')['${interfaceCamel}']`)
     }
 
     return [propsDoc, eventDoc, isComponent === false ? '' : exportNamedComponent].filter(Boolean).join('\n')

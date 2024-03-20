@@ -27,8 +27,8 @@
 |scale-max|Number|10|定义缩放倍数最大值||
 |scale-value|Number|1|定义缩放倍数，取值范围为 0.5 - 10||
 |animation|Boolean|true|是否使用动画||
-|@change|EventHandle||拖动过程中触发的事件，event.detail = {x: x, y: y, source: source}，其中source表示产生移动的原因，值可为touch（拖动）、touch-out-of-bounds（超出移动范围）、out-of-bounds（超出移动范围后的回弹）、friction（惯性）和空字符串（setData）||
-|@scale|EventHandle||缩放过程中触发的事件，event.detail = {x: x, y: y, scale: scale}，||
+|@change|EventHandle||拖动过程中触发的事件，event.detail = {x: number, y: number, source: any}，其中source表示产生移动的原因，值可为touch（拖动）、touch-out-of-bounds（超出移动范围）、out-of-bounds（超出移动范围后的回弹）、friction（惯性）和空字符串（setData）||
+|@scale|EventHandle||缩放过程中触发的事件，event.detail = {x: number, y: number, scale: number}，||
 
 除了基本事件外，movable-view提供了两个特殊事件
 

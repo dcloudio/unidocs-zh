@@ -26,15 +26,15 @@
 |longitude|Number||中心经度||
 |latitude|Number||中心纬度||
 |scale|Number|16|缩放级别，取值范围为3-20|高德地图缩放比例与微信小程序不同|
-|theme|String|normal|主题（satellite 或 normal）只在初始化时有效，不能动态变更（仅Android支持）|京东小程序|
+|theme|'satellite'&#124;'normal'|normal|主题（satellite 或 normal）只在初始化时有效，不能动态变更（仅Android支持）|京东小程序|
 |min-scale|Number|3|最小缩放级别|App-nvue 3.1.0+、微信小程序2.13+|
 |max-scale|Number|20|最大缩放级别|App-nvue 3.1.0+、微信小程序2.13+|
-|layer-style|Number/String|1|个性化地图|App-nvue 3.1.0+、微信小程序2.13+|
-|markers|Array||标记点||
-|polyline|Array||路线|飞书小程序不支持|
-|circles|Array||圆||
-|controls|Array||控件||
-|include-points|Array||缩放视野以包含所有给定的坐标点|App-nvue 2.1.5+、微信小程序、H5、百度小程序、支付宝小程序、京东小程序|
+|layer-style|Number&#124;String|1|个性化地图|App-nvue 3.1.0+、微信小程序2.13+|
+|markers|MapMarker[]||标记点||
+|polyline|MapPolyLine[]||路线|飞书小程序不支持|
+|circles|MapCircle[]||圆||
+|controls|MapControl[]||控件||
+|include-points|MapPoint[]||缩放视野以包含所有给定的坐标点|App-nvue 2.1.5+、微信小程序、H5、百度小程序、支付宝小程序、京东小程序|
 |enable-3D|Boolean|false|是否显示3D楼块|App-nvue 2.1.5+、微信小程序2.3.0|
 |show-compass|Boolean|false|是否显示指南针|App-nvue 2.1.5+、微信小程序2.3.0|
 |enable-zoom|Boolean|true|是否支持缩放|App-nvue 2.1.5+、微信小程序2.3.0|
@@ -46,17 +46,18 @@
 |enable-poi|Boolean|false|是否展示 POI 点|App-nvue 3.1.0+|
 |enable-building|Boolean|false|是否展示建筑物|App-nvue 3.1.0+ 支持 (**废除原enable-3D属性 高德地图默认开启建筑物就是3D无法设置**)|
 |show-location|Boolean||显示带有方向的当前定位点|微信小程序、H5、百度小程序、支付宝小程序、京东小程序|
-|polygons（支付宝为: polygon）|Array.`<polygon>`||多边形|App-nvue 2.1.5+、App-vue 3.4.3+、H5 3.4.3+、微信小程序、百度小程序、支付宝小程序|
+|polygons|MapPolygon[]||多边形|App-nvue 2.1.5+、App-vue 3.4.3+、H5 3.4.3+、微信小程序、百度小程序程序|
+|polygon|MapPolygon[]||多边形|支付宝小程序|
 |enable-indoorMap|Boolean|false|是否展示室内地图|App-nvue 3.1.0+|
-|@markertap|EventHandle||点击标记点时触发，e.detail = {markerId}|App-nvue 2.3.3+、H5、微信小程序、支付宝小程序 （App和H5平台需要指定 marker 对象属性 id）|
-|@labeltap|EventHandle||点击label时触发，e.detail = {markerId} |微信小程序2.9.0|
-|@callouttap|EventHandle||点击标记点对应的气泡时触发，e.detail = {markerId}||
-|@controltap|EventHandle||点击控件时触发，e.detail = {controlId}||
+|@markertap|EventHandle||点击标记点时触发，e.detail = {markerId: number}|App-nvue 2.3.3+、H5、微信小程序、支付宝小程序 （App和H5平台需要指定 marker 对象属性 id）|
+|@labeltap|EventHandle||点击label时触发，e.detail = {markerId: number} |微信小程序2.9.0|
+|@callouttap|EventHandle||点击标记点对应的气泡时触发，e.detail = {markerId: number}||
+|@controltap|EventHandle||点击控件时触发，e.detail = {controlId: number}||
 |@regionchange|EventHandle||视野发生变化时触发|微信小程序、H5、百度小程序、支付宝小程序、京东小程序|
 |@tap|EventHandle||点击地图时触发; App-nvue、微信小程序2.9支持返回经纬度||
 |@updated|EventHandle||在地图渲染更新完成时触发|微信小程序、H5、百度小程序|
-|@anchorpointtap|EventHandle||点击定位标时触发，e.detail = {longitude, latitude}|App-nvue 3.1.0+、微信小程序2.13+|
-|@poitap|EventHandle||点击地图poi点时触发，e.detail = {name, longitude, latitude}|微信小程序2.3.0+|
+|@anchorpointtap|EventHandle||点击定位标时触发，e.detail = {longitude: number, latitude: number}|App-nvue 3.1.0+、微信小程序2.13+|
+|@poitap|EventHandle||点击地图poi点时触发，e.detail = {name: string, longitude: number, latitude: number}|微信小程序2.3.0+|
 
 **注意**
 
@@ -71,7 +72,7 @@
 3. 覆盖物支持调整与其它地图元素的压盖关系。
 4. 支持marker（小车）平移动画，适用于轨迹回放场景。
 
-**markers**
+**MapMarker**
 
 标记点用于在地图上显示标记的位置
 
@@ -86,15 +87,15 @@
 |alpha|标注的透明度|Number|否|默认1，无透明，范围 0 ~ 1|App-nvue 2.1.5+、微信小程序、支付宝小程序、百度小程序、京东小程序|
 |width|标注图标宽度|Number|否|默认为图片实际宽度|App-nvue 2.1.5+、微信小程序、H5、支付宝小程序、百度小程序、京东小程序|
 |height|标注图标高度|Number|否|默认为图片实际高度|App-nvue 2.1.5+、微信小程序、H5、支付宝小程序、百度小程序、京东小程序|
-|callout|自定义标记点上方的气泡窗口|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、微信小程序、支付宝小程序、百度小程序、京东小程序|
-|label|为标记点旁边增加标签|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、微信小程序、H5、App、百度小程序、支付宝小程序|
-|anchor|经纬度在标注图标的锚点，默认底边中点|Object|否|{x, y}，x表示横向(0-1)，y表示竖向(0-1)。{x: .5, y: 1} 表示底边中点|App-nvue 2.1.5+、微信小程序、H5、百度小程序、京东小程序|
+|callout|自定义标记点上方的气泡窗口|MapMarkerCallOut|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、微信小程序、支付宝小程序、百度小程序、京东小程序|
+|label|为标记点旁边增加标签|MapMarkerLabel|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、微信小程序、H5、App、百度小程序、支付宝小程序|
+|anchor|经纬度在标注图标的锚点，默认底边中点|{x:number,y:number}|否|{x, y}，x表示横向(0-1)，y表示竖向(0-1)。{x: .5, y: 1} 表示底边中点|App-nvue 2.1.5+、微信小程序、H5、百度小程序、京东小程序|
 |clusterId|自定义点聚合簇效果时使用|Number|否||App-nvue 3.1.0+、微信小程序|
-|customCallout|自定义气泡窗口|Object|否||App-nvue 2.1.5+、微信小程序、支付宝小程序|
+|customCallout|自定义气泡窗口|MapMarkerCallOut|否||App-nvue 2.1.5+、微信小程序、支付宝小程序|
 |aria-label|无障碍访问，（属性）元素的额外描述|String|否||App-nvue 3.1.0+、微信小程序|
 |joinCluster|是否参与点聚合|Boolean|否|如果指定点聚合 此选项值必须设置为true,才会生效|App-nvue 3.1.0+、微信小程序|
 
-**marker 上的气泡 callout**
+**MapMarkerCallOut**
 
 |属性|说明|类型|平台差异说明|
 |:-|:-|:-|:-|
@@ -111,7 +112,7 @@
 |anchorX |横向偏移量，向右为正数|Number|微信小程序2.11.0|
 |anchorY |纵向偏移量，向下为正数|Number|微信小程序2.11.0|
 
-**marker 上的标签 label**
+**MapMarkerLabel**
 
 |属性|说明|类型|平台差异说明|
 |:-|:-|:-|:-|
@@ -142,13 +143,13 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 [MapContext.removeMarkers](/api/location/map?id=createmapcontext) 移除参与聚合的 marker；
 
 
-**polyline**
+**MapPolyLine**
 
 指定一系列坐标点，从数组第一项连线至最后一项
 
 |属性|说明|类型|必填|备注|平台差异说明|
 |:-|:-|:-|:-|:-|:-|
-|points|经纬度数组|Array|是|[{latitude: 0, longitude: 0}]||
+|points|经纬度数组|MapPoint[]|是|[{latitude: 0, longitude: 0}]||
 |color|线的颜色|String|否|8位十六进制表示，后两位表示alpha值，如：#0000AA||
 |width|线的宽度|Number|否|||
 |dottedLine|是否虚线|Boolean|否|默认false|App-nvue 2.1.5+、微信小程序、H5、百度小程序、支付宝小程序、京东小程序|
@@ -156,26 +157,27 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 |arrowIconPath|更换箭头图标|String|否|在arrowLine为true时生效|App-nvue 2.1.5+、微信小程序、百度小程序、京东小程序|
 |borderColor|线的边框颜色|String|否||微信小程序、H5、百度小程序、京东小程序|
 |borderWidth|线的厚度|Number|否||微信小程序、H5、百度小程序、京东小程序|
-|colorList|彩虹线|Array|否|存在时忽略 color 值|App-nvue 3.1.0+、微信小程序|
+|colorList|彩虹线|string[]|否|存在时忽略 color 值|App-nvue 3.1.0+、微信小程序|
 |level|压盖关系<br/>abovelabels 显示在所有 POI 之上（默认）<br/>abovebuildings 显示在楼块之上 POI 之下<br/>aboveroads 显示在所有 POI 之上|String|否||微信小程序|
 
  **注意事项**
 
 - App-nvue 当 arrowLine 为 true 时，显示的是带箭头的图片拼接的线 color 值会被忽略，替换箭头图片的方法[参考文档](https://ask.dcloud.net.cn/article/37901)
 
-**polygon**<br>
+**MapPolygon**
+
 指定一系列坐标点，根据 points 坐标数据生成闭合多边形
 
 |属性|说明|类型|必填|备注
 |:--|:--|:--|:--|:--|
-|points|经纬度数组|array|是|[{latitude: 0, longitude: 0}]
+|points|经纬度数组|MapPoint[]|是|[{latitude: 0, longitude: 0}]
 |strokeWidth|描边的宽度|Number|否||
 |strokeColor|描边的颜色|String|否|十六进制|
 |fillColor|填充颜色|String|否|十六进制|
 |zIndex|设置多边形 Z 轴数值|Number|否||
 |level|压盖关系<br/>abovelabels 显示在所有 POI 之上（默认）<br/>abovebuildings 显示在楼块之上 POI 之下<br/>aboveroads 显示在所有 POI 之上|String|false|微信小程序|
 
-**circles**
+**MapCircle**
 
 在地图上显示圆
 
@@ -189,18 +191,18 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 |strokeWidth|描边的宽度|Number|否|&nbsp;|
 |level|压盖关系<br/>abovelabels 显示在所有 POI 之上（默认）<br/>abovebuildings 显示在楼块之上 POI 之下<br/>aboveroads 显示在所有 POI 之上|String|false|微信小程序|
 
-**controls**
+**MapControl**
 
 在地图上显示控件，控件不随着地图移动
 
 |属性|说明|类型|必填|备注|
 |:-|:-|:-|:-|:-|
 |id|控件id|Number|否|在控件点击事件回调会返回此id|
-|position|控件在地图的位置|Object|是|控件相对地图位置|
+|position|控件在地图的位置|MapPosition|是|控件相对地图位置|
 |iconPath|显示的图标|String|是|项目目录下的图片路径，支持相对路径写法，以'/'开头则表示相对项目根目录；也支持临时路径|
 |clickable|是否可点击|Boolean|否|默认不可点击|
 
-**position**
+**MapPosition**
 
 |属性|说明|类型|必填|备注|
 |:-|:-|:-|:-|:-|
@@ -208,6 +210,13 @@ MapContext.on('markerClusterCreate', callback) 触发时，通过 [MapContext.ad
 |top|距离地图的上边界多远|Number|否|默认为0|
 |width|控件宽度|Number|否|默认为图片宽度|
 |height|控件高度|Number|否|默认为图片高度|
+
+**MapPoint**
+
+|属性|说明|类型|必填|
+|:-|:-|:-|:-|
+|latitude|纬度，浮点数，范围 -90 ~ 90|Number|否|
+|longitude|经度，浮点数，范围 -180 ~ 180|Number|否|
 
 地图组件的经纬度必填，如果不填经纬度则默认值是北京的经纬度。
 
@@ -260,40 +269,40 @@ export default {
 
 #### Map 地图组件
 
-|属性								|说明																		|高德是否支持	|google地图是否支持		|
-|:----							|:----																	|:----				|:----								|
-|subkey							|个性化地图使用的key											|不支持				|不支持								|
-|show-scale					|显示比例尺															|已支持				|不支持								|
-|enable-poi					|是否展示 POI 点													|已支持				|不支持								|
-|labeltap						|点击label时触发													|已支持				|Android支持iOS不支持	|
-|poitap							|点击地图poi点时触发											|已支持				|Android不支持 iOS支持	|
+|属性|说明|高德是否支持|google地图是否支持|
+|:----|:----|:----|:----|
+|subkey|个性化地图使用的key|不支持|不支持|
+|show-scale|显示比例尺|已支持|不支持|
+|enable-poi|是否展示 POI 点|已支持|不支持|
+|labeltap|点击label时触发|已支持|Android支持iOS不支持|
+|poitap|点击地图poi点时触发|已支持|Android不支持 iOS支持|
 
 #### marker
 
-|属性					|说明																	|高德是否支持	|google地图是否支持		|
-|:----				|:----																|:----				|:----								|
-|label				|为标记点旁边增加标签										|已支持				|Android支持 iOS不支持	|
+|属性|说明|高德是否支持|google地图是否支持|
+|:----|:----|:----|:----|
+|label|为标记点旁边增加标签|已支持|Android支持 iOS不支持|
 
 #### marker 上的气泡 callout
 
-|属性					|说明																			|高德是否支持	|google地图是否支持							|
-|:----				|:----																		|:----				|:----													|
-|display			|'BYCLICK':点击显示; 'ALWAYS':常显					|已支持				|Android支持iOS只支持 'BYCLICK'	|
+|属性|说明|高德是否支持|google地图是否支持|
+|:----|:----|:----|:----|
+|display|'BYCLICK':点击显示; 'ALWAYS':常显|已支持|Android支持iOS只支持 'BYCLICK'|
 
 #### marker 上的自定义气泡 customCallout
 
-|属性		|说明															|高德是否支持	|google地图是否支持							|
-|:----	|:----														|:----				|:----													|
-|display|'BYCLICK':点击显示; 'ALWAYS':常显	|已支持				|Android支持iOS只支持 'BYCLICK'	|
+|属性|说明|高德是否支持|google地图是否支持|
+|:----|:----|:----|:----|
+|display|'BYCLICK':点击显示; 'ALWAYS':常显|已支持|Android支持iOS只支持 'BYCLICK'|
 
 #### polyline
 
-|属性					|说明					|高德是否支持	|google地图是否支持			|
-|:----				|:----				|:----				|:----									|
-|colorList		|彩虹线				|已支持				|Android不支持 iOS支持		|
-|dottedLine		|是否虚线			|已支持				|Android已支持 iOS不支持	|
-|arrowLine		|带箭头的线		|已支持				|Android不支持 iOS支持		|
-|arrowIconPath|更换箭头图标	|已支持				|Android不支持 iOS支持		|
+|属性|说明|高德是否支持|google地图是否支持|
+|:----|:----|:----|:----|
+|colorList|彩虹线|已支持|Android不支持 iOS支持|
+|dottedLine|是否虚线|已支持|Android已支持 iOS不支持|
+|arrowLine|带箭头的线|已支持|Android不支持 iOS支持|
+|arrowIconPath|更换箭头图标|已支持|Android不支持 iOS支持|
 
 
 **map 组件相关操作的 JS API**：[uni.createMapContext](api/location/map?id=createmapcontext)

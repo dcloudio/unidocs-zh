@@ -29,7 +29,7 @@
 |sound-mode|string|speaker|声音输出方式;可选值speaker、ear|微信小程序、QQ小程序1.5.0（仅支持speaker）|
 |min-cache|Number|1|最小缓冲区，单位s||
 |max-cache|Number|3|最大缓冲区，单位s||
-|picture-in-picture-mode|string/Array|3|设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]）|微信小程序（2.10.3）|
+|picture-in-picture-mode|string/Array&lt;string&gt;|3|设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]）|微信小程序（2.10.3）|
 |@statechange|EventHandle||播放状态变化事件，detail = {code}||
 |@netstatus|EventHandle||网络状态通知，detail = {info}|| 
 |@fullscreenchange|EventHandle||全屏变化事件，detail = {direction, fullScreen}。|&nbsp;|

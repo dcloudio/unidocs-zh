@@ -6,13 +6,13 @@
 
 虽然app-uvue中写在view的text区域的文字，也会被编译器自动包裹一层text组件，看起来也可以使用。但这样会造成无法修改该text文字的样式，详见uvue的[样式不继承](uni-app-x/css/README.md#stylenoextends)章节
 
-## 属性说明
+**属性说明**
 
 |属性名		|类型	|默认值	|说明			|平台差异说明				|
 |:-|:-			|:-		|:-		|:-				|
 |selectable	|Boolean|false	|文本是否可选	|		|
 |user-select	|Boolean|false	|文本是否可选	| 微信小程序 |
-|space		|String	|		|显示连续空格	|钉钉小程序不支持	|
+|space		|'ensp'/'emsp'/'nbsp'	|		|显示连续空格	|钉钉小程序不支持	|
 |decode		|Boolean|false	|是否解码		|百度、钉钉小程序不支持	|
 
 **space 值说明**

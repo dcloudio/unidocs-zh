@@ -24,7 +24,7 @@ app-nvue也不支持此组件。
 |poster|String||默认控件上的音频封面的图片资源地址，如果 controls 属性值为 false 则设置 poster 无效|
 |name|String|未知音频|默认控件上的音频名字，如果 controls 属性值为 false 则设置 name 无效|
 |author|String|未知作者|默认控件上的作者名字，如果 controls 属性值为 false 则设置 author 无效|
-|@error|EventHandle||当发生错误时触发 error 事件，detail = {errMsg: MediaError.code}|
+|@error|EventHandle||当发生错误时触发 error 事件，detail = {errMsg: string, errCode: number}|
 |@play|EventHandle||当开始/继续播放时触发play事件|
 |@pause|EventHandle||当暂停播放时触发 pause 事件|
 |@timeupdate|EventHandle||当播放进度改变时触发 timeupdate 事件，detail = {currentTime, duration}|

@@ -29,12 +29,12 @@
 |auto-blur|boolean|false|键盘收起时，是否自动失去焦点|App-vue 3.0.0+ ，App-nvue不支持|
 |ignoreCompositionEvent|boolean|true|是否忽略组件内对文本合成系统事件的处理。为 `false` 时将触发 `compositionstart、compositionend、compositionupdate` 事件，且在文本合成期间会触发 `input` 事件|App-vue (3.4.4+)、H5 (3.4.4+)、App-nvue不支持|
 |inputmode|String|"text"|是一个枚举属性，它提供了用户在编辑元素或其内容时可能输入的数据类型的提示。[有效值](#inputmode)|H5（3.7.0+）、App-vue（3.7.0+）|
-|@focus|EventHandle||输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度|仅微信小程序、京东小程序、App（HBuilderX 2.0+ [nvue uni-app模式](http://ask.dcloud.net.cn/article/36074)） 、QQ小程序支持 height|
+|@focus|EventHandle||输入框聚焦时触发，event.detail = { value: string, height: number }，height 为键盘高度|仅微信小程序、京东小程序、App（HBuilderX 2.0+ [nvue uni-app模式](http://ask.dcloud.net.cn/article/36074)） 、QQ小程序支持 height|
 |@blur|EventHandle||输入框失去焦点时触发，event.detail = {value, cursor}|快手小程序不支持|
-|@linechange|EventHandle||输入框行数变化时调用，event.detail = {height: 0, heightRpx: 0, lineCount: 0}|抖音小程序、飞书小程序、快手小程序不支持|
-|@input|EventHandle||当键盘输入时，触发 input 事件，event.detail = {value, cursor}， @input 处理函数的返回值并不会反映到 textarea 上|快手小程序不支持|
-|@confirm|EventHandle||点击完成时， 触发 confirm 事件，event.detail = {value: value}|微信小程序、百度小程序、QQ小程序、京东小程序|
-|@keyboardheightchange|Eventhandle||键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration}|微信小程序基础库2.7.0+、App 3.1.0+|
+|@linechange|EventHandle||输入框行数变化时调用，event.detail = {height: number, heightRpx: number, lineCount: 0}|抖音小程序、飞书小程序、快手小程序不支持|
+|@input|EventHandle||当键盘输入时，触发 input 事件，event.detail = {value: string, cursor: number}， @input 处理函数的返回值并不会反映到 textarea 上|快手小程序不支持|
+|@confirm|EventHandle||点击完成时， 触发 confirm 事件，event.detail = {value: string}|微信小程序、百度小程序、QQ小程序、京东小程序|
+|@keyboardheightchange|Eventhandle||键盘高度发生变化的时候触发此事件，event.detail = {height: number, duration: number}|微信小程序基础库2.7.0+、App 3.1.0+|
 
 
 **confirm-type 有效值**

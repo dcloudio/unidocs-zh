@@ -11,12 +11,12 @@ app-vue和小程序框架，渲染引擎是webview的。但为了优化体验，
 |√|√|√|√|√|x|√|√|x|√|√|
 
 
-
-支持的事件：`click`
+**属性说明**
 
 |属性名|类型|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
 |scroll-top|number/string||设置顶部滚动偏移量，仅在设置了 overflow-y: scroll 成为滚动元素后生效|支付宝小程序不支持|
+|@click|EventHandler||||
 
 
 

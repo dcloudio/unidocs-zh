@@ -4,7 +4,7 @@
 
 需注意在webview渲染的页面中，区域滚动的性能不及页面滚动。
 
-## 属性说明
+**属性说明**
 
 |属性名					|类型		|默认值	|说明																							|平台差异说明	|
 |:-						|:-			|:-		|:-																								|:-			|
@@ -27,7 +27,7 @@
 |scroll-anchoring|Boolean|false|开启 scroll anchoring 特性，即控制滚动位置不随内容变化而抖动，仅在 iOS 下生效，安卓下可参考 CSS overflow-anchor 属性。|微信小程序 2.8.2|
 |@scrolltoupper			|EventHandle|		|滚动到顶部/左边，会触发 scrolltoupper 事件														|			|
 |@scrolltolower			|EventHandle|		|滚动到底部/右边，会触发 scrolltolower 事件														|			|
-|@scroll				|EventHandle|		|滚动时触发，event.detail = {scrollLeft, scrollTop, scrollHeight, scrollWidth, deltaX, deltaY}	|&nbsp;|
+|@scroll				|EventHandle|		|滚动时触发，event.detail = {scrollLeft: number, scrollTop: number, scrollHeight: number, scrollWidth: number, deltaX: number, deltaY: number}	|&nbsp;|
 |@refresherpulling		|EventHandle|		|自定义下拉刷新控件被下拉|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
 |@refresherrefresh		|EventHandle|		|自定义下拉刷新被触发|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
 |@refresherrestore		|EventHandle|		|自定义下拉刷新被复位|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|

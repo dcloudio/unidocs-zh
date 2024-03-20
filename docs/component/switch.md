@@ -10,7 +10,7 @@
 |disabled|Boolean|false|是否禁用|抖音小程序与飞书小程序不支持|
 |type|String|switch|样式，有效值：switch, checkbox||
 |color|Color||switch 的颜色，同 css 的 color|&nbsp;|
-|@change|EventHandle||checked 改变时触发 change 事件，event.detail={ value:checked}||
+|@change|EventHandle||checked 改变时触发 change 事件，event.detail={ value:boolean}||
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/switch/switch)
  

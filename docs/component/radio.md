@@ -6,7 +6,7 @@
 
 |属性名|类型|默认值|说明|
 |:-|:-|:-|:-|
-|@change|EventHandle||``<radio-group>`` 中的选中项发生变化时触发 change 事件，event.detail = {value: 选中项radio的value}|
+|@change|EventHandle||``<radio-group>`` 中的选中项发生变化时触发 change 事件，event.detail = {value: string}|
 
 #### radio
 

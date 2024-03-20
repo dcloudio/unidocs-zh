@@ -83,7 +83,7 @@
 |destroyed	| Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁 [详情](https://v2.cn.vuejs.org/v2/api/#destroyed)	|√	| √		| √		|	|
 |errorCaptured	| 当捕获一个来自子孙组件的错误时被调用 [详情](https://v2.cn.vuejs.org/v2/api/#errorCaptured)	|√	| √	| √	| -	|
 
-
+[页面及组件生命周期流程图](/tutorial/page.md#vue2-lifecycle-flow)
 
 
 ## 实例属性

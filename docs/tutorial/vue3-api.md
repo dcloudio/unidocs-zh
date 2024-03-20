@@ -108,6 +108,7 @@ const app = createApp({})
 |renderTracked	|跟踪虚拟 `DOM` 重新渲染时调用。钩子接收 `debugger event` 作为参数。此事件告诉你哪个操作跟踪了组件以及该操作的目标对象和键。[详情](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#rendertracked)	|√	|√	| √	|
 |renderTriggered	|当虚拟 `DOM` 重新渲染为 `triggered.Similarly` 为`renderTracked`，接收 `debugger event` 作为参数。此事件告诉你是什么操作触发了重新渲染，以及该操作的目标对象和键。[详情](https://v3.cn.vuejs.org/api/options-lifecycle-hooks.html#rendertriggered)	|√	|√	| √	|
 
+[页面及组件生命周期流程图](/tutorial/page.md#vue3-lifecycle-flow)
 
 ## 选项/资源
 

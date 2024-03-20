@@ -1,3 +1,28 @@
+#### 4.04.2024031519-alpha
+* 【uni-app】
+  + Web平台 修复 iOS safari手势返回期间上一页面为空白的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=941)
+  + 微信小程序平台 新增 `uni.requestVirtualPayment` 虚拟支付API [详情](https://uniapp.dcloud.net.cn/api/plugins/virtualPayment.html)
+  + 修复 4.0.2 引发的 vue3 项目 uts 加密插件编译报错的Bug
+  + App平台 修复 wgt热更新后无法调用 uts 加密插件的Bug [详情](https://ask.dcloud.net.cn/question/187762)
+  + App平台 修复 制作应用 wgt 包时包含 uts 插件的Bug [详情](https://ask.dcloud.net.cn/question/181181)
+  + App平台 修复 uni.getFileSystemManager 错误提示信息不准确的Bug [详情](https://ask.dcloud.net.cn/question/184457)
+  + App-Android平台 修复 应用非首次启动可能偶发崩溃的Bug
+  + App-Android平台 修复 uni.getStorageSync 特定情况可能丢失字符的Bug [详情](https://ask.dcloud.net.cn/question/187167)
+  + App-Android平台 修复 nvue textarea 组件特定情况可能引起崩溃的Bug [详情](https://ask.dcloud.net.cn/question/187514)
+* 【uni-app x 插件】
+  + Web平台 优化 减少编译耗时
+  + Web平台 修复 uni.rpx2px在项目发行后调用报错的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=930)
+  + Web平台 修复 instanceof UniXXXElement 报错的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=940)
+  + App-Android平台 修复 组件 text 内容从非空设置为空文本无效的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=950)
+  + App-Android平台 修复 组件 text 设置高度后无法修改文本内容的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=981)
+  + App-Android平台 修复 4.02版引出的 组件 button 属性样式部分情况可能无效的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=900)
+  + App-Android平台 修复 4.02版引出的 组件 button 组件 hover-class 设置为 none 无效的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=958)
+* 【uniCloud 插件】
+  + 【重要】uni-pay 支持微信小程序虚拟支付 [详情](https://doc.dcloud.net.cn/uniCloud/uni-pay/wxpay-virtual.html)
+  + 新增 插件 uni-pay-x，uni-app x 版本的 uni-pay [详情](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app-x.html)
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 更新 地图/定位模块 高德地图 SDK 为 9.8.3 版，高德定位 SDK 为 6.4.2 版，解决无法合规检测的问题 [详情](https://ask.dcloud.net.cn/question/187161)
+
 #### 4.03.2024031101-alpha
 * 【uni-app 插件】
   + Web平台 修复 4.02 引发的 Vue3 项目 .scss 文件条件编译失效的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=912)

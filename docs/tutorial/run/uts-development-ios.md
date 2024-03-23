@@ -19,11 +19,9 @@ When you run the project with the uts plugin to `iOS real device`, the [uts deve
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ios_uts%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6.jpg" style="zoom: 50%" />
 
-## Xcode环境配置
-## Xcode environment configuration
+## Xcode环境配置@xcodeConfig
 
-本地真机运行 `uts插件` 目前需要`Xcode 13.2.1` 或更高版本。
-Running the `uts plugin` on the local real machine currently requires `Xcode 13.2.1` or later.
+本地真机运行 `uts插件` 目前需要安装`Xcode 15.2` 或更高版本，以及和 Xcode版本相同的 Xcode Command Line Tools。
 
 你可以通过 `App Store` 或到[Apple 开发者官网上下载](https://developer.apple.com/xcode/downloads/ank)。这一步骤会同时安装 `Xcode IDE`、`Xcode` 的命令行工具和 `iOS` 模拟器。
 You can download it from the `App Store` or [Apple Developer Website](https://developer.apple.com/xcode/downloads/ank). This step will install the `Xcode IDE`, `Xcode` command-line tools and the `iOS` simulator.

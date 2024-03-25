@@ -15,24 +15,20 @@ module.exports = md => {
   md.parse = (function (mdParse) {
     return function (src, env, insertComponent =  true) {
       if (src) {
-        src = (insertComponent && ppConfig.EN ? '<md-translatedbygoogle />\n' : '') + translate(src)
-      }
-      try {
         src = pp.preprocess(src, ppConfig)
-      } catch (error) {
-        debugger;
+        src = translate(src)
       }
-      return mdParse.bind(this)(src, env)
+      return mdParse.bind(this)((insertComponent && ppConfig.EN ? '<md-translatedByGoogle />\n' : '') + src, env)
     }
   })(md.parse)
-  md.render = (function (mdRender) {
+  /* md.render = (function (mdRender) {
     return function (src, env, insertComponent = true) {
-      /* if (src) {
-        src = (insertComponent && ppConfig.EN ? '<md-translatedbygoogle />\n' : '') + translate(src)
+      if (src) {
+        src = pp.preprocess(src, ppConfig)
+        src = translate(src)
       }
-      src = pp.preprocess(src, ppConfig) */
-      return mdRender.bind(this)(src, env)
+      return mdRender.bind(this)((insertComponent && ppConfig.EN ? '<md-translatedByGoogle />\n' : '') + src, env)
     }
-  })(md.render)
+  })(md.render) */
 }
 module.exports.translate = translate

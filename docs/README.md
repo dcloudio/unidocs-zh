@@ -2,62 +2,75 @@
 pageClass: custom-page-class
 ---
 
-```uni-app``` 是一个使用 [Vue.js](https://vuejs.org/) 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/飞书/QQ/快手/钉钉/淘宝）、快应用等多个平台。
+`uni-app` 是一个使用 [Vue.js](https://vuejs.org/) 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/飞书/QQ/快手/钉钉/淘宝）、快应用等多个平台。
+`uni-app` is a framework for developing all front-end applications using [Vue.js](https://vuejs.org/), developers write a set of codes, which can be published to iOS, Android, Web ( Responsive), as well as various small programs (WeChat/Alipay/Baidu/Toutiao/Feishu/QQ/Kuishou/DingTalk/Taobao), Quick Apps and other platforms.
 
 `DCloud`公司拥有900万开发者、数百万应用、12亿手机端月活用户、数千款uni-app插件、70+微信/qq群。阿里小程序工具官方内置uni-app（[详见](https://opendocs.alipay.com/mini/ide/overview)），腾讯课堂官方为uni-app录制培训课程（[详见](https://ask.dcloud.net.cn/article/35640)），开发者可以放心选择。
+The `DCloud` company has 9 million developers, millions of applications, 1.2 billion mobile monthly active users, thousands of uni-app plug-ins, and 70+ WeChat/QQ groups. The official Alipay tool has built-in uni-app ([see](https://opendocs.alipay.com/mini/ide/overview)), and Tencent Classroom officially recorded training courses for uni-app ([see](https://ask.dcloud.net.cn/article/35640)), developers can choose with confidence.
 
 `uni-app`在手，做啥都不愁。即使不跨端，```uni-app```也是更好的小程序开发框架（[详见](https://ask.dcloud.net.cn/article/35947)）、更好的App跨平台框架、更方便的H5开发框架。不管领导安排什么样的项目，你都可以快速交付，不需要转换开发思维、不需要更改开发习惯。
-
+With `uni-app` in hand, you don't have to worry about doing anything. Even if it is not cross-end, `uni-app` is a better applet development framework ([see details](https://ask.dcloud.net.cn/article/35947)), a better App Cross-platform framework, more convenient H5 development framework. No matter what kind of project the leader arranges, you can deliver it quickly, without changing the development thinking or changing the development habits.
 
 ## 快速体验
+## Quick experience
 
 <div class="quick">
     <!-- <h3 id="快速体验"><a href="/README?id=%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c" data-id="快速体验" class="anchor"><span>快速体验</span></a></h3> -->
     <p>一套代码编到十几个平台，这不是梦想。眼见为实，扫描以下二维码，亲自体验最全面的跨平台效果！</p>
+    <p>It is not a dream to compile one set of code to multiple platforms. Seeing is believing, scan the QR code below to experience the most comprehensive cross-platform effect for yourself!</p>
     <div class="flex-img-group-view">
       <a href="//hellouniappx.dcloud.net.cn/" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx-qrcode.png" width="160" />
         </div>
         <b>Android版(uni-app x)</b>
+        <b>Android version(uni-app x)</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-android.png" width="160" />
         </div>
         <b>Android版(uni-app)</b>
+        <b>Android version(uni-app)</b>
       </a>
       <a href="https://itunes.apple.com/cn/app/hello-uni-app/id1417078253?mt=8" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ios.png" width="160" />
         </div>
         <b>iOS版</b>
+        <b>iOS version</b>
       </a>
       <a href="https://hellouniapp.dcloud.net.cn/" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/uni-h5-hosting-qr.png" width="160" />
         </div>
         <b>Web版</b>
+        <b>Web version</b>
       </a>
     </div>
+      <!-- @ifndef EN -->
     <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="//img.cdn.aliyun.dcloud.net.cn/guide/uniapp/gh_33446d7f7a26_430.jpg" width="160" /></div>
         <b>微信小程序版</b>
+        <b>WeChat MiniApp version</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/alipay1.png" width="160" /></div>
         <b>支付宝小程序版</b>
+        <b>Alipay MiniApp version</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/baidu-uniapp.png" width="160" /></div>
         <b>百度小程序版</b>
+        <b>Baidu MiniApp Version</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/mp-toutiao.png" width="160" />
         </div>
         <b>抖音小程序版</b>
+        <b>DouYin MiniApp Version</b>
       </a>
     </div>
     <div class="flex-img-group-view" style="margin-top: 20px;">
@@ -66,58 +79,73 @@ pageClass: custom-page-class
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hello-uni-qa-union.png" width="160" />
         </div>
         <b>快应用</b>
+        <b> QuickApp</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hello-uni-qq.png" width="160" />
         </div>
         <b>QQ小程序版</b>
+        <b>QQ MiniApp version</b>
       </a>
       <a href="https://so.mp.360.cn/mp.html?appid=qh4j181qqtru354st6" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hello-uni-mp-360-qr.png" width="160" />
         </div>
         <b>360小程序</b>
+        <b>360 MiniApp version</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-kuaishou-new.png" width="160" /></div>
         <b>快手小程序版</b>
+        <b>Kuaishou MiniApp version</b>
       </a>
     </div>
     <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/lark-qr-code.png" width="160" /></div>
         <b>飞书小程序版</b>
+        <b>Lark MiniApp version</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/dingding-qr-code.png" width="160" />
         </div>
         <b>钉钉小程序版</b>
+        <b>DingTalk MiniApp version</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-jd-qrcode.png" width="160" />
         </div>
         <b>京东小程序版</b>
+        <b>Jingdong MiniApp version</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-xhs-qrcode.png" width="160" />
         </div>
         <b>小红书小程序版</b>
+        <b>RED MiniApp version</b>
       </a>
     </div>
+    <!-- @endif -->
     <p>注：<br/>
+    <p>Note:<br/>
         <em>- 某些平台不能提交简单demo，故补充了一些其他功能；hello uni-app示例代码可从[github](https://github.com/dcloudio/hello-uniapp)获取</em></br>
+        <em>- Some platforms cannot submit simple demos, so some other functions have been added; the hello uni-app sample code can be obtained from [github](https://github.com/dcloudio/hello-uniapp)</em> </br>
         <em>- 快应用仅支持 vivo 、oppo、华为</em></br>
+        <em>-Quick QuickApp only supports vivo, oppo, Huawei</em></br>
         <em>- 360小程序仅 windows平台支持，需要在360浏览器中打开</em></br>
+        <em>- The 360 MiniApp is only supported by the windows platform and needs to be opened in the 360 browser</em></br>
     </p>
 </div>
 
 ## 看视频，10分钟了解uni-app
+## Watch the video and learn about uni-app in 10 minutes
 
 我们精心准备了一个简单的十分钟介绍视频，方便你快速了解`uni-app`的主要特征：
+We carefully prepared a simple ten-minute introduction video, so that you can quickly understand the main features of `uni-app`:
 
 <!-- <video id="video" onplay="videoPlay()" preload="none" controls="controls" width="100%" poster="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/poster.png" src="https://web-assets.dcloud.net.cn/unidoc/zh/DCloud.mp4"></video> -->
 
@@ -129,8 +157,10 @@ pageClass: custom-page-class
 
 
 ## 为什么要选择uni-app？
+## Why choose uni-app?
 
-```uni-app```在开发者数量、案例、跨端抹平度、扩展灵活性、性能体验、周边生态、学习成本、开发成本等8大关键指标上拥有更强的优势。
+`uni-app`在开发者数量、案例、跨端抹平度、扩展灵活性、性能体验、周边生态、学习成本、开发成本等8大关键指标上拥有更强的优势。
+`uni-app` has stronger advantages in 8 key indicators including the number of developers, case studies, cross-end leveling, expansion flexibility, performance experience, surrounding ecosystem, learning cost, and development cost.
 
 <div class="uniapp-home-content">
     <div class="uniapp-home-content-item">
@@ -139,8 +169,11 @@ pageClass: custom-page-class
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">开发者/案例数量更多</h5>
+        <h5 class="uniapp-home-content-item-title">More developers/cases</h5>
         <p class="uniapp-home-content-item-text">数百万应用、uni统计月活12亿、70+微信/qq群、更高的百度指数</p>
+        <p class="uniapp-home-content-item-text">Millions of applications, uni statistics monthly activity of 1.2 billion, 70+ WeChat/QQ groups, higher Baidu index</p>
         <p class="uniapp-home-content-item-text">跨端完善度更高，真正落地的提高生产力</p>
+        <p class="uniapp-home-content-item-text">Higher cross-platform completeness, truly improve productivity that can be implemented</p>
       </div>
     </div>
     <div class="uniapp-home-content-item">
@@ -149,8 +182,11 @@ pageClass: custom-page-class
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">平台能力不受限</h5>
+        <h5 class="uniapp-home-content-item-title">Platform capabilities are not limited</h5>
          <p class="uniapp-home-content-item-text">在跨端的同时，通过条件编译+平台特有API调用，可以优雅的为某平台写个性化代码，调用专有能力而不影响其他平台。</p>
+         <p class="uniapp-home-content-item-text">While cross-platform, through conditional compilation + platform-specific API calls, you can elegantly write personalized code for a platform, call proprietary capabilities without affecting other platforms.</p>
         <p class="uniapp-home-content-item-text">支持原生代码混写和原生sdk集成。</p>
+        <p class="uniapp-home-content-item-text">Support native code hybrid writing and native SDK integration.</p>
       </div>
     </div>
     <div class="uniapp-home-content-item">
@@ -159,9 +195,13 @@ pageClass: custom-page-class
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">性能体验优秀</h5>
+        <h5 class="uniapp-home-content-item-title">Excellent performance experience</h5>
         <p class="uniapp-home-content-item-text">加载新页面速度更快、自动diff更新数据。</p>
+        <p class="uniapp-home-content-item-text">Faster loading of new pages, automatic diff update data.</p>
         <p class="uniapp-home-content-item-text">App端支持原生渲染，可支撑更流畅的用户体验。</p>
+        <p class="uniapp-home-content-item-text">App-side supports native rendering, supporting smoother user experience.</p>
         <p class="uniapp-home-content-item-text">小程序端的性能优于市场其他框架。<a href="https://ask.dcloud.net.cn/article/35947" target="_blank">评测</a></p>
+        <p class="uniapp-home-content-item-text">The performance of the mini-program side is better than other frameworks on the market.<a href="https://ask.dcloud.net.cn/article/35947" target="_blank">Evaluation</a></p>
       </div>
     </div>
     <div class="uniapp-home-content-item">
@@ -170,9 +210,13 @@ pageClass: custom-page-class
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">周边生态丰富</h5>
+        <h5 class="uniapp-home-content-item-title">Rich peripheral ecosystem</h5>
         <p class="uniapp-home-content-item-text"><a href="https://ext.dcloud.net.cn/?orderBy=WeekDownload" target="_blank">插件市场</a>数千款插件。</p>
+        <p class="uniapp-home-content-item-text"><a href="https://ext.dcloud.net.cn/?orderBy=WeekDownload" target="_blank">Plugin Market</a> Thousands of plugins.</p>
         <p class="uniapp-home-content-item-text">支持NPM、支持小程序组件和SDK。</p>
+        <p class="uniapp-home-content-item-text">Support NPM, support mini-program components and SDK.</p>
         <p class="uniapp-home-content-item-text">微信生态的各种sdk可直接用于跨平台App。</p>
+        <p class="uniapp-home-content-item-text">Various SDKs in the WeChat ecosystem can be directly used for cross-platform apps.</p>
       </div>
     </div>
     <div class="uniapp-home-content-item">
@@ -181,7 +225,9 @@ pageClass: custom-page-class
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">学习成本低</h5>
+        <h5 class="uniapp-home-content-item-title">Low learning cost</h5>
         <p class="uniapp-home-content-item-text">基于通用的前端技术栈，采用vue语法+微信小程序api，无额外学习成本。</p>
+        <p class="uniapp-home-content-item-text">Based on common front-end technology stacks, using Vue syntax + WeChat mini-program API, no additional learning costs.</p>
       </div>
     </div>
     <div class="uniapp-home-content-item">
@@ -190,8 +236,11 @@ pageClass: custom-page-class
       </div>
       <div class="uniapp-home-content-item-header">
         <h5 class="uniapp-home-content-item-title">开发成本低</h5>
+        <h5 class="uniapp-home-content-item-title">Low development cost</h5>
         <p class="uniapp-home-content-item-text">不止开发成本，招聘、管理、测试各方面成本都大幅下降。</p>
+        <p class="uniapp-home-content-item-text">Not only development costs, but also recruitment, management, testing costs are greatly reduced.</p>
         <p class="uniapp-home-content-item-text">HBuilderX是高效开发神器，熟练掌握后研发效率至少翻倍（即便只开发一个平台）。</p>
+        <p class="uniapp-home-content-item-text">HBuilderX is an efficient development artifact. After mastering it proficiently, research and development efficiency will double at least (even if only developing one platform).</p>
       </div>
     </div>
 </div>
@@ -212,17 +261,23 @@ pageClass: custom-page-class
 - 对于公司而言：更低成本，覆盖更多用户，```uni-app```是高效利器。 -->
 
 ## 功能框架图
+## Functional frame diagram
 
 从下面`uni-app`功能框架图可看出，`uni-app`在跨平台的过程中，不牺牲平台特色，可优雅的调用平台专有能力，真正做到海纳百川、各取所长。
+As can be seen from the functional frame diagram of `uni-app` below, `uni-app` does not sacrifice the platform features in the process of cross-platform, but can gracefully call the platform's proprietary capabilities, and truly embrace all rivers and learn from each other's strengths.
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-function-diagram.png)
 
 ## 一套代码，运行到多个平台
+## One set of code, running on multiple platforms
 
 `uni-app`实现了一套代码，同时运行到多个平台；如下图所示，一套代码，同时运行到iOS模拟器、Android模拟器、web、微信开发者工具、支付宝小程序Studio、百度开发者工具、抖音开发者工具、QQ开发者工具（底部每个终端选项卡，代表1个终端模拟器）：
+`uni-app` implements a set of codes that run on multiple platforms at the same time; as shown in the figure below, a set of codes runs on iOS emulators, Android emulators, web, WeChat developer tools, Alipay MiniApp Studio, Baidu Developer Tools, ByteDance Developer Tools, QQ Developer Tools (each terminal tab at the bottom represents 1 terminal emulator):
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/dev1x8.jpg)
 
+<!-- @ifndef EN -->
 实际运行效果如下（点击图片可放大）：
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg)#{.zooming}
+<!-- @endif -->

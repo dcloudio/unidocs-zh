@@ -38,16 +38,6 @@ export const navbar = [
         link: '/api/'
       },
       {
-        text: 'UTS',
-        type: 'link',
-        link: '/uts/'
-      },
-      /* {
-        text: 'uni-app x',
-        type: 'link',
-        link: '/uni-app-x/'
-      }, */
-      {
         text: 'Plugin',
         type: 'link',
         link: '/plugin/'
@@ -58,10 +48,9 @@ export const navbar = [
         link: '/worktile/'
       },
       {
-        link: "https://github.com/dcloudio/uni-app",
-        target: "_blank",
-        text: "GitHub",
-        type: "link"
+        text: 'UTS',
+        type: 'link',
+        link: 'https://doc.dcloud.net.cn/uni-app-x/uts/'
       },
       {
         text: '其他规范',
@@ -72,16 +61,31 @@ export const navbar = [
           type: 'link',
           link: 'https://weexapp.com/'
         }]
+      },
+      {
+        link: "https://github.com/dcloudio/uni-app",
+        target: "_blank",
+        text: "GitHub",
+        type: "link"
       }
     ]
   },
   {
-    text: 'uniCloud',
-    type: 'link',
-    link: '/uniCloud/'
+    text: 'uni-app x',
+    link: 'https://doc.dcloud.net.cn/uni-app-x/',
+    type: "link",
+    target: '_blank',
+    needOutbound: false
   },
   {
-    text: 'HBuilder X',
+    text: 'uniCloud',
+    link: 'https://doc.dcloud.net.cn/uniCloud/',
+    type: "link",
+    target: '_blank',
+    needOutbound: false
+  },
+  {
+    text: 'HBuilder',
     link: 'https://www.dcloud.io/hbuilderx.html?lang=en',
     type: "link",
     target: '_blank',

@@ -141,6 +141,7 @@ export default {
  非`static`目录下的静态资源在`vue3`下，被引用的资源会编译到 `assets` 目录下，并重新命名为 `原始名称+内容hash`,如：`logo.png` 会编译为类似 `logo.cfd8fa94.png` 的名称。如果该静态资源未被引用，则不会被编译器处理。
  
  非`static`目录下的静态资源在`vue2`不同平台下，编译规则有些不同：
+ > 自 `HBuilderX 4.0` 起已和 `vue3` 保持一致
 
 - web: 静态资源将会编译到 `static -> img` 下, 如小于 4k 则转为base64
 - 小程序：静态资源将会编译到资源同名文件下，如小于 40kb 则转base64

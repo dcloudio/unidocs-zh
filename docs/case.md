@@ -569,8 +569,6 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **云南财政厅阳光云财一网通：** [App](https://android.myapp.com/myapp/detail.htm?apkName=com.zqlian.ynfuchi)
 
-**云南社保局参保缴费申报：** [H5](http://hrss.yn.gov.cn/modules/ginseng/#/)
-
 **内蒙古体育局：** [H5](http://tyj.nmg.gov.cn/h5/#/)
 
 **内蒙古呼和浩特市青城党建e家微应用：** [H5](http://qcdj.hhhtdj.gov.cn:8082/h5/)

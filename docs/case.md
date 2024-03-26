@@ -799,9 +799,6 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 **云南财政厅阳光云财一网通：** [App](https://android.myapp.com/myapp/detail.htm?apkName=com.zqlian.ynfuchi)
 **Sunshine Yuncai Netcom of Yunnan Department of Finance:** [App](https://android.myapp.com/myapp/detail.htm?apkName=com.zqlian.ynfuchi)
 
-**云南社保局参保缴费申报：** [H5](http://hrss.yn.gov.cn/modules/ginseng/#/)
-**Yunnan Social Security Bureau Insurance Payment Declaration:** [H5](http://hrss.yn.gov.cn/modules/ginseng/#/)
-
 **内蒙古体育局：** [H5](http://tyj.nmg.gov.cn/h5/#/)
 **Inner Mongolia Sports Bureau:** [H5](http://tyj.nmg.gov.cn/h5/#/)
 

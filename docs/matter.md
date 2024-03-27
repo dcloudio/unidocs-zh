@@ -278,6 +278,8 @@ If you have done WeChat MiniApp development, you should already be familiar with
 * 为避免和内置组件冲突，自定义组件请加上前缀（但不能是 u 和 uni）。比如可使用的自定义组件名称：`my-view`、`m-input`、`we-icon`，例如不可使用的自定义组件名称：`u-view`、`uni-input`，如果已有项目使用了可能造成冲突的名称，请修改名称，另外微信小程序下自定义组件名称不能以 wx 开头。
 * To avoid conflicts with built-in components, please add prefixes to custom components (but not u and uni). For example, the names of custom components that can be used: `my-view`, `m-input`, `we-icon`, such as the names of custom components that cannot be used: `u-view`, `uni-input`, if already Some projects use names that may cause conflicts. Please modify the names. In addition, the names of custom components under WeChat MiniApp cannot start with wx.
 
+* vue3 开发阶段不会自动处理语法兼容问题，如果在低版本浏览器上运行，需要自行处理，可参考[详情](https://cn.vitejs.dev/config/build-options.html#build-target)。
+
 ### 小程序开发注意@mp
 ### MiniApp development attention @mp
 

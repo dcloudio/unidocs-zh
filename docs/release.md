@@ -1,3 +1,12 @@
+#### 4.07.2024032720
+* 【uni-app 插件】
+  + Web平台、APP平台 修复 4.06版引出的 button 更改 border-radius 后边框样式不对的Bug [详情](https://ask.dcloud.net.cn/question/188417)
+* 【uni-app x 插件】
+  + Web平台 修复 4.06版引出的 button 更改 border-radius 后边框样式不对的Bug
+* 【uniCloud】
+  + 修复 上传/下载所有公共模块时HBuilderX控制台无响应的Bug [详情](https://ask.dcloud.net.cn/question/188162)
+  + 修复 Web发行目录从H5调整为Web后，导致的上传前端网页托管失败的Bug
+
 #### 4.06.2024032513
 * 【uni-app 插件】
   + 微信小程序平台 新增 `uni.requestVirtualPayment` 虚拟支付API [详情](https://uniapp.dcloud.net.cn/api/plugins/virtualPayment.html)

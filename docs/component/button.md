@@ -49,6 +49,7 @@
 
 - **注1：``button-hover`` 默认为 ``{background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}``**
 - ```open-type="launchApp"```时需要调起的APP接入微信OpenSDK[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html)
+- 微信小程序、Web、App平台 button组件的默认边框宽度为0.5px，不会占据实际的渲染宽高；当type属性为plain时，边框宽度是1px，如果未指定元素的宽高，此时边框宽度会占据实际渲染宽高。
 
 ## size 有效值
 

@@ -1,3 +1,12 @@
+#### 4.07.2024032807-alpha
+* 【uni-app 插件】
+  + Web平台、APP平台 修复 4.06版引出的 button 更改 border-radius 后边框样式不对的Bug [详情](https://ask.dcloud.net.cn/question/188417)
+* 【uni-app x 插件】
+  + Web平台 修复 4.06版引出的 button 更改 border-radius 后边框样式不对的Bug
+* 【uniCloud】
+  + 修复 上传/下载所有公共模块时HBuilderX控制台无响应的Bug [详情](https://ask.dcloud.net.cn/question/188162)
+  + 修复 Web发行目录从H5调整为Web后，导致的上传前端网页托管失败的Bug
+
 #### 4.05.2024032021-alpha
 * 【uni-app-x】
   + Web平台 修复 部分情况下picker-view、picker-view-column值显示错误并额外触发了change事件的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=1009)

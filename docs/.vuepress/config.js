@@ -9,7 +9,10 @@ const { simplifySlugText, tabs_zh, tabs_en } = require('./utils')
 const config_zh = require('./build/config.zh');
 const config_en = require('./build/config.en');
 
-const config = {
+const tabs = process.env.DOCS_LOCAL === 'en' ? tabs_en : tabs_zh
+const config = process.env.DOCS_LOCAL === 'en' ? config_en : config_zh
+
+module.exports = merge({
   theme: 'vuepress-theme-uniapp-official',
   title: 'uni-app官网',
   description: 'uni-app,uniCloud,serverless',

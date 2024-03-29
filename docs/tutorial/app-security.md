@@ -1,4 +1,5 @@
 ## 产品简介
+> uni安全加固相关功能建议或问题，可以加入uni-im交流群进行讨论，[点此加入](https://im.dcloud.net.cn/#/?joinGroup=64cb6a4e8f0d19117baf79cd)
 
 uni安全加固是DCloud联合业内主流安全厂商提供的移动App安全加固技术。
 

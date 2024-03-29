@@ -9,11 +9,8 @@ const { simplifySlugText, tabs_zh, tabs_en } = require('./utils')
 const config_zh = require('./build/config.zh');
 const config_en = require('./build/config.en');
 
-const tabs = process.env.DOCS_LOCAL === 'en' ? tabs_en : tabs_zh
-const config = process.env.DOCS_LOCAL === 'en' ? config_en : config_zh
-
-module.exports = merge({
-  theme: 'vuepress-theme-uni-app-test',
+const config = {
+  theme: 'vuepress-theme-uniapp-official',
   title: 'uni-app官网',
   description: 'uni-app,uniCloud,serverless',
   evergreen: process.env.NODE_ENV === 'development',
@@ -89,21 +86,6 @@ module.exports = merge({
         .end()
 				.plugin('img-add-attrs')
 				.use(require('./markdown/img-add-attrs'))
-        .end()
-				.plugin('attrs')
-        .use(require('markdown-it-attrs'),[{
-          leftDelimiter: '#{',
-          rightDelimiter: '}'
-        }])
-        .end()
-        .plugin('task-lists')
-        .use(require('markdown-it-task-lists'))
-        .end()
-        .plugin('inject-json-to-md')
-        .use(require('./markdown/inject-json-to-md'))
-        .end()
-        .plugin('markdown-it-raw-table')
-        .use(require('markdown-it-raw-table'))
     }
   },
   chainWebpack (config, isServer) {

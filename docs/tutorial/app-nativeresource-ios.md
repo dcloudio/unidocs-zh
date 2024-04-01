@@ -14,8 +14,7 @@ HBuilderX3.6.5起，支持直接在应用项目中配置 iOS 平台的 Info.plis
 Starting from HBuilderX3.6.5, it supports directly configuring the Info.plist and resource files (Bundle Resources) of the iOS platform in the application project.
 
 
-## 配置文件 Info.plist
-## Configuration file Info.plist
+## 配置文件 Info.plist@infoPlist
 
 在HBuilderX中，对项目根目录右键菜单 "新建" -> "自定义文件"  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/newfile.png)

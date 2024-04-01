@@ -9,7 +9,7 @@ app打包，在iOS原生开发中提供了配置 Info.plist 和 资源文件（B
 HBuilderX3.6.5起，支持直接在应用项目中配置 iOS 平台的 Info.plist 和 资源文件（Bundle Resources）。
 
 
-## 配置文件 Info.plist
+## 配置文件 Info.plist@infoPlist
 
 在HBuilderX中，对项目根目录右键菜单 "新建" -> "自定义文件"  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/newfile.png)

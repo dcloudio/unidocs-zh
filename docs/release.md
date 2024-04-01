@@ -1,3 +1,7 @@
+#### 4.08.2024040123
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 更新 地图/定位模块 高德地图 SDK 为10.0.600 版，高德定位 SDK 为 6.4.3 版，解决在部分设备可能定位失败的Bug [详情](https://ask.dcloud.net.cn/question/187119)
+
 #### 4.07.2024032720
 * 【uni-app 插件】
   + Web平台、APP平台 修复 4.06版引出的 button 更改 border-radius 后边框样式不对的Bug [详情](https://ask.dcloud.net.cn/question/188417)

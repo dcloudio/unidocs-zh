@@ -48,6 +48,73 @@ HBuilderX3.6.5起，支持直接在应用项目中配置 iOS 平台的 Info.plis
 - plist文件配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 
 
+### iOS隐私信息访问描述配置  
+如果应用需要修改隐私信息访问的许可描述，可根据需求在`Info.plist`文件中添加，如下示例：
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>读取相册的许可描述</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>读写相册的许可描述</string>
+    <key>NSCameraUsageDescription</key>
+    <string>使用摄像头的许可描述</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>使用麦克风的许可描述</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>运行期访问位置信息的许可描述</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>后台运行期访问位置信息的许可描述</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>访问位置信息的许可描述</string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>访问日历的许可描述</string>
+    <key>NSContactsUsageDescription</key>
+    <string>访问通讯录的许可描述</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>使用蓝牙的许可描述</string>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>持续使用蓝牙的许可描述</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>使用系统语音识别的许可描述</string>
+    <key>NSRemindersUsageDescription</key>
+    <string>访问提醒事项的许可描述</string>
+    <key>NSMotionUsageDescription</key>
+    <string>访问运动与健身的许可描述</string>
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>更新健康数据的许可描述</string>
+    <key>NSHealthShareUsageDescription</key>
+    <string>分享健康数据的许可描述</string>
+    <key>NSAppleMusicUsageDescription</key>
+    <string>访问媒体资料库的许可描述</string>
+    <key>NFCReaderUsageDescription</key>
+    <string>使用NFC的许可描述</string>
+    <key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
+    <string>访问临床记录信息的许可描述</string>
+    <key>NSHomeKitUsageDescription</key>
+    <string>访问HomeKit数据的许可描述</string>
+    <key>NSSiriUsageDescription</key>
+    <string>访问Siri的许可描述</string>
+    <key>NSFaceIDUsageDescription</key>
+    <string>使用FaceID的许可描述</string>
+    <key>NSLocalNetworkUsageDescription</key>
+    <string>使用本地网络的许可描述</string>
+    <key>NSUserTrackingUsageDescription</key>
+    <string>跟踪用户活动的许可描述</string>
+  </dict>
+</plist>
+```
+
+**注意**  
+uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的配置，需在此Info.plist中添加。  
+配置许可描述时需根据应用实际情况准确描述用途，否则提交AppStore审核可能被拒。
+
+**相关参考**  
+- iOS隐私信息访问列表，参考：[https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources](https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources)
+
+
 
 ##  资源文件（Bundle Resources）  
 

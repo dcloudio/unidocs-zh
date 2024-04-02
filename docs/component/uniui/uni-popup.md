@@ -240,7 +240,7 @@ export default {
 |cancelText **[1.7.4新增]**|String|-|定义取消按钮文本|
 |maxlength **[1.8.6新增]**|Number|-|限制输入框字数（当mode="input"时生效）|
 |showClose **[1.8.5新增]**|Boolean|-|是否显示取消按钮|
-|value| String\Number|-|输入框默认值，input模式下生效|
+|value| String\Number|-|输入框值，input模式下生效 注：1.9.0之后为双向绑定,vue2通过value,vue3通过v-model绑定|
 |placeholder|String|-|输入框提示文字，input模式下生效|
 |borderRadius|String|-|四周圆角值（左上、右上、右下、左下） 示例："20px 20px 20px 20px"|
 |before-close|Boolean|false	| 是否拦截按钮事件，如为true，则不会关闭对话框，关闭需要手动执行 uni-popup 的 close 方法|

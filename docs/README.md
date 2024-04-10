@@ -17,9 +17,9 @@ pageClass: custom-page-class
     <div class="flex-img-group-view">
       <a href="//hellouniappx.dcloud.net.cn/" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx-qrcode.png" width="160" />
+          <img src="https://web-ext-storage.dcloud.net.cn/uni-app-x/hello-uniappx-qrcode.png" width="160" />
         </div>
-        <b>Android版(uni-app x)</b>
+        <b>Android、iOS(uni-app x)</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">

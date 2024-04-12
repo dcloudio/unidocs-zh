@@ -632,8 +632,9 @@ sign = sha256(secret:transid)
 #### 接入流程(传统用户系统)
 
 1. 配置 [uni-open-bridge](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html) 托管三方开放平台数据，详情如下:
-1.1 在 uni-id-config 中配置微信小程序的 `appid`、`appsecret`
-1.2 由 传统服务器通过 http 的方式主动将微信小程序的 `access_token` `session_key` 同步到 uni-open-bridge, `encrypt_key` 由 uni-open-bridge 自动向微信服务器获取
+- 1.1 在 uni-id-config 中配置微信小程序的 `appid`、`appsecret` [详见](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#config)
+- 1.2 云函数URL化配置：在[uniCloud 的 web控制台](https://unicloud.dcloud.net.cn) 服务空间--》云函数/云对象--》uni-open-bridge--》详情--》云函数URL化--》编辑配置`/uni-open-bridge`保存。
+- 1.3 由 传统服务器从微信获取到相关凭据通过 http 的方式主动将微信小程序的 `access_token` `session_key` 通过[setAccessToken](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html#setaccesstoken)，[setSessionKey](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html#setsessionkey) ，同步到 uni-open-bridge，`encrypt_key` 由 uni-open-bridge 自动向微信服务器获取。
 
 2. 配置 [安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
 3. 在微信小程序客户端初始化安全网络并传递 openid，通过 uni.checkSession() 检查登录是否过期，过期后需要重新登录并由开发者服务器将 `session_key` 同步到 uni-open-bridge

@@ -118,11 +118,12 @@ export default {
 |  placeholder  |    String     |     -      |  请选择  |                   输入框的提示文字                   |
 |   emptyTips   |    String     |     -      | 暂无数据 |         没有数据时显示的文字 ，本地数据无效          |
 |   placement   |    String     | bottom,top |  bottom  |                      弹出时位置                      |
+|   page-size   |    Number     |     -      |    20    | 返回的数据量（云端请求时有效，更多云端属性详见下方） |
 
-#### DataCom Props
 
-更多 DataCom 支持的属性参考[更多](https://uniapp.dcloud.net.cn/component/datacom.html#%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C)
-More attributes supported by DataCom [more](https://uniapp.dcloud.net.cn/component/datacom.html#%E8%AF%AD%E6%B3%95%E6%89%8B%E5 %86%8C)
+#### 使用云端数据时的属性（DataCom Props）
+
+更多 DataCom 支持的属性参考（包括：设置返回20个的默认大小）[更多](https://uniapp.dcloud.net.cn/component/datacom.html#%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C)
 
 #### Localdata Options
 

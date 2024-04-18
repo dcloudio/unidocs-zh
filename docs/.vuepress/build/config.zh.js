@@ -1,7 +1,6 @@
 const copyOptions = require('../config/zh/copy');
 
 const config = {
-  theme: 'vuepress-theme-uni-app-test',
   title: 'uni-app官网',
   head: [
     ['link', {

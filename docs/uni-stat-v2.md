@@ -411,9 +411,7 @@ In `uni statistics 2.0`, the default trigger period of the `timed task cloud fun
 You can modify the trigger period of the `Scheduled Task Cloud Function (uni-stat-cron)` to the minute level (that is, every n minutes) as needed, but pay attention to the modification of the trigger period, you need to ensure that [Scheduled Task Configuration Item](#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E ) whether the number of minutes set in ) will be triggered, for example, your configuration item is set to trigger on the 10th minute of every hour (expression: `* * * 10`), while the timing trigger is set to trigger every 20 minutes 1 time (`0 1/20 * * * * *`), then this configuration item will never be triggered.
 
 ::: warning 注意
-::: warning attention
-1. 现阶段阿里云仅支持小时级的定时任务（即阿里云云函数的定时触发的最小间隔只能设置为每小时触发一次），因此现阶段阿里云用户如想将`定时任务云函数（uni-stat-cron）`的触发周期设置为分钟级须先向DCloud申请后再开启。[申请方式](https://uniapp.dcloud.io/uniCloud/price.html#aliyun)
-1. At this stage, Alibaba Cloud only supports hourly scheduled tasks (that is, the minimum interval of timed triggering of Alibaba Cloud cloud functions can only be set to be triggered once an hour). -stat-cron)`'s trigger period is set to minute level. You must apply to DCloud before enabling it. [How to apply](https://uniapp.dcloud.io/uniCloud/price.html#aliyun)
+1. 阿里云正式版最低触发间隔为1分钟，支付宝云与腾讯云最低触发间隔为1秒
 2. 因云函数单次最大运行时长为10分钟，所以开启分钟级定时任务后，如果想重新设置定时任务中触发时间的话，最好确保各定时任务之间的触发间隔时间要大于等于10分钟，防止出现运行超时的问题。默认定时任务类型和触发时间可参考下方[定时任务配置说明](#定时任务配置说明)的说明。
 2. Since the cloud function can run for a maximum of 10 minutes at a time, if you want to reset the trigger time in the scheduled task after enabling the minute-level scheduled task, it is best to ensure that the trigger interval between the scheduled tasks is greater than or equal to 10 minutes. , to prevent the problem of running timeout. The default scheduled task type and trigger time can refer to the following [Scheduled Task Configuration Description](#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E9%85%8D%E7 %BD%AE%E8%AF%B4%E6%98%8E).
 :::

@@ -418,11 +418,8 @@ Compressed image interface, optional compression quality
 | width | String | auto | 否 | 缩放图片的宽度，支持像素值（如"100px"）、百分比（如"50%"）、自动计算（如"auto"，即根据width与源图宽的缩放比例计算，若未设置width则使用源图宽度）|App 3.0.0+|
 | width | String | auto | No | Scale the width of the picture, support pixel value (such as "100px"), percentage (such as "50%"), automatic calculation (such as "auto", that is, zoom according to the width and the width of the source image Scale calculation, if width is not set, the source image width will be used) | App 3.0.0+|
 | height | String | auto | 否 | 缩放图片的高度，支持像素值（如"100px"）、百分比（如"50%"）、自动计算（如"auto"，即根据height与源图高的缩放比例计算，若未设置height则使用源图高度）|App 3.0.0+|
-| height | String | auto | No | The height of the scaled image, supports pixel value (such as "100px"), percentage (such as "50%"), automatic calculation (such as "auto", that is, scaling according to the height and the height of the source image Scale calculation, if the height is not set, the height of the source image will be used) | App 3.0.0+|
-| compressedWidth | Number | - | 否 | 压缩后图片的宽度，单位为px，若不填写则默认以 compressHeight 为准等比缩放 |微信小程序2.26.0 +|
-| compressedWidth | Number | - | No| The width of the compressed image, in px, if not filled, the default will be scaled according to the compressedHeight|WeChat MiniApp 2.26.0+|
-| compressHeight | Number | - | 否 | 压缩后图片的高度，单位为px，若不填写则默认以 compressedWidth 为准等比缩放 |微信小程序2.26.0 +|
-| compressHeight | Number | - | No| The height of the compressed image, in px, if not filled in, the compressedWidth will be used as the default scaling|WeChat MiniApp 2.26.0+|
+| compressedWidth | Number | - | 否 | 压缩后图片的宽度，单位为px，若不填写则默认以 compressedHeight 为准等比缩放 |微信小程序2.26.0 +|
+| compressedHeight | Number | - | 否 | 压缩后图片的高度，单位为px，若不填写则默认以 compressedWidth 为准等比缩放 |微信小程序2.26.0 +|
 | rotate | Number | 0 | 否 | 旋转度数，范围0～360 |App 3.0.0+|
 | rotate | Number | 0 | No | Rotation degree, range 0～360 | App 3.0.0+|
 | success | Function |  | 否 | 接口调用成功的回调函数 ||

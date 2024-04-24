@@ -133,3 +133,7 @@ await tag.$('.test')
 ### 测试示例
 
 GitHub： [https://github.com/dcloudio/hello-uniapp](https://github.com/dcloudio/hello-uniapp)
+
+### 更新记录
+
+- `HBuilderX 4.13` 支持 `page.data` 获取 `defineExpose` 暴露的数据

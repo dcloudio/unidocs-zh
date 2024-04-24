@@ -21,7 +21,7 @@
 - 使用的`原生语言插件`或`uts插件`未支持隐私清单，且提交审核时因隐私清单相关问题被拒  
 
 这时需要你根据实际情况制作补充隐私清单文件`PrivacyInfo.xcprivacy`，详情可参考[制作隐私清单文件PrivacyInfo.xcprivacy](#privacyInfo)。  
-将制作的私清单文件`PrivacyInfo.xcprivacy`保存在项目的 `nativeResources/ios` 目录，详情如下：  
+将制作的隐私清单文件`PrivacyInfo.xcprivacy`保存在项目的 `nativeResources/ios` 目录，详情如下：  
 ![](https://web-ext-storage.dcloud.net.cn/doc/app/ios/app-setup-ios-privacyinfo.jpg)
 
 > 添加或编辑隐私清单文件`PrivacyInfo.xcprivacy`后需提交云端打包后才能生效  

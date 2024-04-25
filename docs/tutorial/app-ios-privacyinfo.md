@@ -136,5 +136,6 @@ codesign --timestamp -v --sign "证书名称" SDK名称.xcframework
 
 
 ## 小程序SDK/离线SDK如何支持隐私清单
-`HBuilderX 4.13`版本开始我们在原生示例工程里内置了默认的`PrivacyInfo.xcprivacy` 文件，开发者可根据自身项目情况编辑后重新出包  
+`HBuilderX 4.13`版本开始我们在原生示例工程里内置了默认的`PrivacyInfo.xcprivacy` 文件，开发者可根据自身项目情况编辑后重新出包
+参考：[uniMPSDK隐私清单](https://nativesupport.dcloud.net.cn/UniMPDocs/UseSdk/ios.html#%25E9%259A%2590%25E7%25A7%2581%25E6%25B8%2585%25E5%258D%2595)、[离线SDK隐私清单](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios.html#%25E9%259A%2590%25E7%25A7%2581%25E6%25B8%2585%25E5%258D%2595)  
 

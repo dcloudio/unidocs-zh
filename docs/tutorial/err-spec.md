@@ -79,6 +79,7 @@ Uni统一错误信息，用于统一各平台（端）错误信息
 	对于已经实现的API，继续保留现有errCode规范（保留向下兼容）。\
 	错误码长度及规范参考微信小程序的[Errno错误码](https://developers.weixin.qq.com/miniprogram/dev/framework/usability/PublicErrno.html#%E9%94%99%E8%AF%AF%E7%A0%81%E5%88%97%E8%A1%A8)，使用 7 位数错误码，第 1 - 2 位标识 API 接口的一级类目，第 3 - 4 位标识 API 接口的二级类目，第 5 - 7 位表示具体的错误类型。
 	其他平台，与微信小程序相同的错误，错误码应尽量保持一致。定义平台专有错误码时，为了避免冲突，错误码的第 5 - 7 位按以下规则：  
+	+ 跨端（App/Web）：使用6xx
 	+ App-Android端：使用7xx  
 	+ App-iOS端：使用8xx  
 	+ Web端：使用9xx  

@@ -1,16 +1,17 @@
 
 # API
 
-## program
+## Uni 测试框架 API
+
+### program
 
 program 是uni-automator自动注入的全局对象
 program is the global object automatically injected by uni-automator
 
 
-### 方法
-### method
+#### 方法
 
-#### program.pageStack
+##### program.pageStack
 
 获取页面堆栈。
 Get the page stack.
@@ -18,7 +19,7 @@ Get the page stack.
 `program.pageStack(): Promise<Page[]> `
 
 
-#### program.navigateTo
+##### program.navigateTo
 
 保留当前页面，跳转到应用内的某个页面，同 `uni.navigateTo`。
 Keep the current page and jump to a page in the app, same as `uni.navigateTo`.
@@ -42,7 +43,7 @@ Sample code:
 
 
 
-#### program.redirectTo
+##### program.redirectTo
 
 关闭当前页面，跳转到应用内的某个页面，同 `uni.redirectTo`。
 Close the current page and jump to a page in the application, same as `uni.redirectTo`.
@@ -56,7 +57,7 @@ Close the current page and jump to a page in the application, same as `uni.redir
 |url|string| is |-|The path of the non-tabBar page in the application to be jumped|
 
 
-#### program.navigateBack
+##### program.navigateBack
 
 关闭当前页面，返回上一页面或多级页面，同 `uni.navigateBack`。
 Close the current page and return to the previous page or multi-level pages, same as `uni.navigateBack`.
@@ -66,7 +67,7 @@ Close the current page and return to the previous page or multi-level pages, sam
 
 
 
-#### program.reLaunch
+##### program.reLaunch
 
 关闭所有页面，打开到应用内的某个页面，同 `uni.reLaunch`。
 Close all pages, open to a page within the app, same as `uni.reLaunch`.
@@ -81,7 +82,7 @@ Close all pages, open to a page within the app, same as `uni.reLaunch`.
 |url|string|is |-|the in-app page path to jump to|
 
 
-#### program.switchTab
+##### program.switchTab
 
 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面，同 `uni.switchTab`。
 Jump to the tabBar page and close all other non-tabBar pages, same as `uni.switchTab`.
@@ -97,7 +98,7 @@ Jump to the tabBar page and close all other non-tabBar pages, same as `uni.switc
 |url|string|is |-|path of the tabBar page to jump to|
 
 
-#### program.currentPage
+##### program.currentPage
 
 获取当前页面。
 Get the current page.
@@ -105,7 +106,7 @@ Get the current page.
 `program.currentPage(): Promise<Page>`
 
 
-#### program.systemInfo
+##### program.systemInfo
 
 获取系统信息，同 `uni.getSystemInfo`。
 Get system information, same as `uni.getSystemInfo`.
@@ -126,7 +127,7 @@ Sample code:
 
 
 
-#### program.pageScrollTo
+##### program.pageScrollTo
 
 将页面滚动到目标位置，同 `uni.pageScrollTo`。
 Scroll the page to the target position, same as `uni.pageScrollTo`.
@@ -153,7 +154,7 @@ Sample code:
 
 
 
-#### program.callUniMethod
+##### program.callUniMethod
 
 调用 uni 对象上的指定方法。
 Call the specified method on the uni object.
@@ -187,7 +188,7 @@ Sample code:
 
 
 
-#### program.screenshot
+##### program.screenshot
 
 对当前页面截图，目前只有开发者工具模拟器支持，客户端无法使用。
 The screenshot of the current page is currently only supported by the developer tool simulator, and the client cannot use it.
@@ -224,7 +225,7 @@ The field of options is defined as follows:
 
 
 
-#### program.mockUniMethod
+##### program.mockUniMethod
 
 覆盖 uni 对象上指定方法的调用结果。
 Overrides the result of the invocation of the specified method on the uni object.
@@ -310,7 +311,7 @@ Sample code:
 ```
 
 
-#### program.restoreUniMethod
+##### program.restoreUniMethod
 
 重置 uni 指定方法，消除 mockUniMethod 调用的影响。
 Resets the uni-specified method, removing the effects of the mockUniMethod call.
@@ -338,7 +339,7 @@ Sample code:
 
 
 
-#### program.evaluate
+##### program.evaluate
 
 注入代码片段并返回执行结果。（仅微信小程序支持）
 Inject code snippets and return execution results. (Only supported by WeChat applet)
@@ -382,7 +383,7 @@ Sample code:
 
 
 
-#### program.testAccounts
+##### program.testAccounts
 
 获取多账号调试中已添加的用户列表。（仅微信小程序支持）
 Get the list of users added in multi-account debugging. (Only supported by WeChat applet)
@@ -418,7 +419,7 @@ Sample code:
 ```
 
 
-#### program.exposeFunction
+##### program.exposeFunction
 
 在全局暴露方法，供小程序侧调用测试脚本中的方法（仅微信小程序支持）
 Expose the method globally for the applet side to call the method in the test script (only supported by WeChat applet)
@@ -457,31 +458,29 @@ Sample code:
 
 
 
-## Page
+### Page
 
 Page 模块提供了控制页面的方法。
 Page module provides methods to control pages.
 
-### 属性
-### Attributes
+#### 属性
 
-#### page.path
+##### page.path
 
 页面路径。
 Page path.
 
 `page.path: string`
 
-#### page.query
+##### page.query
 
 页面参数。
 `page.query: Object`
 
 
-### 方法
-### method
+#### 方法
 
-#### page.$
+##### page.$
 
 获取页面元素。
 Get the page element.
@@ -505,7 +504,7 @@ Sample code:
 ```
 
 
-#### page.$$
+##### page.$$
 
 获取页面元素数组。
 Get an array of page elements.
@@ -532,7 +531,7 @@ Sample code:
   console.log(elements.length)
 ```
 
-#### page.waitFor
+##### page.waitFor
 
 等待直到指定条件成立。
 Wait until the specified conditions are met.
@@ -571,7 +570,7 @@ Sample code:
   }) // 等待页面中 picker 元素数量大于 5
 ```
 
-#### page.data
+##### page.data
 
 获取页面渲染数据。
 Get the page rendering data.
@@ -596,7 +595,7 @@ Sample code:
 ```
 
 
-#### page.setData
+##### page.setData
 
 设置页面渲染数据。
 Set the page rendering data.
@@ -623,7 +622,7 @@ Sample code:
 ```
 
 
-#### page.size
+##### page.size
 
 获取页面大小。
 Get the page size.
@@ -669,7 +668,7 @@ Sample code:
 ```
 
 
-#### page.callMethod
+##### page.callMethod
 
 调用页面指定方法。
 Call the page specified method.
@@ -698,14 +697,13 @@ Sample code:
 
 
 
-## Element
+### Element
 Element 模块提供了控制页面元素的方法。
 The Element module provides methods to control page elements.
 
-### 属性
-### Attributes
+#### 属性
 
-#### element.tagName
+##### element.tagName
 
 标签名，小写。
 Tag name, lowercase.
@@ -713,10 +711,9 @@ Tag name, lowercase.
 `element.tagName: string`
 
 
-### 方法
-### method
+#### 方法
 
-#### element.$
+##### element.$
 
 在元素范围内获取元素。
 Get the element within the element range.
@@ -742,7 +739,7 @@ Sample code:
 ```
 
 
-#### element.$$
+##### element.$$
 
 在元素范围内获取元素数组。
 Get the element array within the element range.
@@ -768,7 +765,7 @@ Sample code:
 ```
 
 
-#### element.size
+##### element.size
 
 获取元素大小。
 Get the element size.
@@ -797,7 +794,7 @@ Sample code:
 ```
 
 
-#### element.offset
+##### element.offset
 
 获取元素绝对位置。
 Get the absolute position of the element.
@@ -830,7 +827,7 @@ Sample code:
 ```
 
 
-#### element.text
+##### element.text
 
 获取元素文本。
 Get the element text.
@@ -847,7 +844,7 @@ Sample code:
 ```
 
 
-#### element.attribute
+##### element.attribute
 
 获取元素特性。
 Get element properties.
@@ -873,7 +870,7 @@ Sample code:
 ```
 
 
-#### element.property
+##### element.property
 
 获取元素属性。
 Get element attributes.
@@ -912,7 +909,7 @@ Sample code:
 ```
 
 
-#### element.html
+##### element.html
 
 获取元素 HTML。
 Get the element HTML.
@@ -920,7 +917,7 @@ Get the element HTML.
 `element.html(): Promise<string>`
 
 
-#### element.outerHtml
+##### element.outerHtml
 
 同 html，只是会获取到元素本身。
 Same as html, except that the element itself will be obtained.
@@ -938,7 +935,7 @@ Sample code:
 ```
 
 
-#### element.value
+##### element.value
 
 获取元素值。
 Get the element value.
@@ -955,7 +952,7 @@ Sample code:
 ```
 
 
-#### element.style
+##### element.style
 
 获取元素样式值。
 Get the element style value.
@@ -981,7 +978,7 @@ Sample code:
 ```
 
 
-#### element.tap
+##### element.tap
 
 点击元素。
 Click element.
@@ -998,7 +995,7 @@ Sample code:
 ```
 
 
-#### element.longpress
+##### element.longpress
 
 长按元素。
 Long press the element.
@@ -1006,7 +1003,7 @@ Long press the element.
 `element.longpress(): Promise<void>`
 
 
-#### element.touchstart
+##### element.touchstart
 
 手指开始触摸元素。
 Start touching the element with your finger.
@@ -1026,7 +1023,7 @@ The field of options is defined as follows:
 | changedTouches| array| Yes| \-| Touch events, an array of information about the touch points that are currently changing|
 
 
-#### element.touchmove
+##### element.touchmove
 
 手指触摸元素后移动。
 Move after the finger touches the element.
@@ -1037,7 +1034,7 @@ options 字段同 touchstart。
 The field of options is the same as touchstart.
 
 
-#### element.touchend
+##### element.touchend
 
 手指结束触摸元素。
 End touching the element with your finger.
@@ -1080,7 +1077,7 @@ The field of options is the same as touchstart.
 ```
 
 
-#### element.trigger
+##### element.trigger
 
 触发元素事件。
 Trigger element events.
@@ -1110,7 +1107,7 @@ Sample code:
 This method only triggers the response method, and can neither change the component state nor trigger user action events, namely `tap`, `longpress` and other events. Please call with other corresponding methods.
 
 
-#### element.input
+##### element.input
 
 输入文本，仅 input、textarea 组件可以使用。
 Enter the text, only available for the input and textarea components.
@@ -1136,7 +1133,7 @@ Sample code:
 ```
 
 
-#### element.callMethod
+##### element.callMethod
 
 调用组件实例指定方法，仅自定义组件可以使用。
 Call the specified method of component instance, only available for the custom components.
@@ -1164,7 +1161,7 @@ Sample code:
 ```
 
 
-#### element.data
+##### element.data
 
 获取组件实例渲染数据，仅自定义组件可以使用。
 Get rendering data of component instance, only available for the custom components.
@@ -1190,7 +1187,7 @@ Sample code:
 ```
 
 
-#### element.setData
+##### element.setData
 
 设置组件实例渲染数据，仅自定义组件可以使用。
 Set rendering data of component instance, only available for the custom components.
@@ -1218,7 +1215,7 @@ Sample code:
 ```
 
 
-#### element.callContextMethod
+##### element.callContextMethod
 
 调用上下文 Context 对象方法，仅 video 组件可以使用。
 Call the Context object method, only available for the video component.
@@ -1247,7 +1244,7 @@ video component is only available for those having set the id's.
 ```
 
 
-#### element.scrollWidth
+##### element.scrollWidth
 
 获取滚动宽度，仅 scroll-view 组件可以使用。
 Get the scroll width, only available for the scroll-view component.
@@ -1255,7 +1252,7 @@ Get the scroll width, only available for the scroll-view component.
 `element.scrollWidth(): Promise<number>`
 
 
-#### element.scrollHeight
+##### element.scrollHeight
 
 获取滚动高度，仅 scroll-view 组件可以使用。
 Get the scroll height, only available for the scroll-view component.
@@ -1263,7 +1260,7 @@ Get the scroll height, only available for the scroll-view component.
 `element.scrollHeight(): Promise<number>`
 
 
-#### element.scrollTo
+##### element.scrollTo
 
 滚动到指定位置，仅 scroll-view 组件可以使用。
 Scroll to the specified location, only available for the scroll-view component.
@@ -1292,7 +1289,7 @@ Sample code:
 ```
 
 
-#### element.swipeTo
+##### element.swipeTo
 
 滑动到指定滑块，仅 swiper 组件可以使用。
 Slide the slider to the specified position, only available for the swiper component.
@@ -1318,7 +1315,7 @@ Sample code:
 ```
 
 
-#### element.moveTo
+##### element.moveTo
 
 移动视图容器，仅 movable-view 组件可以使用。
 Move the view container, only available for the movable-view component.
@@ -1346,7 +1343,7 @@ Sample code:
 ```
 
 
-#### element.slideTo
+##### element.slideTo
 
 滑动到指定数值，仅 slider 组件可以使用。
 Slide to the specified value, only available for the slider component.
@@ -1373,11 +1370,9 @@ Sample code:
 ```
 
 
-## 平台差异
-## Platform differences
+### 平台差异
 
-### program(全局对象)
-### program (global object)
+#### program(全局对象)
 
 |方法							|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|uni-app x	|说明																																|
 |--								|--				|--			|--	|--					|--					|--					|--																																	|
@@ -1398,7 +1393,7 @@ Sample code:
 |evaluate					|x				|x			|x	|√					|x					|x					|注入代码片段并返回执行结果																					|
 |exposeFunction		|x				|x			|x	|√					|x					|x					|在全局暴露方法，供小程序侧调用测试脚本中的方法											|
 
-### Page
+#### Page
 
 |属性	|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|uni-app x	|说明			|
 |--		|--				|--			|--	|--					|--					|--					|--				|
@@ -1416,7 +1411,7 @@ Sample code:
 |scrollTop	|√				|√			|√	|√					|√					|√					|获取页面滚动位置						|
 |callMethod	|√				|√			|√	|√					|√					|√					|调用页面指定方法，uni-app x args 仅支持一个参数	|
 
-### Element
+#### Element
 |属性		|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|uni-app x	|说明					|
 |--			|--				|--			|--	|--					|--					|--					|--						|
 |tagName|√				|√			|√	|√					|√					|√					|标签名，小写	|
@@ -1453,11 +1448,98 @@ Sample code:
 |slideTo					|√				|√			|√	|√					|x					|x					|滑动到指定数值，仅 slider 组件可以使用							|
 
 
-### 测试平台判断
-### Test platform judgment
+#### 测试平台判断
 ```js
 if (process.env.UNI_PLATFORM === "h5") {}
 if (process.env.UNI_PLATFORM === "app-plus") {}
 if (process.env.UNI_PLATFORM === "mp-weixin") {}
 if (process.env.UNI_PLATFORM === "mp-baidu") {}
 ```
+## Jest API
+
+### 常用的匹配器
+
+最简单测试一个值的方法是使用精确匹配的方法。
+
+```
+test('two plus two is four', () => {
+  expect(2 + 2).toBe(4);
+});
+```
+在上面的代码中，`expect (2 + 2)` 返回了一个"预期"的对象。 你通常不会对这些期望对象调用过多的匹配器。 在此代码中，`.toBe(4)` 是匹配器。 当 Jest 运行时，它会跟踪所有失败的匹配器，以便它可以为你打印出很好的错误消息。
+
+`toBe` 使用 `Object.is` 来进行精准匹配的测试。 如果要检查对象的值，请使用 `toEqual`:
+
+```
+test('对象赋值', () => {
+  const data = {one: 1};
+  data['two'] = 2;
+  expect(data).toEqual({one: 1, two: 2});
+});
+```
+
+`toEqual` 递归检查对象或数组的每个字段。
+
+**Notice:**\
+`toEqual` 会忽略具有未定义属性、未定义数组项、数组稀疏或对象类型不匹配的对象键。 要考虑这些，请改用 `toStrictEqual`。
+
+您还可以使用与匹配相反的 `not` 来进行测试：
+
+```
+test('adding positive numbers is not zero', () => {
+  for (let a = 1; a < 10; a++) {
+    for (let b = 1; b < 10; b++) {
+      expect(a + b).not.toBe(0);
+    }
+  }
+});
+```
+
+### 真值
+
+代码中的 `undefined`, `null` 和 `false` 有不同含义，若你在测试时不想区分他们，可以用真值判断。 Jest 提供 `helpers` 供你使用。
+
+- `toBeNull` 只匹配 `null`
+- `toBeUndefined` 只匹配 `undefined`
+- `toBeDefined` 与 `toBeUndefined` 相反
+- `toBeTruthy` 匹配任何 `if` 语句为真
+- `toBeFalsy` 匹配任何 `if` 语句为假
+
+例如：
+```
+test('null', () => {
+  const n = null;
+  expect(n).toBeNull();
+  expect(n).toBeDefined();
+  expect(n).not.toBeUndefined();
+  expect(n).not.toBeTruthy();
+  expect(n).toBeFalsy();
+});
+
+test('zero', () => {
+  const z = 0;
+  expect(z).not.toBeNull();
+  expect(z).toBeDefined();
+  expect(z).not.toBeUndefined();
+  expect(z).not.toBeTruthy();
+  expect(z).toBeFalsy();
+});
+```
+
+### 数字
+
+大多数的比较数字有等价的匹配器。
+```
+test('two plus two', () => {
+  const value = 2 + 2;
+  expect(value).toBeGreaterThan(3);
+  expect(value).toBeGreaterThanOrEqual(3.5);
+  expect(value).toBeLessThan(5);
+  expect(value).toBeLessThanOrEqual(4.5);
+
+  // toBe and toEqual are equivalent for numbers
+  expect(value).toBe(4);
+  expect(value).toEqual(4);
+});
+```
+更多 Jest API 参考[文档](https://jestjs.io/)

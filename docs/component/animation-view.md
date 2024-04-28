@@ -2,7 +2,7 @@
 Lottie动画组件，动画资源参考[Lottie官方链接](https://airbnb.design/lottie/)。
 Lottie animation components, animation resource reference [Lottie official link](https://airbnb.design/lottie/).
 
-> animation-view组件是[uts组件](https://uniapp.dcloud.net.cn/plugin/uts-component.html)，需下载插件：[animation-view](https://ext.dcloud.net.cn/plugin?name=uni-animation-view)，仅app平台nvue/uvue页面支持  
+> animation-view组件是[uts组件](https://uniapp.dcloud.net.cn/plugin/uts-component.html)，需下载插件：[animation-view](https://ext.dcloud.net.cn/plugin?name=uni-animation-view)，仅app平台 nvue/uvue 页面支持  
 
 > [uts组件](https://uniapp.dcloud.net.cn/plugin/uts-component.html)需 HBuilderX 3.7.0+  
 > [uts component](https://uniapp.dcloud.net.cn/plugin/uts-component.html) requires HBuilderX 3.7.0+

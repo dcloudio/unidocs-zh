@@ -4,8 +4,7 @@
 
 uni-app提供了一批[API](./api.md)，这些API可以操控uni-app应用，包括运行、跳转页面、触发点击等，并可以获取页面元素状态、进行截图，从而实现对uni-app项目进行自动化测试的目的。
 
-本功能使用到了业内常见的测试库如jest（MIT协议）。
-This function uses the common test libraries in the industry such as jest (MIT protocol).
+本功能使用到了业内常见的测试库如[jest](https://jestjs.io)（MIT协议）。
 
 推荐使用方式：研发提交源码到版本库后，持续集成系统自动拉取源码，自动运行自动化测试。
 Recommended usage: after R&D submits the source code to the version library, the continuous integration system automatically pulls the source code and automatically runs the automated test.

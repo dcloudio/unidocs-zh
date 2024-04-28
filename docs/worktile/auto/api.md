@@ -1542,4 +1542,4 @@ test('two plus two', () => {
   expect(value).toEqual(4);
 });
 ```
-更多 Jest API 参考[文档](https://jestjs.io/)
+更多 Jest API 参考[文档](https://jestjs.io)

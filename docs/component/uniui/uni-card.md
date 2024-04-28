@@ -319,7 +319,7 @@ Please go to the [Component download page](https://ext.dcloud.net.cn/plugin?name
 	}
 </script>
 ```
-
+> style
 ```vue
 <style lang="scss">
 

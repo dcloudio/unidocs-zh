@@ -214,9 +214,8 @@ If you have done WeChat MiniApp development, you should already be familiar with
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/html5-a.png" width="500">
 </div>
     2. 点击菜单 发行-> H5
-    2. Click the menu Release -> H5
-    3. 在当下项目下的 ``unpackage/dist/build/h5`` 目录找到出的资源，部署服务器（或者使用本地服务器预览），如需部署到相对路径（支持本地file协议打开）参考：https://ask.dcloud.net.cn/article/37432。
-    3. Find the resources in the ``unpackage/dist/build/h5`` directory under the current project, deploy the server (or use the local server to preview), if you need to deploy to a relative path (support local file protocol opening), refer to:https http://ask.dcloud.net.cn/article/37432.
+    3. 在当下项目下的 ``unpackage/dist/build/web`` 目录找到出的资源，部署服务器（或者使用本地服务器预览），如需部署到相对路径（Vue2 项目支持本地file协议打开）参考：https://ask.dcloud.net.cn/article/37432。
+		4. 从 HBuilderX 4.06 开始，为了统一概念，编译目录从 `h5` 调整为 `web`，开发者的 `CI/CD` 流程需要同步进行更新。
 
 * 引用第三方 js 的方式：
 * Ways to reference third-party js:

@@ -440,7 +440,8 @@ But the era of SEO is changing, and now a more effective way is to use uni-app t
 * `history` 模式部分浏览器器不支持，iOS微信内置浏览器无法观测到URL变动，默认分享（不使用微信[JSSDK](https://ask.dcloud.net.cn/article/35380)的情况下）的链接为入口页链接。
 * `history` mode is not supported by some browsers, and the built-in browser of iOS WeChat cannot observe URL changes, and the default sharing (does not use WeChat [JSSDK](https://ask.dcloud.net.cn/article/35380) case) is the entry page link.
 * `history` 模式发行需要后台配置支持，详见：[history 模式的后端配置](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
-* The release of `history` mode requires background configuration support, see: [backend configuration of history mode](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90% 8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
+* `base` 参数设置为空或者 `/`，应用运行在 `/` 根目录下。
+* 参数设置为 `./` 时，应用运行在相对路径下，可配合 `nginx` 等工具运行在任意路径中。
 
 #### async@h5-async
 

@@ -136,7 +136,7 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
         <em>- 快应用仅支持 vivo 、oppo、华为</em></br>
         <em>-Quick QuickApp only supports vivo, oppo, Huawei</em></br>
         <em>- 360小程序仅 windows平台支持，需要在360浏览器中打开</em></br>
-        <em>- The 360 MiniApp is only supported by the windows platform and needs to be opened in the 360 browser</em></br>
+        <em>- uni-app 团队已立项启动鸿蒙next的兼容支持工作，预计2024年7月初发布Alpha版本，敬请期待。</em></br>
     </p>
 </div>
 

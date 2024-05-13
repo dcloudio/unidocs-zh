@@ -1,3 +1,13 @@
+#### 4.17.2024051110-alpha
+* 【uni-app】
+  + 修复 4.16 引出的 input 组件 type="number" 时触发不了 input 事件的Bug [详情](https://ask.dcloud.net.cn/question/190631)
+* 【uni-app-x】
+  + Web平台 修复 4.16 引出的 input 组件 type="number" 时触发不了 input 事件的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=1960)
+* 【uts插件】
+  + App-iOS平台 修复 HBuilderX安装路径中包含空格或者中文时，UTS插件真机运行编译失败的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=1950)
+* 【App插件(含5+App和uni-app的App端)】
+  + iOS平台 修复 微信中通过 `<wx-open-launch-app>` 开放标签唤起 app 时获取启动参数异常的Bug [详情](https://ask.dcloud.net.cn/question/190840)
+
 #### 4.16.2024051009-alpha
 * 【uni-app】
   + 修复 4.0版引出的 vue2 项目普通目录下的 static 目录被编译器复制到输出目录的Bug [详情](https://ask.dcloud.net.cn/question/190650)

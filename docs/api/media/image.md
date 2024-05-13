@@ -1,3 +1,6 @@
+
+ > 图片需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
+
 ### uni.chooseImage(OBJECT)
 从本地相册选择图片或使用相机拍照。
 Choose an image from your local photo album or take a photo with your camera.

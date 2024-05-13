@@ -1,4 +1,6 @@
-#### video
+> 视频需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
+
+## video
 视频播放组件。
 
 **属性说明**

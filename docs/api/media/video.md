@@ -1,4 +1,4 @@
-> 图片需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
+> 视频需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
 
 ## uni.chooseVideo(OBJECT)
 拍摄视频或从手机相册中选视频，返回视频的临时文件路径。

@@ -13,9 +13,7 @@ The input in the html specification is not only an input box, but also radio, ch
 |Property Name|Type|Default Value|Description|Platform Difference Description|
 |:-|:-|:-|:-|:-|
 |value|String||输入框的初始内容||
-| value| String||Initial content of the input box||
-|type|String|text|input 的类型 [有效值](#type)|H5 暂未支持动态切换，详见下方 Tips，请使用 v-if 进行整体切换|
-| type| String| text| input type [valid value](#type)| H5 does not support dynamic switching yet, see Tips below for details, please use v-if for overall switching|
+|type|String|text|input 的类型 [有效值](#type)|Web 暂未支持动态切换，详见下方 Tips，请使用 v-if 进行整体切换|
 |text-content-type|String||文本区域的语义，根据类型自动填充 [有效值](#text-content-type)|仅 App-nvue-iOS 支持|
 | text-content-type| String||Semantics of the text area, automatically filled according to the type [valid value](#text-content-type)|Only supported by App-nvue-iOS|
 |password|Boolean|false|是否是密码类型|H5和App写此属性时，type失效|
@@ -86,9 +84,8 @@ The input in the html specification is not only an input box, but also radio, ch
 - `input` 事件处理函数可以直接 return 一个字符串，将替换输入框的内容。仅微信小程序支持。
 - 如果遇到 value 属性设置不生效的问题参考：[组件属性设置不生效解决办法](/tutorial/vue-api.md#componentsolutions)
 - `input` 组件上有默认的 `min-height` 样式，如果 `min-height` 的值大于 `height` 的值那么 `height` 样式无效。
-- There is a default `min-height` style on the `input` component, if the value of `min-height` is greater than the value of `height` then the `height` style will be invalid.
-- H5 暂未支持动态切换，请使用 `v-if`进行整体切换。
 - 微信小程序 `cursor-color` 属性在iOS下的格式为十六进制颜色值 #000000，安卓下只支持 default 和 green，Skyline 下无限制。
+- Web 暂未支持动态切换 type，请使用 `v-if`进行整体切换。
 
 ```html
         <!-- 错误写法 -->

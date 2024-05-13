@@ -1,4 +1,6 @@
-### uni.chooseFile(OBJECT)
+> 文件需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
+
+## uni.chooseFile(OBJECT)
 从本地选择文件。
 Select files from the local directory.
 
@@ -131,7 +133,7 @@ uni.chooseFile({
 })
 ```
 
-### wx.chooseMessageFile(OBJECT)
+## wx.chooseMessageFile(OBJECT)
 
 从微信聊天会话中选择文件。
 Select a file from a WeChat chat session.

@@ -81,7 +81,7 @@
 
 > 需要向百度申请商业授权，参考:[商业授权相关说明](app-geolocation?id=business)，使用前需登录 [百度地图开放平台](https://lbsyun.baidu.com/) 创建应用申请访问应用密钥（AK）
 
-使用`高德定位`需在“App模块配置”项的“Geolocation(定位)”下，勾选“高德定位”：
+使用`百度定位`需在“App模块配置”项的“Geolocation(定位)”下，勾选“百度定位”：
 ![](https://native-res.dcloud.net.cn/images/uniapp/geolocation/baidu.png)
 
 #### 参数说明

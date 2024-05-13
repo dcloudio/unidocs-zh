@@ -1,4 +1,6 @@
-### uni.chooseVideo(OBJECT)
+> 图片需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
+
+## uni.chooseVideo(OBJECT)
 拍摄视频或从手机相册中选视频，返回视频的临时文件路径。
 
 若选择和上传非图像、视频文件，另行参考：[https://uniapp.dcloud.io/api/media/file](https://uniapp.dcloud.io/api/media/file)。
@@ -77,7 +79,8 @@ export default {
 ```
 
 
-### uni.chooseMedia(OBJECT)
+## uni.chooseMedia(OBJECT)
+
 拍摄或从手机相册中选择图片或视频。
 
 若选择和上传非图像、视频文件，另行参考：[https://uniapp.dcloud.io/api/media/file](https://uniapp.dcloud.io/api/media/file)。
@@ -175,7 +178,8 @@ uni.chooseMedia({
 * 微信小程序在2023年10月17日之后，使用API需要配置[隐私协议](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)
 
 
-### uni.saveVideoToPhotosAlbum(OBJECT)
+## uni.saveVideoToPhotosAlbum(OBJECT)
+
 保存视频到系统相册。
 
 **平台差异说明**
@@ -291,7 +295,7 @@ export default {
 |left-mirrored	|同left，但垂直翻转		|
 |right-mirrored	|同right，但垂直翻转	|
 
-### uni.compressVideo(OBJECT)
+## uni.compressVideo(OBJECT)
 
 压缩视频接口。开发者可指定压缩质量 quality 进行压缩。当需要更精细的控制时，可指定 bitrate、fps、和 resolution，当 quality 传入时，这三个参数将被忽略。原视频的相关信息可通过 getVideoInfo 获取。
 
@@ -334,7 +338,7 @@ App端有很多插件支持视频压缩，详见[插件市场](https://ext.dclou
 |tempFilePath	|string	|压缩后的临时文件地址	|
 |size					|string	|压缩后的大小，单位 kB|
 
-### uni.openVideoEditor(OBJECT)
+## uni.openVideoEditor(OBJECT)
 
 打开视频编辑器
 

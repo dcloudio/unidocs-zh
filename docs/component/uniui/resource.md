@@ -9,3 +9,5 @@ Axure资源正在整理和完善中。
 	<a href="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniui.sketch" download="uni-ui.sketch" style="cursor: pointer;display:block;border-radius:5px;;border:1px #eee solid;background:#42b983;color:#fff;font-size:14px;padding:10px 25px;text-align: center;text-decoration: none;" target="_blank">下载</a>
 
 </div>
+
+如果你需要专业美工帮你做设计或UI美化，可以咨询DCloud官方的[UI设计及美工服务](https://ask.dcloud.net.cn/explore/ui/)。

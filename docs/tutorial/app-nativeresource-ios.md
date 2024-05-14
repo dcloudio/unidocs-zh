@@ -61,7 +61,7 @@ Edit and add the required content according to the application requirements, as 
 - The plist file configuration can only take effect after submitting the cloud package. Please use the [custom debugging base] when the real machine is running (https://ask.dcloud.net.cn/article/35115)
 
 
-### iOS隐私信息访问描述配置  
+### iOS隐私信息访问描述配置@usageDescription  
 如果应用需要修改隐私信息访问的许可描述，可根据需求在`Info.plist`文件中添加，如下示例：
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -127,6 +127,33 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
 **相关参考**  
 - iOS隐私信息访问列表，参考：[https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources](https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources)
 
+
+### iOS应用Schemes配置@urlScheme    
+如果应用需要向系统注册url scheme，以便在浏览器中通过scheme打开App，可根据需求在`Info.plist`文件中添加`CFBundleURLTypes`数据，如下示例：
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>scheme</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>myappuniappx</string>
+        </array>
+      </dict>
+    </array>
+  </dict>
+</plist>
+```
+
+**注意**  
+其中`CFBundleURLSchemes`字段下的字符串数组项是需要注册的scheme值，上面示例配置了`myappuniappx`，请根据应用实际需求修改，为了避免与其他应用产生冲突，请配置自己应用特有的字符串来避免冲突。  
 
 
 ##  资源文件（Bundle Resources）  

@@ -2,12 +2,6 @@
 
 uni统计2 是开源、全端、云端一体、更适合uni-app的统计平台。
 
-> `HBuilderX 3.4.10 +`起支持
-> Supported from `HBuilderX 3.4.10+`
-
-> `HBuilderX 3.6.7 +`修复了Android10多个设备deviceId相同导致统计数据减少的bug
-> `HBuilderX 3.6.7 +` fixed the bug that the same deviceId of more than one Android10 device caused the statistics to decrease
-
 > 欢迎加入[uni统计2.0技术交流群](https://im.dcloud.net.cn/#/?joinGroup=663b1aacea24b10030b08f16)
 
 ## demo体验

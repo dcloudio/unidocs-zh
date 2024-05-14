@@ -140,7 +140,12 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
 ```
 
 **注意**  
-其中`CFBundleURLSchemes`字段下的字符串数组项是需要注册的scheme值，上面示例配置了`myappuniappx`，请根据应用实际需求修改，为了避免与其他应用产生冲突，请配置自己应用特有的字符串来避免冲突。  
+- `CFBundleURLSchemes`字段下的字符串数组项是需要注册的scheme值，上面示例配置了`myappuniappx`，请根据应用实际需求修改，array可添加多个string项配置多个scheme值。为了避免与其他应用产生冲突，请配置自己应用特有的字符串来避免冲突。  
+- `CFBundleURLName`字段下的字符串是这组url scheme的标识，建议按上面示例的默认值配置即可，如需修改请参考苹果官方文档。  
+- `CFBundleTypeRole`字段下的字符串是固定值，不要修改。  
+
+**相关参考**  
+- iOS Property List Key ‘CFBundleURLTypes’，参考：[https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleurltypes/](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleurltypes/)
 
 
 ##  资源文件（Bundle Resources）  

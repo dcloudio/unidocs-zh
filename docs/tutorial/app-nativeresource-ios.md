@@ -115,7 +115,7 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
 - iOS隐私信息访问列表，参考：[https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources](https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources)
 
 
-### iOS应用Schemes配置@urlScheme    
+### iOS url scheme配置@urlScheme    
 如果应用需要向系统注册url scheme，以便在浏览器中通过scheme打开App，可根据需求在`Info.plist`文件中添加`CFBundleURLTypes`数据，如下示例：
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -138,6 +138,8 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
   </dict>
 </plist>
 ```
+
+>uni-app/uni-app x项目都支持通过此方式配置url scheme，uni-app项目还可通过manifest.json的可视化界面配置，参考[iOS设置url scheme](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#urlscheme)
 
 **注意**  
 - `CFBundleURLSchemes`字段下的字符串数组项是需要注册的scheme值，上面示例配置了`myappuniappx`，请根据应用实际需求修改，array可添加多个string项配置多个scheme值。为了避免与其他应用产生冲突，请配置自己应用特有的字符串来避免冲突。  

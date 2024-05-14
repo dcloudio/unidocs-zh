@@ -112,6 +112,37 @@ uni-app x项目manifest.json中没有提供Android权限的配置，需在此And
 </manifest>
 ```
 
+### Android url scheme配置@urlScheme  
+如果应用需要向系统注册url scheme，以便在浏览器中通过scheme打开App，可根据需求在`AndroidManifest.xml`文件中添加`android:scheme`数据，如下示例：
+```xml
+<?xml version="1.0" encoding="utf-8"?>  
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"   
+  package="io.dcloud.nativeresouce">  
+    <application>  
+        <!--meta-data-->  
+        <activity android:name="io.dcloud.uniapp.LaunchProxyActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="myappuniappx"/>
+      </intent-filter>
+    </activity>
+    </application>  
+</manifest>
+```
+
+> uni-app x 项目支持通过此方式配置url scheme，需 HBuilderX4.17及以上版本  
+> uni-app 项目请在 `manifest.json` 可视化界面的 `App常用其它设置` 中配置，详情参考[Android设置url scheme](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#urlscheme)  
+
+**注意**  
+- `intent-filter` 下 `data` 节点的 `android:scheme` 属性值配置的是需要注册的scheme，上面示例配置了myappuniappx，请根据应用实际需求修改，可添加多个data节点配置多个scheme值。为了避免与其他应用产生冲突，请配置自己应用特有的字符串来避免冲突。  
+- `intent-filter` 下 `action` 和 `category` 节点数据是固定值，不要修改。  
+
+**相关参考**  
+- Android应用清单文件`intent-filter`节点，参考：[https://developer.android.google.cn/guide/topics/manifest/intent-filter-element](https://developer.android.google.cn/guide/topics/manifest/intent-filter-element?hl=zh-cn)  
+- Android应用清单文件`data`节点，参考：[https://developer.android.google.cn/guide/topics/manifest/data-element](https://developer.android.google.cn/guide/topics/manifest/data-element?hl=zh-cn)  
+
 
 ## 应用资源@nativeResources
 

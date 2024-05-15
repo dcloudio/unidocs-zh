@@ -139,7 +139,7 @@ Customize icons using `custom-prefix` and `type` attributes
 
 
 1. 访问 [阿里图标库](https://www.iconfont.cn/)，搜索图标并加入购物车：
-![搜索图标](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/1.png)
+![搜索图标](https://web-ext-storage.dcloud.net.cn/doc/uni-icon-custom.jpg)
 
 2. 点击页面右上角购物车图标 ，点击`添加至项目`，如没有项目，需要点击下图第二步的图标添加一个项目目录，如已经有项目则可以略过第二步，选择项目后点击确定：
 2. Click the shopping cart icon in the upper right corner of the page, and click 'Add to project'. If there is no project, you need to click the icon in the second step in the figure below to add a project directory. If there is an existing project, you can skip the second step and select the project. Click OK:

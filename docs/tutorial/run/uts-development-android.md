@@ -7,7 +7,7 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持三方 Gr
 
 运行带有 uts 插件的项目到 Android 设备，如果您遇到以下提示，请配置[运行环境](#环境配置)
 
-<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20221111173829.jpg" style="zoom: 50%;" />
+<img src="https://web-ext-storage.dcloud.net.cn/hx/84E1472F-A959-4440-9C47-B8D8A4D0C9BB.png" style="zoom: 50%;" />
 
 ## uts 扩展插件
 
@@ -87,10 +87,12 @@ sdkmanager --sdk_root=%sdk路径% --install "platforms;android-30"
 
 ##### 配置示例
 
-配置后如下图（根据本地目录结构有所不同）
-After configuration, as shown below (depending on the local directory structure)
-
+mac系统配置后如下图（根据本地目录结构有所不同）
 ![image](https://web-ext-storage.dcloud.net.cn/hx/uts-android-1.png)
+
+win系统配置后如下图（根据本地目录结构有所不同）
+![image](https://web-ext-storage.dcloud.net.cn/hx/uts-android-3.png)
+
 
 **注意**
 **Notice**

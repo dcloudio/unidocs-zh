@@ -132,7 +132,7 @@ uni-app x项目manifest.json中没有提供Android权限的配置，需在此And
 </manifest>
 ```
 
-> uni-app x 项目支持通过此方式配置url scheme，需 HBuilderX4.17及以上版本  
+> uni-app x 项目支持通过此方式配置url scheme，需 HBuilderX4.18及以上版本  
 > uni-app 项目请在 `manifest.json` 可视化界面的 `App常用其它设置` 中配置，详情参考[Android设置url scheme](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#urlscheme)  
 
 **注意**  

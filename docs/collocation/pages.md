@@ -642,7 +642,7 @@ searchInput的点击输入框onNavigationBarSearchInputClicked、文本变化onN
 |属性|类型|描述|
 |:- |:-  |:-|
 |id|String| subNVue 原生子窗体的标识 |
-|path|String|配置 nvue 文件路径，nvue 文件需放置到使用 subNvue 的页面文件目录下|
+|path|String|配置 nvue 文件路径，nvue 文件需放置到使用 subNvue 的页面文件目录下，cli项目需要去掉.nvue后缀，只保留文件名|
 |type|String|原生子窗口内置样式，可取值：'popup',弹出层；"navigationBar",导航栏|
 |style|Object|subNVue 原生子窗体的样式，配置项参考下方 [subNVuesStyle](/collocation/pages?id=app-subNVuesStyle)|
 

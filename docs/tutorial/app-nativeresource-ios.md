@@ -9,7 +9,7 @@ app打包，在iOS原生开发中提供了配置 Info.plist 和 资源文件（B
 HBuilderX3.6.5起，支持直接在应用项目中配置 iOS 平台的 Info.plist 和 资源文件（Bundle Resources）。
 
 
-## 配置文件 Info.plist
+## 配置文件 Info.plist@infoPlist
 
 在HBuilderX中，对项目根目录右键菜单 "新建" -> "自定义文件"  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/newfile.png)
@@ -47,6 +47,107 @@ HBuilderX3.6.5起，支持直接在应用项目中配置 iOS 平台的 Info.plis
 - Info.plist的内容和manifest.json的内容应避免冲突，即不配置manifest中已经配置过的内容。云端打包时会合并到app中的Info.list文件，出现冲突时Info.plist的内容会覆盖manifest.json中配置  
 - plist文件配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 
+
+### iOS隐私信息访问描述配置@usageDescription  
+如果应用需要修改隐私信息访问的许可描述，可根据需求在`Info.plist`文件中添加，如下示例：
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>读取相册的许可描述</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>读写相册的许可描述</string>
+    <key>NSCameraUsageDescription</key>
+    <string>使用摄像头的许可描述</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>使用麦克风的许可描述</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>运行期访问位置信息的许可描述</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>后台运行期访问位置信息的许可描述</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>访问位置信息的许可描述</string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>访问日历的许可描述</string>
+    <key>NSContactsUsageDescription</key>
+    <string>访问通讯录的许可描述</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>使用蓝牙的许可描述</string>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>持续使用蓝牙的许可描述</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>使用系统语音识别的许可描述</string>
+    <key>NSRemindersUsageDescription</key>
+    <string>访问提醒事项的许可描述</string>
+    <key>NSMotionUsageDescription</key>
+    <string>访问运动与健身的许可描述</string>
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>更新健康数据的许可描述</string>
+    <key>NSHealthShareUsageDescription</key>
+    <string>分享健康数据的许可描述</string>
+    <key>NSAppleMusicUsageDescription</key>
+    <string>访问媒体资料库的许可描述</string>
+    <key>NFCReaderUsageDescription</key>
+    <string>使用NFC的许可描述</string>
+    <key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
+    <string>访问临床记录信息的许可描述</string>
+    <key>NSHomeKitUsageDescription</key>
+    <string>访问HomeKit数据的许可描述</string>
+    <key>NSSiriUsageDescription</key>
+    <string>访问Siri的许可描述</string>
+    <key>NSFaceIDUsageDescription</key>
+    <string>使用FaceID的许可描述</string>
+    <key>NSLocalNetworkUsageDescription</key>
+    <string>使用本地网络的许可描述</string>
+    <key>NSUserTrackingUsageDescription</key>
+    <string>跟踪用户活动的许可描述</string>
+  </dict>
+</plist>
+```
+
+**注意**  
+uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的配置，需在此Info.plist中添加。  
+配置许可描述时需根据应用实际情况准确描述用途，否则提交AppStore审核可能被拒。
+
+**相关参考**  
+- iOS隐私信息访问列表，参考：[https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources](https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources)
+
+
+### iOS url scheme配置@urlScheme    
+如果应用需要向系统注册url scheme，以便在浏览器中通过scheme打开App，可根据需求在`Info.plist`文件中添加`CFBundleURLTypes`数据，如下示例：
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>scheme</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>myappuniappx</string>
+        </array>
+      </dict>
+    </array>
+  </dict>
+</plist>
+```
+
+>uni-app/uni-app x项目都支持通过此方式配置url scheme，uni-app项目还可通过manifest.json的可视化界面配置，参考[iOS设置url scheme](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#urlscheme)
+
+**注意**  
+- `CFBundleURLSchemes`字段下的字符串数组项是需要注册的scheme值，上面示例配置了`myappuniappx`，请根据应用实际需求修改，array可添加多个string项配置多个scheme值。为了避免与其他应用产生冲突，请配置自己应用特有的字符串来避免冲突。  
+- `CFBundleURLName`字段下的字符串是这组url scheme的标识，建议按上面示例的默认值配置即可，如需修改请参考苹果官方文档。  
+- `CFBundleTypeRole`字段下的字符串是固定值，不要修改。  
+
+**相关参考**  
+- iOS Property List Key ‘CFBundleURLTypes’，参考：[https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleurltypes/](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleurltypes/)
 
 
 ##  资源文件（Bundle Resources）  

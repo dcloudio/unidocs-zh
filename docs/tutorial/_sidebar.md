@@ -91,6 +91,7 @@
       * [Android设置targetSdkVersion](app-android-targetsdkversion.md)
       * [Android设置CPU类型](app-android-abifilters.md)
       * [iOS设置UrlSchemes](app-ios-schemes.md)
+      * [iOS关联域（Associated Domains）](app-ios-capabilities.md#associateddomains)
       * [iOS应用访问白名单](app-ios-schemewhitelist.md)
       * [iOS后台运行能力](app-ios-uibackgroundmodes.md)
       * [iOS使用广告标识IDFA](app-ios-idfa.md)
@@ -104,7 +105,7 @@
   * App 本地打包
     * [Android本地离线打包](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/android)
     * [iOS本地离线打包](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios)
-  * [App 加固加固](app-security.md)
+  * [App 加固](app-security.md)
   * [App 隐私合规检测](app-privacy-detect.md)
   * [App 上架注意](store.md)
     * [国内应用市场上架](android-store.md)
@@ -141,7 +142,7 @@
     * [app js/nvue文件原生混淆加密](app-sec-confusion.md)
 	* [Android安全漏洞问题解决方案](app-sec-android.md)
     * [App 安全检测API](app-sec-api.md)
-	* [App 加固加固](app-security.md)
+	* [App 加固](app-security.md)
 	* [App 隐私合规检测](app-privacy-detect.md)
   * 网络安全
     * [云端一体安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)

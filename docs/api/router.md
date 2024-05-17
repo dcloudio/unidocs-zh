@@ -75,6 +75,33 @@ onLoad: function(option) {
 }
 ```
 
+vue3 `script setup` 语法糖中调用 `getOpenerEventChannel` 示例：
+
+```js
+<script setup>
+  import {
+    onMounted,
+    getCurrentInstance
+  } from 'vue';
+
+  onMounted(() => {
+    const instance = getCurrentInstance().proxy
+    const eventChannel = instance.getOpenerEventChannel();
+    
+    eventChannel.emit('acceptDataFromOpenedPage', {
+      data: 'data from test page'
+    });
+    
+    eventChannel.emit('someEvent', {
+      data: 'data from test page for someEvent'
+    });
+    
+    eventChannel.on('acceptDataFromOpenerPage', function(data) {
+      console.log('acceptDataFromOpenerPage', data)
+    })
+  })
+</script>
+```
 
 url有长度限制，太长的字符串会传递失败，可改用[窗体通信](https://uniapp.dcloud.io/collocation/frame/communication)、[全局变量](https://ask.dcloud.net.cn/article/35021)，另外参数中出现空格等特殊字符时需要对参数进行编码，如下为使用`encodeURIComponent`对参数进行编码的示例。
 ```html

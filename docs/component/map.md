@@ -15,7 +15,7 @@
 |地图服务商|App|H5|微信小程序|
 |:-:|:-:|:-:|:-:|
 |高德|√|3.6.0+||
-|Goolge|3.4+ 仅nvue页面|3.2.10+||
+|Google|3.4+ 仅nvue页面|3.2.10+||
 |腾讯||√|√|
 
 
@@ -40,6 +40,7 @@
 |enable-zoom|Boolean|true|是否支持缩放|App-nvue 2.1.5+、微信小程序2.3.0|
 |enable-scroll|Boolean|true|是否支持拖动|App-nvue 2.1.5+、微信小程序2.3.0|
 |enable-rotate|Boolean|false|是否支持旋转|App-nvue 2.1.5+、微信小程序2.3.0|
+|rotate|Number|0|旋转角度(范围0-360)地图正北和设备 y 轴角度的夹角|微信小程序2.5.0|
 |enable-overlooking|Boolean|false|是否开启俯视|App-nvue 2.1.5+、微信小程序2.3.0|
 |enable-satellite|Boolean|false|是否开启卫星图|App-nvue 2.1.5+、微信小程序2.7.0|
 |enable-traffic|Boolean|false|是否开启实时路况|App-nvue 2.1.5+、微信小程序2.7.0|

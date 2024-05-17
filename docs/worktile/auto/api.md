@@ -1,20 +1,22 @@
 # API
 
-## program
+## Uni 测试框架 API
+
+### program
 
 program 是uni-automator自动注入的全局对象
 
 
-### 方法
+#### 方法
 
-#### program.pageStack
+##### program.pageStack
 
 获取页面堆栈。
 
 `program.pageStack(): Promise<Page[]> `
 
 
-#### program.navigateTo
+##### program.navigateTo
 
 保留当前页面，跳转到应用内的某个页面，同 `uni.navigateTo`。
 
@@ -34,7 +36,7 @@ program 是uni-automator自动注入的全局对象
 
 
 
-#### program.redirectTo
+##### program.redirectTo
 
 关闭当前页面，跳转到应用内的某个页面，同 `uni.redirectTo`。
 
@@ -45,7 +47,7 @@ program 是uni-automator自动注入的全局对象
 |url|string|是|-|需要跳转的应用内非 tabBar 的页面的路径|
 
 
-#### program.navigateBack
+##### program.navigateBack
 
 关闭当前页面，返回上一页面或多级页面，同 `uni.navigateBack`。
 
@@ -54,7 +56,7 @@ program 是uni-automator自动注入的全局对象
 
 
 
-#### program.reLaunch
+##### program.reLaunch
 
 关闭所有页面，打开到应用内的某个页面，同 `uni.reLaunch`。
 
@@ -66,7 +68,7 @@ program 是uni-automator自动注入的全局对象
 |url|string|是|-|需要跳转的应用内页面路径|
 
 
-#### program.switchTab
+##### program.switchTab
 
 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面，同 `uni.switchTab`。
 
@@ -79,14 +81,14 @@ program 是uni-automator自动注入的全局对象
 |url|string|是|-|需要跳转的 tabBar 页面的路径|
 
 
-#### program.currentPage
+##### program.currentPage
 
 获取当前页面。
 
 `program.currentPage(): Promise<Page>`
 
 
-#### program.systemInfo
+##### program.systemInfo
 
 获取系统信息，同 `uni.getSystemInfo`。
 
@@ -105,7 +107,7 @@ program 是uni-automator自动注入的全局对象
 
 
 
-#### program.pageScrollTo
+##### program.pageScrollTo
 
 将页面滚动到目标位置，同 `uni.pageScrollTo`。
 
@@ -128,7 +130,7 @@ program 是uni-automator自动注入的全局对象
 
 
 
-#### program.callUniMethod
+##### program.callUniMethod
 
 调用 uni 对象上的指定方法。
 
@@ -156,7 +158,7 @@ program 是uni-automator自动注入的全局对象
 
 
 
-#### program.screenshot
+##### program.screenshot
 
 对当前页面截图，目前只有开发者工具模拟器支持，客户端无法使用。
 
@@ -186,7 +188,7 @@ options 字段定义如下：
 
 
 
-#### program.mockUniMethod
+##### program.mockUniMethod
 
 覆盖 uni 对象上指定方法的调用结果。
 
@@ -256,7 +258,7 @@ options 字段定义如下：
 ```
 
 
-#### program.restoreUniMethod
+##### program.restoreUniMethod
 
 重置 uni 指定方法，消除 mockUniMethod 调用的影响。
 
@@ -280,7 +282,7 @@ options 字段定义如下：
 
 
 
-#### program.evaluate
+##### program.evaluate
 
 注入代码片段并返回执行结果。（仅微信小程序支持）
 
@@ -318,7 +320,7 @@ options 字段定义如下：
 
 
 
-#### program.testAccounts
+##### program.testAccounts
 
 获取多账号调试中已添加的用户列表。（仅微信小程序支持）
 
@@ -347,7 +349,7 @@ Account 字段定义如下：
 ```
 
 
-#### program.exposeFunction
+##### program.exposeFunction
 
 在全局暴露方法，供小程序侧调用测试脚本中的方法（仅微信小程序支持）
 
@@ -380,27 +382,27 @@ Account 字段定义如下：
 
 
 
-## Page
+### Page
 
 Page 模块提供了控制页面的方法。
 
-### 属性
+#### 属性
 
-#### page.path
+##### page.path
 
 页面路径。
 
 `page.path: string`
 
-#### page.query
+##### page.query
 
 页面参数。
 `page.query: Object`
 
 
-### 方法
+#### 方法
 
-#### page.$
+##### page.$
 
 获取页面元素。
 
@@ -420,7 +422,7 @@ Page 模块提供了控制页面的方法。
 ```
 
 
-#### page.$$
+##### page.$$
 
 获取页面元素数组。
 
@@ -442,7 +444,7 @@ Page 模块提供了控制页面的方法。
   console.log(elements.length)
 ```
 
-#### page.waitFor
+##### page.waitFor
 
 等待直到指定条件成立。
 
@@ -473,7 +475,7 @@ Page 模块提供了控制页面的方法。
   }) // 等待页面中 picker 元素数量大于 5
 ```
 
-#### page.data
+##### page.data
 
 获取页面渲染数据。
 
@@ -493,7 +495,7 @@ Page 模块提供了控制页面的方法。
 ```
 
 
-#### page.setData
+##### page.setData
 
 设置页面渲染数据。
 
@@ -515,7 +517,7 @@ Page 模块提供了控制页面的方法。
 ```
 
 
-#### page.size
+##### page.size
 
 获取页面大小。
 
@@ -553,7 +555,7 @@ Page 模块提供了控制页面的方法。
 ```
 
 
-#### page.callMethod
+##### page.callMethod
 
 调用页面指定方法。
 
@@ -576,21 +578,21 @@ Page 模块提供了控制页面的方法。
 
 
 
-## Element
+### Element
 Element 模块提供了控制页面元素的方法。
 
-### 属性
+#### 属性
 
-#### element.tagName
+##### element.tagName
 
 标签名，小写。
 
 `element.tagName: string`
 
 
-### 方法
+#### 方法
 
-#### element.$
+##### element.$
 
 在元素范围内获取元素。
 
@@ -612,7 +614,7 @@ Element 模块提供了控制页面元素的方法。
 ```
 
 
-#### element.$$
+##### element.$$
 
 在元素范围内获取元素数组。
 
@@ -634,7 +636,7 @@ Element 模块提供了控制页面元素的方法。
 ```
 
 
-#### element.size
+##### element.size
 
 获取元素大小。
 
@@ -657,7 +659,7 @@ Element 模块提供了控制页面元素的方法。
 ```
 
 
-#### element.offset
+##### element.offset
 
 获取元素绝对位置。
 
@@ -683,7 +685,7 @@ Element 模块提供了控制页面元素的方法。
 ```
 
 
-#### element.text
+##### element.text
 
 获取元素文本。
 
@@ -698,7 +700,7 @@ Element 模块提供了控制页面元素的方法。
 ```
 
 
-#### element.attribute
+##### element.attribute
 
 获取元素特性。
 
@@ -719,7 +721,7 @@ Element 模块提供了控制页面元素的方法。
 ```
 
 
-#### element.property
+##### element.property
 
 获取元素属性。
 
@@ -749,14 +751,14 @@ Element 模块提供了控制页面元素的方法。
 ```
 
 
-#### element.html
+##### element.html
 
 获取元素 HTML。
 
 `element.html(): Promise<string>`
 
 
-#### element.outerHtml
+##### element.outerHtml
 
 同 html，只是会获取到元素本身。
 
@@ -772,7 +774,7 @@ Element 模块提供了控制页面元素的方法。
 ```
 
 
-#### element.value
+##### element.value
 
 获取元素值。
 
@@ -787,7 +789,7 @@ Element 模块提供了控制页面元素的方法。
 ```
 
 
-#### element.style
+##### element.style
 
 获取元素样式值。
 
@@ -808,7 +810,7 @@ Element 模块提供了控制页面元素的方法。
 ```
 
 
-#### element.tap
+##### element.tap
 
 点击元素。
 
@@ -823,14 +825,14 @@ Element 模块提供了控制页面元素的方法。
 ```
 
 
-#### element.longpress
+##### element.longpress
 
 长按元素。
 
 `element.longpress(): Promise<void>`
 
 
-#### element.touchstart
+##### element.touchstart
 
 手指开始触摸元素。
 
@@ -845,7 +847,7 @@ options 字段定义如下：
 |changedTouches|array|是|-|触摸事件，当前变化的触摸点信息的数组|
 
 
-#### element.touchmove
+##### element.touchmove
 
 手指触摸元素后移动。
 
@@ -854,7 +856,7 @@ options 字段定义如下：
 options 字段同 touchstart。
 
 
-#### element.touchend
+##### element.touchend
 
 手指结束触摸元素。
 
@@ -895,7 +897,7 @@ options 字段同 touchstart。
 ```
 
 
-#### element.trigger
+##### element.trigger
 
 触发元素事件。
 
@@ -918,7 +920,7 @@ options 字段同 touchstart。
 该方法无法改变组件状态，仅触发响应方法，也无法触发用户操作事件，即 `tap`，`longpress` 等事件，请使用对应的其它方法调用。
 
 
-#### element.input
+##### element.input
 
 输入文本，仅 input、textarea 组件可以使用。
 
@@ -939,7 +941,7 @@ options 字段同 touchstart。
 ```
 
 
-#### element.callMethod
+##### element.callMethod
 
 调用组件实例指定方法，仅自定义组件可以使用。
 
@@ -961,7 +963,7 @@ options 字段同 touchstart。
 ```
 
 
-#### element.data
+##### element.data
 
 获取组件实例渲染数据，仅自定义组件可以使用。
 
@@ -982,7 +984,7 @@ options 字段同 touchstart。
 ```
 
 
-#### element.setData
+##### element.setData
 
 设置组件实例渲染数据，仅自定义组件可以使用。
 
@@ -1005,7 +1007,7 @@ options 字段同 touchstart。
 ```
 
 
-#### element.callContextMethod
+##### element.callContextMethod
 
 调用上下文 Context 对象方法，仅 video 组件可以使用。
 
@@ -1028,21 +1030,21 @@ video 组件必须设置了 id 才能使用。
 ```
 
 
-#### element.scrollWidth
+##### element.scrollWidth
 
 获取滚动宽度，仅 scroll-view 组件可以使用。
 
 `element.scrollWidth(): Promise<number>`
 
 
-#### element.scrollHeight
+##### element.scrollHeight
 
 获取滚动高度，仅 scroll-view 组件可以使用。
 
 `element.scrollHeight(): Promise<number>`
 
 
-#### element.scrollTo
+##### element.scrollTo
 
 滚动到指定位置，仅 scroll-view 组件可以使用。
 
@@ -1065,7 +1067,7 @@ video 组件必须设置了 id 才能使用。
 ```
 
 
-#### element.swipeTo
+##### element.swipeTo
 
 滑动到指定滑块，仅 swiper 组件可以使用。
 
@@ -1086,7 +1088,7 @@ video 组件必须设置了 id 才能使用。
 ```
 
 
-#### element.moveTo
+##### element.moveTo
 
 移动视图容器，仅 movable-view 组件可以使用。
 
@@ -1108,7 +1110,7 @@ video 组件必须设置了 id 才能使用。
 ```
 
 
-#### element.slideTo
+##### element.slideTo
 
 滑动到指定数值，仅 slider 组件可以使用。
 
@@ -1130,9 +1132,9 @@ video 组件必须设置了 id 才能使用。
 ```
 
 
-## 平台差异
+### 平台差异
 
-### program(全局对象)
+#### program(全局对象)
 
 |方法							|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|uni-app x	|说明																																|
 |--								|--				|--			|--	|--					|--					|--					|--																																	|
@@ -1153,7 +1155,7 @@ video 组件必须设置了 id 才能使用。
 |evaluate					|x				|x			|x	|√					|x					|x					|注入代码片段并返回执行结果																					|
 |exposeFunction		|x				|x			|x	|√					|x					|x					|在全局暴露方法，供小程序侧调用测试脚本中的方法											|
 
-### Page
+#### Page
 
 |属性	|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|uni-app x	|说明			|
 |--		|--				|--			|--	|--					|--					|--					|--				|
@@ -1171,7 +1173,7 @@ video 组件必须设置了 id 才能使用。
 |scrollTop	|√				|√			|√	|√					|√					|√					|获取页面滚动位置						|
 |callMethod	|√				|√			|√	|√					|√					|√					|调用页面指定方法，uni-app x args 仅支持一个参数	|
 
-### Element
+#### Element
 |属性		|APP-NVUE	|APP-VUE|H5	|微信小程序	|百度小程序	|uni-app x	|说明					|
 |--			|--				|--			|--	|--					|--					|--					|--						|
 |tagName|√				|√			|√	|√					|√					|√					|标签名，小写	|
@@ -1208,10 +1210,98 @@ video 组件必须设置了 id 才能使用。
 |slideTo					|√				|√			|√	|√					|x					|x					|滑动到指定数值，仅 slider 组件可以使用							|
 
 
-### 测试平台判断
+#### 测试平台判断
 ```js
 if (process.env.UNI_PLATFORM === "h5") {}
 if (process.env.UNI_PLATFORM === "app-plus") {}
 if (process.env.UNI_PLATFORM === "mp-weixin") {}
 if (process.env.UNI_PLATFORM === "mp-baidu") {}
 ```
+## Jest API
+
+### 常用的匹配器
+
+最简单测试一个值的方法是使用精确匹配的方法。
+
+```
+test('two plus two is four', () => {
+  expect(2 + 2).toBe(4);
+});
+```
+在上面的代码中，`expect (2 + 2)` 返回了一个"预期"的对象。 你通常不会对这些期望对象调用过多的匹配器。 在此代码中，`.toBe(4)` 是匹配器。 当 Jest 运行时，它会跟踪所有失败的匹配器，以便它可以为你打印出很好的错误消息。
+
+`toBe` 使用 `Object.is` 来进行精准匹配的测试。 如果要检查对象的值，请使用 `toEqual`:
+
+```
+test('对象赋值', () => {
+  const data = {one: 1};
+  data['two'] = 2;
+  expect(data).toEqual({one: 1, two: 2});
+});
+```
+
+`toEqual` 递归检查对象或数组的每个字段。
+
+**Notice:**\
+`toEqual` 会忽略具有未定义属性、未定义数组项、数组稀疏或对象类型不匹配的对象键。 要考虑这些，请改用 `toStrictEqual`。
+
+您还可以使用与匹配相反的 `not` 来进行测试：
+
+```
+test('adding positive numbers is not zero', () => {
+  for (let a = 1; a < 10; a++) {
+    for (let b = 1; b < 10; b++) {
+      expect(a + b).not.toBe(0);
+    }
+  }
+});
+```
+
+### 真值
+
+代码中的 `undefined`, `null` 和 `false` 有不同含义，若你在测试时不想区分他们，可以用真值判断。 Jest 提供 `helpers` 供你使用。
+
+- `toBeNull` 只匹配 `null`
+- `toBeUndefined` 只匹配 `undefined`
+- `toBeDefined` 与 `toBeUndefined` 相反
+- `toBeTruthy` 匹配任何 `if` 语句为真
+- `toBeFalsy` 匹配任何 `if` 语句为假
+
+例如：
+```
+test('null', () => {
+  const n = null;
+  expect(n).toBeNull();
+  expect(n).toBeDefined();
+  expect(n).not.toBeUndefined();
+  expect(n).not.toBeTruthy();
+  expect(n).toBeFalsy();
+});
+
+test('zero', () => {
+  const z = 0;
+  expect(z).not.toBeNull();
+  expect(z).toBeDefined();
+  expect(z).not.toBeUndefined();
+  expect(z).not.toBeTruthy();
+  expect(z).toBeFalsy();
+});
+```
+
+### 数字
+
+大多数的比较数字有等价的匹配器。
+```
+test('two plus two', () => {
+  const value = 2 + 2;
+  expect(value).toBeGreaterThan(3);
+  expect(value).toBeGreaterThanOrEqual(3.5);
+  expect(value).toBeLessThan(5);
+  expect(value).toBeLessThanOrEqual(4.5);
+
+  // toBe and toEqual are equivalent for numbers
+  expect(value).toBe(4);
+  expect(value).toEqual(4);
+});
+```
+更多 Jest API 参考[文档](https://jestjs.io)

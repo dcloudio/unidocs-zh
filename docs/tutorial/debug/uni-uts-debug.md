@@ -1,6 +1,6 @@
 # uts Android调试
 
-HBuilderX 3.6.20+，uni-app uts插件，运行到Android，支持Debug调试
+HBuilderX 3.6.20+ uni-app uts插件、HBuilderX 4.0+ uni-app-x uts插件，运行到Android，支持Debug调试
 
 ## 开启调试
 

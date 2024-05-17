@@ -1,4 +1,6 @@
-### uni.chooseFile(OBJECT)
+> 文件需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
+
+## uni.chooseFile(OBJECT)
 从本地选择文件。
 
 本API主要用于选择非媒体文件，如果选择的文件是媒体文件，另有3个专用API：
@@ -88,7 +90,7 @@ uni.chooseFile({
 })
 ```
 
-### wx.chooseMessageFile(OBJECT)
+## wx.chooseMessageFile(OBJECT)
 
 从微信聊天会话中选择文件。
 

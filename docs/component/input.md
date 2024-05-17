@@ -9,7 +9,7 @@ html规范中input不仅是输入框，还有radio、checkbox、时间、日期�
 |属性名|类型|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
 |value|String||输入框的初始内容||
-|type|String|text|input 的类型 [有效值](#type)|H5 暂未支持动态切换，详见下方 Tips，请使用 v-if 进行整体切换|
+|type|String|text|input 的类型 [有效值](#type)||
 |text-content-type|String||文本区域的语义，根据类型自动填充 [有效值](#text-content-type)|仅 App-nvue-iOS 支持|
 |password|Boolean|false|是否是密码类型|H5和App写此属性时，type失效|
 |placeholder|String||输入框为空时占位符||
@@ -22,6 +22,7 @@ html规范中input不仅是输入框，还有radio、checkbox、时间、日期�
 |confirm-type|String|done|设置键盘右下角按钮的文字，仅在 type="text" 时生效。[有效值](#confirm-type)|微信小程序、App、H5、快手小程序、京东小程序|
 |confirm-hold|Boolean|false|点击键盘右下角按钮时是否保持键盘不收起|App(3.3.7+)、H5 (3.3.7+)、微信小程序、支付宝小程序、百度小程序、QQ小程序、京东小程序|
 |cursor|Number||指定focus时的光标位置||
+|cursor-color|String||光标颜色|微信小程序 3.1.0+、H5(4.0+)、App-Vue(4.0+)|
 |selection-start|Number|-1|光标起始位置，自动聚集时有效，需与selection-end搭配使用||
 |selection-end|Number|-1|光标结束位置，自动聚集时有效，需与selection-start搭配使用||
 |adjust-position|Boolean|true|键盘弹起时，是否自动上推页面|App-Android（vue 页面 softinputMode 为 adjustResize 时无效，使用 x5 内核时无效）、微信小程序、百度小程序、QQ小程序、京东小程序|
@@ -50,16 +51,7 @@ html规范中input不仅是输入框，还有radio、checkbox、时间、日期�
 - `input` 事件处理函数可以直接 return 一个字符串，将替换输入框的内容。仅微信小程序支持。
 - 如果遇到 value 属性设置不生效的问题参考：[组件属性设置不生效解决办法](/tutorial/vue-api.md#componentsolutions)
 - `input` 组件上有默认的 `min-height` 样式，如果 `min-height` 的值大于 `height` 的值那么 `height` 样式无效。
-- H5 暂未支持动态切换，请使用 `v-if`进行整体切换。
-
-```html
-        <!-- 错误写法 -->
-	<input :type="isText?'text':'number'" placeholder="请输入内容" />
-
-        <!-- 正确写法 -->
-	<input v-if="isText" type="text" placeholder="请输入文本" />
-	<input v-else  type="number"  placeholder="请输入数字" />
-```
+- 微信小程序 `cursor-color` 属性在iOS下的格式为十六进制颜色值 #000000，安卓下只支持 default 和 green，Skyline 下无限制。
 
 #### type 有效值 @type
 
@@ -75,7 +67,7 @@ html规范中input不仅是输入框，还有radio、checkbox、时间、日期�
 
 ::: warning 注意事项
 - 小程序平台，`number` 类型只支持输入整型数字。微信开发者工具上体现不出效果，请使用真机预览。
-- 如果需要在小程序平台输入浮点型数字，请使用 `digit` 类型。
+- 如果需要输入浮点型数字，请使用 `digit` 类型。
 - 小程序端input在置焦时，会表现为原生控件，此时会层级变高。如需前端组件遮盖input，需让input失焦，或使用cover-view等覆盖原生控件的方案，[参考](https://uniapp.dcloud.io/component/native-component)。具体来讲，阿里小程序的input为text且置焦为原生控件；微信、头条、QQ所有input置焦均为原生控件；百度小程序置焦时仍然是非原生的。也可以参考[原生控件](https://uniapp.dcloud.io/component/native-component)文档
 - input组件若不想弹出软键盘，可设置为disabled
 - placeholder-style指定样式类font-size单位为rpx时，抖音小程序、飞书小程序、快手小程序不支持，可使用uni.upx2px()将rpx单位值转换成px。

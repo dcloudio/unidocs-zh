@@ -7,7 +7,7 @@
 
 ```javascript
 if (process.env.NODE_ENV === 'development') {
-	console.log('开发环境');
+	console.log('开发环境');// 发布到生产环境时，此处代码会被摇树移除掉。
 } else {
 	console.log('生产环境');
 }

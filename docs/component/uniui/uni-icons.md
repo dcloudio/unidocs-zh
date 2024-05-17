@@ -121,7 +121,7 @@ nvue 页面暂时不支持自定义图标，如需在 nvue 中使用 ，请自�
 
 
 1. 访问 [阿里图标库](https://www.iconfont.cn/)，搜索图标并加入购物车：
-![搜索图标](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/1.png)
+![搜索图标](https://web-ext-storage.dcloud.net.cn/doc/uni-icon-custom.jpg)
 
 2. 点击页面右上角购物车图标 ，点击`添加至项目`，如没有项目，需要点击下图第二步的图标添加一个项目目录，如已经有项目则可以略过第二步，选择项目后点击确定：
 

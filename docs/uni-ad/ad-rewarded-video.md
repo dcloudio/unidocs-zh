@@ -225,17 +225,11 @@ export default {
 
 返回值 为 string 类型
 
-|值			|描述											|
-|:-:		|:-:											|
-|wm			|uniMP激励视频						|
-|csj		|穿山甲										|
-|gm			|穿山甲gromore						|
-|gdt		|腾讯优量汇（前称广点通）	|
-|ks			|快手											|
-|sigmob	|Sigmob										|
-|bd			|百度											|
-|gg			|Google AdMob							|
-|pg			|海外穿山甲								|
+|值			|描述	|
+|:-:		|:-:	|
+|china	|国内	|
+|global	|国际	|
+
 
 **示例代码**
 
@@ -566,7 +560,7 @@ export default {
 注意：
 1. 新建的云函数名称不能使用 `uniAdCallback`
 2. 服务器通信和前端事件是并行的，前端需要轮询向服务器请求并验证结果
-3. 不建议在 `uni-ad` web控制台修改回调的服务空间名称，因为修改后广告商生效需要一段时间
+3. 不支持在web控制台修改回调的服务空间名称，如果更新需要重新创建广告位
 4. 看一次广告收到2次回调结果，且 `trans_id` 相同，产生2次的可能原因有
   - 没有正确响应JSON格式数据 `{"isValid": true}`
   - 服务器响应过慢，广告商服务器重试
@@ -580,7 +574,7 @@ export default {
 |字段定义	|类型		|字段名称				|备注															|
 |:-:			|:-:		|:-:						|:-:															|
 |adpid		|String	|DCloud广告位id	|																	|
-|provider	|String	|广告服务商			|wm、csj、ks、gdt、sigmob					|
+|provider	|String	|广告服务商			|china、global					|
 |platform	|String	|平台						|iOS、Android											|
 |sign			|String	|签名						|																	|
 |trans_id	|String	|交易id					|完成观看的唯一交易ID							|
@@ -593,7 +587,7 @@ export default {
 sign = sha256(secret:transid)
 ```
 
-提示：`Security key` 在 [uni-ad 广告联盟](https://uniad.dcloud.net.cn) 对应的广告位，配置激励视频服务器回调后可看到
+提示：`Security key` 在 [uni-ad 广告联盟](https://uniad.dcloud.net.cn) 对应的广告位，配置激励视频服务器回调后，点击广告位左侧下拉后可以看到
 
 #### 签名验证方式
 
@@ -625,6 +619,10 @@ sign = sha256(secret:transid)
 
 由于上面三个值之间存在时效和依赖关系，比较复杂，所以需要使用 [uni-open-bridge](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html) 来接管
 
+注意：
+1. 需要发行模式
+2. 需要配置 request 域名白名单，[详情](https://doc.dcloud.net.cn/uniCloud/publish.html)
+
 #### 接入流程(uni-id用户体系)
 
 1. 项目使用了 [uni-id-co](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#save-user-token) 并更新到 1.0.8+
@@ -634,8 +632,9 @@ sign = sha256(secret:transid)
 #### 接入流程(传统用户系统)
 
 1. 配置 [uni-open-bridge](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html) 托管三方开放平台数据，详情如下:
-1.1 在 uni-id-config 中配置微信小程序的 `appid`、`appsecret`
-1.2 由 传统服务器通过 http 的方式主动将微信小程序的 `access_token` `session_key` 同步到 uni-open-bridge, `encrypt_key` 由 uni-open-bridge 自动向微信服务器获取
+- 1.1 在 uni-id-config 中配置微信小程序的 `appid`、`appsecret` [详见](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#config)
+- 1.2 云函数URL化配置：在[uniCloud 的 web控制台](https://unicloud.dcloud.net.cn) 服务空间--》云函数/云对象--》uni-open-bridge--》详情--》云函数URL化--》编辑配置`/uni-open-bridge`保存。
+- 1.3 由 传统服务器从微信获取到相关凭据通过 http 的方式主动将微信小程序的 `access_token` `session_key` 通过[setAccessToken](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html#setaccesstoken)，[setSessionKey](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html#setsessionkey) ，同步到 uni-open-bridge，`encrypt_key` 由 uni-open-bridge 自动向微信服务器获取。
 
 2. 配置 [安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
 3. 在微信小程序客户端初始化安全网络并传递 openid，通过 uni.checkSession() 检查登录是否过期，过期后需要重新登录并由开发者服务器将 `session_key` 同步到 uni-open-bridge

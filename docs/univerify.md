@@ -89,7 +89,6 @@ uni.login({
 
 详细步骤参考：[一键登录服务开通指南](https://doc.dcloud.net.cn/uniCloud/uni-login/service)
 
-开通成功后会得到 apiKey、apiSecret。这2个信息，后续需要配置在uniCloud的云函数里。同时注意保密，这2个信息也是计费凭证。
 
 **注意**
 > 应用开通uni一键登录服务后，需要等审核通过后才能正式使用。在审核期间可以使用HBuilder标准基座真机运行调用一键登录功能，调用时会从你的账户中扣费；但在审核期间不可以使用自定义基座调用一键登录功能，调用时会返回错误。
@@ -195,7 +194,9 @@ univerifyStyle 数据结构：
         "height": "60px"   //图标高度 默认值：60px
     },
     "closeIcon": {
-        "path": "static/xxx.png" // 自定义关闭按钮，仅支持本地图片。 HBuilderX3.3.7+版本支持
+        "path": "static/xxx.png", // 自定义显示在授权框中的logo，仅支持本地图片 默认显示App logo
+        "width":  "60px",  //图标宽度 默认值：60px (HBuilderX 4.0支持)
+        "height": "60px"   //图标高度 默认值：60px (HBuilderX 4.0支持)
     },
     "phoneNum": {
         "color": "#202020"  // 手机号文字颜色 默认值：#202020
@@ -417,8 +418,6 @@ exports.main = async (event, context) => {
   const res = await uniCloud.getPhoneNumber({
   	appid: '_UNI_ABCDEFG', // 替换成自己开通一键登录的应用的DCloud appid
   	provider: 'univerify',
-  	apiKey: 'xxx', // HBuilderX 3.94及以上版本可以不传此参数，部分模板/插件的旧版本仍会检查配置
-  	apiSecret: 'xxx', // HBuilderX 3.94及以上版本可以不传此参数，部分模板/插件的旧版本仍会检查配置
   	access_token: event.access_token,
   	openid: event.openid
   })
@@ -482,8 +481,6 @@ exports.main = async(event) => {
   const res = await uniCloud.getPhoneNumber({
   	provider: 'univerify',
     appid: 'xxx', // DCloud appid，不同于callFunction方式调用，使用云函数Url化需要传递DCloud appid参数！！！
-  	apiKey: 'xxx', // HBuilderX 3.94及以上版本可以不传此参数，部分模板/插件的旧版本仍会检查配置
-  	apiSecret: 'xxx', // HBuilderX 3.94及以上版本可以不传此参数，部分模板/插件的旧版本仍会检查配置
   	access_token: access_token,
   	openid: openid
   })
@@ -558,8 +555,6 @@ exports.main = async(event) => {
   const res = await uniCloud.getPhoneNumber({
   	provider: 'univerify',
     appid: 'xxx', // DCloud appid，不同于callFunction方式调用，使用云函数Url化需要传递DCloud appid参数
-  	apiKey: 'xxx', // HBuilderX 3.94及以上版本可以不传此参数，部分模板/插件的旧版本仍会检查配置
-  	apiSecret: 'xxx', // HBuilderX 3.94及以上版本可以不传此参数，部分模板/插件的旧版本仍会检查配置
   	access_token: access_token,
   	openid: openid
   })
@@ -626,7 +621,7 @@ exports.main = async(event) => {
 
 ## 运行基座和打包
 
-- 使用`uni一键登录`，不需要制作自定义基座，使用HBuilder标准真机运行基座即可。在云函数中配置好apiKey、apiSecret后，一样从你的账户充值中扣费。
+- 使用`uni一键登录`，安卓平台不需要制作自定义基座，使用HBuilder标准真机运行基座即可，调用时会从你的账户中扣费。iOS平台使用标准基座必须要用`io.dcloud.HBuilder`这个bundleId重签，其他bundleId重签无法登录。
 
 - 云端打包
 在项目manifest.json页面“App模块配置”项的“OAuth(登录鉴权)”下勾选“一键登录(uni-verify)”。

@@ -4,7 +4,19 @@
 
 > uni-app 内置了 [Pinia](https://pinia.vuejs.org/zh/index.html) 。Vue 2 项目暂不支持
 
-> 使用 `HBuilder X` 不需要手动安装，直接使用即可。使用 `CLI` 需要手动安装，执行 `yarn add pinia@2.0.33` 或 `npm install pinia@2.0.33`。
+::: warning 注意事项
+- 使用 `HBuilder X`
+
+  HBuilder X 已内置了 Pinia，无需手动安装，按照下方示例使用即可。
+
+  App 升级时，如果之前使用 `HBuilder X 版本 < 4.14` 打包，现在使用 `HBuilder X 版本 >= 4.14`，更新时需要**整包更新**不可使用wgt更新（在 `4.14` 时升级了 `vue` 版本，低版本的基座和高版本 wgt 资源包会导致使用 Pinia 时报错）
+
+- 使用 `CLI`
+
+  `4.14 之前`：执行 `yarn add pinia@2.0.36` 或 `npm install pinia@2.0.36` 安装，要固定版本
+
+  `4.14 之后`：执行 `yarn add pinia` 或 `npm install pinia` 安装，可不指定版本
+:::
 
 ### Pinia 是什么？
 

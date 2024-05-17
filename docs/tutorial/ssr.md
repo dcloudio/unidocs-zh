@@ -268,3 +268,6 @@ cli创建的项目使用`npm run dev:h5:ssr`运行即可
 - Client ***
 - Server ***
 ```
+
+- 若路由模式配置为history之后，浏览器控制台显示如下报错，则需要根据文档检查有无准备好history相关配置。[配置文档](https://zh.uniapp.dcloud.io/quickstart-hx.html#%E5%8F%91%E5%B8%83%E4%B8%BAweb%E7%BD%91%E7%AB%99)
+  - `Hydration completed but contains mismatches`

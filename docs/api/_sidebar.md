@@ -67,6 +67,7 @@
     * [uni.getAppAuthorizeSetting](system/getappauthorizesetting.md)
     * [uni.getSystemSetting](system/getsystemsetting.md)
     * [uni.openAppAuthorizeSetting](system/openappauthorizesetting.md)
+	* [uni.createRequestPermissionListener](system/create-request-permission-listener.md)
   * [内存](system/memory.md)
   * [网络状态](system/network.md)
   * [系统主题](system/theme.md)
@@ -136,7 +137,9 @@
   * [获取服务供应商](plugins/provider.md)
   * [登录](plugins/login.md)
   * [分享](plugins/share.md)
-  * [支付](plugins/payment.md)
+  * 支付```{"collapsable": true}```
+    * [requestPayment](plugins/payment.md)
+    * [requestVirtualPayment](plugins/virtualPayment.md)
   * [推送](plugins/push.md)
   * [语音](plugins/voice.md)
   * [实人认证](plugins/facialRecognitionVerify.md)

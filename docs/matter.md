@@ -133,7 +133,8 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/html5-a.png" width="500">
 </div>
     2. 点击菜单 发行-> H5
-    3. 在当下项目下的 ``unpackage/dist/build/h5`` 目录找到出的资源，部署服务器（或者使用本地服务器预览），如需部署到相对路径（支持本地file协议打开）参考：https://ask.dcloud.net.cn/article/37432。
+    3. 在当下项目下的 ``unpackage/dist/build/web`` 目录找到出的资源，部署服务器（或者使用本地服务器预览），如需部署到相对路径（Vue2 项目支持本地file协议打开）参考：https://ask.dcloud.net.cn/article/37432。
+		4. 从 HBuilderX 4.06 开始，为了统一概念，编译目录从 `h5` 调整为 `web`，开发者的 `CI/CD` 流程需要同步进行更新。
 
 * 引用第三方 js 的方式：
     1. 通过 npm 引入（通过条件编译，只有是 h5 平台才 import 相应的库）
@@ -180,6 +181,8 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 * 组件内（页面除外）不支持 `onLoad`、`onShow` 等页面生命周期。
 
 * 为避免和内置组件冲突，自定义组件请加上前缀（但不能是 u 和 uni）。比如可使用的自定义组件名称：`my-view`、`m-input`、`we-icon`，例如不可使用的自定义组件名称：`u-view`、`uni-input`，如果已有项目使用了可能造成冲突的名称，请修改名称，另外微信小程序下自定义组件名称不能以 wx 开头。
+
+* vue3 开发阶段不会自动处理语法兼容问题，如果在低版本浏览器上运行，需要自行处理，可参考[详情](https://cn.vitejs.dev/config/build-options.html#build-target)。
 
 ### 小程序开发注意@mp
 

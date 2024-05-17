@@ -15,11 +15,11 @@ pageClass: custom-page-class
     <!-- <h3 id="快速体验"><a href="/README?id=%e5%bf%ab%e9%80%9f%e4%bd%93%e9%aa%8c" data-id="快速体验" class="anchor"><span>快速体验</span></a></h3> -->
     <p>一套代码编到十几个平台，这不是梦想。眼见为实，扫描以下二维码，亲自体验最全面的跨平台效果！</p>
     <div class="flex-img-group-view">
-      <a href="//uniappx.m3w.cn" target="_blank" class="clear-style barcode-view">
+      <a href="//hellouniappx.dcloud.net.cn/" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
-          <img src="https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx-qrcode.png" width="160" />
+          <img src="https://web-ext-storage.dcloud.net.cn/uni-app-x/hello-uniappx-qrcode.png" width="160" />
         </div>
-        <b>Android版(uni-app x)</b>
+        <b>Android、iOS(uni-app x)</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
@@ -112,6 +112,7 @@ pageClass: custom-page-class
         <em>- 某些平台不能提交简单demo，故补充了一些其他功能；hello uni-app示例代码可从[github](https://github.com/dcloudio/hello-uniapp)获取</em></br>
         <em>- 快应用仅支持 vivo 、oppo、华为</em></br>
         <em>- 360小程序仅 windows平台支持，需要在360浏览器中打开</em></br>
+        <em>- uni-app 团队已立项启动鸿蒙next的兼容支持工作，预计2024年7月初发布Alpha版本，敬请期待。</em></br>
     </p>
 </div>
 

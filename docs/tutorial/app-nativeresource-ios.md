@@ -163,8 +163,9 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
 - iOS Property List Key ‘CFBundleURLTypes’，参考：[https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleurltypes/](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleurltypes/)
 
 
-##  资源文件（Bundle Resources）  
-## Bundle Resources
+##  资源文件（Native Resources）  
+
+###  资源文件配置（Bundle Resources）  
 
 HBuilderX中对项目右键菜单 "新建" -> "目录"  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/newdir.png)
@@ -177,6 +178,22 @@ Enter the name `nativeResources` (note that it is case-sensitive), confirm and c
 
 将需要添加的iOS原生资源文件拷贝到Resources目录，云端打包时将会合并到安装包的.app中。
 Copy the iOS native resource files that need to be added to the Resources directory, and they will be merged into the .app of the installation package when packaging in the cloud.
+
+###  UniApp.entitlements 配置  
+如上`Bundle Resources`配置类似，在`nativeResources/ios`目录下创建`UniApp.entitlements`节点，UniApp.entitlements 文件配置如下：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:hellouniappx.dcloud.net.cn</string>
+	</array>
+</dict>
+</plist>
+```
 
 **注意**
 **Notice**

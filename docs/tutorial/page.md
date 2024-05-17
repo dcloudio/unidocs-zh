@@ -286,11 +286,11 @@ style的写法与web的css基本相同。
 
 ## Vue2 页面及组件生命周期流程图@vue2-lifecycle-flow
 
-![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/uni-app-lifecycle-vue2.png)#{.zooming width=1000 margin=auto}
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/uni-app-lifecycle-vue2.jpg)#{.zooming width=1000 margin=auto}
 
 ## Vue3 页面及组件生命周期流程图@vue3-lifecycle-flow
 
-![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/uni-app-lifecycle-vue3.png)#{.zooming width=1000 margin=auto}
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/uni-app-lifecycle-vue3.jpg)#{.zooming width=1000 margin=auto}
 
 ### 页面加载时序介绍@timeline
 

@@ -1288,8 +1288,7 @@ The current types of scheduled tasks are (`The content in brackets below indicat
   - 日统计，默认`每天上午5点（20分钟）`触发，统计前一天的错误数据
   - Daily statistics, the default `triggered at 5:00 a.m. (20 minutes) every day`, statistics the error data of the previous day
 
-- `clean`：错误数据统计，统计维度包括：
-- `clean`: Error data statistics, statistical dimensions include:
+- `clean`：过期日志清理定时任务：
   - 日志清理，默认`每天上午5点（30分钟）`触发，清理过期的日志数据
   - Log cleanup, triggered by default `every day at 5:00 am (30 minutes)`, to clean up expired log data
 

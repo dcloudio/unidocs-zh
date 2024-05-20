@@ -150,9 +150,7 @@ Only latitude and longitude information can be obtained, and address information
 2. 使用地图时，在你的app里通过schema调用，打开地图厂商的app，比如直接交给高德地图来导航，这种情况无需在地图厂商注册账户和获取应用key，也就不需要付费。
 3. 联系DCloud申请折扣优惠。
 
-DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用名称/介绍、HBuilder账户）；你也可以直接通过`企业微信`发起在线咨询，扫描以下二维码获取地图福利。如您需要快速回复，一定注明公司名称、应用名称/介绍、以及HBuilder账户，感谢你的理解与配合。
-
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/sc-weixin.png)
+DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用名称/介绍、HBuilder账户）；你也可以通过`uni-im`发起在线咨询，地址：[地图商业授权咨询](https://im.dcloud.net.cn/#/?user_id=a21cd566-ab9c-de7a-3934-55d6caba6b7e)。
 
 **注意骗局**
 

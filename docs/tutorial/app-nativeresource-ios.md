@@ -11,6 +11,8 @@ HBuilderX3.6.5起，支持直接在应用项目中配置 iOS 平台的 Info.plis
 
 ## 配置文件 Info.plist@infoPlist
 
+`Info.plist`文件是 XCode 工程配置文件，可在HBuilderX中项目中添加`Info.plist`文件，云端打包后将会合并到 XCode 工程生成 ipa。
+
 在HBuilderX中，对项目根目录右键菜单 "新建" -> "自定义文件"  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/newfile.png)
 
@@ -150,22 +152,40 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
 - iOS Property List Key ‘CFBundleURLTypes’，参考：[https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleurltypes/](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleurltypes/)
 
 
-##  资源文件（Native Resources）  
-
-###  资源文件配置（Bundle Resources）  
+##  应用资源  
 
 HBuilderX中对项目右键菜单 "新建" -> "目录"  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/newdir.png)
 
 输入名称 `nativeResources`（注意大小写敏感），确定并创建目录。
 
-继续创建“ios”子目录、创建“Resources”二级子目录，结构如下：  
+继续创建“ios”子目录，结构如下：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/ios/directory.png)
 
-将需要添加的iOS原生资源文件拷贝到Resources目录，云端打包时将会合并到安装包的.app中。
 
-###  UniApp.entitlements 配置  
-如上`Bundle Resources`配置类似，在`nativeResources/ios`目录下创建`UniApp.entitlements`节点，UniApp.entitlements 文件配置如下：
+
+### 配置文件UniApp.entitlements@entitlements  
+
+在 nativeResourc/ios 目录下创建`UniApp.entitlements`文件配置 XCode 原生工程中的 `Capabilities`，如下示例：
+
+``` xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+  </dict>
+</plist>
+```
+
+**注意**
+- plist文件必须符合标准的xml格式  
+- plist文件必须符合Apple Information Property List规范，参考[详情](https://developer.apple.com/documentation/bundleresources/information_property_list)  
+	* 文件头需加`<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">`
+	* 根节点必须是plist，二级节点必须是dict   
+- `UniApp.entitlements`的内容只能用于配置 `Capabilities`，不能添加自定义数据   
+
+
+#### 配置`Associated Domains`@domains  
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -179,6 +199,14 @@ HBuilderX中对项目右键菜单 "新建" -> "目录"
 </dict>
 </plist>
 ```
+
+### Bundle资源目录 （Bundle Resources）@bundle  
+
+在“ios”目录下创建“Resources”子目录，结构如下：  
+![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/ios/directory.png)
+
+将需要添加的iOS原生资源文件拷贝到Resources目录，云端打包时将会合并到安装包的.app中。
+
 
 **注意**
 - ios目录下不支持放Object-C/Swift源码文件，需要开发源码建议使用[UTS插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)或[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)  

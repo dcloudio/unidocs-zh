@@ -31,8 +31,7 @@ The plists node data will be converted into the data of the Info.plist file in t
 
 <a id="unilink"/>
 
-### 通用链接（Universal Link）
-### Universal Link
+## 通用链接（Universal Link）
 
 **为了简化配置使用通用链接，推荐使用UniCloud快速生成通用链接，详情参考：[一键生成iOS通用链接](https://uniapp.dcloud.io/api/plugins/universal-links)**  
 **In order to simplify the configuration and use universal links, it is recommended to use UniCloud to quickly generate universal links. For details, please refer to: [Generate iOS Universal Links with One Click](https://uniapp.dcloud.io/api/plugins/universal-links)**
@@ -44,8 +43,7 @@ Please read [Apple's official documentation](https://developer.apple.com/library
 **使用通用链接（Universal Link）必须要有域名，下面的配置中将要用到**
 **Using Universal Link (Universal Link) must have a domain name, which will be used in the following configuration**
 
-#### 第一步：开启Associated Domains服务
-#### Step 1: Open the Associated Domains service
+### 第一步：开启Associated Domains服务
 登录苹果开发者网站，在“Certificates, Identifiers & Profiles”页面选择“Identifiers”中选择对应的App ID，确保开启Associated Domains服务  
 ![](https://native-res.dcloud.net.cn/images/uniapp/ios/apple-capabilities.png)
 
@@ -54,10 +52,9 @@ Please read [Apple's official documentation](https://developer.apple.com/library
 
 <a id="associatedDomains"/>
 
-#### 第二步：配置Associated Domains（域名）
-#### Step 2: Configure Associated Domains
+### 第二步：配置Associated Domains（域名）
 
-##### uni-app/5+ App项目  
+#### uni-app/5+ App项目  
 **使用HBuilderX可视化界面配置**  
 打开项目的manifest.json文件，切换到“App常用其它设置”项，在“iOS设置”下的“关联域（Associated Domains）”中进行配置：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/ios/hx-ass-domains.png)
@@ -83,7 +80,7 @@ Open the manifest.json file of the project, switch to the "Source View" item, an
 保存后提交云端打包生效。
 After saving, submit the cloud package to take effect.
 
-##### uni-app x项目  
+#### uni-app x项目  
 uni-app x项目不再支持maniest.json中配置，需在项目下创建 "nativeResources" -> "ios" 目录，添加`UniApp.entitlements`文件配置。  
 详情参考：[https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#domains](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#domains)
 
@@ -98,8 +95,7 @@ uni-app x项目不再支持maniest.json中配置，需在项目下创建 "native
 **HBuilderX中自带的默认真机运行基座HBuilderX注册的通用链接为：https://demo.dcloud.net.cn/ulink/**
 **The general link for HBuilderX registration on the default real machine running base that comes with HBuilderX is: https://demo.dcloud.net.cn/ulink/**
 
-#### 第三步：服务器配置apple-app-site-association文件
-#### Step 3: Server configuration apple-app-site-association file
+### 第三步：服务器配置apple-app-site-association文件
 需要在上面域名对应的服务器上放apple-app-site-association文件。
 You need to put the apple-app-site-association file on the server corresponding to the above domain name.
 apple-app-site-association文件配置如下：
@@ -140,15 +136,13 @@ After the application is installed, it will register the universal link of the a
 > 推荐方案：将apple-app-site-association文件部署到，免费的阿里云版unicloud的 [前端网页托管](https://uniapp.dcloud.io/uniCloud/hosting?id=%e7%ae%80%e4%bb%8b) 
 > Recommended solution: Deploy the apple-app-site-association file to the free Aliyun version of unicloud's [front-end web hosting](https://uniapp.dcloud.io/uniCloud/hosting?id=%e7%ae% 80%e4%bb%8b)
 
-### 客户端处理通用链接
-### Client Handling Universal Links
+## 客户端处理通用链接
 可通过5+ API的[plus.runtime.launcher](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.launcher)判断应用启动来源，如果其值为"uniLink"则表示通过通用链接启动应。
 The application startup source can be judged through the [plus.runtime.launcher](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.launcher) of the 5+ API, if its value is "uniLink" It means to start the application through the universal link.
 这时可通过5+ API的[plus.runtime.arguments](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.arguments)获取启动参数，通用链接启动的情况将返回完整的通用链接地址。
 At this time, the startup parameters can be obtained through [plus.runtime.arguments](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.arguments) of the 5+ API. Returns the full Universal Link address.
 
-### 注意事项
-### Precautions
+## 注意事项
 - apple-app-site-association文件不需要.json后缀
 - apple-app-site-association files do not need .json suffix
 - 对apple-app-site-association文件的请求仅在App第一次启动时进行，如果此时网络连接出了问题apple会缓存请求，等有网的时候再去请求，如果没有请求此文件通用连接会失效

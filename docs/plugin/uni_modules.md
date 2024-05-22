@@ -1,51 +1,49 @@
 # uni_modules
 
-### 什么是 uni_modules
+## 什么是 uni_modules
 
-`uni_modules`是uni-app的插件模块化规范（HBuilderX 3.1.0+支持），通常是对一组js sdk、组件、页面、uniCloud云函数、公共模块等的封装，用于嵌入到uni-app项目中使用，也支持直接封装为项目模板。
-`uni_modules` is the plug-in modular specification of uni-app (supported by HBuilderRX 3.1.0+), which is usually the encapsulation of a group of js sdk, components, pages, uniCloud cloud functions, public modules, etc. It is used for embedding in uni-app projects, and also supports direct encapsulation as project templates.
+主流的语言/平台，都有自己包管理方案，js的npm、Android的仓储、iOS的cocoapods、鸿蒙的ohpm、dart的pub。。。
 
-你可以简单理解，把一个项目的各种工程目录都挪到了一个uni_modules下，打包成了一个模块，这里面只要符合uni-app规范的文件都可以放。
+uni-app是大一统开发，包括客户端和uniCloud服务器。在客户端部分包括web、Android、iOS、各家小程序。
 
-插件开发者，可以像开发uni-app项目一样编写一个`uni_modules`插件，并在HBuilderX中直接上传至[插件市场](https://ext.dcloud.net.cn/)。
-Plug-in developers can write a `uni_modules` plug-in just like developing a uni-app project, and upload it directly to the [plug-in market](https://ext.dcloud.net.cn/) in HBuilderX.
+在uni-app中可以调用npm库，可以调用Android仓储里的aar，可以调用iOS的cocoapods里framework，以及鸿蒙的ohpm。
 
-插件使用者，可以在[插件市场](https://ext.dcloud.net.cn/)查找符合自己需求的`uni_modules`插件，使用HBuilderX 3.1.0+直接导入到自己的uni-app项目中。后续还可以在HBuilderX中直接点右键升级插件。
-Plug-in users can find the `uni_modules` plugin that meets their needs in [Plugin Market](https://ext.dcloud.net.cn/), and use HBuilderX 3.1.0+ to directly import it into their uni-app project. You can also directly right-click in HBuilderX to upgrade the plug-in later.
+甚至uts语言本身也可以编译为js、kotlin、swift。
 
-相对于普通的插件，`uni_modules`插件拥有更强的独立性，拥有独立的目录结构，可以更加方便的发布，更新，卸载（HBuilderX 3.1.0+对`uni_modules`插件提供了右键菜单，支持发布，更新，安装依赖等）
-Compared with ordinary plug-ins, the `uni_modules` plug-in has stronger independence and independent directory structure, and can be released, updated and uninstalled more conveniently (HBuilderX 3.1.0+ provides a right-click menu for the `uni_modules` plug-in, and supports publishing, updating, installation dependency, etc.)
+那么uni-app的开发者，需要一个大一统的包管理方案，那就是`uni_modules`。
 
-相对于node_modules（node.js模块），`uni_modules`的三方依赖安装时默认最新版本，插件均直接安装在`uni_modules`目录下，不做嵌套，当然，如果开发者希望固定某个版本的依赖，可以将该三方依赖包含到自己的插件包内。
-Compared with node_modules (node.js module), the third party dependency of `uni_modules` defaults to the latest version during installation. Plug-ins are directly installed in the `uni_modules` directory without nesting. Of course, if developers want to fix a version of dependencies, they can include the third-party dependencies in their plug-in packages.
+`uni_modules`是uni-app的包管理方案（HBuilderX 3.1.0+支持），它是一个海纳百川型的设计，
+- 不管是js/uts库、组件、页面、uniCloud云函数、公共模块等的封装，甚至是整个项目，都可以封装成一个`uni_modules`。（类似Android的aar）
+- 不管是npm、Android仓储、iOS的cocoapods、鸿蒙的ohpm，都可以纳入`uni_modules`中。
 
-为什么有了`node_modules`，还需要再发明一个`uni_modules`的轮子？
-Why do we need to invent another `uni_modules` wheel after having `node_modules`?
-1. `node_modules` 不满足云端一体的需求。uniCloud的云函数、公共模块、schema和前端的各种js_sdk、组件、页面、项目，无法在`node_modules`模式下有效融合。
-1. `node_modules` does not meet the needs of cloud integration. UniCloud's cloud functions, public modules, schema and various js_sdk, components, pages and projects in the front end cannot be effectively integrated in the `node_modules` mode.
-2. `uni_modules`有付费和商业的插件，DCloud插件市场提供了版权保护。而`node_modules`不支持付费和版权保护。
-2. `uni_modules` is provided in the form of paid and commercial plug-ins, and the DCloud plug-in market provides copyright protection. But `node_modules` does not support payment and copyright protection.
-3. `node_modules` 是开发者友好而影响终端用户性能的模式。开发者为了省事，层层嵌套`node_modules`，造成数量惊人的文件数目。`uni_modules`不支持module嵌套，鼓励开发者优化包体积
-3. `node_modules` is a developer-friendly mode that affects the performance of end users. To save trouble, developers nested `node_modules` layer by layer, resulting in an astonishing number of files. `uni_modules` Module nesting is not supported, and developers are encouraged to optimize package’s size
-4. `uni_modules`鼓励开发者总是使用最新版。并在HBuilderX中提供了版本内容对比工具
-4. `uni_modules` encourages developers to always use the latest version. And tools for version content comparison are provided in HBuilderX
-5. `uni_modules`里也支持放置`node_modules`，没有强行排斥。
-5. `node_modules` placing is also supported in `uni_modules`, without forced rejection.
+由于uni-app有自己的项目目录结构规范（uni-app[详见](../tutorial/project.md)、uni-app x[详见](https://doc.dcloud.net.cn/uni-app-x/project.html)），
+所以你可以简单理解，把一个项目的这些工程目录都挪到了一个uni_modules下，打包成了一个模块，这里面只要符合uni-app规范的文件都可以放。
+
+详细的uni_modules目录结构[见下](#dir)
+
+### uni_modules的优势
+
+1. uni_modules支持在[插件市场](https://ext.dcloud.net.cn/)计费销售。由DCloud提供商业插件的代码加密和版权保护。
+2. HBuilderX提供了对`uni_modules`的便捷管理，可以对一个`uni_modules`点右键（如果是项目型`uni_modules`，是对根目录的package.json点右键），直接上传`uni_modules`、更新`uni_modules`、安装依赖。版本更新时还会给出新旧代码的详细对比。
 
 与之前插件市场的普通插件相比，`uni_modules`有何优势？
 1. 支持在HBuilderX里直接发布、更新、删除。而无需在web界面操作。
 2. 支持依赖（在package.json中配置）
-2. Support dependencies (configured in package.json)
-3. 插件文件位置统一，不会造成下载一个插件，不知道给工程下多少个目录写入了多少个文件。删除插件时也可以一点删除
-3. If the location of the plug-in file is uniform, it will not cause the problem of downloading a plug-in but not knowing how many files are written to the number of directories under the project. When deleting the plug-in, you can delete it with one click
+3. 插件文件位置统一。以往下载一个插件，不知道给工程下多少个目录写入了多少个文件，这种困惑不再存在。删除插件时也可以一处统一删除
 
-`uni_modules`同时也是一种大型工程的模块分割方案。比如一个旅游应用，可以把机票、酒店、火车票、自由行等模块分拆成不同的`uni_modules`，由不同的部门来开发。
 
-### 目录结构
-### Directory structure
+有`node_modules`了，为何还发明一个`uni_modules`的轮子？
+1. `node_modules` 不满足全平台包管理需求，无法容纳Android仓储、iOS的cocoapods、鸿蒙的ohpm。
+2. `node_modules` 不满足云端一体的需求。uniCloud的云函数、公共模块、schema和前端部分，无法在`node_modules`模式下有效融合。很多组件是云端一体组件，即有客户端又有服务器，需要按uni-app的目录规范放置。
+3. `uni_modules` 有付费和商业的插件，DCloud插件市场提供了版权保护。而`node_modules`不支持付费和版权保护。
+4. `node_modules` 层层嵌套`node_modules`，造成数量惊人的文件数目。`uni_modules`支持依赖但不支持module嵌套，鼓励开发者优化包体积。当然这算差异，并非`uni_modules`的优势
+5. `uni_modules` 在js支持的平台，也容纳了`node_modules`，没有排斥。
 
-#### 项目插件的uni_modules
-#### uni_modules for project plugins
+除了发布插件，`uni_modules`同时也是一种大型工程的模块分割方案。比如一个旅游应用，可以把机票、酒店、火车票、自由行等模块分拆成不同的`uni_modules`，由不同的部门来开发。
+
+## 目录结构@dir
+
+### 项目插件的uni_modules
 
 `uni_modules`插件如果是项目类型的插件，只需要在项目的根目录下放一个符合`uni_modules`规范的package.json。
 If the `uni_modules` plugin is a project type plugin, you only need to put a package.json that conforms to the `uni_modules` specification in the root directory of the project.
@@ -56,8 +54,7 @@ Right-click on the package.json to update the project plugin or publish it to th
 比如[uni-admin](https://ext.dcloud.net.cn/plugin?id=3268)、[uni-starter](https://ext.dcloud.net.cn/plugin?id=5057)，都可以通过这种方式更新。
 For example [uni-admin](https://ext.dcloud.net.cn/plugin?id=3268), [uni-starter](https://ext.dcloud.net.cn/plugin?id=5057) , can be updated in this way.
 
-#### 非项目插件的uni_modules
-#### uni_modules for non-project plugins
+### 非项目插件的uni_modules
 
 如果是非项目类型的插件，比如组件、js sdk、页面模板、云函数，则需要放置在项目的`uni_modules`目录下。
 If it is a plug-in of non-project type, such as component, js sdk, page template and cloud function, it needs to be placed in the `uni_modules` directory of the project.
@@ -88,8 +85,7 @@ uni_modules                                项目根目录下
 That is, the `uni_modules` directory is equivalent to duplicating the project structure of uni-app.
 
 **Tips**
-- 插件目录不支持pages.json、App.vue、main.js、manifest.json、uni.scss文件，如果需要插件使用者修改这些文件内容，请在插件文档(readme.md)中详细说明。
-- Files of pages.json, App.vue, main.js, manifest.json and uni.scss are not supported in the plug-in directory. If plug-in users need to modify the contents of these files, please elaborate in detail in the plug-in document (readme.md).
+- 插件目录不支持pages.json、App.vue/uvue、main.js/uts、manifest.json、uni.scss文件，如果需要插件使用者修改这些文件内容，请在插件文档(readme.md)中详细说明。
 - 插件目录支持`pages_init.json`，可以方便注册页面到项目的pages.json中，[见下](?id=pages-init)
 - The plugin directory supports `pages_init.json`, which can easily register pages to the project's pages.json, [see below](?id=pages-init)
 - 在插件内部引用资源、跳转页面时，请尽量使用相对路径。
@@ -109,10 +105,23 @@ As shown in the figure below, there is a `uni_modules` named `uni-config-center`
 HBuilderX 中打开配有引用图标指示的文件，会打开原始地址。
 Opening a file indicated by a reference icon in HBuilderX will open the original address.
 
-### 使用 uni_modules 插件
-### Use uni_modules plug-in
-#### 下载uni_modules插件
-#### Download uni_modules plugin
+#### uts插件
+在uni_modules的utssdk目录，可以放置uts插件。
+
+uts插件是非常重要的一种跨端插件。它支持API插件和组件插件。
+
+在utssdk目录下，可以放置一个interface.uts的声明，然后可以新建app-android、app-ios、web、mp-weixin、app-harmony等目录，每个目录下可以存放不同客户端平台的代码。
+
+以获取电量的API为例，uni.getBatteryInfo()，在根目录的interface.uts中定义了api的对外暴露接口、定义统一的错误码，然后在各个客户端平台的目录中，实现电量获取这个API。
+
+uni.getBatteryInfo的插件和源码详见：[https://ext.dcloud.net.cn/plugin?id=9295](https://ext.dcloud.net.cn/plugin?id=9295)
+
+在app-android、app-ios目录，可以放置Android原生的aar、iOS原生的framework，也支持配置Android仓储和iOS的cocoapods。
+
+uts插件开发的详细指南见：[https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)
+
+## 使用 uni_modules 插件
+### 下载uni_modules插件
 1. 在[插件市场](https://ext.dcloud.net.cn/)查找uni_modules插件
 1. Find the uni_modules plugin in [Plugin Market](https://ext.dcloud.net.cn/)
 2. 在插件详情页,右侧会标明该插件是否支持uni_modules，点击`使用 HBuilderX 导入插件`
@@ -133,20 +142,17 @@ import {test} from '@/uni_modules/xx-yy/js_sdk/test.js'
 - If you want to use pages from uni_modules, [see below](#pages-init)
 
 
-#### 安装uni_modules插件依赖
-#### Install uni_modules plug-in dependencies
+### 安装uni_modules插件依赖
 1. 导入插件时，HBuilderX会自动安装当前插件的所有三方依赖。
 1. When importing a plug-in, HBuilderX will automatically install all third-party dependencies of the current plug-in.
 2. 您还可以在插件目录右键手动执行`安装插件三方依赖`
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/deps_uni_modules.png)
-#### 更新uni_modules插件
-#### Update uni_modules plug-in
+### 更新uni_modules插件
 1. 可以通过插件目录右键`从插件市场更新`，来检查更新当前所使用的插件
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/check_uni_modules.png)
 2. 对比插件，确认更新内容
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/compare_uni_modules.png)
-#### 卸载uni_modules插件
-#### Uninstall uni_modules plug-in
+### 卸载uni_modules插件
 uni_modules插件目录是独立存在的，如果您不再需要该插件，可以直接删除该插件目录。
 The uni_modules plug-in directory is standalone. If you no longer need the plug-in, you can delete it directly.
 
@@ -155,9 +161,8 @@ The uni_modules plug-in directory is standalone. If you no longer need the plug-
 - Importing the uni_modules specification plug-in requires HBuilderX 3.1.0+
 
 
-### 配置
-### configuration
-#### package.json@package-json
+## 配置
+### package.json@package-json
 
 package.json在每个`uni_modules`插件中都必须存在，包含了插件的基本信息。以下是package.json的详细配置说明
 package.json must exist in every `uni_modules` plug-in and contains the basic information of plug-ins. The following is a detailed configuration description of package.json
@@ -278,7 +283,7 @@ package.json must exist in every `uni_modules` plug-in and contains the basic in
 
 
 
-#### uni_modules.config.json
+### uni_modules.config.json
 `uni_modules.config.json`在项目根目录，可以配置插件更新后的触发脚本（通常用于执行自定义的自动化任务），插件uniCloud支持的服务空间。以下是`uni_modules.config.json`的详细配置说明
 `uni_modules.config.json` In the root directory of the project,  you can configure the trigger script updated by the plug-in (usually used to perform customized automation tasks) and the service space supported by the plug-in uniCloud. The following is a detailed configuration description of `uni_modules.config.json`
 ```json
@@ -297,8 +302,7 @@ package.json must exist in every `uni_modules` plug-in and contains the basic in
 ```
 
 **Tips**
-- 当项目内仅关联了一个服务空间，此时uni_modules插件内的uniCloud相关资源会自动归属至该服务空间，无需在uni_modules.config.json中配置uniCloud所属服务空间
-- When only one service space is associated with the project, the uniCloud-related resources in the uni_modules plugin will be automatically attributed to this service space, so there is no need to configure the service space to which uniCloud belongs in uni_modules.config.json
+- 当项目内仅关联了一个服务空间，此时`uni_modules`插件内的uniCloud相关资源会自动归属至该服务空间，无需在uni_modules.config.json中配置uniCloud所属服务空间
 - 当项目内关联了两个服务空间（阿里云和腾讯云同时存在）
 - When there are two service spaces in the project (Alibaba Cloud and Tencent Cloud exist at the same time)
   * 若未在uni_modules.config.json中配置平台，则上传该插件uniCloud资源时，会提示上传至选择哪个服务空间
@@ -306,7 +310,7 @@ package.json must exist in every `uni_modules` plug-in and contains the basic in
   * 若已在uni_modules.config.json中配置平台，则上传时以配置为准，自动归属至指定的服务空间
   * If the platform has been configured in uni_modules.config.json, the configuration will prevail when uploading and it will be automatically attributed to the specified service space
 
-#### npmignore@npmignore
+### npmignore@npmignore
 
 uni_modules插件发布到插件市场是通常需要忽略掉一些目录或文件，比如`unpackage`、`.hbuilderx`、`node_modules`等，这时可以通过npmignore文件来实现文件的忽略。
 When uni_modules plug-in is released to plug-in market, it is usually necessary to ignore some directories or files, such as `unpackage`, `.hbuilderx`, `node_modules` and so on, then the file can be ignored by npmignore file.
@@ -327,8 +331,7 @@ package-lock.json
 - 项目根目录下的`.npmignore`对发布项目、插件模板生效。`uni_modules/插件Id/.npmignore`对发布插件生效
 - The `.npmignore` in the project root directory is effective for publishing projects and plug-in templates. `uni_modules/Plug-in Id/.npmignore` Effective for published plug-ins
 
-#### pages_init页面注册@pages-init
-#### pages_init page registration @pages-init
+### pages_init页面注册@pages-init
 > 新增于HBuilderX 3.5.0+
 > Added in HBuilderX 3.5.0+
 
@@ -393,10 +396,8 @@ HBuilderX中合并路由界面效果图：
 - 如果HBuilderX版本低于3.5，或插件作者并没有提供`pages_init.json`，那么仍然需要手动编辑pages.json注册页面。
 - If the HBuilderX version is lower than 3.5, or the plugin author does not provide `pages_init.json`, you still need to manually edit the pages.json registration page.
 
-### 开发 uni_modules 插件
-### Develop uni_modules plug-in
-#### 新建uni_modules目录
-#### Create new uni_modules directory
+## 开发 uni_modules 插件
+### 新建uni_modules目录
 在uni-app项目根目录下，创建uni_modules目录，在HBuilderX中可以项目右键菜单中点击`新建uni_modules目录`
 In the root directory of the uni-app project, create the uni_modules directory, and you can click `Create uni_modules directory` on the right-click menu of the project.
 
@@ -406,8 +407,7 @@ In the root directory of the uni-app project, create the uni_modules directory, 
 - 如果是vue-cli项目，uni_modules目录，位于`src`下，即`src/uni_modules`
 - In case of vue-cli project, the uni_modules directory is located under `src`, which is `src/uni_modules`
 
-#### 新建uni_modules插件
-#### Create uni_modules plug-in
+### 新建uni_modules插件
 1. 在HBuilderX中uni_modules目录右键点击`新建uni_modules插件`
 1. Right-click the uni_modules directory in HBuilderX `Create uni_modules plug-in`
 
@@ -431,8 +431,8 @@ Plugin ID naming specification:
 - `uni_modules`插件可以在package.json的`uni_modules->dependencies`节点配置三方依赖（依赖的插件也必须是`uni_modules`插件），如果是依赖了三方的npm插件，可以使用标准的dependencies节点配置。
 - The `uni_modules` plug-in can be configured with three-party dependencies in the `uni_modules->dependencies` node of package.json (the dependent plug-in must also be the `uni_modules` plug-in). If it is an npm plug-in that relies on three parties, you can use the standard dependencies node configuration.
 
+通过 uni_modules->dependencies 配置三方`uni_modules`插件依赖
 ```json
-// 通过 uni_modules->dependencies 配置三方uni_modules插件依赖
 {
   "id": "uni-badge",
   "displayName": "uni-badge 数字角标",
@@ -444,10 +444,8 @@ Plugin ID naming specification:
 }
 ```
 
-#### 发布到插件市场
-#### Release to plug-in market
-当您的插件开发完毕，可以直接发布到[插件市场](https://ext.dcloud.net.cn/)供其他人免费或付费使用，插件市场提供了变现、评价等机制，优秀的插件作者，可以做到月入好几万。
-When your plug-in is developed, you can publish it directly to the [plug-in market](https://ext.dcloud.net.cn/) for free or paid use by others. The plug-in market provides mechanisms such as realization and evaluation. Excellent plug-in authors can earn tens of thousands of dollars a month.
+### 发布到插件市场
+当您的插件开发完毕，可以直接发布到[插件市场](https://ext.dcloud.net.cn/)供其他人免费或付费使用，插件市场提供了变现、评价等机制，优秀的插件作者可以做到月入数万元。
 
 发布流程：
 Release process:
@@ -460,9 +458,7 @@ Release process:
 - 如果需要发布为项目模板，请在项目根目录创建package.json，然后右键菜单发布到插件市场。
 - If you need to release it as a project template, please create package.json in the root directory of the project, and then right-click the menu to release to the plug-in market.
 - 发布插件时，可以选择上传当前项目作为示例工程，完整的示例工程，可以方便用户快速上手。
-- When releasing the plug-ins, you can choose to upload the current project as an example project. A complete example project helps users get started quickly.
-#### 修改插件基本信息
-#### Modify plug-in basic information
+### 修改插件基本信息
 当您的插件发布到插件市场后，如果需要调整插件市场上的一些基本信息，比如插件中文名称，描述，关键词，readme.md等，可以直接在插件目录右键`修改插件基本信息`
 When your plug-in is released to the plug-in market, if you need to adjust some basic information in the plug-in market, such as Chinese name, description, keywords, and readme.md, you can right-click the `Modify the plug-in basic information` directly in the plug-in directory.
 
@@ -471,8 +467,7 @@ When your plug-in is released to the plug-in market, if you need to adjust some 
 2. 修改插件基本信息
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/update_uni_modules_dialog.png)
 
-#### 发布新版本
-#### Release new version
+### 发布新版本
 当您的插件增加了新的功能或修复了Bug，需要发布新版本时，操作与第一次发布一样，可以直接在插件目录右键`发布到插件市场`
 When your plug-in has added new functions or fixed bugs, and a new version needs to be released, the operation is the same as that of the first release, and you can right-click the `Release to plug-in market` directly in the plug-in directory.
 
@@ -481,8 +476,7 @@ When your plug-in has added new functions or fixed bugs, and a new version needs
 - The update log filled in the releasing window will automatically be synchronized with changelog.md in the root directory
 
 
-### 已有插件迁移为 uni_modules 插件指南
-### Guide to migrating existing plugins to uni_modules plug-ins
+## 已有插件迁移为 uni_modules 插件指南
 
 1. 将插件内容迁移至您的uni-app示例项目根目录`uni_modules`下以插件ID命名的目录下，举例，若您已有的插件ID为`xx-yy`，则目录结构为：`uni_modules/xx-yy`
 1. Migrate the plug-in content to the directory named after the plug-in ID under the root directory of your uni-app sample project `uni_modules`. For example, if your existing plug-in ID is `xx-yy`, the directory structure is: `uni_modules/xx-yy`

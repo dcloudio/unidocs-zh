@@ -41,11 +41,11 @@ Universal Link是苹果在WWDC 2015上提出的iOS 9的新特性之一。此特�
 
 #### 第二步：配置Associated Domains（域名）
 
-**使用HBuilderX可视化界面配置**  
+**uni-app项目使用HBuilderX可视化界面配置**  
 打开项目的manifest.json文件，切换到“App常用其它设置”项，在“iOS设置”下的“关联域（Associated Domains）”中进行配置：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/ios/hx-ass-domains.png)
 
-**使用HBuilderX源码视图配置**  
+**uni-app项目使用HBuilderX源码视图配置**  
 打开项目的manifest.json文件，切换到“源码视图”项，在uni-app项目在"app-plus" -> "distribute" -> "ios" -> "capabilities" -> "entitlements"节点下添加"com.apple.developer.associated-domains"字段，字段值为字符串数组，每个字符串为要关联的域名：  
 ```json
 	"capabilities": {

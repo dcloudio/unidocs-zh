@@ -23,7 +23,7 @@ plists节点数据将转换成XCode工程中Info.plist文件的数据（字典�
 
 <a id="unilink"/>
 
-### 通用链接（Universal Link）
+## 通用链接（Universal Link）
 
 **为了简化配置使用通用链接，推荐使用UniCloud快速生成通用链接，详情参考：[一键生成iOS通用链接](https://uniapp.dcloud.io/api/plugins/universal-links)**  
 
@@ -31,7 +31,7 @@ Universal Link是苹果在WWDC 2015上提出的iOS 9的新特性之一。此特�
 使用前请阅读[苹果官方文档](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW1)  
 **使用通用链接（Universal Link）必须要有域名，下面的配置中将要用到**
 
-#### 第一步：开启Associated Domains服务
+### 第一步：开启Associated Domains服务
 登录苹果开发者网站，在“Certificates, Identifiers & Profiles”页面选择“Identifiers”中选择对应的App ID，确保开启Associated Domains服务  
 ![](https://native-res.dcloud.net.cn/images/uniapp/ios/apple-capabilities.png)
 
@@ -39,9 +39,9 @@ Universal Link是苹果在WWDC 2015上提出的iOS 9的新特性之一。此特�
 
 <a id="associatedDomains"/>
 
-#### 第二步：配置Associated Domains（域名）
+### 第二步：配置Associated Domains（域名）
 
-##### uni-app/5+ App项目  
+#### uni-app/5+ App项目  
 **使用HBuilderX可视化界面配置**  
 打开项目的manifest.json文件，切换到“App常用其它设置”项，在“iOS设置”下的“关联域（Associated Domains）”中进行配置：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/ios/hx-ass-domains.png)
@@ -63,7 +63,7 @@ Universal Link是苹果在WWDC 2015上提出的iOS 9的新特性之一。此特�
 
 保存后提交云端打包生效。
 
-##### uni-app x项目  
+#### uni-app x项目  
 uni-app x项目不再支持maniest.json中配置，需在项目下创建 "nativeResources" -> "ios" 目录，添加`UniApp.entitlements`文件配置。  
 详情参考：[https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#domains](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#domains)
 
@@ -76,7 +76,7 @@ uni-app x项目不再支持maniest.json中配置，需在项目下创建 "native
 
 **HBuilderX中自带的默认真机运行基座HBuilderX注册的通用链接为：https://demo.dcloud.net.cn/ulink/**
 
-#### 第三步：服务器配置apple-app-site-association文件
+### 第三步：服务器配置apple-app-site-association文件
 需要在上面域名对应的服务器上放apple-app-site-association文件。
 apple-app-site-association文件配置如下：
 ```javascript
@@ -107,11 +107,11 @@ apple-app-site-association文件配置如下：
 
 > 推荐方案：将apple-app-site-association文件部署到，免费的阿里云版unicloud的 [前端网页托管](https://uniapp.dcloud.io/uniCloud/hosting?id=%e7%ae%80%e4%bb%8b) 
 
-### 客户端处理通用链接
+## 客户端处理通用链接
 可通过5+ API的[plus.runtime.launcher](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.launcher)判断应用启动来源，如果其值为"uniLink"则表示通过通用链接启动应。
 这时可通过5+ API的[plus.runtime.arguments](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.arguments)获取启动参数，通用链接启动的情况将返回完整的通用链接地址。
 
-### 注意事项
+## 注意事项
 - apple-app-site-association文件不需要.json后缀
 - 对apple-app-site-association文件的请求仅在App第一次启动时进行，如果此时网络连接出了问题apple会缓存请求，等有网的时候再去请求，如果没有请求此文件通用连接会失效
 - iOS 9.2开始，在相同的domain内Universal Links不生效，必须要跨域才生效

@@ -228,7 +228,7 @@ uni-app/uni-app x 项目可以通过编辑`UniApp.entitlements`文件配置`Capa
 
 **注意**
 - ios目录下不支持放Object-C/Swift源码文件，需要开发源码建议使用[UTS插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)或[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)  
-- resources目录中的资源文件不能通过uni API使用，需通过 iOS 原生 API 访问，参考[Accessing a Bundle's Contents](https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/Introduction/Introduction.html#//apple_ref/doc/uid/10000123i-CH1-SW1)。也就是在uni-app中，访问这些资源需要通过uts代码访问或编写[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)  
+- resources目录中的资源文件不能通过uni API使用，需通过 iOS 原生 API 访问，参考[Accessing a Bundle's Contents](https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/Introduction/Introduction.html#//apple_ref/doc/uid/10000123i-CH1-SW1)。也就是在uni-app/uni-app x项目中这些资源需要通过uts代码访问，uni-app项目也可编写[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)访问  
 - resources目录中已经保留使用以下文件，需注意避免冲突
 
 <pre v-pre="" data-lang="">

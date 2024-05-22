@@ -174,13 +174,17 @@ HBuilderX中对项目右键菜单 "新建" -> "目录"
 Enter the name `nativeResources` (note that it is case-sensitive), confirm and create a directory.
 
 继续创建“ios”子目录，结构如下：  
-![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/ios/directory.png)
+![](https://native-res.dcloud.net.cn/images/uniapp/nativeresource/ios/ios.png)
 
+- `Resources`，用于保存Bundle资源的目录  
+- `UniApp.entitlements`，用于配置工程`Capabilities`的文件  
 
 
 ### 配置文件UniApp.entitlements@entitlements  
 
-在 nativeResourc/ios 目录下创建`UniApp.entitlements`文件配置 XCode 原生工程中的 `Capabilities`，如下示例：
+在 XCode 中可以通过项目可视化界面编辑应用的`Capabilities`，实际上是操作项目的 entitlements 和 Info.plist 文件保存数据。在 HBuilderX 中暂未提供`Capabilities`可视化界面操作，需手动编辑`UniApp.entitlements`和`Info.plist`文件来实现相关配置。
+
+在 nativeResourc/ios 目录下创建`UniApp.entitlements`文件，用于配置 XCode 原生工程的`Capabilities`，如下示例：
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -191,6 +195,8 @@ Enter the name `nativeResources` (note that it is case-sensitive), confirm and c
 </plist>
 ```
 
+你可以通过编辑`UniApp.entitlements`文件配置`Capabilities`，
+
 **注意**
 - plist文件必须符合标准的xml格式  
 - plist文件必须符合Apple Information Property List规范，参考[详情](https://developer.apple.com/documentation/bundleresources/information_property_list)  
@@ -198,9 +204,11 @@ Enter the name `nativeResources` (note that it is case-sensitive), confirm and c
 	* 根节点必须是plist，二级节点必须是dict   
 - `UniApp.entitlements`的内容只能用于配置 `Capabilities`，不能添加自定义数据   
 
+**相关参考** 
+- Adding capabilities to your app，参考：[https://developer.apple.com/documentation/xcode/adding-capabilities-to-your-app](https://developer.apple.com/documentation/xcode/adding-capabilities-to-your-app)
 
 #### 配置`Associated Domains`@domains  
-
+在`UniApp.entitlements`添加`com.apple.developer.associated-domains`节点数据开启`Associated Domains`能力
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -208,11 +216,21 @@ Enter the name `nativeResources` (note that it is case-sensitive), confirm and c
 <dict>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:hellouniappx.dcloud.net.cn</string>
+		<string>applinks:demo.dcloud.net.cn</string>
 	</array>
 </dict>
 </plist>
 ```
+
+**注意**  
+- `com.apple.developer.associated-domains`字段值类型必须是字符串数组  
+- 上面示例中`applinks:demo.dcloud.net.cn`配置的是通用链接域名，其中`applinks:`表示此域名用于通用链接，`demo.dcloud.net.cn`是域名，请修改为应用自己使用的域名
+- `array`节点下可添加多个关联域名    
+- iOS平台完整配置通用链接参考文档：[配置通用链接（Universal Link）](https://uniapp.dcloud.net.cn/tutorial/app-ios-capabilities.html#%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5-universal-link)
+
+**相关参考**  
+- Configuring an associated domain，参考：[https://developer.apple.com/documentation/xcode/configuring-an-associated-domain](https://developer.apple.com/documentation/xcode/configuring-an-associated-domain)  
+
 
 ### Bundle资源目录 （Bundle Resources）@bundle  
 

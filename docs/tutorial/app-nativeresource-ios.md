@@ -195,7 +195,7 @@ Enter the name `nativeResources` (note that it is case-sensitive), confirm and c
 </plist>
 ```
 
-你可以通过编辑`UniApp.entitlements`文件配置`Capabilities`，
+uni-app/uni-app x 项目可以通过编辑`UniApp.entitlements`文件配置`Capabilities`，需确保此entitlements文件格式正确，可以在 XCode 中编辑验证此文件。  
 
 **注意**
 - plist文件必须符合标准的xml格式  

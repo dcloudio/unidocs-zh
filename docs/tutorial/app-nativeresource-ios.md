@@ -233,6 +233,7 @@ uni-app/uni-app x 项目可以通过编辑`UniApp.entitlements`文件配置`Capa
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
+// uni-app/5+ App 项目  
 ┌─Pandora                       //uni-app资源目录
 │  └─apps                       //应用资源目录
 │    └─[AppID]                  //使用DCloud AppID作为目录名称
@@ -246,6 +247,13 @@ uni-app/uni-app x 项目可以通过编辑`UniApp.entitlements`文件配置`Capa
 ├─uni-jsframework-vue3-dev.js  //uni-app vue3框架（开发模式）
 ├─unincomponents.ttf           //uni-app内置字体图标
 └─userPosition@2x.png          //地图模块当前位置图标
+
+// uni-app x 项目
+┌─uni-app-x                    //uni-app x 项目资源
+├─DCUniVideo                   //video组件目录
+├─uni_uts_toast_error.png      //uni.showToast 使用的图标
+└─uni_uts_toast_success.png    //uni.showToast 使用的图标
+
 	</code>
 </pre>
 - 应用资源目录配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)

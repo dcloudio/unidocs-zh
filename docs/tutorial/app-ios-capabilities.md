@@ -82,7 +82,7 @@ Open the manifest.json file of the project, switch to the "Source View" item, an
 保存后提交云端打包生效。
 After saving, submit the cloud package to take effect.
 
-**uni-app x项目配置**
+**uni-app x项目配置**  
 uni-app x项目不再支持maniest.json中配置，需在项目下创建 "nativeResources" -> "ios" 目录，添加`UniApp.entitlements`文件配置。  
 详情参考：[https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#domains](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#domains)
 

@@ -62,6 +62,11 @@ Universal Link是苹果在WWDC 2015上提出的iOS 9的新特性之一。此特�
 
 保存后提交云端打包生效。
 
+**uni-app x项目配置**
+uni-app x项目不再支持maniest.json中配置，需在项目下创建 "nativeResources" -> "ios" 目录，添加`UniApp.entitlements`文件配置。  
+详情参考：[https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#domains](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#domains)
+
+
 **本地离线打包配置**  
 在原生XCode工程中配置通用链接域名（使用HBuilderX云端打包跳过）  
 ![](https://native-res.dcloud.net.cn/images/uniapp/ios/xcode-ass-domains1.png)  

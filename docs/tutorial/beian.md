@@ -38,6 +38,13 @@
 
 
 **APP备案流程**
+
+
+> 注意：**APP备案的前提是先进行域名备案**，关于域名备案，请参考上一章节。
+> 
+> App备案需要填写App后端服务器域名，该域名持有人需和App备案主体保持一致。
+
+
 1. 前往[阿里云官网APP备案](https://wanwang.aliyun.com/qualificationrec/bazszl)
 2. 填写相关信息以及备案码，其中域名填写你自己的域名(即使你的域名没在APP内使用也可以,但必须是跟APP同一个主体)，不需要填写uniCloud相关的域名
 3. 提交等待审核通过
@@ -47,7 +54,6 @@
 - [阿里云：App备案快速入门](https://wanwang.aliyun.com/qualificationrec/bazszl)
 - [腾讯云：如何快速备案您的网站或App](https://cloud.tencent.com/document/product/243/39038)
 
-注意：App备案需要填写App后端服务器域名，该域名持有人需和App备案主体保持一致，且**域名需提前备案**。关于域名备案，请参考上一章节。
 
 > 若您不熟悉App备案，需要技术指导、加急办理或三方代办服务，可到服务市场寻求帮助，[点此前往](https://market.aliyun.com/agents/yscdcloud#J_3668019490)
 

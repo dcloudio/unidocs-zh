@@ -2,7 +2,7 @@
 
 ## 什么是 uni_modules
 
-主流的语言/平台，都有自己包管理方案，js的npm、Android的仓储、iOS的cocoapods、鸿蒙的ohpm、dart的pub。。。
+主流的语言/平台，都有自己包管理方案，js有npm、yarn或pnpm、Android有仓储、iOS有cocoapods、鸿蒙有ohpm、dart有pub。。。
 
 uni-app是大一统开发，包括客户端和uniCloud服务器。在客户端部分包括web、Android、iOS、各家小程序。
 

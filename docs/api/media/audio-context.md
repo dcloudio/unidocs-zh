@@ -86,7 +86,7 @@ errCode 说明
 
 **tips**
 
-- ape 格式的支持取决于 rom 厂商，在移动端使用不涉及专利授权问题，因为`uni.createInnerAudioContext()`没有单独使用三方解码器
+- ape 格式的支持取决于 rom 厂商，在App移动端使用`uni.createInnerAudioContext()`不涉及专利授权问题，因为没有单独使用三方解码器
 
 
 **示例**

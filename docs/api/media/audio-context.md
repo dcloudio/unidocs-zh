@@ -84,6 +84,11 @@ errCode 说明
 |aiff	|√|x|
 |caf	|√|x|
 
+**tips**
+
+- ape 格式的支持取决于 rom 厂商，在移动端使用不涉及专利授权问题，因为`uni.createInnerAudioContext()`没有单独使用三方解码器
+
+
 **示例**
 
 ```javascript

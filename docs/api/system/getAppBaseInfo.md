@@ -21,7 +21,7 @@
 |hostName|string|小程序宿主名称|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
 |hostPackageName|string|小程序宿主包名|`仅 UNIMPSDK 支持`|
 |hostSDKVersion|string|uni小程序SDK版本、小程序客户端基础库版本|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
-|hostTheme|string|系统当前主题，取值为light或dark。微信小程序全局配置"darkmode":true时才能获取，否则为 undefined （不支持小游戏）|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
+|hostTheme|string|宿主当前主题，取值为light或dark。微信小程序全局配置"darkmode":true时才能获取，否则为 undefined （不支持小游戏）|`App 仅 UNIMPSDK 支持`|
 |hostFontSizeSetting|string|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|`仅 小程序 支持`|
 
 小程序特殊的返回参数

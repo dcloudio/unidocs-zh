@@ -45,7 +45,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |host	|hostName			|小程序宿主或uniMPSDK的集成宿主名称，如：`WeChat`、`FeiShu`|仅 UniMPSDK 支持	|不支持|[详见](#hostname)|微信小程序真机运行才有真值|uni-app 3.4.10+|
 |			|hostVersion		|宿主版本。如：微信版本号|仅 UniMPSDK 支持	|不支持|小程序宿主版本||uni-app 3.4.10+|
 |			|hostLanguage		|宿主语言|仅 UniMPSDK 支持	|不支持|小程序宿主语言||uni-app 3.4.10+|
-|			|hostTheme			|宿主主题|`light`、`dark`。仅 UniMPSDK 支持	|不支持|`light`、`dark`。前提是微信小程序全局配置"darkmode":true时才能获取||uni-app 3.4.10+|
+|			|hostTheme			|宿主主题|`light`、`dark`。仅 UniMPSDK 支持	|`light`、`dark`|`light`、`dark`。前提是微信小程序全局配置"darkmode":true时才能获取||uni-app 3.4.10+|
 |			|hostFontSizeSetting	|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|不支持|不支持|微信小程序、支付宝小程序、百度小程序、QQ小程序、抖音小程序(2.53.0+)||uni-app 3.4.13+|
 |			|hostPackageName	|小程序宿主包名|仅 UniMPSDK 支持	|不支持|不支持||uni-app 3.4.10+|
 |			|hostSDKVersion	|uni小程序SDK版本、小程序客户端基础库版本|仅 UniMPSDK 支持	|不支持|||uni-app 3.4.13+|
@@ -65,8 +65,8 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |			|windowHeight		|可使用窗口高度	|||||		|
 |			|windowTop			|可使用窗口的顶部位置	|||||		|
 |			|windowBottom		|可使用窗口的底部位置	|||||		|
-|			|statusBarHeight	|手机状态栏的高度||||||		
-|			|safeArea			|在竖屏正方向下的安全区域。由于此属性理解和使用比较困难，更推荐使用 safeAreaInsets 属性。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、抖音、飞书、支付宝（iOS真机）、快手、QQ小程序、华为快应用|||	
+|			|statusBarHeight	|手机状态栏的高度||||||
+|			|safeArea			|在竖屏正方向下的安全区域。由于此属性理解和使用比较困难，更推荐使用 safeAreaInsets 属性。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、抖音、飞书、支付宝（iOS真机）、快手、QQ小程序、华为快应用|||
 |			|safeAreaInsets		|在竖屏正方向下的安全区域插入位置。与小程序定义的 safeArea 用途相同，但是规范参考 iOS 平台的 [safeAreaInsets](https://developer.apple.com/documentation/uikit/uiview/2891103-safeareainsets) 更利于理解和使用。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、抖音、飞书、支付宝小程序（iOS真机）、华为快应用||uni-app 2.5.3+|
 
 #### 某些小程序特殊的返回参数

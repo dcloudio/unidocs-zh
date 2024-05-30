@@ -1,6 +1,6 @@
 # uts ios调试
 
-uts插件，运行到iOS，支持Debug，打断点调试。
+uts插件，运行到iOS（限iOS17以下），支持Debug，打断点调试。
 > uni-app 需 HBuilderX 3.7.6+
 
 > uni-app x 需 HBuilderX 4.18+

@@ -34,9 +34,7 @@ Get the basic information of WeChat APP
 |hostPackageName|string|小程序宿主包名|`仅 UNIMPSDK 支持`|
 |hostPackageName|string|mini program host package name|`only supported by UNIMPSDK`|
 |hostSDKVersion|string|uni小程序SDK版本、小程序客户端基础库版本|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
-|hostSDKVersion|string|uni applet SDK version, applet client base library version|`App only supports UNIMPSDK`, `H5 does not support`|
-|hostTheme|string|系统当前主题，取值为light或dark。微信小程序全局配置"darkmode":true时才能获取，否则为 undefined （不支持小游戏）|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
-|hostTheme|string|The current theme of the system, the value is light or dark. The WeChat applet can only be obtained when "darkmode" is globally configured: true, otherwise it is undefined (mini games are not supported)|`App only supports UNIMPSDK`, `H5 does not support`|
+|hostTheme|string|宿主当前主题，取值为light或dark。微信小程序全局配置"darkmode":true时才能获取，否则为 undefined （不支持小游戏）|`App 仅 UNIMPSDK 支持`|
 |hostFontSizeSetting|string|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|`仅 小程序 支持`|
 |hostFontSizeSetting|string|User font size setting. The setting in "I-Settings-General-Font Size" shall prevail, unit: px|`Only applet supports`|
 
@@ -62,6 +60,4 @@ Deprecated return parameter, reserved for backward compatibility only
 |Parameter Name|Type|Description|Platform Difference Description|
 |:-|:-|:-|:-|
 |language|string|应用设置的语言|`H5 不支持`|
-|language|string|The language set by the application|`H5 does not support`|
 |version|string|引擎版本号、微信版本号||
-|version|string|Engine version number, WeChat version number||

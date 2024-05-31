@@ -236,7 +236,7 @@ Releasing ssr will get two parts: the cloud part and the static resource part. T
 3. 前端网页托管绑定自定义域名，参考文档：[前端网页托管配置域名](https://doc.dcloud.net.cn/uniCloud/hosting?id=domain)
 4. 将前两步部署的域名都配置在跨域配置内，即允许云函数跨域访问前端网页托管内的资源，也允许前端网页托管跨域访问云函数。参考文档：[H5中使用uniCloud的跨域处理](https://doc.dcloud.net.cn/uniCloud/quickstart?id=useinh5)
 5. 从插件市场导入[uni-ssr](https://ext.dcloud.net.cn/plugin?id=5338)到项目内
-5. Import [uni-ssr](https://ext.dcloud.net.cn/plugin?id=5338) from the plug-in market into the project
+6. 修改`cloudfunctions/uni-ssr/package.json`内容，将uni-app相关依赖的版本调整为发行项目是的依赖版本
 
 **编译发行**
 **Compile and release**

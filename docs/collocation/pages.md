@@ -1337,8 +1337,7 @@ Providing tabBar configuration in pages.json is not only to facilitate rapid dev
 |selectedColor|HexColor|是||tab 上的文字选中时的颜色||
 | selectedColor| HexColor|Yes || the color when the text on the tab is selected||
 |backgroundColor|HexColor|是||tab 的背景色||
-| backgroundColor| HexColor| is the background color of || tab||
-|borderStyle|String|否|black|tabbar 上边框的颜色，可选值 black/white，也支持其他颜色值|App 2.3.4+ 、H5 3.0.0+|
+|borderStyle|String|否|black|tabbar 上边框的颜色，可选值 black/white，black对应颜色rgba(0,0,0,0.33)，white对应颜色rgba(255,255,255,0.33)。|App 2.3.4+ 、H5 3.0.0+|
 |blurEffect|String|否|none|iOS 高斯模糊效果，可选值 dark/extralight/light/none（参考:[使用说明](https://ask.dcloud.net.cn/article/36617)）|App 2.4.0+ 支持、H5 3.0.0+（只有最新版浏览器才支持）|
 |list|Array|是||tab 的列表，详见 list 属性说明，最少2个、最多5个 tab||
 | list| Array| is a list of || tabs, see the list property description for details, at least 2 and at most 5 tabs||

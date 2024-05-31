@@ -120,9 +120,7 @@ Dynamically set the overall style of tabBar
 |backgroundImage|String||否|图片背景。支持设置本地图片或创建线性渐变如，优先级高于 backgroundColor，仅 App 2.7.1+ 支持|
 | backgroundImage | String | | No | The image background. Support setting local images or creating linear gradients such as, priority is higher than backgroundColor, only supported by App 2.7.1+|
 |backgroundRepeat|String||否|背景图平铺方式。repeat：背景图片在垂直方向和水平方向平铺；repeat-x：背景图片在水平方向平铺，垂直方向拉伸；repeat-y：背景图片在垂直方向平铺，水平方向拉伸；no-repeat：背景图片在垂直方向和水平方向都拉伸。 默认使用 no-repeat。仅 App 2.7.1+ 支持|
-| backgroundRepeat| String||No| The tiling method of the background image. repeat: the background image is tiled vertically and horizontally; repeat-x: the background image is tiled horizontally, stretched vertically; repeat-y: the background image is tiled vertically, stretched horizontally; no-repeat : The background image is stretched both vertically and horizontally. By default no-repeat is used. Only supported by App 2.7.1+|
-|borderStyle|String||否|tabBar上边框的颜色， 仅支持 black/white|
-| borderStyle| String||No| The color of the border on the tabBar, only support black/white|
+|borderStyle|String||否|tabBar上边框的颜色， 仅支持 black/white，black对应颜色rgba(0,0,0,0.33)，white对应颜色rgba(255,255,255,0.33)。|
 |midButton|Object||否|中间按钮 仅在 list 项为偶数时有效 [详情](https://uniapp.dcloud.net.cn/collocation/pages.html#tabbar)。HBuilderX 3.6.9+|
 | midButton| Object||No|The middle button is only valid when the list item is even [Details](https://uniapp.dcloud.net.cn/collocation/pages.html#tabbar). HBuilderX 3.6.9+|
 |success|Funtion||否|接口调用成功的回调函数|

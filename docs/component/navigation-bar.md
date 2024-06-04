@@ -8,7 +8,7 @@ The page navigation bar configuration node is used to specify some attributes of
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√ 2.6.3+|2.6.3+|√ 2.9.0+|√|√|√|√|x|x|
+|√ 2.6.3+|2.6.3+|√ 2.9.0+|√|√|√|√|√|x|
 
 从HBuilderX 2.9.3起，编译到所有平台均支持`navigation-bar`，但编译到微信时，受微信基础库版本限制；编译到其他平台不受平台版本限制。
 From HBuilderX 2.9.3, `navigation-bar` is supported on all platforms when compiled, but when compiled to WeChat, it is limited by the version of the basic library of WeChat; compiled to other platforms, it is not limited by the platform version.

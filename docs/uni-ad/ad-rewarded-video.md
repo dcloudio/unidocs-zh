@@ -587,7 +587,7 @@ export default {
 sign = sha256(secret:transid)
 ```
 
-提示：`Security key` 在 [uni-ad 广告联盟](https://uniad.dcloud.net.cn) 对应的广告位，配置激励视频服务器回调后，点击广告位左侧下拉后可以看到
+提示：`secret` 在 [uni-ad 广告联盟](https://uniad.dcloud.net.cn) 对应的广告位，配置激励视频服务器回调后，点击广告位左侧下拉后可以看到
 
 #### 签名验证方式
 

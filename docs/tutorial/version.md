@@ -113,7 +113,7 @@ HBuilderX 有3.8.7、3.8.12、3.90、3.91这几个正式版。
 ### 版本列表
 
 下面提供 `uni-app` 开发中各产品的版本对应表：
-<iframe src="https://dev.dcloud.net.cn/product/versions/view" width="100%" height="500px" frameborder="0" scrolling="no" style="border: 1px solid #eee; border-radius: 4px;"> </iframe>
+<iframe src="https://dev.dcloud.net.cn/product/versions/view" width="100%" height="680px" frameborder="0" scrolling="no" style="border: 1px solid #eee; border-radius: 4px;"> </iframe>
 
 
 想避免版本兼容问题，还是推荐使用HBuilderX完成一切工作，包括创建项目、运行编译、云打包app。

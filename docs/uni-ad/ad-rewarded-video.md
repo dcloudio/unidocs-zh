@@ -732,7 +732,7 @@ sign = sha256(secret:transid)
 
 注意
 1. 在实际业务中云函数费用可能会出现稍微偏高，如：开发者的服务器响应过慢时，广告商的服务器会重试，导致调用次数增加
-2. 业务系统不在uniCloud的费用采用服务器配置升级后的计算方式，[升级参考](/component/ad-rewarded-video.md#upgrade)
+2. 业务系统不在uniCloud的费用采用服务器配置升级后的计算方式，[升级参考](https://doc.dcloud.net.cn/uniCloud/uni-login/price.html)
 
 #### 总结
 

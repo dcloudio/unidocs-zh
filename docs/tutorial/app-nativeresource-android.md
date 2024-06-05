@@ -120,7 +120,7 @@ uni-app x项目manifest.json中没有提供Android权限的配置，需在此And
   package="io.dcloud.nativeresouce">  
     <application>  
         <!--meta-data-->  
-        <activity android:name="io.dcloud.uniapp.LaunchProxyActivity" android:exported="true">
+        <activity android:name="io.dcloud.uniapp.UniLaunchProxyActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />

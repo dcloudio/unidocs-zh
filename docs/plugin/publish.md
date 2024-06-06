@@ -77,8 +77,8 @@ HBuilderX发布插件界面暂未支持前端组件价格设置，插件作者�
 - 当项目包含前端付费插件时，首次运行或发行到指定平台时，会触发付费插件在该平台的云端编译，此时需要您的电脑处于联网状态，且您登录的HBuilderX账号需要具备使用该插件的权限（购买、试用、协作等），一旦云端编译成功，后续将使用本地缓存，如果更新了的插件版本、HBuilderX版本或运行时勾选了清除缓存，会再次触发云端编译。
 - 不支持直接引入插件内部的文件，仅支持导入插件根目录
 
-* 正确的引入方式：`import { test } from '@/uni_modules/test-components' // 需要插件作者在 index.uts 中 导出 test`
-* 错误的引入方式：`import { test } from '@/uni_modules/test-components/test.uts'`
+	* 正确的引入方式：`import { test } from '@/uni_modules/test-components' // 需要插件作者在 index.uts 中 导出 test`
+	* 错误的引入方式：`import { test } from '@/uni_modules/test-components/test.uts'`
 
 ## uni-app前端模板
 

@@ -33,7 +33,7 @@ uni插件其实是uni-app项目下一部分代码，但提交时注意：
 
 插件市场分多种插件，分类介绍如下：
 
-## 前端组件
+## 前端组件@components
 
 前端组件指uni-app前端使用vue/nvue/wxml等技术开发的、用于页面内嵌的组件。它又进一步细分为vue组件、nvue组件、小程序自定义组件。这个分类不包含uts原生组件。
 
@@ -51,6 +51,33 @@ Tips：
 - 通用组件、nvue组件、目录结构要求相同
 - 小程序组件的一级目录，名字需从 components 变更为 wxcomponents ，其它结构要求相同
 - 组件不能包含根目录的 manifest.json、pages.json、App.vue、main.js 等文件
+
+### 付费插件@components-pay
+从HBuilderX 4.19起，符合 [easycom](https://uniapp.dcloud.net.cn/component/#easycom) 规范的组件支持付费。如需发布付费插件，可对插件设置`普通授权版`及`源码授权版`的价格。DCloud插件市场会**自动加密付费插件中所有vue、uvue、js、ts、uts文件**。
+
+HBuilderX发布插件界面暂未支持前端组件价格设置，插件作者可在插件package.json中手动配置价格后提交发布，后续ui上将支持前端组件价格设置。
+配置方式参考[uni_modules配置](https://uniapp.dcloud.net.cn/plugin/uni_modules.html#package-json)，在package.json`dcloudext`下添加`sale`销售信息。
+
+前端组件付费插件支持试用，当插件用户试用插件时，无法查阅这些加密的源码。插件试用只能用于本地运行或打包自定义基座，不能用于正式发布。
+
+如果插件用户购买了普通授权版，也看不到这些加密文件的源码，运行或打包时，会提交到云端进行验证、解密及编译。
+
+若插件作者提供了源码授权版并且价格在100元以上，需签署第三方电子合同。当意向买方在电子合同签名后，DCloud会短信通知插件作者，提醒插件作者也对该电子合同进行签名。请及时留意合同待签通知。
+
+不管是`普通授权版`还是`源码授权版`，都是绑定唯一的appid和包名。如购买者更换了这2个信息中的一个，需要重新购买授权。
+
+前端组件付费插件开发注意事项：
+- 目前仅支持`uni-app x`项目，不支持`uni-app`项目，且最低需要HBuilderX 4.19+
+- 不支持混搭`utssdk`目录、不支持页面加密、仅支持符合 [easycom](https://uniapp.dcloud.net.cn/component/#easycom) 规范的组件
+- 插件需要对外导出方法、类型等内容时，需要在插件根目录 index.uts 做导出，使用者不能直接引入插件内部的文件
+- 前端组件加密插件无法支持代码提示
+
+前端组件付费插件使用注意事项：
+- 不支持直接引入插件内部的文件，仅支持导入插件根目录
+
+正确的引入方式：`import { test } from '@/uni_modules/test-components' // 需要插件作者在 index.uts 中 导出 test`
+
+错误的引入方式：`import { test } from '@/uni_modules/test-components/test.uts'`
 
 ## uni-app前端模板
 

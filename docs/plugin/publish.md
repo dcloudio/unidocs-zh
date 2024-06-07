@@ -36,7 +36,7 @@ Since HBuilderX 3.1, `uni_modules` has been added, which is an important modular
 
 ## 前端组件@components
 
-前端组件指uni-app前端使用vue/nvue/wxml等技术开发的、用于页面内嵌的组件。它又进一步细分为vue组件、nvue组件、小程序自定义组件。这个分类不包含uts原生组件。
+前端组件指uni-app前端使用vue/nvue/wxml等技术开发的、用于页面内嵌的组件。它又进一步细分为vue组件、uvue组件、nvue组件、小程序自定义组件。这个分类不包含uts原生组件。
 
 我们以小明开发的tag组件（插件ID为：xiaoming-tag）为例，上传插件市场时，目录结构要求如下：
 Let's take the tag component developed by Xiaoming (plugin ID: xiaoming-tag) as an example, when uploading the plugin market, the directory structure requirements are as follows:
@@ -63,15 +63,13 @@ Tips：
 
 HBuilderX 4.19起，DCloud提供了一种云编译的手段来解决前端插件的知识产权保护问题。
 
-插件作者设置加密后，插件使用者下载到的插件是加密后的版本。在运行、发行对前端代码编译时，uni-app x的编译器会将加密插件发送到DCloud的云编译服务器进行编译，将编译结果混入本地编译工程。从而实现插件使用者可以使用插件但无法获取插件源码的效果。
+插件作者设置加密后，插件使用者下载到的插件是加密后的版本。在运行、发行对前端代码编译时，uni-app x的编译器会将加密插件发送到DCloud的云编译服务器进行编译，将编译结果混入本地编译工程。从而实现插件使用者可以使用插件但无法获取插件源码的效果。这种云编译仅在第一次进行，云编译一次后会有缓存。
 
 当然插件使用者可以获取到编译后的代码，但就像uni-app (x)编译后的代码非常难懂，更不会有人去改一样，这种方式虽然不严谨但大体上还是有效保护的了前端插件作者的知识产权。
 
 这个过程不会把插件使用者的项目源码整体发送到DCloud服务器，云编译和解密的仅包括加密插件。
 
 插件市场所有加密付费的插件，均有普通授权和源码授权两种版本。如果购买了源码授权，插件作者可以得到插件的完整源码，此时不再发送插件源码到云编译服务器。
-
-当然这也引发一个问题：如果想纯内网开发，那将无法试用或运行普通授权的插件，因为脱离DCloud的云编译服务器将无法解密。
 
 不管是`普通授权版`还是`源码授权版`，都是绑定唯一的appid和包名。如购买者更换了这2个信息中的一个，需要重新购买授权。注意参考插件购买协议。
 

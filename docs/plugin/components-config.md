@@ -1,42 +1,44 @@
 ## 简介
 
 为了支持**组件加密**功能，**自定义组件**提供了一个**JSON配置文件**，用于配置组件的各项属性。
+* json配置文件需要在组件同级目录下，与组件文件名一致，后缀为`.easycom.json`。
+* 例: 组件文件名为：`button.vue`，json配置文件名就是：`button.easycom.json`
 
 ## 配置文件结构
 
 ```JSON
 {
-    "name": "Test",
-    "description": {
-        "value": "测试",
+  "name": "Test",
+  "description": {
+    "value": "测试",
+    "kind": "markdown"
+  },
+  "attributes": [
+    {
+      "name": "color",
+      "description": {
+        "value": "颜色",
         "kind": "markdown"
-    },
-    "attributes": [
+      },
+      "type": "string",
+      "values": [
         {
-            "name": "color",
-            "description": {
-                "value": "颜色",
-                "kind": "markdown"
-            },
-            "type": "string",
-            "values": [
-                {
-                    "name": "red",
-                    "description": "红色"
-                }
-            ]
-        },
-        {
-            "name": "[event]event",
-            "description": {
-                "value": "测试用事件",
-                "kind": "markdown"
-            },
-            "type": "(event: UniEvent) => void"
+          "name": "red",
+          "description": "红色"
         }
-    ],
-    "example": "例子",
-    "tutorial": "教程",
+      ]
+    },
+    {
+      "name": "[event]event",
+      "description": {
+        "value": "测试用事件",
+        "kind": "markdown"
+      },
+      "type": "(event: UniEvent) => void"
+    }
+  ],
+  "example": "例子",
+  "tutorial": "教程",
 }
 ```
 

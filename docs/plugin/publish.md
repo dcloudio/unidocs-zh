@@ -58,7 +58,7 @@ Tips：
 - 组件不能包含根目录的 manifest.json、pages.json、App.vue、main.js 等文件
 
 ### 付费插件@components-pay
-从HBuilderX 4.19起，符合 [easycom](https://uniapp.dcloud.net.cn/component/#easycom) 规范的组件支持加密和付费。如需发布付费插件，可对插件设置`普通授权版`及`源码授权版`的价格。DCloud插件市场会**自动加密付费插件中所有uvue、uts、js、ts文件**。
+从HBuilderX 4.19起，符合 [easycom](https://uniapp.dcloud.net.cn/component/#easycom) 规范的组件支持加密和付费。如需发布付费插件，可对插件设置`普通授权版`及`源码授权版`的价格。DCloud插件市场会**自动加密付费插件中除hybrid、static目录外所有uvue、uts、js、ts文件**。
 
 插件可在全平台加密，包括web端、app端。因为正式编译会通过DCloud的服务器编译。这不会提交开发者的整个项目代码，仅对插件部分进行云端编译。
 

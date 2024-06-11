@@ -102,7 +102,7 @@ uni.onLocationChange(function (res) {
 
 ### uni.startLocationUpdate(OBJECT)
 
-开启小程序进入前台时接收位置消息。
+开启应用进入前台时接收位置消息。
 
 **平台差异说明**
 
@@ -125,9 +125,9 @@ uni.onLocationChange(function (res) {
 
 ```javascript
 uni.startLocationUpdate({
-  success: res => console.log('开启小程序接收位置消息成功'),
-  fail: err => console.error('开启小程序接收位置消息失败：', err),
-  complete: msg => console.log('调用开启小程序接收位置消息 API 完成')
+  success: res => console.log('开启应用接收位置消息成功'),
+  fail: err => console.error('开启应用接收位置消息失败：', err),
+  complete: msg => console.log('调用开启应用接收位置消息 API 完成')
 });
 ```
 
@@ -151,7 +151,7 @@ uni.startLocationUpdate({
 
 ### uni.startLocationUpdateBackground(OBJECT)
 
-开始监听实时地理位置信息变化事件，小程序进入前后台时均接收实时地理位置信息。
+开始监听实时地理位置信息变化事件，应用进入前后台时均接收实时地理位置信息。
 
 **平台差异说明**
 

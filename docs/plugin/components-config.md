@@ -81,7 +81,7 @@ interface VueComponentData{
 | name        | 组件名称。     |                                                                                                                                             |
 | description | 组件描述。     | 描述信息，可以写**string类型**，也可以写**MarkupContent类型**，MarkupContent类型下， **kind为markdown时**，会将描述按markdown格式进行渲染。 |
 | example     | 组件示例。     |                                                                                                                                             |
-| tutorial    | 自己指南。     |                                                                                                                                             |
+| tutorial    | 组件向导教程。     |                                                                                                                                             |
 | attributes  | 组件属性列表。 |                                                                                                                                             |
 
 ### 属性项

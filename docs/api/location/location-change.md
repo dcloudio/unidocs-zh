@@ -142,8 +142,7 @@ No return value.
 
 ### uni.startLocationUpdate(OBJECT)
 
-开启小程序进入前台时接收位置消息。
-Receive location messages when opening the MiniApp and entering the foreground.
+开启应用进入前台时接收位置消息。
 
 **平台差异说明**
 **Platform Difference Description**
@@ -174,9 +173,9 @@ Receive location messages when opening the MiniApp and entering the foreground.
 
 ```javascript
 uni.startLocationUpdate({
-  success: res => console.log('开启小程序接收位置消息成功'),
-  fail: err => console.error('开启小程序接收位置消息失败：', err),
-  complete: msg => console.log('调用开启小程序接收位置消息 API 完成')
+  success: res => console.log('开启应用接收位置消息成功'),
+  fail: err => console.error('开启应用接收位置消息失败：', err),
+  complete: msg => console.log('调用开启应用接收位置消息 API 完成')
 });
 ```
 
@@ -207,8 +206,7 @@ Turn off the monitoring of real-time location changes, and both the front and ba
 
 ### uni.startLocationUpdateBackground(OBJECT)
 
-开始监听实时地理位置信息变化事件，小程序进入前后台时均接收实时地理位置信息。
-Start monitoring the real-time geographic location information change event, and the MiniApp will receive real-time geographic location information when it enters the foreground and background.
+开始监听实时地理位置信息变化事件，应用进入前后台时均接收实时地理位置信息。
 
 **平台差异说明**
 **Platform Difference Description**

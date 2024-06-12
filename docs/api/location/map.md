@@ -17,7 +17,7 @@ Create and return a map context ``mapContext`` object. Under the custom componen
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|1.9.0+|√|√|
 
-mapContext
+### mapContext
 
 ``mapContext`` 通过 mapId 跟一个 ``<map>`` 组件绑定，通过它可以操作对应的 ``<map>`` 组件。
 ``mapContext`` is bound to a ``<map>`` component through mapId, through which the corresponding ``<map>`` component can be operated.

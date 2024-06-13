@@ -11,7 +11,7 @@ This interface is called the startup interface, also known as splash or lauch sc
 进入应用后启动界面在合适的时机会自动关闭并显示应用首页，可在manifest.json文件中进行配置。
 After entering the application, the startup interface will automatically close at the right time and display the application home page, which can be configured in the manifest.json file.
 
-打开项目的manifest.json文件，在“App启动界面配置”中的“启动界面选项”配置是否“等待首页渲染完毕后再关闭Splash图”：
+打开项目的manifest.json文件，在“App启动界面配置”中的“启动界面选项”配置是否“等待首页渲染完毕后再关闭Splash图”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/splashscreen/setting-closesplash-onrender.png)
 
 - 勾选“等待首页渲染完毕后再关闭Splash图”，表示需要等待首页渲染完成后再关闭启动界面
@@ -98,20 +98,20 @@ The `universal startup interface` has the lowest threshold, and only requires th
 ##### Android平台通用启动界面
 ##### Android platform universal startup interface
 
-打开项目的manifest.json文件，在“App启动界面配置”中的“Android启动界面设置”项下勾选“通用启动界面”：
+打开项目的manifest.json文件，在“App启动界面配置”中的“Android启动界面设置”项下勾选“通用启动界面”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/splashscreen/setting-android.png)
 
-通用启动界面上部显示应用图标（圆形裁剪，外围显示进度），图标下面为应用名称，效果如下：
+通用启动界面上部显示应用图标（圆形裁剪，外围显示进度），图标下面为应用名称，效果如下：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/splashscreen/common-android.png)
 
 
 ##### iOS平台通用启动界面
 ##### iOS platform universal launch interface
 
-打开项目的manifest.json文件，在“App启动界面配置”中的“iOS启动界面设置”项下勾选“通用启动界面”：
+打开项目的manifest.json文件，在“App启动界面配置”中的“iOS启动界面设置”项下勾选“通用启动界面”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/splashscreen/setting-ios.png)
 
-通用启动界面使用storyboard实现，在界面上部显示应用图标（无裁剪），图标下面为应用名称，效果如下：
+通用启动界面使用storyboard实现，在界面上部显示应用图标（无裁剪），图标下面为应用名称，效果如下：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/splashscreen/common-ios.png)
 
 如果应用开启适配暗黑模式/夜间模式/深色模式，则启动界面背景色会自动使用深色，文字颜色自动使用白色。
@@ -126,7 +126,7 @@ If the app is turned on to adapt to dark mode/night mode/dark mode, the backgrou
 ##### Android平台自定义启动图
 ##### Android platform custom launch map
 
-打开项目的manifest.json文件，在“App启动界面配置”中的“Android启动界面设置”项下勾选“自定义启动图”：
+打开项目的manifest.json文件，在“App启动界面配置”中的“Android启动界面设置”项下勾选“自定义启动图”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/splashscreen/setting-android-default.png)
 
 ##### Android平台使用.9.png启动图@9png
@@ -160,7 +160,7 @@ You can refer to the .9 sample project done by the developer in [Plugin Market](
 > 提示：2020年6月30日起，苹果AppStore审核要求应用在启动时，不能使用启动图片，必须改为使用Storyboard来制作启动界面，如果需要提交AppStore请使用[通用启动界面](#common)或[自定义storyboard启动界面](#storyboard)。
 > Tip: From June 30, 2020, the Apple AppStore audit requires that the app cannot use the launch image when launching, and must instead use Storyboard to create the launch interface. If you need to submit the AppStore, please use the [Common Launch Interface](#common) Or [custom storyboard launch interface](#storyboard).
 
-打开项目的manifest.json文件，在“App启动界面配置”中的“iOS启动界面设置”项下勾选“自定义启动图”：
+打开项目的manifest.json文件，在“App启动界面配置”中的“iOS启动界面设置”项下勾选“自定义启动图”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/splashscreen/setting-ios-default.png)
 
 
@@ -194,7 +194,7 @@ Note: each item is optional (for example, only the background image is displayed
 **2.** 使用xcode自行制作。xcode提供了可视化的制作storyboard的方式，但依赖于mac电脑。在xcode中制作storyboard的教程请自行网络搜索，请注意下面的注意事项。
 **2.** Make it by yourself using xcode. Xcode provides a visual way to make storyboards, but it depends on Mac computers. For the tutorial of making storyboard in xcode, please search the Internet by yourself, please pay attention to the following precautions.
 
-HBuilderX需要的自定义storyboard文件格式为zip压缩包，里面要求包含XCode使用的.storyboard文件，以及.stroybard文件中使用的png图，如下图所示：
+HBuilderX需要的自定义storyboard文件格式为zip压缩包，里面要求包含XCode使用的.storyboard文件，以及.stroybard文件中使用的png图，如下图所示：  
 ![](https://img.cdn.aliyun.dcloud.net.cn/client/ask/pkg/splash/storyboard.png)
 
 **注意事项**
@@ -210,12 +210,12 @@ HBuilderX需要的自定义storyboard文件格式为zip压缩包，里面要求�
 - 为了避免png文件名称与应用中内置的文件名冲突，建议以dc_launchscreen开头
 - In order to avoid the png file name conflict with the file name built in the app, it is recommended to start with dc_launchscreen
 - 制作 storyboard 时，**请将图片资源直接拖到放工程中，不要放到 imageset 里面，并且图片命名要保证一定的唯一性可参考附件中的示例**
-- XCode中创建 storyboard 文件时，**页面元素添加约束时一定要相对于** `Superview`，不然启动图到 loading页面过渡时页面会跳动或者变形
+- XCode中创建 storyboard 文件时，**页面元素添加约束时一定要相对于** `Superview`，不然启动图到 loading页面过渡时页面会跳动或者变形  
 ![](https://web-ext-storage.dcloud.net.cn/doc/app/ios/storyboard1.png)
 
 ##### 使用storyboard文件
 ##### Using storyboard files
 
-打开项目的manifest.json文件，在“App启动界面配置”中的“iOS启动界面设置”项下勾选“自定义storyboard启动界面”，并选择自己制作的storyboard文件：
+打开项目的manifest.json文件，在“App启动界面配置”中的“iOS启动界面设置”项下勾选“自定义storyboard启动界面”，并选择自己制作的storyboard文件：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/splashscreen/setting-storyboard.png)
 

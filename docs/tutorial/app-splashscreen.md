@@ -211,7 +211,7 @@ HBuilderX需要的自定义storyboard文件格式为zip压缩包，里面要求�
 - In order to avoid the png file name conflict with the file name built in the app, it is recommended to start with dc_launchscreen
 - 制作 storyboard 时，**请将图片资源直接拖到放工程中，不要放到 imageset 里面，并且图片命名要保证一定的唯一性可参考附件中的示例**
 - XCode中创建 storyboard 文件时，**页面元素添加约束时一定要相对于** `Superview`，不然启动图到 loading页面过渡时页面会跳动或者变形
-![](https://img.cdn.aliyun.dcloud.net.cn/client/ask/pkg/splash/xcode.png)
+![](https://web-ext-storage.dcloud.net.cn/doc/app/ios/storyboard1.png)
 
 ##### 使用storyboard文件
 ##### Using storyboard files

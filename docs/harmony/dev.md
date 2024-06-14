@@ -42,6 +42,8 @@
 
 点击hbx上方【运行】菜单，运行到鸿蒙 DevEco Studio
 
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/17183338900070pjn2uj49t8.png)
+
 4. 在 DevEco-Studio 重新编译或运行
 
 ## 注意事项

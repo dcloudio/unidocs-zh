@@ -693,3 +693,9 @@ const messages = {
   }
 }
 ```
+
+```html
+<template>
+  {{$t('index', {num: 123})}}
+</template>
+```

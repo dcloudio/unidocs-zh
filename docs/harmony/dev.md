@@ -24,6 +24,16 @@
 
 3. 等待 Sync 结束，点击运行按钮可以将工程运行在真机或者模拟器中（如未配置签名信息可能需要先行配置）
 
+## 配置 HBuilderX settings.json
+
+注意：值填你自己的 DevEco-Studio 启动路径
+
+```js
+"harmony.devTools.path" : "D:/Huawei/DevEco Studio/bin/devecostudio64.exe"
+```
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/1718606410632esh6qkook28.png)
+
 ## 配置 uni-app 工程
 
 1. hbx新建一个空白的uniapp项目，选vue3

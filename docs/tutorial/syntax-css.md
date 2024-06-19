@@ -183,10 +183,12 @@ Currently supported selectors are:
 
   ```css
   <!-- 设置页面背景颜色，使用 scoped 会导致失效 -- >
-	page {
-  	background-color: #ccc;
+  page {
+    background-color: #ccc;
   }
   ```
+
+- web端可以正常使用`html`、`body`、`:root`等选择器，详见：[CSS：层叠样式表](https://developer.mozilla.org/zh-CN/docs/Web/CSS)
 
 ## 全局样式与局部样式
 ## Global and local styles

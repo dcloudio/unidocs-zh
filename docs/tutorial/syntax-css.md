@@ -188,7 +188,7 @@ Currently supported selectors are:
   }
   ```
 
-- web端可以正常使用`html`、`body`、`:root`等选择器，详见：[CSS：层叠样式表](https://developer.mozilla.org/zh-CN/docs/Web/CSS)
+- web端可以使用`html`、`body`、`:root`等选择器。由于页面的css样式隔离，且html节点并未添加data-xxx属性，`html`、`:root`写在页面style内无效，只能写在App.vue内。
 
 ## 全局样式与局部样式
 ## Global and local styles

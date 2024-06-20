@@ -18,9 +18,9 @@
 
 ## 配置鸿蒙工程
 
-1. 下载 uni-app 鸿蒙工程模板 template-1.0.0.tgz [下载地址](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/template-1.0.0.tgz)
+1. 下载 uni-app 鸿蒙工程模板 template-1.1.0.tgz [下载地址](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/template-1.1.0.tgz)
 
-2. 解压 template-v1.0.0.tgz 压缩包，将解压后的模板工程在 DevEco-Studio 中打开
+2. 解压 template-1.1.0.tgz 压缩包，将解压后的模板工程在 DevEco-Studio 中打开
 
 3. 等待 Sync 结束，点击运行按钮可以将工程运行在真机或者模拟器中（如未配置签名信息可能需要先行配置）
 

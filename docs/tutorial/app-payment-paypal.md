@@ -153,4 +153,7 @@ After the payment is initiated on the App side, the order id is returned, and th
 - 捕获订单付款参考paypal官方文档：[Capture payment for order](https://developer.paypal.com/api/orders/v2/#orders_capture)  
 - To capture order payment refer to paypal official documentation: [Capture payment for order](https://developer.paypal.com/api/orders/v2/#orders_capture)
 
+## 注意事项
+
+* Android端需要注意应用包名和return_url要小写
 

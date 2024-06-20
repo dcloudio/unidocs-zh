@@ -115,4 +115,7 @@ plus.payment.getChannels(function(channels){
 - 授权订单付款参考paypal官方文档：[Authorize payment for order](https://developer.paypal.com/api/orders/v2/#orders_authorize)  
 - 捕获订单付款参考paypal官方文档：[Capture payment for order](https://developer.paypal.com/api/orders/v2/#orders_capture)  
 
+## 注意事项
+
+* Android端需要注意应用包名和return_url要小写
 

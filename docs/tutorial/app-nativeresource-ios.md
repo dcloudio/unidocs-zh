@@ -180,6 +180,9 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
 </plist>
 ```
 
+> uni-app 项目也支持在 manifest.json 中配置  [screenOrientation](https://uniapp.dcloud.net.cn/collocation/manifest.html#app-plus)，云端打包最终会与 Info.plist 中的值合并  
+> uni-app x 项目仅支持 Info.plist 中配置，需 HBuilderX4.22+ 版本，提交云端打包后才能生效  
+
 **注意**  
 - `UISupportedInterfaceOrientations~iphone` 字段下配置的是 iPhone 设备可支持的横竖屏  
 - `UISupportedInterfaceOrientations~ipad` 字段下配置的是 iPad 设备可支持的横竖屏  

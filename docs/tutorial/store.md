@@ -15,7 +15,7 @@ Google Play上架审核要求比较严格，需要注意以下问题：
 - 应用中不能存在下载/安装apk的行为，不要勾选android.permission.INSTALL_PACKAGES、android.permission.REQUEST_INSTALL_PACKAGES权限‘
 - 应用中的任何功能都不能引导用户下载其它应用，以下模块不能使用：
   + QQ登录、QQ分享：手机没有安装QQ应用时，会引导用户安装
-  + uni-AD 增强广告SDK：广告中存在下载安装其它三方应用的行为。**uni-AD 广告基础功能不受影响**
+  + uni-ad 增强广告SDK：广告中存在下载安装其它三方应用的行为。**uni-ad 广告基础功能不受影响**
 - 应用中不能使用动态加载代码，因此无法配置使用X5内核，详情：[https://ask.dcloud.net.cn/article/36806](https://ask.dcloud.net.cn/article/36806)
 
 **应用必须适配Android11，设置targetSdkVersion大于等于30：**[https://ask.dcloud.net.cn/article/193](https://ask.dcloud.net.cn/article/193#targetsdkversion)
@@ -37,4 +37,3 @@ Google Play上架审核要求比较严格，需要注意以下问题：
 **使用广告标识（IDFA）相关说明：**[https://ask.dcloud.net.cn/article/36107](https://ask.dcloud.net.cn/article/36107)
 
 **UIWebview API 已废弃：**[https://ask.dcloud.net.cn/article/36348](https://ask.dcloud.net.cn/article/36348)
-

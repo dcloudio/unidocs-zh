@@ -117,7 +117,7 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
 - iOS隐私信息访问列表，参考：[https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources](https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources)
 
 
-### iOS url scheme配置@urlScheme    
+### iOS url scheme配置@urlScheme  
 如果应用需要向系统注册url scheme，以便在浏览器中通过scheme打开App，可根据需求在`Info.plist`文件中添加`CFBundleURLTypes`数据，如下示例：
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -151,6 +151,44 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
 **相关参考**  
 - iOS Property List Key ‘CFBundleURLTypes’，参考：[https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleurltypes/](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleurltypes/)
 
+
+### 应用横竖屏配置@orientation  
+应用默认会自动适配横竖屏：  
+- uni-app 项目由 manifest.json 中的 [screenOrientation](https://uniapp.dcloud.net.cn/collocation/manifest.html#app-plus) 字段配置决定  
+- uni-app x 项目默认在 iPhone 设备固定为竖屏，在 iPad 设备根据系统设置自动感应适配横竖屏（后续版本iPhone设备会调整为page.json中配置）  
+
+如果希望自定义配置应用可支持的横竖屏配置，可根据需求在`Info.plist`文件中添加`UISupportedInterfaceOrientations`数据，如下示例：
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>UISupportedInterfaceOrientations~iphone</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+      <string>UIInterfaceOrientationLandscapeLeft</string>
+      <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+      <string>UIInterfaceOrientationPortraitUpsideDown</string>
+      <string>UIInterfaceOrientationLandscapeLeft</string>
+      <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+  </dict>
+</plist>
+```
+
+**注意**  
+- `UISupportedInterfaceOrientations~iphone` 字段下配置的是 iPhone 设备可支持的横竖屏  
+- `UISupportedInterfaceOrientations~ipad` 字段下配置的是 iPad 设备可支持的横竖屏  
+- 字段值为字符串数组，其中字符串可取值：  
+	* `UIInterfaceOrientationPortrait` 竖屏主方向  
+  * `UIInterfaceOrientationPortraitUpsideDown` 竖屏反方向，仅 iPad 设备支持  
+  * `UIInterfaceOrientationLandscapeLeft` 横屏主方向  
+  * `UIInterfaceOrientationLandscapeRight` 横屏反方向  
+- iPhone 和 iPad 设备可分别单独设置，可支持的横竖屏设置会限制应用能支持的横竖屏状态，如设置应用仅支持竖屏（iPhone和iPad），则应用在任何状态下都无法横屏，在 page.json 中设置 pageOrientation 为横屏将无效  
 
 ##  应用资源  
 

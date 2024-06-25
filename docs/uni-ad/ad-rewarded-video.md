@@ -55,17 +55,17 @@
 
 **属性说明**
 
-|属性名														|类型													|默认值		|说明																																									|平台差异	|
-|:-																|:-														|:-				|:-																																										|:-				|
-|adpid														|String&#124;Number|					|广告位id，到uniad后台申请。|					|
-|preload													|Boolean											|true			|页面就绪后加载广告数据																																|					|
-|loadnext													|Boolean											|false		|自动加载下一条广告数据																																|					|
-|disabled													|Boolean											|false		|禁用默认点击行为																																			|					|
-|url-callback											|Object												|					|服务器回调透传数据																																		|					|
-|v-slot:default="{loading, error}"|															|					|作用域插槽可以获取组件内部广告加载状态和加载错误信息																	|					|
-|@load														|EventHandle									|加载事件	|																																											|					|
-|@close														|EventHandle									|关闭事件	|																																											|					|
-|@error														|EventHandle									|错误事件	|																																											|					|
+|属性名														|类型								|默认值	|说明																													|平台差异	|
+|:-																|:-									|:-			|:-																														|:-			|
+|adpid														|String&#124;Number	|				|广告位id，到[uni-ad后台](https://uniad.dcloud.net.cn/)后台申请。	|				|
+|preload													|Boolean						|true		|页面就绪后加载广告数据																						|				|
+|loadnext													|Boolean						|false	|自动加载下一条广告数据																						|				|
+|disabled													|Boolean						|false	|禁用默认点击行为																								|				|
+|url-callback											|Object							|				|服务器回调透传数据																							|				|
+|v-slot:default="{loading, error}"|										|				|作用域插槽可以获取组件内部广告加载状态和加载错误信息									|				|
+|@load														|EventHandle				|加载事件	|																															|				|
+|@close														|EventHandle				|关闭事件	|																															|				|
+|@error														|EventHandle				|错误事件	|																															|				|
 
 **url-callback说明**
 

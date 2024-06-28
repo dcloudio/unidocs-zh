@@ -113,6 +113,7 @@
     * [未同意隐私政策模式运行](app-disagreemode.md)
     * [Google Play上架](android-gp.md)
     * [App Store上架](ios-app-store.md)
+    * [iOS平台隐私清单](app-ios-privacyinfo.md)
   * [App升级](https://doc.dcloud.net.cn/uniCloud/upgrade-center.html)
 * 小程序专题
   * [组件与WXS](miniprogram-subject.md)

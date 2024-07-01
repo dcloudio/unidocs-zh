@@ -29,10 +29,10 @@
 注意：值填你自己的 DevEco-Studio 启动路径
 
 ```js
-"harmony.devTools.path" : "D:/Huawei/DevEco Studio/bin/devecostudio64.exe"
+"harmony.devTools.path" : "D:/Huawei/DevEco Studio"
 ```
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/1718606410632esh6qkook28.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/171981598089431le57049d.png)
 
 ## 配置 uni-app 工程
 
@@ -47,6 +47,8 @@
   "projectPath": "鸿蒙工程路径"
 }
 ```
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/1719816197812rg4fsafg2io.png)
 
 3. 编译 uni-app 到鸿蒙
 

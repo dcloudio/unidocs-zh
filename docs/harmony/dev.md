@@ -16,9 +16,9 @@
 
 注意: 需要win10专业版或win11专业版才能开启以上功能，家庭版需先升级成专业版或企业版
 
-## 配置鸿蒙工程
+## 配置鸿蒙离线SDK（鸿蒙项目模板）
 
-1. 下载 uni-app 鸿蒙工程模板 template-1.2.2.tgz [下载地址](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/template-1.2.2.tgz)
+1. 下载 uni-app 鸿蒙离线SDK template-1.2.2.tgz [下载地址](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/template-1.2.2.tgz)
 
 2. 解压 template-1.2.2.tgz 压缩包，将解压后的模板工程在 DevEco-Studio 中打开
 
@@ -38,13 +38,13 @@
 
 1. hbx新建一个空白的uniapp项目，选vue3
 
-2. 配置鸿蒙工程路径
+2. 在manifest.json文件中配置鸿蒙离线SDK路径
 
 编辑 manifest.json 文件，新增如下配置：
 
 ```json
 "app-harmony": {
-  "projectPath": "鸿蒙工程路径"
+  "projectPath": "鸿蒙离线SDK路径"
 }
 ```
 

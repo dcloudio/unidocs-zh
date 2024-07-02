@@ -31,7 +31,7 @@
 |**第五级**	|信息系统受到破坏后，会对国家安全造成**特别严重**损害	|极度重要系统	|
 
 ### 如何定级？
-<table border="1">
+<table>
   <tr>
     <th rowspan="2" style="font-size:larger; text-align: center;">业务信息安全被破坏时所侵害的客体</th>
     <th colspan="3" style="font-size:larger; text-align: center;">对相应客体的侵害程度</th>

@@ -211,7 +211,7 @@ HBuilderX中对项目右键菜单 "新建" -> "目录"
 
 在 XCode 中可以通过项目可视化界面编辑应用的`Capabilities`，实际上是操作项目的 entitlements 和 Info.plist 文件保存数据。在 HBuilderX 中暂未提供`Capabilities`可视化界面操作，需手动编辑`UniApp.entitlements`和`Info.plist`文件来实现相关配置。
 
-在 nativeResourc/ios 目录下创建`UniApp.entitlements`文件，用于配置 XCode 原生工程的`Capabilities`，如下示例：
+在 nativeResources/ios 目录下创建`UniApp.entitlements`文件，用于配置 XCode 原生工程的`Capabilities`，如下示例：
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>

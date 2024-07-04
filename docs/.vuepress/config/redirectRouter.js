@@ -92,6 +92,9 @@ const routerMap = {
   '/use-html5plus': '/tutorial/use-html5plus.html',
   '/m3w': '/uniCloud/uni-portal.html',
   '/tutorial/syntax-uts': '/uni-app-x/uts/',
+	
+	'/harmony/dev': '/tutorial/harmony/dev.html',
+	'/harmony/dev.html': '/tutorial/harmony/dev.html',
 
   '/uniCloud/uni-id-summary': '/uniCloud/uni-id/summary.html',
   '/uniCloud/uni-id-pages': '/uniCloud/uni-id/redirect.html',
@@ -102,8 +105,7 @@ const routerMap = {
   '/uni-app-x/pagesjson': '/uni-app-x/collocation/pagesjson.html',
   '/uni-app-x/manifest': '/uni-app-x/collocation/manifest.html',
   '/uniCloud/': 'https://doc.dcloud.net.cn/uniCloud/',
-  '/uni-app-x/': 'https://doc.dcloud.net.cn/uni-app-x/',
-  '/harmony/dev': '/tutorial/harmony/dev.html'
+  '/uni-app-x/': 'https://doc.dcloud.net.cn/uni-app-x/'
 }
 
 export default ({ fullPath, path, hash }) => {

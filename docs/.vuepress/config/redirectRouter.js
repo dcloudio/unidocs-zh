@@ -102,7 +102,8 @@ const routerMap = {
   '/uni-app-x/pagesjson': '/uni-app-x/collocation/pagesjson.html',
   '/uni-app-x/manifest': '/uni-app-x/collocation/manifest.html',
   '/uniCloud/': 'https://doc.dcloud.net.cn/uniCloud/',
-  '/uni-app-x/': 'https://doc.dcloud.net.cn/uni-app-x/'
+  '/uni-app-x/': 'https://doc.dcloud.net.cn/uni-app-x/',
+  '/harmony/dev': '/tutorial/harmony/dev.html'
 }
 
 export default ({ fullPath, path, hash }) => {

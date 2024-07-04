@@ -1,5 +1,7 @@
 # uni-app 开发鸿蒙应用
 
+> [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)
+
 ## 开发环境要求@env
 
 * DevEco-Studio 5.0.3.400 以上 [下载地址](https://developer.huawei.com/consumer/cn/deveco-developer-suite/enabling/kit?currentPage=1&pageSize=100)
@@ -113,3 +115,5 @@
 * 移植已有的 uni-app 项目源码时，如有其他 npm 依赖，请自行安装
 * 现阶段条件编译仅 APP-HARMONY、APP 可以命中鸿蒙平台
 * 每次HBuilderX改动源码后，DevEco-Studio 内需要点重新运行才能生效
+* 如果模拟器白屏了，尝试重启软件 DevEco-Studio，再重启项目
+* 如果模拟器无法连接了，尝试重启电脑

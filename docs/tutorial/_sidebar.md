@@ -115,6 +115,8 @@
     * [App Store上架](ios-app-store.md)
     * [iOS平台隐私清单](app-ios-privacyinfo.md)
   * [App升级](https://doc.dcloud.net.cn/uniCloud/upgrade-center.html)
+* 鸿蒙专题
+  * [uni-app 开发鸿蒙应用](harmony/dev.md)
 * 小程序专题
   * [组件与WXS](miniprogram-subject.md)
   * [使用小程序插件](mp-weixin-plugin.md)

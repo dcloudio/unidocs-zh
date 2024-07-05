@@ -1,4 +1,4 @@
-#### animation-view
+### animation-view
 
 Lottie动画组件，动画资源参考[Lottie官方链接](https://airbnb.design/lottie/)。
 

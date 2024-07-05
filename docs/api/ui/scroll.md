@@ -1,4 +1,4 @@
-# uni.pageScrollTo(OBJECT)
+## uni.pageScrollTo(OBJECT)
 
 将页面滚动到目标位置。可以指定滚动到具体的scrollTop数值，也可以指定滚动到某个元素的位置
 

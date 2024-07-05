@@ -32,6 +32,9 @@
 |push|推送|
 
 
+<!-- UNIAPPAPIJSON.getProvider.param -->
+
+
 **success 返回参数说明**
 
 |参数名|类型|说明|

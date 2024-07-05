@@ -8,6 +8,8 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
+<!-- UNIAPPAPIJSON.onLocationChange.compatibility -->
+
 **FUNCTION CALLBACK 参数**
 
 |参数名|类型|说明|平台差异说明|
@@ -47,11 +49,12 @@ uni.onLocationChange(function (res) {
 
 移除实时地理位置变化事件的监听函数。
 
-**平台差异说明**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
+
+<!-- UNIAPPAPIJSON.offLocationChange.compatibility -->
 
 **注意：App端及H5端callback参数为必填。**
 
@@ -77,6 +80,8 @@ uni.onLocationChange(function (res) {
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|x|√|x|x|x|
 
+<!-- UNIAPPAPIJSON.onLocationChangeError.compatibility -->
+
 **FUNCTION CALLBACK 参数**
 
 |参数名|类型|说明|平台差异说明|
@@ -94,6 +99,8 @@ uni.onLocationChange(function (res) {
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|x|√|x|x|x|
 
+<!-- UNIAPPAPIJSON.offLocationChangeError.compatibility -->
+
 **注意：App端及H5端callback参数为必填。**
 
 **FUNCTION CALLBACK 参数**
@@ -109,6 +116,8 @@ uni.onLocationChange(function (res) {
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
+
+<!-- UNIAPPAPIJSON.startLocationUpdate.compatibility -->
 
 **OBJECT 参数**
 
@@ -141,6 +150,9 @@ uni.startLocationUpdate({
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
+<!-- UNIAPPAPIJSON.stopLocationUpdate.compatibility -->
+
+
 **OBJECT 参数**
 
 |参数名|类型|必填|说明|平台差异说明|
@@ -155,9 +167,9 @@ uni.startLocationUpdate({
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|x|x|x|√|x|
+|App|HarmonyOS|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|x|√|x|x|x|x|√|x|
 
 **OBJECT 参数**
 

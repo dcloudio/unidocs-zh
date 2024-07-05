@@ -16,6 +16,8 @@
 
 __仅 H5 支持__，HBuilderX 2.9.9 + 。
 
+<!-- UNIAPPCOMJSON.custom-tab-bar.compatibility -->
+
 **属性说明**
 
 |属性名|类型|默认值|说明|

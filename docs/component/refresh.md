@@ -1,4 +1,6 @@
-#### refresh
+## refresh
+
+> HarmonyOS 不支持
 
 app端nvue专用组件。
 

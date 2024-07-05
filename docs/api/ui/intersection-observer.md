@@ -1,7 +1,9 @@
 节点布局交叉状态 API 可用于监听两个或多个组件节点在布局位置上的相交状态。这一组API常常可以用于推断某些节点是否可以被用户看见、有多大比例可以被用户看见。
 
-### uni.createIntersectionObserver([this], [options])
+## uni.createIntersectionObserver([this], [options])
 创建并返回一个 ``IntersectionObserver`` 对象实例。
+
+<!-- UNIAPPAPIJSON.createIntersectionObserver.compatibility -->
 
 **this说明：**
 
@@ -15,7 +17,9 @@
 |initialRatio|Number|初始的相交比例，如果调用时检测到的相交比例与这个值不相等且达到阈值，则会触发一次监听器的回调函数。默认为 ``0``。|
 |observeAll|Boolean|是否同时观测多个参照节点（而非一个），如果设为 ``true``，``observe`` 的 ``targetSelector`` 将选中多个节点（注意：同时选中过多节点将影响渲染性能）|
 
-### IntersectionObserver 对象的方法列表
+<!-- UNIAPPAPIJSON.createIntersectionObserver.param -->
+
+## IntersectionObserver 对象的方法列表
 
 |方法|说明|
 |:-|:-|
@@ -50,15 +54,16 @@ uni.createIntersectionObserver(this).relativeTo('.scroll',{bottom: 100}).observe
 |relativeRect|Object|参照区域的边界，包含 ``left``、``right``、``top``、``bottom`` 四项|
 |time|Number|相交检测时的时间戳|
 
+<!-- UNIAPPAPIJSON.createIntersectionObserver.returnValue -->
 
 **Tips**
 
 - 与页面显示区域的相交区域并不准确代表用户可见的区域，因为参与计算的区域是“布局区域”，布局区域可能会在绘制时被其他节点裁剪隐藏（如祖先节点中 overflow 样式为 hidden 的节点）或遮盖（如 fixed 定位的节点）。
 - 节点交互状态 ``API`` 建议在 ``onReady`` 生命周期里监听，因为此 ``API`` 需要查找页面元素，``onReady`` 时页面已经完成初次渲染，已经能查找到对应的元素。
 
-### 代码示例
+## 代码示例
 
-```
+```html
 <template>
 	<view class="container">
 		<text>{{appear ? '小球出现' : '小球消失'}}</text>

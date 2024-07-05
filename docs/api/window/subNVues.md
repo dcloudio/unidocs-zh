@@ -4,7 +4,9 @@ subNvue，是 vue 页面的原生子窗体，把weex渲染的原生界面当做 
 
 > subNvue 自1.9.10 起支持 ，仅支持 app 平台
 
-### uni.getSubNVueById(subNvueId)@app-getsubnvuebyid
+## uni.getSubNVueById(subNvueId)@app-getsubnvuebyid
+
+> HarmonyOS 不支持
 
 通过 `ID` 获取 `subNVues` 原生子窗体的实例。  [subNVues 配置](/collocation/pages?id=app-subNVues)
 
@@ -18,11 +20,13 @@ subNvue，是 vue 页面的原生子窗体，把weex渲染的原生界面当做 
 const subNVue = uni.getSubNVueById('popup');
 ```
 
-#### 返回值
+### 返回值
 返回一个 [subNVue](/api/window/subNVues?id=subnvue) 对象
 
 
-### uni.getCurrentSubNVue()@app-getCurrentSubNVue
+## uni.getCurrentSubNVue()@app-getCurrentSubNVue
+
+> HarmonyOS 不支持
 
 在一个subnvue窗体的nvue页面代码中，获取当前 `subNVues` 原生子窗体的实例。
 
@@ -32,11 +36,11 @@ const subNVue = uni.getSubNVueById('popup');
 const subNVue = uni.getCurrentSubNVue();
 ```
 
-#### 返回值
+### 返回值
 返回一个 [subNVue](/api/window/subNVues?id=subnvue) 对象
 
 
-#### subNVue 对象的方法列表@subNVue
+### subNVue 对象的方法列表@subNVue
 
 |方法			|说明				|
 |---			|---				|
@@ -45,7 +49,7 @@ const subNVue = uni.getCurrentSubNVue();
 |setStyle		| 设置原生子窗体的样式	|
 
 
-### subNVue.show (aniShow,duration,showedCB)
+## subNVue.show (aniShow,duration,showedCB)
 显示原生子窗体
 
 |参数		|类型|默认值	|说明								|
@@ -64,7 +68,7 @@ subNVue.show('slide-in-left',200,()=>{
 ```
 
 
-### subNVue.hide (aniShow,duration)
+## subNVue.hide (aniShow,duration)
 隐藏原生子窗体
 
 |参数		|类型|默认值	|说明																																																												|
@@ -79,7 +83,7 @@ subNVue.hide('slide-out-left',200);
 ```
 
 
-### subNVue.setStyle (style)
+## subNVue.setStyle (style)
 设置原生子窗体的样式
 
 |参数	|类型	|说明					|
@@ -116,7 +120,7 @@ subNVue.setStyle({
 ```
 
 
-### subNVue.postMessage(OBJECT)
+## subNVue.postMessage(OBJECT)
 
 发送消息，此通讯方式已过时，请使用`uni.$emit`进行通讯，[参考](/tutorial/page.md#emit)
 
@@ -131,7 +135,7 @@ subNvue.postMessage({
 })
 ```
 
-### subNVue.onMessage(CallBack)
+## subNVue.onMessage(CallBack)
 
 监听消息，此通讯方式已过时，请使用`uni.$on`进行通讯，[参考](/tutorial/page.md#on)
 
@@ -146,7 +150,7 @@ subNvue.onMessage(function(data){
 ```
 
 
-### 动画类型
+## 动画类型
 显示动画与关闭动画，会有默认的对应规则。但是如果通过 API 原生子窗体的关闭动画类型，则不会使用默认的类型。
 
 |显示动画|关闭动画|显示动画描述（关闭动画与之相反）

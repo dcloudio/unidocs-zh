@@ -1,6 +1,8 @@
-#### canvas
+## canvas
 
-画布。
+<!-- UNIAPPCOMJSON.canvas.description -->
+
+<!-- UNIAPPCOMJSON.canvas.compatibility -->
 
 **属性说明**
 
@@ -28,7 +30,7 @@
 * 小程序、app-nvue，因为通信阻塞，难以绘制非常流畅的canvas动画。h5和app-vue不存在此问题。但注意，app-vue下若想流畅的绘制canvas动画，需要使用[renderjs](https://uniapp.dcloud.io/tutorial/renderjs?id=renderjs)技术，把操作canvas的js逻辑放到视图层运行，避免逻辑层和视图层频繁通信。hello uni-app的canvas示例很典型，在相同手机运行该示例，可以看出在h5端和app端非常流畅，而小程序端由于没有renderjs技术，做不到这么流畅的动画。
 
 **示例：** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/canvas/canvas)
- 
+
 ::: preview https://hellouniapp.dcloud.net.cn/pages/component/canvas/canvas
 > Template
 ```vue
@@ -72,8 +74,10 @@ export default {
 </script>
 ```
 :::
- 
+
 相关 api：[uni.createCanvasContext](/api/canvas/createCanvasContext)
+
+<!-- UNIAPPCOMJSON.canvas.reference -->
 
 **扩展阅读**
 
@@ -92,3 +96,5 @@ HBuilderX 2.2.5 开始 nvue 页面支持 Canvas，支持 W3C WebGL API [WebGL 1.
 示例工程地址：[NvueCanvasDemo](https://github.com/dcloudio/NvueCanvasDemo)
 
 在App端，从性能来讲，由于通讯阻塞的问题，nvue的canvas性能不可能达到使用renderjs的vue页面的canvas。在App端，推荐使用vue的canvas。
+
+<!-- UNIAPPCOMJSON.canvas.reference -->

@@ -7,7 +7,7 @@
 获取对应窗口的样式，返回一个 css 属性值对象;
 设置对应窗口的样式，传入一个 css 属性值对象
 
-### uni.getTopWindowStyle()
+## uni.getTopWindowStyle()
 
 获取 topWindow 的样式
 
@@ -25,7 +25,7 @@
 uni.getTopWindowStyle()
 ```
 
-### uni.getLeftWindowStyle()
+## uni.getLeftWindowStyle()
 
 获取 leftWindow 的样式
 
@@ -43,7 +43,7 @@ uni.getTopWindowStyle()
 uni.getLeftWindowStyle()
 ```
 
-### uni.getRightWindowStyle()
+## uni.getRightWindowStyle()
 
 获取 rightWindow 的样式
 
@@ -61,7 +61,7 @@ uni.getLeftWindowStyle()
 uni.getRightWindowStyle()
 ```
 
-### uni.setTopWindowStyle(OBJECT)
+## uni.setTopWindowStyle(OBJECT)
 
 设置 topWindow 的样式
 
@@ -77,12 +77,12 @@ uni.getRightWindowStyle()
 
 ```javascript
 uni.setTopWindowStyle({
-    height: '100px', 
+    height: '100px',
     backgroundColor: 'red'
 })
 ```
 
-### uni.setLeftWindowStyle(OBJECT)
+## uni.setLeftWindowStyle(OBJECT)
 
 设置 leftWindow 的样式
 
@@ -104,12 +104,12 @@ uni.setTopWindowStyle({
 
 ```javascript
 uni.setLeftWindowStyle({
-    width: '500px', 
+    width: '500px',
     backgroundColor: 'blue'
 })
 ```
 
-### uni.setRightWindowStyle(OBJECT)
+## uni.setRightWindowStyle(OBJECT)
 
 设置 rightWindow 的样式
 
@@ -131,17 +131,17 @@ uni.setLeftWindowStyle({
 
 ```javascript
 uni.setRightWindowStyle({
-    width: '500px', 
+    width: '500px',
     backgroundColor: 'blue'
 })
 ```
 
-<!-- 
+<!--
 ## 显示或隐藏窗口的 API
 
 显示或隐藏对应的窗口
 
-### uni.showTopWindow()
+## uni.showTopWindow()
 
 显示 topWindow
 
@@ -159,7 +159,7 @@ uni.setRightWindowStyle({
 uni.showTopWindow()
 ```
 
-### uni.showLeftWindow()
+## uni.showLeftWindow()
 
 显示 leftWindow
 
@@ -177,7 +177,7 @@ uni.showTopWindow()
 uni.showLeftWindow()
 ```
 
-### uni.showRightWindow()
+## uni.showRightWindow()
 
 显示 rightWindow
 
@@ -195,7 +195,7 @@ uni.showLeftWindow()
 uni.showRightWindow()
 ```
 
-### uni.hideTopWindow()
+## uni.hideTopWindow()
 
 隐藏 topWindow
 
@@ -213,7 +213,7 @@ uni.showRightWindow()
 uni.hideTopWindow()
 ```
 
-### uni.hideLeftWindow()
+## uni.hideLeftWindow()
 
 隐藏 leftWindow
 
@@ -231,7 +231,7 @@ uni.hideTopWindow()
 uni.hideLeftWindow()
 ```
 
-### uni.hideRightWindow()
+## uni.hideRightWindow()
 
 隐藏 rightWindow
 
@@ -247,5 +247,5 @@ uni.hideLeftWindow()
 
 ```javascript
 uni.hideRightWindow()
-``` 
+```
 -->

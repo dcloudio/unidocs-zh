@@ -19,6 +19,9 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|[说明](/api/plugins/payment?id=h5-payment)|√|√|√|√|x|√|√|x|
 
+
+<!-- UNIAPPAPIJSON.requestPayment.compatibility -->
+
 **OBJECT 参数说明**
 
 |参数名|类型|必填|说明|平台差异说明|
@@ -109,10 +112,10 @@ uni.requestPayment({
 
     登录支付宝账号，创建应用接入支付宝App支付能力，包括以下步骤：
 
-    - 创建应用（获取appid） 
-    - 开通App支付功能 
-    - 配置密钥（获取公钥、私钥） 
-    
+    - 创建应用（获取appid）
+    - 开通App支付功能
+    - 配置密钥（获取公钥、私钥）
+
   具体可参考支付宝官方文档： [App支付快速接入](https://docs.open.alipay.com/204/105297/)
 
 
@@ -126,22 +129,22 @@ uni.requestPayment({
   - 应用接入 [微信商户平台](https://pay.weixin.qq.com)，选择 App 支付
   - 开通支付功能后可获取支付业务服务器配置数据：PARTNER（财付通商户号）、PARTNER_KEY（财付通密钥）、PAYSIGNKEY（支付签名密钥）
   - 需要将从微信开放平台申请的appid，填回到 manifest-App SDK配置-支付-微信支付 中。打包后生效。
-    
+
   具体可参考微信官方文档： [移动应用开发](https://open.weixin.qq.com/cgi-bin/frame?t=home/app_tmpl&lang=zh_CN)
-  
+
   注意微信的App支付、小程序支付、H5支付是不同的体系。微信小程序支付在 [微信商户平台](https://pay.weixin.qq.com) 申请支付时，选择公众号支付；普通浏览器里也可以调起微信进行支付，这个在微信叫做H5支付，此功能未开放给普通开发者，需向微信单独申请，[详见](https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=15_1)
 
 ### 示例代码
 
 ```javascript
 uni.requestPayment({
-    "provider": "wxpay", 
+    "provider": "wxpay",
     "orderInfo": {
         "appid": "wx499********7c70e",  // 微信开放平台 - 应用 - AppId，注意和微信小程序、公众号 AppId 可能不一致
         "noncestr": "c5sEwbaNPiXAF3iv", // 随机字符串
         "package": "Sign=WXPay",        // 固定值
         "partnerid": "148*****52",      // 微信支付商户号
-        "prepayid": "wx202254********************fbe90000", // 统一下单订单号 
+        "prepayid": "wx202254********************fbe90000", // 统一下单订单号
         "timestamp": 1597935292,        // 时间戳（单位：秒）
         "sign": "A842B45937F6EFF60DEC7A2EAA52D5A0" // 签名，这里用的 MD5/RSA 签名
     },
@@ -218,7 +221,7 @@ uni.getProvider({
 所有 `fail` 回调格式为 `{ errCode: xxx, errMsg: '' }`
 
 
-### 请求支付 `uni.requestPayment()` 
+### 请求支付 `uni.requestPayment()`
 
 ```js
 uni.requestPayment({

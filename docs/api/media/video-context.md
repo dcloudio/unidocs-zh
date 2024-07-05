@@ -7,6 +7,8 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|基础库版本>=1.10.0|√|√|√|√|√|
 
+<!-- UNIAPPAPIJSON.createVideoContext.compatibility -->
+
 **videoContext 对象的方法列表**
 
 |方法|参数|说明|平台差异说明

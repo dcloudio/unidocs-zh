@@ -2,6 +2,8 @@
 
 返回一个数组，用来描述 canvas 区域隐含的像素数据，在自定义组件下，第二个参数传入自定义组件实例 this，以操作组件内 `<canvas>` 组件。
 
+<!-- UNIAPPAPIJSON.canvasGetImageData.compatibility -->
+
 **OBJECT参数说明：**
 
 |参数|类型|必填|说明|
@@ -24,6 +26,7 @@
 |height|Number|图像数据矩形的高度|
 |data|Uint8ClampedArray|图像像素点数据，一维数组，每四项表示一个像素点的rgba|
 
+<!-- UNIAPPAPIJSON.canvasGetImageData.param -->
 
 **示例代码**
 
@@ -43,3 +46,4 @@ uni.canvasGetImageData({
 })
 ```
 
+<!-- UNIAPPAPIJSON.canvasGetImageData.tutorial -->

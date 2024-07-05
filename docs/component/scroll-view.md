@@ -4,6 +4,8 @@
 
 需注意在webview渲染的页面中，区域滚动的性能不及页面滚动。
 
+<!-- UNIAPPCOMJSON.scroll-view.compatibility -->
+
 ## 属性说明
 
 |属性名					|类型		|默认值	|说明																							|平台差异说明	|
@@ -32,6 +34,8 @@
 |@refresherrefresh		|EventHandle|		|自定义下拉刷新被触发|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
 |@refresherrestore		|EventHandle|		|自定义下拉刷新被复位|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
 |@refresherabort		|EventHandle|		|自定义下拉刷新被中止|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
+
+<!-- UNIAPPCOMJSON.scroll-view.attribute -->
 
 使用竖向滚动时，需要给 ``<scroll-view>`` 一个固定高度，通过 css 设置 height；使用横向滚动时，需要给``<scroll-view>``添加``white-space: nowrap;``样式。
 
@@ -222,3 +226,5 @@
 ## 其他注意事项
 - scroll-into-view 的优先级高于 scroll-top。
 - 如果遇到scroll-top、scroll-left、refresher-triggered属性设置不生效的问题参考：[组件属性设置不生效解决办法](/tutorial/vue-api?id=componentsolutions)
+
+<!-- UNIAPPCOMJSON.scroll-view.reference -->

@@ -1,7 +1,9 @@
-### uni.request(OBJECT)
+## uni.request(OBJECT)
 发起网络请求。
 
 > 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。
+
+<!-- UNIAPPAPIJSON.request.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -31,6 +33,8 @@
 |fail|Function|否||接口调用失败的回调函数||
 |complete|Function|否||接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
+<!-- UNIAPPAPIJSON.request.param -->
+
 **method 有效值**
 
 注意：method有效值必须大写，每个平台支持的method有效值不同，详细见下表。
@@ -54,6 +58,8 @@
 |statusCode|Number|开发者服务器返回的 HTTP 状态码|
 |header|Object|开发者服务器返回的 HTTP Response Header|
 |cookies|``Array.<string>``|开发者服务器返回的 cookies，格式为字符串数组|
+
+<!-- UNIAPPAPIJSON.request.returnValue -->
 
 **data 数据说明**
 
@@ -144,14 +150,15 @@ requestTask.abort();
 - 离线打包不支持 `sslVerify` 配置
 - 单次网络请求数据量建议控制在50K以下（仅指json数据，不含图片），过多数据应分页获取，以提升应用体验。
 
+<!-- UNIAPPAPIJSON.request.tutorial -->
 
-### uni.configMTLS(OBJECT)
+## uni.configMTLS(OBJECT)
 
 https 请求配置自签名证书
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√`(3.2.7+)`|x|x|x|x|x|x|x|x|
+|App|HarmonyOS|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√`(3.2.7+)`|x|x|x|x|x|x|x|x|x|
 
 **OBJECT 参数说明**
 

@@ -1,5 +1,7 @@
-### uni.getNetworkType(OBJECT)
+## uni.getNetworkType(OBJECT)
 获取网络类型。
+
+<!-- UNIAPPAPIJSON.getNetworkType.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -38,7 +40,9 @@ uni.getNetworkType({
 });
 ```
 
-### uni.onNetworkStatusChange(CALLBACK)
+<!-- UNIAPPAPIJSON.getNetworkType.tutorial -->
+
+## uni.onNetworkStatusChange(CALLBACK)
 监听网络状态变化。可使用`uni.offNetworkStatusChange`取消监听。
 
 **CALLBACK 返回参数**
@@ -57,14 +61,14 @@ uni.onNetworkStatusChange(function (res) {
 });
 ```
 
-### uni.offNetworkStatusChange(CALLBACK)
+## uni.offNetworkStatusChange(CALLBACK)
 取消监听网络状态变化。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|HBuilderX 3.0.1+|HBuilderX 3.0.1+|基础库 2.9.3+|x|x|x|x|√|x|
+|App|HarmonyOS|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|HBuilderX 3.0.1+|x|HBuilderX 3.0.1+|基础库 2.9.3+|x|x|x|x|√|x|
 
 **Tips**
 - `CALLBACK`必须为调用`uni.onNetworkStatusChange`时传入的`CALLBACK`

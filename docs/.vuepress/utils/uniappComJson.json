@@ -1,0 +1,276 @@
+{
+  "view": {
+    "name": "## view",
+    "description": "基本视图容器",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| hover-class | 4.24 |\n| hover-stop-propagation | 4.24 |\n| hover-start-time | 4.24 |\n| hover-stay-time | 4.24 |"
+  },
+  "scroll-view": {
+    "name": "## scroll-view",
+    "description": "可滚动视图容器",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| direction | 4.24 |\n| scroll-x | 4.24 |\n| scroll-y | 4.24 |\n| rebound | - |\n| upper-threshold | 4.24 |\n| lower-threshold | 4.24 |\n| scroll-top | 4.24 |\n| scroll-left | 4.24 |\n| scroll-into-view | 4.24 |\n| scroll-with-animation | 4.24 |\n| refresher-enabled | 4.24 |\n| refresher-threshold | 4.24 |\n| refresher-default-style | 4.24 |\n| refresher-background | 4.24 |\n| refresher-triggered | 4.24 |\n| show-scrollbar | 4.24 |\n| @refresherpulling | 4.24 |\n| @refresherrefresh | 4.24 |\n| @refresherrestore | 4.24 |\n| @refresherabort | 4.24 |\n| @scrolltoupper | 4.24 |\n| @scrolltolower | 4.24 |\n| @scroll | 4.24 |"
+  },
+  "swiper-item": {
+    "name": "## swiper-item",
+    "description": "swiper的唯一合法子组件。每个swiper-item代表一个滑块。宽高自动设置为100%",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| item-id | - |"
+  },
+  "swiper": {
+    "name": "## swiper",
+    "description": "滑块视图容器",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| indicator-dots | 4.24 |\n| indicator-color | 4.24 |\n| indicator-active-color | 4.24 |\n| active-class | - |\n| changing-class | - |\n| acceleration | - |\n| disable-programmatic-animation | - |\n| disable-touch | - |\n| touchable | - |\n| easing-function | - |\n| autoplay | 4.24 |\n| current | 4.24 |\n| current-item-id | 4.24 |\n| interval | 4.24 |\n| duration | 4.24 |\n| circular | 4.24 |\n| vertical | 4.24 |\n| rebound | - |\n| previous-margin | - |\n| next-margin | - |\n| display-multiple-items | - |\n| skip-hidden-item-layout | - |\n| @change | 4.24 |\n| @transition | 4.24 |\n| @animationfinish | 4.24 |"
+  },
+  "match-media": {
+    "name": "## match-media",
+    "description": "media query 匹配检测节点",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| width | - |\n| min-width | - |\n| max-width | - |\n| height | - |\n| min-height | - |\n| max-height | - |\n| orientation | - |"
+  },
+  "movable-view": {
+    "name": "## movable-view",
+    "description": "可移动的视图容器，在页面中可以拖拽滑动",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| direction | 4.24 |\n| inertia | 4.24 |\n| out-of-bounds | 4.24 |\n| x | 4.24 |\n| y | 4.24 |\n| damping | 4.24 |\n| friction | 4.24 |\n| disabled | 4.24 |\n| scale | 4.24 |\n| scale-min | 4.24 |\n| scale-max | 4.24 |\n| scale-value | 4.24 |\n| animation | 4.24 |\n| @change | 4.24 |\n| @scale | 4.24 |"
+  },
+  "cover-view": {
+    "name": "## cover-view",
+    "description": "覆盖在原生组件之上的文本视图，可覆盖的原生组件包括map、video、canvas、camera，只支持嵌套cover-view、cover-image",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n"
+  },
+  "cover-image": {
+    "name": "## cover-image",
+    "description": "覆盖在原生组件之上的图片视图，可覆盖的原生组件同cover-view，支持嵌套在cover-view里。",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| v-for | - |\n| v-if | - |\n| v-show | - |\n| src | - |"
+  },
+  "list-item": {
+    "name": "## list-item",
+    "description": "list-view组件的唯一合法子组件。每个item是一行",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| type | - |"
+  },
+  "sticky-header": {
+    "name": "## sticky-header",
+    "description": "吸顶布局容器 <br/><br/> 注意：暂时仅支持作为list-view、sticky-section的子节点, sticky-header不支持css样式！当一个容器视图设置多个sticky-header时，后一个sticky-header会停靠在前一个sticky-header的末尾处。",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n"
+  },
+  "sticky-section": {
+    "name": "## sticky-section",
+    "description": "吸顶布局容器 <br/><br/> 注意：暂时仅支持作为list-view的子节点, sticky-section不支持css样式！",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n"
+  },
+  "list-view": {
+    "name": "## list-view",
+    "description": "列表组件",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n"
+  },
+  "nested-scroll-header": {
+    "name": "## nested-scroll-header",
+    "description": " scroll-view 嵌套模式场景中属于外层 scroll-view 的节点，仅支持作为 \\<scroll-view type='nested'> 嵌套模式的直接子节点。不支持复数子节点，渲染时会取其第一个子节点来渲染",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n"
+  },
+  "nested-scroll-body": {
+    "name": "## nested-scroll-body",
+    "description": " scroll-view 嵌套模式场景中属于嵌套内层 scroll-view 的父节点，仅支持作为 \\<scroll-view type='nested'> 嵌套模式的直接子节点。不支持复数子节点，渲染时会取其第一个子节点来渲染",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n"
+  },
+  "icon": {
+    "name": "## icon",
+    "description": "图标",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| type | 4.24 |\n| size | 4.24 |\n| color | 4.24 |"
+  },
+  "text": {
+    "name": "## text",
+    "description": "文本",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| selectable | 4.24 |\n| space | 4.24 |\n| decode | 4.24 |"
+  },
+  "rich-text": {
+    "name": "## rich-text",
+    "description": "富文本。可渲染文字样式、图片、超链接。支持部分HTML标签",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| nodes | 4.24 |\n| selectable | 4.24 |\n| @itemclick | 4.24 |"
+  },
+  "progress": {
+    "name": "## progress",
+    "description": "进度条",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| duration | 4.24 |\n| percent | 4.24 |\n| show-info | 4.24 |\n| stroke-width | 4.24 |\n| activeColor | 4.24 |\n| backgroundColor | 4.24 |\n| active | 4.24 |\n| active-mode | 4.24 |"
+  },
+  "button": {
+    "name": "## button",
+    "description": "按钮",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| disabled | 4.24 |\n| hover-class | 4.24 |\n| hover-start-time | 4.24 |\n| hover-stay-time | 4.24 |\n| size | 4.24 |\n| type | 4.24 |\n| plain | 4.24 |\n| loading | 4.24 |\n| form-type | 4.24 |\n| open-type | - |\n| @error | - |\n| @chooseinvoicetitle | - |\n| @subscribe | - |\n| @login | - |"
+  },
+  "checkbox": {
+    "name": "## checkbox",
+    "description": "多选项。在1组check-group中可选择多个",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| disabled | 4.24 |\n| value | 4.24 |\n| checked | 4.24 |\n| color | 4.24 |\n| backgroundColor | 4.24 |\n| borderColor | 4.24 |\n| activeBackgroundColor | 4.24 |\n| activeBorderColor | 4.24 |\n| iconColor | 4.24 |"
+  },
+  "checkbox-group": {
+    "name": "## checkbox-group",
+    "description": "多选框组",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| name | 4.24 |\n| @change | 4.24 |"
+  },
+  "form": {
+    "name": "## form",
+    "description": "表单",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| disabled | 4.24 |\n| report-submit | 4.24 |\n| @submit | 4.24 |\n| @reset | 4.24 |"
+  },
+  "input": {
+    "name": "## input",
+    "description": "输入框",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| name | 4.24 |\n| disabled | 4.24 |\n| value | 4.24 |\n| type | 4.24 |\n| password | 4.24 |\n| placeholder | 4.24 |\n| placeholder-style | 4.24 |\n| placeholder-class | 4.24 |\n| maxlength | 4.24 |\n| cursor-color | 4.24 |\n| auto-focus | 4.24 |\n| focus | 4.24 |\n| confirm-type | 4.24 |\n| confirm-hold | 4.24 |\n| cursor | 4.24 |\n| selection-start | 4.24 |\n| selection-end | 4.24 |\n| inputmode | 4.24 |\n| @input | 4.24 |\n| @focus | 4.24 |\n| @blur | 4.24 |\n| @confirm | 4.24 |"
+  },
+  "editor": {
+    "name": "## editor",
+    "description": "富文本编辑器，可以对图片、文字进行编辑。",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| read-only | - |\n| placeholder | - |\n| show-img-size | - |\n| show-img-toolbar | - |\n| show-img-resize | - |\n| @ready | - |\n| @focus | - |\n| @blur | - |\n| @input | - |\n| @statuschange | - |"
+  },
+  "label": {
+    "name": "## label",
+    "description": "用来改进表单组件的可用性，使用for属性找到对应的id，或者将控件放在该标签下，当点击时，就会触发对应的控件",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| disabled | 4.24 |\n| for | 4.24 |"
+  },
+  "picker": {
+    "name": "## picker",
+    "description": "从底部弹起的滚动选择器，现支持五种选择器，通过mode来区分，分别是普通选择器，多列选择器，时间选择器，日期选择器，省市区选择器，默认是普通选择器。",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| disabled | - |\n| mode | - |\n| range | - |\n| range-key | - |\n| value | - |\n| start | - |\n| end | - |\n| fields | - |\n| custom-item | - |\n| @change | - |\n| @columnchange | - |\n| @cancel | - |"
+  },
+  "picker-view-column": {
+    "name": "## picker-view-column",
+    "description": "仅可放置于 picker-view 中，其子节点未继承 picker-view 的选中框的高度，需要自己设置高度并居中",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n"
+  },
+  "picker-view": {
+    "name": "## picker-view",
+    "description": "嵌入页面的滚动选择器",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| value | 4.24 |\n| indicator-style | 4.24 |\n| indicator-class | 4.24 |\n| mask-style | 4.24 |\n| mask-class | 4.24 |\n| @change | 4.24 |"
+  },
+  "radio": {
+    "name": "## radio",
+    "description": "单选项。在1组radio-group中只能选中1个",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| disabled | 4.24 |\n| value | 4.24 |\n| checked | 4.24 |\n| color | 4.24 |\n| backgroundColor | 4.24 |\n| borderColor | 4.24 |\n| activeBackgroundColor | 4.24 |\n| activeBorderColor | 4.24 |\n| iconColor | 4.24 |"
+  },
+  "radio-group": {
+    "name": "## radio-group",
+    "description": "单选框组",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| name | 4.24 |\n| @change | 4.24 |"
+  },
+  "slider": {
+    "name": "## slider",
+    "description": "滑动选择器",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| name | - |\n| disabled | - |\n| min | - |\n| max | - |\n| step | - |\n| value | - |\n| activeColor | - |\n| backgroundColor | - |\n| block-size | - |\n| block-color | - |\n| show-value | - |\n| @change | - |\n| @changing | - |"
+  },
+  "switch": {
+    "name": "## switch",
+    "description": "开关选择器",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| name | 4.24 |\n| checked | 4.24 |\n| type | 4.24 |\n| color | 4.24 |\n| disabled | 4.24 |\n| @change | 4.24 |"
+  },
+  "textarea": {
+    "name": "## textarea",
+    "description": "多行输入框",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| name | 4.24 |\n| value | 4.24 |\n| placeholder | 4.24 |\n| placeholder-style | 4.24 |\n| placeholder-class | 4.24 |\n| maxlength | 4.24 |\n| auto-focus | 4.24 |\n| focus | 4.24 |\n| confirm-type | 4.24 |\n| cursor | 4.24 |\n| confirm-hold | 4.24 |\n| auto-height | 4.24 |\n| cursor-color | - |\n| selection-start | 4.24 |\n| selection-end | 4.24 |\n| inputmode | - |\n| @confirm | 4.24 |\n| @input | 4.24 |\n| @linechange | 4.24 |\n| @blur | 4.24 |\n| @focus | 4.24 |"
+  },
+  "navigator": {
+    "name": "## navigator",
+    "description": "页面链接",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| target | 4.24 |\n| url | 4.24 |\n| open-type | 4.24 |\n| delta | 4.24 |\n| app-id | - |\n| path | 4.24 |\n| extra-data | - |\n| version | - |\n| animation-type | 4.24 |\n| animation-duration | 4.24 |\n| hover-class | - |\n| hover-stop-propagation | - |\n| hover-start-time | - |\n| hover-stay-time | - |\n| render-link | 4.24 |"
+  },
+  "audio": {
+    "name": "## audio",
+    "description": "音频",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| loop | - |\n| src | - |\n| controls | - |\n| poster | - |\n| name | - |\n| author | - |\n| @error | - |\n| @play | - |\n| @pause | - |\n| @timeupdate | - |\n| @ended | - |"
+  },
+  "image": {
+    "name": "## image",
+    "description": "图片",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| src | 4.24 |\n| mode | 4.24 |\n| draggable | 4.24 |\n| @error | 4.24 |\n| @load | 4.24 |"
+  },
+  "video": {
+    "name": "## video",
+    "description": "视频",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| loop | 4.24 |\n| src | 4.24 |\n| initial-time | 4.24 |\n| duration | 4.24 |\n| controls | 4.24 |\n| danmu-list | 4.24 |\n| danmu-btn | 4.24 |\n| enable-danmu | 4.24 |\n| autoplay | 4.24 |\n| muted | 4.24 |\n| page-gesture | 4.24 |\n| direction | 4.24 |\n| show-progress | 4.24 |\n| show-fullscreen-btn | 4.24 |\n| show-play-btn | 4.24 |\n| show-center-play-btn | 4.24 |\n| show-loading | 4.24 |\n| enable-progress-gesture | 4.24 |\n| objectFit | 4.24 |\n| poster | 4.24 |\n| show-mute-btn | 4.24 |\n| title | 4.24 |\n| play-btn-position | 4.24 |\n| enable-play-gesture | 4.24 |\n| auto-pause-if-navigate | 4.24 |\n| auto-pause-if-open-native | 4.24 |\n| vslide-gesture | 4.24 |\n| vslide-gesture-in-fullscreen | 4.24 |\n| poster-for-crawler | 4.24 |\n| play-strategy | 4.24 |\n| is-live | 4.24 |\n| @loadedmetadata | 4.24 |\n| @play | 4.24 |\n| @pause | 4.24 |\n| @ended | 4.24 |\n| @timeupdate | 4.24 |\n| @fullscreenchange | 4.24 |\n| @waiting | 4.24 |\n| @error | 4.24 |\n| @progress | 4.24 |\n| @fullscreenclick | 4.24 |\n| @controlstoggle | 4.24 |"
+  },
+  "live-player": {
+    "name": "## live-player",
+    "description": "实时音视频播放",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| src | - |\n| mode | - |\n| autoplay | - |\n| muted | - |\n| orientation | - |\n| object-fit | - |\n| background-mute | - |\n| min-cache | - |\n| max-cache | - |\n| @statechange | - |\n| @fullscreenchange | - |\n| @netstatus | - |"
+  },
+  "live-pusher": {
+    "name": "## live-pusher",
+    "description": "实时音视频录制",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| url | - |\n| mode | - |\n| autopush | - |\n| muted | - |\n| enable-camera | - |\n| auto-focus | - |\n| orientation | - |\n| beauty | - |\n| aspect | - |\n| min-bitrate | - |\n| max-bitrate | - |\n| waiting-image | - |\n| waiting-image-md5 | - |\n| background-mute | - |\n| @statechange | - |\n| @error | - |\n| @netstatus | - |"
+  },
+  "map": {
+    "name": "## map",
+    "description": "地图",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| longitude | - |\n| latitude | - |\n| scale | - |\n| markers | - |\n| covers | - |\n| polyline | - |\n| circles | - |\n| controls | - |\n| include-points | - |\n| show-location | - |\n| @markertap | - |\n| @callouttap | - |\n| @controltap | - |\n| @regionchange | - |\n| @updated | - |"
+  },
+  "canvas": {
+    "name": "## canvas",
+    "description": "画布",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n"
+  },
+  "web-view": {
+    "name": "## web-view",
+    "description": "承载网页的容器",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| 4.24 |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| src | 4.24 |\n| @loaded | - |"
+  },
+  "page-meta": {
+    "name": "## page-meta",
+    "description": "页面元数据，用于设置页面的一些属性，如背景色、下拉刷新等",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| background-text-style | - |\n| background-color | - |\n| background-color-top | - |\n| background-color-bottom | - |\n| scroll-top | - |\n| scroll-duration | - |\n| page-style | - |\n| root-font-size | - |\n| enable-pull-down-refresh | - |\n| @resize | - |\n| @scroll | - |\n| @scrolldone | - |"
+  },
+  "navigation-bar": {
+    "name": "## navigation-bar",
+    "description": "页面导航条配置节点",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| title | - |\n| title-icon | - |\n| titleIcon-radius | - |\n| subtitle-text | - |\n| subtitle-size | - |\n| subtitle-color | - |\n| subtitle-overflow | - |\n| title-align | - |\n| background-image | - |\n| background-repeat | - |\n| blur-effect | - |\n| loading | - |\n| front-color | - |\n| background-color | - |\n| color-animation-duration | - |\n| color-animation-timing-func | - |"
+  },
+  "custom-tab-bar": {
+    "name": "## custom-tab-bar",
+    "description": "自定义tabBar",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| direction | - |\n| show-icon | - |\n| selected | - |\n| @onTabItemTap | - |"
+  },
+  "unicloud-db": {
+    "name": "## unicloud-db",
+    "description": "是一个数据库查询组件，它将clientDB的API封装为组件，进一步减少开发者使用所需的代码量。",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| id | - |\n| v-slot:default | - |\n| collection | - |\n| field | - |\n| where | - |\n| orderby | - |\n| groupby | - |\n| group-field | - |\n| distinct | - |\n| page-data | - |\n| page-current | - |\n| page-size | - |\n| getone | - |\n| getcount | - |\n| gettree | - |\n| startwith | - |\n| limitlevel | - |\n| manual | - |\n| loadtime | - |\n| action | - |\n| @load | - |\n| @error | - |"
+  },
+  "animation-view": {
+    "name": "## animation-view",
+    "description": "Lottie 动画\n> 本 Component 是 uni ext component，需下载插件：[animation-view](https://ext.dcloud.net.cn/plugin?name=uni-animation-view)\n",
+    "compatibility": "\n### HarmonyOS 兼容性\n| HarmonyOS |\n| :- |\n| x |\n",
+    "attribute": "### 属性 HarmonyOS 兼容性 @harmony-compatibility \n | 名称 | HarmonyOS 兼容性 |\n| :- | :- |\n| path | - |\n| loop | - |\n| autoplay | - |\n| action | - |\n| hidden | - |\n| @ended | - |"
+  }
+}

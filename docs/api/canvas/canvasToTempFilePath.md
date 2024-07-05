@@ -8,22 +8,26 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
+<!-- UNIAPPAPIJSON.canvasToTempFilePath.compatibility -->
+
 **object参数说明：**
 
 |参数	|类型		|必填		|说明	|
 |---|---|---|---|
-|x	|Number		|否			|画布x轴起点（默认0）|					
-|y	|Number		|否			|画布y轴起点（默认0）|					
-|width	|Number		|否			|画布宽度（默认为canvas宽度-x）|					
-|height	|Number		|否			|画布高度（默认为canvas高度-y）|					
-|destWidth	|Number		|否			|输出图片宽度（默认为 width * 屏幕像素密度）|					
-|destHeight	|Number		|否			|输出图片高度（默认为 height * 屏幕像素密度）|					
-|canvasId	|String		|是			|画布标识，传入 ``<canvas/>`` 的 canvas-id（支付宝小程序是id、其他平台是canvas-id）|						
-|fileType	|String		|否			|目标文件的类型，只支持 'jpg' 或 'png'。默认为 'png'|		
-|quality	|Number		|否			|图片的质量，取值范围为 (0, 1]，不在范围内时当作1.0处理|		
-|success	|Function	|否			|接口调用成功的回调函数|						
-|fail	|Function	|否			|接口调用失败的回调函数|						
+|x	|Number		|否			|画布x轴起点（默认0）|
+|y	|Number		|否			|画布y轴起点（默认0）|
+|width	|Number		|否			|画布宽度（默认为canvas宽度-x）|
+|height	|Number		|否			|画布高度（默认为canvas高度-y）|
+|destWidth	|Number		|否			|输出图片宽度（默认为 width * 屏幕像素密度）|
+|destHeight	|Number		|否			|输出图片高度（默认为 height * 屏幕像素密度）|
+|canvasId	|String		|是			|画布标识，传入 ``<canvas/>`` 的 canvas-id（支付宝小程序是id、其他平台是canvas-id）|
+|fileType	|String		|否			|目标文件的类型，只支持 'jpg' 或 'png'。默认为 'png'|
+|quality	|Number		|否			|图片的质量，取值范围为 (0, 1]，不在范围内时当作1.0处理|
+|success	|Function	|否			|接口调用成功的回调函数|
+|fail	|Function	|否			|接口调用失败的回调函数|
 |complete	|Function	|否		|接口调用结束的回调函数（调用成功、失败都会执行）		|
+
+<!-- UNIAPPAPIJSON.canvasToTempFilePath.param -->
 
 **示例代码**
 
@@ -39,10 +43,12 @@ uni.canvasToTempFilePath({
   success: function(res) {
     // 在H5平台下，tempFilePath 为 base64
     console.log(res.tempFilePath)
-  } 
+  }
 })
 ```
 
 **Tips**
 
 - H5端 Canvas 内绘制的图像需要支持跨域访问才能成功。
+
+<!-- UNIAPPAPIJSON.canvasToTempFilePath.tutorial -->

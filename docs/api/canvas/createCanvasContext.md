@@ -1,5 +1,7 @@
 ### uni.createCanvasContext(canvasId, this)
 
+<!-- UNIAPPAPIJSON.createCanvasContext.tutorial -->
+
 #### 定义
 
 创建 ```canvas``` 绘图上下文（指定 canvasId）。在自定义组件下，第二个参数传入组件实例this，以操作组件内 ```<canvas/>``` 组件
@@ -13,6 +15,10 @@
 |canvasId|String	|画布标识，传入定义在 `<canvas/>` 的 canvas-id或id（支付宝小程序是id、其他平台是canvas-id）	|
 |componentInstance|Object	|自定义组件实例 this ，表示在这个自定义组件下查找拥有 canvas-id 的 `<canvas/>` ，如果省略，则不在任何自定义组件内查找	|
 
+<!-- UNIAPPAPIJSON.createCanvasContext.param -->
+
 #### 返回值
 
 [CanvasContext](/api/canvas/CanvasContext.md)
+
+<!-- UNIAPPAPIJSON.createCanvasContext.tutorial -->

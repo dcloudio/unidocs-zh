@@ -2,6 +2,8 @@
 
 返回一个 `SelectorQuery` 对象实例。可以在这个实例上使用 `select` 等方法选择节点，并使用 `boundingClientRect` 等方法选择需要查询的信息。
 
+<!-- UNIAPPAPIJSON.createSelectorQuery.compatibility -->
+
 **Tips:**
 
 - 使用 `uni.createSelectorQuery()` 需要在生命周期 `mounted` 后进行调用。
@@ -231,3 +233,5 @@ view
   };
 </script>
 ```
+
+<!-- UNIAPPAPIJSON.createSelectorQuery.returnValue -->

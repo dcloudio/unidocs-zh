@@ -1,4 +1,4 @@
-### uni.getSystemSetting()
+## uni.getSystemSetting()
 获取设备设置
 
 **平台差异说明**
@@ -7,6 +7,7 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX (3.5.2+)|x|基础库 (2.20.1+)|x|x|x|x|x|x|x|
 
+<!-- UNIAPPAPIJSON.getSystemSetting.compatibility -->
 
 **返回参数说明**
 
@@ -19,6 +20,8 @@
 |wifiEnabled|boolean|Wi-Fi 的系统开关|
 |wifiError|String|App端：Android平台没有权限时返回此属性；iOS平台不返回此属性；。详情见下|
 |deviceOrientation|string|设备方向。`竖屏：portrait`，`横屏：landscape`|
+
+<!-- UNIAPPAPIJSON.getSystemSetting.returnValue -->
 
 **Tips**
 - `bluetoothError`：

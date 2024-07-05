@@ -12,6 +12,8 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|1.9.0+|√|√|
 
+<!-- UNIAPPAPIJSON.createMapContext.compatibility -->
+
 ### mapContext
 
 ``mapContext`` 通过 mapId 跟一个 ``<map>`` 组件绑定，通过它可以操作对应的 ``<map>`` 组件。

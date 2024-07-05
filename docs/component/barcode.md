@@ -1,8 +1,10 @@
 #### Barcode
 
+> HarmonyOS 不支持
+
 app端nvue专用的扫码组件。
 
-- 此组件用于app端nvue页面实现内嵌到界面上的扫码。其他场景、其他平台，请使用全屏扫码API：[uni.scanCode](https://uniapp.dcloud.io/api/system/barcode) 
+- 此组件用于app端nvue页面实现内嵌到界面上的扫码。其他场景、其他平台，请使用全屏扫码API：[uni.scanCode](https://uniapp.dcloud.io/api/system/barcode)
 - App下纯nvue项目（manifest中renderer为native），暂不支持uni.scanCode API，此时只能使用barcode组件来替代。
 - 此组件自HBuilderX 2.1.5+起支持。
 
@@ -102,7 +104,7 @@ message|string|失败描述
 <script>
 	export default {
 		onLoad() {
-			
+
 		},
 		data() {
 			return {
@@ -131,7 +133,7 @@ message|string|失败描述
 			},
 
 			toscan: function() {
-				console.log("scan:");				
+				console.log("scan:");
 				const barcodeModule = uni.requireNativePlugin('barcodeScan');
 				barcodeModule.scan("/static/barcode1.png"
 				,(e)=>{

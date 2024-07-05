@@ -2,6 +2,9 @@
 
 文本组件。用于包裹文本内容。
 
+
+<!-- UNIAPPCOMJSON.text.compatibility -->
+
 在app-uvue和app-nvue中，文本只能写在text中，而不能写在view的text区域。
 
 虽然app-uvue中写在view的text区域的文字，也会被编译器自动包裹一层text组件，看起来也可以使用。但这样会造成无法修改该text文字的样式，详见uvue的[样式不继承](https://doc.dcloud.net.cn/uni-app-x/css/#stylenoextends)章节
@@ -14,6 +17,9 @@
 |user-select	|Boolean|false	|文本是否可选	| 微信小程序 |
 |space		|String	|		|显示连续空格	|钉钉小程序不支持	|
 |decode		|Boolean|false	|是否解码		|百度、钉钉小程序不支持	|
+
+
+<!-- UNIAPPCOMJSON.text.attribute -->
 
 **space 值说明**
 
@@ -110,3 +116,5 @@ export default {
 </script>
 ```
 :::
+
+<!-- UNIAPPCOMJSON.text.reference -->

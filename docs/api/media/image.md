@@ -4,6 +4,8 @@
 ### uni.chooseImage(OBJECT)
 从本地相册选择图片或使用相机拍照。
 
+<!-- UNIAPPAPIJSON.chooseImage.compatibility -->
+
 App端如需要更丰富的相机拍照API（如直接调用前置摄像头），参考[plus.camera](https://www.html5plus.org/doc/zh_cn/camera.html)
 
 > _微信小程序从基础库 2.21.0 开始， [wx.chooseImage](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseImage.html) 停止维护，请使用 [uni.chooseMedia](https://uniapp.dcloud.net.cn/api/media/video.html#choosemedia) 代替。_

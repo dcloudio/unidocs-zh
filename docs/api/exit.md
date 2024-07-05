@@ -1,4 +1,4 @@
-### uni.exit(OBJECT)
+## uni.exit(OBJECT)
 
 退出当前应用。
 
@@ -8,11 +8,12 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|x|x|x|x|x|x|x|
 
+<!-- UNIAPPAPIJSON.exit.compatibility -->
 
-**注意**  
-- HBuilderX3.8.15+ 新增支持  
-- 小程序端必须有点击行为才能调用成功  
-- App-iOS平台可以调用此API，但不支持退出应用功能，触发fail回调返回system not support错误  
+**注意**
+- HBuilderX3.8.15+ 新增支持
+- 小程序端必须有点击行为才能调用成功
+- App-iOS平台可以调用此API，但不支持退出应用功能，触发fail回调返回system not support错误
 
 **OBJECT参数说明**
 
@@ -37,9 +38,10 @@ uni.exit({
 ```
 
 
-### 错误码
+## 错误码
 
 |错误码	|错误信息					|说明																|
 |---	|----						|------															|
 |12001	|system not support			|当前系统不支持相关能力												|
 
+<!-- UNIAPPAPIJSON.exit.tutorial -->

@@ -1,6 +1,8 @@
-#### textarea
+## textarea
 
 多行输入框。
+
+<!-- UNIAPPCOMJSON.textarea.compatibility -->
 
 **属性说明**
 
@@ -37,6 +39,7 @@
 |@confirm|EventHandle||点击完成时， 触发 confirm 事件，event.detail = {value: value}|微信小程序、百度小程序、QQ小程序、京东小程序|
 |@keyboardheightchange|Eventhandle||键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration}|微信小程序基础库2.7.0+、App 3.1.0+|
 
+<!-- UNIAPPCOMJSON.textarea.attribute -->
 
 **confirm-type 有效值**
 
@@ -188,3 +191,5 @@ inputmode是html规范后期更新的内容。各家小程序还未支持此属�
 - 方式一：使用uni-app自带的`editor`组件，该组件支持App、H5、微信小程序，其他家小程序自身未提供这类解决方案。
 - 方式二：采用markdown编辑器方案，输入区输入markdown语法，预览区提供预览。这种方式可以跨端。插件市场搜[富文本编辑](https://ext.dcloud.net.cn/search?q=%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91)，有不少插件。
 - 方式三：使用web-view组件，加载html页面，此时可使用web中常见的各种富文本编辑器，插件市场也有这类插件。
+
+<!-- UNIAPPCOMJSON.textarea.reference -->

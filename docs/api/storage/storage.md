@@ -1,5 +1,7 @@
-### uni.setStorage(OBJECT) @setstorage
+## uni.setStorage(OBJECT) @setstorage
 将数据存储在本地缓存中指定的 key 中，会覆盖掉原来该 key 对应的内容，这是一个异步接口。
+
+<!-- UNIAPPAPIJSON.setStorage.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -10,6 +12,8 @@
 |success|Function|否|接口调用成功的回调函数|
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
+
+<!-- UNIAPPAPIJSON.setStorage.param -->
 
 **示例**
 
@@ -26,7 +30,7 @@ uni.setStorage({
 **注意**
 - `uni-`、`uni_`、`dcloud-`、`dcloud_`为前缀的key，为系统保留关键前缀。如`uni_deviceId`、`uni_id_token`，请开发者为key命名时避开这些前缀。
 
-### uni.setStorageSync(KEY,DATA) @setstoragesync
+## uni.setStorageSync(KEY,DATA) @setstoragesync
 将 data 存储在本地缓存中指定的 key 中，会覆盖掉原来该 key 对应的内容，这是一个同步接口。
 
 **参数说明**
@@ -44,8 +48,12 @@ try {
 }
 ```
 
-### uni.getStorage(OBJECT) @getstorage
+<!-- UNIAPPAPIJSON.setStorage.tutorial -->
+
+## uni.getStorage(OBJECT) @getstorage
 从本地缓存中异步获取指定 key 对应的内容。
+
+<!-- UNIAPPAPIJSON.getStorage.tutorial -->
 
 **OBJECT 参数说明**
 
@@ -55,6 +63,8 @@ try {
 |success|Function|是|接口调用的回调函数，res = {data: key对应的内容}|
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
+
+<!-- UNIAPPAPIJSON.getStorage.param -->
 
 **success 返回参数说明**
 
@@ -73,14 +83,20 @@ uni.getStorage({
 });
 ```
 
-### uni.getStorageSync(KEY) @getstoragesync
+<!-- UNIAPPAPIJSON.getStorage.tutorial -->
+
+## uni.getStorageSync(KEY) @getstoragesync
 从本地缓存中同步获取指定 key 对应的内容。
+
+<!-- UNIAPPAPIJSON.getStorageSync.compatibility -->
 
 **参数说明**
 
 |参数|类型|必填|说明|
 |:-|:-|:-|:-|
 |key|String|是|本地缓存中的指定的 key|
+
+<!-- UNIAPPAPIJSON.getStorageSync.param -->
 
 **示例**
 
@@ -95,7 +111,9 @@ try {
 }
 ```
 
-### uni.getStorageInfo(OBJECT) @getstorageinfo
+<!-- UNIAPPAPIJSON.getStorageSync.tutorial -->
+
+## uni.getStorageInfo(OBJECT) @getstorageinfo
 异步获取当前 storage 的相关信息。
 
 **平台差异说明**
@@ -104,6 +122,8 @@ try {
 |:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 2.0.3+|√|√|√|√|
 
+<!-- UNIAPPAPIJSON.getStorageInfo.compatibility -->
+
 **OBJECT 参数说明**
 
 |参数名|类型|必填|说明|
@@ -111,6 +131,8 @@ try {
 |success|Function|是|接口调用的回调函数，详见返回参数说明|
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
+
+<!-- UNIAPPAPIJSON.getStorageInfo.param -->
 
 **success 返回参数说明**
 
@@ -132,7 +154,9 @@ uni.getStorageInfo({
 });
 ```
 
-### uni.getStorageInfoSync() @getstorageinfosync
+<!-- UNIAPPAPIJSON.getStorageInfo.tutorial -->
+
+## uni.getStorageInfoSync() @getstorageinfosync
 同步获取当前 storage 的相关信息。
 
 **平台差异说明**
@@ -140,6 +164,10 @@ uni.getStorageInfo({
 |App|H5|微信小程序|支付宝小程序|百度小程序|
 |:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 2.0.3+|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.getStorageInfoSync.compatibility -->
+
+<!-- UNIAPPAPIJSON.getStorageInfoSync.returnValue -->
 
 **示例**
 
@@ -154,8 +182,12 @@ try {
 }
 ```
 
-### uni.removeStorage(OBJECT) @removestorage
+<!-- UNIAPPAPIJSON.getStorageInfoSync.tutorial -->
+
+## uni.removeStorage(OBJECT) @removestorage
 从本地缓存中异步移除指定 key。
+
+<!-- UNIAPPAPIJSON.removeStorage.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -165,6 +197,8 @@ try {
 |success|Function|是|接口调用的回调函数|
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
+
+<!-- UNIAPPAPIJSON.removeStorage.param -->
 
 **示例**
 
@@ -177,14 +211,20 @@ uni.removeStorage({
 });
 ```
 
-### uni.removeStorageSync(KEY) @removestoragesync
+<!-- UNIAPPAPIJSON.removeStorage.tutorial -->
+
+## uni.removeStorageSync(KEY) @removestoragesync
 从本地缓存中同步移除指定 key。
+
+<!-- UNIAPPAPIJSON.removeStorageSync.compatibility -->
 
 **参数说明**
 
 |参数名|类型|必填|说明|
 |:-|:-|:-|:-|
 |key|String|是|本地缓存中的指定的 key|
+
+<!-- UNIAPPAPIJSON.removeStorageSync.param -->
 
 **示例**
 
@@ -196,17 +236,24 @@ try {
 }
 ```
 
-### uni.clearStorage()
+<!-- UNIAPPAPIJSON.removeStorageSync.tutorial -->
+
+## uni.clearStorage()
 清理本地数据缓存。
+
+<!-- UNIAPPAPIJSON.clearStorage.compatibility -->
 
 **示例**
 
 ```javascript
 uni.clearStorage();
 ```
+<!-- UNIAPPAPIJSON.clearStorage.tutorial -->
 
-### uni.clearStorageSync()
+## uni.clearStorageSync()
 同步清理本地数据缓存。
+
+<!-- UNIAPPAPIJSON.clearStorageSync.compatibility -->
 
 **示例**
 
@@ -217,6 +264,7 @@ try {
 	// error
 }
 ```
+<!-- UNIAPPAPIJSON.clearStorageSync.tutorial -->
 
 **注意**
 
@@ -232,4 +280,3 @@ uni-app的Storage在不同端的实现不同：
 除此之外，其他数据存储方案：
 - H5端还支持websql、indexedDB、sessionStorage
 - App端还支持[SQLite](https://www.html5plus.org/doc/zh_cn/sqlite.html)、[IO文件](https://www.html5plus.org/doc/zh_cn/io.html)等本地存储方案。
-

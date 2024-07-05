@@ -110,6 +110,222 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720086018931faq60pigq9g.png)
 
+## 使用uts调用鸿蒙原生API@nativeapi
+
+这里以打开华为应用市场详情页为例
+
+定于API名称为：uni.openAppProduct
+
+1. 右键 uni_modules 目录（没有则新建目录）点击 `新建uni_modules插件`
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720150080112op9li2g0i1o.png)
+
+2. 插件名称为 `uni-openAppProduct`（注意，开发者自己创建时，不可以使用 `uni-` 开头，应以自己名字或昵称的缩写命令，如：`wq-openAppProduct`
+3. 修改插件根目录的 `package.json`，新增如下配置，arkts 为 true 代表支持鸿蒙
+```js
+"uni-ext-api": {
+	"uni": {
+		"openAppProduct": {
+			"name": "openAppProduct",
+			"app": {
+				"js": false,
+				"kotlin": false,
+				"swift": false,
+				"arkts": true
+			}
+		}
+	}
+},
+```
+
+4. 编写插件根目录下的 `/utssdk/interface.uts` 文件，内容如下
+
+````js
+export interface Uni {
+	/**
+		* openAppProduct()
+		* @description
+		* 跳转应用市场详情页
+		* @param {OpenAppProductOptions}  options
+		* @return {void}
+		* @example
+		 ```typescript
+			uni.openAppProduct({});
+		 ```
+		*/
+	openAppProduct(options : OpenAppProductOptions) : void;
+}
+
+export type OpenAppProduct = (options : OpenAppProductOptions) => void;
+export type OpenAppProductSuccess = {
+	/**
+	 * 错误信息
+	 */
+	errMsg : string
+};
+export type OpenAppProductSuccessCallback = (result : OpenAppProductSuccess) => void;
+export type OpenAppProductFail = {
+	/**
+	 * 错误信息
+	 */
+	errMsg : string
+};
+export type OpenAppProductFailCallback = (result : OpenAppProductFail) => void;
+export type OpenAppProductComplete = {
+	/**
+	 * 错误信息
+	 */
+	errMsg : string
+};
+export type OpenAppProductCompleteCallback = (result : OpenAppProductComplete) => void;
+export type OpenAppProductOptions = {
+	/**
+	 * 接口调用成功的回调函数
+	 * @defaultValue null
+	 */
+	success ?: OpenAppProductSuccessCallback | null,
+	/**
+	 * 接口调用失败的回调函数
+	 * @defaultValue null
+	 */
+	fail ?: OpenAppProductFailCallback | null,
+	/**
+	 * 接口调用结束的回调函数（调用成功、失败都会执行）
+	 * @defaultValue null
+	 */
+	complete ?: OpenAppProductCompleteCallback | null
+};
+````
+
+5. 编写插件根目录下的 `/utssdk/app-harmony/index.uts` 文件（没有则新建），内容如下
+
+```js
+import {
+	OpenAppProduct,
+	OpenAppProductOptions,
+	OpenAppProductSuccess,
+	OpenAppProductFail,
+	OpenAppProductComplete
+} from '../interface.uts'
+
+import bundleManager from '@ohos.bundle.bundleManager';
+
+export {
+	OpenAppProduct,
+	OpenAppProductOptions,
+	OpenAppProductSuccess,
+	OpenAppProductFail,
+	OpenAppProductComplete
+}
+
+import { productViewManager } from '@kit.StoreKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import type { common, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+export function openAppProduct(options : OpenAppProductOptions) {
+	let isSuccess = true;
+	try {
+		const request : Want = {
+			parameters: {
+				// 此处填入要加载的应用包名，例如： bundleName: "com.huawei.hmsapp.appgallery"
+				bundleName: bundleManager.getBundleInfoForSelfSync(bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT).name // 加载当前包名
+			}
+		};
+		productViewManager.loadProduct(getContext() as common.UIAbilityContext, request, {
+			onError: (err : BusinessError) => {
+				isSuccess = false;
+				hilog.info(0, 'TAG', `loadProduct onError. code is ${err.code}, message is ${err.message}`);
+				let result : OpenAppProductFail = {
+					errMsg: err.message ?? ""
+				};
+				const completeResult : OpenAppProductComplete = {
+					errMsg: err.message ?? ""
+				}
+				options?.fail?.(result);
+				options?.complete?.(completeResult);
+			}
+		} as productViewManager.ProductViewCallback);
+	} catch (err) {
+		isSuccess = false;
+		hilog.error(0, 'TAG', `loadProduct failed. code is ${err.code}, message is ${err.message}`);
+		let result : OpenAppProductFail = {
+			errMsg: err.message ?? ""
+		};
+		const completeResult : OpenAppProductComplete = {
+			errMsg: err.message ?? ""
+		}
+		options?.fail?.(result);
+		options?.complete?.(completeResult);
+	}
+
+	// productViewManager.loadProduct 没有成功回调，故以此方式判断是否成功执行
+	if (isSuccess) {
+		let result : OpenAppProductSuccess = {
+			errMsg: "ok"
+		};
+		const completeResult : OpenAppProductComplete = {
+			errMsg: "ok"
+		}
+		options?.success?.(result);
+		options?.complete?.(completeResult);
+	}
+}
+```
+
+6. 编写演示页面，项目根目录下 `/pages/index/index.vue` 内容如下
+
+```vue
+<template>
+	<view class="content">
+		<button @click="openAppProduct">打开应用市场</button>
+	</view>
+</template>
+
+<script lang="uts">
+	export default {
+		data() {
+			return {
+
+			}
+		},
+		onLoad() {
+
+		},
+		methods: {
+			openAppProduct() {
+				uni.openAppProduct({
+					success: (res) => {
+						console.log('success: ', JSON.stringify(res));
+					},
+					fail: (err) => {
+						console.error('fail: ', JSON.stringify(err));
+					},
+					complete: (res) => {
+						console.log('complete: ', JSON.stringify(res));
+					}
+				});
+			}
+		}
+	}
+</script>
+
+<style>
+	.content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+</style>
+```
+
+7. 点击 HBuilderX 上方【运行】菜单，运行到鸿蒙 DevEco Studio
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/17183338900070pjn2uj49t8.png)
+
+8. 鸿蒙 DevEco Studio 启动项目
+
 ## 注意事项@tips
 
 * 移植已有的 uni-app 项目源码时，如有其他 npm 依赖，请自行安装

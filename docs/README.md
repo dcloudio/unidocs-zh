@@ -215,12 +215,12 @@ pageClass: custom-page-class
 ## 功能框架图
 
 从下面`uni-app`功能框架图可看出，`uni-app`在跨平台的过程中，不牺牲平台特色，可优雅的调用平台专有能力，真正做到海纳百川、各取所长。
-
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-function-diagram.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/uni-function-diagram-20240523.png)
 
 ## 一套代码，运行到多个平台
 
 `uni-app`实现了一套代码，同时运行到多个平台；如下图所示，一套代码，同时运行到iOS模拟器、Android模拟器、web、微信开发者工具、支付宝小程序Studio、百度开发者工具、抖音开发者工具、QQ开发者工具（底部每个终端选项卡，代表1个终端模拟器）：
+
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/dev1x8.jpg)
 

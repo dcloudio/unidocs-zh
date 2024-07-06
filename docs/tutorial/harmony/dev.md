@@ -66,6 +66,10 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200873385940vk5oj9ihk.png)
 
+最后依次点击 `Apply` 和 `OK` 使签名生效
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720259265552t0m33hs637.png)
+
 ## 配置 HBuilderX settings.json@hbxsettings
 
 打开HBuilderX，点击上方菜单 - 工具 - 设置，在出现的弹窗右侧窗体新增如下配置
@@ -328,8 +332,39 @@ export function openAppProduct(options : OpenAppProductOptions) {
 
 ## 注意事项@tips
 
-* 移植已有的 uni-app 项目源码时，如有其他 npm 依赖，请自行安装
-* 现阶段条件编译仅 APP-HARMONY、APP 可以命中鸿蒙平台
-* 每次HBuilderX改动源码后，DevEco-Studio 内需要点重新运行才能生效
-* 如果模拟器白屏了，尝试重启软件 DevEco-Studio，再重启项目
-* 如果模拟器无法连接了，尝试重启电脑
+1. 移植已有的 uni-app 项目源码时，如有其他 npm 依赖，请自行安装
+2. 现阶段条件编译仅 APP-HARMONY、APP 可以命中鸿蒙平台
+3. 每次HBuilderX改动源码后，DevEco-Studio 内需要点重新运行才能生效
+4. 如果模拟器白屏了，尝试重启软件 DevEco-Studio，再重启项目
+5. 如果模拟器无法连接了，尝试重启电脑
+6. 在HBuilderX里运行后，需要再去鸿蒙 DevEco Studio里运行
+7. 在HBuilderX里修改代码后，需要去鸿蒙 DevEco Studio里重新运行
+8. 如果有多个uni-app项目要编译到鸿蒙，那么鸿蒙离线sdk需要放置多份，每个uni-app的manifest中配置不同的离线sdk地址，否则会冲突，鸿蒙设备上目前没有基座概念
+
+## 常见问题@question
+
+### 如何修改应用包名
+
+打开 `AppScope\app.json5` 修改 `bundleName`
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17202578113708uo26uaj0vg.png)
+
+修改包名后，需要重启鸿蒙 DevEco Studio，并重新[配置签名](#signature)
+
+### 如何修改应用名称
+
+1. 打开 `AppScope\resources\base\element\string.json` 修改数组元素 name 值为 app_name 对应的 value 的值
+2. 打开 `entry\src\main\resources\base\element\string.json` 修改数组元素 name 值为 EntryAbility_label 对应的 value 的值
+3. 打开 `entry\src\main\resources\en_US\element\string.json` 修改数组元素 name 值为 EntryAbility_label 对应的 value 的值
+4. 打开 `entry\src\main\resources\zh_CN\element\string.json` 修改数组元素 name 值为 EntryAbility_label 对应的 value 的值
+
+### 如何修改应用图标
+
+替换以下文件，注意文件不要改名
+
+1. AppScope\resources\base\media\app_icon.png
+2. entry\src\main\resources\base\media\foreground.png
+3. entry\src\main\resources\base\media\startIcon.png
+
+
+

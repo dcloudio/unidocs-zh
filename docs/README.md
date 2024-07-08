@@ -226,4 +226,4 @@ pageClass: custom-page-class
 
 实际运行效果如下（点击图片可放大）：
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg)#{.zooming}
+![](https://web-ext-storage.dcloud.net.cn/doc/uni-app-multiport-202478.png)#{.zooming}

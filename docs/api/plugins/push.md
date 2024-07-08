@@ -120,7 +120,7 @@ uni.offPushMessage(callback);
 |options|[SetPushChannelOptions](#setpushchanneloptions)|是|
 
 
-##### SetPushChannelOptions 的属性值
+##### SetPushChannelOptions 的属性值 @setpushchanneloptions
 
 |名称|类型|必备|默认值|描述|
 |:-|:-|:-|:-|:-|

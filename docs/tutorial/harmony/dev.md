@@ -118,7 +118,7 @@
 
 这里以打开华为应用市场详情页为例
 
-定于API名称为：uni.openAppProduct
+定义API名称为：uni.openAppProduct
 
 1. 右键 uni_modules 目录（没有则新建目录）点击 `新建uni_modules插件`
 

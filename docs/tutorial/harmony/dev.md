@@ -330,6 +330,20 @@ export function openAppProduct(options : OpenAppProductOptions) {
 
 8. 鸿蒙 DevEco Studio 启动项目
 
+## 使用uts调用鸿蒙第三方库的API@nativelibs
+
+鸿蒙的包用法和npm包差不多，在鸿蒙项目里面用ohpm安装三方库后，在 `/uni_modules/uts插件名/utssdk/app-harmony/index.uts` 内即可直接 import
+
+注意：只能在满足uts插件 `/uni_modules/*/utssdk/app-harmony/*.uts` 的文件下使用，无法直接在项目的pages中使用
+
+具体使用流程：在项目的pages引入uts插件，uts插件内再引入鸿蒙第三方库调用
+
+以调用 `@ohos.bundle.bundleManager` 为例，代码如下
+
+```js
+import bundleManager from '@ohos.bundle.bundleManager';
+```
+
 ## 注意事项@tips
 
 1. 移植已有的 uni-app 项目源码时，如有其他 npm 依赖，请自行安装

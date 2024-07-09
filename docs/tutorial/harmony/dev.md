@@ -340,8 +340,29 @@ export function openAppProduct(options : OpenAppProductOptions) {
 
 以调用 `@ohos.bundle.bundleManager` 为例，代码如下
 
+`page` 内代码
+
+```js
+// 导入要使用的插件
+import { getBundleName } from "@/uni_modules/my-getBundleName";	
+
+methods: {
+	testGetBundleName() {
+		let name = getBundleName();
+		console.log('name: ', name)
+	}
+}
+```
+
+`/uni_modules/*/utssdk/app-harmony/*.uts` 内的代码
+
 ```js
 import bundleManager from '@ohos.bundle.bundleManager';
+
+// 获取当前包名
+export function getBundleName() {
+	return bundleManager.getBundleInfoForSelfSync(bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT).name
+}
 ```
 
 ## 注意事项@tips

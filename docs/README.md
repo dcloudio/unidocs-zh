@@ -33,6 +33,14 @@ pageClass: custom-page-class
         </div>
         <b>iOS版</b>
       </a>
+      <a href="#" target="_blank" class="clear-style barcode-view" style="pointer-events: none;">
+        <div class="barcode-img-box">
+          <img src="https://web-ext-storage.dcloud.net.cn/uni-app/harmony/uni-harmony-qrcode.png" width="160" />
+        </div>
+        <b>鸿蒙版</b>
+        <b style="font-size: 14px;">需使用已升级到鸿蒙Next</b>
+        <b style="font-size: 14px;">的手机扫码体验</b>
+      </a>
       <a href="https://hellouniapp.dcloud.net.cn/" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/uni-h5-hosting-qr.png" width="160" />

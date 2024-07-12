@@ -81,12 +81,12 @@ HBuilderX 运行菜单下针对每个运行平台有一个 `运行时自动打�
 答：百度开发者工具隔离编译模式热更新未同步数据问题，切换依赖分析编译模式。
 
 3. `uni.addInterceptor` 修改 `request url` 导致报错 `未能获取局域网地址，本地调试服务不可用`?\
-答：`uni-vue-devtools` 依赖本地服务通信，故修改 `request url` 应绕开相关服务，特征为 `http:localhost|本机ip:端口`, 例如：
+答：`uni-vue-devtools` 依赖本地服务通信，故修改 `request url` 应绕开相关服务，特征为 `http:localhost|本机IP:端口`, 例如：
 ```js
 uni.addInterceptor('request', {
   invoke(args) {
     if (!args.url.startsWith('http://localhost') && !args.url.startsWith('http://本机IP')) {
-      args.url = 'https://www.baidu.com'
+      args.url = '目标地址'
     }
   }
 })

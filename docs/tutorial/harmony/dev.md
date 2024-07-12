@@ -384,7 +384,7 @@ export function getBundleName() {
 
 ## 常见问题@question
 
-### 如何修改应用包名
+### 如何修改应用包名@q1
 
 打开 `AppScope\app.json5` 修改 `bundleName`
 
@@ -392,14 +392,14 @@ export function getBundleName() {
 
 修改包名后，需要重启鸿蒙 DevEco Studio，并重新[配置签名](#signature)
 
-### 如何修改应用名称
+### 如何修改应用名称@q2
 
 1. 打开 `AppScope\resources\base\element\string.json` 修改数组元素 name 值为 app_name 对应的 value 的值
 2. 打开 `entry\src\main\resources\base\element\string.json` 修改数组元素 name 值为 EntryAbility_label 对应的 value 的值
 3. 打开 `entry\src\main\resources\en_US\element\string.json` 修改数组元素 name 值为 EntryAbility_label 对应的 value 的值
 4. 打开 `entry\src\main\resources\zh_CN\element\string.json` 修改数组元素 name 值为 EntryAbility_label 对应的 value 的值
 
-### 如何修改应用图标
+### 如何修改应用图标@q3
 
 替换以下文件，注意文件不要改名
 
@@ -407,6 +407,6 @@ export function getBundleName() {
 2. entry\src\main\resources\base\media\foreground.png
 3. entry\src\main\resources\base\media\startIcon.png
 
-### 鸿蒙DevEco Studio如何开启热重载
+### 鸿蒙DevEco Studio如何开启热重载@q4
 
 鸿蒙官方文档提供了如何开启热重载，详见[https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hot-reload-0000001527628941-V5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hot-reload-0000001527628941-V5)

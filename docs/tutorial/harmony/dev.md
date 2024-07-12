@@ -407,5 +407,6 @@ export function getBundleName() {
 2. entry\src\main\resources\base\media\foreground.png
 3. entry\src\main\resources\base\media\startIcon.png
 
+### 鸿蒙DevEco Studio如何开启热重载
 
-
+鸿蒙官方文档提供了如何开启热重载，详见[https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hot-reload-0000001527628941-V5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hot-reload-0000001527628941-V5)

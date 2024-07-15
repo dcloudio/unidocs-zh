@@ -430,3 +430,21 @@ export function getBundleName() {
 ### 模拟器已启动，但无法连接?@q7
 
 确保[签名](#signature)没有问题的情况下，尝试重启电脑
+
+
+### 报启动鸿蒙失败，请手动启动鸿蒙@q8
+
+1. 确保路径是正确的
+
+Windows系统快速复制路径方法
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1721024978448hkblu60vadg.png)
+
+注意：复制后的 `\` 要改成 `/`
+
+Mac系统快速复制路径方法
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1721024590649pv63f55jd4g.png)
+
+2. HBuilderX 拥有可以启动其他程序的权限（如尝试以管理员身份启动HBuilderX）
+ 

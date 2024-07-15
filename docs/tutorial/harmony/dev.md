@@ -131,21 +131,29 @@
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720150080112op9li2g0i1o.png)
 
 2. 插件名称为 `uni-openAppProduct`（注意，开发者自己创建时，不可以使用 `uni-` 开头，应以自己名字或昵称的缩写命令，如：`wq-openAppProduct`
-3. 修改插件根目录的 `package.json`，新增如下配置，arkts 为 true 代表支持鸿蒙
+3. 修改插件根目录的 `package.json` 中的 `uni_modules` 节点，新增如下配置，arkts 为 true 代表支持鸿蒙
 ```js
-"uni-ext-api": {
-	"uni": {
-		"openAppProduct": {
-			"name": "openAppProduct",
-			"app": {
-				"js": false,
-				"kotlin": false,
-				"swift": false,
-				"arkts": true
+{
+	...其他属性
+	
+	"uni_modules": {
+		"uni-ext-api": {
+			"uni": {
+				"openAppProduct": {
+					"name": "openAppProduct",
+					"app": {
+						"js": false,
+						"kotlin": false,
+						"swift": false,
+						"arkts": true
+					}
+				}
 			}
-		}
+		},
+		
+		...其他属性
 	}
-},
+}
 ```
 
 4. 编写插件根目录下的 `/utssdk/interface.uts` 文件，内容如下

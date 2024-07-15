@@ -371,7 +371,7 @@ export function getBundleName() {
 }
 ```
 
-## 发布鸿蒙应用
+## 发布鸿蒙应用@publish
 
 鸿蒙官方文档提供了如何发布鸿蒙应用，详见[文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-releaseharmony-0000001933963166)
 

@@ -445,7 +445,7 @@ Windows系统快速复制路径方法
 
 2. 如果步骤1操作完还是不行，请尝试
 
-路径到 `/bin/devecostudio64.exe`
+原路径后面添加 `/bin/devecostudio64.exe`，然后重启 HBuilderX
 
 **Mac系统**
 
@@ -455,5 +455,8 @@ Mac系统快速复制路径方法
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1721024590649pv63f55jd4g.png)
 
-2. 如果步骤1操作完还是不行，请尝试使用 `HBuilderX-alpha` 版本试试
+2. 如果步骤1操作完还是不行，请尝试
+
+原路径后面添加 `/Contents/MacOS/devecostudio`，然后重启 HBuilderX
+
  

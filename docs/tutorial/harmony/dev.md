@@ -453,7 +453,7 @@ Windows系统快速复制路径方法
 
 Mac系统快速复制路径方法
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1721024590649pv63f55jd4g.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/ee1f4941-3736-4df8-a35c-bb3929fb124f.png)
 
 2. 如果步骤1操作完还是不行，请尝试
 

@@ -422,3 +422,11 @@ export function getBundleName() {
 注意：在uniapp页面打印对象或数组时，需要 `JSON.stringify` ，如 `console.log("obj", JSON.stringify(obj))`
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17210155750168uc4maboupo.png)
+
+### 运行出现白屏怎么解决?@q6
+
+首先尝试重新编译uniapp项目，并重启模拟器或真机，如果依然白屏，那可能是你项目中有用到了鸿蒙不支持的组件或者api，可以尝试pages.json进行代码二分法排查（删除一半页面如果不白屏代表被删除的那一半页面中有造成白屏的页面）
+
+### 模拟器已启动，但无法连接?@q7
+
+确保[签名](#signature)没有问题的情况下，尝试重启电脑

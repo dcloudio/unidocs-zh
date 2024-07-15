@@ -371,6 +371,10 @@ export function getBundleName() {
 }
 ```
 
+## 发布鸿蒙应用
+
+鸿蒙官方文档提供了如何发布鸿蒙应用，详见[文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-releaseharmony-0000001933963166)
+
 ## 注意事项@tips
 
 1. 移植已有的 uni-app 项目源码时，如有其他 npm 依赖，请自行安装
@@ -409,4 +413,12 @@ export function getBundleName() {
 
 ### 鸿蒙DevEco Studio如何开启热重载@q4
 
-鸿蒙官方文档提供了如何开启热重载，详见[https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hot-reload-0000001527628941-V5](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hot-reload-0000001527628941-V5)
+鸿蒙官方文档提供了如何开启热重载，详见[文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hot-reload-0000001527628941-V5)
+
+### 如何查看console打印的日志@q5
+
+目前编译到鸿蒙时，在uniapp页面通过console.log打印日志无法在 HBuilderX 直接查看，需要在鸿蒙DevEco Studio内查看，具体查看方法如下图所示
+
+注意：在uniapp页面打印对象或数组时，需要 `JSON.stringify` ，如 `console.log("obj", JSON.stringify(obj))`
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17210155750168uc4maboupo.png)

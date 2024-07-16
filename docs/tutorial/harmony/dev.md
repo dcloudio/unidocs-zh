@@ -124,7 +124,7 @@
 
 这里以打开华为应用市场详情页为例
 
-定义API名称为：uni.openAppProduct
+定义API名称为：openAppProduct
 
 1. 右键 uni_modules 目录（没有则新建目录）点击 `新建uni_modules插件`
 
@@ -132,6 +132,9 @@
 
 2. 插件名称为 `uni-openAppProduct`（注意，开发者自己创建时，不可以使用 `uni-` 开头，应以自己名字或昵称的缩写命令，如：`wq-openAppProduct`
 3. 修改插件根目录的 `package.json` 中的 `uni_modules` 节点，新增如下配置，arkts 为 true 代表支持鸿蒙
+
+**注意：下方的属性名中包含的 `uni` 请勿更改成自己的名字或昵称缩写，只能用 `uni`**
+
 ```js
 {
 	...其他属性
@@ -293,10 +296,12 @@ export function openAppProduct(options : OpenAppProductOptions) {
 
 6. 编写演示页面，项目根目录下 `/pages/index/index.vue` 内容如下
 
+**方式一（挂载到uni全局对象）**
+
 ```vue
 <template>
 	<view class="content">
-		<button @click="openAppProduct">打开应用市场</button>
+		<button class="button" @click="openAppProductBtn">打开应用市场</button>
 	</view>
 </template>
 
@@ -311,7 +316,7 @@ export function openAppProduct(options : OpenAppProductOptions) {
 
 		},
 		methods: {
-			openAppProduct() {
+			openAppProductBtn() {
 				uni.openAppProduct({
 					success: (res) => {
 						console.log('success: ', JSON.stringify(res));
@@ -334,6 +339,63 @@ export function openAppProduct(options : OpenAppProductOptions) {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+	}
+	
+	.button{
+		width: 100%;
+		margin: 10px;
+	}
+</style>
+```
+
+**方式二（使用import引入）**
+
+```vue
+<template>
+	<view class="content">
+		<button class="button" @click="openAppProductBtn">打开应用市场</button>
+	</view>
+</template>
+
+<script lang="uts">
+	import { openAppProduct } from "@/uni_modules/xxx-openAppProduct"
+	export default {
+		data() {
+			return {
+
+			}
+		},
+		onLoad() {
+
+		},
+		methods: {
+			openAppProductBtn() {
+				openAppProduct({
+					success: (res : any) => {
+						console.log('success: ', JSON.stringify(res));
+					},
+					fail: (err : any) => {
+						console.error('fail: ', JSON.stringify(err));
+					},
+					complete: (res : any) => {
+						console.log('complete: ', JSON.stringify(res));
+					}
+				});
+			}
+		}
+	}
+</script>
+
+<style>
+	.content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.button{
+		width: 100%;
+		margin: 10px;
 	}
 </style>
 ```

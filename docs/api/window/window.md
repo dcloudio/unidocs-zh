@@ -14,12 +14,13 @@
 |page.$vm|当前页面的 Vue 实例||
 |page.route|获取当前页面的路由|&nbsp;|
 
-Tips：
+**注意：**
 * ``navigateTo``, ``redirectTo`` 只能打开非 tabBar 页面。
 * ``switchTab`` 只能打开 ``tabBar`` 页面。
 * ``reLaunch`` 可以打开任意页面。
 * 页面底部的 ``tabBar`` 由页面决定，即只要是定义为 ``tabBar`` 的页面，底部都有 ``tabBar``。
 * 不能在首页 ```onReady``` 之前进行页面跳转。
+* 使用`选项式 API` 时，不可创建 `route` 响应式变量，否则会覆盖当前 `page 实例` 的 `route` 属性。
 
 ## $getAppWebview()
 

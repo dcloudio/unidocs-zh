@@ -460,11 +460,13 @@ export function getBundleName() {
 
 ### 如何修改应用包名@q1
 
-打开 `AppScope\app.json5` 修改 `bundleName`
+1. 打开 `AppScope\app.json5` 修改 `bundleName`
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17202578113708uo26uaj0vg.png)
 
-修改包名后，需要重启鸿蒙 DevEco Studio，并重新[配置签名](#signature)
+2. 删除 `build-profile.json5` 内旧的签名信息
+
+3. 重启鸿蒙 DevEco Studio，启动模拟器或连接真机后，重新[配置签名](#signature)
 
 ### 如何修改应用名称@q2
 

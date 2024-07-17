@@ -19,8 +19,28 @@
 
 **代码示例**
 
+::: preview
+
+> 选项式 API
+
 ```javascript
 const query = uni.createSelectorQuery().in(this);
+query
+  .select("#id")
+  .boundingClientRect((data) => {
+    console.log("得到布局位置信息" + JSON.stringify(data));
+    console.log("节点离页面顶部的距离为" + data.top);
+  })
+  .exec();
+```
+
+> 组合式 API
+
+```javascript
+import { getCurrentInstance } from 'vue';
+const instance = getCurrentInstance();
+
+const query = uni.createSelectorQuery().in(instance.proxy);
 query
   .select("#id")
   .boundingClientRect((data) => {

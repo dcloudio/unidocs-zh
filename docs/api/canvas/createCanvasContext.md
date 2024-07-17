@@ -1,4 +1,4 @@
-### uni.createCanvasContext(canvasId, this)
+### uni.createCanvasContext(canvasId, componentInstance)
 
 <!-- UNIAPPAPIJSON.createCanvasContext.compatibility -->
 

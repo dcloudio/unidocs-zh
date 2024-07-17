@@ -1,4 +1,4 @@
-### uni.createVideoContext(videoId, this)
+### uni.createVideoContext(videoId, componentInstance)
 创建并返回 video 上下文 videoContext 对象。在自定义组件下，第二个参数传入组件实例this，以操作组件内 ``<video>`` 组件。
 
 **平台差异说明**

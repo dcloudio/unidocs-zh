@@ -122,6 +122,14 @@
 
 ## 使用uts调用鸿蒙原生API@nativeapi
 
+uni-app在Android和iOS平台，支持uts插件和App原生语言插件。目前App原生语言插件已经停止维护。uts插件是主推的扩展方式。
+
+鸿蒙系统有很多原生API，可以通过uts插件方式接入，被uni-app调用。
+
+详细的教程见：
+- [uts插件介绍](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)
+- [uts插件鸿蒙开发专题](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-harmony.html)
+
 这里以打开华为应用市场详情页为例
 
 定义API名称为：openAppProduct

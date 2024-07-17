@@ -20,8 +20,6 @@
 
 <!-- UNIAPPAPIJSON.connectSocket.param -->
 
-<!-- UNIAPPAPIJSON.connectSocket.tutorial -->
-
 **示例代码**
 
 ```javascript
@@ -222,8 +220,6 @@ uni.onSocketMessage(function (res) {
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 <!-- UNIAPPAPIJSON.closeSocket.param -->
-
-<!-- UNIAPPAPIJSON.closeSocket.tutorial -->
 
 ## uni.onSocketClose(CALLBACK)
 监听WebSocket关闭。

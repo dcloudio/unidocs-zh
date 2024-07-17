@@ -53,7 +53,7 @@ try {
 ## uni.getStorage(OBJECT) @getstorage
 从本地缓存中异步获取指定 key 对应的内容。
 
-<!-- UNIAPPAPIJSON.getStorage.tutorial -->
+<!-- UNIAPPAPIJSON.getStorage.compatibility -->
 
 **OBJECT 参数说明**
 

@@ -1,6 +1,6 @@
 ### uni.createCanvasContext(canvasId, this)
 
-<!-- UNIAPPAPIJSON.createCanvasContext.tutorial -->
+<!-- UNIAPPAPIJSON.createCanvasContext.compatibility -->
 
 #### 定义
 

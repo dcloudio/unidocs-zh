@@ -1,4 +1,4 @@
-### uni.createLivePlayerContext(livePlayerId, this)
+### uni.createLivePlayerContext(livePlayerId, componentInstance)
 创建 live-player 上下文 livePlayerContext 对象。注意是直播的播放而不是推流。
 
 **平台差异说明**
@@ -47,7 +47,7 @@ App平台的直播播放，不使用此API，而直接使用video的API。
 
 
 
-### uni.createLivePusherContext(livePusherId, this)
+### uni.createLivePusherContext(livePusherId, componentInstance)
 创建 live-pusher 上下文 livePusherContext 对象。
 
 **平台差异说明**

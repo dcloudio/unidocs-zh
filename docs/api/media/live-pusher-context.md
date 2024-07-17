@@ -1,4 +1,4 @@
-### uni.createLivePusherContext(livePusherId, this)
+### uni.createLivePusherContext(livePusherId, componentInstance)
 创建 live-pusher 上下文 livePusherContext 对象。
 
 **平台差异说明**

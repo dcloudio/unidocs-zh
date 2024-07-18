@@ -10,7 +10,7 @@
 
 **平台差异说明**
 
-|App|HarmonyOS|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|
+|App|HarmonyOS Next|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|
 |:-	|:-	|:-					|:-						|:-					|:-					|:-				|:-				|
 |√（2.3.8+）	|x|x	|√					|x						|x					|x					|x				|
 
@@ -82,7 +82,7 @@
 
 ## uni.checkIsSupportSoterAuthentication(OBJECT)
 
-> HarmonyOS 不支持
+> HarmonyOS Next 不支持
 
 获取本机支持的 SOTER 生物认证方式
 
@@ -102,7 +102,7 @@
 
 ## uni.checkIsSoterEnrolledInDevice(OBJECT)
 
-> HarmonyOS 不支持
+> HarmonyOS Next 不支持
 
 获取设备内是否录入如指纹等生物信息的接口
 

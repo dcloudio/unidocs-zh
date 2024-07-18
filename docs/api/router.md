@@ -283,7 +283,7 @@ uni.navigateBack({
 
 > 2.8.9+ 支持
 >
-> HarmonyOS 不支持
+> HarmonyOS Next 不支持
 
 页面间事件通信通道
 

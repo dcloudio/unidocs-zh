@@ -4,7 +4,7 @@
 
 **平台差异说明**
 
-|App-nvue|HarmonyOS|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|
+|App-nvue|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√(2.7.12+)|x|√(2.7.12+)|x|x|x|x|x|
 
@@ -51,7 +51,7 @@ HBuilderX 2.7.12+的hello uni-app，在navigator示例和uni ui的日历示例�
 
 ## uni.unPreloadPage(OBJECT)
 
-> HarmonyOS 不支持
+> HarmonyOS Next 不支持
 
 取消预载页面。
 

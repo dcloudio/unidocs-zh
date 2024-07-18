@@ -6,7 +6,7 @@ subNvue，是 vue 页面的原生子窗体，把weex渲染的原生界面当做 
 
 ## uni.getSubNVueById(subNvueId)@app-getsubnvuebyid
 
-> HarmonyOS 不支持
+> HarmonyOS Next 不支持
 
 通过 `ID` 获取 `subNVues` 原生子窗体的实例。  [subNVues 配置](/collocation/pages?id=app-subNVues)
 
@@ -26,7 +26,7 @@ const subNVue = uni.getSubNVueById('popup');
 
 ## uni.getCurrentSubNVue()@app-getCurrentSubNVue
 
-> HarmonyOS 不支持
+> HarmonyOS Next 不支持
 
 在一个subnvue窗体的nvue页面代码中，获取当前 `subNVues` 原生子窗体的实例。
 

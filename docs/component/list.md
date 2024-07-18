@@ -1,6 +1,6 @@
 ## list
 
-> HarmonyOS 不支持
+> HarmonyOS Next 不支持
 
 app端nvue专用组件。在app-nvue下，如果是长列表，使用list组件的性能高于使用view或scroll-view的滚动。原因在于list在不可见部分的渲染资源回收有特殊的优化处理。
 

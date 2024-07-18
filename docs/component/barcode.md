@@ -1,6 +1,6 @@
 #### Barcode
 
-> HarmonyOS 不支持
+> HarmonyOS Next 不支持
 
 app端nvue专用的扫码组件。
 

@@ -24,7 +24,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 
 **OBJECT 参数说明**
 
-|参数名|类型|必填|说明|平台差异说明|
+|参数名|类型|必填#{width=120px}|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
 |provider|String|是|服务提供商，通过 [uni.getProvider](/api/plugins/provider) 获取。||
 |orderInfo|String/Object|是|订单数据，[注意事项](/api/plugins/payment?id=orderinfo)|App、支付宝小程序、百度小程序、抖音小程序|

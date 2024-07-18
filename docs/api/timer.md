@@ -2,7 +2,7 @@
 
 ## setTimeout(callback, delay, rest)
 
-> HarmonyOS 支持
+> HarmonyOS Next 支持
 
 设定一个定时器。在定时到期以后执行注册的回调函数
 
@@ -22,7 +22,7 @@
 
 ## clearTimeout(timeoutID)
 
-> HarmonyOS 支持
+> HarmonyOS Next 支持
 
 取消由 setTimeout 设置的定时器。
 
@@ -67,7 +67,7 @@
 
 ## setInterval(callback, delay, rest)
 
-> HarmonyOS 支持
+> HarmonyOS Next 支持
 
 设定一个定时器。按照指定的周期（以毫秒计）来执行注册的回调函数
 
@@ -95,7 +95,7 @@ this.timer = setInterval(() => {
 
 ## clearInterval(intervalID)
 
-> HarmonyOS 支持
+> HarmonyOS Next 支持
 
 取消由 setInterval 设置的定时器。
 

@@ -284,6 +284,8 @@ style的写法与web的css基本相同。
 |onShareTimeline|监听用户点击右上角转发到朋友圈|微信小程序|2.8.1+|
 |onAddToFavorites|监听用户点击右上角收藏|微信小程序、QQ小程序|2.8.1+|
 
+::: tip 提示 vue3组合式api的自定义组件会触发onLoad和onShow， 方便组件监听到页面的生命周期 :::
+
 ### 页面加载时序介绍@timeline
 
 接下来我们介绍onLoad、onReady、onShow的先后关系，页面加载的详细流程。

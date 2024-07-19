@@ -291,13 +291,9 @@ export declare type ${interfaceCamel}Component = import("vue").DefineComponent<$
 
     if (isComponent !== false) {
         addType(`  ${interfaceCamel}: import('./${comp}').${interfaceCamel}Component`)
-        /**
-         * 处理一个单词命名的组件，转为小写风格，让volar也能匹配到小写时的组件，多单词组件volar会自动处理
-         */
-        if (interfaceCamel.match(/[A-Z]/g).length === 1) {
-            const joinProps = joinPropsArr.map((name) => `import('./${comp}').${name}`).join(' & ')
-            jsxList.push(`      ${toSnackCase(interfaceCamel)}: ${joinProps} & JSXElementAttr;`)
-        }
+        addType(`  "${toSnackCase(interfaceCamel)}": import('./${comp}').${interfaceCamel}Component`)
+        const joinProps = joinPropsArr.map((name) => `import('./${comp}').${name}`).join(' & ')
+        jsxList.push(`      "${toSnackCase(interfaceCamel)}": ${joinProps} & JSXElementAttr;`)
     }
 
     return [propsDoc, eventDoc, isComponent === false ? '' : exportNamedComponent].filter(Boolean).join('\n')
@@ -378,9 +374,10 @@ export const getTypeDoc = () => {
 // Read more: https://github.com/vuejs/core/pull/3399
 export {}
 
+import { StyleValue } from "vue";
 interface JSXElementAttr {
   class?: any
-  style?: any
+  style?: StyleValue
 }
 
 export interface MPComponents {
@@ -396,6 +393,16 @@ ${jsxList.join('\n')}
   }
 }
 
+declare module "@vue/runtime-core" {
+
+  export interface IntrinsicElementAttributes {
+${jsxList.join('\n')}
+  }
+
+  export type NativeElements = {
+    [K in keyof IntrinsicElementAttributes]: IntrinsicElementAttributes[K];
+  };
+}
 declare module "vue" {
   export interface GlobalComponents extends MPComponents {}
 }

@@ -9,7 +9,7 @@
 uni-app（含uni-app x），是DCloud公司提供的跨端开发框架（以下简称本框架）。
 
 ## 知识产权及使用授权
-uni-app开源的源码遵循 Apache-2.0 开源协议，详见 [LICENSE](LICENSE)
+uni-app开源的源码遵循 Apache-2.0 开源协议。
 
 您可以自由下载、使用本框架来开发您的应用，而不需要向DCloud付费。
 

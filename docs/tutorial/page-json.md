@@ -53,3 +53,5 @@ import { pages } from '@/pages.json';
 ```
 在 `App` 平台导入的结果中，`pages` 下只包含 `path` 为 `pages/index/index` 和 `pages/index/app` 的对象。\
 在 `Web` 平台导入的结果中，`pages` 下只包含 `path` 为 `pages/index/index` 和 `pages/index/web` 的对象。
+
+<!--  TODO: uni-app x android 端项目中引入大 json 文件（已知超过6000 行）会编译报错 Method too large -->

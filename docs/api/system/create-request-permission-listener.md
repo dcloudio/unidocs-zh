@@ -1,4 +1,4 @@
-### 监听权限申请
+## 监听权限申请
 
 app-android平台，可使用本API监听应用权限申请确认框的弹出和关闭。不管是哪处的业务代码在申请权限，当弹出和关闭权限申请确认框时均会触发本监听事件。
 
@@ -9,13 +9,15 @@ app-android平台，可使用本API监听应用权限申请确认框的弹出和
 - 当权限申请的确认框在手机端弹出时，会触发onConfirm，回调中会以数组方式提供权限名称列表。
 - 当权限申请的确认框被用户关闭后，会触发onComplete
 
-### uni.createRequestPermissionListener()
+## uni.createRequestPermissionListener()
 
 创建一个监听权限申请的 `RequestPermissionListener` 对象。
 
 **平台差异说明**
 
 HBuilderX (4.0+) android 平台支持
+
+<!-- UNIAPPAPIJSON.createRequestPermissionListener.compatibility -->
 
 **注意：HBuilderX 4.01 Vue2项目需要使用自定义基座测试监听权限申请的功能，标准基座暂不支持测试。**
 

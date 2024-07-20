@@ -5,6 +5,7 @@
   * [引用组件](page-component.md)
   * [引用 js](page-script.md)
   * [引用 css](page-style.md)
+  * [引用 json](page-json.md)
   * [引用静态资源](page-static-assets.md)
   * [引用原生插件](/plugin/native-plugin.md)
 * [js 语法](syntax-js.md)
@@ -46,6 +47,7 @@
   * [HTML5Plus](use-html5plus.md)
   * [Native.js](native-js.md)
   * [renderjs](renderjs.md)
+  * [开发鸿蒙应用](harmony/dev.md)
   * [原生插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)
   * [App的User Agent](app-useragent.md)
   * [App使用高斯模糊](app-blureffect.md)
@@ -113,6 +115,7 @@
     * [未同意隐私政策模式运行](app-disagreemode.md)
     * [Google Play上架](android-gp.md)
     * [App Store上架](ios-app-store.md)
+    * [iOS平台隐私清单](app-ios-privacyinfo.md)
   * [App升级](https://doc.dcloud.net.cn/uniCloud/upgrade-center.html)
 * 小程序专题
   * [组件与WXS](miniprogram-subject.md)
@@ -154,6 +157,8 @@
   * 服务器安全
     * [uniCloud ip防刷](https://doc.dcloud.net.cn/uniCloud/ip-filter.html)
     * [内容安全审查](https://ext.dcloud.net.cn/plugin?id=5460)
+  * 等保测评
+	* [等保测评服务](djbh.md)
 * [国际化专题](i18n.md)
 	* [国际化开发指南](i18n.md)
 	* [海外开发者使用指南](internationalization.md)

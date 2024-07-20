@@ -1,4 +1,4 @@
-### movable-view
+## movable-view
 
 可移动的视图容器，在页面中可以拖拽滑动或双指缩放。
 
@@ -9,6 +9,8 @@
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|x|√|√|√|√|√|
+
+<!-- UNIAPPCOMJSON.movable-view.compatibility -->
 
 **属性说明**
 
@@ -30,6 +32,8 @@
 |@change|EventHandle||拖动过程中触发的事件，event.detail = {x: x, y: y, source: source}，其中source表示产生移动的原因，值可为touch（拖动）、touch-out-of-bounds（超出移动范围）、out-of-bounds（超出移动范围后的回弹）、friction（惯性）和空字符串（setData）||
 |@scale|EventHandle||缩放过程中触发的事件，event.detail = {x: x, y: y, scale: scale}，||
 
+<!-- UNIAPPCOMJSON.movable-view.attribute -->
+
 除了基本事件外，movable-view提供了两个特殊事件
 
 |类型|触发条件|平台差异说明|
@@ -38,9 +42,9 @@
 |vtouchmove|初次手指触摸后移动为纵向的移动，如果catch此事件，则意味着touchmove事件也被catch|微信小程序、百度小程序、QQ小程序、快手小程序、快应用|
 
 > movable-view 必须设置width和height属性，不设置默认为10px
-> 
+>
 > movable-view 默认为绝对定位，top和left属性为0px
-> 
+>
 > 当movable-view小于movable-area时，movable-view的移动范围是在movable-area内；当movable-view大于movable-area时，movable-view的移动范围必须包含movable-area（x轴方向和y轴方向分开考虑）
 
 **Tips**
@@ -112,4 +116,3 @@ export default {
 </script>
 ```
 :::
-

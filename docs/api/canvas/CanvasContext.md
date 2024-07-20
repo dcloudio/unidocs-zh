@@ -1,10 +1,13 @@
 **属性**
 
+
 **平台差异说明**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.createCanvasContext.compatibility -->
 
 App-nvue下如需使用canvas，暂未封装为uni API，可参考[文档](https://github.com/dcloudio/NvueCanvasDemo)使用。
 
@@ -805,7 +808,7 @@ ctx.draw()
 const ctx = uni.createCanvasContext('myCanvas')
 
 // save the default fill style
-ctx.save() 
+ctx.save()
 ctx.setFillStyle('red')
 ctx.fillRect(10, 10, 150, 100)
 

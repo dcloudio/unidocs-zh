@@ -1,4 +1,4 @@
-### uni.createMapContext(mapId,this)
+### uni.createMapContext(mapId, componentInstance?)
 创建并返回 map 上下文 ``mapContext`` 对象。在自定义组件下，第二个参数传入组件实例this，以操作组件内 ``<map>`` 组件。
 
 **注意：uni.createMapContext(mapId, this)**
@@ -12,6 +12,8 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|1.9.0+|√|√|
 
+<!-- UNIAPPAPIJSON.createMapContext.compatibility -->
+
 ### mapContext
 
 ``mapContext`` 通过 mapId 跟一个 ``<map>`` 组件绑定，通过它可以操作对应的 ``<map>`` 组件。
@@ -22,7 +24,7 @@
 |:-|:-|:-|:-|
 |getCenterLocation|OBJECT|获取当前地图中心的经纬度，返回的是 gcj02 坐标系，可以用于 [uni.openLocation](/api/location/location.md#getlocation)||
 |moveToLocation|OBJECT|将地图中心移动到当前定位点，需要配合map组件的show-location使用||
-|translateMarker|OBJECT|平移marker，带动画|app-nvue 2.1.5+、微信小程序带动画、抖音、支付宝、京东、百度、QQ小程序|
+|translateMarker|OBJECT|平移marker，带动画|app-nvue 2.1.5+、H5、微信小程序带动画、抖音、支付宝、京东、百度、QQ小程序|
 |includePoints|OBJECT|缩放视野展示所有经纬度|app-nvue 2.1.5+、微信、抖音、支付宝、京东、百度、快手、QQ小程序|
 |getRegion|OBJECT|获取当前地图的视野范围||
 |getRotate|OBJECT|获取当前地图的旋转角|微信、抖音、支付宝、京东、QQ小程序|

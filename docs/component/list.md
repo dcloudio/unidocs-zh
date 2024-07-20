@@ -1,4 +1,6 @@
-#### list
+## list
+
+> HarmonyOS Next 不支持
 
 app端nvue专用组件。在app-nvue下，如果是长列表，使用list组件的性能高于使用view或scroll-view的滚动。原因在于list在不可见部分的渲染资源回收有特殊的优化处理。
 
@@ -110,7 +112,7 @@ headerHeight|吸顶距离|Number|是|子list吸顶距离最外层滚动容器顶
           console.log("loadmore事件触发");
           this.lists.push('1');
         }
-        
+
     }
   }
 </script>

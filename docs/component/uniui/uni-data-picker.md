@@ -161,7 +161,8 @@
 |map|Object|-|{text:'text',value:'value'}|字段映射，将text/value映射到数据中的其他字段|
 
 ::: warning 注意
-`collection/where/orderby` 和 `<unicloud-db>` 的用法一致，[详情](https://doc.dcloud.net.cn/uniCloud/unicloud-db)
++ `collection/where/orderby` 和 `<unicloud-db>` 的用法一致，[详情](https://doc.dcloud.net.cn/uniCloud/unicloud-db)
++ uniapp项目，每个数据项的value字段不能重复，组件内部基于value做唯一标识。uniappX项目没有这个限制，放心使用
 :::
 
 

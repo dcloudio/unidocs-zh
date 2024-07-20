@@ -9,6 +9,8 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|x|√|√|x|√|x|√|
 
+<!-- UNIAPPAPIJSON.getBackgroundAudioManager.compatibility -->
+
 **backgroundAudioManager 对象的属性列表**
 
 |属性|类型|说明|只读|

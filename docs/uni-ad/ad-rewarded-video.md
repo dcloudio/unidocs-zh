@@ -15,7 +15,7 @@
 - 走路赚钱、看短视频赚钱、猜歌赚钱等应用也非常多
 - 网赚应用中，做各种任务赚钱，或者想要接赚钱的任务，前提是观看激励视频
 - 增值内容消费，比如小说、电影看一半，剩下的需要看广告后才能继续
-- 区块链应用融合激励视频，比如看广告提高收益或提高挖矿成功率
+- 区块链应用融合激励视频，比如看广告提高收益
 - 游戏内看广告复活、看广告拿高级道具
 
 注意激励不能直接发钱，那会被视为积分墙，而被广告平台禁封。
@@ -55,17 +55,17 @@
 
 **属性说明**
 
-|属性名														|类型													|默认值		|说明																																									|平台差异	|
-|:-																|:-														|:-				|:-																																										|:-				|
-|adpid														|String&#124;Number|					|广告位id，到uniad后台申请。|					|
-|preload													|Boolean											|true			|页面就绪后加载广告数据																																|					|
-|loadnext													|Boolean											|false		|自动加载下一条广告数据																																|					|
-|disabled													|Boolean											|false		|禁用默认点击行为																																			|					|
-|url-callback											|Object												|					|服务器回调透传数据																																		|					|
-|v-slot:default="{loading, error}"|															|					|作用域插槽可以获取组件内部广告加载状态和加载错误信息																	|					|
-|@load														|EventHandle									|加载事件	|																																											|					|
-|@close														|EventHandle									|关闭事件	|																																											|					|
-|@error														|EventHandle									|错误事件	|																																											|					|
+|属性名														|类型								|默认值	|说明																													|平台差异	|
+|:-																|:-									|:-			|:-																														|:-			|
+|adpid														|String&#124;Number	|				|广告位id，到[uni-ad后台](https://uniad.dcloud.net.cn/)后台申请。	|				|
+|preload													|Boolean						|true		|页面就绪后加载广告数据																						|				|
+|loadnext													|Boolean						|false	|自动加载下一条广告数据																						|				|
+|disabled													|Boolean						|false	|禁用默认点击行为																								|				|
+|url-callback											|Object							|				|服务器回调透传数据																							|				|
+|v-slot:default="{loading, error}"|										|				|作用域插槽可以获取组件内部广告加载状态和加载错误信息									|				|
+|@load														|EventHandle				|加载事件	|																															|				|
+|@close														|EventHandle				|关闭事件	|																															|				|
+|@error														|EventHandle				|错误事件	|																															|				|
 
 **url-callback说明**
 
@@ -499,13 +499,13 @@ rewardedVideoAd.onClose(res => {
 
 ### 服务器回调@callback
 
-App平台 3.1.15+ 支持穿山甲/优量汇/快手
+App平台 3.1.15+ 支持服务器回调
 
 激励视频广告可以支持广告服务器到业务服务器的回调，用于业务系统判断是否提供奖励给观看广告的用户。配置服务器回调后，当用户成功看完广告时，广告服务器会访问配置的云函数，通知用户完成观看激励视频。
 
 服务器回调将更加安全，可以依赖广告平台的反作弊机制来避免用户模拟观看广告完成的事件。
 
-![激励视频回调](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback-01-29.png)
+![激励视频回调](https://web-ext-storage.dcloud.net.cn/doc/ad/uniAdCallback-20240708.png)
 
 如何使用
 1. 申请激励视频广告位时开启服务器回调

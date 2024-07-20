@@ -1,4 +1,4 @@
-### 什么是datacom
+## 什么是datacom
 
 `datacom`，全称是`data components`，数据驱动的组件。
 
@@ -95,7 +95,7 @@
 图例：
 ![](https://img-cdn-aliyun.dcloud.net.cn/stream/plugin_screens/f5c64490-2994-11eb-a554-03adfa49bb37_0.jpg)
 
-### 什么是datacom组件规范
+## 什么是datacom组件规范
 
 显然，datacom组件不是只有一个`<uni-data-checkbox>`，radio、check、select、picker、segement、tree...还有很多组件都可以成为datacom组件，变成类似`<uni-data-picker>`。
 
@@ -105,7 +105,7 @@
 
 详细的“datacom组件规范”见后文。
 
-### datacom对于开发者的好处
+## datacom对于开发者的好处
 
 datacom组件，对服务器数据规范、前端组件的数据输入和输出规范，做了定义。它提升了产业的标准化程度、细化了分工，提升了效率。
 
@@ -126,14 +126,14 @@ datacom组件，对服务器数据规范、前端组件的数据输入和输出�
 5. 额外的，开发者将可以在插件市场找到多个城市选择组件，它们都符合`datacom组件规范`，可能有的是全屏选择、有的是底部半屏选择，有的顶部有搜索框、有的右侧有索引字母....不管什么样的城市选择组件，你都可以随便的换，反正它们都符合一个数据规范。
 
 
-### datacom组件规范
+## datacom组件规范
 
 1. 命名以 -data- 为中间分隔符，前面为组件库名称，后面是组件功能表达
 2. 组件可以通过属性赋值，绑定一个 data 数据。可以是本地的localdata，也可以直接指定uniCloud云数据库的查询结果。详见下文的《数据绑定规范》
 3. data数据是一组候选json数据。数据可以是平铺的数组，也可以是嵌套的树形结构。详见下文的《数据结构规范》
 4. 符合 `<uni-forms>` 组件的表单校验规范
 
-#### 数据结构规范
+### 数据结构规范
 
 datacom组件接受的数据结构，包含了“数组”和“树”两种数据结构规范。
 
@@ -253,7 +253,7 @@ data数据是可遍历嵌套的数据集合。数组中每条数据如下基本k
 	</script>
 ```
 
-#### 数据绑定规范
+### 数据绑定规范
 
 `datacom组件	`的data，可以来自页面本地，即localdata；也可以直接指定uniCloud的云数据库查询结果，即指定collection表名、field字段名、where条件，这些写法与`unicloud-db组件`的写法相同，如果localdata和collection同时存在，优先使用localdata。
 
@@ -284,9 +284,9 @@ collection表名、field字段名、where条件的写法，详见[clientDB组件
 
 datacom组件规范还要求支持绑定 value，且支持双向绑定，即：支持`v-model`指令。这同时也是为了uni-forms的表单校验。
 
-#### 组件属性规范
+### 组件属性规范
 
-##### 分步查询属性规范
+#### 分步查询属性规范
 
 当`datacom组件`的data来自uniCloud的云数据库或cdn等云端，且数据量较大时，我们通常可以选择分步查询来优化用户体验，如以下场景：
 
@@ -303,7 +303,7 @@ datacom组件规范还要求支持绑定 value，且支持双向绑定，即：�
 |parent-field	|String		|		|"树"结构的父字段名称。常用于树，picker，参考：`uni-data-picker`					|
 |@stepsearch	|EventHandle|		|分步查询数据时触发。可用于自定义分步查询数据，参考：`uni-data-picker`				|
 
-##### 弹出类属性规范
+#### 弹出类属性规范
 
 `datacom组件`为弹出类组件，设计了以下组件属性、事件：
 
@@ -314,12 +314,12 @@ datacom组件规范还要求支持绑定 value，且支持双向绑定，即：�
 |@popupclosed	|EventHandle|		|组件弹出关闭时触发。参考：`uni-data-picker`|
 
 
-### datacom的局限
+## datacom的局限
 
 - 与基础代码相比，datacom用起来简单，但封装一层后导致其灵活性不如基础组件。如有个性化逻辑则有可能需要改组件源码。
 - datacom覆盖范围主要是选择类组件。按钮类、输入类组件并不适合做成datacom。
 
-### 有哪些组件可做成datacom
+## 有哪些组件可做成datacom
 
 选择类组件很多，基本逻辑都是在指定的数据范围内，选择其中的一个或多个。
 
@@ -352,7 +352,7 @@ datacom组件规范还要求支持绑定 value，且支持双向绑定，即：�
 欢迎开发者们开发这些`datacom组件`。插件市场提供了[datacom组件专区](https://ext.dcloud.net.cn/search?&q=DataCom&type=UpdatedDate)，给予更高的显示权重。
 
 
-### 使用mixinDatacom快速开发datacom@mixindatacom
+## 使用mixinDatacom快速开发datacom@mixindatacom
 
 > 版本要求：HBuilderX 3.1.0+
 
@@ -362,7 +362,7 @@ datacom组件规范还要求支持绑定 value，且支持双向绑定，即：�
 
 mixin是vue的技术，不熟悉的可以点此了解[vue官网的mixin文档](https://cn.vuejs.org/v2/api/#Vue-mixin)
 
-#### 语法手册
+### 语法手册
 
 `uniCloud.mixinDatacom` 的props
 
@@ -410,7 +410,7 @@ mixin是vue的技术，不熟悉的可以点此了解[vue官网的mixin文档](h
 |mixinDatacomEasyGet			|加载数据，包含 `mixinDatacomLoading` 、`mixinDatacomHasMore`、`mixinDatacomErrorMessage` 逻辑 |
 |onMixinDatacomPropsChange	|属性发生变化时触发|
 
-#### 使用方法
+### 使用方法
 
 使用 `uniCloud.mixinDatacom` 开发 `datacom` 组件需要以下步骤
 
@@ -571,7 +571,7 @@ mixin是vue的技术，不熟悉的可以点此了解[vue官网的mixin文档](h
 ```
 
 
-#### `uniCloud.mixinDatacom` 源码 @mixinDatacomsource
+### `uniCloud.mixinDatacom` 源码 @mixinDatacomsource
 为方便开发者理解mixinDatacom的工作原理，这里贴出mixinDatacom的源码：
 
 uni-app-x 3.99+ 开始支持

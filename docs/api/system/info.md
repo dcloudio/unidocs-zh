@@ -1,4 +1,4 @@
-### 系统信息的概念
+## 系统信息的概念
 
 uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的2个API获取系统信息。
 
@@ -12,8 +12,10 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 - `uni`：uni-app框架相关的信息，如uni-app框架的编译器版本、运行时版本
 - `app`：开发者的应用相关的信息，如应用名称、版本
 
-### uni.getSystemInfo(OBJECT)
+## uni.getSystemInfo(OBJECT)
 异步获取系统信息
+
+<!-- UNIAPPAPIJSON.getSystemInfo.compatibility -->
 
 **OBJECT 参数说明：**
 
@@ -23,7 +25,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-#### success 返回参数说明
+### success 返回参数说明
 
 |参数分类	|参数|说明			|App平台值域		|Web平台值域		|小程序平台值域	|备注	|uni框架最低版本要求	|
 |:-			|:-|:-|:-|:-|:-|:-|:-|
@@ -69,7 +71,9 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |			|safeArea			|在竖屏正方向下的安全区域。由于此属性理解和使用比较困难，更推荐使用 safeAreaInsets 属性。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、抖音、飞书、支付宝（iOS真机）、快手、QQ小程序、华为快应用|||
 |			|safeAreaInsets		|在竖屏正方向下的安全区域插入位置。与小程序定义的 safeArea 用途相同，但是规范参考 iOS 平台的 [safeAreaInsets](https://developer.apple.com/documentation/uikit/uiview/2891103-safeareainsets) 更利于理解和使用。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、抖音、飞书、支付宝小程序（iOS真机）、华为快应用||uni-app 2.5.3+|
 
-#### 某些小程序特殊的返回参数
+<!-- UNIAPPAPIJSON.getSystemInfo.param -->
+
+### 某些小程序特殊的返回参数
 
 |参数|说明|平台差异说明|
 |:-|:-|:-|
@@ -92,7 +96,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |cacheLocation|上一次缓存的位置信息|百度小程序(安卓端最低基础库版本 3.40.4 ；iOS 最低支持版本 3.70.2)|
 |storage|设备磁盘容量|支付宝小程序|
 
-#### 不推荐使用的返回参数，仅为向下兼容保留
+### 不推荐使用的返回参数，仅为向下兼容保留
 
 |参数|说明|平台差异说明|
 |:-|:-|:-|
@@ -111,7 +115,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序、抖音小程序(2.53.0+)|
 
 
-#### uniPlatform 返回值说明 @uniplatform
+### uniPlatform 返回值说明 @uniplatform
 
 |值|生效条件|
 |:-|:-|
@@ -139,22 +143,22 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 - App离线打包，使用了不匹配的离线SDK
 - App wgt升级，即手机上安装的App是老版的`uniRuntimeVersion`，wgt的新版使用了不同版本的HBuilder或uni-app cli版本，并且实施了应用资源升级
 
-#### romName 返回值说明 @romname
+### romName 返回值说明 @romname
 
 |值|解释|
 |:-|:-|
 |MIUI|小米|
 |EMUI|华为|
-|HarmonyOS|华为鸿蒙|
+|HarmonyOS Next|华为鸿蒙|
 |Magic OS|荣耀|
 |ColorOS|oppo|
 |Funtouch OS|vivo|
 |FLymeOS|魅族|
 |SmartisanOS|锤子|
 
-注意：不同rom的版本号规则不同，比如`MIUI`版本号是`V130`，而`HarmonyOS`的版本号是`2.0.0`
+注意：不同rom的版本号规则不同，比如`MIUI`版本号是`V130`，而`HarmonyOS Next`的版本号是`2.0.0`
 
-#### hostName 返回值说明 @hostname
+### hostName 返回值说明 @hostname
 
 |值|解释|
 |:-|:-|
@@ -172,7 +176,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |qq|QQ|
 |KUAISHOU|快手|
 
-#### safeArea 返回值说明 @safearea
+### safeArea 返回值说明 @safearea
 
 |参数	|类型	|说明		|
 |:-		|:-			|:-			|
@@ -192,7 +196,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |top	|Number	|安全区顶部插入位置			|
 |bottom	|Number	|安全区域底部插入位置			|
 
-#### language 返回值说明
+### language 返回值说明
 
 language的国际规范是`BCP47规范`，分为三段，主语言-次语言-地区。例如`zh-Hans-CN`，表示 中文-简体-中国大陆
 
@@ -204,7 +208,7 @@ language的国际规范是`BCP47规范`，分为三段，主语言-次语言-地
 
 所以获取语言后，不能直接字符串比较，需要拆段比较，npm上也有专门做`BCP47语言规范`比较的库。
 
-#### deviceId 返回值说明
+### deviceId 返回值说明
 
 Web、小程序、iOS，属于对用户隐私保护比较严格的平台，在这些平台很难获取有效的设备唯一标记。
 
@@ -221,12 +225,12 @@ deviceId，在`app-android`平台，会根据优先使用imei、mac（仅在用�
 
 app下需要广告追踪的场景，在iOS上可以使用[idfa](https://ask.dcloud.net.cn/article/36107)、部分国产Android手机可以使用[OAID](http://www.html5plus.org/doc/zh_cn/device.html#plus.device.getOAID)
 
-#### deviceModel 返回值说明
+### deviceModel 返回值说明
 uni-app 3.5.1+ 版本规范了 deviceModel 返回值，例如之前返回 `iPhone11ProMax` 新版本返回值为 `iPhone 11 Pro Max`，各设备型号[参考规范](https://www.theiphonewiki.com/wiki/Models) 中 Generation 对应的值
 
 注意：新机型刚推出一段时间会显示 Unknown，官方会尽快进行适配。
 
-#### 其他注意 @tips
+### 其他注意 @tips
 - `deviceType`：
   - `app-ios` 只支持 `phone`、`pad`。
   - `app-android` 支持 `phone`、`pad`、`tv`、`car`、`watch`、`vr`、`appliance`、`undefined`、`unknown`，关于各个类型的更详细解释参考[Android官方文档](https://developer.android.com/guide/)。
@@ -256,7 +260,7 @@ uni-app 3.5.1+ 版本规范了 deviceModel 返回值，例如之前返回 `iPhon
 - [京东小程序](https://mp-docs.jd.com/api/equipment/system.html)
 - [华为快应用](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-systeminfo-0000001126227753)
 
-#### 示例 @getsysteminfo-new-fields
+### 示例 @getsysteminfo-new-fields
 
 调用代码示例
 ```javascript
@@ -297,14 +301,15 @@ uni.getSystemInfo({
 |osLanguage|zh-CN|zh-Hans-CN|-|zh-CN|zh-Hans-CN|-|-|-|-|
 |osTheme|light|light|-|light|light|-|-|-|-|
 |osAndroidAPILevel|31|-|-|29|-|-|-|-|-|-|
-|romName|MIUI|-|-|HarmonyOS|-|-|-|-|-|
+|romName|MIUI|-|-|HarmonyOS Next|-|-|-|-|-|
 |romVersion|V130|-|-|2.0.0|-|-|-|-|-|
 |uniPlatform|app|app|web|app|app|mp-weixin|mp-alipay|mp-baidu|mp-toutiao|
 |uniCompileVersion|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|
 |uniRuntimeVersion|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|
 
+<!-- UNIAPPAPIJSON.getSystemInfo.tutorial -->
 
-### uni.getSystemInfoSync()
+## uni.getSystemInfoSync()
 
 获取系统信息的同步接口。`调用参数和返回值同上getSystemInfo`。
 

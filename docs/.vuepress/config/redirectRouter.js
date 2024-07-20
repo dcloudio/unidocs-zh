@@ -92,6 +92,9 @@ const routerMap = {
   '/use-html5plus': '/tutorial/use-html5plus.html',
   '/m3w': '/uniCloud/uni-portal.html',
   '/tutorial/syntax-uts': '/uni-app-x/uts/',
+	
+	'/harmony/dev': '/tutorial/harmony/dev.html',
+	'/harmony/dev.html': '/tutorial/harmony/dev.html',
 
   '/uniCloud/uni-id-summary': '/uniCloud/uni-id/summary.html',
   '/uniCloud/uni-id-pages': '/uniCloud/uni-id/redirect.html',

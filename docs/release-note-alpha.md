@@ -1,3 +1,68 @@
+#### 4.23.2024070309-alpha
+* 【uni-app-x】
+  + 新增 API uni.setTabBarStyle/pages.json 支持传递 borderColor 设定自定义边框颜色，优先级高于 borderStyle [详情](https://doc.dcloud.net.cn/uni-app-x/api/set-tabbar.html#settabbarstyle)
+  + Web平台、App-Android平台 调整 API uni.setTabBarStyle/pages.json 中 borderStyle 只支持 black/white [详情](https://doc.dcloud.net.cn/uni-app-x/api/set-tabbar.html#settabbarstyle)
+  + Web平台 修复 4.22版本引出的 开发阶段内置浏览器白屏的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2722)
+  + Web平台 修复 4.21版提供的 canvas API 缺失 toDataURL/toBlob 方法的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2811)
+  + App平台 调整 API uni.getDeviceInfo 返回数据中的 devicePixelRatio 属性类型为 number [详情](https://doc.dcloud.net.cn/uni-app-x/api/get-device-info.html#%E8%BF%94%E5%9B%9E%E5%80%BC)
+  + App-iOS平台 修复 4.22版本引出的 自定义组件样式污染造成渲染变慢的bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2592)
+  + App-iOS平台 修复 组件 form submit/reset 事件 target 属性为 null 的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2798)
+  + App-iOS平台 修复 uts组件插件触发 event 事件参数中缺少 type、target 等属性的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2801)
+* 【uts】
+  + App-iOS平台 新增 UTSJSONObject 支持 assign、keys 等静态方法 [详情](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/utsjsonobject.html#%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95)
+  + App-iOS平台 修复 UTSJSONObject 中包含 Map 类型数据可能会引起崩溃的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2047)
+* 【uniCloud】
+  + 修复 4.22版本引出的支付宝云 WebSocket 默认连接地址不是 wss 协议的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2725)
+  + 优化 上传网页前端托管上传速度及上传稳定性，减少上传失败的情况
+
+#### 4.22.2024062415-alpha
+* 【uni-app】
+  + Web平台、App-vue平台 修复 input 组件 type="digit"，在有初始值的情况下输入小数点时输入框清空的Bug [详情](https://ask.dcloud.net.cn/question/193171)
+  + Web平台 修复 vue3版本 tabBar切换时不能记忆滚动位置的Bug [详情](https://ask.dcloud.net.cn/question/193400)
+* 【uni-app-x】
+  + Web平台 修复 input 在 type="digit"，在有初始值的情况下输入小数点时输入框清空的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2601)
+  + Web平台 修复 tabBar切换时不能记忆滚动位置的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2516)
+  + App-Android平台 修复 响应式API可能存在内存泄漏的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2543)
+  + App-Android平台 修复 组件 switch 在 list-view 组件中显示状态可能不正确的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2482)
+  + App-iOS平台 新增 uni-ad 开屏广告 [文档](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-ad)
+  + App-iOS平台 新增 uni-ad 激励视频广告 [文档](https://doc.dcloud.net.cn/uni-app-x/api/create-rewarded-video-ad.html)
+  + App-iOS平台 修复 组件 button 动态设置 text 文本重复显示的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2507)
+  + App-iOS平台 修复 API uni.setTabBarStyle 参数 backgroundImage 无效的bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2523)
+  + App-iOS平台 修复 自定义组件样式污染的bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2592)
+  + App-iOS平台 修复 `Info.plis` 中配置应用支持的横竖屏后云端打包无效的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2639)
+* 【uniCloud 插件】
+  + 【重要】新增 支付宝云支持 WebSocket [详情](https://doc.dcloud.net.cn/uniCloud/websocket.html)
+  + 修复 支付宝云 uni-app-x ios 端请求在某些情况下云函数报错的Bug [详情](https://ask.dcloud.net.cn/question/193076)
+
+#### 4.21.2024061818-alpha
+* 【uni-app】
+  + Web平台 修复 Vue3 项目暗黑模式下，theme.json 中配置 tabbar 的 iconPath 或 selectedIconPath 或 midButton -> backgroundImage 的路径不以 / 开头时在发行模式下图片 404 不显示的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2472)
+  + 小程序平台 修复 用户工程路由以 App.vue 结尾错误识别为主入口的bug [详情](https://ask.dcloud.net.cn/question/192513)
+  + 小程序平台 修复 不支持用户传递 `transformAssetUrls.tags` 的 bug [详情](https://github.com/dcloudio/uni-app/pull/4980)
+  + 微信小程序平台 修复 使用 `uni://form-field` 报错的 bug [详情](https://github.com/dcloudio/uni-app/issues/4960)
+  + 头条小程序平台 修复 启用 virtualHost 时相关生命周期不生效的bug [详情](https://ask.dcloud.net.cn/question/192502)
+  + App-iOS平台 修复 在 iOS 16 系统中，input type="digit" 时无法删除小数点的Bug [详情](https://ask.dcloud.net.cn/question/193171)
+* 【uni-app-x】
+  + 新增 支持 onError 应用生命周期 [详情](https://doc.dcloud.net.cn/uni-app-x/collocation/app.html)
+  + Web平台 修复 暗黑模式下，theme.json 中配置 tabbar 的 iconPath 或 selectedIconPath 或 midButton -> backgroundImage 的路径不以 / 开头时在发行模式下图片 404 不显示的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2472)
+  + Web平台 修复 uni.setTabBarStyle后minbutton消失的bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2513)
+  + App-Android平台 调整 系统底栏背景色与页面 backgroundColorContent 颜色一致 [详情](https://doc.dcloud.net.cn/uni-app-x/collocation/pagesjson.html#pagesoptionspage-tips)
+  + App-Android平台 修复 离线打包 number 类型判断相等可能与云打包结果不一致的bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2422)
+  + App-Android平台 修复 响应式数组调用 unshift 方法不触发响应式变更 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2151)
+  + App-Android平台 调整 input/textarea 组件同时设置 modelValue 和 value 时，modelValue 优先级更高 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2236)
+  + App-iOS平台 修复 uts 插件事件包含大写触发后无法接收事件的bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2525)
+* 【uts】
+  + App-Android平台 修复 可选 number 类型判断相等结果可能不正确的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2439)
+  + App-Android平台 修复 UTSJSONObject 通过 getXXX 方法获取对象属性返回的不是引用的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2340)
+  + App-Android平台 修复 JSON.parse 返回的数字类型通过 console.log 打印输出类型不正确的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2427)
+  + App-iOS平台 修复 4.18版本引出的 uts组件插件使用时设置 style 可能会被默认 style 覆盖的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2411)
+* 【uniCloud】
+  + 调整 客户端请求云函数、云对象的 clientInfo 内仅保留部分字段，移除 oaid、safeAreaInsets 等信息，避免 vivo 商店报警 [详情](https://doc.dcloud.net.cn/uniCloud/cf-functions.html#get-client-infos)
+  + 新增 客户端API uniCloud.setCustomClientInfo 用于自定义客户端信息 [详情](https://doc.dcloud.net.cn/uniCloud/client-sdk.html#set-custom-client-info)
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 更新 统计模块 google渠道友盟统计 SDK 为 9.6.8 版，解决可能无法通过 GooglePlay 审核的问题 [详情](https://ask.dcloud.net.cn/question/189922)
+  + iOS平台 修复 特定场景下可能偶现崩溃的Bug [详情](https://ask.dcloud.net.cn/question/191578)
+
 #### 4.19.2024060704-alpha
 * 【uni-app】
   + 小程序平台 修复 uni-app cli 项目依赖 @vitejs/plugin-vue@5.05 引发的组件编译失败的Bug [详情](https://github.com/dcloudio/uni-app/issues/4952)

@@ -26,16 +26,16 @@ editor 组件对应的 editorContext 实例，可通过 [uni.createSelectorQuery
 
 **平台差异说明**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
+|App|HarmonyOS Next|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
 |:-:|:-:		|:-:		|:-:				|:-:			|:-:				|:-:		|:-:		|:-:	|
-|√	|2.4.5+	|√			|x					|需引入动态库	|x				|x			|x			|x		|
+|√	|x|2.4.5+	|√			|x					|需引入动态库	|x				|x			|x			|x		|
 
 
 **百度小程序引入动态库**
 
 
-1. 在项目中引用动态库，在 `manifest.json` 中增添一项 `dynamicLib` 
- 
+1. 在项目中引用动态库，在 `manifest.json` 中增添一项 `dynamicLib`
+
 ```js
 	"mp-baidu" : {
 		"appid" : "",
@@ -52,9 +52,9 @@ editor 组件对应的 editorContext 实例，可通过 [uni.createSelectorQuery
 
 2. 在每个使用到富文本编辑器组件的页面，配置 `pages.json` 文件如下：
 
-``` js 
+``` js
 {
-	"pages": [ 
+	"pages": [
 		{
 			"path": "pages/index/index",
 			"style": {

@@ -7,6 +7,8 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|1.23.4+|√|√|√|√|√|
 
+<!-- UNIAPPAPIJSON.createInnerAudioContext.compatibility -->
+
 **innerAudioContext 对象的属性列表**
 
 |属性|类型|说明|只读|平台差异说明|

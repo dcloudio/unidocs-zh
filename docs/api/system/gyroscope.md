@@ -1,4 +1,4 @@
-### uni.onGyroscopeChange(CALLBACK)
+## uni.onGyroscopeChange(CALLBACK)
 
 监听陀螺仪数据变化事件。
 
@@ -24,7 +24,7 @@
 |y|number|y轴方向角速度|
 |z|number|z轴方向角速度|
 
-### uni.startGyroscope(OBJECT)
+## uni.startGyroscope(OBJECT)
 
 开始监听陀螺仪数据。
 
@@ -41,7 +41,7 @@
 |fail|function||否|接口调用失败的回调函数||
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-### uni.stopGyroscope(OBJECT)
+## uni.stopGyroscope(OBJECT)
 
 停止监听陀螺仪数据。
 

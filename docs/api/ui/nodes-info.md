@@ -2,6 +2,8 @@
 
 返回一个 `SelectorQuery` 对象实例。可以在这个实例上使用 `select` 等方法选择节点，并使用 `boundingClientRect` 等方法选择需要查询的信息。
 
+<!-- UNIAPPAPIJSON.createSelectorQuery.compatibility -->
+
 **Tips:**
 
 - 使用 `uni.createSelectorQuery()` 需要在生命周期 `mounted` 后进行调用。
@@ -17,6 +19,10 @@
 
 **代码示例**
 
+::: preview
+
+> 选项式 API
+
 ```javascript
 const query = uni.createSelectorQuery().in(this);
 query
@@ -27,6 +33,24 @@ query
   })
   .exec();
 ```
+
+> 组合式 API
+
+```javascript
+import { getCurrentInstance } from 'vue';
+const instance = getCurrentInstance();
+
+const query = uni.createSelectorQuery().in(instance.proxy);
+query
+  .select("#id")
+  .boundingClientRect((data) => {
+    console.log("得到布局位置信息" + JSON.stringify(data));
+    console.log("节点离页面顶部的距离为" + data.top);
+  })
+  .exec();
+```
+:::
+
 
 **注意**
 
@@ -231,3 +255,5 @@ view
   };
 </script>
 ```
+
+<!-- UNIAPPAPIJSON.createSelectorQuery.returnValue -->

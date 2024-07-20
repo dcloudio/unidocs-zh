@@ -1,4 +1,4 @@
-#### live-player
+## live-player
 
 实时音视频播放，也称直播拉流。
 
@@ -9,6 +9,8 @@
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快应用|360小程序|京东小程序|
 |:-:		|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x(见下)|x	|√	|x	|√	|√(基础库版本>=1.52.0)|x	|√	|x |x |x |
+
+<!-- UNIAPPCOMJSON.live-player.compatibility -->
 
 - App的实时音视频播放，不是使用 live-player，而是直接使用 video 组件。
 - H5 下可用 video 播放符合 HTML5 规范的流媒体，rtmp 等非 HTML5 标准的流媒体格式，仅在部分支持 flash 的国内手机浏览器上可播放。在 pc 浏览器上，需要安装 flash 插件才能播放 rtmp 等格式。
@@ -31,7 +33,7 @@
 |max-cache|Number|3|最大缓冲区，单位s||
 |picture-in-picture-mode|string/Array|3|设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]）|微信小程序（2.10.3）|
 |@statechange|EventHandle||播放状态变化事件，detail = {code}||
-|@netstatus|EventHandle||网络状态通知，detail = {info}|| 
+|@netstatus|EventHandle||网络状态通知，detail = {info}||
 |@fullscreenchange|EventHandle||全屏变化事件，detail = {direction, fullScreen}。|&nbsp;|
 |@audiovolumenotify|EventHandle||播放音量大小通知，detail = {}|微信小程序（2.10.0）|
 |@enterpictureinpicture|EventHandle||播放器进入小窗|微信小程序（2.11.0）|

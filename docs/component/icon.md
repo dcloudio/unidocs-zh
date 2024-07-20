@@ -1,4 +1,4 @@
-#### icon
+## icon
 
 图标。
 
@@ -7,6 +7,8 @@
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√(2.2.3+)|√|√|√|√|√|√|√|√|√|
+
+<!-- UNIAPPCOMJSON.icon.compatibility -->
 
 **Tips**
 
@@ -28,6 +30,7 @@
 |支付宝小程序|info, warn, waiting, cancel, download, search, clear, success, success_no_circle,loading|
 |百度小程序|success, info, warn, waiting, success_no_circle, clear, search, personal, setting, top, close, cancel, download, checkboxSelected, radioSelected, radioUnselect|
 
+<!-- UNIAPPCOMJSON.icon.attribute -->
 
 **示例**
 ```html
@@ -64,3 +67,5 @@ export default {
 		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/icon1.png" width="100" style="margin-right:20px;"/>
 		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/icon2.png" width="100"/>
 </div>
+
+<!-- UNIAPPCOMJSON.icon.reference -->

@@ -6,7 +6,7 @@ uni-app和5+App提供了一批API，获取客户端一些与安全有关的信�
 更推荐使用[uni云端一体安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)，使用安全网络后将无需在使用本章节提供的API。
 :::
 
-### getSignature
+### 应用签名标识
 [plus.navigator.getSignature](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getSignature)用于获取应用签名标识，可以判断App是否被重新签名。
 
 签名证书是对App开发者身份的唯一标识，如果程序未对签名证书进行校验，可能被反编译后进行二次打包使用其它签名证书重新签名。如重新签名的App可以正常启动，则可能导致App被仿冒盗版，影响其合法收入，甚至可能被添加钓鱼代码、病毒代码、恶意代码，导致用户敏感信息泄露或者恶意攻击。
@@ -43,6 +43,9 @@ uni-app项目可以在App.vue的应用生命周期[onLaunch](https://uniapp.dclo
 
 > 提示：为了防止js检验代码被反编译篡改，建议将签名校验代码放到独立js文件中并配置[js/nvue文件原生混淆加密](app-sec-confusion)，或者使用apk加固处理
 
+#### uni-app x 项目  
+uni-app x 项目不支持 plus API，需使用 [uni.getAppBaseInfo](https://doc.dcloud.net.cn/uni-app-x/api/get-app-base-info.html#%E8%BF%94%E5%9B%9E%E5%80%BC) 返回值中的 signature 属性值。  
+
 
 ### isSimulator
 [plus.navigator.isSimulator](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.isSimulator)用于判断当前应用是否运行在模拟器中。
@@ -75,6 +78,9 @@ iOS系统由于苹果限制了正式打包后不能在模拟器上运行，一�
 
 > 提示：为了防止js检验代码被反编译篡改，建议将签名校验代码放到独立js文件中并配置[js/nvue文件原生混淆加密](app-sec-confusion)，或者使用apk加固处理
 
+#### uni-app x 项目  
+uni-app x 项目可通过 [uni.getDeviceInfo](https://doc.dcloud.net.cn/uni-app-x/api/get-device-info.html#%E8%BF%94%E5%9B%9E%E5%80%BC) 返回值中的 isSimulator 属性值获取。  
+
 
 ### isSetProxy
 [plus.networkinfo.isSetProxy](https://www.html5plus.org/doc/zh_cn/device.html#plus.networkinfo.isSetProxy)用于判断当前应用网络环境是否设置代理。
@@ -96,7 +102,8 @@ iOS系统由于苹果限制了正式打包后不能在模拟器上运行，一�
 
 ```
 
-
+#### uni-app x 项目  
+uni-app x 项目暂不支持。  
 
 
 ### isRoot
@@ -127,7 +134,16 @@ root破解（也叫越狱）是利用iOS系统的漏洞来破解系统安全机�
   }
 ```
 
-
 > 提示：为了防止js检验代码被反编译篡改，建议将签名校验代码放到独立js文件中并配置[js/nvue文件原生混淆加密](app-sec-confusion)，或者使用apk加固处理
 
+#### uni-app x 项目  
+uni-app x 项目可通过 [uni.getDeviceInfo](https://doc.dcloud.net.cn/uni-app-x/api/get-device-info.html#%E8%BF%94%E5%9B%9E%E5%80%BC) 返回值中的 isRoot 属性值获取。  
 
+
+### isUSBDebugging  
+判断当前应用运行的设备是否开启USB调试，仅Android平台支持。  
+
+> uni-app 项目不支持获取此状态  
+
+#### uni-app x 项目  
+uni-app x 项目可通过 [uni.getDeviceInfo](https://doc.dcloud.net.cn/uni-app-x/api/get-device-info.html#%E8%BF%94%E5%9B%9E%E5%80%BC) 返回值中的 isUSBDebugging 属性值获取。  

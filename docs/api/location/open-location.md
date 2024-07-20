@@ -7,6 +7,8 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|x|x|x|
 
+<!-- UNIAPPAPIJSON.openLocation.compatibility -->
+
 **OBJECT 参数说明**
 
 |参数名|类型|必填|说明|平台差异说明|

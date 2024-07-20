@@ -1,6 +1,8 @@
-# button
+## button
 
 按钮。
+
+<!-- UNIAPPCOMJSON.button.compatibility -->
 
 **属性说明**
 
@@ -46,6 +48,8 @@
 |@subscribe|Handler||订阅消息授权回调|open-type="subscribe"|百度小程序|
 |@login|Handler||登录回调|open-type="login"|百度小程序|
 |@im|Handler||监听跳转IM的成功回调|open-type="im"|抖音小程序2.68.0版本+|
+
+<!-- UNIAPPCOMJSON.button.attribute -->
 
 - **注1：``button-hover`` 默认为 ``{background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}``**
 - ```open-type="launchApp"```时需要调起的APP接入微信OpenSDK[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html)
@@ -133,8 +137,8 @@ style和class的优先级，高于size和type属性。
 
 ```html
 <template>
-	<button size="default" type="default" 
-	style="color:#ffffff;backgroundColor:#1AAD19;borderColor:#1AAD19" 
+	<button size="default" type="default"
+	style="color:#ffffff;backgroundColor:#1AAD19;borderColor:#1AAD19"
 	hover-class="is-hover">按钮</button>
 </template>
 <style>
@@ -222,3 +226,5 @@ button 组件没有 url 属性，如果要跳转页面，可以在@click中编�
 ```html
 <button type="default" open-type="getPhoneNumber" @getphonenumber="decryptPhoneNumber">获取手机号</button>
 ```
+
+<!-- UNIAPPCOMJSON.button.reference -->

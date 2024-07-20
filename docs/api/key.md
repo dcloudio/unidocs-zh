@@ -1,4 +1,4 @@
-### uni.hideKeyboard()
+## uni.hideKeyboard()
 
 隐藏软键盘
 
@@ -6,19 +6,19 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|x|√|√|√|√|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|√|x|√|√|√|√|
 
 
-### uni.onKeyboardHeightChange(CALLBACK) @onkeyboardheightchange
+## uni.onKeyboardHeightChange(CALLBACK) @onkeyboardheightchange
 
 监听键盘高度变化
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 2.2.3+|x|基础库2.7+|HBuilderX 3.6.8+|x|x|√|√|√|
 
 **参数**
@@ -43,15 +43,15 @@ uni.onKeyboardHeightChange(res => {
 })
 ```
 
-### uni.offKeyboardHeightChange(CALLBACK) @offkeyboardheightchange
+## uni.offKeyboardHeightChange(CALLBACK) @offkeyboardheightchange
 
 取消监听键盘高度变化事件
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|HBuilderX 3.1.0+|x|基础库2.9.2+|HBuilderX 3.6.8+|x|x|x|x|√|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|HBuilderX 3.1.0+|x|x|基础库2.9.2+|HBuilderX 3.6.8+|x|x|x|x|√|
 
 **参数**
 
@@ -69,15 +69,15 @@ uni.onKeyboardHeightChange(listener)
 uni.offKeyboardHeightChange(listener) // 需传入与监听时同一个的函数对象
 ```
 
-### uni.getSelectedTextRange(OBJECT) @getselectedtextrange
+## uni.getSelectedTextRange(OBJECT) @getselectedtextrange
 
 在input、textarea等focus之后，获取输入框的光标位置。注意：只有在focus的时候调用此接口才有效。目前仅支持 vue 页面，nvue 可以直接使用 weex 的 [getSelectionRange](https://weex.apache.org/zh/docs/components/input.html#getSelectionRange)。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|HBuilderX 2.8.12+|HBuilderX 2.8.12+|基础库 2.7.0+|x|x|x|x|√|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|HBuilderX 2.8.12+|x|HBuilderX 2.8.12+|基础库 2.7.0+|x|x|x|x|√|x|
 
 **OBJECT 参数说明：**
 

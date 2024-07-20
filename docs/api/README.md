@@ -24,6 +24,8 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
 
 各平台的 API 新增，不需要 uni-app 升级，开发者就可以直接使用。
 
+各平台 API 独有的字段，如快手小程序 `ks.pay` 的 `payType`、`paymentChannel` 字段，开发者在调用 API 时正常传入即可，会透传至快手小程序的 API 上
+
 ## 补充说明
 
 - uni.on 开头的 API 是监听某个事件发生的 API 接口，接受一个 CALLBACK 函数作为参数。当该事件触发时，会调用 CALLBACK 函数。

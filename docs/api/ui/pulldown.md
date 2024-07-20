@@ -1,11 +1,13 @@
-### onPullDownRefresh
+## onPullDownRefresh
 在 js 中定义 onPullDownRefresh 处理函数（和onLoad等生命周期函数同级），监听该页面用户下拉刷新事件。
 
 - 需要在 ``pages.json`` 里，找到的当前页面的pages节点，并在 ``style`` 选项中开启 ``enablePullDownRefresh``。
 - 当处理完数据刷新后，``uni.stopPullDownRefresh`` 可以停止当前页面的下拉刷新。
 
-### uni.startPullDownRefresh(OBJECT)
+## uni.startPullDownRefresh(OBJECT)
 开始下拉刷新，调用后触发下拉刷新动画，效果与用户手动下拉刷新一致。
+
+<!-- UNIAPPAPIJSON.startPullDownRefresh.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -21,8 +23,12 @@
 |:-|:-|:-|
 |errMsg|String|接口调用结果|
 
-### uni.stopPullDownRefresh()
+<!-- UNIAPPAPIJSON.startPullDownRefresh.tutorial -->
+
+## uni.stopPullDownRefresh()
 停止当前页面下拉刷新。
+
+<!-- UNIAPPAPIJSON.stopPullDownRefresh.compatibility -->
 
 **示例**
 
@@ -77,7 +83,10 @@ export default {
 - 支付宝小程序```startPullDownRefresh```请使用真机调试（非真机预览）
 - 后续支付宝小程序开发工具更新可能会有所修改
 
-### FAQ
+
+<!-- UNIAPPAPIJSON.stopPullDownRefresh.tutorial -->
+
+## FAQ
 Q：如何暂时禁用掉下拉刷新，待需要的时候再重新开启？
 A：`App` 平台下可以处理此类场景，详细参考：[uni-app 中实现动态禁用/开启下拉刷新](https://ask.dcloud.net.cn/article/35134)
 

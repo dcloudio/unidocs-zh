@@ -1,11 +1,11 @@
-### uni.createLivePusherContext(livePusherId, this)
+### uni.createLivePusherContext(livePusherId, componentInstance)
 创建 live-pusher 上下文 livePusherContext 对象。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|
-|见下|x|√|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|见下|x|x|√|x|x|x|
 
 
 **参数说明**

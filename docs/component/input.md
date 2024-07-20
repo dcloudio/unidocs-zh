@@ -2,6 +2,8 @@
 
 单行输入框。
 
+<!-- UNIAPPCOMJSON.input.compatibility -->
+
 html规范中input不仅是输入框，还有radio、checkbox、时间、日期、文件选择功能。在uni-app规范中，input仅仅是输入框。其他功能uni-app有单独的组件或API：[radio组件](https://uniapp.dcloud.io/component/radio)、[checkbox组件](https://uniapp.dcloud.io/component/checkbox)、[时间选择](https://uniapp.dcloud.io/component/picker?id=%e6%97%b6%e9%97%b4%e9%80%89%e6%8b%a9%e5%99%a8)、[日期选择](https://uniapp.dcloud.io/component/picker?id=%e6%97%a5%e6%9c%9f%e9%80%89%e6%8b%a9%e5%99%a8)、[图片选择](https://uniapp.dcloud.io/api/media/image?id=chooseimage)、[视频选择](https://uniapp.dcloud.io/api/media/video?id=choosevideo)、[多媒体文件选择(含图片视频)](https://uniapp.dcloud.io/api/media/video?id=choosemedia)、[通用文件选择](https://uniapp.dcloud.io/api/media/file?id=choosefile)。
 
 ### 属性说明
@@ -18,7 +20,7 @@ html规范中input不仅是输入框，还有radio、checkbox、时间、日期�
 |disabled|Boolean|false|是否禁用||
 |maxlength|Number|140|最大输入长度，设置为 -1 的时候不限制最大长度||
 |cursor-spacing|Number|0|指定光标与键盘的距离，单位 px 。取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离|App、微信小程序、百度小程序、QQ小程序、京东小程序|
-|focus|Boolean|false|获取焦点。|H5、App需要点击按钮获取焦点的，必须使用@touchend.prevent="onTap"阻止键盘收起默认事件才能获取焦点[关于软键盘弹出的逻辑说明](/component/input.html#关于软键盘弹出的逻辑说明)，小程序、nvue需使用组件的 focus()、blur() 方法控制焦点|
+|focus|Boolean|false|获取焦点。|H5、App需要点击按钮获取焦点的，必须使用@touchend.prevent="onTap"阻止键盘收起默认事件才能获取焦点[关于软键盘弹出的逻辑说明](#关于软键盘弹出的逻辑说明)，小程序、nvue需使用组件的 focus()、blur() 方法控制焦点|
 |confirm-type|String|done|设置键盘右下角按钮的文字，仅在 type="text" 时生效。[有效值](#confirm-type)|微信小程序、App、H5、快手小程序、京东小程序|
 |confirm-hold|Boolean|false|点击键盘右下角按钮时是否保持键盘不收起|App(3.3.7+)、H5 (3.3.7+)、微信小程序、支付宝小程序、百度小程序、QQ小程序、京东小程序|
 |cursor|Number||指定focus时的光标位置||
@@ -41,10 +43,14 @@ html规范中input不仅是输入框，还有radio、checkbox、时间、日期�
 |always-system|Boolean|false|是否强制使用系统键盘和 Web-view 创建的 input 元素。为 true 时，confirm-type、confirm-hold 可能失效|支付宝小程序 2.7.3+|
 |inputmode|String|"text"|是一个枚举属性，它提供了用户在编辑元素或其内容时可能输入的数据类型的提示。[有效值](#inputmode)|H5（3.6.16+）、App-vue（3.6.16+）|
 |@input|EventHandle||当键盘输入时，触发input事件，event.detail = {value}|差异见下方 Tips|
-|@focus|EventHandle||输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度|仅微信小程序、京东小程序、App（2.2.3+） 、QQ小程序支持 height|
-|@blur|EventHandle||输入框失去焦点时触发，event.detail = {value: value}|快手小程序不支持|
-|@confirm|EventHandle||点击完成按钮时触发，event.detail = {value: value}|&nbsp;快手小程序不支持|
+|@focus|EventHandle||输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度|仅微信小程序、京东小程序、App（2.2.3+） 、QQ小程序、快手小程序支持 height|
+|@blur|EventHandle||输入框失去焦点时触发，event.detail = {value: value}||
+|@confirm|EventHandle||点击完成按钮时触发，event.detail = {value: value}||
 |@keyboardheightchange|eventhandle||键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration}|微信小程序基础库2.7.0+、App 3.1.0+|
+
+
+<!-- UNIAPPCOMJSON.input.attribute -->
+
 
 **Tips**
 
@@ -52,6 +58,7 @@ html规范中input不仅是输入框，还有radio、checkbox、时间、日期�
 - 如果遇到 value 属性设置不生效的问题参考：[组件属性设置不生效解决办法](/tutorial/vue-api.md#componentsolutions)
 - `input` 组件上有默认的 `min-height` 样式，如果 `min-height` 的值大于 `height` 的值那么 `height` 样式无效。
 - 微信小程序 `cursor-color` 属性在iOS下的格式为十六进制颜色值 #000000，安卓下只支持 default 和 green，Skyline 下无限制。
+- 在 `Web` 和 `app-plus vue` 上 iOS 自带键盘的智能标点功能会导致：在 type 为 `number`、`digit` 时，连续输入两次 `.` 后，在第三次输入 `.` 时，会触发两次 deleteContentBackward（删除） 的输入外加一次 insertText 为 `…`（三个点） 的输入。会导致表现异常，关闭智能标点功能后正常。
 
 #### type 有效值 @type
 
@@ -315,3 +322,5 @@ export default {
 - uni ui提供了搜索框ui组件，插件市场还有封装好的页面模板。[详见](https://ext.dcloud.net.cn/search?q=search)。云端一体搜索模板功能完善，推荐使用：[https://ext.dcloud.net.cn/plugin?id=3851](https://ext.dcloud.net.cn/plugin?id=3851)
 - uni-app插件市场有输入文字后自动提示候选的组件，可搜索 [autocomplete](https://ext.dcloud.net.cn/search?q=autocomplete) 查看。
 - 插件市场有各种类型的模拟键盘，比如车牌键盘、身份证键盘，可去插件市场搜索 [键盘](https://ext.dcloud.net.cn/search?q=%E9%94%AE%E7%9B%98)。
+
+<!-- UNIAPPCOMJSON.input.reference -->

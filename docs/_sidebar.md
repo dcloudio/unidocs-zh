@@ -12,6 +12,7 @@
 * 运营服务
   * [uni-ad广告变现](uni-ad/intro.md)
     * [业务介绍](uni-ad/intro.md)
+    * [开屏广告](uni-ad/ad-splash.md)
     * [信息流(Banner)广告](uni-ad/ad-component.md)
     * [激励视频广告](uni-ad/ad-rewarded-video.md)
     * [uniMP激励视频广告](uni-ad/unimp.md)

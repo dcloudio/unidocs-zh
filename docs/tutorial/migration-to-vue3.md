@@ -1,5 +1,7 @@
 <!-- #### vue2 项目迁移 vue3，必须适配的部分 -->
 
+首先强调下：vue3支持选项式！vue3不是只支持组合式！
+
 以下列举迁移到 vue3，必须适配的几个点，vue2 项目才能正常运行在 vue3 上。更多查看完整的[非兼容特性列表](https://github.com/vuejs/vue-next/tree/master/packages/vue-compat#incompatible)
 
 ## main.js

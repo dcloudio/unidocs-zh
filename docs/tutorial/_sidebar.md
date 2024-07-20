@@ -5,6 +5,7 @@
   * [引用组件](page-component.md)
   * [引用 js](page-script.md)
   * [引用 css](page-style.md)
+  * [引用 json](page-json.md)
   * [引用静态资源](page-static-assets.md)
   * [引用原生插件](/plugin/native-plugin.md)
 * [js 语法](syntax-js.md)

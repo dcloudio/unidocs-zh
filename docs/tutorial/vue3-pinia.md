@@ -50,6 +50,7 @@ Pinia（发音为 `/piːnjʌ/`，如英语中的 `peenya`） 是 Vue 的存储�
 在 `main.js` 中编写以下代码：
 
 ```js
+import App from './App'
 import { createSSRApp } from 'vue';
 import * as Pinia from 'pinia';
 

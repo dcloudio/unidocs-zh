@@ -416,36 +416,35 @@ export function openAppProduct(options : OpenAppProductOptions) {
 
 ## 使用uts调用鸿蒙第三方库的API@nativelibs
 
+> 新增于HBuilderX 4.25
+
 鸿蒙的包用法和npm包差不多，在鸿蒙项目里面用ohpm安装三方库后，在 `/uni_modules/uts插件名/utssdk/app-harmony/index.uts` 内即可直接 import
 
 注意：只能在满足uts插件 `/uni_modules/*/utssdk/app-harmony/*.uts` 的文件下使用，无法直接在项目的pages中使用
 
 具体使用流程：在项目的pages引入uts插件，uts插件内再引入鸿蒙第三方库调用
 
-以调用 `@ohos.bundle.bundleManager` 为例，代码如下
+以调用 `@cashier_alipay/cashiersdk` 为例，代码如下
 
 `page` 内代码
 
 ```js
 // 导入要使用的插件
-import { getBundleName } from "@/uni_modules/my-getBundleName";	
-
-methods: {
-	testGetBundleName() {
-		let name = getBundleName();
-		console.log('name: ', name)
-	}
-}
+import { requestPayment } from "@/uni_modules/test-alipay";
+requestPayment({
+	orderInfo: "xxxx"
+});
 ```
 
 `/uni_modules/*/utssdk/app-harmony/*.uts` 内的代码
 
 ```js
-import bundleManager from '@ohos.bundle.bundleManager';
-
-// 获取当前包名
-export function getBundleName() {
-	return bundleManager.getBundleInfoForSelfSync(bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT).name
+import { Pay } from '@cashier_alipay/cashiersdk'
+export interface RequestPaymentOptions {
+    orderInfo: string
+}
+export function requestPayment(options : RequestPaymentOptions) {
+		return new Pay().pay(options.orderInfo, true)
 }
 ```
 

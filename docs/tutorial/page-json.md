@@ -1,6 +1,6 @@
 ### json 文件引入
 
-`uni-app vue3` 和 `uni-app-x` 项目支持引入 `json` 文件。
+`uni-app vue3` 和 `uni-app x` 项目支持引入 `json` 文件。
 
 `js | ts | uts` 文件或 `script` 标签内引入 `json` 文件时，可以使用相对路径或绝对路径，例如:
 

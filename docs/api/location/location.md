@@ -1,6 +1,10 @@
 ## uni.getLocation(OBJECT)
 获取当前的地理位置、速度。
 
+::: warning 注意
+Web平台本API调用了腾讯地图的gcj02坐标转换接口，该接口从2024年7月18日起开始陆续下线，导致本API异常。[详见](https://ask.dcloud.net.cn/question/195113)
+:::
+
 <!-- UNIAPPAPIJSON.getLocation.compatibility -->
 
 **OBJECT 参数说明**
@@ -85,6 +89,10 @@ uni.getLocation({
 
 ### uni.chooseLocation(OBJECT)
 打开地图选择位置。
+
+::: warning 注意
+Web平台和App平台，本API调用了腾讯地图的gcj02坐标转换接口，该接口从2024年7月18日起开始陆续下线，导致本API异常。[详见](https://ask.dcloud.net.cn/question/195066)
+:::
 
 **平台差异说明**
 

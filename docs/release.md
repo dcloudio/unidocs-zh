@@ -1,3 +1,10 @@
+#### 4.24.2024072208
+* 【uni-app】
+  + App平台 修复 uni.chooseLocation 页面获取当前位置报错的Bug [详情](https://ask.dcloud.net.cn/question/195066)
+  + Web平台 修复 使用腾讯定位/地图时获取 gcj02 坐标系位置失败的Bug [详情](https://ask.dcloud.net.cn/question/195113)
+* 【uni-app-x】
+  + Web平台 修复 使用腾讯定位/地图时获取 gcj02 坐标系位置失败的Bug [详情](https://ask.dcloud.net.cn/question/195113)
+
 #### 4.23.2024070804
 * 【uni-app】
   + 修复 4.0版引出的 vue2 项目普通目录下的 static 目录被编译器复制到输出目录的Bug [详情](https://ask.dcloud.net.cn/question/190650)

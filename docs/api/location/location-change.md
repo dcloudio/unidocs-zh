@@ -22,15 +22,16 @@
 |verticalAccuracy|number|垂直精度 (m)|抖音小程序、快手小程序 Android 无法获取，返回 0|
 |horizontalAccuracy|number|水平精度 (m)|抖音小程序不支持|
 |city|string|定位到的城市信息|百度小程序、抖音小程序（iOS 不支持）|
-|cityCode|String|城市编码|百度小程序||street|String|街道名称
+|cityCode|String|城市编码|百度小程序|
+|street|String|街道名称||
 |city|String|城市名称|百度小程序|
-country|String|国家|百度小程序|
-countryCode|String|国家代码|百度小程序|
-province|String|省份|百度小程序|
-streetNumber|String|街道号码|百度小程序|
-district|String|区|百度小程序|
-isFullAccuracy|Boolean|是不是精确定位信息|百度小程序|
-altitudeAccuracy|Number|海拔的精确度信息|App|
+|country|String|国家|百度小程序|
+|countryCode|String|国家代码|百度小程序|
+|province|String|省份|百度小程序|
+|streetNumber|String|街道号码|百度小程序|
+|district|String|区|百度小程序|
+|isFullAccuracy|Boolean|是不是精确定位信息|百度小程序|
+|altitudeAccuracy|Number|海拔的精确度信息|App|
 
 **注意**
 - 该方法会持续监听地理位置信息的变化，建议在不需要监听地理位置信息变化后，直接调用 `uni.stopLocationUpdate` 方法取消监听。

@@ -19,19 +19,7 @@ pageClass: custom-page-class
         <div class="barcode-img-box">
           <img src="https://web-ext-storage.dcloud.net.cn/uni-app-x/hello-uniappx-qrcode.png" width="160" />
         </div>
-        <b>Android、iOS(uni-app x)</b>
-      </a>
-      <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
-        <div class="barcode-img-box">
-          <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-android.png" width="160" />
-        </div>
-        <b>Android版(uni-app)</b>
-      </a>
-      <a href="https://itunes.apple.com/cn/app/hello-uni-app/id1417078253?mt=8" target="_blank" class="clear-style barcode-view">
-        <div class="barcode-img-box">
-          <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ios.png" width="160" />
-        </div>
-        <b>iOS版</b>
+        <b style="width:160px;">Android、iOS(uni-app x)</b>
       </a>
       <a href="#" target="_blank" class="clear-style barcode-view" style="pointer-events: none;">
         <div class="barcode-img-box">
@@ -47,11 +35,23 @@ pageClass: custom-page-class
         </div>
         <b>Web版</b>
       </a>
-    </div>
-    <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="//img.cdn.aliyun.dcloud.net.cn/guide/uniapp/gh_33446d7f7a26_430.jpg" width="160" /></div>
         <b>微信小程序版</b>
+      </a>
+    </div>
+    <div class="flex-img-group-view" style="margin-top: 20px;">
+      <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
+        <div class="barcode-img-box">
+          <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-android.png" width="160" />
+        </div>
+        <b>Android版(uni-app)</b>
+      </a>
+      <a href="https://itunes.apple.com/cn/app/hello-uni-app/id1417078253?mt=8" target="_blank" class="clear-style barcode-view">
+        <div class="barcode-img-box">
+          <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ios.png" width="160" />
+        </div>
+        <b>iOS版(uni-app)</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/alipay1.png" width="160" /></div>
@@ -61,19 +61,13 @@ pageClass: custom-page-class
         <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/baidu-uniapp.png" width="160" /></div>
         <b>百度小程序版</b>
       </a>
+    </div>
+    <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/mp-toutiao.png" width="160" />
         </div>
         <b>抖音小程序版</b>
-      </a>
-    </div>
-    <div class="flex-img-group-view" style="margin-top: 20px;">
-      <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
-        <div class="barcode-img-box">
-          <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hello-uni-qa-union.png" width="160" />
-        </div>
-        <b>快应用</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
@@ -115,6 +109,17 @@ pageClass: custom-page-class
         </div>
         <b>小红书小程序版</b>
       </a>
+    </div>
+    <div class="flex-img-group-view" style="margin-top: 20px;">
+      <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
+        <div class="barcode-img-box">
+          <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hello-uni-qa-union.png" width="160" />
+        </div>
+        <b>快应用</b>
+      </a>
+      <div style="width:160px"></div>
+      <div style="width:160px"></div>
+      <div style="width:160px"></div>
     </div>
     <p>注：<br/>
         <em>- 某些平台不能提交简单demo，故补充了一些其他功能；hello uni-app示例代码可从[github](https://github.com/dcloudio/hello-uniapp)获取</em></br>

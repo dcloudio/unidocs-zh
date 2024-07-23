@@ -2,7 +2,7 @@
 获取当前的地理位置、速度。
 
 ::: warning 注意
-Web平台本API调用了腾讯地图的gcj02坐标转换接口，该接口从2024年7月18日起被腾讯逐步下线，导致老版本中本API无法使用。请立即升级到 uni-app 4.26版。
+Web平台本API调用了腾讯地图的gcj02坐标转换接口，该接口从2024年7月18日起被腾讯逐步下线，导致老版本中本API无法使用。请立即升级到 uni-app 4.24版。
 :::
 
 <!-- UNIAPPAPIJSON.getLocation.compatibility -->

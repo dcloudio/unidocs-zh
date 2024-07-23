@@ -49,7 +49,7 @@ uni统计支持sourcemap，可直观了解到底哪行代码写的有问题。[�
 **5. 默认功能丰富**
 
 - 设备统计
-- 注册用户统计（基于[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id.html)）
+- 注册用户统计（基于[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)）
 - 页面统计
 - 内容统计
 - 新增、活跃、留存、跳出率分析

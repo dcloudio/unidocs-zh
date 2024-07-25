@@ -32,7 +32,7 @@
 
 2. 解压刚下载的压缩包，将解压后的模板工程在 DevEco-Studio 中打开
 
-3. 等待 Sync 结束，点击运行按钮可以将工程运行在真机或者模拟器中（如未配置签名信息可能需要先行配置）
+3. 等待 Sync 结束，再 [启动鸿蒙模拟器](#connectvirtually) 或 [连接鸿蒙真机](#connectmobile)
 
 ### 启动鸿蒙模拟器@connectvirtually
 
@@ -51,6 +51,8 @@
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200856058101582lbghgf8.png)
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085712493il2ep17ldg8.png)
+
+启动模拟器成功后，如果提示需要先签名，则进行[配置签名](#signature)
 
 ### 连接鸿蒙真机@connectmobile
 

@@ -103,7 +103,8 @@
       * [iOS 安心打包证书安装](build/iosSafePack.md)
     * [Android 自定义渠道包](build/AndroidChannel.md)
     * [Android原生应用清单文件和资源](app-nativeresource-android.md)
-	* [iOS原生应用配置文件和资源](app-nativeresource-ios.md)
+    * [iOS原生应用配置文件和资源](app-nativeresource-ios.md)
+  * [App 云端打包环境](app-env.md)
   * App 本地打包
     * [Android本地离线打包](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/android)
     * [iOS本地离线打包](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios)

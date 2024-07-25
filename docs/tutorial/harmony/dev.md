@@ -454,6 +454,36 @@ export function requestPayment(options : RequestPaymentOptions) {
 
 鸿蒙官方文档提供了如何发布鸿蒙应用，详见[文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-releaseharmony-0000001933963166)
 
+## 条件编译@ifndef
+
+仅 APP-HARMONY 和 APP 可以条件编译命中鸿蒙平台，APP-PLUS 不能命中中鸿蒙平台
+
+```js
+// #ifdef APP-HARMONY
+console.log("仅鸿蒙会编译")		
+// #endif
+
+// #ifndef APP-HARMONY
+console.log("仅非鸿蒙会编译")								
+// #endif
+
+// #ifdef APP
+console.log("安卓、苹果、鸿蒙会编译，小程序和Web不会编译")		
+// #endif
+
+// #ifndef APP
+console.log("安卓、苹果、鸿蒙不会编译，小程序和Web会编译")		
+// #endif
+
+// #ifdef APP-PLUS
+console.log("安卓、苹果会编译，鸿蒙不会编译，小程序和Web也不会编译")		
+// #endif
+
+// #ifndef APP-PLUS
+console.log("安卓、苹果不会编译，鸿蒙会编译，小程序和Web也会编译")		
+// #endif
+```
+
 ## 注意事项@tips
 
 1. 移植已有的 uni-app 项目源码时，如有其他 npm 依赖，请自行安装

@@ -505,7 +505,11 @@ App平台 3.1.15+ 支持服务器回调
 
 服务器回调将更加安全，可以依赖广告平台的反作弊机制来避免用户模拟观看广告完成的事件。
 
-![激励视频回调](https://web-ext-storage.dcloud.net.cn/doc/ad/uniAdCallback-20240708.png)
+- 业务代码在uniCloud，流程图如下：
+![激励视频回调](https://web-ext-storage.dcloud.net.cn/doc/ad/uniCloud-uniAdCallback-20240726.png)
+
+- 业务代码在开发者传统服务器，流程图如下：
+![激励视频回调](https://web-ext-storage.dcloud.net.cn/doc/ad/tr-servers-uniAdCallback-20240726.png)
 
 如何使用
 1. 申请激励视频广告位时开启服务器回调
@@ -540,7 +544,7 @@ export default {
 
 ### 服务器回调说明
 
-#### 服务器回调基于 [uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)
+#### 服务器回调基于 [uniCloud](https://doc.dcloud.net.cn/uniCloud/)
 
 1. 由于多家广告商的回调和签名验证逻辑不同，开发者需要写很多逻辑，`uniCloud` 中的云函数 `uniAdCallback` 已抹平了差异，开发者按照统一的参数处理即可
 2. 开发者的服务器有可能响应慢或失去响应造成回调数据丢失, 使用 `uniCloud` 可以帮助开发者保存一份来自广告商服务器的回调数据到开发者的云数据中，以便开发者主动查询

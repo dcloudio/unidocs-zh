@@ -6,6 +6,8 @@ Lottie动画组件，动画资源参考[Lottie官方链接](https://airbnb.desig
 
 > [uts组件](https://uniapp.dcloud.net.cn/plugin/uts-component.html)需 HBuilderX 3.7.0+
 
+> 本地编译需要 [gradle](https://gradle.org/releases/) 7.5 以上版本
+
 > app平台真机运行需要打[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 
 

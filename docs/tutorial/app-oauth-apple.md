@@ -6,9 +6,9 @@
 ### 开通
 使用苹果登录首先需要在苹果开发者后台开启 App 的 `Sign In with Apple` 服务：
 - 登录到[苹果开发者后台](https://developer.apple.com/)
-- 在[Identifiers](https://developer.apple.com/account/resources/identifiers/list)页面选择应用的 App ID（Bundle ID）进入编辑 `Capabilities` 界面，勾选 `Sign In with Apple` 服务并保存
+- 在[Identifiers](https://developer.apple.com/account/resources/identifiers/list)页面选择应用的 App ID（Bundle ID）进入编辑 `Capabilities` 界面，勾选 `Sign In with Apple` 服务并保存  
 ![](https://native-res.dcloud.net.cn/images/uniapp/oauth/apple-appid.png)
-- 修改 `Sign In with Apple` 配置后需要到 [Profiles](https://developer.apple.com/account/resources/profiles/list) 更新 profile 描述文件（不需要新建），点击 Edit 重新编辑对应的 profile 文件，然后下载保存使用新的 profile 文件即可
+- 修改 `Sign In with Apple` 配置后需要到 [Profiles](https://developer.apple.com/account/resources/profiles/list) 更新 profile 描述文件（不需要新建），点击 Edit 重新编辑对应的 profile 文件，然后下载保存使用新的 profile 文件即可  
 ![](https://native-res.dcloud.net.cn/images/uniapp/oauth/apple-profile.png)
 
 > 注：只有发布Appstore的应用才能使用苹果登录。企业版开发者账号不支持 `Sign In with Apple` （企业版开发者账号指的是用于企业内部分发App，不能用于发布 App Store 的账号，也就是价格为 299$ 的账号）
@@ -16,7 +16,7 @@
 
 
 ### 配置
-打开项目的manifest.json文件，在“App模块配置”项的“OAuth(登录鉴权)”下，勾选“苹果登录（Sign in with Apple）”：
+打开项目的manifest.json文件，在“App模块配置”项的“OAuth(登录鉴权)”下，勾选“苹果登录（Sign in with Apple）”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/oauth/apple-manifest.png)
 
 **注意**
@@ -39,7 +39,7 @@
 - 按钮圆角范围及按钮最小尺寸也有要求；
 - 具体规则请参考苹果 [官方文档](https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/)
 
-下面是原生端默认的几种按钮样式供大家参考（width:130pt, height:30pt, corner radius: 6pt）
+下面是原生端默认的几种按钮样式供大家参考（width:130pt, height:30pt, corner radius: 6pt）  
 ![](https://native-res.dcloud.net.cn/images/uniapp/oauth/apple-style-zh.png)
 
 
@@ -137,6 +137,6 @@ code|说明
 ### 注意事项
 1. 内置基座为企业证书签名不支持Sign in with Apple，需要提交云打包或制作自定义基座进行功能测试
 2. 只有首次弹出登录授权框时才会有用户名及email的项（email需要配置 scope: 'email' ），并且用户可以删除或编辑用户名或隐藏用户邮箱，如果用户删除了用户名授权成功后fullname字段也会为空
-3. 授权成功后再次调用登录接口会先校验上次授权是否依然有效，如有效，直接回调成功并返回上次授权成功时的数据，**注意，此校验不会校验identityToken是否过期**，需要用户自行处理；如果想每次都弹出授权框获取新的identityToken等信息，需要先调用'logout()'，然后在调用登录接口就会弹出授权框，注意这时授权框内不会在出现用户名及邮箱，登录成功后这两个字段会为空，需要拿到 authorizationCode，identityToken 后传给服务器，然后和苹果服务器验证可获取用户名称等信息，具体请自行查阅文档；如果想在授权框中再次出现用户名或邮箱。需要在 系统设置->AppleID->密码与安全性->使用Apple ID 的 App 里面取消授权，然后再调用登录接口
+3. 授权成功后再次调用登录接口会先校验上次授权是否依然有效，如有效，直接回调成功并返回上次授权成功时的数据，**注意，此校验不会校验identityToken是否过期**，需要用户自行处理；如果想每次都弹出授权框获取新的identityToken等信息，需要先调用[logout](https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.AuthService.logout)，然后在调用登录接口就会弹出授权框，注意这时授权框内不会在出现用户名及邮箱，登录成功后这两个字段会为空，需要拿到 authorizationCode，identityToken 后传给服务器，然后和苹果服务器验证可获取用户名称等信息，具体请自行查阅文档；如果想在授权框中再次出现用户名或邮箱。需要在 系统设置->AppleID->密码与安全性->使用Apple ID 的 App 里面取消授权，然后再调用登录接口
 
 

@@ -105,7 +105,9 @@ uni.setNavigationBarColor({
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√|√|√|√|1.48.0+|x|√|√|√|
 
-App平台调用此API时会在屏幕中间悬浮显示loading
+<!-- UNIAPPAPIJSON.showNavigationBarLoading.compatibility -->
+
+App平台（不包括 HarmonyOS Next）调用此API时会在屏幕中间悬浮显示loading
 
 **OBJECT参数说明**
 
@@ -131,7 +133,9 @@ uni.showNavigationBarLoading()
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√|√|√|√|1.48.0+|x|√|√|√|
 
-App平台调用此API时会关闭屏幕中间悬浮显示的loading
+<!-- UNIAPPAPIJSON.hideNavigationBarLoading.compatibility -->
+
+App平台（不包括 HarmonyOS Next）调用此API时会关闭屏幕中间悬浮显示的loading
 
 **OBJECT参数说明**
 

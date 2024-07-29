@@ -6,10 +6,11 @@
 
 **平台差异说明**
 
-|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|x|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|x|√|√|√|√|
 
+<!-- UNIAPPAPIJSON.hideKeyboard.compatibility -->
 
 ## uni.onKeyboardHeightChange(CALLBACK) @onkeyboardheightchange
 
@@ -19,7 +20,7 @@
 
 |App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|HBuilderX 2.2.3+|x|基础库2.7+|HBuilderX 3.6.8+|x|x|√|√|√|
+|HBuilderX 2.2.3+|HBuilderX 4.23|基础库2.7+|HBuilderX 3.6.8+|x|x|√|√|√|
 
 **参数**
 
@@ -51,7 +52,7 @@ uni.onKeyboardHeightChange(res => {
 
 |App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|HBuilderX 3.1.0+|x|x|基础库2.9.2+|HBuilderX 3.6.8+|x|x|x|x|√|
+|HBuilderX 3.1.0+|HBuilderX 4.23|x|基础库2.9.2+|HBuilderX 3.6.8+|x|x|x|x|√|
 
 **参数**
 

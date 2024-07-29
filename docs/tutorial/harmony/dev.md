@@ -102,7 +102,7 @@
 
 ```json
 "app-harmony": {
-  "projectPath": "鸿蒙离线SDK路径"
+  "projectPath": "上一步下载的template-1.3.4.tgz的解压地址/package"
 }
 ```
 

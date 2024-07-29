@@ -570,7 +570,11 @@ Mac系统快速复制路径方法
 
 原路径后面添加 `/Contents/MacOS/devecostudio`，然后重启 HBuilderX
 
-### 通过 app-plus:titleNView 配置页面右上角按钮未生效
+### 通过 app-plus:titleNView 配置页面右上角按钮未生效@q9
 
 当前导航栏未支持，可以尝试关闭原生导航栏，使用自己的自定义导航栏组件实现。
+
+### 鸿蒙支持uniPush推送吗?@q10
+
+暂不支持
  

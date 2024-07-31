@@ -740,7 +740,7 @@ nvue 支持大部分 uni-app API ，下面只列举目前还**不支持的 API**
 |--			|--			|
 |uni.createIntersectionObserver()	|创建并返回一个 IntersectionObserver 对象实例	|
 
-##### 绘画
+##### 画布
 
 canvas API使用，[详见canvas文档](https://uniapp.dcloud.net.cn/api/canvas/createCanvasContext)。
 

@@ -120,7 +120,7 @@
   * [uni.getFileInfo](file/file.md#getfileinfo)
   * [uni.openDocument](file/file.md#opendocument)
   * [uni.getFileSystemManager](file/getFileSystemManager.md)
-* 绘画
+* 画布
 	* [uni.createOffscreenCanvas](canvas/createOffscreenCanvas.md)
 	* [uni.createCanvasContext](canvas/createCanvasContext.md)
 	* [uni.canvasToTempFilePath](canvas/canvasToTempFilePath.md)

@@ -111,6 +111,4 @@ module.exports = merge({
     if (type === 'script') return path.includes('vendors~') || path.includes('layout-') || path.includes('index.')
     return false
   }
-}
-
-module.exports = config
+}, config)

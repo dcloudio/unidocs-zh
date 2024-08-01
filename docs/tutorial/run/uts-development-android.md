@@ -3,7 +3,7 @@
 > 版本要求: HBuilderX 3.6.9+
 > Version requirements: HBuilderX 3.6.9+
 
-HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持三方 Gradle 仓储。
+HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持通过 Gradle 下载三方仓储。
 
 运行带有 uts 插件的项目到 Android 设备，如果您遇到以下提示，请配置[运行环境](#环境配置)
 
@@ -32,7 +32,10 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持三方 Gr
 
 2. 将步骤 1 下载的内容解压后，找到 bin 目录下的执行脚本，填入图标 2 处。
 
-**注意** mac 为`%解压路径%/bin/gradle`；window 为`%解压路径%\bin\gradle.bat`。
+**注意** 
+
+- 内置的下载模板中 Android Gradle Plugin 使用的最低版本为 7.4.0，所以Gradle 最低版本要求7.5及以上。
+- mac 为`%解压路径%/bin/gradle`；window 为`%解压路径%\bin\gradle.bat`。
 
 ##### 配置 Gradle JDK
 
@@ -45,7 +48,6 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持三方 Gr
 **注意**
 
 - HBuilderX 4.02+支持此配置项
-- Gradle 最低版本要求7.5
 - Gradle8.0 最低要求 JDK 版本为 17。更多版本要求[参考文档](https://developer.android.google.cn/build/releases/past-releases?hl=zh-cn)
 
 ##### 配置 SDK

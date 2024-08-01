@@ -1,5 +1,4 @@
-
-### uni.base64ToArrayBuffer(base64)
+## uni.base64ToArrayBuffer(base64)
 
 将 Base64 字符串转成 ArrayBuffer 对象
 Convert Base64 string to ArrayBuffer object
@@ -10,6 +9,8 @@ Convert Base64 string to ArrayBuffer object
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|x|x|√|√|√|
+
+<!-- UNIAPPAPIJSON.base64ToArrayBuffer.compatibility -->
 
 **参数说明**
 **Parameter Description**
@@ -27,3 +28,5 @@ Convert Base64 string to ArrayBuffer object
 const base64 = 'test'
 const arrayBuffer = uni.base64ToArrayBuffer(base64)
 ```
+
+<!-- UNIAPPAPIJSON.base64ToArrayBuffer.tutorial -->

@@ -1,4 +1,4 @@
-### component
+## component
 
 渲染一个“元组件”为动态组件。依 `is` 的值，来决定哪个组件被渲染。[详见](https://v2.cn.vuejs.org/v2/api/#component)
 Renders a "meta component" as a dynamic component. Depending on the value of `is`, determine which component is rendered. [See details](https://v2.cn.vuejs.org/v2/api/#component)
@@ -8,16 +8,15 @@ Renders a "meta component" as a dynamic component. Depending on the value of `is
 **平台差异说明**
 **Platform difference description**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
-|:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|
-|√ (Vue2 需传入 String 类型) |√	|x			|x				|x			|x				|x			|x		|x			|x			|x			|
-|√ (Vue2 needs to pass String type) |√ | x | x | x | x | x | x | x | x | x |
+|App|HarmonyOS Next|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
+|:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|:-:		|
+|√ (Vue2 需传入 String 类型) |HBuilderX 4.24|√	|x			|x				|x			|x				|x			|x		|x			|x			|x			|
 
 
 
 
 
-### template
+## template
 
 `uni-app` 支持在 `template` 模板中嵌套 `<template/>` 和 `<block/>`，用来进行 [条件渲染](/tutorial/vue-basics.md#condition) 和 [列表渲染](/tutorial/vue-basics.md#listrendering)。
 
@@ -31,9 +30,9 @@ Renders a "meta component" as a dynamic component. Depending on the value of `is
 **平台差异说明**
 **Platform difference description**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
-|:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|
-|√	|√	|√			|√				|√			|√				|√			|√		|√			|√			|√			|
+|App|HarmonyOS Next|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
+|:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|:-:		|
+|√	|HBuilderX 4.24|√	|√			|√				|√			|√				|√			|√		|√			|√			|√			|
 
 
 **代码示例**
@@ -59,7 +58,7 @@ Renders a "meta component" as a dynamic component. Depending on the value of `is
             }
         }
     }
-</script> 
+</script>
 ```
 
 
@@ -76,7 +75,7 @@ Renders a "meta component" as a dynamic component. Depending on the value of `is
 
 
 
-### transition
+## transition
 
 `<transition>` 元素作为单个元素/组件的过渡效果。`<transition>` 只会把过渡效果应用到其包裹的内容上，而不会额外渲染 DOM 元素，也不会出现在可被检查的组件层级中。[详见](https://v2.cn.vuejs.org/v2/api/#transition)
 The `<transition>` element acts as a transition effect for a single element/component. `<transition>` will only apply transition effects to its wrapped content, without rendering additional DOM elements, and will not appear in the component hierarchy that can be inspected. [See details](https://v2.cn.vuejs.org/v2/api/#transition)
@@ -92,7 +91,7 @@ The `<transition>` element acts as a transition effect for a single element/comp
 
 
 
-### transition-group
+## transition-group
 
 `<transition-group>` 元素作为多个元素/组件的过渡效果。`<transition-group>` 渲染一个真实的 DOM 元素。默认渲染 `<span>`，可以通过 tag attribute 配置哪个元素应该被渲染。[详见](https://v2.cn.vuejs.org/v2/api/#transition-group)
 The `<transition-group>` element acts as a transition effect for multiple elements/components. `<transition-group>` renders a real DOM element. Render `<span>` by default, you can configure which element should be rendered by tag attribute. [See details](https://v2.cn.vuejs.org/v2/api/#transition-group)
@@ -109,7 +108,7 @@ The `<transition-group>` element acts as a transition effect for multiple elemen
 
 
 
-### keep-alive
+## keep-alive
 
 `<keep-alive>` 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。和 `<transition>` 相似，`<keep-alive>` 是一个抽象组件：它自身不会渲染一个 DOM 元素，也不会出现在组件的父组件链中。[详见](https://v2.cn.vuejs.org/v2/api/#keep-alive)
 `<keep-alive>`, when wrapping dynamic components, caches inactive component instances instead of destroying them. Similar to `<transition>`, `<keep-alive>` is an abstract component: it does not render a DOM element itself, nor does it appear in the component's parent component chain. [See details](https://v2.cn.vuejs.org/v2/api/#keep-alive)
@@ -124,7 +123,7 @@ The `<transition-group>` element acts as a transition effect for multiple elemen
 
 
 
-### slot
+## slot
 
 `<slot>` 元素作为组件模板之中的内容分发插槽。`<slot>` 元素自身将被替换。[插槽](https://uniapp.dcloud.io/vue-components?id=%e6%8f%92%e6%a7%bd)。
 `<slot>` element serves as a content distribution slot in the component template.`<slot>` The element itself will be replaced. [Slot](https://uniapp.dcloud.io/vue-components?id=%e6%8f%92%e6%a7%bd).
@@ -136,7 +135,6 @@ For detailed usage, please refer to the links of the following tutorials. [Distr
 **平台差异说明**
 **Platform difference description**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
-|:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|
-|√	|√	|√			|√				|√			|√				|√			|√		|√			|√			|√			|
-
+|App|HarmonyOS Next|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快应用	|360小程序	|快手小程序|京东小程序|
+|:-:|:-:|:-:		|:-:			|:-:		|:-:			|:-:		|:-:	|:-:		|:-:		|:-:		|:-:		|
+|√	|HBuilderX 4.24|√	|√			|√				|√			|√				|√			|√		|√			|√			|√			|

@@ -73,8 +73,7 @@ The landing page of the uni-AD domestic enhanced advertisement (such as pangolin
 
 ![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/app/android/googleplay/ad.png)
 
-**注意：uni-AD 广告基础功能不受影响**
-**Note: uni-AD advertising basic functionality is not affected**
+**注意：uni-ad 广告基础功能不受影响**
 
 #### 离线打包:
 #### Offline packaging:
@@ -96,6 +95,4 @@ Tencent TBS (X5) kernel solves many adaptation problems on the Android platform 
 Please do not integrate the X5 dependent library webview-x5-release.aar, if so, please delete
 
 ### 其它相关问题
-### Other related questions
 - Android App Bundle(AAB)格式相关说明：[https://ask.dcloud.net.cn/article/39052](https://ask.dcloud.net.cn/article/39052)
-- Description of Android App Bundle (AAB) format: [https://ask.dcloud.net.cn/article/39052](https://ask.dcloud.net.cn/article/39052)

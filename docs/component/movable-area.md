@@ -1,4 +1,4 @@
-### movable-area
+## movable-area
 
 可拖动区域
 draggable area
@@ -24,6 +24,8 @@ Of course, instead of dragging, you can use code to trigger the move and zoom of
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|x|√|√|√|√|√|
 
+<!-- UNIAPPCOMJSON.movable-view.compatibility -->
+
 **属性说明**
 **Property description**
 
@@ -34,6 +36,4 @@ Of course, instead of dragging, you can use code to trigger the move and zoom of
 |scale-area|Boolean|false|When the movable-view inside is set to support two-finger zooming, setting this value can modify the effective area of the zoom gesture to the entire movable-area|
 
 **注意：movable-area 必须设置 width 和 height 属性，不设置默认为 10px**
-**Note: movable-area must set the width and height properties, if not set the default is 10px**
 - movable-area app-nvue平台 暂不支持手势缩放，并且和滚动冲突。
-- The movable-area app-nvue platform currently does not support gesture zooming and conflicts with scrolling.

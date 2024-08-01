@@ -1,9 +1,9 @@
 **蓝牙 API 平台差异说明**
 **Platform difference description for Bluetooth APIs**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|x|x|√|x|x|√|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|x|√|√|x|x|√|x|x|√|
 
 ### uni.openBluetoothAdapter(OBJECT)
 
@@ -147,8 +147,7 @@ Start to search for nearby Bluetooth peripherals. **Such an operation consumes s
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 |10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
-**注意：** 
-**Notice:**
+**注意：**
 
 * App 端目前仅支持发现ble蓝牙设备，更多蓝牙设备发现，可以使用 Native.js，参考：[https://ask.dcloud.net.cn/article/114](https://ask.dcloud.net.cn/article/114)。也可以在插件市场获取[原生插件](https://ext.dcloud.net.cn/search?q=%E8%93%9D%E7%89%99&cat1=5&cat2=51&orderBy=UpdatedDate)
 * The App side currently only supports the discovery of ble Bluetooth devices. For more Bluetooth device discovery, you can use Native.js, refer to: [https://ask.dcloud.net.cn/article/114](https://ask.dcloud .net.cn/article/114). You can also get the [native plugin] in the plugin market (https://ext.dcloud.net.cn/search?q=%E8%93%9D%E7%89%99&cat1=5&cat2=51&orderBy=UpdatedDate)
@@ -400,8 +399,7 @@ Obtain the devices with connected status according to uuid.
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 |10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
-**示例代码** 
-**Sample code**
+**示例代码**
 
 ```javascript
 uni.getConnectedBluetoothDevices({

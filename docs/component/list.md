@@ -1,4 +1,6 @@
-#### list
+## list
+
+> HarmonyOS Next 不支持
 
 app端nvue专用组件。在app-nvue下，如果是长列表，使用list组件的性能高于使用view或scroll-view的滚动。原因在于list在不可见部分的渲染资源回收有特殊的优化处理。
 app side nvue specific component. Under app-nvue, if it is a long list, the perlistance of using the list component is higher than that of scrolling using view or scroll-view. The reason lies in that list has special optimization for rendering resource recycling of the invisible part.
@@ -147,7 +149,7 @@ will be triggered immediately if the list scrolls to the bottom. You can load th
           console.log("loadmore事件触发");
           this.lists.push('1');
         }
-        
+
     }
   }
 </script>

@@ -1,4 +1,4 @@
-#### navigator
+## navigator
 
 页面跳转。
 
@@ -88,4 +88,3 @@ onLoad: function (option) {
 	const item = JSON.parse(decodeURIComponent(option.item));
 }
 ```
-

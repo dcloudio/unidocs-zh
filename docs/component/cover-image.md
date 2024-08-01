@@ -1,4 +1,4 @@
-### cover-image
+## cover-image
 覆盖在原生组件上的图片视图。可覆盖的原生组件同`cover-view`，支持嵌套在`cover-view`里。
 Image view overlaid on native component. Overridable native components are the same as `cover-view`, support nesting in `cover-view`.
 
@@ -9,6 +9,8 @@ Image view overlaid on native component. Overridable native components are the s
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|x|√|√|x|√|√|
 
+<!-- UNIAPPCOMJSON.cover-image.compatibility -->
+
 **属性说明**
 **Property description**
 
@@ -18,7 +20,6 @@ Image view overlaid on native component. Overridable native components are the s
 |src|String||图标路径。支持本地路径、网络路径。不支持 base64 格式。||
 |@load|eventhandle||图片加载成功时触发|微信小程序 2.1.0、百度小程序、QQ小程序、快手小程序、京东小程序|
 |@error|eventhandle||图片加载失败时触发|微信小程序 2.1.0、百度小程序、QQ小程序、快手小程序、京东小程序|
-
 
 app-vue上可覆盖的原生组件：`<video>`、`<map>`
 Overridable native components on app-vue: `<video> `,`<map> `

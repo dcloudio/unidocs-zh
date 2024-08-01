@@ -1,4 +1,4 @@
-### uni.getDeviceInfo()
+## uni.getDeviceInfo()
 
 获取设备基础信息
 Get basic device information
@@ -6,6 +6,8 @@ Get basic device information
 |App|H5|微信小程序|支付宝小程序|抖音小程序|快手小程序|QQ小程序|百度小程序|京东小程序|钉钉小程序|飞书小程序|
 |:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
 |√ `(3.4.13+)`|√ `(3.4.13+)`|√ `(2.20.1+)`|x|x|x|x|x|x|x|x|
+
+<!-- UNIAPPAPIJSON.getDeviceInfo.compatibility -->
 
 **返回参数说明**
 **Return parameter description**
@@ -52,6 +54,7 @@ Deprecated return parameter, reserved for backward compatibility only
 |model|string|设备型号。新机型刚推出一段时间会显示unknown，微信会尽快进行适配。||
 |model|string|Device model. The new model will display unknown after it has been launched for a while, and WeChat will adapt it as soon as possible. ||
 
+<!-- UNIAPPAPIJSON.getDeviceInfo.returnValue -->
+
 **Tips**
 - `deviceId`：`android 平台` 根据优先使用imei、mac，如果没有获取到就使用随机生成的标识。`ios 平台` 是直接使用随机生成的标识
-- `deviceId`: `android platform` uses imei and mac according to the priority, and uses a randomly generated identifier if it is not obtained. `ios platform` is to use the randomly generated logo directly

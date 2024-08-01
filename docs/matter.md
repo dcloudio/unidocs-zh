@@ -271,8 +271,7 @@ If you have done WeChat MiniApp development, you should already be familiar with
 * PC 端 Chrome 浏览器模拟器设备测试的时候，获取位置 API 需要连接谷歌服务器。
 * When testing on the Chrome browser emulator device on the PC side, the location API needs to be connected to the Google server.
 
-* 组件内（页面除外）不支持 `onLoad`、`onShow` 等页面生命周期。
-* Page life cycles such as `onLoad`, `onShow`, etc. are not supported in components (except pages).
+* vue2组件内（页面除外）不支持 onLoad、onShow 等页面生命周期， vue3请使用组合式api监听
 
 * 为避免和内置组件冲突，自定义组件请加上前缀（但不能是 u 和 uni）。比如可使用的自定义组件名称：`my-view`、`m-input`、`we-icon`，例如不可使用的自定义组件名称：`u-view`、`uni-input`，如果已有项目使用了可能造成冲突的名称，请修改名称，另外微信小程序下自定义组件名称不能以 wx 开头。
 * To avoid conflicts with built-in components, please add prefixes to custom components (but not u and uni). For example, the names of custom components that can be used: `my-view`, `m-input`, `we-icon`, such as the names of custom components that cannot be used: `u-view`, `uni-input`, if already Some projects use names that may cause conflicts. Please modify the names. In addition, the names of custom components under WeChat MiniApp cannot start with wx.

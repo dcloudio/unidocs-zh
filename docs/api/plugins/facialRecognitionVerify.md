@@ -16,6 +16,8 @@ App端API规范参考：[详情](https://doc.dcloud.net.cn/uniCloud/frv/dev.html
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.7.4+）|x|x|x|x|x|x|x|x|
 
+<!-- UNIAPPAPIJSON.getFacialRecognitionMetaInfo.compatibility -->
+
 ### uni.startFacialRecognitionVerify(OBJECT)
 实人认证
 
@@ -29,3 +31,4 @@ App端API规范参考：[详情](https://doc.dcloud.net.cn/uniCloud/frv/dev.html
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.7.4+）|x|√|x|x|x|x|x|x|
 
+<!-- UNIAPPAPIJSON.startFacialRecognitionVerify.compatibility -->

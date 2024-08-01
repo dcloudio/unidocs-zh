@@ -1,4 +1,4 @@
-### uni.onWindowResize(CALLBACK)
+## uni.onWindowResize(CALLBACK)
 监听窗口尺寸变化事件
 Listen for window size change events
 
@@ -8,9 +8,9 @@ Listen for window size change events
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序	|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|x|x|x|√|√|
+|App|HarmonyOS Next|H5|微信小程序	|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|x|x|x|√|√|
 
 **CALLBACK 参数说明**
 **CALLBACK parameter description**
@@ -38,7 +38,7 @@ uni.onWindowResize(windowResizeCallback)
 - 横竖屏切换时，会触发此事件。
 - This event will be triggered when the screen is switched between landscape and portrait.
 
-### uni.offWindowResize(CALLBACK)
+## uni.offWindowResize(CALLBACK)
 取消监听窗口尺寸变化事件
 Cancel listening window size change event
 
@@ -48,9 +48,9 @@ Cancel listening window size change event
 平台差异说明
 Explanation of Platform Differences
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|x|x|x|√|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|x|x|x|√|
 
 **Tips**
 - `CALLBACK`为调用`uni.onWindowResize`时传入的`CALLBACK`

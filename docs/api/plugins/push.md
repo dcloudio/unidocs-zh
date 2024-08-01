@@ -14,6 +14,8 @@ Obtain the unique push ID of the client
 注意：这是一个异步的方法，且仅支持uni-push2.0；
 Note: This is an asynchronous method and only supports uni-push2.0;
 
+<!-- UNIAPPAPIJSON.getPushClientId.compatibility -->
+
 **OBJECT 参数说明**
 **OBJECT parameter description**
 
@@ -72,7 +74,10 @@ Note: This is an asynchronous method and only supports uni-push2.0;
 
 ### uni.onPushMessage(callback)@onpushmessage
 启动监听推送消息事件
-Start listening to push message events
+
+
+<!-- UNIAPPAPIJSON.onPushMessage.compatibility -->
+
 代码示例：
 ```js
 uni.onPushMessage((res)=>{
@@ -91,7 +96,9 @@ uni.onPushMessage((res)=>{
 
 ### uni.offPushMessage(callback)
 关闭推送消息监听事件
-Close the push message listening event
+
+<!-- UNIAPPAPIJSON.offPushMessage.compatibility -->
+
 示例代码：
 Sample code:
 ```js
@@ -110,6 +117,8 @@ uni.offPushMessage(callback);
 ### uni.getChannelManager()@getchannelmanager
 
 获取通知渠道管理器，Android 8系统以上才可以设置通知渠道。
+
+<!-- UNIAPPAPIJSON.getChannelManager.compatibility -->
 
 **返回值说明**
 
@@ -136,7 +145,7 @@ uni.offPushMessage(callback);
 |options|[SetPushChannelOptions](#setpushchanneloptions)|是|
 
 
-##### SetPushChannelOptions 的属性值
+##### SetPushChannelOptions 的属性值 @setpushchanneloptions
 
 |名称|类型|必备|默认值|描述|
 |:-|:-|:-|:-|:-|
@@ -200,6 +209,8 @@ Create a local notification bar message (supported from HBuilderX 3.5.2)
 |App|H5	|快应用	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序	|京东小程序	|
 |:-:|:-:|:-:	|:-:		|:-:			|:-:		|:-:						|:-:		|:-:		|:-:		|
 |√	|x	|x		|x			|x				|x			|x							|x			|x			|x			|
+
+<!-- UNIAPPAPIJSON.createPushMessage.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**

@@ -1,4 +1,6 @@
-#### recycle-list
+## recycle-list
+
+> HarmonyOS Next 不支持
 
 app端nvue专用组件。
 app side nvue specific component.

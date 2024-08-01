@@ -23,9 +23,7 @@ Review requirements for release of Google Play are strict, and the following iss
 - 应用中的任何功能都不能引导用户下载其它应用，以下模块不能使用：
 - No function in the application can guide users to download other applications, and the following modules cannot be used:
   + QQ登录、QQ分享：手机没有安装QQ应用时，会引导用户安装
-  + QQ login, QQ share: when QQ application is not installed on the mobile phone, users will be guided to install it
-  + uni-AD 增强广告SDK：广告中存在下载安装其它三方应用的行为。**uni-AD 广告基础功能不受影响**
-  + uni-AD enhanced advertising SDK: there is the behavior of downloading and installing other third-party applications in advertisements. **The basic functions of uni-AD ads are not affected**
+  + uni-ad 增强广告SDK：广告中存在下载安装其它三方应用的行为。**uni-ad 广告基础功能不受影响**
 - 应用中不能使用动态加载代码，因此无法配置使用X5内核，详情：[https://ask.dcloud.net.cn/article/36806](https://ask.dcloud.net.cn/article/36806)
 - Dynamic loading code cannot be used in the application, so the X5 kernel cannot be configured. See [https://ask.dcloud.net.cn/article/36806](https://ask.dcloud.net.cn/article/36806) for details.
 
@@ -57,5 +55,3 @@ The following issues need to be noted:
 **Instructions on using IDFA:** [https://ask.dcloud.net.cn/article/36107](https://ask.dcloud.net.cn/article/36107)
 
 **UIWebview API 已废弃：**[https://ask.dcloud.net.cn/article/36348](https://ask.dcloud.net.cn/article/36348)
-**UIWebview API is obsolete:** [https://ask.dcloud.net.cn/article/36348](https://ask.dcloud.net.cn/article/36348)
-

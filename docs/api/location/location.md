@@ -1,6 +1,24 @@
-### uni.getLocation(OBJECT)
+## uni.getLocation(OBJECT)
 获取当前的地理位置、速度。
 Get the current location and speed.
+
+::: warning 注意
+Web平台本API之前调用了腾讯地图的gcj02坐标免费转换接口，该接口从2024年7月18日起被腾讯逐步下线，导致老版本中本API无法使用。请立即升级到 `uni-app 4.24版`。
+
+升级后注意：
+1. cli项目需升级cli
+2. App平台 manifest中配置好自己的地图厂商key，在地图厂商的后台，填写正确包名和证书摘要。地图厂商的sdk会在运行时校验key、包名、证书的一致性
+5. Web平台 manifest中配置好自己的地图厂商key，使用web接口如涉及白名单，需确保自己的域名在地图厂商那里正确配置了域名白名单
+3. 确保在地图厂商那里配额足够
+4. 确保在地图厂商那里有周边服务的权限。否则无法获取周围地址
+
+如果运行在微信浏览器中，可以使用微信的jssdk的定位能力。这个是微信向腾讯地图申请的key，开发者无需配置自己的key。
+
+地图厂商的商业授权较贵，如需购买，请点击[获取优惠](https://ask.dcloud.net.cn/explore/map/)。
+
+:::
+
+<!-- UNIAPPAPIJSON.getLocation.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -135,12 +153,28 @@ uni.getLocation({
 打开地图选择位置。
 Open the map to select a location.
 
+::: warning 注意
+Web平台和App平台，本API之前调用了腾讯地图的gcj02坐标免费，该接口从2024年7月18日起被腾讯逐步下线，导致老版本中本API无法使用。请立即升级到 `uni-app 4.24版`。
+
+升级后注意：
+1. 如果是cli或离线打包，需要配套升级cli和离线sdk
+2. manifest中配置好自己的地图厂商key。web和app都需要。一般标准基座正常，自定义基座和打包后异常，都是这个原因
+3. 确保在地图厂商那里配额足够
+4. 确保在地图厂商那里有周边服务的权限。否则无法获取周围地址
+5. web平台确保自己的域名在地图厂商那里正确配置了域名白名单
+
+地图厂商的商业授权较贵，如需购买，请点击[获取优惠](https://ask.dcloud.net.cn/explore/map/)。
+
+:::
+
 **平台差异说明**
 **Platform Difference Description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|x|x|
+
+<!-- UNIAPPAPIJSON.chooseLocation.compatibility -->
 
 
 **OBJECT 参数说明**

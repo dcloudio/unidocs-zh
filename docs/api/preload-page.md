@@ -1,4 +1,4 @@
-#### uni.preloadPage(OBJECT)
+## uni.preloadPage(OBJECT)
 
 预加载页面，是一种性能优化技术。被预载的页面，在打开时速度更快。
 Page pre-loading is a performance optimization technology. The preloaded pages can be opened faster.
@@ -6,9 +6,9 @@ Page pre-loading is a performance optimization technology. The preloaded pages c
 **平台差异说明**
 **Platform difference description**
 
-|App-nvue|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√(2.7.12+)|√(2.7.12+)|x|x|x|x|x|
+|App-nvue|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√(2.7.12+)|x|√(2.7.12+)|x|x|x|x|x|
 
 
 |属性|类型|必填|说明|
@@ -20,8 +20,7 @@ Page pre-loading is a performance optimization technology. The preloaded pages c
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 
-#### H5 平台
-#### H5 platform
+### H5 平台
 
 预加载 /pages/test/test 对应的js文件，不执行页面预渲染逻辑
 Preload the js file corresponding to /pages/test/test without executing the page pre-rendering logic
@@ -29,8 +28,7 @@ Preload the js file corresponding to /pages/test/test without executing the page
 uni.preloadPage({url: "/pages/test/test"});
 ```
 
-#### App-nvue 平台
-#### App-nvue platform
+### App-nvue 平台
 
 预加载nvue页面 /pages/test/test
 Preload nvue page /pages/test/test
@@ -66,7 +64,9 @@ uni.navigateTo({url: "/pages/test/test?a=b"}); // url不匹配，正常打开新
 HBuilderX 2.7.12+的hello uni-app，在navigator示例和uni ui的日历示例中增加了页面预载示例。
 hello uni-app of HBuilderX 2.7.12+ adds a page preload example to the navigator example and the calendar example of uni ui.
 
-#### uni.unPreloadPage(OBJECT)
+## uni.unPreloadPage(OBJECT)
+
+> HarmonyOS Next 不支持
 
 取消预载页面。
 Cancel the preload page.

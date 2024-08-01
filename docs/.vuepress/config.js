@@ -89,6 +89,9 @@ module.exports = merge({
         .end()
 				.plugin('img-add-attrs')
 				.use(require('./markdown/img-add-attrs'))
+        .end()
+        .plugin('inject-json-to-md')
+        .use(require('./markdown/inject-json-to-md'))
     }
   },
   chainWebpack (config, isServer) {
@@ -108,4 +111,6 @@ module.exports = merge({
     if (type === 'script') return path.includes('vendors~') || path.includes('layout-') || path.includes('index.')
     return false
   }
-}, config)
+}
+
+module.exports = config

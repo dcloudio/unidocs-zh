@@ -1,10 +1,11 @@
 #### Barcode
 
+> HarmonyOS Next 不支持
+
 app端nvue专用的扫码组件。
 Scanning component specific to the app-side nvue.
 
-- 此组件用于app端nvue页面实现内嵌到界面上的扫码。其他场景、其他平台，请使用全屏扫码API：[uni.scanCode](https://uniapp.dcloud.io/api/system/barcode) 
-- This component is used for the nvue page on the app side to realize the scanning embedded in the interface. For other scenes and other platforms, please use the full-screen scanning API: [uni.scanCode](https://uniapp.dcloud.io/api/system/barcode)
+- 此组件用于app端nvue页面实现内嵌到界面上的扫码。其他场景、其他平台，请使用全屏扫码API：[uni.scanCode](https://uniapp.dcloud.io/api/system/barcode)
 - App下纯nvue项目（manifest中renderer为native），暂不支持uni.scanCode API，此时只能使用barcode组件来替代。
 - For the pure nvue project of App (rendered as native in manifest), the uni.scanCode API is temporarily not supported, and only the barcode component can be used instead.
 - 此组件自HBuilderX 2.1.5+起支持。
@@ -158,7 +159,7 @@ message|string|Failure description
 <script>
 	export default {
 		onLoad() {
-			
+
 		},
 		data() {
 			return {
@@ -187,7 +188,7 @@ message|string|Failure description
 			},
 
 			toscan: function() {
-				console.log("scan:");				
+				console.log("scan:");
 				const barcodeModule = uni.requireNativePlugin('barcodeScan');
 				barcodeModule.scan("/static/barcode1.png"
 				,(e)=>{

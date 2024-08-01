@@ -1,11 +1,11 @@
 **iBeacon API 平台差异说明**
 **Platform difference description for iBeacon APIs**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|x|x|√|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|x|√|√|x|x|√|x|x|x|
 
-### uni.onBeaconServiceChange(CALLBACK)
+## uni.onBeaconServiceChange(CALLBACK)
 
 监听 iBeacon 服务状态变化事件
 listen to iBeacon service status change events
@@ -21,7 +21,7 @@ listen to iBeacon service status change events
 |discovering|boolean|目前是否处于搜索状态|
 | discovering| boolean| Whether it is in the searching state currently|
 
-### uni.onBeaconUpdate(CALLBACK)
+## uni.onBeaconUpdate(CALLBACK)
 
 监听 iBeacon 设备更新事件
 listen to iBeacon device update events
@@ -35,7 +35,7 @@ listen to iBeacon device update events
 |beacons|Array<[IBeaconInfo](/api/system/ibeacon?id=ibeaconinfo)>|当前搜寻到的所有 iBeacon 设备列表|
 | beacons| Array<[IBeaconInfo](/api/system/ibeacon?id=ibeaconinfo)>| List of all iBeacon devices that are searched currently|
 
-### uni.getBeacons(OBJECT)
+## uni.getBeacons(OBJECT)
 
 获取所有已搜索到的 iBeacon 设备
 Obtain all searched iBeacon devices.
@@ -62,8 +62,7 @@ Obtain all searched iBeacon devices.
 |beacons|Array<[IBeaconInfo](/api/system/ibeacon?id=ibeaconinfo)>|iBeacon 设备列表|
 | beacons| Array<[IBeaconInfo](/api/system/ibeacon?id=ibeaconinfo)>| iBeacon device list|
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|
@@ -79,7 +78,7 @@ Obtain all searched iBeacon devices.
 |11003|already start|已经开始搜索|
 | 11003| already start| Search started|
 
-### uni.startBeaconDiscovery(OBJECT)
+## uni.startBeaconDiscovery(OBJECT)
 
 开始搜索附近的 iBeacon 设备
 Start searching for nearby iBeacon devices
@@ -101,8 +100,7 @@ Start searching for nearby iBeacon devices
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| function| | No| Callback function for closed interface calling (available both for successful and failed calling)|
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|
@@ -118,8 +116,7 @@ Start searching for nearby iBeacon devices
 |11003|already start|已经开始搜索|
 | 11003| already start| Search started|
 
-#### 示例代码
-#### Sample code
+### 示例代码
 
 ```js
 uni.startBeaconDiscovery({
@@ -127,7 +124,7 @@ uni.startBeaconDiscovery({
 })
 ```
 
-### uni.stopBeaconDiscovery(OBJECT)
+## uni.stopBeaconDiscovery(OBJECT)
 
 停止搜索附近的 iBeacon 设备
 Stop searching for nearby iBeacon devices
@@ -145,8 +142,7 @@ Stop searching for nearby iBeacon devices
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| function| | No| Callback function for closed interface calling (available both for successful and failed calling)|
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|
@@ -162,7 +158,7 @@ Stop searching for nearby iBeacon devices
 |11003|already start|已经开始搜索|
 | 11003| already start| Search started|
 
-### IBeaconInfo
+## IBeaconInfo
 
 |属性|类型|说明|
 | Attribute| Type| Instruction|
@@ -181,8 +177,6 @@ Stop searching for nearby iBeacon devices
 | rssi| number| Indicate the signal strength of the device|
 
 
-### 注意事项
-### Precautions
+## 注意事项
 
 * 未启用定位将影响 iBeacon 的正常使用。（相关反馈：[#2027](https://github.com/dcloudio/uni-app/issues/2027)）
-* Disabling localization will affect the normal use of iBeacon. (Related feedback: [#2027](https://github.com/dcloudio/uni-app/issues/2027))

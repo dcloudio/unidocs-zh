@@ -130,7 +130,7 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
 - iOS隐私信息访问列表，参考：[https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources](https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources)
 
 
-### iOS url scheme配置@urlScheme    
+### iOS url scheme配置@urlScheme  
 如果应用需要向系统注册url scheme，以便在浏览器中通过scheme打开App，可根据需求在`Info.plist`文件中添加`CFBundleURLTypes`数据，如下示例：
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -165,6 +165,47 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
 - iOS Property List Key ‘CFBundleURLTypes’，参考：[https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleurltypes/](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleurltypes/)
 
 
+### 应用可支持横竖屏列表配置@orientation  
+应用默认可支持的横竖列表：  
+- uni-app 项目由 manifest.json 中的 [screenOrientation](https://uniapp.dcloud.net.cn/collocation/manifest.html#app-plus) 字段配置决定  
+- uni-app x 项目默认支持横竖平列表为横屏和竖屏，但运行期在 iPhone 设备固定为竖屏，在 iPad 设备根据系统设置自动感应适配横竖屏（后续版本iPhone设备会支持page.json中配置）  
+
+如果希望自定义配置应用可支持的横竖屏列表，可根据需求在`Info.plist`文件中添加`UISupportedInterfaceOrientations`数据，如下示例：
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>UISupportedInterfaceOrientations~iphone</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+      <string>UIInterfaceOrientationLandscapeLeft</string>
+      <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+      <string>UIInterfaceOrientationPortraitUpsideDown</string>
+      <string>UIInterfaceOrientationLandscapeLeft</string>
+      <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+  </dict>
+</plist>
+```
+
+> uni-app 项目同时也支持在 manifest.json 中配置  [screenOrientation](https://uniapp.dcloud.net.cn/collocation/manifest.html#app-plus)，云端打包会与 Info.plist 中配置的值合并  
+> uni-app x 项目仅支持 Info.plist 中配置，需 HBuilderX4.22+ 版本，提交云端打包后才能生效  
+
+**注意**  
+- `UISupportedInterfaceOrientations~iphone` 字段下配置的是 iPhone 设备可支持的横竖屏  
+- `UISupportedInterfaceOrientations~ipad` 字段下配置的是 iPad 设备可支持的横竖屏  
+- 字段值为字符串数组，其中字符串可取值：  
+	* `UIInterfaceOrientationPortrait` 竖屏主方向  
+  * `UIInterfaceOrientationPortraitUpsideDown` 竖屏反方向，仅 iPad 设备支持  
+  * `UIInterfaceOrientationLandscapeLeft` 横屏主方向  
+  * `UIInterfaceOrientationLandscapeRight` 横屏反方向  
+- iPhone 和 iPad 设备可分别单独设置，可支持的横竖屏列表会限制应用能支持的横竖屏状态，如设置应用支持的横竖屏列表值为竖屏（UIInterfaceOrientationPortrait），则应用在任何状态下都无法横屏，在 iPad 设备无法根据系统设置自动感应适配，在 page.json 中设置 pageOrientation 为横屏将无效  
+
 ##  应用资源  
 
 HBuilderX中对项目右键菜单 "新建" -> "目录"  
@@ -184,7 +225,7 @@ Enter the name `nativeResources` (note that it is case-sensitive), confirm and c
 
 在 XCode 中可以通过项目可视化界面编辑应用的`Capabilities`，实际上是操作项目的 entitlements 和 Info.plist 文件保存数据。在 HBuilderX 中暂未提供`Capabilities`可视化界面操作，需手动编辑`UniApp.entitlements`和`Info.plist`文件来实现相关配置。
 
-在 nativeResourc/ios 目录下创建`UniApp.entitlements`文件，用于配置 XCode 原生工程的`Capabilities`，如下示例：
+在 nativeResources/ios 目录下创建`UniApp.entitlements`文件，用于配置 XCode 原生工程的`Capabilities`，如下示例：
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>

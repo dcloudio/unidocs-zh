@@ -851,8 +851,7 @@ nvue supports most uni-app APIs. The following only lists the **APIs** that are 
 |uni.createIntersectionObserver()	|创建并返回一个 IntersectionObserver 对象实例	|
 | uni.createIntersectionObserver()| Create and return an example of the IntersectionObserver object|
 
-##### 绘画
-##### Painting
+##### 画布
 
 canvas API使用，[详见canvas文档](https://uniapp.dcloud.net.cn/api/canvas/createCanvasContext)。
 For the usage of canvas API, please refer to [canvas document](https://uniapp.dcloud.net.cn/api/canvas/createCanvasContext).

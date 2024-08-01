@@ -1,12 +1,15 @@
 **属性**
 **Attributes**
 
+
 **平台差异说明**
 **Platform Difference Description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.createCanvasContext.compatibility -->
 
 App-nvue下如需使用canvas，暂未封装为uni API，可参考[文档](https://github.com/dcloudio/NvueCanvasDemo)使用。
 If you need to use canvas under App-nvue, it has not been packaged as uni API yet, you can refer to [documentation](https://github.com/dcloudio/NvueCanvasDemo) to use.
@@ -992,7 +995,7 @@ Restores a previously saved drawing context.
 const ctx = uni.createCanvasContext('myCanvas')
 
 // save the default fill style
-ctx.save() 
+ctx.save()
 ctx.setFillStyle('red')
 ctx.fillRect(10, 10, 150, 100)
 

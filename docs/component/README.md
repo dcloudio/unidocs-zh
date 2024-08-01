@@ -1,4 +1,4 @@
-### 组件使用的入门教程
+## 组件使用的入门教程
 - 组件是视图层的基本组成单元。
 - 组件是一个单独且可复用的功能模块的封装。
 
@@ -32,7 +32,7 @@
 
 通过了解[button组件](/component/button)的文档，我们知道上述代码将在页面中绘制一个按钮，按钮显示的文字是“按钮”，按钮的大小是小尺寸的。
 
-#### 组件的属性类型
+### 组件的属性类型
 
 组件的属性，有多种类型：
 
@@ -56,7 +56,7 @@
 </template>
 ```
 
-#### 公共属性列表
+### 公共属性列表
 
 每个组件都有各自定义的属性，但所有uni-app的组件，都有如下属性：
 
@@ -72,7 +72,7 @@
 
 除了上述公共属性，还有一类特殊属性以`v-`开头，称之为vue指令，如v-if、v-else、v-for、v-model。详见[vue指令](/tutorial/vue-api?id=%e6%a8%a1%e6%9d%bf%e6%8c%87%e4%bb%a4)
 
-#### 在组件中使用script的data变量
+### 在组件中使用script的data变量
 
 组件中可以使用script的data中定义的变量，但组件的属性中使用和内容区使用的用法不一样。
 
@@ -99,7 +99,7 @@
 </script>
 ```
 
-#### 组件的事件
+### 组件的事件
 
 每个组件都有“事件”。事件就是在指定的条件下触发某个js方法。
 
@@ -131,7 +131,7 @@
 ```
 
 
-### 基础组件
+## 基础组件
 
 uni-app的组件，分为基础组件和扩展组件。
 
@@ -159,7 +159,7 @@ uni-app为开发者提供了一系列基础组件，类似HTML里的基础标签
 ```
 
 
-#### 基础组件列表
+### 基础组件列表
 
 基础组件分为以下十几大类：
 
@@ -263,7 +263,7 @@ uni-app为开发者提供了一系列基础组件，类似HTML里的基础标签
 
 在小程序平台和nvue平台，还有一些专有组件，比如open-data，详见左侧导航
 
-### 扩展组件的意义
+## 扩展组件的意义
 
 虽然所有的业务需求都可以通过基础组件满足，但仅有基础组件是低效的，实际开发中会有很多封装的组件。
 
@@ -287,7 +287,7 @@ uni-app为开发者提供了一系列基础组件，类似HTML里的基础标签
 - 代码更加方便组织和管理，并且扩展性也更强，便于多人协同开发。
 - 组件化开发能大幅度提高应用开发效率、测试性、复用性等。
 
-### 组件的类别
+## 组件的类别
 
 uni-app支持的组件分为vue组件和小程序自定义组件。
 
@@ -305,7 +305,7 @@ uni-app支持的组件分为vue组件和小程序自定义组件。
 
 接下来一一讲解。
 
-### easycom组件规范@easycom
+## easycom组件规范@easycom
 
 > `HBuilderX 2.5.5`起支持
 
@@ -365,7 +365,7 @@ uni-app支持的组件分为vue组件和小程序自定义组件。
 	</script>
 ```
 
-### uni_module规范
+## uni_module规范
 
 uni_module其实不止服务于组件，它可以服务于组件、js库、页面、项目等所有DCloud插件市场所支持的种类。
 
@@ -377,7 +377,7 @@ uni_module还支持云端一体的插件。
 
 uni_module有详细的专项文档，请另行查阅[uni_module规范](/plugin/uni_modules.md)。
 
-### uniCloud组件
+## uniCloud组件
 
 uniCloud是DCloud提供的、配套uni-app的云开发服务。
 
@@ -389,9 +389,9 @@ uni-app的基础组件中，有一个特殊基础组件是：`<unicloud-db>`组�
 
 除了内置的数据库组件，在uni-ui扩展库里还有uniCloud的文件选择和上传组件，参考：[uni-file-picker](https://ext.dcloud.net.cn/plugin?id=4079)
 
-### 原生组件和原生插件
+## 原生组件和原生插件
 
-#### 基础组件里的原生组件
+### 基础组件里的原生组件
 
 uni-app的基础组件里，有一批原生组件，如video、map...
 
@@ -403,7 +403,7 @@ uni-app的基础组件里，有一批原生组件，如video、map...
 
 相关文档详见：[uni-app内置原生组件说明](/component/native-component)
 
-#### uni-app的App端原生插件
+### uni-app的App端原生插件
 
 uni-app的App端支持原生插件，这类插件使用iOS或Android原生语言编写，封装成插件，供其他开发者使用js来调用。
 
@@ -413,7 +413,7 @@ uni-app的App端支持原生插件，这类插件使用iOS或Android原生语言
 
 相关文档详见：[uni-app原生插件开发](https://nativesupport.dcloud.net.cn/NativePlugin/README)
 
-### datacom
+## datacom
 
 datacom组件是一种数据驱动的、可云端一体的组件。
 
@@ -421,11 +421,11 @@ datacom组件是一种数据驱动的、可云端一体的组件。
 
 相关文档详见：[datacom组件](/component/datacom)
 
-### 如何封装组件
+## 如何封装组件
 
 封装组件涉及的知识点较多，相关文档详见：[vue组件详解](https://uniapp.dcloud.io/vue-components)
 
 
-### 扩展组件（uni-ui）@uniui
+## 扩展组件（uni-ui）@uniui
 
 详见: [uni-ui介绍](/component/uniui/uni-ui.md)

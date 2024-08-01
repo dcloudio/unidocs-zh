@@ -15,7 +15,7 @@ uni-app是当今主流的开发框架，DCloud有900万开发者，uni统计手�
 
 `uni-app` 是免费并且属于Apache2.0开源协议的产品。DCloud官方承诺无论HBuilderX、uni-app，面向全球程序员永久免费。大家可以放心使用。
 
-DCloud的盈利方式在帮助开发者进行流量变现（uni-AD）和提供有价值的云服务（uniCloud）上，而不在开发工具收费上。
+DCloud的盈利方式在帮助开发者进行流量变现（uni-ad）和提供有价值的云服务（uniCloud）上，而不在开发工具收费上。
 
 **跨端会造成功能受限制吗？**
 
@@ -135,7 +135,7 @@ uni-app提供了大量的扩展api解决了这个问题，并且发展了成熟�
 2. 小程序端：uni-app没有限制，同该小程序自身能支持的最低平台
 3. App端：
 	- Vue2: Android4.4+、iOS9+。Android4.4已经是2013年发布的手机了。
-	- Vue3: 支持的范围是：Android >=5 （使用nvue和vue有区别。某些老国产Android5的rom无法动态升级Android system webview，此时如果使用vue页面需搭配x5内核） , iOS >= 10 
+	- Vue3: 支持的范围是：Android >=5 （使用nvue和vue有区别。某些老国产Android5的rom无法动态升级Android system webview，此时如果使用vue页面需搭配x5内核） , iOS >= 10
 
 **uni-app成熟度高吗？**
 

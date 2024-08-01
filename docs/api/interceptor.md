@@ -1,6 +1,8 @@
-### uni.addInterceptor(STRING, OBJECT)
+## uni.addInterceptor(STRING, OBJECT)
 添加拦截器
 Add interceptor
+
+<!-- UNIAPPAPIJSON.addInterceptor.compatibility -->
 
 **STRING 参数说明**
 **STRING parameter description**
@@ -45,18 +47,17 @@ uni.request({
 
 uni.addInterceptor('request', {
   invoke(args) {
-    // request 触发前拼接 url 
-    //Splice url before triggering request 
+    // request 触发前拼接 url
     args.url = 'https://www.example.com/'+args.url
   },
   success(args) {
     // 请求成功后，修改code值为1
     //After a successful request, modify the code value to 1
     args.data.code = 1
-  }, 
+  },
   fail(err) {
     console.log('interceptor-fail',err)
-  }, 
+  },
   complete(res) {
     console.log('interceptor-complete',res)
   }
@@ -71,9 +72,11 @@ uni.addInterceptor({
 
 ```
 
-### uni.removeInterceptor(STRING)
+## uni.removeInterceptor(STRING)
 删除拦截器
 Remove interceptor
+
+<!-- UNIAPPAPIJSON.removeInterceptor.compatibility -->
 
 **STRING 参数说明**
 **STRING parameter description**
@@ -94,6 +97,4 @@ uni.removeInterceptor('request')
 Note: Intercepting [uni.switchTab](https://uniapp.dcloud.io/api/router?id=switchtab) itself has no problem. But the underlying logic of clicking `tabbar` on the WeChat applet is not to trigger `uni.switchTab`. So it is misunderstood that the interception is invalid, and the solution for such scenarios is to handle it in the page life cycle `onShow` of the `tabbar` page.
 
 ##### 拦截器的适用场景非常多，比如路由拦截，权限引导等。
-##### Interceptors can be used in many scenarios including route interception, authority booting and so on.
 > 你可以参考插件市场,拦截器应用示例：图片选择api时无权限，引导用户快捷打开系统设置：[https://ext.dcloud.net.cn/plugin?id=5095](https://ext.dcloud.net.cn/plugin?id=5095)
-> You can refer to the plug-in market for an example of the application of the interceptor: the picture has no permission when selecting api, and guide the user to quickly open the system settings: [https://ext.dcloud.net.cn/plugin?id=5095](https://ext.dcloud.net.cn/plugin?id=5095)

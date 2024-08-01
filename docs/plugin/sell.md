@@ -11,7 +11,7 @@
 
 插件市场支持对uniCloud插件、app的uts/原生插件设置付费销售其中：
 
-- uniCloud插件和uts插件，支持普通授权版、源码授权版两种形式进行售卖；[uniCloud付费插件的“源码授权版”和“普通授权版”的区别](https://ask.dcloud.net.cn/article/38040)；
+- uniCloud插件和uts插件，支持普通授权版、源码授权版两种形式进行售卖；[uniCloud付费插件的“源码授权版”和“普通授权版”的区别](https://uniapp.dcloud.net.cn/plugin/plugin-ext-introduction.html#payment)；
 - App原生插件仅支持购买普通授权版，不提供源码；
 
 其他类型插件不支持计费销售。

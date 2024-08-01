@@ -37,9 +37,7 @@ The basic operation of cloud packaging for accounts in "International Area" is t
 “国际区”账号尚不支持部分功能点，具体如下：
 "International Area" accounts do not yet support some function points, as follows:
 1. “国际区”账号尚不支持[问答社区](https://ask.dcloud.net.cn)发帖，但你可以到Github提交[issue](https://github.com/dcloudio/uni-app/issues)
-1. The "International Zone" account does not yet support [Q&A community](https://ask.dcloud.net.cn) posting, but you can submit [issue](https://github.com/dcloudio/uni) to Github -app/issues)
-2. “国际区”账号不能使用插件市场、uniCloud、uniAD 服务；
-2. Accounts in the "international area" cannot use the plug-in market, uniCloud, and uniAD services;
+2. “国际区”账号不能使用插件市场、uniCloud、uni-ad 服务；
 3. “国际区”账号仅支持”uniapp“项目打包，不支持 "5+APp"、"wap2app"打包；
 3. The "International Zone" account only supports "uniapp" project packaging, and does not support "5+APPp" and "wap2app" packaging;
 4. “国际区”账号不支持使用公共测试证书（test keystore）和DCloud老版证书（DCloud keystore）
@@ -69,4 +67,3 @@ DCloud正在积极开拓海外市场，面向海外工程师提供高效便捷�
 DCloud is actively exploring overseas markets and providing efficient and convenient development tools for overseas engineers. We are developing [uni-app official website English site](https://en.uniapp.dcloud.io). All developers who are familiar with English are welcome, Participate in perfection together.
 
 文档源码地址：[https://github.com/dcloudio/unidocs-en](https://github.com/dcloudio/unidocs-en)，欢迎各位踊跃提交 pr 或 issue。
-Documentation source address: [https://github.com/dcloudio/unidocs-en](https://github.com/dcloudio/unidocs-en). Welcome to submit pr or issue.

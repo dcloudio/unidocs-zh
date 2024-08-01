@@ -1,6 +1,9 @@
-# text组件
+## text组件
 
 文本组件。用于包裹文本内容。
+
+
+<!-- UNIAPPCOMJSON.text.compatibility -->
 
 在app-uvue和app-nvue中，文本只能写在text中，而不能写在view的text区域。
 
@@ -19,6 +22,9 @@
 | space | String | |Display continuous spaces |DingTalk MiniApp not support |
 |decode		|Boolean|false	|是否解码		|百度、钉钉小程序不支持	|
 | decode | Boolean| false |Whether to decode |Baidu and DingTalk MiniApp do not support |
+
+
+<!-- UNIAPPCOMJSON.text.attribute -->
 
 **space 值说明**
 **space value description**
@@ -125,3 +131,5 @@ export default {
 </script>
 ```
 :::
+
+<!-- UNIAPPCOMJSON.text.reference -->

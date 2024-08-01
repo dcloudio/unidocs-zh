@@ -1,6 +1,8 @@
-### uni.onCompassChange(CALLBACK)
+## uni.onCompassChange(CALLBACK)
 监听罗盘数据，频率：5次/秒，接口调用后会自动开始监听，可使用 ``uni.offCompassChange`` 取消监听。
 Monitor compass data, frequency: 5 times per second, it will automatically start monitoring after the interface is called, you can use ``uni.offCompassChange`` to cancel the monitoring.
+
+<!-- UNIAPPAPIJSON.onCompassChange.compatibility -->
 
 **CALLBACK 返回参数**
 **CALLBACK return parameter**
@@ -10,6 +12,8 @@ Monitor compass data, frequency: 5 times per second, it will automatically start
 |:-|:-|:-|
 |direction|Number|面对的方向度数|
 | direction| Number|Facing direction in degrees|
+
+<!-- UNIAPPAPIJSON.onCompassChange.param -->
 
 **Tips**
 - H5端获取罗盘信息，需要部署在 **https** 服务上，本地预览（localhost）仍然可以使用 http 协议。
@@ -25,7 +29,9 @@ const callback = function (res) {
 uni.onCompassChange(callback);
 ```
 
-### uni.offCompassChange(CALLBACK)
+<!-- UNIAPPAPIJSON.onCompassChange.tutorial -->
+
+## uni.offCompassChange(CALLBACK)
 取消监听罗盘数据。
 Cancel listening to compass data.
 
@@ -36,6 +42,8 @@ Cancel listening to compass data.
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|x|
 | HBuilderX 2.9.6+| HBuilderX 2.9.6+|Basic library 2.9.3+| x| x| x| x|√| x|
+
+<!-- UNIAPPAPIJSON.offCompassChange.compatibility -->
 
 **示例**
 **example**
@@ -49,11 +57,13 @@ uni.onCompassChange(callback);
 uni.offCompassChange(callback);
 ```
 
+<!-- UNIAPPAPIJSON.offCompassChange.tutorial -->
+
 **Tips**
 - `CALLBACK`为调用`uni.onCompassChange`时传入的`CALLBACK`
 - `CALLBACK` is the `CALLBACK` passed in when calling `uni.onCompassChange`
 
-### uni.startCompass(OBJECT)
+## uni.startCompass(OBJECT)
 开始监听罗盘数据。
 Start listening to compass data.
 
@@ -64,6 +74,8 @@ Start listening to compass data.
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|x|√|√|√|√|x|
 
+<!-- UNIAPPAPIJSON.startCompass.compatibility -->
+
 **OBJECT 参数说明**
 **OBJECT parameter description**
 
@@ -76,6 +88,8 @@ Start listening to compass data.
 | fail| Function|No|Callback function for interface call failure|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
+
+<!-- UNIAPPAPIJSON.startCompass.param -->
 
 **示例**
 **example**
@@ -84,9 +98,13 @@ Start listening to compass data.
 uni.startCompass();
 ```
 
-### uni.stopCompass(OBJECT)
+<!-- UNIAPPAPIJSON.startCompass.tutorial -->
+
+## uni.stopCompass(OBJECT)
 停止监听罗盘数据。
 Stop listening to compass data.
+
+<!-- UNIAPPAPIJSON.stopCompass.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -101,9 +119,13 @@ Stop listening to compass data.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
+<!-- UNIAPPAPIJSON.stopCompass.param -->
+
 **示例**
 **example**
 
 ```javascript
 uni.stopCompass();
 ```
+
+<!-- UNIAPPAPIJSON.stopCompass.tutorial -->

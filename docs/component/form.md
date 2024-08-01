@@ -1,9 +1,11 @@
-#### form
+## form
 表单，将组件内的用户输入的``<switch>`` ``<input>`` ``<checkbox>`` ``<slider>`` ``<radio>`` ``<picker>`` 提交。
 Form, ``<switch>`` ``<input>`` ``<checkbox>`` ``<slider>`` ``<radio>`` ``<picker>` within the component ` Submit.
 
 当点击 ``<form>`` 表单中 formType 为 submit 的 ``<button>`` 组件时，会将表单组件中的 value 值进行提交，需要在表单组件中加上 name 来作为 key。
 When clicking the ``<button>`` component whose formType is submit in the ``<form>`` form, the value in the form component will be submitted, and name needs to be added to the form component as the key.
+
+<!-- UNIAPPCOMJSON.form.compatibility -->
 
 **属性说明**
 **Attribute Description**
@@ -20,9 +22,10 @@ When clicking the ``<button>`` component whose formType is submit in the ``<form
 |@reset|EventHandle|表单重置时会触发 reset 事件|&nbsp;|
 |@reset| EventHandle|The reset event will be triggered when the form is reset|&nbsp;|
 
+<!-- UNIAPPCOMJSON.form.attribute -->
+
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/form/form)
-**Example** [View Demo](https://hellouniapp.dcloud.net.cn/pages/component/form/form)
- 
+
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 The following sample code comes from [hello uni-app project](https://github.com/dcloudio/hello-uniapp). It is recommended to use HBuilderX to create a new uni-app project and select the hello uni-app template to directly experience the complete example.
 
@@ -79,7 +82,7 @@ The following sample code comes from [hello uni-app project](https://github.com/
 		</view>
 	</view>
 </template>
-``` 
+```
 > Script
 ``` vue
 <script>
@@ -103,7 +106,7 @@ The following sample code comes from [hello uni-app project](https://github.com/
 		}
 	}
 </script>
-``` 
+```
 > Style
 ``` vue
 <style>
@@ -147,29 +150,29 @@ Examples are as follows:
 
 ```html
 <!-- /pages/index/index.vue -->
-<template>  
-    <view class="content">  
-        <form @submit="onSubmit">  
-            <compInput name="test" v-model="testValue"></compInput>  
-            <button form-type="submit">Submit</button>  
-        </form>  
-    </view>  
-</template>  
+<template>
+    <view class="content">
+        <form @submit="onSubmit">
+            <compInput name="test" v-model="testValue"></compInput>
+            <button form-type="submit">Submit</button>
+        </form>
+    </view>
+</template>
 
-<script>  
-    export default {  
-        data() {  
-            return {  
-                testValue: 'Hello'  
-            }  
-        },  
-        methods: {  
-            onSubmit(e) {  
-                console.log(e)  
-            }  
-        }  
-    }  
-</script>  
+<script>
+    export default {
+        data() {
+            return {
+                testValue: 'Hello'
+            }
+        },
+        methods: {
+            onSubmit(e) {
+                console.log(e)
+            }
+        }
+    }
+</script>
 ```
 
 ::: preview
@@ -178,43 +181,14 @@ Examples are as follows:
 
 ```html
 <!-- /components/compInput/compInput.vue -->
-<template>  
-    <view>  
-        <input name="test" style="border: solid 1px #999999;height: 80px;" type="text" @input="onInput" :value="value" />  
-    </view>  
-</template>  
+<template>
+    <view>
+        <input name="test" style="border: solid 1px #999999;height: 80px;" type="text" @input="onInput" :value="value" />
+    </view>
+</template>
 
-<script>  
-    export default {  
-        name: 'compInput',  
-        behaviors: ['uni://form-field'],
-		data(){
-			return{
-				value:""
-			}
-		},
-        methods: {  
-            onInput(e) {  
-                this.$emit('input', e.detail.value)  
-            }  
-        }  
-    }  
-</script>  
-```
-
-
-> Vue3
-
-```html
-<!-- /components/compInput/compInput.vue -->
-<template>  
-    <view>  
-        <input name="test" style="border: solid 1px #999999;height: 80px;" type="text" @input="onInput" :value="value" />  
-    </view>  
-</template>  
-
-<script>  
-    export default {  
+<script>
+    export default {
         name: 'compInput',
         behaviors: ['uni://form-field'],
 		data(){
@@ -222,13 +196,42 @@ Examples are as follows:
 				value:""
 			}
 		},
-        methods: {  
-            onInput(e) {  
-                this.$emit('update:modelValue',e.detail.value) 
-            }  
-        }  
-    }  
-</script>  
+        methods: {
+            onInput(e) {
+                this.$emit('input', e.detail.value)
+            }
+        }
+    }
+</script>
+```
+
+
+> Vue3
+
+```html
+<!-- /components/compInput/compInput.vue -->
+<template>
+    <view>
+        <input name="test" style="border: solid 1px #999999;height: 80px;" type="text" @input="onInput" :value="value" />
+    </view>
+</template>
+
+<script>
+    export default {
+        name: 'compInput',
+        behaviors: ['uni://form-field'],
+		data(){
+			return{
+				value:""
+			}
+		},
+        methods: {
+            onInput(e) {
+                this.$emit('update:modelValue',e.detail.value)
+            }
+        }
+    }
+</script>
 ```
 :::
 
@@ -244,4 +247,5 @@ Examples are as follows:
   * 如果使用uniCloud的`DB Schema`可以自动生成全套表单，包括界面、校验逻辑、提交入库，[详见](https://uniapp.dcloud.io/uniCloud/schema?id=autocode).
   * If you use `DB Schema` of uniCloud, you can automatically generate a full set of forms, including interface, verification logic, and submit to storage, [see details](https://uniapp.dcloud.io/uniCloud/schema?id=autocode).
   * 不使用uniCloud的话，插件市场有可视化拖拽表单插件：[详见](https://ext.dcloud.net.cn/search?q=%E5%8F%AF%E8%A7%86%E5%8C%96)。这类插件只生成界面，没有逻辑。
-  * If you don’t use uniCloud, there is a visual drag-and-drop form plug-in in the plug-in market: [see details](https://ext.dcloud.net.cn/search?q=%E5%8F%AF%E8%A7%86%E5 %8C%96). Such plug-ins only generate interfaces without logic.
+
+<!-- UNIAPPCOMJSON.form.reference -->

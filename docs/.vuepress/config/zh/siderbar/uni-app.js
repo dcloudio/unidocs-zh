@@ -21,7 +21,7 @@ export default {
 					imageUrl: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/d@2x.png',
 				},
 				{
-					name: 'uniAD',
+					name: 'uni-ad',
 					url: 'https://uniad.dcloud.net.cn',
 					imageUrl:
 						'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniad-520.png',

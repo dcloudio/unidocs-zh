@@ -57,6 +57,7 @@ Pinia (pronounced `/piːnjʌ/`, like `peenya` in English) is a repository for Vu
 Write the following code in `main.js`:
 
 ```js
+import App from './App'
 import { createSSRApp } from 'vue';
 import * as Pinia from 'pinia';
 

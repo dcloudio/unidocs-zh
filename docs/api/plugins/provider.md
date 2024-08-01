@@ -15,6 +15,8 @@ Cloud packaging configures related modules and SDK information in the manifest, 
 |:-|:-|:-|:-|:-|:-|:-|:-|
 |√|x|√|x|√|√|√|√|
 
+<!-- UNIAPPAPIJSON.getProvider.compatibility -->
+
 **OBJECT 参数说明**
 **OBJECT parameter description**
 
@@ -44,6 +46,9 @@ Cloud packaging configures related modules and SDK information in the manifest, 
 |payment|Payment|
 |push|推送|
 |push|Push|
+
+
+<!-- UNIAPPAPIJSON.getProvider.param -->
 
 
 **success 返回参数说明**

@@ -1,4 +1,4 @@
-### uni.getAppBaseInfo()
+## uni.getAppBaseInfo()
 
 获取微信 APP 基础信息
 Get the basic information of WeChat APP
@@ -6,6 +6,8 @@ Get the basic information of WeChat APP
 |App|H5|微信小程序|支付宝小程序|抖音小程序|快手小程序|QQ小程序|百度小程序|京东小程序|钉钉小程序|飞书小程序|
 |:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
 |√ `(3.4.13+)`|√ `(3.4.13+)`|√ `(2.20.1+)`|x|x|x|x|x|x|x|x|
+
+<!-- UNIAPPAPIJSON.getAppBaseInfo.compatibility -->
 
 **返回参数说明**
 **Return parameter description**
@@ -61,3 +63,5 @@ Deprecated return parameter, reserved for backward compatibility only
 |:-|:-|:-|:-|
 |language|string|应用设置的语言|`H5 不支持`|
 |version|string|引擎版本号、微信版本号||
+
+<!-- UNIAPPAPIJSON.getAppBaseInfo.returnValue -->

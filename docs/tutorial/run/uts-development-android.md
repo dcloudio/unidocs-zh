@@ -40,11 +40,12 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持三方 Gr
 
 1. 点击图标 3 的下载地址进入下载页面，选择所需要的版本。（如本地已安装 JDK 可跳过此步骤）
 
-2. 将步骤 1 下载的内容解压后，找到 Home 目录，填入图标 4 处。
+2. 将步骤 1 下载的内容解压，填入图标 4 处（Mac电脑找到 Home 目录，Win电脑为解压后的根目录），可参考文档最后的示例。
 
 **注意**
 
 - HBuilderX 4.02+支持此配置项
+- Gradle 最低版本要求7.5
 - Gradle8.0 最低要求 JDK 版本为 17。更多版本要求[参考文档](https://developer.android.google.cn/build/releases/past-releases?hl=zh-cn)
 
 ##### 配置 SDK

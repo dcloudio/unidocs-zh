@@ -1,9 +1,11 @@
-### uni.request(OBJECT)
+## uni.request(OBJECT)
 发起网络请求。
 Make a network request.
 
 > 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。
 > When each MiniApp platform is running, network-related APIs need to be configured with a domain name whitelist before use.
+
+<!-- UNIAPPAPIJSON.request.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -54,6 +56,8 @@ Make a network request.
 |complete|Function|否||接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 | complete| Function|No||The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|&nbsp;|
 
+<!-- UNIAPPAPIJSON.request.param -->
+
 **method 有效值**
 **method Valid Values**
 
@@ -85,6 +89,8 @@ Note: The effective value of method must be capitalized. The effective value of 
 | header| Object|HTTP Response Header returned by the developer server|
 |cookies|``Array.<string>``|开发者服务器返回的 cookies，格式为字符串数组|
 | cookies|``Array.<string>``|The cookies returned by the developer server, in the format of a string array|
+
+<!-- UNIAPPAPIJSON.request.returnValue -->
 
 **data 数据说明**
 **data data description**
@@ -210,15 +216,16 @@ requestTask.abort();
 - 单次网络请求数据量建议控制在50K以下（仅指json数据，不含图片），过多数据应分页获取，以提升应用体验。
 - It is recommended that the data volume of a single network request be controlled below 50K (only refers to json data, excluding pictures), and excessive data should be obtained in pages to improve the application experience.
 
+<!-- UNIAPPAPIJSON.request.tutorial -->
 
-### uni.configMTLS(OBJECT)
+## uni.configMTLS(OBJECT)
 
 https 请求配置自签名证书
 https request configuration self-signed certificate
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√`(3.2.7+)`|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√`(3.2.7+)`|x|x|x|x|x|x|x|x|x|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**

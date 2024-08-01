@@ -10,6 +10,8 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |app-vue 1.9.0+；app-uvue 3.9+|2.3.4+|基础库 2.1.0+| 1.11.0+ |x|x|x|
 
+<!-- UNIAPPAPIJSON.loadFontFace.compatibility -->
+
 app-nvue不支持本api，而是使用 Weex 提供的 DOM.addRule 加载自定义字体，[详见](https://uniapp.dcloud.io/tutorial/nvue-api.html#dom)。
 
 ## 参数说明
@@ -23,6 +25,8 @@ app-nvue不支持本api，而是使用 Weex 提供的 DOM.addRule 加载自定�
 |success|Function||否|接口调用成功的回调函数|
 |fail|Function||否|接口调用失败的回调函数|
 |complete|Function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
+
+<!-- UNIAPPAPIJSON.loadFontFace.param -->
 
 **source**
 
@@ -61,6 +65,7 @@ uni-app x 中加载字体图标，详见 hello uni-app x 的 [loadFontFace](http
 - 引入中文字体，体积过大时会发生错误，建议抽离出部分中文，减少体积，或者用图片替代
 - 工具里提示 Faild to load font可以忽略
 
+<!-- UNIAPPAPIJSON.loadFontFace.tutorial -->
 
 # uni.upx2px()
 

@@ -246,8 +246,7 @@ HBuilderX creates, runs, and publishes projects visually, and the underlying cal
 ### 为什么要提供HBuilderX可视化模式
 ### Why provide HBuilderX visualization mode
 
-1. 为了提升易用性，较低门槛
-1. In order to improve ease of use, lower threshold
+1. 为了提升易用性，降低门槛
 
 很多开发者对node不熟悉、对命令行有心理抵触。不要想当然认为所有开发者都会node，HBuilder有几百万开发者，其中掌握node的开发者连一半都占不到。
 Many developers are unfamiliar with node and have psychological resistance to the command line. Don't take it for granted that all developers can use node. HBuilder has millions of developers, and less than half of them master node.

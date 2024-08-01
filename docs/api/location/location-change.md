@@ -1,7 +1,23 @@
+
 ### uni.onLocationChange(FUNCTION CALLBACK)
 
 监听实时地理位置变化事件，需结合 `uni.startLocationUpdate` 或 `uni.startLocationUpdateBackground` 使用。
 To monitor real-time location change events, it needs to be used in conjunction with `uni.startLocationUpdate` or `uni.startLocationUpdateBackground`.
+
+::: warning 注意
+Web平台本API之前调用了腾讯地图的gcj02坐标免费转换接口，该接口从2024年7月18日起被腾讯逐步下线，导致老版本中本API无法使用。请立即升级到 uni-app 4.24版。
+
+升级后注意：
+1. cli项目需升级cli
+2. manifest中配置好自己的地图厂商key
+3. 确保在地图厂商那里配额足够
+4. 确保在地图厂商那里有周边服务的权限。否则无法获取周围地址
+5. 确保自己的域名在地图厂商那里正确配置了域名白名单
+
+如果运行在微信浏览器中，可以使用微信的jssdk的定位能力。这个是微信向腾讯地图申请的key，开发者无需配置自己的key。
+
+地图厂商的商业授权较贵，如需购买，请点击[获取优惠](https://ask.dcloud.net.cn/explore/map/)。
+:::
 
 **平台差异说明**
 **Platform Difference Description**
@@ -9,6 +25,8 @@ To monitor real-time location change events, it needs to be used in conjunction 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
+
+<!-- UNIAPPAPIJSON.onLocationChange.compatibility -->
 
 **FUNCTION CALLBACK 参数**
 **FUNCTION CALLBACK parameter**
@@ -28,24 +46,16 @@ To monitor real-time location change events, it needs to be used in conjunction 
 |verticalAccuracy|number|垂直精度 (m)|抖音小程序、快手小程序 Android 无法获取，返回 0|
 |horizontalAccuracy|number|水平精度 (m)|抖音小程序不支持|
 |city|string|定位到的城市信息|百度小程序、抖音小程序（iOS 不支持）|
-|cityCode|String|城市编码|百度小程序||street|String|街道名称
-|cityCode|String|City Code|Baidu MiniApp||street|String|Street Name
+|cityCode|String|城市编码|百度小程序|
+|street|String|街道名称||
 |city|String|城市名称|百度小程序|
-|city|String|City Name|Baidu MiniApp|
-country|String|国家|百度小程序|
-country|String|Country|Baidu MiniApp|
-countryCode|String|国家代码|百度小程序|
-countryCode|String|Country Code|Baidu MiniApp|
-province|String|省份|百度小程序|
-province|String|Province|Baidu MiniApp|
-streetNumber|String|街道号码|百度小程序|
-streetNumber|String|Street Number|Baidu MiniApp|
-district|String|区|百度小程序|
-district|String|District|Baidu MiniApp|
-isFullAccuracy|Boolean|是不是精确定位信息|百度小程序|
-isFullAccuracy|Boolean|Is it accurate positioning information|Baidu MiniApp|
-altitudeAccuracy|Number|海拔的精确度信息|App|
-altitudeAccuracy|Number|Altitude accuracy information|App|
+|country|String|国家|百度小程序|
+|countryCode|String|国家代码|百度小程序|
+|province|String|省份|百度小程序|
+|streetNumber|String|街道号码|百度小程序|
+|district|String|区|百度小程序|
+|isFullAccuracy|Boolean|是不是精确定位信息|百度小程序|
+|altitudeAccuracy|Number|海拔的精确度信息|App|
 
 **注意**
 **Notice**
@@ -67,12 +77,12 @@ uni.onLocationChange(function (res) {
 
 移除实时地理位置变化事件的监听函数。
 
-**平台差异说明**
-**Platform Difference Description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
+
+<!-- UNIAPPAPIJSON.offLocationChange.compatibility -->
 
 **注意：App端及H5端callback参数为必填。**
 **Note: The callback parameters on the App side and the H5 side are required. **
@@ -110,6 +120,8 @@ Triggered when the monitoring continuous positioning interface returns failure.
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|x|√|x|x|x|
 
+<!-- UNIAPPAPIJSON.onLocationChangeError.compatibility -->
+
 **FUNCTION CALLBACK 参数**
 **FUNCTION CALLBACK parameter**
 
@@ -131,6 +143,8 @@ Unregister location update error callback.
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|x|√|x|x|x|
 
+<!-- UNIAPPAPIJSON.offLocationChangeError.compatibility -->
+
 **注意：App端及H5端callback参数为必填。**
 **Note: The callback parameters on the App side and the H5 side are required. **
 
@@ -150,6 +164,8 @@ No return value.
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
+
+<!-- UNIAPPAPIJSON.startLocationUpdate.compatibility -->
 
 **OBJECT 参数**
 **OBJECT parameter**
@@ -191,6 +207,9 @@ Turn off the monitoring of real-time location changes, and both the front and ba
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
+<!-- UNIAPPAPIJSON.stopLocationUpdate.compatibility -->
+
+
 **OBJECT 参数**
 **OBJECT parameter**
 
@@ -211,9 +230,9 @@ Turn off the monitoring of real-time location changes, and both the front and ba
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|x|x|x|√|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|x|√|x|x|x|x|√|x|
 
 **OBJECT 参数**
 **OBJECT parameter**

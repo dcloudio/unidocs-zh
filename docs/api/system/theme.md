@@ -1,4 +1,4 @@
-### uni.onThemeChange(CALLBACK)
+## uni.onThemeChange(CALLBACK)
 监听系统主题状态变化。
 listen to system theme state changes.
 
@@ -13,6 +13,8 @@ listen to system theme state changes.
 |`iOS 2.6.5+`、`Android 3.6.9+`|HBuilderX 3.6.9+|基础库 2.11.0+|x|x|x|V5.3.0+|x|x|x|
 |`iOS 2.6.5+`, `Android 3.6.9+`| HBuilderX 3.6.9+|Basic library 2.11.0+| x| x| x| V5.3.0+| x| x| x|
 
+<!-- UNIAPPAPIJSON.onThemeChange.compatibility -->
+
 **CALLBACK 返回参数**
 **CALLBACK return parameter**
 
@@ -21,6 +23,8 @@ listen to system theme state changes.
 |:-|:-|:-|:-|
 |theme|String|主题名称(`dark`, `light`)|
 | theme| String|Theme name (`dark`, `light`)|
+
+<!-- UNIAPPAPIJSON.onThemeChange.param -->
 
 **示例**
 **Example**
@@ -31,7 +35,9 @@ uni.onThemeChange(function (res) {
 });
 ```
 
-### uni.offThemeChange(CALLBACK)
+<!-- UNIAPPAPIJSON.onThemeChange.tutorial -->
+
+## uni.offThemeChange(CALLBACK)
 取消监听系统主题状态变化。
 Cancel listening to system theme status changes.
 
@@ -45,6 +51,8 @@ Cancel listening to system theme status changes.
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 3.6.9+|HBuilderX 3.6.9+|基础库 2.11.0+|x|x|x|V5.3.0+|x|x|x|
 | HBuilderX 3.6.9+| HBuilderX 3.6.9+|Basic library 2.11.0+| x| x| x| V5.3.0+| x| x| x|
+
+<!-- UNIAPPAPIJSON.offThemeChange.compatibility -->
 
 **参数**
 **parameter**
@@ -62,6 +70,8 @@ const callback = function (res) {
 uni.onThemeChange(callback);
 uni.offThemeChange(callback); // 此时不再触发 callback 方法
 ```
+
+<!-- UNIAPPAPIJSON.offThemeChange.tutorial -->
 
 **注意**
 **Notice**

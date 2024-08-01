@@ -1,15 +1,11 @@
-### uni.openAppAuthorizeSetting()
+## uni.openAppAuthorizeSetting()
 跳转系统授权管理页
 Jump to the system authorization management page
 
-- App端  
-- App side
-    打开系统App的权限设置界面  
-    Open the permission setting interface of the system app
-- 微信小程序  
-- WeChat applet
-    打开系统微信App的权限设置界面  
-    Open the permission setting interface of the system WeChat App
+- App端
+    打开系统App的权限设置界面
+- 微信小程序
+    打开系统微信App的权限设置界面
 
 **平台差异说明**
 **Platform Difference Description**
@@ -19,7 +15,7 @@ Jump to the system authorization management page
 |HBuilderX (3.5.3+)|x|基础库 (2.20.1+)|x|x|x|x|x|x|x|
 |HBuilderX (3.5.3+)|x|Base Library (2.20.1+)|x|x|x|x|x|x|x|
 
-
+<!-- UNIAPPAPIJSON.openAppAuthorizeSetting.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**

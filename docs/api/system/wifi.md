@@ -24,11 +24,13 @@ Baidu Smart Mini Program Platform Implementation Reference: [Specification Detai
 抖音小程序的wifi API参考：[规范详情](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/wi-fi/tt-get-connected-wifi/)
 
 
-### uni.startWifi(OBJECT)
+## uni.startWifi(OBJECT)
 
 初始化Wi-Fi模块
 Initialize the Wi-Fi module
 
+<!-- UNIAPPAPIJSON.startWifi.compatibility -->
+
 **OBJECT 参数说明**
 **OBJECT parameter description**
 
@@ -42,12 +44,15 @@ Initialize the Wi-Fi module
 |complete|function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
+<!-- UNIAPPAPIJSON.startWifi.tutorial -->
 
-### uni.stopWifi(OBJECT)
+## uni.stopWifi(OBJECT)
 
 关闭 Wi-Fi 模块
 Turn off the Wi-Fi module
 
+<!-- UNIAPPAPIJSON.stopWifi.compatibility -->
+
 **OBJECT 参数说明**
 **OBJECT parameter description**
 
@@ -61,11 +66,14 @@ Turn off the Wi-Fi module
 |complete|function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
+<!-- UNIAPPAPIJSON.stopWifi.tutorial -->
 
-### uni.getConnectedWifi(OBJECT)
+## uni.getConnectedWifi(OBJECT)
 
 获取已连接的 Wi-Fi 信息
 Get connected Wi-Fi information
+
+<!-- UNIAPPAPIJSON.getConnectedWifi.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -92,7 +100,10 @@ Get connected Wi-Fi information
 | wifi| WifiInfo| Wi-Fi Information|
 
 
-### uni.getWifiList(OBJECT)
+<!-- UNIAPPAPIJSON.getConnectedWifi.tutorial -->
+
+
+## uni.getWifiList(OBJECT)
 
 请求获取 Wi-Fi 列表。wifiList 数据会在 onGetWifiList 注册的回调中返回。
 Request a Wi-Fi list. The wifiList data will be returned in the callback registered by onGetWifiList.
@@ -118,10 +129,14 @@ Request a Wi-Fi list. The wifiList data will be returned in the callback registe
 |√|x|
 
 
-### uni.onGetWifiList(CALLBACK)
+<!-- UNIAPPAPIJSON.getWifiList.compatibility -->
+
+## uni.onGetWifiList(CALLBACK)
 
 监听获取到 Wi-Fi 列表数据事件。
 Listen to the event of getting Wi-Fi list data.
+
+<!-- UNIAPPAPIJSON.onGetWifiList.compatibility -->
 
 **CALLBACK 参数说明**
 **CALLBACK parameter description**
@@ -145,7 +160,7 @@ Obtain the listener function of the Wi-Fi list data event
 |√|x|
 
 
-### uni.offGetWifiList(CALLBACK)
+## uni.offGetWifiList(CALLBACK)
 
 移除获取到 Wi-Fi 列表数据事件的监听函数。
 Remove the listener function for getting the Wi-Fi list data event.
@@ -163,8 +178,9 @@ The listener function passed in by onGetWifiList. If this parameter is not passe
 |:-:|:-:|
 |√|x|
 
+<!-- UNIAPPAPIJSON.offGetWifiList.compatibility -->
 
-### uni.connectWifi(OBJECT)
+## uni.connectWifi(OBJECT)
 
 连接 Wi-Fi。若已知 Wi-Fi 信息，可以直接利用该接口连接。
 Connect to Wi-Fi. If the Wi-Fi information is known, you can directly use this interface to connect.
@@ -199,8 +215,9 @@ Connect to Wi-Fi. If the Wi-Fi information is known, you can directly use this i
 |:-:|:-:|
 |android10 以下版本支持直连，android 10以上，包括鸿蒙系统仅支持 maunal 手动链接|x|
 
+<!-- UNIAPPAPIJSON.connectWifi.compatibility -->
 
-### uni.onWifiConnected(CALLBACK)
+## uni.onWifiConnected(CALLBACK)
 
 监听连接上 Wi-Fi 的事件。
 Listen for Wi-Fi connected events.
@@ -226,7 +243,9 @@ Listener function for events connected to Wi-Fi
 |:-:|:-:|
 |√|x|
 
-### uni.offWifiConnected(CALLBACK)
+<!-- UNIAPPAPIJSON.onWifiConnected.compatibility -->
+
+## uni.offWifiConnected(CALLBACK)
 
 移除连接上 Wi-Fi 的事件的监听函数。
 Remove the listener function for events connected to Wi-Fi.
@@ -244,8 +263,10 @@ onWifiConnected incoming listener function. If this parameter is not passed, all
 |:-:|:-:|
 |√|x|
 
+<!-- UNIAPPAPIJSON.offWifiConnected.compatibility -->
 
-### uni.onWifiConnectedWithPartialInfo(CALLBACK)
+
+## uni.onWifiConnectedWithPartialInfo(CALLBACK)
 
 监听连接上 Wi-Fi 的事件。
 Listen for Wi-Fi connected events.
@@ -271,8 +292,10 @@ Listener function for events connected to Wi-Fi
 |:-:|:-:|
 |√|x|
 
+<!-- UNIAPPAPIJSON.onWifiConnectedWithPartialInfo.compatibility -->
 
-### uni.offWifiConnectedWithPartialInfo(CALLBACK)
+
+## uni.offWifiConnectedWithPartialInfo(CALLBACK)
 
 移除连接上 Wi-Fi 的事件的监听函数。
 Remove the listener function for events connected to Wi-Fi.
@@ -290,8 +313,10 @@ onWifiConnectedWithPartialInfo The listener function passed in. If this paramete
 |:-:|:-:|
 |√|x|
 
+<!-- UNIAPPAPIJSON.offWifiConnectedWithPartialInfo.compatibility -->
 
-### WifiInfo
+
+## WifiInfo
 
 Wifi 信息
 WiFi information
@@ -311,8 +336,7 @@ WiFi information
 | frequency | number | Wi-Fi frequency band unit MHz |
 
 
-### 错误码
-### error code
+## 错误码
 
 |错误码	|错误信息					|说明																|
 |Error code |Error message |Description |
@@ -330,9 +354,6 @@ WiFi information
 |12013	|wifi config may be expired	|系统保存的 Wi-Fi 配置过期，建议忘记 Wi-Fi 后重试，仅 Android 支持	|
 | 12013 | wifi config may be expired |The Wi-Fi configuration saved by the system has expired. It is recommended to forget the Wi-Fi and try again. Only Android supports |
 
-### 参考
-### refer to
-- [Android平台获取WIFI列表](https://ask.dcloud.net.cn/question/12113)  
-- [Android platform to obtain WIFI list](https://ask.dcloud.net.cn/question/12113)
-- [iOS平台打开系统WIFI设置页面](https://ask.dcloud.net.cn/question/7797)  
-- [Open system WIFI setting page on iOS platform](https://ask.dcloud.net.cn/question/7797)
+## 参考
+- [Android平台获取WIFI列表](https://ask.dcloud.net.cn/question/12113)
+- [iOS平台打开系统WIFI设置页面](https://ask.dcloud.net.cn/question/7797)

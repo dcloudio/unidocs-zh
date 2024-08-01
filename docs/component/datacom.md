@@ -1,5 +1,4 @@
-### 什么是datacom
-### What is datacom
+## 什么是datacom
 
 `datacom`，全称是`data components`，数据驱动的组件。
 `datacom`, with the full name of `data components`, is a data-driven component.
@@ -103,8 +102,7 @@ For the writing mode with basic components, the code lines will increase a lot, 
 图例：
 ![](https://img-cdn-aliyun.dcloud.net.cn/stream/plugin_screens/f5c64490-2994-11eb-a554-03adfa49bb37_0.jpg)
 
-### 什么是datacom组件规范
-### What is datacom component specification
+## 什么是datacom组件规范
 
 显然，datacom组件不是只有一个`<uni-data-checkbox>`，radio、check、select、picker、segement、tree...还有很多组件都可以成为datacom组件，变成类似`<uni-data-picker>`。
 Obviously, there is more than one `<uni-data-checkbox>` for datacom component , radio, check, select, picker, segement, tree ... and many other components can become datacom components and become similar `<uni-data-picker>`.
@@ -118,8 +116,7 @@ All developers can submit components that meet `datacom component specification`
 详细的“datacom组件规范”见后文。
 See the "datacom component specification" below for details.
 
-### datacom对于开发者的好处
-### Benefits of datacom to developers
+## datacom对于开发者的好处
 
 datacom组件，对服务器数据规范、前端组件的数据输入和输出规范，做了定义。它提升了产业的标准化程度、细化了分工，提升了效率。
 datacom components define the data specification of server, and the data input and output specifications of front-end components. It enhances the degree of standardization of the industry, refines the division of work and improves the efficiency.
@@ -152,8 +149,7 @@ For example, suppose we want to realize the transaction of city selection.
 5. In addition, developers will be able to find multiple city selection components in the plug-in market, all of which meet `datacom component specification`. There may be full-screen options, half-screen options at the bottom, search boxes at the top, index letters at the right ... No matter what kind of city selection components, you can change them at will, because they all conform to a data specification.
 
 
-### datacom组件规范
-### datacom component specification
+## datacom组件规范
 
 1. 命名以 -data- 为中间分隔符，前面为组件库名称，后面是组件功能表达
 1. Naming with -data- as the middle separator, the front part is the component library name and the rear part is component function expression
@@ -164,8 +160,7 @@ For example, suppose we want to realize the transaction of city selection.
 4. 符合 `<uni-forms>` 组件的表单校验规范
 4. Conform to the form validation specification of the `<uni-forms>` component
 
-#### 数据结构规范
-#### Data structure specification
+### 数据结构规范
 
 datacom组件接受的数据结构，包含了“数组”和“树”两种数据结构规范。
 The data structure accepted by datacom component includes two data structure specifications: "array" and "tree".
@@ -319,8 +314,7 @@ For the complete JSON Schema definition, please refer to [https://gitee.com/dclo
 	</script>
 ```
 
-#### 数据绑定规范
-#### Data binding specification
+### 数据绑定规范
 
 `datacom组件	`的data，可以来自页面本地，即localdata；也可以直接指定uniCloud的云数据库查询结果，即指定collection表名、field字段名、where条件，这些写法与`unicloud-db组件`的写法相同，如果localdata和collection同时存在，优先使用localdata。
 The data of `datacom component	` can come from the page local, i.e., localdata, or can directly specify the cloud database query result of uniCloud, i.e., specify the collection table name, field name, and where condition. These writing methods are the same as those of `unicloud-db component`. If both localdata and collection exist, localdata is preferred.
@@ -358,11 +352,9 @@ A more common scenario is to install a clientDB component around the whole page 
 datacom组件规范还要求支持绑定 value，且支持双向绑定，即：支持`v-model`指令。这同时也是为了uni-forms的表单校验。
 The datacom component specification also requires that the binding value is supported, and two-way binding is supported, that is, the `v-model` instruction is supported. This is also for the form verification of uni-forms.
 
-#### 组件属性规范
-#### Component attribute specifications
+### 组件属性规范
 
-##### 分步查询属性规范
-##### Query attribute specifications step by step
+#### 分步查询属性规范
 
 当`datacom组件`的data来自uniCloud的云数据库或cdn等云端，且数据量较大时，我们通常可以选择分步查询来优化用户体验，如以下场景：
 When the data of `datacom component` comes from uniCloud's cloud database or cdn and other clouds, and the amount of data is large, we can usually choose step-by-step query to optimize the user experience, such as the following scenarios:
@@ -389,8 +381,7 @@ When the data of `datacom component` comes from uniCloud's cloud database or cdn
 |@stepsearch	|EventHandle|		|分步查询数据时触发。可用于自定义分步查询数据，参考：`uni-data-picker`				|
 | @stepsearch| EventHandle| | Triggered when querying data step-by-step. Can be used to customize step-by-step query data, refer to: `uni-data-picker`|
 
-##### 弹出类属性规范
-##### Pop-up class attribute specification
+#### 弹出类属性规范
 
 `datacom组件`为弹出类组件，设计了以下组件属性、事件：
 `datacom component` designs the following component attributes and events for pop-up components:
@@ -406,16 +397,14 @@ When the data of `datacom component` comes from uniCloud's cloud database or cdn
 | @popupclosed| EventHandle| | Triggered when the component pop-up closes. Refer to: `uni-data-picker`|
 
 
-### datacom的局限
-### Limitations of datacom
+## datacom的局限
 
 - 与基础代码相比，datacom用起来简单，但封装一层后导致其灵活性不如基础组件。如有个性化逻辑则有可能需要改组件源码。
 - Compared with the basic code, datacom is simple to use, but its flexibility is not as good as that of the basic component after encapsulation for one level. If there is personalized logic, it may be necessary to change the component source code.
 - datacom覆盖范围主要是选择类组件。按钮类、输入类组件并不适合做成datacom。
 - datacom covers mainly the selection components. It is not suitable to design the button and input components as datacom.
 
-### 有哪些组件可做成datacom
-### What components can be designed as datacom
+## 有哪些组件可做成datacom
 
 选择类组件很多，基本逻辑都是在指定的数据范围内，选择其中的一个或多个。
 There are many selection components, and the basic logic is to select one or more of them within the specified data range.
@@ -470,8 +459,7 @@ Here's a list of common selection components and their classification according 
 欢迎开发者们开发这些`datacom组件`。插件市场提供了[datacom组件专区](https://ext.dcloud.net.cn/search?&q=DataCom&type=UpdatedDate)，给予更高的显示权重。
 
 
-### 使用mixinDatacom快速开发datacom@mixindatacom
-### Use mixinDatacom to quickly develop datacom@mixindatacom
+## 使用mixinDatacom快速开发datacom@mixindatacom
 
 > 版本要求：HBuilderX 3.1.0+
 
@@ -484,8 +472,7 @@ For this reason, the official provides a mixin library. Developers can mix `uniC
 mixin是vue的技术，不熟悉的可以点此了解[vue官网的mixin文档](https://cn.vuejs.org/v2/api/#Vue-mixin)
 mixin is the technology of vue. If you are not familiar with it, please refer to [mixin document on vue official website](https://cn.vuejs.org/v2/api/#Vue-mixin)
 
-#### 语法手册
-#### Grammar Manual
+### 语法手册
 
 `uniCloud.mixinDatacom` 的props
 props of `uniCloud.mixinDatacom`
@@ -558,8 +545,7 @@ data of `uniCloud.mixinDatacom`
 |onMixinDatacomPropsChange	|属性发生变化时触发|
 | onMixinDatacomPropsChange| Triggered when the attribute changes|
 
-#### 使用方法
-#### Usage method
+### 使用方法
 
 使用 `uniCloud.mixinDatacom` 开发 `datacom` 组件需要以下步骤
 The following steps are required to develop the `datacom` component using `uniCloud.mixinDatacom`
@@ -749,8 +735,7 @@ After completing the uni-data-jql component, it can be used in the page:
 ```
 
 
-#### `uniCloud.mixinDatacom` 源码 @mixinDatacomsource
-#### `uniCloud.mixinDatacom` Source code @mixinDatacomsource
+### `uniCloud.mixinDatacom` 源码 @mixinDatacomsource
 为方便开发者理解mixinDatacom的工作原理，这里贴出mixinDatacom的源码：
 In order to help the developers to understand the working principle of mixinDatacom easily, the source code of mixinDatacom is posted here:
 

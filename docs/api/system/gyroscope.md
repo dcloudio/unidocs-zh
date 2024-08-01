@@ -1,4 +1,4 @@
-### uni.onGyroscopeChange(CALLBACK)
+## uni.onGyroscopeChange(CALLBACK)
 
 监听陀螺仪数据变化事件。
 Listen for gyroscope data change events.
@@ -34,7 +34,7 @@ The frequency of Alipay applet is 500ms/time, and the frequency of WeChat applet
 |z|number|z轴方向角速度|
 |z|number|Angular velocity in the z-axis direction|
 
-### uni.startGyroscope(OBJECT)
+## uni.startGyroscope(OBJECT)
 
 开始监听陀螺仪数据。
 Start listening for gyroscope data.
@@ -58,7 +58,7 @@ Start listening for gyroscope data.
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 |complete|function||No|The callback function of the end of the interface call (the call will be executed if the call succeeds or fails)|&nbsp;|
 
-### uni.stopGyroscope(OBJECT)
+## uni.stopGyroscope(OBJECT)
 
 停止监听陀螺仪数据。
 Stop listening for gyroscope data.
@@ -128,4 +128,3 @@ export default {
 **Tips**
 
 * 陀螺仪 相关 API 在小程序开发工具中调用可能报错，请在真机中测试
-* The gyroscope related API may be wrong when called in the applet development tool, please test it on the real machine

@@ -1,4 +1,4 @@
-#### custom-tab-bar
+### custom-tab-bar
 
 自定义tabBar组件。
 Custom tabBar components.
@@ -23,6 +23,8 @@ This component supports all `tabBar` related APIs, such as setting the tab logo,
 
 __仅 H5 支持__，HBuilderX 2.9.9 + 。
 __Only supported on the H5 side__，HBuilderX 2.9.9+.
+
+<!-- UNIAPPCOMJSON.custom-tab-bar.compatibility -->
 
 **属性说明**
 **Attribute description**

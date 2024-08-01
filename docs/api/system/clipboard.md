@@ -4,9 +4,11 @@
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
-### uni.setClipboardData(OBJECT)
+## uni.setClipboardData(OBJECT)
 设置系统剪贴板的内容。
 Set the contents of the system clipboard.
+
+<!-- UNIAPPAPIJSON.setClipboardData.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -25,6 +27,8 @@ Set the contents of the system clipboard.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
 |complete|Function|No|The callback function of the end of the interface call (the call will be executed if the call succeeds or fails)||
 
+<!-- UNIAPPAPIJSON.setClipboardData.param -->
+
 **示例**
 **Example**
 
@@ -37,9 +41,13 @@ uni.setClipboardData({
 });
 ```
 
-### uni.getClipboardData(OBJECT)
+<!-- UNIAPPAPIJSON.setClipboardData.tutorial -->
+
+## uni.getClipboardData(OBJECT)
 获取系统剪贴板内容。
 Get the contents of the system clipboard.
+
+<!-- UNIAPPAPIJSON.getClipboardData.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -53,6 +61,8 @@ Get the contents of the system clipboard.
 | fail| Function| No| Callback function for failed interface calling|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function| No| Callback function for closed interface calling (available both for successful and failed calling)|
+
+<!-- UNIAPPAPIJSON.getClipboardData.param -->
 
 **success 返回参数说明**
 **success return parameter description**
@@ -74,8 +84,9 @@ uni.getClipboardData({
 });
 ```
 
-#### **注意**
-#### **Notice**
+<!-- UNIAPPAPIJSON.getClipboardData.tutorial -->
+
+### **注意**
 
 - 设置剪贴板内容后，小程序平台会自动弹出轻提示；（微信小程序在成功回调success里设置toast可覆盖自带的轻提示）。App平台默认与小程序保持一致策略。如不希望在App平台弹出提示，可使用Native.js自行操作剪贴板，插件市场有封装好的示例[https://ext.dcloud.net.cn/plugin?id=712](https://ext.dcloud.net.cn/plugin?id=712)。也可以在设置剪切板后立即uni.hideToast()。
 

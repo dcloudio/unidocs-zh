@@ -14,6 +14,8 @@ If you select and upload non-image and video files, please refer to: [https://un
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
+<!-- UNIAPPAPIJSON.chooseVideo.compatibility -->
+
 **OBJECT 参数说明**
 **OBJECT parameter description**
 
@@ -261,6 +263,8 @@ Save the video to the system album.
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|√|√|√|x|
 
+<!-- UNIAPPAPIJSON.saveVideoToPhotosAlbum.compatibility -->
+
 **OBJECT 参数说明**
 **OBJECT parameter description**
 
@@ -344,6 +348,8 @@ Get video details
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |3.1.10+|3.1.10+|2.11.0+|x|x|x|x|√|x|
+
+<!-- UNIAPPAPIJSON.getVideoInfo.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**

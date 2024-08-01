@@ -1,7 +1,9 @@
-### uni.connectSocket(OBJECT)
+## uni.connectSocket(OBJECT)
 创建一个 [WebSocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket) 连接。
 
 > 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。
+
+<!-- UNIAPPAPIJSON.connectSocket.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -15,6 +17,8 @@
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+
+<!-- UNIAPPAPIJSON.connectSocket.param -->
 
 **示例代码**
 
@@ -52,19 +56,28 @@ var socketTask = uni.connectSocket({
 - QQ小程序、支付宝小程序平台最多支持同时存在5个socket连接。
 - uni-push2.0在web、小程序以及APP的非离线模式下的底层实现都是基于一个socket。如果你的项目需要再次使用socket，请通过[socketTask](/api/request/socket-task)实现。
 
+<!-- UNIAPPAPIJSON.connectSocket.returnValue -->
 
-### uni.onSocketOpen(CALLBACK)
+<!-- UNIAPPAPIJSON.connectSocket.tutorial -->
+
+## uni.onSocketOpen(CALLBACK)
 监听WebSocket连接打开事件。
 
 **平台兼容性**
 
 抖音小程序不支持
 
+<!-- UNIAPPAPIJSON.onSocketOpen.compatibility -->
+
 **CALLBACK 返回参数**
 
 |属性|类型|说明|
 |:-|:-|:-|
 |header|Object|连接成功的 HTTP 响应 Header|
+
+<!-- UNIAPPAPIJSON.onSocketOpen.param -->
+
+<!-- UNIAPPAPIJSON.onSocketOpen.tutorial -->
 
 **示例代码：**
 
@@ -78,12 +91,14 @@ uni.onSocketOpen(function (res) {
 ```
 
 
-### uni.onSocketError(CALLBACK)
+## uni.onSocketError(CALLBACK)
 监听WebSocket错误。
 
 **平台兼容性**
 
 抖音小程序不支持
+
+<!-- UNIAPPAPIJSON.onSocketError.compatibility -->
 
 **示例代码**
 
@@ -99,12 +114,14 @@ uni.onSocketError(function (res) {
 });
 ```
 
-### uni.sendSocketMessage(OBJECT)
+## uni.sendSocketMessage(OBJECT)
 通过 WebSocket 连接发送数据，需要先 [uni.connectSocket](/api/request/websocket?id=connectsocket)，并在 [uni.onSocketOpen](/api/request/websocket?id=onsocketopen) 回调之后才能发送。
 
 **平台兼容性**
 
 抖音小程序不支持
+
+<!-- UNIAPPAPIJSON.sendSocketMessage.compatibility -->
 
 **OBJECT 参数说明：**
 
@@ -114,6 +131,10 @@ uni.onSocketError(function (res) {
 |success|Function|否|接口调用成功的回调函数|
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
+
+<!-- UNIAPPAPIJSON.sendSocketMessage.param -->
+
+<!-- UNIAPPAPIJSON.sendSocketMessage.tutorial -->
 
 **示例代码**
 
@@ -148,18 +169,24 @@ function sendSocketMessage(msg) {
 
 * 出于性能的权衡，在Android端底层实现上发送队列占用的内存不能超过16M，一旦超过将导致连接被关闭。
 
-### uni.onSocketMessage(CALLBACK)
+## uni.onSocketMessage(CALLBACK)
 监听WebSocket接受到服务器的消息事件。
 
 **平台兼容性**
 
 抖音小程序不支持
 
+<!-- UNIAPPAPIJSON.onSocketMessage.compatibility -->
+
 **CALLBACK 返回参数**
 
 |参数|类型|说明|
 |:-|:-|:-|
 |data|String/ArrayBuffer|服务器返回的消息|
+
+<!-- UNIAPPAPIJSON.onSocketMessage.param -->
+
+<!-- UNIAPPAPIJSON.onSocketMessage.tutorial -->
 
 **示例代码：**
 
@@ -173,12 +200,14 @@ uni.onSocketMessage(function (res) {
 });
 ```
 
-### uni.closeSocket(OBJECT)
+## uni.closeSocket(OBJECT)
 关闭 WebSocket 连接。
 
 **平台兼容性**
 
 抖音小程序不支持
+
+<!-- UNIAPPAPIJSON.closeSocket.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -190,12 +219,18 @@ uni.onSocketMessage(function (res) {
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-### uni.onSocketClose(CALLBACK)
+<!-- UNIAPPAPIJSON.closeSocket.param -->
+
+## uni.onSocketClose(CALLBACK)
 监听WebSocket关闭。
 
 **平台兼容性**
 
 抖音小程序不支持
+
+<!-- UNIAPPAPIJSON.onSocketClose.compatibility -->
+
+<!-- UNIAPPAPIJSON.onSocketClose.param -->
 
 ```javascript
 uni.connectSocket({
@@ -213,3 +248,5 @@ uni.onSocketClose(function (res) {
   console.log('WebSocket 已关闭！');
 });
 ```
+
+<!-- UNIAPPAPIJSON.onSocketClose.tutorial -->

@@ -1,6 +1,8 @@
-### uni.onAccelerometerChange(CALLBACK)
+## uni.onAccelerometerChange(CALLBACK)
 监听加速度数据，频率：5次/秒，接口调用后会自动开始监听，可使用 ``uni.offAccelerometer`` 取消监听。
 Monitoring acceleration data, frequency: 5 times per second, the monitoring will start automatically after the interface is called, you can use ``uni.offAccelerometer`` to cancel the monitoring.
+
+<!-- UNIAPPAPIJSON.onAccelerometerChange.compatibility -->
 
 **参数**
 **parameter**
@@ -25,6 +27,8 @@ Object res
 |z|Number|Z 轴|
 | z| Number| Z axYes|
 
+<!-- UNIAPPAPIJSON.onAccelerometerChange.param -->
+
 **Tips**
 
 - H5端获取加速度信息，需要部署在 **https** 服务上，本地预览（localhost）仍然可以使用 http 协议。
@@ -41,7 +45,9 @@ uni.onAccelerometerChange(function (res) {
 });
 ```
 
-### uni.offAccelerometerChange(CALLBACK)
+<!-- UNIAPPAPIJSON.onAccelerometerChange.tutorial -->
+
+## uni.offAccelerometerChange(CALLBACK)
 取消监听加速度数据。
 Cancel listening to acceleration data.
 
@@ -52,6 +58,9 @@ Cancel listening to acceleration data.
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|√|
 | HBuilderX 2.9.6+| HBuilderX 2.9.6+|Basic library 2.9.3+| x| x| x| x|√|√|
+
+<!-- UNIAPPAPIJSON.offAccelerometerChange.compatibility -->
+
 
 **参数**
 **parameter**
@@ -71,8 +80,9 @@ uni.onAccelerometerChange(listener)
 uni.offAccelerometerChange(listener) // 需传入与监听时同一个的函数对象
 ```
 
+<!-- UNIAPPAPIJSON.offAccelerometerChange.tutorial -->
 
-### uni.startAccelerometer(OBJECT)
+## uni.startAccelerometer(OBJECT)
 开始监听加速度数据。
 Start monitoring acceleration data.
 
@@ -82,6 +92,8 @@ Start monitoring acceleration data.
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|x|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.startAccelerometer.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -111,6 +123,7 @@ Legal values for `interval`
 |normal|普通的回调频率，在 200ms/次 左右|
 | normal|Normal callback frequency, about 200ms/time|
 
+<!-- UNIAPPAPIJSON.startAccelerometer.param -->
 
 **示例**
 **example**
@@ -119,9 +132,13 @@ Legal values for `interval`
 uni.startAccelerometer();
 ```
 
-### uni.stopAccelerometer(OBJECT)
+<!-- UNIAPPAPIJSON.startAccelerometer.tutorial -->
+
+## uni.stopAccelerometer(OBJECT)
 停止监听加速度数据。
 Stop listening to acceleration data.
+
+<!-- UNIAPPAPIJSON.stopAccelerometer.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -136,9 +153,13 @@ Stop listening to acceleration data.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
+<!-- UNIAPPAPIJSON.stopAccelerometer.param -->
+
 **示例**
 **example**
 
 ```javascript
 uni.stopAccelerometer();
 ```
+
+<!-- UNIAPPAPIJSON.stopAccelerometer.tutorial -->

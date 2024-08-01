@@ -45,6 +45,7 @@ Conditional compilation is marked with special comments which are the basic of c
 |APP-PLUS-NVUE或APP-NVUE|App nvue 页面||
 |APP-ANDROID|App Android 平台 [详情](#uts)||
 |APP-IOS|App iOS 平台 [详情](#uts)||
+|APP-HARMONY|App HarmonyOS Next 平台 ||
 |H5|H5（推荐使用 `WEB`）||
 |WEB|web（同`H5`）|HBuilderX 3.6.3+|
 |MP-WEIXIN|微信小程序||
@@ -78,9 +79,9 @@ Conditional compilation is marked with special comments which are the basic of c
 * 使用条件编译请保证`编译前`和`编译后`文件的语法正确性，即要保障无论条件编译是否生效都能通过语法校验。比如：json文件中不能有多余的逗号，js中不能重复导入；
 
   ::: preview
-  
+
   > JSON 错误示例
-  
+
   ```json
   {
     "key": "a",
@@ -89,9 +90,9 @@ Conditional compilation is marked with special comments which are the basic of c
     // #endif
   }
   ```
-  
+
   > JSON 正确示例
-  
+
   ```json
   {
     "key": "a"
@@ -100,13 +101,13 @@ Conditional compilation is marked with special comments which are the basic of c
     // #endif
   }
   ```
-  
+
   :::
-  
+
   ::: preview
-  
+
   > JS 错误示例
-  
+
   ```js
   // #ifdef MP-WEIXIN
   import a from 'a/wx'
@@ -115,9 +116,9 @@ Conditional compilation is marked with special comments which are the basic of c
   import a from 'a/index'
   // #endif
   ```
-  
+
   > JS 正确示例
-  
+
   ```js
   // #ifdef MP-WEIXIN
   import a as aWx from 'a/wx'
@@ -133,9 +134,9 @@ Conditional compilation is marked with special comments which are the basic of c
   a = aIndex
   // #endif
   ```
-  
+
   :::
-  
+
 * `VUE3` 需要在项目的 `manifest.json` 文件根节点配置 `"vueVersion" : "3"`；
 
 ### API 的条件编译
@@ -229,6 +230,7 @@ For conditional compilation of json, if the key names of different platforms are
 |目录名称	|说明					|版本支持		|
 |:-:		|:-:					|:-:			|
 |app-plus	|app（推荐使用`app`）	|				|
+|app-harmony	|HarmonyOS Next	|				|
 |app		|app					|uni-app 3.9+	|
 |h5			|H5（推荐使用`web`）		|				|
 |web		|web					|uni-app 3.9+	|
@@ -290,9 +292,9 @@ Platform-specific API implementation
 使用`UNI-APP-X`条件编译，来区分uni-app x项目和uni-app项目。
 
 ::: preview
-  
+
   > uni-app x项目
-  
+
   ```js
   // #ifdef UNI-APP-X
   代码会生效
@@ -301,9 +303,9 @@ Platform-specific API implementation
   代码不会生效
   // #endif
   ```
-  
+
   > uni-app项目
-  
+
   ```js
   // #ifdef UNI-APP-X
   代码不会生效
@@ -312,7 +314,7 @@ Platform-specific API implementation
   代码会生效
   // #endif
   ```
-  
+
   :::
 
 ### 版本的条件编译@uniVersion

@@ -1,13 +1,13 @@
-### uni.scanCode(OBJECT)
+## uni.scanCode(OBJECT)
 调起客户端扫码界面，扫码成功后返回对应的结果。
 Call up the code scanning interface of the client, and return the corresponding result after the code scanning is successful.
 
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|√|√|√|√|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|x|√|√|√|√|√|√|√|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -122,5 +122,3 @@ uni.scanCode({
 - 支付宝小程序不支持 `success` 回调中的`charSet`，`path`
 - Alipay MiniApp not support `charSet`, `path` in `success` callback
 - HX 3.4.4之后版本 android 新增 检测到 QR 码时自动放大功能，提升扫码识别率。
-- The android version after HX 3.4.4 has added an automatic zoom-in function when a QR code is detected to improve the scanning recognition rate.
-

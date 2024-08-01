@@ -4,6 +4,8 @@
 
 > 各小程序平台，web-view 加载的 url 需要在后台配置域名白名单，包括内部再次 iframe 内嵌的其他 url 。
 
+<!-- UNIAPPCOMJSON.web-view.compatibility -->
+
 **属性说明**
 
 |属性名|类型|说明|平台差异说明|
@@ -18,6 +20,8 @@
 |@onPostMessage|EventHandler|网页向应用实时 `postMessage`|App-nvue|
 |@load|EventHandler|网页加载成功时候触发此事件。|微信小程序、支付宝小程序、抖音小程序、QQ小程序|
 |@error|EventHandler|网页加载失败的时候触发此事件。|微信小程序、支付宝小程序、抖音小程序、QQ小程序|
+
+<!-- UNIAPPCOMJSON.web-view.attribute -->
 
 **注意**
 - `update-title` 仅支持 `App-vue` 。`小程序` 恒为 `true`，`H5、nvue` 恒为 `false`
@@ -452,3 +456,5 @@ A：加载的 HTML 中是有 5+ 环境的，在 plusready 后调用即可。参�
 
 Q: web-view 加载 uni-app H5，内部跳转冲突如何解决
 A：使用 uni.webView.navigateTo...
+
+<!-- UNIAPPCOMJSON.web-view.reference -->

@@ -419,7 +419,7 @@ Three-party SDK description for Map & Geolocation module integration
   </tr>
 </table>
 
-### uni-AD
+### uni-ad
 
 <a id="uniAd"/>
 
@@ -444,7 +444,7 @@ Three-party SDK description for uni-AD advertising module integration
     <th style="width:10%">SDK Privacy Policy Link/Purpose</th>
   </tr>
   <tr>
-    <td>uni-AD</td>
+    <td>uni-ad</td>
     <td></td>
     <td>基础广告 </td>
     <td>basic advertising</td>
@@ -452,7 +452,7 @@ Three-party SDK description for uni-AD advertising module integration
     <td style="font-size:12px">
 	android.permission.ACCESS_NETWORK_STATE <br>
 	android.permission.READ_PHONE_STATE <br>
-	android.permission.ACCESS_COARSE_LOCATION 
+	android.permission.ACCESS_COARSE_LOCATION
 	</td>
     <td>广告投放合作，广告归因、反作弊、安全 </td>
     <td>Advertising cooperation, advertising attribution, anti-cheating, security</td>
@@ -468,7 +468,7 @@ Three-party SDK description for uni-AD advertising module integration
 	<td style="font-size:12px">
 	android.permission.ACCESS_NETWORK_STATE <br>
 	android.permission.READ_PHONE_STATE <br>
-	android.permission.ACCESS_COARSE_LOCATION 
+	android.permission.ACCESS_COARSE_LOCATION
 	</td>
 	<td style="font-size:12px">识别广告、活动作弊行为；改善 SDK 崩溃率、推送个性化广告；广告投放。 </td>
 	<td style="font-size:12px">Identify ads, campaign cheating; improve SDK crash rate, push personalized ads; ad serving.</td>
@@ -487,7 +487,7 @@ Three-party SDK description for uni-AD advertising module integration
 	android.permission.READ_PHONE_STATE <br>
 	android.permission.ACCESS_WIFI_STATE <br>
 	android.permission.REQUEST_INSTALL_PACKAGES <br>
-	android.permission.VIBRATE 
+	android.permission.VIBRATE
 	</td>
     <td>广告投放、广告归因、反作弊、安全 </td>
     <td>Ad serving, ad attribution, anti-fraud, security</td>
@@ -529,11 +529,11 @@ Three-party SDK description for uni-AD advertising module integration
 	android.permission.ACCESS_NETWORK_STATE <br>
 	android.permission.ACCESS_WIFI_STATE <br>
 	android.permission.REQUEST_INSTALL_PACKAGES <br>
-	android.permission.CHANGE_NETWORK_STATE<br> 
+	android.permission.CHANGE_NETWORK_STATE<br>
 	android.permission.QUERY_ALL_PACKAGES <br>
 	android.permission.REORDER_TASKS<br>
     android.permission.VIBRATE <br>
-	android.permission.ACCESS_COARSE_LOCATION 
+	android.permission.ACCESS_COARSE_LOCATION
 	</td>
     <td style="font-size:12px">广告投放与监测归因、广告主统计投放结果、减少App崩溃、确保服务器正常运行、提升可扩展性和性能</td>
     <td style="font-size:12px">Ad serving and monitoring attribution, advertisers&#39; statistics on serving results, reducing App crashes, ensuring normal server operation, improving scalability and performance</td>
@@ -549,7 +549,7 @@ Three-party SDK description for uni-AD advertising module integration
     <td style="font-size:12px">
 	android.permission.ACCESS_NETWORK_STATE <br>
 	android.permission.READ_PHONE_STATE <br>
-	android.permission.WRITE_EXTERNAL_STORAGE 
+	android.permission.WRITE_EXTERNAL_STORAGE
 	</td>
     <td>广告投放合作、广告归因、反作弊 </td>
     <td>Advertising cooperation, advertising attribution, anti-fraud</td>

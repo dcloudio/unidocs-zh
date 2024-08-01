@@ -9,12 +9,9 @@ If an app uses a third-party or social login service (e.g., Facebook login, Goog
 使用苹果登录首先需要在苹果开发者后台开启 App 的 `Sign In with Apple` 服务：
 To log in with Apple, you first need to enable the `Sign In with Apple` service of the App in the Apple developer background:
 - 登录到[苹果开发者后台](https://developer.apple.com/)
-- Log in to [Apple Developer Dashboard](https://developer.apple.com/)
-- 在[Identifiers](https://developer.apple.com/account/resources/identifiers/list)页面选择应用的 App ID（Bundle ID）进入编辑 `Capabilities` 界面，勾选 `Sign In with Apple` 服务并保存
-- Select the App ID (Bundle ID) of the app on the [Identifiers](https://developer.apple.com/account/resources/identifiers/list) page to enter the edit `Capabilities` interface, and check the `Sign In with Apple` service and save
+- 在[Identifiers](https://developer.apple.com/account/resources/identifiers/list)页面选择应用的 App ID（Bundle ID）进入编辑 `Capabilities` 界面，勾选 `Sign In with Apple` 服务并保存  
 ![](https://native-res.dcloud.net.cn/images/uniapp/oauth/apple-appid.png)
-- 修改 `Sign In with Apple` 配置后需要到 [Profiles](https://developer.apple.com/account/resources/profiles/list) 更新 profile 描述文件（不需要新建），点击 Edit 重新编辑对应的 profile 文件，然后下载保存使用新的 profile 文件即可
-- After modifying the `Sign In with Apple` configuration, you need to go to [Profiles](https://developer.apple.com/account/resources/profiles/list) to update the profile description file (no need to create a new one), click Edit to re-edit the corresponding profile file, then download and save the new profile file
+- 修改 `Sign In with Apple` 配置后需要到 [Profiles](https://developer.apple.com/account/resources/profiles/list) 更新 profile 描述文件（不需要新建），点击 Edit 重新编辑对应的 profile 文件，然后下载保存使用新的 profile 文件即可  
 ![](https://native-res.dcloud.net.cn/images/uniapp/oauth/apple-profile.png)
 
 > 注：只有发布Appstore的应用才能使用苹果登录。企业版开发者账号不支持 `Sign In with Apple` （企业版开发者账号指的是用于企业内部分发App，不能用于发布 App Store 的账号，也就是价格为 299$ 的账号）
@@ -23,7 +20,7 @@ To log in with Apple, you first need to enable the `Sign In with Apple` service 
 
 
 ### 配置
-打开项目的manifest.json文件，在“App模块配置”项的“OAuth(登录鉴权)”下，勾选“苹果登录（Sign in with Apple）”：
+打开项目的manifest.json文件，在“App模块配置”项的“OAuth(登录鉴权)”下，勾选“苹果登录（Sign in with Apple）”：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/oauth/apple-manifest.png)
 
 **注意**
@@ -54,7 +51,7 @@ Apple has requirements for the style of the login button, please set the style o
 - 具体规则请参考苹果 [官方文档](https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/)
 - For specific rules, please refer to Apple's [official document](https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/)
 
-下面是原生端默认的几种按钮样式供大家参考（width:130pt, height:30pt, corner radius: 6pt）
+下面是原生端默认的几种按钮样式供大家参考（width:130pt, height:30pt, corner radius: 6pt）  
 ![](https://native-res.dcloud.net.cn/images/uniapp/oauth/apple-style-zh.png)
 
 
@@ -185,8 +182,6 @@ code|Description
 1. 内置基座为企业证书签名不支持Sign in with Apple，需要提交云打包或制作自定义基座进行功能测试
 1. The built-in pedestal is signed for the enterprise certificate and does not support Sign in with Apple. You need to submit a cloud package or make a custom pedestal for functional testing.
 2. 只有首次弹出登录授权框时才会有用户名及email的项（email需要配置 scope: 'email' ），并且用户可以删除或编辑用户名或隐藏用户邮箱，如果用户删除了用户名授权成功后fullname字段也会为空
-2. Only when the login authorization box pops up for the first time will there be items of username and email (email needs to be configured with scope: 'email' ), and the user can delete or edit the username or hide the user's mailbox, if the user deletes the username and the authorization is successful After the fullname field will also be empty
-3. 授权成功后再次调用登录接口会先校验上次授权是否依然有效，如有效，直接回调成功并返回上次授权成功时的数据，**注意，此校验不会校验identityToken是否过期**，需要用户自行处理；如果想每次都弹出授权框获取新的identityToken等信息，需要先调用'logout()'，然后在调用登录接口就会弹出授权框，注意这时授权框内不会在出现用户名及邮箱，登录成功后这两个字段会为空，需要拿到 authorizationCode，identityToken 后传给服务器，然后和苹果服务器验证可获取用户名称等信息，具体请自行查阅文档；如果想在授权框中再次出现用户名或邮箱。需要在 系统设置->AppleID->密码与安全性->使用Apple ID 的 App 里面取消授权，然后再调用登录接口
-3. After the authorization is successful, calling the login interface again will first verify whether the last authorization is still valid. If it is valid, the callback will be successful and the data of the last authorization will be returned. **Note that this verification will not verify whether the identityToken has expired. **, which needs to be handled by the user; if you want to pop up the authorization box every time to obtain new identityToken and other information, you need to call 'logout()' first, and then the authorization box will pop up after calling the login interface. The username and email address will appear. After successful login, these two fields will be empty. You need to get the authorizationCode and identityToken and pass them to the server, and then verify with the Apple server to obtain the user name and other information. For details, please refer to the documentation; if you want to The username or email appears again in the authorization box. You need to cancel the authorization in System Settings->AppleID->Password and Security->Apps using Apple ID, and then call the login interface
+3. 授权成功后再次调用登录接口会先校验上次授权是否依然有效，如有效，直接回调成功并返回上次授权成功时的数据，**注意，此校验不会校验identityToken是否过期**，需要用户自行处理；如果想每次都弹出授权框获取新的identityToken等信息，需要先调用[logout](https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.AuthService.logout)，然后在调用登录接口就会弹出授权框，注意这时授权框内不会在出现用户名及邮箱，登录成功后这两个字段会为空，需要拿到 authorizationCode，identityToken 后传给服务器，然后和苹果服务器验证可获取用户名称等信息，具体请自行查阅文档；如果想在授权框中再次出现用户名或邮箱。需要在 系统设置->AppleID->密码与安全性->使用Apple ID 的 App 里面取消授权，然后再调用登录接口
 
 

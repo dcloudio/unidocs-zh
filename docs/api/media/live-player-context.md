@@ -1,11 +1,11 @@
-### uni.createLivePlayerContext(livePlayerId, this)
+### uni.createLivePlayerContext(livePlayerId, componentInstance)
 创建 live-player 上下文 livePlayerContext 对象。注意是直播的播放而不是推流。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|见下|x|√|x|√|x|√|x|√|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|见下|x|x|√|x|√|x|√|x|√|
 
 App平台的直播播放，不使用此API，而直接使用video的API。
 
@@ -47,7 +47,7 @@ App平台的直播播放，不使用此API，而直接使用video的API。
 
 
 
-### uni.createLivePusherContext(livePusherId, this)
+### uni.createLivePusherContext(livePusherId, componentInstance)
 创建 live-pusher 上下文 livePusherContext 对象。
 
 **平台差异说明**

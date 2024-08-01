@@ -163,6 +163,7 @@ Deep nested nodes often need to occupy more memory when the page is initialized 
 - App 端的 splash 关闭有白屏检测机制，如果首页一直白屏或首页本身就是一个空的中转页面，可能会造成 splash 10 秒才关闭，可参考此文解决 [https://ask.dcloud.net.cn/article/35565](https://ask.dcloud.net.cn/article/35565)
 - App 端，首页为 nvue 页面时，并设置为 [fast 启动模式](https://ask.dcloud.net.cn/article/36749)，此时 App 启动速度最快。
 - App 设置为纯 nvue 项目（manifest 里设置 app-plus 下的 renderer:"native"），这种项目的启动速度更快，2 秒即可完成启动。因为它整个应用都使用原生渲染，不加载基于 webview 的那套框架。
+- 分包。app也支持分包，分包可以让启动时只加载部分js。对于工程下js非常多的情况比较合适。[详见](https://uniapp.dcloud.net.cn/collocation/pages.html#subpackages)
 
 ### 优化包体积
 

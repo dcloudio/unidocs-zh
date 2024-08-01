@@ -1,4 +1,4 @@
-#### 原生组件说明
+### 原生组件说明
 
 小程序和App的vue页面，主体是webview渲染的。为了提升性能，小程序和App的vue页面下部分ui元素，比如导航栏、tabbar、video、map使用了原生控件。这种方式被称为混合渲染。
 
@@ -24,7 +24,7 @@ H5、App的nvue页面，不存在混合渲染的情况，它们或者全部是�
 * [ad](/component/ad) (仅app、微信小程序、百度小程序、抖音小程序、QQ小程序支持)
 
 
-#### 混合渲染模式下原生组件的使用限制
+### 混合渲染模式下原生组件的使用限制
 
 由于原生组件脱离在 WebView 渲染流程外，因此在使用时有以下限制：
 
@@ -40,7 +40,7 @@ H5、App的nvue页面，不存在混合渲染的情况，它们或者全部是�
     * 不能在父级节点使用 overflow: hidden 来裁剪原生组件的显示区域。
 * 在小程序端真机上，原生组件会遮挡 vConsole 弹出的调试面板。
 
-#### 其他原生界面元素
+### 其他原生界面元素
 除了原生组件外，uni-app在非H5端还有其他原生界面元素，清单如下：
 * 原生navigationBar和tabbar（pages.json里配置的）。
 * web-view组件虽然不是原生的，但这个组件相当于一个原生webview覆盖在页面上，并且小程序上web-view组件是强制全屏的，无法在上面覆盖前端元素
@@ -49,7 +49,7 @@ H5、App的nvue页面，不存在混合渲染的情况，它们或者全部是�
 
 注意：app的nvue页面里的组件虽然不涉及map、video等原生组件的层级遮挡问题，但pages.json中配置的原生tabbar、原生navigationBar，一样是nvue里的组件也无法遮挡的。
 
-#### vue页面层级覆盖解决方案
+### vue页面层级覆盖解决方案
 
 为了解决webview渲染中原生组件层级最高的限制，uni-app提供了 [cover-view](/component/cover-view) 和 [cover-image](/component/cover-view?id=cover-image) 组件，让其覆盖在原生组件上。
 
@@ -94,14 +94,14 @@ subNVue的层级高于前端元素，但多个subNVue以及Webview，它们之�
 当然每个subNVue和webview，都支持Style参数配置，其中有一个zindex属性，可以调节它们的层级。
 
 
-#### App的nvue页面层级问题
+### App的nvue页面层级问题
 nvue页面全部都是原生组件，互相之间没有层级问题。
 
 但如果在pages.json里注册了原生导航栏和tabbar，nvue里的界面元素默认也无法覆盖这些，也需要plus.nativeObj.view或subNVue。
 
 如果仅开发App，不跨端，不愿涉及层级问题，也可以不使用pages.json里的原生导航栏和tabbar，nvue页面不需要这些来强化性能。
 
-#### Android系统主题字体对原生组件渲染的影响
+### Android系统主题字体对原生组件渲染的影响
 
 在Android手机上，调整系统主题字体，所有原生渲染的控件的字体都会变化，而webview渲染的字体则不一定会变化，有的rom的系统webview会跟随变，有的不会变。
 

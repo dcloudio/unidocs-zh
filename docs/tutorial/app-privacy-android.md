@@ -160,7 +160,7 @@ privacy节点数据格式如下：
  json格式，可选，模板提示框上显示的内容
 
 #### 模板提示框
-配置promt属性值为template时，表示使用原生模板隐私政策提示框，效果如下：
+配置promt属性值为template时，表示使用原生模板隐私政策提示框，效果如下：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/privacy/template-android.png)
 
 **应用启动前，在Splash页面时显示此提示框，用户点击同意按钮后才会进入应用**

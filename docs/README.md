@@ -23,8 +23,28 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
         <div class="barcode-img-box">
           <img src="https://web-ext-storage.dcloud.net.cn/uni-app-x/hello-uniappx-qrcode.png" width="160" />
         </div>
-        <b>Android、iOS(uni-app x)</b>
+        <b style="width:160px;">Android、iOS(uni-app x)</b>
       </a>
+      <a href="#" target="_blank" class="clear-style barcode-view" style="pointer-events: none;">
+        <div class="barcode-img-box">
+          <img src="https://web-ext-storage.dcloud.net.cn/uni-app/harmony/uni-harmony-qrcode.png" width="160" />
+        </div>
+        <b>鸿蒙版</b>
+        <b style="font-size: 14px;">需使用已升级到鸿蒙Next</b>
+        <b style="font-size: 14px;">的手机扫码体验</b>
+      </a>
+      <a href="https://hellouniapp.dcloud.net.cn/" target="_blank" class="clear-style barcode-view">
+        <div class="barcode-img-box">
+          <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/uni-h5-hosting-qr.png" width="160" />
+        </div>
+        <b>Web版</b>
+      </a>
+      <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
+        <div class="barcode-img-box"><img src="//img.cdn.aliyun.dcloud.net.cn/guide/uniapp/gh_33446d7f7a26_430.jpg" width="160" /></div>
+        <b>微信小程序版</b>
+      </a>
+    </div>
+    <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-android.png" width="160" />
@@ -36,23 +56,7 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
         <div class="barcode-img-box">
           <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ios.png" width="160" />
         </div>
-        <b>iOS版</b>
-        <b>iOS version</b>
-      </a>
-      <a href="https://hellouniapp.dcloud.net.cn/" target="_blank" class="clear-style barcode-view">
-        <div class="barcode-img-box">
-          <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/uni-h5-hosting-qr.png" width="160" />
-        </div>
-        <b>Web版</b>
-        <b>Web version</b>
-      </a>
-    </div>
-      <!-- @ifndef EN -->
-    <div class="flex-img-group-view" style="margin-top: 20px;">
-      <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
-        <div class="barcode-img-box"><img src="//img.cdn.aliyun.dcloud.net.cn/guide/uniapp/gh_33446d7f7a26_430.jpg" width="160" /></div>
-        <b>微信小程序版</b>
-        <b>WeChat MiniApp version</b>
+        <b>iOS版(uni-app)</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/alipay1.png" width="160" /></div>
@@ -64,21 +68,14 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
         <b>百度小程序版</b>
         <b>Baidu MiniApp Version</b>
       </a>
+    </div>
+    <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/mp-toutiao.png" width="160" />
         </div>
         <b>抖音小程序版</b>
         <b>DouYin MiniApp Version</b>
-      </a>
-    </div>
-    <div class="flex-img-group-view" style="margin-top: 20px;">
-      <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
-        <div class="barcode-img-box">
-          <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hello-uni-qa-union.png" width="160" />
-        </div>
-        <b>快应用</b>
-        <b> QuickApp</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
@@ -128,7 +125,17 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
         <b>RED MiniApp version</b>
       </a>
     </div>
-    <!-- @endif -->
+    <div class="flex-img-group-view" style="margin-top: 20px;">
+      <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
+        <div class="barcode-img-box">
+          <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hello-uni-qa-union.png" width="160" />
+        </div>
+        <b>快应用</b>
+      </a>
+      <div style="width:160px"></div>
+      <div style="width:160px"></div>
+      <div style="width:160px"></div>
+    </div>
     <p>注：<br/>
     <p>Note:<br/>
         <em>- 某些平台不能提交简单demo，故补充了一些其他功能；hello uni-app示例代码可从[github](https://github.com/dcloudio/hello-uniapp)获取</em></br>
@@ -136,7 +143,7 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
         <em>- 快应用仅支持 vivo 、oppo、华为</em></br>
         <em>-Quick QuickApp only supports vivo, oppo, Huawei</em></br>
         <em>- 360小程序仅 windows平台支持，需要在360浏览器中打开</em></br>
-        <em>- uni-app 团队已立项启动鸿蒙next的兼容支持工作，预计2024年7月初发布Alpha版本，敬请期待。</em></br>
+        <em>- uni-app 已支持纯血鸿蒙开发，详见[鸿蒙开发专题](https://uniapp.dcloud.net.cn/tutorial/harmony/dev.html)。</em></br>
     </p>
 </div>
 
@@ -263,9 +270,7 @@ We carefully prepared a simple ten-minute introduction video, so that you can qu
 ## Functional frame diagram
 
 从下面`uni-app`功能框架图可看出，`uni-app`在跨平台的过程中，不牺牲平台特色，可优雅的调用平台专有能力，真正做到海纳百川、各取所长。
-As can be seen from the functional frame diagram of `uni-app` below, `uni-app` does not sacrifice the platform features in the process of cross-platform, but can gracefully call the platform's proprietary capabilities, and truly embrace all rivers and learn from each other's strengths.
-
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-function-diagram.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/uni-function-diagram-20240523.png)
 
 ## 一套代码，运行到多个平台
 ## One set of code, running on multiple platforms
@@ -273,10 +278,10 @@ As can be seen from the functional frame diagram of `uni-app` below, `uni-app` d
 `uni-app`实现了一套代码，同时运行到多个平台；如下图所示，一套代码，同时运行到iOS模拟器、Android模拟器、web、微信开发者工具、支付宝小程序Studio、百度开发者工具、抖音开发者工具、QQ开发者工具（底部每个终端选项卡，代表1个终端模拟器）：
 `uni-app` implements a set of codes that run on multiple platforms at the same time; as shown in the figure below, a set of codes runs on iOS emulators, Android emulators, web, WeChat developer tools, Alipay MiniApp Studio, Baidu Developer Tools, ByteDance Developer Tools, QQ Developer Tools (each terminal tab at the bottom represents 1 terminal emulator):
 
+
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/dev1x8.jpg)
 
 <!-- @ifndef EN -->
 实际运行效果如下（点击图片可放大）：
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg)#{.zooming}
-<!-- @endif -->
+![](https://web-ext-storage.dcloud.net.cn/doc/uni-app-multiport-202478.png)#{.zooming}

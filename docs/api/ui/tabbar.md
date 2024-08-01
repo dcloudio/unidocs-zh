@@ -1,4 +1,4 @@
-### uni.setTabBarItem(OBJECT)
+## uni.setTabBarItem(OBJECT)
 
 动态设置 tabBar 某一项的内容
 Dynamically set the content of a tabBar item
@@ -10,6 +10,8 @@ Dynamically set the content of a tabBar item
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√（钉钉小程序不支持）|√|√|√|√|√|
 |√|√|√|√ (DingTalk MiniApp not supported)|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.setTabBarItem.compatibility -->
 
 **OBJECT参数说明：**
 **OBJECT parameter description:**
@@ -55,6 +57,7 @@ Dynamically set the content of a tabBar item
 |selectedColor|String|字体图标选中颜色|
 | selectedColor| String| font icon selected color|
 
+<!-- UNIAPPAPIJSON.setTabBarItem.param -->
 
 **示例代码**
 **Example Code**
@@ -93,7 +96,9 @@ Note: When setting the `iconfont` property, the pages.json `iconfontSrc` needs t
 }
 ```
 
-### uni.setTabBarStyle(OBJECT)
+<!-- UNIAPPAPIJSON.setTabBarItem.tutorial -->
+
+## uni.setTabBarStyle(OBJECT)
 
 动态设置 tabBar 的整体样式
 Dynamically set the overall style of tabBar
@@ -104,6 +109,8 @@ Dynamically set the overall style of tabBar
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.setTabBarStyle.compatibility -->
 
 **OBJECT参数说明：**
 **OBJECT parameter description:**
@@ -129,6 +136,8 @@ Dynamically set the overall style of tabBar
 | fail| Function||No|Callback function for interface call failure|
 |complete|Funtion||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function||No|The callback function of the end of the interface call (it will be executed when the call succeeds or fails)|
+
+<!-- UNIAPPAPIJSON.setTabBarStyle.param -->
 
 **backgroundImage创建线性渐变说明**
 **backgroundImage creates a linear gradient description**
@@ -166,7 +175,9 @@ uni.setTabBarStyle({
 })
 ```
 
-### uni.hideTabBar(OBJECT)
+<!-- UNIAPPAPIJSON.setTabBarStyle.tutorial -->
+
+## uni.hideTabBar(OBJECT)
 
 隐藏 tabBar
 hide tabBar
@@ -178,6 +189,8 @@ hide tabBar
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
+<!-- UNIAPPAPIJSON.hideTabBar.compatibility -->
+
 **OBJECT参数说明：**
 **OBJECT parameter description:**
 
@@ -192,7 +205,11 @@ hide tabBar
 |complete|Funtion||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function||No|The callback function of the end of the interface call (it will be executed when the call succeeds or fails)|
 
-### uni.showTabBar(OBJECT)
+<!-- UNIAPPAPIJSON.hideTabBar.param -->
+
+<!-- UNIAPPAPIJSON.hideTabBar.tutorial -->
+
+## uni.showTabBar(OBJECT)
 
 显示 tabBar
 show tabBar
@@ -204,6 +221,8 @@ show tabBar
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
+<!-- UNIAPPAPIJSON.showTabBar.compatibility -->
+
 **OBJECT参数说明：**
 **OBJECT parameter description:**
 
@@ -218,7 +237,11 @@ show tabBar
 |complete|Funtion||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function||No|The callback function of the end of the interface call (it will be executed when the call succeeds or fails)|
 
-### uni.setTabBarBadge(OBJECT)
+<!-- UNIAPPAPIJSON.showTabBar.param -->
+
+<!-- UNIAPPAPIJSON.showTabBar.tutorial -->
+
+## uni.setTabBarBadge(OBJECT)
 为 tabBar 某一项的右上角添加文本。
 Add text to the upper right corner of an item in the tabBar.
 
@@ -228,6 +251,8 @@ Add text to the upper right corner of an item in the tabBar.
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.setTabBarBadge.compatibility -->
 
 **OBJECT参数说明：**
 **OBJECT parameter description:**
@@ -246,6 +271,8 @@ Add text to the upper right corner of an item in the tabBar.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
+<!-- UNIAPPAPIJSON.setTabBarBadge.param -->
+
 **示例代码**
 **Example Code**
 
@@ -256,7 +283,9 @@ uni.setTabBarBadge({
 })
 ```
 
-### uni.removeTabBarBadge(OBJECT)
+<!-- UNIAPPAPIJSON.setTabBarBadge.tutorial -->
+
+## uni.removeTabBarBadge(OBJECT)
 移除 tabBar 某一项右上角的文本。
 Remove the text in the upper right corner of an item in the tabBar.
 
@@ -267,6 +296,8 @@ Remove the text in the upper right corner of an item in the tabBar.
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
+<!-- UNIAPPAPIJSON.removeTabBarBadge.compatibility -->
+
 **OBJECT参数说明：**
 **OBJECT parameter description:**
 
@@ -282,7 +313,12 @@ Remove the text in the upper right corner of an item in the tabBar.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
-### uni.showTabBarRedDot(OBJECT)
+
+<!-- UNIAPPAPIJSON.removeTabBarBadge.param -->
+
+<!-- UNIAPPAPIJSON.removeTabBarBadge.tutorial -->
+
+## uni.showTabBarRedDot(OBJECT)
 显示 tabBar 某一项的右上角的红点。
 Displays a red dot in the upper right corner of an item in the tabBar.
 
@@ -293,6 +329,8 @@ Displays a red dot in the upper right corner of an item in the tabBar.
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
+<!-- UNIAPPAPIJSON.showTabBarRedDot.compatibility -->
+
 **OBJECT参数说明：**
 **OBJECT parameter description:**
 
@@ -308,7 +346,11 @@ Displays a red dot in the upper right corner of an item in the tabBar.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
-### uni.hideTabBarRedDot(OBJECT)
+<!-- UNIAPPAPIJSON.showTabBarRedDot.param -->
+
+<!-- UNIAPPAPIJSON.showTabBarRedDot.tutorial -->
+
+## uni.hideTabBarRedDot(OBJECT)
 隐藏 tabBar 某一项的右上角的红点。
 Hide the red dot in the upper right corner of an item in the tabBar.
 
@@ -319,6 +361,8 @@ Hide the red dot in the upper right corner of an item in the tabBar.
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
 
+<!-- UNIAPPAPIJSON.hideTabBarRedDot.compatibility -->
+
 **OBJECT参数说明：**
 **OBJECT parameter description:**
 
@@ -334,7 +378,11 @@ Hide the red dot in the upper right corner of an item in the tabBar.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
-### uni.onTabBarMidButtonTap(CALLBACK)
+<!-- UNIAPPAPIJSON.hideTabBarRedDot.param -->
+
+<!-- UNIAPPAPIJSON.hideTabBarRedDot.tutorial -->
+
+## uni.onTabBarMidButtonTap(CALLBACK)
 监听中间按钮的点击事件
 Listen to the click event of the middle button
 
@@ -345,6 +393,7 @@ Listen to the click event of the middle button
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（HBuilderX 2.3.4+）|√|x|x|x|x|x|x|x|
 
+<!-- UNIAPPAPIJSON.onTabBarMidButtonTap.compatibility -->
 
 **Tip**
 - tabbar是原生的，层级高于前端元素

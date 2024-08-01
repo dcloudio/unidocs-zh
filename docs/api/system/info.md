@@ -1,5 +1,4 @@
-### 系统信息的概念
-### The concept of system information
+## 系统信息的概念
 
 uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的2个API获取系统信息。
 uni-app provides two asynchronous (`uni.getSystemInfo`) and synchronous (`uni.getSystemInfoSync`) APIs to obtain system information.
@@ -20,9 +19,11 @@ Sorted according to the level of the operating environment, from the bottom up, 
 - `app`：开发者的应用相关的信息，如应用名称、版本
 - `app`: developer's application-related information, such as application name, version
 
-### uni.getSystemInfo(OBJECT)
+## uni.getSystemInfo(OBJECT)
 异步获取系统信息
 Get system information asynchronously
+
+<!-- UNIAPPAPIJSON.getSystemInfo.compatibility -->
 
 **OBJECT 参数说明：**
 **OBJECT parameter description:**
@@ -37,8 +38,7 @@ Get system information asynchronously
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
-#### success 返回参数说明
-#### success return parameter description
+### success 返回参数说明
 
 |参数分类	|参数|说明			|App平台值域		|Web平台值域		|小程序平台值域	|备注	|uni框架最低版本要求	|
 |Parameter classification |Parameter|Description | App platform value range | Web platform value range | MiniApp platform value range |Remarks | Minimum version requirements of the uni framework |
@@ -115,8 +115,9 @@ Get system information asynchronously
 |			|safeArea			|在竖屏正方向下的安全区域。由于此属性理解和使用比较困难，更推荐使用 safeAreaInsets 属性。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、抖音、飞书、支付宝（iOS真机）、快手、QQ小程序、华为快应用|||
 |			|safeAreaInsets		|在竖屏正方向下的安全区域插入位置。与小程序定义的 safeArea 用途相同，但是规范参考 iOS 平台的 [safeAreaInsets](https://developer.apple.com/documentation/uikit/uiview/2891103-safeareainsets) 更利于理解和使用。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、抖音、飞书、支付宝小程序（iOS真机）、华为快应用||uni-app 2.5.3+|
 
-#### 某些小程序特殊的返回参数
-#### Special return parameters for some applets
+<!-- UNIAPPAPIJSON.getSystemInfo.param -->
+
+### 某些小程序特殊的返回参数
 
 |参数|说明|平台差异说明|
 |Parameter|Description|Platform Difference Description|
@@ -158,8 +159,7 @@ Get system information asynchronously
 |storage|设备磁盘容量|支付宝小程序|
 | storage|Device Disk Capacity|Alipay MiniApp|
 
-#### 不推荐使用的返回参数，仅为向下兼容保留
-#### Deprecated return parameters, reserved only for backward compatibility
+### 不推荐使用的返回参数，仅为向下兼容保留
 
 |参数|说明|平台差异说明|
 |Parameter|Description|Platform Difference Description|
@@ -188,8 +188,7 @@ Get system information asynchronously
 |fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序、抖音小程序(2.53.0+)|
 
 
-#### uniPlatform 返回值说明 @uniplatform
-#### uniPlatform return value description @uniplatform
+### uniPlatform 返回值说明 @uniplatform
 
 |值|生效条件|
 |value|valid condition|
@@ -234,8 +233,7 @@ But on the App platform, the values of `uniCompileVersion` and `uniRuntimeVersio
 - App wgt升级，即手机上安装的App是老版的`uniRuntimeVersion`，wgt的新版使用了不同版本的HBuilder或uni-app cli版本，并且实施了应用资源升级
 - App wgt upgrade, that is, the app installed on the mobile phone is the old version `uniRuntimeVersion`, the new version of wgt uses a different version of HBuilder or uni-app cli version, and implements the application resource upgrade
 
-#### romName 返回值说明 @romname
-#### romName Return value description @romname
+### romName 返回值说明 @romname
 
 |值|解释|
 |value|interpretation|
@@ -243,9 +241,7 @@ But on the App platform, the values of `uniCompileVersion` and `uniRuntimeVersio
 |MIUI|小米|
 | MIUI|Xiaomi|
 |EMUI|华为|
-| EMUI|Huawei|
-|HarmonyOS|华为鸿蒙|
-| HarmonyOS|Huawei Hongmeng|
+|HarmonyOS Next|华为鸿蒙|
 |Magic OS|荣耀|
 |ColorOS|oppo|
 |Funtouch OS|vivo|
@@ -254,11 +250,9 @@ But on the App platform, the values of `uniCompileVersion` and `uniRuntimeVersio
 |SmartisanOS|锤子|
 | SmartisanOS | Hammer |
 
-注意：不同rom的版本号规则不同，比如`MIUI`版本号是`V130`，而`HarmonyOS`的版本号是`2.0.0`
-Note: The version number rules of different roms are different, for example, the version number of `MIUI` is `V130`, and the version number of `HarmonyOS` is `2.0.0`
+注意：不同rom的版本号规则不同，比如`MIUI`版本号是`V130`，而`HarmonyOS Next`的版本号是`2.0.0`
 
-#### hostName 返回值说明 @hostname
-#### hostName return value description @hostname
+### hostName 返回值说明 @hostname
 
 |值|解释|
 |value|interpretation|
@@ -287,8 +281,7 @@ Note: The version number rules of different roms are different, for example, the
 |KUAISHOU|快手|
 | KUAISHOU| Kuaishou|
 
-#### safeArea 返回值说明 @safearea
-#### safeArea return value description @safearea
+### safeArea 返回值说明 @safearea
 
 |参数	|类型	|说明		|
 |Parameter |Type |Description |
@@ -321,8 +314,7 @@ Note: The version number rules of different roms are different, for example, the
 |bottom	|Number	|安全区域底部插入位置			|
 | bottom | Number | Insert position at the bottom of the safe area |
 
-#### language 返回值说明
-#### language return value description
+### language 返回值说明
 
 language的国际规范是`BCP47规范`，分为三段，主语言-次语言-地区。例如`zh-Hans-CN`，表示 中文-简体-中国大陆
 The international specification of language is `BCP47 specification`, which is divided into three sections, main language-secondary language-region. For example `zh-Hans-CN` means Chinese-Simplified-Mainland China
@@ -340,8 +332,7 @@ But except for the main language, the latter two can be omitted. On different pl
 所以获取语言后，不能直接字符串比较，需要拆段比较，npm上也有专门做`BCP47语言规范`比较的库。
 Therefore, after obtaining the language, strings cannot be compared directly, and segments need to be compared. There is also a library on npm dedicated to comparing `BCP47 language specification`.
 
-#### deviceId 返回值说明
-#### deviceId return value description
+### deviceId 返回值说明
 
 Web、小程序、iOS，属于对用户隐私保护比较严格的平台，在这些平台很难获取有效的设备唯一标记。
 Web, MiniApp, and iOS are all platforms that strictly protect user privacy, and it is difficult to obtain effective unique device tags on these platforms.
@@ -367,16 +358,14 @@ When using random numbers stored locally, the deviceId will become invalid in th
 app下需要广告追踪的场景，在iOS上可以使用[idfa](https://ask.dcloud.net.cn/article/36107)、部分国产Android手机可以使用[OAID](http://www.html5plus.org/doc/zh_cn/device.html#plus.device.getOAID)
 For scenarios that require ad tracking under the app, [idfa](https://ask.dcloud.net.cn/article/36107) can be used on iOS, and [OAID](http://www. html5plus.org/doc/zh_cn/device.html#plus.device.getOAID)
 
-#### deviceModel 返回值说明
-#### deviceModel return value description
+### deviceModel 返回值说明
 uni-app 3.5.1+ 版本规范了 deviceModel 返回值，例如之前返回 `iPhone11ProMax` 新版本返回值为 `iPhone 11 Pro Max`，各设备型号[参考规范](https://www.theiphonewiki.com/wiki/Models) 中 Generation 对应的值
 The uni-app 3.5.1+ version standardizes the return value of deviceModel. For example, the return value of `iPhone11ProMax` in the new version is `iPhone 11 Pro Max`. Each device model [reference specification](https://www.theiphonewiki.com/ wiki/Models) corresponding to the value of Generation
 
 注意：新机型刚推出一段时间会显示 Unknown，官方会尽快进行适配。
 Note: Unknown will be displayed for a while after the new model is launched, and the official will adapt it as soon as possible.
 
-#### 其他注意 @tips
-#### Other notes @tips
+### 其他注意 @tips
 - `deviceType`：
   - `app-ios` 只支持 `phone`、`pad`。
   - `app-ios` only supports `phone`, `pad`.
@@ -423,8 +412,7 @@ Links to the documentation of this API in other MiniApp:
 - [华为快应用](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-systeminfo-0000001126227753)
 - [Huawei QuickApp](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-systeminfo-0000001126227753)
 
-#### 示例 @getsysteminfo-new-fields
-#### Example @getsysteminfo-new-fields
+### 示例 @getsysteminfo-new-fields
 
 调用代码示例
 Call code example
@@ -469,14 +457,15 @@ The return value of getSystemInfo on different platforms (the table is long, you
 |osLanguage|zh-CN|zh-Hans-CN|-|zh-CN|zh-Hans-CN|-|-|-|-|
 |osTheme|light|light|-|light|light|-|-|-|-|
 |osAndroidAPILevel|31|-|-|29|-|-|-|-|-|-|
-|romName|MIUI|-|-|HarmonyOS|-|-|-|-|-|
+|romName|MIUI|-|-|HarmonyOS Next|-|-|-|-|-|
 |romVersion|V130|-|-|2.0.0|-|-|-|-|-|
 |uniPlatform|app|app|web|app|app|mp-weixin|mp-alipay|mp-baidu|mp-toutiao|
 |uniCompileVersion|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|
 |uniRuntimeVersion|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|
 
+<!-- UNIAPPAPIJSON.getSystemInfo.tutorial -->
 
-### uni.getSystemInfoSync()
+## uni.getSystemInfoSync()
 
 获取系统信息的同步接口。`调用参数和返回值同上getSystemInfo`。
 A synchronous interface for obtaining system information. `The call parameters and return value are the same as above getSystemInfo`.

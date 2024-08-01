@@ -5,6 +5,8 @@
 从本地相册选择图片或使用相机拍照。
 Choose an image from your local photo album or take a photo with your camera.
 
+<!-- UNIAPPAPIJSON.chooseImage.compatibility -->
+
 App端如需要更丰富的相机拍照API（如直接调用前置摄像头），参考[plus.camera](https://www.html5plus.org/doc/zh_cn/camera.html)
 If the App side needs a richer camera camera API (such as directly calling the front camera), refer to [plus.camera](https://www.html5plus.org/doc/zh_cn/camera.html)
 

@@ -6,7 +6,7 @@ uni-app和5+App提供了一批API，获取客户端一些与安全有关的信�
 更推荐使用[uni云端一体安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)，使用安全网络后将无需在使用本章节提供的API。
 :::
 
-### getSignature
+### 应用签名标识
 [plus.navigator.getSignature](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getSignature)用于获取应用签名标识，可以判断App是否被重新签名。
 [plus.navigator.getSignature](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getSignature) is used to obtain the signature of the app, which can determine whether the app has been re-signed.
 
@@ -50,6 +50,9 @@ The uni-app project can be found in App.vue's application lifecycle [onLaunch](h
 > 提示：为了防止js检验代码被反编译篡改，建议将签名校验代码放到独立js文件中并配置[js/nvue文件原生混淆加密](app-sec-confusion)，或者使用apk加固处理
 > Tip: In order to prevent the js verification code from being decompiled and tampered with, it is recommended to put the signature verification code in a separate js file and configure [js/nvue file native confusion encryption](app-sec-confusion), or use apk for reinforcement processing
 
+#### uni-app x 项目  
+uni-app x 项目不支持 plus API，需使用 [uni.getAppBaseInfo](https://doc.dcloud.net.cn/uni-app-x/api/get-app-base-info.html#%E8%BF%94%E5%9B%9E%E5%80%BC) 返回值中的 signature 属性值。  
+
 
 ### isSimulator
 [plus.navigator.isSimulator](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.isSimulator)用于判断当前应用是否运行在模拟器中。
@@ -89,6 +92,9 @@ In actual projects, this information can be submitted to the business server for
 > 提示：为了防止js检验代码被反编译篡改，建议将签名校验代码放到独立js文件中并配置[js/nvue文件原生混淆加密](app-sec-confusion)，或者使用apk加固处理
 > Tip: In order to prevent the js verification code from being decompiled and tampered with, it is recommended to put the signature verification code in a separate js file and configure [js/nvue file native confusion encryption](app-sec-confusion), or use apk for reinforcement processing
 
+#### uni-app x 项目  
+uni-app x 项目可通过 [uni.getDeviceInfo](https://doc.dcloud.net.cn/uni-app-x/api/get-device-info.html#%E8%BF%94%E5%9B%9E%E5%80%BC) 返回值中的 isSimulator 属性值获取。  
+
 
 ### isSetProxy
 [plus.networkinfo.isSetProxy](https://www.html5plus.org/doc/zh_cn/device.html#plus.networkinfo.isSetProxy)用于判断当前应用网络环境是否设置代理。
@@ -114,7 +120,8 @@ You can submit whether the current network environment uses a proxy when the use
 
 ```
 
-
+#### uni-app x 项目  
+uni-app x 项目暂不支持。  
 
 
 ### isRoot
@@ -150,8 +157,17 @@ It is recommended to judge when the application is started. If it is running in 
   }
 ```
 
-
 > 提示：为了防止js检验代码被反编译篡改，建议将签名校验代码放到独立js文件中并配置[js/nvue文件原生混淆加密](app-sec-confusion)，或者使用apk加固处理
 > Tip: In order to prevent the js verification code from being decompiled and tampered with, it is recommended to put the signature verification code in a separate js file and configure [js/nvue file native confusion encryption](app-sec-confusion), or use apk for reinforcement processing
 
+#### uni-app x 项目  
+uni-app x 项目可通过 [uni.getDeviceInfo](https://doc.dcloud.net.cn/uni-app-x/api/get-device-info.html#%E8%BF%94%E5%9B%9E%E5%80%BC) 返回值中的 isRoot 属性值获取。  
 
+
+### isUSBDebugging  
+判断当前应用运行的设备是否开启USB调试，仅Android平台支持。  
+
+> uni-app 项目不支持获取此状态  
+
+#### uni-app x 项目  
+uni-app x 项目可通过 [uni.getDeviceInfo](https://doc.dcloud.net.cn/uni-app-x/api/get-device-info.html#%E8%BF%94%E5%9B%9E%E5%80%BC) 返回值中的 isUSBDebugging 属性值获取。  

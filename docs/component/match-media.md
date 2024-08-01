@@ -1,4 +1,4 @@
-### match-media
+## match-media
 
 media query 匹配检测节点。
 media query match detection node.
@@ -16,6 +16,8 @@ For example, if a sidebar is placed in the match-media component, and the media 
 |:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
 |2.8.12+，app-vue|√|基础库 2.11.1+|√|√|√|√|×|√|×|×|
 |2.8.12+, app-vue|√|Basic library 2.11.1+|√|√|√|√|×|√|×|×|
+
+<!-- UNIAPPCOMJSON.match-media.compatibility -->
 
 注意：支付宝小程序、qq小程序、百度小程序、抖音小程序，暂不支持监听屏幕动态改变，即只执行一次媒体查询。
 

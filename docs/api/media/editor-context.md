@@ -30,19 +30,17 @@ The Baidu applet `Editor` rich text editor dynamic library provides the `createE
 **平台差异说明**
 **Platform difference description**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
+|App|HarmonyOS Next|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
 |:-:|:-:		|:-:		|:-:				|:-:			|:-:				|:-:		|:-:		|:-:	|
-|√	|2.4.5+	|√			|x					|需引入动态库	|x				|x			|x			|x		|
-|√ |2.4.5+ |√ |x |A dynamic library needs to be imported |x |x |x |x |
+|√	|4.23|2.4.5+	|√			|x					|需引入动态库	|x				|x			|x			|x		|
 
 
 **百度小程序引入动态库**
 **Baidu applet introduces dynamic library**
 
 
-1. 在项目中引用动态库，在 `manifest.json` 中增添一项 `dynamicLib` 
-1. To reference the dynamic library in the project, add a `dynamicLib` to `manifest.json`
- 
+1. 在项目中引用动态库，在 `manifest.json` 中增添一项 `dynamicLib`
+
 ```js
 	"mp-baidu" : {
 		"appid" : "",
@@ -60,9 +58,9 @@ The Baidu applet `Editor` rich text editor dynamic library provides the `createE
 2. 在每个使用到富文本编辑器组件的页面，配置 `pages.json` 文件如下：
 2. On each page that uses the Rich Text Editor component, configure the `pages.json` file as follows:
 
-``` js 
+``` js
 {
-	"pages": [ 
+	"pages": [
 		{
 			"path": "pages/index/index",
 			"style": {
@@ -422,6 +420,4 @@ Get the plain text content within the selected area of the editor. When the edit
 | Parameter| Type| Instruction|
 |:-|:-|:-|
 |errMsg|String|接口调用结果（百度小程序不支持）|
-| errMsg| String| Interface call result|
 |text|String|纯文本内容|
-| text| String| Plain text content|

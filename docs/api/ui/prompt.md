@@ -1,7 +1,9 @@
-### uni.showToast(OBJECT)
+## uni.showToast(OBJECT)
 
 显示消息提示框。
 Displays the message prompt box.
+
+<!-- UNIAPPAPIJSON.showToast.compatibility -->
 
 **OBJECT参数说明**
 **OBJECT parameter description**
@@ -23,6 +25,8 @@ Displays the message prompt box.
 | fail| Function| No| Callback function for failed interface calling| |
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 | complete| Function| No| Callback function for closed interface calling (available both for successful and failed calling)|  |
+
+<!-- UNIAPPAPIJSON.showToast.param -->
 
 **icon 值说明**
 **icon value description**
@@ -66,10 +70,14 @@ uni.showToast({
 - App端可通过[plus.nativeUI.toast API](https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.toast)实现更多功能。
 - The App can achieve more functions through the [plus.nativeUI.toast API](https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.toast).
 
-### uni.hideToast()
+<!-- UNIAPPAPIJSON.showToast.tutorial -->
+
+## uni.hideToast()
 
 隐藏消息提示框。
 Hide the message prompt box.
+
+<!-- UNIAPPAPIJSON.hideToast.compatibility -->
 
 **示例**
 **Example**
@@ -79,9 +87,11 @@ uni.hideToast();
 ```
 
 
-### uni.showLoading(OBJECT)@showloading
+## uni.showLoading(OBJECT)@showloading
 
 显示 loading 提示框, 需主动调用 [uni.hideLoading](#hideloading) 才能关闭提示框。
+
+<!-- UNIAPPAPIJSON.showLoading.compatibility -->
 
 **OBJECT参数说明**
 **OBJECT parameter description**
@@ -98,6 +108,8 @@ uni.hideToast();
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 | complete| Function| No| Callback function for closed interface calling (available both for successful and failed calling)|  |
 
+<!-- UNIAPPAPIJSON.showLoading.param -->
+
 **示例**
 **Example**
 
@@ -107,10 +119,14 @@ uni.showLoading({
 });
 ```
 
-### uni.hideLoading()@hideloading
+<!-- UNIAPPAPIJSON.showLoading.tutorial -->
+
+## uni.hideLoading()@hideloading
 
 隐藏 loading 提示框。
 Hide the loading prompt box.
+
+<!-- UNIAPPAPIJSON.hideLoading.compatibility -->
 
 **示例**
 **Example**
@@ -125,10 +141,12 @@ setTimeout(function () {
 }, 2000);
 ```
 
-### uni.showModal(OBJECT)@showmodal
+## uni.showModal(OBJECT)@showmodal
 
 显示模态弹窗，可以只有一个确定按钮，也可以同时有确定和取消按钮。类似于一个API整合了 html 中：alert、confirm。
 Display the modal pop-up window with only one OK button or both OK and Cancel buttons. Similar to an API integrating alert and confirm in html.
+
+<!-- UNIAPPAPIJSON.showModal.compatibility -->
 
 **OBJECT参数说明**
 **OBJECT parameter description**
@@ -154,6 +172,8 @@ Display the modal pop-up window with only one OK button or both OK and Cancel bu
 | fail| Function| No| Callback function for failed interface calling| |
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 | complete| Function| No| Callback function for closed interface calling (available both for successful and failed calling)|  |
+
+<!-- UNIAPPAPIJSON.showModal.param -->
 
 **success返回参数说明**
 **Success return parameter description**
@@ -198,10 +218,12 @@ uni.showModal({
 - Various MiniApp platforms may have different return rules for `confirm` and `cancel` fields, including two cases: `{ confirm: true, cancel: false }` or `{ confirm: true }`, but not Affect the use of if to make judgments
 
 
-### uni.showActionSheet(OBJECT)
+## uni.showActionSheet(OBJECT)
 
 从底部向上弹出操作菜单
 Pop up the operation menu from the bottom up
+
+<!-- UNIAPPAPIJSON.showActionSheet.compatibility -->
 
 **OBJECT参数说明**
 **OBJECT parameter description**
@@ -247,6 +269,8 @@ Pop up the operation menu from the bottom up
 |tapIndex|Number|用户点击的按钮，从上到下的顺序，从0开始|
 | tapIndex| Number| The buttons clickable by user, from top to bottom, starting from 0|
 
+<!-- UNIAPPAPIJSON.showActionSheet.param -->
+
 **示例**
 **Example**
 
@@ -275,4 +299,5 @@ uni.showActionSheet({
 - 在非H5端，本章的所有弹出控件都是原生控件，层级最高，可覆盖video、map、tabbar等原生控件。
 - On the non-H5 side, all pop-up controls in this chapter are native controls with the highest level, covering native controls such as video, map and tabbar.
 - [uni-app插件市场](https://ext.dcloud.net.cn/)有很多封装好的前端组件，但注意前端组件层级不是最高，无法覆盖原生组件，除非使用cover-view或nvue。
-- [uni-app plug-in market](https://ext.dcloud.net.cn/) has many packaged front-end components, but note that the level of front-end components is not the highest, and cannot cover native components, unless cover-view or nvue is used .
+
+<!-- UNIAPPAPIJSON.showActionSheet.tutorial -->

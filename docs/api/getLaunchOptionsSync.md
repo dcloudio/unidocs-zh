@@ -1,4 +1,4 @@
-### uni.getLaunchOptionsSync()
+## uni.getLaunchOptionsSync()
 
 获取启动时的参数。返回值与App.onLaunch的回调参数一致
 Get the parameters at startup. The return value is consistent with the callback parameter of App.onLaunch
@@ -7,6 +7,8 @@ Get the parameters at startup. The return value is consistent with the callback 
 |:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
 |√ `(3.4.10+)`|√ `(见下)`|√|√|√|√|√|√|√|x|x|
 |√ `(3.4.10+)`|√ `(see below)`|√|√|√|√|√|√|√|x|x|
+
+<!-- UNIAPPAPIJSON.getLaunchOptionsSync.compatibility -->
 
 web平台不同Vue版本支持情况有差异：
 There are differences in the support of different Vue versions of the web platform:

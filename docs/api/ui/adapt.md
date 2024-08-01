@@ -12,7 +12,7 @@ Get the style of the corresponding window and return a css attribute value objec
 设置对应窗口的样式，传入一个 css 属性值对象
 Set the style of the corresponding window and pass in a css attribute value object
 
-### uni.getTopWindowStyle()
+## uni.getTopWindowStyle()
 
 获取 topWindow 的样式
 Get the style of topWindow
@@ -34,7 +34,7 @@ Get the style of topWindow
 uni.getTopWindowStyle()
 ```
 
-### uni.getLeftWindowStyle()
+## uni.getLeftWindowStyle()
 
 获取 leftWindow 的样式
 Get the style of leftWindow
@@ -56,7 +56,7 @@ Get the style of leftWindow
 uni.getLeftWindowStyle()
 ```
 
-### uni.getRightWindowStyle()
+## uni.getRightWindowStyle()
 
 获取 rightWindow 的样式
 Get the style of rightWindow
@@ -78,7 +78,7 @@ Get the style of rightWindow
 uni.getRightWindowStyle()
 ```
 
-### uni.setTopWindowStyle(OBJECT)
+## uni.setTopWindowStyle(OBJECT)
 
 设置 topWindow 的样式
 Set the style of topWindow
@@ -100,12 +100,12 @@ Set the style of topWindow
 
 ```javascript
 uni.setTopWindowStyle({
-    height: '100px', 
+    height: '100px',
     backgroundColor: 'red'
 })
 ```
 
-### uni.setLeftWindowStyle(OBJECT)
+## uni.setLeftWindowStyle(OBJECT)
 
 设置 leftWindow 的样式
 Set the style of leftWindow
@@ -134,12 +134,12 @@ Set the style of leftWindow
 
 ```javascript
 uni.setLeftWindowStyle({
-    width: '500px', 
+    width: '500px',
     backgroundColor: 'blue'
 })
 ```
 
-### uni.setRightWindowStyle(OBJECT)
+## uni.setRightWindowStyle(OBJECT)
 
 设置 rightWindow 的样式
 Set the style of rightWindow
@@ -168,19 +168,19 @@ Set the style of rightWindow
 
 ```javascript
 uni.setRightWindowStyle({
-    width: '500px', 
+    width: '500px',
     backgroundColor: 'blue'
 })
 ```
 
-<!-- 
+<!--
 ## 显示或隐藏窗口的 API
 ## API to show or hide the window
 
 显示或隐藏对应的窗口
 Show or hide the corresponding window
 
-### uni.showTopWindow()
+## uni.showTopWindow()
 
 显示 topWindow
 show topWindow
@@ -202,7 +202,7 @@ show topWindow
 uni.showTopWindow()
 ```
 
-### uni.showLeftWindow()
+## uni.showLeftWindow()
 
 显示 leftWindow
 show leftWindow
@@ -224,7 +224,7 @@ show leftWindow
 uni.showLeftWindow()
 ```
 
-### uni.showRightWindow()
+## uni.showRightWindow()
 
 显示 rightWindow
 show rightWindow
@@ -246,7 +246,7 @@ show rightWindow
 uni.showRightWindow()
 ```
 
-### uni.hideTopWindow()
+## uni.hideTopWindow()
 
 隐藏 topWindow
 hide topWindow
@@ -268,7 +268,7 @@ hide topWindow
 uni.hideTopWindow()
 ```
 
-### uni.hideLeftWindow()
+## uni.hideLeftWindow()
 
 隐藏 leftWindow
 hide leftWindow
@@ -290,7 +290,7 @@ hide leftWindow
 uni.hideLeftWindow()
 ```
 
-### uni.hideRightWindow()
+## uni.hideRightWindow()
 
 隐藏 rightWindow
 hide rightWindow
@@ -310,5 +310,5 @@ hide rightWindow
 
 ```javascript
 uni.hideRightWindow()
-``` 
+```
 -->

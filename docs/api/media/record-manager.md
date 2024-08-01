@@ -9,6 +9,8 @@ Get the **globally unique** recording manager ``recorderManager``.
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|√|√|√|√|
 
+<!-- UNIAPPAPIJSON.getRecorderManager.compatibility -->
+
 **recorderManager 对象的方法列表**
 **List of methods of recorderManager object**
 
@@ -76,7 +78,7 @@ Among them, the sampling rate and code rate have certain requirements, and the s
 |44100|64000 ~ 320000|
 |48000|64000 ~ 320000|
 
-### onStop(callback) 
+### onStop(callback)
 
 |属性|类型|说明|
 |Attribute|Type|Description|
@@ -86,7 +88,7 @@ Among them, the sampling rate and code rate have certain requirements, and the s
 |fileSize|Number|录音文件大小。单位：Byte。（仅支付宝10.2.90+支持）|
 
 
-### onFrameRecorded(callback) 
+### onFrameRecorded(callback)
 
 |属性|类型|说明|
 |Attribute|Type|Description|
@@ -96,7 +98,7 @@ Among them, the sampling rate and code rate have certain requirements, and the s
 |isLastFrame|Boolean|当前帧是否正常录音结束前的最后一帧|
 | isLastFrame| Boolean|Whether the current frame is the last frame before the end of normal recording|
 
-### onError(callback) 
+### onError(callback)
 
 |属性|类型|说明|
 |Attribute|Type|Description|

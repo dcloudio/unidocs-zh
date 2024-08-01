@@ -1,4 +1,4 @@
-#### page-meta
+## page-meta
 
 页面属性配置节点，用于指定页面的一些属性、监听页面事件。可部分替代pages.json的功能。
 The page attribute configuration node, used to specify some page attributes and listen to page events. It can partially replace the functions of pages.json.
@@ -18,6 +18,8 @@ In a sense, `page-meta` has a certain substitution effect on pages.json, allowin
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√ 2.6.3+|2.6.3+|√ 2.9.0+|√|√|√|x|√|x|x|
+
+<!-- UNIAPPCOMJSON.page-meta.compatibility -->
 
 从HBuilderX 2.6.3起，编译到所有平台均支持`page-meta`，但编译到微信时，受微信基础库版本限制；编译到其他平台不受平台版本限制。
 From HBuilderX 2.6.3, `page-meta` is supported on all platforms when compiled, but when compiled to WeChat, it is limited by the version of the basic library of WeChat; compiled to other platforms, it is not limited by the platform version.

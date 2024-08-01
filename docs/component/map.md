@@ -13,6 +13,8 @@ The map component is used to display the map, while the positioning API only obt
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|1.63+|1.9.0+|√|x|√|√|
 
+<!-- UNIAPPCOMJSON.map.compatibility -->
+
 **地图服务商说明**
 **Instructions for Map Service Provider**
 
@@ -54,7 +56,7 @@ The map component is used to display the map, while the positioning API only obt
 |controls|Array||控件||
 | controls| Array||Controls||
 |include-points|Array||缩放视野以包含所有给定的坐标点|App-nvue 2.1.5+、微信小程序、H5、百度小程序、支付宝小程序、京东小程序|
-| include-points| Array||Zoom view to include all given coordinate points| App-nvue 2.1.5+, WeChat MiniApp, H5, Baidu MiniApp, Alipay MiniApp, Jingdong MiniApp|
+|zIndex|number|false|显示层级|微信小程序2.3.0|
 |enable-3D|Boolean|false|是否显示3D楼块|App-nvue 2.1.5+、微信小程序2.3.0|
 | enable-3D| Boolean| false|Whether to display 3D blocks| App-nvue 2.1.5+, WeChat MiniApp 2.3.0|
 |show-compass|Boolean|false|是否显示指南针|App-nvue 2.1.5+、微信小程序2.3.0|
@@ -144,9 +146,7 @@ Marker points are used to show the marker's location on the map
 |width|标注图标宽度|Number|否|默认为图片实际宽度|App-nvue 2.1.5+、微信小程序、H5、支付宝小程序、百度小程序、京东小程序|
 | width|mark icon width| Number|No| The MiniApp is the actual width of the picture|
 |height|标注图标高度|Number|否|默认为图片实际高度|App-nvue 2.1.5+、微信小程序、H5、支付宝小程序、百度小程序、京东小程序|
-| height|mark icon height| Number|No|The default is the actual height of the picture| App-nvue 2.1.5+, WeChat MiniApp, H5, Alipay MiniApp, Baidu MiniApp, Jingdong MiniApp|
-|callout|自定义标记点上方的气泡窗口|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、微信小程序、支付宝小程序、百度小程序、京东小程序|
-| callout|Customize the bubble window above the marker| Object|No|The supported properties are shown in the table below, and it can recognize line breaks. | App-nvue 2.1.5+, WeChat MiniApp, Alipay MiniApp, Baidu MiniApp, Jingdong MiniApp|
+|callout|自定义标记点上方的气泡窗口|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、H5、微信小程序、支付宝小程序、百度小程序、京东小程序|
 |label|为标记点旁边增加标签|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、微信小程序、H5、App、百度小程序、支付宝小程序|
 | label| Add a label next to the mark point | Object|No| The supported attributes are shown in the table below, and newline characters can be recognized. | App-nvue 2.1.5+, WeChat MiniApp, H5, App, Baidu MiniApp, Alipay MiniApp|
 |anchor|经纬度在标注图标的锚点，默认底边中点|Object|否|{x, y}，x表示横向(0-1)，y表示竖向(0-1)。{x: .5, y: 1} 表示底边中点|App-nvue 2.1.5+、微信小程序、H5、百度小程序、京东小程序|
@@ -210,17 +210,11 @@ Marker points are used to show the marker's location on the map
 |anchorX |label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、微信小程序|
 | anchorX | the coordinates of the label, the origin is the latitude and longitude corresponding to the marker| Number| App-nvue 2.1.5+, WeChat MiniApp|
 |anchorY |label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、微信小程序|
-| anchorY | the coordinates of the label, the origin is the latitude and longitude corresponding to the marker| Number| App-nvue 2.1.5+, WeChat MiniApp|
-|borderWidth|边框宽度|Number|微信小程序、百度小程序|
-| borderWidth|Border Width| Number|WeChat MiniApp, Baidu MiniApp|
-|borderColor|边框颜色|String|微信小程序、百度小程序|
-| borderColor|border color| String|WeChat MiniApp, Baidu MiniApp|
-|borderRadius|边框圆角|Number|App-nvue 2.1.5+、微信小程序、百度小程序、支付宝小程序|
-| borderRadius|Border rounded corners| Number| App-nvue 2.1.5+, WeChat MiniApp, Baidu MiniApp, Alipay MiniApp|
-|bgColor|背景色|String|App-nvue 2.1.5+、微信小程序、百度小程序、支付宝小程序|
-| bgColor|Background color| String| App-nvue 2.1.5+, WeChat MiniApp, Baidu MiniApp, Alipay MiniApp|
-|padding|文本边缘留白|Number|App-nvue 2.1.5+、微信小程序、百度小程序、支付宝小程序|
-| padding|Leave blank at the edge of the text| Number| App-nvue 2.1.5+, WeChat MiniApp, Baidu MiniApp, Alipay MiniApp|
+|borderWidth|边框宽度|Number|H5、微信小程序、百度小程序|
+|borderColor|边框颜色|String|H5、微信小程序、百度小程序|
+|borderRadius|边框圆角|Number|App-nvue 2.1.5+、H5、微信小程序、百度小程序、支付宝小程序|
+|bgColor|背景色|String|App-nvue 2.1.5+、H5、微信小程序、百度小程序、支付宝小程序|
+|padding|文本边缘留白|Number|App-nvue 2.1.5+、H5、微信小程序、百度小程序、支付宝小程序|
 |textAlign|文本对齐方式。有效值: left, right, center|String|App-nvue 2.1.5+、微信小程序、百度小程序|
 | textAlign| Text alignment. Valid values: left, right, center| String| App-nvue 2.1.5+, WeChat MiniApp, Baidu MiniApp|
 |aria-label|无障碍访问，（属性）元素的额外描述|String|App-nvue 3.1.0+、微信小程序|
@@ -534,4 +528,3 @@ DCloud为开发者争取了福利，可优惠获取商业授权。如有需求�
 **运行效果图**
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/408.png)
-

@@ -1,4 +1,4 @@
-### uni.getAppAuthorizeSetting()
+## uni.getAppAuthorizeSetting()
 获取 APP 授权设置
 Get APP authorization settings
 
@@ -9,6 +9,8 @@ Get APP authorization settings
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX (3.5.2+)|x|基础库 (2.20.1+)|x|x|x|x|x|x|x|
 |HBuilderX (3.5.2+)|x|Base Library (2.20.1+)|x|x|x|x|x|x|x|
+
+<!-- UNIAPPAPIJSON.getAppAuthorizeSetting.compatibility -->
 
 **返回参数说明**
 **Return parameter description**
@@ -39,11 +41,12 @@ Get APP authorization settings
 |phoneCalendarAuthorized|'authorized'/'denied'/'not determined'|允许读写日历的开关|App 端不支持|
 |phoneCalendarAuthorized|'authorized'/'denied'/'not determined'|The switch that allows reading and writing the calendar|Not supported on the App side|
 
+<!-- UNIAPPAPIJSON.getAppAuthorizeSetting.returnValue -->
+
 > App 端需要获取更多权限状态可参考插件: [App权限判断和提示](https://ext.dcloud.net.cn/plugin?id=594)
 > If the App needs to obtain more permission status, please refer to the plugin: [App Permission Judgment and Tips](https://ext.dcloud.net.cn/plugin?id=594)
 
-#### 不推荐使用的返回参数，仅为兼容保留
-#### Deprecated return parameter, reserved for compatibility only
+### 不推荐使用的返回参数，仅为兼容保留
 |locationReducedAccuracy|boolean|模糊定位。true 表示模糊定位，false 表示精确定位 |App 端仅 iOS 支持|
 |locationReducedAccuracy|boolean|Ambiguous location. true means fuzzy positioning, false means precise positioning |App only supports iOS|
 

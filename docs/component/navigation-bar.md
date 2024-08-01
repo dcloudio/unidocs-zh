@@ -1,4 +1,4 @@
-#### navigation-bar
+## navigation-bar
 
 页面导航条配置节点，用于指定导航栏的一些属性。只能是 [page-meta](https://uniapp.dcloud.io/component/page-meta) 组件内的第一个节点，需要配合它一同使用。
 The page navigation bar configuration node is used to specify some attributes of the navigation bar. It can only be the first node in the [page-meta](https://uniapp.dcloud.io/component/page-meta) component, and it needs to be used together.
@@ -9,6 +9,8 @@ The page navigation bar configuration node is used to specify some attributes of
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√ 2.6.3+|2.6.3+|√ 2.9.0+|√|√|√|√|√|x|
+
+<!-- UNIAPPCOMJSON.navigation-bar.compatibility -->
 
 从HBuilderX 2.9.3起，编译到所有平台均支持`navigation-bar`，但编译到微信时，受微信基础库版本限制；编译到其他平台不受平台版本限制。
 From HBuilderX 2.9.3, `navigation-bar` is supported on all platforms when compiled, but when compiled to WeChat, it is limited by the version of the basic library of WeChat; compiled to other platforms, it is not limited by the platform version.

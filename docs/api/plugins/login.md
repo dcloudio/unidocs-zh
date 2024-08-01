@@ -10,9 +10,9 @@ uni.login is a client API that unifies and encapsulates various common login met
 **平台差异说明**
 **Platform Difference Description**
 
-|App|Web|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|√|√|√|√|
+|App|HarmonyOS Next|Web|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|x|√|√|√|√|√|√|√|
 
 大多数登录方式，都需要申请开通相关服务，具体点击下面的文档查看。
 For most login methods, you need to apply for the activation of related services. For details, click the document below to view.
@@ -177,7 +177,7 @@ Check if the login status has expired
 ### uni.getUserInfo(OBJECT)
 
 > 微信小程序端用户头像昵称获取规则已调整，参考 [用户信息接口调整说明](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801)、[小程序用户头像昵称获取规则调整公告](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01)
-> The rules for obtaining nicknames and avatars on WeChat MiniApp have been adjusted <a href="https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801)、[小程序用户头像昵称获取规则调整公告](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01">. Rule Adjustment Announcement](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01</a> )
+> 支付宝小程序获取用户头像昵称规则已调整，将在 2024年09月15日正式生效。参考 [关于小程序用户头像昵称获取规则调整公告](https://open.alipay.com/portal/forum/post/173201040)
 
 获取用户信息。
 Get user information.
@@ -185,9 +185,9 @@ Get user information.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|√|√|√|√|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|x|√|√|√|√|√|√|√|
 
 **注意：**
 **Notice:**
@@ -455,9 +455,9 @@ pre-login. It is used for one-click login with App phone number.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|3.0.0+|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|3.0.0+|x|x|x|x|x|x|x|x|x|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -485,9 +485,9 @@ According to the requirements of China Mobile, China Unicom, China Telecom and o
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|3.0.0+|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|3.0.0+|x|x|x|x|x|x|x|x|x|
 
 
 ### uni.getCheckBoxState(OBJECT)
@@ -497,9 +497,9 @@ Get the checkbox status of [one-key login](/univerify) clause.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|3.2.3+|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|3.2.3+|x|x|x|x|x|x|x|x|x|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -532,9 +532,9 @@ Get the globally unique one-click login manager univerifyManager
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√ (3.2.13+)|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√ (3.2.13+)|x|x|x|x|x|x|x|x|x|
 
 **univerifyManager 方法说明**
 **univerifyManager method description**

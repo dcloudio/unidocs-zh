@@ -9,6 +9,8 @@ Use the built-in map to view locations.
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|x|x|x|
 
+<!-- UNIAPPAPIJSON.openLocation.compatibility -->
+
 **OBJECT 参数说明**
 **OBJECT parameter description**
 

@@ -2,6 +2,8 @@
 
 ## setTimeout(callback, delay, rest)
 
+> HarmonyOS Next 支持
+
 设定一个定时器。在定时到期以后执行注册的回调函数
 Set a timer. Execute the registered callback function after the timer timeout
 
@@ -28,6 +30,8 @@ Set a timer. Execute the registered callback function after the timer timeout
 | timeoutID| Number| The number of the timer, which can be passed to [clearTimeout](/api/timer?id=cleartimeout) to cancel the timing|
 
 ## clearTimeout(timeoutID)
+
+> HarmonyOS Next 支持
 
 取消由 setTimeout 设置的定时器。
 Cancel the timer set by setTimeout.
@@ -76,6 +80,8 @@ Cancel the timer set by setTimeout.
 
 ## setInterval(callback, delay, rest)
 
+> HarmonyOS Next 支持
+
 设定一个定时器。按照指定的周期（以毫秒计）来执行注册的回调函数
 Set a timer. Executes the registered callback function at the specified period (in ms)
 
@@ -110,6 +116,8 @@ this.timer = setInterval(() => {
 ```
 
 ## clearInterval(intervalID)
+
+> HarmonyOS Next 支持
 
 取消由 setInterval 设置的定时器。
 Cancel the timer set by setInterval.

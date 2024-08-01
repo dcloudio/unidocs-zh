@@ -1,4 +1,4 @@
-#### live-pusher
+## live-pusher
 
 实时音视频录制，也称直播推流。
 Live audio and video recording, also known as live-pusher.
@@ -9,6 +9,8 @@ Live audio and video recording, also known as live-pusher.
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√(nvue)、vue 3.4.1+|x|√|x|x|x|x|x|x|x|x|
+
+<!-- UNIAPPCOMJSON.live-pusher.compatibility -->
 
 app平台的 3.4.1+ vue页面已支持 live-pusher，3.4.1以前的版本
 The 3.4.1+ vue page of the app platform already supports live-pusher, versions before 3.4.1

@@ -572,8 +572,8 @@ Sample code:
 
 ##### page.data
 
-获取页面渲染数据。
-Get the page rendering data.
+获取页面渲染数据, 即`选项式 API data` 中返回的数据和`组合式 API defineExpose` 暴露的数据。\
+**注意：** `uni-app x` Android 端暂不支持获取 `defineExpose` 暴露的 `ref` 数据。
 
 `page.data(path?: string): Promise<Object>`
 
@@ -1163,8 +1163,8 @@ Sample code:
 
 ##### element.data
 
-获取组件实例渲染数据，仅自定义组件可以使用。
-Get rendering data of component instance, only available for the custom components.
+获取组件实例渲染数据，即`选项式 API data` 中返回的数据和`组合式 API defineExpose` 暴露的数据，仅自定义组件可以使用。\
+**注意：** `uni-app x` Android 端暂不支持获取 `defineExpose` 暴露的 `ref` 数据。
 
 `element.data(path?: string): Promise<Object>`
 

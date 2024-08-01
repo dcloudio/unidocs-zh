@@ -1,5 +1,4 @@
-### 组件的概念
-### The concept of components
+## 组件的概念
 组件是现代开发的重要里程碑。组件重构了分工模型，让大量的轮子出现，让开发者可以拿来轮子直接用，大幅提升了整个产业的效率。
 Components are an important milestone in modern development. The component reconstructs the division of labor model, allowing a large number of wheels to appear, allowing developers to use the wheels directly, greatly improving the efficiency of the entire industry.
 
@@ -21,8 +20,7 @@ uni-app的[插件市场](https://ext.dcloud.net.cn/)，有很多扩展组件，�
 Some developers like the complete set of components, but note that the complete set of extension components may not cover all needs, and many scenarios still need to download professional components separately.
 
 
-### 扩展组件的选择
-### Selection of extension components
+## 扩展组件的选择
 
 众多扩展组件如何选择？我们首先要搞清楚组件的分类。
 How to choose among the many extension components? We must first figure out the classification of components.
@@ -76,8 +74,7 @@ In addition to compatibility, what are the differences between different types o
 - nvue support: If you develop an app, it may involve nvue's native rendering of pages. This rendering method supports limited CSS. At this time, it is necessary to check whether the components are compatible with nvue.
 
 再来看看各种成套UI的优劣分析
-Let’s take a look at the advantages and disadvantages of various complete sets of UI
-#### uni ui
+### uni ui
 DCloud官方出了一套扩展组件，即[uni-ui](https://uniapp.dcloud.io/component/uniui/uni-ui)
 DCloud officially released a set of extension components, namely [uni-ui](https://uniapp.dcloud.io/component/uniui/uni-ui)
 这些扩展组件支持单个组件从插件市场下载，也支持[npm引入](https://ext.dcloud.net.cn/plugin?id=55)uni ui，当然更方便的是在HBuilderX新建项目时直接选择`uni ui项目模板`
@@ -111,8 +108,7 @@ uni ui has the following advantages:
 ![](https://ask.dcloud.net.cn/uploads/article/20200424/dc948a41cd85a418e84cde325c055a75.jpg)
 ![](http://img.cdn.aliyun.dcloud.net.cn/uni-app/doc/uni-ui-snippet.jpg)
 
-#### 插件市场更多组件
-#### Plugin Market more components
+### 插件市场更多组件
 插件市场，[https://ext.dcloud.net.cn](https://ext.dcloud.net.cn)，有各种玲琅满目的组件、模板。
 The plugin market, [https://ext.dcloud.net.cn](https://ext.dcloud.net.cn), has various components and templates.
 其中成套的全端兼容ui库包括：
@@ -132,8 +128,7 @@ The complete set of full-end compatible ui libraries include:
 
 
 
-### 其他
-### other
+## 其他
 - 如果你仍坚持使用微信小程序的自定义组件ui，插件市场也有很多vant weapp版的集成示例[https://ext.dcloud.net.cn/search?q=vant](https://ext.dcloud.net.cn/search?q=vant)。同时要注意，小程序自定义组件的性能不如vue组件。
 - If you still insist on using the custom component ui of WeChat applet, there are also many integration examples of vant weapp version in the plugin market [https://ext.dcloud.net.cn/search?q=vant](https://ext .dcloud.net.cn/search?q=vant). At the same time, it should be noted that the performance of the applet custom component is not as good as the vue component.
 - 如果你的nvue文件使用weex编译模式，也支持weex ui。三方商业ui库有graceUI weex版。但weex编译模式属于被淘汰技术，不再提供技术支持，nvue开发请使用uni-app编译模式。
@@ -144,6 +139,4 @@ In summary, the official recommendations for the use of components are:
 1. 首先使用内置组件
 1. Use built-in components first
 2. 然后使用uni ui扩展组件
-2. Then use the uni ui extension component
 3. 其他需求依靠插件市场其他组件灵活补充
-3. Other needs are flexibly supplemented by other components in the plug-in market

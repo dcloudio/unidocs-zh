@@ -3,6 +3,8 @@
 单行输入框。
 Single line input box.
 
+<!-- UNIAPPCOMJSON.input.compatibility -->
+
 html规范中input不仅是输入框，还有radio、checkbox、时间、日期、文件选择功能。在uni-app规范中，input仅仅是输入框。其他功能uni-app有单独的组件或API：[radio组件](https://uniapp.dcloud.io/component/radio)、[checkbox组件](https://uniapp.dcloud.io/component/checkbox)、[时间选择](https://uniapp.dcloud.io/component/picker?id=%e6%97%b6%e9%97%b4%e9%80%89%e6%8b%a9%e5%99%a8)、[日期选择](https://uniapp.dcloud.io/component/picker?id=%e6%97%a5%e6%9c%9f%e9%80%89%e6%8b%a9%e5%99%a8)、[图片选择](https://uniapp.dcloud.io/api/media/image?id=chooseimage)、[视频选择](https://uniapp.dcloud.io/api/media/video?id=choosevideo)、[多媒体文件选择(含图片视频)](https://uniapp.dcloud.io/api/media/video?id=choosemedia)、[通用文件选择](https://uniapp.dcloud.io/api/media/file?id=choosefile)。
 The input in the html specification is not only an input box, but also radio, checkbox, time, date, and file selection functions. In the uni-app specification, input is just an input box. Other functions uni-app has a separate component or API: [radio component](https://uniapp.dcloud.io/component/radio), [checkbox component](https://uniapp.dcloud.io/component/checkbox ), [time selection](https://uniapp.dcloud.io/component/picker?id=%e6%97%b6%e9%97%b4%e9%80%89%e6%8b%a9%e5% 99%a8), [date picker](https://uniapp.dcloud.io/component/picker?id=%e6%97%a5%e6%9c%9f%e9%80%89%e6%8b%a9 %e5%99%a8), [Image Selection](https://uniapp.dcloud.io/api/media/image?id=chooseimage), [Video Selection](https://uniapp.dcloud.io/api /media/video?id=choosevideo), [multimedia file selection (including picture and video)](https://uniapp.dcloud.io/api/media/video?id=choosemedia), [general file selection](https: //uniapp.dcloud.io/api/media/file?id=choosefile).
 
@@ -27,7 +29,7 @@ The input in the html specification is not only an input box, but also radio, ch
 |maxlength|Number|140|最大输入长度，设置为 -1 的时候不限制最大长度||
 | maxlength| Number| 140|Maximum input length, when set to -1, there is no limit to the maximum length||
 |cursor-spacing|Number|0|指定光标与键盘的距离，单位 px 。取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离|App、微信小程序、百度小程序、QQ小程序、京东小程序|
-|focus|Boolean|false|获取焦点。|H5、App需要点击按钮获取焦点的，必须使用@touchend.prevent="onTap"阻止键盘收起默认事件才能获取焦点[关于软键盘弹出的逻辑说明](/component/input.html#关于软键盘弹出的逻辑说明)，小程序、nvue需使用组件的 focus()、blur() 方法控制焦点|
+|focus|Boolean|false|获取焦点。|H5、App需要点击按钮获取焦点的，必须使用@touchend.prevent="onTap"阻止键盘收起默认事件才能获取焦点[关于软键盘弹出的逻辑说明](#关于软键盘弹出的逻辑说明)，小程序、nvue需使用组件的 focus()、blur() 方法控制焦点|
 |confirm-type|String|done|设置键盘右下角按钮的文字，仅在 type="text" 时生效。[有效值](#confirm-type)|微信小程序、App、H5、快手小程序、京东小程序|
 | confirm-type| String| done|Set the text of the button in the lower right corner of the keyboard, only valid when type="text". [Valid value](#confirm-type)|WeChat MiniApp, App, H5, Kuaishou MiniApp, Jingdong MiniApp|
 |confirm-hold|Boolean|false|点击键盘右下角按钮时是否保持键盘不收起|App(3.3.7+)、H5 (3.3.7+)、微信小程序、支付宝小程序、百度小程序、QQ小程序、京东小程序|
@@ -69,15 +71,15 @@ The input in the html specification is not only an input box, but also radio, ch
 |inputmode|String|"text"|是一个枚举属性，它提供了用户在编辑元素或其内容时可能输入的数据类型的提示。[有效值](#inputmode)|H5（3.6.16+）、App-vue（3.6.16+）|
 |inputmode| String|"text"| is an enumerated property that provides hints about the type of data the user may enter when editing the element or its contents. [valid value](#inputmode)| H5 (3.6.16+), App-vue (3.6.16+)|
 |@input|EventHandle||当键盘输入时，触发input事件，event.detail = {value}|差异见下方 Tips|
-|@input| EventHandle||When the keyboard enters, the input event is triggered, event.detail = {value}|For the difference, see Tips below|
-|@focus|EventHandle||输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度|仅微信小程序、京东小程序、App（2.2.3+） 、QQ小程序支持 height|
-|@focus| EventHandle||triggered when the input box is focused, event.detail = { value, height }, height is the height of the keyboard|Only WeChat MiniApp, Jingdong MiniApp, App (2.2.3+), QQ MiniApp support height |
-|@blur|EventHandle||输入框失去焦点时触发，event.detail = {value: value}|快手小程序不支持|
-|@blur| EventHandle||triggered when the input box loses focus, event.detail = {value: value}| Kuaishou MiniApp does not support|
-|@confirm|EventHandle||点击完成按钮时触发，event.detail = {value: value}|&nbsp;快手小程序不支持|
-|@confirm| EventHandle||triggered when the Done button is clicked, event.detail = {value: value}|&nbsp; Kuaishou MiniApp does not support|
+|@focus|EventHandle||输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度|仅微信小程序、京东小程序、App（2.2.3+） 、QQ小程序、快手小程序支持 height|
+|@blur|EventHandle||输入框失去焦点时触发，event.detail = {value: value}||
+|@confirm|EventHandle||点击完成按钮时触发，event.detail = {value: value}||
 |@keyboardheightchange|eventhandle||键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration}|微信小程序基础库2.7.0+、App 3.1.0+|
 |@keyboardheightchange| eventhandle||This event is triggered when the keyboard height changes, event.detail = {height: height, duration: duration}|WeChat MiniApp base library 2.7.0+, App 3.1.0+|
+
+
+<!-- UNIAPPCOMJSON.input.attribute -->
+
 
 **Tips**
 
@@ -422,4 +424,5 @@ export default {
 - uni-app插件市场有输入文字后自动提示候选的组件，可搜索 [autocomplete](https://ext.dcloud.net.cn/search?q=autocomplete) 查看。
 - The uni-app plug-in market has a component that automatically prompts candidates after inputting text, you can search for [autocomplete](https://ext.dcloud.net.cn/search?q=autocomplete) to view.
 - 插件市场有各种类型的模拟键盘，比如车牌键盘、身份证键盘，可去插件市场搜索 [键盘](https://ext.dcloud.net.cn/search?q=%E9%94%AE%E7%9B%98)。
-- There are various types of simulated keyboards in the plug-in market, such as license plate keyboards and ID card keyboards, you can go to the plug-in market to search [Keyboard](https://ext.dcloud.net.cn/search?q=%E9%94%AE %E7%9B%98).
+
+<!-- UNIAPPCOMJSON.input.reference -->

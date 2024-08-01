@@ -1,4 +1,4 @@
-# editor 组件
+## editor 组件
 
 富文本编辑器，可以对图片、文字格式进行编辑和混排。
 
@@ -16,11 +16,18 @@
 
 ## 平台差异说明
 
+
 |App					|H5			|微信小程序		|支付宝小程序|百度小程序		|抖音小程序、飞书小程序|QQ小程序		|快应用					|360小程序|快手小程序	|
 |:-:					|:-:		|:-:					|:-:		    |:-:					|:-:					|:-:				|:-:						|:-:			|:-:			|
 |2.0+，app-vue|2.4.5+	|基础库 2.7.0+|x						|需引入动态库[引入方式](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)					|x							|x				|x				|x				|x				|
 
-editor组件目前只有H5、App的vue页面、微信小程序、百度小程序支持，其他端平台自身未提供editor组件，只能使用web-view加载web页面，也可搜索[插件市场](https://ext.dcloud.net.cn/search?q=%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91) 获取简单的markdown富文本编辑器
+<!-- UNIAPPCOMJSON.cover-image.compatibility -->
+
+::: warning 注意
+- editor组件目前只有H5、App的vue页面、微信小程序、百度小程序支持，其他端平台自身未提供editor组件，只能使用web-view加载web页面，也可搜索[插件市场](https://ext.dcloud.net.cn/search?q=%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91) 获取简单的markdown富文本编辑器
+- 百度平台需引入动态库[引入方式](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)
+:::
+
 
 ## 属性说明
 
@@ -199,7 +206,7 @@ window.Quill = quill;
 		</view>
 	</view>
 </template>
-``` 
+```
 > Script
 ``` vue
 <script>
@@ -211,7 +218,7 @@ window.Quill = quill;
 			}
 		},
 		onLoad() {
-			// #ifndef MP-BAIDU 
+			// #ifndef MP-BAIDU
 			uni.loadFontFace({
 				family: 'Pacifico',
 				source: 'url("https://sungd.github.io/Pacifico.ttf")'
@@ -301,7 +308,7 @@ window.Quill = quill;
 		}
 	}
 </script>
-``` 
+```
 > Style
 ``` vue
 <style>
@@ -354,3 +361,5 @@ window.Quill = quill;
 :::
 
 一个完整的内容管理系统 `Content Management System` 比较复杂，DCloud已提供好了现成的 `uni-cms`，开源、免费、全端可用、功能完善，包括管理端和用户端。还内置了 AI 生成文章和广告变现功能。详见：[https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)
+
+<!-- UNIAPPCOMJSON.editor.reference -->

@@ -26,11 +26,13 @@ For example, WeChat has different application entrances and usage processes such
 |√|[说明](/api/plugins/payment?id=h5-payment)|√|√|√|√|x|√|√|x|
 |√|[Description](/api/plugins/payment?id=h5-payment)|√|√|√|√|x|√|√|x|
 
+
+<!-- UNIAPPAPIJSON.requestPayment.compatibility -->
+
 **OBJECT 参数说明**
 **OBJECT parameter description**
 
-|参数名|类型|必填|说明|平台差异说明|
-|Parameter Name|Type|Required|Description|Platform Difference Description|
+|参数名|类型|必填#{width=120px}|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
 |provider|String|是|服务提供商，通过 [uni.getProvider](/api/plugins/provider) 获取。||
 |orderInfo|String/Object|是|订单数据，[注意事项](/api/plugins/payment?id=orderinfo)|App、支付宝小程序、百度小程序、抖音小程序|
@@ -153,13 +155,10 @@ uni.requestPayment({
     登录支付宝账号，创建应用接入支付宝App支付能力，包括以下步骤：
     Log in to the Alipay account and create an application to access the Alipay App payment capability, including the following steps:
 
-    - 创建应用（获取appid） 
-    - Create app (get appid)
-    - 开通App支付功能 
-    - Activate the App payment function
-    - 配置密钥（获取公钥、私钥） 
-    - Configure keys (get public key, private key)
-    
+    - 创建应用（获取appid）
+    - 开通App支付功能
+    - 配置密钥（获取公钥、私钥）
+
   具体可参考支付宝官方文档： [App支付快速接入](https://docs.open.alipay.com/204/105297/)
   For details, please refer to the official Alipay documentation: [Quick access to App payment](https://docs.open.alipay.com/204/105297/)
 
@@ -180,11 +179,9 @@ If Alipay is not installed on the mobile phone, it will start Alipay's wap page 
   - 开通支付功能后可获取支付业务服务器配置数据：PARTNER（财付通商户号）、PARTNER_KEY（财付通密钥）、PAYSIGNKEY（支付签名密钥）
   - After the payment function is activated, the configuration data of the payment service server can be obtained: PARTNER (Tenpay merchant number), PARTNER_KEY (Tenpay key), PAYSIGNKEY (payment signature key)
   - 需要将从微信开放平台申请的appid，填回到 manifest-App SDK配置-支付-微信支付 中。打包后生效。
-  - You need to fill in the appid applied for from the WeChat Open Platform back to manifest-App SDK Configuration-Payment-WeChat Payment. Effective after packaging.
-    
+
   具体可参考微信官方文档： [移动应用开发](https://open.weixin.qq.com/cgi-bin/frame?t=home/app_tmpl&lang=zh_CN)
-  For details, please refer to the official WeChat document: [Mobile Application Development](https://open.weixin.qq.com/cgi-bin/frame?t=home/app_tmpl&lang=zh_CN)
-  
+
   注意微信的App支付、小程序支付、H5支付是不同的体系。微信小程序支付在 [微信商户平台](https://pay.weixin.qq.com) 申请支付时，选择公众号支付；普通浏览器里也可以调起微信进行支付，这个在微信叫做H5支付，此功能未开放给普通开发者，需向微信单独申请，[详见](https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=15_1)
   Note that WeChat's App payment, MiniApp payment, and H5 payment are different systems. WeChat MiniApp Payment When applying for payment on the [WeChat Merchant Platform](https://pay.weixin.qq.com), select the official account payment; ordinary browsers can also call up WeChat for payment, which is called H5 payment in WeChat , this function is not open to ordinary developers, you need to apply to WeChat separately, [see details]( <a href="https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=15_1">https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=15_1</a> )
 
@@ -193,13 +190,13 @@ If Alipay is not installed on the mobile phone, it will start Alipay's wap page 
 
 ```javascript
 uni.requestPayment({
-    "provider": "wxpay", 
+    "provider": "wxpay",
     "orderInfo": {
         "appid": "wx499********7c70e",  // 微信开放平台 - 应用 - AppId，注意和微信小程序、公众号 AppId 可能不一致
         "noncestr": "c5sEwbaNPiXAF3iv", // 随机字符串
         "package": "Sign=WXPay",        // 固定值
         "partnerid": "148*****52",      // 微信支付商户号
-        "prepayid": "wx202254********************fbe90000", // 统一下单订单号 
+        "prepayid": "wx202254********************fbe90000", // 统一下单订单号
         "timestamp": 1597935292,        // 时间戳（单位：秒）
         "sign": "A842B45937F6EFF60DEC7A2EAA52D5A0" // 签名，这里用的 MD5/RSA 签名
     },
@@ -301,8 +298,7 @@ uni.getProvider({
 All `fail` callbacks have the format `{ errCode: xxx, errMsg: '' }`
 
 
-### 请求支付 `uni.requestPayment()` 
-### Request payment `uni.requestPayment()`
+### 请求支付 `uni.requestPayment()`
 
 ```js
 uni.requestPayment({

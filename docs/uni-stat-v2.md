@@ -67,9 +67,7 @@ Uni statistics support sourcemap, which can intuitively understand which line of
 **5. Default feature rich**
 
 - 设备统计
-- Device Statistics
-- 注册用户统计（基于[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id.html)）
-- Registered user statistics (based on [uni-id](https://uniapp.dcloud.io/uniCloud/uni-id.html))
+- 注册用户统计（基于[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)）
 - 页面统计
 - 内容统计
 - 新增、活跃、留存、跳出率分析
@@ -1905,9 +1903,7 @@ answer:
 - 确保分清楚，业务App 和 admin 是2个工程。业务App是采集端，admin是报表端
 - Make sure to distinguish clearly, business app and admin are 2 projects. The business app is the collection end, and the admin is the report end
 - 确保使用HBuilderX 3.4.14+。如果是cli创建的项目，需要升级cli到uni-app 3.4.14+
-- Make sure to use HBuilderX 3.4.14+. If it is a project created by cli, you need to upgrade cli to uni-app 3.4.14+
-- 确保在需要统计的业务App工程的manifest里勾选了开启 uni统计2.0，并关联和正确的uniCloud服务空间
-- Make sure that Enable uni Statistics 2.0 is checked in the manifest of the business App project that needs statistics, and associate with the correct uniCloud service space
+- 确保在需要统计的业务App工程的manifest里勾选了开启 uni统计2.0，并关联了正确的uniCloud服务空间
 - 确保重新发行过业务App（在HBuilder里发行即可，不需要上架应用商店或小程序商店），数据上报只发生在项目发行后或者运行项目开启了调试模式，其他情况不会上报数据。[详情](#report-time)
 - Make sure that the business app has been re-issued (you can issue it in HBuilder, you don't need to put it on the App Store or MiniApp Store). Data reporting only occurs after the project is released or the debug mode is enabled for running the project. In other cases, data will not be reported. [Details](#report-time)
 - 确保`uni-admin`项目的`uniCloud`目录下的云函数都上传到了与App相同的uniCloud服务空间

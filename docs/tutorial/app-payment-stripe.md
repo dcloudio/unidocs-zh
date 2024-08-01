@@ -55,7 +55,7 @@ Object对象类型
 | ephemeralKey | String | 否 | Stripe的Customer Ephemeral Key，用于临时访问Customer |
 | isAllowDelay | String | 否 | 是否支持延迟支付,默认不支持(将 isAllowDelay 设置为 true 后可使用一些较慢的支付方式，例如 SEPA 借记和 Sofort 对于这些支付方式，只有当 PaymentSheet 完成后才能知道最终的付款状态是成功还是失败。如果您允许这样，则通知客户您已确认他们的订单，但收到付款后才能履行（例如，发货）订单。) |
 | merchantName | String | 是 | 商户名称 |
-| paymentIntent | String | 是 | Stripe的[PaymentIntent](https://stripe.com/docs/api/payment_intents)对象，对应服务器生成的支付订单 |
+| paymentIntent | String | 是 | 对应Stripe中[PaymentIntent](https://stripe.com/docs/api/payment_intents)对象的client_secret，对应服务器生成的支付订单 |
 | publishKey | String | 是 | 公钥，在Stripe注册账号后可获取 |
 | billingDetails | Object | 否 | 银行卡账单信息(包含姓名、手机号码、邮箱地址、账单地址等)|
 

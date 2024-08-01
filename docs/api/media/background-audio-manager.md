@@ -7,7 +7,9 @@
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|x|√|√|x|√|x|√|
+|√|x|√|1.11.0|√|√|5.20.0|√|√|√|
+
+<!-- UNIAPPAPIJSON.getBackgroundAudioManager.compatibility -->
 
 **backgroundAudioManager 对象的属性列表**
 
@@ -63,7 +65,7 @@ const bgAudioManager = uni.getBackgroundAudioManager();
 bgAudioManager.title = '致爱丽丝';
 bgAudioManager.singer = '暂无';
 bgAudioManager.coverImgUrl = 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/music-a.png';
-bgAudioManager.src = 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-hello-uniapp/2cc220e0-c27a-11ea-9dfb-6da8e309e0d8.mp3';
+bgAudioManager.src = 'https://web-ext-storage.dcloud.net.cn/uni-app/ForElise.mp3';
 ```
 
 

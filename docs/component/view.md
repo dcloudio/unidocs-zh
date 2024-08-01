@@ -1,8 +1,10 @@
 所有的视图组件，包括view、swiper等，本身不显示任何可视化元素。它们的用途都是为了包裹其他真正显示的组件。
 
-### view
+## view
 
 视图容器。
+
+<!-- UNIAPPCOMJSON.view.compatibility -->
 
 它类似于传统html中的div，用于包裹各种元素内容。
 
@@ -16,6 +18,8 @@
 |hover-stop-propagation|Boolean|false|指定是否阻止本节点的祖先节点出现点击态，App、H5、支付宝小程序、百度小程序不支持（支付宝小程序、百度小程序文档中都有此属性，实测未支持）|
 |hover-start-time|Number|50|按住后多久出现点击态，单位毫秒|
 |hover-stay-time|Number|400|手指松开后点击态保留时间，单位毫秒|
+
+<!-- UNIAPPCOMJSON.view.attribute -->
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/view/view)
 
@@ -56,3 +60,5 @@
 
 - 小程序平台如果使用 `<div>` ，编译时会被转换为 `<view>`。
 - App平台 Vue2 项目在节点非常多时可以尝试使用 `<div>` 替换 `<view>` 以提升渲染性能。
+
+<!-- UNIAPPCOMJSON.view.reference -->

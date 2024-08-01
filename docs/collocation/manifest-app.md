@@ -24,7 +24,7 @@ App-Android平台云端打包相关配置
 |hasTaskAffinity|Boolean|是否设置android：taskAffinity，[详见](https://uniapp.dcloud.net.cn/tutorial/app-sec-android.html#strandhogg%E6%BC%8F%E6%B4%9E)|
 |buildFeatures|Object|Android平台云端打包时build.gradle的buildFeatures配置项，[详见](/collocation/manifest?id=buildFeatures)|
 |pushRegisterMode|String|延迟初始化UniPush的配置，当配置此项值为`manual`后UniPush不会初始化，直到首次调用[getPushClientId](https://uniapp.dcloud.net.cn/api/plugins/push.html#getpushclientid)、getClientInfo、getClientInfoAsync时才会初始化，注:一旦调用获取cid的方法后，下次App启动就不再延迟初始化UniPush了。(manual为延迟，其他值表示不延迟。)|
-|enableOAID|Boolean|是否支持获取OAID，默认值为true，[详见](#enableOAID)|
+|enableOAID|Boolean|是否支持获取OAID，默认值为true，[详见](#enableoaid)|
 
 #### buildFeatures@buildFeatures  
 Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)，如下示例源码：  
@@ -283,7 +283,11 @@ iOS平台云端打包相关配置
                     "NSUserTrackingUsageDescription": ""                        //可选，字符串类型，跟踪用户活动权限描述
                 },
                 "idfa": true,                   //可选，Boolean类型，是否使用广告标识
-                "capabilities": {               //可选，JSON对象，应用的能力配置（Capabilities）
+                "capabilities": {    // 可选，JSON对象，配置应用的capabilities数据（根据XCode规范分别配置到entitlements和plist文件中）
+                    "entitlements": {    // 合并到工程entitlements文件的数据（json格式）
+                    },
+                    "plists": {    // 合并到工程Info.plist文件的数据（json格式）
+                    }
                 },
                 "CFBundleName": "HBuilder",     //可选，字符串类型，CFBundleName名称
                 "validArchitectures": [         //可选，字符串数组类型，编译时支持的CPU指令，可取值arm64、arm64e、armv7、armv7s、x86_64

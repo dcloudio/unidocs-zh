@@ -1,18 +1,18 @@
-### 生物认证说明
+## 生物认证说明
 
 生物认证，包含手机的指纹识别、faceid两部分。即通过人体身体特征来进行身份认证识别。
 
 如需要专业的活体检测、人脸识别、金融级实人认证，需另见文档[uni实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
 
-### uni.startSoterAuthentication(OBJECT)
+## uni.startSoterAuthentication(OBJECT)
 
 开始 SOTER 生物认证。
 
 **平台差异说明**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|
-|:-	|:-	|:-					|:-						|:-					|:-					|:-				|
-|√（2.3.8+）	|x	|√					|x						|x					|x					|x				|
+|App|HarmonyOS Next|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|
+|:-	|:-	|:-					|:-						|:-					|:-					|:-				|:-				|
+|√（2.3.8+）	|x|x	|√					|x						|x					|x					|x				|
 
 
 **OBJECT参数说明**
@@ -80,7 +80,9 @@
 |90010	|重试次数过多被冻结																|
 |90011	|用户未录入所选识别方式														|
 
-### uni.checkIsSupportSoterAuthentication(OBJECT)
+## uni.checkIsSupportSoterAuthentication(OBJECT)
+
+> HarmonyOS Next 不支持
 
 获取本机支持的 SOTER 生物认证方式
 
@@ -98,7 +100,9 @@
 |:-					|:-		|:-																			|
 |supportMode|Array|该设备支持的可被SOTER识别的生物识别方式|
 
-### uni.checkIsSoterEnrolledInDevice(OBJECT)
+## uni.checkIsSoterEnrolledInDevice(OBJECT)
+
+> HarmonyOS Next 不支持
 
 获取设备内是否录入如指纹等生物信息的接口
 
@@ -125,7 +129,7 @@
 |isEnrolled	|boolean|是否已录入信息	|
 |errMsg			|string	|错误信息				|
 
-#### 代码示例
+### 代码示例
 
 ```html
 
@@ -236,7 +240,7 @@
 
 ```
 
-#### 注意事项
+### 注意事项
 
 - App端打包时，注意需要在manifest的模块中选择指纹、faceID、实人认证等模块，否则打包后无法运行相关功能。
 - hello uni-app已经集成相关示例，最新版HBuilderX新建新版hello uni-app示例项目真机运行可见，在API-设备-生物认证里。

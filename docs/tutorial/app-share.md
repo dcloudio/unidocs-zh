@@ -2,7 +2,7 @@ App端Share(分享)模块封装了市场上主流的三方分享SDK，提供JS A
 
 |项目类型|API|
 |:-|:-|
-|uni-app|[uni.share(OBJECT)](api/plugins/share#share)、[uni.shareWithSystem(OBJECT)](api/plugins/share#sharewithsystem)|
+|uni-app|[uni.share(OBJECT)](/api/plugins/share.md#share)、[uni.shareWithSystem(OBJECT)](/api/plugins/share.md#sharewithsystem)|
 |5+App/Wap2App|[plus.share.*](https://www.html5plus.org/doc/zh_cn/share.html)
 
 uni-app项目中，官方提供了封装好的[uni-share](https://ext.dcloud.net.cn/plugin?id=4860)插件方便开发者使用。
@@ -18,8 +18,8 @@ uni-app项目中，官方提供了封装好的[uni-share](https://ext.dcloud.net
 - 在App项目中调用API进行分享操作
 
 支持的三方分享平台：
-- [微信分享](tutorial/app-share-weixin)  
-- [QQ分享](tutorial/app-share-qq)  
-- [新浪微博分享](tutorial/app-share-sina)  
+- [微信分享](./app-share-weixin.md)
+- [QQ分享](./app-share-qq.md)
+- [新浪微博分享](./app-share-weibo.md)
 
 

@@ -8,7 +8,7 @@
 
 |项目类型|API|
 |:-|:-|
-|uni-app|[uni.getLocation(OBJECT)](api/location/location?id=getlocation)|
+|uni-app|[uni.getLocation(OBJECT)](/api/location/location.md#getlocation)|
 |5+ App/Wap2App|[plus.geolocation.*](https://www.html5plus.org/doc/zh_cn/geolocation.html)
 
 使用定位功能需在项目manifest.json的“App模块配置”中勾选“Geolocation(定位)”，并根据项目实际需求勾选使用的三方定位SDK：
@@ -16,7 +16,7 @@
 
 
 
-### 系统定位@system  
+### 系统定位@system
 
 > HBuilderX3.2.16开始独立出“系统定位”模块
 
@@ -59,21 +59,21 @@
 使用`高德定位`需在“App模块配置”项的“Geolocation(定位)”下，勾选“高德定位”：
 ![](https://native-res.dcloud.net.cn/images/uniapp/geolocation/amap.png)
 
-#### 参数说明  
-- 高德用户名  
-高德开放平台注册账号的用户名，获取方式参考“[高德开放平台用户名](#amapName)”章节
-- appkey_android  
+#### 参数说明
+- 高德用户名
+高德开放平台注册账号的用户名，获取方式参考“[高德开放平台用户名](#amapname)”章节
+- appkey_android
 [高德开放平台](https://lbs.amap.com/)为Android平台申请的Key
-- appkey_ios  
+- appkey_ios
 [高德开放平台](https://lbs.amap.com/)为iOS平台申请的Key
 
-**注意**  
+**注意**
 - 调用高德定位SDK提供的定位服务，仅支持gcj02坐标系，支持解析地址信息。
 - 配置后需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 - 本地离线打包参考[Android平台高德定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e9%ab%98%e5%be%b7%e5%ae%9a%e4%bd%8d)、[iOS平台高德定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e9%ab%98%e5%be%b7%e5%ae%9a%e4%bd%8d)
 
-#### 高德开放平台用户名@amapName  
-登录 [高德开放平台](https://lbs.amap.com/)，进入“控制台”，在“账号信息”的“基本信息”中可获取“用户名”：  
+#### 高德开放平台用户名@amapName
+登录 [高德开放平台](https://lbs.amap.com/)，进入“控制台”，在“账号信息”的“基本信息”中可获取“用户名”：
 ![](https://native-res.dcloud.net.cn/images/uniapp/maps/amap_name.png)
 
 
@@ -84,13 +84,13 @@
 使用`高德定位`需在“App模块配置”项的“Geolocation(定位)”下，勾选“高德定位”：
 ![](https://native-res.dcloud.net.cn/images/uniapp/geolocation/baidu.png)
 
-#### 参数说明  
-- appkey_android  
+#### 参数说明
+- appkey_android
 [百度地图开放平台](https://lbsyun.baidu.com/)为Android平台申请的访问应用密钥
-- appkey_ios  
+- appkey_ios
 [百度地图开放平台](https://lbsyun.baidu.com/)为iOS平台申请的访问应用密钥
 
-**注意**  
+**注意**
 -调用百度定位SDK提供的定位服务，仅支持gcj02/bd09/bd09ll坐标系，支持解析地址信息。
 - 配置后需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 - 本地离线打包参考[Android平台百度定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e7%99%be%e5%ba%a6%e5%ae%9a%e4%bd%8d)、[iOS平台百度定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e7%99%be%e5%ba%a6%e5%ae%9a%e4%bd%8d)
@@ -126,11 +126,7 @@
 2. 使用地图时，在你的app里通过schema调用，打开地图厂商的app，比如直接交给高德地图来导航，这种情况无需在地图厂商注册账户和获取应用key，也就不需要付费。
 3. 联系DCloud申请折扣优惠。
 
-DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用名称/介绍、HBuilder账户）；你也可以直接通过`企业微信`发起在线咨询，扫描以下二维码获取地图福利。如您需要快速回复，一定注明公司名称、应用名称/介绍、以及HBuilder账户，感谢你的理解与配合。
-
-- 腾讯地图商业授权现优惠政策：买1年送1个月，买2年送1年。如需购买，请速扫以下二维码咨询与购买！
-
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/sc-weixin.png)
+DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用名称/介绍、HBuilder账户）；你也可以通过`uni-im`发起在线咨询，地址：[地图商业授权咨询](https://ask.dcloud.net.cn/explore/map/)。
 
 **注意骗局**
 

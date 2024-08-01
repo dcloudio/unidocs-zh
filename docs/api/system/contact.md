@@ -9,6 +9,8 @@ App平台提供了更多通讯录相关API，包括读取联系人，详见：[h
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|x|x|√|x|
 
+<!-- UNIAPPAPIJSON.addPhoneContact.compatibility -->
+
 **OBJECT 参数说明**
 
 |参数名|类型|必填|说明|

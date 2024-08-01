@@ -1,4 +1,6 @@
-### uni.createCanvasContext(canvasId, this)
+### uni.createCanvasContext(canvasId, componentInstance)
+
+<!-- UNIAPPAPIJSON.createCanvasContext.compatibility -->
 
 #### 定义
 
@@ -10,9 +12,13 @@
 
 |参数|类型|说明|
 |----|----|-----|
-|canvasId|String	|画布表示，传入定义在 `<canvas/>` 的 canvas-id或id（支付宝小程序是id、其他平台是canvas-id）	|
+|canvasId|String	|画布标识，传入定义在 `<canvas/>` 的 canvas-id或id（支付宝小程序是id、其他平台是canvas-id）	|
 |componentInstance|Object	|自定义组件实例 this ，表示在这个自定义组件下查找拥有 canvas-id 的 `<canvas/>` ，如果省略，则不在任何自定义组件内查找	|
+
+<!-- UNIAPPAPIJSON.createCanvasContext.param -->
 
 #### 返回值
 
 [CanvasContext](/api/canvas/CanvasContext.md)
+
+<!-- UNIAPPAPIJSON.createCanvasContext.tutorial -->

@@ -11,6 +11,8 @@
 |:-|:-|:-|:-|:-|:-|:-|:-|
 |√|x|√|x|√|√|√|√|
 
+<!-- UNIAPPAPIJSON.getProvider.compatibility -->
+
 **OBJECT 参数说明**
 
 |参数名|类型|必填|说明|
@@ -28,6 +30,9 @@
 |share|分享|
 |payment|支付|
 |push|推送|
+
+
+<!-- UNIAPPAPIJSON.getProvider.param -->
 
 
 **success 返回参数说明**

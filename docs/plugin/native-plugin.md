@@ -1,6 +1,6 @@
 uni-app在App侧的原生扩展插件，支持使用java、object-c等原生语言编写。
 
-从HBuilderX 3.6起，新增支持了使用uts来开发原生插件。文档另见[uts插件](uts-plugin.md)
+从HBuilderX 3.6起，新增支持了使用uts来开发原生插件。文档另见[uts插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)
 
 为了和uts插件区别，之前的`App原生插件`，改名为`App原生语言插件`。
 
@@ -14,7 +14,7 @@ uni-app在App侧的原生扩展插件，支持使用java、object-c等原生语�
 
 自 HBuilderX 1.4 版本起，uni-app 支持引入原生插件，使用方式如下：
 
-```js 
+```js
 	const PluginName = uni.requireNativePlugin(PluginName); // PluginName 为原生插件名称
 ```
 
@@ -37,7 +37,7 @@ uni-app在App侧的原生扩展插件，支持使用java、object-c等原生语�
 ``` html
 	<template>
 		<view>
-			<text class="my-iconfont">&#xe85c;</text>	
+			<text class="my-iconfont">&#xe85c;</text>
 		</view>
 	</template>
 	<script>
@@ -63,7 +63,7 @@ uni-app在App侧的原生扩展插件，支持使用java、object-c等原生语�
 
 
 
-非内置原生插件，分为 [本地插件](/api/extend/native-plugin?id=本地插件非内置原生插件) 和 [云端插件](/api/extend/native-plugin?id=云端插件非内置原生插件) 。集成原生插件后，需要提交云端打包或制作自定义基座运行才会生效。
+非内置原生插件，分为 [本地插件](/plugin/native-plugin.md#本地插件-非内置原生插件) 和 [云端插件](/plugin/native-plugin.md#云端插件-非内置原生插件) 。集成原生插件后，需要提交云端打包或制作自定义基座运行才会生效。
 
 ### 本地插件(非内置原生插件)
 
@@ -97,7 +97,7 @@ uni-app在App侧的原生扩展插件，支持使用java、object-c等原生语�
 在vue页面或nvue页面引入这个原生插件。
 
 使用uni.requireNativePlugin的api，参数为插件的id。
-```js 
+```js
 	const dcRichAlert = uni.requireNativePlugin('DCloud-RichAlert')
 ```
 
@@ -167,7 +167,7 @@ const dcRichAlert = uni.requireNativePlugin('DCloud-RichAlert')
 ##### 第四步：打包发布
 使用自定义基座开发调试uni-app原生插件后，不可直接将自定义基座apk作为正式版发布。
 应该重新提交云端打包（不能勾选“自定义基座”）生成正式版本。
-  
+
 
 
 #### 注意事项

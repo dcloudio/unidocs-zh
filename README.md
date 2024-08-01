@@ -2,12 +2,18 @@
 
 官网地址：[uniapp.dcloud.io](https://uniapp.dcloud.io)
 
+## 如何在本地运行查看文档
+
+1. 使用命令行工具打开文档根目录
+2. 在命令行中执行 `yarn` 安装依赖，如果没有 `yarn`，则先执行 `npm i -g yarn`
+3. 在命令行中执行 `yarn dev --no-cache`，命令运行完毕后，会显示本地可查看链接，点击或复制到浏览器查看即可
+
 ## 文档编写注意事项
 
 1. 右侧导航仅支持二级、三级、四级
 2. 文档如有标题，必须从一级或二级开始，不允许只有三级，没有二级的情况；也不允许先有三级、后有二级的情况；
 3. FAQ、注意事项、常见问题，要放在文档最下方，不要穿插在文档中间位置
-4. 容器书写方式，支持：`tip`、`warning`、`danger`、`details（在 IE / Edge 中不生效）` [详情](https://vuepress.vuejs.org/zh/guide/markdown.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%B9%E5%99%A8)：
+4. 容器书写方式，支持：`info`、`tip`、`warning`、`danger`、`details（在 IE / Edge 中不生效）` [详情](https://vuepress.vuejs.org/zh/guide/markdown.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%B9%E5%99%A8)：
     ```md
     ::: warning 注意
     - 认证凭证有效期为`30分钟`
@@ -51,12 +57,12 @@
     ```html
     <img class="zooming" src="xxx">
     ```
-11. md 支持书写属性。`#{`：左定界符，与 markdown 语法之间不能有空格；`}` 右定界符
+11. md 支持书写属性。`#{`：左定界符，与 markdown 语法之间不能有空格；`}` 右定界符 [详情](https://www.npmjs.com/package/markdown-it-attrs#ambiguity)
     ```md
     ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg)#{.zooming data=abc width=100 height=100}
     ```
     渲染为：
-    
+
     ```html
     <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-multiport.jpg" class="zooming" data="abc" width="100" height="100" />
     ```
@@ -68,7 +74,7 @@
     	- `内容 **加粗** 内容` 两边需要有空格
     	- 在书写方括号 `[]` 时要注意使用转义字符 `\`，或者使用 `\`\`` 包裹，否则会被识别为链接，导致链接失效
 
-13. md 表格支持行、列合并
+13. md 表格
     - 行列合并
         ```md
         |资源分类		|资源细项				|售价（元）	|
@@ -87,6 +93,21 @@
         |流量（GB）|0.18		|
         |售价（元/月）#{colspan=2}	|5		|
         ```
+    - 无限嵌套表格行折叠
+        ```md
+        |父Table第一列|父Table第二列				|父Table第三列|
+        |:------		|:-------					|:--------|
+        |A		|**B**|[C](https://www.dcloud.io/hbuilderx.html)|
+        |@|第一列|第二列				|第三列				|
+        |@|:------		|:-------:	|-------:	|
+        |@|第一行		|**居中**|~~markdown~~|
+        |@@| 名称 | 类型 | 必备 | 默认值 | 描述 |
+        |@@| :- | :- | :- | :- | :- |
+        |@@| D | E \\| F | H | - | I |
+        |@|第二行		|[HBuilderX](https://www.dcloud.io/hbuilderx.html)|右对齐|
+        ```
+        ![](https://web-ext-storage.dcloud.net.cn/doc/table-expandable-row.png)
+
 ## 文档 Algolia 使用限额
 Included Quota:
 - Records: 1,000,000

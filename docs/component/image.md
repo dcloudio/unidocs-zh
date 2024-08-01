@@ -1,5 +1,9 @@
 # image
 
+> 图片需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
+
+<!-- UNIAPPCOMJSON.image.compatibility -->
+
 图片组件。
 
 |属性名					|类型		|默认值			|说明																											|平台差异说明									|
@@ -14,6 +18,8 @@
 |@error					|HandleEvent|				|当错误发生时，发布到 AppService 的事件名，事件对象event.detail = {errMsg: 'something wrong'}					|												|
 |@load					|HandleEvent|				|当图片载入完毕时，发布到 AppService 的事件名，事件对象event.detail = {height:'图片高度px', width:'图片宽度px'}	|&nbsp;											|
 
+
+<!-- UNIAPPCOMJSON.image.attribute -->
 
 ## 图片格式说明：
 - 当使用浏览器/webview渲染时，支持哪些图片格式由webview决定，[详见](https://developer.mozilla.org/zh-CN/docs/Web/Media/Formats/Image_types#webp_image)
@@ -65,7 +71,7 @@ mode 有 14 种模式，其中 5 种是缩放模式，9 种是裁剪模式。
 
 ## 示例
 [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/image/image)
- 
+
 ::: preview
 > Template
 ```vue
@@ -193,8 +199,9 @@ bottom right：不缩放图片，只显示图片的右下边区域
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cat-12.png)
 
 
+<!-- UNIAPPCOMJSON.image.reference -->
 
-<!-- 
+<!--
 - 默认的图片加载失败，是空白。如需自定义，可监听error事件进行重定义，如下
 ```html
 <template>

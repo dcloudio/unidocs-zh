@@ -10,7 +10,7 @@
 
 - [uni-template-news](https://github.com/dcloudio/uni-template-news)：基于uni-app开发的新闻/资讯类App模板 -- by DCloud
 
-- [uni-app 开发资源汇总](https://github.com/aben1188/awesome-uni-app/blob/master/README.md)：uni-app 一站式学习资源/开发资源汇总 -- aben1188
+- [uni-app 开发资源汇总](https://github.com/aben1188/awesome-uni-app/blob/master/README.html)：uni-app 一站式学习资源/开发资源汇总 -- aben1188
 
 - [colorUI for uni-app](https://ext.dcloud.net.cn/plugin?id=239)：colorUI官方维护的uni-app版本，酷炫漂亮的css库 -- by 文晓港
 
@@ -26,7 +26,7 @@
 
 - [得推B2C商城](https://ext.dcloud.net.cn/plugin?id=187)：一套简洁的B2C商城，全部功能完善，用户、下单、注册 -- by 得推网络科技
 
-- [商城类项目模版](https://ext.dcloud.net.cn/plugin?id=200)：漂亮的商城前端模板，可变背景导航栏、购物车、详情模板 -- by  MixR 
+- [商城类项目模版](https://ext.dcloud.net.cn/plugin?id=200)：漂亮的商城前端模板，可变背景导航栏、购物车、详情模板 -- by  MixR
 
 - [来客电商](http://www.laiketui.com/)：包含前后台的完整项目 -- by 来客电商
 
@@ -70,7 +70,7 @@
 
 - [录音朗读fm](https://ext.dcloud.net.cn/plugin?id=1170)：类喜马拉雅FM -- by https://ext.dcloud.net.cn/publisher?id=217187
 
-- [教育APP首页](http://ext.dcloud.net.cn/plugin?id=216)：教育APP首页 -- by snice 
+- [教育APP首页](http://ext.dcloud.net.cn/plugin?id=216)：教育APP首页 -- by snice
 
 - [店滴餐饮](https://ext.dcloud.net.cn/plugin?id=1381)：饭店外卖系统 -- by http://www.wayfirer.com/
 

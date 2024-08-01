@@ -1,5 +1,9 @@
-#### video
+> 视频需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
+
+## video
 视频播放组件。
+
+<!-- UNIAPPCOMJSON.video.compatibility -->
 
 **属性说明**
 
@@ -59,6 +63,7 @@
 
 `<video>` 默认宽度 300px、高度 225px，可通过 css 设置宽高。
 
+<!-- UNIAPPCOMJSON.video.attribute -->
 
 ##### direction 的合法值
 
@@ -206,3 +211,5 @@ ijkplayer作为一个开源库，比腾讯视频等商业sdk仍有差距。如�
 - App平台：3.6.14 以及 手机系统 iOS16 以上video**全屏** 需要配置应用支持横屏： 在 manifest.json 文件内 app-plus 节点下新增 screenOrientation 配置，设置值为["portrait-primary","portrait-secondary","landscape-primary","landscape-secondary"]。
 - H5平台： 在部分浏览器中会强制调用原生播放器播放（如：微信内置浏览器、UC浏览器等），在 x5 内核的浏览器中支持配置[同层播放器](https://x5.tencent.com/docs/video.html)。
 - HBuilderX内置浏览器，使用video标签暂时存在问题，请先使用其他外部浏览器。
+
+<!-- UNIAPPCOMJSON.video.reference -->

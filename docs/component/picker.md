@@ -1,6 +1,8 @@
-#### picker
+## picker
 
 从底部弹起的滚动选择器。支持五种选择器，通过mode来区分，分别是普通选择器，多列选择器，时间选择器，日期选择器，省市区选择器，默认是普通选择器。
+
+<!-- UNIAPPCOMJSON.picker.compatibility -->
 
 #### 普通选择器
 
@@ -13,7 +15,7 @@
 |range|Array / Array&lt;Object&gt;|[]|mode为 selector 或 multiSelector 时，range 有效||
 |range-key|String||当 range 是一个 `Array＜Object＞` 时，通过 range-key 来指定 Object 中 key 的值作为选择器显示内容||
 |value|Number|0|value 的值表示选择了 range 中的第几个（下标从 0 开始）||
-|selector-type|String|auto|大屏时UI类型，支持 picker、select、auto，默认在 iPad 以 picker 样式展示而在 PC 以 select 样式展示|H5 2.9.9+|
+|selector-type|String|auto|UI类型,仅大屏时该属性生效，支持 picker、select、auto，默认在 iPad 以 picker 样式展示而在 PC 以 select 样式展示|H5 2.9.9+|
 |disabled|Boolean|false|是否禁用|快手小程序不支持|
 |@change|EventHandle||value 改变时触发 change 事件，event.detail = {value: value}||
 |@cancel|EventHandle||取消选择或点遮罩层收起 picker 时触发|快手小程序不支持|
@@ -45,7 +47,7 @@
 |disabled|Boolean|false|是否禁用（快手小程序不支持）|
 
 **bug & tips**
-- 由于 JavaScript 的限制 vue 不能观测如下方式设置 value：``this.value[0] = 0`` （[vue 注意事项](/tutorial/vue-basics.html#listrendering)），解决方式参考：[hello-uniapp 示例](https://github.com/dcloudio/hello-uniapp/commit/59264474172a591c865431d02a2a1e3583978827)
+- 由于 JavaScript 的限制 vue 不能观测如下方式设置 value：``this.value[0] = 0`` （[vue 注意事项](/tutorial/vue-basics.md#listrendering)），解决方式参考：[hello-uniapp 示例](https://github.com/dcloudio/hello-uniapp/commit/59264474172a591c865431d02a2a1e3583978827)
 - 微信开发工具的pc模拟器有可能出现拖动数据错乱，使用真机正常
 
 #### 时间选择器
@@ -90,7 +92,7 @@
 |value|String|0|表示选中的日期，格式为"YYYY-MM-DD"||
 |start|String||表示有效日期范围的开始，字符串格式为"YYYY-MM-DD"||
 |end|String||表示有效日期范围的结束，字符串格式为"YYYY-MM-DD"||
-|fields|String|day|有效值 year、month、day，表示选择器的粒度，默认为 day，App 端未配置此项时使用系统 UI|H5、App 2.6.3+、微信小程序、百度小程序、抖音小程序、飞书小程序|
+|fields|String|day|有效值 year、month、day，表示选择器的粒度，默认为 day，App 端未配置此项时使用系统 UI|H5、App 2.6.3+、微信小程序、支付宝小程序、百度小程序、抖音小程序、飞书小程序|
 |@change|EventHandle||value 改变时触发 change 事件，event.detail = {value: value}||
 |@cancel|EventHandle||取消选择时触发||
 |disabled|Boolean|false|是否禁用|&nbsp;|
@@ -124,7 +126,7 @@
 |disabled|Boolean|false|是否禁用（快手小程序不支持）|
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/picker/picker)
- 
+
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/component/picker/picker
@@ -250,3 +252,5 @@ export default {
   * 支持多列数据分级加载，比如省市区选择，先选择省，然后动态联网加载该省的市。
   * uniCloud自带了[opendb](https://gitee.com/dcloud/opendb)表，[opendb-city-china](https://gitee.com/dcloud/opendb/tree/master/collection/opendb-city-china)，包括全国的省市区数据。在`<uni-data-picker>`组件上可直接绑定该数据，生成全端可用的、联网懒加载的省市区选择。
   * unicloud数据库提供了[DB Schema](https://uniapp.dcloud.io/uniCloud/schema)，还提供了[schema2code](https://doc.dcloud.net.cn/uniCloud/schema?id=autocode)自动生成全套表单页面，包括界面、校验逻辑、提交入库。在schema中配置字段的格式，比如在用户地址表[uni-id-address](https://gitee.com/dcloud/opendb/tree/master/collection/uni-id-address)的字段`area_code`配置值域指向[opendb-city-china](https://gitee.com/dcloud/opendb/tree/master/collection/opendb-city-china)表，即可自动生成该用户地址的生成页面
+
+<!-- UNIAPPCOMJSON.picker.reference -->

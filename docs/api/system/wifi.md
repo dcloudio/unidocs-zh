@@ -18,10 +18,12 @@
 抖音小程序的wifi API参考：[规范详情](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/wi-fi/tt-get-connected-wifi/)
 
 
-### uni.startWifi(OBJECT)
+## uni.startWifi(OBJECT)
 
 初始化Wi-Fi模块
 
+<!-- UNIAPPAPIJSON.startWifi.compatibility -->
+
 **OBJECT 参数说明**
 
 |参数名|类型|必填|说明|
@@ -30,11 +32,14 @@
 |fail|function|否|接口调用失败的回调函数|
 |complete|function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
+<!-- UNIAPPAPIJSON.startWifi.tutorial -->
 
-### uni.stopWifi(OBJECT)
+## uni.stopWifi(OBJECT)
 
 关闭 Wi-Fi 模块
 
+<!-- UNIAPPAPIJSON.stopWifi.compatibility -->
+
 **OBJECT 参数说明**
 
 |参数名|类型|必填|说明|
@@ -43,10 +48,13 @@
 |fail|function|否|接口调用失败的回调函数|
 |complete|function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
+<!-- UNIAPPAPIJSON.stopWifi.tutorial -->
 
-### uni.getConnectedWifi(OBJECT)
+## uni.getConnectedWifi(OBJECT)
 
 获取已连接的 Wi-Fi 信息
+
+<!-- UNIAPPAPIJSON.getConnectedWifi.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -64,7 +72,10 @@
 |wifi|WifiInfo|Wi-Fi 信息|
 
 
-### uni.getWifiList(OBJECT)
+<!-- UNIAPPAPIJSON.getConnectedWifi.tutorial -->
+
+
+## uni.getWifiList(OBJECT)
 
 请求获取 Wi-Fi 列表。wifiList 数据会在 onGetWifiList 注册的回调中返回。
 
@@ -83,9 +94,13 @@
 |√|x|
 
 
-### uni.onGetWifiList(CALLBACK)
+<!-- UNIAPPAPIJSON.getWifiList.compatibility -->
+
+## uni.onGetWifiList(CALLBACK)
 
 监听获取到 Wi-Fi 列表数据事件。
+
+<!-- UNIAPPAPIJSON.onGetWifiList.compatibility -->
 
 **CALLBACK 参数说明**
 
@@ -95,7 +110,7 @@
 
 |属性		|类型				|说明			|
 |--			|---				|--				|
-|wifiList	|Array<[WifiInfo](#WifiInfo)>	|Wi-Fi 列表数据	|
+|wifiList	|Array<[WifiInfo](#wifiinfo)>	|Wi-Fi 列表数据	|
 
 **平台差异说明**
 
@@ -104,7 +119,7 @@
 |√|x|
 
 
-### uni.offGetWifiList(CALLBACK)
+## uni.offGetWifiList(CALLBACK)
 
 移除获取到 Wi-Fi 列表数据事件的监听函数。
 
@@ -118,8 +133,9 @@ onGetWifiList 传入的监听函数。不传此参数则移除所有监听函数
 |:-:|:-:|
 |√|x|
 
+<!-- UNIAPPAPIJSON.offGetWifiList.compatibility -->
 
-### uni.connectWifi(OBJECT)
+## uni.connectWifi(OBJECT)
 
 连接 Wi-Fi。若已知 Wi-Fi 信息，可以直接利用该接口连接。
 
@@ -142,8 +158,9 @@ onGetWifiList 传入的监听函数。不传此参数则移除所有监听函数
 |:-:|:-:|
 |android10 以下版本支持直连，android 10以上，包括鸿蒙系统仅支持 maunal 手动链接|x|
 
+<!-- UNIAPPAPIJSON.connectWifi.compatibility -->
 
-### uni.onWifiConnected(CALLBACK)
+## uni.onWifiConnected(CALLBACK)
 
 监听连接上 Wi-Fi 的事件。
 
@@ -155,7 +172,7 @@ onGetWifiList 传入的监听函数。不传此参数则移除所有监听函数
 
 |属性	|类型		|说明		|
 |---	|---		|---		|
-|wifi	|[WifiInfo](#WifiInfo)	|Wi-Fi 信息	|
+|wifi	|[WifiInfo](#wifiinfo)	|Wi-Fi 信息	|
 
 **平台差异说明**
 
@@ -163,7 +180,9 @@ onGetWifiList 传入的监听函数。不传此参数则移除所有监听函数
 |:-:|:-:|
 |√|x|
 
-### uni.offWifiConnected(CALLBACK)
+<!-- UNIAPPAPIJSON.onWifiConnected.compatibility -->
+
+## uni.offWifiConnected(CALLBACK)
 
 移除连接上 Wi-Fi 的事件的监听函数。
 
@@ -177,8 +196,10 @@ onWifiConnected 传入的监听函数。不传此参数则移除所有监听函�
 |:-:|:-:|
 |√|x|
 
+<!-- UNIAPPAPIJSON.offWifiConnected.compatibility -->
 
-### uni.onWifiConnectedWithPartialInfo(CALLBACK)
+
+## uni.onWifiConnectedWithPartialInfo(CALLBACK)
 
 监听连接上 Wi-Fi 的事件。
 
@@ -190,7 +211,7 @@ onWifiConnected 传入的监听函数。不传此参数则移除所有监听函�
 
 |属性	|类型		|说明		|
 |---	|---		|---		|
-|wifi	|[WifiInfo](#WifiInfo)	|只包含 SSID 属性的 WifiInfo 对象	|
+|wifi	|[WifiInfo](#wifiinfo)	|只包含 SSID 属性的 WifiInfo 对象	|
 
 **平台差异说明**
 
@@ -198,8 +219,10 @@ onWifiConnected 传入的监听函数。不传此参数则移除所有监听函�
 |:-:|:-:|
 |√|x|
 
+<!-- UNIAPPAPIJSON.onWifiConnectedWithPartialInfo.compatibility -->
 
-### uni.offWifiConnectedWithPartialInfo(CALLBACK)
+
+## uni.offWifiConnectedWithPartialInfo(CALLBACK)
 
 移除连接上 Wi-Fi 的事件的监听函数。
 
@@ -213,8 +236,10 @@ onWifiConnectedWithPartialInfo 传入的监听函数。不传此参数则移除�
 |:-:|:-:|
 |√|x|
 
+<!-- UNIAPPAPIJSON.offWifiConnectedWithPartialInfo.compatibility -->
 
-### WifiInfo
+
+## WifiInfo
 
 Wifi 信息
 
@@ -227,7 +252,7 @@ Wifi 信息
 |frequency	|number	|Wi-Fi 频段单位 MHz	|
 
 
-### 错误码
+## 错误码
 
 |错误码	|错误信息					|说明																|
 |---	|----						|------																|
@@ -238,6 +263,6 @@ Wifi 信息
 |12005	|wifi not turned on			|Android 特有，未打开 Wi-Fi 开关									|
 |12013	|wifi config may be expired	|系统保存的 Wi-Fi 配置过期，建议忘记 Wi-Fi 后重试，仅 Android 支持	|
 
-### 参考
-- [Android平台获取WIFI列表](https://ask.dcloud.net.cn/question/12113)  
-- [iOS平台打开系统WIFI设置页面](https://ask.dcloud.net.cn/question/7797)  
+## 参考
+- [Android平台获取WIFI列表](https://ask.dcloud.net.cn/question/12113)
+- [iOS平台打开系统WIFI设置页面](https://ask.dcloud.net.cn/question/7797)

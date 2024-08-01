@@ -1,6 +1,8 @@
-# button
+## button
 
 按钮。
+
+<!-- UNIAPPCOMJSON.button.compatibility -->
 
 **属性说明**
 
@@ -38,7 +40,7 @@
 |@opensetting|Handler||在打开授权设置页并关闭后回调|open-type="openSetting"|微信、QQ、百度、快手、京东小程序|
 |@launchapp|Handler||从小程序打开 App 成功的回调|open-type="launchApp"|微信、QQ、快手、京东小程序|
 |@contact|Handler||客服消息回调|open-type="contact"|微信、QQ、百度、快手小程序|
-|@chooseavatar|Handler||获取用户头像回调|open-type="chooseAvatar"|微信小程序|
+|@chooseavatar|Handler||获取用户头像回调|open-type="chooseAvatar"|微信、支付宝小程序|
 |@agreeprivacyauthorization|Handler||用户同意隐私协议事件回调，open-type="agreePrivacyAuthorization"时有效|open-type="agreeprivacyauthorization"|微信小程序2.33.0|
 |@addgroupapp|Handler||添加群应用的回调|open-type="addGroupApp"|QQ小程序|
 |@chooseaddress|Handler||调起用户编辑并选择收货地址的回调|open-type="chooseAddress"|百度小程序|
@@ -47,8 +49,11 @@
 |@login|Handler||登录回调|open-type="login"|百度小程序|
 |@im|Handler||监听跳转IM的成功回调|open-type="im"|抖音小程序2.68.0版本+|
 
+<!-- UNIAPPCOMJSON.button.attribute -->
+
 - **注1：``button-hover`` 默认为 ``{background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;}``**
 - ```open-type="launchApp"```时需要调起的APP接入微信OpenSDK[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html)
+- 微信小程序、Web、App平台 button组件的默认边框宽度为0.5px，不会占据实际的渲染宽高；当type属性为plain时，边框宽度是1px，如果未指定元素的宽高，此时边框宽度会占据实际渲染宽高。
 
 ## size 有效值
 
@@ -132,8 +137,8 @@ style和class的优先级，高于size和type属性。
 
 ```html
 <template>
-	<button size="default" type="default" 
-	style="color:#ffffff;backgroundColor:#1AAD19;borderColor:#1AAD19" 
+	<button size="default" type="default"
+	style="color:#ffffff;backgroundColor:#1AAD19;borderColor:#1AAD19"
 	hover-class="is-hover">按钮</button>
 </template>
 <style>
@@ -221,3 +226,5 @@ button 组件没有 url 属性，如果要跳转页面，可以在@click中编�
 ```html
 <button type="default" open-type="getPhoneNumber" @getphonenumber="decryptPhoneNumber">获取手机号</button>
 ```
+
+<!-- UNIAPPCOMJSON.button.reference -->

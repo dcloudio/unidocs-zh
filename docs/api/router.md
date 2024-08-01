@@ -1,18 +1,22 @@
-### uni.navigateTo(OBJECT)
+## uni.navigateTo(OBJECT)
 
 保留当前页面，跳转到应用内的某个页面，使用```uni.navigateBack```可以返回到原页面。
+
+<!-- UNIAPPAPIJSON.navigateTo.compatibility -->
 
 **OBJECT参数说明**
 
 |参数|类型|必填|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|:-|
 |url|String|是||需要跳转的应用内非 tabBar 的页面的路径 , 路径后可以带参数。参数与路径之间使用?分隔，参数键与参数值用=相连，不同参数用&分隔；如 'path?key=value&key2=value2'，path为下一个页面的路径，下一个页面的onLoad函数可得到传递的参数| |
-|animationType|String|否|pop-in|窗口显示的动画效果，详见：[窗口动画](api/router?id=animation)|App（uni-app x 不支持）|
-|animationDuration|Number|否|300|窗口动画持续时间，单位为 ms|App（uni-app x 不支持）|
-|events|Object|否||页面间通信接口，用于监听被打开页面发送到当前页面的数据。2.8.9+ 开始支持。|uni-app x 不支持|
+|animationType|String|否|pop-in|窗口显示的动画效果，详见：[窗口动画](#animation)|App|
+|animationDuration|Number|否|300|窗口动画持续时间，单位为 ms|App|
+|events|Object|否||页面间通信接口，用于监听被打开页面发送到当前页面的数据。2.8.9+ 开始支持。||
 |success|Function|否||接口调用成功的回调函数||
 |fail|Function|否||接口调用失败的回调函数||
 |complete|Function|否||接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+
+<!-- UNIAPPAPIJSON.navigateTo.param -->
 
 **object.success 回调函数**
 
@@ -22,7 +26,7 @@
 
 |属性|类型|说明|
 |:-|:-|:-|
-|eventChannel|[EventChannel](api/router?id=event-channel)|和被打开页面进行通信|
+|eventChannel|[EventChannel](#event-channel)|和被打开页面进行通信|
 
 
 **示例**
@@ -75,6 +79,33 @@ onLoad: function(option) {
 }
 ```
 
+vue3 `script setup` 语法糖中调用 `getOpenerEventChannel` 示例：
+
+```js
+<script setup>
+  import {
+    onMounted,
+    getCurrentInstance
+  } from 'vue';
+
+  onMounted(() => {
+    const instance = getCurrentInstance().proxy
+    const eventChannel = instance.getOpenerEventChannel();
+
+    eventChannel.emit('acceptDataFromOpenedPage', {
+      data: 'data from test page'
+    });
+
+    eventChannel.emit('someEvent', {
+      data: 'data from test page for someEvent'
+    });
+
+    eventChannel.on('acceptDataFromOpenerPage', function(data) {
+      console.log('acceptDataFromOpenerPage', data)
+    })
+  })
+</script>
+```
 
 url有长度限制，太长的字符串会传递失败，可改用[窗体通信](https://uniapp.dcloud.io/collocation/frame/communication)、[全局变量](https://ask.dcloud.net.cn/article/35021)，另外参数中出现空格等特殊字符时需要对参数进行编码，如下为使用`encodeURIComponent`对参数进行编码的示例。
 ```html
@@ -92,9 +123,13 @@ onLoad: function (option) {
 * 跳转到 tabBar 页面只能使用 switchTab 跳转
 * 路由API的目标页面必须是在pages.json里注册的vue页面。如果想打开web url，在App平台可以使用 [plus.runtime.openURL](http://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.openURL)或web-view组件；H5平台使用 window.open；小程序平台使用web-view组件（url需在小程序的联网白名单中）。在hello uni-app中有个组件ulink.vue已对多端进行封装，可参考。
 
-### uni.redirectTo(OBJECT)
+<!-- UNIAPPAPIJSON.navigateTo.tutorial -->
+
+## uni.redirectTo(OBJECT)
 
 关闭当前页面，跳转到应用内的某个页面。
+
+<!-- UNIAPPAPIJSON.redirectTo.compatibility -->
 
 **OBJECT参数说明**
 
@@ -117,9 +152,13 @@ uni.redirectTo({
 
 * 跳转到 tabBar 页面只能使用 switchTab 跳转
 
-### uni.reLaunch(OBJECT)
+<!-- UNIAPPAPIJSON.redirectTo.tutorial -->
+
+## uni.reLaunch(OBJECT)
 
 关闭所有页面，打开到应用内的某个页面。
+
+<!-- UNIAPPAPIJSON.reLaunch.compatibility -->
 
 **注意：**
 如果调用了 [uni.preloadPage(OBJECT)](https://uniapp.dcloud.net.cn/api/preload-page) 不会关闭，仅触发生命周期 `onHide`
@@ -152,9 +191,13 @@ Tips：
 
 * H5端调用`uni.reLaunch`之后之前页面栈会销毁，但是无法清空浏览器之前的历史记录，此时`navigateBack`不能返回，如果存在历史记录的话点击浏览器的返回按钮或者调用`history.back()`仍然可以导航到浏览器的其他历史记录。
 
-### uni.switchTab(OBJECT)
+<!-- UNIAPPAPIJSON.reLaunch.tutorial -->
+
+## uni.switchTab(OBJECT)
 
 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面。
+
+<!-- UNIAPPAPIJSON.switchTab.compatibility -->
 
 **注意：**
 如果调用了 [uni.preloadPage(OBJECT)](https://uniapp.dcloud.net.cn/api/preload-page) 不会关闭，仅触发生命周期 `onHide`
@@ -191,20 +234,26 @@ uni.switchTab({
 });
 ```
 
-### uni.navigateBack(OBJECT)
+<!-- UNIAPPAPIJSON.switchTab.tutorial -->
+
+## uni.navigateBack(OBJECT)
 
 关闭当前页面，返回上一页面或多级页面。可通过 ```getCurrentPages()``` 获取当前的页面栈，决定需要返回几层。
+
+<!-- UNIAPPAPIJSON.navigateBack.compatibility -->
 
 **OBJECT参数说明**
 
 |参数|类型|必填|默认值|说明|平台差异说明|
 |:-|:-|:-|:-|:-|:-|
 |delta|Number|否|1|返回的页面数，如果 delta 大于现有页面数，则返回到首页。||
-|animationType|String|否|pop-out|窗口关闭的动画效果，详见：[窗口动画](api/router?id=animation)|App（uni-app x 不支持）|
-|animationDuration|Number|否|300|窗口关闭动画的持续时间，单位为 ms|App（uni-app x 不支持）|
+|animationType|String|否|pop-out|窗口关闭的动画效果，详见：[窗口动画](#animation)|App|
+|animationDuration|Number|否|300|窗口关闭动画的持续时间，单位为 ms|App|
 |success|Function|否||接口调用成功的回调函数||
 |fail|Function|否||接口调用失败的回调函数||
 |complete|Function|否||接口调用结束的回调函数（调用成功、失败都会执行）||
+
+<!-- UNIAPPAPIJSON.navigateBack.param -->
 
 **示例**
 
@@ -227,14 +276,21 @@ uni.navigateBack({
 });
 ```
 
+<!-- UNIAPPAPIJSON.navigateBack.tutorial -->
 
-### EventChannel@event-channel
-2.8.9+ 支持
+
+## EventChannel@event-channel
+
+> 2.8.9+ 支持
+>
+> HarmonyOS Next 不支持
+
 页面间事件通信通道
+
 
 **方法**
 
-#### EventChannel.emit(string eventName, any args)
+### EventChannel.emit(string eventName, any args)
 
 触发一个事件
 
@@ -245,7 +301,7 @@ any args
 事件参数
 
 
-#### EventChannel.off(string eventName, function fn)
+### EventChannel.off(string eventName, function fn)
 
 取消监听一个事件。给出第二个参数时，只取消给出的监听函数，否则取消所有监听函数
 
@@ -260,7 +316,7 @@ any args
 触发事件参数
 
 
-#### EventChannel.on(string eventName, function fn)
+### EventChannel.on(string eventName, function fn)
 
 持续监听一个事件
 
@@ -275,7 +331,7 @@ any args
 触发事件参数
 
 
-#### EventChannel.once(string eventName, function fn)
+### EventChannel.once(string eventName, function fn)
 
 监听一个事件一次，触发后失效
 
@@ -302,12 +358,12 @@ Tips：
 - 页面路由拦截和管理，插件市场有很多封装好的工具类，搜索[路由](https://ext.dcloud.net.cn/search?q=%E8%B7%AF%E7%94%B1)
 
 
-### 窗口动画@animation
+## 窗口动画@animation
 > 本API仅App支持。小程序自身不支持自定义动画。H5的窗体动画可使用常规单页动画处理方案，见[H5下单页动画示例](https://ext.dcloud.net.cn/plugin?id=659&tdsourcetag=s_pctim_aiomsg)
 
 窗口的显示/关闭动画效果，支持在 API、组件、pages.json 中配置，优先级为：`API = 组件 > pages.json`。
 
-#### API
+### API
 有效的路由 API
 
 - navigateTo
@@ -325,7 +381,7 @@ uni.navigateBack({
 	animationDuration: 200
 });
 ```
-#### 组件
+### 组件
 open-type 有效值
 
 - navigateTo
@@ -335,7 +391,7 @@ open-type 有效值
 <navigator animation-type="pop-in" animation-duration="300" url="../test/test">navigator</navigator>
 <navigator animation-type="pop-out" animation-duration="300" open-type="navigateBack" >navigator</navigator>
 ```
-#### pages.json
+### pages.json
 pages.json 中配置的是窗口显示的动画
 ```javascript
 "style": {

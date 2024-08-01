@@ -1,4 +1,4 @@
-### cover-view
+## cover-view
 覆盖在原生组件上的文本视图。
 
 app-vue和小程序框架，渲染引擎是webview的。但为了优化体验，部分组件如map、video、textarea、canvas通过原生控件实现，原生组件层级高于前端组件（类似flash层级高于div）。为了能正常覆盖原生组件，设计了cover-view。
@@ -11,6 +11,7 @@ app-vue和小程序框架，渲染引擎是webview的。但为了优化体验，
 |√|√|√|√|√|x|√|√|x|√|√|
 
 
+<!-- UNIAPPCOMJSON.cover-image.compatibility -->
 
 支持的事件：`click`
 

@@ -1,5 +1,7 @@
-### uni.getNetworkType(OBJECT)
+## uni.getNetworkType(OBJECT)
 获取网络类型。
+
+<!-- UNIAPPAPIJSON.getNetworkType.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -38,8 +40,12 @@ uni.getNetworkType({
 });
 ```
 
-### uni.onNetworkStatusChange(CALLBACK)
+<!-- UNIAPPAPIJSON.getNetworkType.tutorial -->
+
+## uni.onNetworkStatusChange(CALLBACK)
 监听网络状态变化。可使用`uni.offNetworkStatusChange`取消监听。
+
+<!-- UNIAPPAPIJSON.onNetworkStatusChange.compatibility -->
 
 **CALLBACK 返回参数**
 
@@ -57,8 +63,10 @@ uni.onNetworkStatusChange(function (res) {
 });
 ```
 
-### uni.offNetworkStatusChange(CALLBACK)
+## uni.offNetworkStatusChange(CALLBACK)
 取消监听网络状态变化。
+
+<!-- UNIAPPAPIJSON.offNetworkStatusChange.compatibility -->
 
 **平台差异说明**
 

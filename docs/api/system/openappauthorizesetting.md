@@ -1,10 +1,10 @@
-### uni.openAppAuthorizeSetting()
+## uni.openAppAuthorizeSetting()
 跳转系统授权管理页
 
-- App端  
-    打开系统App的权限设置界面  
-- 微信小程序  
-    打开系统微信App的权限设置界面  
+- App端
+    打开系统App的权限设置界面
+- 微信小程序
+    打开系统微信App的权限设置界面
 
 **平台差异说明**
 
@@ -12,7 +12,7 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX (3.5.3+)|x|基础库 (2.20.1+)|x|x|x|x|x|x|x|
 
-
+<!-- UNIAPPAPIJSON.openAppAuthorizeSetting.compatibility -->
 
 **OBJECT 参数说明**
 

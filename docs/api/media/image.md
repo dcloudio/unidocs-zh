@@ -1,5 +1,10 @@
+
+ > 图片需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
+
 ### uni.chooseImage(OBJECT)
 从本地相册选择图片或使用相机拍照。
+
+<!-- UNIAPPAPIJSON.chooseImage.compatibility -->
 
 App端如需要更丰富的相机拍照API（如直接调用前置摄像头），参考[plus.camera](https://www.html5plus.org/doc/zh_cn/camera.html)
 
@@ -39,7 +44,7 @@ App端如需要更丰富的相机拍照API（如直接调用前置摄像头）�
 - 微信小程序在2023年10月17日之后，使用API需要配置[隐私协议](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)
 - 在部分低端机如红米上拍照闪退，拍照调用的是系统相机，当系统内存不足，rom为了给相机activity分配内存而把app的主activity回收了。遇到此问题建议使用nvue页面并内嵌的[自定义相机](https://ext.dcloud.net.cn/search?q=%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9B%B8%E6%9C%BA&orderBy=Relevance)的原生或uts插件。相关分析报告[详见](https://ask.dcloud.net.cn/article/40877)
 
-**注：文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](api/file/file?id=savefile)，在应用下次启动时才能访问得到。**
+**注：文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](/api/file/file.md#savefile)，在应用下次启动时才能访问得到。**
 
 **success 返回参数说明**
 
@@ -78,6 +83,7 @@ uni.chooseImage({
 |参数名|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
 |current|String/Number|详见下方说明|详见下方说明||
+|showmenu|Boolean|否|是否显示长按菜单，默认值为 true|微信小程序2.13.0|
 |urls|Array&lt;String&gt;|是|需要预览的图片链接列表||
 |indicator|String|否|图片指示器样式，可取值："default" - 底部圆点指示器； "number" - 顶部数字指示器； "none" - 不显示指示器。|App|
 |loop|Boolean|否|是否可循环预览，默认值为 false|App|
@@ -295,8 +301,8 @@ uni.chooseImage({
 | quality | Number | 80 | 否 | 压缩质量，范围0～100，数值越小，质量越低，压缩率越高（仅对jpg有效） ||
 | width | String | auto | 否 | 缩放图片的宽度，支持像素值（如"100px"）、百分比（如"50%"）、自动计算（如"auto"，即根据width与源图宽的缩放比例计算，若未设置width则使用源图宽度）|App 3.0.0+|
 | height | String | auto | 否 | 缩放图片的高度，支持像素值（如"100px"）、百分比（如"50%"）、自动计算（如"auto"，即根据height与源图高的缩放比例计算，若未设置height则使用源图高度）|App 3.0.0+|
-| compressedWidth | Number | - | 否 | 压缩后图片的宽度，单位为px，若不填写则默认以 compressHeight 为准等比缩放 |微信小程序2.26.0 +|
-| compressHeight | Number | - | 否 | 压缩后图片的高度，单位为px，若不填写则默认以 compressedWidth 为准等比缩放 |微信小程序2.26.0 +|
+| compressedWidth | Number | - | 否 | 压缩后图片的宽度，单位为px，若不填写则默认以 compressedHeight 为准等比缩放 |微信小程序2.26.0 +|
+| compressedHeight | Number | - | 否 | 压缩后图片的高度，单位为px，若不填写则默认以 compressedWidth 为准等比缩放 |微信小程序2.26.0 +|
 | rotate | Number | 0 | 否 | 旋转度数，范围0～360 |App 3.0.0+|
 | success | Function |  | 否 | 接口调用成功的回调函数 ||
 | fail | Function |  | 否 | 接口调用失败的回调函数 ||

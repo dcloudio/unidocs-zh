@@ -1,10 +1,10 @@
 **iBeacon API 平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|x|x|√|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|x|√|√|x|x|√|x|x|x|
 
-### uni.onBeaconServiceChange(CALLBACK)
+## uni.onBeaconServiceChange(CALLBACK)
 
 监听 iBeacon 服务状态变化事件
 
@@ -15,7 +15,7 @@
 |available|boolean|服务目前是否可用|
 |discovering|boolean|目前是否处于搜索状态|
 
-### uni.onBeaconUpdate(CALLBACK)
+## uni.onBeaconUpdate(CALLBACK)
 
 监听 iBeacon 设备更新事件
 
@@ -25,7 +25,7 @@
 |:-|:-|:-|
 |beacons|Array<[IBeaconInfo](/api/system/ibeacon?id=ibeaconinfo)>|当前搜寻到的所有 iBeacon 设备列表|
 
-### uni.getBeacons(OBJECT)
+## uni.getBeacons(OBJECT)
 
 获取所有已搜索到的 iBeacon 设备
 
@@ -43,7 +43,7 @@
 |:-|:-|:-|
 |beacons|Array<[IBeaconInfo](/api/system/ibeacon?id=ibeaconinfo)>|iBeacon 设备列表|
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |:-|:-|:-|
@@ -53,7 +53,7 @@
 |11002|location service unavailable|位置服务不可用|
 |11003|already start|已经开始搜索|
 
-### uni.startBeaconDiscovery(OBJECT)
+## uni.startBeaconDiscovery(OBJECT)
 
 开始搜索附近的 iBeacon 设备
 
@@ -67,7 +67,7 @@
 |fail|function||否|接口调用失败的回调函数|
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |:-|:-|:-|
@@ -77,7 +77,7 @@
 |11002|location service unavailable|位置服务不可用|
 |11003|already start|已经开始搜索|
 
-#### 示例代码
+### 示例代码
 
 ```js
 uni.startBeaconDiscovery({
@@ -85,7 +85,7 @@ uni.startBeaconDiscovery({
 })
 ```
 
-### uni.stopBeaconDiscovery(OBJECT)
+## uni.stopBeaconDiscovery(OBJECT)
 
 停止搜索附近的 iBeacon 设备
 
@@ -97,7 +97,7 @@ uni.startBeaconDiscovery({
 |fail|function||否|接口调用失败的回调函数|
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |:-|:-|:-|
@@ -107,7 +107,7 @@ uni.startBeaconDiscovery({
 |11002|location service unavailable|位置服务不可用|
 |11003|already start|已经开始搜索|
 
-### IBeaconInfo
+## IBeaconInfo
 
 |属性|类型|说明|
 |:-|:-|:-|
@@ -119,6 +119,6 @@ uni.startBeaconDiscovery({
 |rssi|number|表示设备的信号强度|
 
 
-### 注意事项
+## 注意事项
 
 * 未启用定位将影响 iBeacon 的正常使用。（相关反馈：[#2027](https://github.com/dcloudio/uni-app/issues/2027)）

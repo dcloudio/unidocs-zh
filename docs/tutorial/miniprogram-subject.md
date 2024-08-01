@@ -462,4 +462,4 @@ export default {
 - `nvue`页面暂不支持wxs、sjs、filter.js
 - 各个`script`标签会分别被打包至对应支持平台，不需要额外写条件编译
 - 自`HBuilderX 2.2.5`开始，不推荐使用各个小程序自有的引入方式，推荐使用`script`标签引入
-- App和H5端，提供了wxs的升级版，更加强大，见下面的 [renderjs](/tutorial/renderjs.html) 章节
+- App和H5端，提供了wxs的升级版，更加强大，见下面的 [renderjs](/tutorial/renderjs.md) 章节

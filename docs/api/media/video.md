@@ -1,4 +1,6 @@
-### uni.chooseVideo(OBJECT)
+> 视频需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
+
+## uni.chooseVideo(OBJECT)
 拍摄视频或从手机相册中选视频，返回视频的临时文件路径。
 
 若选择和上传非图像、视频文件，另行参考：[https://uniapp.dcloud.io/api/media/file](https://uniapp.dcloud.io/api/media/file)。
@@ -8,6 +10,8 @@
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.chooseVideo.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -37,7 +41,7 @@
 **注意：**
 * sourceType 值在 H5 平台根据浏览器的不同而表现不同，一般不可限制仅使用相册，部分浏览器也无法限制是否使用相机。
 * app安卓端选择的视频最大只支持180MB，如需突破该限制请使用原生插件https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9
-* 文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](api/file/file?id=savefile)，在应用下次启动时才能访问得到。
+* 文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](/api/file/file.md#savefile)，在应用下次启动时才能访问得到。
 * camera 部分 Android 手机下由于系统 ROM 不支持无法生效，打开拍摄界面后可操作切换
 * 可以通过用户授权API来判断用户是否给应用授予相册或摄像头的访问权限[https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
 * App下如需进一步压缩视频大小，可以在插件市场搜索[视频压缩](http://ext.dcloud.net.cn/search?q=%E8%A7%86%E9%A2%91%E5%8E%8B%E7%BC%A9)插件
@@ -48,7 +52,7 @@
 
 **示例**
 
-```html
+```
 <template>
 	<view>
 		<text>hello</text>
@@ -56,8 +60,6 @@
 		<video :src="src"></video>
 	</view>
 </template>
-```
-```javascript
 export default {
 	data() {
 		return {
@@ -79,7 +81,8 @@ export default {
 ```
 
 
-### uni.chooseMedia(OBJECT)
+## uni.chooseMedia(OBJECT)
+
 拍摄或从手机相册中选择图片或视频。
 
 若选择和上传非图像、视频文件，另行参考：[https://uniapp.dcloud.io/api/media/file](https://uniapp.dcloud.io/api/media/file)。
@@ -177,7 +180,8 @@ uni.chooseMedia({
 * 微信小程序在2023年10月17日之后，使用API需要配置[隐私协议](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)
 
 
-### uni.saveVideoToPhotosAlbum(OBJECT)
+## uni.saveVideoToPhotosAlbum(OBJECT)
+
 保存视频到系统相册。
 
 **平台差异说明**
@@ -185,6 +189,8 @@ uni.chooseMedia({
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|√|√|√|x|
+
+<!-- UNIAPPAPIJSON.saveVideoToPhotosAlbum.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -207,7 +213,7 @@ uni.chooseMedia({
 
 **示例**
 
-```html
+```
 <template>
 	<view>
 		<text>hello</text>
@@ -215,8 +221,6 @@ uni.chooseMedia({
 		<video :src="src"></video>
 	</view>
 </template>
-```
-```javascript
 export default {
 	data() {
 		return {
@@ -258,6 +262,8 @@ export default {
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |3.1.10+|3.1.10+|2.11.0+|x|x|x|x|√|x|
 
+<!-- UNIAPPAPIJSON.getVideoInfo.compatibility -->
+
 **OBJECT 参数说明**
 
 
@@ -295,7 +301,7 @@ export default {
 |left-mirrored	|同left，但垂直翻转		|
 |right-mirrored	|同right，但垂直翻转	|
 
-### uni.compressVideo(OBJECT)
+## uni.compressVideo(OBJECT)
 
 压缩视频接口。开发者可指定压缩质量 quality 进行压缩。当需要更精细的控制时，可指定 bitrate、fps、和 resolution，当 quality 传入时，这三个参数将被忽略。原视频的相关信息可通过 getVideoInfo 获取。
 
@@ -338,7 +344,7 @@ App端有很多插件支持视频压缩，详见[插件市场](https://ext.dclou
 |tempFilePath	|string	|压缩后的临时文件地址	|
 |size					|string	|压缩后的大小，单位 kB|
 
-### uni.openVideoEditor(OBJECT)
+## uni.openVideoEditor(OBJECT)
 
 打开视频编辑器
 

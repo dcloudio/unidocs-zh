@@ -10,12 +10,14 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|1.63+|1.9.0+|√|x|√|√|
 
+<!-- UNIAPPCOMJSON.map.compatibility -->
+
 **地图服务商说明**
 
 |地图服务商|App|H5|微信小程序|
 |:-:|:-:|:-:|:-:|
 |高德|√|3.6.0+||
-|Goolge|3.4+ 仅nvue页面|3.2.10+||
+|Google|3.4+ 仅nvue页面|3.2.10+||
 |腾讯||√|√|
 
 
@@ -35,11 +37,14 @@
 |circles|Array||圆||
 |controls|Array||控件||
 |include-points|Array||缩放视野以包含所有给定的坐标点|App-nvue 2.1.5+、微信小程序、H5、百度小程序、支付宝小程序、京东小程序|
+|zIndex|number|false|显示层级|微信小程序2.3.0|
 |enable-3D|Boolean|false|是否显示3D楼块|App-nvue 2.1.5+、微信小程序2.3.0|
 |show-compass|Boolean|false|是否显示指南针|App-nvue 2.1.5+、微信小程序2.3.0|
 |enable-zoom|Boolean|true|是否支持缩放|App-nvue 2.1.5+、微信小程序2.3.0|
 |enable-scroll|Boolean|true|是否支持拖动|App-nvue 2.1.5+、微信小程序2.3.0|
 |enable-rotate|Boolean|false|是否支持旋转|App-nvue 2.1.5+、微信小程序2.3.0|
+|rotate|Number|0|旋转角度(范围0-360)地图正北和设备 y 轴角度的夹角|微信小程序2.5.0、支付宝小程序、抖音小程序、QQ小程序|
+|skew|Number|0|倾斜角度，范围 0 ~ 40 , 关于 z 轴的倾角|微信小程序2.5.0、支付宝小程序、抖音小程序、QQ小程序|
 |enable-overlooking|Boolean|false|是否开启俯视|App-nvue 2.1.5+、微信小程序2.3.0|
 |enable-satellite|Boolean|false|是否开启卫星图|App-nvue 2.1.5+、微信小程序2.7.0|
 |enable-traffic|Boolean|false|是否开启实时路况|App-nvue 2.1.5+、微信小程序2.7.0|
@@ -86,7 +91,7 @@
 |alpha|标注的透明度|Number|否|默认1，无透明，范围 0 ~ 1|App-nvue 2.1.5+、微信小程序、支付宝小程序、百度小程序、京东小程序|
 |width|标注图标宽度|Number|否|默认为图片实际宽度|App-nvue 2.1.5+、微信小程序、H5、支付宝小程序、百度小程序、京东小程序|
 |height|标注图标高度|Number|否|默认为图片实际高度|App-nvue 2.1.5+、微信小程序、H5、支付宝小程序、百度小程序、京东小程序|
-|callout|自定义标记点上方的气泡窗口|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、微信小程序、支付宝小程序、百度小程序、京东小程序|
+|callout|自定义标记点上方的气泡窗口|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、H5、微信小程序、支付宝小程序、百度小程序、京东小程序|
 |label|为标记点旁边增加标签|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、微信小程序、H5、App、百度小程序、支付宝小程序|
 |anchor|经纬度在标注图标的锚点，默认底边中点|Object|否|{x, y}，x表示横向(0-1)，y表示竖向(0-1)。{x: .5, y: 1} 表示底边中点|App-nvue 2.1.5+、微信小程序、H5、百度小程序、京东小程序|
 |clusterId|自定义点聚合簇效果时使用|Number|否||App-nvue 3.1.0+、微信小程序|
@@ -122,11 +127,11 @@
 |y |label的坐标，原点是 marker 对应的经纬度|Number|H5、百度小程序|
 |anchorX |label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、微信小程序|
 |anchorY |label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、微信小程序|
-|borderWidth|边框宽度|Number|微信小程序、百度小程序|
-|borderColor|边框颜色|String|微信小程序、百度小程序|
-|borderRadius|边框圆角|Number|App-nvue 2.1.5+、微信小程序、百度小程序、支付宝小程序|
-|bgColor|背景色|String|App-nvue 2.1.5+、微信小程序、百度小程序、支付宝小程序|
-|padding|文本边缘留白|Number|App-nvue 2.1.5+、微信小程序、百度小程序、支付宝小程序|
+|borderWidth|边框宽度|Number|H5、微信小程序、百度小程序|
+|borderColor|边框颜色|String|H5、微信小程序、百度小程序|
+|borderRadius|边框圆角|Number|App-nvue 2.1.5+、H5、微信小程序、百度小程序、支付宝小程序|
+|bgColor|背景色|String|App-nvue 2.1.5+、H5、微信小程序、百度小程序、支付宝小程序|
+|padding|文本边缘留白|Number|App-nvue 2.1.5+、H5、微信小程序、百度小程序、支付宝小程序|
 |textAlign|文本对齐方式。有效值: left, right, center|String|App-nvue 2.1.5+、微信小程序、百度小程序|
 |aria-label|无障碍访问，（属性）元素的额外描述|String|App-nvue 3.1.0+、微信小程序|
 
@@ -296,7 +301,7 @@ export default {
 |arrowIconPath|更换箭头图标	|已支持				|Android不支持 iOS支持		|
 
 
-**map 组件相关操作的 JS API**：[uni.createMapContext](api/location/map?id=createmapcontext)
+**map 组件相关操作的 JS API**：[uni.createMapContext](../api/location/map.md#createmapcontext)
 
 nvue map 更换箭头图标格式参考: [https://ask.dcloud.net.cn/article/37901](https://ask.dcloud.net.cn/article/37901)
 
@@ -334,11 +339,7 @@ A: App 3.4+ 已支持 Google 地图， App 3.4 以下版本使用下面的方案
 
 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 
-DCloud为开发者争取了福利，可优惠获取商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`企业微信`发起在线咨询，扫描以下二维码获取地图福利。如您需要快速回复，一定注明公司名称、应用名称/介绍、以及HBuilder账户，感谢你的理解与配合。
-
-- 腾讯地图商业授权现优惠政策：买1年送1个月，买2年送1年。如需购买，请速扫以下二维码咨询与购买！
-
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/sc-weixin.png)
+DCloud为开发者争取了福利，可优惠获取商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以通过`uni-im`发起在线咨询，地址：[地图商业授权咨询](https://ask.dcloud.net.cn/explore/map/)。
 
 详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)
 
@@ -363,4 +364,3 @@ DCloud为开发者争取了福利，可优惠获取商业授权。如有需求�
 **运行效果图**
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/408.png)
-

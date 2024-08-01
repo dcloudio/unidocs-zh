@@ -1,11 +1,13 @@
-## uni.createSelectorQuery()
+# uni.createSelectorQuery()
 
-返回一个 ``SelectorQuery`` 对象实例。可以在这个实例上使用 ``select`` 等方法选择节点，并使用 ``boundingClientRect`` 等方法选择需要查询的信息。 
+返回一个 `SelectorQuery` 对象实例。可以在这个实例上使用 `select` 等方法选择节点，并使用 `boundingClientRect` 等方法选择需要查询的信息。
 
-**Tips:** 
+<!-- UNIAPPAPIJSON.createSelectorQuery.compatibility -->
 
-* 使用 `uni.createSelectorQuery()` 需要在生命周期 `mounted` 后进行调用。
-* 默认需要使用到 `selectorQuery.in` 方法。
+**Tips:**
+
+- 使用 `uni.createSelectorQuery()` 需要在生命周期 `mounted` 后进行调用。
+- 默认需要使用到 `selectorQuery.in` 方法。
 
 ## SelectorQuery
 
@@ -13,47 +15,73 @@
 
 ### selectorQuery.in(component)
 
-将选择器的选取范围更改为自定义组件 ``component`` 内，返回一个 ``SelectorQuery`` 对象实例。（初始时，选择器仅选取页面范围的节点，不会选取任何自定义组件中的节点）。
+将选择器的选取范围更改为自定义组件 `component` 内，返回一个 `SelectorQuery` 对象实例。（初始时，选择器仅选取页面范围的节点，不会选取任何自定义组件中的节点）。
 
 **代码示例**
+
+::: preview
+
+> 选项式 API
+
 ```javascript
 const query = uni.createSelectorQuery().in(this);
-query.select('#id').boundingClientRect(data => {
-  console.log("得到布局位置信息" + JSON.stringify(data));
-  console.log("节点离页面顶部的距离为" + data.top);
-}).exec();
+query
+  .select("#id")
+  .boundingClientRect((data) => {
+    console.log("得到布局位置信息" + JSON.stringify(data));
+    console.log("节点离页面顶部的距离为" + data.top);
+  })
+  .exec();
 ```
+
+> 组合式 API
+
+```javascript
+import { getCurrentInstance } from 'vue';
+const instance = getCurrentInstance();
+
+const query = uni.createSelectorQuery().in(instance.proxy);
+query
+  .select("#id")
+  .boundingClientRect((data) => {
+    console.log("得到布局位置信息" + JSON.stringify(data));
+    console.log("节点离页面顶部的距离为" + data.top);
+  })
+  .exec();
+```
+:::
+
 
 **注意**
 
-- 支付宝小程序不支持in(component)，使用无效果
+- 支付宝小程序不支持 in(component)，使用无效果
 
 ### selectorQuery.select(selector)
 
-在当前页面下选择第一个匹配选择器 ``selector`` 的节点，返回一个 ``NodesRef`` 对象实例，可以用于获取节点信息。
+在当前页面下选择第一个匹配选择器 `selector` 的节点，返回一个 `NodesRef` 对象实例，可以用于获取节点信息。
 
 **selector 说明：**
 
-``selector`` 类似于 CSS 的选择器，但仅支持下列语法。
-- ID选择器：``#the-id``
-- class选择器（可以连续指定多个）：``.a-class.another-class``
-- 子元素选择器：``.the-parent > .the-child``
-- 后代选择器：``.the-ancestor .the-descendant``
-- 跨自定义组件的后代选择器：``.the-ancestor >>> .the-descendant``
-- 多选择器的并集：``#a-node, .some-other-nodes``
+`selector` 类似于 CSS 的选择器，但仅支持下列语法。
+
+- ID 选择器：`#the-id`
+- class 选择器（可以连续指定多个）：`.a-class.another-class`
+- 子元素选择器：`.the-parent > .the-child`
+- 后代选择器：`.the-ancestor .the-descendant`
+- 跨自定义组件的后代选择器：`.the-ancestor >>> .the-descendant` (H5 暂不支持)
+- 多选择器的并集：`#a-node, .some-other-nodes`
 
 ### selectorQuery.selectAll(selector)
 
-在当前页面下选择匹配选择器 ``selector`` 的所有节点，返回一个 ``NodesRef`` 对象实例，可以用于获取节点信息。
+在当前页面下选择匹配选择器 `selector` 的所有节点，返回一个 `NodesRef` 对象实例，可以用于获取节点信息。
 
 ### selectorQuery.selectViewport()
 
-选择显示区域，可用于获取显示区域的尺寸、滚动位置等信息，返回一个 ``NodesRef`` 对象实例。
-
+选择显示区域，可用于获取显示区域的尺寸、滚动位置等信息，返回一个 `NodesRef` 对象实例。
 
 ### selectorQuery.exec(callback)
 
-执行所有的请求。请求结果按请求次序构成数组，在callback的第一个参数中返回。
+执行所有的请求。请求结果按请求次序构成数组，在 callback 的第一个参数中返回。
 
 ## NodesRef
 
@@ -78,33 +106,33 @@ query.select('#id').boundingClientRect(data => {
 
 ### nodesRef.boundingClientRect(callback)
 
-添加节点的布局位置的查询请求。相对于显示区域，以像素为单位。其功能类似于 DOM 的 ``getBoundingClientRect``。返回 ``NodesRef`` 对应的 ``SelectorQuery``。
+添加节点的布局位置的查询请求。相对于显示区域，以像素为单位。其功能类似于 DOM 的 `getBoundingClientRect`。返回 `NodesRef` 对应的 `SelectorQuery`。
 
 **callback 返回参数**
 
-|属性	|类型		|说明		|
-|---|---|---|
-|id	|String	|节点的 ID|		
-|dataset	|Object	|节点的 dataset|		
-|left	|Number	|节点的左边界坐标|		
-|right	|Number	|节点的右边界坐标|		
-|top	|Number	|节点的上边界坐标|		
-|bottom	|Number	|节点的下边界坐标|		
-|width	|Number	|节点的宽度|		
-|height	|Number	|节点的高度|
+| 属性    | 类型   | 说明             |
+| ------- | ------ | ---------------- |
+| id      | String | 节点的 ID        |
+| dataset | Object | 节点的 dataset   |
+| left    | Number | 节点的左边界坐标 |
+| right   | Number | 节点的右边界坐标 |
+| top     | Number | 节点的上边界坐标 |
+| bottom  | Number | 节点的下边界坐标 |
+| width   | Number | 节点的宽度       |
+| height  | Number | 节点的高度       |
 
 ### nodesRef.scrollOffset(callback)
 
-添加节点的滚动位置查询请求。以像素为单位。节点必须是 ``scroll-view`` 或者 ``viewport``。返回 ``NodesRef`` 对应的 ``SelectorQuery``。
+添加节点的滚动位置查询请求。以像素为单位。节点必须是 `scroll-view` 或者 `viewport`。返回 `NodesRef` 对应的 `SelectorQuery`。
 
 **callback 返回参数**
 
-|属性	|类型				|说明		|
-|---|---|---|
-|id	|String			|节点的 ID|								
-|dataset	|Object			|节点的 dataset|								
-|scrollLeft	|Number			|节点的水平滚动位置|							
-|scrollTop	|Number	|节点的竖直滚动位置	|
+| 属性       | 类型   | 说明               |
+| ---------- | ------ | ------------------ |
+| id         | String | 节点的 ID          |
+| dataset    | Object | 节点的 dataset     |
+| scrollLeft | Number | 节点的水平滚动位置 |
+| scrollTop  | Number | 节点的竖直滚动位置 |
 
 ### nodesRef.context(callback)
 
@@ -118,8 +146,8 @@ query.select('#id').boundingClientRect(data => {
 
 **callback 返回参数**
 
-| 属性 | 类型 | 说明 |
-| --- | --- | --- |
+| 属性    | 类型   | 说明                    |
+| ------- | ------ | ----------------------- |
 | context | Object | 节点对应的 Context 对象 |
 
 ### nodesRef.node(callback)
@@ -134,8 +162,8 @@ query.select('#id').boundingClientRect(data => {
 
 **callback 返回参数**
 
-| 属性 | 类型 | 说明 |
-| --- | --- | --- |
+| 属性 | 类型   | 说明                 |
+| ---- | ------ | -------------------- |
 | node | Object | 节点对应的 Node 实例 |
 
 **注意**
@@ -146,27 +174,39 @@ query.select('#id').boundingClientRect(data => {
 ### 代码示例
 
 ```javascript
-uni.createSelectorQuery().selectViewport().scrollOffset(res => {
-  console.log("竖直滚动位置" + res.scrollTop);
-}).exec();
+uni
+  .createSelectorQuery()
+  .selectViewport()
+  .scrollOffset((res) => {
+    console.log("竖直滚动位置" + res.scrollTop);
+  })
+  .exec();
 
 let view = uni.createSelectorQuery().in(this).select(".test");
 
-view.fields({
-  size: true,
-  scrollOffset: true
-}, data => {
-  console.log("得到节点信息" + JSON.stringify(data));
-  console.log("节点的宽为" + data.width);
-}).exec();
+view
+  .fields(
+    {
+      size: true,
+      scrollOffset: true,
+    },
+    (data) => {
+      console.log("得到节点信息" + JSON.stringify(data));
+      console.log("节点的宽为" + data.width);
+    }
+  )
+  .exec();
 
-view.boundingClientRect(data => {
-  console.log("得到布局位置信息" + JSON.stringify(data));
-  console.log("节点离页面顶部的距离为" + data.top);
-}).exec();
+view
+  .boundingClientRect((data) => {
+    console.log("得到布局位置信息" + JSON.stringify(data));
+    console.log("节点离页面顶部的距离为" + data.top);
+  })
+  .exec();
 ```
 
 **注意**
+
 - nvue 暂不支持 uni.createSelectorQuery，暂时使用下面的方案
 
 ```html
@@ -186,11 +226,11 @@ view.boundingClientRect(data => {
 <script>
   // 注意平台差异
   // #ifdef APP-NVUE
-  const dom = weex.requireModule('dom')
+  const dom = weex.requireModule("dom");
   // #endif
 
   export default {
-    data () {
+    data() {
       return {
         size: {
           width: 0,
@@ -198,20 +238,22 @@ view.boundingClientRect(data => {
           top: 0,
           bottom: 0,
           left: 0,
-          right: 0
-        }
-      }
+          right: 0,
+        },
+      };
     },
     onReady() {
-    	 setTimeout(()=> {
-	        const result = dom.getComponentRect(this.$refs.box, option => {
-		    console.log('getComponentRect:', option)
-		    this.size = option.size
-		})
-		console.log('return value:', result)
-		console.log('viewport:', dom.getComponentRect('viewport'))
-	 }, 100);
-     }
-  }
+      setTimeout(() => {
+        const result = dom.getComponentRect(this.$refs.box, (option) => {
+          console.log("getComponentRect:", option);
+          this.size = option.size;
+        });
+        console.log("return value:", result);
+        console.log("viewport:", dom.getComponentRect("viewport"));
+      }, 100);
+    },
+  };
 </script>
 ```
+
+<!-- UNIAPPAPIJSON.createSelectorQuery.returnValue -->

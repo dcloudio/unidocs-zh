@@ -1,4 +1,3 @@
-
 ::: tip 组件名：uni-data-picker
 > 代码块： `uDataPicker`
 > 关联组件：`uni-data-pickerview`、`uni-load-more`。
@@ -115,7 +114,7 @@
 ```
 
 
-### 自定义 Solt
+### 自定义 Slot
 
 ```html
 <uni-data-picker v-slot:default="{data, error, options}" popup-title="请选择所在地区">
@@ -152,7 +151,6 @@
 |clear-icon|Boolean| true/false |true|是否显示清除按钮|
 |ellipsis|Boolean| true/false |	true|是否隐藏 tab 标签过长的文本|
 |step-searh|Boolean| true/false |true|分步查询时，点击节点请求数据|
-|step-search-url|String|-|-|分步查询时，动态加载云端数据url格式，`https://xxx.com/{parentValue}`(当前版本暂不支持，下版支持)|
 |self-field|String|-|-|分步查询时当前字段名称|
 |parent-field|String|-|-|分步查询时父字段名称|
 |collection|String|-|-|表名。支持输入多个表名，用 `,` 分割|
@@ -163,7 +161,8 @@
 |map|Object|-|{text:'text',value:'value'}|字段映射，将text/value映射到数据中的其他字段|
 
 ::: warning 注意
-`collection/where/orderby` 和 `<unicloud-db>` 的用法一致，[详情](https://doc.dcloud.net.cn/uniCloud/unicloud-db)
++ `collection/where/orderby` 和 `<unicloud-db>` 的用法一致，[详情](https://doc.dcloud.net.cn/uniCloud/unicloud-db)
++ uniapp项目，每个数据项的value字段不能重复，组件内部基于value做唯一标识。uniappX项目没有这个限制，放心使用
 :::
 
 
@@ -174,7 +173,6 @@
 |:-:| :-:|	:-:|
 |@change|EventHandle|选择完成时触发 {detail: {value}}|
 |@nodeclick|EventHandle| 节点被点击时触发|
-|@stepsearch|EventHandle| 动态加载节点数据前触发(当前版本暂不支持，下版支持)	|
 |@popupopened|EventHandle| 弹出层弹出时触发|
 |@popupclosed|EventHandle| 弹出层关闭时触发|
 

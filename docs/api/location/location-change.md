@@ -1,12 +1,30 @@
+
 ### uni.onLocationChange(FUNCTION CALLBACK)
 
 监听实时地理位置变化事件，需结合 `uni.startLocationUpdate` 或 `uni.startLocationUpdateBackground` 使用。
+
+::: warning 注意
+Web平台本API之前调用了腾讯地图的gcj02坐标免费转换接口，该接口从2024年7月18日起被腾讯逐步下线，导致老版本中本API无法使用。请立即升级到 uni-app 4.24版。
+
+升级后注意：
+1. cli项目需升级cli
+2. manifest中配置好自己的地图厂商key
+3. 确保在地图厂商那里配额足够
+4. 确保在地图厂商那里有周边服务的权限。否则无法获取周围地址
+5. 确保自己的域名在地图厂商那里正确配置了域名白名单
+
+如果运行在微信浏览器中，可以使用微信的jssdk的定位能力。这个是微信向腾讯地图申请的key，开发者无需配置自己的key。
+
+地图厂商的商业授权较贵，如需购买，请点击[获取优惠](https://ask.dcloud.net.cn/explore/map/)。
+:::
 
 **平台差异说明**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
+
+<!-- UNIAPPAPIJSON.onLocationChange.compatibility -->
 
 **FUNCTION CALLBACK 参数**
 
@@ -20,15 +38,16 @@
 |verticalAccuracy|number|垂直精度 (m)|抖音小程序、快手小程序 Android 无法获取，返回 0|
 |horizontalAccuracy|number|水平精度 (m)|抖音小程序不支持|
 |city|string|定位到的城市信息|百度小程序、抖音小程序（iOS 不支持）|
-|cityCode|String|城市编码|百度小程序||street|String|街道名称
+|cityCode|String|城市编码|百度小程序|
+|street|String|街道名称||
 |city|String|城市名称|百度小程序|
-country|String|国家|百度小程序|
-countryCode|String|国家代码|百度小程序|
-province|String|省份|百度小程序|
-streetNumber|String|街道号码|百度小程序|
-district|String|区|百度小程序|
-isFullAccuracy|Boolean|是不是精确定位信息|百度小程序|
-altitudeAccuracy|Number|海拔的精确度信息|App|
+|country|String|国家|百度小程序|
+|countryCode|String|国家代码|百度小程序|
+|province|String|省份|百度小程序|
+|streetNumber|String|街道号码|百度小程序|
+|district|String|区|百度小程序|
+|isFullAccuracy|Boolean|是不是精确定位信息|百度小程序|
+|altitudeAccuracy|Number|海拔的精确度信息|App|
 
 **注意**
 - 该方法会持续监听地理位置信息的变化，建议在不需要监听地理位置信息变化后，直接调用 `uni.stopLocationUpdate` 方法取消监听。
@@ -45,13 +64,14 @@ uni.onLocationChange(function (res) {
 ```
 ### uni.offLocationChange(FUNCTION CALLBACK)
 
-关闭监听实时位置变化，前后台都停止消息接收。
+移除实时地理位置变化事件的监听函数。
 
-**平台差异说明**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
+
+<!-- UNIAPPAPIJSON.offLocationChange.compatibility -->
 
 **注意：App端及H5端callback参数为必填。**
 
@@ -77,6 +97,8 @@ uni.onLocationChange(function (res) {
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|x|√|x|x|x|
 
+<!-- UNIAPPAPIJSON.onLocationChangeError.compatibility -->
+
 **FUNCTION CALLBACK 参数**
 
 |参数名|类型|说明|平台差异说明|
@@ -94,6 +116,8 @@ uni.onLocationChange(function (res) {
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|x|√|x|x|x|
 
+<!-- UNIAPPAPIJSON.offLocationChangeError.compatibility -->
+
 **注意：App端及H5端callback参数为必填。**
 
 **FUNCTION CALLBACK 参数**
@@ -102,13 +126,15 @@ uni.onLocationChange(function (res) {
 
 ### uni.startLocationUpdate(OBJECT)
 
-开启小程序进入前台时接收位置消息。
+开启应用进入前台时接收位置消息。
 
 **平台差异说明**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
+
+<!-- UNIAPPAPIJSON.startLocationUpdate.compatibility -->
 
 **OBJECT 参数**
 
@@ -125,9 +151,9 @@ uni.onLocationChange(function (res) {
 
 ```javascript
 uni.startLocationUpdate({
-  success: res => console.log('开启小程序接收位置消息成功'),
-  fail: err => console.error('开启小程序接收位置消息失败：', err),
-  complete: msg => console.log('调用开启小程序接收位置消息 API 完成')
+  success: res => console.log('开启应用接收位置消息成功'),
+  fail: err => console.error('开启应用接收位置消息失败：', err),
+  complete: msg => console.log('调用开启应用接收位置消息 API 完成')
 });
 ```
 
@@ -141,6 +167,9 @@ uni.startLocationUpdate({
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
 
+<!-- UNIAPPAPIJSON.stopLocationUpdate.compatibility -->
+
+
 **OBJECT 参数**
 
 |参数名|类型|必填|说明|平台差异说明|
@@ -151,13 +180,13 @@ uni.startLocationUpdate({
 
 ### uni.startLocationUpdateBackground(OBJECT)
 
-开始监听实时地理位置信息变化事件，小程序进入前后台时均接收实时地理位置信息。
+开始监听实时地理位置信息变化事件，应用进入前后台时均接收实时地理位置信息。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|x|x|x|√|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|x|√|x|x|x|x|√|x|
 
 **OBJECT 参数**
 
@@ -173,6 +202,6 @@ uni.startLocationUpdate({
 
 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 
-DCloud为开发者争取了福利，可优惠获取高德的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
+DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
 
 详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)

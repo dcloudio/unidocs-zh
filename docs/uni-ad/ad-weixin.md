@@ -33,7 +33,7 @@ uni-ad可以一套代码全端变现，包括app、web、微信小程序；wx广
 
 uni-ad内置了安全防护策略，减少广告被刷风险
 
-3.6.8+ 支持激励视频服务器安全回调，[详情](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#callback)
+3.6.8+ 支持激励视频服务器安全回调，[详情](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html#callback)
 
 服务器回调用于业务系统判断是否提供奖励给观看广告的用户。配置服务器回调后，当用户成功看完广告时，[uniCloud](https://doc.dcloud.net.cn/uniCloud/)服务器会访问配置的云函数，通知用户完成观看激励视频。
 相对来讲服务器回调将更加安全
@@ -58,15 +58,15 @@ uni-ad由开发者在DCloud网站[uniad.dcloud.net.cn](https://uniad.dcloud.net.
 ## 不同广告类型的开发文档
 - banner/信息流广告
 
-详细开发文档地址：[https://uniapp.dcloud.io/component/ad](https://uniapp.dcloud.io/component/ad)
+详细开发文档地址：[https://uniapp.dcloud.net.cn/uni-ad/ad-component.html](https://uniapp.dcloud.net.cn/uni-ad/ad-component.html)
 
 - 激励视频广告
 
-详细开发文档地址：[https://uniapp.dcloud.io/component/ad-rewarded-video](https://uniapp.dcloud.io/component/ad-rewarded-video)
+详细开发文档地址：[https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html)
 
 - 插屏广告
 
-详细开发文档地址：[https://uniapp.dcloud.io/component/ad-interstitial](https://uniapp.dcloud.io/component/ad-interstitial)
+详细开发文档地址：[https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)
 
 ## adpid和unit-id详解
 
@@ -104,4 +104,7 @@ uni-ad由开发者在DCloud网站[uniad.dcloud.net.cn](https://uniad.dcloud.net.
 ### 方案二
 
 登陆微信公众平台 [https://mp.weixin.qq.com/](https://mp.weixin.qq.com/)，点击左侧栏 `设置`，然后找到顶部页签 `第三方设置`，向下滚动屏幕到 `插件管理`,
-点击 `添加插件` 按钮，搜索 `uniAD` 和 `珊瑚运营平台` 并添加
+点击 `添加插件` 按钮，搜索 `uni-ad` 和 `珊瑚运营平台` 并添加
+
+**提示**
+安装2个插件（uniAD和珊瑚运营平台）后直接提交广告申请即可。其中“珊瑚运营平台”插件会显示【待确认】状态，属于正常现象，直接提交广告开通申请，待广告位开通后会显示【已通过】

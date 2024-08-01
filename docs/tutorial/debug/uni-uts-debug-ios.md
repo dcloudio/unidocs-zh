@@ -1,6 +1,9 @@
 # uts ios调试
 
-HBuilderX 3.7.6+，uni-app uts插件，运行到iOS，支持Debug调试
+uts插件，运行到iOS（限iOS17以下），支持Debug，打断点调试。
+> uni-app 需 HBuilderX 3.7.6+
+
+> uni-app x 需 HBuilderX 4.18+
 
 ## 开启调试
 
@@ -36,7 +39,7 @@ HBuilderX 3.7.6+，uni-app uts插件，运行到iOS，支持Debug调试
 
 调试视图分为5部分:
 
-- [调试工具栏](#DebugActions)
+- [调试工具栏](#debugactions)
 - 变量窗口 (`复制值`、`复制表达式`、`添加到监视`)
 - 监视窗口（包含`添加`/`编辑`/`删除`表达式，以及`复制值`）
 - 调用堆栈窗口

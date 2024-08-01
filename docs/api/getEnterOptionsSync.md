@@ -1,4 +1,4 @@
-### uni.getEnterOptionsSync()
+## uni.getEnterOptionsSync()
 
 获取启动时的参数。
 
@@ -15,14 +15,16 @@
 |:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
 |√ `(3.4.10+)`|√ `(3.5.1+)`|√|√|√|√|x|x|x|x|x|
 
+<!-- UNIAPPAPIJSON.getEnterOptionsSync.compatibility -->
+
 **返回参数说明**
 
 |参数名|类型|说明|平台差异说明|
 |:-|:-|:-|:-|
-|path|String|启动的路径(代码包路径)|其他平台均支持，`抖音小程序(1.12.0+)`|
-|scene|Number|启动时的场景值，具体值含义请查看各平台文档说明。App、web端恒为 1001。|其他平台均支持，`抖音小程序(1.12.0+)`|
-|query|Object|启动时的 query 参数|其他平台均支持，`抖音小程序(1.12.0+)`|
-|referrerInfo|Object|来源信息。如果没有则返回 `{}`|其他平台均支持，`抖音小程序(1.15.0+)`|
+|path|String|启动的路径(代码包路径)||
+|scene|Number|启动时的场景值，具体值含义请查看各平台文档说明。App、web端恒为 1001。||
+|query|Object|启动时的 query 参数||
+|referrerInfo|Object|来源信息。如果没有则返回 `{}`||
 |channel|String|如果应用没有设置渠道标识，则返回空字符串。取值如下|`仅 App 支持`|
 |launcher|String|应用启动来源。取值如下|`仅 App 支持`|
 |forwardMaterials|Array\<Object\>|打开的文件信息数组，只有从聊天素材场景打开（scene为1173）才会携带该参数|`微信小程序`|

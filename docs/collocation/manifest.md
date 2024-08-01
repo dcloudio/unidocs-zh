@@ -2,7 +2,7 @@
 
 `manifest.json` 文件是应用的配置文件，用于指定应用的名称、图标、权限等。HBuilderX 创建的工程此文件在根目录，CLI 创建的工程此文件在 src 目录。
 
-### 配置项列表
+## 配置项列表
 
 |属性|类型|默认值|描述|最低版本|
 |:-|:-|:-|:-|:-|
@@ -25,7 +25,7 @@
 |mp-toutiao|Object||[抖音小程序特有配置](/collocation/manifest?id=mp-toutiao)|1.6.0|
 |mp-lark|Object||[飞书小程序特有配置](/collocation/manifest?id=mp-lark)|3.2.12|
 |mp-qq|Object||[qq 小程序特有配置](/collocation/manifest?id=mp-qq)|2.1.0|
-|mp-kuaishou|Object||[快手小程序特有配置](/collocation/manifest.html#mp-kuaishou)|3.2.2|
+|mp-kuaishou|Object||[快手小程序特有配置](/collocation/manifest.md#mp-kuaishou)|3.2.2|
 
 **Tips**
 
@@ -34,7 +34,7 @@
 - versionName在云打包App和生成wgt应用资源时会使用。如需升级App版本，先修改此处再云打包。导出wgt资源用于离线打包和热更新时也会以此版本为依据。
 - 在本地打包时和热更新时，App版本和wgt应用资源版本将不再保持一致。此时通过[plus.runtime.version](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.version)可获取App版本，通过[plus.runtime.getProperty](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.getProperty)获取wgt资源版本。
 
-#### networkTimeout
+### networkTimeout
 
 各类网络请求的超时时间，单位均为毫秒。
 
@@ -47,8 +47,8 @@
 
 自`HBuilderX 2.5.10`起，上述默认超时时间由6秒改为60秒，对齐微信小程序平台。
 
+### uniStatistics
 
-#### uniStatistics
 uni 统计配置项
 
 |属性|类型|必填|默认值|说明|
@@ -73,7 +73,6 @@ uni 统计配置项
 |uniStatistics|Object|[App 是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|2.2.3+|
 |webView|Object|当系统webview低于指定版本时，会弹出提示。或者下载x5内核后继续启动，仅Android支持，[详情](/collocation/manifest?id=appwebview)|3.5.0+|
 
-
 PS：上表只列出了核心部分，App平台的配置其实非常多，完整内容请参考 [完整的 manifest.json](/collocation/manifest-app?id=full-manifest)。
 
 **Tips**
@@ -84,7 +83,6 @@ PS：上表只列出了核心部分，App平台的配置其实非常多，完整
 - 部分 modules 是默认的，不需要进行配置。
 - 微信小程序的 `appid` 等信息，需要配置在 `mp-weixin` 节点下。不要配置在 `app-plus`下。`sdkConfigs` 下出现的 `weixin` 节点，配置的是 App 的第三方 SDK 信息。
 
-
 #### App Splashscreen@splashscreen
 
 splash（启动封面）是App必然存在的、不可取消的。
@@ -94,17 +92,18 @@ splash（启动封面）是App必然存在的、不可取消的。
 |autoclose|Boolean|true|是否自动关闭启动界面，仅当alwaysShowBeforeRender设置为false时生效，如果需要[手动关闭](https://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.closeSplashscreen)启动界面，需将 alwaysShowBeforeRender 及 autoclose 均设置为 false。||
 |waiting|Boolean|true|是否在程序启动界面显示等待圈或雪花||
 
-alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关闭启动界面（splash）策略，[详见](tutorial/app-splashscreen)
+alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关闭启动界面（splash）策略，[详见](../tutorial/app-splashscreen.md)
 
 **注意**
+
 - 如果不配置自己的splash图，App端会默认把App的icon放到splash中
 - splash只能是标准png，不要用jpg改名为png。也不支持gif等动画
 - 相关改动，云打包生效，真机运行不生效。本地打包需自行在原生工程中配置
 - App启动图中iOS的MAX等大屏设备的splash图若不配，会导致iOS认为此App没有为MAX优化，App将无法全屏，四周会有黑边
-- Android的splash支持.9.png，[详见](tutorial/app-splashscreen?id=9png)
-
+- Android的splash支持.9.png，[详见](../tutorial/app-splashscreen.md#_9png)
 
 #### App Modules@modules
+
 模块选择是为了控制App的包体积，不需要的模块可以在打包时剔除。
 
 |名称|描述|
@@ -126,6 +125,7 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 |VideoPlayer|视频播放|
 
 **注意**
+
 - 仅App云打包生效。本地打包需自行在原生工程中配置。
 
 #### App Distribute@distribute
@@ -163,12 +163,14 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 |:-|:-|:-|
 |subPackages|Boolean|是否开启分包优化，目前仅 uni-app vue2 下生效|
 
-```
-"app-plus": {
-  "optimization": {
-    "subPackages": true
-  },
-  "runmode" : "liberate" // 开启分包优化后，必须配置资源释放模式
+```json
+{
+  "app-plus": {
+    "optimization": {
+      "subPackages": true
+    },
+    "runmode" : "liberate" // 开启分包优化后，必须配置资源释放模式
+  }
 }
 ```
 
@@ -177,18 +179,18 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 也就是一旦在pages.json里配置分包，小程序一定生效，而app是否生效，取决于manifest里是否开启。
 
 注意:
+
 * App开启分包后，每个分包单独编译成一个js文件(都包含在app内，不会联网下载)，当App首页是vue时，可减小启动加载文件大小，提升启动速度。
 * 首页是nvue时，分包不会提升启动速度，nvue本身启动速度就快于vue，也快于开启分包后的首页为vue的应用。如果追求极致启动速度，还是应该使用nvue做首页并在manifest开启fast模式。
 * App页面较少时，分包对启动速度的优化不明显。
 
-
 #### nvue@nvue
+
 `nvue` 页面布局初始设置
 
 |属性|类型|描述|
 |:-|:-|:-|
 |flex-direction|String| flex 成员项的排列方向，支持项，row：从左到右； row-reverse：从右到左；column：从上到下；column-reverse：与 column 相反，默认值 column。|
-
 
 #### webview@appwebview
 
@@ -196,7 +198,7 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 
 当App代码使用了低版本webview不支持的语法时（比如使用了vue3），可以在manifest配置本属性，来指定最低运行的webview版本。
 
-当系统webview版本不符合需求时，uni-app引擎会自动弹框。同时开发者可以指定使用 x5引擎webview 来替代系统webview，以保障浏览器兼容性。详见[x5文档](/tutorial/app-android-x5.html)
+当系统webview版本不符合需求时，uni-app引擎会自动弹框。同时开发者可以指定使用 x5引擎webview 来替代系统webview，以保障浏览器兼容性。详见[x5文档](/tutorial/app-android-x5.md)
 
 当你的应用强依赖x5时，比如需要vue页面的字体和tabbar等原生界面保持一致时，也可以在manifest配置本属性。
 
@@ -212,7 +214,6 @@ x5 属性说明
 |timeOut|Number|3000|超时时间|
 |showTipsWithoutWifi|Boolean|false|是否在非WiFi网络环境时，显示用户确认下载x5内核的弹窗。（如果为true时，在非WiFi网络下载x5模块，会显示用户确认弹框，内容为 `当前处于非WiFi网络，是否允许下载x5模块？` ，false时不显示弹框 。）|
 |allowDownloadWithoutWiFi|Boolean|false|是否允许用户在非WiFi网络时进行x5内核的下载。（如果为true，就不会显示用户确认的弹窗。false时，如果showTipsWithoutWifi为true，就会显示用户确认弹框；showTipsWithoutWifi为false时，不下载x5模块。）|
-
 
 webview示例
 
@@ -234,10 +235,11 @@ webview示例
 提示：vue3 vue页面 要求 Android 系统 webview 最低版本为 `64.0.3282.116`
 
 ### h5
+
 |属性|类型|说明|
 |:-|:-|:-|
 |title|String|页面标题，默认使用 manifest.json 的 name|
-|template|String|index.html模板路径，相对于应用根目录，可定制生成的 html 代码。参考：[自定义模板](/collocation/manifest?id=h5-template)|
+|template|String|index.html 模板路径，相对于应用根目录，可定制生成的 html 代码。参考：[自定义模板](/collocation/manifest?id=h5-template), Vue2 支持，Vue3 暂不支持|
 |router|Object|参考：[router](/collocation/manifest?id=h5-router)|
 |async|Object|参考：[async](/collocation/manifest?id=h5-async)|
 |devServer|Object|开发环境 server 配置，参考：[devServer](/collocation/manifest?id=devserver)|
@@ -247,6 +249,9 @@ webview示例
 |uniStatistics|Object|[H5 是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)||
 
 #### 自定义模板@h5-template
+
+> 目前 Vue2 支持， Vue3 暂不支持
+
 需要使用自定义模板的场景，通常有以下几种情况：
 
 - 调整页面 head 中的 meta 配置
@@ -254,6 +259,7 @@ webview示例
 - 加入百度统计等三方js
 
 使用自定义模板时，1. 工程根目录下新建一个html文件；2. 复制下面的基本模板内容，到这个html文件，在此基础上修改meta和引入js；3. 在 `manifest.json->h5->template` 节点中关联这个html文件的路径。
+
 ```html
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -293,6 +299,7 @@ H5平台是SPA单页应用，普通的SEO信息即加meta字段只能在，自�
 但SEO的时代在变，现在更有效的方式，使用uni-app同时发布一版百度小程序，这个搜索权重更高。DCloud的ask社区的H5版也是uni-app做的，同时发布了百度小程序，权重更高，每天来自百度的搜索量非常多。是一个可现身说法的好案例。
 
 #### router@h5-router
+
 |属性|类型|默认值|说明|
 |:-|:-|:-|:-|
 |mode|String|hash|路由跳转模式，支持 hash、history|
@@ -302,8 +309,11 @@ H5平台是SPA单页应用，普通的SEO信息即加meta字段只能在，自�
 
 * `history` 模式部分浏览器器不支持，iOS微信内置浏览器无法观测到URL变动，默认分享（不使用微信[JSSDK](https://ask.dcloud.net.cn/article/35380)的情况下）的链接为入口页链接。
 * `history` 模式发行需要后台配置支持，详见：[history 模式的后端配置](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
+* `base` 参数设置为空或者 `/`，应用运行在 `/` 根目录下。
+* 参数设置为 `./` 时，应用运行在相对路径下，可配合 `nginx` 等工具运行在任意路径中。
 
 #### async@h5-async
+
 |属性|类型|默认值|说明|
 |:-|:-|:-|:-|
 |loading|String|AsyncLoading|页面 js 加载时使用的组件（需注册为全局组件）|
@@ -312,6 +322,7 @@ H5平台是SPA单页应用，普通的SEO信息即加meta字段只能在，自�
 |timeout|Number|60000|页面 js 加载超时时间（超时后展示 error 对应的组件）|
 
 #### devServer
+
 |属性|类型|默认值|说明|
 |:-|:-|:-|:-|
 |https|Boolean|false|启用 https 协议|
@@ -321,6 +332,7 @@ H5平台是SPA单页应用，普通的SEO信息即加meta字段只能在，自�
 Tips：`uni-app` 中 `manifest.json->h5->devServer`，`vue2` 实际上对应 `webpack` 的 [devServer](https://webpack.js.org/configuration/dev-server/)，`vue3` 实际上对应 `vite` 的 [server](https://cn.vitejs.dev/config/server-options.html#server-options)，鉴于 manifest 为 json 文件，故 `webpack.config.js->devServer` 及 `vite.config.js->server` 配置项下的简单类型属性均可在`manifest.json->h5->devServer`节点下配置，funciton 等复杂类型暂不支持。
 
 #### publicPath
+
 配置 publicPath 为 cdn 资源地址前缀，这样编译出来的 html 文件，引用的 js，css 路径会自动变成 cdn 上的地址。
 
 注意：如果想对图片生效，image组件的图片地址需要使用相对路径
@@ -335,6 +347,7 @@ Tips：`uni-app` 中 `manifest.json->h5->devServer`，`vue2` 实际上对应 `we
 <script src=/h5/static/js/chunk-vendors.803ce52d.js></script>
 <script src=/h5/static/js/index.34e8497d.js>
 ```
+
 配置 publicPath 为 `https://www.cdn.com/h5/`（无效地址仅用作示例） 后，发布时 index.html 中的结果：
 
 ```html
@@ -343,6 +356,7 @@ Tips：`uni-app` 中 `manifest.json->h5->devServer`，`vue2` 实际上对应 `we
 ```
 
 **注意**
+
 - 打包部署后，在服务器上开启 gzip 可以进一步压缩文件。具体的配置，可以参考网上的分享：https://juejin.im/post/5af003286fb9a07aac24611b
 
 #### sdkconfig@h5sdkconfig
@@ -360,6 +374,7 @@ Tips：`uni-app` 中 `manifest.json->h5->devServer`，`vue2` 实际上对应 `we
 **示例**
 
 ```json
+{
 "h5": {
 	"sdkConfigs": {
 		// 使用地图或位置相关功能必须填写其一
@@ -387,9 +402,8 @@ Tips：`uni-app` 中 `manifest.json->h5->devServer`，`vue2` 实际上对应 `we
 		}
 	}
 }
+}
 ```
-**注意**
-- 百度地图 vue2 项目暂不支持
 
 #### optimization
 
@@ -406,11 +420,14 @@ Tips：`uni-app` 中 `manifest.json->h5->devServer`，`vue2` 实际上对应 `we
 |enable|Boolean|false|是否启用摇树优化|
 
 **示例：**
+
 ```json
-"h5": {
-    "optimization": {
-        "treeShaking": {
-            "enable": true
+{
+    "h5": {
+        "optimization": {
+            "treeShaking": {
+                "enable": true
+            }
         }
     }
 }
@@ -435,12 +452,11 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |cloudfunctionRoot|String| 配置云开发目录，参考[setting](/collocation/manifest?id=cloudfunctionRoot)|
 |uniStatistics|Object|[微信小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
-|mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
+|mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.md#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
 |slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
 |embeddedAppIdList|Array|要半屏跳转的小程序appid。[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html)|
 |requiredPrivateInfos|Array|地理位置相关接口。[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#requiredPrivateInfos)|
 |lazyCodeLoading|String| 目前仅支持值 requiredComponents，代表开启小程序[按需注入](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|
-
 
 #### setting
 
@@ -479,9 +495,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 配置目录之后，需要在项目根目录新建 `vue.config.js` 配置对应的文件编译规则
 
 ```javascript
-
 {
-
  plugins: [
      new CopyWebpackPlugin([
        {
@@ -491,7 +505,6 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
      ]),
    ],
 }
-
 ```
 
 ### mp-alipay
@@ -506,7 +519,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |enableDistFileMinify	|Boolean| 是否压缩编译产物（仅在真机预览/真机调试时生效），默认为false	|
 |uniStatistics				|Object	|[支付宝小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
-|mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
+|mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.md#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
 |slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
 |lazyCodeLoading|String|是否开启代码按需执行。|
 |styleIsolation|String|组件样式隔离方式，默认值为 `apply-shared`，具体配置 [详见](https://opendocs.alipay.com/mini/framework/page-acss)。 uni-app 3.99+ 开始支持|
@@ -660,21 +673,23 @@ HBuilderX 3.6.16+ 支持项目根目录(cli 项目为 src 目录)下创建配置
 
 
 **manifest.json配置**
+
 ```json
-"quickapp-webview": {// 快应用通用配置
-  "icon": "/static/logo.png",
-  "package": "com.example.demo",
-  "versionName": "1.0.0",
-  "versionCode": 100
-},
-"quickapp-webview-union": {// 快应用联盟，目前仅支持 vivo、oppo
-  "minPlatformVersion": 1063 //最小平台支持
-},
-"quickapp-webview-huawei": {// 快应用华为
-  "minPlatformVersion": 1070 //最小平台支持
+{
+  "quickapp-webview": {// 快应用通用配置
+    "icon": "/static/logo.png",
+    "package": "com.example.demo",
+    "versionName": "1.0.0",
+    "versionCode": 100
+  },
+  "quickapp-webview-union": {// 快应用联盟，目前仅支持 vivo、oppo
+    "minPlatformVersion": 1063 //最小平台支持
+  },
+  "quickapp-webview-huawei": {// 快应用华为
+    "minPlatformVersion": 1070 //最小平台支持
+  }
 }
 ```
-
 
 ### FAQ
 Q：iOS 应用调用相机等权限时，弹出的提示语如何修改？

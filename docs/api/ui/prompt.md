@@ -1,6 +1,8 @@
-### uni.showToast(OBJECT)
+## uni.showToast(OBJECT)
 
 显示消息提示框。
+
+<!-- UNIAPPAPIJSON.showToast.compatibility -->
 
 **OBJECT参数说明**
 
@@ -15,6 +17,8 @@
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+
+<!-- UNIAPPAPIJSON.showToast.param -->
 
 **icon 值说明**
 
@@ -48,9 +52,13 @@ uni.showToast({
 
 - App端可通过[plus.nativeUI.toast API](https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.toast)实现更多功能。
 
-### uni.hideToast()
+<!-- UNIAPPAPIJSON.showToast.tutorial -->
+
+## uni.hideToast()
 
 隐藏消息提示框。
+
+<!-- UNIAPPAPIJSON.hideToast.compatibility -->
 
 **示例**
 
@@ -59,9 +67,11 @@ uni.hideToast();
 ```
 
 
-### uni.showLoading(OBJECT)
+## uni.showLoading(OBJECT)@showloading
 
-显示 loading 提示框, 需主动调用 [uni.hideLoading](api/ui/prompt?id=hideloading) 才能关闭提示框。
+显示 loading 提示框, 需主动调用 [uni.hideLoading](#hideloading) 才能关闭提示框。
+
+<!-- UNIAPPAPIJSON.showLoading.compatibility -->
 
 **OBJECT参数说明**
 
@@ -73,6 +83,8 @@ uni.hideToast();
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
+<!-- UNIAPPAPIJSON.showLoading.param -->
+
 **示例**
 
 ```javascript
@@ -81,9 +93,13 @@ uni.showLoading({
 });
 ```
 
-### uni.hideLoading()
+<!-- UNIAPPAPIJSON.showLoading.tutorial -->
+
+## uni.hideLoading()@hideloading
 
 隐藏 loading 提示框。
+
+<!-- UNIAPPAPIJSON.hideLoading.compatibility -->
 
 **示例**
 
@@ -97,9 +113,11 @@ setTimeout(function () {
 }, 2000);
 ```
 
-### uni.showModal(OBJECT)
+## uni.showModal(OBJECT)@showmodal
 
 显示模态弹窗，可以只有一个确定按钮，也可以同时有确定和取消按钮。类似于一个API整合了 html 中：alert、confirm。
+
+<!-- UNIAPPAPIJSON.showModal.compatibility -->
 
 **OBJECT参数说明**
 
@@ -117,6 +135,8 @@ setTimeout(function () {
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+
+<!-- UNIAPPAPIJSON.showModal.param -->
 
 **success返回参数说明**
 
@@ -151,9 +171,11 @@ uni.showModal({
 - 各家小程序平台对于 `confirm`、`cancel` 字段返回规则可能不尽相同，包含两种情况：`{ confirm: true, cancel: false }` 或 `{ confirm: true }`，但并不影响使用 if 去做判断
 
 
-### uni.showActionSheet(OBJECT)
+## uni.showActionSheet(OBJECT)
 
 从底部向上弹出操作菜单
+
+<!-- UNIAPPAPIJSON.showActionSheet.compatibility -->
 
 **OBJECT参数说明**
 
@@ -183,6 +205,8 @@ uni.showModal({
 |:-|:-|:-|
 |tapIndex|Number|用户点击的按钮，从上到下的顺序，从0开始|
 
+<!-- UNIAPPAPIJSON.showActionSheet.param -->
+
 **示例**
 
 ```javascript
@@ -206,3 +230,5 @@ uni.showActionSheet({
 
 - 在非H5端，本章的所有弹出控件都是原生控件，层级最高，可覆盖video、map、tabbar等原生控件。
 - [uni-app插件市场](https://ext.dcloud.net.cn/)有很多封装好的前端组件，但注意前端组件层级不是最高，无法覆盖原生组件，除非使用cover-view或nvue。
+
+<!-- UNIAPPAPIJSON.showActionSheet.tutorial -->

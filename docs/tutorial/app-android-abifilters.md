@@ -19,7 +19,7 @@ HBuilder/HBuilderX中使用so库的功能（模块）
 
 
 ### CPU类型
-HBulderX已适配支持以下主流CPU类型：
+HBuilderX已适配支持以下主流CPU类型：
 - armeabi-v7a
 第7代及以上的ARM处理器（ARM32位），市面上大多数手机使用此CPU类型。
 - arm64-v8a

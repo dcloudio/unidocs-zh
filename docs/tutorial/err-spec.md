@@ -90,7 +90,7 @@ Uni统一错误信息，用于统一各平台（端）错误信息
 - data
 	可选，错误时返回的数据，比如获取设备信息时，如部分数据获取成功，部分数据获取失败，此时触发错误回调，需将获取成功的数据放到data属性中
 - cause
-	可选，源错误信息，可以包含多个错误，详见SourceError
+	可选，源错误信息，可以包含多个错误，详见[SourceError](#sourceerror)
 
 
 当源错误存在多个时，需要将SourceError封装到AggregateError对象中，按以下方式获取SourceError数组：

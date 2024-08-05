@@ -564,6 +564,8 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **同济医院官方App：** [App官网下载页](https://tjhapp.com.cn/app/appdown.html)
 
+**SINOPEC PLUS：** 中国石化香港分公司为全港市民推出的便利加油应用，[Android](https://play.google.com/store/apps/details?id=uni.UNI42811E9)、[iOS](https://apps.apple.com/hk/app/sinopec-plus/id1459721711)
+
 **广汽丰田：** 微信小程序搜同名
 
 **一汽丰田官方App（5+App）：** [Android](https://android.myapp.com/myapp/detail.htm?apkName=com.toyota.ftmsApp&amp;ADTAG=mobile)、[iOS](https://apps.apple.com/cn/app/%E4%B8%80%E6%B1%BD%E4%B8%B0%E7%94%B0/id687516806)

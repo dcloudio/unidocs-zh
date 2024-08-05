@@ -1,4 +1,3 @@
-
 ::: tip 组件名：uni-notice-bar
 > 代码块： `uNoticeBar`
 
@@ -58,7 +57,7 @@
 |single|Boolean|false|是否单行|
 |scrollable|Boolean|false|是否滚动，为true时，NoticeBar为单行|
 |showIcon|Boolean|false	|是否显示左侧喇叭图标|
-|showClose|Boolean|false|是否显示左侧关闭按钮|
+|showClose|Boolean|false|是否显示右侧关闭按钮|
 |showGetMore|Boolean|false|是否显示右侧查看更多图标，为true时，NoticeBar为单行|
 
 ### NoticeBar Events

@@ -104,6 +104,7 @@
     * [Android 自定义渠道包](build/AndroidChannel.md)
     * [Android原生应用清单文件和资源](app-nativeresource-android.md)
     * [iOS原生应用配置文件和资源](app-nativeresource-ios.md)
+    * [iOS通用链接配置教程](app-ios-capabilities.md)
   * [App 云端打包环境](app-env.md)
   * App 本地打包
     * [Android本地离线打包](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/android)

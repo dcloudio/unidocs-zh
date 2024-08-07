@@ -9,7 +9,7 @@
 
 **注意：uni-app x 项目只支持此方式配置** 
 
-将 XCode 工程中的 .entitlements 文件中的内容配置到 `iOS原生应用配置文件和资源` 的 `UniApp.entitlements` 文件，详细参考：[配置文件UniApp.entitlements](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#entitlements)  
+将 XCode 工程中的 .entitlements 文件中的内容配置到 `iOS原生应用配置文件和资源` 的 `UniApp.entitlements` 文件，详情参考：[配置文件UniApp.entitlements](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#entitlements)  
 
 将 XCode 工程中的 Info.plist 文件中的内容配置到 `iOS原生应用配置文件和资源` 的 `Info.plist` 文件，详情参考：[配置文件 Info.plist](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoplist)  
 

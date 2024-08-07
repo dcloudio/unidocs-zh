@@ -38,7 +38,7 @@ plists节点数据将转换成XCode工程中Info.plist文件的数据（字典�
 
 <a id="unilink"/>
 
-## 通用链接（Universal Link）
+## 通用链接（Universal Link）配置教程
 
 **为了简化配置使用通用链接，推荐使用UniCloud快速生成通用链接，详情参考：[一键生成iOS通用链接](https://uniapp.dcloud.io/api/plugins/universal-links)**  
 

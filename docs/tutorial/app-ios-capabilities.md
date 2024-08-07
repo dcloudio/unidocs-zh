@@ -1,7 +1,22 @@
-HBuilderX2.3.0开始云端打包支持配置XCode中的Capabilities，在XCode中可给工程添加设置Capabilities，如图所示：  
+# iOS平台Capabilities配置  
+
+在XCode中可给工程添加设置Capabilities，如图所示：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/ios/xcode-capabilities.png)
 
-配置后，会更新XCode工程的.entitlements和Info.plist文件，可将以上文件内容转换为json格式数据配置到manifest.json文件中，使得HBuilderX云端打包工程设置相应的Capabilities。
+配置后，会更新XCode工程的.entitlements和Info.plist文件，此文章介绍如何在HBuilderX中配置iOS平台的Capabilities。
+
+## HBuilderX4.18及以上版本
+
+**注意：uni-app x 项目只支持此方式配置** 
+
+将 XCode 工程中的 .entitlements 文件中的内容配置到 `iOS原生应用配置文件和资源` 的 `UniApp.entitlements` 文件，详细参考：[配置文件UniApp.entitlements](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#entitlements)  
+
+将 XCode 工程中的 Info.plist 文件中的内容配置到 `iOS原生应用配置文件和资源` 的 `Info.plist` 文件，详情参考：[配置文件 Info.plist](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoplist)  
+
+
+
+## HBuilderX4.18以前版本
+将XCode工程中的 .entitlements 和 Info.plist 文件中的内容转换为json格式数据配置到manifest.json文件中，使得HBuilderX云端打包工程设置相应的Capabilities。
 
 打开项目的manifest.json文件，在源码视图中进行配置  
 - 5  APP项目  

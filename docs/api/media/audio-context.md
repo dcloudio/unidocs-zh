@@ -1,4 +1,4 @@
-### uni.createInnerAudioContext()
+## uni.createInnerAudioContext()
 创建并返回内部 audio 上下文 `innerAudioContext` 对象。
 
 **平台差异说明**

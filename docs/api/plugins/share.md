@@ -1,4 +1,4 @@
-## 分享
+# 分享
 
 <!--
 /// meta
@@ -13,7 +13,7 @@ keyword: 分享,share
 - H5：如果是普通浏览器，浏览器自带分享按钮；如果是在微信内嵌浏览器中，可调用js-sdk进行分享，[参考](https://ask.dcloud.net.cn/article/35380)
 - APP：可以直接使用已经封装好的uni-share插件[详情](https://ext.dcloud.net.cn/plugin?id=4860)
 
-### uni.share(OBJECT)
+## uni.share(OBJECT)
 uni-app的App引擎已经封装了微信、QQ、微博的分享SDK，开发者可以直接调用相关功能。
 
 可以分享到微信、QQ、微博，每个社交平台被称为分享服务提供商，即provider。
@@ -88,7 +88,7 @@ uni-app的App引擎已经封装了微信、QQ、微博的分享SDK，开发者�
 * 分享微信朋友圈多图，微信官方已经禁掉这个功能。可以考虑把多张图用canvas合并成一张图分享出去。
 * 从APP分享到微信时，无法判断用户是否点击取消分享，因为微信官方禁掉了分享成功的返回值。
 
-#### 分享到微信聊天界面示例代码
+### 分享到微信聊天界面示例代码
 
 **分享文字**
 ```javascript
@@ -146,7 +146,7 @@ uni.share({
 ```
 
 
-#### 分享到微信朋友圈示例代码
+### 分享到微信朋友圈示例代码
 
 **分享文字**
 ```javascript
@@ -224,12 +224,12 @@ uni.share({
 ```
 
 
-#### uni.share 在App端各社交平台分享配置说明
+### uni.share 在App端各社交平台分享配置说明
 
 - 第一步，打开 manifest.json -> App模块权限配置，勾选 Share(分享)；
 - 第二步，按如下文档具体配置微信、微博、QQ的参数。
 
-##### 微信分享
+#### 微信分享
 
 在 manifest.json 的 App SDK 配置里，勾选微信消息及朋友圈，并填写 appid，如需在iOS平台使用还需要配置通用链接。
 
@@ -240,12 +240,12 @@ uni.share({
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-weixin-manifest-share.png)
 
-##### 新浪微博分享
+#### 新浪微博分享
 在 manifest.json 的 App SDK 配置里，勾选勾选新浪微博，并填写相关appkey，新浪微博 appkey 申请步骤可参考：[https://ask.dcloud.net.cn/article/209](https://ask.dcloud.net.cn/article/209)。
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni2019022502.png)
 
-##### QQ 分享
+#### QQ 分享
 在 manifest.json 的 App SDK 配置里，勾选分享到QQ好友，并填写相关appkey，QQ分享 appkey 申请步骤：
 
 1. 前往 QQ 开放平台：[https://connect.qq.com/index.html](https://connect.qq.com/index.html)；
@@ -261,14 +261,14 @@ uni.share({
 如果手机端未安装QQ、微博，调用时会启动这些平台的wap页面分享，如果已安装相应客户端，会启动它们的客户端分享。
 
 
-##### FAQ
+#### FAQ
 - Q：App端如何集成其他分享SDK，如facebook分享、twitter分享
 - A：插件市场已有相关插件，[详见](https://ext.dcloud.net.cn/search?q=share)；也可以根据原生插件教程自行开发，原生插件开发文档见[https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428)
 
 - Q：弹出分享菜单，是否有已经写好的插件？
 - A：插件市场有很多封装好的分享菜单插件，[底部图标菜单](https://ext.dcloud.net.cn/search?q=%E5%BA%95%E9%83%A8%E5%9B%BE%E6%A0%87%E8%8F%9C%E5%8D%95)，可直接弹出菜单，并且没有遮挡层级问题，推荐使用。
 
-### uni.shareWithSystem(OBJECT)
+## uni.shareWithSystem(OBJECT)
 
 调用系统分享组件发送分享消息，不需要配置分享SDK
 
@@ -313,7 +313,7 @@ uni.shareWithSystem({
 })
 ```
 <!--
-### plus.share.sendWithSystem(msg, successCB, errorCB)
+## plus.share.sendWithSystem(msg, successCB, errorCB)
 
 Android和iOS都有应用注册分享接口的机制，基本上所有有接收分享内容功能的应用，都会注册分享接口。
 
@@ -362,7 +362,7 @@ App端可调用手机的系统分享，实现所有注册分享的应用的呼�
 
 -->
 
-### onShareAppMessage(OBJECT)
+## onShareAppMessage(OBJECT)
 
 小程序中用户点击分享后，在 js 中定义 onShareAppMessage 处理函数（和 onLoad 等生命周期函数同级），设置该页面的分享信息。
 
@@ -425,7 +425,7 @@ export default {
 * 微信、头条平台：只有定义了此事件处理函数，小程序右上角菜单才会显示“转发”按钮
 * QQ小程序还支持通过[qq.offShareAppMessage](https://q.qq.com/wiki/develop/game/API/share/qq.offShareAppMessage.html)取消对系统分享按钮的监听。
 
-### uni.showShareMenu(OBJECT)
+## uni.showShareMenu(OBJECT)
 
 小程序的原生菜单中显示分享按钮
 
@@ -449,7 +449,7 @@ export default {
 |complete				|Function	|否		|接口调用结束的回调函数（调用成功、失败都会执行）	|&nbsp;				|
 
 
-### uni.hideShareMenu(OBJECT)
+## uni.hideShareMenu(OBJECT)
 小程序的原生菜单中隐藏分享按钮
 
 **平台差异说明**

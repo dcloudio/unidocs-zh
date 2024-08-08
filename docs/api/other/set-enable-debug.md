@@ -1,4 +1,4 @@
-### uni.setEnableDebug(OBJECT)
+## uni.setEnableDebug(OBJECT)
 
 设置是否打开调试开关。此开关对正式版也能生效。
 
@@ -17,7 +17,7 @@
 | fail | function| 否 | 接口调用失败的回调函数 |微信小程序|
 | complete | function| 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |微信小程序|
 
-#### 示例代码
+### 示例代码
 ```js
 // 打开调试
 uni.setEnableDebug({

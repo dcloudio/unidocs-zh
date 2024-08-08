@@ -1,4 +1,4 @@
-### addTemplate
+## addTemplate
 
 组合模板并添加至帐号下的个人模板库。
 
@@ -55,12 +55,12 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/templateadd?access_tok
     "errmsg": "ok",
     /* "template_id": "wDYzYZVxobJivW9oMpSCpuvACOfJXQIoKUm0PY397Tc" //微信小程序 */
     "data": { // 百度小程序
-        "template_id": "f34178cd598201d9dc8d5c88cd87b44cf7cd0e62NwmP" 
+        "template_id": "f34178cd598201d9dc8d5c88cd87b44cf7cd0e62NwmP"
     }
 }
 ```
 
-### deleteTemplate
+## deleteTemplate
 
 删除帐号下的某个模板。
 
@@ -82,7 +82,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/templatedel?access_tok
 **请求参数**
 
 | 属性 | 类型 |必填 | 说明 |
-| --- | --- | --- | --- | 
+| --- | --- | --- | --- |
 | access_token | string| 是 |接口调用凭证，微信小程序参考 [getAccessToken](https://developers.weixin.qq.com/miniprogram/dev/api/getAccessToken.html)，百度小程序参考[verify](https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#verify/)|
 | template_id | string | 是 | 要删除的模板id |
 
@@ -114,7 +114,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/templatedel?access_tok
 ```
 
 
-### getTemplateLibraryById
+## getTemplateLibraryById
 
 获取模板库某个模板标题下关键词库。
 
@@ -223,7 +223,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/libraryget?access_toke
 }
 ```
 
-### getTemplateLibraryList
+## getTemplateLibraryList
 
 获取APP模板库标题列表
 
@@ -312,7 +312,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/librarylist?access_tok
 }
 ```
 
-### getTemplateList
+## getTemplateList
 
 获取帐号下已存在的模板列表。
 
@@ -410,7 +410,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/templatelist?access_to
 }
 ```
 
-### sendTemplateMessage
+## sendTemplateMessage
 
 发送模板消息
 
@@ -543,7 +543,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/templatedel?access_tok
 }
 ```
 
-### alipay.open.app.mini.templatemessage.send
+## alipay.open.app.mini.templatemessage.send
 
 小程序通过 openapi 给用户触达消息，主要为支付后的触达（通过消费id）和用户提交表单后的触达（通过formId）。
 

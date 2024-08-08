@@ -1,5 +1,5 @@
 
-### uni.onLocationChange(FUNCTION CALLBACK)
+## uni.onLocationChange(FUNCTION CALLBACK)
 
 监听实时地理位置变化事件，需结合 `uni.startLocationUpdate` 或 `uni.startLocationUpdateBackground` 使用。
 
@@ -62,7 +62,7 @@ uni.onLocationChange(function (res) {
 	console.log('经度：' + res.longitude);
 });
 ```
-### uni.offLocationChange(FUNCTION CALLBACK)
+## uni.offLocationChange(FUNCTION CALLBACK)
 
 移除实时地理位置变化事件的监听函数。
 
@@ -87,7 +87,7 @@ uni.onLocationChange(function (res) {
 |verticalAccuracy|number|垂直精度 (m)（Android 无法获取，返回 0）|快手小程序|
 |horizontalAccuracy|number|水平精度 (m)|快手小程序|
 
-### uni.onLocationChangeError(FUNCTION CALLBACK)
+## uni.onLocationChangeError(FUNCTION CALLBACK)
 
 监听持续定位接口返回失败时触发。
 
@@ -106,7 +106,7 @@ uni.onLocationChange(function (res) {
 |errCode|Number|错误|微信小程序|
 |errMsg|String|错误信息|抖音小程序|
 
-### uni.offLocationChangeError(FUNCTION CALLBACK)
+## uni.offLocationChangeError(FUNCTION CALLBACK)
 
 取消注册位置更新错误回调。
 
@@ -124,7 +124,7 @@ uni.onLocationChange(function (res) {
 
 无返回值。
 
-### uni.startLocationUpdate(OBJECT)
+## uni.startLocationUpdate(OBJECT)
 
 开启应用进入前台时接收位置消息。
 
@@ -157,7 +157,7 @@ uni.startLocationUpdate({
 });
 ```
 
-### uni.stopLocationUpdate(OBJECT)
+## uni.stopLocationUpdate(OBJECT)
 
 关闭监听实时位置变化，前后台都停止消息接收。
 
@@ -178,7 +178,7 @@ uni.startLocationUpdate({
 |fail|Function|否|接口调用失败的回调函数||
 |complete|function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
 
-### uni.startLocationUpdateBackground(OBJECT)
+## uni.startLocationUpdateBackground(OBJECT)
 
 开始监听实时地理位置信息变化事件，应用进入前后台时均接收实时地理位置信息。
 
@@ -198,7 +198,7 @@ uni.startLocationUpdate({
 |complete|function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
 
 
-### 三方定位和地图服务收费说明
+## 三方定位和地图服务收费说明
 
 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 

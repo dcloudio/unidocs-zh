@@ -1,4 +1,4 @@
-#### uni.getAccountInfoSync()
+## uni.getAccountInfoSync()
 
 获取当前帐号信息，可以返回小程序的Appid。如果使用了微信小程序的云端插件，还可以返回当前插件Appid、版本号。
 

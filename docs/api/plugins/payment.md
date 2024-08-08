@@ -1,4 +1,4 @@
-# uni.requestPayment(OBJECT)
+## uni.requestPayment(OBJECT)
 支付
 
 uni.requestPayment是一个统一各平台的客户端支付API，不管是在某家小程序还是在App中，客户端均使用本API调用支付。

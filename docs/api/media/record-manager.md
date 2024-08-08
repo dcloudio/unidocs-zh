@@ -1,4 +1,4 @@
-### uni.getRecorderManager()
+## uni.getRecorderManager()
 获取**全局唯一**的录音管理器 ``recorderManager``。
 
 **平台差异说明**
@@ -34,7 +34,7 @@
 |onError|callback|录音错误事件, 会回调错误信息|&nbsp;|
 |offError|callback|取消监听录音错误事件|仅支付宝小程序支持|
 
-### start(options)
+## start(options)
 
 |属性|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
@@ -63,7 +63,7 @@
 |44100|64000 ~ 320000|
 |48000|64000 ~ 320000|
 
-### onStop(callback)
+## onStop(callback)
 
 |属性|类型|说明|
 |:-|:-|:-|
@@ -72,14 +72,14 @@
 |fileSize|Number|录音文件大小。单位：Byte。（仅支付宝10.2.90+支持）|
 
 
-### onFrameRecorded(callback)
+## onFrameRecorded(callback)
 
 |属性|类型|说明|
 |:-|:-|:-|
 |frameBuffer|ArrayBuffer|录音分片结果数据|
 |isLastFrame|Boolean|当前帧是否正常录音结束前的最后一帧|
 
-### onError(callback)
+## onError(callback)
 
 |属性|类型|说明|
 |:-|:-|:-|
@@ -89,7 +89,7 @@
 
 - 可以通过用户授权API来判断用户是否给应用授予麦克风的访问权限[https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
 
-### 示例
+## 示例
 
 ```html
 <template>

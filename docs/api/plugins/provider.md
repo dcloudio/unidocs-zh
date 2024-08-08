@@ -1,4 +1,4 @@
-### uni.getProvider(OBJECT)
+## uni.getProvider(OBJECT)
 获取服务供应商。
 
 在App平台，可用的服务商，是打包环境中配置的服务商，与手机端是否安装了该服务商的App没有关系。

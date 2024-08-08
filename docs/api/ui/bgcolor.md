@@ -1,4 +1,4 @@
-### uni.setBackgroundColor(OBJECT)
+## uni.setBackgroundColor(OBJECT)
 
 动态设置窗口的背景色。
 
@@ -29,7 +29,7 @@ uni.setBackgroundColor({
 });
 ```
 
-### uni.setBackgroundTextStyle(OBJECT)
+## uni.setBackgroundTextStyle(OBJECT)
 
 动态设置下拉背景字体、loading 图的样式。
 

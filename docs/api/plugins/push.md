@@ -2,9 +2,9 @@
 
 `uni-push`有服务器API和客户端API。
 
-## 客户端API
+# 客户端API
 
-### uni.getPushClientId(OBJECT)@getpushclientid
+## uni.getPushClientId(OBJECT)@getpushclientid
 获取客户端唯一的推送标识
 
 注意：这是一个异步的方法，且仅支持uni-push2.0；
@@ -52,7 +52,7 @@
 ```
 
 
-### uni.onPushMessage(callback)@onpushmessage
+## uni.onPushMessage(callback)@onpushmessage
 启动监听推送消息事件
 
 
@@ -64,13 +64,13 @@ uni.onPushMessage((res)=>{
 	console.log(res)
 })
 ```
-#### 回调参数说明
+### 回调参数说明
 |名称	|类型	|描述	|
 |--		|--		|--		|
 |type	|String	| 事件类型，"click"-从系统推送服务点击消息启动应用事件；"receive"-应用从推送服务器接收到推送消息事件。|
 |data	|String、Object|消息内容|
 
-### uni.offPushMessage(callback)
+## uni.offPushMessage(callback)
 关闭推送消息监听事件
 
 <!-- UNIAPPAPIJSON.offPushMessage.compatibility -->
@@ -85,11 +85,11 @@ uni.onPushMessage(callback);
 //关闭推送事件监听
 uni.offPushMessage(callback);
 ```
-#### Tips
+### Tips
 - 如果uni.offPushMessage没有传入参数，则移除App级别的所有事件监听器；
 - 如果只提供了事件名（callback），则移除该事件名对应的所有监听器；
 
-### uni.getChannelManager()@getchannelmanager
+## uni.getChannelManager()@getchannelmanager
 
 获取通知渠道管理器，Android 8系统以上才可以设置通知渠道。
 
@@ -101,17 +101,17 @@ uni.offPushMessage(callback);
 |:-|
 |[ChannelManager](#channelmanager)|
 
-#### getChannelManager兼容性
+### getChannelManager兼容性
 
 |Android 系统版本	|Android|iOS|其他|
 |:-|:-|:-|:-|
 |8.0|4.02|x|x|
 
-### ChannelManager
+## ChannelManager
 
 渠道管理器
 
-#### setPushChannel(options)
+### setPushChannel(options)
 
 设置推送渠道
 
@@ -120,7 +120,7 @@ uni.offPushMessage(callback);
 |options|[SetPushChannelOptions](#setpushchanneloptions)|是|
 
 
-##### SetPushChannelOptions 的属性值 @setpushchanneloptions
+#### SetPushChannelOptions 的属性值 @setpushchanneloptions
 
 |名称|类型|必备|默认值|描述|
 |:-|:-|:-|:-|:-|
@@ -132,7 +132,7 @@ uni.offPushMessage(callback);
 |importance|number|否|3|通知的重要性级别，可选范围IMPORTANCE_LOW：2、IMPORTANCE_DEFAULT：3、IMPORTANCE_HIGH：4|
 |lockscreenVisibility|number|否|-1000|锁屏可见性，可选范围VISIBILITY_PRIVATE：0、VISIBILITY_PUBLIC：1、VISIBILITY_SECRET：-1、VISIBILITY_NO_OVERRIDE：-1000|
 
-##### 代码示例
+#### 代码示例
 
 ```typescript
 
@@ -146,35 +146,35 @@ manager.setPushChannel({
 ```
 
 
-##### setPushChannel兼容性
+#### setPushChannel兼容性
 
 |Android 系统版本	|Android|iOS|其他|
 |:-|:-|:-|:-|
 |8.0|4.02|x|x|
 
-#### getAllChannels()
+### getAllChannels()
 
 获取当前应用注册的所有的通知渠道。
 
-##### 返回值
+#### 返回值
 |类型|
 |:-|
 | Array<string> |
 
 
-##### getAllChannels兼容性
+#### getAllChannels兼容性
 
 |Android 系统版本	|Android|iOS|其他|
 |:-|:-|:-|:-|
 |8.0|4.02|x|x|
 
-### 注意事项
+## 注意事项
 
 * 通知渠道相关配置为Android端专有配置，只能在Android端进行配置。[通知渠道](https://developer.android.com/develop/ui/views/notifications/channels?hl=zh-cn)
 * 离线推送申请自分类权益时，需要客户端创建channel，因此客户端提供了`setPushChannel`来进行channel的创建，通过此Api来创建渠道进行推送。客户端创建渠道成功后，即可通过云函数进行推送，[uni-push2服务端文档](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/api.html)。
 * 由于Android通知渠道的机制问题，一旦通知渠道建立，便不能修改此渠道的配置，即使删除渠道后再次创建同channelId名称的渠道，也不会改变原先渠道的配置（除非删除应用），最明显的现象就是铃声动态修改失败，比如调用`setPushChannel`时，第一次的设置参数是`{"channelId":"test","soundName":"pushsound"}` , 这时你想切换铃音，你的channelId就不能再叫test了，而应该为`{"channelId":"test2","soundName":"ring"}` ，此时会新建一个渠道。
 
-### uni.createPushMessage(OBJECT)@createpushmessage
+## uni.createPushMessage(OBJECT)@createpushmessage
 创建本地通知栏消息（HBuilderX 3.5.2起支持）
 
 **平台差异说明**
@@ -210,7 +210,7 @@ manager.setPushChannel({
 - 自定义App推送铃声：[https://ext.dcloud.net.cn/plugin?id=7482](https://ext.dcloud.net.cn/plugin?id=7482)
 - 如何自定义推送通知的图标：[https://ask.dcloud.net.cn/article/35537](https://ask.dcloud.net.cn/article/35537)
 
-### 小程序平台
+## 小程序平台
 
 小程序平台的类似概念叫做`模板消息`，也有的平台改名为`订阅消息`。
 

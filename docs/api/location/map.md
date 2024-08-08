@@ -1,4 +1,4 @@
-### uni.createMapContext(mapId, componentInstance?)
+## uni.createMapContext(mapId, componentInstance?)
 创建并返回 map 上下文 ``mapContext`` 对象。在自定义组件下，第二个参数传入组件实例this，以操作组件内 ``<map>`` 组件。
 
 **注意：uni.createMapContext(mapId, this)**
@@ -14,7 +14,7 @@
 
 <!-- UNIAPPAPIJSON.createMapContext.compatibility -->
 
-### mapContext
+## mapContext
 
 ``mapContext`` 通过 mapId 跟一个 ``<map>`` 组件绑定，通过它可以操作对应的 ``<map>`` 组件。
 
@@ -406,17 +406,17 @@ App nvue 3.6.9+ 支持
 ```
 
 
-### mapSearch 模块(仅app-nvue支持，Google地图不支持)
+## mapSearch 模块(仅app-nvue支持，Google地图不支持)
 
-#### reverseGeocode(Object,callback);@reverseGeocode
+### reverseGeocode(Object,callback);@reverseGeocode
 > 反向地理编码
 
-##### Object
+#### Object
 属性|类型 |默认值|必填|说明
 :--|:--|:--|:--|:--|
 point|Object| |是|{latitude: 纬度, longitude: 经度}
 
-##### callback 返回 Object 参数说明
+#### callback 返回 Object 参数说明
 属性|类型 |说明
 :--|:--|:--|
 type|String|"success" 表示成功， "fail" 表示失败
@@ -424,10 +424,10 @@ code|Number| 成功返回 0,失败返回相应 code 码
 message|String|失败描述
 address|String|查询后地址 （成功时返回）
 
-#### poiSearchNearBy（Object,callback);@poiSearchNearBy
+### poiSearchNearBy（Object,callback);@poiSearchNearBy
 > 周边检索
 
-##### Object
+#### Object
 属性|类型 |默认值|必填|说明
 :--|:--|:--|:--|:--|
 point|Object| |是|检索的中心点坐标 {latitude: 纬度, longitude: 经度}
@@ -436,7 +436,7 @@ radius|Number|3000|否|检索的半径，单位为米
 index|Number|1|否|要获取检索结果的页号索引
 offset|Number|10|否|设置每页条目数（默认每页10条数据）。HBuilder 3.2.13+
 
-##### callback 返回 Object 参数说明
+#### callback 返回 Object 参数说明
 属性|类型 |说明
 :--|:--|:--|
 type|String|"success" 表示成功， "fail" 表示失败
@@ -448,7 +448,7 @@ pageNumber|Number|页数
 pageIndex|Number|当前页号索引
 poiList|Array.&lt;poiObject&gt;|POI信息数组
 
-##### poiObject
+#### poiObject
 属性|类型 |说明
 :--|:--|:--|
 location|Object|{latitude: 纬度, longitude: 经度}
@@ -457,10 +457,10 @@ type|String|类型
 distance|Number|距离（单位米）
 address|String|地址
 
-#### poiKeywordsSearch（Object,callback);@poiKeywordsSearch
+### poiKeywordsSearch（Object,callback);@poiKeywordsSearch
 > 关键字检索
 
-##### Object
+#### Object
 属性|类型 |默认值|必填|说明
 :--|:--|:--|:--|:--|
 key|String| | 是|搜索关键字
@@ -472,7 +472,7 @@ sortrule|Number|0|否|排序规则, 0-距离排序；1-综合排序, 默认0
 offset|Number|10|否|设置每页条目数（默认每页10条数据）。HBuilder 3.2.13+
 cityLimit| Boolean | false | 否 | 强制城市限制功能 默认 false，例如：在上海搜索天安门，如果citylimit为true，将不返回北京的天安门相关的POI。HBuilder 3.2.13+
 
-##### callback 返回 Object 参数说明
+#### callback 返回 Object 参数说明
 属性|类型 |说明
 :--|:--|:--|
 type|String|"success" 表示成功， "fail" 表示失败
@@ -496,7 +496,7 @@ poiList|Array.&lt;poiObject&gt;|POI信息数组
 - H5 端使用地图和定位相关，需要在 [manifest.json](https://uniapp.dcloud.io/collocation/manifest.html#h5sdkconfig) 内配置腾讯或谷歌等三方地图服务商申请的秘钥（key）。
 - ``<map>`` 组件默认为国测局坐标，调用 ``uni.getLocation`` 返回结果传递给 ``<map>`` 组件时，需指定 type 为 gcj02。
 
-### 三方定位和地图服务收费说明
+## 三方定位和地图服务收费说明
 
 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 

@@ -1,4 +1,4 @@
-### uni.addPhoneContact(OBJECT)
+## uni.addPhoneContact(OBJECT)
 调用后，用户可以选择将该表单以“新增联系人”或“添加到已有联系人”的方式（APP端目前没有选择步骤，将直接写入），写入手机系统通讯录，完成手机通讯录联系人和联系方式的增加。
 
 App平台提供了更多通讯录相关API，包括读取联系人，详见：[https://www.html5plus.org/doc/zh_cn/contacts.html](https://www.html5plus.org/doc/zh_cn/contacts.html)

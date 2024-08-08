@@ -4,7 +4,7 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|x|√|√|x|x|√|x|x|√|
 
-### uni.openBluetoothAdapter(OBJECT)
+## uni.openBluetoothAdapter(OBJECT)
 
 初始化蓝牙模块
 
@@ -16,7 +16,7 @@
 |fail|function||否|接口调用失败的回调函数|
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |---|---|---|
@@ -52,7 +52,7 @@ uni.openBluetoothAdapter({
 })
 ```
 
-### uni.startBluetoothDevicesDiscovery(OBJECT)
+## uni.startBluetoothDevicesDiscovery(OBJECT)
 
 开始搜寻附近的蓝牙外围设备。**此操作比较耗费系统资源，请在搜索并连接到设备后调用 [`uni.stopBluetoothDevicesDiscovery`](/api/system/bluetooth?id=stopbluetoothdevicesdiscovery) 方法停止搜索。**
 
@@ -71,7 +71,7 @@ uni.openBluetoothAdapter({
 
 
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |---|---|---|
@@ -108,7 +108,7 @@ uni.startBluetoothDevicesDiscovery({
 })
 ```
 
-### uni.onBluetoothDeviceFound(CALLBACK)
+## uni.onBluetoothDeviceFound(CALLBACK)
 
 监听寻找到新设备的事件
 
@@ -154,7 +154,7 @@ uni.onBluetoothDeviceFound(function (devices) {
 })
 ```
 
-### uni.stopBluetoothDevicesDiscovery(OBJECT)
+## uni.stopBluetoothDevicesDiscovery(OBJECT)
 
 停止搜寻附近的蓝牙外围设备。若已经找到需要的蓝牙设备并不需要继续搜索时，建议调用该接口停止蓝牙搜索。
 
@@ -166,7 +166,7 @@ uni.onBluetoothDeviceFound(function (devices) {
 |fail|function||否|接口调用失败的回调函数|
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |---|---|---|
@@ -197,7 +197,7 @@ uni.stopBluetoothDevicesDiscovery({
 })
 ```
 
-### uni.onBluetoothAdapterStateChange(CALLBACK)
+## uni.onBluetoothAdapterStateChange(CALLBACK)
 
 监听蓝牙适配器状态变化事件
 
@@ -216,7 +216,7 @@ uni.onBluetoothAdapterStateChange(function (res) {
 })
 ```
 
-### uni.getConnectedBluetoothDevices(OBJECT)
+## uni.getConnectedBluetoothDevices(OBJECT)
 
 根据 uuid 获取处于已连接状态的设备。
 
@@ -242,7 +242,7 @@ uni.onBluetoothAdapterStateChange(function (res) {
 |name|string|蓝牙设备名称，某些设备可能没有|
 |deviceId|string|用于区分设备的 id|
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |---|---|---|
@@ -272,7 +272,7 @@ uni.getConnectedBluetoothDevices({
 })
 ```
 
-### uni.getBluetoothDevices(OBJECT)
+## uni.getBluetoothDevices(OBJECT)
 
 获取在蓝牙模块生效期间所有已发现的蓝牙设备。包括已经和本机处于连接状态的设备。
 
@@ -303,7 +303,7 @@ uni.getConnectedBluetoothDevices({
 |serviceData|Object|当前蓝牙设备的广播数据段中的 ServiceData 数据段|
 
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |---|---|---|
@@ -349,7 +349,7 @@ uni.getBluetoothDevices({
 *   该接口获取到的设备列表为**蓝牙模块生效期间所有搜索到的蓝牙设备**，若在蓝牙模块使用流程结束后未及时调用 [`uni.closeBluetoothAdapter`](/api/system/bluetooth?id=closebluetoothadapter) 释放资源，会存在调用该接口会返回之前的蓝牙使用流程中搜索到的蓝牙设备，可能设备已经不在用户身边，无法连接。
 *   蓝牙设备在被搜索到时，系统返回的 name 字段一般为广播包中的 LocalName 字段中的设备名称，而如果与蓝牙设备建立连接，系统返回的 name 字段会改为从蓝牙设备上获取到的 `GattName`。若需要动态改变设备名称并展示，建议使用 `localName` 字段。
 
-### uni.getBluetoothAdapterState(OBJECT)
+## uni.getBluetoothAdapterState(OBJECT)
 
 获取本机蓝牙适配器状态。
 
@@ -368,7 +368,7 @@ uni.getBluetoothDevices({
 |discovering|boolean|是否正在搜索设备|
 |available|boolean|蓝牙适配器是否可用|
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |---|---|---|
@@ -398,7 +398,7 @@ uni.getBluetoothAdapterState({
 })
 ```
 
-### uni.closeBluetoothAdapter(OBJECT)
+## uni.closeBluetoothAdapter(OBJECT)
 
 关闭蓝牙模块。调用该方法将断开所有已建立的连接并释放系统资源。建议在使用蓝牙流程后，与 [`uni.openBluetoothAdapter`](/api/system/bluetooth?id=openbluetoothadapter) 成对调用。
 
@@ -410,7 +410,7 @@ uni.getBluetoothAdapterState({
 |fail|function||否|接口调用失败的回调函数|
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |---|---|---|

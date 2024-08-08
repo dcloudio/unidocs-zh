@@ -1,4 +1,4 @@
-### uni.openSetting(OBJECT)
+## uni.openSetting(OBJECT)
 
 调起客户端小程序设置界面，返回用户设置的操作结果。
 
@@ -30,7 +30,7 @@ uni.openSetting({
 });
 ```
 
-### uni.getSetting(OBJECT)
+## uni.getSetting(OBJECT)
 获取用户的当前设置。
 
 **平台差异说明**
@@ -54,7 +54,7 @@ uni.openSetting({
 |authSetting|Object|用户授权结果，其中 key 为 [scope](/api/other/authorize?id=scope-列表) 值，value 为 Boolean 值，表示用户是否允许授权|
 |subscriptionsSetting|SubscriptionsSetting|用户订阅消息设置，接口参数`withSubscriptions`值为`true`时才会返回。**（微信小程序 2.10.1 支持）**|
 
-#### 示例代码
+### 示例代码
 ```js
 uni.getSetting({
    success(res) {

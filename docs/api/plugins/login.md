@@ -1,4 +1,4 @@
-### uni.login(OBJECT)
+## uni.login(OBJECT)
 登录
 
 uni.login是一个客户端API，统一封装了各个平台的各种常见的登录方式，包括App手机号一键登陆、三方登录（微信、微博、QQ、Apple、google、facebook）、各家小程序内置登录。
@@ -13,7 +13,7 @@ uni.login是一个客户端API，统一封装了各个平台的各种常见的�
 
 大多数登录方式，都需要申请开通相关服务，具体点击下面的文档查看。
 
-#### App平台支持的登录方式
+### App平台支持的登录方式
 - [手机号一键登录（univerify）](/univerify.md)
 - [苹果登录（Sign in with Apple）](/tutorial/app-oauth-apple.md)
 - [微信登录](/tutorial/app-oauth-weixin.md)
@@ -22,7 +22,7 @@ uni.login是一个客户端API，统一封装了各个平台的各种常见的�
 - [Google登录](/tutorial/app-oauth-google.md)
 - [Facebook登录](/tutorial/app-oauth-facebook.md)
 
-#### 小程序平台支持的登录方式
+### 小程序平台支持的登录方式
 * [微信小程序登录](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)
 * [支付宝小程序登录](https://docs.alipay.com/mini/introduce/authcode)
 * [百度小程序登录](https://smartprogram.baidu.com/docs/develop/api/open_log/#%E6%8E%88%E6%9D%83%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/)
@@ -31,12 +31,12 @@ uni.login是一个客户端API，统一封装了各个平台的各种常见的�
 * [快手小程序登录](https://mp.kuaishou.com/docs/develop/api-next/open/login/ks.login.html)
 * [京东小程序登录](https://mp-docs.jd.com/api/openInterface/login.html)
 
-#### web平台支持的登录方式
+### web平台支持的登录方式
 Web平台常见的登录包括用户名密码、短信验证码、pc端微信扫描、微信公众号登录。这些没有封装在 uni.login API中，但都封装在了uni-id中。请另行参考[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)
 
 如不使用uni-id，微信内嵌浏览器运行H5版时，可通过js sdk实现微信登录，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)
 
-#### OBJECT 参数说明
+### OBJECT 参数说明
 
 |参数名|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
@@ -73,12 +73,12 @@ uni.login({
 });
 ```
 
-#### 注意事项
+### 注意事项
 - 百度小程序平台需要在button组件的@login事件后再调用 uni.login ，[详见](https://smartprogram.baidu.com/docs/develop/function/login/),否则会返回“请登录”的错误信息，建议在@login事件中调用。
 - uni.login 已针对百度小程序[兼容性升级](https://smartprogram.baidu.com/forum/topic/show/125547)转为 getLoginCode 调用，但某些情况下，百度小程序发布时兼容性诊断依然提示swan.login非兼容性改造，[详见](https://github.com/dcloudio/uni-app/issues/2443)，可使用 [uni.getLoginCode](#getlogincode) 替代 uni.login 解决。
 - 京东小程序IDE 暂时不支持此uni.login()，请用真机查看；IDE调用，只能返回模拟数据 code为200。
 
-### uni.getLoginCode(OBJECT)@getLoginCode
+## uni.getLoginCode(OBJECT)@getLoginCode
 获取宿主 App 登录凭证（Authorization Code）
 
 **平台差异说明**
@@ -102,7 +102,7 @@ uni.login({
 |:-|:-|:-|
 |code|String|用户登录凭证（有效期十分钟），开发者需要在开发者服务器后台调用 API ，使用 code 换取 session_key 等信息。用户登录凭证 code 只能使用一次。|
 
-### uni.checkSession
+## uni.checkSession
 检查登录状态是否过期
 
 > 1.6.0 新增
@@ -120,7 +120,7 @@ uni.login({
 |complete|function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 
-### uni.getUserInfo(OBJECT)
+## uni.getUserInfo(OBJECT)
 
 > 微信小程序端用户头像昵称获取规则已调整，参考 [用户信息接口调整说明](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801)、[小程序用户头像昵称获取规则调整公告](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01)
 > 支付宝小程序获取用户头像昵称规则已调整，将在 2024年09月15日正式生效。参考 [关于小程序用户头像昵称获取规则调整公告](https://open.alipay.com/portal/forum/post/173201040)
@@ -182,7 +182,7 @@ uni.login({
 
 除了以上三个必有的信息外，不同服务供应商返回的其它信息会存在差异。
 
-#### App端登录的扩展说明
+### App端登录的扩展说明
 
 App端还支持更多登录相关API，如`logout`，[详见](https://www.html5plus.org/doc/zh_cn/oauth.html)
 
@@ -213,7 +213,7 @@ uni.login({
 });
 ```
 
-#### App端集成其他登录SDK如支付宝、淘宝登录的说明 @app-oauth
+### App端集成其他登录SDK如支付宝、淘宝登录的说明 @app-oauth
 1. 在插件市场寻找插件
 - [支付宝登录](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98%E5%AE%9D%E7%99%BB%E9%99%86)
 - [淘宝登录](https://ext.dcloud.net.cn/search?q=%E7%99%BE%E5%B7%9D)
@@ -223,7 +223,7 @@ uni.login({
 3. 开发原生插件集成三方sdk，[详见](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
 
-### uni.getUserProfile(OBJECT)@getUserProfile
+## uni.getUserProfile(OBJECT)@getUserProfile
 
 > 微信小程序端基础库2.27.1及以上版本，**[wx.getUserProfile 接口](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserProfile.html)被收回**，详见[《小程序用户头像昵称获取规则调整公告》](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01)。
 
@@ -303,7 +303,7 @@ uni.login({
 |zh_TW|繁体中文|
 
 
-### uni.preLogin(OBJECT)
+## uni.preLogin(OBJECT)
 预登录。用于App手机号一键登录。
 
 **平台差异说明**
@@ -322,7 +322,7 @@ uni.login({
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 
-### uni.closeAuthView()
+## uni.closeAuthView()
 关闭[一键登录](/univerify)页面。
 
 按照中国移动、中国联通、中国电信等运营商的要求，一键登录必须有界面。可用此API关闭页面。
@@ -334,7 +334,7 @@ uni.login({
 |3.0.0+|x|x|x|x|x|x|x|x|x|
 
 
-### uni.getCheckBoxState(OBJECT)
+## uni.getCheckBoxState(OBJECT)
 获取[一键登录](/univerify)条款勾选框状态。
 
 **平台差异说明**
@@ -358,7 +358,7 @@ uni.login({
 |state|Boolean|一键登录条款勾选框状态|
 |errMsg|String|描述信息|
 
-### uni.getUniverifyManager(OBJECT)
+## uni.getUniverifyManager(OBJECT)
 获取全局唯一的一键登录管理器 univerifyManager
 
 **平台差异说明**

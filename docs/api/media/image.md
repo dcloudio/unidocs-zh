@@ -1,7 +1,7 @@
 
  > 图片需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
 
-### uni.chooseImage(OBJECT)
+## uni.chooseImage(OBJECT)
 从本地相册选择图片或使用相机拍照。
 
 <!-- UNIAPPAPIJSON.chooseImage.compatibility -->
@@ -75,7 +75,7 @@ uni.chooseImage({
 });
 ```
 
-### uni.previewImage(OBJECT) @unipreviewimageobject
+## uni.previewImage(OBJECT) @unipreviewimageobject
 预览图片。
 
 **OBJECT 参数说明**
@@ -157,7 +157,7 @@ uni.chooseImage({
 - 在非H5端，previewImage是原生实现的，界面自定义灵活度较低。
 - 插件市场有前端实现的previewImage，性能低于原生实现，但界面可随意定义；插件市场也有适于App端的previewImage原生插件，提供了更多功能。
 
-### uni.closePreviewImage(OBJECT)
+## uni.closePreviewImage(OBJECT)
 
 关闭预览图片。
 
@@ -173,7 +173,7 @@ uni.chooseImage({
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-### uni.getImageInfo(OBJECT)
+## uni.getImageInfo(OBJECT)
 
 获取图片信息。
 
@@ -235,7 +235,7 @@ uni.chooseImage({
 });
 ```
 
-### uni.saveImageToPhotosAlbum(OBJECT)
+## uni.saveImageToPhotosAlbum(OBJECT)
 保存图片到系统相册。
 
 **平台差异说明**
@@ -283,7 +283,7 @@ uni.chooseImage({
 });
 ```
 
-### uni.compressImage(OBJECT)
+## uni.compressImage(OBJECT)
 
 压缩图片接口，可选压缩质量
 

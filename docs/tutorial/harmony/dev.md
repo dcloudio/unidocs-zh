@@ -28,7 +28,7 @@
 
 ## 配置鸿蒙离线SDK（鸿蒙项目模板）@harmonysdk
 
-1. 下载 uni-app 鸿蒙离线SDK template-1.3.5.tgz [下载地址](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/zip/template-1.3.5.tgz)
+1. 下载 uni-app 鸿蒙离线SDK template-1.3.6.tgz [下载地址](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/zip/template-1.3.6.tgz)
 
 2. 解压刚下载的压缩包，将解压后的模板工程在 DevEco-Studio 中打开
 
@@ -102,7 +102,7 @@
 
 ```json
 "app-harmony": {
-  "projectPath": "上一步下载的template-1.3.5.tgz的解压地址/package"
+  "projectPath": "上一步下载的template-1.3.6.tgz的解压地址/package"
 }
 ```
 

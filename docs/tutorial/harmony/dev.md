@@ -578,3 +578,8 @@ Mac系统快速复制路径方法
 
 暂不支持
  
+### release模式进入使用了组合式api的页面报错`Cannot read property route of undefined`
+
+此问题由于arkTs的混淆Bug引发，即使进入到一个空的组合式api页面也会出现这个报错，已反馈给鸿蒙团队处理。
+
+临时解决方案：在鸿蒙项目`entry/obfuscation-rules.txt`文件中增加一行`-disable-obfuscation`来禁用混淆。

@@ -392,7 +392,7 @@ uni统计新增的文件主要包括：
 
 #### 使用环境@sourcemap-parse-error-env
 
-1. 腾讯云服务空间（uni-admin 1.9.4+），阿里云服务空间（uni-admin 2.3.4+）
+1. 腾讯云服务空间（uni-admin 1.9.4+），阿里云服务空间（uni-admin 2.3.4+），支付宝云服务空间（uni-admin 2.4.3+）
 2. HBuiderX 3.5.3+
 3. 不支持 IE，不支持hbx内置浏览器，推荐使用谷歌浏览器
 

@@ -2,7 +2,7 @@
 
 ## 已知问题
 
-1. 只能连接真机运行，不支持模拟器
+1. 不支持x86的模拟器
 2. uni-app的项目appid只能是HBuilder，暂不支持其他appid，故HBuilderX打包后需要[手动更改appid](#updateappid)
 3. 只能启动一个小程序实例
 4. 小程序实例关闭后无法重新启动

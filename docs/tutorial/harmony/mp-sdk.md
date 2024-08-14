@@ -15,13 +15,13 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/6ed02769-bbf1-46a9-aae5-80cebc86ba82.png)
 
-3. 点击右上角 Sync Now，并等待 Sync 结束
+2. 点击右上角 Sync Now，并等待 Sync 结束
 
-4. 打开鸿蒙项目文件 `entry/src/main/ets/entryability` 新增下图红框内的代码
+3. 打开鸿蒙项目文件 `entry/src/main/ets/entryability` 新增下图红框内的代码
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/0a822b2b-147c-4aec-8f75-e68466be3911.png)
 
-5. 配置完成
+4. 配置完成
 
 ## 使用步骤
 

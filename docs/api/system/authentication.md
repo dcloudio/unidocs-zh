@@ -10,10 +10,12 @@
 
 **平台差异说明**
 
-|App|HarmonyOS Next|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|
-|:-	|:-	|:-					|:-						|:-					|:-					|:-				|:-				|
-|√（2.3.8+）	|x|x	|√					|x						|x					|x					|x				|
+|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|
+|:-	|:-					|:-						|:-					|:-					|:-				|:-				|
+|√（2.3.8+）	|x	|√					|x						|x					|x					|x				|
 
+
+<!-- UNIAPPAPIJSON.startSoterAuthentication.compatibility -->
 
 **OBJECT参数说明**
 
@@ -82,9 +84,9 @@
 
 ## uni.checkIsSupportSoterAuthentication(OBJECT)
 
-> HarmonyOS Next 不支持
-
 获取本机支持的 SOTER 生物认证方式
+
+<!-- UNIAPPAPIJSON.checkIsSupportSoterAuthentication.compatibility -->
 
 **OBJECT参数说明**
 
@@ -102,7 +104,7 @@
 
 ## uni.checkIsSoterEnrolledInDevice(OBJECT)
 
-> HarmonyOS Next 不支持
+<!-- UNIAPPAPIJSON.checkIsSoterEnrolledInDevice.compatibility -->
 
 获取设备内是否录入如指纹等生物信息的接口
 

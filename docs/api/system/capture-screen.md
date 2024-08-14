@@ -68,9 +68,11 @@ Android的截屏监听原理是监听相册中截屏目录的文件新增，需�
 
 **平台差异说明**
 
-|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|x|x|x|x|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|x|x|x|x|x|x|x|
+
+<!-- UNIAPPAPIJSON.setUserCaptureScreen.compatibility -->
 
 > 在 App 平台本 API 是 [uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)，需下载插件：[uni-usercapturescreen](https://ext.dcloud.net.cn/plugin?name=uni-usercapturescreen)
 > 需要HBuilder X 3.7.7+版本

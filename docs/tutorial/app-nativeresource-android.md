@@ -118,7 +118,7 @@ uni-app x项目manifest.json中没有提供Android权限的配置，需在此And
 
 uni-app 项目请在 `manifest.json` 可视化界面的 `App常用其它设置` 中配置，详情参考[Android设置url scheme](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#urlscheme)
 
-#### uni-appx
+#### uni-app x
 
 应用需要向系统注册url scheme，以便在浏览器中通过scheme打开App，可根据需求在`AndroidManifest.xml`文件中添加`android:scheme`数据，如下示例：
 ```xml
@@ -171,7 +171,7 @@ uni-app x 页面 activity 如下:
 </manifest>
 ```
 
-#### uni-appx
+#### uni-app x
 
 uni-app x 页面 activity 如下:
 
@@ -200,6 +200,7 @@ uni-app x 页面 activity 如下:
 
 **注意** 
 - activity 注册配置项theme、screenOrientation、configChanges、windowSoftInputMode、launchMode禁止设置，随意配置可能会导致app出现不可预估问题
+- 不可通过该方式自行配置scheme，请通过[Android url scheme配置](#Android url scheme配置)实现
 
 ## 应用资源@nativeResources
 

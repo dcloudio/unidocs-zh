@@ -11,23 +11,17 @@
 
 ## 配置uni小程序SDK@mpsdk
 
-1. 下载 uni小程序SDK [下载地址](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/har/UniAppRuntime.har)
+1. 修改鸿蒙项目根目录文件 `oh-package.json5` 的依赖 `"@dcloudio/uni-app-runtime": "版本号"`，如下图所示
 
-2. 将下载的 UniAppRuntime.har 文件复制到鸿蒙原生项目的根目录，如下图所示
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/6ed02769-bbf1-46a9-aae5-80cebc86ba82.png)
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/0f686381-b8d6-4cc9-a1ff-579600baf23f.png)
+3. 点击右上角 Sync Now，并等待 Sync 结束
 
-3. 修改鸿蒙项目根目录文件 oh-package.json5 新增依赖 `"@dcloudio/uni-app-runtime": "./UniAppRuntime.har"`，如下图所示
-
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1845871b-474a-4fa7-b430-c6b3acf1cee3.png)
-
-4. 等待 Sync 结束
-
-5. 打开鸿蒙项目文件 `entry/src/main/ets/entryability` 新增下图红框内的代码
+4. 打开鸿蒙项目文件 `entry/src/main/ets/entryability` 新增下图红框内的代码
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/0a822b2b-147c-4aec-8f75-e68466be3911.png)
 
-6. 配置完成
+5. 配置完成
 
 ## 使用步骤
 
@@ -82,12 +76,4 @@ struct Index {
 按如下图所示修改 `目录名` 和 `entry\src\main\resources\rawfile\apps\HBuilder\www\manifest.json` 内的id属性
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/2637224c-67c1-4470-91ab-5f62440b73ea.png)
-
-## 更新uni小程序SDK@updatempsdk
-
-1. 将最新的 UniAppRuntime.har 文件复制到鸿蒙原生项目的根目录替换旧版本
-2. 打开鸿蒙项目根目录下的文件 `oh-package.json5`
-3. 删除依赖 `"@dcloudio/uni-app-runtime": "./UniAppRuntime.har"`，并点击右上角 `Sync Now`，等待Sync完成
-4. 再恢复依赖 `"@dcloudio/uni-app-runtime": "./UniAppRuntime.har"`，并点击右上角 `Sync Now`，等待Sync完成
-5. 更新完成
 

@@ -113,7 +113,14 @@ uni-app x项目manifest.json中没有提供Android权限的配置，需在此And
 ```
 
 ### Android url scheme配置@urlScheme  
-如果应用需要向系统注册url scheme，以便在浏览器中通过scheme打开App，可根据需求在`AndroidManifest.xml`文件中添加`android:scheme`数据，如下示例：
+
+#### uni-app
+
+uni-app 项目请在 `manifest.json` 可视化界面的 `App常用其它设置` 中配置，详情参考[Android设置url scheme](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#urlscheme)
+
+#### uni-app x
+
+应用需要向系统注册url scheme，以便在浏览器中通过scheme打开App，可根据需求在`AndroidManifest.xml`文件中添加`android:scheme`数据，如下示例：
 ```xml
 <?xml version="1.0" encoding="utf-8"?>  
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"   
@@ -132,8 +139,7 @@ uni-app x项目manifest.json中没有提供Android权限的配置，需在此And
 </manifest>
 ```
 
-> uni-app x 项目支持通过此方式配置url scheme，需 HBuilderX4.18及以上版本  
-> uni-app 项目请在 `manifest.json` 可视化界面的 `App常用其它设置` 中配置，详情参考[Android设置url scheme](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#urlscheme)  
+> uni-app x 项目支持通过此方式配置url scheme，需 HBuilderX4.18及以上版本    
 
 **注意**  
 - `intent-filter` 下 `data` 节点的 `android:scheme` 属性值配置的是需要注册的scheme，上面示例配置了myappuniappx，请根据应用实际需求修改，可添加多个data节点配置多个scheme值。为了避免与其他应用产生冲突，请配置自己应用特有的字符串来避免冲突。  
@@ -143,6 +149,58 @@ uni-app x项目manifest.json中没有提供Android权限的配置，需在此And
 - Android应用清单文件`intent-filter`节点，参考：[https://developer.android.google.cn/guide/topics/manifest/intent-filter-element](https://developer.android.google.cn/guide/topics/manifest/intent-filter-element?hl=zh-cn)  
 - Android应用清单文件`data`节点，参考：[https://developer.android.google.cn/guide/topics/manifest/data-element](https://developer.android.google.cn/guide/topics/manifest/data-element?hl=zh-cn)  
 
+### Android 修改`activity`注册配置信息
+
+android平台的`activity`内容载体，部分特殊功能需修改[activity注册配置](https://developer.android.google.cn/guide/topics/manifest/activity-element?hl=zh-cn)才能实现功能，因此提供如下方式修改注册的配置信息。
+
+#### uni-app
+
+uni-app x 页面 activity 如下:
+
++ 所有页面activity为io.dcloud.PandoraEntryActivity
+
+如下示例：
+```xml
+<?xml version="1.0" encoding="utf-8"?>  
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"   
+  package="io.dcloud.nativeresouce">  
+    <application>  
+        <activity android:name="io.dcloud.PandoraEntryActivity" 
+                  android:配置项 = "配置内容"/> 
+    </application>  
+</manifest>
+```
+
+#### uni-app x
+
+uni-app x 页面 activity 如下:
+
++ 首页的activity为io.dcloud.uniapp.UniAppActivity
++ 次级页面跟随屏幕方向的activity为io.dcloud.uniapp.appframe.activity.UniPageActivity
++ 次级页面固定横屏的activity为io.dcloud.uniapp.appframe.activity.UniLandscapePageActivity
++ 次级页面固定竖屏的activity为io.dcloud.uniapp.appframe.activity.UniPortraitPageActivity
+
+如下示例：
+```xml
+<?xml version="1.0" encoding="utf-8"?>  
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"   
+  package="io.dcloud.nativeresouce">  
+    <application>  
+        <activity android:name="io.dcloud.uniapp.UniAppActivity" 
+                  android:配置项 = "配置内容"/>
+        <activity android:name="io.dcloud.uniapp.appframe.activity.UniPageActivity"
+                  android:配置项 = "配置内容"/>
+        <activity android:name="io.dcloud.uniapp.appframe.activity.UniLandscapePageActivity"
+                  android:配置项 = "配置内容"/>
+        <activity android:name="io.dcloud.uniapp.appframe.activity.UniPortraitPageActivity"
+                  android:配置项 = "配置内容"/>
+    </application>  
+</manifest>
+```
+
+**注意** 
+- activity 注册配置项theme、screenOrientation、configChanges、windowSoftInputMode、launchMode禁止设置，随意配置可能会导致app出现不可预估问题
+- 不可通过该方式自行配置scheme，请通过[Android url scheme配置](#Android url scheme配置)实现
 
 ## 应用资源@nativeResources
 

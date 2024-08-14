@@ -252,7 +252,7 @@ export default {
 
 * 微信小程序在2023年10月17日之后，使用API需要配置[隐私协议](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)
 
-### uni.getVideoInfo(OBJECT)
+## uni.getVideoInfo(OBJECT)
 
 获取视频详细信息
 
@@ -310,6 +310,8 @@ export default {
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |3.1.10+|x|2.11.0+|x|x|x|x|x|x|
+
+<!-- UNIAPPAPIJSON.compressVideo.compatibility -->
 
 App端有很多插件支持视频压缩，详见[插件市场](https://ext.dcloud.net.cn/search?q=%E8%A7%86%E9%A2%91%E5%8E%8B%E7%BC%A9)
 

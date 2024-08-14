@@ -78,6 +78,8 @@ uni.chooseImage({
 ## uni.previewImage(OBJECT) @unipreviewimageobject
 预览图片。
 
+<!-- UNIAPPAPIJSON.previewImage.compatibility -->
+
 **OBJECT 参数说明**
 
 |参数名|类型|必填|说明|平台差异说明|
@@ -165,6 +167,8 @@ uni.chooseImage({
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√ `(3.2.15+)`|√ `(3.2.15+)`|x|x|x|x|x|x|x|x|
 
+<!-- UNIAPPAPIJSON.closePreviewImage.compatibility -->
+
 **OBJECT 参数说明**
 
 |参数名|类型|必填|说明|
@@ -184,6 +188,8 @@ uni.chooseImage({
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.getImageInfo.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -244,6 +250,8 @@ uni.chooseImage({
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|√|√|√|√|
 
+<!-- UNIAPPAPIJSON.saveImageToPhotosAlbum.compatibility -->
+
 **OBJECT 参数说明**
 
 |参数名|类型|必填|说明|
@@ -293,6 +301,8 @@ uni.chooseImage({
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√(基础库版本>=3.110.3)|√|√|√|√|
 
+<!-- UNIAPPAPIJSON.compressImage.compatibility -->
+
 **OBJECT 参数说明**
 
 | 属性 | 类型 | 默认值 | 必填 | 说明 | 平台差异说明 |
@@ -301,8 +311,8 @@ uni.chooseImage({
 | quality | Number | 80 | 否 | 压缩质量，范围0～100，数值越小，质量越低，压缩率越高（仅对jpg有效） ||
 | width | String | auto | 否 | 缩放图片的宽度，支持像素值（如"100px"）、百分比（如"50%"）、自动计算（如"auto"，即根据width与源图宽的缩放比例计算，若未设置width则使用源图宽度）|App 3.0.0+|
 | height | String | auto | 否 | 缩放图片的高度，支持像素值（如"100px"）、百分比（如"50%"）、自动计算（如"auto"，即根据height与源图高的缩放比例计算，若未设置height则使用源图高度）|App 3.0.0+|
-| compressedWidth | Number | - | 否 | 压缩后图片的宽度，单位为px，若不填写则默认以 compressedHeight 为准等比缩放 |微信小程序2.26.0 +|
-| compressedHeight | Number | - | 否 | 压缩后图片的高度，单位为px，若不填写则默认以 compressedWidth 为准等比缩放 |微信小程序2.26.0 +|
+| compressedWidth | Number | - | 否 | 压缩后图片的宽度，单位为px，若不填写则默认以 compressedHeight 为准等比缩放 |微信小程序2.26.0 +、App 3.7.0+|
+| compressedHeight | Number | - | 否 | 压缩后图片的高度，单位为px，若不填写则默认以 compressedWidth 为准等比缩放 |微信小程序2.26.0 +、App 3.7.0+|
 | rotate | Number | 0 | 否 | 旋转度数，范围0～360 |App 3.0.0+|
 | success | Function |  | 否 | 接口调用成功的回调函数 ||
 | fail | Function |  | 否 | 接口调用失败的回调函数 ||

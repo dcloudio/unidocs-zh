@@ -5,10 +5,9 @@
 1. 不支持x86的模拟器
 2. uni-app的项目appid只能是HBuilder，暂不支持其他appid，故HBuilderX打包后需要[手动更改appid](#updateappid)
 3. 只能启动一个小程序实例
-4. 小程序实例关闭后无法重新启动
-5. 没有胶囊按钮
-6. 只能使用 resource 资源中的小程序
-7. 支持在 DB1 版本上运行，不支持在 DB2 版本上运行
+4. 没有胶囊按钮
+5. 只能使用 resource 资源中的小程序
+6. 支持在 DB1 版本上运行，不支持在 DB2 版本上运行
 
 ## 配置uni小程序SDK@mpsdk
 
@@ -83,3 +82,12 @@ struct Index {
 按如下图所示修改 `目录名` 和 `entry\src\main\resources\rawfile\apps\HBuilder\www\manifest.json` 内的id属性
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/2637224c-67c1-4470-91ab-5f62440b73ea.png)
+
+## 更新uni小程序SDK@updatempsdk
+
+1. 将最新的 UniAppRuntime.har 文件复制到鸿蒙原生项目的根目录替换旧版本
+2. 打开鸿蒙项目根目录下的文件 `oh-package.json5`
+3. 删除依赖 `"@dcloudio/uni-app-runtime": "./UniAppRuntime.har"`，并点击右上角 `Sync Now`，等待Sync完成
+4. 再恢复依赖 `"@dcloudio/uni-app-runtime": "./UniAppRuntime.har"`，并点击右上角 `Sync Now`，等待Sync完成
+5. 更新完成
+

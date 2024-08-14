@@ -200,7 +200,7 @@ uni-app x 页面 activity 如下:
 
 **注意** 
 - activity 注册配置项theme、screenOrientation、configChanges、windowSoftInputMode、launchMode禁止设置，随意配置可能会导致app出现不可预估问题
-- 不可通过该方式自行配置scheme，请通过[Android url scheme配置](#Android url scheme配置)实现
+- 不可通过该方式自行配置scheme，请通过`Android url scheme配置`实现
 
 ## 应用资源@nativeResources
 

@@ -578,8 +578,14 @@ Mac系统快速复制路径方法
 
 暂不支持
  
-### release模式进入使用了组合式api的页面报错`Cannot read property route of undefined`
+### release模式进入使用了组合式api的页面报错`Cannot read property route of undefined`@q11
 
 此问题由于arkTs的混淆Bug引发，即使进入到一个空的组合式api页面也会出现这个报错，已反馈给鸿蒙团队处理。
 
 临时解决方案：在鸿蒙项目`entry/obfuscation-rules.txt`文件中增加一行`-disable-obfuscation`来禁用混淆。
+
+### 1.3.7及以上模板在部分设备的模拟器上无法运行，报错`Install Failed: error: failed to install bundle`@q12
+
+此问题是由于支付宝sdk兼容性造成的，目前只能删除支付宝sdk依赖，如下图所示操作，删除后需要点右上角的 Sync Now，并等待 Sync 结束
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/2020d045-c7d8-4b3a-ba21-d4f301900d00.png)

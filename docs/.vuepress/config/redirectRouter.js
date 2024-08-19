@@ -92,7 +92,7 @@ const routerMap = {
   '/use-html5plus': '/tutorial/use-html5plus.html',
   '/m3w': '/uniCloud/uni-portal.html',
   '/tutorial/syntax-uts': '/uni-app-x/uts/',
-	
+
 	'/harmony/dev': '/tutorial/harmony/dev.html',
 	'/harmony/dev.html': '/tutorial/harmony/dev.html',
 
@@ -108,12 +108,18 @@ const routerMap = {
   '/uni-app-x/': 'https://doc.dcloud.net.cn/uni-app-x/'
 }
 
+function fileNameToLowerCase (path) {
+  return path.replace(/\/[\w-]+\.(html|md)/, ($1) => {
+    return $1.toLocaleLowerCase()
+  })
+}
+
 export default ({ fullPath, path, hash }) => {
   fullPath = decodeURIComponent(fullPath)
   const matchFullPath = routerMap[fullPath.replace('?id=', '#').replace('.html', '')];
   if (matchFullPath) {
     return {
-      path: matchFullPath,
+      path: fileNameToLowerCase(matchFullPath),
       replace: true
     }
   }
@@ -121,7 +127,7 @@ export default ({ fullPath, path, hash }) => {
   const matchPath = routerMap[path] || routerMap[path.replace('.html', '')]
   if (matchPath) {
     return {
-      path: matchPath,
+      path: fileNameToLowerCase(matchPath),
       hash,
       replace: true
     }
@@ -129,7 +135,7 @@ export default ({ fullPath, path, hash }) => {
 
   if (path.indexOf('/app-') === 0 || path.indexOf('/android-') === 0 || path.indexOf('/ios-') === 0) {
     return {
-      path: `/tutorial${path}`,
+      path: `/tutorial${fileNameToLowerCase(path)}`,
       hash,
       replace: true
     }
@@ -140,7 +146,8 @@ export default ({ fullPath, path, hash }) => {
   routerMapKeys.forEach(key => {
     if (path.indexOf(key) === 0 && routerMap[key].indexOf(key) !== 0 && routerMap[key] !== path) {
       return returnPathConfig = {
-        path: path.replace(key, routerMap[key]),
+        // fixed: 文件名转为小写
+        path: fileNameToLowerCase(path.replace(key, routerMap[key])),
         hash,
         replace: true
       }

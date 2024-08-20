@@ -122,9 +122,9 @@ apple-app-site-association文件配置如下：
 
 > 推荐方案：将apple-app-site-association文件部署到，免费的阿里云版unicloud的 [前端网页托管](https://uniapp.dcloud.io/uniCloud/hosting?id=%e7%ae%80%e4%bb%8b) 
 
-## app端处理通用链接
+### app端处理通用链接
 
-### uni-app/5+ App项目  
+#### uni-app/5+ App项目  
 可通过5+ API的[plus.runtime.launcher](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.launcher)判断应用启动来源，如果其值为"uniLink"则表示通过通用链接启动应。
 这时可通过5+ API的[plus.runtime.arguments](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.arguments)获取启动参数，通用链接启动的情况将返回完整的通用链接地址。
 
@@ -134,7 +134,7 @@ apple-app-site-association文件配置如下：
 也可以通过 API： [uni.getLaunchOptionsSync](https://doc.dcloud.net.cn/uni-app-x/api/launch.html) 和 [uni.getEnterOptionsSync](https://doc.dcloud.net.cn/uni-app-x/api/launch.html#getenteroptionssync) 返回值中的 appLink 属性获取通用链接地址。
 
 
-## 注意事项
+### 注意事项
 - apple-app-site-association文件不需要.json后缀
 - 对apple-app-site-association文件的请求仅在App第一次启动时进行，如果此时网络连接出了问题apple会缓存请求，等有网的时候再去请求，如果没有请求此文件通用连接会失效
 - iOS 9.2开始，在相同的domain内Universal Links不生效，必须要跨域才生效

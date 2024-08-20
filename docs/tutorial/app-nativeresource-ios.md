@@ -71,6 +71,8 @@ HBuilderX3.6.5起，支持直接在应用项目中配置 iOS 平台的 Info.plis
     <string>后台运行期访问位置信息的许可描述</string>
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
     <string>访问位置信息的许可描述</string>
+    <key>NSUserNotificationsUsageDescription</key>
+    <string>使用推送通知的许可描述</string>
     <key>NSCalendarsUsageDescription</key>
     <string>访问日历的许可描述</string>
     <key>NSContactsUsageDescription</key>
@@ -111,7 +113,9 @@ HBuilderX3.6.5起，支持直接在应用项目中配置 iOS 平台的 Info.plis
 
 **注意**  
 uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的配置，需在此Info.plist中添加。  
-配置许可描述时需根据应用实际情况准确描述用途，否则提交AppStore审核可能被拒。
+配置许可描述时需根据应用实际情况准确描述用途，否则提交AppStore审核可能被拒。  
+- NSUserNotificationsUsageDescription  
+  使用消息推动通知的许可描述是可选配置，不配置此字段（不包含NSUserNotificationsUsageDescription）也可以通过AppStore审核；如果配置了此字段则需正确描述应用使用消息通知的用途才能通过AppStore审核。
 
 **相关参考**  
 - iOS隐私信息访问列表，参考：[https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources](https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources)

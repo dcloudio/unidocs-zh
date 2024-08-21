@@ -1436,14 +1436,11 @@ uni统计支持sourcemap，可直观了解到底哪行代码写的有问题。[�
 
 答：首先登录[uniCloud控制台](https://unicloud.dcloud.net.cn/)，检查在出现问题的统计项配置的时间点(参考：[定时任务配置说明](#定时任务配置说明))，`uni-stat-cron`云函数的运行日志，如果运行日志前面的状态标识是灰色的，代表云函数运行超时了，此时在云函数详情中将`uni-stat-cron`云函数的超时时间设置到最大值即可。如果运行日志的状态标识是绿色的，则需要检查日志内容是否有报错，然后根据报错内容做出调整。
 
-### 9. 应用开通uni统计2.0后无统计数据怎么办？
-
-答：首先登录[uniCloud控制台](https://unicloud.dcloud.net.cn/)，确认`uni-stat-reciver`云对象有没有运行日志，如果没有运行日志则代表数据未上报，则需要检查应用关联的服务空间与部署`uni-admin`项目的服务空间是否一致、应用是否开启`uni统计2.0`并启用对应平台；其次检查 `uni-stat-reciver`云函数的运行日志中有没有报错，有报错则需要根据报错内容做出调整。
 
 ## 参考资料
 
 不掌握如下文档，很难对 `uni统计2.0` 吃透和做二次开发
 - uni-admin文档：[详见](https://doc.dcloud.net.cn/uniCloud/admin.html)
-- uni-id文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-id.html)
+- uni-id文档：[详见](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)
 - opendb文档：[详见](https://doc.dcloud.net.cn/uniCloud/opendb.html)
 

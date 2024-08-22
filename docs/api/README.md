@@ -392,7 +392,7 @@ uni.addInterceptor({
 | :-------------------------------------------------------- | :--------------------------------------------------- |
 | [uni.getSystemInfo](system/info?id=getsysteminfo)         | 获取系统信息                                         |
 | [uni.getSystemInfoSync](system/info?id=getsysteminfosync) | 获取系统信息                                         |
-| [uni.canIUse](/api/system/info?id=caniuse)                | 判断应用的 API，回调，参数，组件等是否在当前版本可用 |
+| [uni.canIUse](caniuse)                | 判断应用的 API，回调，参数，组件等是否在当前版本可用 |
 
 #### 内存
 

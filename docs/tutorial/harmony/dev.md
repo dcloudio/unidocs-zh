@@ -484,6 +484,38 @@ console.log("安卓、苹果不会编译，鸿蒙会编译，小程序和Web也�
 // #endif
 ```
 
+### map组件及定位等api
+
+> 新增于HBuilderX 4.26
+
+map组件、getLocation、openLocation、chooseLocation依赖于地图厂商。目前仅支持腾讯地图，且此界面上显示的地图是通过webview加载的。由于目前页面使用的并非http协议，因此在申请腾讯地图key时需要将域名白名单留空以便地图能正确加载出来。后续在harmonyOS上页面会调整成以http方式加载，到时可以在腾讯地图控制台配置域名白名单。
+
+在uni-app项目内配置腾讯地图key：
+
+1. 以源码方式打开项目manifest.json
+2. 在manifest.json内放入如下内容：
+
+```json5
+{
+    // ...
+    "app-plus" : {
+        // ...
+        "distribute" : {
+            // ...
+            "sdkConfigs" : {
+                // ...
+                "maps" : {
+                    "qqmap" : {
+                        "key" : "XXX-XXXX-XXXX"
+                    }
+                }
+            }
+        }
+    },
+    // ...
+}
+```
+
 ## 注意事项@tips
 
 1. 移植已有的 uni-app 项目源码时，如有其他 npm 依赖，请自行安装
@@ -494,6 +526,7 @@ console.log("安卓、苹果不会编译，鸿蒙会编译，小程序和Web也�
 6. 在HBuilderX里运行后，需要再去鸿蒙 DevEco Studio里运行
 7. 在HBuilderX里修改代码后，需要去鸿蒙 DevEco Studio里重新运行
 8. 如果有多个uni-app项目要编译到鸿蒙，那么鸿蒙离线sdk需要放置多份，每个uni-app的manifest中配置不同的离线sdk地址，否则会冲突，鸿蒙设备上目前没有基座概念
+
 
 ## 常见问题@question
 

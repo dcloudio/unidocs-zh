@@ -70,7 +70,7 @@ uni.onPushMessage((res)=>{
 |type	|String	| 事件类型，"click"-从系统推送服务点击消息启动应用事件；"receive"-应用从推送服务器接收到推送消息事件。|
 |data	|String、Object|消息内容|
 
-## uni.offPushMessage(callback)
+## uni.offPushMessage(callback)@offpushmessage
 关闭推送消息监听事件
 
 <!-- UNIAPPAPIJSON.offPushMessage.compatibility -->

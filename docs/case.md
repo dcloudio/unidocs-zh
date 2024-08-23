@@ -436,6 +436,8 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **人力资源和社会保障部：** 微信小程序搜“电子社保卡”
 
+**全国住房公积金公共服务：** 微信小程序搜“全国住房公积金公共服务”
+
 **农交安（5+App）：** 公安部交通管理局，农村道路交通安全信息系统App。[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.tmri.nda)、[iOS](https://itunes.apple.com/cn/app/id1445388528)
 
 **国家应急管理部：** [特种作业操作证信息查询平台](https://cx.mem.gov.cn/)
@@ -450,7 +452,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **NSTL国家科技图书文献中心：** [App下载页](https://www.nstl.gov.cn/download_app.html)、[H5](https://www.nstl.gov.cn/index_app.html#/)
 
-**各地税务：** 北京、上海、广东、深圳、江苏、河南、湖北、四川、安徽、山东、山西、陕西、浙江、河北、云南、新疆、青岛、福建、甘肃、湖南、贵州大量使用uni-app开发
+**各地税务：** 北京、上海、广东、深圳、江苏、河南、湖北、四川、安徽、山东、山西、陕西、浙江、河北、云南、新疆、青岛、福建、甘肃、湖南、贵州的App均使用uni-app开发。可在应用商店搜索 如“江苏税务”
 
 **北京共青团：** [H5网站](https://m.bjyouth.net)
 

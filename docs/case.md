@@ -341,89 +341,6 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 <!-- **达内在线：** 达内教育的在线培训App。[App官网下载](http://www.tmooc.cn/app/index.shtml) -->
 
-### SaaS服务商
-
-**人人商城：** 客户众多的分销商城 [https://www.rrsc.cn/V5introduce.html](https://www.rrsc.cn/V5introduce.html)
-
-**即速应用：** 微信小程序搜索“即速应用商家版”
-
-**大商创：** 全渠道多用户商城解决方案。[官网](https://www.dscmall.cn)
-
-### 通信运营商
-
-**中国移动：** 微信小程序搜索“中国移动10086+”
-
-**中国移动：** App中大量小程序基于uni-app开发
-
-**中国移动咪咕视频：** 微信小程序搜索“咪咕视频”
-
-**中国移动咪咕商城：** [H5](https://mgmall.migudm.cn/)
-
-**中国移动咪咕爱看App：** 内嵌[uni小程序SDK](https://nativesupport.dcloud.net.cn)。App内部部分栏目做成小程序形式。[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.wondertek.miguaikan)、[iOS](https://apps.apple.com/cn/app/id1168490851)
-
-**北京移动：** App部分页面使用uni-app制作
-
-**广东汕头公交：** 广东移动出品。[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.gmcc.stgj)、[iOS](https://apps.apple.com/cn/app/%E6%B1%95%E5%A4%B4%E5%85%AC%E4%BA%A4/id1091442840)、微信小程序搜索“汕头智慧公交”
-
-**云南移动微店系统：** [H5](http://wx.10086.cn/yunnan/qrcodeyn/uniapph5/h5/index.html)
-
-**中国电信：** App中大量小程序基于uni-app开发，内嵌uni小程序SDK
-
-**中国电信189福利站：** [App内福利站页面](https://www.189.cn/client/actcenter/signActivityH5/welfare2/index1.html#/)
-
-**广东联通粉丝卡：** [H5（特定UA）](https://wxv.gd10010.cn/)
-
-**贵州联通沃扫码：** [H5，需扫码访问](http://www.gz10010.shop/wsm-h5/#/)
-
-### 金融
-
-**中国银联云闪付：** App部分页面使用uni-app制作
-
-**招商银行：** App部分页面使用uni-app制作
-
-**建设银行：** App龙支付慧点单 longpay.ccb.com；CCB建融家园
-
-**兴业银行：** 兴经营 微信小程序
-
-**湖北银行（5+App）：** [Android](https://android.myapp.com/myapp/detail.htm?apkName=cn.com.yusys.app.HuBeiBank)、[iOS](https://apps.apple.com/cn/app/%E6%B9%96%E5%8C%97%E9%93%B6%E8%A1%8C%E4%B8%AA%E4%BA%BA%E6%89%8B%E6%9C%BA%E9%93%B6%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF/id718080432)
-
-**湖北农信社：** 农商e支付 微信小程序
-
-**河南农信社：** 豫惠优选 微信小程序
-
-**山西农信社：：** 晋享生活（5+App），[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.ydnsh.buy.mobileBank)、[iOS](https://apps.apple.com/cn/app/id1147645808)
-
-**云南红塔银行：** [App](https://a.app.qq.com/o/simple.jsp?pkgname=com.csii.yuxi.mobilebank)
-
-**中原银行信用卡：** [微信H5](https://cch.zybank.com.cn:10080/credit/#/pages/home/home)
-
-**蒙商银行（5+App）：** [Android](https://android.myapp.com/myapp/detail.htm?apkName=cn.com.bsb.mbank)、[iOS](https://itunes.apple.com/cn/app/bao-shang-yin-xing/id875246323?mt=8)
-
-**苍南农商银行** 丰收联盟。[H5](https://wxmapp.zjcnbank.com/)
-
-**新网银行：** 微信小程序搜同名
-
-**平安集团：** 智慧医疗慢病管理，[H5](https://hm.city.pingan.com/h5/)；金管家多个页面，[H5](https://laip-gbr-pai.pingan.com/static/goodStart/#/)；口袋合伙人，[H5](https://b.pingan.com.cn/mkt/youhui/2012/kdhhrzhjh/#/package-act21/pages/act-zhlx/index)；易骑行，[H5](https://ebs.yun.city.pingan.com/pc/mini/#/)
-
-**长城人寿：** 微信小程序搜索 “长城银保e站”、“长城人寿线上培训平台”等
-
-**华夏保险：** app部分页面使用uni-app制作
-
-**泰康医生：** 微信小程序搜同名
-
-**水滴保：** 微信小程序搜同名
-
-**国信证券：** 股票开户行情，微信小程序搜“国信小店”
-
-**国泰君安：** app部分页面使用uni-app制作
-
-**同花顺股票：** 微信小程序搜同名
-
-**拉卡拉收款宝：** App部分页面使用uni-app制作
-
-**易宝支付：** cash.yeepay.com
-
-
 ### 政府
 
 **大量新冠抗疫项目，详见专题：** [xinguan2020.dcloud.net.cn](https://dcloud.io/ncp.html)
@@ -527,6 +444,81 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 **新疆税务社保缴费：** 微信小程序搜同名
 
 **天津公安：** [App](https://a.app.qq.com/o/simple.jsp?pkgname=jnhyjt.tjgamsfwpt.tjga)
+
+### 通信运营商
+
+**中国移动：** 微信小程序搜索“中国移动10086+”
+
+**中国移动：** App中大量小程序基于uni-app开发
+
+**中国移动咪咕视频：** 微信小程序搜索“咪咕视频”
+
+**中国移动咪咕商城：** [H5](https://mgmall.migudm.cn/)
+
+**中国移动咪咕爱看App：** 内嵌[uni小程序SDK](https://nativesupport.dcloud.net.cn)。App内部部分栏目做成小程序形式。[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.wondertek.miguaikan)、[iOS](https://apps.apple.com/cn/app/id1168490851)
+
+**北京移动：** App部分页面使用uni-app制作
+
+**广东汕头公交：** 广东移动出品。[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.gmcc.stgj)、[iOS](https://apps.apple.com/cn/app/%E6%B1%95%E5%A4%B4%E5%85%AC%E4%BA%A4/id1091442840)、微信小程序搜索“汕头智慧公交”
+
+**云南移动微店系统：** [H5](http://wx.10086.cn/yunnan/qrcodeyn/uniapph5/h5/index.html)
+
+**中国电信：** App中大量小程序基于uni-app开发，内嵌uni小程序SDK
+
+**中国电信189福利站：** [App内福利站页面](https://www.189.cn/client/actcenter/signActivityH5/welfare2/index1.html#/)
+
+**广东联通粉丝卡：** [H5（特定UA）](https://wxv.gd10010.cn/)
+
+**贵州联通沃扫码：** [H5，需扫码访问](http://www.gz10010.shop/wsm-h5/#/)
+
+### 金融
+
+**中国银联云闪付：** App部分页面使用uni-app制作
+
+**招商银行：** App部分页面使用uni-app制作
+
+**建设银行：** App龙支付慧点单 longpay.ccb.com；CCB建融家园
+
+**兴业银行：** 兴经营 微信小程序
+
+**湖北银行（5+App）：** [Android](https://android.myapp.com/myapp/detail.htm?apkName=cn.com.yusys.app.HuBeiBank)、[iOS](https://apps.apple.com/cn/app/%E6%B9%96%E5%8C%97%E9%93%B6%E8%A1%8C%E4%B8%AA%E4%BA%BA%E6%89%8B%E6%9C%BA%E9%93%B6%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF/id718080432)
+
+**湖北农信社：** 农商e支付 微信小程序
+
+**河南农信社：** 豫惠优选 微信小程序
+
+**山西农信社：：** 晋享生活（5+App），[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.ydnsh.buy.mobileBank)、[iOS](https://apps.apple.com/cn/app/id1147645808)
+
+**云南红塔银行：** [App](https://a.app.qq.com/o/simple.jsp?pkgname=com.csii.yuxi.mobilebank)
+
+**中原银行信用卡：** [微信H5](https://cch.zybank.com.cn:10080/credit/#/pages/home/home)
+
+**蒙商银行（5+App）：** [Android](https://android.myapp.com/myapp/detail.htm?apkName=cn.com.bsb.mbank)、[iOS](https://itunes.apple.com/cn/app/bao-shang-yin-xing/id875246323?mt=8)
+
+**苍南农商银行** 丰收联盟。[H5](https://wxmapp.zjcnbank.com/)
+
+**新网银行：** 微信小程序搜同名
+
+**平安集团：** 智慧医疗慢病管理，[H5](https://hm.city.pingan.com/h5/)；金管家多个页面，[H5](https://laip-gbr-pai.pingan.com/static/goodStart/#/)；口袋合伙人，[H5](https://b.pingan.com.cn/mkt/youhui/2012/kdhhrzhjh/#/package-act21/pages/act-zhlx/index)；易骑行，[H5](https://ebs.yun.city.pingan.com/pc/mini/#/)
+
+**长城人寿：** 微信小程序搜索 “长城银保e站”、“长城人寿线上培训平台”等
+
+**华夏保险：** app部分页面使用uni-app制作
+
+**泰康医生：** 微信小程序搜同名
+
+**水滴保：** 微信小程序搜同名
+
+**国信证券：** 股票开户行情，微信小程序搜“国信小店”
+
+**国泰君安：** app部分页面使用uni-app制作
+
+**同花顺股票：** 微信小程序搜同名
+
+**拉卡拉收款宝：** App部分页面使用uni-app制作
+
+**易宝支付：** cash.yeepay.com
+
 
 ### 传统品牌
 
@@ -645,6 +637,14 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 **极米：** [极米官方app](https://sj.qq.com/myapp/detail.htm?apkName=com.xgimi.zhushou&info=FB45015C23ACF368D22855D6C4964312)、[官网H5版](https://m.xgimi.com/)、微信小程序搜索“极米官方商城”、微信小程序搜索“极米care+”售后服务宣传
 
 **小米手环4自定义表盘软件：** [Android](https://www.coolapk.com/apk/tech.pingx.watchface)、[H5](http://watchface.pingx.tech/h5/)
+
+### SaaS服务商
+
+**人人商城：** 客户众多的分销商城 [https://www.rrsc.cn/V5introduce.html](https://www.rrsc.cn/V5introduce.html)
+
+**即速应用：** 微信小程序搜索“即速应用商家版”
+
+**大商创：** 全渠道多用户商城解决方案。[官网](https://www.dscmall.cn)
 
 ### 游戏
 

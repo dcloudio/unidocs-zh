@@ -11,7 +11,7 @@ vite.config.js 是一个可选的配置文件，如果项目的根目录中存�
 
 部分配置项会被编译配置覆盖，例如：
 
-- base：支持
+- base：web 平台支持
 - root：不支持
 - mode：不支持
 - publicDir: 不支持，固定为 static

@@ -98,9 +98,19 @@ HBuilderX (4.0+) android 平台支持
 
 ```
 
-**Tips**
+## 全局监听权限申请并弹窗提示用户权限申请原因
+iOS的权限申请原因，是在manifest或info.plist里配置的。
+
+Android没有在系统层面提供这套机制，但一些应用商店（如华为），又要求申请权限时弹框说明原因。
+
+虽然uni.createRequestPermissionListener可以监听权限申请，但前端弹框的层级较低，无法正常显示权限申请原因。
+
+所以DCloud提供了一个插件，可以在原生层面给出文字提示：
+- 全局监听权限申请可参考插件[uni-registerRequestPermissionTips](https://ext.dcloud.net.cn/plugin?name=uni-registerRequestPermissionTips)。
+
+## Tips
 
 - 如果权限已经申请并且允许之后，`onConfirm`不会触发。
 - 如果同时申请多个权限时，`onComplete`可能会触发多次。
 - 权限列表参考：[https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions)
-- 全局监听权限申请可参考插件[uni-registerRequestPermissionTips](https://ext.dcloud.net.cn/plugin?name=uni-registerRequestPermissionTips)。
+

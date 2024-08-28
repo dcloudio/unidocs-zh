@@ -161,8 +161,7 @@
   * 服务器安全
     * [uniCloud ip防刷](https://doc.dcloud.net.cn/uniCloud/ip-filter.html)
     * [内容安全审查](https://ext.dcloud.net.cn/plugin?id=5460)
-  * 等保测评
-	* [等保测评服务](djbh.md)
+  * [等保测评服务](djbh.md)
 * [国际化专题](i18n.md)
 	* [国际化开发指南](i18n.md)
 	* [海外开发者使用指南](internationalization.md)

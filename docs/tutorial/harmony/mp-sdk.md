@@ -3,11 +3,8 @@
 ## 已知问题
 
 1. 不支持x86的模拟器
-2. uni-app的项目appid只能是HBuilder，暂不支持其他appid，故HBuilderX打包后需要[手动更改appid](#updateappid)
-3. 只能启动一个小程序实例
-4. 没有胶囊按钮
-5. 只能使用 resource 资源中的小程序
-6. 支持在 DB1 版本上运行，不支持在 DB2 版本上运行
+2. 只能使用 resource 资源中的小程序
+3. 支持在 DB1 版本上运行，不支持在 DB2 版本上运行
 
 ## 配置uni小程序SDK@mpsdk
 

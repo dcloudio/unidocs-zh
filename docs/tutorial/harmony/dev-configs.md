@@ -18,7 +18,7 @@ HX 里面有两个与鸿蒙相关的功能入口：
 
 在构建过程中，会在 `unpackage` 目录下生成鸿蒙工程目录，并把 `harmony-configs` 目录下的内容合并到这里，uni-app 项目编译的结果也会输出到这里。
 
-然后 HX 会对这个鸿蒙工程目录进行构建、打包、签名，如果是运行的话，会把生成的 .hap 安装到选定的鸿蒙设备上并启动运行，如果是发行则最终生成 .app 安装包。
+然后 HX 会对这个鸿蒙工程目录进行构建、打包、签名，如果是运行的话，会把生成的 `.hap` 安装到选定的鸿蒙设备上并启动运行，如果是发行则最终生成 `.app` 安装包。
 
 ## 配置
 
@@ -61,6 +61,19 @@ HX 里面有两个与鸿蒙相关的功能入口：
 如果确实需要这里的某些权限，那就需要申请一个调试证书，并配置到 `harmony-configs/build-profile.json5` 文件的 `app.signingConfigs` 中。
 这里要注意，一定要通过 DevEco Studio 来申请这个证书，且需要开启 `Automatically generate signature` 选项，只有这样拿到的调试证书才会支持 ACL 权限。
 手动申请的调试证书不会直接支持 ACL 权限，必须要获得白名单授权才可以，这个申请过程要求比较高。
+
+### 报错 `配置的 bundleName 与签名证书不符`@bundle-name-mismatch
+
+如果配置了签名证书，打包之后会进行签名，但如果项目中配置的 `bundleName` 与签名证书申请时所填报的 `bundleName` 不符，就会报这个错。
+可以修改 `harmony-configs/AppScrope/app.json5` 文件中 `app.bundleName` 为签名证书申请时所填的应用包名，
+也可以根据配置的 `bundleName` 重新申请证书。
+
+### 报错 `签名验证失败`@signature-verification-failed
+
+当运行到鸿蒙时，在把打包后的 `.hap` 安装到设备上时，可能会遇到这个报错。
+一个常见的原因是当前使用的设备没有添加到签名用的 profile 文件中，要解决这个问题，
+首先要 [注册调试设备](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-device-0000001946142249)，
+最后 [申请调试Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102) 或修改已有的 profile 文件并重新下载。
 
 ## 关于数字签名证书的配置@singing
 

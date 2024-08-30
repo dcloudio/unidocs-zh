@@ -10,7 +10,7 @@
 
 ## 开发环境要求@env
 
-* DevEco-Studio 5.0.3.400 以上 [下载地址](https://developer.huawei.com/consumer/cn/deveco-developer-suite/enabling/kit?currentPage=1&pageSize=100)
+* DevEco-Studio 5.0.3.400 以上 [下载地址](https://developer.huawei.com/consumer/cn/download/)
 * 鸿蒙系统版本 API 12 以上 （DevEco-Studio有内置鸿蒙模拟器）
 * HBuilderX-alpha-4.22 以上
 

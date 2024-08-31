@@ -12,7 +12,7 @@
 
 2. 点击右上角 Sync Now，并等待 Sync 结束
 
-3. 打开鸿蒙项目文件 `entry/src/main/ets/entryability`，增加初始化uni小程序sdk的逻辑，初始化uni_module
+3. 打开鸿蒙项目文件 `entry/src/main/ets/entryability`，增加初始化uni小程序sdk的逻辑
 
 ```ts
 import { init } from '@dcloudio/uni-app-runtime'

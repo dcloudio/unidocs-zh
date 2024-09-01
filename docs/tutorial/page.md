@@ -633,13 +633,13 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 	})
 ```
 
-### uni.$off([eventName, callback]) @off
+### uni.$off(eventName, callback) @off
 
 移除全局自定义事件监听器。
 
 |属性		|类型			|描述			|
 |---		|---			|---			|
-|eventName	|Array＜String＞ |事件名			|
+|eventName	|String |事件名			|
 |callback	|Function		|事件的回调函数	|
 
 **Tips**

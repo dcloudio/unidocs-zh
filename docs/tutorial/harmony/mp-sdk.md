@@ -45,7 +45,7 @@ export default class EntryAbility extends UIAbility {
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1725101625314.jpg)
 
-2. 在鸿蒙ets页面（例如: entry/src/main/ets/pages/Index.ets）引入uni小程序SDK，编写小程序代码
+2. 在鸿蒙ets页面（例如: entry/src/main/ets/pages/Index.ets）引入uni小程序SDK，编写启动小程序的代码
 
 ```js
 // entry/src/main/ets/pages/Index.ets

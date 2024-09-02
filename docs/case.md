@@ -720,6 +720,7 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **崇胜CMS：** 漫画、小说、音乐管理系统。[官网](https://www.chshcms.net/)
 
+**闺蜜圈：** 一款跟好用的大姨妈记录 app。[官网](https://guimiquan.cn/)
 
 <style>
 	.barcode-view {

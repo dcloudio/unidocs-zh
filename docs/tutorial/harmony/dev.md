@@ -601,7 +601,7 @@ map组件、getLocation、openLocation、chooseLocation依赖于地图厂商。�
   </head>
   <body>
     <button id="call-native-method">callNativeMethod</button>
-    <script type="text/javascript" src="./uni.webview.1.5.5.js"></script>
+    <script type="text/javascript" src="./uni.webview.1.5.6.js"></script>
     <script>
       let callbackId = 0
       const callbacks = {}

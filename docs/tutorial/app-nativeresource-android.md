@@ -241,7 +241,6 @@ HBuilderX中对项目右键菜单 "新建" -> "目录"
 └─uni-jsframework-vue3-dev.js  //uni-app vue3框架（开发模式）
 	</code>
 </pre>
-
   + uni-app x 项目
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">

@@ -20,6 +20,10 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持通过 Gr
 
 ![image](https://web-ext-storage.dcloud.net.cn/hx/uts-android-2.png)
 
+> HBuilderX 4.27+ 配置迁移到 【设置 - 运行配置】：如图
+
+![image](https://web-ext-storage.dcloud.net.cn/hx/uts-android-4.png)
+
 ### 上面的截图展示了以下配置：
 
 #### 配置 Gradle
@@ -37,7 +41,7 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持通过 Gr
 
 #### 配置 Gradle JDK
 
-- 不同版本 Gradle 依赖不同版本的 JDK 。HbuilderX 内置的 JDK 为 11，仅支持 Gradle8.0 以下。如配置 Gradle 为 8.0 及以上版本需要手动下载并配置 JDK 路径。配置方式如下
+- 不同版本 Gradle 依赖不同版本的 JDK 。HbuilderX 内置的 JDK 为 11，仅支持 Gradle8.0 以下。如配置 Gradle 为 8.0 及以上版本需要手动下载并配置 JDK 路径。HBuilderX 4.27 内置的 JDK 升级到17。如使用的Gradle版本对JDK要求满足要求可以跳过配置。如需配置方式如下
 
 1. 点击图标 3 的下载地址进入下载页面，选择所需要的版本。（如本地已安装 JDK 可跳过此步骤）
 

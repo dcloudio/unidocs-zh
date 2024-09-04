@@ -323,10 +323,10 @@ App端有很多插件支持视频压缩，详见[插件市场](https://ext.dclou
 |属性				|类型			|默认值	|必填	|说明																									|
 |:-:				|:-:			|:-:		|:-:	|:-:																									|
 |src				|string		|				|是		|视频文件路径，可以是临时文件路径也可以是永久文件路径	|
-|quality		|string		|				|是		|压缩质量																							|
-|bitrate		|number		|				|是		|码率，单位 kbps																			|
-|fps				|number		|				|是		|帧率																									|
-|resolution	|number		|				|是		|相对于原视频的分辨率比例，取值范围(0, 1]							|
+|quality		|string		|'high'|否		|压缩质量																							|
+|bitrate		|number		|				|否		|码率，单位 kbps（仅 iOS 支持）																			|
+|fps				|number		|				|否		|帧率（仅 iOS 支持）																									|
+|resolution	|number		|				|否		|相对于原视频的分辨率比例，取值范围(0, 1]（仅 iOS 支持）							|
 |success		|function	|				|否		|接口调用成功的回调函数																|
 |fail				|function	|				|否		|接口调用失败的回调函数																|
 |complete		|function	|				|否		|接口调用结束的回调函数（调用成功、失败都会执行）			|

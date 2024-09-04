@@ -4,11 +4,11 @@ export default {
       text: 'uni-app',
       type: 'algolia',
     },
-    /* {
+    {
       text: 'uni-app x',
       type: 'algolia',
     },
-    {
+    /* {
       text: 'uniCloud',
       type: 'algolia',
     }, */

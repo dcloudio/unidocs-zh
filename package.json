@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "vuepress": "1.9.9",
-    "vuepress-theme-uniapp-official": "^1.4.25"
+    "vuepress-theme-uniapp-official": "^1.4.30"
   },
   "resolutions": {
     "terser-webpack-plugin": "1.4.6"

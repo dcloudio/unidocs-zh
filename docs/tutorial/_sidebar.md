@@ -138,6 +138,7 @@
   * [App平台：uni-app debug](debug/debug-app.md)
   * [App平台：Android uts调试](debug/uni-uts-debug.md)
   * [App平台：iOS uts调试](debug/uni-uts-debug-ios.md)
+  * [App平台：鸿蒙的运行和发行](run/run-app-harmony.md)
   * [小程序平台：运行调试](debug/debug-mp.md)
   * [uni-vue-devtools 调试](debug/uni-vue-devtools.md)
 * [高效开发技巧](snippet.md)

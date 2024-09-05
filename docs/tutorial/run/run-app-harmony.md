@@ -1,4 +1,4 @@
-# 配置鸿蒙的运行和发行功能@configs
+# 鸿蒙的运行和发行功能
 
 ## 准备工作
 
@@ -14,13 +14,13 @@ HX 里面有两个与鸿蒙相关的功能入口：
 
 ## 操作过程
 
-在一个 uni-app 项目中点击鸿蒙的运行或发行菜单后，HX 会检查 `harmony-configs` 目录内容的完整性，如果目录不存在或者里面缺少文件，会自动添加进去，已有的文件不会被覆盖。
+在一个 uni-app 项目中点击鸿蒙的运行或发行菜单后，HX 会检查 `harmony-configs` 目录内容的完整性，如果目录不存在或者里面缺少文件，会自动添加进去作为默认配置，已有的文件不会被覆盖。
 
-在构建过程中，会在 `unpackage` 目录下生成鸿蒙工程目录，并把 `harmony-configs` 目录下的内容合并到这里，uni-app 项目编译的结果也会输出到这里。
+在构建过程中，会在 `unpackage` 目录下生成鸿蒙工程目录，并把 `harmony-configs` 目录下的所有文件覆盖到这里，uni-app 项目编译的结果也会输出到这里。
 
 然后 HX 会对这个鸿蒙工程目录进行构建、打包、签名，如果是运行的话，会把生成的 `.hap` 安装到选定的鸿蒙设备上并启动运行，如果是发行则最终生成 `.app` 安装包。
 
-## 配置
+## 配置@configs
 
 所有属于鸿蒙工程的配置调整，都可以写在 `harmony-configs` 目录下，具体内容可以参照鸿蒙的相关文档。其中常用内容有：
 
@@ -42,8 +42,8 @@ HX 里面有两个与鸿蒙相关的功能入口：
 
 ### 报错 `依赖包与运行设备不兼容`@install-parse-native-so-failed
 
-在一个 uni-app 项目上首次使用【运行到鸿蒙】的时候，可能会遇到这个报错。
-这是由于默认配置里面依赖了支付宝SDK，而这个包不支持运行在 Windows 平台的模拟器上，所以在打包后安装到模拟器设备时会报错。
+在 x86_64 平台（绝大多数 Windows 系统和部分 MacOS 系统）上使用【运行到鸿蒙】并选择了模拟器作为运行设备的时候，可能会遇到这个报错。
+这是由于默认配置里面依赖了支付宝SDK，而这个包不支持运行在 x86_64 平台的模拟器上，所以在打包后安装到模拟器设备时会报错。
 出现这种情况时，如果并不需要这个依赖，可以修改 `harmony-configs/oh-package.json5` 文件，在 `dependencies` 里面删除 `@cashier_alipay/cashiersdk` 就行了；
 如果确实需要，那就只能改用真机设备来运行了。
 
@@ -60,7 +60,7 @@ HX 里面有两个与鸿蒙相关的功能入口：
 
 如果确实需要这里的某些权限，那就需要申请一个调试证书，并配置到 `harmony-configs/build-profile.json5` 文件的 `app.signingConfigs` 中。
 这里要注意，一定要通过 DevEco Studio 来申请这个证书，且需要开启 `Automatically generate signature` 选项，只有这样拿到的调试证书才会支持 ACL 权限。
-手动申请的调试证书不会直接支持 ACL 权限，必须要获得白名单授权才可以，这个申请过程要求比较高。
+手动申请的调试证书不会直接支持 ACL 权限，必须要获得白名单授权才可以，这个申请过程的门槛比较高。
 
 ### 报错 `配置的 bundleName 与签名证书不符`@bundle-name-mismatch
 
@@ -73,7 +73,8 @@ HX 里面有两个与鸿蒙相关的功能入口：
 当运行到鸿蒙时，在把打包后的 `.hap` 安装到设备上时，可能会遇到这个报错。
 一个常见的原因是当前使用的设备没有添加到签名用的 profile 文件中，要解决这个问题，
 首先要 [注册调试设备](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-device-0000001946142249)，
-最后 [申请调试Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102) 或修改已有的 profile 文件并重新下载。
+然后 [申请调试Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102)
+或修改已有的 profile 文件并重新下载。
 
 ## 关于数字签名证书的配置@singing
 

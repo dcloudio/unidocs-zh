@@ -149,14 +149,14 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |:-|:-|
 |MIUI|小米|
 |EMUI|华为|
-|HarmonyOS Next|华为鸿蒙|
+|HarmonyOS|华为鸿蒙|
 |Magic OS|荣耀|
 |ColorOS|oppo|
 |Funtouch OS|vivo|
 |FLymeOS|魅族|
 |SmartisanOS|锤子|
 
-注意：不同rom的版本号规则不同，比如`MIUI`版本号是`V130`，而`HarmonyOS Next`的版本号是`2.0.0`
+注意：不同rom的版本号规则不同，比如`MIUI`版本号是`V130`，而`HarmonyOS`的版本号是`2.0.0`
 
 ### hostName 返回值说明 @hostname
 
@@ -302,7 +302,7 @@ uni.getSystemInfo({
 |osLanguage|zh-CN|zh-Hans-CN|-|zh-CN|zh-Hans-CN|-|-|-|-|
 |osTheme|light|light|-|light|light|-|-|-|-|
 |osAndroidAPILevel|31|-|-|29|-|-|-|-|-|-|
-|romName|MIUI|-|-|HarmonyOS Next|-|-|-|-|-|
+|romName|MIUI|-|-|HarmonyOS|-|-|-|-|-|
 |romVersion|V130|-|-|2.0.0|-|-|-|-|-|
 |uniPlatform|app|app|web|app|app|mp-weixin|mp-alipay|mp-baidu|mp-toutiao|
 |uniCompileVersion|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|

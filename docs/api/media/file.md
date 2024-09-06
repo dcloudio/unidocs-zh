@@ -14,6 +14,8 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|√`(HBuilder X2.9.9+)`|x`(可使用wx.chooseMessageFile)`|x|x|x|x|x|x|
 
+<!-- UNIAPPAPIJSON.chooseFile.compatibility -->
+
 - App端如需选择非媒体文件，可在插件市场搜索[文件选择](https://ext.dcloud.net.cn/search?q=文件选择)，其中Android端可以使用Native.js，无需原生插件，而iOS端需要原生插件。
 - App端如果想选择下载到`_doc`、`_downloads`、`_documents`等plus.io控制的目录下的文件，可通过[plus.io Api](https://www.html5plus.org/doc/zh_cn/io.html)，自己做选择框。
 - 选择文件大多为了上传，uni ui封装了更完善的[uni-file-picker组件](https://ext.dcloud.net.cn/plugin?id=4079)，文件选择、上传到uniCloud的免费存储和cdn中，一站式集成。强烈推荐使用。
@@ -99,4 +101,3 @@ uni.chooseFile({
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√`(基础库2.5.0+)`|x|x|x|√`(基础库1.18.0+)`|x|x|
-

@@ -93,6 +93,8 @@ export default {
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|2.10.0+|x|x|√|x|x|√|
 
+<!-- UNIAPPAPIJSON.chooseMedia.compatibility -->
+
 **OBJECT 参数说明**
 
 |参数名|类型|默认值|必填|说明|

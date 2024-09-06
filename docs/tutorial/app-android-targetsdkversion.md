@@ -6,7 +6,9 @@ targetSdkVersion用于指定应用的目标Android版本（API等级），默认
 随着Android系统的升级，一些应用市场会要求设置较高的targetSdkVersion才可以提交，HBuilderX中可在项目的manifest.json中进行配置。
 
 
-**️注意: App升级时 targetSdkVersion 只能增加不能降低，也就是说 targetSdkVersion 高的App无法被 targetSdkVersion 低的App覆盖安装，开发者需要注意！**
+**️注意:**
++  App升级时 targetSdkVersion 只能增加不能降低，也就是说 targetSdkVersion 高的App无法被 targetSdkVersion 低的App覆盖安装，开发者需要注意！
++  android 15 设备对 targetSdkVersion 版本有要求，低于24无法正常在android 15设备上正常安装，开发者需要注意！
 
 ### 设置targetSdkVersion  
 targetSdkVersion值为Number类型，且必须为正整数，取值范围参考`Android版本列表`中的`API等级`。
@@ -51,6 +53,8 @@ API等级与Android版本对应列表如下：
 
 | API等级 | Android版本号 | Android版本名称 |  
 | :-- | :-- | :-- |  
+| 35 | Android15 | Android V, Vanilla Ice Cream|
+| 34 | Android14 | Android U, Upside Down Cake|
 | 33 | Android13 | Android T, Tiramisu |  
 | 32 | Android12L | Android S_V2 |  
 | 31 | Android12 | Android S, Snow Cone |  

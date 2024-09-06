@@ -6,7 +6,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 
 按照运行环境层级排序，从底层向上，uni-app有6个概念：
 - `device`：运行应用的设备，如iphone、huawei
-- `os`：设备的操作系统，如 ios、android、windows、mac、linux
+- `os`：设备的操作系统，如 ios、android、windows、mac、linux、harmonyos（OpenHarmony）
 - `rom`：基于操作系统的定制，Android系统特有概念，如miui、鸿蒙
 - `host`：运行应用的宿主程序，即OS和应用之间的运行环境，如浏览器、微信等小程序宿主、集成uniMPSDK的App。uni-app直接开发的app没有host概念
 - `uni`：uni-app框架相关的信息，如uni-app框架的编译器版本、运行时版本
@@ -35,7 +35,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |			|deviceModel		|设备型号		||部分设备无法获取	|||uni-app 3.4.10+|
 |			|deviceOrientation		|设备方向		|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`。仅微信百度小程序支持||uni-app 3.4.13+|
 |			|devicePixelRatio		|设备像素比		||	|||uni-app 3.4.13+|
-|os		|osName|系统名称|ios、android|ios、android、windows、macos、linux|ios、android、windows、macos||uni-app 3.4.10+|
+|os		|osName|系统名称|ios、android|ios、android、windows、macos、linux、harmonyos|ios、android、windows、macos||uni-app 3.4.10+|
 |			|osVersion			|操作系统版本。如 ios 版本，android 版本|||||uni-app 3.4.10+|
 |			|osLanguage			|操作系统语言[详见](#tips)|Android仅支持主语言+地区：`zh-CN 中文简体`、iOS支持主语言+次语言+地区`zh-Hans-CN 中文简体` |与浏览器语言一致	|不支持	|	|uni-app 3.4.10+|
 |			|osTheme			|操作系统主题			|light、dark。iOS平台只有将应用主题设置为跟随系统时才能获取到系统的主题|不支持	|不支持	||uni-app 3.4.10+|
@@ -241,6 +241,7 @@ uni-app 3.5.1+ 版本规范了 deviceModel 返回值，例如之前返回 `iPhon
 		return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
 	}
 	```
+  - `app-harmony` 支持 `phone`、`pad`、`tv`、`watch`、`pc`、`unknown`、`car`、`vr`、`undefined`。
 - `osTheme`：`app-ios` 只有将应用主题设置为跟随系统时才能获取到系统的主题。小程序也有类似限制。
 - 屏幕高度 = 原生NavigationBar高度（含状态栏高度）+ 可使用窗口高度 + 原生TabBar高度
 - windowHeight不包含NavigationBar和TabBar的高度

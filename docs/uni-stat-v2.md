@@ -1390,7 +1390,7 @@ uni统计支持sourcemap，可直观了解到底哪行代码写的有问题。[�
 
 答：总设备数计算公式为：总设备数 = 原设备数 + 新设备数，而判断一个设备是否为新设备的依据是在客户端SDK中是否已储存该设备上次访问某一应用的时间，未存储则认为是该应用的新设备(即lvts=0时为新设备，lvts>0时为老设备)。 因此如果之前某一设备已经访问过某一应用，就算此时清除数据库中的数据，由于已经在客户端SDK中储存该设备上次访问应用的时间（即此时lvts > 0），所以该设备也不会再被认为是该应用的新设备从而不会再被计算进该应用的总设备数中而只会计算进活跃设备数中，此时可能就会出现总设备数小于活跃设备数的情况。
 
-### 6. uni-stat-cron运行日志显示 Not Found the cofnig file
+### 6. uni-stat-cron运行日志显示 Not Found the config file
 
 业务App 和 admin 是2个工程。业务App是采集端，admin是报表端；这两个项目均包含`uni-config-center`；如果这两个项目关联（复用）相同的服务空间时，很容易出现`uni-config-center`的互相覆盖问题；此时建议单点维护，方案有2种：
 - 以业务App为主：将`uni-admin`项目中`uni-config-center` 下面的`uni-stat`文件夹，复制到业务App项目下的`uni-config-center`目录下，然后重新上传业务App项目下的`uni-config-center`公共模块即可。

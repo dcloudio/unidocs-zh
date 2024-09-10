@@ -156,7 +156,11 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |FLymeOS|魅族|
 |SmartisanOS|锤子|
 
-注意：不同rom的版本号规则不同，比如`MIUI`版本号是`V130`，而`HarmonyOS`的版本号是`2.0.0`
+注意：
+
+- 不同rom的版本号规则不同，比如`MIUI`版本号是`V130`，而`HarmonyOS`的版本号是`2.0.0`
+- Harmony OS Next目前没有返回romName，此属性对应鸿蒙 deviceInfo 的 distributionOSName，目前Harmony OS Next deviceInfo 的 distributionOSName 属性为空字符串。
+
 
 ### hostName 返回值说明 @hostname
 

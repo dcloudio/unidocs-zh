@@ -1,9 +1,5 @@
 # uni-app 鸿蒙使用uni小程序SDK（内部简易教程）
 
-## 已知问题
-
-1. 支持在 DB1 版本上运行，不支持在 DB2 版本上运行
-
 ## 配置uni小程序SDK@mpsdk
 
 1. 修改鸿蒙项目根目录文件 `oh-package.json5` 的依赖 `"@dcloudio/uni-app-runtime": "版本号"`，如下图所示

@@ -1,6 +1,6 @@
 # uni-app 开发鸿蒙应用
 
-> 此文档适用于HBuilderX 4.27及之后的版本，4.26及之前的版本请移步：[开发鸿蒙应用](./dev-v1.md)
+> 此文档适用于HBuilderX 4.26及之前的版本，4.27及之后的版本请移步：[开发鸿蒙应用](./dev.md)
 
 > [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)
 
@@ -27,6 +27,14 @@
 注意: 需要win10专业版或win11专业版才能开启以上功能，家庭版需先升级成专业版或企业版
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085210915b1knhu7l3u8.png)
+
+## 配置鸿蒙离线SDK（鸿蒙项目模板）@harmonysdk
+
+1. 下载 uni-app 鸿蒙离线SDK template-1.3.7.tgz [下载地址](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/zip/template-1.3.7.tgz)
+
+2. 解压刚下载的压缩包，将解压后的模板工程在 DevEco-Studio 中打开
+
+3. 等待 Sync 结束，再 [启动鸿蒙模拟器](#connectvirtually) 或 [连接鸿蒙真机](#connectmobile)
 
 ### 启动鸿蒙模拟器@connectvirtually
 
@@ -86,27 +94,35 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/171981598089431le57049d.png)
 
-## 运行uni-app项目
+## 配置 uni-app 工程@uniappproject
 
 1. HBuilderX 新建一个空白的 uniapp 项目，选vue3
 
-2. 编译 uni-app 到鸿蒙
+2. 在 manifest.json 文件中配置鸿蒙离线SDK路径
+
+编辑 manifest.json 文件，新增如下配置：
+
+```json
+"app-harmony": {
+  "projectPath": "上一步下载的template-1.3.7.tgz的解压地址/package"
+}
+```
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/1719816197812rg4fsafg2io.png)
+
+3. 编译 uni-app 到鸿蒙
 
 点击 HBuilderX 上方【运行】菜单，运行到鸿蒙 DevEco Studio
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/20240914151457.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/17183338900070pjn2uj49t8.png)
 
-3. 【首次运行】此时如果是第一次运行本项目会在项目根目录下生成harmony-configs目录用于存放鸿蒙配置文件
+如果没有出现此菜单，请确认你的 HBuilderX 版本是否是 4.22 及以上
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/20240914151712.png)
+4. 在 DevEco-Studio 重新编译或运行
 
-4. 【首次运行】配置签名信息、包名到鸿蒙配置文件内
+先等待 HBuilderX 编译完成，然后打开 DevEco-Studio，点击运行
 
-参考：[修改鸿蒙工程配置](https://uniapp.dcloud.net.cn/tutorial/run/run-app-harmony.html#configs)
-
-5. 再次运行项目，选择目标设备
-
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/20240914152406.jpg)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720086018931faq60pigq9g.png)
 
 ## 使用uts调用鸿蒙原生API@nativeapi
 
@@ -639,9 +655,30 @@ map组件、getLocation、openLocation、chooseLocation依赖于地图厂商。�
 
 ## 常见问题@question
 
-### 如何修改应用名称、图标、权限等信息
+### 如何修改应用包名@q1
 
-参考鸿蒙官方文档：[应用/组件级配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-component-configuration-stage-V5)
+1. 打开 `AppScope\app.json5` 修改 `bundleName`
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17202578113708uo26uaj0vg.png)
+
+2. 删除 `build-profile.json5` 内旧的签名信息
+
+3. 重启鸿蒙 DevEco Studio，启动模拟器或连接真机后，重新[配置签名](#signature)
+
+### 如何修改应用名称@q2
+
+1. 打开 `AppScope\resources\base\element\string.json` 修改数组元素 name 值为 app_name 对应的 value 的值
+2. 打开 `entry\src\main\resources\base\element\string.json` 修改数组元素 name 值为 EntryAbility_label 对应的 value 的值
+3. 打开 `entry\src\main\resources\en_US\element\string.json` 修改数组元素 name 值为 EntryAbility_label 对应的 value 的值
+4. 打开 `entry\src\main\resources\zh_CN\element\string.json` 修改数组元素 name 值为 EntryAbility_label 对应的 value 的值
+
+### 如何修改应用图标@q3
+
+替换以下文件，注意文件不要改名
+
+1. AppScope\resources\base\media\app_icon.png
+2. entry\src\main\resources\base\media\foreground.png
+3. entry\src\main\resources\base\media\startIcon.png
 
 ### 鸿蒙DevEco Studio如何开启热重载@q4
 
@@ -649,9 +686,11 @@ map组件、getLocation、openLocation、chooseLocation依赖于地图厂商。�
 
 ### 如何查看console打印的日志@q5
 
-目前编译到鸿蒙时，在uniapp页面通过console.log打印日志可以直接在 HBuilderX 查看
+目前编译到鸿蒙时，在uniapp页面通过console.log打印日志无法在 HBuilderX 直接查看，需要在鸿蒙DevEco Studio内查看，具体查看方法如下图所示
 
 注意：在uniapp页面打印对象或数组时，需要 `JSON.stringify` ，如 `console.log("obj", JSON.stringify(obj))`
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17210155750168uc4maboupo.png)
 
 ### 运行出现白屏或闪退怎么解决?@q6
 

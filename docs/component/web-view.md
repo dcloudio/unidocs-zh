@@ -439,7 +439,7 @@ uni.webView.navigateTo 示例，注意uni sdk放到body下面
 			},
 			// 调用 webview 内部逻辑
 			evalJs: function() {
-				this.$refs.webview.evalJs("document.body.style.background ='#00FF00'");
+				this.$refs.webview.evalJS("document.body.style.background ='#00FF00'");
 			}
 		}
 	}

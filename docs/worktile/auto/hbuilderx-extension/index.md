@@ -2,6 +2,7 @@
 
 ## 插件说明@description
 
+
 本插件，用于在HBuilderX内运行uni-app自动化测试，支持H5、微信小程序、android、ios自动化测试。
 
 主要功能有：
@@ -13,6 +14,7 @@
 
 ## 测试注意事项@note
 
+
 1. 本插件支持`uni-app普通项目`和`uniapp-cli项目`。uniapp-cli项目，运行自动化测试，需要在当前项目下安装自动化测试依赖。
 2. Windows电脑不支持运行测试到`ios手机`。
 3. MacOSX电脑，仅支持运行测试到`iOS模拟器`，不支持ios真机，测试iOS模拟器，需要电脑装安装XCode。
@@ -23,6 +25,7 @@
 
 ## 插件安装@test-install
 
+
 [插件安装地址](https://ext.dcloud.net.cn/plugin?id=5708)
 
 如下图所示，在插件市场，进入[插件详情页](https://ext.dcloud.net.cn/plugin?id=5708)，点击【导入插件】，会自动拉起本地安装的HBuilderX。
@@ -32,6 +35,7 @@
 > 特别注意：插件安装，依赖HBuilderX 终端插件。
 
 ## 测试环境安装@env
+
 
 **插件依赖：**
 
@@ -44,7 +48,7 @@
 - uni-app普通项目，需要通过插件`hbuilderx-for-uniapp-test`来安装测试环境。
 - uniapp-cli项目，只需在项目下安装相关测试依赖即可。[详情](#cli)
 
-### uni-app普通项目@uni-app
+#### uni-app普通项目@uni-app
 
 uni-app普通项目，`初始化测试环境`或`运行测试`时，如果未安装相关依赖，会自动安装。
 
@@ -54,7 +58,7 @@ uni-app普通项目，`初始化测试环境`或`运行测试`时，如果未安
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/env_install.gif" style="zoom: 70%;border: 1px solid #eee; border-radius: 10px;"/>
 
-### uniapp-cli项目@cli
+#### uniapp-cli项目@cli
 
 uniapp-cli项目，自动化测试运行，将使用**项目下的依赖库**。
 
@@ -63,7 +67,9 @@ uniapp-cli项目，自动化测试运行，将使用**项目下的依赖库**。
 npm install --save cross-env puppeteer adbkit node-simctl jest playwright @playwright/test
 ```
 
+
 ## 创建测试用例@create-testcase
+
 
 uni-app项目，pages页面，右键菜单，创建测试用例
 
@@ -71,26 +77,27 @@ uni-app项目，pages页面，右键菜单，创建测试用例
 
 ## 测试运行@test-run
 
+
 创建测试用例之后，选中项目，右键菜单【运行uni-app自动化测试】，选择运行平台，即可开始运行测试。
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/run_test.gif" style="zoom: 70%;border: 1px solid #eee;border-radius: 10px;"/>
 
 **注意**：如果要运行指定的测试用例，请在项目管理器**选中**要运行的用例，右键菜单【运行当前测试用例】
 
-### 测试平台说明@platform
+#### 测试平台说明@platform
 
 - Windows电脑**不支持**运行测试到`ios手机`
 - MacOSX电脑，仅支持运行测试到`ios模拟器`，**不支持**ios真机。
 - 运行测试到H5，仅支持`chrome`浏览器，**不支持**其它浏览器。
 - 运行测试到Android手机，如果HBuilderX仅检测到**一个android设备**，直接运行测试到当前已连接设备。多个设备时，会弹窗要求选择手机。
 
-### 选择测试平台@select-platform
+#### 选择测试平台@select-platform
 
 如下图所示，运行测试时，支持选择对应平台。
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/test_platforms.png" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
 
-### 选择设备@select-devices
+#### 选择设备@select-devices
 
 > 如果无法获取到设备信息，请[参考](/tutorial/run/run-app-faq.md)
 
@@ -98,6 +105,7 @@ uni-app项目，pages页面，右键菜单，创建测试用例
 
 
 ## 插件配置@extension-config
+
 
 点击菜单【设置】【插件配置】，找到hbuilderx-for-uniapp-test项，即可看到设置项。
 
@@ -112,6 +120,7 @@ uni-app项目，pages页面，右键菜单，创建测试用例
 
 ## 如何编写测试用例@howToWriteTestcase
 
+
 > uni-app自动化测试，使用了业内常见的jest测试库。
 
 - uni-app项目，pages目录下，右键菜单【创建测试用例】，选择模板。
@@ -119,7 +128,7 @@ uni-app项目，pages页面，右键菜单，创建测试用例
 - 测试用例编写，请遵循jest规范。
 
 
-### jest用例解析@jest-testcase
+#### jest用例解析@jest-testcase
 
 下面将使用一个最简单的示例，来讲解测试用例的组成。
 
@@ -145,7 +154,7 @@ describe("sum test", () => {
 ```
 
 
-### uni-app页面用例示例@example
+#### uni-app页面用例示例@example
 
 以uni-app【默认模板】index页面为例。
 
@@ -173,6 +182,7 @@ describe('test title', () => {
 
 ## Setup and Teardown@SetupTeardown
 
+
 > 通常在编写测试时，您需要在测试运行之前进行一些设置工作，并且在测试运行之后需要进行一些完成工作。可以使用Jest的钩子函数来解决这个问题.
 
 **jest中有4个钩子函数**
@@ -184,7 +194,7 @@ describe('test title', () => {
 
 文档扩展: [jest setup-teardown](https://jestjs.io/docs/setup-teardown)
 
-### 钩子函数的执行顺序@sequence
+#### 钩子函数的执行顺序@sequence
 
 用下列代码，我们来查看一下函数执行顺序
 
@@ -248,3 +258,69 @@ Time:        0.454 s
 |afterEach	|afterEach(() => {});			|
 |afterAll	|afterAll(() => {});			|
 |beforeAll	|beforeAll(() => {});			|
+
+
+## env.js@envjs
+
+
+> 提醒：下面关于env.js的介绍，大部分情况下，自动化测试插件会自动修改，无需您手动调整。如果不确定，请勿修改。
+
+通常，测试项目下有个测试配置文件env.js，内容如下:
+
+```js
+module.exports = {
+	// is-custom-runtime = true，修改env.js时，将不会使用标准基座路径，替代env.js中已配置的android、ios基座路径。
+    "is-custom-runtime": false,
+    "UNI_TEST_CUSTOM_ENV": {
+		// 自动化测试插件 1.9.0版本新增`UNI_TEST_CUSTOM_ENV`
+		"xx": "xx"
+    },
+    "compile": true,
+    "h5": {
+        // 此处省略........
+    },
+    "mp-weixin": {
+		// 此处省略........
+    },
+    "app-plus": {
+        // 此处省略........
+    }
+}
+```
+
+#### env.js UNI_TEST_CUSTOM_ENV
+
+> 提示：大部分场景下，您不会用到UNI_TEST_CUSTOM_ENV。修改请慎重。
+
+下面将对`UNI_TEST_CUSTOM_ENV`做介绍。
+ 
+自动化测试插件 1.9.0版本新增`UNI_TEST_CUSTOM_ENV`, 用于读取自定义环境变量，并传递给uniapp自动化测试框架命令行。后期会随时扩充新的key。
+
+```js
+{
+	"UNI_TEST_CUSTOM_ENV": {
+		// APPID 用于测试自定义基座 
+		"UNI_TEST_BASE_APPID": "__UNI__xxxxxxxx",
+		// 基座包名 用于测试自定义基座
+		"UNI_TEST_BASE_PACKAGE_NAME": "io.xxx.xxx"
+	}
+}
+```
+
+
+## 多个HBuilderX时，如何共用一个测试依赖？
+
+
+场景：电脑上安装了HBuilderX 正式版、Dev、Alpha版本，每个程序plugins目录都重新安装一遍测试依赖？答案：不需要。
+
+解决方案：
+
+1. 进入HBuilderX安装目录，将plugins目录下的hbuilderx-for-uniapp-test-lib目录，拷贝到电脑其它目录。
+2. 拷贝后，在命令行进入拷贝目录下，执行`npm install`
+3. 打开HBuilderX菜单【设置】【源码视图】，增加配置项:
+
+```
+{
+	"hbuilderx-for-uniapp-test.customTestEnvironmentDependencyDir" : "自定义的测试依赖node_modules路径，路径必须以node_modules结尾"
+}
+```

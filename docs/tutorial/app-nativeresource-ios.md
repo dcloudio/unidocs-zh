@@ -159,7 +159,7 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
 ### 应用可支持横竖屏列表配置@orientation  
 应用默认可支持的横竖列表：  
 - uni-app 项目由 manifest.json 中的 [screenOrientation](https://uniapp.dcloud.net.cn/collocation/manifest.html#app-plus) 字段配置决定  
-- uni-app x 项目默认支持横竖平列表为横屏和竖屏，但运行期在 iPhone 设备固定为竖屏，在 iPad 设备根据系统设置自动感应适配横竖屏（后续版本iPhone设备会支持page.json中配置）  
+- uni-app x 项目默认可支持横竖屏列表为横屏和竖屏，但运行期在 iPhone 设备默认为竖屏，在 iPad 设备根据系统设置自动感应适配横竖屏，HBuilderX4.25版本iPhone设备支持[screenOrientation](https://uniapp.dcloud.net.cn/collocation/manifest.html#app-plus) 字段配置  
 
 如果希望自定义配置应用可支持的横竖屏列表，可根据需求在`Info.plist`文件中添加`UISupportedInterfaceOrientations`数据，如下示例：
 ```xml

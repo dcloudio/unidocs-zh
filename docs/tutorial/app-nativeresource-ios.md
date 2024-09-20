@@ -195,7 +195,7 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
   * `UIInterfaceOrientationPortraitUpsideDown` 竖屏反方向，仅 iPad 设备支持  
   * `UIInterfaceOrientationLandscapeLeft` 横屏主方向  
   * `UIInterfaceOrientationLandscapeRight` 横屏反方向  
-- iPhone 和 iPad 设备可分别单独设置，可支持的横竖屏列表会限制应用能支持的横竖屏状态，如设置应用支持的横竖屏列表值为竖屏（UIInterfaceOrientationPortrait），则应用在任何状态下都无法横屏，在 iPad 设备无法根据系统设置自动感应适配，在 page.json 中设置 pageOrientation 为横屏将无效  
+- iPhone 和 iPad 设备可分别单独设置，可支持的横竖屏列表会限制应用能支持的横竖屏状态，如设置应用支持的横竖屏列表值为竖屏（UIInterfaceOrientationPortrait），则应用在任何状态下都无法横屏。 
 
 ##  应用资源  
 

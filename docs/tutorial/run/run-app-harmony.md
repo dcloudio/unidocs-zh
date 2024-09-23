@@ -76,6 +76,10 @@ HX 里面有两个与鸿蒙相关的功能入口：
 然后 [申请调试Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102)
 或修改已有的 profile 文件并重新下载。
 
+### 报错 `没有签名无法安装`@no-signature-file
+
+当运行到鸿蒙时，如果选择真机为运行设备，则必须配置好数字签名证书，否则无法安装到真机上。
+
 ## 关于数字签名证书的配置@singing
 
 如前所述，如果业务代码用到了 ACL 权限，那么就需要申请并配置一个**调试证书**用于数字签名。

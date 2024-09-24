@@ -99,7 +99,7 @@ uni.getLocation({
   - 可以通过用户授权API来判断用户是否给应用授予定位权限，[详见](https://uniapp.dcloud.io/api/other/authorize)
   - 在 `微信小程序` 中，当用户离开应用后，此接口无法调用，需要申请 [后台持续定位权限](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html) ，另外新版本中需要使用 [wx.onLocationChange](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html) 监听位置信息变化；当用户点击“显示在聊天顶部”时，此接口可继续调用。
 
-### uni.chooseLocation(OBJECT)
+## uni.chooseLocation(OBJECT)
 打开地图选择位置。
 
 ::: warning 注意
@@ -173,7 +173,7 @@ uni.chooseLocation({
 - 若 `Android App端` 位置不准，见上文 uni.getLocation 的注意事项
 - 微信小程序在2023年10月17日之后，使用API需要配置[隐私协议](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)
 
-### 三方定位和地图服务收费说明
+## 三方定位和地图服务收费说明
 
 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 
@@ -181,7 +181,7 @@ DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授�
 
 详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)
 
-### unicloud-city-select 城市选择组件
+## unicloud-city-select 城市选择组件
 
 若想要实现城市选择功能，可以使用 `unicloud-city-select` 城市选择组件。
 
@@ -192,3 +192,7 @@ DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授�
 > 下载地址：[https://ext.dcloud.net.cn/plugin?name=unicloud-city-select](https://ext.dcloud.net.cn/plugin?name=unicloud-city-select)
 
 > 文档地址：[https://doc.dcloud.net.cn/uniCloud/unicloud-city-select.html](https://doc.dcloud.net.cn/uniCloud/unicloud-city-select.html)
+
+## 【福利】高德拉新活动
+
+一键注册高德企业开发者，最高可获取210元奖励金，详见[https://ask.dcloud.net.cn/article/41279](https://ask.dcloud.net.cn/article/41279)

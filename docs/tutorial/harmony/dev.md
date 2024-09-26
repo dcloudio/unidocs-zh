@@ -448,7 +448,9 @@ export function requestPayment(options : RequestPaymentOptions) {
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/d6bee0ad-97b2-4d11-ba47-9e6b07d3698b.png)
 
-在生成的 `harmony-configs` 目录找到文件 `harmony-configs/build-profile.json5` 修改里面的 `app.signingConfigs`，具体格式如下：
+配置签名：在生成的 `harmony-configs` 目录找到文件 `harmony-configs/build-profile.json5` 修改里面的 `app.signingConfigs`，具体格式如下：
+
+[查看数字签名证书的配置文档](https://uniapp.dcloud.net.cn/tutorial/run/run-app-harmony.html#singing)
 
 ```js
 {

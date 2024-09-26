@@ -438,7 +438,93 @@ export function requestPayment(options : RequestPaymentOptions) {
 
 ## 发布鸿蒙应用@publish
 
-鸿蒙官方文档提供了如何发布鸿蒙应用，详见[文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-releaseharmony-0000001933963166)
+### 生成.app文件
+
+使用hbx（4.28以上），点击【发行】- 【App-Harmony-本地打包】
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/c42f9a21-d782-41e3-9342-bfa3265cbc54.png)
+
+项目第一次发行时，会出现如下提示
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/d6bee0ad-97b2-4d11-ba47-9e6b07d3698b.png)
+
+在生成的 `harmony-configs` 目录找到文件 `harmony-configs/build-profile.json5` 修改里面的 `app.signingConfigs`，具体格式如下：
+
+```js
+{
+	"app": {
+		"signingConfigs": [
+			{
+				"name": "default",
+				"type": "HarmonyOS",
+				"material": {
+					"storePassword": "xxxxxx",
+					"certpath": "D:/鸿蒙调试证书/xxx.cer",
+					"keyAlias": "别名",
+					"keyPassword": "xxxxxx",
+					"profile": "D:/鸿蒙调试证书/xxx.p7b",
+					"signAlg": "SHA256withECDSA",
+					"storeFile": "D:/鸿蒙调试证书/.p12"
+				}
+			},
+			{
+				"name": "release",
+				"type": "HarmonyOS",
+				"material": {
+					"storePassword": "xxxxxx",
+					"certpath": "D:/鸿蒙发布证书/xxx.cer",
+					"keyAlias": "别名",
+					"keyPassword": "xxxxxx",
+					"profile": "D:/鸿蒙发布证书/xxx.p7b",
+					"signAlg": "SHA256withECDSA",
+					"storeFile": "D:/鸿蒙发布证书/.p12"
+				}
+			}
+		],
+		"products": [
+			{
+				"name": "default",
+				"signingConfig": "default",
+				"compatibleSdkVersion": "5.0.0(12)",
+				"runtimeOS": "HarmonyOS",
+			},
+			{
+				"name": "release",
+				"signingConfig": "release",
+				"compatibleSdkVersion": "5.0.0(12)",
+				"runtimeOS": "HarmonyOS",
+			}
+		],
+		"buildModeSet": [
+			{
+				"name": "debug",
+			},
+			{
+				"name": "release"
+			}
+		]
+	},
+	"modules": [
+		{
+			"name": "entry",
+			"srcPath": "./entry",
+			"targets": [
+				{
+					"name": "default",
+					"applyToProducts": [
+						"default",
+						"release"
+					]
+				}
+			]
+		}
+	]
+}
+```
+
+配置完签名后，再次点击【发行】- 【App-Harmony-本地打包】即可得到已签名的 `.app` 安装包文件
+
+最后参考鸿蒙官方文档发布鸿蒙应用，详见[文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-releaseharmony-0000001933963166)
 
 ## 条件编译@ifndef
 

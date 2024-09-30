@@ -1,3 +1,16 @@
+#### 4.29.2024093009
+* 【uniapp】
+  + 修复 4.28版本引发的 vue3项目 static 目录条件编译失效的Bug [详情](https://ask.dcloud.net.cn/question/199019) [详情](https://ask.dcloud.net.cn/question/199184)
+  + 修复 4.28版本引发的 vue3项目 三方依赖使用 require 加载 json 文件编译报错的Bug [详情](https://ask.dcloud.net.cn/question/199088) [详情](https://ask.dcloud.net.cn/question/199002) [详情](https://ask.dcloud.net.cn/question/198500)
+  + App平台 修复 4.28版本引发的 vue3项目 页面组件setup情况下子组件无法通过$root.$scope获取getAppWebview的Bug [详情](https://ask.dcloud.net.cn/question/199111)
+* 【uts】
+  + App-Android平台 修复 4.28版本引发的 UTSJSONObject 包含 number 类型数据时调用 toJSONObject 序列化可能异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=9447)
+* 【App插件(含5+App和uni-app的App端)】
+  + iOS平台 修复 iPhone 16 设备无法获取手机型号的Bug
+  + iOS平台 修复 iOS 18 系统调用拨打电话等API失败的Bug [详情](https://ask.dcloud.net.cn/question/198814)
+* 【uniCloud】
+  + 修复 4.28版本引发的 只在分包中使用 uniCloud 导致无法运行/发行的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=9360)
+
 #### 4.28.2024092502
 * 【uni-app】
   + 【重要】开放鸿蒙next的运行、发行、生成wgt [详情](https://uniapp.dcloud.net.cn/tutorial/run/run-app-harmony.html)

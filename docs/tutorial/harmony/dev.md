@@ -92,9 +92,9 @@
 
 2. 编译 uni-app 到鸿蒙
 
-点击 HBuilderX 上方【运行】菜单，运行到鸿蒙 DevEco Studio
+点击 HBuilderX 上方【运行】菜单 - 运行到手机或模拟器 - 运行到鸿蒙
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/20240914151457.png)
+![](https://web-ext-storage.dcloud.net.cn/unicloud/ext-storage/52a7f8f1-ea77-4733-b5f2-d92d20ff87cf.png)
 
 3. 【首次运行】此时如果是第一次运行本项目会在项目根目录下生成harmony-configs目录用于存放鸿蒙配置文件
 
@@ -396,9 +396,9 @@ export function openAppProduct(options : OpenAppProductOptions) {
 </style>
 ```
 
-7. 点击 HBuilderX 上方【运行】菜单，运行到鸿蒙 DevEco Studio
+7. 点击 HBuilderX 上方【运行】菜单 - 运行到手机或模拟器 - 运行到鸿蒙
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/17183338900070pjn2uj49t8.png)
+![](https://web-ext-storage.dcloud.net.cn/unicloud/ext-storage/52a7f8f1-ea77-4733-b5f2-d92d20ff87cf.png)
 
 8. 鸿蒙 DevEco Studio 启动项目
 

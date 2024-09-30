@@ -400,6 +400,8 @@ export function openAppProduct(options : OpenAppProductOptions) {
 
 ![](https://web-ext-storage.dcloud.net.cn/unicloud/ext-storage/52a7f8f1-ea77-4733-b5f2-d92d20ff87cf.png)
 
+注意：如果是新安装的 HBuilderX，【3】这里可能会只显示【下载真机运行插件】，点击它安装好插件才会看到这些菜单项。
+
 8. 鸿蒙 DevEco Studio 启动项目
 
 ## 使用uts调用鸿蒙第三方库的API@nativelibs

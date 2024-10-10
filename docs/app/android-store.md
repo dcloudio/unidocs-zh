@@ -18,7 +18,7 @@
 		android.permission.READ_EXTERNAL_STORAG
 	</td>
 	<td>存储文件</td>
-	<td><a href="http://doc.weex.io/zh/" target="_blank">http://doc.weex.io/zh</a></td>
+	<td><a href="https://weexapp.com/zh/" target="_blank">https://weexapp.com/zh/</a></td>
   </tr>
   <tr>
     <td>Fresco图库</td>

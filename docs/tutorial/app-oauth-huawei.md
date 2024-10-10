@@ -1,4 +1,4 @@
-# HarmonyOS Next 华为账号登录 @harmonyos-next-huawei-login
+# HarmonyOS Next 华为账号登录 @harmonyos-next-huawei-login <Badge text="HBuilderX 4.31+" />
 
 根据华为应用市场上架审核要求，如果应用支持用户使用第三方账号登录，则该应用需提供华为账号登录选项 [文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-detailedrules-V5)
 

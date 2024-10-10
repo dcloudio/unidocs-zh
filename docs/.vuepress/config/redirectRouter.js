@@ -115,6 +115,9 @@ function fileNameToLowerCase (path) {
 }
 
 export default ({ fullPath, path, hash }) => {
+  if (!hash && fullPath !== path) {
+    hash = fullPath.replace(path, '').replace('?id=', '#')
+  }
   fullPath = decodeURIComponent(fullPath)
   const matchFullPath = routerMap[fullPath.replace('?id=', '#').replace('.html', '')];
   if (matchFullPath) {
@@ -136,6 +139,16 @@ export default ({ fullPath, path, hash }) => {
   if (path.indexOf('/app-') === 0 || path.indexOf('/android-') === 0 || path.indexOf('/ios-') === 0) {
     return {
       path: `/tutorial${fileNameToLowerCase(path)}`,
+      hash,
+      replace: true
+    }
+  }
+
+  const matchUTSPlugin = path.match(/\/(plugin\/uts-\S+(\.html)*\S*)/)
+  if (matchUTSPlugin) {
+    const utsPluginPath = matchUTSPlugin[1]
+    return {
+      path: routerMap['/uni-app-x/'] + utsPluginPath,
       hash,
       replace: true
     }

@@ -249,6 +249,8 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 
 **抖音：** 飞书部分页面feishu.cn
 
+**小红书：** 微信小程序搜索“小红书”
+
 **百度：** [爱企查](https://aiqicha.baidu.com/)；[百度企服](https://qifu.baidu.com/)；[寻客宝](https://xunkebao.baidu.com)；[寻标宝](https://xunbiaobao.baidu.com/)；[律临](https://lvlin.baidu.com)
 
 **美团：** 微信小程序搜索“美团充电宝”，App内充电宝栏目；[美团骑行](https://bike.meituan.com/)

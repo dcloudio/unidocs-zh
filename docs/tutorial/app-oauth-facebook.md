@@ -71,4 +71,6 @@ plus.oauth.getServices(function(services) {
 	// 获取 services 失败
 })
 ```
-
+::: warning 注意事项
+- Android端在4.31版本后Facebook登录SDK默认携带`com.google.android.gms.permission.AD_ID`权限，如未使用广告相关功能在GooglePlay上架时会遇到审核问题，需要手动删除掉此权限，[删除权限文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#removepermissions)。
+:::

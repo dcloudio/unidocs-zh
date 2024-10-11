@@ -39,59 +39,6 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 ## 第三方开发者案例
 
-### 新冠抗疫专区案例
-
-uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
-
-- 首都疫苗服务 [App](https://a.app.qq.com/o/simple.jsp?pkgname=io.dcloud.H5AC4580F)
-- 广东 粤核酸 微信小程序
-- 广东 粤健通 微信小程序
-- 广州市 穗康生活 微信小程序
-- 海南 海易办 微信小程序
-- 陕西一码通 微信小程序
-- 健康陕西公众服务 微信小程序
-- 健康西安公众服务 微信小程序
-- 河南疾控 微信小程序
-- 平顶山 鹰城官微 微信小程序
-- 开封市 汴易检 微信小程序
-- 三门峡市 灵宝一码通 微信小程序
-- 湖北健康码 微信小程序
-- 山西 晋快检 微信小程序
-- 云南省居民电子健康卡 微信小程序
-- 西双版纳 平安版纳 微信小程序
-- 黑龙江 健康龙江服务平台 微信小程序
-- 黑龙江 密山疫情防控 微信小程序
-- 贵州健康码 微信小程序
-- 贵州 黔康码 微信小程序
-- 河北新冠疫苗预约 懂苗服务 微信小程序
-- 蒙速办 微信小程序
-- 蒙健康 微信小程序
-- 包头市 鹿城健康服务 微信小程序
-- 江西 赣通码 微信小程序
-- 南昌 昌通码 微信小程序
-- 藏易通健康码 微信小程序
-- 江苏核酸检测信息系统 cydj.weiynet.cn
-- 扬州 扬城扫码通 微信小程序
-- 遵义市 实名登记码 微信小程序
-- 乐清市 乐行通 微信小程序
-- 南昌市 i南昌-官方 微信小程序
-- 鄂尔多斯健康宝 微信小程序
-- 新疆伊犁阿勒泰 满意雪都 微信小程序
-- 南宁市电子健康卡 微信小程序
-- 吕梁健康防疫核酸检测平台  微信小程序
-- 曲靖防疫出行 微信小程序
-- 镇江市通行码 镇合意 微信小程序
-- 灌南县 惠泽行 微信小程序
-- 新疆伊犁哈萨克自治州塔城地区 健康塔城 微信小程序
-- 喀什和易行 微信小程序
-- 巴州和易行 微信小程序
-- 绥化防疫 微信小程序
-- 青城医疗 微信小程序
-- 温州健康码扫码工具 微信小程序
-- 临沂 沂码通 微信小程序
-- 鞍山 易鞍码 微信小程序
-
-2020年新冠疫情爆发初期的抗疫项目专题另见：[xinguan2020.dcloud.net.cn](https://dcloud.io/ncp.html)
 
 ### 典型案例
 
@@ -151,28 +98,6 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 		<span style="margin-top:15px;">App码</span>
 	</a>
 </div>
-
-<!--
-<a href="https://www.csdn.net/" target="_blank" class="clear-style"><b>CSDN：</b></a> 专业 IT 技术社区，致力于为中国软件开发者提供知识传播、在线学习、职业发展等全生命周期服务。
-<div style="display:flex;justify-content: space-around;">
-	<a href="javascript:;" target="_blank" class="clear-style barcode-view">
-		<img src="https://img-cdn-qiniu.dcloud.net.cn/doc/csdn/csdn.png" width="200"/>
-		<span style="margin-top:15px;">微信小程序码</span>
-	</a>
-</div>
-
-<a href="https://www.oschina.net/" target="_blank" class="clear-style"><b>开源中国：</b></a> 中文开源技术交流社区，提供最新的开源软件资讯。
-<div style="display:flex;justify-content: space-around;">
-	<a href="javascript:;" target="_blank" class="clear-style barcode-view">
-		<img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/oschina_weixin.jpg" width="200"/>
-		<span style="margin-top:15px;">微信小程序码</span>
-	</a>
-    <a href="javascript:;" target="_blank" class="clear-style barcode-view">
-		<img src="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/onchina.png" width="200"/>
-		<span style="margin-top:15px;">百度小程序码</span>
-	</a>
-</div>
--->
 
 <b>vivo官方商城：</b> vivo公司旗下的官方自营商城。
 
@@ -723,6 +648,60 @@ uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
 **崇胜CMS：** 漫画、小说、音乐管理系统。[官网](https://www.chshcms.net/)
 
 **闺蜜圈：** 一款跟好用的大姨妈记录 app。[官网](https://guimiquan.cn/)
+
+### 新冠抗疫专区案例
+
+uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
+
+- 首都疫苗服务 [App](https://a.app.qq.com/o/simple.jsp?pkgname=io.dcloud.H5AC4580F)
+- 广东 粤核酸 微信小程序
+- 广东 粤健通 微信小程序
+- 广州市 穗康生活 微信小程序
+- 海南 海易办 微信小程序
+- 陕西一码通 微信小程序
+- 健康陕西公众服务 微信小程序
+- 健康西安公众服务 微信小程序
+- 河南疾控 微信小程序
+- 平顶山 鹰城官微 微信小程序
+- 开封市 汴易检 微信小程序
+- 三门峡市 灵宝一码通 微信小程序
+- 湖北健康码 微信小程序
+- 山西 晋快检 微信小程序
+- 云南省居民电子健康卡 微信小程序
+- 西双版纳 平安版纳 微信小程序
+- 黑龙江 健康龙江服务平台 微信小程序
+- 黑龙江 密山疫情防控 微信小程序
+- 贵州健康码 微信小程序
+- 贵州 黔康码 微信小程序
+- 河北新冠疫苗预约 懂苗服务 微信小程序
+- 蒙速办 微信小程序
+- 蒙健康 微信小程序
+- 包头市 鹿城健康服务 微信小程序
+- 江西 赣通码 微信小程序
+- 南昌 昌通码 微信小程序
+- 藏易通健康码 微信小程序
+- 江苏核酸检测信息系统 cydj.weiynet.cn
+- 扬州 扬城扫码通 微信小程序
+- 遵义市 实名登记码 微信小程序
+- 乐清市 乐行通 微信小程序
+- 南昌市 i南昌-官方 微信小程序
+- 鄂尔多斯健康宝 微信小程序
+- 新疆伊犁阿勒泰 满意雪都 微信小程序
+- 南宁市电子健康卡 微信小程序
+- 吕梁健康防疫核酸检测平台  微信小程序
+- 曲靖防疫出行 微信小程序
+- 镇江市通行码 镇合意 微信小程序
+- 灌南县 惠泽行 微信小程序
+- 新疆伊犁哈萨克自治州塔城地区 健康塔城 微信小程序
+- 喀什和易行 微信小程序
+- 巴州和易行 微信小程序
+- 绥化防疫 微信小程序
+- 青城医疗 微信小程序
+- 温州健康码扫码工具 微信小程序
+- 临沂 沂码通 微信小程序
+- 鞍山 易鞍码 微信小程序
+
+2020年新冠疫情爆发初期的抗疫项目专题另见：[xinguan2020.dcloud.net.cn](https://dcloud.io/ncp.html)
 
 <style>
 	.barcode-view {

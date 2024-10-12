@@ -65,6 +65,7 @@
         * [新浪微博登录](app-oauth-weibo.md)
         * [Google登录](app-oauth-google.md)
         * [Facebook登录](app-oauth-facebook.md)
+        * [HarmonyOS Next 华为账号登录](app-oauth-huawei.md)
       * [Payment(支付)](app-payment.md)
         * [Apple应用内支付](app-payment-aip.md)
         * [支付宝支付](app-payment-alipay.md)

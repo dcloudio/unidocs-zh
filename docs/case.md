@@ -607,7 +607,7 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **差旅管家：** 商旅管理系统，[Android](http://a.app.qq.com/o/simple.jsp?pkgname=com.ceekee.steward)、[iOS](https://itunes.apple.com/cn/app/%E5%B7%AE%E6%97%85%E7%AE%A1%E5%AE%B6-%E4%BC%81%E4%B8%9A%E5%95%86%E6%97%85%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/id1353696740?mt=8)
 
-**指掌短信：** App、小程序、电脑版，全平台发送短信（小程序搜“指掌短信”），**<span id="zhizhang" style="color:#42b983;cursor: pointer;">开发者致DCloud的感谢信</span>**。[App及H5的通用链接](//m3w.cn/__uni__7ffa4e9)
+**指掌短信：** App、小程序、电脑版，全平台发送短信（小程序搜“指掌短信”），**<span id="zhizhang" style="color:#42b983;cursor: pointer;">开发者致DCloud的感谢信</span>**。[App及H5的通用链接](https://m3w.cn/__uni__7ffa4e9)
 
 **潮电共享充电宝：** 支付宝小程序搜索潮电共享充电宝
 

@@ -733,6 +733,20 @@ map组件、getLocation、openLocation、chooseLocation依赖于地图厂商。�
 
 参考鸿蒙官方文档：[应用/组件级配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-component-configuration-stage-V5)
 
+### 应用图标资源规范
+
+为保证图标在系统内显示的一致性，应用预置的图标资源应满足以下要素：
+
+- 图标资源必须为分层资源（一张前景图和一张背景图）
+- 图标资源尺寸必须为1024*1024px
+- 图标资源必须为为正方形图像，系统会为对应场景自动生成遮罩裁切
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/b0a3c063-02c4-47f3-a23e-5d04ad5c4293.png)
+
+### 启动图资源规范
+
+启动页可以配置背景色代码（默认为#FFFFFF）和一张启动图，启动图没有尺寸要求，但建议为正方形logo图
+
 ### 鸿蒙DevEco Studio如何开启热重载@q4
 
 虽然鸿蒙官方文档提供了如何开启热重载，详见[文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hot-reload-0000001527628941-V5)，但目前只能针对ets文件的修改进行热更，还无法针对uniapp打包的js文件进行热更。

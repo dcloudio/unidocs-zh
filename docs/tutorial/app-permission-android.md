@@ -101,6 +101,7 @@ Android平台云端打包使用的权限包括以下几个方面：
 	"<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
 	"<uses-permission android:name=\"android.permission.BLUETOOTH_ADMIN\" />",
 	"<uses-permission android:name=\"android.permission.BLUETOOTH\" />"
+	"<uses-permission android:name=\"android.permission.BLUETOOTH_SCAN\" />"
 ```
 
 #### Contact(通讯录)

@@ -103,7 +103,7 @@ DCloud联合业内主流隐私合规检测厂商推出了`uni隐私合规检测`
 - buttonRefuse
   模板提示框上拒绝按钮的文本，默认不显示此按钮
 - hrefLoader  HX 3.4.13之后版本新增，system 使用系统webview 打开隐私协议链接，默认使用uni-app内置web组件
-  隐私政策提示框中的链接地址加载方式，可取值：system-表示使用系统浏览器打开；default-表示使用应用内置webview页面打开。默认值为default。
+  隐私政策提示框中的链接地址加载方式，可取值：system-表示使用系统浏览器打开(注意此模式下不支持项目内路径)；default-表示使用应用内置webview页面打开。默认值为default。
   **注意：可能有些检测机构认为webview会读取隐私信息，这时可以配置为system来解决此问题**
 - backToExit  HX 3.6.20之后版本新增。用来设置弹出隐私弹窗时，用户点击系统回退按钮 是否能退出应用。默认为false 不退出。部分应用市场不接受此行为，则开发者可以设置为true，允许用户点击回退按钮时，退出应用。
 - disagreeMode

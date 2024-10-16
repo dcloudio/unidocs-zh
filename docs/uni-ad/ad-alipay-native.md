@@ -2,7 +2,7 @@
 
 1. 开通方式
 
-uni-ad由开发者在DCloud网站[uniad.dcloud.net.cn](https://uniad.dcloud.net.cn)申请，开发者与DCloud开票结算
+开发者在DCloud网站[uniad.dcloud.net.cn](https://uniad.dcloud.net.cn)申请，开发者与DCloud开票结算
 
 2. 引入插件
 
@@ -20,12 +20,14 @@ uni-ad由开发者在DCloud网站[uniad.dcloud.net.cn](https://uniad.dcloud.net.
   },
   "plugins": {
     "uni-ad": {
-      "version": "1.0.2",
+      "version": "*",
       "provider": "2021004169623603"
     }
   }
 }
 ```
+
+提示：`"version": "*"` 表示使用最新版本
 
 3. 接入示例
 

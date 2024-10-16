@@ -35,13 +35,13 @@ HX 里面有两个与鸿蒙相关的功能入口：
 
 - 数字签名证书相关信息
 
-    在 `harmony-configs/build-profile.json5` 中修改 `signingConfigs`
+    在 `harmony-configs/build-profile.json5` 中修改 `app.signingConfigs`
 
-    数字证书可以通过 DevEco Studio 来申请，申请的结果就写在 DevEco Studio 所打开的鸿蒙工程根目录下的 `build-profile.json5` 文件里，
-    可以通过这种方式将申请到的证书信息抄写到 `harmony-configs/build-profile.json5` 里面。
+    数字证书可以通过 DevEco Studio 来自动申请，申请的结果就写在 DevEco Studio 所打开的鸿蒙工程根目录下的 `build-profile.json5` 文件里，
+    然后把里面的 `app.signingConfigs` 抄写到 `harmony-configs/build-profile.json5` 里面。
 
-    理论上，数字证书也可以在华为的 AppGallery Connect 服务中手工申请并下载，但是目前在 AGC 手工申请调试证书的时候无法开启受限的权限，
-    导致签名后的应用包可能无法安装到设备。
+    数字证书也可以在华为的 AppGallery Connect 服务中手工申请并下载，这样得到的签名证书也要填写到 DevEco Studio 里面，让 DevEco Studio 生成
+    `build-profile.json5` 里面的 `app.signingConfigs`，再手工抄写到 `harmony-configs/build-profile.json5` 里面。
 
 ## 调试运行时可能遇到的问题及处理方法
 
@@ -54,18 +54,18 @@ HX 里面有两个与鸿蒙相关的功能入口：
 
 ### 报错 `运行所需的权限没有签名授权`@permissions-failed
 
-这是由于默认配置里面声明申请了一些权限，其中包含受限权限，这就要求安装包必须用具备足够权限授权的数字证书进行签名，否则无法安装到设备上。
-
-如果业务代码里面并没有实际使用到这些权限，一个简单的办法就是修改 `harmony-configs/entry/src/main/module.json5` 文件，
-删除 `module.requestPermissions` 数组里面的这三项内容（因为它们是需要白名单授权的 ACL 权限），重新运行即可：
+这是由于默认配置里面声明申请了一些权限，其中包含受限权限（需要白名单授权的 ACL 权限），这就要求安装包必须用具备足够权限授权的数字证书进行签名，否则无法安装到设备上。
 
 - `ohos.permission.WRITE_IMAGEVIDEO`
 - `ohos.permission.WRITE_CONTACTS`
 - `ohos.permission.READ_PASTEBOARD`
 
+如果业务代码里面并没有实际使用到这些权限，一个简单的办法就是修改 `harmony-configs/entry/src/main/module.json5` 文件，
+删除 `module.requestPermissions` 数组里面涉及这三项的内容，重新运行即可：
+
 如果确实需要这里的某些权限，那就需要申请一个调试证书，并配置到 `harmony-configs/build-profile.json5` 文件的 `app.signingConfigs` 中。
-这里要注意，一定要通过 DevEco Studio 来申请这个证书，且需要开启 `Automatically generate signature` 选项，只有这样拿到的调试证书才会支持 ACL 权限。
-手动申请的调试证书不会直接支持 ACL 权限，必须要获得白名单授权才可以，这个申请过程的门槛比较高。
+这里要注意，如果是通过 DevEco Studio 来自动申请证书（开启 `Automatically generate signature` 选项），拿到的调试证书会自动支持 ACL 权限；
+如果是手动申请调试证书的话，需要在添加 profile 的时候勾选相应的受限权限。
 
 ### 报错 `配置的 bundleName 与签名证书不符`@bundle-name-mismatch
 
@@ -96,9 +96,8 @@ HX 里面有两个与鸿蒙相关的功能入口：
 
 ## 关于数字签名证书的配置@signing
 
-如前所述，如果业务代码用到了 ACL 权限，那么就需要申请并配置一个**调试证书**用于数字签名。
-另外，在发行安装包的时候，一定需要配置一个**发布证书**（参考 [申请发布证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-releasecert-0000001946273961)），
-否则只能拿到一个未签名的安装包，是无法实际使用的。
+如前所述，在使用模拟器进行调试运行的时候，一般是不需要做数字签名的，但如果是用真机进行调试运行，或者业务代码用到了 ACL 权限，那么就需要申请并配置一个**调试证书**用于数字签名
+（参考 [申请调试证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugcert-0000001914263178)）。
 
 数字签名证书需要配置到 `harmony-configs/build-profile.json5` 中，这个文件等同于一个普通的鸿蒙工程中对应的文件。
 
@@ -109,3 +108,6 @@ HX 里面有两个与鸿蒙相关的功能入口：
 通过 DevEco Studio 申请得到的证书，缺省会保存到电脑的用户目录下，在 Windows 系统中一般是 `%USERPROFILE%\.ohos\config`，在 Mac 系统中一般是 `~/.ohos/config`。
 配置信息中包含的三个文件缺省都是采用绝对路径来表示，也可以把这些文件移到 `harmony-configs` 目录下，这样就可以使用相对路径来表示，相对于 `harmony-configs` 目录。
 如果要移动证书文件的位置，需注意跟这三个文件一起的还有一个名为 `material` 的目录，也要一起移动。
+
+另外，在发行安装包的时候，一定需要配置一个**发布证书**（参考 [申请发布证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-releasecert-0000001946273961)），
+否则只能拿到一个未签名的安装包，是无法实际使用的。

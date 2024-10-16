@@ -73,7 +73,7 @@
 
   ![](https://web-ext-storage.dcloud.net.cn/doc/uniapp/component/app-tencent-map-web-service-key.jpg)
 
-### 高德地图审图号：
+### 高德地图审图号
 
 - 普通地图：GS (2023)551号 | GS (2023)2175号
 - 卫星地图：GS (2023)4047号

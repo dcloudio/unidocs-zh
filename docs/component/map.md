@@ -73,6 +73,13 @@
 
   ![](https://web-ext-storage.dcloud.net.cn/doc/uniapp/component/app-tencent-map-web-service-key.jpg)
 
+### 高德地图审图号：
+
+- 普通地图：GS (2023)551号 | GS (2023)2175号
+- 卫星地图：GS (2023)4047号
+- 地形图：GS(2021)6352号
+
+
 ### 近期新增功能
 1. 支持点聚合，适用于marker过多场景。
 2. 支持彩虹蚯蚓线，常用于路线规划场景。

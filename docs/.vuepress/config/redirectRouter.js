@@ -105,7 +105,15 @@ const routerMap = {
   '/uni-app-x/pagesjson': '/uni-app-x/collocation/pagesjson.html',
   '/uni-app-x/manifest': '/uni-app-x/collocation/manifest.html',
   '/uniCloud/': 'https://doc.dcloud.net.cn/uniCloud/',
-  '/uni-app-x/': 'https://doc.dcloud.net.cn/uni-app-x/'
+  '/uni-app-x/': 'https://doc.dcloud.net.cn/uni-app-x/',
+	
+	'/tutorial/harmony/dev#env': '/tutorial/harmony/debug.html',
+	'/tutorial/harmony/dev#nativeapi': '/tutorial/harmony/native-api.html',
+	'/tutorial/harmony/dev#nativelibs': '/tutorial/harmony/native-api.html',
+	'/tutorial/harmony/dev#publish': '/tutorial/harmony/publish.html',
+	'/tutorial/harmony/dev#harmonyos特性说明': '/tutorial/harmony/built-in-module.html',
+	'/tutorial/harmony/dev': '/tutorial/harmony/intro.html',
+	
 }
 
 function fileNameToLowerCase (path) {

@@ -38,7 +38,7 @@
   * [宽屏适配](adapt.md)
   * [SSR 服务端渲染](ssr.md)
   * [前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting.html)
-* App 专题
+* 安卓/iOS专题
   * [nvue 原生渲染](nvue-outline.md)
     * [综述](nvue-outline.md)
     * [样式](nvue-css.md)
@@ -47,7 +47,6 @@
   * [HTML5Plus](use-html5plus.md)
   * [Native.js](native-js.md)
   * [renderjs](renderjs.md)
-  * [开发鸿蒙应用](harmony/dev.md)
   * [原生插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)
   * [App的User Agent](app-useragent.md)
   * [App使用高斯模糊](app-blureffect.md)
@@ -120,6 +119,12 @@
     * [App Store上架](ios-app-store.md)
     * [iOS平台隐私清单](app-ios-privacyinfo.md)
   * [App升级](https://doc.dcloud.net.cn/uniCloud/upgrade-center.html)
+* 鸿蒙专题
+  * [概述](harmony/intro.md)
+  * [运行和调试](harmony/debug.md)
+  * [发行](harmony/publish.md)
+  * [调用鸿蒙原生API](harmony/native-api.md)
+  * [内置模块说明](harmony/built-in-module.md)
 * 小程序专题
   * [组件与WXS](miniprogram-subject.md)
   * [使用小程序插件](mp-weixin-plugin.md)

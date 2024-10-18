@@ -68,9 +68,17 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200873385940vk5oj9ihk.png)
 
-最后依次点击 `Apply` 和 `OK` 使签名生效
+依次点击 `Apply` 和 `OK` 使签名生效
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720259265552t0m33hs637.png)
+
+生成的签名在文件 build-profile.json5 内
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/23185c32-0342-4ef0-a62d-e5432050a48d.png)
+
+将它复制到你的 uni-app 项目根目录的 `harmony-configs/build-profile.json5` 的 signingConfigs 配置中
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1a2b004c-2b31-4a48-912e-b31ed4740449.png)
 
 ## 配置 HBuilderX settings.json@hbxsettings
 

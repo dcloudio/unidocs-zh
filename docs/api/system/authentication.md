@@ -35,11 +35,6 @@
 |fingerPrint|指纹识别	|
 |facial			|人脸识别	|
 
-注意：
-- App端指纹识别，Android平台从Android6.0起才提供了官方API，uni-app也是从Android6起支持。对于更低版本的安卓，某些rom私有的指纹识别API，uni-app并不支持。
-- App端人脸识别，iOS平台使用自带的faceID。Android平台需另行使用uni实人认证，另见[https://doc.dcloud.net.cn/uniCloud/frv/intro.html](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
-
-
 **OBJECT.success返回值说明**
 
 |属性								|类型		|说明																																																																						|平台差异说明		|
@@ -82,6 +77,11 @@
 |90010	|重试次数过多被冻结																|
 |90011	|用户未录入所选识别方式														|
 
+::: warning 注意
+- App端指纹识别，Android平台从Android6.0起才提供了官方API，uni-app也是从Android6起支持。对于更低版本的安卓，某些rom私有的指纹识别API，uni-app并不支持。
+- App端人脸识别，iOS平台使用自带的faceID。Android平台需另行使用uni实人认证，另见[https://doc.dcloud.net.cn/uniCloud/frv/intro.html](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
+:::
+
 ## uni.checkIsSupportSoterAuthentication(OBJECT)
 
 获取本机支持的 SOTER 生物认证方式
@@ -101,6 +101,10 @@
 |属性				|类型	|说明																		|
 |:-					|:-		|:-																			|
 |supportMode|Array|该设备支持的可被SOTER识别的生物识别方式|
+
+::: warning
+- `HarmonyOS Next` 平台使用时需要添加权限 `ohos.permission.ACCESS_BIOMETRIC`
+:::
 
 ## uni.checkIsSoterEnrolledInDevice(OBJECT)
 
@@ -130,6 +134,10 @@
 |:-					|:-			|:-							|
 |isEnrolled	|boolean|是否已录入信息	|
 |errMsg			|string	|错误信息				|
+
+::: warning
+- `HarmonyOS Next` 平台使用时需要添加权限 `ohos.permission.ACCESS_BIOMETRIC`
+:::
 
 ### 代码示例
 

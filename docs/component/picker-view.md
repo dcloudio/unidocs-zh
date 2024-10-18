@@ -14,8 +14,8 @@
 |indicator-style|String|设置选择器中间选中框的样式||
 |indicator-class|String|设置选择器中间选中框的类名，注意页面或组件的style中写了scoped时，需要在类名前写/deep/|app-nvue与抖音小程序与飞书小程序不支持|
 |mask-style|String|设置蒙层的样式||
-|mask-top-style|String|设置蒙层上半部分的样式|仅 app-nvue（3.6.7+） 支持|
-|mask-bottom-style|String|设置蒙层下半部分的样式|仅 app-nvue（3.6.7+） 支持|
+|mask-top-style|String|设置蒙层上半部分的样式（使用 background-image 覆盖）|仅 app-nvue（3.6.7+） 支持|
+|mask-bottom-style|String|设置蒙层下半部分的样式（使用 background-image 覆盖）|仅 app-nvue（3.6.7+） 支持|
 |mask-class|String|设置蒙层的类名|app-nvue与抖音小程序与飞书小程序不支持|
 |immediate-change|Boolean|是否在手指松开时立即触发 change 事件。若不开启则会在滚动动画结束后触发 change 事件。|微信小程序 2.21.1|
 |@change|EventHandle|当滚动选择，value 改变时触发 change 事件，event.detail = {value: value}；value为数组，表示 picker-view 内的 picker-view-column 当前选择的是第几项（下标从 0 开始）|&nbsp;|

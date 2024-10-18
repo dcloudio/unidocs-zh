@@ -78,7 +78,8 @@ uni.addPhoneContact({
 });
 ```
 
-**注意**
-
+::: warning 注意
 - 手机OS对通讯录访问有严格的权限限制和要求。在小程序中使用时，需注意微信等小程序载体本身已经获得了手机端的授权许可。App端获取通讯录相关权限，参考[https://ext.dcloud.net.cn/plugin?id=594](https://ext.dcloud.net.cn/plugin?id=594)
 - 打包App时，云打包则需要在manifest中配置权限和模块，离线打包需自行在原生工程中配置。
+- `HarmonyOS Next` 平台使用时需要添加受限开放权限 [ohos.permission.WRITE_CONTACTS](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/restricted-permissions-V5#section31629267196)
+:::

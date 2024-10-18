@@ -30,6 +30,10 @@
 |unknown|Android 下不常见的网络类型||
 |none|无网络|&nbsp;|
 
+::: warning 注意
+- `HarmonyOS Next` 平台使用时需要添加权限 `ohos.permission.GET_NETWORK_INFO`
+:::
+
 **示例**
 
 ```javascript
@@ -54,6 +58,10 @@ uni.getNetworkType({
 |isConnected|Boolean|当前是否有网络连接|抖音小程序不支持|
 |networkType|String|网络类型|&nbsp;|
 
+::: warning 注意
+- `HarmonyOS Next` 平台使用时需要添加权限 `ohos.permission.GET_NETWORK_INFO`
+:::
+
 **示例**
 
 ```javascript
@@ -74,8 +82,11 @@ uni.onNetworkStatusChange(function (res) {
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |HBuilderX 3.0.1+|HBuilderX 3.0.1+|基础库 2.9.3+|x|x|x|x|√|x|
 
-**Tips**
+
+::: warning 注意
 - `CALLBACK`必须为调用`uni.onNetworkStatusChange`时传入的`CALLBACK`
+- `HarmonyOS Next` 平台使用时需要添加权限 `ohos.permission.GET_NETWORK_INFO`
+:::
 
 例如：
 ```

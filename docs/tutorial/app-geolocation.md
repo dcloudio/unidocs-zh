@@ -74,26 +74,8 @@
 
 #### 高德开放平台用户名@amapName
 登录 [高德开放平台](https://lbs.amap.com/)，进入“控制台”，在“账号信息”的“基本信息”中可获取“用户名”：
+
 ![](https://native-res.dcloud.net.cn/images/uniapp/maps/amap_name.png)
-
-
-### 百度定位@baidu
-
-> 需要向百度申请商业授权，参考:[商业授权相关说明](app-geolocation?id=business)，使用前需登录 [百度地图开放平台](https://lbsyun.baidu.com/) 创建应用申请访问应用密钥（AK）
-
-使用`百度定位`需在“App模块配置”项的“Geolocation(定位)”下，勾选“百度定位”：
-![](https://native-res.dcloud.net.cn/images/uniapp/geolocation/baidu.png)
-
-#### 参数说明
-- appkey_android
-[百度地图开放平台](https://lbsyun.baidu.com/)为Android平台申请的访问应用密钥
-- appkey_ios
-[百度地图开放平台](https://lbsyun.baidu.com/)为iOS平台申请的访问应用密钥
-
-**注意**
--调用百度定位SDK提供的定位服务，仅支持gcj02/bd09/bd09ll坐标系，支持解析地址信息。
-- 配置后需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
-- 本地离线打包参考[Android平台百度定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e7%99%be%e5%ba%a6%e5%ae%9a%e4%bd%8d)、[iOS平台百度定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e7%99%be%e5%ba%a6%e5%ae%9a%e4%bd%8d)
 
 
 <a id="business"/>

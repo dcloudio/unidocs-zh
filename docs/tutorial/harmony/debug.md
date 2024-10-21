@@ -146,6 +146,18 @@ console.log("安卓、苹果不会编译，鸿蒙会编译，小程序和Web也�
 // #endif
 ```
 
+## 权限配置@permission
+
+部分API需要在配置文件显示声明权限才能调用，权限的配置文件路径为：`/harmony-configs/entry/src/main/module.json5`，配置节点为：`requestPermissions`，如下图所示
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/bfb249bd-30c0-4be4-b50e-e2695860507d.png)
+
+具体请查看以下文档
+
+1. [声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-0000001820999665)
+2. [基础权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-0000001820999669)
+3. [受限权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-in-acl-0000001763952222)
+
 ## 注意事项@tips
 
 1. 移植已有的 uni-app 项目源码时，如有其他 npm 依赖，请自行安装

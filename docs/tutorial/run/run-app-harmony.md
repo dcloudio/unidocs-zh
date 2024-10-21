@@ -2,7 +2,7 @@
 
 ## 准备工作
 
-HX 里面有两个与鸿蒙相关的功能入口：
+HX 里面有两个专门与鸿蒙相关的功能入口：
 
 1. 【运行】菜单里的【运行到鸿蒙】
 2. 【发行】菜单里的【App-Harmony-本地打包】
@@ -94,7 +94,7 @@ HX 里面有两个与鸿蒙相关的功能入口：
 
 ## 关于数字签名证书的配置@signing
 
-### 调试用的数字签名证书
+### 调试用的数字签名证书@signing-debug
 
 参考 [申请调试证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugcert-0000001914263178)
 
@@ -110,7 +110,7 @@ HX 里面有两个与鸿蒙相关的功能入口：
 配置信息中包含的三个文件缺省都是采用绝对路径来表示，也可以把这些文件移到 `harmony-configs` 目录下，这样就可以使用相对路径来表示，相对于 `harmony-configs` 目录。
 如果要移动证书文件的位置，需注意跟这三个文件一起的还有一个名为 `material` 的目录，也要一起移动。
 
-### 发布用的数字签名证书
+### 发布用的数字签名证书@signing-release
 
 参考 [申请发布证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-releasecert-0000001946273961)
 
@@ -118,7 +118,7 @@ HX 里面有两个与鸿蒙相关的功能入口：
 
 在 `app.signingConfigs` 中配置发布用的证书时一定要注意把 `name` 属性设置为 `"release"`，如果设置为 `"default"` 的话将仅用于调试运行。
 
-### 手动申请证书
+### 手动申请证书@signing-manual
 
 如果是手动申请的证书（发布证书只能手动申请），也需要在 DevEco Studio 里面配置给一个鸿蒙工程，这样才能得到一个完整的 `signingConfigs` 配置项（里面的 `storePassword` 和 `keyPassword`
 是加密格式的，并不是手动申请证书时填写的密码原文），然后复制到 `harmony-configs/build-profile.json5` 中。

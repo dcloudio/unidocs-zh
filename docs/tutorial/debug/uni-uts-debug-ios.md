@@ -13,7 +13,9 @@ uts插件，运行到iOS（限iOS17以下），支持Debug，打断点调试。
 
 ## uniapp x开启调试
 
-运行uni-app x项目到iOS，运行成功后，HBuilder控制台点击`红色虫子`图标，下拉菜单选择【uts插调试】，即可开启uts插件调试功能；下拉菜单选择【uts调试】，即可开启uts调试功能。
+> uts调试功能，需 HBuilderX 4.31+
+
+运行uni-app x项目到iOS，运行成功后，HBuilder控制台点击`红色虫子`图标，下拉菜单选择【uts插件调试】，即可开启uts插件调试功能；下拉菜单选择【uts调试】，即可开启uts调试功能。
 
 <img src="https://web-ext-storage.dcloud.net.cn/hx/debug/unix_open_debug.png" style="zoom: 50%;" />
 
@@ -30,7 +32,8 @@ uts插件，运行到iOS（限iOS17以下），支持Debug，打断点调试。
 - 点击【uts插件调试】，uts插件调试开启，可能需要十几秒
 - 调试进程`codelldb`会占用较大的内存。
 - uts 调试需要手机在 “设置” > “Safari” > “高级” > “Web检查器” 设置为打开
-<img src="https://web-ext-storage.dcloud.net.cn/hx/debug/unix_iphone_safari_setting.jpg" style="zoom: 50%;" />
+
+<img src="https://web-ext-storage.dcloud.net.cn/hx/debug/unix_iphone_safari_setting.jpg?t=1" style="zoom: 30%;" />
 
 
 ## 添加/删除断点@add-breakpoint

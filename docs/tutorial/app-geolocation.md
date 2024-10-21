@@ -81,6 +81,7 @@
 
 ### 腾讯定位@tencent
 
+> HBuilderX4.31 新增支持 `腾讯定位`  
 > 需要向腾讯申请商业授权，参考:[商业授权相关说明](app-geolocation?id=business)，使用前需登录 [腾讯位置服务官网](https://lbs.qq.com/) 创建应用申请Key
 
 使用`腾讯定位`需在“安卓/iOS模块配置”项的“Geolocation(定位)”下，勾选“腾讯定位”：

@@ -129,7 +129,7 @@ uni-push本身并不收费，实际使用中需要依赖uniCloud云服务，而u
 - **使用有其他疑问**，欢迎扫码加入 uni-push2.0 微信交流群讨论：
     <br/><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/support.jpg" width="250"/>
 
-# 快速上手
+# 快速上手@start
 ## 第一步：开通  
 - 使用 HBuilder 账号登录 [开发者中心](https://dev.dcloud.net.cn) 
 - 在左侧菜单栏找到`uni-push`-`uni-push 2.0（支持全端推送）`-`应用信息`，点击“当前应用”选择要操作的应用。

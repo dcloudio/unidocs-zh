@@ -29,6 +29,8 @@ HX 里面有两个与鸿蒙相关的功能入口：
 
     在 `harmony-configs/AppScrope/app.json5` 中修改 `app.bundleName`
 
+    注意：HX 4.31+ 同时支持在项目的 `manifest.json` 里面以图形界面修改鸿蒙配置（包括包名），如果在那里做了设置，将优先于 `harmony-configs/AppScrope/app.json5` 里面的 `app.bundleName`。
+
 - 运行权限
 
     在 `harmony-configs/entry/src/main/module.json5` 中修改 `module.requestPermissions`
@@ -37,11 +39,7 @@ HX 里面有两个与鸿蒙相关的功能入口：
 
     在 `harmony-configs/build-profile.json5` 中修改 `app.signingConfigs`
 
-    数字证书可以通过 DevEco Studio 来自动申请，申请的结果就写在 DevEco Studio 所打开的鸿蒙工程根目录下的 `build-profile.json5` 文件里，
-    然后把里面的 `app.signingConfigs` 抄写到 `harmony-configs/build-profile.json5` 里面。
-
-    数字证书也可以在华为的 AppGallery Connect 服务中手工申请并下载，这样得到的签名证书也要填写到 DevEco Studio 里面，让 DevEco Studio 生成
-    `build-profile.json5` 里面的 `app.signingConfigs`，再手工抄写到 `harmony-configs/build-profile.json5` 里面。
+    具体操作方法请参考 [关于数字签名证书的配置](#signing)
 
 ## 调试运行时可能遇到的问题及处理方法
 
@@ -96,8 +94,11 @@ HX 里面有两个与鸿蒙相关的功能入口：
 
 ## 关于数字签名证书的配置@signing
 
-如前所述，在使用模拟器进行调试运行的时候，一般是不需要做数字签名的，但如果是用真机进行调试运行，或者业务代码用到了 ACL 权限，那么就需要申请并配置一个**调试证书**用于数字签名
-（参考 [申请调试证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugcert-0000001914263178)）。
+### 调试用的数字签名证书
+
+参考 [申请调试证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugcert-0000001914263178)
+
+在使用模拟器进行调试运行的时候，一般是不需要做数字签名的，但如果是用真机进行调试运行，或者业务代码用到了 ACL 权限，那么就需要申请并配置一个**调试证书**用于数字签名。
 
 数字签名证书需要配置到 `harmony-configs/build-profile.json5` 中，这个文件等同于一个普通的鸿蒙工程中对应的文件。
 
@@ -109,5 +110,15 @@ HX 里面有两个与鸿蒙相关的功能入口：
 配置信息中包含的三个文件缺省都是采用绝对路径来表示，也可以把这些文件移到 `harmony-configs` 目录下，这样就可以使用相对路径来表示，相对于 `harmony-configs` 目录。
 如果要移动证书文件的位置，需注意跟这三个文件一起的还有一个名为 `material` 的目录，也要一起移动。
 
-另外，在发行安装包的时候，一定需要配置一个**发布证书**（参考 [申请发布证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-releasecert-0000001946273961)），
-否则只能拿到一个未签名的安装包，是无法实际使用的。
+### 发布用的数字签名证书
+
+参考 [申请发布证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-releasecert-0000001946273961)
+
+在发行安装包的时候，一定需要配置一个**发布证书**，否则只能拿到一个未签名的安装包，是无法实际使用的。
+
+在 `app.signingConfigs` 中配置发布用的证书时一定要注意把 `name` 属性设置为 `"release"`，如果设置为 `"default"` 的话将仅用于调试运行。
+
+### 手动申请证书
+
+如果是手动申请的证书（发布证书只能手动申请），也需要在 DevEco Studio 里面配置给一个鸿蒙工程，这样才能得到一个完整的 `signingConfigs` 配置项（里面的 `storePassword` 和 `keyPassword`
+是加密格式的，并不是手动申请证书时填写的密码原文），然后复制到 `harmony-configs/build-profile.json5` 中。

@@ -124,6 +124,7 @@
   * [运行和发行](harmony/runbuild.md)
   * [调用鸿蒙原生API](harmony/native-api.md)
   * [内置模块说明](harmony/built-in-module.md)
+  * [历史变更](harmony/history.md)
 * 小程序专题
   * [组件与WXS](miniprogram-subject.md)
   * [使用小程序插件](mp-weixin-plugin.md)

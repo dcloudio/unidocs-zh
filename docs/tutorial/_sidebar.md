@@ -121,8 +121,7 @@
   * [App升级](https://doc.dcloud.net.cn/uniCloud/upgrade-center.html)
 * 鸿蒙专题
   * [概述](harmony/intro.md)
-  * [运行和调试](harmony/debug.md)
-  * [发行](harmony/publish.md)
+  * [运行和发行](harmony/runbuild.md)
   * [调用鸿蒙原生API](harmony/native-api.md)
   * [内置模块说明](harmony/built-in-module.md)
 * 小程序专题

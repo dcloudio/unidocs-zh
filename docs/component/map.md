@@ -69,9 +69,18 @@
 - 谷歌地图使用 `wgs84` 坐标，其他地图使用 `gcj02` 坐标，用错坐标类型会显示偏移。
 - App平台 `layer-style` 属性需要在地图服务商后台创建，值设置为高德后台申请的字符串，[详情](https://developer.amap.com/api/android-sdk/guide/create-map/custom)。
 - H5 端高德地图 include-points 属性仅支持 2 个坐标点，表示显示范围的西南角和东北角。
-- App平台 腾讯地图使用web方案，在申请key时注意将页面域名白名单设置为空，如下图
 
-  ![](https://web-ext-storage.dcloud.net.cn/doc/uniapp/component/app-tencent-map-web-service-key.jpg)
+### 腾讯地图服务商说明
+
+**申请及使用key**
+
+App平台（包含iOS、安卓、鸿蒙）腾讯地图使用web方案，在申请key时注意将页面域名白名单设置为空，如下图
+
+![](https://web-ext-storage.dcloud.net.cn/doc/uniapp/component/app-tencent-map-web-service-key.jpg)
+
+出于安全考虑，安卓、iOS端manifest.json内配置的key仅用来展示地图，uni.chooseLocation所依赖的地点搜索、逆地址解析功能需要通过uniCloud云对象[uni-map-co](https://ext.dcloud.net.cn/plugin?id=13872)来调用，开发者可以通过安全网络来保障服务端api不被他人盗用，详情参考[uni.chooseLocation](../api/location/location.md#chooselocation)文档。开发者可以将manifest.json内配置的key的所有api额度设置为0，避免key泄露产生额外的资源消耗。
+
+鸿蒙平台由于暂不支持安全网络，所以chooseLocation依然使用manifest.json内配置的key来调用地点搜索、逆地址解析。
 
 ### 高德地图审图号
 
@@ -79,6 +88,9 @@
 - 卫星地图：GS (2023)4047号
 - 地形图：GS(2021)6352号
 
+### 腾讯地图审图号
+
+- 普通地图：GS粤（2023）1171号
 
 ### 近期新增功能
 1. 支持点聚合，适用于marker过多场景。

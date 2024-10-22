@@ -135,9 +135,39 @@ Web平台和App平台，本API之前调用了腾讯地图的gcj02坐标免费，
 |latitude|Number|否|目标地纬度|微信小程序（2.9.0+）、H5-Vue3（3.2.10+）|
 |longitude|Number|否|目标地经度|微信小程序（2.9.0+）、H5-Vue3（3.2.10+）|
 |keyword|String|否|搜索关键字，仅App平台支持||
+|useSecureNetwork|Boolea|否|是否通过安全网络调用地点搜索、逆地址解析，默认false||
 |success|Function|是|接口调用成功的回调函数，返回内容详见返回参数说明。||
 |fail|Function|否|接口调用失败的回调函数（获取定位失败、用户取消等情况下触发）||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
+
+**腾讯地图服务商说明**
+
+出于安全考虑，安卓、iOS端manifest.json内配置的key仅用来展示地图，uni.chooseLocation所依赖的地点搜索、逆地址解析功能需要通过uniCloud云对象[uni-map-co](https://ext.dcloud.net.cn/plugin?id=13872)来调用，开发者可以通过安全网络来保障服务端api不被他人盗用。
+
+鸿蒙平台由于暂不支持安全网络，所以chooseLocation依然使用manifest.json内配置的key来调用地点搜索、逆地址解析。
+
+默认情况下，uni.chooseLocation不会使用安全网络请求uni-map-co。如果需要使用安全网络请求uni-map-co，需按如下步骤操作：
+
+1. 项目关联uniCloud服务空间
+2. 按照[uni-map-co](https://ext.dcloud.net.cn/plugin?id=13872)文档导入uni-map-common插件，并配置好地图的key。
+3. 按照[安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)文档，将应用关联到服务空间。
+4. 在项目manifest.json中`安卓/iOS模块配置`中勾选安全网络模块。
+5. 修改uni-map-co入口文件`index.obj.js`内添加如下代码，拦截非法请求：
+
+  ```javascript
+  module.exports = {
+    _before: function() {
+      const clientInfo = this.getClientInfo()
+      const methodName = this.getMethodName()
+      const secretType = clientInfo.secretType
+      if(methodName === 'chooseLocation' && secretType !== 'both' && secretType !== 'request') {
+        throw new Error('Unauthorized client')
+      }
+    }
+  }
+  ```
+6. 上传uni-map-co云对象、uni-config-center公共模块、uni-map-common公共模块。
+7. 调用uni.chooseLocation时，将useSecureNetwork设置为true。
 
 **注意**
 - 因平台差异，如果SDK配置百度地图，需要设置 keyword，才能显示相关地点

@@ -149,8 +149,8 @@ Web平台和App平台，本API之前调用了腾讯地图的gcj02坐标免费，
 默认情况下，uni.chooseLocation不会使用安全网络请求uni-map-co。如果需要使用安全网络请求uni-map-co，需按如下步骤操作：
 
 1. 项目关联uniCloud服务空间
-2. 按照[uni-map-co](https://ext.dcloud.net.cn/plugin?id=13872)文档导入uni-map-common插件，并配置好地图的key。
-3. 按照[安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)文档，将应用关联到服务空间。
+2. 参考[uni-map-co](https://ext.dcloud.net.cn/plugin?id=13872)文档导入uni-map-common插件，并配置好地图的key。
+3. 参考[安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)文档，将应用关联到服务空间。
 4. 在项目manifest.json中`安卓/iOS模块配置`中勾选安全网络模块。
 5. 修改uni-map-co入口文件`index.obj.js`内添加如下代码，拦截非法请求：
 

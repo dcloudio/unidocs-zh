@@ -1,15 +1,13 @@
 # 概述
 
-> [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)
+自 `HBuilderX 4.27` 版本开始，uni-app 支持`Harmony Next`平台的App开发。
 
-随着移动设备的多样化，跨平台开发技术越来越受到开发者们的关注。
-
-`uni-app` 作为一种优秀的跨平台前端框架，凭借其“一次开发，多端运行”的特点，为广大开发者提供了便捷的开发体验。
-
-本文档旨在介绍如何使用 `uni-app` 框架开发适用于鸿蒙操作系统的应用，帮助开发者快速掌握鸿蒙应用的开发方法。
+本专题旨在介绍如何使用 `uni-app` 框架开发适用于`Harmony Next`操作系统的应用，帮助开发者快速掌握鸿蒙应用的开发方法。
 
 本文档主要包括以下内容：
 
 1. [运行和发行](runbuild.md)
 2. [调用鸿蒙原生API](native-api.md)
 3. [内置模块说明](built-in-module.md)
+
+> [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)

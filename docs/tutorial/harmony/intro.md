@@ -10,4 +10,4 @@
 2. [调用鸿蒙原生API](native-api.md)
 3. [内置模块说明](built-in-module.md)
 
-> [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)
+欢迎加入 [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)

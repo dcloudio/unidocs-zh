@@ -187,7 +187,7 @@ uni.startLocationUpdate({
 
 |App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|x|√|x|x|x|x|√|x|
+|x|HBuilderX 4.31|x|√|x|x|x|x|√|x|
 
 **OBJECT 参数**
 

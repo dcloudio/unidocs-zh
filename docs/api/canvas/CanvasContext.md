@@ -1,85 +1,81 @@
-**属性**
-**Attributes**
-
+## CanvasContext
 
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|√|√|√|
-
-<!-- UNIAPPAPIJSON.createCanvasContext.compatibility -->
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|HBuilderX 4.23|√|√|√|√|√|√|√|√|
 
 App-nvue下如需使用canvas，暂未封装为uni API，可参考[文档](https://github.com/dcloudio/NvueCanvasDemo)使用。
 If you need to use canvas under App-nvue, it has not been packaged as uni API yet, you can refer to [documentation](https://github.com/dcloudio/NvueCanvasDemo) to use.
 
-### CanvasContext.fillStyle string
+## CanvasContext.fillStyle string
 
 填充颜色。用法同 [CanvasContext.setFillStyle()](#canvascontextsetfillstyle)。
 Fill color. The usage is the same as [CanvasContext.setFillStyle()](#canvascontextsetfillstyle).
 
-### CanvasContext.strokeStyle string
+## CanvasContext.strokeStyle string
 
 边框颜色。用法同 [CanvasContext.setStrokeStyle()](#canvascontextsetstrokestyle)。
 Border color. The usage is the same as [CanvasContext.setStrokeStyle()](#canvascontextsetstrokestyle).
 
-### CanvasContext.shadowOffsetX number
+## CanvasContext.shadowOffsetX number
 
 阴影相对于形状在水平方向的偏移
 The shadow's horizontal offset relative to the shape
 
-### CanvasContext.shadowOffsetY number
+## CanvasContext.shadowOffsetY number
 
 阴影相对于形状在竖直方向的偏移
 The vertical offset of the shadow relative to the shape
 
-### CanvasContext.shadowColor number
+## CanvasContext.shadowColor number
 
 阴影的颜色
 shade color
 
-### CanvasContext.shadowBlur number
+## CanvasContext.shadowBlur number
 
 阴影的模糊级别
 Blur level for shadows
 
-### CanvasContext.lineWidth number
+## CanvasContext.lineWidth number
 
 线条的宽度。用法同 [CanvasContext.setLineWidth()](#canvascontextsetlinewidth)。
 The width of the line. The usage is the same as [CanvasContext.setLineWidth()](#canvascontextsetlinewidth).
 
-### CanvasContext.lineCap number
+## CanvasContext.lineCap number
 
 线条的端点样式。用法同 [CanvasContext.setLineCap()](#canvascontextsetlinecap)。
 The endpoint style of the line. The usage is the same as [CanvasContext.setLineCap()](#canvascontextsetlinecap).
 
-### CanvasContext.lineJoin number
+## CanvasContext.lineJoin number
 
 线条的交点样式。用法同 [CanvasContext.setLineJoin()](#canvascontextsetlinejoin)。
 The intersection style of the line. The usage is the same as [CanvasContext.setLineJoin()](#canvascontextsetlinejoin).
 
-### CanvasContext.miterLimit number
+## CanvasContext.miterLimit number
 
 最大斜接长度。用法同 [CanvasContext.setMiterLimit()](#canvascontextsetmiterlimit)。
 Maximum miter length. The usage is the same as [CanvasContext.setMiterLimit()](#canvascontextsetmiterlimit).
 
-### CanvasContext.lineDashOffset number
+## CanvasContext.lineDashOffset number
 
 虚线偏移量，初始值为0
 Dashed line offset, the initial value is 0
 
-### CanvasContext.font string
+## CanvasContext.font string
 
 当前字体样式的属性。符合 [CSS font 语法](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font) 的 DOMString 字符串，至少需要提供字体大小和字体族名。默认值为 10px sans-serif。
 Properties of the current font style. A DOMString string conforming to [CSS font syntax](https://developer.mozilla.org/zh-CN/docs/Web/CSS/font), at least need to provide font size and font family name. The default is 10px sans-serif.
 
-### CanvasContext.globalAlpha number
+## CanvasContext.globalAlpha number
 
 全局画笔透明度。范围 0-1，0 表示完全透明，1 表示完全不透明。
 Global brush transparency. The range is 0-1, with 0 being completely transparent and 1 being completely opaque.
 
-### CanvasContext.globalCompositeOperation string
+## CanvasContext.globalCompositeOperation string
 
 在绘制新形状时应用的合成操作的类型。目前安卓版本只适用于 `fill` 填充块的合成，用于 `stroke` 线段的合成效果都是 `source-over`。
 The type of compositing operation to apply when drawing new shapes. The current Android version is only applicable to the composition of `fill` filling blocks, and the composition effect of `stroke` line segments is `source-over`.
@@ -103,7 +99,7 @@ Currently supported operations are
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|
 
-### CanvasContext.arc
+## CanvasContext.arc
 
 画一条弧线。创建一个圆可以用 ```arc()``` 方法指定起始弧度为0，终止弧度为 ```2 * Math.PI```。用 ```stroke()``` 或者 ```fill()``` 方法来在 ```canvas``` 中画弧线。
 Draw an arc. To create a circle, you can use the ```arc()``` method to specify the starting arc as 0 and the ending arc as ```2 * Math.PI```. Use the ```stroke()``` or ```fill()``` methods to draw arcs in ```canvas```.
@@ -189,7 +185,7 @@ The three key coordinates for ```arc(100, 75, 50, 0, 1.5 * Math.PI)``` are as fo
 * 蓝色: 终止弧度 (1.5 * Math.PI)
 * Blue: end radians (1.5 * Math.PI)
 
-### CanvasContext.arcTo
+## CanvasContext.arcTo
 
 根据控制点和半径绘制圆弧路径。
 Draws an arc path based on control points and radius.
@@ -215,7 +211,7 @@ CanvasContext.arcTo(x1, y1, x2, y2, radius)
 |radius	|Number	|圆弧的半径	|
 | radius | Number | Radius of the arc |
 
-### CanvasContext.beginPath
+## CanvasContext.beginPath
 
 开始创建一个路径，需要调用fill或者stroke才会使用路径进行填充或描边。
 Start to create a path, you need to call fill or stroke to use the path to fill or stroke.
@@ -253,7 +249,7 @@ ctx.draw()
 ```
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/fill-path.png)
-### CanvasContext.bezierCurveTo
+## CanvasContext.bezierCurveTo
 
 创建三次方贝塞尔曲线路径。
 Creates a cubic Bezier path.
@@ -340,7 +336,7 @@ The three key coordinates for `moveTo(20, 20)` ```bezierCurveTo(20, 100, 200, 10
 * 绿色：终止点(200, 20)
 * Green: end point (200, 20)
 
-### CanvasContext.clearRect
+## CanvasContext.clearRect
 
 清除画布上在该矩形区域内的内容。
 Clears the content within the rectangle on the canvas.
@@ -384,7 +380,7 @@ ctx.draw()
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/clear-rect.png)
 
 
-### CanvasContext.clip
+## CanvasContext.clip
 从原始画布中剪切任意形状和尺寸。一旦剪切了某个区域，则所有之后的绘图都会被限制在被剪切的区域内（不能访问画布上的其他区域）。可以在使用 clip() 方法前通过使用 save() 方法对当前画布区域进行保存，并在以后的任意时间对其进行恢复（通过 restore() 方法）。
 Cut any shape and size from the original canvas. Once a region is clipped, all subsequent drawing is restricted to the clipped region (no access to other regions on the canvas). The current canvas area can be saved by using the save() method before using the clip() method, and restored at any later time (via the restore() method).
 
@@ -415,7 +411,7 @@ context.drawImage(res.tempFilePath, 48, 48)
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/clip.png)
 
-### CanvasContext.closePath
+## CanvasContext.closePath
 关闭一个路径。
 Close a path.
 
@@ -465,7 +461,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/close-path.png)
 
-### CanvasContext.createCircularGradient
+## CanvasContext.createCircularGradient
 创建一个从圆心开始的渐变。返回的 [CanvasGradient](/api/canvas/CanvasGradient) 对象，需要使用 ```CanvasGradient.addColorStop()``` 来指定渐变点，至少要两个。
 Creates a gradient starting at the center of the circle. The returned [CanvasGradient](/api/canvas/CanvasGradient) object needs to use ```CanvasGradient.addColorStop()``` to specify gradient points, at least two.
 
@@ -501,7 +497,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/circular-gradient.png)
 
-### CanvasContext.createLinearGradient
+## CanvasContext.createLinearGradient
 创建一个线性的渐变颜色。返回的 [CanvasGradient](/api/canvas/CanvasGradient) 对象，需要使用 ```CanvasGradient.addColorStop()``` 来指定渐变点，至少要两个。
 Creates a linear gradient of colors. The returned [CanvasGradient](/api/canvas/CanvasGradient) object needs to use ```CanvasGradient.addColorStop()``` to specify gradient points, at least two.
 
@@ -540,7 +536,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/linear-gradient.png)
 
-### CanvasContext.createPattern
+## CanvasContext.createPattern
 对指定的图像创建模式的方法，可在指定的方向上重复元图像
 Method for creating a pattern for a specified image that repeats the metaimage in the specified direction
 
@@ -566,7 +562,7 @@ ctx.fillRect(0, 0, 300, 150)
 ctx.draw()
 ```
 
-### CanvasContext.draw
+## CanvasContext.draw
 将之前在绘图上下文中的描述（路径、变形、样式）画到 canvas 中。
 Draws the description (path, transform, style) previously in the drawing context to the canvas.
 
@@ -609,7 +605,7 @@ ctx.draw(true)
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/reserve.png)
 
-### CanvasContext.drawImage
+## CanvasContext.drawImage
 绘制图像到画布。
 Draw the image to the canvas.
 
@@ -661,7 +657,7 @@ uni.chooseImage({
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/draw-image.png)
 
-### CanvasContext.fill
+## CanvasContext.fill
 对当前路径中的内容进行填充。默认的填充色为黑色。
 Fill in the content of the current path. The default fill color is black.
 
@@ -710,7 +706,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/fill-path.png)
 
-### CanvasContext.fillRect
+## CanvasContext.fillRect
 填充一个矩形。
 Fills a rectangle.
 
@@ -744,7 +740,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/fill-rect.png)
 
-### CanvasContext.fillText
+## CanvasContext.fillText
 在画布上绘制被填充的文本。
 Draw the filled text on the canvas.
 
@@ -777,7 +773,7 @@ ctx.draw()
 ```
 
 
-### CanvasContext.lineTo
+## CanvasContext.lineTo
 增加一个新点，然后创建一条从上次指定点到目标点的线。
 Adds a new point, then creates a line from the last specified point to the target point.
 
@@ -809,7 +805,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/line-to.png)
 
-### CanvasContext.measureText
+## CanvasContext.measureText
 测量文本尺寸信息，目前仅返回文本宽度。同步接口。（App 端 2.8.12+ 支持）
 Measure text size information, currently only returns text width. synchronous interface. (App 2.8.12+ support)
 
@@ -844,7 +840,7 @@ const metrics = ctx.measureText('Hello World')
 console.log(metrics.width)
 ```
 
-### CanvasContext.moveTo
+## CanvasContext.moveTo
 把路径移动到画布中的指定点，不创建线条。用 ```stroke()``` 方法来画线条。
 Moves the path to the specified point in the canvas without creating a line. Use the ```stroke()``` method to draw lines.
 
@@ -875,7 +871,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/move-to.png)
 
-### CanvasContext.quadraticCurveTo
+## CanvasContext.quadraticCurveTo
 创建二次贝塞尔曲线路径。曲线的起始点为路径中前一个点。
 Creates a quadratic Bézier path. The starting point of the curve is the previous point in the path.
 
@@ -949,7 +945,7 @@ The three key coordinates for `moveTo(20, 20)` ```quadraticCurveTo(20, 100, 200,
 * 绿色：终止点(200, 20)
 * Green: end point (200, 20)
 
-### CanvasContext.rect
+## CanvasContext.rect
 创建一个矩形。
 Create a rectangle.
 
@@ -984,7 +980,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/fill-rect.png)
 
-### CanvasContext.restore
+## CanvasContext.restore
 恢复之前保存的绘图上下文。
 Restores a previously saved drawing context.
 
@@ -1008,7 +1004,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/save-restore.png)
 
-### CanvasContext.rotate
+## CanvasContext.rotate
 以原点为中心，原点可以用 translate方法修改。顺时针旋转当前坐标轴。多次调用rotate，旋转的角度会叠加。
 Centered on the origin, the origin can be modified with the translate method. Rotate the current axis clockwise. Call rotate multiple times, the angle of rotation will be superimposed.
 
@@ -1038,7 +1034,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/rotate.png)
 
-### CanvasContext.save
+## CanvasContext.save
 保存当前的绘图上下文。
 Save the current drawing context.
 
@@ -1060,7 +1056,7 @@ ctx.fillRect(50, 50, 150, 100)
 ctx.draw()
 ```
 
-### CanvasContext.scale
+## CanvasContext.scale
 在调用```scale```方法后，之后创建的路径其横纵坐标会被缩放。多次调用```scale```，倍数会相乘。
 After calling the ```scale``` method, the horizontal and vertical coordinates of the created path will be scaled. Calling ```scale``` multiple times, the multiples will be multiplied.
 
@@ -1092,7 +1088,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/scale.png)
 
-### CanvasContext.setFillStyle@canvascontextsetfillstyle
+## CanvasContext.setFillStyle@canvascontextsetfillstyle
 设置填充色，如果没有设置 fillStyle，默认颜色为 black。
 Set the fill color, if no fillStyle is set, the default color is black.
 
@@ -1125,7 +1121,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/fill-rect.png)
 
-### CanvasContext.setFontSize
+## CanvasContext.setFontSize
 设置字体的字号。
 Sets the size of the font.
 
@@ -1156,7 +1152,7 @@ ctx.draw()
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/font-size.png)
 
 
-### CanvasContext.setGlobalAlpha
+## CanvasContext.setGlobalAlpha
 设置全局画笔透明度。
 Sets the global brush transparency.
 
@@ -1188,7 +1184,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/global-alpha.png)
 
-### CanvasContext.setLineCap@canvascontextsetlinecap
+## CanvasContext.setLineCap@canvascontextsetlinecap
 设置线条的端点样式。
 Sets the endpoint style of the line.
 
@@ -1237,7 +1233,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/line-cap.png)
 
-### CanvasContext.setLineDash
+## CanvasContext.setLineDash
 设置线条宽度。
 Sets the line width.
 
@@ -1270,7 +1266,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/set-line-dash.png)
 
-### CanvasContext.setLineJoin@canvascontextsetlinejoin
+## CanvasContext.setLineJoin@canvascontextsetlinejoin
 设置线条的交点样式。
 Sets the intersection style for lines.
 
@@ -1323,7 +1319,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/line-join.png)
 
-### CanvasContext.setLineWidth@canvascontextsetlinewidth
+## CanvasContext.setLineWidth@canvascontextsetlinewidth
 设置线条的宽度。
 Sets the width of the line.
 
@@ -1369,7 +1365,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/line-width.png)
 
-### CanvasContext.setMiterLimit@canvascontextsetmiterlimit
+## CanvasContext.setMiterLimit@canvascontextsetmiterlimit
 设置最大斜接长度，斜接长度指的是在两条线交汇处内角和外角之间的距离。 当 ``setLineJoin()`` 为 miter 时才有效。超过最大倾斜长度的，连接处将以 lineJoin 为 bevel 来显示。
 Sets the maximum miter length, which is the distance between the inner and outer corners where two lines meet. Only valid when ``setLineJoin()`` is miter. If it exceeds the maximum slant length, the join will be displayed with lineJoin as bevel.
 
@@ -1428,7 +1424,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/miter-limit.png)
 
-### CanvasContext.setShadow
+## CanvasContext.setShadow
 设置阴影样式。如果没有设置，offsetX 默认值为0， offsetY 默认值为0， blur 默认值为0，color 默认值为 black。
 Sets the shadow style. If not set, the default value of offsetX is 0, the default value of offsetY is 0, the default value of blur is 0, and the default value of color is black.
 
@@ -1460,7 +1456,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/shadow.png)
 
-### CanvasContext.setStrokeStyle@canvascontextsetstrokestyle
+## CanvasContext.setStrokeStyle@canvascontextsetstrokestyle
 设置边框颜色。如果没有设置 fillStyle，默认颜色为 black。
 Set border color. If fillStyle is not set, the default color is black.
 
@@ -1485,7 +1481,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/stroke-rect.png)
 
-### CanvasContext.setTextAlign
+## CanvasContext.setTextAlign
 用于设置文字的对齐
 Used to set the alignment of text
 
@@ -1521,7 +1517,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/set-text-align.png)
 
-### CanvasContext.setTextBaseline
+## CanvasContext.setTextBaseline
 用于设置文字的水平对齐
 Used to set the horizontal alignment of the text
 
@@ -1564,7 +1560,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/set-text-baseline.png)
 
-### CanvasContext.setTransform
+## CanvasContext.setTransform
 使用矩阵重新设置（覆盖）当前变换的方法
 Method to reset (overwrite) the current transform using a matrix
 
@@ -1594,7 +1590,7 @@ canvasContext.setTransform(scaleX, skewX, skewY, scaleY, translateX, translateY)
 |translateY	|Number	|垂直移动	|
 | translateY | Number | vertical translation |
 
-### CanvasContext.stroke
+## CanvasContext.stroke
 画出当前路径的边框。默认颜色为黑色。
 Draws a border around the current path. The default color is black.
 
@@ -1641,7 +1637,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/stroke-path.png)
 
-### CanvasContext.strokeRect
+## CanvasContext.strokeRect
 画一个矩形(非填充)。用 `setFillStroke()` 设置边框颜色，如果没设置默认是黑色。
 Draw a rectangle (not filled). Use `setFillStroke()` to set the border color, if not set, the default is black.
 
@@ -1673,7 +1669,7 @@ ctx.draw()
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/stroke-rect.png)
 
 
-### CanvasContext.strokeText
+## CanvasContext.strokeText
 给定的 (x, y) 位置绘制文本描边的方法
 Method to draw a text stroke at a given (x, y) position
 
@@ -1700,7 +1696,7 @@ canvasContext.strokeText(text, x, y, maxWidth)
 |maxWidth	|Number	|需要绘制的最大宽度，可选	|
 | maxWidth | Number | The maximum width to be drawn, optional |
 
-### CanvasContext.transform
+## CanvasContext.transform
 使用矩阵多次叠加当前变换的方法。
 Method to overlay the current transform multiple times using a matrix.
 
@@ -1723,7 +1719,7 @@ Method to overlay the current transform multiple times using a matrix.
 |translateY	|Number	|垂直移动	|
 | translateY | Number | vertical translation |
 
-### CanvasContext.translate
+## CanvasContext.translate
 对当前坐标系的原点(0, 0)进行变换，默认的坐标系原点为页面左上角。
 Transform the origin (0, 0) of the current coordinate system. The default coordinate system origin is the upper left corner of the page.
 

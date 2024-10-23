@@ -281,6 +281,10 @@ If you have done WeChat MiniApp development, you should already be familiar with
 ### 小程序开发注意@mp
 ### MiniApp development attention @mp
 
+#### 文件命名
+`vue3` 项目，页面或组件目录下，不能使用与 `vue、nvue` 同名的 `js、ts` 文件。\
+小程序端 `vue` 文件会被编译为同名的 `js、json、wxml、wxss` 文件，如果存在同名 `js、ts` 文件，会导致冲突。
+
 #### 各家小程序实现机制不同，可能存在的平台兼容问题
 #### Different MiniApp have different implementation mechanisms, and there may be platform compatibility issues
 

@@ -1,4 +1,4 @@
-### uni.setBackgroundColor(OBJECT)
+## uni.setBackgroundColor(OBJECT)
 
 动态设置窗口的背景色。
 Dynamically set the background color of the window.
@@ -6,9 +6,9 @@ Dynamically set the background color of the window.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|√|x|√|√|√|
+|App|HarmonyOS Next|Web|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|HBuilderX 4.31|x|√|x|√|x|√|√|√|
 
 **参数说明**
 **Parameter Description**
@@ -40,7 +40,7 @@ uni.setBackgroundColor({
 });
 ```
 
-### uni.setBackgroundTextStyle(OBJECT)
+## uni.setBackgroundTextStyle(OBJECT)
 
 动态设置下拉背景字体、loading 图的样式。
 Dynamically set the style of the drop-down background font and loading image.
@@ -48,9 +48,9 @@ Dynamically set the style of the drop-down background font and loading image.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|√|x|√|√|√|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|HBuilderX 4.31|x|√|x|√|x|√|√|√|
 
 **参数说明**
 **Parameter Description**

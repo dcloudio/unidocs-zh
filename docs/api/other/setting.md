@@ -1,4 +1,4 @@
-### uni.openSetting(OBJECT)
+## uni.openSetting(OBJECT)
 
 调起客户端小程序设置界面，返回用户设置的操作结果。
 Call up the client applet setting interface and return the operation result set by the user.
@@ -40,7 +40,7 @@ uni.openSetting({
 });
 ```
 
-### uni.getSetting(OBJECT)
+## uni.getSetting(OBJECT)
 获取用户的当前设置。
 Get the user's current settings.
 
@@ -75,8 +75,7 @@ Get the user's current settings.
 |subscriptionsSetting|SubscriptionsSetting|用户订阅消息设置，接口参数`withSubscriptions`值为`true`时才会返回。**（微信小程序 2.10.1 支持）**|
 |subscriptionsSetting|SubscriptionsSetting|User subscription message settings, only returned when the interface parameter `withSubscriptions` value is `true`. **(Wechat applet 2.10.1 support)**|
 
-#### 示例代码
-#### Sample code
+### 示例代码
 ```js
 uni.getSetting({
    success(res) {

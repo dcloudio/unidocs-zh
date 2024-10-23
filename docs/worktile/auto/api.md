@@ -822,7 +822,7 @@ Sample code:
 ```js
   const page = await program.currentPage()
   const element = await page.$('.index-bd')
-  const { left top } = await element.offset()
+  const { left, top } = await element.offset()
   console.log(left, top)
 ```
 

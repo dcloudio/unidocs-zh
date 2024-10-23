@@ -1,14 +1,14 @@
-### uni.createCanvasContext(canvasId, componentInstance)
+## uni.createCanvasContext(canvasId, componentInstance)
 
 <!-- UNIAPPAPIJSON.createCanvasContext.compatibility -->
 
-#### 定义
+### 定义
 
 创建 ```canvas``` 绘图上下文（指定 canvasId）。在自定义组件下，第二个参数传入组件实例this，以操作组件内 ```<canvas/>``` 组件
 
 **Tip:** 需要指定 canvasId，该绘图上下文只作用于对应的 `<canvas/>`
 
-#### 参数
+### 参数
 
 |参数|类型|说明|
 |----|----|-----|
@@ -17,7 +17,7 @@
 
 <!-- UNIAPPAPIJSON.createCanvasContext.param -->
 
-#### 返回值
+### 返回值
 
 [CanvasContext](/api/canvas/CanvasContext.md)
 

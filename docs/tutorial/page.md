@@ -703,7 +703,7 @@ Listen to global custom events. Events can be triggered by uni.$emit, but only o
 	})
 ```
 
-### uni.$off([eventName, callback]) @off
+### uni.$off(eventName, callback) @off
 
 移除全局自定义事件监听器。
 Remove the global custom event listener.
@@ -711,8 +711,7 @@ Remove the global custom event listener.
 |属性		|类型			|描述			|
 | Attribute| Type| Describe|
 |---		|---			|---			|
-|eventName	|Array＜String＞ |事件名			|
-| eventName| Array＜String＞| Event name|
+|eventName	|String |事件名			|
 |callback	|Function		|事件的回调函数	|
 | callback| Function| Event callback function|
 

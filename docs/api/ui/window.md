@@ -10,7 +10,7 @@ Listen for window size change events
 
 |App|HarmonyOS Next|H5|微信小程序	|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|x|x|x|√|√|
+|√|HBuilderX 4.25|√|√|x|x|x|√|√|
 
 **CALLBACK 参数说明**
 **CALLBACK parameter description**
@@ -50,7 +50,7 @@ Explanation of Platform Differences
 
 |App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|x|x|x|√|
+|√|HBuilderX 4.31|√|√|x|x|x|√|
 
 **Tips**
 - `CALLBACK`为调用`uni.onWindowResize`时传入的`CALLBACK`

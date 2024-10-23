@@ -1,4 +1,4 @@
-### getMenuButtonBoundingClientRect()
+## getMenuButtonBoundingClientRect()
 
 在小程序平台，如果原生导航栏被隐藏，仍然在右上角会有一个悬浮按钮，微信下也被称为胶囊按钮。本API用于获取小程序下该菜单按钮的布局位置信息，方便开发者布局顶部内容时避开该按钮。
 On the Mini Program platform, if the native navigation bar is hidden, there will still be a floating button in the upper right corner, also known as the capsule button under WeChat. This API is used to obtain the layout position information of the menu button under the applet, which is convenient for developers to avoid the button when laying out the top content.

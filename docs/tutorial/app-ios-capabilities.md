@@ -1,8 +1,22 @@
-HBuilderX2.3.0开始云端打包支持配置XCode中的Capabilities，在XCode中可给工程添加设置Capabilities，如图所示：  
+# iOS平台Capabilities配置  
+
+在XCode中可给工程添加设置Capabilities，如图所示：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/ios/xcode-capabilities.png)
 
-配置后，会更新XCode工程的.entitlements和Info.plist文件，可将以上文件内容转换为json格式数据配置到manifest.json文件中，使得HBuilderX云端打包工程设置相应的Capabilities。
-After configuration, the .entitlements and Info.plist files of the XCode project will be updated. The content of the above files can be converted into json format data and configured in the manifest.json file, so that the HBuilderX cloud packaging project can set the corresponding Capabilities.
+配置后，会更新XCode工程的.entitlements和Info.plist文件，此文章介绍如何在HBuilderX中配置iOS平台的Capabilities。
+
+## HBuilderX4.18及以上版本
+
+**注意：uni-app x 项目只支持此方式配置** 
+
+将 XCode 工程中的 .entitlements 文件中的内容配置到 `iOS原生应用配置文件和资源` 的 `UniApp.entitlements` 文件，详情参考：[配置文件UniApp.entitlements](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#entitlements)  
+
+将 XCode 工程中的 Info.plist 文件中的内容配置到 `iOS原生应用配置文件和资源` 的 `Info.plist` 文件，详情参考：[配置文件 Info.plist](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoplist)  
+
+
+
+## HBuilderX4.18以前版本
+将XCode工程中的 .entitlements 和 Info.plist 文件中的内容转换为json格式数据配置到manifest.json文件中，使得HBuilderX云端打包工程设置相应的Capabilities。
 
 打开项目的manifest.json文件，在源码视图中进行配置  
 Open the manifest.json file of the project and configure it in the source view
@@ -31,7 +45,7 @@ The plists node data will be converted into the data of the Info.plist file in t
 
 <a id="unilink"/>
 
-## 通用链接（Universal Link）
+## 通用链接（Universal Link）配置教程
 
 **为了简化配置使用通用链接，推荐使用UniCloud快速生成通用链接，详情参考：[一键生成iOS通用链接](https://uniapp.dcloud.io/api/plugins/universal-links)**  
 **In order to simplify the configuration and use universal links, it is recommended to use UniCloud to quickly generate universal links. For details, please refer to: [Generate iOS Universal Links with One Click](https://uniapp.dcloud.io/api/plugins/universal-links)**
@@ -136,13 +150,21 @@ After the application is installed, it will register the universal link of the a
 > 推荐方案：将apple-app-site-association文件部署到，免费的阿里云版unicloud的 [前端网页托管](https://uniapp.dcloud.io/uniCloud/hosting?id=%e7%ae%80%e4%bb%8b) 
 > Recommended solution: Deploy the apple-app-site-association file to the free Aliyun version of unicloud's [front-end web hosting](https://uniapp.dcloud.io/uniCloud/hosting?id=%e7%ae% 80%e4%bb%8b)
 
-## 客户端处理通用链接
+### app端处理通用链接
+
+#### uni-app/5+ App项目  
 可通过5+ API的[plus.runtime.launcher](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.launcher)判断应用启动来源，如果其值为"uniLink"则表示通过通用链接启动应。
 The application startup source can be judged through the [plus.runtime.launcher](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.launcher) of the 5+ API, if its value is "uniLink" It means to start the application through the universal link.
 这时可通过5+ API的[plus.runtime.arguments](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.arguments)获取启动参数，通用链接启动的情况将返回完整的通用链接地址。
 At this time, the startup parameters can be obtained through [plus.runtime.arguments](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.arguments) of the 5+ API. Returns the full Universal Link address.
 
-## 注意事项
+#### uni-app x项目  
+在 App.uvue 文件的应用生命周期 [onLaunch](https://doc.dcloud.net.cn/uni-app-x/collocation/app.html#onlaunch) 和 [onShow](https://doc.dcloud.net.cn/uni-app-x/collocation/app.html#onshow) 回调参数中可通过 appLink 属性获取通用链接地址。
+
+也可以通过 API： [uni.getLaunchOptionsSync](https://doc.dcloud.net.cn/uni-app-x/api/launch.html) 和 [uni.getEnterOptionsSync](https://doc.dcloud.net.cn/uni-app-x/api/launch.html#getenteroptionssync) 返回值中的 appLink 属性获取通用链接地址。
+
+
+### 注意事项
 - apple-app-site-association文件不需要.json后缀
 - apple-app-site-association files do not need .json suffix
 - 对apple-app-site-association文件的请求仅在App第一次启动时进行，如果此时网络连接出了问题apple会缓存请求，等有网的时候再去请求，如果没有请求此文件通用连接会失效

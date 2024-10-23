@@ -179,6 +179,10 @@ uni.addInterceptor({
     }
     return new Promise((resolve, reject) => {
       res.then((res) => {
+        if (!res) {
+          resolve(res);
+          return;
+        }
         if (res[0]) {
           reject(res[0]);
         } else {
@@ -388,7 +392,7 @@ uni.addInterceptor({
 | :-------------------------------------------------------- | :--------------------------------------------------- |
 | [uni.getSystemInfo](system/info?id=getsysteminfo)         | 获取系统信息                                         |
 | [uni.getSystemInfoSync](system/info?id=getsysteminfosync) | 获取系统信息                                         |
-| [uni.canIUse](/api/system/info?id=caniuse)                | 判断应用的 API，回调，参数，组件等是否在当前版本可用 |
+| [uni.canIUse](caniuse)                | 判断应用的 API，回调，参数，组件等是否在当前版本可用 |
 
 #### 内存
 
@@ -652,10 +656,9 @@ uni.addInterceptor({
 | [uni.share](/api/plugins/share?id=share)                             | 分享                                                            |
 | [uni.shareWithSystem](/api/plugins/share?id=sharewithsystem)         | 使用系统分享                                                    |
 | [uni.requestPayment](/api/plugins/payment?id=requestpayment)         | 支付                                                            |
-| [uni.subscribePush](/api/plugins/push?id=subscribepush)              | 开启推送                                                        |
-| [uni.unsubscribePush](/api/plugins/push?id=unsubscribepush)          | 关闭推送                                                        |
-| [uni.onPush](/api/plugins/push?id=onpush)                            | 监听透传数据                                                    |
-| [uni.offPush](/api/plugins/push?id=offpush)                          | 移除监听透传数据                                                |
+| [uni.onPushMessage](/api/plugins/push?id=onpushmessage)              | 启动监听推送消息事件     |
+| [uni.offPushMessage](/api/plugins/push?id=offpushmessage)          | 关闭推送消息监听事件  |
+
 
 ### 广告
 

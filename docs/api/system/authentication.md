@@ -12,10 +12,12 @@ Start the SOTER biometric authentication.
 **平台差异说明**
 **Platform difference description**
 
-|App|HarmonyOS Next|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|
-|:-	|:-	|:-					|:-						|:-					|:-					|:-				|:-				|
-|√（2.3.8+）	|x|x	|√					|x						|x					|x					|x				|
+|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|
+|:-	|:-					|:-						|:-					|:-					|:-				|:-				|
+|√（2.3.8+）	|x	|√					|x						|x					|x					|x				|
 
+
+<!-- UNIAPPAPIJSON.startSoterAuthentication.compatibility -->
 
 **OBJECT参数说明**
 **OBJECT parameter description**
@@ -46,12 +48,6 @@ Start the SOTER biometric authentication.
 | fingerPrint| Fingerprint identification|
 |facial			|人脸识别	|
 | facial| Face identification|
-
-注意：
-Notice:
-- App端指纹识别，Android平台从Android6.0起才提供了官方API，uni-app也是从Android6起支持。对于更低版本的安卓，某些rom私有的指纹识别API，uni-app并不支持。
-- App端人脸识别，iOS平台使用自带的faceID。Android平台需另行使用uni实人认证，另见[https://doc.dcloud.net.cn/uniCloud/frv/intro.html](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
-
 
 **OBJECT.success返回值说明**
 **Description of return value of OBJECT.success**
@@ -127,12 +123,17 @@ This data is JSON assembled from the incoming challenge and other security infor
 |90011	|用户未录入所选识别方式														|
 | 90011| User has not entered the selected identification method.|
 
-## uni.checkIsSupportSoterAuthentication(OBJECT)
+::: warning 注意
+- App端指纹识别，Android平台从Android6.0起才提供了官方API，uni-app也是从Android6起支持。对于更低版本的安卓，某些rom私有的指纹识别API，uni-app并不支持。
+- App端人脸识别，iOS平台使用自带的faceID。Android平台需另行使用uni实人认证，另见[https://doc.dcloud.net.cn/uniCloud/frv/intro.html](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
+:::
 
-> HarmonyOS Next 不支持
+## uni.checkIsSupportSoterAuthentication(OBJECT)
 
 获取本机支持的 SOTER 生物认证方式
 Obtain the supported SOTER biometric authentication mode
+
+<!-- UNIAPPAPIJSON.checkIsSupportSoterAuthentication.compatibility -->
 
 **OBJECT参数说明**
 **OBJECT parameter description**
@@ -156,9 +157,13 @@ Obtain the supported SOTER biometric authentication mode
 |supportMode|Array|该设备支持的可被SOTER识别的生物识别方式|
 | supportMode| Array| Biometrics supported by this device that can be recognized by SOTER|
 
+::: warning
+- `HarmonyOS Next` 平台使用时需要添加权限 `ohos.permission.ACCESS_BIOMETRIC`
+:::
+
 ## uni.checkIsSoterEnrolledInDevice(OBJECT)
 
-> HarmonyOS Next 不支持
+<!-- UNIAPPAPIJSON.checkIsSoterEnrolledInDevice.compatibility -->
 
 获取设备内是否录入如指纹等生物信息的接口
 Interface for requesting whether biological information such as fingerprints are entered in the device
@@ -199,6 +204,10 @@ Interface for requesting whether biological information such as fingerprints are
 | isEnrolled| boolean| Whether the information has been entered|
 |errMsg			|string	|错误信息				|
 | errMsg| string| Error message|
+
+::: warning
+- `HarmonyOS Next` 平台使用时需要添加权限 `ohos.permission.ACCESS_BIOMETRIC`
+:::
 
 ### 代码示例
 

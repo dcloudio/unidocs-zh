@@ -47,109 +47,6 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 ## 第三方开发者案例
 ## Third-party developer case
 
-### 新冠抗疫专区案例
-### New crown anti-epidemic zone case
-
-uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
-uni-app has helped hundreds of units quickly launch **anti-epidemic system**, and open source many projects.
-
-- 首都疫苗服务 [App](https://a.app.qq.com/o/simple.jsp?pkgname=io.dcloud.H5AC4580F)
-- Capital Vaccine Service [App](https://a.app.qq.com/o/simple.jsp?pkgname=io.dcloud.H5AC4580F)
-- 广东 粤核酸 微信小程序
-- Guangdong Yue Nucleic Acid WeChat MiniApp
-- 广东 粤健通 微信小程序
-- Guangdong Yuejiantong WeChat MiniApp
-- 广州市 穗康生活 微信小程序
-- Guangzhou Suikang Life WeChat MiniApp
-- 海南 海易办 微信小程序
-- Hainan Haiyiban WeChat MiniApp
-- 陕西一码通 微信小程序
-- Shaanxi Yimatong WeChat MiniApp
-- 健康陕西公众服务 微信小程序
-- Healthy Shaanxi Public Service WeChat MiniApp
-- 健康西安公众服务 微信小程序
-- Healthy Xi'an Public Service WeChat MiniApp
-- 河南疾控 微信小程序
-- Henan CDC WeChat MiniApp
-- 平顶山 鹰城官微 微信小程序
-- Pingdingshan Yingcheng Official WeChat MiniApp
-- 开封市 汴易检 微信小程序
-- Kaifeng Bianyijian WeChat MiniApp
-- 三门峡市 灵宝一码通 微信小程序
-- Sanmenxia City Lingbao Yimatong Wechat MiniApp
-- 湖北健康码 微信小程序
-- Hubei Health Code WeChat MiniApp
-- 山西 晋快检 微信小程序
-- Shanxi Jinkuai Inspection WeChat MiniApp
-- 云南省居民电子健康卡 微信小程序
-- Wechat MiniApp for electronic health card for Yunnan residents
-- 西双版纳 平安版纳 微信小程序
-- Xishuangbanna Pinganbanna WeChat MiniApp
-- 黑龙江 健康龙江服务平台 微信小程序
-- Heilongjiang Health Longjiang Service Platform WeChat MiniApp
-- 黑龙江 密山疫情防控 微信小程序
-- WeChat MiniApp for Epidemic Prevention and Control in Mishan, Heilongjiang
-- 贵州健康码 微信小程序
-- Guizhou Health Code WeChat MiniApp
-- 贵州 黔康码 微信小程序
-- Guizhou Qiankangma WeChat MiniApp
-- 河北新冠疫苗预约 懂苗服务 微信小程序
-- Hebei New Crown Vaccine Appointment Understanding Vaccination Service WeChat MiniApp
-- 蒙速办 微信小程序
-- Mengsu runs a WeChat MiniApp
-- 蒙健康 微信小程序
-- Meng Health WeChat MiniApp
-- 包头市 鹿城健康服务 微信小程序
-- Wechat MiniApp of Lucheng Health Service in Baotou City
-- 江西 赣通码 微信小程序
-- Jiangxi Gantongma WeChat MiniApp
-- 南昌 昌通码 微信小程序
-- Nanchang Changtongma WeChat MiniApp
-- 藏易通健康码 微信小程序
-- Zangyitong Health Code WeChat MiniApp
-- 江苏核酸检测信息系统 cydj.weiynet.cn
-- Jiangsu Nucleic Acid Testing Information System cydj.weiynet.cn
-- 扬州 扬城扫码通 微信小程序
-- Yangzhou Yangcheng Scan Code WeChat MiniApp
-- 遵义市 实名登记码 微信小程序
-- Zunyi City real-name registration code WeChat MiniApp
-- 乐清市 乐行通 微信小程序
-- Yueqing Lexingtong WeChat MiniApp
-- 南昌市 i南昌-官方 微信小程序
-- Nanchang i Nanchang-Official WeChat MiniApp
-- 鄂尔多斯健康宝 微信小程序
-- Erdos Healthbao WeChat MiniApp
-- 新疆伊犁阿勒泰 满意雪都 微信小程序
-- WeChat MiniApp for Satisfied Snow City in Altay, Ili, Xinjiang
-- 南宁市电子健康卡 微信小程序
-- Nanning Electronic Health Card WeChat MiniApp
-- 吕梁健康防疫核酸检测平台  微信小程序
-- WeChat MiniApp of Luliang Health and Epidemic Prevention Nucleic Acid Testing Platform
-- 曲靖防疫出行 微信小程序
-- Qujing Epidemic Prevention Travel WeChat MiniApp
-- 镇江市通行码 镇合意 微信小程序
-- Zhenjiang Tongxingma Town Heyi WeChat MiniApp
-- 灌南县 惠泽行 微信小程序
-- Guannan County Huizehang WeChat MiniApp
-- 新疆伊犁哈萨克自治州塔城地区 健康塔城 微信小程序
-- Healthy Tacheng WeChat MiniApp in Tacheng District, Ili Kazakh Autonomous Prefecture, Xinjiang
-- 喀什和易行 微信小程序
-- Kashi and Yixing WeChat MiniApp
-- 巴州和易行 微信小程序
-- Bazhou and Yixing WeChat MiniApp
-- 绥化防疫 微信小程序
-- Suihua Epidemic Prevention WeChat MiniApp
-- 青城医疗 微信小程序
-- Qingcheng Medical WeChat MiniApp
-- 温州健康码扫码工具 微信小程序
-- Wechat MiniApp of Wenzhou Health Code Scanning Tool
-- 临沂 沂码通 微信小程序
-- Linyi Yimatong WeChat MiniApp
-- 鞍山 易鞍码 微信小程序
-- Anshan Yi'anma WeChat MiniApp
-
-2020年新冠疫情爆发初期的抗疫项目专题另见：[xinguan2020.dcloud.net.cn](https://dcloud.io/ncp.html)
-See also the topic of anti-epidemic projects in the early stage of the outbreak of the new crown epidemic in 2020: [xinguan2020.dcloud.net.cn](https://dcloud.io/ncp.html)
 
 ### 典型案例
 ### Typical Case
@@ -216,33 +113,6 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 		<span style="margin-top:15px;">App Code</span>
 	</a>
 </div>
-
-<!--
-<a href="https://www.csdn.net/" target="_blank" class="clear-style"><b>CSDN：</b></a> 专业 IT 技术社区，致力于为中国软件开发者提供知识传播、在线学习、职业发展等全生命周期服务。
-<a href="https://www.csdn.net/" target="_blank" class="clear-style"><b>CSDN:</b></a> Professional IT technology community, dedicated to Chinese software developers provide full life cycle services such as knowledge dissemination, online learning, and career development.
-<div style="display:flex;justify-content: space-around;">
-	<a href="javascript:;" target="_blank" class="clear-style barcode-view">
-		<img src="https://img-cdn-qiniu.dcloud.net.cn/doc/csdn/csdn.png" width="200"/>
-		<span style="margin-top:15px;">微信小程序码</span>
-		<span style="margin-top:15px;">WeChat MiniApp code</span>
-	</a>
-</div>
-
-<a href="https://www.oschina.net/" target="_blank" class="clear-style"><b>开源中国：</b></a> 中文开源技术交流社区，提供最新的开源软件资讯。
-<a href="https://www.oschina.net/" target="_blank" class="clear-style"><b>Open Source China:</b></a> Chinese open source technology exchange community, providing The latest open source software news.
-<div style="display:flex;justify-content: space-around;">
-	<a href="javascript:;" target="_blank" class="clear-style barcode-view">
-		<img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/oschina_weixin.jpg" width="200"/>
-		<span style="margin-top:15px;">微信小程序码</span>
-		<span style="margin-top:15px;">WeChat MiniApp code</span>
-	</a>
-    <a href="javascript:;" target="_blank" class="clear-style barcode-view">
-		<img src="https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/onchina.png" width="200"/>
-		<span style="margin-top:15px;">百度小程序码</span>
-		<span style="margin-top:15px;">Baidu MiniApp Code</span>
-	</a>
-</div>
--->
 
 <b>vivo官方商城：</b> vivo公司旗下的官方自营商城。
 
@@ -322,8 +192,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 **腾讯手游助手：** [H5](https://bbs.syzs.qq.com/)
 **Tencent Mobile Game Assistant:** [H5](https://bbs.syzs.qq.com/)
 
-**腾讯地图：** App内穿梭线路栏目
-**Tencent Map:** Shuttle route column in the App
+**腾讯地图：** App内穿梭线路栏目，微信小程序搜同名
 
 **腾讯理财通：** App内网页
 **Tencent Wealth Management:** App webpage
@@ -339,6 +208,8 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 **抖音：** 抖音小游戏中心。
 
 **抖音：** 飞书部分页面feishu.cn
+
+**小红书：** 微信小程序搜索“小红书”
 
 **百度：** [爱企查](https://aiqicha.baidu.com/)；[百度企服](https://qifu.baidu.com/)；[寻客宝](https://xunkebao.baidu.com)；[寻标宝](https://xunbiaobao.baidu.com/)；[律临](https://lvlin.baidu.com)
 
@@ -380,6 +251,8 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 
 **携程微商城：** [微信H5](https://m.ctrip.com/webapp/hotelofficial/?#/)
 **Ctrip Micro Mall:** [WeChat H5](https://m.ctrip.com/webapp/hotelofficial/?#/)
+
+**知乎：** 微信小程序搜索“知乎”
 
 **58转转：** 微信小程序搜索“转转二手交易网”
 **58 Zhuanzhuan:** Wechat MiniApp search "Zhuanzhuan second-hand trading network"
@@ -465,17 +338,109 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 <!-- **达内在线：** 达内教育的在线培训App。[App官网下载](http://www.tmooc.cn/app/index.shtml) -->
 <!-- **Dane Online:** Dane Education's online training App. [App official website download](http://www.tmooc.cn/app/index.shtml) -->
 
-### SaaS服务商
-### SaaS Service Provider
+### 政府
 
-**人人商城：** 客户众多的分销商城 [https://www.rrsc.cn/V5introduce.html](https://www.rrsc.cn/V5introduce.html)
-**Renren Mall:** A distribution mall with many customers [https://www.rsc.cn/V5introduce.html](https://www.rsc.cn/V5introduce.html)
+**大量新冠抗疫项目，详见专题：** [xinguan2020.dcloud.net.cn](https://dcloud.io/ncp.html)
 
-**即速应用：** 微信小程序搜索“即速应用商家版”
-**Instant App:** Search for "Instant App Merchant Version" in the WeChat MiniApp
+**中国教育发布：** 中国人民共和国教育部官方App。使用uniCloud云开发。[详见](http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202009/t20200904_485105.html)
 
-**大商创：** 全渠道多用户商城解决方案。[官网](https://www.dscmall.cn)
-**Dashangchuang:** Omni-channel multi-user mall solution. [Official website](https://www.dscmall.cn)
+**国家医保服务平台：** 使用uni小程序sdk [App](https://a.app.qq.com/o/simple.jsp?pkgname=cn.hsa.app&channel=0002160650432d595942&fromcase=60001)
+
+**登记注册身份验证（5+App）：** 国家工商总局，企业登记注册身份验证。[Android](https://android.myapp.com/myapp/detail.htm?apkName=gov.zwfw.samr.djzc)、[iOS](https://apps.apple.com/cn/app/%E7%99%BB%E8%AE%B0%E6%B3%A8%E5%86%8C%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81/id1466043859)
+
+**人力资源和社会保障部：** 微信小程序搜“电子社保卡”
+
+**全国住房公积金公共服务：** 微信小程序搜“全国住房公积金公共服务”
+
+**农交安（5+App）：** 公安部交通管理局，农村道路交通安全信息系统App。[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.tmri.nda)、[iOS](https://itunes.apple.com/cn/app/id1445388528)
+
+**国家应急管理部：** [特种作业操作证信息查询平台](https://cx.mem.gov.cn/)
+
+**国家邮政局：** 实名快递收寄系统。[Android](http://sj.qq.com/myapp/detail.htm?apkName=cn.aiqy.demo_postman)、[iOS](https://apps.apple.com/cn/app/%E5%AE%89%E6%98%93%E9%80%92%E6%94%B6%E5%AF%84%E7%89%88/id1148473259)、微信小程序搜“安易递收寄版”
+
+**国家体育总局：** 微信小程序搜“中国体育彩票”
+
+**中国交通通信信息中心：** 微信小程序搜“道路运政一网通办”
+
+**共青团全国青少年弘扬中华优秀传统文化交流展示活动专题网站：** [同时适配PC和手机版的H5](https://chuancheng.xwhdw.com/)
+
+**NSTL国家科技图书文献中心：** [App下载页](https://www.nstl.gov.cn/download_app.html)、[H5](https://www.nstl.gov.cn/index_app.html#/)
+
+**各地税务：** 北京、上海、广东、深圳、江苏、河南、湖北、四川、安徽、山东、山西、陕西、浙江、河北、云南、新疆、青岛、福建、甘肃、湖南、贵州的App均使用uni-app开发。可在应用商店搜索 如“江苏税务”
+
+**北京共青团：** [H5网站](https://m.bjyouth.net)
+
+**北京进京证：** [H5](https://jjz.jtgl.beijing.gov.cn/)
+
+**北京财政局会计专业考试系统：** [H5](http://fwxt.czj.beijing.gov.cn/kjbmh5/)
+
+**广东省政务服务：** [移动政务协同](https://www.gdzwfw.gov.cn/)
+
+**广东工商局：** [食品安全等多款应用](http://amr.gd.gov.cn/)
+
+**广东省公安厅：** [出入境管理局](http://crj.gdga.gd.gov.cn/)
+
+**粤苗：** 广东省疾病预防控制中心疫苗预约管理 [官网app下载](http://cdcp.gd.gov.cn/ggwsfwxx/content/post_3146600.html)
+
+**广东省工会：** 粤工惠，广东工友服务App，[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.gdftu.ygh)、[iOS](https://apps.apple.com/cn/app/id1464193434) 、微信小程序搜索“粤工惠”
+
+**广东省广州民政局：** [微信H5](https://wxpt.gzmz.gov.cn/ydzw-wx/#/pagesA/login/index)
+
+**广东省共青团：** [12355.net](https://12355.net)
+
+**广州市**：[公积金](http://ggfw.ylbz.henan.gov.cn/)
+
+**广州市公安局南沙区分局：** 微警[微信H5](https://ns.weijing.gov.cn/wechat-app/)
+
+**广州市南沙区企业综合服务平台：** [H5](https://qiye.gzns.gov.cn/m/#/)
+
+**深圳市：** [民意速办](https://szmssq.sz.gov.cn/mssq_web/index.html)
+
+**广东省佛山市财政局佛山扶持通：** 微信小程序搜索 佛山扶持通、[H5](https://fsfczj.foshan.gov.cn/fuchi-wx/#/)
+
+**浙江政务服务网：** 浙里办，App内嵌uni小程序SDK，大量政务应用基于uni-app开发
+
+**浙江ETC：** 微信小程序搜索 “浙江ETC”、支付宝小程序搜索 “浙江ETC”、[H5](https://issue.zjetc.cn/)
+
+**浙江省杭州市公安局：** 警察叔叔
+
+**浙江宁波市鄞州区行政服务中心：** [PC](http://xzfwwx.nbyz.gov.cn/GET/touch/#/)
+
+**江苏税务：** [Android和iOS](https://sj.qq.com/appdetail/cn.gov.chinatax.jiangsu.etax.app)
+
+**江苏无锡旅游：** [H5](https://h5.wuxitour.cn/)
+
+**江苏无锡医保：** [微信H5](https://weixin.ylbzj.wuxi.gov.cn/wxyb/#/)
+
+**湖南税务：** [Android和iOS](http://hunan.chinatax.gov.cn/show/20210125360695)
+
+**河南省机关事务管理局**：[H5](http://lypt.sgj.henan.gov.cn/h5/#/)
+
+**河南省：**[医疗保障公共服务平台](http://ggfw.ylbz.henan.gov.cn/)
+
+**河南郑州图书馆：** [H5](https://wxlib.zzlib.org.cn/h5/)
+
+**广西药监局：** [H5](http://app.yjj.gxzf.gov.cn/wxhycg/pages/login/index)
+
+**内蒙古：** 蒙速办
+
+**内蒙古乌兰察布市市场监督管理局：** [H5](http://amr.wulanchabu.gov.cn/h5/#/)
+
+**山东** 爱山东政务服务小程序和H5
+
+**安徽医保公共服务：** 微信小程序搜同名
+
+**安徽法律服务网：** [H5](http://ah.12348.gov.cn/h5/#/)
+
+**赣服通：** 江西政务办理[H5](http://ganfutong.jiangxi.gov.cn/jmopen/webapp/html5/unZip/0c39647d0c004736a23f7355c56a91b8/nkyy/#/)
+
+**江西党建云：** [App](https://a.app.qq.com/o/simple.jsp?pkgname=com.app.jianguyu.jiangxidangjian&channel=0002160650432d595942&fromcase=60001)
+
+**江西体彩微彩助手：** 微信小程序搜同名
+
+**新疆税务社保缴费：** 微信小程序搜同名
+
+**天津公安：** [App](https://a.app.qq.com/o/simple.jsp?pkgname=jnhyjt.tjgamsfwpt.tjga)
 
 ### 通信运营商
 ### Communication Operator
@@ -584,142 +549,6 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 ** YeePay: ** cash.yeepay.com
 
 
-### 政府
-### government
-
-**大量新冠抗疫项目，详见专题：** [xinguan2020.dcloud.net.cn](https://dcloud.io/ncp.html)
-**A large number of new crown anti-epidemic projects, see the topic for details:** [xinguan2020.dcloud.net.cn](https://dcloud.io/ncp.html)
-
-**中国教育发布：** 中国人民共和国教育部官方App。使用uniCloud云开发。[详见](http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202009/t20200904_485105.html)
-**China Education Release:** The official app of the Ministry of Education of the People's Republic of China. Use uniCloud cloud development. [For details, see](http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202009/t20200904_485105.html)
-
-**国家医保服务平台：** 使用uni小程序sdk [App](https://a.app.qq.com/o/simple.jsp?pkgname=cn.hsa.app&channel=0002160650432d595942&fromcase=60001)
-**National Medical Insurance Service Platform:** Use the uni MiniApp sdk [App](https://a.app.qq.com/o/simple.jsp?pkgname=cn.hsa.app&channel=0002160650432d595942&fromcase=60001)
-
-**登记注册身份验证（5+App）：** 国家工商总局，企业登记注册身份验证。[Android](https://android.myapp.com/myapp/detail.htm?apkName=gov.zwfw.samr.djzc)、[iOS](https://apps.apple.com/cn/app/%E7%99%BB%E8%AE%B0%E6%B3%A8%E5%86%8C%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81/id1466043859)
-**Registration identity verification (5+App):** State Administration for Industry and Commerce, enterprise registration identity verification. [Android](https://android.myapp.com/myapp/detail.htm?apkName=gov.zwfw.samr.djzc), [iOS](https://apps.apple.com/cn/app/% E7%99%BB%E8%AE%B0%E6%B3%A8%E5%86%8C%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81/id1466043859)
-
-**人力资源和社会保障部：** 微信小程序搜“电子社保卡”
-**Ministry of Human Resources and Social Security:** Search "electronic social security card" in the WeChat MiniApp
-
-**农交安（5+App）：** 公安部交通管理局，农村道路交通安全信息系统App。[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.tmri.nda)、[iOS](https://itunes.apple.com/cn/app/id1445388528)
-**Rural Traffic Safety (5+App):** The Traffic Management Bureau of the Ministry of Public Security, a rural road traffic safety information system app. [Android](https://android.myapp.com/myapp/detail.htm?apkName=com.tmri.nda), [iOS](https://itunes.apple.com/cn/app/id1445388528)
-
-**国家应急管理部：** [特种作业操作证信息查询平台](https://cx.mem.gov.cn/)
-
-**国家邮政局：** 实名快递收寄系统。[Android](http://sj.qq.com/myapp/detail.htm?apkName=cn.aiqy.demo_postman)、[iOS](https://apps.apple.com/cn/app/%E5%AE%89%E6%98%93%E9%80%92%E6%94%B6%E5%AF%84%E7%89%88/id1148473259)、微信小程序搜“安易递收寄版”
-**State Post Bureau:** Real-name express delivery system. [Android](http://sj.qq.com/myapp/detail.htm?apkName=cn.aiqy.demo_postman), [iOS](https://apps.apple.com/cn/app/%E5%AE%89%E6%98%93%E9%80%92%E6%94%B6%E5%AF%84%E7%89%88/id1148473259), WeChat MiniApp search "Anyi Express Receiving Edition"
-**国家体育总局：** 微信小程序搜“中国体育彩票”
-**State General Administration of Sports:** Search "China Sports Lottery" in the WeChat MiniApp
-
-**中国交通通信信息中心：** 微信小程序搜“道路运政一网通办”
-**China Transportation and Communication Information Center:** WeChat MiniApp search for "Road Transport and Administration All-in-one Netcom Office"
-
-**共青团全国青少年弘扬中华优秀传统文化交流展示活动专题网站：** [同时适配PC和手机版的H5](https://chuancheng.xwhdw.com/)
-**The special website of the National Youth League of the Communist Youth League to carry forward the excellent traditional Chinese cultural exchange and exhibition activities:** [adapt to both PC and mobile version H5](https://chuancheng.xwhdw.com/)
-
-**NSTL国家科技图书文献中心：** [App下载页](https://www.nstl.gov.cn/download_app.html)、[H5](https://www.nstl.gov.cn/index_app.html#/)
-**NSTL National Science and Technology Book Documentation Center:** [App download page](https://www.nstl.gov.cn/download_app.html), [H5](https://www.nstl.gov.cn/ index_app.html#/)
-
-**各地税务：** 北京、上海、广东、深圳、江苏、河南、湖北、四川、安徽、山东、山西、陕西、浙江、河北、云南、新疆、青岛、福建、甘肃、湖南、贵州大量使用uni-app开发
-
-**北京共青团：** [H5网站](https://m.bjyouth.net)
-**Beijing Communist Youth League:** [H5 Website](https://m.bjyouth.net)
-
-**北京进京证：** [H5](https://jjz.jtgl.beijing.gov.cn/)
-
-**北京财政局会计专业考试系统：** [H5](http://fwxt.czj.beijing.gov.cn/kjbmh5/)
-**Beijing Finance Bureau Accounting Professional Examination System:** [H5](http://fwxt.czj.beijing.gov.cn/kjbmh5/)
-
-**广东省政务服务：** [移动政务协同](https://www.gdzwfw.gov.cn/)
-
-**广东工商局：** [食品安全等多款应用](http://amr.gd.gov.cn/)
-
-**广东省公安厅：** [出入境管理局](http://crj.gdga.gd.gov.cn/)
-
-**粤苗：** 广东省疾病预防控制中心疫苗预约管理 [官网app下载](http://cdcp.gd.gov.cn/ggwsfwxx/content/post_3146600.html)
-**Guangdong Miao:** Guangdong Provincial Center for Disease Control and Prevention vaccine appointment management [official website app download](http://cdcp.gd.gov.cn/ggwsfwxx/content/post_3146600.html)
-
-**广东省工会：** 粤工惠，广东工友服务App，[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.gdftu.ygh)、[iOS](https://apps.apple.com/cn/app/id1464193434) 、微信小程序搜索“粤工惠”
-**Guangdong Provincial Trade Union:** Guangdong Gonghui, Guangdong Gongyou Service App, [Android](https://android.myapp.com/myapp/detail.htm?apkName=com.gdftu.ygh),[iOS]( https://apps.apple.com/cn/app/id1464193434), WeChat MiniApp search "Yuegonghui"
-
-**广东省广州民政局：** [微信H5](https://wxpt.gzmz.gov.cn/ydzw-wx/#/pagesA/login/index)
-**Guangzhou Civil Affairs Bureau of Guangdong Province:** [WeChat H5](https://wxpt.gzmz.gov.cn/ydzw-wx/#/pagesA/login/index)
-
-**广东省共青团：** [12355.net](https://12355.net)
-**Guangdong Communist Youth League:** [12355.net](https://12355.net)
-
-**广州市**：[公积金](http://ggfw.ylbz.henan.gov.cn/)
-
-**广州市公安局南沙区分局：** 微警[微信H5](https://ns.weijing.gov.cn/wechat-app/)
-**Guangzhou Public Security Bureau Nansha District Branch:** Wechat [WeChat H5](https://ns.weijing.gov.cn/wechat-app/)
-
-**广州市南沙区企业综合服务平台：** [H5](https://qiye.gzns.gov.cn/m/#/)
-**Comprehensive Service Platform for Enterprises in Nansha District, Guangzhou:** [H5](https://qiye.gzns.gov.cn/m/#/)
-
-**深圳市：** [民意速办](https://szmssq.sz.gov.cn/mssq_web/index.html)
-
-**广东省佛山市财政局佛山扶持通：** 微信小程序搜索 佛山扶持通、[H5](https://fsfczj.foshan.gov.cn/fuchi-wx/#/)
-**Foshan Fuzhitong, Finance Bureau of Foshan City, Guangdong Province:** Search Foshan MiniApp, [H5](https://fsfczj.foshan.gov.cn/fuchi-wx/#/)
-
-**浙江政务服务网：** 浙里办，App内嵌uni小程序SDK，大量政务应用基于uni-app开发
-
-**浙江ETC：** 微信小程序搜索 “浙江ETC”、支付宝小程序搜索 “浙江ETC”、[H5](https://issue.zjetc.cn/)
-
-**浙江省杭州市公安局：** 警察叔叔
-
-**浙江宁波市鄞州区行政服务中心：** [PC](http://xzfwwx.nbyz.gov.cn/GET/touch/#/)
-**Ningbo Yinzhou District Administrative Service Center:** [PC](http://xzfwwx.nbyz.gov.cn/GET/touch/#/)
-
-**江苏税务：** [Android和iOS](https://sj.qq.com/appdetail/cn.gov.chinatax.jiangsu.etax.app)
-**Jiangsu Tax:** [Android and iOS](https://sj.qq.com/appdetail/cn.gov.chinatax.jiangsu.etax.app)
-
-**江苏无锡旅游：** [H5](https://h5.wuxitour.cn/)
-**Jiangsu Wuxi Tourism:** [H5](https://h5.wuxitour.cn/)
-
-**江苏无锡医保：** [微信H5](https://weixin.ylbzj.wuxi.gov.cn/wxyb/#/)
-**Jiangsu Wuxi Medical Insurance:** [WeChat H5](https://weixin.ylbzj.wuxi.gov.cn/wxyb/#/)
-
-**湖南税务：** [Android和iOS](http://hunan.chinatax.gov.cn/show/20210125360695)
-
-**河南省机关事务管理局**：[H5](http://lypt.sgj.henan.gov.cn/h5/#/)
-**Henan Provincial Agency Affairs Administration**: [H5](http://lypt.sgj.henan.gov.cn/h5/#/)
-
-**河南省：**[医疗保障公共服务平台](http://ggfw.ylbz.henan.gov.cn/)
-
-**河南郑州图书馆：** [H5](https://wxlib.zzlib.org.cn/h5/)
-
-**广西药监局：** [H5](http://app.yjj.gxzf.gov.cn/wxhycg/pages/login/index)
-**Guangxi Food and Drug Administration:** [H5](http://app.yjj.gxzf.gov.cn/wxhycg/pages/login/index)
-
-**内蒙古：** 蒙速办
-
-**内蒙古乌兰察布市市场监督管理局：** [H5](http://amr.wulanchabu.gov.cn/h5/#/)
-**Inner Mongolia Wulanchabu City Market Supervision Administration:** [H5](http://amr.wulanchabu.gov.cn/h5/#/)
-
-**山东** 爱山东政务服务小程序和H5
-
-**安徽医保公共服务：** 微信小程序搜同名
-**Anhui Medical Insurance Public Service:** Search for the same name in the WeChat MiniApp
-
-**安徽法律服务网：** [H5](http://ah.12348.gov.cn/h5/#/)
-**Anhui Legal Service Network:** [H5](http://ah.12348.gov.cn/h5/#/)
-
-**赣服通：** 江西政务办理[H5](http://ganfutong.jiangxi.gov.cn/jmopen/webapp/html5/unZip/0c39647d0c004736a23f7355c56a91b8/nkyy/#/)
-**Ganfutong:** Jiangxi Government Affairs [H5](http://ganfutong.jiangxi.gov.cn/jmopen/webapp/html5/unZip/0c39647d0c004736a23f7355c56a91b8/nkyy/#/)
-
-**江西党建云：** [App](https://a.app.qq.com/o/simple.jsp?pkgname=com.app.jianguyu.jiangxidangjian&channel=0002160650432d595942&fromcase=60001)
-**Jiangxi Party Construction Cloud:** [App](https://a.app.qq.com/o/simple.jsp?pkgname=com.app.jianguyu.jiangxidangjian&channel=0002160650432d595942&fromcase=60001)
-
-**江西体彩微彩助手：** 微信小程序搜同名
-**Jiangxi Sports Lottery Micro Lottery Assistant:** Wechat MiniApp search with the same name
-
-**新疆税务社保缴费：** 微信小程序搜同名
-**Xinjiang tax and social security payment:** Wechat MiniApp search for the same name
-
-**天津公安：** [App](https://a.app.qq.com/o/simple.jsp?pkgname=jnhyjt.tjgamsfwpt.tjga)
-**Tianjin Public Security:** [App](https://a.app.qq.com/o/simple.jsp?pkgname=jnhyjt.tjgamsfwpt.tjga)
-
 ### 传统品牌
 ### Heritage Brands
 
@@ -737,6 +566,8 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 
 **蜜雪冰城：** 微信小程序搜索 “蜜雪冰城”
 **Mixue Ice City:** Search for "Mixue Ice City" in the WeChat MiniApp
+
+**茶百道：** 微信小程序搜索 “茶百道点餐”
 
 **达美乐比萨点餐：** 微信小程序搜同名
 **Domino’s Pizza Order:** Search the same name in the WeChat MiniApp
@@ -777,6 +608,8 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 
 **同济医院官方App：** [App官网下载页](https://tjhapp.com.cn/app/appdown.html)
 **Official App of Tongji Hospital:** [App official website download page](https://tjhapp.com.cn/app/appdown.html)
+
+**SINOPEC PLUS：** 中国石化香港分公司为全港市民推出的便利加油应用，[Android](https://play.google.com/store/apps/details?id=uni.UNI42811E9)、[iOS](https://apps.apple.com/hk/app/sinopec-plus/id1459721711)
 
 **广汽丰田：** 微信小程序搜同名
 **GAC Toyota:** Wechat MiniApp search with the same name
@@ -884,6 +717,14 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 **小米手环4自定义表盘软件：** [Android](https://www.coolapk.com/apk/tech.pingx.watchface)、[H5](http://watchface.pingx.tech/h5/)
 **Mi Band 4 custom dial software:** [Android](https://www.coolapk.com/apk/tech.pingx.watchface), [H5](http://watchface.pingx.tech/ h5/)
 
+### SaaS服务商
+
+**人人商城：** 客户众多的分销商城 [https://www.rrsc.cn/V5introduce.html](https://www.rrsc.cn/V5introduce.html)
+
+**即速应用：** 微信小程序搜索“即速应用商家版”
+
+**大商创：** 全渠道多用户商城解决方案。[官网](https://www.dscmall.cn)
+
 ### 游戏
 ### game
 
@@ -929,8 +770,7 @@ See also the topic of anti-epidemic projects in the early stage of the outbreak 
 **差旅管家：** 商旅管理系统，[Android](http://a.app.qq.com/o/simple.jsp?pkgname=com.ceekee.steward)、[iOS](https://itunes.apple.com/cn/app/%E5%B7%AE%E6%97%85%E7%AE%A1%E5%AE%B6-%E4%BC%81%E4%B8%9A%E5%95%86%E6%97%85%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/id1353696740?mt=8)
 **Travel Manager:** Business travel management system, [Android](http://a.app.qq.com/o/simple.jsp?pkgname=com.ceekee.steward), [iOS](https:/ /itunes.apple.com/cn/app/%E5%B7%AE%E6%97%85%E7%AE%A1%E5%AE%B6-%E4%BC%81%E4%B8%9A%E5 %95%86%E6%97%85%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/id1353696740?mt=8)
 
-**指掌短信：** App、小程序、电脑版，全平台发送短信（小程序搜“指掌短信”），**<span id="zhizhang" style="color:#42b983;cursor: pointer;">开发者致DCloud的感谢信</span>**。[App及H5的通用链接](//m3w.cn/__uni__7ffa4e9)
-** Zhizhang SMS:** App, MiniApp, computer version, all platforms to send SMS (MiniApp search "zhizhang SMS"), **<span id="zhizhang" style="color:#42b983;cursor: pointer;">Thank you letter from the developer to DCloud</span>**. [Universal link of App and H5](//m3w.cn/__uni__7ffa4e9)
+**指掌短信：** App、小程序、电脑版，全平台发送短信（小程序搜“指掌短信”），**<span id="zhizhang" style="color:#42b983;cursor: pointer;">开发者致DCloud的感谢信</span>**。[App及H5的通用链接](https://m3w.cn/__uni__7ffa4e9)
 
 **潮电共享充电宝：** 支付宝小程序搜索潮电共享充电宝
 **Chaodian Power Bank:** Alipay MiniApp to search for Chaodian Power Bank
@@ -993,6 +833,61 @@ href="https://user-images.githubusercontent.com/29654065/63156422-3cfdfc80-c047-
 **崇胜CMS：** 漫画、小说、音乐管理系统。[官网](https://www.chshcms.net/)
 **Chongsheng CMS:** Manga, novel, music management system. [Official Website](https://www.chshcms.net/)
 
+**闺蜜圈：** 一款跟好用的大姨妈记录 app。[官网](https://guimiquan.cn/)
+
+### 新冠抗疫专区案例
+
+uni-app助力数百家单位快速上线**抗疫系统**，开源众多项目。
+
+- 首都疫苗服务 [App](https://a.app.qq.com/o/simple.jsp?pkgname=io.dcloud.H5AC4580F)
+- 广东 粤核酸 微信小程序
+- 广东 粤健通 微信小程序
+- 广州市 穗康生活 微信小程序
+- 海南 海易办 微信小程序
+- 陕西一码通 微信小程序
+- 健康陕西公众服务 微信小程序
+- 健康西安公众服务 微信小程序
+- 河南疾控 微信小程序
+- 平顶山 鹰城官微 微信小程序
+- 开封市 汴易检 微信小程序
+- 三门峡市 灵宝一码通 微信小程序
+- 湖北健康码 微信小程序
+- 山西 晋快检 微信小程序
+- 云南省居民电子健康卡 微信小程序
+- 西双版纳 平安版纳 微信小程序
+- 黑龙江 健康龙江服务平台 微信小程序
+- 黑龙江 密山疫情防控 微信小程序
+- 贵州健康码 微信小程序
+- 贵州 黔康码 微信小程序
+- 河北新冠疫苗预约 懂苗服务 微信小程序
+- 蒙速办 微信小程序
+- 蒙健康 微信小程序
+- 包头市 鹿城健康服务 微信小程序
+- 江西 赣通码 微信小程序
+- 南昌 昌通码 微信小程序
+- 藏易通健康码 微信小程序
+- 江苏核酸检测信息系统 cydj.weiynet.cn
+- 扬州 扬城扫码通 微信小程序
+- 遵义市 实名登记码 微信小程序
+- 乐清市 乐行通 微信小程序
+- 南昌市 i南昌-官方 微信小程序
+- 鄂尔多斯健康宝 微信小程序
+- 新疆伊犁阿勒泰 满意雪都 微信小程序
+- 南宁市电子健康卡 微信小程序
+- 吕梁健康防疫核酸检测平台  微信小程序
+- 曲靖防疫出行 微信小程序
+- 镇江市通行码 镇合意 微信小程序
+- 灌南县 惠泽行 微信小程序
+- 新疆伊犁哈萨克自治州塔城地区 健康塔城 微信小程序
+- 喀什和易行 微信小程序
+- 巴州和易行 微信小程序
+- 绥化防疫 微信小程序
+- 青城医疗 微信小程序
+- 温州健康码扫码工具 微信小程序
+- 临沂 沂码通 微信小程序
+- 鞍山 易鞍码 微信小程序
+
+2020年新冠疫情爆发初期的抗疫项目专题另见：[xinguan2020.dcloud.net.cn](https://dcloud.io/ncp.html)
 
 <style>
 	.barcode-view {

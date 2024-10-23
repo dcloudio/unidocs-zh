@@ -121,6 +121,8 @@ If you select and upload non-image and video files, please refer to: [https://un
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|2.10.0+|x|x|√|x|x|√|
 
+<!-- UNIAPPAPIJSON.chooseMedia.compatibility -->
+
 **OBJECT 参数说明**
 **OBJECT parameter description**
 
@@ -337,7 +339,7 @@ export default {
 
 * 微信小程序在2023年10月17日之后，使用API需要配置[隐私协议](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)
 
-### uni.getVideoInfo(OBJECT)
+## uni.getVideoInfo(OBJECT)
 
 获取视频详细信息
 Get video details
@@ -426,6 +428,8 @@ Compressed video interface. Developers can specify the compression quality (qual
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |3.1.10+|x|2.11.0+|x|x|x|x|x|x|
 
+<!-- UNIAPPAPIJSON.compressVideo.compatibility -->
+
 App端有很多插件支持视频压缩，详见[插件市场](https://ext.dcloud.net.cn/search?q=%E8%A7%86%E9%A2%91%E5%8E%8B%E7%BC%A9)
 Many plug-ins are available on the App side that support video compression. See.[Plug-in market](https://ext.dcloud.net.cn/search?q=%E8%A7%86%E9%A2%91%E5%8E%8B%E7%BC%A9) for details
 
@@ -439,15 +443,10 @@ Many plug-ins are available on the App side that support video compression. See.
 | Attribute| Type| Defaults| Required| Instruction|
 |:-:				|:-:			|:-:		|:-:	|:-:																									|
 |src				|string		|				|是		|视频文件路径，可以是临时文件路径也可以是永久文件路径	|
-| src| string| | Yes| The video file path can be a temporary file path or a permanent file path.|
-|quality		|string		|				|是		|压缩质量																							|
-| quality| string| | Yes| Compression quality|
-|bitrate		|number		|				|是		|码率，单位 kbps																			|
-| bitrate| number| | Yes| bit rate, in kbps|
-|fps				|number		|				|是		|帧率																									|
-| fps| number| | Yes| Frame rate|
-|resolution	|number		|				|是		|相对于原视频的分辨率比例，取值范围(0, 1]							|
-| resolution| number| | Yes| Resolution ratio to the original video, with the value range of (0, 1]|
+|quality		|string		|'high'|否		|压缩质量																							|
+|bitrate		|number		|				|否		|码率，单位 kbps（仅 iOS 支持）																			|
+|fps				|number		|				|否		|帧率（仅 iOS 支持）																									|
+|resolution	|number		|				|否		|相对于原视频的分辨率比例，取值范围(0, 1]（仅 iOS 支持）							|
 |success		|function	|				|否		|接口调用成功的回调函数																|
 | success| function| | No| Callback function for successful interface calling|
 |fail				|function	|				|否		|接口调用失败的回调函数																|

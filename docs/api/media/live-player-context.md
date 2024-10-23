@@ -1,4 +1,4 @@
-### uni.createLivePlayerContext(livePlayerId, componentInstance)
+## uni.createLivePlayerContext(livePlayerId, componentInstance)
 创建 live-player 上下文 livePlayerContext 对象。注意是直播的播放而不是推流。
 
 **平台差异说明**
@@ -47,7 +47,7 @@ App平台的直播播放，不使用此API，而直接使用video的API。
 
 
 
-### uni.createLivePusherContext(livePusherId, componentInstance)
+## uni.createLivePusherContext(livePusherId, componentInstance)
 创建 live-pusher 上下文 livePusherContext 对象。
 
 **平台差异说明**
@@ -60,8 +60,8 @@ App平台的直播播放，不使用此API，而直接使用video的API。
 - app-nvue 平台 2.2.5以下，需要同时设置组件属性id和ref ``<live-pusher id="livepusher1" ref="livepusher1"></live-pusher>``，或者直接使用 ref，例如 ``this.$refs.livepusher1``
 - app-vue 平台，需要编写条件编译代码，使用 `plus.video.LivePusher`，[业务指南](https://ask.dcloud.net.cn/article/13416)、[规范文档](http://www.html5plus.org/doc/zh_cn/video.html#plus.video.LivePusher)
 
-#### livePusherContext
-#### start(OBJECT)
+### livePusherContext
+### start(OBJECT)
 > 开始推流
 
 |属性|类型|必填|说明|
@@ -70,7 +70,7 @@ App平台的直播播放，不使用此API，而直接使用video的API。
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-#### pause(OBJECT)
+### pause(OBJECT)
 > 暂停推流
 
 |属性|类型|必填|说明|
@@ -79,7 +79,7 @@ App平台的直播播放，不使用此API，而直接使用video的API。
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-#### resume(OBJECT)
+### resume(OBJECT)
 > 恢复推流
 
 |属性|类型|必填|说明|
@@ -89,7 +89,7 @@ App平台的直播播放，不使用此API，而直接使用video的API。
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
 
-#### stop(OBJECT)
+### stop(OBJECT)
 > 停止推流
 
 |属性|类型|必填|说明|
@@ -98,7 +98,7 @@ App平台的直播播放，不使用此API，而直接使用video的API。
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-#### switchCamera(OBJECT)
+### switchCamera(OBJECT)
 > 切换前后摄像头
 
 |属性|类型|必填|说明|
@@ -107,7 +107,7 @@ App平台的直播播放，不使用此API，而直接使用video的API。
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-#### snapshot(OBJECT)
+### snapshot(OBJECT)
 > 快照
 
 |属性|类型|必填|说明|
@@ -116,7 +116,7 @@ App平台的直播播放，不使用此API，而直接使用video的API。
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-#### startPreview(OBJECT)
+### startPreview(OBJECT)
 > 开启摄像头预览
 
 |属性|类型|必填|说明|
@@ -125,7 +125,7 @@ App平台的直播播放，不使用此API，而直接使用video的API。
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-#### stopPreview(OBJECT)
+### stopPreview(OBJECT)
 > 关闭摄像头预览
 
 |属性|类型|必填|说明|

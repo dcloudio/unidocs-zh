@@ -139,7 +139,9 @@ uni.getLocation({
   - 持续定位方案：iOS端可以申请持续定位权限，[参考](https://ask.dcloud.net.cn/article/12569)。Android如果进程被杀，代码无法执行，可以在插件市场搜索[保活](https://ext.dcloud.net.cn/search?q=%E4%BF%9D%E6%B4%BB&cat1=5)相关原生语言插件避免App被系统杀死。即使使用了原生语言插件保活，也很容易被杀，此时可以使用[unipush](https://uniapp.dcloud.net.cn/unipush-v2.html) ，通过推送消息提示用户激活App
   - `3.3.0 版本以上` 优化系统定位模块，可不使用三方定位SDK的进行高精度定位，具体参考：[系统定位](/app/geolocation)。
   - 鸿蒙系统 不支持系统定位，需要配置三方sdk，比如高德，同时设置坐标系参数为 `type: 'gcj02'`
-  - 如需使用腾讯定位sdk，可下载[腾讯定位插件](https://ext.dcloud.net.cn/plugin?id=14569)，在插件中配置key打包后生效，腾讯定位是[ext api插件](../../api/extapi.md)引用到工程后，会覆盖uni.getLocation的实现，替换掉系统定位。
+  - Android/iOS平台使用腾讯定位SDK需到 [腾讯位置服务](https://lbs.qq.com/) 官网申请应用Key并配置：  
+    + `4.31 版本及以上` HBuilderX内置支持腾讯定位，在manifest.json勾选配置，详情参考[Geolocation定位](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html)  
+    + `4.31 版本之前` 可下载[腾讯定位插件](https://ext.dcloud.net.cn/plugin?id=14569)，在插件中配置key打包后生效，腾讯定位是[ext api插件](../../api/extapi.md)引用到工程后，会覆盖uni.getLocation的实现，替换掉系统定位。
 - `小程序平台`
 - `MiniApp Platform`
   - api默认不返回详细地址中文描述。需要中文地址有2种方式：1、使用高德地图小程序sdk，在app和微信上都可以获得中文地址，[参考](http://ask.dcloud.net.cn/article/35070)。2、只考虑app，使用``plus.geolocation``也可以获取中文地址。manifest里的App SDK配置仅用于app，小程序无需在这里配置。
@@ -147,9 +149,9 @@ uni.getLocation({
   - 可以通过用户授权API来判断用户是否给应用授予定位权限，[详见](https://uniapp.dcloud.io/api/other/authorize)
   - The user authorization API can be used to determine whether the user has granted the application location permission, [see details](https://uniapp.dcloud.io/api/other/authorize)
   - 在 `微信小程序` 中，当用户离开应用后，此接口无法调用，需要申请 [后台持续定位权限](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html) ，另外新版本中需要使用 [wx.onLocationChange](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html) 监听位置信息变化；当用户点击“显示在聊天顶部”时，此接口可继续调用。
-  - In the `WeChat MiniApp Program`, when the user leaves the app, this interface cannot be called, and you need to apply for [Background continuous positioning permission](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability /authorize.html), and in the new version, you need to use [wx.onLocationChange]( <a href="https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html">https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html</a> ) to monitor location information changes; when This interface can continue to be called when the user clicks "Show on top of chat".
+- `HarmonyOS Next平台`调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`，需自行在项目中配置权限。
 
-### uni.chooseLocation(OBJECT)
+## uni.chooseLocation(OBJECT)
 打开地图选择位置。
 Open the map to select a location.
 
@@ -188,13 +190,42 @@ Web平台和App平台，本API之前调用了腾讯地图的gcj02坐标免费，
 |longitude|Number|否|目标地经度|微信小程序（2.9.0+）、H5-Vue3（3.2.10+）|
 |longitude|Number|No|Destination longitude|WeChat MiniApp(2.9.0+), H5-Vue3 (3.2.10+)|
 |keyword|String|否|搜索关键字，仅App平台支持||
-|keyword|String|No|Search keywords, only supported by App platform||
+|useSecureNetwork|Boolea|否|是否通过安全网络调用地点搜索、逆地址解析，默认false||
 |success|Function|是|接口调用成功的回调函数，返回内容详见返回参数说明。||
 |success|Function| is the callback function for the successful call of the interface. For details, please refer to the return parameter description. ||
 |fail|Function|否|接口调用失败的回调函数（获取定位失败、用户取消等情况下触发）||
 |fail|Function|No|The callback function of the failed API call (triggered when the location fails to be acquired, the user cancels, etc.)||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
 |complete|Function|No|The callback function of the end of the interface call (the call will be executed if the call succeeds or fails)||
+
+**腾讯地图服务商说明**
+
+出于安全考虑，安卓、iOS端manifest.json内配置的key仅用来展示地图，uni.chooseLocation所依赖的地点搜索、逆地址解析功能需要通过uniCloud云对象[uni-map-co](https://ext.dcloud.net.cn/plugin?id=13872)来调用，开发者可以通过安全网络来保障服务端api不被他人盗用。
+
+鸿蒙平台由于暂不支持安全网络，所以chooseLocation依然使用manifest.json内配置的key来调用地点搜索、逆地址解析。
+
+默认情况下，uni.chooseLocation不会使用安全网络请求uni-map-co。如果需要使用安全网络请求uni-map-co，需按如下步骤操作：
+
+1. 项目关联uniCloud服务空间
+2. 参考[uni-map-co](https://ext.dcloud.net.cn/plugin?id=13872)文档导入uni-map-common插件，并配置好地图的key。
+3. 参考[安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)文档，将应用关联到服务空间。
+4. 在项目manifest.json中`安卓/iOS模块配置`中勾选安全网络模块。
+5. 修改uni-map-co入口文件`index.obj.js`内添加如下代码，拦截非法请求：
+
+  ```javascript
+  module.exports = {
+    _before: function() {
+      const clientInfo = this.getClientInfo()
+      const methodName = this.getMethodName()
+      const secretType = clientInfo.secretType
+      if(methodName === 'chooseLocation' && secretType !== 'both' && secretType !== 'request') {
+        throw new Error('Unauthorized client')
+      }
+    }
+  }
+  ```
+6. 上传uni-map-co云对象、uni-config-center公共模块、uni-map-common公共模块。
+7. 调用uni.chooseLocation时，将useSecureNetwork设置为true。
 
 **注意**
 **Notice**
@@ -248,8 +279,7 @@ uni.chooseLocation({
 - 若 `Android App端` 位置不准，见上文 uni.getLocation 的注意事项
 - 微信小程序在2023年10月17日之后，使用API需要配置[隐私协议](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)
 
-### 三方定位和地图服务收费说明
-### Three-party positioning and map service fee description
+## 三方定位和地图服务收费说明
 
 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 
@@ -257,7 +287,7 @@ DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授�
 
 详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)
 
-### unicloud-city-select 城市选择组件
+## unicloud-city-select 城市选择组件
 
 若想要实现城市选择功能，可以使用 `unicloud-city-select` 城市选择组件。
 
@@ -268,3 +298,7 @@ DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授�
 > 下载地址：[https://ext.dcloud.net.cn/plugin?name=unicloud-city-select](https://ext.dcloud.net.cn/plugin?name=unicloud-city-select)
 
 > 文档地址：[https://doc.dcloud.net.cn/uniCloud/unicloud-city-select.html](https://doc.dcloud.net.cn/uniCloud/unicloud-city-select.html)
+
+## 【福利】高德拉新活动
+
+一键注册高德企业开发者，最高可获取210元奖励金，详见[https://ask.dcloud.net.cn/article/41279](https://ask.dcloud.net.cn/article/41279)

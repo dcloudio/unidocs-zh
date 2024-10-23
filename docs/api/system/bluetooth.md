@@ -5,7 +5,7 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|x|√|√|x|x|√|x|x|√|
 
-### uni.openBluetoothAdapter(OBJECT)
+## uni.openBluetoothAdapter(OBJECT)
 
 初始化蓝牙模块
 Initialize the Bluetooth module
@@ -23,8 +23,7 @@ Initialize the Bluetooth module
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| function| | No| Callback function for closed interface calling (available both for successful and failed calling)|
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|
@@ -81,7 +80,7 @@ uni.openBluetoothAdapter({
 })
 ```
 
-### uni.startBluetoothDevicesDiscovery(OBJECT)
+## uni.startBluetoothDevicesDiscovery(OBJECT)
 
 开始搜寻附近的蓝牙外围设备。**此操作比较耗费系统资源，请在搜索并连接到设备后调用 [`uni.stopBluetoothDevicesDiscovery`](/api/system/bluetooth?id=stopbluetoothdevicesdiscovery) 方法停止搜索。**
 Start to search for nearby Bluetooth peripherals. **Such an operation consumes system resources. Please call the [`uni.stopBluetoothDevicesDiscovery`](/api/system/bluetooth?id=stopbluetoothdevicesdiscovery) method to stop searching after searching and connecting to the device.**
@@ -110,8 +109,7 @@ Start to search for nearby Bluetooth peripherals. **Such an operation consumes s
 
 
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|
@@ -167,7 +165,7 @@ uni.startBluetoothDevicesDiscovery({
 })
 ```
 
-### uni.onBluetoothDeviceFound(CALLBACK)
+## uni.onBluetoothDeviceFound(CALLBACK)
 
 监听寻找到新设备的事件
 listen to the event of finding a new device
@@ -230,7 +228,7 @@ uni.onBluetoothDeviceFound(function (devices) {
 })
 ```
 
-### uni.stopBluetoothDevicesDiscovery(OBJECT)
+## uni.stopBluetoothDevicesDiscovery(OBJECT)
 
 停止搜寻附近的蓝牙外围设备。若已经找到需要的蓝牙设备并不需要继续搜索时，建议调用该接口停止蓝牙搜索。
 Stop searching for nearby Bluetooth peripherals. If the required Bluetooth device that has been found needn't to continue searching, it is recommended to call this interface to stop Bluetooth searching.
@@ -248,8 +246,7 @@ Stop searching for nearby Bluetooth peripherals. If the required Bluetooth devic
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| function| | No| Callback function for closed interface calling (available both for successful and failed calling)|
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|
@@ -297,7 +294,7 @@ uni.stopBluetoothDevicesDiscovery({
 })
 ```
 
-### uni.onBluetoothAdapterStateChange(CALLBACK)
+## uni.onBluetoothAdapterStateChange(CALLBACK)
 
 监听蓝牙适配器状态变化事件
 listen to Bluetooth adapter status change events
@@ -322,7 +319,7 @@ uni.onBluetoothAdapterStateChange(function (res) {
 })
 ```
 
-### uni.getConnectedBluetoothDevices(OBJECT)
+## uni.getConnectedBluetoothDevices(OBJECT)
 
 根据 uuid 获取处于已连接状态的设备。
 Obtain the devices with connected status according to uuid.
@@ -362,8 +359,7 @@ Obtain the devices with connected status according to uuid.
 |deviceId|string|用于区分设备的 id|
 | deviceId| string| Id used to distinguish the devices|
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|
@@ -409,7 +405,7 @@ uni.getConnectedBluetoothDevices({
 })
 ```
 
-### uni.getBluetoothDevices(OBJECT)
+## uni.getBluetoothDevices(OBJECT)
 
 获取在蓝牙模块生效期间所有已发现的蓝牙设备。包括已经和本机处于连接状态的设备。
 Get all discovered Bluetooth devices during the Bluetooth module's effective period. Devices that are already connected to the local PC are included.
@@ -458,8 +454,7 @@ Get all discovered Bluetooth devices during the Bluetooth module's effective per
 | serviceData| Object| ServiceData data segment in broadcast data segment of the current Bluetooth device|
 
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|
@@ -524,7 +519,7 @@ uni.getBluetoothDevices({
 *   蓝牙设备在被搜索到时，系统返回的 name 字段一般为广播包中的 LocalName 字段中的设备名称，而如果与蓝牙设备建立连接，系统返回的 name 字段会改为从蓝牙设备上获取到的 `GattName`。若需要动态改变设备名称并展示，建议使用 `localName` 字段。
 * When a Bluetooth device is searched, the name field returned by the system is usually the device name in the LocalName field in the broadcast packet. However, if a connection is established with the Bluetooth device, the name field returned by the system will be changed to `GattName` obtained from the Bluetooth device. If the device name needs to be dynamically changed and displayed, the `localName` field is recommended.
 
-### uni.getBluetoothAdapterState(OBJECT)
+## uni.getBluetoothAdapterState(OBJECT)
 
 获取本机蓝牙适配器状态。
 Obtain the local Bluetooth adapter status.
@@ -553,8 +548,7 @@ Obtain the local Bluetooth adapter status.
 |available|boolean|蓝牙适配器是否可用|
 | available| boolean| Is the Bluetooth adapter available?|
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|
@@ -601,7 +595,7 @@ uni.getBluetoothAdapterState({
 })
 ```
 
-### uni.closeBluetoothAdapter(OBJECT)
+## uni.closeBluetoothAdapter(OBJECT)
 
 关闭蓝牙模块。调用该方法将断开所有已建立的连接并释放系统资源。建议在使用蓝牙流程后，与 [`uni.openBluetoothAdapter`](/api/system/bluetooth?id=openbluetoothadapter) 成对调用。
 Disable the Bluetooth module. Calling this method will disconnect all established connections and release the system resources. It is recommended to call in pairs with [`uni.openBluetoothAdapter`](/api/system/bluetooth?id=openbluetoothadapter) after using the Bluetooth process.
@@ -619,8 +613,7 @@ Disable the Bluetooth module. Calling this method will disconnect all establishe
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| function| | No| Callback function for closed interface calling (available both for successful and failed calling)|
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|

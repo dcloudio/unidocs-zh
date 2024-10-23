@@ -1,9 +1,9 @@
 # Geolocation定位
 
-定位模块封装了OS自带的`系统定位`，及市场上主流的三方定位SDK，如`高德定位`、`百度定位`等。并提供统一的JS API调用定位能力。
+定位模块封装了OS自带的`系统定位`，及市场上主流的三方定位SDK，如`高德定位`、`腾讯定位`等。并提供统一的JS API调用定位能力。
 
 ::: warning 注意
-三方定位（高德、百度、腾讯、谷歌）是商业收费服务，需获取授权，注意避免侵权。[详见](#lic)
+三方定位（高德、腾讯、谷歌等）是商业收费服务，需获取授权，注意避免侵权。[详见](#lic)
 :::
 
 |项目类型|API|
@@ -13,7 +13,7 @@
 |5+ App/Wap2App|[plus.geolocation.*](https://www.html5plus.org/doc/zh_cn/geolocation.html)
 
 使用定位功能需在项目manifest.json的“App模块配置”中勾选“Geolocation(定位)”，并根据项目实际需求勾选使用的三方定位SDK：
-![](https://native-res.dcloud.net.cn/images/uniapp/geolocation/modules.png)
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/app-geolocation-modules.png)
 
 
 
@@ -23,7 +23,7 @@
 > HBuilderX3.2.16 began to separate out the "system location" module
 
 使用`系统定位`需在“App模块配置”项的“Geolocation(定位)”下，勾选“系统定位”：
-![](https://native-res.dcloud.net.cn/images/uniapp/geolocation/system.png)
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/app-geolocation-system.png)
 
 `系统定位`调用设备的操作系统提供的定位服务，只支持wgs84坐标系，不同设备对定位功能支持的情况有所差异。
 `System positioning` calls the positioning service provided by the operating system of the device, which only supports the wgs84 coordinate system. Different devices support different positioning functions.
@@ -61,8 +61,7 @@ Only latitude and longitude information can be obtained, and address information
 
 **注意**
 - 由于设备厂商适配的原因，在部分Android设备上定位服务可能不稳定，如需提升定位功能的稳定性建议使用`高德定位`或`腾讯定位`
-- 本地离线打包参考[Android平台系统定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e7%b3%bb%e7%bb%9f%e5%ae%9a%e4%bd%8d)、[iOS平台百度定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e7%b3%bb%e7%bb%9f%e5%ae%9a%e4%bd%8d)
-- Local offline packaging reference [Android platform system positioning module configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e7%b3%bb%e7%bb%9f%e5 %ae%9a%e4%bd%8d), [iOS platform Baidu positioning module configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e7%b3%bb% e7%bb%9f%e5%ae%9a%e4%bd%8d)
+- 本地离线打包参考[Android平台系统定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e7%b3%bb%e7%bb%9f%e5%ae%9a%e4%bd%8d)、[iOS平台系统定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e7%b3%bb%e7%bb%9f%e5%ae%9a%e4%bd%8d)
 
 
 
@@ -72,7 +71,7 @@ Only latitude and longitude information can be obtained, and address information
 > You need to apply for business authorization from AutoNavi, refer to: [Commercial authorization instructions](app-geolocation?id=business), you need to log in to the [AutoNavi Open Platform](https://lbs.amap.com/) to create Application Application Key
 
 使用`高德定位`需在“App模块配置”项的“Geolocation(定位)”下，勾选“高德定位”：
-![](https://native-res.dcloud.net.cn/images/uniapp/geolocation/amap.png)
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/app-geolocation-amp.png)
 
 #### 参数说明
 - 高德用户名
@@ -93,31 +92,29 @@ Only latitude and longitude information can be obtained, and address information
 
 #### 高德开放平台用户名@amapName
 登录 [高德开放平台](https://lbs.amap.com/)，进入“控制台”，在“账号信息”的“基本信息”中可获取“用户名”：
+
 ![](https://native-res.dcloud.net.cn/images/uniapp/maps/amap_name.png)
 
 
-### 百度定位@baidu
 
-> 需要向百度申请商业授权，参考:[商业授权相关说明](app-geolocation?id=business)，使用前需登录 [百度地图开放平台](https://lbsyun.baidu.com/) 创建应用申请访问应用密钥（AK）
-> You need to apply for business authorization from Baidu, please refer to: [Commercial authorization instructions](app-geolocation?id=business), you need to log in to [Baidu Map Open Platform](https://lbsyun.baidu.com/) to create an application before use Request an Access Application Key (AK)
+### 腾讯定位@tencent
 
-使用`高德定位`需在“App模块配置”项的“Geolocation(定位)”下，勾选“高德定位”：
-![](https://native-res.dcloud.net.cn/images/uniapp/geolocation/baidu.png)
+> HBuilderX4.31 新增支持 `腾讯定位`  
+> 需要向腾讯申请商业授权，参考:[商业授权相关说明](app-geolocation?id=business)，使用前需登录 [腾讯位置服务官网](https://lbs.qq.com/) 创建应用申请Key
+
+使用`腾讯定位`需在“安卓/iOS模块配置”项的“Geolocation(定位)”下，勾选“腾讯定位”：
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/app-geolocation-tencent.png)
 
 #### 参数说明
-- appkey_android
-[百度地图开放平台](https://lbsyun.baidu.com/)为Android平台申请的访问应用密钥
-- appkey_ios
-[百度地图开放平台](https://lbsyun.baidu.com/)为iOS平台申请的访问应用密钥
-[Baidu Map Open Platform](https://lbsyun.baidu.com/) Access application key applied for the iOS platform
+- apikey_android
+[腾讯位置服务官网](https://lbs.qq.com/)为Android平台申请的Key
+- apikey_ios
+[腾讯位置服务官网](https://lbs.qq.com/)为iOS平台申请的Key
 
 **注意**
--调用百度定位SDK提供的定位服务，仅支持gcj02/bd09/bd09ll坐标系，支持解析地址信息。
-- Calling the positioning service provided by Baidu Positioning SDK, only supports gcj02/bd09/bd09ll coordinate system, and supports parsing address information.
+- 调用腾讯定位SDK提供的定位服务，仅支持gcj02坐标系，支持解析地址信息。
 - 配置后需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
-- After configuration, the cloud package must be submitted to take effect. Please use the [custom debugging base] when the real machine is running (https://ask.dcloud.net.cn/article/35115)
-- 本地离线打包参考[Android平台百度定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e7%99%be%e5%ba%a6%e5%ae%9a%e4%bd%8d)、[iOS平台百度定位模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e7%99%be%e5%ba%a6%e5%ae%9a%e4%bd%8d)
-- Local offline packaging reference [Android platform Baidu positioning module configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/geolocation?id=%e7%99%be%e5%ba%a6%e5 %ae%9a%e4%bd%8d), [iOS platform Baidu positioning module configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/geolocation?id=%e7%99%be% e5%ba%a6%e5%ae%9a%e4%bd%8d)
+
 
 
 <a id="business"/>
@@ -125,7 +122,7 @@ Only latitude and longitude information can be obtained, and address information
 ### 商业授权相关说明@lic
 
 #### 国内用户
-2021年起，高德、百度、腾讯等地图服务商开始商业授权。
+2021年起，高德、腾讯、百度等地图服务商开始商业授权。
 
 授权费用：5万元/年。
 

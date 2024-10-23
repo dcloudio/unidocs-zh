@@ -17,14 +17,17 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持通过 Gr
 
 ## 环境配置
 
-> 下载插件后打开 HBuilderX 到 【设置 - 插件配置】：如图
+> 下载插件后打开 HBuilderX 到 【设置 - 插件配置】（HBuilderX 4.27之前）：如图
 
 ![image](https://web-ext-storage.dcloud.net.cn/hx/uts-android-2.png)
 
-#### 上面的截图展示了以下配置：
-#### The screenshot above shows the following configuration:
+> HBuilderX 4.27+ 配置迁移到 【设置 - 运行配置】：如图
 
-##### 配置 Gradle
+![image](https://web-ext-storage.dcloud.net.cn/hx/uts-android-4.png)
+
+### 上面的截图展示了以下配置：
+
+#### 配置 Gradle
 
 1. 点击图标 1 的下载地址进入下载页面。如图所示，点击红圈部分下载工具包。
 
@@ -37,9 +40,9 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持通过 Gr
 - 内置的下载模板中 Android Gradle Plugin 使用的最低版本为 7.4.0，所以Gradle 最低版本要求7.5及以上。
 - mac 为`%解压路径%/bin/gradle`；window 为`%解压路径%\bin\gradle.bat`。
 
-##### 配置 Gradle JDK
+#### 配置 Gradle JDK
 
-- 不同版本 Gradle 依赖不同版本的 JDK 。HbuilderX 内置的 JDK 为 11，仅支持 Gradle8.0 以下。如配置 Gradle 为 8.0 及以上版本需要手动下载并配置 JDK 路径。配置方式如下
+- 不同版本 Gradle 依赖不同版本的 JDK 。HbuilderX 4.27之前 内置的 JDK 为 11，HBuilderX 4.27+ 内置的 JDK 为 17。Gradle8.0 以上，JDK 最低要求为17。请根据HbuilderX实际版本手动下载并配置 JDK 路径。配置方式如下
 
 1. 点击图标 3 的下载地址进入下载页面，选择所需要的版本。（如本地已安装 JDK 可跳过此步骤）
 
@@ -50,11 +53,11 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持通过 Gr
 - HBuilderX 4.02+支持此配置项
 - Gradle8.0 最低要求 JDK 版本为 17。更多版本要求[参考文档](https://developer.android.google.cn/build/releases/past-releases?hl=zh-cn)
 
-##### 配置 SDK
+#### 配置 SDK
 
 点击图标 5 的下载地址进入安卓官网，提供如下两种形式。
 
-###### ◇ 下载 Android Studio
+##### ◇ 下载 Android Studio
 
 1. 如图所示，根据平台下载 Android Studio
 
@@ -66,7 +69,7 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持通过 Gr
 
 - 默认路径 mac 为`/Users/用户名/Library/Android/sdk`；window 为`C:\Users\用户名\AppData\Local\Android\Sdk`
 
-###### ◇ 如不需要安装 Android Studio 可通过下载 Command line tools only
+##### ◇ 如不需要安装 Android Studio 可通过下载 Command line tools only
 
 1. 如图所示，根据平台下载 Command line tools only。
 
@@ -88,7 +91,7 @@ sdkmanager --sdk_root=%sdk路径% --install "platforms;android-30"
 
 - 下载 Android Studio 和下载 Command line tools only 选择一种形式下载 sdk 即可。
 
-##### 配置示例
+#### 配置示例
 
 mac系统配置后如下图（根据本地目录结构有所不同）
 ![image](https://web-ext-storage.dcloud.net.cn/hx/uts-android-1.png)
@@ -103,3 +106,7 @@ win系统配置后如下图（根据本地目录结构有所不同）
 - 如果环境已存在可以直接设置本地的工具包路径
 - 此插件依赖 sdk 目录下 build-tools 版本不低于 30.0.0
 - 此插件依赖 sdk 目录下 platforms 版本不低于 android-30
+
+## 特别注意
+
+> 项目依赖的三方仓储下载完成后会生成缓存，缓存如果有效，下次运行将直接跳过配置检测和下载过程。如需要缓存主动失效可清理gradle的缓存目录，正常存放于`用户目录/.gradle/caches`。

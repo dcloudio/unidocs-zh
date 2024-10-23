@@ -1,6 +1,6 @@
-### uni.requestSubscribeMessage(Object object)
+## uni.requestSubscribeMessage(Object object)
 
- 
+
 **平台差异说明**
 **Platform Difference Description**
 

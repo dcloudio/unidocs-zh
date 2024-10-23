@@ -334,9 +334,4 @@ Inside DCloud, uni-app and HBuilderX are different teams.
 * vscode等其他开发工具，在vue或uni-app领域，开发效率比不过HBuilderX。详见：[https://ask.dcloud.net.cn/article/35451](https://ask.dcloud.net.cn/article/35451)
 * Other development tools such as vscode, in the field of vue or uni-app, the development efficiency is not as good as HBuilderX. For details, see: [https://ask.dcloud.net.cn/article/35451](https://ask.dcloud.net.cn/article/35451)
 * 发布App时，仍然需要使用HBuilderX。其他开发工具无法发布App，但可以发布H5、各种小程序。如需开发App，可以先在HBuilderX里运行起来，然后在其他编辑器里修改保存代码，代码修改后会自动同步到手机基座。
-* You still need to use HBuilderX when publishing your app. Other development tools cannot publish apps, but they can publish H5 and various small programs. If you need to develop an App, you can run it in HBuilderX first, and then modify and save the code in other editors. After the code is modified, it will be automatically synchronized to the mobile phone base.
-* 如果使用``cli``创建项目，HBuilderX插件列表中的uni-app编译器可以不安装
-* If you use ``cli`` to create a project, the uni-app compiler in the HBuilderX plugin list can not be installed
-* 对 `cli` 使用有疑问，欢迎扫码加入 uni-app 微信交流群讨论：
-* If you have any questions about the use of `cli`, please scan the code to join the uni-app WeChat exchange group discussion:
-    <br/><img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/wx-barcode.png" width="250"/>
+* 如果使用`cli`创建项目，HBuilderX插件列表中的uni-app编译器可以不安装

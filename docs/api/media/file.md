@@ -21,6 +21,8 @@ This API is mainly used to select non-media files. For media files, there are th
 |x|√`(HBuilder X2.9.9+)`|x`(可使用wx.chooseMessageFile)`|x|x|x|x|x|x|
 |x|√`(HBuilder X2.9.9+)`|x`(wx.chooseMessageFile can be used)`|x|x|x|x|x|x|
 
+<!-- UNIAPPAPIJSON.chooseFile.compatibility -->
+
 - App端如需选择非媒体文件，可在插件市场搜索[文件选择](https://ext.dcloud.net.cn/search?q=文件选择)，其中Android端可以使用Native.js，无需原生插件，而iOS端需要原生插件。
 - If you need to select non-media files on the App side, you can search for [File Selection] in the plugin market (https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9 %80%89%E6%8B%A9), in which Native.js can be used on the Android side without native plugins, while the iOS side requires native plugins.
 - App端如果想选择下载到`_doc`、`_downloads`、`_documents`等plus.io控制的目录下的文件，可通过[plus.io Api](https://www.html5plus.org/doc/zh_cn/io.html)，自己做选择框。
@@ -144,5 +146,3 @@ Select a file from a WeChat chat session.
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√`(基础库2.5.0+)`|x|x|x|√`(基础库1.18.0+)`|x|x|
-|x|x|√`(base library 2.5.0+)`|x|x|x|√`(base library 1.18.0+)`|x|x|
-

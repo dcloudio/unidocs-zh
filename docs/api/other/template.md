@@ -1,4 +1,4 @@
-### addTemplate
+## addTemplate
 
 组合模板并添加至帐号下的个人模板库。
 Combine templates and add to your personal template gallery under your account.
@@ -74,12 +74,12 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/templateadd?access_tok
     "errmsg": "ok",
     /* "template_id": "wDYzYZVxobJivW9oMpSCpuvACOfJXQIoKUm0PY397Tc" //微信小程序 */
     "data": { // 百度小程序
-        "template_id": "f34178cd598201d9dc8d5c88cd87b44cf7cd0e62NwmP" 
+        "template_id": "f34178cd598201d9dc8d5c88cd87b44cf7cd0e62NwmP"
     }
 }
 ```
 
-### deleteTemplate
+## deleteTemplate
 
 删除帐号下的某个模板。
 Delete a template under the account.
@@ -105,8 +105,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/templatedel?access_tok
 **Request Parameters**
 
 | 属性 | 类型 |必填 | 说明 |
-| Attribute | Type | Required | Description |
-| --- | --- | --- | --- | 
+| --- | --- | --- | --- |
 | access_token | string| 是 |接口调用凭证，微信小程序参考 [getAccessToken](https://developers.weixin.qq.com/miniprogram/dev/api/getAccessToken.html)，百度小程序参考[verify](https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#verify/)|
 | access_token | string| Yes | API call credentials, WeChat applet reference [getAccessToken](https://developers.weixin.qq.com/miniprogram/dev/api/getAccessToken.html), Baidu applet reference [verify]( https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#verify/)|
 | template_id | string | 是 | 要删除的模板id |
@@ -149,7 +148,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/templatedel?access_tok
 ```
 
 
-### getTemplateLibraryById
+## getTemplateLibraryById
 
 获取模板库某个模板标题下关键词库。
 Get the keyword library under a template title of the template library.
@@ -286,7 +285,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/libraryget?access_toke
 }
 ```
 
-### getTemplateLibraryList
+## getTemplateLibraryList
 
 获取APP模板库标题列表
 Get the list of APP template library titles
@@ -402,7 +401,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/librarylist?access_tok
 }
 ```
 
-### getTemplateList
+## getTemplateList
 
 获取帐号下已存在的模板列表。
 Get a list of templates that already exist under the account.
@@ -528,7 +527,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/templatelist?access_to
 }
 ```
 
-### sendTemplateMessage
+## sendTemplateMessage
 
 发送模板消息
 Send template message
@@ -706,7 +705,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/templatedel?access_tok
 }
 ```
 
-### alipay.open.app.mini.templatemessage.send
+## alipay.open.app.mini.templatemessage.send
 
 小程序通过 openapi 给用户触达消息，主要为支付后的触达（通过消费id）和用户提交表单后的触达（通过formId）。
 The applet sends messages to users through openapi, mainly after payment (through consumption id) and after the user submits the form (through formId).
@@ -748,6 +747,4 @@ https://openapi.alipay.com/gateway.do
 |version	|String		|是		|调用的接口版本，固定为：1.0|1.0																										|
 |version |String |yes |The version of the interface called, fixed as: 1.0|1.0 |
 |app_auth_token|String	|否	|详见[应用授权概述](https://doc.open.alipay.com/doc2/detail.htm?treeId=216&articleId=105193&docType=1)|&nbsp;|
-|app_auth_token|String |No |See [App Authorization Overview](https://doc.open.alipay.com/doc2/detail.htm?treeId=216&articleId=105193&docType=1)|&nbsp;|
 |biz_content|String	|是		|请求参数的集合，最大长度不限，除公共参数外所有请求参数都必须放在这个参数中传递，具体参照各产品快速接入文档	|&nbsp;|
-|biz_content|String |Yes |A collection of request parameters, the maximum length is unlimited. All request parameters except public parameters must be passed in this parameter. For details, please refer to the quick access documentation of each product |&nbsp;|

@@ -74,3 +74,52 @@ After the Android emulator is started, HBuilderX will recognize it as an Android
 The effect of running the app project to the android emulator is as follows:
 
 <img src="https://hx.dcloud.net.cn/static/snapshots/app/Android-emulator-start.jpg" style="zoom: 50%" />
+
+## 鸿蒙模拟器@harmony
+
+安装鸿蒙模拟器，需要先安装[DevEco-Studio](https://developer.huawei.com/consumer/cn/deveco-developer-suite/enabling/kit?currentPage=1&pageSize=100)；
+
+**Windows系统如使用模拟器则需要开启以下功能**
+
+打开控制面板 - 程序与功能 - 开启以下功能
+
+1. Hyper-V
+2. Windows 虚拟机监控程序平台
+3. 虚拟机平台
+
+注意: 需要win10专业版或win11专业版才能开启以上功能，家庭版需先升级成专业版或企业版
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085210915b1knhu7l3u8.png)
+
+### 运行App到鸿蒙模拟器@run-app-harmony-emulato
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085379828ap3pkhhfmig.png)
+
+如果没有登录华为账号，此时需要先登录，登录成功后看到如下页面
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200854641084hsm583p5jo.png)
+
+选择模拟器型号，选第一个即可
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200855617759sfquhr1j0o.png)
+
+安装完模拟器后，点击启动按钮启动模拟器
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200856058101582lbghgf8.png)
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085712493il2ep17ldg8.png)
+
+启动模拟器成功后，如果提示需要先签名（配置签名需要先启动模拟器后才能配置）
+
+点击 DevEco-Studio 上方菜单 File - Project Structure... 
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720087126462d9133uo0hmg.png)
+
+在弹出的窗体中选择 Project - Signing Configs 并打钩 Automatically generate signature，即可自动生成签名
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200873385940vk5oj9ihk.png)
+
+最后依次点击 `Apply` 和 `OK` 使签名生效
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720259265552t0m33hs637.png)
+

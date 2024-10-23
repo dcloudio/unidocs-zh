@@ -43,19 +43,17 @@
   * [uni一键登录](univerify.md)
   * [uni实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
   * [uni-push统一推送](unipush.md)
-  * [uni-push](unipush.md)
-	* [uni-push1.0](unipush-v1.md)
-	* [uni-push2.0](unipush-v2.md)
-		* [业务文档](unipush-v2.md)
-		* [Business documents](unipush-v2.md)
-		* 开发文档
-			* [uni-app客户端api](https://uniapp.dcloud.net.cn/api/plugins/push.html)
-			* [uni-app x客户端api](https://doc.dcloud.net.cn/uni-app-x/api/push.html)
-			* [服务端api](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/api.html)
-		* [uni-push2.0、uni-id、uni统计的组合](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/mate.html)
+  * [uni-push1.0](unipush-v1.md)
+  * [uni-push2.0](unipush-v2.md)
+    * [业务文档](unipush-v2.md)
+    * 开发文档
+      * [uni-app客户端api](https://uniapp.dcloud.net.cn/api/plugins/push.html)
+      * [uni-app x客户端api](https://doc.dcloud.net.cn/uni-app-x/api/push.html)
+      * [服务端api](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/api.html)
+    * [uni-push2.0、uni-id、uni统计的组合](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/mate.html)
   * [uni统计](uni-stat.md)
     * [uni统计2.0](uni-stat-v2.md)
-	* [uni统计1.0](uni-stat-v1.md)`
+    * [uni统计1.0](uni-stat-v1.md)`
   * [uni加固](/tutorial/app-security.md)
   * [uni隐私合规检测](/tutorial/app-privacy-detect.md)
   * [地图商业授权](/tutorial/app-geolocation.md?id=lic)

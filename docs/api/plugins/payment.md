@@ -1,4 +1,4 @@
-# uni.requestPayment(OBJECT)
+## uni.requestPayment(OBJECT)
 支付
 pay
 

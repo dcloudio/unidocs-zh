@@ -1,4 +1,4 @@
-### uni.createMapContext(mapId, componentInstance?)
+## uni.createMapContext(mapId, componentInstance?)
 创建并返回 map 上下文 ``mapContext`` 对象。在自定义组件下，第二个参数传入组件实例this，以操作组件内 ``<map>`` 组件。
 Create and return a map context ``mapContext`` object. Under the custom component, the second parameter is passed to the component instance this to operate the ``<map>`` component inside the component.
 
@@ -19,7 +19,7 @@ Create and return a map context ``mapContext`` object. Under the custom componen
 
 <!-- UNIAPPAPIJSON.createMapContext.compatibility -->
 
-### mapContext
+## mapContext
 
 ``mapContext`` 通过 mapId 跟一个 ``<map>`` 组件绑定，通过它可以操作对应的 ``<map>`` 组件。
 ``mapContext`` is bound to a ``<map>`` component through mapId, through which the corresponding ``<map>`` component can be operated.
@@ -109,11 +109,8 @@ Notes on `$getAppMap()`:
 |markerId|Number|是|指定 marker|
 | markerId| Number|Yes|Specify marker|
 |destination|Object|是|指定 marker 移动到的目标点|
-|destination| Object|Yes|specifies the target point where the marker moves to|
-|autoRotate|Boolean|是|移动过程中是否自动旋转 marker|
-| autoRotate| Boolean|Yes|Whether to automatically rotate the marker during movement|
-|rotate|Number|是|marker 的旋转角度|
-|rotate|Number|Yes|the rotation angle of the marker|
+|autoRotate|Boolean|否|移动过程中是否自动旋转 marker|
+|rotate|Number|否|marker 的旋转角度|
 |moveWithRotate|Boolean|否|平移和旋转同时进行，默认值false（仅微信小程序2.13.0支持）|
 | moveWithRotate| Boolean|No|Translate and rotate at the same time, the default value is false (only supported by WeChat MiniApp 2.13.0)|
 |duration|Number|否|动画持续时长，默认值1000ms，平移与旋转分别计算|
@@ -572,21 +569,20 @@ Zoom out the map to see that multiple markers are merged into one and display th
 ```
 
 
-### mapSearch 模块(仅app-nvue支持，Google地图不支持)
+## mapSearch 模块(仅app-nvue支持，Google地图不支持)
 
-#### reverseGeocode(Object,callback);@reverseGeocode
+### reverseGeocode(Object,callback);@reverseGeocode
 > 反向地理编码
 > Reverse Geocoding
 
-##### Object
+#### Object
 属性|类型 |默认值|必填|说明
 Attribute|Type|Default|Required|Description
 :--|:--|:--|:--|:--|
 point|Object| |是|{latitude: 纬度, longitude: 经度}
 point|Object| |Yes|{latitude: latitude, longitude: longitude}
 
-##### callback 返回 Object 参数说明
-##### callback returns Object parameter description
+#### callback 返回 Object 参数说明
 属性|类型 |说明
 property|type|description
 :--|:--|:--|
@@ -599,11 +595,11 @@ message|String|Failure description
 address|String|查询后地址 （成功时返回）
 address|String|Address after query (returned when successful)
 
-#### poiSearchNearBy（Object,callback);@poiSearchNearBy
+### poiSearchNearBy（Object,callback);@poiSearchNearBy
 > 周边检索
 > Surrounding search
 
-##### Object
+#### Object
 属性|类型 |默认值|必填|说明
 Attribute|Type|Default|Required|Description
 :--|:--|:--|:--|:--|
@@ -618,8 +614,7 @@ index|Number|1|No|The page number index of the search result to be obtained
 offset|Number|10|否|设置每页条目数（默认每页10条数据）。HBuilder 3.2.13+
 offset|Number|10|No|Set the number of entries per page (10 entries per page by default). HBuilder 3.2.13+
 
-##### callback 返回 Object 参数说明
-##### callback returns Object parameter description
+#### callback 返回 Object 参数说明
 属性|类型 |说明
 property|type|description
 :--|:--|:--|
@@ -640,7 +635,7 @@ pageIndex|Number|Current page number index
 poiList|Array.&lt;poiObject&gt;|POI信息数组
 poiList|Array.&lt;poiObject&gt;|POI information array
 
-##### poiObject
+#### poiObject
 属性|类型 |说明
 property|type|description
 :--|:--|:--|
@@ -655,11 +650,11 @@ distance|Number|distance (in meters)
 address|String|地址
 address|String|address
 
-#### poiKeywordsSearch（Object,callback);@poiKeywordsSearch
+### poiKeywordsSearch（Object,callback);@poiKeywordsSearch
 > 关键字检索
 > Keyword search
 
-##### Object
+#### Object
 属性|类型 |默认值|必填|说明
 Attribute|Type|Default|Required|Description
 :--|:--|:--|:--|:--|
@@ -680,8 +675,7 @@ offset|Number|10|No|Set the number of entries per page (10 entries per page by d
 cityLimit| Boolean | false | 否 | 强制城市限制功能 默认 false，例如：在上海搜索天安门，如果citylimit为true，将不返回北京的天安门相关的POI。HBuilder 3.2.13+
 cityLimit| Boolean | false | No | Mandatory city limit function Default false, for example: search for Tiananmen Square in Shanghai, if citylimit is true, it will not return POIs related to Tiananmen Square in Beijing. HBuilder 3.2.13+
 
-##### callback 返回 Object 参数说明
-##### callback returns Object parameter description
+#### callback 返回 Object 参数说明
 属性|类型 |说明
 property|type|description
 :--|:--|:--|
@@ -721,8 +715,7 @@ poiList|Array.&lt;poiObject&gt;|POI information array
 - ``<map>`` 组件默认为国测局坐标，调用 ``uni.getLocation`` 返回结果传递给 ``<map>`` 组件时，需指定 type 为 gcj02。
 - The ``<map>`` component defaults to the coordinates of the National Survey Bureau. When calling ``uni.getLocation`` to pass the returned result to the ``<map>`` component, you need to specify the type as gcj02.
 
-### 三方定位和地图服务收费说明
-### Three-party positioning and map service fee description
+## 三方定位和地图服务收费说明
 
 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 

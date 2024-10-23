@@ -1,5 +1,5 @@
 
-### uni.onLocationChange(FUNCTION CALLBACK)
+## uni.onLocationChange(FUNCTION CALLBACK)
 
 监听实时地理位置变化事件，需结合 `uni.startLocationUpdate` 或 `uni.startLocationUpdateBackground` 使用。
 To monitor real-time location change events, it needs to be used in conjunction with `uni.startLocationUpdate` or `uni.startLocationUpdateBackground`.
@@ -63,6 +63,7 @@ Web平台本API之前调用了腾讯地图的gcj02坐标免费转换接口，该
 - This method will continuously monitor the changes of the geographic location information. It is recommended to call the `uni.stopLocationUpdate` method to cancel the monitoring after you do not need to monitor the changes of the geographic location information.
 - `微信小程序`若使用该接口，需要在 app.json 中进行声明，否则将无法正常使用该接口，[详情](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html)
 - `抖音小程序`调用此 API 需要申请高精度权限，具体信息见[高精度定位运营规范](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/operation/platform-capabilities/high-progress-targeting/gaojingdu/)。
+- `HarmonyOS Next平台`调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`，需自行在项目中配置权限。
 
 **示例**
 **Example**
@@ -73,7 +74,7 @@ uni.onLocationChange(function (res) {
 	console.log('经度：' + res.longitude);
 });
 ```
-### uni.offLocationChange(FUNCTION CALLBACK)
+## uni.offLocationChange(FUNCTION CALLBACK)
 
 移除实时地理位置变化事件的监听函数。
 
@@ -108,7 +109,7 @@ uni.onLocationChange(function (res) {
 |horizontalAccuracy|number|水平精度 (m)|快手小程序|
 | horizontalAccuracy| number|horizontal accuracy (m)| Kuaishou MiniApp|
 
-### uni.onLocationChangeError(FUNCTION CALLBACK)
+## uni.onLocationChangeError(FUNCTION CALLBACK)
 
 监听持续定位接口返回失败时触发。
 Triggered when the monitoring continuous positioning interface returns failure.
@@ -131,7 +132,7 @@ Triggered when the monitoring continuous positioning interface returns failure.
 |errCode|Number|错误|微信小程序|
 |errMsg|String|错误信息|抖音小程序|
 
-### uni.offLocationChangeError(FUNCTION CALLBACK)
+## uni.offLocationChangeError(FUNCTION CALLBACK)
 
 取消注册位置更新错误回调。
 Unregister location update error callback.
@@ -154,7 +155,7 @@ Unregister location update error callback.
 无返回值。
 No return value.
 
-### uni.startLocationUpdate(OBJECT)
+## uni.startLocationUpdate(OBJECT)
 
 开启应用进入前台时接收位置消息。
 
@@ -195,7 +196,7 @@ uni.startLocationUpdate({
 });
 ```
 
-### uni.stopLocationUpdate(OBJECT)
+## uni.stopLocationUpdate(OBJECT)
 
 关闭监听实时位置变化，前后台都停止消息接收。
 Turn off the monitoring of real-time location changes, and both the front and back will stop receiving messages.
@@ -223,7 +224,7 @@ Turn off the monitoring of real-time location changes, and both the front and ba
 |complete|function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
 |complete|function|No|The callback function of the end of the interface call (the call will be executed if the call succeeds or fails)||
 
-### uni.startLocationUpdateBackground(OBJECT)
+## uni.startLocationUpdateBackground(OBJECT)
 
 开始监听实时地理位置信息变化事件，应用进入前后台时均接收实时地理位置信息。
 
@@ -246,8 +247,12 @@ Turn off the monitoring of real-time location changes, and both the front and ba
 |fail|Function|否|接口调用失败的回调函数||
 |complete|function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
 
+**注意**
 
-### 三方定位和地图服务收费说明
+- `HarmonyOS Next平台`调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`及后台定位权限`ohos.permission.LOCATION_IN_BACKGROUND`，需自行在项目中配置权限。
+
+
+## 三方定位和地图服务收费说明
 
 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 

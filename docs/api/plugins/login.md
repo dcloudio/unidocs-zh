@@ -1,4 +1,4 @@
-### uni.login(OBJECT)
+## uni.login(OBJECT)
 登录
 Log in
 
@@ -10,15 +10,16 @@ uni.login is a client API that unifies and encapsulates various common login met
 **平台差异说明**
 **Platform Difference Description**
 
-|App|HarmonyOS Next|Web|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|x|√|√|√|√|√|√|√|
+|App|Web|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.login.compatibility -->
 
 大多数登录方式，都需要申请开通相关服务，具体点击下面的文档查看。
 For most login methods, you need to apply for the activation of related services. For details, click the document below to view.
 
-#### App平台支持的登录方式
-#### Login methods supported by App platform
+### App平台支持的登录方式
 - [手机号一键登录（univerify）](/univerify.md)
 - [One-key login with mobile phone number (univerify)](/univerify.md)
 - [苹果登录（Sign in with Apple）](/tutorial/app-oauth-apple.md)
@@ -32,8 +33,7 @@ For most login methods, you need to apply for the activation of related services
 - [Facebook登录](/tutorial/app-oauth-facebook.md)
 - [Facebook Login](/tutorial/app-oauth-facebook.md)
 
-#### 小程序平台支持的登录方式
-####The login methods supported by the MiniApp platform
+### 小程序平台支持的登录方式
 * [微信小程序登录](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)
 * [WeChat MiniApp Login](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)
 * [支付宝小程序登录](https://docs.alipay.com/mini/introduce/authcode)
@@ -47,14 +47,13 @@ For most login methods, you need to apply for the activation of related services
 * [京东小程序登录](https://mp-docs.jd.com/api/openInterface/login.html)
 * [Jingdong MiniApp login](https://mp-docs.jd.com/api/openInterface/login.html)
 
-#### web平台支持的登录方式
+### web平台支持的登录方式
 Web平台常见的登录包括用户名密码、短信验证码、pc端微信扫描、微信公众号登录。这些没有封装在 uni.login API中，但都封装在了uni-id中。请另行参考[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)
 
 如不使用uni-id，微信内嵌浏览器运行H5版时，可通过js sdk实现微信登录，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)
 If you don’t use uni-id, when the WeChat embedded browser runs the H5 version, you can log in to WeChat through js sdk, you need to introduce a separate js, [see details](https://ask.dcloud.net.cn/article /35380)
 
-#### OBJECT 参数说明
-#### OBJECT parameter description
+### OBJECT 参数说明
 
 |参数名|类型|必填|说明|平台差异说明|
 |Parameter Name|Type|Required|Description|Platform Difference Description|
@@ -107,14 +106,13 @@ uni.login({
 });
 ```
 
-#### 注意事项
-#### Precautions
+### 注意事项
 - 百度小程序平台需要在button组件的@login事件后再调用 uni.login ，[详见](https://smartprogram.baidu.com/docs/develop/function/login/),否则会返回“请登录”的错误信息，建议在@login事件中调用。
 - uni.login 已针对百度小程序[兼容性升级](https://smartprogram.baidu.com/forum/topic/show/125547)转为 getLoginCode 调用，但某些情况下，百度小程序发布时兼容性诊断依然提示swan.login非兼容性改造，[详见](https://github.com/dcloudio/uni-app/issues/2443)，可使用 [uni.getLoginCode](#getlogincode) 替代 uni.login 解决。
 - 京东小程序IDE 暂时不支持此uni.login()，请用真机查看；IDE调用，只能返回模拟数据 code为200。
 - The JD MiniApp IDE does not support this uni.login() for the time being, please check it with a real device; the IDE call can only return the simulated data with a code of 200.
 
-### uni.getLoginCode(OBJECT)@getLoginCode
+## uni.getLoginCode(OBJECT)@getLoginCode
 获取宿主 App 登录凭证（Authorization Code）
 Obtain the host App login credentials (Authorization Code)
 
@@ -149,7 +147,7 @@ Obtain the host App login credentials (Authorization Code)
 |code|String|用户登录凭证（有效期十分钟），开发者需要在开发者服务器后台调用 API ，使用 code 换取 session_key 等信息。用户登录凭证 code 只能使用一次。|
 | code| String|User login credentials (valid for ten minutes), the developer needs to call the API in the background of the developer server, and exchange the code for session_key and other information. The user login credential code can only be used once. |
 
-### uni.checkSession
+## uni.checkSession
 检查登录状态是否过期
 Check if the login status has expired
 
@@ -174,7 +172,7 @@ Check if the login status has expired
 | complete| function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
 
-### uni.getUserInfo(OBJECT)
+## uni.getUserInfo(OBJECT)
 
 > 微信小程序端用户头像昵称获取规则已调整，参考 [用户信息接口调整说明](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801)、[小程序用户头像昵称获取规则调整公告](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01)
 > 支付宝小程序获取用户头像昵称规则已调整，将在 2024年09月15日正式生效。参考 [关于小程序用户头像昵称获取规则调整公告](https://open.alipay.com/portal/forum/post/173201040)
@@ -185,9 +183,11 @@ Get user information.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|x|√|√|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.getUserInfo.compatibility -->
 
 **注意：**
 **Notice:**
@@ -238,8 +238,7 @@ Get user information.
 |Parameter|Type|Description|Platform Difference Description|
 |:-|:-|:-|:-|
 |userInfo|OBJECT|用户信息对象||
-| userInfo| OBJECT|user information object||
-|rawData|String|不包括敏感信息的原始数据字符串，用于计算签名。||
+|rawData|String|不包括敏感信息的原始数据字符串，用于计算签名。|微信小程序、抖音小程序、飞书小程序、快手小程序、京东小程序|
 |signature|String|使用 sha1( rawData + sessionkey ) 得到字符串，用于校验用户信息。|微信小程序、抖音小程序、飞书小程序、快手小程序、京东小程序|
 |encryptedData|String|包括敏感数据在内的完整用户信息的加密数据，详细见加密数据解密算法。|微信小程序、抖音小程序、飞书小程序、快手小程序|
 |iv|String|加密算法的初始向量，详细见加密数据解密算法。|微信小程序、抖音小程序、飞书小程序、快手小程序|
@@ -264,8 +263,7 @@ Get user information.
 除了以上三个必有的信息外，不同服务供应商返回的其它信息会存在差异。
 In addition to the above three necessary information, other information returned by different service providers will be different.
 
-#### App端登录的扩展说明
-#### Expansion instructions for App login
+### App端登录的扩展说明
 
 App端还支持更多登录相关API，如`logout`，[详见](https://www.html5plus.org/doc/zh_cn/oauth.html)
 The App side also supports more login-related APIs, such as `logout`, [see details](https://www.html5plus.org/doc/zh_cn/oauth.html)
@@ -306,8 +304,7 @@ uni.login({
 });
 ```
 
-#### App端集成其他登录SDK如支付宝、淘宝登录的说明 @app-oauth
-#### Instructions for integrating other login SDKs such as Alipay and Taobao on the App side @app-oauth
+### App端集成其他登录SDK如支付宝、淘宝登录的说明 @app-oauth
 1. 在插件市场寻找插件
 1. Find plugins in the plugin market
 - [支付宝登录](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98%E5%AE%9D%E7%99%BB%E9%99%86)
@@ -322,7 +319,7 @@ uni.login({
 3. Develop native plug-ins to integrate three-party SDKs, [see details](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
 
-### uni.getUserProfile(OBJECT)@getUserProfile
+## uni.getUserProfile(OBJECT)@getUserProfile
 
 > 微信小程序端基础库2.27.1及以上版本，**[wx.getUserProfile 接口](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserProfile.html)被收回**，详见[《小程序用户头像昵称获取规则调整公告》](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01)。
 > Wechat MiniApp Basic Library 2.27.1 and above, **[wx.getUserProfile interface](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserProfile.html) has been withdrawn**, for details, please refer to ["Announcement on the Adjustment of the Rules for Obtaining MiniApp User Avatar Nicknames"](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01).
@@ -448,7 +445,7 @@ Get user information. An authorization window will pop up for each request, and 
 | zh_TW|Traditional Chinese|
 
 
-### uni.preLogin(OBJECT)
+## uni.preLogin(OBJECT)
 预登录。用于App手机号一键登录。
 pre-login. It is used for one-click login with App phone number.
 
@@ -475,7 +472,7 @@ pre-login. It is used for one-click login with App phone number.
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
 
-### uni.closeAuthView()
+## uni.closeAuthView()
 关闭[一键登录](/univerify)页面。
 Close the [one-key login](/univerify) page.
 
@@ -490,7 +487,7 @@ According to the requirements of China Mobile, China Unicom, China Telecom and o
 |3.0.0+|x|x|x|x|x|x|x|x|x|
 
 
-### uni.getCheckBoxState(OBJECT)
+## uni.getCheckBoxState(OBJECT)
 获取[一键登录](/univerify)条款勾选框状态。
 Get the checkbox status of [one-key login](/univerify) clause.
 
@@ -525,7 +522,7 @@ Get the checkbox status of [one-key login](/univerify) clause.
 |errMsg|String|描述信息|
 | errMsg| String|Description|
 
-### uni.getUniverifyManager(OBJECT)
+## uni.getUniverifyManager(OBJECT)
 获取全局唯一的一键登录管理器 univerifyManager
 Get the globally unique one-click login manager univerifyManager
 

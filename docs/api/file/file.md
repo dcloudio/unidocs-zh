@@ -1,4 +1,4 @@
-### uni.saveFile(OBJECT) @savefile
+## uni.saveFile(OBJECT) @savefile
 保存文件到本地。
 
 **平台差异说明**
@@ -42,7 +42,7 @@ uni.chooseImage({
 });
 ```
 
-### uni.getSavedFileList(OBJECT) @getsavedfilelist
+## uni.getSavedFileList(OBJECT) @getsavedfilelist
 获取本地已保存的文件列表。
 
 **平台差异说明**
@@ -86,7 +86,7 @@ uni.getSavedFileList({
 });
 ```
 
-### uni.getSavedFileInfo(OBJECT) @getsavedfileinfo
+## uni.getSavedFileInfo(OBJECT) @getsavedfileinfo
 获取本地文件的文件信息。此接口只能用于获取已保存到本地的文件。
 
 **平台差异说明**
@@ -127,7 +127,7 @@ uni.getSavedFileInfo({
 });
 ```
 
-### uni.removeSavedFile(OBJECT) @removesavedfile
+## uni.removeSavedFile(OBJECT) @removesavedfile
 删除本地存储的文件。
 
 **平台差异说明**
@@ -164,7 +164,7 @@ uni.getSavedFileList({
 });
 ```
 
-### uni.getFileInfo(OBJECT) @getfileinfo
+## uni.getFileInfo(OBJECT) @getfileinfo
 获取文件信息
 
 **平台差异说明**
@@ -193,7 +193,7 @@ uni.getSavedFileList({
 |size|Number|文件大小，以字节为单位。||
 |digest|String|按照传入的 digestAlgorithm 计算得出的的文件摘要|微信小程序、京东小程序、App 2.9.0+|
 
-### uni.openDocument(OBJECT) @opendocument
+## uni.openDocument(OBJECT) @opendocument
 新开页面打开文档，支持格式：doc, xls, ppt, pdf, docx, xlsx, pptx。
 
 **平台差异说明**

@@ -28,7 +28,8 @@ App-Android platform cloud packaging related configuration
 |minSdkVersion|String|Android平台最低支持版本，详情参考：[Android平台设置minSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-minsdkversion)|
 |minSdkVersion|String|The minimum supported version of the Android platform, please refer to: [Android platform setting minSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-minsdkversion)|
 |targetSdkVersion|String|Android平台目标版本，详情参考：[Android平台设置targetSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion)|
-|targetSdkVersion|String|Android platform target version, please refer to: [Android platform setting targetSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion)|
+|aaptOptions|Array|Android平台云端打包时build.gradle的packagingOptions配置项，示例："aaptOptions": ["noCompress 'png', 'jpg', 'jpeg'"]|
+|buildFeatures|Object|Android平台云端打包时build.gradle的buildFeatures配置项，[详见](/collocation/manifest?id=buildFeatures)|
 |packagingOptions|Array|Android平台云端打包时build.gradle的packagingOptions配置项，示例："packagingOptions": ["doNotStrip '*/armeabi-v7a/*.so'","merge '**/LICENSE.txt'"]|
 |packagingOptions|Array|The packagingOptions configuration item of build.gradle when the Android platform is packaged in the cloud, example: "packagingOptions": ["doNotStrip '*/armeabi-v7a/*.so'","merge '**/LICENSE.txt' "]|
 |jsEngine|String|uni-app使用的JS引擎，可取值v8、jsc，**将废弃，后续不再支持jsc引擎**|
@@ -41,9 +42,20 @@ App-Android platform cloud packaging related configuration
 |forceDarkAllowed|Boolean|Whether dark mode is forced|
 |resizeableActivity|Boolean|是否支持分屏调整窗口大小|
 |hasTaskAffinity|Boolean|是否设置android：taskAffinity，[详见](https://uniapp.dcloud.net.cn/tutorial/app-sec-android.html#strandhogg%E6%BC%8F%E6%B4%9E)|
-|buildFeatures|Object|Android平台云端打包时build.gradle的buildFeatures配置项，[详见](/collocation/manifest?id=buildFeatures)|
 |pushRegisterMode|String|延迟初始化UniPush的配置，当配置此项值为`manual`后UniPush不会初始化，直到首次调用[getPushClientId](https://uniapp.dcloud.net.cn/api/plugins/push.html#getpushclientid)、getClientInfo、getClientInfoAsync时才会初始化，注:一旦调用获取cid的方法后，下次App启动就不再延迟初始化UniPush了。(manual为延迟，其他值表示不延迟。)|
 |enableOAID|Boolean|是否支持获取OAID，默认值为true，[详见](#enableoaid)|
+
+#### aaptOptions@aaptoptions  
+Android平台云端打包时build.gradle的aaptOptions配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/AaptOptions?hl=en)，如下示例源码：  
+```json  
+"aaptOptions": [
+    "noCompress 'png', 'jpg', 'jpeg'"  //配置禁止对 png、jpg、jpeg格式的文件进行压缩
+]
+```
+云端打包默认包含以下配置：
+- additionalParameters '--auto-add-overlay'
+- ignoreAssetsPattern '!.svn:!.git:.*:!CVS:!thumbs.db:!picasa.ini:!*.scc:*~'
+
 
 #### buildFeatures@buildFeatures  
 Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)，如下示例源码：  
@@ -266,6 +278,13 @@ iOS platform cloud packaging related configuration
                 },
                 "minSdkVersion": 21,            //可选，数字类型，Android平台最低支持版本，参考：https://uniapp.dcloud.io/tutorial/app-android-minsdkversion
                 "targetSdkVersion": 30,         //可选，数字类型，Android平台目标版本，参考：https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion
+                "aaptOptions": [               //可选，字符串数组类型，Android平台云端打包时build.gradle的packagingOptions配置项
+                  "noCompress 'png', 'jpg', 'jpeg'"
+                ],
+                "buildFeatures": {              //（HBuilderX3.5.0+版本支持）可选，JSON对象，Android平台云端打包时build.gradle的buildFeatures配置项  
+                    "dataBinding": false,           //可选，Boolean类型，是否设置dataBinding
+                    "viewBinding": false            //可选，Boolean类型，是否设置viewBinding
+                },
                 "packagingOptions": [           //可选，字符串数组类型，Android平台云端打包时build.gradle的packagingOptions配置项
                     "doNotStrip '*/armeabi-v7a/*.so'",
                     "merge '**/LICENSE.txt'"
@@ -275,11 +294,7 @@ iOS platform cloud packaging related configuration
                 "locale": "default",            //可选，应用的语言
                 "forceDarkAllowed": false,      //可选，Boolean类型，是否强制允许暗黑模式
                 "resizeableActivity": false,    //可选，Boolean类型，是否支持分屏调整窗口大小
-                "hasTaskAffinity": false,       //可选，Boolean类型，是否设置android：taskAffinity
-                "buildFeatures": {              //（HBuilderX3.5.0+版本支持）可选，JSON对象，Android平台云端打包时build.gradle的buildFeatures配置项  
-                    "dataBinding": false,           //可选，Boolean类型，是否设置dataBinding
-                    "viewBinding": false            //可选，Boolean类型，是否设置viewBinding
-                }
+                "hasTaskAffinity": false        //可选，Boolean类型，是否设置android：taskAffinity
             },
             "ios": {                //可选，JSON对象，iOS平台云端打包配置
                 "appid": "",                    //必填，字符串类型，iOS平台Bundle ID
@@ -424,7 +439,7 @@ iOS platform cloud packaging related configuration
                                 "xxdpi": "",                                //可选，字符串类型，1080P高密度屏幕推送图标路径，分辨率要求144x144
                                 "xxxdpi": "",                               //可选，字符串类型，4K屏设备推送图标路径，分辨率要求192x192
                             },
-                            "smal": {                               //可选，JSON对象，Push小图标配置
+                            "small": {                               //可选，JSON对象，Push小图标配置
                                 "ldpi": "",                                 //可选，字符串类型，普通屏设备推送小图标路径，分辨率要求18x18
                                 "mdpi": "",                                 //可选，字符串类型，大屏设备设备推送小图标路径，分辨率要求24x24
                                 "hdpi": "",                                 //可选，字符串类型，高分屏设备推送小图标路径，分辨率要求36x36
@@ -447,7 +462,7 @@ iOS platform cloud packaging related configuration
                                 "xxdpi": "",                                //可选，字符串类型，1080P高密度屏幕推送图标路径，分辨率要求144x144
                                 "xxxdpi": "",                               //可选，字符串类型，4K屏设备推送图标路径，分辨率要求192x192
                             },
-                            "smal": {                               //可选，JSON对象，Push小图标配置
+                            "small": {                               //可选，JSON对象，Push小图标配置
                                 "ldpi": "",                                 //可选，字符串类型，普通屏设备推送小图标路径，分辨率要求18x18
                                 "mdpi": "",                                 //可选，字符串类型，大屏设备设备推送小图标路径，分辨率要求24x24
                                 "hdpi": "",                                 //可选，字符串类型，高分屏设备推送小图标路径，分辨率要求36x36

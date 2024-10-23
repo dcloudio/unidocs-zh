@@ -33,9 +33,7 @@ Functions (modules) using the so library in HBuilder/HBuilderX
 
 
 ### CPU类型
-### CPU type
-HBulderX已适配支持以下主流CPU类型：
-HBulderX has been adapted to support the following mainstream CPU types:
+HBuilderX已适配支持以下主流CPU类型：
 - armeabi-v7a
 第7代及以上的ARM处理器（ARM32位），市面上大多数手机使用此CPU类型。
 7th generation and above ARM processors (ARM32-bit), most mobile phones on the market use this CPU type.

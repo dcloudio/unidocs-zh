@@ -1,4 +1,4 @@
-### uni.getRecorderManager()
+## uni.getRecorderManager()
 获取**全局唯一**的录音管理器 ``recorderManager``。
 Get the **globally unique** recording manager ``recorderManager``.
 
@@ -41,7 +41,7 @@ Get the **globally unique** recording manager ``recorderManager``.
 |onError|callback|录音错误事件, 会回调错误信息|&nbsp;|
 |offError|callback|取消监听录音错误事件|仅支付宝小程序支持|
 
-### start(options)
+## start(options)
 
 |属性|类型|必填|说明|平台差异说明|
 |Attribute|Type|Required|Description|Platform Difference Description|
@@ -78,7 +78,7 @@ Among them, the sampling rate and code rate have certain requirements, and the s
 |44100|64000 ~ 320000|
 |48000|64000 ~ 320000|
 
-### onStop(callback)
+## onStop(callback)
 
 |属性|类型|说明|
 |Attribute|Type|Description|
@@ -88,7 +88,7 @@ Among them, the sampling rate and code rate have certain requirements, and the s
 |fileSize|Number|录音文件大小。单位：Byte。（仅支付宝10.2.90+支持）|
 
 
-### onFrameRecorded(callback)
+## onFrameRecorded(callback)
 
 |属性|类型|说明|
 |Attribute|Type|Description|
@@ -98,7 +98,7 @@ Among them, the sampling rate and code rate have certain requirements, and the s
 |isLastFrame|Boolean|当前帧是否正常录音结束前的最后一帧|
 | isLastFrame| Boolean|Whether the current frame is the last frame before the end of normal recording|
 
-### onError(callback)
+## onError(callback)
 
 |属性|类型|说明|
 |Attribute|Type|Description|
@@ -106,13 +106,13 @@ Among them, the sampling rate and code rate have certain requirements, and the s
 |errMsg|String|错误信息|
 | errMsg| String|error message|
 
-**注意**
-**Notice**
-
+::: warning 注意
 - 可以通过用户授权API来判断用户是否给应用授予麦克风的访问权限[https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
-- You can use the user authorization API to determine whether the user has granted the application access to the microphone [https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize )
+- `HarmonyOS Next` 平台使用时需要添加权限 `ohos.permission.MICROPHONE`
+:::
 
-### 示例
+
+## 示例
 
 ```html
 <template>

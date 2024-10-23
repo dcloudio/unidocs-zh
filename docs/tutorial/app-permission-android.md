@@ -103,6 +103,7 @@ After saving, submit the cloud package to take effect.
 	"<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
 	"<uses-permission android:name=\"android.permission.BLUETOOTH_ADMIN\" />",
 	"<uses-permission android:name=\"android.permission.BLUETOOTH\" />"
+	"<uses-permission android:name=\"android.permission.BLUETOOTH_SCAN\" />"
 ```
 
 #### Contact(通讯录)

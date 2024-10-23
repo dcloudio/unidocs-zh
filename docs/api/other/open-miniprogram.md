@@ -1,4 +1,4 @@
-### uni.navigateToMiniProgram(OBJECT)
+## uni.navigateToMiniProgram(OBJECT)
 
 打开另一个小程序。
 Open another applet.
@@ -54,7 +54,7 @@ uni.navigateToMiniProgram({
 
 
 
-### uni.navigateBackMiniProgram(OBJECT)
+## uni.navigateBackMiniProgram(OBJECT)
 
 跳转回上一个小程序，只有当另一个小程序跳转到当前小程序时才会能调用成功。
 Jump back to the previous applet, only when another applet jumps to the current applet can it be called successfully.
@@ -95,7 +95,7 @@ uni.navigateBackMiniProgram({
 })
 ```
 
-### uni.openEmbeddedMiniProgram(OBJECT)
+## uni.openEmbeddedMiniProgram(OBJECT)
 
 微信小程序跳转小程序（半屏模式）（从微信础库 2.20.1 开始支持）
 WeChat applet jump to applet (half-screen mode) (supported from WeChat base library 2.20.1)

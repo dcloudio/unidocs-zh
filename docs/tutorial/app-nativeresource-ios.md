@@ -84,6 +84,8 @@ Edit and add the required content according to the application requirements, as 
     <string>后台运行期访问位置信息的许可描述</string>
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
     <string>访问位置信息的许可描述</string>
+    <key>NSUserNotificationsUsageDescription</key>
+    <string>使用推送通知的许可描述</string>
     <key>NSCalendarsUsageDescription</key>
     <string>访问日历的许可描述</string>
     <key>NSContactsUsageDescription</key>
@@ -124,7 +126,9 @@ Edit and add the required content according to the application requirements, as 
 
 **注意**  
 uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的配置，需在此Info.plist中添加。  
-配置许可描述时需根据应用实际情况准确描述用途，否则提交AppStore审核可能被拒。
+配置许可描述时需根据应用实际情况准确描述用途，否则提交AppStore审核可能被拒。  
+- NSUserNotificationsUsageDescription  
+  使用消息推动通知的许可描述是可选配置，不配置此字段（不包含NSUserNotificationsUsageDescription）也可以通过AppStore审核；如果配置了此字段则需正确描述应用使用消息通知的用途才能通过AppStore审核。
 
 **相关参考**  
 - iOS隐私信息访问列表，参考：[https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources](https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources)
@@ -168,7 +172,7 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
 ### 应用可支持横竖屏列表配置@orientation  
 应用默认可支持的横竖列表：  
 - uni-app 项目由 manifest.json 中的 [screenOrientation](https://uniapp.dcloud.net.cn/collocation/manifest.html#app-plus) 字段配置决定  
-- uni-app x 项目默认支持横竖平列表为横屏和竖屏，但运行期在 iPhone 设备固定为竖屏，在 iPad 设备根据系统设置自动感应适配横竖屏（后续版本iPhone设备会支持page.json中配置）  
+- uni-app x 项目默认可支持横竖屏列表为横屏和竖屏，但运行期在 iPhone 设备默认为竖屏，在 iPad 设备根据系统设置自动感应适配横竖屏，HBuilderX4.25版本iPhone设备支持[screenOrientation](https://uniapp.dcloud.net.cn/collocation/manifest.html#app-plus) 字段配置  
 
 如果希望自定义配置应用可支持的横竖屏列表，可根据需求在`Info.plist`文件中添加`UISupportedInterfaceOrientations`数据，如下示例：
 ```xml
@@ -204,7 +208,7 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
   * `UIInterfaceOrientationPortraitUpsideDown` 竖屏反方向，仅 iPad 设备支持  
   * `UIInterfaceOrientationLandscapeLeft` 横屏主方向  
   * `UIInterfaceOrientationLandscapeRight` 横屏反方向  
-- iPhone 和 iPad 设备可分别单独设置，可支持的横竖屏列表会限制应用能支持的横竖屏状态，如设置应用支持的横竖屏列表值为竖屏（UIInterfaceOrientationPortrait），则应用在任何状态下都无法横屏，在 iPad 设备无法根据系统设置自动感应适配，在 page.json 中设置 pageOrientation 为横屏将无效  
+- iPhone 和 iPad 设备可分别单独设置，可支持的横竖屏列表会限制应用能支持的横竖屏状态，如设置应用支持的横竖屏列表值为竖屏（UIInterfaceOrientationPortrait），则应用在任何状态下都无法横屏。 
 
 ##  应用资源  
 

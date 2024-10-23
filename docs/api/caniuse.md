@@ -7,7 +7,7 @@ Platform Difference Description
 
 |App|HarmonyOS Next|Web|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√ (uni-app 3.4.13+)|√|√|√|√|√|
+|√|HBuilder 4.23|√ (uni-app 3.4.13+)|√|√|√|√|√|
 
 **String 参数说明**
 **String parameter description**

@@ -21,6 +21,7 @@ The value of minSdkVersion is of type Number and must be a positive integer. For
 打开项目的manifest.json文件，切换到“源码视图”，根据项目类型进行配置。  
 Open the manifest.json file of the project, switch to the "source view", and configure it according to the project type.
 
+
 - uni-app项目  
 - uni-app project
 在 "app-plus" -> "distribute" -> "android" 节点的 minSdkVersion 属性配置，示例如下：

@@ -6,6 +6,8 @@
 
 除了组件方式，API方式也可以实现页面跳转，另见：[https://uniapp.dcloud.io/api/router?id=navigateto](https://uniapp.dcloud.io/api/router?id=navigateto)
 
+<!-- UNIAPPCOMJSON.navigator.compatibility -->
+
 **属性说明**
 
 |属性名|类型|默认值|说明|平台差异说明|

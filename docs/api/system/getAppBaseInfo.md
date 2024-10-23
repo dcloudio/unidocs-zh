@@ -26,7 +26,9 @@ Get the basic information of WeChat APP
 |appLanguage|string|应用设置的语言`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`App`、`H5`|
 |appLanguage|string|Language for application settings `en`, `zh-Hans`, `zh-Hant`, `fr`, `es`|`App`, `H5`|
 |appWgtVersion|string|应用资源（wgt）的版本名称。	|App 3.5.5+|
-|appWgtVersion|string|Version name of the app resource (wgt). |App 3.5.5+|
+|isUniAppX|string|是否uni-app x|HBuilderX 4.31+|
+|uniPlatform|string|uni-app 运行平台，与条件编译平台相同|HBuilderX 4.31+|
+|uniCompilerVersion|string|uni 编译器版本|HBuilderX 4.31+|
 |hostLanguage|string|小程序宿主语言|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
 |hostLanguage|string|Mini Program Host Language|`App only supports UNIMPSDK`, `H5 does not support`|
 |hostVersion|string|App、小程序宿主版本。如：微信版本号|`App 仅 UNIMPSDK 支持`、`H5 不支持`|

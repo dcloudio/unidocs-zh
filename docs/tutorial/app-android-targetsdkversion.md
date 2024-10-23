@@ -11,8 +11,9 @@ Setting the targetSdkVersion value indicates the Android version (API level) tha
 With the upgrade of the Android system, some application markets will require a higher targetSdkVersion to be submitted, which can be configured in the manifest.json of the project in HBuilderX.
 
 
-**️注意: App升级时 targetSdkVersion 只能增加不能降低，也就是说 targetSdkVersion 高的App无法被 targetSdkVersion 低的App覆盖安装，开发者需要注意！**
-**️Note: When an app is upgraded, the targetSdkVersion can only be increased but not decreased, that is to say, apps with high targetSdkVersion cannot be overwritten and installed by apps with low targetSdkVersion, developers need to pay attention! **
+**️注意:**
++  App升级时 targetSdkVersion 只能增加不能降低，也就是说 targetSdkVersion 高的App无法被 targetSdkVersion 低的App覆盖安装，开发者需要注意！
++  android 15 设备对 targetSdkVersion 版本有要求，低于24无法正常在android 15设备上正常安装，开发者需要注意！
 
 ### 设置targetSdkVersion  
 ### Set targetSdkVersion
@@ -68,8 +69,9 @@ API等级与Android版本对应列表如下：
 The corresponding list of API levels and Android versions is as follows:
 
 | API等级 | Android版本号 | Android版本名称 |  
-| API level | Android version number | Android version name |
 | :-- | :-- | :-- |  
+| 35 | Android15 | Android V, Vanilla Ice Cream|
+| 34 | Android14 | Android U, Upside Down Cake|
 | 33 | Android13 | Android T, Tiramisu |  
 | 32 | Android12L | Android S_V2 |  
 | 31 | Android12 | Android S, Snow Cone |  

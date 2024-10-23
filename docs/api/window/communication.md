@@ -60,7 +60,7 @@
 
 <!-- UNIAPPAPIJSON.$once.tutorial -->
 
-## uni.$off([eventName, callback])
+## uni.$off(eventName, callback)
 
 移除全局自定义事件监听器。
 
@@ -68,7 +68,7 @@
 
 |属性		|类型			|描述			|
 |---		|---			|---			|
-|eventName	|Array＜String＞ |事件名			|
+|eventName	|String |事件名			|
 |callback	|Function		|事件的回调函数	|
 
 **Tips**

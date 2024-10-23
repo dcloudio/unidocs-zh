@@ -264,9 +264,7 @@ export default {
 |rightText|String|-|右侧文字内容|
 |rightText|String|-|right text content|
 |disabled|Boolean|false|是否禁用	|
-|disabled|Boolean|false|Disabled|
-|showArrow|Boolean|true|是否显示箭头图标	|		
-|showArrow|Boolean|true|Show arrow icon |
+|showArrow|Boolean|false|是否显示箭头图标	|		
 |link|String|navigateTo	|新页面跳转方式，可选值见下表|
 |link|String|navigateTo |New page jump method, see the following table for optional values|
 |to|String|-|新页面跳转地址，如填写此属性，click 会返回页面是否跳转成功|

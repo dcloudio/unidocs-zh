@@ -1,7 +1,7 @@
 
  > 图片需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
 
-### uni.chooseImage(OBJECT)
+## uni.chooseImage(OBJECT)
 从本地相册选择图片或使用相机拍照。
 Choose an image from your local photo album or take a photo with your camera.
 
@@ -109,9 +109,11 @@ uni.chooseImage({
 });
 ```
 
-### uni.previewImage(OBJECT) @unipreviewimageobject
+## uni.previewImage(OBJECT) @unipreviewimageobject
 预览图片。
 preview picture.
+
+<!-- UNIAPPAPIJSON.previewImage.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -223,7 +225,7 @@ uni.chooseImage({
 - 插件市场有前端实现的previewImage，性能低于原生实现，但界面可随意定义；插件市场也有适于App端的previewImage原生插件，提供了更多功能。
 - The plug-in market has a front-end implementation of previewImage, whose performance is lower than that of the native implementation, but the interface can be defined at will; the plug-in market also has a native previewImage plug-in suitable for the App side, which provides more functions.
 
-### uni.closePreviewImage(OBJECT)
+## uni.closePreviewImage(OBJECT)
 
 关闭预览图片。
 Close the preview image.
@@ -231,6 +233,8 @@ Close the preview image.
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√ `(3.2.15+)`|√ `(3.2.15+)`|x|x|x|x|x|x|x|x|
+
+<!-- UNIAPPAPIJSON.closePreviewImage.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -245,7 +249,7 @@ Close the preview image.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
-### uni.getImageInfo(OBJECT)
+## uni.getImageInfo(OBJECT)
 
 获取图片信息。
 Get image information.
@@ -259,6 +263,8 @@ To obtain network picture information under the MiniApp, you need to configure t
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|√|√|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.getImageInfo.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -334,7 +340,7 @@ uni.chooseImage({
 });
 ```
 
-### uni.saveImageToPhotosAlbum(OBJECT)
+## uni.saveImageToPhotosAlbum(OBJECT)
 保存图片到系统相册。
 Save the picture to the system album.
 
@@ -344,6 +350,8 @@ Save the picture to the system album.
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.saveImageToPhotosAlbum.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -397,7 +405,7 @@ uni.chooseImage({
 });
 ```
 
-### uni.compressImage(OBJECT)
+## uni.compressImage(OBJECT)
 
 压缩图片接口，可选压缩质量
 Compressed image interface, optional compression quality
@@ -409,6 +417,8 @@ Compressed image interface, optional compression quality
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|√|√|√(基础库版本>=3.110.3)|√|√|√|√|
 |√| x|√|√|√(base library version>=3.110.3)|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.compressImage.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -423,8 +433,8 @@ Compressed image interface, optional compression quality
 | width | String | auto | 否 | 缩放图片的宽度，支持像素值（如"100px"）、百分比（如"50%"）、自动计算（如"auto"，即根据width与源图宽的缩放比例计算，若未设置width则使用源图宽度）|App 3.0.0+|
 | width | String | auto | No | Scale the width of the picture, support pixel value (such as "100px"), percentage (such as "50%"), automatic calculation (such as "auto", that is, zoom according to the width and the width of the source image Scale calculation, if width is not set, the source image width will be used) | App 3.0.0+|
 | height | String | auto | 否 | 缩放图片的高度，支持像素值（如"100px"）、百分比（如"50%"）、自动计算（如"auto"，即根据height与源图高的缩放比例计算，若未设置height则使用源图高度）|App 3.0.0+|
-| compressedWidth | Number | - | 否 | 压缩后图片的宽度，单位为px，若不填写则默认以 compressedHeight 为准等比缩放 |微信小程序2.26.0 +|
-| compressedHeight | Number | - | 否 | 压缩后图片的高度，单位为px，若不填写则默认以 compressedWidth 为准等比缩放 |微信小程序2.26.0 +|
+| compressedWidth | Number | - | 否 | 压缩后图片的宽度，单位为px，若不填写则默认以 compressedHeight 为准等比缩放 |微信小程序2.26.0 +、App 3.7.0+|
+| compressedHeight | Number | - | 否 | 压缩后图片的高度，单位为px，若不填写则默认以 compressedWidth 为准等比缩放 |微信小程序2.26.0 +、App 3.7.0+|
 | rotate | Number | 0 | 否 | 旋转度数，范围0～360 |App 3.0.0+|
 | rotate | Number | 0 | No | Rotation degree, range 0～360 | App 3.0.0+|
 | success | Function |  | 否 | 接口调用成功的回调函数 ||

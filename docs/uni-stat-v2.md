@@ -517,9 +517,7 @@ Before enabling the redis cache, you need to confirm whether the redis service h
 In order for the data collected by the client app to be correctly received and counted by the cloud function in `uni-admin`, it is necessary to ensure that the client project and the admin project are associated with the same service space.
 
 1. 选择用户端项目（需采集用户数据的项目）
-1. Select the client project (the project that needs to collect user data)
-2. 若该项目之前未启用`uniCloud`，右键并选择 `创建uniCloud云开发环境 -> 阿里云|腾讯云`；否则，进入第3步；
-2. If `uniCloud` has not been enabled before, right click and select `Create uniCloud cloud development environment -> Alibaba Cloud|Tencent Cloud`; otherwise, go to step 3;
+2. 若该项目之前未启用`uniCloud`，右键并选择 `创建uniCloud云开发环境 -> 支付宝云|阿里云|腾讯云`（数据量大推荐使用`支付宝云`）；否则，进入第3步；
 
 ![关联前后台数据](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/iShot2022-04-01%2015.11.18.png)
 
@@ -539,7 +537,7 @@ In order to facilitate developers to use sourceMap files to locate code problems
 #### 使用环境@sourcemap-parse-error-env
 #### Using the environment @sourcemap-parse-error-env
 
-1. 腾讯云服务空间（uni-admin 1.9.4+），阿里云服务空间（uni-admin 2.3.4+）
+1. 腾讯云服务空间（uni-admin 1.9.4+），阿里云服务空间（uni-admin 2.3.4+），支付宝云服务空间（uni-admin 2.4.3+）
 2. HBuiderX 3.5.3+
 3. 不支持 IE，不支持hbx内置浏览器，推荐使用谷歌浏览器
 
@@ -1929,7 +1927,7 @@ Answer: Generally, you do not need to configure it yourself, but if the time-out
 答：总设备数计算公式为：总设备数 = 原设备数 + 新设备数，而判断一个设备是否为新设备的依据是在客户端SDK中是否已储存该设备上次访问某一应用的时间，未存储则认为是该应用的新设备(即lvts=0时为新设备，lvts>0时为老设备)。 因此如果之前某一设备已经访问过某一应用，就算此时清除数据库中的数据，由于已经在客户端SDK中储存该设备上次访问应用的时间（即此时lvts > 0），所以该设备也不会再被认为是该应用的新设备从而不会再被计算进该应用的总设备数中而只会计算进活跃设备数中，此时可能就会出现总设备数小于活跃设备数的情况。
 Answer: The formula for calculating the total number of devices is: total number of devices = number of original devices + number of new devices, and the basis for judging whether a device is a new device is whether the time when the device last accessed an application has been stored in the client SDK If it is not stored, it is considered as a new device of the application (that is, when lvts=0, it is a new device, and when lvts>0, it is an old device). Therefore, if a device has accessed an application before, even if the data in the database is cleared at this time, since the time when the device accessed the application last time has been stored in the client SDK (that is, lvts > 0 at this time), the device It will no longer be considered as a new device of the application, so it will no longer be counted into the total number of devices of the application, but will only be counted into the number of active devices. At this time, the total number of devices may be less than the number of active devices. Condition.
 
-### 6. uni-stat-cron运行日志显示 Not Found the cofnig file
+### 6. uni-stat-cron运行日志显示 Not Found the config file
 
 业务App 和 admin 是2个工程。业务App是采集端，admin是报表端；这两个项目均包含`uni-config-center`；如果这两个项目关联（复用）相同的服务空间时，很容易出现`uni-config-center`的互相覆盖问题；此时建议单点维护，方案有2种：
 Business App and admin are 2 projects. The business app is the collection end, and the admin is the report end; both projects contain `uni-config-center`; if these two projects are associated (multiplexed) with the same service space, it is easy to appear `uni-config-center` `The mutual coverage problem; at this time, it is recommended to maintain a single point, there are 2 solutions:
@@ -1978,10 +1976,12 @@ Business App and admin are 2 projects. The business app is the collection end, a
 
 答：首先登录[uniCloud控制台](https://unicloud.dcloud.net.cn/)，检查在出现问题的统计项配置的时间点(参考：[定时任务配置说明](#定时任务配置说明))，`uni-stat-cron`云函数的运行日志，如果运行日志前面的状态标识是灰色的，代表云函数运行超时了，此时在云函数详情中将`uni-stat-cron`云函数的超时时间设置到最大值即可。如果运行日志的状态标识是绿色的，则需要检查日志内容是否有报错，然后根据报错内容做出调整。
 
+
 ## 参考资料
 ## References
 
 不掌握如下文档，很难对 `uni统计2.0` 吃透和做二次开发
 - uni-admin文档：[详见](https://doc.dcloud.net.cn/uniCloud/admin.html)
-- uni-id文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-id.html)
+- uni-id文档：[详见](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)
 - opendb文档：[详见](https://doc.dcloud.net.cn/uniCloud/opendb.html)
+

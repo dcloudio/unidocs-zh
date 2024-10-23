@@ -1,15 +1,14 @@
-### uni.chooseAddress(OBJECT)
+## uni.chooseAddress(OBJECT)
 
 获取用户收货地址。调起用户编辑收货地址原生界面，并在编辑完成后返回用户选择的地址，需要用户授权 scope.address。
-Get the user's shipping address. Call up the native interface for the user to edit the delivery address, and return to the address selected by the user after editing, which requires the user to authorize scope.address.
- 
+
 **平台差异说明**
 **Platform Difference Description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x|x|√|√|√|√|x|x|x|x|
- 
+
 **OBJECT参数说明**
 **OBJECT parameter description**
 

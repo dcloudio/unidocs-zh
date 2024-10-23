@@ -1,4 +1,4 @@
-### uni.getBackgroundAudioManager()
+## uni.getBackgroundAudioManager()
 获取**全局唯一**的背景音频管理器 ``backgroundAudioManager``。
 
 背景音频，不是游戏的背景音乐，而是类似QQ音乐那样，App在后台时，仍然在播放音乐。如果你不需要在App切后台时继续播放，那么不应该使用本API，而应该使用普通音频API[uni.createInnerAudioContext](https://uniapp.dcloud.io/api/media/audio-context)。

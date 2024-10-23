@@ -27,7 +27,7 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
       </a>
       <a href="#" target="_blank" class="clear-style barcode-view" style="pointer-events: none;">
         <div class="barcode-img-box">
-          <img src="https://web-ext-storage.dcloud.net.cn/uni-app/harmony/uni-harmony-qrcode.png" width="160" />
+          <img src="https://web-ext-storage.dcloud.net.cn/doc/harmony-os-next/tongyi-applinking.png" width="160" />
         </div>
         <b>鸿蒙版</b>
         <b style="font-size: 14px;">需使用已升级到鸿蒙Next</b>

@@ -9,7 +9,7 @@ System information returns a lot of content, and each operating system, each Min
 按照运行环境层级排序，从底层向上，uni-app有6个概念：
 Sorted according to the level of the operating environment, from the bottom up, uni-app has 6 concepts:
 - `device`：运行应用的设备，如iphone、huawei
-- `os`：设备的操作系统，如 ios、android、windows、mac、linux
+- `os`：设备的操作系统，如 ios、android、windows、mac、linux、harmonyos（OpenHarmony）
 - `rom`：基于操作系统的定制，Android系统特有概念，如miui、鸿蒙
 - `rom`: customization based on the operating system, unique concepts of the Android system, such as miui, Hongmeng
 - `host`：运行应用的宿主程序，即OS和应用之间的运行环境，如浏览器、微信等小程序宿主、集成uniMPSDK的App。uni-app直接开发的app没有host概念
@@ -54,8 +54,7 @@ Get system information asynchronously
 |			|deviceOrientation		|设备方向		|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`。仅微信百度小程序支持||uni-app 3.4.13+|
 | | deviceOrientation |Device orientation |`vertical portrait`, `horizontal landscape`|`vertical portrait`, `horizontal landscape`|`vertical portrait`, `horizontal landscape`. Only supported by WeChat and Baidu MiniApp|| uni-app 3.4.13+|
 |			|devicePixelRatio		|设备像素比		||	|||uni-app 3.4.13+|
-| | devicePixelRatio | device pixel ratio || ||| uni-app 3.4.13+|
-|os		|osName|系统名称|ios、android|ios、android、windows、macos、linux|ios、android、windows、macos||uni-app 3.4.10+|
+|os		|osName|系统名称|ios、android|ios、android、windows、macos、linux、harmonyos|ios、android、windows、macos||uni-app 3.4.10+|
 |			|osVersion			|操作系统版本。如 ios 版本，android 版本|||||uni-app 3.4.10+|
 |			|osLanguage			|操作系统语言[详见](#tips)|Android仅支持主语言+地区：`zh-CN 中文简体`、iOS支持主语言+次语言+地区`zh-Hans-CN 中文简体` |与浏览器语言一致	|不支持	|	|uni-app 3.4.10+|
 | | osLanguage |Operating system language[See details](#tips)| |Consistent with the browser language |Not supported | | uni-app 3.4.10+|
@@ -241,7 +240,7 @@ But on the App platform, the values of `uniCompileVersion` and `uniRuntimeVersio
 |MIUI|小米|
 | MIUI|Xiaomi|
 |EMUI|华为|
-|HarmonyOS Next|华为鸿蒙|
+|HarmonyOS|华为鸿蒙|
 |Magic OS|荣耀|
 |ColorOS|oppo|
 |Funtouch OS|vivo|
@@ -250,7 +249,11 @@ But on the App platform, the values of `uniCompileVersion` and `uniRuntimeVersio
 |SmartisanOS|锤子|
 | SmartisanOS | Hammer |
 
-注意：不同rom的版本号规则不同，比如`MIUI`版本号是`V130`，而`HarmonyOS Next`的版本号是`2.0.0`
+注意：
+
+- 不同rom的版本号规则不同，比如`MIUI`版本号是`V130`，而`HarmonyOS`的版本号是`2.0.0`
+- Harmony OS Next目前没有返回romName，此属性对应鸿蒙 deviceInfo 的 distributionOSName，目前Harmony OS Next deviceInfo 的 distributionOSName 属性为空字符串。
+
 
 ### hostName 返回值说明 @hostname
 
@@ -379,6 +382,7 @@ Note: Unknown will be displayed for a while after the new model is launched, and
 		return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
 	}
 	```
+  - `app-harmony` 支持 `phone`、`pad`、`tv`、`watch`、`pc`、`unknown`、`car`、`vr`、`undefined`。
 - `osTheme`：`app-ios` 只有将应用主题设置为跟随系统时才能获取到系统的主题。小程序也有类似限制。
 - `osTheme`: `app-ios` Only when the application theme is set to follow the system can the theme of the system be obtained. MiniApp have similar restrictions.
 - 屏幕高度 = 原生NavigationBar高度（含状态栏高度）+ 可使用窗口高度 + 原生TabBar高度
@@ -457,7 +461,7 @@ The return value of getSystemInfo on different platforms (the table is long, you
 |osLanguage|zh-CN|zh-Hans-CN|-|zh-CN|zh-Hans-CN|-|-|-|-|
 |osTheme|light|light|-|light|light|-|-|-|-|
 |osAndroidAPILevel|31|-|-|29|-|-|-|-|-|-|
-|romName|MIUI|-|-|HarmonyOS Next|-|-|-|-|-|
+|romName|MIUI|-|-|HarmonyOS|-|-|-|-|-|
 |romVersion|V130|-|-|2.0.0|-|-|-|-|-|
 |uniPlatform|app|app|web|app|app|mp-weixin|mp-alipay|mp-baidu|mp-toutiao|
 |uniCompileVersion|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|

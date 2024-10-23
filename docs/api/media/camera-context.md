@@ -1,4 +1,4 @@
-### uni.createCameraContext()
+## uni.createCameraContext()
 创建并返回 camera 组件的上下文 cameraContext 对象。
 Create and return the context cameraContext object of the camera component.
 
@@ -25,7 +25,7 @@ This API is the js API supporting the camera component, which has the same platf
 |stopRecord|Object|结束录像，成功则返回封面与视频。||
 |onCameraFrame|Function|获取 Camera 实时帧数据。|微信小程序[详情](https://developers.weixin.qq.com/miniprogram/dev/api/CameraContext.onCameraFrame.html)、支付宝小程序[详情](https://opendocs.alipay.com/mini/03qitt)、抖音小程序支持[详情](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/media/camera/camera-context/camera-context-on-camera-frame)|
 
-### cameraContext.takePhoto
+## cameraContext.takePhoto
 **takePhoto 的 Object 参数列表：**
 **takePhoto Object parameter list:**
 
@@ -43,7 +43,7 @@ This API is the js API supporting the camera component, which has the same platf
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
-### cameraContext.setZoom
+## cameraContext.setZoom
 **setZoom 的 Object 参数列表：**
 **setZoom Object parameter list:**
 
@@ -59,7 +59,7 @@ This API is the js API supporting the camera component, which has the same platf
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
-### cameraContext.startRecord
+## cameraContext.startRecord
 **startRecord 的 Object 参数列表：**
 **StartRecord's Object parameter list:**
 
@@ -79,7 +79,7 @@ This API is the js API supporting the camera component, which has the same platf
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
-### cameraContext.stopRecord
+## cameraContext.stopRecord
 **stopRecord 的 Object 参数列表：**
 **stopRecord Object parameter list:**
 

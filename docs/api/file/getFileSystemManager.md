@@ -1,4 +1,4 @@
-#### uni.getFileSystemManager()
+## uni.getFileSystemManager()
 
 获取全局唯一的文件管理器
 Get a globally unique file manager

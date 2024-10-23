@@ -18,13 +18,11 @@ The map component is used to display the map, while the positioning API only obt
 **地图服务商说明**
 **Instructions for Map Service Provider**
 
-|地图服务商|App|H5|微信小程序|
-|Map Service Provider| App| H5|WeChat MiniApp|
-|:-:|:-:|:-:|:-:|
-|高德|√|3.6.0+||
-|Google|3.4+ 仅nvue页面|3.2.10+||
-|腾讯||√|√|
-|Tencent||√|√|
+|地图服务商	|安卓/iOS								|HarmonyOS Next	|H5			|微信小程序	|
+|:-:			|:-:										|:-:						|:-:		|:-:			|
+|高德			|√											|x							|3.6.0+	|					|
+|Google		|3.4+ 仅nvue页面					|x							|3.2.10+|					|
+|腾讯			|4.31+ 仅vue3项目vue页面	|4.25+					|√			|√				|
 
 
 **属性说明**
@@ -109,6 +107,28 @@ The map component is used to display the map, while the positioning API only obt
 - 谷歌地图使用 `wgs84` 坐标，其他地图使用 `gcj02` 坐标，用错坐标类型会显示偏移。
 - App平台 `layer-style` 属性需要在地图服务商后台创建，值设置为高德后台申请的字符串，[详情](https://developer.amap.com/api/android-sdk/guide/create-map/custom)。
 - H5 端高德地图 include-points 属性仅支持 2 个坐标点，表示显示范围的西南角和东北角。
+
+### 腾讯地图服务商说明
+
+**申请及使用key**
+
+App平台（包含iOS、安卓、鸿蒙）腾讯地图使用web方案，在申请key时注意将页面域名白名单设置为空，如下图
+
+![](https://web-ext-storage.dcloud.net.cn/doc/uniapp/component/app-tencent-map-web-service-key.jpg)
+
+出于安全考虑，安卓、iOS端manifest.json内配置的key仅用来展示地图，uni.chooseLocation所依赖的地点搜索、逆地址解析功能需要通过uniCloud云对象[uni-map-co](https://ext.dcloud.net.cn/plugin?id=13872)来调用，开发者可以通过安全网络来保障服务端api不被他人盗用，详情参考[uni.chooseLocation](../api/location/location.md#chooselocation)文档。开发者可以将manifest.json内配置的key的所有api额度设置为0，避免key泄露产生额外的资源消耗。
+
+鸿蒙平台由于暂不支持安全网络，所以chooseLocation依然使用manifest.json内配置的key来调用地点搜索、逆地址解析。
+
+### 高德地图审图号
+
+- 普通地图：GS (2023)551号 | GS (2023)2175号
+- 卫星地图：GS (2023)4047号
+- 地形图：GS(2021)6352号
+
+### 腾讯地图审图号
+
+- 普通地图：GS粤（2023）1171号
 
 ### 近期新增功能
 ### Recently Added Features
@@ -455,8 +475,8 @@ Nvue map replacement arrow icon format reference: [https://ask.dcloud.net.cn/art
 **注意事项**
 **Precautions**
 
-- 小程序和app-vue中，`<map>` 组件是由引擎创建的原生组件，它的层级是最高的，不能通过 z-index 控制层级。在`<map>`上绘制内容，可使用组件自带的`marker、controls`等属性，也可以使用`<cover-view>`组件。App端还可以使用plus.nativeObj.view 或 subNVue 绘制原生内容，[参考](/component/native-component)。另外App端nvue文件不存在层级问题。从微信基础库2.8.3开始，支持map组件的同层渲染，不再有层级问题。
--In MiniApp and app-vue, the `<map>` component is a native component created by the engine. It has the highest level and cannot be controlled by z-index. To draw content on `<map>`, you can use the `marker, controls` and other attributes that come with the component, or you can use the `<cover-view>` component. App side can also use plus.nativeObj.view or subNVue to draw native content, [Reference](/component/native-component). In addition, there is no hierarchical problem with the nvue file on the App side. Starting from WeChat Basic Library 2.8.3, it supports the same layer rendering of map components, and there is no layer problem anymore.
+- App端 map 组件实例同时存在个数有上限（大概10个）超过后会显示黑色，如果页面深度过深，每个页面都需要显示map组件，可以使用 v-if 控制一下，页面隐藏的时候销毁当前页面的 map 组件，页面显示的时候在创建。
+- 小程序和app-vue中，`<map>` 组件是由引擎创建的原生组件，它的层级是最高的，不能通过 z-index 控制层级。在`<map>`上绘制内容，可使用组件自带的`marker、controls`等属性，也可以使用`<cover-view>`组件。App端还可以使用plus.nativeObj.view 或 subNVue 绘制原生内容，[参考](/component/native-component)。另外App端nvue文件不存在层级问题。从微信基础库2.8.3开始，支持map组件的同层渲染，不再有层级问题。app的iOS、Android、鸿蒙新增了腾讯地图，腾讯地图在这3个平台使用web渲染，没有层级问题。
 - 微信小程序端 `controls` 属性即将废弃，[详情](https://developers.weixin.qq.com/miniprogram/dev/component/map.html)。如果所用基础库支持同层渲染，则可以直接使用 `<view>` 组件，否则使用`<cover-view>`组件
 - The `controls` property of the WeChat MiniApp will be deprecated, [Details](https://developers.weixin.qq.com/miniprogram/dev/component/map.html).If the base library used supports same-layer rendering, you can use the `<view>` component directly, otherwise use the `<cover-view>` component
 - App端nvue文件的map和小程序拉齐度更高。vue里的map则与plus.map功能一致，和小程序的地图略有差异。**App端使用map推荐使用nvue。**
@@ -528,3 +548,7 @@ DCloud为开发者争取了福利，可优惠获取商业授权。如有需求�
 **运行效果图**
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/408.png)
+
+### 【福利】高德拉新
+
+一键注册高德企业开发者，最高可获取210元奖励金，详见[https://ask.dcloud.net.cn/article/41279](https://ask.dcloud.net.cn/article/41279)

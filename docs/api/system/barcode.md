@@ -5,9 +5,11 @@ Call up the code scanning interface of the client, and return the corresponding 
 **平台差异说明**
 **Platform Difference Description**
 
-|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|x|√|√|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.scanCode.compatibility -->
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -109,7 +111,7 @@ uni.scanCode({
 
 **Tip**
 
-- App的扫码引擎，使用业内开源的通用扫码库，识别效率比不过微信、支付宝等商业扫码库。如需更强的扫码效果，支付宝等原生语言扫码插件：[https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&orderBy=Relevance&cat1=5&cat2=51](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&orderBy=Relevance&cat1=5&cat2=51)，或uts插件：[https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&orderBy=Relevance&cat1=8&cat2=81](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&orderBy=Relevance&cat1=8&cat2=81)
+- App的扫码引擎，使用业内开源的通用扫码库，识别效率比不过微信、支付宝、华为、谷歌等商业扫码库。如需更强的扫码效果，推荐使用uts插件：[https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&orderBy=Relevance&cat1=8&cat2=81](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&orderBy=Relevance&cat1=8&cat2=81)
 - App-vue如果想自定义扫码，可参考[uni-app中如何使用5+的原生界面控件](http://ask.dcloud.net.cn/article/35036)和[plus.barcode API](https://www.html5plus.org/doc/zh_cn/barcode.html)
 - If App-vue wants to customize the code scanning, please refer to [How to use 5+ native interface controls in uni-app](http://ask.dcloud.net.cn/article/35036) and [plus.barcode API ](https://www.html5plus.org/doc/zh_cn/barcode.html)
 - App-nvue，支持barcode组件，可自定义扫码界面。[详见](https://uniapp.dcloud.io/component/barcode)。App端自定义扫码界面，建议使用nvue方式。

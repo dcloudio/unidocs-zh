@@ -1,4 +1,4 @@
-# uni.requestVirtualPayment(OBJECT)
+## uni.requestVirtualPayment(OBJECT)
 
 **概述**
 
@@ -57,9 +57,9 @@
 |short_series_goods				|道具直购	|
 |short_series_coin| 代币充值 |
 
-## 代码示例
+### 代码示例
 
-### 代币充值
+#### 代币充值
 
 ```javascript
 // 仅作为示例，非真实参数信息。
@@ -74,7 +74,7 @@ uni.requestVirtualPayment({
 			user_id: "001"
 		})
 	},
-	mode: "short_series_coin", 
+	mode: "short_series_coin",
 	paySig: "支付签名",
 	signature: '用户态签名',
 	success: (res) => {
@@ -89,7 +89,7 @@ uni.requestVirtualPayment({
 });
 ```
 
-### 道具直购
+#### 道具直购
 
 ```javascript
 // 仅作为示例，非真实参数信息。
@@ -106,7 +106,7 @@ uni.requestVirtualPayment({
 		productId: "", // 道具ID, **该字段仅mode=short_series_goods时需要必填**
 		goodsPrice: 1, // 道具单价(分), **该字段仅mode=short_series_goods时需要必填**, 用来校验价格与后台道具价格是否一致, 避免用户在业务商城页看到的价格与实际价格不一致导致投诉
 	},
-	mode: "short_series_coin", 
+	mode: "short_series_coin",
 	paySig: "支付签名",
 	signature: '用户态签名',
 	success: (res) => {
@@ -121,12 +121,12 @@ uni.requestVirtualPayment({
 });
 ```
 
-## 服务器相关
+### 服务器相关
 
-### uniCloud开发
+#### uniCloud开发
 - 前端：使用 `uni-pay` 组件发起支付。
 - 服务端：使用[uniPay](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)，该服务对应的演示工程在插件市场：[https://ext.dcloud.net.cn/plugin?id=1835](https://ext.dcloud.net.cn/plugin?id=1835)，此示例为完整的前后端支付演示，使用`uniPay`可极快的完成支付业务开发。
 
-### php、java等后端语言开发
+#### php、java等后端语言开发
 - 前端：使用 `uni.request` 请求服务端接口，得到订单数据，使用 `uni.requestVirtualPayment` 向支付平台发起支付请求，拉起支付平台的客户端进行支付。
 - 服务端：[参考文档](https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html)

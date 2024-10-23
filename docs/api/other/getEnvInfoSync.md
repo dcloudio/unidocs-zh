@@ -1,4 +1,4 @@
-#### uni.getEnvInfoSync()
+## uni.getEnvInfoSync()
 
 获取小程序环境信息。
 

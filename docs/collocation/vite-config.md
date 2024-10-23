@@ -18,8 +18,7 @@ vite.config.js is an optional configuration file. If this file exists in the roo
 部分配置项会被编译配置覆盖，例如：
 Some configuration items will be overridden by the build configuration, for example:
 
-- base：支持
-- base: support
+- base：web 平台支持
 - root：不支持
 - root: not supported
 - mode：不支持

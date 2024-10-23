@@ -249,9 +249,9 @@ unverifyStyle data structure:
         "height": "60px"   //图标高度 默认值：60px
     },
     "closeIcon": {
-        "path": "static/xxx.png", // 自定义显示在授权框中的logo，仅支持本地图片 默认显示App logo
-        "width":  "60px",  //图标宽度 默认值：60px (HBuilderX 4.0支持)
-        "height": "60px"   //图标高度 默认值：60px (HBuilderX 4.0支持)
+        "path": "static/xxx.png", // 自定义显示在授权框中的logo，仅支持本地图片
+        "width":  "60px",  //图标宽度 默认值：60px (HBuilderX 4.0+ 仅iOS支持)
+        "height": "60px"   //图标高度 默认值：60px (HBuilderX 4.0+ 仅iOS支持)
     },
     "phoneNum": {
         "color": "#202020"  // 手机号文字颜色 默认值：#202020

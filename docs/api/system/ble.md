@@ -5,7 +5,7 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√|x|x|√|√|x|x|√|x|x|√|
 
-### uni.setBLEMTU(OBJECT)
+## uni.setBLEMTU(OBJECT)
 
 2.8.4+
 
@@ -29,7 +29,7 @@ Set the Bluetooth maximum transmission unit. It needs to be called after the suc
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| function| | No| Callback function for closed interface calling (available both for successful and failed calling)|
 
-### uni.writeBLECharacteristicValue(OBJECT)
+## uni.writeBLECharacteristicValue(OBJECT)
 
 向低功耗蓝牙设备特征值中写入二进制数据。注意：必须设备的特征值支持 write 才可以成功调用。
 Write binary data into the characteristic value of the low power Bluetooth devices. Note: Successful invocation requires the characteristic value of the device supporting write.
@@ -69,8 +69,7 @@ Write binary data into the characteristic value of the low power Bluetooth devic
 |writeNoResponse|Force no reply write, report an error if not supported|
 
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|
@@ -106,8 +105,7 @@ Write binary data into the characteristic value of the low power Bluetooth devic
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 |10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
-#### 注意
-#### Notice
+### 注意
 
 *   并行调用多次会存在写失败的可能性。
 * There is the possibility of write failure when calling in parallel for many times.
@@ -118,8 +116,7 @@ Write binary data into the characteristic value of the low power Bluetooth devic
 *   安卓平台上，在调用 `notifyBLECharacteristicValueChange` 成功后立即调用 `writeBLECharacteristicValue` 接口，在部分机型上会发生 10008 系统错误
 * On the Android platform, the `writeBLECharacteristicValue` interface will be called immediately after the successful call of `notifyBLECharacteristicValueChange`, and the system error 10008 will occur on some models
 
-#### 示例代码
-#### Sample code
+### 示例代码
 
 ```js
 // 向蓝牙设备发送一个0x00的16进制数据
@@ -146,7 +143,7 @@ uni.writeBLECharacteristicValue({
 })
 ```
 
-### uni.readBLECharacteristicValue(OBJECT)
+## uni.readBLECharacteristicValue(OBJECT)
 
 读取低功耗蓝牙设备的特征值的二进制数据值。注意：必须设备的特征值支持 read 才可以成功调用。
 Read the binary data value of the characteristic value of the low power Bluetooth devices. Note: Successful invocation requires the characteristic value of the device supporting read.
@@ -170,8 +167,7 @@ Read the binary data value of the characteristic value of the low power Bluetoot
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| function| | No| Callback function for closed interface calling (available both for successful and failed calling)|
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|
@@ -207,16 +203,14 @@ Read the binary data value of the characteristic value of the low power Bluetoot
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 |10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
-#### 注意
-#### Notice
+### 注意
 
 *   并行调用多次会存在读失败的可能性。
 * There is the possibility of read failure when calling in parallel for many times.
 *   接口读取到的信息需要在 `onBLECharacteristicValueChange` 方法注册的回调中获取。
 * The information read by the interface needs to be obtained in the callback registered by the `onBLECharacteristicValueChange` method.
 
-#### 示例代码
-#### Sample code
+### 示例代码
 
 ```js
 // 必须在这里的回调才能获取
@@ -240,7 +234,7 @@ uni.readBLECharacteristicValue({
 })
 ```
 
-### uni.onBLEConnectionStateChange(CALLBACK)
+## uni.onBLEConnectionStateChange(CALLBACK)
 
 监听低功耗蓝牙连接状态的改变事件。包括开发者主动连接或断开连接，设备丢失，连接异常断开等等
 listen to the change events of low power Bluetooth connection status. Include developers actively connecting or disconnecting, device loss, abnormal disconnection and so on.
@@ -256,8 +250,7 @@ listen to the change events of low power Bluetooth connection status. Include de
 |connected|boolean|是否处于已连接状态|
 | connected| boolean| Is it connected?|
 
-#### 示例代码
-#### Sample code
+### 示例代码
 
 ```js
 uni.onBLEConnectionStateChange(function (res) {
@@ -267,7 +260,7 @@ uni.onBLEConnectionStateChange(function (res) {
 })
 ```
 
-### uni.onBLECharacteristicValueChange(CALLBACK)
+## uni.onBLECharacteristicValueChange(CALLBACK)
 
 监听低功耗蓝牙设备的特征值变化事件。必须先启用 `notifyBLECharacteristicValueChange` 接口才能接收到设备推送的 notification。
 listen to the characteristic value change events of the low power Bluetooth devices. You must first enable the `notifyBLECharacteristicValueChange` interface to receive notification pushed by the device.
@@ -287,8 +280,7 @@ listen to the characteristic value change events of the low power Bluetooth devi
 |value|ArrayBuffer|特征值最新的值|
 | value| ArrayBuffer| Latest value of the eigenvalue|
 
-#### 示例代码
-#### Sample code
+### 示例代码
 
 ```js
 // ArrayBuffer转16进度字符串示例
@@ -308,7 +300,7 @@ uni.onBLECharacteristicValueChange(function (res) {
 })
 ```
 
-### uni.notifyBLECharacteristicValueChange(OBJECT)
+## uni.notifyBLECharacteristicValueChange(OBJECT)
 
 启用低功耗蓝牙设备特征值变化时的 notify 功能，订阅特征值。注意：必须设备的特征值支持 notify 或者 indicate 才可以成功调用。
 Enable the notify function when the characteristic values of low power Bluetooth device changes, and subscribe to the characteristic values.
@@ -336,8 +328,7 @@ Notice: Only when the characteristic value of the necessary device supports noti
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| function| | No| Callback function for closed interface calling (available both for successful and failed calling)|
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|
@@ -373,16 +364,14 @@ Notice: Only when the characteristic value of the necessary device supports noti
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 |10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
-#### 注意
-#### Notice
+### 注意
 
 *   订阅操作成功后需要设备主动更新特征值的 value，才会触发 [`uni.onBLECharacteristicValueChange`](/api/system/ble?id=onblecharacteristicvaluechange) 回调。
 * After the subscription is successful, the device needs to actively update the value of the characteristic value to trigger the [`uni.onBLECharacteristicValueChange`](/api/system/ble?id=onblecharacteristicvaluechange) callback.
 *   安卓平台上，在调用 `notifyBLECharacteristicValueChange` 成功后立即调用 `writeBLECharacteristicValue` 接口，在部分机型上会发生 10008 系统错误
 * On the Android platform, the `writeBLECharacteristicValue` interface will be called immediately after the successful call of `notifyBLECharacteristicValueChange`, and the system error 10008 will occur on some models
 
-#### 示例代码
-#### Sample code
+### 示例代码
 
 ```js
 uni.notifyBLECharacteristicValueChange({
@@ -402,7 +391,7 @@ uni.notifyBLECharacteristicValueChange({
 })
 ```
 
-### uni.getBLEDeviceServices(OBJECT)
+## uni.getBLEDeviceServices(OBJECT)
 
 获取蓝牙设备所有服务(service)。
 Obtain all services of the Bluetooth devices.
@@ -442,8 +431,7 @@ Obtain all services of the Bluetooth devices.
 |isPrimary|boolean|该服务是否为主服务|
 | isPrimary| boolean| Whether the service is a primary service|
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|
@@ -479,8 +467,7 @@ Obtain all services of the Bluetooth devices.
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 |10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
-#### 示例代码
-#### Sample code
+### 示例代码
 
 ```js
 uni.getBLEDeviceServices({
@@ -494,7 +481,7 @@ uni.getBLEDeviceServices({
 ```
 
 
-### uni.getBLEDeviceRSSI(OBJECT)
+## uni.getBLEDeviceRSSI(OBJECT)
 
 2.8.4+
 
@@ -517,7 +504,7 @@ Get the signal strength of Bluetooth device.
 | complete| function| | No| Callback function for closed interface calling (available both for successful and failed calling)|
 
 
-### uni.getBLEDeviceCharacteristics(OBJECT)
+## uni.getBLEDeviceCharacteristics(OBJECT)
 
 获取蓝牙设备某个服务中所有特征值(characteristic)。
 Obtain all characteristic values of a certain service of that Bluetooth device.
@@ -574,8 +561,7 @@ Obtain all characteristic values of a certain service of that Bluetooth device.
 |indicate|boolean|该特征值是否支持 indicate 操作|
 | indicate| boolean| Does this characteristic value support indicate operation|
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|
@@ -603,8 +589,7 @@ Obtain all characteristic values of a certain service of that Bluetooth device.
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
 | 10009| system not support| Android system-specific. BLE is not available on system version lower than 4.3.|
 
-#### 示例代码
-#### Sample code
+### 示例代码
 
 ```js
 uni.getBLEDeviceCharacteristics({
@@ -620,7 +605,7 @@ uni.getBLEDeviceCharacteristics({
 })
 ```
 
-### uni.createBLEConnection(OBJECT)
+## uni.createBLEConnection(OBJECT)
 
 连接低功耗蓝牙设备。
 Connect low power Bluetooth devices.
@@ -645,8 +630,7 @@ If the APP has searched for a Bluetooth device beforehand and successfully conne
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| function| | No| Callback function for closed interface calling (available both for successful and failed calling)|
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|
@@ -682,8 +666,7 @@ If the APP has searched for a Bluetooth device beforehand and successfully conne
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 |10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
-#### 注意
-#### Notice
+### 注意
 
 *   请保证尽量成对的调用 `createBLEConnection` 和 `closeBLEConnection` 接口。安卓如果多次调用 `createBLEConnection` 创建连接，有可能导致系统持有同一设备多个连接的实例，导致调用 `closeBLEConnection` 的时候并不能真正的断开与设备的连接。
 * Make sure to call the `createBLEConnection` and `closeBLEConnection` interfaces in pairs as much as possible. If Android calls `createBLEConnection` multiple times to create a connection, the system may hold multiple connection instances of the same device, resulting in the failure to truly disconnect from the device when calling `closeBLEConnection`.
@@ -692,8 +675,7 @@ If the APP has searched for a Bluetooth device beforehand and successfully conne
 *   若对未连接的设备或已断开连接的设备调用数据读写操作的接口，会返回 10006 错误，建议进行重连操作。
 * If the interface of data read-write operation is called for the unconnected or disconnected devices, it will return 10006 error, and recommend to reconnect again.
 
-#### 示例代码
-#### Sample code
+### 示例代码
 
 ```js
 uni.createBLEConnection({
@@ -706,7 +688,7 @@ uni.createBLEConnection({
 })
 ```
 
-### uni.closeBLEConnection(OBJECT)
+## uni.closeBLEConnection(OBJECT)
 
 断开与低功耗蓝牙设备的连接。
 Disconnect from low power Bluetooth devices.
@@ -726,8 +708,7 @@ Disconnect from low power Bluetooth devices.
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| function| | No| Callback function for closed interface calling (available both for successful and failed calling)|
 
-#### 错误
-#### Error
+### 错误
 
 |错误码|错误信息|说明|
 | Error code| Error message| Instruction|
@@ -763,8 +744,7 @@ Disconnect from low power Bluetooth devices.
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 |10013|invalid_data|The connection deviceId is empty or in an incorrect format|
 
-#### 示例代码
-#### Sample code
+### 示例代码
 
 ```js
 uni.closeBLEConnection({

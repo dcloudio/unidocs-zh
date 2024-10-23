@@ -16,7 +16,7 @@ Custom component instance. **The applet does not support this parameter, the inp
 
 |App|HarmonyOS Next|微信小程序|H5|支付宝小程序|qq小程序|百度小程序|抖音小程序|飞书小程序|360小程序|快应用|
 |:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
-|2.8.12+，app-vue|x|基础库 2.11.1+|√|√|√|√|√|x|√|x|
+|2.8.12+，app-vue|HBuilderX 4.28|基础库 2.11.1+|√|√|√|√|√|x|√|x|
 
 注意：支付宝小程序、qq小程序、百度小程序、抖音小程序，暂不支持监听屏幕动态改变，即只执行一次媒体查询。
 

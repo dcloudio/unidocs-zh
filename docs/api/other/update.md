@@ -1,4 +1,4 @@
-### uni.getUpdateManager()
+## uni.getUpdateManager()
 
 本API返回**全局唯一**的版本更新管理器对象： updateManager，用于管理小程序更新。
 This API returns a **globally unique** version update manager object: updateManager, which is used to manage applet updates.

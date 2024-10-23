@@ -1,4 +1,3 @@
-
 ::: tip 组件名：uni-swipe-action
 > 代码块： `uSwipeAction`、`uSwipeActionItem`
 
@@ -31,7 +30,7 @@
 			<view><text>置顶</text></view>
 		</template>
 		<view>
-			<text >使用插槽</text>
+			<text>使用插槽</text>
 		</view>
 		<template v-slot:right>
 			<view><text>删除</text></view>
@@ -55,47 +54,50 @@
 
 <!-- 按组使用 -->
 <uni-swipe-action>
-    <uni-swipe-action-item :right-options="options"  @click="bindClick" @change="swipeChange($event, index)">
-		<view >item1</view>
-    </uni-swipe-action-item>
-    <uni-swipe-action-item :right-options="options"  @click="bindClick" @change="swipeChange($event, index)">
+	<uni-swipe-action-item :right-options="options" @click="onClick" @change="swipeChange($event, 0)">
+		<view>item1</view>
+	</uni-swipe-action-item>
+	<uni-swipe-action-item :right-options="options" @click="onClick" @change="swipeChange($event, 1)">
 		<view>item2</view>
-    </uni-swipe-action-item>
-    <uni-swipe-action-item :right-options="options"  @click="bindClick" @change="swipeChange($event, index)">
+	</uni-swipe-action-item>
+	<uni-swipe-action-item :right-options="options" @click="onClick" @change="swipeChange($event, 2)">
 		<view>item3</view>
-    </uni-swipe-action-item>
+	</uni-swipe-action-item>
 </uni-swipe-action>
+
 
 ```
 
 ```javascript
 export default {
-  data(){
-    return {
-      options:[
-        {
-            text: '取消',
-            style: {
-                backgroundColor: '#007aff'
-            }
-        }, {
-            text: '确认',
-            style: {
-                backgroundColor: '#dd524d'
-            }
-        }
-      ]
-    }
-  },
-  methods:{
-    onClick(e){
-      console.log('点击了'+(e.position === 'left' ? '左侧' : '右侧') + e.content.text + '按钮')
-    },
-    swipeChange(e,index){
-      console.log('当前状态：'+ e +'，下标：' + index)
-    }
-  }
+	data() {
+		return {
+			options: [{
+				text: '取消',
+				style: {
+					backgroundColor: '#007aff'
+				}
+			}, {
+				text: '确认',
+				style: {
+					backgroundColor: '#dd524d'
+				}
+			}]
+		}
+	},
+	methods: {
+		onClick(e) {
+			console.log('点击了' + (e.position === 'left' ? '左侧' : '右侧') + e.content.text + '按钮')
+		},
+		change(event) {
+			console.log('改变事件', event);
+		},
+		swipeChange(e, index) {
+			console.log('当前状态：' + e + '，下标：' + index)
+		}
+	}
 }
+
 
 ```
 
@@ -373,7 +375,6 @@ export default {
 		},
 		onReady() {
 			// 模拟延迟赋值
-			// emulate lazy assignment
 			setTimeout(() => {
 				this.isOpened = 'right';
 			}, 1000);

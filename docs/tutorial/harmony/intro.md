@@ -10,7 +10,6 @@
 
 本文档主要包括以下内容：
 
-1. [运行和调试](debug.md)
-2. [发行](publish.md)
-3. [调用鸿蒙原生API](native-api.md)
-4. [内置模块说明](built-in-module.md)
+1. [运行和发行](runbuild.md)
+2. [调用鸿蒙原生API](native-api.md)
+3. [内置模块说明](built-in-module.md)

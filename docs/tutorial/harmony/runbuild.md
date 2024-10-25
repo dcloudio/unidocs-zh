@@ -1,6 +1,6 @@
 # 运行和发行
 
-> HBuilderX 版本需 ≥ 4.27
+> HBuilderX 版本需 ≥ 4.24
 
 > [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)
 
@@ -12,9 +12,10 @@
 
 ## 开发环境要求@env
 
-- DevEco-Studio 5.0.3.400 以上 [下载地址](https://developer.huawei.com/consumer/cn/download/)
+- DevEco-Studio [下载地址](https://developer.huawei.com/consumer/cn/download/)，HBuilderX 4.24+ 要求 DevEco-Studio 5.0.3.400+，HBuilderX 4.31+ 要求 DevEco-Studio 5.0.3.800+。
 - 鸿蒙系统版本 API 12 以上 （DevEco-Studio有内置鸿蒙模拟器）
-- HBuilderX-4.27+ [下载地址](https://www.dcloud.io/hbuilderx.html)
+- HBuilderX 4.24+ [下载地址](https://www.dcloud.io/hbuilderx.html)
+- HBuilderX 4.31+ 在调试运行时不支持 x86_64 平台，会影响到 Windows 系统和部分 Mac 系统的鸿蒙模拟器无法使用，需使用真机调试
 
 **Windows系统如使用模拟器则需要开启以下功能**
 
@@ -28,7 +29,24 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085210915b1knhu7l3u8.png)
 
+### 调试运行的方式@run-mode
+
+HBuilderX 4.24 版本开始支持【运行到鸿蒙】，具体的方式是又开发者下载鸿蒙工程模板并创建独立的鸿蒙工程目录，
+然后在 uni-app 项目中的 `manifest.json` 里面设置 `app-harmony.projectPath` 属性来指向这个鸿蒙工程目录，
+uni-app 项目在编译时把编译产物输出到鸿蒙工程目录，然后调起 DevEco Studio 打开鸿蒙工程目录，由开发者手动完成后续的运行调试工作。
+
+HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【运行到鸿蒙】时自动创建鸿蒙工程目录，与 uni-app 项目的编译产物合并，
+然后调用鸿蒙工具链完成打包和安装、运行等操作，同时从运行设备上收集输出的日志显示到 HBuilderX 的控制台。
+
+新的内置模板的方式虽然在调试运行过程中不再调起 DevEco Studio，但一般来说仍然需要安装 DevEco Studio，因为：
+
+1. 需要使用 DevEco Studio 提供的鸿蒙工具链来完成相关操作。
+2. 启动鸿蒙模拟器这个操作只能在 DevEco Studio 中完成。
+3. 调试运行时如果需要进行数字签名，可以在 DevEco Studio 中自动申请调试证书。
+
 ### 启动鸿蒙模拟器@connectvirtually
+
+在 DevEco Studio 中打开任意一个项目（也可以新建一个空项目），然后在下图的位置进入设备管理器：
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085379828ap3pkhhfmig.png)
 
@@ -46,13 +64,11 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085712493il2ep17ldg8.png)
 
-启动模拟器成功后，如果提示需要先签名，则进行[配置签名](#signature)
-
 ### 连接鸿蒙真机@connectmobile
 
 **注意：真机需要鸿蒙系统版本 API 12 以上**
 
-打开鸿蒙手机开发者模式，开启USB调试，通过USB线连接电脑，在此处选择你的手机名称，再启动项目即可，如果提示需要先签名，则进行[配置签名](#signature)
+打开鸿蒙手机开发者模式，开启USB调试，通过USB线连接电脑，在此处能看到对应的设备标识符则表示连接成功
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720091392422r91cpejpp7g.png)
 

@@ -60,13 +60,13 @@ HX 里面有两个专门与鸿蒙相关的功能入口：
 - `ohos.permission.WRITE_CONTACTS`
 - `ohos.permission.READ_PASTEBOARD`
 
+**注：从 HX 4.31+ 开始默认配置中已经不再包含 ACL 权限，如果需要的话请自行修改 `harmony-configs/entry/src/main/module.json5` 文件添加权限声明。**
+
 如果业务代码里面并没有实际使用到这些权限，一个简单的办法就是修改 `harmony-configs/entry/src/main/module.json5` 文件，
 删除 `module.requestPermissions` 数组里面涉及这三项的内容，重新运行即可：
 
 如果确实需要这里的某些权限，那就需要申请一个调试证书，并配置到 `harmony-configs/build-profile.json5` 文件的 `app.signingConfigs` 中。
 具体请参考 [调试用的数字签名证书](#signing-debug)
-
-**注：从 HX 4.31+ 开始默认配置中已经不再包含 ACL 权限，如果需要的话请自行修改 `harmony-configs/entry/src/main/module.json5` 文件添加。**
 
 ### 报错 `配置的 bundleName 与签名证书不符`@bundle-name-mismatch
 
@@ -110,8 +110,8 @@ HX 里面有两个专门与鸿蒙相关的功能入口：
 
 用于申请证书的这个鸿蒙工程需注意以下几点：
 
-    - 设置好正确的应用包名 `bundleName`，与最终使用该证书进行签名的项目保持一致。
-    - 需在 `entry/src/main/module.json5` 中声明相关的 ACL 权限，这样获得的证书中才能包含相关的授权。
+- 设置好正确的应用包名 `bundleName`，与最终使用该证书进行签名的项目保持一致。
+- 需在 `entry/src/main/module.json5` 中声明相关的 ACL 权限，这样获得的证书中才能包含相关的授权。
 
 通过 DevEco Studio 自动申请得到的证书，缺省会保存到电脑的用户目录下，在 Windows 系统中一般是 `%USERPROFILE%\.ohos\config`，在 Mac 系统中一般是 `~/.ohos/config`。
 配置信息中包含的三个文件缺省都是采用绝对路径来表示，也可以把这些文件移到 `harmony-configs` 目录下，这样就可以使用相对路径来表示，相对于 `harmony-configs` 目录。

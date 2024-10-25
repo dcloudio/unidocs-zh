@@ -12,10 +12,11 @@
 
 ## 开发环境要求@env
 
-- DevEco-Studio [下载地址](https://developer.huawei.com/consumer/cn/download/)，HBuilderX 4.24+ 要求 DevEco-Studio 5.0.3.400+，HBuilderX 4.31+ 要求 DevEco-Studio 5.0.3.800+。
-- 鸿蒙系统版本 API 12 以上 （DevEco-Studio有内置鸿蒙模拟器）
 - HBuilderX 4.24+ [下载地址](https://www.dcloud.io/hbuilderx.html)
-- HBuilderX 4.31+ 在调试运行时不支持 x86_64 平台，会影响到 Windows 系统和部分 Mac 系统的鸿蒙模拟器无法使用，需使用真机调试
+- DevEco-Studio [下载地址](https://developer.huawei.com/consumer/cn/download/)
+  - HBuilderX 4.24+ 要求 DevEco-Studio 5.0.3.400+，HBuilderX 4.31+ 要求 DevEco-Studio 5.0.3.800+。
+  - 鸿蒙系统版本 API 12 以上 （DevEco-Studio有内置鸿蒙模拟器）
+- HBuilderX 4.31+ 构建的鸿蒙运行包不支持 x86_64 平台，会影响到 Windows 系统和部分 Mac 系统的鸿蒙模拟器无法使用，需使用真机调试
 
 **Windows系统如使用模拟器则需要开启以下功能**
 

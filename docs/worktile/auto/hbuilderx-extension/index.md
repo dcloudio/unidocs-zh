@@ -308,7 +308,7 @@ module.exports = {
 ```
 
 
-## 多个HBuilderX时，如何共用一个测试依赖？
+## 多个HBuilderX时，如何共用一个测试依赖？@share_test_libs
 
 
 场景：电脑上安装了HBuilderX 正式版、Dev、Alpha版本，每个程序plugins目录都重新安装一遍测试依赖？答案：不需要。
@@ -316,7 +316,7 @@ module.exports = {
 解决方案：
 
 1. 进入HBuilderX安装目录，将plugins目录下的hbuilderx-for-uniapp-test-lib目录，拷贝到电脑其它目录。
-2. 拷贝后，在命令行进入拷贝目录下，执行`npm install`
+2. 拷贝后，在命令行进入`上面的拷贝目录下`，执行`npm install`
 3. 打开HBuilderX菜单【设置】【源码视图】，增加配置项:
 
 ```

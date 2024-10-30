@@ -102,6 +102,10 @@ HX 里面有两个专门与鸿蒙相关的功能入口：
 请在 HX 主菜单中选择【工具>插件安装】，找到【App真机运行】插件并点击卸载，然后在主菜单中选择【运行>运行到手机或模拟器>下载真机运行插件】重新安装。
 如果安装过【App真机运行(uni-app x)】插件，需要先卸载掉，否则无法卸载【App真机运行】插件。
 
+### 报错 `未正确配置鸿蒙应用的包名`@bundlename-incorrect
+
+应该在 `manifest.json` 的【鸿蒙配置】中设置正确的包名，具体要求请参考 [配置应用包名](https://developer.huawei.com/consumer/cn/doc/app/agc-help-createharmonyapp-0000001945392297)
+
 ## 关于数字签名证书的配置@signing
 
 ### 调试用的数字签名证书@signing-debug

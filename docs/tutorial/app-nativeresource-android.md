@@ -274,6 +274,8 @@ HBuilderX中对项目右键菜单 "新建" -> "目录"
 }
 ```
 
+ `manifestPlaceholders.json` 文件中的键名和键值必需是字符串，其中键名为占位符的名称，如占位符 ${api_key} 的键名为 api_key，键值为要替换 `AndroidManifest.xml` 中的占位符的值。  
+
 **注意**  
 云端打包默认保留以下`manifestPlaceholders`，避免使用
 - apk.applicationId: 用于保存应用 ID，作用与 android 构建环境内置的 [applicationId](https://developer.android.google.cn/build/configure-app-module?hl=zh-cn#set-application-id) 一致。  

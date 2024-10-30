@@ -263,7 +263,7 @@ HBuilderX中对项目右键菜单 "新建" -> "目录"
 - 其它文件在云打包时将会拷贝到应用级根目录（app）下
 - 应用资源目录配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 
-### manifestPlaceholders.json @manifestPlaceholders  
+### manifestPlaceholders.json @manifestplaceholders  
 在 Android 原生开发中可以在 `build.gradle` 文件配置 `manifestPlaceholders` 数据用于替换 `AndroidManifest.xml` 中的占位符，例如 ${api_key} 。
 为了满足此需求，在项目的 nativeResources/android 目录下可添加 `manifestPlaceholders.json` 文件来配置 `manifestPlaceholders` 数据。
 

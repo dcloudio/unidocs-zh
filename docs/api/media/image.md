@@ -1,4 +1,3 @@
-
  > 图片需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
 
 ## uni.chooseImage(OBJECT)
@@ -43,6 +42,7 @@ App端如需要更丰富的相机拍照API（如直接调用前置摄像头）�
 - App上有时会遇到图片旋转90度问题，插件市场有解决方案：[图片旋转](https://ext.dcloud.net.cn/search?q=%E5%9B%BE%E7%89%87%E6%97%8B%E8%BD%AC)
 - 微信小程序在2023年10月17日之后，使用API需要配置[隐私协议](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)
 - 在部分低端机如红米上拍照闪退，拍照调用的是系统相机，当系统内存不足，rom为了给相机activity分配内存而把app的主activity回收了。遇到此问题建议使用nvue页面并内嵌的[自定义相机](https://ext.dcloud.net.cn/search?q=%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9B%B8%E6%9C%BA&orderBy=Relevance)的原生或uts插件。相关分析报告[详见](https://ask.dcloud.net.cn/article/40877)
+- 由于受[google play 照片和视频权限](https://support.google.com/googleplay/android-developer/answer/14115180)政策的影响，使用uni.chooseImage在上架google play时需要主动添加声明。遇到此问题可以使用插件[uni-chooseSystemMedia](https://ext.dcloud.net.cn/plugin?id=20744)。
 
 **注：文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](/api/file/file.md#savefile)，在应用下次启动时才能访问得到。**
 

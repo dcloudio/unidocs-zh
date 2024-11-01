@@ -1,3 +1,34 @@
+#### 4.32.2024110103-alpha
+* 【uni-app】
+  + App平台、Web平台 修复 4.31版本引发的 rpx 渲染异常的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11253)
+  + App平台 修复 4.31版本引发的 vue 和 nvue 页面混合项目路由跳转异常问题 [详情](https://ask.dcloud.net.cn/question/200528)
+  + App-Android平台 修复 4.31版本引发的 调用 uni.previewImage 闪退的Bug [详情](https://ask.dcloud.net.cn/question/200452)
+  + App-HarmonyOS平台 修复 jsvm 和 napi 数据转换时 null 丢失的Bug
+  + App-HarmonyOS平台 修复 getStorageSync 获取储存的数组时将数组转为了对象的Bug [详情](https://ask.dcloud.net.cn/question/200673)
+  + App-HarmonyOS平台 修复 网络请求返回非法 cookie 导致应用崩溃的Bug
+  + App-HarmonyOS平台 修复 网络请求重定向时返回的 cookie 被设置到错误的 url 的Bug
+  + App-HarmonyOS平台 修复 网络请求 api 访问 http 链接返回的 cookie 无法保存的Bug [详情](https://ask.dcloud.net.cn/question/200536)
+  + App-HarmonyOS平台 修复 网络请求 api 在 url 非法时未进入任何回调的Bug
+  + App-HarmonyOS平台 修复 web-view 组件内请求摄像头、麦克风权限不生效的Bug [详情](https://ask.dcloud.net.cn/question/200562)
+  + App-HarmonyOS平台 调整 web-view 组件内请求定位权限时不再额外弹窗
+  + App-HarmonyOS平台 调整 web-view 组件内请求定位权限时自动申请 ohos.permission.LOCATION 权限
+  + App-HarmonyOS平台 调整 构造 UTSJSONObject 时不再递归所有属性的值
+* 【uni-app x】
+  + Web平台 修复 4.31版本引发的 rpx 渲染异常的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11253)
+  + App-Android平台 修复 4.31版本引发的 编译器 pages.json以及外链引入的css/scss/less文件修改后热更新不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11247)
+  + App-Android平台 修复 4.31版本引发的 pages.json 隐藏tabbar后可能渲染异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11269)
+  + App-Android平台 修复 组件 触发 @click 事件没有音效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11066)
+  + App-Android平台 修复 4.31版本引发的 CSS border 某些情况下border不显示 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11225)
+  + App-Android平台 修复 4.31版本引发的 CSS box-shadow 阴影渲染异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11447)
+  + App-iOS平台 修复 组件 canvas 中使用的 image 更新 src 时可能触发图片重复加载导致绘制异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11136)
+  + App-iOS平台 修复 API dialogPage 可能无法遮挡原生 tabbar [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11129)
+  + App-iOS平台 修复 API uni.getDeviceInfo 返回的 deviceId 值异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11436)
+* 【uts】
+  + App-Android平台 修复 4.31版本引发的 number除法可能会触发 java.lang.ArithmeticException: divide by zero [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11331)
+  + App-Android平台 修复 4.31版本引发的 Math.abs 可能不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11332)
+* 【uniCloud】
+  + 修复 新建云开发环境后，部分情况下uniCloud文件夹显示顺序不正确的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11421)
+
 #### 4.31.2024102414-alpha
 * 【uni-app】
   + 修复 4.25版本引发的 vue3项目 static 目录条件编译失效的Bug [详情](https://ask.dcloud.net.cn/question/199019) [详情](https://ask.dcloud.net.cn/question/199184)

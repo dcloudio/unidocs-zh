@@ -2,6 +2,7 @@
 
 - App平台端详细文档需另见：[业务介绍](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)、[开发指南](https://doc.dcloud.net.cn/uniCloud/frv/dev.html)
 - 微信小程序端业务开发流程，请参考[微信人脸核身接口能力](https://developers.weixin.qq.com/community/business/doc/000442d352c1202bd498ecb105c00d)
+- App HarmonyOS Next 上运行时暂时不支持将 `工程根目录->build-profile.json5->app.products.buildOption.strictMode.caseSensitiveCheck` 配置为 `true`
 
 
 ## uni.getFacialRecognitionMetaInfo()

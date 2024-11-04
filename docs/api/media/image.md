@@ -1,4 +1,4 @@
- > 图片需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
+> 图片需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
 
 ## uni.chooseImage(OBJECT)
 从本地相册选择图片或使用相机拍照。
@@ -335,3 +335,7 @@ uni.compressImage({
   }
 })
 ```
+
+## 注意
+
+- HarmonyOS Next 设备需要添加 `ohos.permission.READ_IMAGEVIDEO` 权限并且自助签名方

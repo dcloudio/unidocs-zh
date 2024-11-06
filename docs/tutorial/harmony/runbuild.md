@@ -77,7 +77,7 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 **注意：配置签名需要先启动模拟器或连接真机后才能配置**
 
-点击 DevEco-Studio 上方菜单 File - Project Structure... 
+点击 DevEco-Studio 上方菜单 File - Project Structure...
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720087126462d9133uo0hmg.png)
 
@@ -185,6 +185,10 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 ## 常见问题@question
 
+### 运行失败报错如 `Unexpected token (Note that you need plugins to import files that are not JavaScript)` 或 `Please make sure that the splash page has one and only one '@Entry' decorator`
+
+请将 HBuilderX 项目向上层目录移动，直到运行成功。这是因为鸿蒙在编译 ArkTs 时，`.ets` 文件路径总长不能大于 255 个字符。
+
 ### 如何修改应用名称、图标、权限等信息@q1
 
 参考鸿蒙官方文档：[应用/组件级配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-component-configuration-stage-V5)
@@ -209,27 +213,27 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 ```js
 // #ifdef APP-HARMONY
-console.log("仅鸿蒙会编译")		
+console.log("仅鸿蒙会编译")
 // #endif
 
 // #ifndef APP-HARMONY
-console.log("仅非鸿蒙会编译")								
+console.log("仅非鸿蒙会编译")
 // #endif
 
 // #ifdef APP
-console.log("安卓、苹果、鸿蒙会编译，小程序和Web不会编译")		
+console.log("安卓、苹果、鸿蒙会编译，小程序和Web不会编译")
 // #endif
 
 // #ifndef APP
-console.log("安卓、苹果、鸿蒙不会编译，小程序和Web会编译")		
+console.log("安卓、苹果、鸿蒙不会编译，小程序和Web会编译")
 // #endif
 
 // #ifdef APP-PLUS
-console.log("安卓、苹果会编译，鸿蒙不会编译，小程序和Web也不会编译")		
+console.log("安卓、苹果会编译，鸿蒙不会编译，小程序和Web也不会编译")
 // #endif
 
 // #ifndef APP-PLUS
-console.log("安卓、苹果不会编译，鸿蒙会编译，小程序和Web也会编译")		
+console.log("安卓、苹果不会编译，鸿蒙会编译，小程序和Web也会编译")
 // #endif
 ```
 
@@ -286,7 +290,7 @@ Mac系统快速复制路径方法
 ### 鸿蒙支持uniPush推送吗?@q10
 
 暂不支持
- 
+
 ### release模式进入使用了组合式api的页面报错`Cannot read property route of undefined`@q11
 
 此问题由于arkTs的混淆Bug引发，即使进入到一个空的组合式api页面也会出现这个报错，已反馈给鸿蒙团队处理。
@@ -302,6 +306,3 @@ Mac系统快速复制路径方法
 删除后还需要点右上角的 Sync Now，并等待 Sync 结束
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/908ef551-8605-4add-b68f-42aa497109b7.png)
-
-
-

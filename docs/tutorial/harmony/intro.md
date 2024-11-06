@@ -2,6 +2,8 @@
 
 自 `HBuilderX 4.27` 版本开始，uni-app 支持`Harmony Next`平台的App开发。
 
+目前仅支持 vue3 项目编译到鸿蒙平台，vue2 项目升级 vue3 项目请参考：[vue2 项目迁移到 vue3](../migration-to-vue3.md)
+
 本专题旨在介绍如何使用 `uni-app` 框架开发适用于`Harmony Next`操作系统的应用，帮助开发者快速掌握鸿蒙应用的开发方法。
 
 本文档主要包括以下内容：

@@ -526,6 +526,10 @@ vue3 出于性能考虑，style 中暂不支持 div、p 等 HTML 标签选择器
   > Android < 4.4，配置 X5 内核支持，首次需要联网下载，可以配置下载 X5 内核成功后启动应用，[详情](https://uniapp.dcloud.net.cn/collocation/manifest.html#appwebview)
 
 
+## 小程序自定义组件
+
+web 平台、app 平台 vue3 项目不再支持小程序自定义组件
+
 ## vue3 nvue 暂不支持 recycle-list 组件
 
 vue3 nvue 暂不支持 recycle-list 组件

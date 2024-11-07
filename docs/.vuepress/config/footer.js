@@ -189,7 +189,7 @@ export default {
 			},
 			{
 				subTitle: '许可协议',
-				url: 'https://ask.dcloud.net.cn/article/35623',
+				url: 'https://dcloud.io/license/DCloud.html',
 			},
 			{
 				subTitle: '加入我们',

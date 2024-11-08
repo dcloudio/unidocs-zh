@@ -45,6 +45,8 @@ HX 里面有两个专门与鸿蒙相关的功能入口：
 
 ### 报错 `依赖包与运行设备不兼容`@install-parse-native-so-failed
 
+> 此章节仅针对HBuilderX 4.29及之前版本，4.31及之后的版本暂不支持在x86_64平台的模拟器上运行。
+
 在 x86_64 平台（绝大多数 Windows 系统和部分 MacOS 系统）上使用【运行到鸿蒙】并选择了模拟器作为运行设备的时候，可能会遇到这个报错。
 这是由于默认配置里面依赖了支付宝SDK，而这个包不支持运行在 x86_64 平台的模拟器上，所以在打包后安装到模拟器设备时会报错。
 出现这种情况时，如果并不需要这个依赖，可以修改 `harmony-configs/oh-package.json5` 文件，在 `dependencies` 里面删除 `@cashier_alipay/cashiersdk` 就行了；

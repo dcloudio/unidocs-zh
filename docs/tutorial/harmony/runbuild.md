@@ -289,7 +289,7 @@ Mac系统快速复制路径方法
 
 ### 鸿蒙支持uniPush推送吗?@q10
 
-暂不支持
+HBuilderX 4.31起支持uniPush推送，具体配置请参考[文档](https://uniapp.dcloud.net.cn/unipush-v2.html)
 
 ### release模式进入使用了组合式api的页面报错`Cannot read property route of undefined`@q11
 
@@ -298,6 +298,8 @@ Mac系统快速复制路径方法
 临时解决方案：在鸿蒙项目`entry/obfuscation-rules.txt`文件中增加一行`-disable-obfuscation`来禁用混淆。
 
 ### 1.3.7及以上模板在部分设备的模拟器上无法运行，报错`Install Failed: error: failed to install bundle`@q12
+
+> 此章节仅针对HBuilderX 4.29及之前版本，4.31及之后的版本暂不支持在x86_64平台的模拟器上运行。
 
 此问题是由于支付宝sdk兼容性造成的，目前只能删除支付宝sdk依赖，如下图所示操作，删除后需要点右上角的 Sync Now，并等待 Sync 结束
 

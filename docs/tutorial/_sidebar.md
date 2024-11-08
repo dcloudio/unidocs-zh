@@ -2,6 +2,7 @@
 * [工程](project.md)
 * [页面](page.md)
 * 互相引用
+  * [绝对路径和相对路径](page-path.md)
   * [引用组件](page-component.md)
   * [引用 js](page-script.md)
   * [引用 css](page-style.md)

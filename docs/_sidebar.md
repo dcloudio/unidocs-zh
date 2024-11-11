@@ -42,7 +42,7 @@
       * [uni-push2.0、uni-id、uni统计的组合](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/mate.html)
   * [uni统计](uni-stat.md)
     * [uni统计2.0](uni-stat-v2.md)
-    * [uni统计1.0](uni-stat-v1.md)`
+    * [uni统计1.0](uni-stat-v1.md)
   * [uni加固](/tutorial/app-security.md)
   * [uni隐私合规检测](/tutorial/app-privacy-detect.md)
   * [地图商业授权](/tutorial/app-geolocation.md?id=lic)

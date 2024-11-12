@@ -12,7 +12,7 @@
 
 ## 前端配置
 
-因为当前版本 uni统计是单独的插件，需要在插件市场中下载使用
+因为当前版本 `uni统计`是单独的插件，需要在插件市场中下载使用
 
 [下载uni统计](https://ext.dcloud.net.cn/plugin?name=uni-stat)
 
@@ -20,22 +20,22 @@
 
 #### uniStatistics说明
 
-|字段      | 类型   | 默认值 | 可选值    | 说明                               |
-|:-:      |:-:   |:-:  |:-:     |:-:                               |
-|debug     | Boolean |false | true/ false |开启统计调试模式 ，会产生大量日志，且会在开发阶段上报数据，应用发布请关闭此项 |
-|reportInterval | Number |10   | -      |前端数据上报周期                          |
-|collectItems  |Object  |-   | -      |采集项配置                  |
+|字段      | 类型   | 默认值     | 说明                               |
+|:-:      |:-:   |:-:      |:-:                               |
+|debug     | Boolean |false  |开启统计调试模式 ，会产生大量日志，且会在开发阶段上报数据，应用发布请关闭此项 |
+|reportInterval | Number |10        |前端数据上报周期 （单位秒）                    |
+|collectItems  |Object  |-       |采集项配置          |
 
 #### collectItems 采集项配置说明
 
-|字段 |类型| 默认值 |可选值 |说明|
-|:-:|:-: |:-:    |:-:  |:-:|
-|uniPushClientID| Boolean |false| true/false |是否开启推送PushClientID的采集|
-|uniStatPageLog| Boolean |true| true/false |是否开启页面数据采集|
+|字段 |类型| 默认值  |说明|
+|:-:|:-: |:-:     |:-:|
+|uniPushClientID| Boolean |false |是否开启推送PushClientID的采集。**需注意：开启PUSH采集，在APP上需要初始化个推SDK，涉及隐私政策的问题。**|
+|uniStatPageLog| Boolean |true |是否开启页面数据采集，如不关心页面数据且需要节省函数调用量的用户，可关闭此项。|
 
 ### 如何引用
 
-在 main.uts 中 ，通过vue插件的方式加载 uni统计
+在 `main.uts` 中 ，通过vue插件的方式加载 `uni统计`
 
 ```js
 import App from './App.uvue'
@@ -45,21 +45,21 @@ import { createSSRApp } from 'vue'
 import { uniStat } from '@/uni_modules/uni-stat/plugin.uts'
 
 // uni统计采集项配置
-const collectItems = {
+const uniStatcollectItems = {
  uniStatPageLog: true
 }
 
 // uni统计基础配置
-const statOptions = {
+const uniStatOptions = {
  debug: true,
- collectItems: collectItems
+ collectItems: uniStatcollectItems
 }
 
 export function createApp() {
  const app = createSSRApp(App)
 
  // 载入uni统计插件 ，use 第二个参数不能为空，如需使用默认配置，请传入 {}
- app.use(uniStat, statOptions)
+ app.use(uniStat, uniStatOptions)
 
  return {
   app
@@ -73,6 +73,8 @@ export function createApp() {
 因版本限制，uni统计无法自动采集应用相关的数据，如应用启动、进入后台、进入前台等信息，需要用户手动调用 uni.report() 来实现对应的数据采集。
 
 #### 使用示例
+
+**示例页面：`App.nvue`**
 
 ```js
 <script lang="uts">

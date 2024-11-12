@@ -38,6 +38,17 @@ usb和线的问题，可以通过交叉验证来排查具体的问题。
 
 如果在启动HBuilderX后才安装驱动连接上手机，可能需要重启HBuilderX。
 
+- windows + iOS设备注意事项：
+如果是windows电脑搭配iOS设备，需要安装itunes。有的电脑用iTools等三方软件也可以，但未对三方软件做系统性测试。
+
+如果你的itunes也连不上你的iOS设备，那HBuilderX肯定也连不上。
+
+有的电脑会停用 Apple Mobile Device Service，这是一个windows系统服务，停止后itunes也无法连接iOS设备。可以在 windows控制面板的服务中手动启动，也可以直接启动itunes，因为itunes启动后会自动启动 Apple Mobile Device Service。
+
+Apple Mobile Device Service 服务启动后，需要重新插拔iOS设备才能检测到。
+
+HBuilderX真机运行并不需要一直开着itunes。itunes仅用于验证手机与电脑是否可正常连接。
+
 ## 第3步 电脑与手机是否建立信任调试关系
 
 ### 3.1 Android设备信任

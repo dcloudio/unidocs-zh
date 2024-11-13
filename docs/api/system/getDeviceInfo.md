@@ -20,8 +20,8 @@
 |devicePixelRatio|string|设备像素比|`App、H5`。微信小程序请使用 `(getSystemInfo Api)[/api/system/info.html]` 获取|
 |system|string|操作系统及版本||
 |platform|string|客户端平台||
-|osName|string|系统名称|HBuilderX 4.32+，`weixin`不支持|
-|osVersion|string|操作系统版本。如 ios 版本，andriod 版本|HBuilderX 4.32+，`weixin`不支持|
+|osName|string|系统名称|HBuilderX 4.32+，`weixin 4.33`支持|
+|osVersion|string|操作系统版本。如 ios 版本，andriod 版本|HBuilderX 4.32+，`weixin 4.33`支持|
 |osLanguage|string|操作系统语言|HBuilderX 4.32+，`H5、weixin` 不支持|
 |osTheme|string|操作系统主题|HBuilderX 4.32+，`H5、weixin` 不支持|
 |romName|string|rom 名称。Android 部分机型获取不到值。iOS 恒为 `ios`|HBuilderX 4.32+，`H5、weixin` 不支持|

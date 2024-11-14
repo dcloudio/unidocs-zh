@@ -70,7 +70,7 @@ export function createApp() {
 
 ### 如何使用
 
-因版本限制，uni统计无法自动采集应用相关的数据，如应用启动、进入后台、进入前台等信息，需要用户手动调用 uni.report() 来实现对应的数据采集。
+因版本限制，uni统计无法自动采集应用相关的数据，如应用启动、进入后台、进入前台等信息，需要用户手动调用 [uni.report()](https://doc.dcloud.net.cn/uni-app-x/api/report) 来实现对应的数据采集。
 
 #### 使用示例
 
@@ -146,47 +146,6 @@ export function createApp() {
 
 - 页面访问次数
 
-### uni.report(OBJECT) 说明
+### uni.report(OBJECT) 
+`uni.report` 参考[使用文档](https://doc.dcloud.net.cn/uni-app-x/api/report)
 
-#### OBJECT参数说明
-
-|参数名  |类型   |必填 |说明                   |
-|:-:   |:-:   |:-: |:-:                   |
-|name   | String | 是  |事件名称 ，内置名称见下方 **name 内置事件说明** |
-|options | Any   | 否  |事件自定义参数               |
-|success | Function| 否  |接口调用成功的回调函数            |
-|fail   |Function | 否  |接口调用失败的回调函数            |
-|complete | Function| 否  |接口调用结束的回调函数（调用成功、失败都会执行） |
-
-#### name 内置事件说明
-
-|事件名     |调用声明周期  |事件说明     |
-|:-:      |:-:     |:-:      |
-|uni-app-launch | App.onLaunch| 应用启动    |
-|uni-app-show  | App.onShow | 应用进入前台  |
-|uni-app-hide  | App.onHide | 应用进入后台  |
-|uni-app-error | App.onError | 应用发生错误  |
-|title     | any     | 内容统计采集标题 |
-
-#### 如何使用自定义上报
-
-```js
-// 参数支持字符串
-uni.report({
- name:'购买',
- options:'购买成功'
-})
-
-// 参数支持对象
-uni.report({
- name:'购买',
- options:{
-  id:'1000',
-  name:'上衣',
-  price:'998',
-  msg:'购买成功'
-  // ...
- }
-})
-
-```

@@ -4,7 +4,7 @@
 >
 > uni统计for uni-app x需要单独下载使用，无需在 manifest.json 中配置开关，只需在前端代码中配置即可。
 >
-> 依赖 `Hbuilder X Alpha版 4.32+`。
+> 依赖 `Hbuilder X Alpha版 4.33+`。
 
 ## 配置 uni统计后台
 

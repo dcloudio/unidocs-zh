@@ -21,7 +21,6 @@
 |isUniAppX|string|是否uni-app x|HBuilderX 4.33+|
 |uniPlatform|string|uni-app 运行平台，与条件编译平台相同|HBuilderX 4.33+|
 |uniCompilerVersion|string|uni 编译器版本|HBuilderX 4.33+|
-|uniRuntimeVersion|string|uni 运行时版本|HBuilderX 4.33+|
 |hostLanguage|string|小程序宿主语言|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
 |hostVersion|string|App、小程序宿主版本。如：微信版本号|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
 |hostName|string|小程序宿主名称|`App 仅 UNIMPSDK 支持`、`H5 不支持`|

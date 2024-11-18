@@ -1,3 +1,70 @@
+#### 4.33.2024111702-alpha
+* 【uni-app】
+  + App-HarmonyOS平台 新增 支持 uni.upx2px
+  + App-HarmonyOS平台 修复 用户代码编译产物过大导致应用崩溃的 Bug
+  + App-HarmonyOS平台 修复 cleatInterval 无效的 Bug
+  + App-HarmonyOS平台 修复 页面内表单元素的 auto-focus 无法拉起键盘的 Bug
+  + App-HarmonyOS平台 修复 websocket 传 ArrayBuffer 作为 data 无效的 Bug [详情](https://ask.dcloud.net.cn/question/200725)
+  + App-HarmonyOS平台 修复 uni.previewImage 在图片放大后无法移动的 Bug
+  + App-HarmonyOS平台 修复 调用 web-view 组件 evalJs 等方法不生效的Bug
+  + App-HarmonyOS平台 修复 web-view 组件无法加载沙盒中 html 文件的 Bug
+  + App-HarmonyOS平台 修复 canvas 组件绘制本地图片时因画布污染导致无法调用 canvasToTempFilePath 的 Bug [详情](https://ask.dcloud.net.cn/question/201151)
+  + App-HarmonyOS平台 调整 调用 uni.getRecorderManager().start() 可不传参数
+  + App-HarmonyOS平台 调整 WebviewContext evalJs 方法重命名为 evalJS，旧方法暂时保留但不推荐使用
+  + App-HarmonyOS平台 调整 web-view 组件支持加载 https、http 混合内容
+  + App-HarmonyOS平台 调整 Picker 组件 mode="multiSelector" 时在宽屏上的显示效果
+* 【uni-app x】
+  + 新增 uni统计功能 [文档](https://uniapp.dcloud.net.cn/uni-stat-uniappx) <https://issues.dcloud.net.cn/pages/issues/detail?id=12350>
+  + Web平台 修复 CSS rpx 通过style.setProperty设置rpx值无法响应屏幕宽度变化 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11256)
+  + Web平台 修复 DOM API UniElement 在属性值为空字符串时错误的返回了null [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12306)
+  + Web平台 修复 4.31版本引发的 vue ssr模式运行项目时控制台报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12304)
+  + Web平台 修复 4.23版本引发的 运行调试 uni-app-x项目以SSR模式运行报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12179)
+  + App平台 新增 app.uvue 原生捕获异常触发应用生命周期onError [文档](https://doc.dcloud.net.cn/uni-app-x/collocation/app.html#onerror) <https://issues.dcloud.net.cn/pages/issues/detail?id=7116>
+  + App平台 新增 API uni.chooseLocation 打开地图选择位置 [文档](https://doc.dcloud.net.cn/uni-app-x/api/choose-location.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=12430>
+  + App平台 新增 API uni.shareWithSystem 调用系统分享 [文档](http://doc.dcloud.net.cn/uni-app-x/api/share-with-system.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=10687>
+  + App平台 新增 API uni.createInnerAudioContext 支持音频播放 [文档](https://doc.dcloud.net.cn/uni-app-x/api/create-inner-audio-context.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=10686>
+  + App平台 新增 API uni.chooseImage 支持 pageOrientation 参数适配横竖屏 [文档](https://doc.dcloud.net.cn/uni-app-x/api/choose-image.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=10683>
+  + App平台 新增 API uni.chooseVideo 支持 pageOrientation 参数适配横竖屏 [文档](https://doc.dcloud.net.cn/uni-app-x/api/choose-video.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=12342>
+  + App平台 新增 CSS 支持内置 uni-icon 字体图标 [文档](https://doc.dcloud.net.cn/uni-app-x/css/common/at-rules.html#uniicon) <https://issues.dcloud.net.cn/pages/issues/detail?id=11994>
+  + App平台 修复 vue 设置样式 display: flex 时，v-show="false" 首次渲染会显示 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11473)
+  + App平台 修复 API getCurrentPages getPageStyle 返回页面样式信息不正确 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=10274)
+  + App平台 修复 API uni.loadFontFace 不支持 base64 格式数据URL [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12105)
+  + App平台 修复 pages.json tabbar不支持字体图标在theme.json配置颜色 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11289)
+  + App平台 修复 组件 canvas source-atop与web效果不一致 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11284)
+  + App-Android平台 新增 API uni.chooseImage 支持 albumMode 参数配置使用系统相册选择图片 [文档](https://doc.dcloud.net.cn/uni-app-x/api/choose-image.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=12344>
+  + App-Android平台 新增 API uni.chooseVideo 支持 albumMode 参数配置使用系统相册选择视频 [文档](https://doc.dcloud.net.cn/uni-app-x/api/choose-video.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=10685>
+  + App-Android平台 新增 发行 云端打包支持 enableResourceOptimizations 配置关闭原生res资源文件名称混淆 [文档](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest.html#enableresourceoptimizations) <https://issues.dcloud.net.cn/pages/issues/detail?id=12424>
+  + App-Android平台 修复 vue 使用h()函数时无法使用具名插槽 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12388)
+  + App-Android平台 修复 4.31版本引发的 vue render 函数渲染自定义组件，修改数据无法触发更新 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11752)
+  + App-Android平台 修复 vue v-bind与其他绑定混合使用编译报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12488)
+  + App-Android平台 修复 4.31版本引发的 pages.json hideStatusBar 属性在 dialogPage 页面失效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12321)
+  + App-Android平台 修复 组件 list-item 中的子元素在某些场景 boder 和 background-color 样式不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12341)
+  + App-Android平台 修复 4.02版本引发的 组件 rich-text 中的 a 标签某些场景下可能出现点击不触发 itemclick 事件 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11051)
+  + App-Android平台 修复 4.31版本引发的 组件 input 在 dialogPage 页面无法取消焦点 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12182)
+  + App-Android平台 修复 组件 map 设置 show-location 为 true 时偶发显示定位精度圆形遮罩 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11575)
+  + App-Android平台 修复 pages.json 横屏参数导致启动页面的时候会有一个切换的动作 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11147)
+  + App-Android平台 修复 API uni.redirectTo 某些场景窗口动画失效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11158)
+  + App-Android平台 修复 API push 某些情况点击离线消息不能触发 `click` 事件 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11268)
+  + App-Android平台 修复 API push 模块使用的 gson 库可能与uts插件的依赖库冲突 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11861)
+  + App-Android平台 优化 API uni.$emit 支持不传参数或传多个参数 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11588)
+  + App-iOS平台 新增 pages.json 支持 hideBottomNavigationIndicator 属性 [文档](https://doc.dcloud.net.cn/uni-app-x/collocation/pagesjson.html#pagesoptionspage-style) <https://issues.dcloud.net.cn/pages/issues/detail?id=10478>
+  + App-iOS平台 新增 pages.json 支持 hideStatusBar 属性 [文档](https://doc.dcloud.net.cn/uni-app-x/collocation/pagesjson.html#pages-globalstyle) <https://issues.dcloud.net.cn/pages/issues/detail?id=10554>
+  + App-iOS平台 新增 组件 video 支持子组件 [文档](https://doc.dcloud.net.cn/uni-app-x/component/video.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=10477>
+  + App-iOS平台 新增 API uni.exit 支持在原生SDK环境中退出应用 [文档](https://doc.dcloud.net.cn/uni-app-x/api/exit.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=11654>
+  + App-iOS平台 修复 组件 rich-text 点击不会触发父组件 click 事件 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=6986)
+  + App-iOS平台 修复 组件 rich-text 设置固定高度时内容不显示 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=10999)
+  + App-iOS平台 修复 组件 slider 设置的 max 不能整除 step 时滑动到最右侧返回值可能会大于 max [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12503)
+  + App-iOS平台 修复 组件 canvas 在自定义组件中处理高清屏逻辑不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11696)
+  + App-iOS平台 修复 API uni.request 返回数据类型为不为UTSJSONObject [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11697)
+  + App-iOS平台 修复 API uni.getWindowInfo 返回 safeArea 中的 bottom、height 属性值不正确 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=10935)
+  + App-iOS平台 修复 API uni.addInterceptor 【ios端】uni.addInterceptor拦截'switchTab'无效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=10147)
+  + App-iOS平台 修复 4.18版本引发的 DOM API UniResizeObserver 监视元素的大小变化可能导致内存泄露 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11451)
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 新增 云端打包支持 enableResourceOptimizations 配置关闭原生res资源文件名称混淆 [文档](https://uniapp.dcloud.net.cn/collocation/manifest-app.html#enableresourceoptimizations)
+  + Android平台 修复 云端打包证书密码中包含特殊字符时可能提示 `Keystore was tampered with, or password was incorrect` 错误的Bug [详情](https://ask.dcloud.net.cn/question/201240)
+  + Android平台 修复 UniPush 在部分高版本设备点击通知无法唤起应用的Bug [详情](https://ask.dcloud.net.cn/question/200520)
+  + App-iOS平台 修复 视频选择开启压缩后在iphone16设备上无法触发回调的Bug [详情](https://ask.dcloud.net.cn/question/199797)
+
 #### 4.32.2024110103-alpha
 * 【uni-app】
   + App平台、Web平台 修复 4.31版本引发的 rpx 渲染异常的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11253)

@@ -625,6 +625,19 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |:-|:-|:-|
 |subPackages|Boolean|是否开启分包优化|
 
+### 鸿蒙元服务项目设置@mp-harmony
+
+|属性|类型|说明|
+|:-|:-|:-|
+|distribute|Object|分发配置|
+
+#### distribute 选项
+
+|属性|类型|说明|
+|:-|:-|:-|
+|bundleName|String|元服务包名|
+
+
 ### 自定义小程序项目配置
 
 HBuilderX 3.6.16+ 支持项目根目录(cli 项目为 src 目录)下创建配置文件自定义小程序项目配置。平台对应文件名如下：

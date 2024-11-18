@@ -60,14 +60,13 @@
 
 具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5) 进行查询。
 
-### 4. 项目启动
+### 4. 运行鸿蒙元服务
 
 选择 `运行 - 运行到小程序模拟器 - 鸿蒙元服务`，在弹出的鸿蒙设置选择框中选择模拟器或者真机。
 
 ![运行鸿蒙元服务](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/48d95bfd-418d-4dfd-8715-b03c8d9841f1.png)
 
 ![选择模拟器](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/00014bd7-d578-4451-92d1-94f4cbbc52a3.png)
-
 
 等待构建完成后，控制台提示：
 
@@ -82,6 +81,8 @@
 ## 发行与上架
 
 鸿蒙元服务的上架，依赖上一步骤 **运行与调试** 的运行。
+
+注意：目前上架元服务，部分信息需要在鸿蒙元服务后台填写，访问 [华为 AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，选择 **我的元服务**。
 
 在 HBuilderX 中开发 uni-app 上架到鸿蒙元服务需要下面 4 个步骤：
 
@@ -106,17 +107,36 @@
 
 选择你要上架的元服务，授权 DCloud 完成后续的上架流程。
 
-### 1. 配置发行签名证书
+### 2. 配置发行签名证书
 
 开发调试期间的证书不可用于应用上架。元服务发布证书的申请流程和鸿蒙应用开发类似，访问 [鸿蒙发布元服务文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-harmonyos-releaseservice-0000001946273965) 进行发布证书的获取。
 
-### 2. 应用打包
+调整 `harmony-as-configs/build-profile.json5`：
 
-在 HBuilderX 中选择 `发行 - 鸿蒙元服务`，进行元服务打包。等待打包完成，得到 app 后缀文件。
+1. 补充 `app.signingConfigs` 字段，添加发布证书相关信息
+2. 补充 `app.products` 字段，添加 name 为 `release` 的字段
+3. 调整 `modules[0].targets[0].applyToProducts` 添加 `release` 字段
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/2e8f1326-8b1a-49af-ba8e-6b9db3b7b212.png)
+
+### 3. 应用打包
+
+在 HBuilderX 中选择 `发行 - 鸿蒙元服务`，进行元服务打包。等待打包完成，会提示上传完成。接下来到 DCloud开发者中心完善上架资料。
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/506b5153-ec4b-4d8b-93ac-df1ac42de2f5.png)
+
+### 4. 完善上架资料
+
+在上个步骤中，控制台在上传完成之后，提示打开 [DCloud 开发者中心](https://dev.dcloud.net.cn)，选择 `应用管理 - 我的应用 - 选择项目 APPID`，进入项目详情，选择 **各平台信息**，打开下面截图的页面，选择 **发布** 按钮。
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/22572bab-cc18-4ebd-ac19-4f285f41acdb.png)
 
 
+## 注意事项
 
-## 备注事项
+### 如何解除 DCloud 的应用授权服务？
+
+解除授权可能会导致应用不能正常运行。如果要确认取消 DCloud 应用授权，访问 [AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，打开 **用户与访问** 页面，依次选择 `第三方授权管理 - 应用授权`，可以看到当前授权应用的列表，选择要解除授权的应用，选择 **解除授权** 即可。
 
 ### 发布报错 `hvigor ERROR: Invalid storeFile value. Make sure it is not null or empty. The file must be included`
 
@@ -126,7 +146,3 @@
 
 调整 `build-profile.json5`
 
-
-## 版本变更
-
-HBuilderX 4.34 适配鸿蒙元服务

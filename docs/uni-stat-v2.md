@@ -1088,6 +1088,56 @@ exports.main = async (event, context) => {
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/uni-admin/450.png)
 
+
+### 升级到2.4.24+ 含鸿蒙平台的版本@upgrade3
+
+`uni-admin2.4.24` 版本开始，新增了对`App-Harmony`（即鸿蒙App）平台的统计。
+
+![](https://web-ext-storage.dcloud.net.cn/doc/uni-stat/screenshot_2024-11-06_17-45-45.png)
+
+若您部署过`uni-admin2.4.24`之前的版本，需要先将`uni-admin`升级到`2.4.24`之后的版本。
+
+**升级uni-admin项目的方法**
+
+1. 通过`HBuilderX`部署`uni-admin项目`的用户，可直接在`HBuilerX` 中，找到`uni-admin项目根目录/package.json`文件，右键 => 从插件市场更新，合并项目文件后重新打包、发布`uni-admin项目`即可。
+
+::: warning 注意
+- 若之前自行修改过uni-admin项目，需要手动合并处理，否则修改的内容可能会被覆盖。
+:::
+
+
+![](https://web-ext-storage.dcloud.net.cn/doc/uni-stat/screenshot_2024-11-06_17-06-09.png)
+
+
+2. 通过插件市场`在线部署`功能，部署`uni-admin项目`的用户，可重新在[插件市场](https://ext.dcloud.net.cn/plugin?id=3268)选择`在线部署`，注意`appid`需要与原`uni-admin项目`的AppId保持一致，否则将会导致管理员账号无法登录，原`uni-admin项目`的AppId，可在插件市场的[插件部署记录](https://ext.dcloud.net.cn/manage/one-click-deployment)模块查看。
+
+![](https://web-ext-storage.dcloud.net.cn/doc/uni-stat/screenshot_2024-11-06_17-20-15.png)
+
+
+**在uni-admin项目中添加App-Harmony服务平台**
+
+如果您在`uni-admin项目`中，无法找到`App-Harmony`平台，您需要在HBuilderX中，找到`uni-admin项目根目录/uniCloud/database/JQL查询.jql`文件，添加以下`jql语句`并运行。
+
+::: warning 注意
+- 通过插件市场`在线部署`功能，部署`uni-admin项目`的用户，需要先在`HBuilderX`中创建`uni-admin项目`，并关联原部署`uni-admin项目`服务空间，再进行如上操作。
+:::
+
+```js
+db.collection('uni-stat-app-platforms').add({
+	"name": "App-Harmony",
+	"code": "harmony",
+	"order": 2,
+	"enable": true,
+	"create_time": 1730886932506
+})
+```
+
+
+**升级HBuilderX至4.33+，重新打包、发布您要统计的应用**
+
+uni-admin项目更新后，即可正常接收和统计`App-Harmony`平台的相关数据。此外，您还需要升级`uni统计2.0`的前端采集SDK，采集数据才能正常上报，即需要将`HBuilderX`版本升级至`4.33+`后，重新打包发布您要统计的应用。
+
+
 ## uni统计2.0费用评测@cost
 
 ### 前言

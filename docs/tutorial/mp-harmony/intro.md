@@ -40,11 +40,15 @@
 
 项目运行需要配置元服务包名，打开项目根目录的 `mainefest.json` 填写 `鸿蒙元服务配置 - 应用包名`，结构类似 `com.atomicservice.[你的应用包名]`。
 
+![ 配置 manifest.json 文件](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/f7a94969-59d3-42ad-84be-adf5bcadcd54.png)
+
 ### 2. 配置签名证书
 
-项目运行到模拟器、真机需要配置签名证书。签名证书的配置和鸿蒙应用开发类似，请参考 [鸿蒙证书签名配置指南](/tutorial/harmony/runbuild.html#signature) 进行证书签名。
+项目运行到模拟器、真机需要配置签名证书。签名证书的配置和鸿蒙应用开发类似，请参考 [鸿蒙证书签名配置指南](../harmony/runbuild.md#signature) 进行证书签名。
 
 项目根目录创建 `harmony-as-configs/build-profile.json5` 文件，将元服务原生项目中的 `build-profile.json5` 文件内容复制。
+
+![配置签名证书](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/25329a0f-75bf-4812-8efc-3ada29e4ae23.png)
 
 ### 3. 配置权限模版
 
@@ -52,24 +56,55 @@
 
 项目根目录创建 `harmony-as-configs/entry/src/main/module.json5` 文件。将元服务原生项目中的 `entry/src/main/module.json5` 的内容复制填充。HBuilderX 在构建时候会识别替换相关文件。
 
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/1206d3f5-5789-4856-b1e3-3928e6c01995.png)
+
 具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5) 进行查询。
 
 ### 4. 项目启动
 
-选择 `运行 - 运行到小程序模拟器 - 鸿蒙元服务`，在弹出的鸿蒙设置选择框中选择模拟器。
+选择 `运行 - 运行到小程序模拟器 - 鸿蒙元服务`，在弹出的鸿蒙设置选择框中选择模拟器或者真机。
 
-等待构建完成后，即可进行元服务开发和运行。
+![运行鸿蒙元服务](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/48d95bfd-418d-4dfd-8715-b03c8d9841f1.png)
+
+![选择模拟器](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/00014bd7-d578-4451-92d1-94f4cbbc52a3.png)
+
+
+等待构建完成后，控制台提示：
+
+> 安装成功
+>
+> 在鸿蒙设备上启动运行 .hap ...
+>
+> 运行成功
+
+同时模拟器或者真机页面更新，即可进行元服务开发和运行。
 
 ## 发行与上架
 
+鸿蒙元服务的上架，依赖上一步骤 **运行与调试** 的运行。
+
 在 HBuilderX 中开发 uni-app 上架到鸿蒙元服务需要下面 4 个步骤：
 
-1. 授权 uni-app 协助上架。
+1. 授权 DCloud 完成上架流程
 2. 配置发行签名证书。
 3. 应用打包。
 4. 等待上架审批通知。
 
 下面进行详细说明。
+
+### 1. 授权 DCloud 完成上架流程
+
+点击 [鸿蒙第三方授权链接](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/authorization?clientId=1553077832379297600&type=1) 打开下面页面：
+
+第一步：
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/f4f354d9-bfe0-4a75-aaa5-65ca66882316.png)
+
+第二步：
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/fd9c19a8-40e5-482f-a94c-b527cd8952f8.png)
+
+选择你要上架的元服务，授权 DCloud 完成后续的上架流程。
 
 ### 1. 配置发行签名证书
 
@@ -80,11 +115,17 @@
 在 HBuilderX 中选择 `发行 - 鸿蒙元服务`，进行元服务打包。等待打包完成，得到 app 后缀文件。
 
 
+
 ## 备注事项
 
 ### 发布报错 `hvigor ERROR: Invalid storeFile value. Make sure it is not null or empty. The file must be included`
 
 构建时候证书缺少或者配置不对。参考 [鸿蒙发布元服务](https://developer.huawei.com/consumer/cn/doc/app/agc-help-harmonyos-releaseservice-0000001946273965) 进行证书申请。
+
+### 发行报错 hvigor ERROR: Unable to find the product 'release'.
+
+调整 `build-profile.json5`
+
 
 ## 版本变更
 

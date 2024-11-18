@@ -1093,7 +1093,7 @@ exports.main = async (event, context) => {
 
 `uni-admin2.4.24` 版本开始，新增了对`App-Harmony`（即鸿蒙App）平台的统计。
 
-![](https://web-ext-storage.dcloud.net.cn/doc/uni-stat/screenshot_2024-11-06_17-45-45.png)
+![](https://web-ext-storage.dcloud.net.cn/doc/uni-stat/20241118-193219.png)
 
 若您部署过`uni-admin2.4.24`之前的版本，需要先将`uni-admin`升级到`2.4.24`之后的版本。
 

@@ -17,7 +17,7 @@
 
 鸿蒙元服务和鸿蒙应用开发流程相似，如果你是第一次安装鸿蒙 DevEco-Studio 和鸿蒙模拟器，可以参考 [uni-app 开发鸿蒙应用环境要求](../harmony/runbuild) 进行环境配置。
 
-如果可以在模拟器、鸿蒙真机运行官方 Hello World 示例，说明相关环境、证书配置完成。
+如果可以在模拟器、鸿蒙真机运行 DevEco Studio 提供的官方 Hello World 示例（下面称之为原生工程），说明相关环境、证书配置完成。此时原生工程的作用是自动创建证书、权限配置等信息。
 
 ### 元服务 appid 注册
 
@@ -40,7 +40,7 @@
 
 项目运行需要配置元服务包名，打开项目根目录的 `mainefest.json` 填写 `鸿蒙元服务配置 - 应用包名`，结构类似 `com.atomicservice.[你的应用包名]`。
 
-![ 配置 manifest.json 文件](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/f7a94969-59d3-42ad-84be-adf5bcadcd54.png)
+![配置 manifest.json 文件](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/f7a94969-59d3-42ad-84be-adf5bcadcd54.png)
 
 ### 2. 配置签名证书
 
@@ -82,11 +82,27 @@
 
 鸿蒙元服务的上架，依赖上一步骤 **运行与调试** 的运行。
 
-注意：目前上架元服务，部分信息需要在鸿蒙元服务后台填写，访问 [华为 AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，选择 **我的元服务**。
+### 上架前置准备
+
+注意：目前上架元服务，部分信息需要在鸿蒙元服务后台填写，访问 [华为 AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，选择 **我的元服务**，选择对应的元服务 - 编辑。
+
+注意：如果编辑权限会置灰禁止编辑，你可能已经完成了 **授权 DCloud 完成上架流程**，需要参考文档下方 **注意事项** 临时解除授权。
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0cc21275-cb13-4a68-968b-24438a4b2d0d.png)
+
+需要填写 3 处资料：
+
+1. 设置 `应用上架 - 应用信息` 填写应用分类标签，是为了下一步的 内容分级做准备。
+2. 填写 **内容分级** 表单。
+3. 填写 **隐私声明**。
+
+这一步骤作用是填写上架所需的特定数据，填写完上述数据后点击页面右上角的 **保存** 按钮即可。
+
+### 发行与上架步骤
 
 在 HBuilderX 中开发 uni-app 上架到鸿蒙元服务需要下面 4 个步骤：
 
-1. 授权 DCloud 完成上架流程
+1. 授权 DCloud 完成上架流程。
 2. 配置发行签名证书。
 3. 应用打包。
 4. 等待上架审批通知。
@@ -129,8 +145,9 @@
 
 在上个步骤中，控制台在上传完成之后，提示打开 [DCloud 开发者中心](https://dev.dcloud.net.cn)，选择 `应用管理 - 我的应用 - 选择项目 APPID`，进入项目详情，选择 **各平台信息**，打开下面截图的页面，选择 **发布** 按钮。
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/22572bab-cc18-4ebd-ac19-4f285f41acdb.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0dba9aa1-1a5f-4fea-86b0-35f7c9e691bd.png)
 
+表单会默认填写部分元服务信息，请务必确定完成了 **上架前置准备** 要求内容。填写完成后选择 **提交审核** 按钮。
 
 ## 注意事项
 
@@ -140,9 +157,9 @@
 
 ### 发布报错 `hvigor ERROR: Invalid storeFile value. Make sure it is not null or empty. The file must be included`
 
-构建时候证书缺少或者配置不对。参考 [鸿蒙发布元服务](https://developer.huawei.com/consumer/cn/doc/app/agc-help-harmonyos-releaseservice-0000001946273965) 进行证书申请。
+如果发生在应用运行、发行阶段。可能是构建时候证书缺少或者配置不对。参考 [鸿蒙发布元服务](https://developer.huawei.com/consumer/cn/doc/app/agc-help-harmonyos-releaseservice-0000001946273965) 进行证书申请。
 
 ### 发行报错 hvigor ERROR: Unable to find the product 'release'.
 
-调整 `build-profile.json5`
+如果是发生应用发行阶段，可能是未填写完整的发布证书，需要调整 `build-profile.json5`。
 

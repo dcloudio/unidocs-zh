@@ -4,6 +4,10 @@
 
 触发全局的自定义事件，附加参数都会传给监听器回调函数。
 
+|元服务|
+|:-:|
+|x|
+
 <!-- UNIAPPAPIJSON.$emit.compatibility -->
 
 |属性		|类型	|描述				|
@@ -21,6 +25,10 @@
 ## uni.$on(eventName,callback)
 
 监听全局的自定义事件，事件由 `uni.$emit` 触发，回调函数会接收事件触发函数的传入参数。
+
+|元服务|
+|:-:|
+|x|
 
 <!-- UNIAPPAPIJSON.$on.compatibility -->
 
@@ -43,6 +51,10 @@
 
 监听全局的自定义事件，事件由 `uni.$emit` 触发，但仅触发一次，在第一次触发之后移除该监听器。
 
+|元服务|
+|:-:|
+|x|
+
 <!-- UNIAPPAPIJSON.$once.compatibility -->
 
 |属性		|类型		|描述			|
@@ -63,6 +75,10 @@
 ## uni.$off(eventName, callback)
 
 移除全局自定义事件监听器。
+
+|元服务|
+|:-:|
+|x|
 
 <!-- UNIAPPAPIJSON.$off.compatibility -->
 

@@ -6,6 +6,11 @@ subNvue，是 vue 页面的原生子窗体，把weex渲染的原生界面当做 
 
 ## uni.getSubNVueById(subNvueId)@app-getsubnvuebyid
 
+|元服务|
+|:-:|
+|x|
+
+
 > HarmonyOS Next 不支持
 
 通过 `ID` 获取 `subNVues` 原生子窗体的实例。  [subNVues 配置](/collocation/pages?id=app-subNVues)

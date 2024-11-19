@@ -22,6 +22,10 @@
 
 初始化Wi-Fi模块
 
+|元服务|
+|:-:|
+|x|
+
 <!-- UNIAPPAPIJSON.startWifi.compatibility -->
 
 **OBJECT 参数说明**

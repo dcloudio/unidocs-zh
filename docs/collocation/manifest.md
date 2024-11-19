@@ -635,7 +635,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 
 |属性|类型|说明|
 |:-|:-|:-|
-|bundleName|String|元服务包名|
+|bundleName|String|元服务包名(固定格式为 `com.atomicservice.[纯数字 appId]`)|
 
 
 ### 自定义小程序项目配置

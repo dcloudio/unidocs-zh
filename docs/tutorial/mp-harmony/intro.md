@@ -158,7 +158,7 @@
 
 如果是发生应用发行阶段，可能是未填写完整的发布证书，需要调整 `build-profile.json5`。
 
-### 打开 web-view 渲染空白，不能展示网页
+### 组件 打开 web-view 渲染空白，不能展示网页
 
 WebView 需要设置网络白名单。
 
@@ -167,14 +167,26 @@ WebView 需要设置网络白名单。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/49323643-31f5-4f95-80b2-87157c9a06d5.png)
 
-### 打开 map 地图无法展示
+### 组件 打开 map 地图无法展示
 
 Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/) 进行权限申请。具体可以参考 [鸿蒙 Map Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/map-config-agc-V5)，开通地图服务。
 
-### 登录 uni.login 获取 code 报错
+### API 登录 uni.login 获取 code 报错
 
 参考[鸿蒙 Account Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-config-permissions-V5#section132012717318) 设置相关权限，添加 scope 权限
 
-### 获取网络类型失败、手机震动不等效
+### API 获取网络类型失败、手机震动不等效
 
-需要 `internet` 和 `vibrate` 权限。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5) 进行查询。按照 **配置权限模版** 章节进行配置。
+需要 `GET_NETWORK_INFO` 和 `vibrate` 权限。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5) 进行查询。按照 **配置权限模版** 章节进行配置。
+
+### 组件 rich-text 渲染空白不展示
+
+已知问题，等待元服务修复。动态更新 `rich-text` 的 `nodes` 数据时候，内容不会更新。可以临时通过给 rich-text 添加 v-if 控制显隐，在 nextTick 中动态切换生效。
+
+### 组件 Image 选择本地图片不展示
+
+已知问题，等待元服务修复。目前 `image` 组件不支持本地路径，可临时通过路径字符串展示、或者上传后提供远程 URL 规避。
+
+## 运行报错 `failed to install bundle. code:9568296 error: install failed due to error bundle type`
+
+模拟器或者真机上已经安装了当前 BundleName 的应用。可能是证书复用导致的错误，重新确认当前证书是元服务证书，而不是鸿蒙应用的证书。

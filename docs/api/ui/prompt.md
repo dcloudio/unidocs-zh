@@ -58,6 +58,10 @@ uni.showToast({
 
 隐藏消息提示框。
 
+|元服务|
+|:-:|
+|x|
+
 <!-- UNIAPPAPIJSON.hideToast.compatibility -->
 
 **示例**
@@ -174,6 +178,10 @@ uni.showModal({
 ## uni.showActionSheet(OBJECT)
 
 从底部向上弹出操作菜单
+
+|元服务|
+|:-:|
+|x|
 
 <!-- UNIAPPAPIJSON.showActionSheet.compatibility -->
 

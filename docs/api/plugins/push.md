@@ -9,6 +9,10 @@
 
 注意：这是一个异步的方法，且仅支持uni-push2.0；
 
+|元服务|
+|:-:|
+|x|
+
 <!-- UNIAPPAPIJSON.getPushClientId.compatibility -->
 
 **OBJECT 参数说明**

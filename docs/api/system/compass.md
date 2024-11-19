@@ -1,6 +1,10 @@
 ## uni.onCompassChange(CALLBACK)
 监听罗盘数据，频率：5次/秒，接口调用后会自动开始监听，可使用 ``uni.offCompassChange`` 取消监听。
 
+|元服务|
+|:-:|
+|x|
+
 <!-- UNIAPPAPIJSON.onCompassChange.compatibility -->
 
 **CALLBACK 返回参数**
@@ -30,9 +34,9 @@ uni.onCompassChange(callback);
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|x|x|
 
 <!-- UNIAPPAPIJSON.offCompassChange.compatibility -->
 
@@ -56,9 +60,9 @@ uni.offCompassChange(callback);
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|x|√|√|√|√|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|x|√|√|√|√|x|x|
 
 <!-- UNIAPPAPIJSON.startCompass.compatibility -->
 

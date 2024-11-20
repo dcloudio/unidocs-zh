@@ -1,3 +1,16 @@
+#### 4.34.2024112020-alpha
+* 【uni-app】
+  + 【重要】uni-app 支持发布为鸿蒙元服务 [详情](https://uniapp.dcloud.net.cn/tutorial/mp-harmony/intro.html)
+* 【uni-app x】
+  + 修复 API uni.chooseLocation input输入框点击会闪、POI显示不准确等问题 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12940)
+  + App-Android平台 修复 组件 video 云打包后应用static目录下视频无法播放 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12871)
+  + App-Android平台 修复 API uni.downloadFile 部分情况下可能引起应用崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12869)
+  + App-Android平台 修复 API uni.saveVideoToPhotosAlbum 云打包后保存应用static目录下的视频文件失败 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12867)
+  + App-Android平台 修复 API uni.createInnerAudioContext 播放倍速仅支持设置平台专有Double数据类型 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12862)
+  + App-Android平台 修复 API uni.shareWithSystem shareWithSystem 云打包后应用static目录下文件无法分享 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12851)
+* 【uts插件】
+  + App平台 修复 4.19版本引发的 uts加密插件包含easycom组件时，云打包报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12775)
+
 #### 4.33.2024111702-alpha
 * 【uni-app】
   + App-HarmonyOS平台 新增 支持 uni.upx2px

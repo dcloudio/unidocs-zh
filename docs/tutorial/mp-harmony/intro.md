@@ -15,15 +15,72 @@
 
 ### 鸿蒙新手指引
 
-鸿蒙元服务和鸿蒙应用开发流程相似，如果你是第一次安装鸿蒙 DevEco-Studio 和鸿蒙模拟器，可以参考 [uni-app 开发鸿蒙应用环境要求](../harmony/runbuild) 进行环境配置。
+初次编译运行元服务，需要提前配置好证书签名、权限设置等信息，对第一次参与鸿蒙开发的新手不够友好，请仔细阅读下面相关建议，否则会阻塞开发体验元服务。
 
-如果可以在模拟器、鸿蒙真机运行 DevEco Studio 提供的官方 Hello World 示例（下面称原生工程），说明相关环境、证书配置完成。运行原生工程的作用是自动创建证书、权限配置等信息，方便后续提供配置文件。
+如果你已经参与鸿蒙开发，证书签名、权限配置会比较熟悉，配置过程可以参考 [uni-app 开发鸿蒙应用环境要求](../harmony/runbuild) 进行环境配置。
+
+#### 新建鸿蒙云服务原生项目
+
+如果你是第一次接触鸿蒙开发，你可以参考上述帮助文档进行学习，并动手创建鸿蒙云服务原生项目，完成相关配置。
+
+打开 DevEco Studio 编辑器，选择 `新建工程 - 元服务 AtomService - Empty Ability`，选择已注册好的 AppID，创建鸿蒙云服务示例（下面称原生工程）。并在编辑器的右上角完成自动签名。这种自动签名的方式只能用于运行与调试，需要发行上架时候请参考 **发行与上架** 章节修改签名文件。
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/7eeda96c-4fc1-45d3-816b-2e23806d2e36.png)
+
+如果可以在模拟器、鸿蒙真机运行 DevEco Studio 提供的官方 Hello World 示例（下面称原生工程），说明相关环境、证书配置完成。
+
+请留意下面两个文件比较特殊，后续 HBuilderX 编译运行需要这些文件。
+
+#### build-profile.json5
+
+证书签名的文件。位置在根目录 `build-profile.json5`，后续云服务的开发运行、发布上架依赖此文件。
+
+#### module.json5
+
+项目权限配置、metadata 信息配置。文件位置 `entry/src/main/module.json5`，云服务设置权限，比如访问网络、位置定位、手机震动等功能依赖此文件。
 
 ### 元服务 appid 注册
 
-元服务的开发和上架需要使用元服务的包名 BundleName，包名的形式 `com.atomicservice.[你的应用包名]`。
+元服务的开发和上架需要使用元服务的包名 BundleName，包名的形式 `com.atomicservice.[你的 APPID]`。
 
 如果还没有创建元服务，访问 [华为 AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myApp) 完成元服务应用的注册，得到相关包名。
+
+### 安装元服务依赖
+
+元服务在编译运行时，依赖 `@atomicservice/ascf-toolkit` npm 包，请确保已全局安装成功，安装命令如下：
+
+```shell
+npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror.com
+```
+
+这一步骤是为了规避下载 npm 失败的情况。
+
+### DevEco-Studio 5.0.5.200 临时修复错误
+
+在 DevEco-Studio 5.0.5.200 版本中，运行云服务需要手动修改两个文件，后续等待 DevEco-Studio 修复此问题，在升级之前，目前需要手动修复。后续文档也会持续跟踪此问题。
+
+首先打开 DevEco-Studio 安装目录。
+
+#### 1. 修改 process-profile.js 文件
+
+位置定位 `tools/hvigor/hvigor-ohos-plugin/src/tasks/process-profile.js`，这是一个压缩混淆的文件，请备份后小心修改。
+
+搜索 `e.module.dependencies=this._dependencies,`
+替换为 `/* e.module.dependencies=this._dependencies, */`
+
+也就是手动注释这一行文件
+
+#### 2. 修改 task-service.js
+
+位置定位 `tools/hvigor/hvigor-ohos-plugin/src/tasks/service/task-service.js`，这是一个压缩混淆的文件，请备份后小心修改。
+
+搜索 ```does not exist oh_modules.`);```
+
+替换为 ```does not exist oh_modules.`);if(!o){return;}```
+
+也就是追加了一行 `if(!o){return;}`
+
+修改完这两个文件，重启 DevEco 编辑器后生效。请注意这是临时兼容方案，后续修复后 DevEco 会自动解决。
 
 ## 运行与调试
 
@@ -172,11 +229,13 @@ WebView 需要设置网络白名单。
 Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/) 进行权限申请。具体可以参考 [鸿蒙 Map Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/map-config-agc-V5)，开通地图服务。
 
 ### API 登录 uni.login 获取 code 报错
+<!-- client id -->
 
 参考[鸿蒙 Account Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-config-permissions-V5#section132012717318) 设置相关权限，添加 scope 权限
 
 ### API 获取网络类型失败、手机震动不等效
 
+<!-- client id -->
 需要 `GET_NETWORK_INFO` 和 `vibrate` 权限。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5) 进行查询。按照 **配置权限模版** 章节进行配置。
 
 ### 组件 rich-text 渲染空白不展示

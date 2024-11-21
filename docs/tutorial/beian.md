@@ -1,6 +1,6 @@
 ## 域名备案
 
-> 购买域名，委托代理备案服务等[点此前往](https://market.aliyun.com/agents/yscdcloud#J_3368608030%5D)
+> 购买域名，委托代理备案服务等[点此前往](https://market.aliyun.com/common/agents/yscdcloud?userCode=yp4pevgx#3)
 
 需要进行域名备案的场景：
 - 云函数绑定自定义域名
@@ -16,7 +16,7 @@
 
 **uniCloud域名备案：**
 - 如果你已经有备案过的域名，直接解析过来即可。
-- 如果你要新注册域名，前往[开发者商店](https://market.aliyun.com/agents/yscdcloud)购买，同时域名如果想绑定空间，需要先进行域名备案。
+- 如果你要新注册域名，前往[开发者商店](https://market.aliyun.com/common/agents/yscdcloud?userCode=yp4pevgx#2)购买，同时域名如果想绑定空间，需要先进行域名备案。
   - 若域名需要绑定在阿里云空间或支付宝云空间，则去阿里云官网备案，备案时需要准备一个备案码，可以通过上方所述获取支付宝云[备案码](https://doc.dcloud.net.cn/uniCloud/price.html#备案码) 。
   - 如果域名绑定在腾讯云空间，则只能在腾讯云买一台最便宜的服务器来备案。
 
@@ -55,7 +55,7 @@
 - [腾讯云：如何快速备案您的网站或App](https://cloud.tencent.com/document/product/243/39038)
 
 
-> 若您不熟悉App备案，需要技术指导、加急办理或三方代办服务，可到服务市场寻求帮助，[点此前往](https://market.aliyun.com/agents/yscdcloud#J_3668019490)
+> 若您不熟悉App备案，需要技术指导、加急办理或三方代办服务，可到服务市场寻求帮助，[点此前往](https://market.aliyun.com/common/agents/yscdcloud?userCode=yp4pevgx#3)
 
 ## 小程序备案
 
@@ -70,7 +70,7 @@
 - [京东小程序备案流程](https://mp-docs.jd.com/doc/operation/beian/2300)
 - [快手小程序备案流程](https://mp.kuaishou.com/docs/operate/specification/icp/guide.html)
 
-> 若您不熟悉小程序备案流程，需要技术指导、加急办理或三方代办服务，可到服务市场寻求帮助，[点此前往](https://market.aliyun.com/agents/yscdcloud#J_3668019490)
+> 若您不熟悉小程序备案流程，需要技术指导、加急办理或三方代办服务，可到服务市场寻求帮助，[点此前往](https://market.aliyun.com/common/agents/yscdcloud?userCode=yp4pevgx)
 
 ## FAQ
 

@@ -21,7 +21,7 @@
 
 **上架微信开放平台**的流程如下:
 
-1. 确认应用已上架国内的任意应用市场(上架前需要提供软著,[点此前往](https://market.aliyun.com/agents/yscdcloud#J_8427731610)加急办理软著登记), 微信开放平台需要已上架的应用下载地址
+1. 确认应用已上架国内的任意应用市场(上架前需要提供软著,[点此前往](https://market.aliyun.com/common/agents/yscdcloud?userCode=yp4pevgx#4)加急办理软著登记), 微信开放平台需要已上架的应用下载地址
 2. 登录微信开放平台 [https://open.weixin.qq.com/](https://open.weixin.qq.com/)
 3. 在微信开放平台 `创建移动应用`，按照提示填写相关信息至完成。创建成功后会生成 `AppID`
 4. 确认在微信开放平台创建的应用状态为 `已上架`

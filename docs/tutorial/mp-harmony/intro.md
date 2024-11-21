@@ -68,7 +68,7 @@ npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror
 搜索 `e.module.dependencies=this._dependencies,`
 替换为 `/* e.module.dependencies=this._dependencies, */`
 
-也就是手动注释这一行文件
+也就是手动注释这一行代码。
 
 #### 2. 修改 task-service.js
 
@@ -78,7 +78,7 @@ npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror
 
 替换为 ```does not exist oh_modules.`);if(!o){return;}```
 
-也就是追加了一行 `if(!o){return;}`
+也就是追加了一行 `if(!o){return;}` 代码。
 
 修改完这两个文件，重启 DevEco 编辑器后生效。请注意这是临时兼容方案，后续修复后 DevEco 会自动解决。
 
@@ -95,7 +95,7 @@ npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror
 
 ### 1. 配置 manifest.json 文件
 
-项目运行需要配置元服务包名，打开项目根目录的 `mainefest.json` 填写 `鸿蒙元服务配置 - 应用包名`，结构类似 `com.atomicservice.[你的应用包名]`。
+项目运行需要配置元服务包名，打开项目根目录的 `mainefest.json` 填写 `鸿蒙元服务配置 - 应用包名`，结构类似 `com.atomicservice.[你的AppID]`。
 
 ![配置 manifest.json 文件](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/f7a94969-59d3-42ad-84be-adf5bcadcd54.png)
 
@@ -105,7 +105,7 @@ npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror
 
 项目根目录创建 `harmony-mp-configs/build-profile.json5` 文件，将元服务原生项目中的 `build-profile.json5` 文件内容复制。
 
-![配置签名证书](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/25329a0f-75bf-4812-8efc-3ada29e4ae23.png)
+![配置签名证书](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/6991974b-52d2-4bdc-85fa-d93887b887e8.png)
 
 ### 3. 配置权限模版
 
@@ -195,15 +195,21 @@ npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror
 
 在 HBuilderX 中选择 `发行 - 鸿蒙元服务`，进行元服务打包。等待打包完成，会提示上传完成。接下来到 DCloud开发者中心完善上架资料。
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/506b5153-ec4b-4d8b-93ac-df1ac42de2f5.png)
+上传成功截图如下：
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/a40b554b-2ba3-4a7b-8d2c-a9baa43e9bb7.png)
 
 ### 4. 完善上架资料
 
-在上个步骤中，控制台在上传完成之后，提示打开 [DCloud 开发者中心](https://dev.dcloud.net.cn)，选择 `应用管理 - 我的应用 - 选择项目 APPID`，进入项目详情，选择 **各平台信息**，打开下面截图的页面，选择 **发布** 按钮。
+在上个步骤中，控制台在上传完成之后，提示打开 [DCloud 开发者中心](https://dev.dcloud.net.cn)。如果你是项目协作者账号登录，请切换为项目作者账号登录。
+
+选择 `应用管理 - 我的应用 - 选择项目 APPID`，进入项目详情，选择 **各平台信息**，打开下面截图的页面，选择 **发布** 按钮。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0dba9aa1-1a5f-4fea-86b0-35f7c9e691bd.png)
 
 表单会默认填写部分元服务信息，请务必确定完成了 **上架前置准备** 要求内容。填写完成后选择 **提交审核** 按钮。
+
+
 
 ## 注意事项
 

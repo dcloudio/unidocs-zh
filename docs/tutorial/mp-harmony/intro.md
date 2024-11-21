@@ -103,7 +103,7 @@ npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror
 
 项目运行到模拟器、真机需要配置签名证书。签名证书的配置和鸿蒙应用开发类似，请参考 [鸿蒙证书签名配置指南](../harmony/runbuild.md#signature) 进行证书签名。
 
-项目根目录创建 `harmony-as-configs/build-profile.json5` 文件，将元服务原生项目中的 `build-profile.json5` 文件内容复制。
+项目根目录创建 `harmony-mp-configs/build-profile.json5` 文件，将元服务原生项目中的 `build-profile.json5` 文件内容复制。
 
 ![配置签名证书](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/25329a0f-75bf-4812-8efc-3ada29e4ae23.png)
 
@@ -111,7 +111,7 @@ npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror
 
 鸿蒙元服务需要获取使用特定的能力，比如元服务登录、震动、获取网络状态等原生提供的能力，需要配置权限模版。
 
-项目根目录创建 `harmony-as-configs/entry/src/main/module.json5` 文件。将元服务原生项目中的 `entry/src/main/module.json5` 的内容复制填充。HBuilderX 在构建时候会识别替换相关文件。
+项目根目录创建 `harmony-mp-configs/entry/src/main/module.json5` 文件。将元服务原生项目中的 `entry/src/main/module.json5` 的内容复制填充。HBuilderX 在构建时候会识别替换相关文件。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/1206d3f5-5789-4856-b1e3-3928e6c01995.png)
 
@@ -183,7 +183,7 @@ npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror
 
 开发调试期间的证书不可用于应用上架。元服务发布证书的申请流程和鸿蒙应用开发类似，访问 [鸿蒙发布元服务文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-harmonyos-releaseservice-0000001946273965) 进行发布证书的获取。
 
-调整 `harmony-as-configs/build-profile.json5`：
+调整 `harmony-mp-configs/build-profile.json5`：
 
 1. 补充 `app.signingConfigs` 字段，添加发布证书相关信息
 2. 补充 `app.products` 字段，添加 name 为 `release` 的字段

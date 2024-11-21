@@ -70,7 +70,7 @@
 - [京东小程序备案流程](https://mp-docs.jd.com/doc/operation/beian/2300)
 - [快手小程序备案流程](https://mp.kuaishou.com/docs/operate/specification/icp/guide.html)
 
-> 若您不熟悉小程序备案流程，需要技术指导、加急办理或三方代办服务，可到服务市场寻求帮助，[点此前往](https://market.aliyun.com/common/agents/yscdcloud?userCode=yp4pevgx)
+> 若您不熟悉小程序备案流程，需要技术指导、加急办理或三方代办服务，可到服务市场寻求帮助，[点此前往](https://market.aliyun.com/common/agents/yscdcloud?userCode=yp4pevgx#3)
 
 ## FAQ
 

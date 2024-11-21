@@ -43,12 +43,12 @@
   "cover-view": {
     "name": "## cover-view",
     "description": "覆盖在原生组件之上的文本视图，可覆盖的原生组件包括map、video、canvas、camera，只支持嵌套cover-view、cover-image",
-    "compatibility": "\n**HarmonyOS Next** 兼容性\n| HarmonyOS Next | 元服务 | \n| :- | :- | \n| HBuilderX 4.28++ | x2 | \n"
+    "compatibility": "\n**HarmonyOS Next** 兼容性\n| HarmonyOS Next | \n| :- | \n| HBuilderX 4.28 | \n"
   },
   "cover-image": {
     "name": "## cover-image",
     "description": "覆盖在原生组件之上的图片视图，可覆盖的原生组件同cover-view，支持嵌套在cover-view里。",
-    "compatibility": "\n**HarmonyOS Next** 兼容性\n| HarmonyOS Next | 元服务 |\n| :- | :- |\n| HBuilderX 4.28+2 | x |\n",
+    "compatibility": "\n**HarmonyOS Next** 兼容性\n| HarmonyOS Next |\n| :- |\n| HBuilderX 4.28 |\n",
     "attribute": "**属性 HarmonyOS Next 兼容性** \n | 名称 | HarmonyOS Next 兼容性 |\n| :- | :- |\n| v-for | - |\n| v-if | - |\n| v-show | - |\n| src | - |"
   },
   "list-item": {

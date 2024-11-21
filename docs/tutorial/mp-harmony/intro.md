@@ -19,11 +19,11 @@
 
 如果你已经参与鸿蒙开发，证书签名、权限配置会比较熟悉，配置过程可以参考 [uni-app 开发鸿蒙应用环境要求](../harmony/runbuild) 进行环境配置。
 
-#### 新建鸿蒙云服务原生项目
+#### 新建鸿蒙元服务原生项目
 
-如果你是第一次接触鸿蒙开发，你可以参考上述帮助文档进行学习，并动手创建鸿蒙云服务原生项目，完成相关配置。
+如果你是第一次接触鸿蒙开发，你可以参考上述帮助文档进行学习，并动手创建鸿蒙元服务原生项目，完成相关配置。
 
-打开 DevEco Studio 编辑器，选择 `新建工程 - 元服务 AtomService - Empty Ability`，选择已注册好的 AppID，创建鸿蒙云服务示例（下面称原生工程）。并在编辑器的右上角完成自动签名。这种自动签名的方式只能用于运行与调试，需要发行上架时候请参考 **发行与上架** 章节修改签名文件。
+打开 DevEco Studio 编辑器，选择 `新建工程 - 元服务 AtomService - Empty Ability`，选择已注册好的 AppID，创建鸿蒙元服务示例（下面称原生工程）。并在编辑器的右上角完成自动签名。这种自动签名的方式只能用于运行与调试，需要发行上架时候请参考 **发行与上架** 章节修改签名文件。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/7eeda96c-4fc1-45d3-816b-2e23806d2e36.png)
 
@@ -33,11 +33,11 @@
 
 #### build-profile.json5
 
-证书签名的文件。位置在根目录 `build-profile.json5`，后续云服务的开发运行、发布上架依赖此文件。
+证书签名的文件。位置在根目录 `build-profile.json5`，后续元服务的开发运行、发布上架依赖此文件。
 
 #### module.json5
 
-项目权限配置、metadata 信息配置。文件位置 `entry/src/main/module.json5`，云服务设置权限，比如访问网络、位置定位、手机震动等功能依赖此文件。
+项目权限配置、metadata 信息配置。文件位置 `entry/src/main/module.json5`，元服务设置权限，比如访问网络、位置定位、手机震动等功能依赖此文件。
 
 ### 元服务 appid 注册
 
@@ -57,7 +57,7 @@ npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror
 
 ### DevEco-Studio 5.0.5.200 临时修复错误
 
-在 DevEco-Studio 5.0.5.200 版本中，运行云服务需要手动修改两个文件，后续等待 DevEco-Studio 修复此问题，在升级之前，目前需要手动修复。后续文档也会持续跟踪此问题。
+在 DevEco-Studio 5.0.5.200 版本中，运行元服务需要手动修改两个文件，后续等待 DevEco-Studio 修复此问题，在升级之前，目前需要手动修复。后续文档也会持续跟踪此问题。
 
 首先打开 DevEco-Studio 安装目录。
 
@@ -252,6 +252,6 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 
 已知问题，等待元服务修复。目前 `image` 组件不支持本地路径，可临时通过路径字符串展示、或者上传后提供远程 URL 规避。
 
-## 运行报错 `failed to install bundle. code:9568296 error: install failed due to error bundle type`
+### 运行报错 `failed to install bundle. code:9568296 error: install failed due to error bundle type`
 
 模拟器或者真机上已经安装了当前 BundleName 的应用。可能是证书复用导致的错误，重新确认当前证书是元服务证书，而不是鸿蒙应用的证书。

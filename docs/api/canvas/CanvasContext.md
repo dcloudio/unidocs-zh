@@ -658,6 +658,9 @@ ctx.draw()
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/line-to.png)
 
 ## CanvasContext.measureText
+
+> 该方法在 HarmonyOS Next 设备上是异步，需要传入回调函数获取文本尺寸信息。
+
 测量文本尺寸信息，目前仅返回文本宽度。同步接口。（App 端 2.8.12+ 支持）
 
 **参数**
@@ -665,6 +668,7 @@ ctx.draw()
 |参数	|类型	|说明			|
 |---	|---	|---			|
 |text	|String	|要测量的文本	|
+|callback	|({metricsWidth: number} => void)	|测量回调 `仅 HarmonyOS Next 支持`	|
 
 **返回**
 

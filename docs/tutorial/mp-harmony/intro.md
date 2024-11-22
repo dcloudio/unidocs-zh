@@ -273,3 +273,14 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 ### 运行报错 `failed to install bundle. code:9568296 error: install failed due to error bundle type`
 
 模拟器或者真机上已经安装了当前 BundleName 的应用。可能是证书复用导致的错误，重新确认当前证书是元服务证书，而不是鸿蒙 App 的证书。
+
+### 针对 HBuilderX 4.34.2024112020-alpha 版本的补丁包@patch-3bd4eead
+
+更新内容包括：
+
+- 新增了支持鸿蒙元服务的分包模式
+- 修复了某些 Windows 平台鸿蒙工具链报错导致构建失败的问题
+
+安装方法：下载 [补丁包](https://web-ext-storage.dcloud.net.cn/hx/3bd4eead.zip) 文件，从里面解压出 `main.js` 文件，覆盖到 HBuilderX 安装目录下的 `plugins/launcher/out/main.js` 文件，然后重启 HBuilderX 即可。
+
+后续发布的版本将包含此补丁包的内容，不再需要安装此补丁包。

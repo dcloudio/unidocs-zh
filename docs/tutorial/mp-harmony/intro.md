@@ -1,5 +1,7 @@
 # 概述
 
+> 鸿蒙元服务就是鸿蒙Next系统上的快应用、小程序。在鸿蒙Next系统上，不再支持快应用，对标产品即为鸿蒙快应用。
+
 从 `HBuilderX 4.34` 版本开始，uni-app 支持 **鸿蒙元服务** 平台应用开发。
 
 欢迎加入 [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流。

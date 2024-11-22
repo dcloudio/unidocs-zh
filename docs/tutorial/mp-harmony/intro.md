@@ -9,7 +9,7 @@
 ::: warning 注意
 
 - 目前仅支持 Vue3 项目编译到鸿蒙元服务平台，Vue2 项目升级 Vue3 项目请参考：[Vue2 项目迁移到 Vue3](../migration-to-vue3.md)。
-- 目前仅支持鸿蒙真机，鸿蒙模拟器暂不支持，后续鸿蒙模拟器支持后会更新文档。
+- 目前仅支持鸿蒙真机，鸿蒙模拟器暂不支持，后续鸿蒙模拟器支持后会更新文档。[点击链接]((https://consumer.huawei.com/cn/support/harmonyos/models-next/)) 查看支持鸿蒙 Next 的机型清单。
 :::
 
 ## 前置准备
@@ -33,7 +33,7 @@
 
 签名证书分成两类：
 
-- 面向一台鸿蒙设备的自动签名证书。比较简单，不能用于上架。
+- 面向一台鸿蒙设备的自动签名证书。签名过程比较简单，可用于调试，不能用于上架。
 - 面向企业级协作的调试、发行证书。统一管理设备注册、权限管理等，调试证书可以用于开发，发行证书可以用于上架。
 
 接下来文档会面向新手，详细介绍如何使用自动签名证书。发行证书会在文档下方的 **发行与上架** 部分进行介绍。
@@ -54,7 +54,7 @@
 
 注意：
 
-- 也可以通过 `File - Project Stucture...` 打开。
+- 也可以通过 `File - Project Structure...` 打开。
 - 这种自动签名的方式只能用于运行与调试，需要发行上架时候请参考 **发行与上架** 章节修改签名文件。
 - 签名操作需要连接鸿蒙真机设备。
 
@@ -62,14 +62,14 @@
 
 到这里前置工作就准备完成了。因为元服务还在开发迭代，下面补充相关注意事项。
 
-### 补充：签名文件、权限配置文件位置
+### 签名文件、权限配置文件位置
 
 请留意原生工程的两个文件比较特殊，后续 HBuilderX 编译运行需要这些文件：
 
 1. 根目录 `build-profile.json5` - 证书签名参数等。后续元服务的开发运行、发布上架依赖此文件。
 2. `entry/src/main/module.json5` - 项目权限配置、metadata 信息配置，元服务设置权限，比如访问网络、位置定位、手机震动等功能依赖此文件。
 
-### 补充：主动安装元服务依赖
+### 主动安装元服务依赖
 
 元服务在编译过程中，依赖鸿蒙提供的 `@atomicservice/ascf-toolkit` npm 包，请确保已全局安装成功，安装命令如下：
 
@@ -79,7 +79,7 @@ npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror
 
 这一步骤是为了规避下载 npm 失败，导致编译失败。
 
-### 补充：DevEco-Studio 5.0.5.200 临时修复错误
+### DevEco-Studio 5.0.5.200 临时修复错误
 
 在 DevEco-Studio 5.0.5.200 版本中，运行元服务需要手动修改两个文件，后续等待 DevEco-Studio 修复此问题，在升级之前，目前需要手动修复。后续文档也会持续跟踪此问题。
 
@@ -122,17 +122,19 @@ npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror
 
 ### 2. 配置 `build-profile.json5`
 
-需要配置签名证书，这里依赖 [准备签名证书](#准备签名证书) 部分。项目根目录创建 `harmony-mp-configs/build-profile.json5` 文件，将元服务原生项目中的 `build-profile.json5` 文件内容复制。
+需要配置签名证书，这里依赖 [准备签名证书](#准备签名证书) 部分。项目根目录创建 `harmony-mp-configs/build-profile.json5` 文件，将上文提到的原生空白项目中的 `build-profile.json5` 文件内容复制。
 
-![配置签名证书](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/6991974b-52d2-4bdc-85fa-d93887b887e8.png)
+在文件中搜索 `useNormalizedOHMUrl` 将值设置为 false。
+
+![配置签名证书](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/116bc7de-00e0-4250-ac78-508b2dfa803f.png)
 
 ### 3. 配置 `module.json5`
 
 鸿蒙元服务需要获取使用特定的能力，比如元服务登录、震动、获取网络状态等原生提供的能力，需要配置权限模版。
 
-项目根目录创建 `harmony-mp-configs/entry/src/main/module.json5` 文件。将元服务原生项目中的 `entry/src/main/module.json5` 的内容复制填充。HBuilderX 在构建时候会识别替换相关文件。
+项目根目录创建 `harmony-mp-configs/entry/src/main/module.json5` 文件。将上文提到的原生空白项目中的 `entry/src/main/module.json5` 的内容复制填充。HBuilderX 在构建时候会识别替换相关文件。
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/1206d3f5-5789-4856-b1e3-3928e6c01995.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/62fbd174-5276-4a76-9ef7-26562e611533.png)
 
 ### 4. 运行鸿蒙元服务
 
@@ -143,7 +145,6 @@ npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror
 ![选择模拟器](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dc3e7683-5d44-40a9-920f-80aec53330dc.png)
 
 构建流程完成后，控制台提示：
-
 
 > 安装成功
 >
@@ -203,13 +204,11 @@ npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror
 
 开发调试期间的证书不可用于应用上架。元服务发布证书的申请流程和鸿蒙应用开发类似，访问 [鸿蒙发布元服务文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-harmonyos-releaseservice-0000001946273965) 进行发布证书的获取。
 
-调整 `harmony-mp-configs/build-profile.json5`：
+注意：目前发布上架暂不支持多产物，意思是手动调整 `harmony-mp-configs/build-profile.json5`：
 
-1. 补充 `app.signingConfigs` 字段，添加发布证书相关信息
-2. 补充 `app.products` 字段，添加 name 为 `release` 的字段
-3. 调整 `modules[0].targets[0].applyToProducts` 添加 `release` 字段
+定位到 `app.signingConfigs[0]` 字段，修改 `material` 为发行证书路径。
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/2e8f1326-8b1a-49af-ba8e-6b9db3b7b212.png)
+
 
 ### 3. 应用打包
 
@@ -230,6 +229,25 @@ npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror
 表单会默认填写部分元服务信息，请务必确定完成了 **上架前置准备** 要求内容。填写完成后选择 **提交审核** 按钮。
 
 ## 注意事项
+
+### 如何修改元服务默认标题、图标？
+
+通过文件配置。在项目 `harmony-mp-configs` 目录创建 `AppScope/resources/base/element/string.json` 填写
+
+```json
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "helloUniApp" // 修改为元服务名称
+    }
+  ]
+}
+```
+
+元服务图标必须在华为提供的标准图标底板上设计，参考 [生成元服务图标](https://developer.huawei.com/consumer/cn/doc/atomic-guides-V5/atomic-service-icon-generation-V5) 生成图标，否则会上架审核不通过。最终得到 216x216 的图标放置在 `harmony-mp-configs/AppScope/resources/base/media/app_icon.png` 路径内。
+
+上架时候，这个图标文件也需要在 DCloud 管理后台进行配置。
 
 ### 发布报错 `hvigor ERROR: Invalid storeFile value. Make sure it is not null or empty. The file must be included`
 

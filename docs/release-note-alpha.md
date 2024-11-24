@@ -1,3 +1,11 @@
+#### 4.35.2024112402-alpha
+* 【uni-app】
+  + MP-Harmony平台 新增 对分包模式的支持
+  + MP-Harmony平台 修复 windows平台用户名过长时，鸿蒙工具链报错导致uni-app编译失败的问题
+  + App-Harmony平台 修复 4.34版本引发的 内置鸿蒙项目模板丢失了部分4.33版本的修复及特性的Bug
+* 【uni-app x】
+  + 优化 API uni.chooseLocation 新增请求参数payload，原样透传给uni-map-co，可用于用户鉴权 [详情](https://doc.dcloud.net.cn/uni-app-x/api/choose-location.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=13108>
+
 #### 4.34.2024112020-alpha
 * 【uni-app】
   + 【重要】uni-app 支持发布为鸿蒙元服务 [详情](https://uniapp.dcloud.net.cn/tutorial/mp-harmony/intro.html)

@@ -9,7 +9,7 @@
 ::: warning 注意
 
 - 目前仅支持 Vue3 项目编译到鸿蒙元服务平台，Vue2 项目升级 Vue3 项目请参考：[Vue2 项目迁移到 Vue3](../migration-to-vue3.md)。
-- 目前仅支持鸿蒙真机，鸿蒙模拟器暂不支持，后续鸿蒙模拟器支持后会更新文档。[点击链接]((https://consumer.huawei.com/cn/support/harmonyos/models-next/)) 查看支持鸿蒙 Next 的机型清单。
+- 目前仅支持鸿蒙真机，鸿蒙模拟器暂不支持，后续鸿蒙模拟器支持后会更新文档。[点击链接](https://consumer.huawei.com/cn/support/harmonyos/models-next/) 查看支持鸿蒙 Next 的机型清单。
 :::
 
 ## 前置准备

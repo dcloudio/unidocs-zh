@@ -19,6 +19,54 @@
 - HBuilderX 4.34+ [下载地址](https://www.dcloud.io/hbuilderx.html)
 - DevEco-Studio 5.0.5.200+ [下载地址](https://developer.huawei.com/consumer/cn/download/)
 
+#### 主动安装元服务依赖
+
+元服务在编译过程中，依赖鸿蒙提供的 `@atomicservice/ascf-toolkit` npm 包，请确保已全局安装成功，安装命令如下：
+
+```shell
+npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror.com
+```
+
+这一步骤是为了规避下载 npm 失败，导致编译失败。
+
+#### DevEco-Studio 5.0.5.200 临时修复错误
+
+在 DevEco-Studio 5.0.5.200 版本中，运行元服务需要手动修改两个文件，后续等待 DevEco-Studio 修复此问题，在升级之前，目前需要手动修复。后续文档也会持续跟踪此问题。
+
+首先打开 DevEco-Studio 安装目录。
+
+1. 修改 process-profile.js 文件，位置定位 `tools/hvigor/hvigor-ohos-plugin/src/tasks/process-profile.js`
+
+这是一个压缩混淆的文件，请备份后小心修改。
+
+搜索 `e.module.dependencies=this._dependencies,` 替换为 `/* e.module.dependencies=this._dependencies, */`
+
+也就是手动注释这一行代码。
+
+2. 修改 task-service.js，位置定位 `tools/hvigor/hvigor-ohos-plugin/src/tasks/service/task-service.js`
+
+这是一个压缩混淆的文件，请备份后小心修改。
+
+搜索 ```does not exist oh_modules.`);``` 替换为 ```does not exist oh_modules.`);if(!o){return;}```
+
+也就是追加了一行 `if(!o){return;}` 代码。
+
+修改完这两个文件，重启 DevEco 编辑器后生效。请注意这是临时兼容方案，后续 DevEco 会升级解决。
+
+#### 确保存在 `com.huawei.hms.ascf`
+
+在连接鸿蒙真机的情况下，执行 `hdc shell bm dump-shared -a` 观察返回值是否包含 `com.huawei.hms.ascf`，这是一个 uni-app 运行元服务必需的一个基础包，目前鸿蒙真机还未内置此基础包。
+
+如果返回值里不包含  `com.huawei.hms.ascf`，你需要打开华为应用市场，搜索 `helloUniApp` 并打开应用，稍等片刻，重新执行 `hdc shell bm dump-shared -a` 观察返回值。此时应该已经存在 `com.huawei.hms.ascf` 了。
+
+```shell
+hdc shell bm dump-shared -a
+
+# com.huawei.hms.ascf
+```
+
+访问线上 helloUniApp 的作用是下载相关基础依赖，确保本机存在相关基础包。后续鸿蒙系统升级后会解决该问题，本文档也会持续关注测问题。
+
 ### 元服务 appid 注册@register-app-id
 
 元服务的开发和上架需要使用元服务的包名 BundleName，包名的形式 `com.atomicservice.[你的 APPID]`。
@@ -68,40 +116,6 @@
 
 1. 根目录 `build-profile.json5` - 证书签名参数等。后续元服务的开发运行、发布上架依赖此文件。
 2. `entry/src/main/module.json5` - 项目权限配置、metadata 信息配置，元服务设置权限，比如访问网络、位置定位、手机震动等功能依赖此文件。
-
-### 主动安装元服务依赖
-
-元服务在编译过程中，依赖鸿蒙提供的 `@atomicservice/ascf-toolkit` npm 包，请确保已全局安装成功，安装命令如下：
-
-```shell
-npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror.com
-```
-
-这一步骤是为了规避下载 npm 失败，导致编译失败。
-
-### DevEco-Studio 5.0.5.200 临时修复错误
-
-在 DevEco-Studio 5.0.5.200 版本中，运行元服务需要手动修改两个文件，后续等待 DevEco-Studio 修复此问题，在升级之前，目前需要手动修复。后续文档也会持续跟踪此问题。
-
-首先打开 DevEco-Studio 安装目录。
-
-1. 修改 process-profile.js 文件，位置定位 `tools/hvigor/hvigor-ohos-plugin/src/tasks/process-profile.js`
-
-这是一个压缩混淆的文件，请备份后小心修改。
-
-搜索 `e.module.dependencies=this._dependencies,` 替换为 `/* e.module.dependencies=this._dependencies, */`
-
-也就是手动注释这一行代码。
-
-2. 修改 task-service.js，位置定位 `tools/hvigor/hvigor-ohos-plugin/src/tasks/service/task-service.js`
-
-这是一个压缩混淆的文件，请备份后小心修改。
-
-搜索 ```does not exist oh_modules.`);``` 替换为 ```does not exist oh_modules.`);if(!o){return;}```
-
-也就是追加了一行 `if(!o){return;}` 代码。
-
-修改完这两个文件，重启 DevEco 编辑器后生效。请注意这是临时兼容方案，后续 DevEco 会升级解决。
 
 ## 运行与调试
 
@@ -207,8 +221,6 @@ npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror
 注意：目前发布上架暂不支持多产物，意思是手动调整 `harmony-mp-configs/build-profile.json5`：
 
 定位到 `app.signingConfigs[0]` 字段，修改 `material` 为发行证书路径。
-
-
 
 ### 3. 应用打包
 

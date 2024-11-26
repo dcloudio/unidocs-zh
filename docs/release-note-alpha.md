@@ -1,3 +1,8 @@
+#### 4.36.2024112612-alpha
+* 【uni-app x】
+  + App平台 修复 API uni.createCanvasContextAsync 在生命周期 onLoad/onMount 中无法获取width/height [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=13212)
+  + App-Android平台 修复 4.35版本引发的 vue keepAlive 组件切换时，触发了 update 生命周期的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=13261)
+
 #### 4.35.2024112402-alpha
 * 【uni-app】
   + MP-Harmony平台 新增 对分包模式的支持

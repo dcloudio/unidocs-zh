@@ -19,53 +19,38 @@
 - HBuilderX 4.34+ [下载地址](https://www.dcloud.io/hbuilderx.html)
 - DevEco-Studio 5.0.5.200+ [下载地址](https://developer.huawei.com/consumer/cn/download/)
 
-#### 主动安装元服务依赖
 
-元服务在编译过程中，依赖鸿蒙提供的 `@atomicservice/ascf-toolkit` npm 包，请确保已全局安装成功，安装命令如下：
+目前 uni-app 开发元服务时，需要先在 DevEco-Studio 初始化元服务的环境，具体步骤如下：
 
-```shell
-npm install -g @atomicservice/ascf-toolkit --registry=https://registry.npmmirror.com
-```
+ 1. 确保 `hdc` 全局已注册，输入 `hdc -v` 有返回值。`hdc` 是用来和鸿蒙设备交互的命令行，如果打印出错，参考 [鸿蒙配置 HDC](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/hdc-V5) 文档进行配置。
+ 2. [点击下载自动脚本](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/HarmonyOS-AtomicService-ASCF-Tools-1126.rar)，下载压缩包并解压，并根据操作系统执行下面操作。
 
-这一步骤是为了规避下载 npm 失败，导致编译失败。
+**Windows 系统**
 
-#### DevEco-Studio 5.0.5.200 临时修复错误
+1. 手机连接电脑后，确保 `hdc` 命令功能可用，即可右键管理员运行：`鸿蒙元服务ASCF-开发环境初始化（右键管理员运行）.bat`
+2. 如果有新的手机，没有安装ASCF依赖库，需要手动运行：`鸿蒙元服务ASCF-手机安装依赖库.bat`
 
-在 DevEco-Studio 5.0.5.200 版本中，运行元服务需要手动修改两个文件，后续等待 DevEco-Studio 修复此问题，在升级之前，目前需要手动修复。后续文档也会持续跟踪此问题。
+**Mac 系统**
 
-首先打开 DevEco-Studio 安装目录。
+打开终端，进入本工具解压后目录，`chmod +x *.sh` 赋予可执行权限：
 
-1. 修改 process-profile.js 文件，位置定位 `tools/hvigor/hvigor-ohos-plugin/src/tasks/process-profile.js`
+1. 手机连接电脑后，确保hdc命令功能可用： `sudo bash ascf-init-env.sh` 。如果执行失败可以执行 `sudo node init-ascf.js all`
+2. 如果有新的手机，没有安装ASCF依赖库，需要手动运行：`./ascf-init-phone.sh` 。如果执行失败可以执行 `node init-ascf.js hsp`
 
-这是一个压缩混淆的文件，请备份后小心修改。
+**注意**：当前仅支持ide默认安装路径，如果默认安装路径查找失败，请执行设置环境变量后重试。
+windows系统：`set DEVECO_DIR="C:\Program Files\Huawei\DevEco Studio\bin"`
+mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"`。
 
-搜索 `e.module.dependencies=this._dependencies,` 替换为 `/* e.module.dependencies=this._dependencies, */`
-
-也就是手动注释这一行代码。
-
-2. 修改 task-service.js，位置定位 `tools/hvigor/hvigor-ohos-plugin/src/tasks/service/task-service.js`
-
-这是一个压缩混淆的文件，请备份后小心修改。
-
-搜索 ```does not exist oh_modules.`);``` 替换为 ```does not exist oh_modules.`);if(!o){return;}```
-
-也就是追加了一行 `if(!o){return;}` 代码。
-
-修改完这两个文件，重启 DevEco 编辑器后生效。请注意这是临时兼容方案，后续 DevEco 会升级解决。
-
-#### 确保存在 `com.huawei.hms.ascf`
-
-在连接鸿蒙真机的情况下，执行 `hdc shell bm dump-shared -a` 观察返回值是否包含 `com.huawei.hms.ascf`，这是一个 uni-app 运行元服务必需的一个基础包，目前鸿蒙真机还未内置此基础包。
-
-如果返回值里不包含  `com.huawei.hms.ascf`，你需要打开华为应用市场，搜索 `helloUniApp` 并打开应用，稍等片刻，重新执行 `hdc shell bm dump-shared -a` 观察返回值。此时应该已经存在 `com.huawei.hms.ascf` 了。
-
-```shell
-hdc shell bm dump-shared -a
-
-# com.huawei.hms.ascf
-```
-
-访问线上 helloUniApp 的作用是下载相关基础依赖，确保本机存在相关基础包。后续鸿蒙系统升级后会解决该问题，本文档也会持续关注测问题。
+<details>
+<summary>脚本内执行了哪些操作？</summary>
+<ul>
+<li>判断当前系统，定位到 DevEco Studio 的安装目录</li>
+<li>修改替换 `task-service.js` 文件和 `process-profile.js` 文件</li>
+<li>下载安装 `com.huawei.hms.ascf` 基础框架</li>
+<li>安装 `@atomicservice/ascf-toolkit` npm 依赖</li>
+</ul>
+<p>随着后续版本的更新，这些操作可能会发生变化</p>
+</details>
 
 ### 元服务 appid 注册@register-app-id
 
@@ -100,7 +85,7 @@ hdc shell bm dump-shared -a
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/7eeda96c-4fc1-45d3-816b-2e23806d2e36.png)
 
-注意：
+**注意**：
 
 - 也可以通过 `File - Project Structure...` 打开。
 - 这种自动签名的方式只能用于运行与调试，需要发行上架时候请参考 **发行与上架** 章节修改签名文件。
@@ -176,7 +161,7 @@ hdc shell bm dump-shared -a
 
 ### 上架前置准备
 
-注意：目前上架元服务，部分应用信息需要在鸿蒙元服务后台填写，访问 [华为 AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，选择 **我的元服务**，选择对应的元服务 - 编辑。
+**注意**：目前上架元服务，部分应用信息需要在鸿蒙元服务后台填写，访问 [华为 AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/)，选择 **我的元服务**，选择对应的元服务 - 编辑。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0cc21275-cb13-4a68-968b-24438a4b2d0d.png)
 
@@ -218,7 +203,7 @@ hdc shell bm dump-shared -a
 
 开发调试期间的证书不可用于应用上架。元服务发布证书的申请流程和鸿蒙应用开发类似，访问 [鸿蒙发布元服务文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-harmonyos-releaseservice-0000001946273965) 进行发布证书的获取。
 
-注意：目前发布上架暂不支持多产物，意思是手动调整 `harmony-mp-configs/build-profile.json5`：
+**注意**：目前发布上架暂不支持多产物，意思是手动调整 `harmony-mp-configs/build-profile.json5`：
 
 定位到 `app.signingConfigs[0]` 字段，修改 `material` 为发行证书路径。
 

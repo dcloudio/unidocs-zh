@@ -19,7 +19,6 @@
 - HBuilderX 4.34+ [下载地址](https://www.dcloud.io/hbuilderx.html)
 - DevEco-Studio 5.0.5.200+ [下载地址](https://developer.huawei.com/consumer/cn/download/)
 
-
 目前 uni-app 开发元服务时，需要先在 DevEco-Studio 初始化元服务的环境，具体步骤如下：
 
  1. 确保 `hdc` 全局已注册，输入 `hdc -v` 有返回值。`hdc` 是用来和鸿蒙设备交互的命令行，如果打印出错，参考 [鸿蒙配置 HDC](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/hdc-V5) 文档进行配置。
@@ -100,7 +99,7 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 请留意原生工程的两个文件比较特殊，后续 HBuilderX 编译运行需要这些文件：
 
 1. 根目录 `build-profile.json5` - 证书签名参数等。后续元服务的开发运行、发布上架依赖此文件。
-2. `entry/src/main/module.json5` - 项目权限配置、metadata 信息配置，元服务设置权限，比如访问网络、位置定位、手机震动等功能依赖此文件。
+2. `entry/src/main/module.json5` - 项目权限配置、metadata 信息配置，元服务设置权限，比如访问网络、位置定位、手机震动等功能依赖此文件。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5)。
 
 ## 运行与调试
 
@@ -254,11 +253,28 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 
 如果是发生应用发行阶段，可能是未填写完整的发布证书，需要调整 `build-profile.json5`。
 
-### 组件 打开 web-view 渲染空白，不能展示网页
+### 发送网络请求报错、组件 web-view 渲染空白，不能展示网页
 
-WebView 需要设置网络白名单。
+需要主动开启网络访问状态、并且需要设置网络白名单。
 
-- 临时方案。进入手机 - 设置 - 系统 - 开发者选项（如果未开启 关于手机 - 软件版本连续点击开启） - 开发中元服务豁免管控，选择开启后，可以自由调试 web-view
+开启网络配置。修改 `harmony-mp-configs/entry/src/main/module.json5`，在 json 文件的添加，表明需要 `INTERNET` 权限。
+
+```json
+"requestPermissions": [
+  {
+    "name": "ohos.permission.INTERNET",
+    "reason": "$string:app_name",
+    "usedScene": {
+      "abilities": ["FromAbility"],
+      "when": "inuse"
+    }
+  }
+]
+```
+
+还需要在配置网络访问白名单：
+
+- 临时方案。进入手机 - 设置 - 系统 - 开发者选项（如果未开启 关于手机 - 软件版本连续点击开启） - 开发中元服务豁免管控，选择开启后，可以自由调试。
 - 稳定方案。整理 web-view 需要用到的相关域名，进入[华为AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/) - 我的项目 - 开发管理 - 域名设置 - 服务器域名 - httpRequest 合法域名。按照提示进行填写。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/49323643-31f5-4f95-80b2-87157c9a06d5.png)
@@ -274,7 +290,6 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 
 ### API 获取网络类型失败、手机震动不等效
 
-<!-- client id -->
 需要 `GET_NETWORK_INFO` 和 `vibrate` 权限。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5) 进行查询。按照 **配置权限模版** 章节进行配置。
 
 ### 组件 rich-text 渲染空白不展示
@@ -289,3 +304,42 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 
 模拟器或者真机上已经安装了当前 BundleName 的应用。可能是证书复用导致的错误，重新确认当前证书是元服务证书，而不是鸿蒙 App 的证书。
 
+###  运行报错 `hvigor ERROR: SDK component missing. Please verify the integrity of your SDK.`
+
+你可能声明了不兼容的字段，需要在 `harmony-mp-configs/build-profile.json5` 里面去掉 `app.products.*.compileSdkVersion` 属性。
+
+### 运行运行闪退，但是没有报错
+
+一般来说 `harmony-mp-configs/entry/src/main/module.json5` 配置文件有问题，导致运行失败，需要检查配置文件，如果配置文件没有问题，可以尝试删除文件，重新运行一下。
+
+目前运行，有的用户在 `module` 内部缺少下面三个字段，请确保下面字段存在，如果不存在需要添加：
+
+```json
+"srcEntry": "./ets/abilitystage/AbilityStage.ets",
+"metadata": [
+	{
+		"name": "appgallery_privacy_hosted",
+		"value": "1" 
+	},
+	{
+		"name": "client_id",
+		"value": "" // 填写实际的 client_id 
+	}
+],
+"dependencies": [
+	{
+		"bundleName": "com.huawei.hms.ascf",
+		"moduleName": "ascf",
+		"versionCode": 100000
+	}
+]
+```
+
+### 配置的 module.json5 注意事项
+
+文件 `harmony-mp-configs/entry/src/main/module.json5` 会用来配置应用的一些应为，你可以参考 [鸿蒙 module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/module-configuration-file-V5) 进行学习和参考。
+
+如果你已经在开发鸿蒙 App ，见到 module.json5会感觉比较熟悉，有几个属性需要特别注意：
+
+- 需要 `module.installationFree` 设置为 true
+- 需要设置 `module.srcEntry` `module.metadata` 和 `module.dependencies` 参考上一条问题。

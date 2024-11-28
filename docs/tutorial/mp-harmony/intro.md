@@ -132,6 +132,29 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 
 项目根目录创建 `harmony-mp-configs/entry/src/main/module.json5` 文件。将上文提到的原生空白项目中的 `entry/src/main/module.json5` 的内容复制填充。HBuilderX 在构建时候会识别替换相关文件。
 
+确保在 `module` 字段内，存在下面三个字段，如果不存在需要添加，不添加可能会让元服务运行闪退。
+
+```json
+"srcEntry": "./ets/abilitystage/AbilityStage.ets",
+"metadata": [
+	{
+		"name": "appgallery_privacy_hosted",
+		"value": "1" 
+	},
+	{
+		"name": "client_id",
+		"value": "" // 填写实际的 client_id 
+	}
+],
+"dependencies": [
+	{
+		"bundleName": "com.huawei.hms.ascf",
+		"moduleName": "ascf",
+		"versionCode": 100000
+	}
+]
+```
+
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/62fbd174-5276-4a76-9ef7-26562e611533.png)
 
 ### 4. 运行鸿蒙元服务
@@ -152,7 +175,9 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 
 同时真机页面更新，即可进行元服务开发和运行。
 
-开发过程中遇到的问题，欢迎加入 [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流。
+元服务的条件编译是 `MP-HARMONY`。
+
+开发过程中遇到的问题，欢迎加入 [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流，有官方人员进行答疑和指导。
 
 ## 发行与上架
 
@@ -223,6 +248,8 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0dba9aa1-1a5f-4fea-86b0-35f7c9e691bd.png)
 
 表单会默认填写部分元服务信息，请务必确定完成了 **上架前置准备** 要求内容。填写完成后选择 **提交审核** 按钮。
+
+上架过程中遇到的问题，欢迎加入 [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流，有官方人员进行答疑和指导。
 
 ## 注意事项
 
@@ -343,3 +370,7 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 
 - 需要 `module.installationFree` 设置为 true
 - 需要设置 `module.srcEntry` `module.metadata` 和 `module.dependencies` 参考上一条问题。
+
+### 鸿蒙元服务的条件编译怎么写？
+
+`MP-HARMONY`。

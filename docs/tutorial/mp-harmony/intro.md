@@ -134,6 +134,8 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 
 确保在 `module` 字段内，存在下面三个字段，如果不存在需要添加，不添加可能会让元服务运行闪退。
 
+访问 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)，选择你的项目，在 **项目设置 - 常规** 页面中搜索 Client ID，匹配到的结果是下面需要到 `client_id`，这个参数会关联当前应用的相关权限，比如位置服务等。
+
 ```json
 "srcEntry": "./ets/abilitystage/AbilityStage.ets",
 "metadata": [
@@ -339,28 +341,7 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 
 一般来说 `harmony-mp-configs/entry/src/main/module.json5` 配置文件有问题，导致运行失败，需要检查配置文件，如果配置文件没有问题，可以尝试删除文件，重新运行一下。
 
-目前运行，有的用户在 `module` 内部缺少下面三个字段，请确保下面字段存在，如果不存在需要添加：
-
-```json
-"srcEntry": "./ets/abilitystage/AbilityStage.ets",
-"metadata": [
-	{
-		"name": "appgallery_privacy_hosted",
-		"value": "1" 
-	},
-	{
-		"name": "client_id",
-		"value": "" // 填写实际的 client_id 
-	}
-],
-"dependencies": [
-	{
-		"bundleName": "com.huawei.hms.ascf",
-		"moduleName": "ascf",
-		"versionCode": 100000
-	}
-]
-```
+确保按照 `配置 module.json5` 章节添加了三个字段，请注意是 module **内部添加**，**不是**和 module 字段平级。
 
 ### 配置的 module.json5 注意事项
 
@@ -373,4 +354,4 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 
 ### 鸿蒙元服务的条件编译怎么写？
 
-`MP-HARMONY`。
+`MP-HARMONY`，具体参考 [条件编译文档](https://uniapp.dcloud.net.cn/tutorial/platform.html)。

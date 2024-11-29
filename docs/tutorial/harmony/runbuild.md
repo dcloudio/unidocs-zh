@@ -158,9 +158,9 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 具体请查看以下文档
 
-1. [声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-0000001820999665)
-2. [基础权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-0000001820999669)
-3. [受限权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-in-acl-0000001763952222)
+1. [声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/declare-permissions-V5)
+2. [基础权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5)
+3. [受限权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/restricted-permissions-V5)
 
 ## 更多配置指南@moreconfig
 

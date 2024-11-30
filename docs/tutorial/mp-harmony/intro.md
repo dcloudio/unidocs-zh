@@ -36,7 +36,7 @@
 1. 手机连接电脑后，确保hdc命令功能可用： `sudo bash ascf-init-env.sh` 。如果执行失败可以执行 `sudo node init-ascf.js all`
 2. 如果有新的手机，没有安装ASCF依赖库，需要手动运行：`./ascf-init-phone.sh` 。如果执行失败可以执行 `node init-ascf.js hsp`
 
-**注意**：当前仅支持ide默认安装路径，如果默认安装路径查找失败，请执行设置环境变量后重试。
+**注意**：当前仅支持ide默认安装路径，如果默认安装路径查找失败，请执行设置环境变量后重试。如果你是外置硬盘系统请注意仔细阅读。
 windows系统：`set DEVECO_DIR="C:\Program Files\Huawei\DevEco Studio\bin"`
 mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"`。
 
@@ -56,6 +56,12 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 元服务的开发和上架需要使用元服务的包名 BundleName，包名的形式 `com.atomicservice.[你的 APPID]`。
 
 如果还没有创建元服务，访问 [华为 AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myApp) 完成元服务应用的注册，得到相关包名。方便进行签名证书的操作。
+
+### 元服务上架备案（上架重要）
+
+元服务上架需要提前做好备案，强烈建议注册元服务时候立刻开始备案流程，避免临上架才开始备案，耽误上架时间。参考 [App 备案相关注意事项](https://developer.huawei.com/consumer/cn/doc/app/50130-FAQ).
+
+如果你的元服务需要应到登录、支付权限，也立即开始着手准备申请相关权限，参考 [华为支付服务开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/payment-preparations-V5)。
 
 ### 准备签名证书
 
@@ -255,22 +261,45 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 
 ## 注意事项
 
-### 如何修改元服务默认标题、图标？
+### 启动元服务之后展示一个 Hello Wolrd 不是我设置的页面
 
-通过文件配置。在项目 `harmony-mp-configs` 目录创建 `AppScope/resources/base/element/string.json` 填写
+如果你启动之后展示的是一个黑白界面展示了 Hello Wrold，说明 HBuilderX 提供的默认模版没有被修改，一般是自动化脚本没有成功执行，如果是 Mac 终端请务必注意：屏幕右上角会提示是否允许终端修改文件，一定要允许，才能保证自动化脚本执行成功。
 
+### 如何修改元服务默认标题、图标、启动图等信息？
+
+如果你开发过鸿蒙应用，会发现元服务工程和鸿蒙应用开发设置一致，配置文件同样遵循 module.json5 效果优先于 app.json5 ，参考 [鸿蒙应用组件配置文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-component-configuration-stage-V5)。推荐在组件级别进行配置。
+
+打开 `entry/src/main/module.json5` ，定位到 `module.abilities[0]` 会找到下面几个字段：
+
+- `description` 应用描述
+- `icon` 应用图标
+- `label` 应用标题
+- `startWindowIcon` 应用启动图标，Splashscreen
+- `startWindowBackground` 应用启动时候屏幕颜色
+
+这里的取值一般是 `$media:xxx` 对应图片索引，`$string:xxx` `$color:xxx` 对应配置文件的值。通过文件配置，在项目 `harmony-mp-configs` 目录创建 `entry/src/main/resources/` 目录，并将原生工程相关配置复制过来。注意，`zh_CN` 大于 `base` 配置，优先修改 zh_CN 配置。
+
+举例，下面是 `zh-CN/element/string.json` 中的内容，可以修改 `EntryAbility_label` 字段。
 ```json
 {
   "string": [
     {
-      "name": "app_name",
-      "value": "helloUniApp" // 修改为元服务名称
+      "name": "module_desc",
+      "value": "模块描述"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "label"
     }
   ]
 }
 ```
 
-元服务图标必须在华为提供的标准图标底板上设计，参考 [生成元服务图标](https://developer.huawei.com/consumer/cn/doc/atomic-guides-V5/atomic-service-icon-generation-V5) 生成图标，否则会上架审核不通过。最终得到 216x216 的图标放置在 `harmony-mp-configs/AppScope/resources/base/media/app_icon.png` 路径内。
+元服务图标必须在华为提供的标准图标底板上设计，参考 [生成元服务图标](https://developer.huawei.com/consumer/cn/doc/atomic-guides-V5/atomic-service-icon-generation-V5) 生成图标，否则会上架审核不通过。最终得到 216x216 的图标放置在 `harmony-mp-configs/entry/src/main/resources/base/media/app_icon.png` 路径内。
 
 上架时候，这个图标文件也需要在 DCloud 管理后台进行配置。
 

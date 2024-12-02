@@ -960,6 +960,8 @@ uni统计配置项存放于uniCloud配置中心（`uni-config-center`）下的 `
 - `事件日志：eventLog`，默认保留`7`天的日志。
 - `分享日志：shareLog`，默认保留`7`天的日志。
 - `错误日志：errorLog`，默认保留`7`天的日志。
+- `实时统计数据：resultHourLog`，默认保留`30`天的日志。
+- `app崩溃日志：appCrashLog`，默认保留`7`天的日志。
 
 ::: warning 注意事项
 - 客户端和统计后台两个项目务必关联同一个服务空间，且uni-admin中所有云函数、公共模板等都已经上传部署到该服务空间
@@ -1136,6 +1138,38 @@ db.collection('uni-stat-app-platforms').add({
 **升级HBuilderX至4.33+，重新打包、发布您要统计的应用**
 
 uni-admin项目更新后，即可正常接收和统计`App-Harmony`平台的相关数据。此外，您还需要升级`uni统计2.0`的前端采集SDK，采集数据才能正常上报，即需要将`HBuilderX`版本升级至`4.33+`后，重新打包发布您要统计的应用。
+
+
+### 升级到2.4.25+ 含鸿蒙元服务平台的版本@upgrade4
+
+`uni-admin2.4.25` 版本开始，新增了对`鸿蒙元服务`平台的统计。
+
+![](https://web-ext-storage.dcloud.net.cn/doc/uni-stat/QQ20241202-164941-yfw.png)
+
+若您部署过`uni-admin2.4.25`之前的版本，需要先将`uni-admin`升级到`2.4.25`之后的版本，升级`uni-admin`项目的方法，可参考上方[升级到2.4.24+ 含鸿蒙平台的版本](#upgrade3)中的说明。
+
+**在uni-admin项目中添加鸿蒙元服务平台**
+
+如果您在`uni-admin项目`中，无法找到`鸿蒙元服务`平台，您需要在HBuilderX中，找到`uni-admin项目根目录/uniCloud/database/JQL查询.jql`文件，添加以下`jql语句`并运行。
+
+::: warning 注意
+- 通过插件市场`在线部署`功能，部署`uni-admin项目`的用户，需要先在`HBuilderX`中创建`uni-admin项目`，并关联原部署`uni-admin项目`服务空间，再进行如上操作。
+:::
+
+```js
+db.collection('uni-stat-app-platforms').add({
+    "name":"鸿蒙元服务",
+    "code":"mp-harmony",
+    "order":16,
+    "enable":true,
+    "create_time":163998979103
+})
+```
+
+
+**升级HBuilderX至4.33+，重新打包、发布您要统计的应用**
+
+uni-admin项目更新后，即可正常接收和统计`鸿蒙元服务`平台的相关数据。此外，您还需要升级`uni统计2.0`的前端采集SDK，采集数据才能正常上报，即需要将`HBuilderX`版本升级至`4.33+`后，重新打包发布您要统计的应用。
 
 
 ## uni统计2.0费用评测@cost

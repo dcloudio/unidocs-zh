@@ -17,6 +17,7 @@
   - HBuilderX 4.24+ 要求 DevEco-Studio 5.0.3.400+，HBuilderX 4.31+ 要求 DevEco-Studio 5.0.3.800+。
   - 鸿蒙系统版本 API 12 以上 （DevEco-Studio有内置鸿蒙模拟器）
 - HBuilderX 4.31+ 构建的鸿蒙运行包不支持 x86_64 平台，会影响到 Windows 系统和部分 Mac 系统的鸿蒙模拟器无法使用，需使用真机调试
+- **项目的路径不要太深，如果项目路径过长会导致编译失败，建议将项目放在盘符根目录下**
 
 **Windows系统如使用模拟器则需要开启以下功能**
 
@@ -32,7 +33,7 @@
 
 ### 调试运行的方式@run-mode
 
-HBuilderX 4.24 版本开始支持【运行到鸿蒙】，具体的方式是又开发者下载鸿蒙工程模板并创建独立的鸿蒙工程目录，
+HBuilderX 4.24 版本开始支持【运行到鸿蒙】，具体的方式是开发者下载鸿蒙工程模板并创建独立的鸿蒙工程目录，
 然后在 uni-app 项目中的 `manifest.json` 里面设置 `app-harmony.projectPath` 属性来指向这个鸿蒙工程目录，
 uni-app 项目在编译时把编译产物输出到鸿蒙工程目录，然后调起 DevEco Studio 打开鸿蒙工程目录，由开发者手动完成后续的运行调试工作。
 
@@ -157,9 +158,9 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 具体请查看以下文档
 
-1. [声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-0000001820999665)
-2. [基础权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-0000001820999669)
-3. [受限权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-in-acl-0000001763952222)
+1. [声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/declare-permissions-V5)
+2. [基础权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5)
+3. [受限权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/restricted-permissions-V5)
 
 ## 更多配置指南@moreconfig
 

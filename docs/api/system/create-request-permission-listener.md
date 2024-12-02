@@ -17,6 +17,10 @@ app-android平台，可使用本API监听应用权限申请确认框的弹出和
 
 HBuilderX (4.0+) android 平台支持
 
+|元服务|
+|:-:|
+|x|
+
 <!-- UNIAPPAPIJSON.createRequestPermissionListener.compatibility -->
 
 **注意：HBuilderX 4.01 Vue2项目需要使用自定义基座测试监听权限申请的功能，标准基座暂不支持测试。**

@@ -122,6 +122,11 @@ export const navbar = [
             type: 'link',
             link: 'https://weexapp.com/zh/'
           },
+          {
+            text: '鸿蒙元服务',
+            type: 'link',
+            link: 'https://developer.huawei.com/consumer/cn/doc/atomic-guides-V5/atomic-service-V5'
+          }
         ]
       },
       {

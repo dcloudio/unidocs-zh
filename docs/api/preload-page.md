@@ -4,9 +4,9 @@
 
 **平台差异说明**
 
-|App-nvue|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√(2.7.12+)|x|√(2.7.12+)|x|x|x|x|x|
+|App-nvue|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√(2.7.12+)|x|√(2.7.12+)|x|x|x|x|x|x|
 
 
 |属性|类型|必填|说明|
@@ -50,6 +50,10 @@ uni.navigateTo({url: "/pages/test/test?a=b"}); // url不匹配，正常打开新
 HBuilderX 2.7.12+的hello uni-app，在navigator示例和uni ui的日历示例中增加了页面预载示例。
 
 ## uni.unPreloadPage(OBJECT)
+
+|元服务|
+|:-:|
+|x|
 
 > HarmonyOS Next 不支持
 

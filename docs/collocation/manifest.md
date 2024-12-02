@@ -379,7 +379,11 @@ Tips：`uni-app` 中 `manifest.json->h5->devServer`，`vue2` 实际上对应 `we
 	"sdkConfigs": {
 		// 使用地图或位置相关功能必须填写其一
 		"maps": {
-            "qqmap": {
+            "qqmap": { // HBuilderX 4.36以下版本腾讯地图配置项
+                // 腾讯地图秘钥 https://lbs.qq.com/dev/console/key/manage
+                "key": ""
+            },
+            "tencent": { // HBuilderX 4.36及以上版本腾讯地图配置项
                 // 腾讯地图秘钥 https://lbs.qq.com/dev/console/key/manage
                 "key": ""
             },
@@ -635,7 +639,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 
 |属性|类型|说明|
 |:-|:-|:-|
-|bundleName|String|元服务包名|
+|bundleName|String|元服务包名(固定格式为 `com.atomicservice.[纯数字 appId]`)|
 
 
 ### 自定义小程序项目配置

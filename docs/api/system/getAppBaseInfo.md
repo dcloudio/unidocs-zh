@@ -2,9 +2,9 @@
 
 获取微信 APP 基础信息
 
-|App|H5|微信小程序|支付宝小程序|抖音小程序|快手小程序|QQ小程序|百度小程序|京东小程序|钉钉小程序|飞书小程序|
-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
-|√ `(3.4.13+)`|√ `(3.4.13+)`|√ `(2.20.1+)`|x|x|x|x|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|抖音小程序|快手小程序|QQ小程序|百度小程序|京东小程序|钉钉小程序|飞书小程序|元服务|
+|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-:|
+|√ `(3.4.13+)`|√ `(3.4.13+)`|√ `(2.20.1+)`|x|x|x|x|x|x|x|x|x|
 
 <!-- UNIAPPAPIJSON.getAppBaseInfo.compatibility -->
 
@@ -21,6 +21,7 @@
 |isUniAppX|string|是否uni-app x|HBuilderX 4.33+|
 |uniPlatform|string|uni-app 运行平台，与条件编译平台相同|HBuilderX 4.33+|
 |uniCompilerVersion|string|uni 编译器版本|HBuilderX 4.33+|
+|uniRuntimeVersion|string|uni 编译器版本|HBuilderX 4.34+|
 |hostLanguage|string|小程序宿主语言|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
 |hostVersion|string|App、小程序宿主版本。如：微信版本号|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
 |hostName|string|小程序宿主名称|`App 仅 UNIMPSDK 支持`、`H5 不支持`|

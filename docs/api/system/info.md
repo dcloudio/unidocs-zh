@@ -91,11 +91,12 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |notificationAlertAuthorized	|	允许微信通知带有提醒的开关（仅 iOS 有效）	|微信小程序|
 |notificationBadgeAuthorized	|	允许微信通知带有标记的开关（仅 iOS 有效）	|微信小程序|
 |notificationSoundAuthorized	|	允许微信通知带有声音的开关（仅 iOS 有效）	|微信小程序|
-|bluetoothEnabled	|	蓝牙的系统开关	|微信小程序|
-|locationEnabled	|	地理位置的系统开关	|微信小程序|
-|wifiEnabled	|	Wi-Fi 的系统开关	|微信小程序|
+|bluetoothEnabled	|	蓝牙的系统开关	|微信小程序、鸿蒙元服务|
+|locationEnabled	|	地理位置的系统开关	|微信小程序、鸿蒙元服务|
+|wifiEnabled	|	Wi-Fi 的系统开关	|微信小程序、鸿蒙元服务|
 |cacheLocation|上一次缓存的位置信息|百度小程序(安卓端最低基础库版本 3.40.4 ；iOS 最低支持版本 3.70.2)|
 |storage|设备磁盘容量|支付宝小程序|
+|OSApiVersion|系统 Api 版本|鸿蒙元服务|
 
 ### 不推荐使用的返回参数，仅为向下兼容保留
 
@@ -131,6 +132,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |mp-kuaishou|快手小程序|
 |mp-jd|京东小程序|
 |mp-360|360小程序|
+|mp-harmony|鸿蒙元服务|
 |quickapp-webview|快应用通用(包含联盟、华为)|
 |quickapp-webview-union|快应用联盟|
 |quickapp-webview-huawei|快应用华为|
@@ -180,6 +182,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |[抖音宿主平台枚举值列表](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info/#appname-%E8%AF%B4%E6%98%8E)|抖音系列|
 |qq|QQ|
 |KUAISHOU|快手|
+|HarmonyOS|鸿蒙|
 
 ### safeArea 返回值说明 @safearea
 
@@ -237,16 +240,16 @@ uni-app 3.5.1+ 版本规范了 deviceModel 返回值，例如之前返回 `iPhon
 
 ### 其他注意 @tips
 - `deviceType`：
-  - `app-ios` 只支持 `phone`、`pad`。
-  - `app-android` 支持 `phone`、`pad`、`tv`、`car`、`watch`、`vr`、`appliance`、`undefined`、`unknown`，关于各个类型的更详细解释参考[Android官方文档](https://developer.android.com/guide/)。
-  - 其中，`app-android` 平台下 `pad` 类型的判断，在国产pad等非google官方设备上并不一定准确。如果有需要开发者可自行根据型号或屏幕大小判断。uni-app框架源码中判断`pad`的java代码如下，供参考：
+	- `app-ios` 只支持 `phone`、`pad`。
+	- `app-android` 支持 `phone`、`pad`、`tv`、`car`、`watch`、`vr`、`appliance`、`undefined`、`unknown`，关于各个类型的更详细解释参考[Android官方文档](https://developer.android.com/guide/)。
+	- 其中，`app-android` 平台下 `pad` 类型的判断，在国产pad等非google官方设备上并不一定准确。如果有需要开发者可自行根据型号或屏幕大小判断。uni-app框架源码中判断`pad`的java代码如下，供参考：
 
 	```java
 	public static boolean isTablet(Context context) {
 		return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
 	}
 	```
-  - `app-harmony` 支持 `phone`、`pad`、`tv`、`watch`、`pc`、`unknown`、`car`、`vr`、`undefined`。
+	- `app-harmony` 支持 `phone`、`pad`、`tv`、`watch`、`pc`、`unknown`、`car`、`vr`、`undefined`。
 - `osTheme`：`app-ios` 只有将应用主题设置为跟随系统时才能获取到系统的主题。小程序也有类似限制。
 - 屏幕高度 = 原生NavigationBar高度（含状态栏高度）+ 可使用窗口高度 + 原生TabBar高度
 - windowHeight不包含NavigationBar和TabBar的高度

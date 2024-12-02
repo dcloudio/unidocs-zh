@@ -173,11 +173,7 @@ uni统计的开源且基于[uni-admin](https://doc.dcloud.net.cn/uniCloud/admin)
 
 部署uni统计时可以选择使用uniCloud的阿里云版或腾讯云版，不同云厂商对应的域名不同（文章后面章节会有服务空间相关配置）
 
-| uniCloud服务提供商 |      request 合法域名       |
-| :--------: | :-------------------------: |
-|   阿里云公测版   |       api.bspapp.com        |
-|   阿里云正式版   |       api.next.bspapp.com        |
-|   腾讯云   | tcb-api.tencentcloudapi.com |
+点击查看各厂商[request合法域名](https://doc.dcloud.net.cn/uniCloud/publish.html#useinmp)。
 
 根据选择的uniCloud云厂商，配置相应的域名到小程序的域名白名单配置里即可。
 

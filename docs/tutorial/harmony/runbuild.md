@@ -9,6 +9,8 @@
 1. 鸿蒙开发只支持Vue3，不支持Vue2、不支持plus、但支持nvue
 2. nvue编译到鸿蒙后非原生渲染，而是与web一样渲染（自动注入一些默认样式进行兼容）
 3. Vue3也支持选项式代码风格，参考[Vue2升Vue3指南](https://uniapp.dcloud.net.cn/tutorial/migration-to-vue3.html )
+4. HBuilderX 4.41+ 开始运行到鸿蒙设备时支持修改代码后热刷更新
+5. HBuilderX 4.41+ 开始运行到鸿蒙设备时控制台显示的应用日志支持回源代码
 
 ## 开发环境要求@env
 

@@ -23,14 +23,18 @@ uni-ad可以一套代码全端变现，包括app、web、微信小程序；wx广
 
 有高有低，不同小程序cpm不同，需要开发者测试比较
 
-4. 结算周期
+5. 结算周期
 
 相比微信自带流量主广告，uni-ad开发者可以申请相对更短的结算周期和垫资服务。具体扫码加企业微信咨询。
 
-![](
-https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/wx_zhangeryun.png) ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/wx_yangguibin.png)
+<figure>
+  ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/wx_zhangeryun.png)
+</figure>
+<figure style="margin-left: 100px">
+ ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/wx_yangguibin.png)
+</figure>
 
-5. 安全防护
+6. 安全防护
 
 uni-ad内置了安全防护策略，减少广告被刷风险
 
@@ -39,11 +43,11 @@ uni-ad内置了安全防护策略，减少广告被刷风险
 服务器回调用于业务系统判断是否提供奖励给观看广告的用户。配置服务器回调后，当用户成功看完广告时，[uniCloud](https://doc.dcloud.net.cn/uniCloud/)服务器会访问配置的云函数，通知用户完成观看激励视频。
 相对来讲服务器回调将更加安全
 
-6. 开通方式
+7. 开通方式
 
 uni-ad由开发者在DCloud网站[uniad.dcloud.net.cn](https://uniad.dcloud.net.cn)申请，开发者与DCloud开票结算；而wx广告在微信小程序后台申请，开发者与微信开票结算
 
-7. 代码写法
+8. 代码写法
 
 两者在开发时，都使用相同的组件，比如`<ad>`组件、`<ad-rewarded-video>`组件，但uni-ad的组件属性是adpid（广告位id的缩写），微信小程序的组件属性是unit-id。
 

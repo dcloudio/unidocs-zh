@@ -384,3 +384,11 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 ### 鸿蒙元服务的条件编译怎么写？
 
 `MP-HARMONY`，具体参考 [条件编译文档](https://uniapp.dcloud.net.cn/tutorial/platform.html)。
+
+### 初次运行报错 `Failed to install the HAP or HSP`
+
+参考文档顶部 **开发环境准备** 部分，请确认：
+
+1. 真机是鸿蒙Next 真机，系统版本是 鸿蒙 5.0+。如果是鸿蒙 4.x 版本不属于鸿蒙 Next 系统，模拟器暂不支持。具体支持机型参考 [HarmonyOS NEXT 支持机型
+](https://consumer.huawei.com/cn/support/harmonyos/models-next/)
+2. 确定下载了自动化初始脚本，完成了脚本安装。控制台执行 `ascf -V` 有返回值。

@@ -27,7 +27,8 @@ uni-ad可以一套代码全端变现，包括app、web、微信小程序；wx广
 
 相比微信自带流量主广告，uni-ad开发者可以申请相对更短的结算周期和垫资服务。具体扫码加企业微信咨询。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/eryunweixin.jpg)
+![](
+https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/wx_zhangeryun.png) ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/wx_yangguibin.png)
 
 5. 安全防护
 

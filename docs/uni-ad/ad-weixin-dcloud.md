@@ -93,5 +93,5 @@ uni-ad微信小程序广告的优势在于：
 ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_dcloud/adp_income.png)
 ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_dcloud/day_income.png)
 
-如遇到任何问题请联系uni-ad运营或邮件uniad@dcloud.io解决，谢谢。
+如遇到任何问题请联系uni-ad运营或邮件<a href="mailto:uniad@dcloud.io">uniad@dcloud.io</a>解决，谢谢。
 

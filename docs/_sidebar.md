@@ -21,6 +21,7 @@
     * [Draw视频信息流广告](uni-ad/ad-draw.md)
     * [短视频内容联盟广告](uni-ad/ad-content-page.md)
     * [微信小程序](uni-ad/ad-weixin.md)
+      * [微信小程序广告](uni-ad/ad-weixin-dcloud.md)
     * [微信小程序视频广告](uni-ad/ad-video.md)
     * [微信小程序格子广告](uni-ad/ad-grid.md)
     * [微信小程序互动广告](uni-ad/ad-interactive.md)

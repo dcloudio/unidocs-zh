@@ -32,7 +32,7 @@
 
 #### 微信小程序
 
-> `uni-ad`无开通门槛、提前结算、插件丰富。[详见](https://uniapp.dcloud.net.cn/component/ad-weixin.html)
+> `uni-ad`无开通门槛、提前结算、插件丰富。[详见](https://uniapp.dcloud.net.cn/uni-ad/ad-weixin.html)
 
 - [信息流(Banner)](https://uniapp.dcloud.net.cn/uni-ad/ad-component.html)
 - [激励视频广告](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html)

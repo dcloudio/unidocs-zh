@@ -51,6 +51,7 @@ uni-ad微信小程序广告的优势在于：
 
 **注意：如果微信小程序尚未发布，您无法审核通过。请确认申请广告前微信小程序已经发布，并且页面展示正常无误。**
 其他的信息按照实际情况正常填写，最后点击“确认开通”。
+
 ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_dcloud/open_wx_ad1.png)
 
 ::: warning FAQ

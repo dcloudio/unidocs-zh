@@ -17,9 +17,9 @@
 ## 平台差异说明
 
 
-|App					|H5			|微信小程序		|支付宝小程序|百度小程序		|抖音小程序、飞书小程序|QQ小程序		|快应用					|360小程序|快手小程序	|元服务|
-|:-:					|:-:		|:-:					|:-:		    |:-:					|:-:					|:-:				|:-:						|:-:			|:-:			|:-:|
-|2.0+，app-vue|2.4.5+	|基础库 2.7.0+|x						|需引入动态库[引入方式](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)					|x							|x				|x				|x				|x				|x|
+|App					|H5			|微信小程序		|支付宝小程序|百度小程序		|抖音小程序、飞书小程序|QQ小程序		|快应用					|360小程序|快手小程序	|元服务|小红书小程序|
+|:-:					|:-:		|:-:					|:-:		    |:-:					|:-:					|:-:				|:-:						|:-:			|:-:			|:-:|:-:|
+|2.0+，app-vue|2.4.5+	|基础库 2.7.0+|x						|需引入动态库[引入方式](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)					|x							|x				|x				|x				|x				|x|√|
 
 <!-- UNIAPPCOMJSON.editor.compatibility -->
 

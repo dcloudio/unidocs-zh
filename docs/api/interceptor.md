@@ -2,10 +2,6 @@
 添加拦截器
 
 
-|元服务|
-|:-:|
-|x|
-
 <!-- UNIAPPAPIJSON.addInterceptor.compatibility -->
 
 **STRING 参数说明**
@@ -68,10 +64,6 @@ uni.addInterceptor({
 
 ## uni.removeInterceptor(STRING)
 删除拦截器
-
-|元服务|
-|:-:|
-|x|
 
 <!-- UNIAPPAPIJSON.removeInterceptor.compatibility -->
 

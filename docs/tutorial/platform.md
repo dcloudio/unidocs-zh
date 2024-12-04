@@ -53,7 +53,8 @@ uni-app 已将常用的组件、API封装到框架中，开发者按照 uni-app 
 |MP-KUAISHOU|快手小程序||
 |MP-JD|京东小程序||
 |MP-360|360小程序||
-|MP-HARMONY|鸿蒙元服务||
+|MP-HARMONY|鸿蒙元服务|HBuilderX 4.34+|
+|MP-XHS|小红书小程序||
 |MP|微信小程序/支付宝小程序/百度小程序/抖音小程序/飞书小程序/QQ小程序/360小程序/鸿蒙元服务||
 |QUICKAPP-WEBVIEW|快应用通用(包含联盟、华为)||
 |QUICKAPP-WEBVIEW-UNION|快应用联盟||
@@ -222,7 +223,8 @@ json的条件编译，如不同平台的key名称相同，cli项目下开发者�
 |mp-toutiao	|抖音小程序				|				|
 |mp-lark	|飞书小程序				|				|
 |mp-kuaishou|快手小程序				|				|
-|mp-jd		|京东小程序				|				|
+|mp-harmony		|鸿蒙元服务				|				|
+|mp-xhs		|小红书小程序				|				|
 
 专有目录下的静态资源只有在特定平台才会编译进去。
 

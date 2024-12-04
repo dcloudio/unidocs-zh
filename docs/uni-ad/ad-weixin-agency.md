@@ -17,17 +17,17 @@ DCloud是微信官方核准的广告代运营服务商，代运营是微信给�
 
 ### 开通流程
 1. 登录[uni-ad](https://uniad.dcloud.net.cn/)，点击左侧导航栏 **广告设置->点击应用进入应用详情->点击微信小程序广告->点击授权微信小程序流量主代运营**
-![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_component/apply.png)
+![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/apply.png)
 确认微信appid及名称点击下一步
-![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_component/step1.png)
+![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/step1.png)
 2. 使用微信小程序appid绑定的管理员个人微信号进行扫码授权
-![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_component/qrcode_agree.png)
+![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/qrcode_agree.png)
 然后在手机端按流程提示完成授权：
-![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_component/mobile.png)
+![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/mobile.png)
 ::: warning FAQ
 - **Q：微信小程序绑定的管理员在哪查看？**
 - A：登录[微信公众平台](https://mp.weixin.qq.com/)，点击左侧导航栏 **成员管理** 查看管理员账户
-- ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_component/mp_admin.png)
+- ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/mp_admin.png)
 - **Q：授权代运营的管理费**
 - A：uni-ad默认收取开发者流量主广告收益的1%作为服务费。同时uni-ad承诺给开发者提供比单纯的流量主广告变现更高的收益提升，如未达到此目标，开发者可以申请退还服务费。
 - **Q：结款流程**
@@ -44,6 +44,6 @@ DCloud是微信官方核准的广告代运营服务商，代运营是微信给�
 
 ### 广告位说明
 - 开发者在开通uni-ad微信小程序广告时，uni-ad已经会自动创建5个小程序广告位，列表如下:
-![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_component/adp_list.png)
+![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/adp_list.png)
 
 然后授权uni-ad流量主代运营后，uni-ad会针对以上广告位创建流量主广告位，名称为：`uni-ad-[广告位名称]`，开发者如已使用以上广告位adpid，则不需要修改对应代码，重新发布小程序即可。

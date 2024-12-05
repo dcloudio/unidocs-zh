@@ -18,8 +18,8 @@ DCloud是微信官方核准的广告代运营服务商，代运营是微信给�
 ### 开通流程
 1. 登录[uni-ad](https://uniad.dcloud.net.cn/)，点击左侧导航栏 **广告设置->点击应用进入应用详情->点击微信小程序广告->点击授权微信小程序流量主代运营**
 ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/apply.png)
-确认微信appid及名称点击下一步
-![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/step1.png)
+确认微信appid及名称并勾选后点击下一步
+![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/step.png)
 2. 使用微信小程序appid绑定的管理员个人微信号进行扫码授权
 ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/qrcode_agree.png)
 然后在手机端按流程提示完成授权：

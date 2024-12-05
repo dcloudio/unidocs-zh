@@ -170,6 +170,12 @@ export const navbar = [
     target: '_blank',
     needOutbound: false
   },
+  {
+    text: 'uni-ad广告',
+    link: '/uni-ad/',
+    type: "link",
+    needOutbound: false
+  },
   /* {
     text: '问答社区',
     link: 'https://ask.dcloud.net.cn/explore/',

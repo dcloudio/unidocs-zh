@@ -16,7 +16,7 @@ function simplifySlugText(text) {
 
 // 顺序有要求，会影响 for 循环匹配侧边栏
 const tabs = [
-  '/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/',
+  '/uni-ad/', '/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/',
 ]
 
 module.exports = {

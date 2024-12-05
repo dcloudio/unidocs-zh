@@ -231,7 +231,15 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 
 选择你要上架的元服务，授权 DCloud 完成后续的上架流程。
 
-### 2. 配置发行签名证书
+### 2. 确认分享承诺
+
+点击 [鸿蒙原生应用激励分享承诺函](https://developer.huawei.com/consumer/cn/verified/incentiveAuth)，如下图选择本次计划上架的应用（元服务），服务商字段搜索“数字天堂”并选择，勾选“我已阅读”，点击提交，完成激励分享。
+
+![](https://web-ext-storage.dcloud.net.cn/doc/harmony-os-next/harmony-incentiveAuth.png)
+
+**注意：必须完成分享承诺，才有机会拿到奖励金；**
+
+### 3. 配置发行签名证书
 
 开发调试期间的证书不可用于应用上架。元服务发布证书的申请流程和鸿蒙应用开发类似，访问 [鸿蒙发布元服务文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-harmonyos-releaseservice-0000001946273965) 进行发布证书的获取。
 
@@ -239,7 +247,7 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 
 定位到 `app.signingConfigs[0]` 字段，修改 `material` 为发行证书路径。
 
-### 3. 应用打包
+### 4. 应用打包
 
 在 HBuilderX 中选择 `发行 - 鸿蒙元服务`，进行元服务打包。等待打包完成，会提示上传完成。接下来到 DCloud开发者中心完善上架资料。
 
@@ -247,7 +255,7 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/a40b554b-2ba3-4a7b-8d2c-a9baa43e9bb7.png)
 
-### 4. 完善上架资料
+### 5. 完善上架资料
 
 在上个步骤中，控制台在上传完成之后，提示打开 [DCloud 开发者中心](https://dev.dcloud.net.cn)。如果你是项目协作者账号登录，请切换为项目作者账号登录。
 

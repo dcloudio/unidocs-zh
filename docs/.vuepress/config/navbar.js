@@ -130,7 +130,7 @@ export const navbar = [
           {
             text: "小红书小程序",
             type: "link",
-            link: "https://miniapp.xiaohongshu.com/docs?path=/docs/guide/miniIntroduce",
+            link: "https://miniapp.xiaohongshu.com/docsV2/doc/DC026595",
           },
         ]
       },

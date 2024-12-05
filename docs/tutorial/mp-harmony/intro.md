@@ -1,5 +1,8 @@
 # 概述
 
+目前使用 uni-app 开发鸿蒙元服务有 **现金激励** 活动，访问 《[发布鸿蒙元服务，领取现金奖励
+](https://ask.dcloud.net.cn/article/41398)》了解活动详情。
+
 > 鸿蒙元服务就是鸿蒙Next系统上的快应用、小程序。在鸿蒙Next系统上，不再支持快应用，对标产品即为鸿蒙快应用。
 
 > 如果你是服务商、外包商，承诺短期可快速上架20个元服务，欢迎点此[联系我们](https://im.dcloud.net.cn/#/?business_type=harmony-reward)，我们可提供单独技术支持，以及帮助协调鸿蒙测试机。
@@ -210,12 +213,13 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 
 ### 发行与上架步骤
 
-在 HBuilderX 中开发 uni-app 上架到鸿蒙元服务需要下面 4 个步骤：
+在 HBuilderX 中开发 uni-app 上架到鸿蒙元服务需要下面 5 个步骤：
 
-1. 授权 DCloud 完成上架流程。
-2. 配置发行签名证书。
-3. 应用打包。
-4. 完善上架资料
+  1. 授权 DCloud 完成上架流程。
+  2. 签署应用激励分享承诺函
+  3. 配置发行签名证书。
+  4. 应用打包。
+  5. 完善上架资料
 
 下面进行详细说明。
 
@@ -266,6 +270,11 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0dba9aa1-1a5f-4fea-86b0-35f7c9e691bd.png)
 
 表单会默认填写部分元服务信息，请务必确定完成了 **上架前置准备** 要求内容。填写完成后选择 **提交审核** 按钮。
+
+下面是用户上架遇到的问题，请 **注意**：
+
+- 务必配置应用图标位元服务图标，页面中有 元服务图标生成工具 链接，否则会审核失败
+- 发布版本 - 版本选取，选择创建时间最新的版本，勾选选择
 
 上架过程中遇到的问题，欢迎加入 [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流，有官方人员进行答疑和指导。
 
@@ -321,7 +330,7 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 
 如果是发生应用发行阶段，可能是未填写完整的发布证书，需要调整 `build-profile.json5`。
 
-### 发送网络请求报错、组件 web-view 渲染空白，不能展示网页
+### 发送网络请求报错
 
 需要主动开启网络访问状态、并且需要设置网络白名单。
 
@@ -347,12 +356,15 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/49323643-31f5-4f95-80b2-87157c9a06d5.png)
 
+### 组件 web-view 渲染空白，不能展示网页
+
+同上，发送网络请求报错的解决方案。
+
 ### 组件 打开 map 地图无法展示
 
 Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/) 进行权限申请。具体可以参考 [鸿蒙 Map Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/map-config-agc-V5)，开通地图服务。
 
 ### API 登录 uni.login 获取 code 报错
-<!-- client id -->
 
 参考[鸿蒙 Account Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-config-permissions-V5#section132012717318) 设置相关权限，添加 scope 权限
 
@@ -395,7 +407,7 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 
 `MP-HARMONY`，具体参考 [条件编译文档](https://uniapp.dcloud.net.cn/tutorial/platform.html)。
 
-### 初次运行报错 `Failed to install the HAP or HSP`
+### 初次运行报错 `Failed to install the HAP or HSP`@failed-to-install-the-hap-or-hsp
 
 参考文档顶部 **开发环境准备** 部分，请确认：
 

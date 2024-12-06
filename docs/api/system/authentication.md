@@ -12,9 +12,9 @@ Start the SOTER biometric authentication.
 **平台差异说明**
 **Platform difference description**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|
-|:-	|:-					|:-						|:-					|:-					|:-				|:-				|
-|√（2.3.8+）	|x	|√					|x						|x					|x					|x				|
+|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|元服务|
+|:-	|:-					|:-						|:-					|:-					|:-				|:-				|:-:|
+|√（2.3.8+）	|x	|√					|x						|x					|x					|x				|x|
 
 
 <!-- UNIAPPAPIJSON.startSoterAuthentication.compatibility -->
@@ -26,9 +26,7 @@ Start the SOTER biometric authentication.
 |Properties |Type |Default |Required |Description | Platform Difference Description |
 |:-								|:-				|:-			|:-		|:-																																																																																																			|:-							|
 |requestAuthModes	|Array		|				|是		|请求使用的可接受的生物认证方式																																																																																					|APP、微信小程序|
-|requestAuthModes |Array | |Yes |Acceptable biometric authentication methods used by the request |APP, WeChat applet|
-|challenge				|String		|				|是		|挑战因子。挑战因子为调用者为此次生物鉴权准备的用于签名的字符串关键识别信息，将作为 resultJSON 的一部分，供调用者识别本次请求。例如：如果场景为请求用户对某订单进行授权确认，则可以将订单号填入此参数。	|微信小程序			|
-|challenge |String | |Yes |challenge factor. The challenge factor is the string key identification information for signature prepared by the caller for this biometric authentication, which will be part of the resultJSON for the caller to identify this request. For example, if the scenario is to request the user to authorize and confirm an order, the order number can be filled in this parameter. |WeChat Mini Program |
+|challenge				|String		|				|是		|挑战因子。挑战因子为调用者为此次生物鉴权准备的用于签名的字符串关键识别信息，将作为 resultJSON 的一部分，供调用者识别本次请求。例如：如果场景为请求用户对某订单进行授权确认，则可以将订单号填入此参数。	|微信小程序、HarmonyOS Next			|
 |authContent			|String		|''			|否		|验证描述，即识别过程中显示在界面上的对话框提示内容																																																																											|APP、微信小程序|
 |authContent |String |'' |No |Authentication description, that is, the dialog prompt content displayed on the interface during the recognition process |APP, WeChat applet|
 |success					|Function	|				|否		|接口调用成功的回调函数																																																																																									|								|

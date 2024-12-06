@@ -28,6 +28,7 @@ App-Android platform cloud packaging related configuration
 |minSdkVersion|String|Android平台最低支持版本，详情参考：[Android平台设置minSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-minsdkversion)|
 |minSdkVersion|String|The minimum supported version of the Android platform, please refer to: [Android platform setting minSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-minsdkversion)|
 |targetSdkVersion|String|Android平台目标版本，详情参考：[Android平台设置targetSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion)|
+|enableResourceOptimizations|Boolean|是否开启Android原生res资源文件优化|
 |aaptOptions|Array|Android平台云端打包时build.gradle的packagingOptions配置项，示例："aaptOptions": ["noCompress 'png', 'jpg', 'jpeg'"]|
 |buildFeatures|Object|Android平台云端打包时build.gradle的buildFeatures配置项，[详见](/collocation/manifest?id=buildFeatures)|
 |packagingOptions|Array|Android平台云端打包时build.gradle的packagingOptions配置项，示例："packagingOptions": ["doNotStrip '*/armeabi-v7a/*.so'","merge '**/LICENSE.txt'"]|
@@ -44,6 +45,17 @@ App-Android platform cloud packaging related configuration
 |hasTaskAffinity|Boolean|是否设置android：taskAffinity，[详见](https://uniapp.dcloud.net.cn/tutorial/app-sec-android.html#strandhogg%E6%BC%8F%E6%B4%9E)|
 |pushRegisterMode|String|延迟初始化UniPush的配置，当配置此项值为`manual`后UniPush不会初始化，直到首次调用[getPushClientId](https://uniapp.dcloud.net.cn/api/plugins/push.html#getpushclientid)、getClientInfo、getClientInfoAsync时才会初始化，注:一旦调用获取cid的方法后，下次App启动就不再延迟初始化UniPush了。(manual为延迟，其他值表示不延迟。)|
 |enableOAID|Boolean|是否支持获取OAID，默认值为true，[详见](#enableoaid)|
+
+#### enableResourceOptimizations @enableresourceoptimizations  
+
+> HBuilderX4.33版本新增 enableResourceOptimizations 配置项
+
+Android平台云端打包时配置是否开启Android原生res资源文件优化，开启后res资源文件名称会被混淆。  
+
+**注意**  
+HBuilder4.25及以上版本云端打包环境升级为Gradle 8.5，enableResourceOptimizations默认值为true，即开启原生res资源文件混淆  
+HBuilder4.25以下版本云端打包环境为Gradle 7.6.3，enableResourceOptimizations默认值为false，即关闭原生res资源文件混淆  
+
 
 #### aaptOptions@aaptoptions  
 Android平台云端打包时build.gradle的aaptOptions配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/AaptOptions?hl=en)，如下示例源码：  
@@ -278,6 +290,7 @@ iOS platform cloud packaging related configuration
                 },
                 "minSdkVersion": 21,            //可选，数字类型，Android平台最低支持版本，参考：https://uniapp.dcloud.io/tutorial/app-android-minsdkversion
                 "targetSdkVersion": 30,         //可选，数字类型，Android平台目标版本，参考：https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion
+                "enableResourceOptimizations": false, // 可选，Boolean类型，是否开启Android原生res资源文件优化
                 "aaptOptions": [               //可选，字符串数组类型，Android平台云端打包时build.gradle的packagingOptions配置项
                   "noCompress 'png', 'jpg', 'jpeg'"
                 ],

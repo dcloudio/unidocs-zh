@@ -3,6 +3,10 @@
 ## uni.createIntersectionObserver([this], [options])
 创建并返回一个 ``IntersectionObserver`` 对象实例。
 
+|元服务|
+|:-:|
+|x|
+
 <!-- UNIAPPAPIJSON.createIntersectionObserver.compatibility -->
 
 **this说明：**

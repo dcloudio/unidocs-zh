@@ -29,6 +29,10 @@ Baidu Smart Mini Program Platform Implementation Reference: [Specification Detai
 初始化Wi-Fi模块
 Initialize the Wi-Fi module
 
+|元服务|
+|:-:|
+|x|
+
 <!-- UNIAPPAPIJSON.startWifi.compatibility -->
 
 **OBJECT 参数说明**

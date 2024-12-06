@@ -450,6 +450,7 @@ export default {
 **注意**
 
 - `onBackPress`上不可使用`async`，会导致无法阻止默认返回
+- iOS 端侧滑返回不会触发 `onBackPress`
 - 支付宝小程序只有真机可以监听到非`navigateBack`引发的返回事件（使用小程序开发工具时不会触发`onBackPress`），不可以阻止默认返回行为
 
 详细说明及使用：[onBackPress 详解](http://ask.dcloud.net.cn/article/35120)

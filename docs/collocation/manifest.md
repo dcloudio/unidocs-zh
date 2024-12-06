@@ -532,7 +532,11 @@ Map service provider SDK configuration, this item needs to be configured when us
 		// 使用地图或位置相关功能必须填写其一
 		// To use map or location-related functions, one must be filled in
 		"maps": {
-            "qqmap": {
+            "qqmap": { // HBuilderX 4.36以下版本腾讯地图配置项
+                // 腾讯地图秘钥 https://lbs.qq.com/dev/console/key/manage
+                "key": ""
+            },
+            "tencent": { // HBuilderX 4.36及以上版本腾讯地图配置项
                 // 腾讯地图秘钥 https://lbs.qq.com/dev/console/key/manage
                 // Tencent map key https://lbs.qq.com/dev/console/key/manage
                 "key": ""
@@ -866,6 +870,19 @@ Optimized configuration for Kuaishou MiniApp
 |:-|:-|:-|
 |subPackages|Boolean|是否开启分包优化|
 | subPackages| Boolean|Whether to enable subpackage optimization|
+
+### 鸿蒙元服务项目设置@mp-harmony
+
+|属性|类型|说明|
+|:-|:-|:-|
+|distribute|Object|分发配置|
+
+#### distribute 选项
+
+|属性|类型|说明|
+|:-|:-|:-|
+|bundleName|String|元服务包名(固定格式为 `com.atomicservice.[纯数字 appId]`)|
+
 
 ### 自定义小程序项目配置
 ### Custom MiniApp project configuration

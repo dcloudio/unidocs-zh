@@ -12,10 +12,9 @@ For example, if a sidebar is placed in the match-media component, and the media 
 **平台兼容性**
 **Platform compatibility**
 
-|app|h5|微信小程序|支付宝小程序|qq小程序|百度小程序|抖音小程序|飞书小程序|360小程序|快应用|京东小程序|
-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
-|2.8.12+，app-vue|√|基础库 2.11.1+|√|√|√|√|×|√|×|×|
-|2.8.12+, app-vue|√|Basic library 2.11.1+|√|√|√|√|×|√|×|×|
+|app|h5|微信小程序|支付宝小程序|qq小程序|百度小程序|抖音小程序|飞书小程序|360小程序|快应用|京东小程序|元服务|小红书小程序|
+|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-:|
+|2.8.12+，app-vue|√|基础库 2.11.1+|√|√|√|√|×|√|×|×|x|x|
 
 <!-- UNIAPPCOMJSON.match-media.compatibility -->
 

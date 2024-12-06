@@ -22,9 +22,9 @@ Web平台本API之前调用了腾讯地图的gcj02坐标免费转换接口，该
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√（3.6.8+）|√（3.6.8+）|√|x|√|√|x|√|x|√|√|
 
 <!-- UNIAPPAPIJSON.onLocationChange.compatibility -->
 
@@ -233,7 +233,7 @@ Turn off the monitoring of real-time location changes, and both the front and ba
 
 |App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|x|√|x|x|x|x|√|x|
+|x|HBuilderX 4.31|x|√|x|x|x|x|√|x|
 
 **OBJECT 参数**
 **OBJECT parameter**

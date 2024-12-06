@@ -15,8 +15,8 @@ function simplifySlugText(text) {
 }
 
 // 顺序有要求，会影响 for 循环匹配侧边栏
-const tabs_zh = process.env.DOCS_LITE ? [] : [
-  '/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/',
+const tabs = [
+  '/uni-ad/', '/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/',
 ]
 const tabs_en = ['/plugin/', '/worktile/', '/tutorial/', '/collocation/', '/component/', '/api/', '/']
 

@@ -3,9 +3,9 @@
 **平台差异说明**
 **Platform Difference Description**
 
-|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|HBuilderX 4.23|√|√|√|√|√|√|√|√|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|HBuilderX 4.23|√|√|√|√|√|√|√|√|√|
 
 App-nvue下如需使用canvas，暂未封装为uni API，可参考[文档](https://github.com/dcloudio/NvueCanvasDemo)使用。
 If you need to use canvas under App-nvue, it has not been packaged as uni API yet, you can refer to [documentation](https://github.com/dcloudio/NvueCanvasDemo) to use.
@@ -806,6 +806,9 @@ ctx.draw()
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/line-to.png)
 
 ## CanvasContext.measureText
+
+> 该方法在 HarmonyOS Next 设备上是异步，需要传入回调函数获取文本尺寸信息。
+
 测量文本尺寸信息，目前仅返回文本宽度。同步接口。（App 端 2.8.12+ 支持）
 Measure text size information, currently only returns text width. synchronous interface. (App 2.8.12+ support)
 
@@ -816,7 +819,7 @@ Measure text size information, currently only returns text width. synchronous in
 |Parameter |Type |Description |
 |---	|---	|---			|
 |text	|String	|要测量的文本	|
-| text | String | Text to measure |
+|callback	|({metricsWidth: number} => void)	|测量回调 `仅 HarmonyOS Next 支持`	|
 
 **返回**
 **return**

@@ -32,7 +32,7 @@
 
 #### 微信小程序
 
-> `uni-ad`无开通门槛、提前结算、插件丰富。[详见](https://uniapp.dcloud.net.cn/component/ad-weixin.html)
+> `uni-ad`无开通门槛、提前结算、插件丰富。[详见](https://uniapp.dcloud.net.cn/uni-ad/ad-weixin.html)
 
 - [信息流(Banner)](https://uniapp.dcloud.net.cn/uni-ad/ad-component.html)
 - [激励视频广告](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html)
@@ -55,7 +55,10 @@
 3. 更快结算
   - 默认每月4日、19日两次结算。扫描联系商务申请更短结算周期
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/eryunweixin.jpg)
+<figure style="margin: 50px 0;">
+  <img src="https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/uni-ad-wx-1.png">
+  <img style="margin-left: 100px" src="https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/uni-ad-wx-2.png">
+</figure>
 
 ### 开通配置广告步骤@start
 

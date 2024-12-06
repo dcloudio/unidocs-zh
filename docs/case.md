@@ -203,7 +203,7 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 **华为：** 荣耀商城。微信小程序搜索“荣耀亲选商城”、[H5](https://m.qinxuan.honor.cn/)、[App部分栏目使用DCloud SDK](https://appgallery1.huawei.com/#/app/C100382765)
 **Huawei:** Honor Mall. WeChat MiniApp search for "Honor Personal Selection Mall", [H5](https://m.qinxuan.honor.cn/),[Partof the app uses DCloudSDK]( <a href="https://appgallery1.huawei.com/#/app/C100382765">https://appgallery1.huawei.com/#/ app/C100382765</a> )
 
-**华为：** 莫塞尔商城。[App下载](https://appgallery.huawei.com/#/app/C103915115)；微信小程序搜索“莫塞尔商城”
+**华为：** 莫塞尔商城，支持鸿蒙Next。[App下载](https://appgallery.huawei.com/#/app/C103915115)；微信小程序搜索“莫塞尔商城”
 
 **抖音：** 抖音小游戏中心。
 
@@ -269,8 +269,7 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 **CSDN App：** Appstore新闻类榜单前十。[uni小程序SDK](https://nativesupport.dcloud.net.cn)案例。App内部众多栏目做成小程序形式。[App下载](https://www.csdn.net/apps/download)
 **CSDN App:** The top ten in the Appstore news category. [uni MiniApp SDK](https://nativesupport.dcloud.net.cn)case. Many columns inside the app are made into MiniApp. [App Download](https://www.csdn.net/apps/download)
 
-**开源中国：** 微信小程序搜索“osc+”、百度小程序搜索“开源中国社区”
-**Open source China:** Search for "osc+" in the WeChat MiniApp, and search for "Open Source China Community" in the Baidu MiniApp
+**开源中国：** 在各平台应用市场搜索「OSC 开源社区」下载体验，同时支持iOS、Android、Harmony Next三大平台，[官宣发版](https://mp.weixin.qq.com/s/tMIzQ-dDFtKJ4sT3DVW83A)；微信小程序搜索“osc+”、百度小程序搜索“开源中国社区”。
 
 **网易藏宝阁：** [uni小程序SDK](https://nativesupport.dcloud.net.cn)案例，部分栏目做成小程序形态。[App下载](https://cbg.163.com/app/)
 **Netease Treasure Pavilion:** [uni MiniApp SDK](https://nativesupport.dcloud.net.cn)case, some columns are made into MiniApp. [App Download](https://cbg.163.com/app/)

@@ -3,9 +3,9 @@
 获取微信 APP 基础信息
 Get the basic information of WeChat APP
 
-|App|H5|微信小程序|支付宝小程序|抖音小程序|快手小程序|QQ小程序|百度小程序|京东小程序|钉钉小程序|飞书小程序|
-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
-|√ `(3.4.13+)`|√ `(3.4.13+)`|√ `(2.20.1+)`|x|x|x|x|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|抖音小程序|快手小程序|QQ小程序|百度小程序|京东小程序|钉钉小程序|飞书小程序|元服务|
+|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-:|
+|√ `(3.4.13+)`|√ `(3.4.13+)`|√ `(2.20.1+)`|x|x|x|x|x|x|x|x|x|
 
 <!-- UNIAPPAPIJSON.getAppBaseInfo.compatibility -->
 
@@ -26,9 +26,10 @@ Get the basic information of WeChat APP
 |appLanguage|string|应用设置的语言`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`App`、`H5`|
 |appLanguage|string|Language for application settings `en`, `zh-Hans`, `zh-Hant`, `fr`, `es`|`App`, `H5`|
 |appWgtVersion|string|应用资源（wgt）的版本名称。	|App 3.5.5+|
-|isUniAppX|string|是否uni-app x|HBuilderX 4.31+|
-|uniPlatform|string|uni-app 运行平台，与条件编译平台相同|HBuilderX 4.31+|
-|uniCompilerVersion|string|uni 编译器版本|HBuilderX 4.31+|
+|isUniAppX|string|是否uni-app x|HBuilderX 4.33+|
+|uniPlatform|string|uni-app 运行平台，与条件编译平台相同|HBuilderX 4.33+|
+|uniCompilerVersion|string|uni 编译器版本|HBuilderX 4.33+|
+|uniRuntimeVersion|string|uni 编译器版本|HBuilderX 4.34+|
 |hostLanguage|string|小程序宿主语言|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
 |hostLanguage|string|Mini Program Host Language|`App only supports UNIMPSDK`, `H5 does not support`|
 |hostVersion|string|App、小程序宿主版本。如：微信版本号|`App 仅 UNIMPSDK 支持`、`H5 不支持`|

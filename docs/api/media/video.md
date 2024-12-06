@@ -10,9 +10,9 @@ If you select and upload non-image and video files, please refer to: [https://un
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|√|√|√|√|x|√|
 
 <!-- UNIAPPAPIJSON.chooseVideo.compatibility -->
 
@@ -73,6 +73,7 @@ If you select and upload non-image and video files, please refer to: [https://un
 * Most of the videos are selected for uploading. uni ui encapsulates a more complete [uni-file-picker component](https://ext.dcloud.net.cn/plugin?id=4079). Files are selected and uploaded to uniCloud's free storage and cdn for one-stop integration. Highly recommended.
 * 部分浏览器中无法获取视频信息。
 * 微信小程序在2023年10月17日之后，使用API需要配置[隐私协议](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)
+* 由于受[google play 照片和视频权限](https://support.google.com/googleplay/android-developer/answer/14115180)政策的影响，使用uni.chooseVideo在上架google play时需要主动添加声明。遇到此问题可以使用插件[uni-chooseSystemMedia](https://ext.dcloud.net.cn/plugin?id=20744)。
 
 **示例**
 **Example**
@@ -117,9 +118,9 @@ If you select and upload non-image and video files, please refer to: [https://un
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|2.10.0+|x|x|√|x|x|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|2.10.0+|x|x|√|x|x|√|√|√|
 
 <!-- UNIAPPAPIJSON.chooseMedia.compatibility -->
 
@@ -261,9 +262,9 @@ Save the video to the system album.
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|√|√|√|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|√|√|√|√|x|x|√|
 
 <!-- UNIAPPAPIJSON.saveVideoToPhotosAlbum.compatibility -->
 
@@ -347,9 +348,9 @@ Get video details
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|3.1.10+|3.1.10+|2.11.0+|x|x|x|x|√|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|3.1.10+|3.1.10+|2.11.0+|x|x|x|x|√|x|x|√|
 
 <!-- UNIAPPAPIJSON.getVideoInfo.compatibility -->
 
@@ -424,9 +425,9 @@ Compressed video interface. Developers can specify the compression quality (qual
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|3.1.10+|x|2.11.0+|x|x|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|3.1.10+|x|2.11.0+|x|x|x|x|x|x|x|√|
 
 <!-- UNIAPPAPIJSON.compressVideo.compatibility -->
 
@@ -486,9 +487,9 @@ Open video editor
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|2.12.0+|x|x|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|2.12.0+|x|x|x|x|x|x|x|x|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**

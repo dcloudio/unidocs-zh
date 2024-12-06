@@ -77,6 +77,10 @@ uni.showToast({
 隐藏消息提示框。
 Hide the message prompt box.
 
+|元服务|
+|:-:|
+|x|
+
 <!-- UNIAPPAPIJSON.hideToast.compatibility -->
 
 **示例**
@@ -222,6 +226,10 @@ uni.showModal({
 
 从底部向上弹出操作菜单
 Pop up the operation menu from the bottom up
+
+|元服务|
+|:-:|
+|x|
 
 <!-- UNIAPPAPIJSON.showActionSheet.compatibility -->
 

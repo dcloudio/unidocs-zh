@@ -1,5 +1,9 @@
 ## uni.vibrate(OBJECT)
 
+|元服务|
+|:-:|
+|x|
+
 > HarmonyOS Next 不支持
 
 使手机发生振动。
@@ -24,6 +28,10 @@ uni.vibrate({
 
 ## uni.vibrateLong(OBJECT)
 
+|元服务|
+|:-:|
+|√|
+
 > HarmonyOS Next 不支持
 
 使手机发生较长时间的振动（400ms）。
@@ -47,6 +55,10 @@ uni.vibrateLong({
 ```
 
 ## uni.vibrateShort(OBJECT)
+
+|元服务|
+|:-:|
+|√|
 
 > HarmonyOS Next 不支持
 

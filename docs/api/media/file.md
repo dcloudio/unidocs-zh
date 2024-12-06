@@ -16,10 +16,9 @@ This API is mainly used to select non-media files. For media files, there are th
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|√`(HBuilder X2.9.9+)`|x`(可使用wx.chooseMessageFile)`|x|x|x|x|x|x|
-|x|√`(HBuilder X2.9.9+)`|x`(wx.chooseMessageFile can be used)`|x|x|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|√`(HBuilder X2.9.9+)`|x`(可使用wx.chooseMessageFile)`|x|x|x|x|x|x|x|x|
 
 <!-- UNIAPPAPIJSON.chooseFile.compatibility -->
 
@@ -143,6 +142,6 @@ Select a file from a WeChat chat session.
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√`(基础库2.5.0+)`|x|x|x|√`(基础库1.18.0+)`|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|√`(基础库2.5.0+)`|x|x|x|√`(基础库1.18.0+)`|x|x|x|

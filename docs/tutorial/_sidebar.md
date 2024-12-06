@@ -2,6 +2,7 @@
 * [工程](project.md)
 * [页面](page.md)
 * 互相引用
+  * [绝对路径和相对路径](page-path.md)
   * [引用组件](page-component.md)
   * [引用 js](page-script.md)
   * [引用 css](page-style.md)
@@ -121,12 +122,13 @@
     * [App Store上架](ios-app-store.md)
     * [iOS平台隐私清单](app-ios-privacyinfo.md)
   * [App升级](https://doc.dcloud.net.cn/uniCloud/upgrade-center.html)
-* 鸿蒙专题
+* 鸿蒙App专题
   * [概述](harmony/intro.md)
   * [运行和发行](harmony/runbuild.md)
   * [调用鸿蒙原生API](harmony/native-api.md)
   * [内置模块说明](harmony/built-in-module.md)
   * [历史变更](harmony/history.md)
+* [鸿蒙元服务专题](mp-harmony/intro.md)
 * 小程序专题
   * [组件与WXS](miniprogram-subject.md)
   * [使用小程序插件](mp-weixin-plugin.md)

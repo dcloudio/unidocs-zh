@@ -152,7 +152,7 @@ var str = dateToStr(new Date());
 str += ": 欢迎使用Html5 Plus创建本地消息！";  
 plus.push.createMessage(str, "LocalMSG", options);  
 ```
-<a id="receive" />
+<a id="receive"></a>
 **iOS平台创建本地消息也会触发监听的"receive"事件，此时需要添加特殊参数来标识本地创建的消息。**
 **The creation of a local message on the iOS platform will also trigger the monitored "receive" event. In this case, special parameters need to be added to identify the locally created message. **
 ```

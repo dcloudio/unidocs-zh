@@ -84,7 +84,7 @@ Get system information asynchronously
 |uni-app框架	|uniPlatform		|uni-app 运行平台，与条件编译平台相同。[详见](#uniplatform) |app|`web`或`h5`|各家小程序，如`mp-weixin`||uni-app 3.4.10+|
 | uni-app framework | uniPlatform | The running platform of uni-app is the same as the conditional compilation platform. [See details](#uniplatform) | app|`web` or `h5`| various MiniApp, such as `mp-weixin`|| uni-app 3.4.10+|
 |			|uniCompileVersion	|uni 编译器版本号。[详见](#uniplatform)|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||uni-app 3.4.10+|
-| | uniCompileVersion | uni Compiler version number. [See](#uniplatform)|`3.4.10`, `3.2.9`, etc. |`3.4.10`, `3.2.9`, etc.|`3.4.10`, `3.2.9`, etc.|| uni -app 3.4.10+|
+|			|uniCompilerVersion	|uni 编译器版本号。[详见](#uniplatform)|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||uni-app +|
 |			|uniRuntimeVersion	|uni 运行时版本。[详见](#uniplatform)|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||uni-app 3.4.10+|
 | | uniRuntimeVersion | uni runtime version. [See](#uniplatform)|`3.4.10`, `3.2.9`, etc. |`3.4.10`, `3.2.9`, etc.|`3.4.10`, `3.2.9`, etc.|| uni -app 3.4.10+|
 |app	|appId|`manifest` 中应用appid，即DCloud appid。			|||||uni-app 3.4.10+|
@@ -146,17 +146,13 @@ Get system information asynchronously
 |notificationBadgeAuthorized	|	允许微信通知带有标记的开关（仅 iOS 有效）	|微信小程序|
 | notificationBadgeAuthorized | Allow WeChat notifications to be marked with a switch (only valid for iOS) |WeChat MiniApp|
 |notificationSoundAuthorized	|	允许微信通知带有声音的开关（仅 iOS 有效）	|微信小程序|
-| notificationSoundAuthorized | Allow WeChat notification with sound switch (only valid for iOS) |WeChat MiniApp|
-|bluetoothEnabled	|	蓝牙的系统开关	|微信小程序|
-| bluetoothEnabled | Bluetooth system switch |WeChat MiniApp|
-|locationEnabled	|	地理位置的系统开关	|微信小程序|
-| locationEnabled | System switch of geographic location |WeChat MiniApp|
-|wifiEnabled	|	Wi-Fi 的系统开关	|微信小程序|
-| wifiEnabled | Wi-Fi system switch |WeChat MiniApp|
+|bluetoothEnabled	|	蓝牙的系统开关	|微信小程序、鸿蒙元服务|
+|locationEnabled	|	地理位置的系统开关	|微信小程序、鸿蒙元服务|
+|wifiEnabled	|	Wi-Fi 的系统开关	|微信小程序、鸿蒙元服务|
 |cacheLocation|上一次缓存的位置信息|百度小程序(安卓端最低基础库版本 3.40.4 ；iOS 最低支持版本 3.70.2)|
 | cacheLocation|Last cached location information|Baidu MiniApp(minimum base library version 3.40.4 for Android; minimum supported version 3.70.2 for iOS)|
 |storage|设备磁盘容量|支付宝小程序|
-| storage|Device Disk Capacity|Alipay MiniApp|
+|OSApiVersion|系统 Api 版本|鸿蒙元服务|
 
 ### 不推荐使用的返回参数，仅为向下兼容保留
 
@@ -209,7 +205,7 @@ Get system information asynchronously
 |mp-jd|京东小程序|
 | mp-jd|JD MiniApp|
 |mp-360|360小程序|
-| mp-360| 360 MiniApp|
+|mp-harmony|鸿蒙元服务|
 |quickapp-webview|快应用通用(包含联盟、华为)|
 | quickapp-webview| QuickApp general (including Alliance, Huawei)|
 |quickapp-webview-union|快应用联盟|
@@ -282,7 +278,7 @@ But on the App platform, the values of `uniCompileVersion` and `uniRuntimeVersio
 |[抖音宿主平台枚举值列表](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info/#appname-%E8%AF%B4%E6%98%8E)|抖音系列|
 |qq|QQ|
 |KUAISHOU|快手|
-| KUAISHOU| Kuaishou|
+|HarmonyOS|鸿蒙|
 
 ### safeArea 返回值说明 @safearea
 
@@ -370,19 +366,16 @@ Note: Unknown will be displayed for a while after the new model is launched, and
 
 ### 其他注意 @tips
 - `deviceType`：
-  - `app-ios` 只支持 `phone`、`pad`。
-  - `app-ios` only supports `phone`, `pad`.
-  - `app-android` 支持 `phone`、`pad`、`tv`、`car`、`watch`、`vr`、`appliance`、`undefined`、`unknown`，关于各个类型的更详细解释参考[Android官方文档](https://developer.android.com/guide/)。
-  - `app-android` supports `phone`, `pad`, `tv`, `car`, `watch`, `vr`, `appliance`, `undefined`, `unknown`, more detailed explanations about each type Refer to [Android Official Documentation](https://developer.android.com/guide/).
-  - 其中，`app-android` 平台下 `pad` 类型的判断，在国产pad等非google官方设备上并不一定准确。如果有需要开发者可自行根据型号或屏幕大小判断。uni-app框架源码中判断`pad`的java代码如下，供参考：
-  - Among them, the judgment of `pad` type under the `app-android` platform is not necessarily accurate on non-Google official devices such as domestic pads. If necessary, the developer can make a judgment based on the model or screen size. The Java code for judging `pad` in the uni-app framework source code is as follows, for reference:
+	- `app-ios` 只支持 `phone`、`pad`。
+	- `app-android` 支持 `phone`、`pad`、`tv`、`car`、`watch`、`vr`、`appliance`、`undefined`、`unknown`，关于各个类型的更详细解释参考[Android官方文档](https://developer.android.com/guide/)。
+	- 其中，`app-android` 平台下 `pad` 类型的判断，在国产pad等非google官方设备上并不一定准确。如果有需要开发者可自行根据型号或屏幕大小判断。uni-app框架源码中判断`pad`的java代码如下，供参考：
 
 	```java
 	public static boolean isTablet(Context context) {
 		return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
 	}
 	```
-  - `app-harmony` 支持 `phone`、`pad`、`tv`、`watch`、`pc`、`unknown`、`car`、`vr`、`undefined`。
+	- `app-harmony` 支持 `phone`、`pad`、`tv`、`watch`、`pc`、`unknown`、`car`、`vr`、`undefined`。
 - `osTheme`：`app-ios` 只有将应用主题设置为跟随系统时才能获取到系统的主题。小程序也有类似限制。
 - `osTheme`: `app-ios` Only when the application theme is set to follow the system can the theme of the system be obtained. MiniApp have similar restrictions.
 - 屏幕高度 = 原生NavigationBar高度（含状态栏高度）+ 可使用窗口高度 + 原生TabBar高度

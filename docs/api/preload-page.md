@@ -6,9 +6,9 @@ Page pre-loading is a performance optimization technology. The preloaded pages c
 **平台差异说明**
 **Platform difference description**
 
-|App-nvue|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√(2.7.12+)|x|√(2.7.12+)|x|x|x|x|x|
+|App-nvue|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√(2.7.12+)|x|√(2.7.12+)|x|x|x|x|x|x|x|
 
 
 |属性|类型|必填|说明|
@@ -65,6 +65,10 @@ HBuilderX 2.7.12+的hello uni-app，在navigator示例和uni ui的日历示例�
 hello uni-app of HBuilderX 2.7.12+ adds a page preload example to the navigator example and the calendar example of uni ui.
 
 ## uni.unPreloadPage(OBJECT)
+
+|元服务|
+|:-:|
+|x|
 
 > HarmonyOS Next 不支持
 

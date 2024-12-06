@@ -1,6 +1,8 @@
 ## 小程序自定义组件支持
 ## Mini Program Custom Component Support
 
+> 
+
 `uni-app`在支持vue组件之外，也实现了对小程序自定义组件的兼容。
 
 小程序组件不是vue组件，并且每家小程序都有自己的组件规范，比如微信小程序的组件是wxml格式。
@@ -16,10 +18,8 @@ The applet component is not a vue component, and each applet has its own compone
 |平台|支持情况|小程序组件存放目录|
 |Platform|Support |Mini Program Components Storage Directory|
 |---|---|---|
-|H5|支持微信小程序组件（2.4.7+）|wxcomponents|
-|H5|Support WeChat Mini Program Components (2.4.7+)|wxcomponents|
-|App（不含nvue）|支持微信小程序组件|wxcomponents|
-|App (excluding nvue)|Support WeChat applet components|wxcomponents|
+|H5|vue2项目支持微信小程序组件（2.4.7+），vue3不支持|wxcomponents|
+|App（不含nvue）|vue2项目支持微信小程序组件，vue3不支持|wxcomponents|
 |微信小程序|支持微信小程序组件|wxcomponents|
 |WeChat applet|Support WeChat applet components|wxcomponents|
 |支付宝小程序|支持支付宝小程序组件|mycomponents|

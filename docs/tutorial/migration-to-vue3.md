@@ -615,6 +615,10 @@ vue3 出于性能考虑，style 中暂不支持 div、p 等 HTML 标签选择器
   > Android < 4.4, configure X5 kernel support, it needs to be downloaded online for the first time, you can configure to start the application after downloading the X5 kernel successfully, [Details](https://uniapp.dcloud.net.cn/collocation/manifest.html#appwebview)
 
 
+## 小程序自定义组件
+
+web 平台、app 平台 vue3 项目不再支持小程序自定义组件
+
 ## vue3 nvue 暂不支持 recycle-list 组件
 ## vue3 nvue does not support the recycle-list component
 

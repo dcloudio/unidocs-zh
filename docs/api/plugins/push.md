@@ -13,6 +13,10 @@ Obtain the unique push ID of the client
 注意：这是一个异步的方法，且仅支持uni-push2.0；
 Note: This is an asynchronous method and only supports uni-push2.0;
 
+|元服务|
+|:-:|
+|x|
+
 <!-- UNIAPPAPIJSON.getPushClientId.compatibility -->
 
 **OBJECT 参数说明**
@@ -213,27 +217,21 @@ Create a local notification bar message (supported from HBuilderX 3.5.2)
 **OBJECT 参数说明**
 **OBJECT parameter description**
 
-|参数名		|类型			|必填	|说明																																																																																																								|
-|Parameter name |Type |Required |Description |
-|:-			|:-				|:-		|:-																																																																																																									|
-|title		|string			|否		|推送消息的标题，在系统消息中心显示的通知消息标题，默认值为程序的名称。</br>Android - ALL (支持)</br>iOS - 5.0+ (不支持): 不支持设置消息的标题，固定为程序的名称。																																																																|
-| title | string |No |The title of the push message, the title of the notification message displayed in the system message center, the default value is the name of the program. </br>Android - ALL (supported)</br>iOS - 5.0+ (not supported): It does not support setting the title of the message, it is fixed as the name of the program. |
-|content	|string			|是		|消息显示的内容，在系统通知中心中显示的文本内容。																																																																																													|
-| content | string |yes |The content displayed in the message, the text content displayed in the system notification center. |
-|payload	|string、Object	|否		|消息承载的数据，可根据业务逻辑自定义数据格式。																																																																																														|
-| payload | string, Object |No |The data carried by the message can be customized according to the business logic. |
-|icon		|string			|否		|推送消息的图标</br>本地图片地址，相对路径 - 相对于当前页面的host位置，如"a.jpg"，注意当前页面为网络地址则不支持； 绝对路径 - 系统绝对路径，如Android平台"/sdcard/logo.png"，此类路径通常通过其它5+ API获取的； 扩展相对路径URL(RelativeURL) - 以"_"开头的相对路径，如"_www/a.jpg"； 本地路径URL - 以“file://”开头，后面跟随系统绝对路径。</br>Android - 2.3+ (支持)</br>iOS - ALL (不支持): 不支持自定义图片，固定使用应用图标。	|
-|sound		|string			|否		|显示消息时播放的提示音；</br>可取值：`system`表示使用系统通知提示音，`none`表示不使用提示音；(默认值为system)。</br>注意：当程序在前台运行时，提示音不生效。 注：通常应该设置延迟时间，当程序切换到后台才创建本地推送消息时生效</br>支持的版本：Android 2.3+，iOS - 5.1+。																												|
-|cover		|boolean		|否		|是否覆盖上一次提示的消息</br>可取值：`true`或`false`，true为覆盖，false不覆盖，默认为permission中设置的cover值</br>Android - ALL (支持)</br>iOS - 5.0+ (不支持): 不支持覆盖消息，只能创建新的消息。																																																										|
-|delay		|number			|否		|提示消息延迟显示的时间</br>当设备接收到推送消息后，可不立即显示，而是延迟一段时间显示，延迟时间单位为s，默认为0s，立即显示。																																																																										|
-| delay | number |No |Delayed display time of the prompt message</br>When the device receives the push message, it may not be displayed immediately, but displayed after a period of delay. The delay time unit is s, and the default is 0s, which is displayed immediately. |
-|when		|Date			|否		|消息上显示的提示时间</br>默认为当前时间，如果延迟显示则使用延时后显示消息的时间。</br>Android - ALL (支持)</br>iOS - 5.0+ (不支持): 不支持设定消息的显示时间，由系统自动管理消息的创建时间。																																																										|
-|channelId	|string			|否		|渠道id， 支持的版本：HBuilder X 4.02+|
-|category	|string			|否		|通知类别，支持的版本：HBuilder X 4.02+|
-|success	|Function		|否		|接口调用成功的回调函数																																																																																																				|
-| success | Function |No |Callback function for successful interface call |
-|fail		|Function		|否		|接口调用失败的回调函数																																																																																																				|
-|complete	|Function		|否		|接口调用结束的回调函数（调用成功、失败都会执行）
+|参数名		|类型						|必填	|说明																																																																																																																																																																																									|
+|:-				|:-							|:-		|:-																																																																																																																																																																																										|
+|title		|string					|否		|推送消息的标题，在系统消息中心显示的通知消息标题，默认值为程序的名称。</br>Android和Harmony - ALL (支持)</br>iOS - 5.0+ (不支持): 不支持设置消息的标题，固定为程序的名称。																																																																																																																				|
+|content	|string					|是		|消息显示的内容，在系统通知中心中显示的文本内容。																																																																																																																																																																							|
+|payload	|string、Object	|否		|消息承载的数据，可根据业务逻辑自定义数据格式。																																																																																																																																																																								|
+|icon			|string					|否		|推送消息的图标</br>本地图片地址，相对路径 - 相对于当前页面的host位置，如"a.jpg"，注意当前页面为网络地址则不支持； 绝对路径 - 系统绝对路径，如Android平台"/sdcard/logo.png"，此类路径通常通过其它5+ API获取的； 扩展相对路径URL(RelativeURL) - 以"_"开头的相对路径，如"_www/a.jpg"； 本地路径URL - 以“file://”开头，后面跟随系统绝对路径。</br>Android - 2.3+ (支持)</br>iOS和Harmony - ALL (不支持): 不支持自定义图片，固定使用应用图标。	|
+|sound		|string					|否		|显示消息时播放的提示音；</br>可取值：`system`表示使用系统通知提示音，`none`表示不使用提示音；(默认值为system)。</br>注意：当程序在前台运行时，提示音不生效。 注：通常应该设置延迟时间，当程序切换到后台才创建本地推送消息时生效</br>支持的版本：Android 2.3+，iOS - 5.1+。Harmony - ALL (不支持)																																																																							|
+|cover		|boolean				|否		|是否覆盖上一次提示的消息</br>可取值：`true`或`false`，true为覆盖，false不覆盖，默认为permission中设置的cover值</br>Android - ALL (支持)</br>iOS - 5.0+ (不支持): 不支持覆盖消息，只能创建新的消息。</br>Harmony - ALL (不支持)																																																																																																			|
+|delay		|number					|否		|提示消息延迟显示的时间</br>当设备接收到推送消息后，可不立即显示，而是延迟一段时间显示，延迟时间单位为s，默认为0s，立即显示。</br>Harmony - ALL (不支持)																																																																																																																																							|
+|when			|Date						|否		|消息上显示的提示时间</br>默认为当前时间，如果延迟显示则使用延时后显示消息的时间。</br>Android (支持)</br>iOS - 5.0+ 和 Harmony - ALL (不支持): 不支持设定消息的显示时间，由系统自动管理消息的创建时间。																																																																																																									|
+|channelId|string					|否		|渠道id， 支持的版本：HBuilder X 4.02+	，Harmony - ALL (不支持)																																																																																																																																																																									|
+|category	|string					|否		|通知类别，支持的版本：HBuilder X 4.02+	，Harmony支持的category值[详情查看](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/notification-slot-V5#通知渠道类型说明)																																																																																																																																																																									|
+|success	|Function				|否		|接口调用成功的回调函数																																																																																																																																																																																		|
+|fail			|Function				|否		|接口调用失败的回调函数																																																																																																																																																																																		|
+|complete	|Function				|否		|接口调用结束的回调函数（调用成功、失败都会执行）																																																																																																																																																																							|
 
 
 **其他相关资源**

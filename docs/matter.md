@@ -451,4 +451,10 @@ pages configuration
 ##### sign 证书配置
 ##### sign certificate configuration
 sign放到项目根目录，编译后自动拷贝到 .quickapp/sign，每次编译完成时会删除.quickapp，避免证书丢失
-sign is placed in the root directory of the project, automatically copied to .quickapp/sign after compilation, and .quickapp will be deleted each time the compilation is completed to avoid loss of certificates
+
+#### 鸿蒙元服务@mp-harmony
+
+- 目前 uni-app 开发鸿蒙元服务还在开发迭代，暂不支持模拟器，只支持鸿蒙 Next 真机。
+- 鸿蒙常见问题，请参考 [元服务开发注意事项](/tutorial/mp-harmony/intro#注意事项)
+
+#### 小红书小程序@mp-xhs

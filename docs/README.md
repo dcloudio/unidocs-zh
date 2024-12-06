@@ -33,11 +33,13 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
         <b style="font-size: 14px;">需使用已升级到鸿蒙Next</b>
         <b style="font-size: 14px;">的手机扫码体验</b>
       </a>
-      <a href="https://hellouniapp.dcloud.net.cn/" target="_blank" class="clear-style barcode-view">
+      <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view" style="pointer-events: none;">
         <div class="barcode-img-box">
-          <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/uni-h5-hosting-qr.png" width="160" />
+          <img src="https://web-ext-storage.dcloud.net.cn/doc/harmony-os-next/tongyi-applinking-as.png" width="160" />
         </div>
-        <b>Web版</b>
+        <b>鸿蒙元服务</b>
+        <b style="font-size: 14px;">需使用已升级到鸿蒙Next</b>
+        <b style="font-size: 14px;">的手机扫码体验</b>
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="//img.cdn.aliyun.dcloud.net.cn/guide/uniapp/gh_33446d7f7a26_430.jpg" width="160" /></div>
@@ -45,6 +47,12 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
       </a>
     </div>
     <div class="flex-img-group-view" style="margin-top: 20px;">
+      <a href="https://hellouniapp.dcloud.net.cn/" target="_blank" class="clear-style barcode-view">
+        <div class="barcode-img-box">
+          <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/uni-h5-hosting-qr.png" width="160" />
+        </div>
+        <b>Web版</b>
+      </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-android.png" width="160" />
@@ -63,13 +71,13 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
         <b>支付宝小程序版</b>
         <b>Alipay MiniApp version</b>
       </a>
+    </div>
+    <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/baidu-uniapp.png" width="160" /></div>
         <b>百度小程序版</b>
         <b>Baidu MiniApp Version</b>
       </a>
-    </div>
-    <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/mp-toutiao.png" width="160" />
@@ -91,13 +99,13 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
         <b>360小程序</b>
         <b>360 MiniApp version</b>
       </a>
+    </div>
+    <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-kuaishou-new.png" width="160" /></div>
         <b>快手小程序版</b>
         <b>Kuaishou MiniApp version</b>
       </a>
-    </div>
-    <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/lark-qr-code.png" width="160" /></div>
         <b>飞书小程序版</b>
@@ -117,6 +125,8 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
         <b>京东小程序版</b>
         <b>Jingdong MiniApp version</b>
       </a>
+    </div>
+    <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-xhs-qrcode.png" width="160" />
@@ -124,8 +134,6 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
         <b>小红书小程序版</b>
         <b>RED MiniApp version</b>
       </a>
-    </div>
-    <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hello-uni-qa-union.png" width="160" />
@@ -134,16 +142,13 @@ With `uni-app` in hand, you don't have to worry about doing anything. Even if it
       </a>
       <div style="width:160px"></div>
       <div style="width:160px"></div>
-      <div style="width:160px"></div>
     </div>
     <p>注：<br/>
-    <p>Note:<br/>
-        <em>- 某些平台不能提交简单demo，故补充了一些其他功能；hello uni-app示例代码可从[github](https://github.com/dcloudio/hello-uniapp)获取</em></br>
-        <em>- Some platforms cannot submit simple demos, so some other functions have been added; the hello uni-app sample code can be obtained from [github](https://github.com/dcloudio/hello-uniapp)</em> </br>
+        <em>- 某些平台不能提交简单demo，故补充了一些其他功能；hello uni-app示例代码可从 <a href="https://github.com/dcloudio/hello-uniapp">github</a> 获取</em></br>
         <em>- 快应用仅支持 vivo 、oppo、华为</em></br>
         <em>-Quick QuickApp only supports vivo, oppo, Huawei</em></br>
         <em>- 360小程序仅 windows平台支持，需要在360浏览器中打开</em></br>
-        <em>- uni-app 已支持纯血鸿蒙开发，详见[鸿蒙开发专题](https://uniapp.dcloud.net.cn/tutorial/harmony/dev.html)。</em></br>
+        <em>- uni-app 已支持纯血鸿蒙开发，详见 <a href="https://uniapp.dcloud.net.cn/tutorial/harmony/dev.html">鸿蒙开发专题</a>。</em></br>
     </p>
 </div>
 

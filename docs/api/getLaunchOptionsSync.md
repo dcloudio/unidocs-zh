@@ -3,10 +3,9 @@
 获取启动时的参数。返回值与App.onLaunch的回调参数一致
 Get the parameters at startup. The return value is consistent with the callback parameter of App.onLaunch
 
-|App|web|微信小程序|支付宝小程序|抖音小程序|QQ小程序|快手小程序|钉钉小程序|飞书小程序|百度小程序|京东小程序|
-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
-|√ `(3.4.10+)`|√ `(见下)`|√|√|√|√|√|√|√|x|x|
-|√ `(3.4.10+)`|√ `(see below)`|√|√|√|√|√|√|√|x|x|
+|App|web|微信小程序|支付宝小程序|抖音小程序|QQ小程序|快手小程序|钉钉小程序|飞书小程序|百度小程序|京东小程序|元服务|小红书小程序|
+|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-:|
+|√ `(3.4.10+)`|√ `(见下)`|√|√|√|√|√|√|√|x|x|√|√|
 
 <!-- UNIAPPAPIJSON.getLaunchOptionsSync.compatibility -->
 

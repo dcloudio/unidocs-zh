@@ -1,6 +1,6 @@
 # 运行和发行
 
-> HBuilderX 版本需 ≥ 4.27
+> HBuilderX 版本需 ≥ 4.24
 
 > [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)
 
@@ -9,12 +9,17 @@
 1. 鸿蒙开发只支持Vue3，不支持Vue2、不支持plus、但支持nvue
 2. nvue编译到鸿蒙后非原生渲染，而是与web一样渲染（自动注入一些默认样式进行兼容）
 3. Vue3也支持选项式代码风格，参考[Vue2升Vue3指南](https://uniapp.dcloud.net.cn/tutorial/migration-to-vue3.html )
+4. HBuilderX 4.41+ 开始运行到鸿蒙设备时支持修改代码后热刷更新
+5. HBuilderX 4.41+ 开始运行到鸿蒙设备时控制台显示的应用日志支持回源代码
 
 ## 开发环境要求@env
 
-- DevEco-Studio 5.0.3.400 以上 [下载地址](https://developer.huawei.com/consumer/cn/download/)
-- 鸿蒙系统版本 API 12 以上 （DevEco-Studio有内置鸿蒙模拟器）
-- HBuilderX-4.27+ [下载地址](https://www.dcloud.io/hbuilderx.html)
+- HBuilderX 4.24+ [下载地址](https://www.dcloud.io/hbuilderx.html)
+- DevEco-Studio [下载地址](https://developer.huawei.com/consumer/cn/download/)
+  - HBuilderX 4.24+ 要求 DevEco-Studio 5.0.3.400+，HBuilderX 4.31+ 要求 DevEco-Studio 5.0.3.800+。
+  - 鸿蒙系统版本 API 12 以上 （DevEco-Studio有内置鸿蒙模拟器）
+- HBuilderX 4.31+ 构建的鸿蒙运行包不支持 x86_64 平台，会影响到 Windows 系统和部分 Mac 系统的鸿蒙模拟器无法使用，需使用真机调试
+- **项目的路径不要太深，如果项目路径过长会导致编译失败，建议将项目放在盘符根目录下**
 
 **Windows系统如使用模拟器则需要开启以下功能**
 
@@ -28,7 +33,24 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085210915b1knhu7l3u8.png)
 
+### 调试运行的方式@run-mode
+
+HBuilderX 4.24 版本开始支持【运行到鸿蒙】，具体的方式是开发者下载鸿蒙工程模板并创建独立的鸿蒙工程目录，
+然后在 uni-app 项目中的 `manifest.json` 里面设置 `app-harmony.projectPath` 属性来指向这个鸿蒙工程目录，
+uni-app 项目在编译时把编译产物输出到鸿蒙工程目录，然后调起 DevEco Studio 打开鸿蒙工程目录，由开发者手动完成后续的运行调试工作。
+
+HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【运行到鸿蒙】时自动创建鸿蒙工程目录，与 uni-app 项目的编译产物合并，
+然后调用鸿蒙工具链完成打包和安装、运行等操作，同时从运行设备上收集输出的日志显示到 HBuilderX 的控制台。
+
+新的内置模板的方式虽然在调试运行过程中不再调起 DevEco Studio，但一般来说仍然需要安装 DevEco Studio，因为：
+
+1. 需要使用 DevEco Studio 提供的鸿蒙工具链来完成相关操作。
+2. 启动鸿蒙模拟器这个操作只能在 DevEco Studio 中完成。
+3. 调试运行时如果需要进行数字签名，可以在 DevEco Studio 中自动申请调试证书。
+
 ### 启动鸿蒙模拟器@connectvirtually
+
+在 DevEco Studio 中打开任意一个项目（也可以新建一个空项目），然后在下图的位置进入设备管理器：
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085379828ap3pkhhfmig.png)
 
@@ -46,13 +68,11 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085712493il2ep17ldg8.png)
 
-启动模拟器成功后，如果提示需要先签名，则进行[配置签名](#signature)
-
 ### 连接鸿蒙真机@connectmobile
 
 **注意：真机需要鸿蒙系统版本 API 12 以上**
 
-打开鸿蒙手机开发者模式，开启USB调试，通过USB线连接电脑，在此处选择你的手机名称，再启动项目即可，如果提示需要先签名，则进行[配置签名](#signature)
+打开鸿蒙手机开发者模式，开启USB调试，通过USB线连接电脑，在此处能看到对应的设备标识符则表示连接成功
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720091392422r91cpejpp7g.png)
 
@@ -60,7 +80,7 @@
 
 **注意：配置签名需要先启动模拟器或连接真机后才能配置**
 
-点击 DevEco-Studio 上方菜单 File - Project Structure... 
+点击 DevEco-Studio 上方菜单 File - Project Structure...
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720087126462d9133uo0hmg.png)
 
@@ -140,9 +160,9 @@
 
 具体请查看以下文档
 
-1. [声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-0000001820999665)
-2. [基础权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-0000001820999669)
-3. [受限权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-in-acl-0000001763952222)
+1. [声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/declare-permissions-V5)
+2. [基础权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5)
+3. [受限权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/restricted-permissions-V5)
 
 ## 更多配置指南@moreconfig
 
@@ -168,6 +188,10 @@
 
 ## 常见问题@question
 
+### 运行失败报错如 `Unexpected token (Note that you need plugins to import files that are not JavaScript)` 或 `Please make sure that the splash page has one and only one '@Entry' decorator`
+
+请将 HBuilderX 项目向上层目录移动，直到运行成功。这是因为鸿蒙在编译 ArkTs 时，`.ets` 文件路径总长不能大于 255 个字符。
+
 ### 如何修改应用名称、图标、权限等信息@q1
 
 参考鸿蒙官方文档：[应用/组件级配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-component-configuration-stage-V5)
@@ -192,27 +216,27 @@
 
 ```js
 // #ifdef APP-HARMONY
-console.log("仅鸿蒙会编译")		
+console.log("仅鸿蒙会编译")
 // #endif
 
 // #ifndef APP-HARMONY
-console.log("仅非鸿蒙会编译")								
+console.log("仅非鸿蒙会编译")
 // #endif
 
 // #ifdef APP
-console.log("安卓、苹果、鸿蒙会编译，小程序和Web不会编译")		
+console.log("安卓、苹果、鸿蒙会编译，小程序和Web不会编译")
 // #endif
 
 // #ifndef APP
-console.log("安卓、苹果、鸿蒙不会编译，小程序和Web会编译")		
+console.log("安卓、苹果、鸿蒙不会编译，小程序和Web会编译")
 // #endif
 
 // #ifdef APP-PLUS
-console.log("安卓、苹果会编译，鸿蒙不会编译，小程序和Web也不会编译")		
+console.log("安卓、苹果会编译，鸿蒙不会编译，小程序和Web也不会编译")
 // #endif
 
 // #ifndef APP-PLUS
-console.log("安卓、苹果不会编译，鸿蒙会编译，小程序和Web也会编译")		
+console.log("安卓、苹果不会编译，鸿蒙会编译，小程序和Web也会编译")
 // #endif
 ```
 
@@ -268,8 +292,8 @@ Mac系统快速复制路径方法
 
 ### 鸿蒙支持uniPush推送吗?@q10
 
-暂不支持
- 
+HBuilderX 4.31起支持uniPush推送，具体配置请参考[文档](https://uniapp.dcloud.net.cn/unipush-v2.html)
+
 ### release模式进入使用了组合式api的页面报错`Cannot read property route of undefined`@q11
 
 此问题由于arkTs的混淆Bug引发，即使进入到一个空的组合式api页面也会出现这个报错，已反馈给鸿蒙团队处理。
@@ -278,6 +302,8 @@ Mac系统快速复制路径方法
 
 ### 1.3.7及以上模板在部分设备的模拟器上无法运行，报错`Install Failed: error: failed to install bundle`@q12
 
+> 此章节仅针对HBuilderX 4.29及之前版本，4.31及之后的版本暂不支持在x86_64平台的模拟器上运行。
+
 此问题是由于支付宝sdk兼容性造成的，目前只能删除支付宝sdk依赖，如下图所示操作，删除后需要点右上角的 Sync Now，并等待 Sync 结束
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/2020d045-c7d8-4b3a-ba21-d4f301900d00.png)
@@ -285,6 +311,3 @@ Mac系统快速复制路径方法
 删除后还需要点右上角的 Sync Now，并等待 Sync 结束
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/908ef551-8605-4add-b68f-42aa497109b7.png)
-
-
-

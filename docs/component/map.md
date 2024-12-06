@@ -9,9 +9,9 @@ The map component is used to display the map, while the positioning API only obt
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|1.63+|1.9.0+|√|x|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|1.63+|1.9.0+|√|x|√|√|√|
 
 <!-- UNIAPPCOMJSON.map.compatibility -->
 
@@ -476,7 +476,10 @@ Nvue map replacement arrow icon format reference: [https://ask.dcloud.net.cn/art
 **Precautions**
 
 - App端 map 组件实例同时存在个数有上限（大概10个）超过后会显示黑色，如果页面深度过深，每个页面都需要显示map组件，可以使用 v-if 控制一下，页面隐藏的时候销毁当前页面的 map 组件，页面显示的时候在创建。
-- 小程序和app-vue中，`<map>` 组件是由引擎创建的原生组件，它的层级是最高的，不能通过 z-index 控制层级。在`<map>`上绘制内容，可使用组件自带的`marker、controls`等属性，也可以使用`<cover-view>`组件。App端还可以使用plus.nativeObj.view 或 subNVue 绘制原生内容，[参考](/component/native-component)。另外App端nvue文件不存在层级问题。从微信基础库2.8.3开始，支持map组件的同层渲染，不再有层级问题。app的iOS、Android、鸿蒙新增了腾讯地图，腾讯地图在这3个平台使用web渲染，没有层级问题。
+- 小程序和app-vue中，`<map>` 组件是由引擎创建的原生组件，它的层级是最高的，不能通过 z-index 控制层级。在`<map>`上绘制内容，可使用组件自带的`marker、controls`等属性，也可以使用`<cover-view>`组件。App端还可以使用plus.nativeObj.view 或 subNVue 绘制原生内容，[参考](/component/native-component)。
+	* App端nvue文件不存在层级问题。
+	* 从微信基础库2.8.3开始，支持map组件的同层渲染，不再有层级问题。
+	* app的iOS、Android、鸿蒙新增了腾讯地图，腾讯地图在这3个平台使用web渲染，没有层级问题。
 - 微信小程序端 `controls` 属性即将废弃，[详情](https://developers.weixin.qq.com/miniprogram/dev/component/map.html)。如果所用基础库支持同层渲染，则可以直接使用 `<view>` 组件，否则使用`<cover-view>`组件
 - The `controls` property of the WeChat MiniApp will be deprecated, [Details](https://developers.weixin.qq.com/miniprogram/dev/component/map.html).If the base library used supports same-layer rendering, you can use the `<view>` component directly, otherwise use the `<cover-view>` component
 - App端nvue文件的map和小程序拉齐度更高。vue里的map则与plus.map功能一致，和小程序的地图略有差异。**App端使用map推荐使用nvue。**

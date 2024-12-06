@@ -4,9 +4,6 @@ It is recommended that the first step is to read the introduction of the homepag
 建议第二步，通过[快速上手](https://uniapp.dcloud.io/quickstart-hx)，亲身体验下uni-app。
 It is recommended that the second step is to experience uni-app for yourself through [Quick Start](https://uniapp.dcloud.io/quickstart-hx).
 
-建议第三步，看完[《uni-app官方教程》](https://ke.qq.com/course/3169971)，出品人：DCloud，课时：共3节。
-It is recommended that the third step is to read the ["uni-app official course"](https://ke.qq.com/course/3169971), producer: DCloud, class time: a total of 3 sessions.
-
 #### 如果你熟悉h5，但不熟悉vue和小程序 
 #### If you are familiar with h5, but not with vue and MiniApp
 1. 看完这篇[白话uni-app](/vernacular.md)

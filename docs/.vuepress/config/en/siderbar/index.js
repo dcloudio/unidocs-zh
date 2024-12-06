@@ -1,5 +1,4 @@
 import uniapp from './uni-app';
-import uniCloud from './uniCloud';
 
 export default {
   "/": uniapp,

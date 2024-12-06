@@ -11,9 +11,9 @@ How to activate reference rewarded video ads [https://uniapp.dcloud.net.cn/api/a
 **平台差异说明**
 **Platform Difference Description**
 
-|App|HarmonyOS Next|Web|微信小程序|支付宝小程序|百度小程序|抖音小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√（3.4.8+）|x|x|x|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|Web|微信小程序|支付宝小程序|百度小程序|抖音小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√（3.4.8+）|x|x|x|x|x|x|x|x|x|x|x|x|x|
 
 - app端的广告源由腾讯优量汇、头条穿山甲、快手等广告联盟提供，DCloud负责聚合
 - The advertising sources on the app side are provided by Tencent Youlianghui, Toutiao Pangolin, Kuaishou and other advertising alliances, and DCloud is responsible for the aggregation

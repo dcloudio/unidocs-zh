@@ -45,6 +45,8 @@ HX 里面有两个专门与鸿蒙相关的功能入口：
 
 ### 报错 `依赖包与运行设备不兼容`@install-parse-native-so-failed
 
+> 此章节仅针对HBuilderX 4.29及之前版本，4.31及之后的版本暂不支持在x86_64平台的模拟器上运行。
+
 在 x86_64 平台（绝大多数 Windows 系统和部分 MacOS 系统）上使用【运行到鸿蒙】并选择了模拟器作为运行设备的时候，可能会遇到这个报错。
 这是由于默认配置里面依赖了支付宝SDK，而这个包不支持运行在 x86_64 平台的模拟器上，所以在打包后安装到模拟器设备时会报错。
 出现这种情况时，如果并不需要这个依赖，可以修改 `harmony-configs/oh-package.json5` 文件，在 `dependencies` 里面删除 `@cashier_alipay/cashiersdk` 就行了；
@@ -54,22 +56,26 @@ HX 里面有两个专门与鸿蒙相关的功能入口：
 
 这是由于默认配置里面声明申请了一些权限，其中包含受限权限（需要白名单授权的 ACL 权限），这就要求安装包必须用具备足够权限授权的数字证书进行签名，否则无法安装到设备上。
 
-- `ohos.permission.WRITE_IMAGEVIDEO`
-- `ohos.permission.WRITE_CONTACTS`
-- `ohos.permission.READ_PASTEBOARD`
+目前已知的 ACL 权限包括：
+
+  - `ohos.permission.WRITE_IMAGEVIDEO`
+  - `ohos.permission.WRITE_CONTACTS`
+  - `ohos.permission.READ_PASTEBOARD`
 
 如果业务代码里面并没有实际使用到这些权限，一个简单的办法就是修改 `harmony-configs/entry/src/main/module.json5` 文件，
-删除 `module.requestPermissions` 数组里面涉及这三项的内容，重新运行即可：
+删除 `module.requestPermissions` 数组里面涉及这三项的内容，重新运行即可。
+**注：从 HX 4.31+ 开始默认配置中已经不再包含 ACL 权限，如果需要的话请自行修改 `harmony-configs/entry/src/main/module.json5` 文件添加权限声明。**
 
 如果确实需要这里的某些权限，那就需要申请一个调试证书，并配置到 `harmony-configs/build-profile.json5` 文件的 `app.signingConfigs` 中。
-这里要注意，如果是通过 DevEco Studio 来自动申请证书（开启 `Automatically generate signature` 选项），拿到的调试证书会自动支持 ACL 权限；
-如果是手动申请调试证书的话，需要在添加 profile 的时候勾选相应的受限权限。
+具体请参考 [调试用的数字签名证书](#signing-debug)
 
 ### 报错 `配置的 bundleName 与签名证书不符`@bundle-name-mismatch
 
 如果配置了签名证书，打包之后会进行签名，但如果项目中配置的 `bundleName` 与签名证书申请时所填报的 `bundleName` 不符，就会报这个错。
 可以修改 `harmony-configs/AppScrope/app.json5` 文件中 `app.bundleName` 为签名证书申请时所填的应用包名，
 也可以根据配置的 `bundleName` 重新申请证书。
+
+**注：从 HX 4.31+ 开始应该在项目的 manifest.json 文件的【鸿蒙配置】中设置【包名】。**
 
 ### 报错 `签名验证失败`@signature-verification-failed
 
@@ -92,6 +98,16 @@ HX 里面有两个专门与鸿蒙相关的功能入口：
 有记录显示，在 Windows 系统下，运行到鸿蒙时如果选择模拟器作为运行设备，可能会出现超时的情况，原因尚不清楚，有可能与模拟器系统里存在以前安装的相同包名的应用有关，
 如遇这种情况，可以尝试手工在模拟器里面删除旧的应用然后重试。
 
+### 报错 `检测到App真机运行插件出现破损`@launcher-damaged
+
+由于未知原因导致【App真机运行】插件出现破损，需要重新安装。
+请在 HX 主菜单中选择【工具>插件安装】，找到【App真机运行】插件并点击卸载，然后在主菜单中选择【运行>运行到手机或模拟器>下载真机运行插件】重新安装。
+如果安装过【App真机运行(uni-app x)】插件，需要先卸载掉，否则无法卸载【App真机运行】插件。
+
+### 报错 `未正确配置鸿蒙应用的包名`@bundlename-incorrect
+
+应该在 `manifest.json` 的【鸿蒙配置】中设置正确的包名，具体要求请参考 [配置应用包名](https://developer.huawei.com/consumer/cn/doc/app/agc-help-createharmonyapp-0000001945392297)
+
 ## 关于数字签名证书的配置@signing
 
 ### 调试用的数字签名证书@signing-debug
@@ -102,13 +118,20 @@ HX 里面有两个专门与鸿蒙相关的功能入口：
 
 数字签名证书需要配置到 `harmony-configs/build-profile.json5` 中，这个文件等同于一个普通的鸿蒙工程中对应的文件。
 
-为了便于操作，可以用 DevEco Studio 创建一个简单的鸿蒙工程（注意设置好正确的应用包名 `bundleName`），在里面完成申请证书的操作，
-具体方法可参考 [自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-signing-V5#section18815157237)，
+为了便于操作，可以用 DevEco Studio 创建或打开的鸿蒙工程，在里面完成申请证书的操作，具体方法可参考 [自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-signing-V5#section18815157237)，
 然后把 `build-profile.json5` 文件中 `app.signingConfigs` 的内容复制到 `harmony-configs/build-profile.json5` 中。
 
-通过 DevEco Studio 申请得到的证书，缺省会保存到电脑的用户目录下，在 Windows 系统中一般是 `%USERPROFILE%\.ohos\config`，在 Mac 系统中一般是 `~/.ohos/config`。
+用于申请证书的这个鸿蒙工程需注意以下几点：
+
+  - 设置好正确的应用包名 `bundleName`，与最终使用该证书进行签名的项目保持一致。
+  - 需在 `entry/src/main/module.json5` 中声明相关的 ACL 权限，这样获得的证书中才能包含相关的授权。
+
+通过 DevEco Studio 自动申请得到的证书，缺省会保存到电脑的用户目录下，在 Windows 系统中一般是 `%USERPROFILE%\.ohos\config`，在 Mac 系统中一般是 `~/.ohos/config`。
 配置信息中包含的三个文件缺省都是采用绝对路径来表示，也可以把这些文件移到 `harmony-configs` 目录下，这样就可以使用相对路径来表示，相对于 `harmony-configs` 目录。
 如果要移动证书文件的位置，需注意跟这三个文件一起的还有一个名为 `material` 的目录，也要一起移动。
+
+如果是手动申请的证书，需要在添加 profile 的时候勾选相应的受限权限，然后在 DevEco Studio 里面配置给一个鸿蒙工程，这样才能得到一个完整的 `signingConfigs` 配置项
+（里面的 `storePassword` 和 `keyPassword` 是加密格式的，并不是手动申请证书时填写的密码原文），然后复制给 `harmony-configs/build-profile.json5`。
 
 ### 发布用的数字签名证书@signing-release
 
@@ -116,9 +139,6 @@ HX 里面有两个专门与鸿蒙相关的功能入口：
 
 在发行安装包的时候，一定需要配置一个**发布证书**，否则只能拿到一个未签名的安装包，是无法实际使用的。
 
+发布证书只能手动申请，也需要在 DevEco Studio 里面配置给一个鸿蒙工程，才能得到一个完整的 `signingConfigs` 配置项并复制给 `harmony-configs/build-profile.json5`。
+
 在 `app.signingConfigs` 中配置发布用的证书时一定要注意把 `name` 属性设置为 `"release"`，如果设置为 `"default"` 的话将仅用于调试运行。
-
-### 手动申请证书@signing-manual
-
-如果是手动申请的证书（发布证书只能手动申请），也需要在 DevEco Studio 里面配置给一个鸿蒙工程，这样才能得到一个完整的 `signingConfigs` 配置项（里面的 `storePassword` 和 `keyPassword`
-是加密格式的，并不是手动申请证书时填写的密码原文），然后复制到 `harmony-configs/build-profile.json5` 中。

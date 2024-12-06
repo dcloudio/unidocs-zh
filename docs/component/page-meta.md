@@ -15,9 +15,9 @@ In a sense, `page-meta` has a certain substitution effect on pages.json, allowin
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√ 2.6.3+|2.6.3+|√ 2.9.0+|√|√|√|x|√|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√ 2.6.3+|2.6.3+|√ 2.9.0+|√|√|√|x|√|x|x|x|
 
 <!-- UNIAPPCOMJSON.page-meta.compatibility -->
 
@@ -41,11 +41,8 @@ From HBuilderX 2.6.3, `page-meta` is supported on all platforms when compiled, b
 |scroll-top|string|""|否|滚动位置，可以使用 px 或者 rpx 为单位，在被设置时，页面会滚动到对应位置|微信基础库 2.9.0、H5 3.7.0、App-vue 3.7.0|
 | scroll-top| string|""|No|Scroll position, you can use px or rpx as the unit, when set, the page will scroll to the corresponding position|WeChat base library 2.9.0, H5 3.7.0, App-vue 3.7.0|
 |scroll-duration|number|300|否|滚动动画时长|微信基础库 2.9.0|
-|scroll-duration|number|300|No|Scrolling Animation Duration|WeChat Basic Library 2.9.0|
-|page-style|string|""|否|页面根节点样式，页面根节点是所有页面节点的祖先节点，相当于 HTML 中的 body 节点|微信基础库 2.9.0、H5 2.6.7、App-vue 2.6.7|
-|page-style|string|""|No|The style of the page root node, the page root node is the ancestor node of all page nodes, which is equivalent to the body node in HTML|WeChat Basic Library 2.9.0, H5 2.6.7, App- vue 2.6.7|
-|root-font-size|string|""|否|页面的根字体大小，页面中的所有 rem 单位，将使用这个字体大小作为参考值，即 1rem 等于这个字体大小|微信基础库 2.9.0、H5 2.6.7、App-vue 2.6.7|
-|root-font-size|string|""|No|The root font size of the page, all rem units in the page, will use this font size as a reference value, that is, 1rem is equal to this font size|WeChat Basic Library 2.9.0, H5 2.6.7, App-vue 2.6.7|
+|page-style|string|""|否|页面根节点样式，页面根节点是所有页面节点的祖先节点，相当于 HTML 中的 body 节点|微信基础库 2.9.0|
+|root-font-size|string|""|否|页面的根字体大小，页面中的所有 rem 单位，将使用这个字体大小作为参考值，即 1rem 等于这个字体大小|微信基础库 2.9.0|
 |enable-pull-down-refresh|Boolean|""|否|是否开启下拉刷新|App 2.6.7|
 | enable-pull-down-refresh| Boolean| ""| No| Whether to enable pull-down refresh?| App 2.6.7|
 |@resize|eventhandle||否|页面尺寸变化时会触发 resize 事件， event.detail = { size: { windowWidth, windowHeight } }|微信基础库 2.9.0|

@@ -6,7 +6,7 @@
 
 ### map组件及定位等api
 
-> 新增于HBuilderX 4.26
+> 新增于HBuilderX 4.26，仅4.31之前的版本使用下面的配置方式，4.31及之后的版本请在manifest.json可视化界面配置。
 
 map组件、getLocation、openLocation、chooseLocation依赖于地图厂商。目前仅支持腾讯地图，且此界面上显示的地图是通过webview加载的。由于目前页面使用的并非http协议，因此在申请腾讯地图key时需要将域名白名单留空以便地图能正确加载出来。后续在harmonyOS上页面会调整成以http方式加载，到时可以在腾讯地图控制台配置域名白名单。
 

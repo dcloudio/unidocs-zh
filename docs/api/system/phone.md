@@ -1,6 +1,10 @@
 ## uni.makePhoneCall(OBJECT)
 拨打电话。
 
+|元服务|
+|:-:|
+|√|
+
 <!-- UNIAPPAPIJSON.makePhoneCall.compatibility -->
 
 **OBJECT 参数说明**

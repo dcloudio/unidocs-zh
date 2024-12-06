@@ -40,7 +40,10 @@
 
 - 默认每月 4 日、19 日两次结算。扫描联系商务申请更短结算周期
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/eryunweixin.jpg)
+<figure style="margin: 50px 0;">
+  <img src="https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/uni-ad-wx-1.png">
+  <img style="margin-left: 100px" src="https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/uni-ad-wx-2.png">
+</figure>
 
 ## 开通配置广告步骤@start
 

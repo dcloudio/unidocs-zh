@@ -147,6 +147,8 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 
 访问 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)，选择你的项目，在 **项目设置 - 常规** 页面中搜索 Client ID，匹配到的结果是下面需要到 `client_id`，这个参数会关联当前应用的相关权限，比如位置服务等。
 
+![](https://web-ext-storage.dcloud.net.cn/unicloud/0a447b30-645c-4325-99c8-8d68274f0f2d.png)
+
 ```json
 "srcEntry": "./ets/abilitystage/AbilityStage.ets",
 "metadata": [
@@ -155,8 +157,12 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 		"value": "1" 
 	},
 	{
+	"name": "app_id",
+		"value": "" // 填写实际应用的 app_id 
+	},
+	{
 		"name": "client_id",
-		"value": "" // 填写实际的 client_id 
+		"value": "" // 填写实际应用的 client_id 
 	}
 ],
 "dependencies": [

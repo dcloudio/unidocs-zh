@@ -421,3 +421,36 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 ### 分包 `The subpackage path name does not meet the requirements`
 
 已知问题。目前线上的 ascf 依赖版本尚不支持分包路径中包含 `-` 等特殊符号，适配需要修改相关路径成 `_` 操作符，规避此问题，后续华为会解决该问题。
+
+### 之后突然报错 `Cannot find module '@atomicservice/ascf-toolkit'`
+
+2024-12-06 更新的鸿蒙依赖有问题，可以临时用下面方式兼容。
+
+临时解决元服务依赖报错，在 harmony-mp-configs 目录新建 hvigor/hvigor-config.json5
+
+```
+{
+  "modelVersion": "5.0.0",
+  "dependencies": {
+    "@atomicservice/ascf-toolkit-hvigor-plugin": "1.0.0"
+  },
+  "execution": {
+    // "analyze": "normal",                     /* Define the build analyze mode. Value: [ "normal" | "advanced" | false ]. Default: "normal" */
+    // "daemon": true,                          /* Enable daemon compilation. Value: [ true | false ]. Default: true */
+    // "incremental": true,                     /* Enable incremental compilation. Value: [ true | false ]. Default: true */
+    // "parallel": true,                        /* Enable parallel compilation. Value: [ true | false ]. Default: true */
+    // "typeCheck": false,                      /* Enable typeCheck. Value: [ true | false ]. Default: false */
+  },
+  "logging": {
+    // "level": "info"                          /* Define the log level. Value: [ "debug" | "info" | "warn" | "error" ]. Default: "info" */
+  },
+  "debugging": {
+    // "stacktrace": false                      /* Disable stacktrace compilation. Value: [ true | false ]. Default: false */
+  },
+  "nodeOptions": {
+    // "maxOldSpaceSize": 8192                  /* Enable nodeOptions maxOldSpaceSize compilation. Unit M. Used for the daemon process. Default: 8192*/
+    // "exposeGC": true                         /* Enable to trigger garbage collection explicitly. Default: true*/
+  }
+}
+
+```

@@ -69,7 +69,7 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 
 初次运行元服务，需要配置好证书签名、权限设置等信息，第一次参与鸿蒙开发的新手请仔细阅读下面相关建议，否则可能会影响开发元服务。
 
-如果你已经参与鸿蒙 App 开发，证书签名、权限配置会比较相似，配置过程可以参考 [证书签名配置指南](../harmony/runbuild#connectmobile) 进行环境配置。
+如果你已有鸿蒙 App 开发经验，元服务的证书签名、权限配置和鸿蒙App的相关操作基本一致，参考 [证书签名配置指南](../harmony/runbuild#connectmobile) 。
 
 签名证书分成两类：
 

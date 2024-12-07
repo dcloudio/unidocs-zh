@@ -120,7 +120,7 @@ DCloud是微信官方核准的广告代运营服务商，代运营是微信给�
    ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/qrcode_agree.png)
    然后在手机端按流程提示完成授权：
    ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/mobile.png)
-   ::: warning FAQ
+::: warning FAQ
 - **Q：微信小程序绑定的管理员在哪查看？**
 - A：登录[微信公众平台](https://mp.weixin.qq.com/)，点击左侧导航栏 **成员管理** 查看管理员账户
 - ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/mp_admin.png)
@@ -132,7 +132,7 @@ DCloud是微信官方核准的广告代运营服务商，代运营是微信给�
 - A：开发者可以随时取消代运营（小程序管理员微信在手机端自助操作，无需DCloud审核）。uni-ad的核心是为开发者创造更高收益、更方便和安全的变现，如果开发者没有达到期待，可以随时取消代运营。但取消前建议和DCloud商务沟通，查验不满意的原因，因为正常情况下uni-ad会更有优势。
 - **Q：数据查看**
 - A：授权代运营后，微信流量主的广告收益在微信后台仍然可以看到。同时在uni-ad后台可以看到聚合比价后的整体总收益，会大于微信后台的收益。
-  :::
+:::
 
 3. 代运营授权完成后uni-ad系统会自动检测该小程序是否已开通微信流量主广告。如未开通且符合条件，uni-ad会自动开通微信流量主广告，如果检测不通过，uni-ad会提示错误原因。
 
@@ -143,7 +143,6 @@ DCloud是微信官方核准的广告代运营服务商，代运营是微信给�
   ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/adp_list.png)
 
 然后授权uni-ad流量主代运营后，uni-ad会针对以上广告位创建流量主广告位，名称为：`uni-ad-[广告位名称]`，开发者如已使用以上广告位adpid，则不需要修改对应代码，重新发布小程序即可。
-
 
 如遇到任何问题请联系uni-ad运营或邮件<a href="mailto:uniad@dcloud.io">uniad@dcloud.io</a>解决，谢谢。
 

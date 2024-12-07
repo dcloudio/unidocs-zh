@@ -67,6 +67,25 @@ uni-app x 中加载字体图标，详见 hello uni-app x 的 [loadFontFace](http
 
 <!-- UNIAPPAPIJSON.loadFontFace.tutorial -->
 
+## uni.rpx2px()
+
+将rpx单位值转换成px
+
+```js
+<script>
+	export default {
+		data() {
+			return {
+				boxWidth:""
+			}
+		},
+		onLoad() {
+			this.boxWidth = uni.rpx2px(600) + 'px';
+		}
+	}
+</script>
+```
+
 ## uni.upx2px()
 
 已废弃。

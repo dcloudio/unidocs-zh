@@ -11,7 +11,7 @@
 ::: warning 注意
 
 - 目前仅支持 Vue3 项目编译到鸿蒙元服务平台，Vue2 项目升级 Vue3 项目请参考：[Vue2 项目迁移到 Vue3](../migration-to-vue3.md)。
-- 目前仅支持鸿蒙真机，鸿蒙模拟器开始内测，[点击链接](#arm-emulator)了解如何申请。
+- 目前仅支持鸿蒙 Next 真机，鸿蒙 ARM 模拟器开始内测，[点击链接](#arm-emulator)了解如何申请。
 - 目前支持鸿蒙5.0，鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/)。
 :::
 
@@ -458,7 +458,7 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 
 ### 元服务 ARM 模拟器申请@arm-emulator
 
-目前可以申请 ARM 模拟器运行和调试鸿蒙元服务。如需申请，请发送邮件想华为运营人员申请。在收到你的邮件申请后，华为运营人员将在1-3个工作日内为你安排对接人员。
+目前可以申请 ARM 模拟器运行和调试鸿蒙元服务。如需申请，请发送邮件向华为运营人员申请。在收到邮件申请后，华为运营人员将在1-3个工作日内为你安排对接人员。
 
 申请方法如下：
 - 申请邮箱地址：`atomicservice@huawei.com`

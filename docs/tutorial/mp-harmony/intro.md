@@ -11,7 +11,8 @@
 ::: warning 注意
 
 - 目前仅支持 Vue3 项目编译到鸿蒙元服务平台，Vue2 项目升级 Vue3 项目请参考：[Vue2 项目迁移到 Vue3](../migration-to-vue3.md)。
-- 目前仅支持鸿蒙真机，鸿蒙模拟器暂不支持，后续鸿蒙模拟器支持后会更新文档。[点击链接](https://consumer.huawei.com/cn/support/harmonyos/models-next/) 查看支持鸿蒙 Next 的机型清单。
+- 目前仅支持鸿蒙真机，鸿蒙模拟器开始内测，[点击链接](#arm-emulator)了解如何申请。
+- 目前支持鸿蒙5.0，鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/)。
 :::
 
 ## 前置准备
@@ -454,3 +455,31 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 }
 
 ```
+
+### 元服务 ARM 模拟器申请@arm-emulator
+
+目前可以申请 ARM 模拟器运行和调试鸿蒙元服务。如需申请，请发送邮件想华为运营人员申请。在收到你的邮件申请后，华为运营人员将在1-3个工作日内为你安排对接人员。
+
+申请方法如下：
+- 申请邮箱地址：`atomicservice@huawei.com`
+- 邮件标题：`[模拟器联调版本申请]-[元服务名称]-[APP ID]-[Developer ID]`，APP ID等查询方法见下方信息。
+- 邮件正文：
+
+```text
+XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申请携带ASCF框架特性直板机模拟器 Mac Arm联调版本，用于XXX。
+【使用范围】：开发调试XXX元服务
+【版本接收人】：XXXX (接收人邮箱)
+【华为账号ID】：XXXX (开发者ID，不是账号名称)
+【使用时限】： 2024年X月XX日 - 2024年12月31日 （在结束时间点需要完成版本收编）
+我承诺：我清楚该版本是非正式发布版本，可能存在部分问题。如遇到问题，我愿意参与帮助改进。该版本仅用于功能测试和问题联调，受限使用不会扩散，版本会按时收编。
+
+承诺人：XX 
+日期：202X年X月XX日
+```
+
+
+**注意**：如何查询 APP ID 和 Developer ID？
+
+打开 [华为 AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myApp)，打开 **我的项目 - 选择项目** ，也在页面顶部选择当前的元服务应用。页面中包含 Developer ID 和 APPID （APPID 也就是元服务包名中的数字部分）。
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/803608f0-9e24-4492-ac36-a60072f2a751.png)

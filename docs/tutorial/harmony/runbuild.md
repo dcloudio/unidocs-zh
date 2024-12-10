@@ -311,3 +311,9 @@ HBuilderX 4.31起支持uniPush推送，具体配置请参考[文档](https://uni
 删除后还需要点右上角的 Sync Now，并等待 Sync 结束
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/908ef551-8605-4add-b68f-42aa497109b7.png)
+
+### harmony应用怎样调试？
+
+可以参考鸿蒙的文档 [使用DevTools工具调试前端页面](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/web-debugging-with-devtools-V5) 进行处理。
+
+在 uni-app 的开发模式 `setWebDebuggingAccess` 会自动开启，此步骤可以跳过。

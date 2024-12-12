@@ -356,7 +356,7 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 
 模拟器或者真机上已经安装了当前 BundleName 的应用。可能是证书复用导致的错误，重新确认当前证书是元服务证书，而不是鸿蒙 App 的证书。
 
-###  运行报错 `hvigor ERROR: SDK component missing. Please verify the integrity of your SDK.`
+### 运行报错 `hvigor ERROR: SDK component missing. Please verify the integrity of your SDK.`
 
 你可能声明了不兼容的字段，需要在 `harmony-mp-configs/build-profile.json5` 里面去掉 `app.products.*.compileSdkVersion` 属性。
 
@@ -390,7 +390,7 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 {
   "modelVersion": "5.0.0",
   "dependencies": {
-    "@atomicservice/ascf-toolkit-hvigor-plugin": "1.0.1-beta.1"
+    "@atomicservice/ascf-toolkit-hvigor-plugin": "~1.0.1"
   },
   "execution": {
     // "analyze": "normal",                     /* Define the build analyze mode. Value: [ "normal" | "advanced" | false ]. Default: "normal" */
@@ -422,7 +422,7 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 
 ### 元服务 ARM 模拟器申请@arm-emulator
 
-目前可以申请 ARM 模拟器运行和调试鸿蒙元服务。如需申请，请发送邮件向华为运营人员申请。在收到邮件申请后，华为运营人员将在1-3个工作日内为你安排对接人员。
+基于 ARM 架构 Mac M1 等系列芯片用户，目前可以申请 ARM 模拟器运行和调试鸿蒙元服务。如需申请，请发送邮件向华为运营人员申请。在收到邮件申请后，华为运营人员将在1-3个工作日内为你安排对接人员。
 
 申请方法如下：
 - 申请邮箱地址：`atomicservice@huawei.com`
@@ -440,7 +440,6 @@ XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申�
 承诺人：XX 
 日期：202X年X月XX日
 ```
-
 
 **注意**：如何查询 APP ID 和 Developer ID？
 

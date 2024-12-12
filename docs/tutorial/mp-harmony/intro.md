@@ -22,38 +22,6 @@
 - HBuilderX 4.34+ [下载地址](https://www.dcloud.io/hbuilderx.html)
 - DevEco-Studio 5.0.5.200+ [下载地址](https://developer.huawei.com/consumer/cn/download/)
 
-目前 uni-app 开发元服务时，需要先在 DevEco-Studio 初始化元服务的环境，具体步骤如下：
-
- 1. 确保 `hdc` 全局已注册，输入 `hdc -v` 有返回值。`hdc` 是用来和鸿蒙设备交互的命令行，如果打印出错，参考 [鸿蒙配置 HDC](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/hdc-V5) 文档进行配置。
- 2. [点击下载自动脚本](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/HarmonyOS-AtomicService-ASCF-Tools-1126.rar)，下载压缩包并解压，并根据操作系统执行下面操作。
-
-**Windows 系统**
-
-1. 手机连接电脑后，确保 `hdc` 命令功能可用，即可右键管理员运行：`鸿蒙元服务ASCF-开发环境初始化（右键管理员运行）.bat`
-2. 如果有新的手机，没有安装ASCF依赖库，需要手动运行：`鸿蒙元服务ASCF-手机安装依赖库.bat`
-
-**Mac 系统**
-
-打开终端，进入本工具解压后目录，`chmod +x *.sh` 赋予可执行权限：
-
-1. 手机连接电脑后，确保hdc命令功能可用： `sudo bash ascf-init-env.sh` 。如果执行失败可以执行 `sudo node init-ascf.js all`
-2. 如果有新的手机，没有安装ASCF依赖库，需要手动运行：`./ascf-init-phone.sh` 。如果执行失败可以执行 `node init-ascf.js hsp`
-
-**注意**：当前仅支持ide默认安装路径，如果默认安装路径查找失败，请执行设置环境变量后重试。如果你是外置硬盘系统请注意仔细阅读。
-windows系统：`set DEVECO_DIR="C:\Program Files\Huawei\DevEco Studio\bin"`
-mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"`。
-
-<details>
-<summary>脚本内执行了哪些操作？</summary>
-<ul>
-<li>判断当前系统，定位到 DevEco Studio 的安装目录</li>
-<li>修改替换 `task-service.js` 文件和 `process-profile.js` 文件</li>
-<li>下载安装 `com.huawei.hms.ascf` 基础框架</li>
-<li>安装 `@atomicservice/ascf-toolkit` npm 依赖</li>
-</ul>
-<p>随着后续版本的更新，这些操作可能会发生变化</p>
-</details>
-
 ### 元服务 appid 注册@register-app-id
 
 元服务的开发和上架需要使用元服务的包名 BundleName，包名的形式 `com.atomicservice.[你的 APPID]`。
@@ -255,7 +223,7 @@ mac系统： `export DEVECO_DIR="/Applications/DevEco-Studio.app/Contents/tools"
 
 **注意**：目前发布上架暂不支持多产物，意思是手动调整 `harmony-mp-configs/build-profile.json5`：
 
-定位到 `app.signingConfigs[0]` 字段，修改 `material` 为发行证书路径。
+定位到 `app.signingConfigs[0]` 字段，修改 `material` 为发行证书路径，确保签名证书只有一出定义，也就是 default。后续版本会解决多产物处理。
 
 ### 4. 应用打包
 
@@ -411,50 +379,46 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 
 `MP-HARMONY`，具体参考 [条件编译文档](https://uniapp.dcloud.net.cn/tutorial/platform.html)。
 
-### 初次运行报错 `Failed to install the HAP or HSP`@failed-to-install-the-hap-or-hsp
+### 运行报错 `Failed to install the HAP or HSP`@failed-to-install-the-hap-or-hsp
 
 参考文档顶部 **开发环境准备** 部分，请确认：
 
-1. 真机是鸿蒙Next 真机，系统版本是 鸿蒙 5.0+。如果是鸿蒙 4.x 版本不属于鸿蒙 Next 系统，模拟器暂不支持。具体支持机型参考 [HarmonyOS NEXT 支持机型
-](https://consumer.huawei.com/cn/support/harmonyos/models-next/)
-2. 确定下载了自动化初始脚本，完成了脚本安装。控制台执行 `ascf -V` 有返回值。
+1. 真机是鸿蒙 Next 真机，系统版本是 鸿蒙 5.0+。如果是鸿蒙 4.x 版本不属于鸿蒙 Next 系统，模拟器暂不支持。具体支持机型参考 [HarmonyOS NEXT 支持机型](https://consumer.huawei.com/cn/support/harmonyos/models-next/)
+2. 如果你调整过 hvigor 文件，可能锁定了 hbigor 版本为 1.0.0，请修改 `hvigor/hvigor-config.json5` 文件，粘贴下面内容。
+
+```json
+{
+  "modelVersion": "5.0.0",
+  "dependencies": {
+    "@atomicservice/ascf-toolkit-hvigor-plugin": "1.0.1-beta.1"
+  },
+  "execution": {
+    // "analyze": "normal",                     /* Define the build analyze mode. Value: [ "normal" | "advanced" | false ]. Default: "normal" */
+    // "daemon": true,                          /* Enable daemon compilation. Value: [ true | false ]. Default: true */
+    // "incremental": true,                     /* Enable incremental compilation. Value: [ true | false ]. Default: true */
+    // "parallel": true,                        /* Enable parallel compilation. Value: [ true | false ]. Default: true */
+    // "typeCheck": false,                      /* Enable typeCheck. Value: [ true | false ]. Default: false */
+  },
+  "logging": {
+    // "level": "info"                          /* Define the log level. Value: [ "debug" | "info" | "warn" | "error" ]. Default: "info" */
+  },
+  "debugging": {
+    // "stacktrace": false                      /* Disable stacktrace compilation. Value: [ true | false ]. Default: false */
+  },
+  "nodeOptions": {
+    // "maxOldSpaceSize": 8192                  /* Enable nodeOptions maxOldSpaceSize compilation. Unit M. Used for the daemon process. Default: 8192*/
+    // "exposeGC": true                         /* Enable to trigger garbage collection explicitly. Default: true*/
+  }
+}
+```
 
 ### 分包 `The subpackage path name does not meet the requirements`
 
-已知问题。目前线上的 ascf 依赖版本尚不支持分包路径中包含 `-` 等特殊符号，适配需要修改相关路径成 `_` 操作符，规避此问题，后续华为会解决该问题。
+已修复。参考 [运行报错](#failed-to-install-the-hap-or-hsp) 调整 hvigor 版本号。
 
 ### 之后突然报错 `Cannot find module '@atomicservice/ascf-toolkit'`
 
-2024-12-06 更新的鸿蒙依赖有问题，可以临时用下面方式兼容。
-
-临时解决元服务依赖报错，在 harmony-mp-configs 目录新建 hvigor/hvigor-config.json5
-
-```
-{
-  "modelVersion": "5.0.0",
-  "dependencies": {
-    "@atomicservice/ascf-toolkit-hvigor-plugin": "1.0.0"
-  },
-  "execution": {
-    // "analyze": "normal",                     /* Define the build analyze mode. Value: [ "normal" | "advanced" | false ]. Default: "normal" */
-    // "daemon": true,                          /* Enable daemon compilation. Value: [ true | false ]. Default: true */
-    // "incremental": true,                     /* Enable incremental compilation. Value: [ true | false ]. Default: true */
-    // "parallel": true,                        /* Enable parallel compilation. Value: [ true | false ]. Default: true */
-    // "typeCheck": false,                      /* Enable typeCheck. Value: [ true | false ]. Default: false */
-  },
-  "logging": {
-    // "level": "info"                          /* Define the log level. Value: [ "debug" | "info" | "warn" | "error" ]. Default: "info" */
-  },
-  "debugging": {
-    // "stacktrace": false                      /* Disable stacktrace compilation. Value: [ true | false ]. Default: false */
-  },
-  "nodeOptions": {
-    // "maxOldSpaceSize": 8192                  /* Enable nodeOptions maxOldSpaceSize compilation. Unit M. Used for the daemon process. Default: 8192*/
-    // "exposeGC": true                         /* Enable to trigger garbage collection explicitly. Default: true*/
-  }
-}
-
-```
+已修复。参考 [运行报错](#failed-to-install-the-hap-or-hsp) 调整 hvigor 版本号。
 
 ### 元服务 ARM 模拟器申请@arm-emulator
 

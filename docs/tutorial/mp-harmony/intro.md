@@ -446,3 +446,8 @@ XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申�
 打开 [华为 AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myApp)，打开 **我的项目 - 选择项目** ，也在页面顶部选择当前的元服务应用。页面中包含 Developer ID 和 APPID （APPID 也就是元服务包名中的数字部分）。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/803608f0-9e24-4492-ac36-a60072f2a751.png)
+
+### 我希望自动化来处理元服务的创建、更新和维护@automation-cli
+
+目前华为提供了一个自动化工具，用来自动化处理多个元服务的创建、信息维护和更新操作。详见 [元服务工具使用指导
+](https://developer.huawei.com/consumer/cn/doc/app/atomic_tool_usage-0000002081536858#section1861132294011)

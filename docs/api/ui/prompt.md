@@ -2,6 +2,10 @@
 
 显示消息提示框。
 
+|元服务|
+|:-:|
+|√|
+
 <!-- UNIAPPAPIJSON.showToast.compatibility -->
 
 **OBJECT参数说明**
@@ -75,6 +79,10 @@ uni.hideToast();
 
 显示 loading 提示框, 需主动调用 [uni.hideLoading](#hideloading) 才能关闭提示框。
 
+|元服务|
+|:-:|
+|√|
+
 <!-- UNIAPPAPIJSON.showLoading.compatibility -->
 
 **OBJECT参数说明**
@@ -103,6 +111,10 @@ uni.showLoading({
 
 隐藏 loading 提示框。
 
+|元服务|
+|:-:|
+|x|
+
 <!-- UNIAPPAPIJSON.hideLoading.compatibility -->
 
 **示例**
@@ -120,6 +132,10 @@ setTimeout(function () {
 ## uni.showModal(OBJECT)@showmodal
 
 显示模态弹窗，可以只有一个确定按钮，也可以同时有确定和取消按钮。类似于一个API整合了 html 中：alert、confirm。
+
+|元服务|
+|:-:|
+|√|
 
 <!-- UNIAPPAPIJSON.showModal.compatibility -->
 

@@ -111,9 +111,7 @@
 
 确保在 `module` 字段内，存在下面三个字段，如果不存在需要添加，不添加可能会让元服务运行闪退。
 
-访问 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)，选择你的项目，在 **项目设置 - 常规** 页面中搜索 Client ID，匹配到的结果是下面需要到 `client_id`，这个参数会关联当前应用的相关权限，比如位置服务等。
-
-![](https://web-ext-storage.dcloud.net.cn/unicloud/0a447b30-645c-4325-99c8-8d68274f0f2d.png)
+请务必注意：这三个字段添加到 module 内部，保证 `srcEntry` 出现里两次。
 
 ```json
 "srcEntry": "./ets/abilitystage/AbilityStage.ets",
@@ -124,11 +122,11 @@
 	},
 	{
 	"name": "app_id",
-		"value": "" // 填写实际应用的 app_id 
+		"value": "" // 填写实际应用的 app_id 获取方式见下方
 	},
 	{
 		"name": "client_id",
-		"value": "" // 填写实际应用的 client_id 
+		"value": "" // 填写实际应用的 client_id 获取方式见下方
 	}
 ],
 "dependencies": [
@@ -141,6 +139,10 @@
 ```
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/62fbd174-5276-4a76-9ef7-26562e611533.png)
+
+访问 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)，选择你的项目，在 **项目设置 - 常规** 页面中搜索 Client ID，匹配到的结果是下面需要到 `client_id`，这个参数会关联当前应用的相关权限，比如位置服务等。
+
+![](https://web-ext-storage.dcloud.net.cn/unicloud/0a447b30-645c-4325-99c8-8d68274f0f2d.png)
 
 ### 4. 运行鸿蒙元服务
 
@@ -163,6 +165,8 @@
 元服务的条件编译是 `MP-HARMONY`。
 
 开发过程中遇到的问题，欢迎加入 [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流，有官方人员进行答疑和指导。
+
+如果遇到需要 debug 或者白屏问题可以下面方案 [进行调试](#how-to-debug)。
 
 ## 发行与上架
 
@@ -346,7 +350,7 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 
 ### 组件 rich-text 渲染空白不展示
 
-已知问题，等待元服务修复。动态更新 `rich-text` 的 `nodes` 数据时候，内容不会更新。可以临时通过给 rich-text 添加 v-if 控制显隐，在 nextTick 中动态切换生效。
+已修复。动态更新 `rich-text` 的 `nodes` 数据时候，内容不会更新。可以临时通过给 rich-text 添加 v-if 控制显隐，在 nextTick 中动态切换生效。
 
 ### 组件 Image 选择本地图片不展示
 
@@ -411,6 +415,7 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
   }
 }
 ```
+3. 第一次启动会跳转到应用市场访问应用，网络问题可能会超时，重试两次就可以。正式上架后不会出现此问题。
 
 ### 分包 `The subpackage path name does not meet the requirements`
 
@@ -451,3 +456,18 @@ XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申�
 
 目前华为提供了一个自动化工具，用来自动化处理多个元服务的创建、信息维护和更新操作。详见 [元服务工具使用指导
 ](https://developer.huawei.com/consumer/cn/doc/app/atomic_tool_usage-0000002081536858#section1861132294011)
+
+### 备案如何获取公钥和签名信息？
+
+备案类问题参考阅读：[APP 备案 FAQ](https://developer.huawei.com/consumer/cn/doc/app/50130)。
+
+### 元服务如何调试、遇到渲染白屏了怎么看？@how-to-debug
+
+首先建议缩小问题范围，注释页面相关逻辑，锁定出问题的页面、组件、逻辑，从而针对性的调试。如果希望开启远程调试，可以按照下面方法操作。
+
+阅读官方文档 [使用DevTools工具调试前端页面](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/web-debugging-with-devtools-V5)
+
+按照文档操作，简单来说可以分成三个步骤：
+  1. 确认插入了设备执行 `hdc shell "cat /proc/net/unix | grep devtools"` 记录返回数据尾部的数字部分
+  2. 转发端口 `hdc fport tcp:9222 localabstract:webview_devtools_remote_[刚才的数字部分]` 返回 OK
+  3. 打开浏览器 `chrome://inspect/#devices` 观察 Remoet Target 进行调试。

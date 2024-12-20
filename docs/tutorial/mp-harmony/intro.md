@@ -421,7 +421,7 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 
 此问题发行后不会出现，仅运行调试时有概率出现。
 
-出现此问题时，请用鸿蒙 Next 真机，在手机搜索框输入uniapp，并点击出现的元服务 helloUniApp，点打开，然后再关闭，最后在hbx重启项目即可
+出现此问题时，请用鸿蒙 Next 真机，在手机搜索框或手机里的华为应用市场里搜索uniapp，并点击出现的元服务 helloUniApp，点打开，然后再关闭，最后在hbx重启项目即可
 
 ### 分包 `The subpackage path name does not meet the requirements`
 

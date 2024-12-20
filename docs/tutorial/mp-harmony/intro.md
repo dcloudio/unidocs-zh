@@ -101,6 +101,8 @@
 
 在文件中搜索 `useNormalizedOHMUrl` 将值设置为 false。
 
+**注意：** 考虑到很多用户不会修改配置，这里提供一个模版，强烈建议新手用户基于 [这个模版](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/build-profile.json5) 修改，只替换签名部分即可。
+
 ![配置签名证书](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/116bc7de-00e0-4250-ac78-508b2dfa803f.png)
 
 ### 3. 配置 `module.json5`
@@ -111,14 +113,14 @@
 
 确保在 `module` 字段内，存在下面三个字段，如果不存在需要添加，不添加可能会让元服务运行闪退。
 
-请务必注意：这三个字段添加到 module 内部，保证 `srcEntry` 出现里两次。
+请务必注意：这三个字段添加到 `module` 内部，保证 `srcEntry` 出现里两次。
 
 ```json
-"srcEntry": "./ets/abilitystage/AbilityStage.ets",
+"srcEntry": "./ets/abilitystage/AbilityStage.ets", // 此时页面有两个 srcEntry
 "metadata": [
 	{
 		"name": "appgallery_privacy_hosted",
-		"value": "1" 
+		"value": "1" // 默认开启系统隐私弹窗，建议开启无需编写页面
 	},
 	{
 	"name": "app_id",
@@ -215,19 +217,17 @@
 
 ### 2. 确认分享承诺
 
-点击 [鸿蒙原生应用激励分享承诺函](https://developer.huawei.com/consumer/cn/verified/incentiveAuth)，如下图选择本次计划上架的应用（元服务），服务商字段搜索“数字天堂”并选择，勾选“我已阅读”，点击提交，完成激励分享。
+点击 [鸿蒙原生应用激励分享承诺函](https://developer.huawei.com/consumer/cn/verified/incentiveAuth)，如下图选择本次计划上架的应用（元服务），服务商字段输入“数字天堂”并选择，勾选“我已阅读”，点击提交，完成激励分享。
 
 ![](https://web-ext-storage.dcloud.net.cn/doc/harmony-os-next/harmony-incentiveAuth.png)
 
-**注意：必须完成分享承诺，才有机会拿到奖励金；**
+**注意：必须完成分享承诺，才有机会拿到奖励金；** 
 
 ### 3. 配置发行签名证书
 
 开发调试期间的证书不可用于应用上架。元服务发布证书的申请流程和鸿蒙应用开发类似，访问 [鸿蒙发布元服务文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-harmonyos-releaseservice-0000001946273965) 进行发布证书的获取。
 
-**注意**：目前发布上架暂不支持多产物，意思是手动调整 `harmony-mp-configs/build-profile.json5`：
-
-定位到 `app.signingConfigs[0]` 字段，修改 `material` 为发行证书路径，确保签名证书只有一出定义，也就是 default。后续版本会解决多产物处理。
+修改 `build-profile.json5` 里的 release 证书签名。务必注意调试和发行证书是两套，不能混用。
 
 ### 4. 应用打包
 
@@ -328,7 +328,7 @@
 还需要在配置网络访问白名单：
 
 - 临时方案。进入手机 - 设置 - 系统 - 开发者选项（如果未开启 关于手机 - 软件版本连续点击开启） - 开发中元服务豁免管控，选择开启后，可以自由调试。
-- 稳定方案。整理 web-view 需要用到的相关域名，进入[华为AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/) - 我的项目 - 开发管理 - 域名设置 - 服务器域名 - httpRequest 合法域名。按照提示进行填写。
+- 稳定方案。整理 web-view 需要用到的相关域名，进入[华为AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/) - 我的项目 - 开发管理 - 域名设置 - 服务器域名 - httpRequest 合法域名。按照提示进行填写。填写完成后打开 手机设置 - 应用与元服务，删掉正在开发的元服务，重新启动应用。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/49323643-31f5-4f95-80b2-87157c9a06d5.png)
 
@@ -336,17 +336,27 @@
 
 同上，发送网络请求报错的解决方案。
 
-### 组件 打开 map 地图无法展示
+### 组件 打开 map 地图无法展示、API 位置相关使用报错
 
-Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/) 进行权限申请。具体可以参考 [鸿蒙 Map Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/map-config-agc-V5)，开通地图服务。
+Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/) 进行权限申请。具体可以参考 [鸿蒙 Map Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/map-config-agc-V5)，在 项目设置 - API 管理开启定位服务、位置服务、地图服务。
+
+在 `harmony-mp-configs/entry/src/main/module.json5` 在 `requestPermissions` 字段里添加 `ohos.permission.LOCATION` 和 `ohos.permission.APPROXIMATELY_LOCATION` 两条记录。
 
 ### API 登录 uni.login 获取 code 报错
 
-参考[鸿蒙 Account Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-config-permissions-V5#section132012717318) 设置相关权限，添加 scope 权限
+参考[鸿蒙 Account Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-config-permissions-V5#section132012717318) 设置相关权限，添加 scope 权限。
+
+易错点：
+    1. 签名证书不能是自动签名，设置的是 agc 上下载的调试证书
+    2. `mp-configs/entry/src/main/modueljson5` 里有个 metadata cliend_id 确保值正确。
+    3. AGC 后台配置了指纹，添加了证书。
+
+具体写法可以参考 [华为元服务登录](https://gitcode.net/dcloud/hello_uni-id-pages/-/tree/dev/pages/index) 开源代码进行参考。欢迎使用 [uni-id-pages](https://doc.dcloud.net.cn/uniCloud/uni-id/app.html) 插件加速元服务开发落地。
 
 ### API 获取网络类型失败、手机震动不等效
 
 需要 `GET_NETWORK_INFO` 和 `vibrate` 权限。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5) 进行查询。按照 **配置权限模版** 章节进行配置。
+
 
 ### 组件 rich-text 渲染空白不展示
 
@@ -477,3 +487,7 @@ XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申�
   1. 确认插入了设备执行 `hdc shell "cat /proc/net/unix | grep devtools"` 记录返回数据尾部的数字部分
   2. 转发端口 `hdc fport tcp:9222 localabstract:webview_devtools_remote_[刚才的数字部分]` 返回 OK
   3. 打开浏览器 `chrome://inspect/#devices` 观察 Remoet Target 进行调试。
+
+### API uploadFile 报错，其他端正常
+
+已知问题，等下修复。观察上传参数里是否有数字类型参数，强转为字符串。

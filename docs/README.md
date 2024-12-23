@@ -37,12 +37,16 @@ pageClass: custom-page-class
         <b style="font-size: 14px;">需使用已升级到鸿蒙Next</b>
         <b style="font-size: 14px;">的手机扫码体验</b>
       </a>
-      <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
-        <div class="barcode-img-box"><img src="//img.cdn.aliyun.dcloud.net.cn/guide/uniapp/gh_33446d7f7a26_430.jpg" width="160" /></div>
-        <b>微信小程序版</b>
+      <a href="//hellouniappx.dcloud.net.cn/" target="_blank" class="clear-style barcode-view">
+        <div class="barcode-img-box"><img src="https://web-ext-storage.dcloud.net.cn/uni-app-x/hello-uni-app-x-mp-qrcode.jpg" width="160" /></div>
+        <b>微信小程序版(uni-app x)</b>
       </a>
     </div>
     <div class="flex-img-group-view" style="margin-top: 20px;">
+      <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
+        <div class="barcode-img-box"><img src="//img.cdn.aliyun.dcloud.net.cn/guide/uniapp/gh_33446d7f7a26_430.jpg" width="160" /></div>
+        <b>微信小程序版(uni-app)</b>
+      </a>
       <a href="https://hellouniapp.dcloud.net.cn/" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/uni-h5-hosting-qr.png" width="160" />
@@ -61,12 +65,12 @@ pageClass: custom-page-class
         </div>
         <b>iOS版(uni-app)</b>
       </a>
+    </div>
+    <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/alipay1.png" width="160" /></div>
         <b>支付宝小程序版</b>
       </a>
-    </div>
-    <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/baidu-uniapp.png" width="160" /></div>
         <b>百度小程序版</b>
@@ -83,14 +87,14 @@ pageClass: custom-page-class
         </div>
         <b>QQ小程序版</b>
       </a>
+    </div>
+    <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="https://so.mp.360.cn/mp.html?appid=qh4j181qqtru354st6" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hello-uni-mp-360-qr.png" width="160" />
         </div>
         <b>360小程序</b>
       </a>
-    </div>
-    <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box"><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-kuaishou-new.png" width="160" /></div>
         <b>快手小程序版</b>
@@ -105,14 +109,14 @@ pageClass: custom-page-class
         </div>
         <b>钉钉小程序版</b>
       </a>
+    </div>
+    <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-jd-qrcode.png" width="160" />
         </div>
         <b>京东小程序版</b>
       </a>
-    </div>
-    <div class="flex-img-group-view" style="margin-top: 20px;">
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view">
         <div class="barcode-img-box">
           <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-xhs-qrcode.png" width="160" />
@@ -125,7 +129,6 @@ pageClass: custom-page-class
         </div>
         <b>快应用</b>
       </a>
-      <div style="width:160px"></div>
       <div style="width:160px"></div>
     </div>
     <p>注：<br/>

@@ -219,7 +219,7 @@ manager.setPushChannel({
 注意：此api仅鸿蒙平台支持，iOS和Android平台请使用`plus.runtime.setBadgeNumber`[详情参考](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.setBadgeNumber)
 |参数名	|类型		|必填	|说明																			|
 |:-			|:-			|:-		|:-																				|
-|num		|number	|否		|要显示的角标数字值，参数为0则表示清除角标数字。	|
+|num		|number	|是		|要显示的角标数字值，参数为0则表示清除角标数字。	|
 
 
 ## 小程序平台

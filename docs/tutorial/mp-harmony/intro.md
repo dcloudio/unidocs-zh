@@ -357,7 +357,6 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 
 需要 `GET_NETWORK_INFO` 和 `vibrate` 权限。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5) 进行查询。按照 **配置权限模版** 章节进行配置。
 
-
 ### 组件 rich-text 渲染空白不展示
 
 已修复。动态更新 `rich-text` 的 `nodes` 数据时候，内容不会更新。可以临时通过给 rich-text 添加 v-if 控制显隐，在 nextTick 中动态切换生效。
@@ -425,13 +424,7 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
   }
 }
 ```
-3. 第一次启动会跳转到应用市场访问应用，网络问题可能会超时，重试两次就可以。正式上架后不会出现此问题。
-
-### 运行报错 `code:9568305 error: Failed to install the HAP or HSP because the dependent module does not exist.`@failed-to-install-the-hap-or-hsp-9568305
-
-此问题发行后不会出现，仅运行调试时有概率出现。
-
-出现此问题时，请用鸿蒙 Next 真机，在手机搜索框或手机里的华为应用市场里搜索uniapp，并点击出现的元服务 helloUniApp，点打开，然后再关闭，最后在hbx重启项目即可
+3. 第一次启动会跳转到应用市场访问应用，网络问题可能会超时，重试两次就可以。正式上架后不会出现此问题。出现此问题时，请用鸿蒙 Next 真机，在手机搜索框或手机里的华为应用市场里搜索uniapp，并点击出现的元服务 helloUniApp，点打开，等待加载完成，然后再关闭，最后在 HBuilderX 重启项目即可。
 
 ### 分包 `The subpackage path name does not meet the requirements`
 
@@ -477,6 +470,8 @@ XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申�
 
 备案类问题参考阅读：[APP 备案 FAQ](https://developer.huawei.com/consumer/cn/doc/app/50130)。
 
+补充： Mac 电脑上指纹信息填写 SHA-1 的数值，不要填写 SHA-256。
+
 ### 元服务如何调试、遇到渲染白屏了怎么看？@how-to-debug
 
 首先建议缩小问题范围，注释页面相关逻辑，锁定出问题的页面、组件、逻辑，从而针对性的调试。如果希望开启远程调试，可以按照下面方法操作。
@@ -491,3 +486,9 @@ XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申�
 ### API uploadFile 报错，其他端正常
 
 已知问题，等下修复。观察上传参数里是否有数字类型参数，强转为字符串。
+
+### 元服务构建在 Windows 系统下卡死
+
+有用户反馈在 Windows 平台下运行 DevEco 原生元服务正常，使用 HBuilderX 运行空白工程会卡主无法完成。发现是个别系统安全工具会默认拦截，拦截发生在 DevEco 调用内置的 node 处理编译时候。提示文案：“有程序正在进行可疑操作，建议阻止”。
+
+目前没有好的方案解决，建议始终信任 DevEco 的操作，或者临时退出安全软件。有相关经验也欢迎交流反馈。

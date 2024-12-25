@@ -53,6 +53,7 @@
 参考：
 - [阿里云：App备案快速入门](https://wanwang.aliyun.com/qualificationrec/bazszl)
 - [腾讯云：如何快速备案您的网站或App](https://cloud.tencent.com/document/product/243/39038)
+- [华为云：备案指引](https://support.huaweicloud.com/usermanual-icp/zh-cn_topic_0000002127712329.html)
 
 
 > 若您不熟悉App备案，需要技术指导、加急办理或三方代办服务，可到服务市场寻求帮助，[点此前往](https://market.aliyun.com/common/agents/yscdcloud?userCode=yp4pevgx#3)
@@ -69,6 +70,9 @@
 - [百度小程序备案指引](https://smartprogram.baidu.com/docs/introduction/register_filings/)
 - [京东小程序备案流程](https://mp-docs.jd.com/doc/operation/beian/2300)
 - [快手小程序备案流程](https://mp.kuaishou.com/docs/operate/specification/icp/guide.html)
+- [HarmonyOS元服务备案流程](https://developer.huawei.com/consumer/cn/doc/app/50130)
+
+HarmonyOS应用/元服务备案要求与APP备案一致，均由接入商代为备案。请注意，在接入商备案系统填写材料时需选择“鸿蒙”平台。如果之前Android应用App备案已完成，可通过“变更备案”加入“鸿蒙”平台提交，完成HarmonyOS应用/元服务的备案。
 
 > 若您不熟悉小程序备案流程，需要技术指导、加急办理或三方代办服务，可到服务市场寻求帮助，[点此前往](https://market.aliyun.com/common/agents/yscdcloud?userCode=yp4pevgx#3)
 

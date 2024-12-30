@@ -431,9 +431,9 @@ cli 项目的 uni-app 编译器是跟随项目配置的，跟 HBuilderX 的版�
 
 删除 `harmony-configs` 目录（如果目录里有自己修改过的内容请先做好备份），再删除 `unpackage` 目录，然后重试。
 
-### 报错如 `Permission denied`@permission-denied
+### 报错如 `EPERM: operation not permitted, copyfile ...`@file-readonly
 
-源代码中有资源文件（比如图片）带有只读属性，导致打包的时候鸿蒙工具链删除失败报错。找到有问题的文件去掉只读属性即可。
+源代码中有资源文件（比如图片）带有只读属性，导致再次打包的时候鸿蒙工具链删除失败报错。找到有问题的文件去掉只读属性，再删除 `unpackage` 目录，重试即可。
 
 ### 报错如 `hvigor ERROR: Tools execution failed`@tools-execution-failed
 

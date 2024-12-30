@@ -260,7 +260,7 @@
 
 如果你启动之后展示的是一个黑白界面展示了 Hello Wrold，说明 HBuilderX 提供的默认模版没有被修改，一般是自动化脚本没有成功执行，如果是 Mac 终端请务必注意：屏幕右上角会提示是否允许终端修改文件，一定要允许，才能保证自动化脚本执行成功。
 
-### 如何修改元服务默认标题、图标、启动图等信息？
+### 如何修改元服务默认标题、图标、启动图等信息？@how-to-change-icon
 
 如果你开发过鸿蒙应用，会发现元服务工程和鸿蒙应用开发设置一致，配置文件同样遵循 module.json5 效果优先于 app.json5 ，参考 [鸿蒙应用组件配置文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-component-configuration-stage-V5)。推荐在组件级别进行配置。
 
@@ -297,6 +297,12 @@
 元服务图标必须在华为提供的标准图标底板上设计，参考 [生成元服务图标](https://developer.huawei.com/consumer/cn/doc/atomic-guides-V5/atomic-service-icon-generation-V5) 生成图标，否则会上架审核不通过。最终得到 216x216 的图标放置在 `harmony-mp-configs/entry/src/main/resources/base/media/app_icon.png` 路径内。
 
 上架时候，这个图标文件也需要在 DCloud 管理后台进行配置。
+
+### 如何查询 ClientID ClientSecet?@how-to-get-clientid
+
+访问 [开发者后台 - 凭证](https://developer.huawei.com/consumer/cn/console/api/credentials/dev99442608245310190/0) - 项目级凭证，查询到当前项目的相关信息。
+
+其中 OAth 2.0 客户端 ID 中的凭证名称标识对应的应用、元服务名称，`客户端凭证ID` 代表 `ClientID`,密钥代表 `ClientSecret` 在解析 code 时候需要。
 
 ### 发布报错 `hvigor ERROR: Invalid storeFile value. Make sure it is not null or empty. The file must be included`
 
@@ -342,7 +348,7 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 
 在 `harmony-mp-configs/entry/src/main/module.json5` 在 `requestPermissions` 字段里添加 `ohos.permission.LOCATION` 和 `ohos.permission.APPROXIMATELY_LOCATION` 两条记录。
 
-### API 登录 uni.login 获取 code 报错
+### API 登录 uni.login 获取 code 报错、如何绑定现有用户体系？@how-to-login
 
 参考[鸿蒙 Account Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-config-permissions-V5#section132012717318) 设置相关权限，添加 scope 权限。
 
@@ -351,7 +357,29 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
     2. `mp-configs/entry/src/main/modueljson5` 里有个 metadata cliend_id 确保值正确。
     3. AGC 后台配置了指纹，添加了证书。
 
-具体写法可以参考 [华为元服务登录](https://gitcode.net/dcloud/hello_uni-id-pages/-/tree/dev/pages/index) 开源代码进行参考。欢迎使用 [uni-id-pages](https://doc.dcloud.net.cn/uniCloud/uni-id/app.html) 插件加速元服务开发落地。
+具体写法可以参考 [hello_uni-id-pages](https://gitcode.net/dcloud/hello_uni-id-pages/-/tree/dev/pages/index) 开源代码进行参考。欢迎使用 [uni-id-pages](https://doc.dcloud.net.cn/uniCloud/uni-id/app.html) 插件加速元服务开发落地。
+
+通过 `uni.login` 可以得到 `code`，流程和其他小程序登录流程相似。参考 [解析凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-get-token-info-V5) 得到用户的 UnionID，开发者在这一步骤自行判断是已绑定华为 UnionID，如果未绑定，引导用户绑定现有账号体系。
+
+### 如何获取用户手机号？@how-to-get-phonenumber
+
+申请过手机号敏感权限之后，可以通过 button 获取用户手机号。使用这种方式快速注册、绑定账号体系。
+
+1. 获取手机号权限。访问 [开发者后台- API 服务 - 授权管理 - 敏感权限](https://developer.huawei.com/consumer/cn/console/api/scopeManage) 申请获取您的手机号权限。等待审核通过后继续下面操作
+2. 页面中使用下面按钮获取手机号授权 code。
+
+```html
+<button open-type="getPhoneNumber" @getphonenumber='getphonenumber'>获取手机号</button>
+```
+
+```js
+getphonenumber(e){
+  // 获取 code 数值：e.detai.code
+  console.log(e);
+}
+```
+3. 参考 [获取用户级凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-obtain-user-token-V5) 获取 `access_token`，参考 [其他场景获取用户信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-otherscene-getuserinfo-V5) 接口获取用户手机号。
+
 
 ### API 获取网络类型失败、手机震动不等效
 
@@ -492,3 +520,12 @@ XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申�
 有用户反馈在 Windows 平台下运行 DevEco 原生元服务正常，使用 HBuilderX 运行空白工程会卡主无法完成。发现是个别系统安全工具会默认拦截，拦截发生在 DevEco 调用内置的 node 处理编译时候。提示文案：“有程序正在进行可疑操作，建议阻止”。
 
 目前没有好的方案解决，建议始终信任 DevEco 的操作，或者临时退出安全软件。有相关经验也欢迎交流反馈。
+
+### 发行应用时候提示上传失败
+
+- 场景一 `[AppGalleryConnectPublishServicelapp state can not be modified!` 当前应用可能已经在审核中
+
+### 常见上架驳回错误原因
+
+- 元服务图标（最近任务列表图标）未使用平台提供的元服务图标生成工具生成，图标使用不规范。参考 [如何修改元服务默认标题、图标、启动图等信息？](#how-to-change-icon)
+- 元服务存在自定构造的登录页面，不符合华为应用市场审核标准。参考 [API 登录 uni.login 获取 code 报错、如何绑定现有用户体系？](#how-to-login)

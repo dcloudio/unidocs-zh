@@ -195,10 +195,6 @@ uni.showModal({
 
 从底部向上弹出操作菜单
 
-|元服务|
-|:-:|
-|x|
-
 <!-- UNIAPPAPIJSON.showActionSheet.compatibility -->
 
 **OBJECT参数说明**

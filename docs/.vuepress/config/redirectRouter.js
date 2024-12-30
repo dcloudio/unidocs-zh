@@ -114,6 +114,7 @@ const routerMap = {
 	'/tutorial/harmony/dev#harmonyos特性说明': '/tutorial/harmony/built-in-module.html',
 	'/tutorial/harmony/dev': '/tutorial/harmony/intro.html',
 	
+	'/tutorial/run/run-app-harmony.': '/tutorial/harmony/runbuild.',
 }
 
 function fileNameToLowerCase (path) {

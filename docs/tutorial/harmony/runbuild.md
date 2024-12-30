@@ -1,37 +1,26 @@
 # 运行和发行
 
-> HBuilderX 版本需 ≥ 4.24
-
 > [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)
 
-## 兼容性说明
+## 兼容性说明@compatibility
 
-1. 鸿蒙开发只支持Vue3，不支持Vue2、不支持plus、但支持nvue
-2. nvue编译到鸿蒙后非原生渲染，而是与web一样渲染（自动注入一些默认样式进行兼容）
-3. Vue3也支持选项式代码风格，参考[Vue2升Vue3指南](https://uniapp.dcloud.net.cn/tutorial/migration-to-vue3.html )
-4. HBuilderX 4.41+ 开始运行到鸿蒙设备时支持修改代码后热刷更新
-5. HBuilderX 4.41+ 开始运行到鸿蒙设备时控制台显示的应用日志支持回源代码
+- HBuilderX 4.24+ 开始支持运行到鸿蒙平台
+- 鸿蒙开发只支持Vue3、不支持Vue2，不支持plus、但支持nvue
+- nvue编译到鸿蒙后非原生渲染，而是与web一样渲染（自动注入一些默认样式进行兼容）
+- Vue3也支持选项式代码风格，参考[Vue2升Vue3指南](https://uniapp.dcloud.net.cn/tutorial/migration-to-vue3.html)
+- HBuilderX 4.31+ 构建的鸿蒙运行包不支持 x86_64 平台，会影响到 Windows 系统和部分 Mac 系统的鸿蒙模拟器无法使用，需使用真机调试
+- HBuilderX 4.41+ 开始运行到鸿蒙设备时支持修改代码后热刷更新
+- HBuilderX 4.41+ 开始运行到鸿蒙设备时控制台显示的应用日志支持回源代码
+- HBuilderX 4.43+ 开始支持将 `mainfest.json` 里面配置的应用版本名称/应用版本号（`versionName`/`versionCode`）应用于鸿蒙平台，且优先于 `harmony-configs/AppScope/app.json5` 中的设置
 
 ## 开发环境要求@env
 
 - HBuilderX 4.24+ [下载地址](https://www.dcloud.io/hbuilderx.html)
-- DevEco-Studio [下载地址](https://developer.huawei.com/consumer/cn/download/)
-  - HBuilderX 4.24+ 要求 DevEco-Studio 5.0.3.400+，HBuilderX 4.31+ 要求 DevEco-Studio 5.0.3.800+。
-  - 鸿蒙系统版本 API 12 以上 （DevEco-Studio有内置鸿蒙模拟器）
-- HBuilderX 4.31+ 构建的鸿蒙运行包不支持 x86_64 平台，会影响到 Windows 系统和部分 Mac 系统的鸿蒙模拟器无法使用，需使用真机调试
-- **项目的路径不要太深，如果项目路径过长会导致编译失败，建议将项目放在盘符根目录下**
-
-**Windows系统如使用模拟器则需要开启以下功能**
-
-打开控制面板 - 程序与功能 - 开启以下功能
-
-1. Hyper-V
-2. Windows 虚拟机监控程序平台
-3. 虚拟机平台
-
-注意: 需要win10专业版或win11专业版才能开启以上功能，家庭版需先升级成专业版或企业版
-
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085210915b1knhu7l3u8.png)
+- DevEco Studio [下载地址](https://developer.huawei.com/consumer/cn/download/)
+  - HBuilderX 4.24+ 要求 DevEco Studio 5.0.3.400+，HBuilderX 4.31+ 要求 DevEco Studio 5.0.3.800+。
+  - 鸿蒙系统版本 API 12 以上 （DevEco Studio有内置鸿蒙模拟器）
+- 如果没有符合兼容性要求的模拟器，就需要有真机作为运行设备
+- **项目的路径不要太深，如果项目路径过长会导致编译失败，建议将项目放在盘符根目录下。也不要包含中文、空格和其它特殊字符。**
 
 ### 调试运行的方式@run-mode
 
@@ -44,7 +33,7 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 新的内置模板的方式虽然在调试运行过程中不再调起 DevEco Studio，但一般来说仍然需要安装 DevEco Studio，因为：
 
-1. 需要使用 DevEco Studio 提供的鸿蒙工具链来完成相关操作。
+1. HBuilderX 需要使用 DevEco Studio 提供的鸿蒙工具链来完成相关操作。
 2. 启动鸿蒙模拟器这个操作只能在 DevEco Studio 中完成。
 3. 调试运行时如果需要进行数字签名，可以在 DevEco Studio 中自动申请调试证书。
 
@@ -52,21 +41,20 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 在 DevEco Studio 中打开任意一个项目（也可以新建一个空项目），然后在下图的位置进入设备管理器：
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085379828ap3pkhhfmig.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085379828ap3pkhhfmig.png)#{.zooming style="max-height:200px"}
 
 如果没有登录华为账号，此时需要先登录，登录成功后看到如下页面
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200854641084hsm583p5jo.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200854641084hsm583p5jo.png)#{.zooming style="max-height:200px"}
 
 选择模拟器型号，选第一个即可
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200855617759sfquhr1j0o.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200855617759sfquhr1j0o.png)#{.zooming style="max-height:200px"}
 
 安装完模拟器后，点击启动按钮启动模拟器
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200856058101582lbghgf8.png)
-
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085712493il2ep17ldg8.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200856058101582lbghgf8.png)#{.zooming style="max-height:200px"}
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085712493il2ep17ldg8.png)#{.zooming style="max-height:200px"}
 
 ### 连接鸿蒙真机@connectmobile
 
@@ -74,47 +62,15 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 打开鸿蒙手机开发者模式，开启USB调试，通过USB线连接电脑，在此处能看到对应的设备标识符则表示连接成功
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720091392422r91cpejpp7g.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720091392422r91cpejpp7g.png)#{.zooming style="max-height:200px"}
 
-### 证书签名配置指南@signature
+## 配置 HBuilderX settings.json@hbxsettings
 
-**注意：配置签名需要先启动模拟器或连接真机后才能配置**
+打开HBuilderX，点击上方菜单 - 工具 - 设置，再点击 运行配置，在鸿蒙运行配置中设置 DevEco Studio 的安装路径。
 
-点击 DevEco-Studio 上方菜单 File - Project Structure...
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0c206e8a-868f-49de-8ca2-e7a2d2b768a8.png)#{.zooming style="max-height:200px"}
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720087126462d9133uo0hmg.png)
-
-**生成运行调试证书和签名**
-
-在弹出的窗体中选择 Project - Signing Configs，并打钩 Automatically generate signature，即可自动生成签名
-
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200873385940vk5oj9ihk.png)
-
-**使用发布证书生成发布用的签名**
-
-需要先[申请发布证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-releasecert-0000001946273961)
-
-在弹出的窗体中选择 Project - Signing Configs，并手动填写证书信息和密钥
-
-依次点击 `Apply` 和 `OK` 使签名生效
-
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720259265552t0m33hs637.png)
-
-如果是运行证书还是发布证书，生成的签名在文件 build-profile.json5 内
-
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/23185c32-0342-4ef0-a62d-e5432050a48d.png)
-
-将它复制到你的 uni-app 项目根目录的 `harmony-configs/build-profile.json5` 的 signingConfigs 配置中
-
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1a2b004c-2b31-4a48-912e-b31ed4740449.png)
-
-### 配置 HBuilderX settings.json@hbxsettings
-
-打开HBuilderX，点击上方菜单 - 工具 - 设置，再点击 运行配置，在鸿蒙运行配置中设置 DevEco Studio 的路径
-
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/fe28df4f-a2e1-4c40-bba2-3e4b93ae1951.png)
-
-## 运行uniapp项目到鸿蒙@run
+## 运行 uni-app 项目到鸿蒙@run
 
 1. HBuilderX 新建一个空白的 uni-app 项目，选vue3（也可使用已有的uni-app vue3项目）
 
@@ -122,33 +78,95 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 点击 HBuilderX 上方【运行】菜单 - 运行到手机或模拟器 - 运行到鸿蒙
 
-![](https://web-ext-storage.dcloud.net.cn/unicloud/ext-storage/52a7f8f1-ea77-4733-b5f2-d92d20ff87cf.png)
+![](https://web-ext-storage.dcloud.net.cn/unicloud/ext-storage/52a7f8f1-ea77-4733-b5f2-d92d20ff87cf.png)#{.zooming style="max-height:200px"}
 
-3. 【首次运行】此时如果是第一次运行本项目会在项目根目录下生成harmony-configs目录用于存放鸿蒙配置文件
+3. 【首次运行】第一次运行本项目时会在项目根目录下生成 `harmony-configs` 目录用于存放鸿蒙配置文件
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/20240914151712.png)
+参考：[更多配置指南](#configs)
 
-4. 【首次运行】配置签名信息、包名到鸿蒙配置文件内
+4. 选择运行设备
 
-参考：[修改鸿蒙工程配置](https://uniapp.dcloud.net.cn/tutorial/run/run-app-harmony.html#configs)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/20240914152406.jpg)#{.zooming style="max-height:200px"}
 
-5. 再次运行项目，选择目标设备
+5. 【首次运行之后】配置签名证书资料
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/20240914152406.jpg)
+参考：[证书签名配置指南](#signing)
+
+## 证书签名配置指南@signing
+
+数字签名证书需要配置到 `harmony-configs/build-profile.json5` 中，这个文件等同于一个普通的鸿蒙工程中对应的文件。
+
+申请证书的操作要在 DevEco Studio 中完成，如果是自己在华为的 AppGallery Connect 网站上手动申请证书，也需要 DevEco Studio 配合才能最终得到所需的 `build-profile.json5` 文件。
+
+DevEco Studio 且须先打开一个鸿蒙工程才可进行证书相关的操作，建议先执行一次【运行到鸿蒙】，然后在项目的 `unpackage` 目录下找到临时生成的鸿蒙工程目录，
+在 DevEco Studio 里面打开后再进行后面的操作。
+如果是自己在 DevEco Studio 里面独立创建一个新的鸿蒙工程，虽然也可以用于申请证书，但需注意以下几点：
+
+1. 由于证书资料中包含应用的包名，所以在这个鸿蒙工程中设置的应用包名应该与将要开发的 uni-app 应用项目中设置的鸿蒙应用包名（在 `manifest.json` 中设置）相一致，这样申请到的证书资料才会有效；
+
+2. 这个鸿蒙工程的根目录中的 `build-profile.json5` 文件中的内容应该与 HBuilderX 自动生成的鸿蒙工程中的对应文件保持一致，否则在后续操作中可能产生异常。
+
+3. 如果有用到 ACL 权限，需在 `entry/src/main/module.json5` 中声明，这样获得的证书中才能包含相关的授权。参考 [权限配置指南](#permission)
+
+完成申请证书的操作之后，把这个鸿蒙工程中的 `build-profile.json5` 文件复制到 uni-app 项目的 `harmony-configs/build-profile.json5` 即可。
+
+### 打开证书配置对话框@signing-dialog
+
+点击 DevEco Studio 上方菜单 File - Project Structure...
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720087126462d9133uo0hmg.png)#{.zooming style="max-height:200px"}
+
+### 调试用的数字签名证书@signing-debug
+
+在使用模拟器进行调试运行的时候，一般是不需要做数字签名的，但如果是用真机进行调试运行，或者业务代码用到了 ACL 权限，那么就需要申请并配置一个**调试证书**用于数字签名。
+
+参考 [申请调试证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugcert-0000001914263178)
+
+在对话框中选择 Project - Signing Configs，并勾选 Automatically generate signature，即可自动生成签名证书资料
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200873385940vk5oj9ihk.png)#{.zooming style="max-height:200px"}
+
+参考 [自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-signing-V5#section18815157237)
+
+通过 DevEco Studio 自动申请得到的证书，缺省会保存到电脑的用户目录下，在 Windows 系统中一般是 `%USERPROFILE%\.ohos\config`，在 Mac 系统中一般是 `~/.ohos/config`。
+配置信息中包含的三个文件缺省都是采用绝对路径来表示，也可以把这些文件移到 `harmony-configs` 目录下，这样就可以使用相对路径来表示，相对于 `harmony-configs` 目录。
+如果要移动证书文件的位置，需注意跟这三个文件一起的还有一个名为 `material` 的目录，也要一起移动。
+
+也可以在对话框中填写手动申请到的证书，填写的时候注意三个文件要在同一个目录。
+
+完成以上操作后，鸿蒙工程中的 `build-profile.json5` 文件就包含了完整的调试证书配置信息（在 `app.signingConfigs` 数组里，`name` 属性的值是 `"default"`）。
+
+### 发布用的数字签名证书@signing-release
+
+在发行安装包的时候，一定需要配置一个**发布证书**，否则只能拿到一个未签名的安装包，是无法实际使用的。
+
+发布证书只能手动申请，申请完成后把拿到的相关资料文件填写到 DevEco Studio 里面，填写的时候注意三个文件要在同一个目录。
+
+参考 [申请发布证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-releasecert-0000001946273961)
+
+在对话框中选择 Project - Signing Configs，不要勾选 Automatically generate signature，创建一个名为 `release` 的配置项。
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/8ab460c4-33c0-465e-9704-10d6bb935448.png)#{.zooming style="max-height:200px"}
+
+完成以上操作后，鸿蒙工程中的 `build-profile.json5` 文件就包含了完整的发布证书配置信息（在 `app.signingConfigs` 数组里，`name` 属性的值是 `"release"`）。
+
+### 把生成的证书配置信息拷贝到 uni-app 项目中@signing-profile
+
+无论是调试证书还是发布证书，生成的证书资料信息都在鸿蒙工程根目录下的 `build-profile.json5` 文件中，把这个文件复制到 uni-app 项目的 `harmony-configs/build-profile.json5` 即可。
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1a2b004c-2b31-4a48-912e-b31ed4740449.png)#{.zooming style="max-height:200px"}
 
 ## 发行鸿蒙应用到应用市场@publish
 
-1. 使用hbx（4.28以上），点击【发行】- 【App-Harmony-本地打包】
+1. 使用 HBuilderX 4.28+，点击【发行】-【App-Harmony-本地打包】
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/c42f9a21-d782-41e3-9342-bfa3265cbc54.png)
+    ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/c42f9a21-d782-41e3-9342-bfa3265cbc54.png)#{.zooming style="max-height:200px"}
 
-项目第一次发行时，会出现如下提示
+    如果项目中没有 `harmony-configs` 目录，此时会自动生成。
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/d6bee0ad-97b2-4d11-ba47-9e6b07d3698b.png)
+2. 如果日志窗口提示没有配置签名证书资料，则去 [配置发布证书的资料](#signing-release)
 
-2. 配置[签名](#signature)
-
-3. 配置完签名后，再次点击【发行】- 【App-Harmony-本地打包】即可得到已签名的 `.app` 安装包文件
+3. 配置完证书资料后，再次点击【发行】- 【App-Harmony-本地打包】即可得到已签名的 `.app` 安装包文件
 
 4. 最后还需参考鸿蒙官方文档发布鸿蒙应用到应用市场，详见[文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-releaseharmony-0000001933963166)
 
@@ -156,7 +174,7 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 部分API需要在配置文件显示声明权限才能调用，权限的配置文件路径为：`/harmony-configs/entry/src/main/module.json5`，配置节点为：`requestPermissions`，如下图所示
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/bfb249bd-30c0-4be4-b50e-e2695860507d.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/bfb249bd-30c0-4be4-b50e-e2695860507d.png)#{.zooming style="max-height:200px"}
 
 具体请查看以下文档
 
@@ -164,37 +182,82 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 2. [基础权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5)
 3. [受限权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/restricted-permissions-V5)
 
-## 更多配置指南@moreconfig
+## 更多配置指南@configs
 
-项目的根目录下有一个 `harmony-configs` 目录，每当执行跟鸿蒙相关的操作时，HX 都会检查这个目录，如果目录不存在则会自动创建。该目录中初始会存在几个常用的配置文件。
+HBuilderX 支持把 `manifest.json` 里面的一些配置项传递给鸿蒙工程，打开这个文件，下面这些配置项与鸿蒙相关：
 
-在执行运行或者发行到鸿蒙的操作过程中，HX 会根据内置模板生成一个鸿蒙工程目录（一般在 `unpackage` 目录下游），然后把 `harmony-configs` 目录下的所有内容都原样覆盖过去，
+### 基础配置@config-basic
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/da24a937-cb3e-4afb-b8c6-604b31b3fb3d.png)#{.zooming style="max-height:200px"}
+
+目前这里的应用名称、应用版本名称、应用版本号将传递给鸿蒙工程使用。
+
+### 鸿蒙App配置@config-app-harmony
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/245d9e69-055e-402a-8e71-634443f359df.png)#{.zooming style="max-height:200px"}
+
+这里的配置是专用于传递给鸿蒙工程使用。
+
+以上的配置项有可能随着 HBuilderX 的升级而有所增加，其优先级高于后面所述的 `harmony-configs` 目录。如果这些仍没有满足需求，则可以自行在 `harmony-configs` 目录中进行配置。
+
+### 使用 `harmony-configs` 配置目录@config-dir
+
+项目的根目录下有一个 `harmony-configs` 目录，每当执行跟鸿蒙相关的操作时，HBuilderX 都会检查这个目录，如果目录不存在则会自动创建。
+HBuilderX 早期版本所创建目录初始会存在几个常用的配置文件，4.36+ 版本该目录初始为空。
+
+在执行运行或者发行到鸿蒙的操作过程中，HBuilderX 会根据内置模板生成一个鸿蒙工程目录（一般在 `unpackage` 目录下游），然后把 `harmony-configs` 目录下的所有内容都原样覆盖过去，
 然后再调用鸿蒙的工具链进行编译打包等操作。
 
-所以，`harmony-configs` 目录中的所有文件最终都会原样进入鸿蒙工程目录参与项目构建，所有需要对鸿蒙工程的定制化配置都可以写在这个目录下（注意：在 `manifest.json` 的【鸿蒙配置】中设置的选项将具有更高的优先级）。
+所以，`harmony-configs` 目录中的所有文件最终都会原样进入鸿蒙工程目录参与项目构建，所有需要对鸿蒙工程的定制化配置都可以写在这个目录下。
+
+**注意**：在 `manifest.json` 支持的鸿蒙相关的配置项将具有更高的优先级。
+
+**注意**：`harmony-configs` 目录下应该**仅放置必要的文件**，多余的文件有可能对鸿蒙工具链的执行产生意外的干扰，导致项目无法正常编译打包。
+
+**注意**：当升级 HBuilderX 到新版本之后，由于其内置的鸿蒙工程模板有可能调整，导致与旧版本的配置文件产生不兼容的情况，所以如果以前正常的项目在升级后出现打包错误的话，
+建议清空 `harmony-configs` 目录的原有内容（注意做好备份），再删除 `unpackage` 目录，重新运行之后再按需要逐步恢复 `harmony-configs` 里面应有的配置。
 
 关于 `harmony-configs` 目录的使用要遵守鸿蒙的技术规范，具体可参考 [鸿蒙官方文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-configuration-file-stage-V5)
+
+经常会用到的配置文件有：
+
+- `harmony-configs/build-profile.json5`
+
+    其中的 `app.signingConfigs` 用于设置数字签名资料，参见 [证书签名配置指南](#signing)
+
+- `harmony-configs/entry/src/main/module.json5`
+
+    修改其中的 `module.requestPermissions` 来设置运行权限，参见 [权限配置指南](#permission)
+
+- `harmony-configs/AppScrope/app.json5`
+
+    其中的 `app.bundleName` 用于设置应用包名。
+    HX 4.31+ 已经支持在项目的 `manifest.json` 里面以图形界面修改应用包名，如果在那里做了设置，将优先于这里的设置。
+
+    其中的 `app.versionName` 和 `app.versionCode` 用于设置应用版本名称和版本号。
+    HX 4.43+ 已经支持使用项目的 `manifest.json` 里面的应用版本名称和版本号，将优先于这里的设置。
+
+    一般而言，新版本已经不再需要 `harmony-configs/AppScrope/app.json5` 文件了。
 
 ## 注意事项@tips
 
 1. 移植已有的 uni-app 项目源码时，如有其他 npm 依赖，请自行安装
 2. 现阶段条件编译仅 APP-HARMONY、APP 可以命中鸿蒙平台
-3. 每次HBuilderX改动源码后，DevEco-Studio 内需要点重新运行才能生效
-4. 如果模拟器白屏了，尝试重启软件 DevEco-Studio，再重启项目
+3. HBuilderX 4.27 以前的版本，在 HBuilderX 里运行后，需要再去鸿蒙 DevEco Studio 里运行；在 HBuilderX 中改动源码后，需要在 DevEco Studio 内点重新运行才能生效
+4. 如果模拟器白屏了，尝试重启软件 DevEco Studio，再重启项目
 5. 如果模拟器无法连接了，尝试重启电脑
-6. 在HBuilderX里运行后，需要再去鸿蒙 DevEco Studio里运行
-7. 在HBuilderX里修改代码后，需要去鸿蒙 DevEco Studio里重新运行
-8. 如果有多个uni-app项目要编译到鸿蒙，那么鸿蒙离线sdk需要放置多份，每个uni-app的manifest中配置不同的离线sdk地址，否则会冲突，鸿蒙设备上目前没有基座概念
 
 ## 常见问题@question
 
-### 运行失败报错如 `Unexpected token (Note that you need plugins to import files that are not JavaScript)` 或 `Please make sure that the splash page has one and only one '@Entry' decorator`
+### 运行失败报错如 `Unexpected token (Note that you need plugins to import files that are not JavaScript)` 或 `Please make sure that the splash page has one and only one '@Entry' decorator`@long-path
 
-请将 HBuilderX 项目向上层目录移动，直到运行成功。这是因为鸿蒙在编译 ArkTs 时，`.ets` 文件路径总长不能大于 255 个字符。
+鸿蒙工具链运行时要求所涉及到的文件的路径总长度不能超过 255 个字符。请尝试把 uni-app 项目的目录位置改到一个比较短的路径下，可能会避开这个问题。
 
-### 如何修改应用名称、图标、权限等信息@q1
+### 如何修改应用名称、版本、图标、权限等信息@q1
 
-参考鸿蒙官方文档：[应用/组件级配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-component-configuration-stage-V5)
+manifest.json 里面已经支持一些应用配置项，未直接支持的可以通过 `harmony-configs` 来设置，详情参见 [更多配置指南](configs)。
+
+同时可以参考鸿蒙官方文档：[应用/组件级配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-component-configuration-stage-V5)
 
 ### 应用图标资源规范@q2
 
@@ -204,7 +267,7 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 - 图标资源尺寸必须为1024*1024px
 - 图标资源必须为为正方形图像，系统会为对应场景自动生成遮罩裁切
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/b0a3c063-02c4-47f3-a23e-5d04ad5c4293.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/b0a3c063-02c4-47f3-a23e-5d04ad5c4293.png)#{.zooming style="max-height:200px"}
 
 ### 启动图资源规范@q3
 
@@ -242,23 +305,34 @@ console.log("安卓、苹果不会编译，鸿蒙会编译，小程序和Web也�
 
 ### 鸿蒙DevEco Studio如何开启热重载@q4
 
-虽然鸿蒙官方文档提供了如何开启热重载，详见[文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hot-reload-0000001527628941-V5)，但目前只能针对ets文件的修改进行热更，还无法针对uniapp打包的js文件进行热更。
+HBuilderX 4.27 以前的版本需要在 DevEco Studio 中运行由 uni-app 项目生成的鸿蒙工程，虽然鸿蒙官方文档提供了如何开启热重载，详见[文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hot-reload-0000001527628941-V5)，
+但目前只能针对 ets 文件的修改进行热更，还无法针对 uni-app 打包的 js 文件进行热更。
+
+HBuilderX 4.27+ 支持直接运行到鸿蒙设备，修改源代码之后需重新调用鸿蒙工具链编译打包，并重新安装到鸿蒙设备上运行，不支持热重载。
+
+HBuilderX 4.41+ 支持热重载，但跟具体修改的代码文件有关，如果进行了无法热重载的修改，会自动重新安装整个应用并重新运行。
 
 ### 如何查看console打印的日志@q5
 
-目前编译到鸿蒙时，在uniapp页面通过console.log打印日志可以直接在 HBuilderX 查看
+运行到鸿蒙时，在 uni-app 页面通过 console.log 打印日志可以直接在 HBuilderX 查看。
 
-注意：在uniapp页面打印对象或数组时，需要 `JSON.stringify` ，如 `console.log("obj", JSON.stringify(obj))`
+HBuilderX 4.41+ 在真机运行时需要连接到与主机电脑相同的局域网才能正确接收到日志。
+
+注意：在 UTS 代码里面打印对象或数组时，需要 `JSON.stringify` 才能正确显示内容，如 `console.log("obj", JSON.stringify(obj))`
 
 ### 运行出现白屏或闪退怎么解决?@q6
 
-首先尝试重新编译uniapp项目，并重启模拟器或真机，如果依然白屏或闪退，那可能是你项目中有用到了鸿蒙不支持的组件或者api，可以尝试pages.json进行代码二分法排查（删除一半页面如果正常了代表被删除的那一半页面中有造成白屏或闪退的页面）
+首先尝试重新编译 uni-app 项目，并重启模拟器或真机，如果依然白屏或闪退，那可能是你项目中有用到了鸿蒙不支持的组件或者api，可以尝试pages.json进行代码二分法排查（删除一半页面如果正常了代表被删除的那一半页面中有造成白屏或闪退的页面）
 
 ### 模拟器已启动，但无法连接?@q7
 
-确保[签名](#signature)没有问题的情况下，尝试重启电脑
+确保[签名证书资料](#signing)没有问题的情况下，尝试重启电脑
 
 ### 报启动鸿蒙失败，请手动启动鸿蒙@q8
+
+此问题仅会在 HBuilderX 4.27 以前的版本存在，因为编译 uni-app 代码完成之后需要调起 DevEco Studio 来运行鸿蒙工程。
+
+请用下面的方法确保设置的 DevEco Studio 安装路径是正确的，重新设置之后请重启 HBuilderX。
 
 **Windows系统**
 
@@ -266,7 +340,7 @@ console.log("安卓、苹果不会编译，鸿蒙会编译，小程序和Web也�
 
 Windows系统快速复制路径方法
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1721024978448hkblu60vadg.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1721024978448hkblu60vadg.png)#{.zooming style="max-height:200px"}
 
 注意：复制后的 `\` 要改成 `/`
 
@@ -280,7 +354,7 @@ Windows系统快速复制路径方法
 
 Mac系统快速复制路径方法
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/ee1f4941-3736-4df8-a35c-bb3929fb124f.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/ee1f4941-3736-4df8-a35c-bb3929fb124f.png)#{.zooming style="max-height:200px"}
 
 2. 如果步骤1操作完还是不行，请尝试
 
@@ -300,20 +374,98 @@ HBuilderX 4.31起支持uniPush推送，具体配置请参考[文档](https://uni
 
 临时解决方案：在鸿蒙项目`entry/obfuscation-rules.txt`文件中增加一行`-disable-obfuscation`来禁用混淆。
 
-### 1.3.7及以上模板在部分设备的模拟器上无法运行，报错`Install Failed: error: failed to install bundle`@q12
+### 在部分设备的模拟器上无法运行，报错`依赖包与运行设备不兼容 Install Failed: error: failed to install bundle`@install-parse-native-so-failed
 
 > 此章节仅针对HBuilderX 4.29及之前版本，4.31及之后的版本暂不支持在x86_64平台的模拟器上运行。
 
-此问题是由于支付宝sdk兼容性造成的，目前只能删除支付宝sdk依赖，如下图所示操作，删除后需要点右上角的 Sync Now，并等待 Sync 结束
+在 x86_64 平台（绝大多数 Windows 系统和部分 MacOS 系统）上使用【运行到鸿蒙】并选择了模拟器作为运行设备的时候，可能会遇到这个报错。
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/2020d045-c7d8-4b3a-ba21-d4f301900d00.png)
+这是由于 HBuilderX 4.29 及之前版本在默认配置里面依赖了支付宝SDK，而这个包不支持运行在 x86_64 平台的模拟器上，所以在打包后安装到模拟器设备时会报错。
 
-删除后还需要点右上角的 Sync Now，并等待 Sync 结束
+出现这种情况时，如果并不需要这个依赖，可以修改 `harmony-configs/oh-package.json5` 文件，在 `dependencies` 里面删除 `@cashier_alipay/cashiersdk` 就行了；
+如果确实需要，那就只能改用真机设备来运行了。
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/908ef551-8605-4add-b68f-42aa497109b7.png)
+### harmony应用怎样调试？@q13
 
-### harmony应用怎样调试？
+目前 HBuilderX 尚不支持断点方式对运行于鸿蒙设备上的 uni-app 应用进行调试，必要时可借助 DevEco Studio 在鸿蒙工程层面进行调试。
+
+HBuilderX 4.27+ 开始不再自动调起 DevEco Studio，需要手动调起 DevEco Studio 打开由 HBuilderX 自动生成的鸿蒙工程目录，
+该目录可以在 `unpackage` 目录下找到，一般是在类似 `unpackage/debug/app-harmony-xxx` 的位置，如果是 cli 项目的话则是在 `dist` 目录下。
 
 可以参考鸿蒙的文档 [使用DevTools工具调试前端页面](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/web-debugging-with-devtools-V5) 进行处理。
 
 在 uni-app 的开发模式 `setWebDebuggingAccess` 会自动开启，此步骤可以跳过。
+
+### Windows 系统中如何使用模拟器@q14
+
+首先，HBuilderX 4.31+ 构建的鸿蒙运行包依赖于运行设备中的 JSVM，由于兼容性限制目前尚不能运行于 x86_64 平台的模拟器，所以绝大部分 Windows 系统用户无法使用鸿蒙模拟器。
+
+**在满足兼容性要求的前提下，如果要在 Windows 系统如使用模拟器则需要开启以下功能**
+
+打开控制面板 - 程序与功能 - 开启以下功能
+
+1. Hyper-V
+2. Windows 虚拟机监控程序平台
+3. 虚拟机平台
+
+注意: 需要win10专业版或win11专业版才能开启以上功能，家庭版需先升级成专业版或企业版
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085210915b1knhu7l3u8.png)#{.zooming style="max-height:200px"}
+
+### 报错 `运行所需的权限没有签名授权`@permissions-failed
+
+参考 [权限配置指南](#permission)
+
+这是由于默认配置里面声明申请了一些权限，其中包含受限权限（需要白名单授权的 ACL 权限），这就要求安装包必须用具备足够权限授权的数字证书进行签名，否则无法安装到设备上。
+
+目前已知的 ACL 权限包括：
+
+  - `ohos.permission.WRITE_IMAGEVIDEO`
+  - `ohos.permission.WRITE_CONTACTS`
+  - `ohos.permission.READ_PASTEBOARD`
+
+如果业务代码里面并没有实际使用到这些权限，一个简单的办法就是修改 `harmony-configs/entry/src/main/module.json5` 文件，
+删除 `module.requestPermissions` 数组里面涉及这三项的内容，重新运行即可。
+**注：从 HX 4.31+ 开始默认配置中已经不再包含 ACL 权限，如果需要的话请自行修改 `harmony-configs/entry/src/main/module.json5` 文件添加权限声明。**
+
+如果确实需要这里的某些权限，那就需要申请一个调试证书，并配置到 `harmony-configs/build-profile.json5` 文件的 `app.signingConfigs` 中。
+具体请参考 [调试用的数字签名证书](#signing-debug)
+
+### 报错 `配置的 bundleName 与签名证书不符`@bundle-name-mismatch
+
+如果配置了签名证书，打包之后会进行签名，但如果项目中配置的 `bundleName` 与签名证书申请时所填报的 `bundleName` 不符，就会报这个错。
+可以修改 `harmony-configs/AppScrope/app.json5` 文件中 `app.bundleName` 为签名证书申请时所填的应用包名，
+也可以根据配置的 `bundleName` 重新申请证书。
+
+**注：从 HX 4.31+ 开始应该在项目的 manifest.json 文件的【鸿蒙App配置】中设置【包名】。**
+
+### 报错 `签名验证失败`@signature-verification-failed
+
+当运行到鸿蒙时，在把打包后的 `.hap` 安装到设备上时，可能会遇到这个报错。
+一个常见的原因是当前使用的设备没有添加到签名用的 profile 文件中，要解决这个问题，
+首先要 [注册调试设备](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-device-0000001946142249)，
+然后 [申请调试Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102)
+或修改已有的 profile 文件并重新下载。
+
+### 报错 `没有签名无法安装`@no-signature-file
+
+当运行到鸿蒙时，如果选择真机为运行设备，则必须配置好数字签名证书，否则无法安装到真机上。
+
+### 报错 `签名不一致`@sign-info-inconsistent
+
+当运行到鸿蒙时，所使用的签名证书与鸿蒙设备中已安装的应用不一致，此时无法覆盖安装。请先手动删除已安装的应用。
+
+### 报错 `安装超时，设备没有响应`@install-timeout
+
+有记录显示，在 Windows 系统下，运行到鸿蒙时如果选择模拟器作为运行设备，可能会出现超时的情况，原因尚不清楚，有可能与模拟器系统里存在以前安装的相同包名的应用有关，
+如遇这种情况，可以尝试手工在模拟器里面删除旧的应用然后重试。
+
+### 报错 `检测到App真机运行插件出现破损`@launcher-damaged
+
+由于未知原因导致【App真机运行】插件出现破损，需要重新安装。
+请在 HX 主菜单中选择【工具>插件安装】，找到【App真机运行】插件并点击卸载，然后在主菜单中选择【运行>运行到手机或模拟器>下载真机运行插件】重新安装。
+如果安装过【App真机运行(uni-app x)】插件，需要先卸载掉，否则无法卸载【App真机运行】插件。
+
+### 报错 `未正确配置鸿蒙应用的包名`@bundlename-incorrect
+
+应该在 `manifest.json` 的【鸿蒙配置】中设置正确的包名，具体要求请参考 [配置应用包名](https://developer.huawei.com/consumer/cn/doc/app/agc-help-createharmonyapp-0000001945392297)

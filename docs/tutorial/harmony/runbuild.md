@@ -255,7 +255,7 @@ HBuilderX 早期版本所创建目录初始会存在几个常用的配置文件�
 
 ### 如何修改应用名称、版本、图标、权限等信息@q1
 
-manifest.json 里面已经支持一些应用配置项，未直接支持的可以通过 `harmony-configs` 来设置，详情参见 [更多配置指南](configs)。
+manifest.json 里面已经支持一些应用配置项，未直接支持的可以通过 `harmony-configs` 来设置，详情参见 [更多配置指南](#configs)。
 
 同时可以参考鸿蒙官方文档：[应用/组件级配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-component-configuration-stage-V5)
 

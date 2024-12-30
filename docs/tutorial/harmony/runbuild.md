@@ -249,10 +249,6 @@ HBuilderX 早期版本所创建目录初始会存在几个常用的配置文件�
 
 ## 常见问题@question
 
-### 运行失败报错如 `Unexpected token (Note that you need plugins to import files that are not JavaScript)` 或 `Please make sure that the splash page has one and only one '@Entry' decorator`@long-path
-
-鸿蒙工具链运行时要求所涉及到的文件的路径总长度不能超过 255 个字符。请尝试把 uni-app 项目的目录位置改到一个比较短的路径下，可能会避开这个问题。
-
 ### 如何修改应用名称、版本、图标、权限等信息@q1
 
 manifest.json 里面已经支持一些应用配置项，未直接支持的可以通过 `harmony-configs` 来设置，详情参见 [更多配置指南](#configs)。
@@ -320,9 +316,22 @@ HBuilderX 4.41+ 在真机运行时需要连接到与主机电脑相同的局域�
 
 注意：在 UTS 代码里面打印对象或数组时，需要 `JSON.stringify` 才能正确显示内容，如 `console.log("obj", JSON.stringify(obj))`
 
+### 运行到鸿蒙时不显示日志@no-log-output
+
+HBuilderX 早期版本使用鸿蒙工具链中的 hilog 来收集日志并显示，可能因为设备连接问题或者鸿蒙系统版本升级调整等原因导致日志收集不到。
+
+HBuilderX 4.41+ 在真机运行时需要连接到与主机电脑相同的局域网才能正确接收到日志。
+
+另外，HBuilderX 4.41+ 在控制台工具条中增加了“显示原生日志”的选项，开启后可以看到更多的日志内容。
+
+作为一个应急处理方案，可以打开一个命令行窗口，执行命令 `hdc shell hilog -T JSAPP` 来直接从连接的鸿蒙设备查看日志。
+
 ### 运行出现白屏或闪退怎么解决?@q6
 
-首先尝试重新编译 uni-app 项目，并重启模拟器或真机，如果依然白屏或闪退，那可能是你项目中有用到了鸿蒙不支持的组件或者api，可以尝试pages.json进行代码二分法排查（删除一半页面如果正常了代表被删除的那一半页面中有造成白屏或闪退的页面）
+如果配置了 `harmony-configs/build-profile.json5` 文件，请确认里面的 `app.products`设置了 `"useNormalizedOHMUrl": true`。
+
+如果不是上述的原因，最常见的情况就是使用了不支持的组件或者 API，请逐个排查所使用的组件和 API 是否已经兼容了鸿蒙平台，
+可以尝试对 `pages.json` 进行代码二分法排查（删除一半页面如果正常了代表被删除的那一半页面中有造成白屏或闪退的页面）。
 
 ### 模拟器已启动，但无法连接?@q7
 
@@ -411,6 +420,46 @@ HBuilderX 4.27+ 开始不再自动调起 DevEco Studio，需要手动调起 DevE
 注意: 需要win10专业版或win11专业版才能开启以上功能，家庭版需先升级成专业版或企业版
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085210915b1knhu7l3u8.png)#{.zooming style="max-height:200px"}
+
+### cli 项目运行到鸿蒙时运行起来的是空项目@cli-compiler-outdated
+
+cli 项目的 uni-app 编译器是跟随项目配置的，跟 HBuilderX 的版本并不直接相关，如果是以前创建的 cli 项目，可能因为关联的编译器版本太低而出现此现象。
+
+建议升级 cli 项目的编译器版本，参考 [更新编译器的版本](https://uniapp.dcloud.net.cn/quickstart-cli.html#cliversion)
+
+### 点击“运行到鸿蒙”之后没有反应，或者提示打包失败，没有其它提示@no-harmony-build
+
+删除 `harmony-configs` 目录（如果目录里有自己修改过的内容请先做好备份），再删除 `unpackage` 目录，然后重试。
+
+### 报错如 `Permission denied`@permission-denied
+
+源代码中有资源文件（比如图片）带有只读属性，导致打包的时候鸿蒙工具链删除失败报错。找到有问题的文件去掉只读属性即可。
+
+### 报错如 `hvigor ERROR: Tools execution failed`@tools-execution-failed
+
+HBuilderX 在打包的时候会调用鸿蒙的工具链，其中用到了 java 程序，这种问题一般是因为 java 程序版本不匹配导致的。
+早期版本是优先使用环境变量 PATH 里面能找到的 java 程序，临时的解决办法是在 PATH 环境变量里去掉 java 程序的路径，再重新启动 HBuilderX。
+HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不会是这个原因了。
+
+检查电脑上安装的 java 版本，可能是版本过低。建议卸载 java 或者在 PATH 环境变量里去掉 java 的路径。
+新版本（4.31+）已调整为优先使用鸿蒙工具链自带的 java 就不会受这个影响了。
+
+### 报错如 `Unexpected token (Note that you need plugins to import files that are not JavaScript)` 或 `Please make sure that the splash page has one and only one '@Entry' decorator`@long-path
+
+鸿蒙工具链运行时要求所涉及到的文件的路径总长度不能超过 255 个字符。请尝试把 uni-app 项目的目录位置改到一个比较短的路径下，可能会避开这个问题。
+
+### 报错如 `...HBuilderX\plugins\node\npm.cmd install,pnpm execute failed`@install-pnpm-failed
+
+鸿蒙工具链在首次运行的时候需要安装一些依赖的工具，且此操作只能在 DevEco Studio 中才能正确执行，方法是在 DevEco Studio 里面随便创建一个工程然后构建运行一下即可。
+
+如果在 DevEco Studio 里面也报了同样的错误，则可以尝试自行设置 npm 的镜像源来解决问题，比如设置环境变量 `NPM_CONFIG_REGISTRY=https://registry.npmmirror.com` 使用境内的镜像源。
+
+### 报错如 `hvigor ERROR: Schema validate failed`@schema-validate-failed
+
+可能是使用的 DevEco Studio 版本过低，要求 5.0.3.800+。
+
+也可能是自行配置的 `harmony-configs/build-profile.json5` 文件里面有错误，导致 DevEco Studio 无法正确解析。
+请参考 [文档](#config-dir) 的方法确保配置正确。
 
 ### 报错 `运行所需的权限没有签名授权`@permissions-failed
 

@@ -448,7 +448,7 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 
 鸿蒙工具链运行时要求所涉及到的文件的路径总长度不能超过 255 个字符。请尝试把 uni-app 项目的目录位置改到一个比较短的路径下，可能会避开这个问题。
 
-### 报错如 `...HBuilderX\plugins\node\npm.cmd install,pnpm execute failed`@install-pnpm-failed
+### 报错如 `...HBuilderX\plugins\node\npm.cmd install,pnpm execute failed` 或 `network request to https://registry.npmjs.org/pnpm failed`@install-pnpm-failed
 
 鸿蒙工具链在首次运行的时候需要安装一些依赖的工具，且此操作只能在 DevEco Studio 中才能正确执行，方法是在 DevEco Studio 里面随便创建一个工程然后构建运行一下即可。
 

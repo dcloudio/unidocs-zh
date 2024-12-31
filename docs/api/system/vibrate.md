@@ -1,9 +1,5 @@
 ## uni.vibrate(OBJECT)
 
-|元服务|
-|:-:|
-|x|
-
 > HarmonyOS Next 不支持
 
 使手机发生振动。

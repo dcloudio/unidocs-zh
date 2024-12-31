@@ -51,7 +51,7 @@ uni.getNetworkType({
 
 |元服务|
 |:-:|
-|x|
+|1.0.4+|
 
 <!-- UNIAPPAPIJSON.onNetworkStatusChange.compatibility -->
 
@@ -80,7 +80,7 @@ uni.onNetworkStatusChange(function (res) {
 
 |元服务|
 |:-:|
-|x|
+|1.0.4+|
 
 <!-- UNIAPPAPIJSON.offNetworkStatusChange.compatibility -->
 

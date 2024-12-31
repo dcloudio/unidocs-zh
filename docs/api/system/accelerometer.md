@@ -3,7 +3,7 @@
 
 |元服务|
 |:-:|
-|x|
+|1.0.4+|
 
 <!-- UNIAPPAPIJSON.onAccelerometerChange.compatibility -->
 
@@ -48,7 +48,7 @@ uni.onAccelerometerChange(function (res) {
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|√|x|
+|HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|√|1.0.4+|
 
 <!-- UNIAPPAPIJSON.offAccelerometerChange.compatibility -->
 
@@ -77,7 +77,7 @@ uni.offAccelerometerChange(listener) // 需传入与监听时同一个的函数�
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|x|√|√|√|√|√|x|
+|√|√|√|x|√|√|√|√|√|1.0.4+|
 
 <!-- UNIAPPAPIJSON.startAccelerometer.compatibility -->
 
@@ -113,7 +113,7 @@ uni.startAccelerometer();
 
 |元服务|
 |:-:|
-|x|
+|1.0.4+|
 
 <!-- UNIAPPAPIJSON.stopAccelerometer.compatibility -->
 

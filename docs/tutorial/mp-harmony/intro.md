@@ -1,19 +1,19 @@
 # 概述
 
-> 为了丰富鸿蒙生态，为国产操作系统生态做贡献，DCloud联合华为推出开发者激励计划，uni-app开发者只需将 uni-app 项目发行为鸿蒙元服务，即可获得现金激励，发行多个元服务可以获得多份现金奖励，欢迎各位开发者积极提交，[活动详情](https://ask.dcloud.net.cn/article/41398)
+> 为了丰富鸿蒙生态，为国产操作系统生态做贡献，DCloud 联合华为推出开发者激励计划，uni-app 开发者只需将 uni-app 项目发行为鸿蒙元服务，即可获得现金激励，发行多个元服务可以获得多份现金奖励，欢迎各位开发者积极提交，[活动详情](https://ask.dcloud.net.cn/article/41398)
 
-> 如果你是服务商、外包商，承诺短期可快速上架20个元服务，欢迎点此[联系我们](https://im.dcloud.net.cn/#/?business_type=harmony-reward)，我们可提供单独技术支持，以及帮助协调鸿蒙测试机。
+> 如果你是服务商、外包商，承诺短期可快速上架 20 个元服务，欢迎点此[联系我们](https://im.dcloud.net.cn/#/?business_type=harmony-reward)，我们可提供单独技术支持，以及帮助协调鸿蒙测试机。
 
-从 `HBuilderX 4.34` 版本开始，uni-app 支持 **鸿蒙元服务** 平台应用开发。鸿蒙元服务就是鸿蒙Next系统上的快应用、小程序。在鸿蒙Next系统上，不再支持快应用，对标替换产品即为鸿蒙元服务。
+从 `HBuilderX 4.34` 版本开始，uni-app 支持 **鸿蒙元服务** 平台应用开发。鸿蒙元服务就是鸿蒙 Next 系统上的快应用、小程序。在鸿蒙 Next 系统上，不再支持快应用，对标替换产品即为鸿蒙元服务。
 
-欢迎加入 [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流。
+欢迎加入 [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流。
 
 ::: warning 注意
 
 - 目前仅支持 Vue3 项目编译到鸿蒙元服务平台，Vue2 项目升级 Vue3 项目请参考：[Vue2 项目迁移到 Vue3](../migration-to-vue3.md)。
 - 目前仅支持鸿蒙 Next 真机，鸿蒙 ARM 模拟器开始内测，[点击链接](#arm-emulator)了解如何申请。
-- 目前支持鸿蒙5.0，鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/)。
-:::
+- 目前支持鸿蒙 5.0，鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/)。
+  :::
 
 ## 前置准备
 
@@ -38,7 +38,7 @@
 
 初次运行元服务，需要配置好证书签名、权限设置等信息，第一次参与鸿蒙开发的新手请仔细阅读下面相关建议，否则可能会影响开发元服务。
 
-如果你已有鸿蒙 App 开发经验，元服务的证书签名、权限配置和鸿蒙App的相关操作基本一致，参考 [证书签名配置指南](../harmony/runbuild#connectmobile) 。
+如果你已有鸿蒙 App 开发经验，元服务的证书签名、权限配置和鸿蒙 App 的相关操作基本一致，参考 [证书签名配置指南](../harmony/runbuild#connectmobile) 。
 
 签名证书分成两类：
 
@@ -166,7 +166,7 @@
 
 元服务的条件编译是 `MP-HARMONY`。
 
-开发过程中遇到的问题，欢迎加入 [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流，有官方人员进行答疑和指导。
+开发过程中遇到的问题，欢迎加入 [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流，有官方人员进行答疑和指导。
 
 如果遇到需要 debug 或者白屏问题可以下面方案 [进行调试](#how-to-debug)。
 
@@ -193,11 +193,11 @@
 
 在 HBuilderX 中开发 uni-app 上架到鸿蒙元服务需要下面 5 个步骤：
 
-  1. 授权 DCloud 完成上架流程。
-  2. 签署应用激励分享承诺函
-  3. 配置发行签名证书。
-  4. 应用打包。
-  5. 完善上架资料
+1. 授权 DCloud 完成上架流程。
+2. 签署应用激励分享承诺函
+3. 配置发行签名证书。
+4. 应用打包。
+5. 完善上架资料
 
 下面进行详细说明。
 
@@ -215,29 +215,21 @@
 
 选择你要上架的元服务，授权 DCloud 完成后续的上架流程。
 
-### 2. 确认分享承诺
-
-点击 [鸿蒙原生应用激励分享承诺函](https://developer.huawei.com/consumer/cn/verified/incentiveAuth)，如下图选择本次计划上架的应用（元服务），服务商字段输入“数字天堂”并选择，勾选“我已阅读”，点击提交，完成激励分享。
-
-![](https://web-ext-storage.dcloud.net.cn/doc/harmony-os-next/harmony-incentiveAuth.png)
-
-**注意：必须完成分享承诺，才有机会拿到奖励金；** 
-
-### 3. 配置发行签名证书
+### 2. 配置发行签名证书
 
 开发调试期间的证书不可用于应用上架。元服务发布证书的申请流程和鸿蒙应用开发类似，访问 [鸿蒙发布元服务文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-harmonyos-releaseservice-0000001946273965) 进行发布证书的获取。
 
 修改 `build-profile.json5` 里的 release 证书签名。务必注意调试和发行证书是两套，不能混用。
 
-### 4. 应用打包
+### 3. 应用打包
 
-在 HBuilderX 中选择 `发行 - 鸿蒙元服务`，进行元服务打包。等待打包完成，会提示上传完成。接下来到 DCloud开发者中心完善上架资料。
+在 HBuilderX 中选择 `发行 - 鸿蒙元服务`，进行元服务打包。等待打包完成，会提示上传完成。接下来到 DCloud 开发者中心完善上架资料。
 
 上传成功截图如下：
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/a40b554b-2ba3-4a7b-8d2c-a9baa43e9bb7.png)
 
-### 5. 完善上架资料
+### 4. 完善上架资料
 
 在上个步骤中，控制台在上传完成之后，提示打开 [DCloud 开发者中心](https://dev.dcloud.net.cn)。如果你是项目协作者账号登录，请切换为项目作者账号登录。
 
@@ -252,7 +244,7 @@
 - 务必配置应用图标位元服务图标，页面中有 元服务图标生成工具 链接，否则会审核失败
 - 发布版本 - 版本选取，选择创建时间最新的版本，勾选选择
 
-上架过程中遇到的问题，欢迎加入 [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流，有官方人员进行答疑和指导。
+上架过程中遇到的问题，欢迎加入 [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流，有官方人员进行答疑和指导。
 
 ## 注意事项
 
@@ -275,6 +267,7 @@
 这里的取值一般是 `$media:xxx` 对应图片索引，`$string:xxx` `$color:xxx` 对应配置文件的值。通过文件配置，在项目 `harmony-mp-configs` 目录创建 `entry/src/main/resources/` 目录，并将原生工程相关配置复制过来。注意，`zh_CN` 大于 `base` 配置，优先修改 zh_CN 配置。
 
 举例，下面是 `zh-CN/element/string.json` 中的内容，可以修改 `EntryAbility_label` 字段。
+
 ```json
 {
   "string": [
@@ -334,7 +327,7 @@
 还需要在配置网络访问白名单：
 
 - 临时方案。进入手机 - 设置 - 系统 - 开发者选项（如果未开启 关于手机 - 软件版本连续点击开启） - 开发中元服务豁免管控，选择开启后，可以自由调试。
-- 稳定方案。整理 web-view 需要用到的相关域名，进入[华为AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/) - 我的项目 - 开发管理 - 域名设置 - 服务器域名 - httpRequest 合法域名。按照提示进行填写。填写完成后打开 手机设置 - 应用与元服务，删掉正在开发的元服务，重新启动应用。
+- 稳定方案。整理 web-view 需要用到的相关域名，进入[华为 AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/) - 我的项目 - 开发管理 - 域名设置 - 服务器域名 - httpRequest 合法域名。按照提示进行填写。填写完成后打开 手机设置 - 应用与元服务，删掉正在开发的元服务，重新启动应用。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/49323643-31f5-4f95-80b2-87157c9a06d5.png)
 
@@ -344,22 +337,31 @@
 
 ### 组件 打开 map 地图无法展示、API 位置相关使用报错
 
-Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/) 进行权限申请。具体可以参考 [鸿蒙 Map Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/map-config-agc-V5)，在 项目设置 - API 管理开启定位服务、位置服务、地图服务。
+Map 和相关定位需要 [华为 AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/) 进行权限申请。具体可以参考 [鸿蒙 Map Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/map-config-agc-V5)，在 项目设置 - API 管理开启定位服务、位置服务、地图服务。
 
 在 `harmony-mp-configs/entry/src/main/module.json5` 在 `requestPermissions` 字段里添加 `ohos.permission.LOCATION` 和 `ohos.permission.APPROXIMATELY_LOCATION` 两条记录。
+
+### 上架驳回理由：存在自行构造的登录页面，不符合华为应用市场审核标准
+
+有用户上架驳回理由如下：您的元服务存在自行构造的登录页面，不符合华为应用市场审核标准。修改建议：请使用华为账号静默登录能力，确保用户可以获得完整、体验良好的账号体验。
+
+元服务的登录要求可以参考阅读 《[使用华为账号登录 静默登录](https://developer.huawei.com/consumer/cn/doc/design-guides/accounts-0000001967444380)》、《[开发者可以使用自行设计的登录界面吗？](https://developer.huawei.com/consumer/cn/doc/atomic-faqs-V5/faqs-common-account-5-V5)》。
+
+如果需要账号登录体系，建议在应用合适的时机调用登录接口换取 UnionID，先标识用户为华为用户，操作关键步骤时候接入现有账号体系。
+
+具体技术实现见下个问题。
 
 ### API 登录 uni.login 获取 code 报错、如何绑定现有用户体系？@how-to-login
 
 参考[鸿蒙 Account Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-config-permissions-V5#section132012717318) 设置相关权限，添加 scope 权限。
 
-易错点：
-    1. 签名证书不能是自动签名，设置的是 agc 上下载的调试证书
-    2. `mp-configs/entry/src/main/modueljson5` 里有个 metadata cliend_id 确保值正确。
-    3. AGC 后台配置了指纹，添加了证书。
-
-具体写法可以参考 [hello_uni-id-pages](https://gitcode.net/dcloud/hello_uni-id-pages/-/tree/dev/pages/index) 开源代码进行参考。欢迎使用 [uni-id-pages](https://doc.dcloud.net.cn/uniCloud/uni-id/app.html) 插件加速元服务开发落地。
+易错点： 1. 签名证书不能是自动签名，设置的是 agc 上下载的调试证书 2. `mp-configs/entry/src/main/modueljson5` 里有个 metadata cliend_id 确保值正确。 3. AGC 后台配置了指纹，添加了证书。
 
 通过 `uni.login` 可以得到 `code`，流程和其他小程序登录流程相似。参考 [解析凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-get-token-info-V5) 得到用户的 UnionID，开发者在这一步骤自行判断是已绑定华为 UnionID，如果未绑定，引导用户绑定现有账号体系。
+
+也可以参考下面手机号接口申请，快速绑定手机号，具体见下个问题。
+
+欢迎使用 [uni-id-pages](https://doc.dcloud.net.cn/uniCloud/uni-id/app.html) 插件加速元服务开发落地。
 
 ### 如何获取用户手机号？@how-to-get-phonenumber
 
@@ -369,7 +371,9 @@ Map 和相关定位需要 [华为AppGallery Connect 后台](https://developer.hu
 2. 页面中使用下面按钮获取手机号授权 code。
 
 ```html
-<button open-type="getPhoneNumber" @getphonenumber='getphonenumber'>获取手机号</button>
+<button open-type="getPhoneNumber" @getphonenumber="getphonenumber">
+  获取手机号
+</button>
 ```
 
 ```js
@@ -378,8 +382,8 @@ getphonenumber(e){
   console.log(e);
 }
 ```
-3. 参考 [获取用户级凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-obtain-user-token-V5) 获取 `access_token`，参考 [其他场景获取用户信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-otherscene-getuserinfo-V5) 接口获取用户手机号。
 
+3. 参考 [获取用户级凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-obtain-user-token-V5) 获取 `access_token`，参考 [其他场景获取用户信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-otherscene-getuserinfo-V5) 接口获取用户手机号。
 
 ### API 获取网络类型失败、手机震动不等效
 
@@ -409,9 +413,9 @@ getphonenumber(e){
 
 ### 配置的 module.json5 注意事项
 
-文件 `harmony-mp-configs/entry/src/main/module.json5` 会用来配置应用的一些应为，你可以参考 [鸿蒙 module.json5配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/module-configuration-file-V5) 进行学习和参考。
+文件 `harmony-mp-configs/entry/src/main/module.json5` 会用来配置应用的一些应为，你可以参考 [鸿蒙 module.json5 配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/module-configuration-file-V5) 进行学习和参考。
 
-如果你已经在开发鸿蒙 App ，见到 module.json5会感觉比较熟悉，有几个属性需要特别注意：
+如果你已经在开发鸿蒙 App ，见到 module.json5 会感觉比较熟悉，有几个属性需要特别注意：
 
 - 需要 `module.installationFree` 设置为 true
 - 需要设置 `module.srcEntry` `module.metadata` 和 `module.dependencies` 参考上一条问题。
@@ -452,7 +456,8 @@ getphonenumber(e){
   }
 }
 ```
-3. 第一次启动会跳转到应用市场访问应用，网络问题可能会超时，重试两次就可以。正式上架后不会出现此问题。出现此问题时，请用鸿蒙 Next 真机，在手机搜索框或手机里的华为应用市场里搜索uniapp，并点击出现的元服务 helloUniApp，点打开，等待加载完成，然后再关闭，最后在 HBuilderX 重启项目即可。
+
+3. 第一次启动会跳转到应用市场访问应用，网络问题可能会超时，重试两次就可以。正式上架后不会出现此问题。出现此问题时，请用鸿蒙 Next 真机，在手机搜索框或手机里的华为应用市场里搜索 uniapp，并点击出现的元服务 helloUniApp，点打开，等待加载完成，然后再关闭，最后在 HBuilderX 重启项目即可。
 
 ### 分包 `The subpackage path name does not meet the requirements`
 
@@ -464,11 +469,12 @@ getphonenumber(e){
 
 ### 元服务 ARM 模拟器申请@arm-emulator
 
-基于 ARM 架构 Mac M1 等系列芯片用户，目前可以申请 ARM 模拟器运行和调试鸿蒙元服务。如需申请，请发送邮件向华为运营人员申请。在收到邮件申请后，华为运营人员将在1-3个工作日内为你安排对接人员。
+基于 ARM 架构 Mac M1 等系列芯片用户，目前可以申请 ARM 模拟器运行和调试鸿蒙元服务。如需申请，请发送邮件向华为运营人员申请。在收到邮件申请后，华为运营人员将在 1-3 个工作日内为你安排对接人员。
 
 申请方法如下：
+
 - 申请邮箱地址：`atomicservice@huawei.com`
-- 邮件标题：`[模拟器联调版本申请]-[元服务名称]-[APP ID]-[Developer ID]`，APP ID等查询方法见下方信息。
+- 邮件标题：`[模拟器联调版本申请]-[元服务名称]-[APP ID]-[Developer ID]`，APP ID 等查询方法见下方信息。
 - 邮件正文：
 
 ```text
@@ -479,7 +485,7 @@ XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申�
 【使用时限】： 2024年X月XX日 - 2024年12月31日 （在结束时间点需要完成版本收编）
 我承诺：我清楚该版本是非正式发布版本，可能存在部分问题。如遇到问题，我愿意参与帮助改进。该版本仅用于功能测试和问题联调，受限使用不会扩散，版本会按时收编。
 
-承诺人：XX 
+承诺人：XX
 日期：202X年X月XX日
 ```
 
@@ -504,12 +510,13 @@ XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申�
 
 首先建议缩小问题范围，注释页面相关逻辑，锁定出问题的页面、组件、逻辑，从而针对性的调试。如果希望开启远程调试，可以按照下面方法操作。
 
-阅读官方文档 [使用DevTools工具调试前端页面](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/web-debugging-with-devtools-V5)
+阅读官方文档 [使用 DevTools 工具调试前端页面](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/web-debugging-with-devtools-V5)
 
 按照文档操作，简单来说可以分成三个步骤：
-  1. 确认插入了设备执行 `hdc shell "cat /proc/net/unix | grep devtools"` 记录返回数据尾部的数字部分
-  2. 转发端口 `hdc fport tcp:9222 localabstract:webview_devtools_remote_[刚才的数字部分]` 返回 OK
-  3. 打开浏览器 `chrome://inspect/#devices` 观察 Remoet Target 进行调试。
+
+1. 确认插入了设备执行 `hdc shell "cat /proc/net/unix | grep devtools"` 记录返回数据尾部的数字部分
+2. 转发端口 `hdc fport tcp:9222 localabstract:webview_devtools_remote_[刚才的数字部分]` 返回 OK
+3. 打开浏览器 `chrome://inspect/#devices` 观察 Remoet Target 进行调试。
 
 ### API uploadFile 报错，其他端正常
 

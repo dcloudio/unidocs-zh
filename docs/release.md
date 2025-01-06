@@ -1,3 +1,15 @@
+#### 4.45.2025010502
+* 【uni-app】
+  + 小程序平台 修复 4.44版本引发的 vue3项目 部分 api 无法调用的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=14784)
+  + 微信小程序平台 修复 vue2 项目调用 getAppBaseInfo 报错 `Cannot read property 'replace' of undefined` 的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=14764)
+  + 新增 uni-app 运行到鸿蒙真机时如果手机跟电脑端不在同一个局域网时会在控制台窗口中输出提示信息
+* 【uts插件】
+  + Web平台、App-iOS平台、微信小程序平台 修复 getString等方法第二个参数（默认值）不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=14224)
+  + App-Android平台 修复 4.41版本引发的 String.split 使用了 Kotlin 的 removeFirst/removeLast 扩展函数与 Android15 中的 Java 函数冲突 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=14804)
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 修复 uni-ad 穿山甲&GroMore 静默状态下或在后台运行可能会获取MAC地址的问题
+  + iOS平台 修复 4.41版本引发的 uni-ad 某些场景下开屏广告读取缓存失败导致展示率降低的Bug
+
 #### 4.44.2024123110
 * 【uni-app】
   + Web平台 修复 4.25版本引发的 vue3项目 onPageNotFound 生命周期中使用路由 API 失效的Bug [详情](https://ask.dcloud.net.cn/question/201202)

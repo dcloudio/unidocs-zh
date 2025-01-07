@@ -342,6 +342,22 @@ Map 和相关定位需要 [华为 AppGallery Connect 后台](https://developer.h
 
 在 `harmony-mp-configs/entry/src/main/module.json5` 在 `requestPermissions` 字段里添加 `ohos.permission.LOCATION` 和 `ohos.permission.APPROXIMATELY_LOCATION` 两条记录。
 
+元服务不允许未经用户同意发起定位。在请求位置之前需要获取用户授权。伪代码如下：
+
+```js
+uni.authorize({
+  scope: "scope.userLocation",
+  success: () => {
+    uni.getLocation({});
+  },
+  fail: () => {
+    uni.showToast({
+      title: "未授权获取地理位置权限",
+    });
+  },
+});
+```
+
 ### 上架驳回理由：存在自行构造的登录页面，不符合华为应用市场审核标准
 
 有用户上架驳回理由如下：您的元服务存在自行构造的登录页面，不符合华为应用市场审核标准。修改建议：请使用华为账号静默登录能力，确保用户可以获得完整、体验良好的账号体验。

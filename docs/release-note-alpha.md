@@ -1,3 +1,14 @@
+#### 4.45.2025010702-alpha
+* 【uni-app】
+  + App-Harmony平台 修复 应用首次切换到后台时 App onHide 生命周期不触发的 bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=14757)
+  + 小程序平台 修复 4.41版本引发的 vue3项目 部分 api 无法调用的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=14784)
+  + 微信小程序平台 修复 vue2 项目调用 getAppBaseInfo 报错 `Cannot read property 'replace' of undefined` 的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=14764)
+* 【uts插件】
+  + App-Android平台 修复 4.41版本引发的 String.split 使用了 Kotlin 的 removeFirst/removeLast 扩展函数与 Android15 中的 Java 函数冲突 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=14804)
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 修复 uni-ad 穿山甲&GroMore 静默状态下或在后台运行可能会获取MAC地址的问题
+  + iOS平台 修复 4.41版本引发的 uni-ad 某些场景下开屏广告读取缓存失败导致展示率降低的Bug
+
 #### 4.43.2024122419-alpha
 * 【uni-app】
   + App-HarmonyOS平台 修复 部分情况下键盘收回后视图显示异常的 Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=14557)

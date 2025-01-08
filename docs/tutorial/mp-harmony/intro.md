@@ -372,7 +372,7 @@ uni.authorize({
 
 参考[鸿蒙 Account Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-config-permissions-V5#section132012717318) 设置相关权限，添加 scope 权限。
 
-易错点： 1. 签名证书不能是自动签名，设置的是 agc 上下载的调试证书 2. `mp-configs/entry/src/main/modueljson5` 里有个 metadata cliend_id 确保值正确。 3. AGC 后台配置了指纹，添加了证书。
+易错点： 1. 签名证书不能是自动签名，设置的是 agc 上下载的调试证书 2. `mp-configs/entry/src/main/modueljson5` 里有个 metadata client_id 确保值正确。 3. AGC 后台配置了指纹，添加了证书。
 
 通过 `uni.login` 可以得到 `code`，流程和其他小程序登录流程相似。参考 [解析凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-get-token-info-V5) 得到用户的 UnionID，开发者在这一步骤自行判断是已绑定华为 UnionID，如果未绑定，引导用户绑定现有账号体系。
 

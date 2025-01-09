@@ -396,11 +396,12 @@ uni.authorize({
 ```js
 getphonenumber(e){
   // 获取 code 数值：e.detai.code
-  console.log(e);
+  console.log(e.detail.code);
 }
 ```
 
-3. 参考 [获取用户级凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-obtain-user-token-V5) 获取 `access_token`，参考 [其他场景获取用户信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-otherscene-getuserinfo-V5) 接口获取用户手机号。
+3. 参考 [获取用户级凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-obtain-user-token-V5) 通过上一步骤的 code 获取 `access_token`
+4. 参考 [其他场景获取用户信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-otherscene-getuserinfo-V5) 接口通过 `access_token` 获取用户手机号。
 
 ### API 获取网络类型失败、手机震动不等效
 

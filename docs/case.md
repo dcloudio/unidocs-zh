@@ -136,6 +136,21 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 **极志愿：** 专业高考志愿填报。**<span style="color:#42b983">多端获客典型案例，1个月获得400万用户</span>**，[详见报道](https://mp.weixin.qq.com/s?__biz=MzU3NTU5NDc0NA==&mid=2247491214&idx=1&sn=7e334d079146d9e31cea407f45bd8624)。体验方式：[App、微信小程序、百度小程序、H5 官网地址](https://www.jizhy.com/home/)
 
 
+### 鸿蒙Next
+
+> 鸿蒙App的商店地址，仅支持 HarmonyOS NEXT 以上的设备查看；
+
+**华为：** 莫塞尔商城,同时支持[鸿蒙App](https://appgallery.huawei.com/app/detail?id=com.huawei.mosselhm)和鸿蒙元服务
+
+**海信商城：**鸿蒙应用市场搜索“海信商城”，[详情](https://appgallery.huawei.com/app/detail?id=com.terminus.hisensemobile_hm)
+
+**美好买菜：** 鸿蒙应用市场搜索“美好买菜”，[详情](https://appgallery.huawei.com/app/detail?id=com.sc.meihao)；另见[iOS App](https://apps.apple.com/cn/app/%E7%BE%8E%E5%A5%BD%E4%B9%B0%E8%8F%9C/id1567375058)、[Android App](https://appgallery.huawei.com/app/C104333959)
+
+**康强医疗人才网：**，鸿蒙应用市场搜索“康强医疗人才网”，[详情](https://appgallery.huawei.com/app/detail?id=com.kq.kq520.com)
+
+**塔罗屋：**鸿蒙元服务，鸿蒙应用市场搜索“塔罗屋”
+
+
 ### 互联网公司
 
 **我的医保凭证：** 微信小程序搜索“我的医保凭证”。国家医疗保障局监制、腾讯开发。

@@ -3,6 +3,12 @@
 
 > 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。
 
+uni-app的socket，分全局socket和socketTask。全局socket只能有一个，一旦被占用就无法再开启。**所以不推荐使用全局socket，一般使用socketTask。**
+
+小程序上，socketTask也有数量限制，具体需要参阅各家小程序文档。
+
+注意：小程序的运行日志回显、uniPush的小程序版，均基于socket，都会占用socketTask通道数量。运行日志回显是可以关闭的，[详见](https://uniapp.dcloud.net.cn/tutorial/run/mp-log.html)
+
 <!-- UNIAPPAPIJSON.connectSocket.compatibility -->
 
 **OBJECT 参数说明**

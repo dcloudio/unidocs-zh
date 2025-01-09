@@ -236,6 +236,8 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **叮咚买菜：** 微信小程序搜索 “叮咚买菜”、[公众号H5](http://wx.m.ddxq.mobi/#/)
 
+**美好买菜：** [iOS](https://apps.apple.com/cn/app/%E7%BE%8E%E5%A5%BD%E4%B9%B0%E8%8F%9C/id1567375058)、[Android](https://appgallery.huawei.com/app/C104333959)、[鸿蒙Next](https://appgallery.huawei.com/app/detail?id=com.sc.meihao)
+
 **新浪健康：** 病情咨询，[H5](https://health.sina.cn/patient_consult_h5/)
 
 **爱奇艺：** i联盟，[H5](https://vip.iqiyi.com/html5VIP/activity/person-union/#/)

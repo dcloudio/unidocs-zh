@@ -69,6 +69,8 @@ var socketTask = uni.connectSocket({
 ## uni.onSocketOpen(CALLBACK)
 监听WebSocket连接打开事件。
 
+> 已废弃，使用 SocketTask 的 onOpen 替换。  
+
 **平台兼容性**
 
 抖音小程序不支持
@@ -100,6 +102,8 @@ uni.onSocketOpen(function (res) {
 ## uni.onSocketError(CALLBACK)
 监听WebSocket错误。
 
+> 已废弃，使用 SocketTask 的 onError 替换。  
+
 **平台兼容性**
 
 抖音小程序不支持
@@ -122,6 +126,8 @@ uni.onSocketError(function (res) {
 
 ## uni.sendSocketMessage(OBJECT)
 通过 WebSocket 连接发送数据，需要先 [uni.connectSocket](/api/request/websocket?id=connectsocket)，并在 [uni.onSocketOpen](/api/request/websocket?id=onsocketopen) 回调之后才能发送。
+
+> 已废弃，使用 SocketTask 的 send 替换。  
 
 **平台兼容性**
 
@@ -178,6 +184,8 @@ function sendSocketMessage(msg) {
 ## uni.onSocketMessage(CALLBACK)
 监听WebSocket接受到服务器的消息事件。
 
+> 已废弃，使用 SocketTask 的 onMessage 替换。  
+
 **平台兼容性**
 
 抖音小程序不支持
@@ -209,6 +217,8 @@ uni.onSocketMessage(function (res) {
 ## uni.closeSocket(OBJECT)
 关闭 WebSocket 连接。
 
+> 已废弃，使用 SocketTask 的 close 替换。  
+
 **平台兼容性**
 
 抖音小程序不支持
@@ -229,6 +239,8 @@ uni.onSocketMessage(function (res) {
 
 ## uni.onSocketClose(CALLBACK)
 监听WebSocket关闭。
+
+> 已废弃，使用 SocketTask 的 onClose 替换。  
 
 **平台兼容性**
 

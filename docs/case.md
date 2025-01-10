@@ -150,6 +150,8 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **禾望云：** 提供电站的运营分析和移动运维服务，鸿蒙应用市场搜索“禾望云”，[详情](https://appgallery.huawei.com/app/detail?id=com.hopewind.hopecloud)
 
+**睿学在线：** 高等院校成人教育的移动端在线学习与考试平台，鸿蒙应用市场搜索“睿学在线”，[详情](https://appgallery.huawei.com/app/detail?id=com.whaty.HMRXZX)
+
 **塔罗屋：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗屋”
 
 

@@ -108,6 +108,8 @@ export default defineConfig({
 });
 ```
 
+注意：在 HBuilderX 中读取 `.env` 环境变量可以通过 `loadEnv` 获取，注意第二个参数不要使用 `processs.cwd()`， 第二个参数需要填写配置文件所在的绝对路径： `const env = loadEnv(mode, __dirname);`
+
 **发布时删除 console**
 
 ```js

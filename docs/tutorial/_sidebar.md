@@ -112,7 +112,8 @@
     * [iOS本地离线打包](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios)
   * [App 加固](app-security.md)
   * [App 隐私合规检测](app-privacy-detect.md)
-  * [App 上架注意](store.md)
+  * App 应用市场上架
+    * [概述](store.md)
     * [国内应用市场上架](android-store.md)
     * [Android平台隐私与政策提示框](app-privacy-android.md)
     * [未同意隐私政策模式运行](app-disagreemode.md)

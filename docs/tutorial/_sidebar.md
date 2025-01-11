@@ -126,6 +126,7 @@
   * [运行和发行](harmony/runbuild.md)
   * [调用鸿蒙原生API](harmony/native-api.md)
   * [内置模块说明](harmony/built-in-module.md)
+  * [鸿蒙案例](https://uniapp.dcloud.net.cn/case.html#鸿蒙next)
   * [历史变更](harmony/history.md)
 * [鸿蒙元服务专题](mp-harmony/intro.md)
 * 小程序专题

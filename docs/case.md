@@ -148,6 +148,8 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **一码游贵州：** 贵州省委宣传部指导，贵州本土智慧文旅产业生态平台，鸿蒙应用市场搜索“一码游贵州”，[详情](https://appgallery.huawei.com/app/detail?id=com.dsy.ymygz)
 
+**地质云：** 中国地质调查局主持研发的一套综合性地址信息服务系统，鸿蒙应用市场搜索“地质云”，[详情](https://appgallery.huawei.com/app/detail?id=com.cgs.gov.geoapp)
+
 **康强医疗人才网：** 医生护士招聘求职平台，鸿蒙应用市场搜索“康强医疗人才网”，[详情](https://appgallery.huawei.com/app/detail?id=com.kq.kq520.com)
 
 **禾望云：** 提供电站的运营分析和移动运维服务，鸿蒙应用市场搜索“禾望云”，[详情](https://appgallery.huawei.com/app/detail?id=com.hopewind.hopecloud)

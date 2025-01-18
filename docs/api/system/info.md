@@ -57,8 +57,8 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |			|uniRuntimeVersion	|uni 运行时版本。[详见](#uniplatform)|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||uni-app 3.4.10+|
 |app	|appId|`manifest` 中应用appid，即DCloud appid。			|||||uni-app 3.4.10+|
 |			|appName			|`manifest` 中应用名称	||||和`抖音小程序`字段冲突，`抖音小程序`原字段与`hostName`一致|uni-app 3.4.10+|
-|			|appVersion			|`manifest` 中应用版本名称。(调试模式下获取到的是基座的应用版本名称)		|||||uni-app 3.4.10+|
-|			|appVersionCode		|`manifest` 中应用版本号。(调试模式下获取到的是基座的应用版本号)		|||||uni-app 3.4.10+|
+|			|appVersion			|`manifest` 中应用版本名称。(标准基座模式下获取到的是基座的应用版本名称)		|||||uni-app 3.4.10+|
+|			|appVersionCode		|`manifest` 中应用版本号。(标准基座模式下获取到的是基座的应用版本号)		|||||uni-app 3.4.10+|
 |			|appWgtVersion		|应用资源（wgt）的版本名称。		|||||uni-app 3.4.15+|
 |			|appLanguage		|应用设置的语言|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`||uni-app 3.4.13+|
 |其他	 |ua| userAgent标识	|||不支持		||uni-app 3.4.10+|

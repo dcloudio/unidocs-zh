@@ -192,7 +192,9 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **尤伴：** 陪伴游玩旅游交友，鸿蒙应用市场搜索“尤伴”，[详情](https://appgallery.huawei.com/app/detail?id=com.ttbyou.huawei)
 
-**塔罗屋：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗屋”
+**便签记事：** 一款简单实用的桌面便签记事本便利贴，鸿蒙应用市场搜索“便签记事”，[详情](https://appgallery.huawei.com/app/detail?id=com.mvtrail.notepad.zjhw)
+
+**塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
 
 **多点计算器：** 一款功能强大的计算器，支持科学计算、BMI指数计算、体脂率计算等，鸿蒙元服务，鸿蒙应用市场搜索“多点计算器”
 

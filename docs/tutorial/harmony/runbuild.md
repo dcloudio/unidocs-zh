@@ -518,3 +518,7 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 ### 报错 `未正确配置鸿蒙应用的包名`@bundlename-incorrect
 
 应该在 `manifest.json` 的【鸿蒙配置】中设置正确的包名，具体要求请参考 [配置应用包名](https://developer.huawei.com/consumer/cn/doc/app/agc-help-createharmonyapp-0000001945392297)
+
+### HBuilder X 升级至 `4.51` 后报错 `owns a higher api version or a higher sdkReleaseType compared to current compilation process.`
+
+需要在工程级的 `build-profile.json5` 的 `products` 字段（如果有多项都要配置）中配置 `compatibleSdkVersionStage: "beta6"` 后重新运行

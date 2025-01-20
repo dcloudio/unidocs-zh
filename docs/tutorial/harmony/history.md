@@ -8,3 +8,4 @@
 - JSVM 下不再支持直接调用鸿蒙的原生接口。调用原生API的代码请写在 [uts 插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-harmony.html)中。
 - 不支持在 DevEco Studio 中设置断点调试。
 - 目前由于华为 JSVM 的限制，仅支持运行在 arm64 架构的设备或模拟器上。也就是目前不支持x86模拟器了，当然不排除未来华为升级后支持的可能性，届时无需HBuilderX更新。
+- HBuilder X 升级至 `4.51 ` 需要在工程级的 `build-profile.json5` 的 `products` 字段（如果有多项都要配置）中配置 `compatibleSdkVersionStage: "beta6"`

@@ -522,3 +522,17 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 ### HBuilder X 升级至 `4.51` 后报错 `owns a higher api version or a higher sdkReleaseType compared to current compilation process.`
 
 需要在工程级的 `build-profile.json5` 的 `products` 字段（如果有多项都要配置）中配置 `compatibleSdkVersionStage: "beta6"` 后重新运行 [鸿蒙文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hvigor-build-profile-V5)
+
+### 报错 `没有连接到正在运行的应用，热更新失败，请尝试重新运行以建立连接`@hmr-failed
+
+在把 uni-app 项目运行到鸿蒙设备上以后，修改代码后会触发差量编译，然后会对鸿蒙设备中运行的应用执行热更新操作。在某些情况下有可能出现此种报错。
+
+首先确认在鸿蒙设备里确实已经运行了应用，然后尝试在 HBuilderX 里面重新运行到鸿蒙看是否能解决问题。
+
+在某些电脑环境下，存在一种偶发的情况也会导致出现此种报错，原因尚不完全清楚，重启 hdc server 可以解决问题。
+hdc 是安装 DevEco Studio 时自带的鸿蒙工具链中的一个重要工具，正常情况下它的安装位置在：
+
+- Windows 环境下为 `<DevEco Studio安装目录>\sdk\default\openharmony\toolchains\hdc.exe`
+- Mac 环境下为 `<DevEco Studio安装目录>/Contents/sdk/default/openharmony/toolchains/hdc`
+
+在命令行中执行 `hdc kill -r` 命令以重启 hdc server，然后在 HBuilderX 里面重新运行到鸿蒙即可。

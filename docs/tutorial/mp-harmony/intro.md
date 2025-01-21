@@ -1,7 +1,5 @@
 # 概述
 
-> 为了丰富鸿蒙生态，为国产操作系统生态做贡献，DCloud 联合华为推出开发者激励计划，uni-app 开发者只需将 uni-app 项目发行为鸿蒙元服务，即可获得现金激励，发行多个元服务可以获得多份现金奖励，欢迎各位开发者积极提交，[活动详情](https://ask.dcloud.net.cn/article/41398)
-
 > 如果你是服务商、外包商，承诺短期可快速上架 20 个元服务，欢迎点此[联系我们](https://im.dcloud.net.cn/#/?business_type=harmony-reward)，我们可提供单独技术支持，以及帮助协调鸿蒙测试机。
 
 从 `HBuilderX 4.34` 版本开始，uni-app 支持 **鸿蒙元服务** 平台应用开发。鸿蒙元服务就是鸿蒙 Next 系统上的快应用、小程序。在鸿蒙 Next 系统上，不再支持快应用，对标替换产品即为鸿蒙元服务。
@@ -97,11 +95,7 @@
 
 ### 2. 配置 `build-profile.json5`
 
-需要配置签名证书，这里依赖 [准备签名证书](#准备签名证书) 部分。项目根目录创建 `harmony-mp-configs/build-profile.json5` 文件，将上文提到的原生空白项目中的 `build-profile.json5` 文件内容复制。
-
-在文件中搜索 `useNormalizedOHMUrl` 将值设置为 false。
-
-**注意：** 考虑到很多用户不会修改配置，这里提供一个模版，强烈建议新手用户基于 [这个模版](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/build-profile.json5) 修改，只替换签名部分即可。
+需要配置签名证书，这里依赖 [准备签名证书](#准备签名证书) 部分。项目根目录创建 `harmony-mp-configs/build-profile.json5` 文件，下载 [这个模版](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/build-profile.json5) 修改，只替换签名部分。
 
 ![配置签名证书](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/116bc7de-00e0-4250-ac78-508b2dfa803f.png)
 
@@ -109,36 +103,7 @@
 
 鸿蒙元服务需要获取使用特定的能力，比如元服务登录、震动、获取网络状态等原生提供的能力，需要配置权限模版。
 
-项目根目录创建 `harmony-mp-configs/entry/src/main/module.json5` 文件。将上文提到的原生空白项目中的 `entry/src/main/module.json5` 的内容复制填充。HBuilderX 在构建时候会识别替换相关文件。
-
-确保在 `module` 字段内，存在下面三个字段，如果不存在需要添加，不添加可能会让元服务运行闪退。
-
-请务必注意：这三个字段添加到 `module` 内部，保证 `srcEntry` 出现里两次。
-
-```json
-"srcEntry": "./ets/abilitystage/AbilityStage.ets", // 此时页面有两个 srcEntry
-"metadata": [
-	{
-		"name": "appgallery_privacy_hosted",
-		"value": "1" // 默认开启系统隐私弹窗，建议开启无需编写页面
-	},
-	{
-	"name": "app_id",
-		"value": "" // 填写实际应用的 app_id 获取方式见下方
-	},
-	{
-		"name": "client_id",
-		"value": "" // 填写实际应用的 client_id 获取方式见下方
-	}
-],
-"dependencies": [
-	{
-		"bundleName": "com.huawei.hms.ascf",
-		"moduleName": "ascf",
-		"versionCode": 100000
-	}
-]
-```
+项目根目录创建 `harmony-mp-configs/entry/src/main/module.json5` 文件。下载 [module.json5](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/module.json5) 文件进行替换操作。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/62fbd174-5276-4a76-9ef7-26562e611533.png)
 
@@ -249,10 +214,6 @@
 
 ## 注意事项
 
-### 启动元服务之后展示一个 Hello Wolrd 不是我设置的页面
-
-如果你启动之后展示的是一个黑白界面展示了 Hello Wrold，说明 HBuilderX 提供的默认模版没有被修改，一般是自动化脚本没有成功执行，如果是 Mac 终端请务必注意：屏幕右上角会提示是否允许终端修改文件，一定要允许，才能保证自动化脚本执行成功。
-
 ### 如何修改元服务默认标题、图标、启动图等信息？@how-to-change-icon
 
 如果你开发过鸿蒙应用，会发现元服务工程和鸿蒙应用开发设置一致，配置文件同样遵循 module.json5 效果优先于 app.json5 ，参考 [鸿蒙应用组件配置文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-component-configuration-stage-V5)。推荐在组件级别进行配置。
@@ -360,13 +321,9 @@ uni.authorize({
 
 ### 上架驳回理由：存在自行构造的登录页面，不符合华为应用市场审核标准@how-to-design-user-login
 
-有用户上架驳回理由如下：您的元服务存在自行构造的登录页面，不符合华为应用市场审核标准。修改建议：请使用华为账号静默登录能力，确保用户可以获得完整、体验良好的账号体验。
-
 元服务的登录要求可以参考阅读 《[使用华为账号登录 静默登录](https://developer.huawei.com/consumer/cn/doc/design-guides/accounts-0000001967444380)》、《[开发者可以使用自行设计的登录界面吗？](https://developer.huawei.com/consumer/cn/doc/atomic-faqs-V5/faqs-common-account-5-V5)》。
 
-如果需要账号登录系统，必须使用 `uni.login` 登录，不得绕过自行使用账号密码登录。建议申请获取用户手机号权限，然后关联自己的账号系统。在应用在应用合适的时机调用登录接口换取 UnionID，先标识用户为华为用户，操作关键步骤时候接入现有账号，比如获取手机号关联现有账号。
-
-同时务必提供注销用户功能，运行用户自行取消注册，否则会被驳回。
+如果需要账号登录，必须使用 `uni.login` 登录，不得绕过自行使用账号密码登录。建议申请获取用户手机号权限，然后关联自己的账号系统。在应用在应用合适的时机调用登录接口换取 UnionID，先标识用户为华为用户，操作关键步骤时候接入现有账号，比如获取手机号关联现有账号。同时务必提供注销用户功能入口，用户自行取消注册，否则会被驳回。
 
 具体技术实现见下个问题。
 
@@ -411,7 +368,7 @@ getphonenumber(e){
 
 ### 组件 rich-text 渲染空白不展示
 
-已修复。动态更新 `rich-text` 的 `nodes` 数据时候，内容不会更新。可以临时通过给 rich-text 添加 v-if 控制显隐，在 nextTick 中动态切换生效。
+已修复。
 
 ### 组件 Image 选择本地图片不展示
 
@@ -429,7 +386,7 @@ getphonenumber(e){
 
 一般来说 `harmony-mp-configs/entry/src/main/module.json5` 配置文件有问题，导致运行失败，需要检查配置文件，如果配置文件没有问题，可以尝试删除文件，重新运行一下。
 
-确保按照 `配置 module.json5` 章节添加了三个字段，请注意是 module **内部添加**，**不是**和 module 字段平级。
+确保 `entry/src/main/module.json5` 文件是使用文档顶部的网络模版下载的。
 
 ### 配置的 module.json5 注意事项
 
@@ -449,35 +406,9 @@ getphonenumber(e){
 参考文档顶部 **开发环境准备** 部分，请确认：
 
 1. 真机是鸿蒙 Next 真机，系统版本是 鸿蒙 5.0+。如果是鸿蒙 4.x 版本不属于鸿蒙 Next 系统，模拟器暂不支持。具体支持机型参考 [HarmonyOS NEXT 支持机型](https://consumer.huawei.com/cn/support/harmonyos/models-next/)
-2. 如果你调整过 hvigor 文件，可能锁定了 hbigor 版本为 1.0.0，请修改 `hvigor/hvigor-config.json5` 文件，粘贴下面内容。
-
-```json
-{
-  "modelVersion": "5.0.0",
-  "dependencies": {
-    "@atomicservice/ascf-toolkit-hvigor-plugin": "~1.0.1"
-  },
-  "execution": {
-    // "analyze": "normal",                     /* Define the build analyze mode. Value: [ "normal" | "advanced" | false ]. Default: "normal" */
-    // "daemon": true,                          /* Enable daemon compilation. Value: [ true | false ]. Default: true */
-    // "incremental": true,                     /* Enable incremental compilation. Value: [ true | false ]. Default: true */
-    // "parallel": true,                        /* Enable parallel compilation. Value: [ true | false ]. Default: true */
-    // "typeCheck": false,                      /* Enable typeCheck. Value: [ true | false ]. Default: false */
-  },
-  "logging": {
-    // "level": "info"                          /* Define the log level. Value: [ "debug" | "info" | "warn" | "error" ]. Default: "info" */
-  },
-  "debugging": {
-    // "stacktrace": false                      /* Disable stacktrace compilation. Value: [ true | false ]. Default: false */
-  },
-  "nodeOptions": {
-    // "maxOldSpaceSize": 8192                  /* Enable nodeOptions maxOldSpaceSize compilation. Unit M. Used for the daemon process. Default: 8192*/
-    // "exposeGC": true                         /* Enable to trigger garbage collection explicitly. Default: true*/
-  }
-}
-```
-
+2. 如果你调整过 hvigor 文件，可能锁定了 hbigor 版本为 1.0.0，请恢复 `hvigor/hvigor-config.json5` 文件。
 3. 第一次启动会跳转到应用市场访问应用，网络问题可能会超时，重试两次就可以。正式上架后不会出现此问题。出现此问题时，请用鸿蒙 Next 真机，在手机搜索框或手机里的华为应用市场里搜索 uniapp，并点击出现的元服务 helloUniApp，点打开，等待加载完成，然后再关闭，最后在 HBuilderX 重启项目即可。
+4. HBuilderX Alpha 4.51 起，内置依赖的 ascf 框架发生了变化，如果仍有问题，可以 IM 群内沟通。
 
 ### 分包 `The subpackage path name does not meet the requirements`
 
@@ -551,6 +482,18 @@ XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申�
 ### 发行应用时候提示上传失败
 
 - 场景一 `[AppGalleryConnectPublishServicelapp state can not be modified!` 当前应用可能已经在审核中
+
+### HBuilderX Alpha 4.51 版本无法启动
+
+从 HBuilderX Alpha 4.51 开始，鸿蒙元服务启用了新的内置模版，适配 ASCF 最新能力，产生了不兼容变化，需要手动处理下面 3 项改动：
+
+1. 打开 `harmony-mp-configs/build-profile.json5` 文件，搜索 `useNormalizedOHMUrl` 确保值为 true
+2. 打开 `harmony-mp-configs/entry/src/main/module.json5` 文件，
+
+- 搜索 `dependencies` 修改 bundleName 为 `com.huawei.hms.ascfruntime`
+- 搜索 `dependencies` 修改 versionCode 为 `10006300`
+
+3. （可选）如果你存在 `entry/oh-package.json5` 文件（一般不需要这个文件），你需要添加新的依赖，添加 dependencies 内 `"@atomicservice/ascfapi": "^1.0.6"`
 
 ### 常见上架驳回错误原因
 

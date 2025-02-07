@@ -410,6 +410,8 @@ getphonenumber(e){
 3. 第一次启动会跳转到应用市场访问应用，网络问题可能会超时，重试两次就可以。正式上架后不会出现此问题。出现此问题时，请用鸿蒙 Next 真机，在手机搜索框或手机里的华为应用市场里搜索 uniapp，并点击出现的元服务 helloUniApp，点打开，等待加载完成，然后再关闭，最后在 HBuilderX 重启项目即可。
 4. HBuilderX Alpha 4.51 起，内置依赖的 ascf 框架发生了变化，如果仍有问题，可以 IM 群内沟通。
 
+在终端中运行 `hdc shell bm dump-shared -a` 观察返回值是否包含 `com.huawei.hms.ascfruntime`，如果不包含，请打开应用市场搜索 `helloUniApp` 访问体验一次，然后重试。
+
 ### 分包 `The subpackage path name does not meet the requirements`
 
 已修复。参考 [运行报错](#failed-to-install-the-hap-or-hsp) 调整 hvigor 版本号。
@@ -485,7 +487,9 @@ XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申�
 
 ### HBuilderX Alpha 4.51 版本无法启动
 
-从 HBuilderX Alpha 4.51 开始，鸿蒙元服务启用了新的内置模版，适配 ASCF 最新能力，产生了不兼容变化，需要手动处理下面 3 项改动：
+从 HBuilderX Alpha 4.51 开始，鸿蒙元服务启用了新的内置模版，适配 ASCF 最新能力，产生了不兼容变化，需要手动处理。
+
+需要手动处理下面 3 项改动：
 
 1. 打开 `harmony-mp-configs/build-profile.json5` 文件，搜索 `useNormalizedOHMUrl` 确保值为 true
 2. 打开 `harmony-mp-configs/entry/src/main/module.json5` 文件，
@@ -494,6 +498,8 @@ XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申�
 - 搜索 `dependencies` 修改 versionCode 为 `10006300`
 
 3. （可选）如果你存在 `entry/oh-package.json5` 文件（一般不需要这个文件），你需要添加新的依赖，添加 dependencies 内 `"@atomicservice/ascfapi": "^1.0.6"`
+
+如果仍有报错，你可以在华为应用市场中搜索 `helloUniApp` 打开体验一次，这个过程会主动下载 `com.huawei.hms.ascfruntime`。
 
 ### 常见上架驳回错误原因
 

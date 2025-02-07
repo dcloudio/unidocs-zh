@@ -132,7 +132,9 @@ import { test } from "@/uni_modules/uts-osapi/index.uts";
 ```js
 import {test} from '@/uni_modules/xx-yy/js_sdk/test.js'
 ```
-
+- 如果是加密插件，加密文件不支持单独对外导出，即：不能使用 import 语句直接导入插件内的某个加密文件（uts加密插件导入插件根目录即可）
+- uni-app项目下uts插件不支持导入非utssdk以外的uts文件
+- uts插件utssdk内的文件以及这些文件引入的非utssdk内的uts文件均不支持单独对外导出
 - 如果要使用uni_modules中的页面，[见下](#pages-init)
 
 

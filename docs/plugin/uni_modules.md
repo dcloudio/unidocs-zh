@@ -108,6 +108,16 @@ uni.getBatteryInfo的插件和源码详见：[https://ext.dcloud.net.cn/plugin?i
 
 uts插件开发的详细指南见：[https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)
 
+***注意事项***
+
+使用 import 导入uts插件时，仅支持导入到插件根目录，不支持导入插件内部的文件。
+```ts
+// 正确的写法
+import * as UTSHello from "@/uni_modules/uts-osapi";
+// 错误的写法
+import * as UTSHello from "@/uni_modules/uts-osapi/index.uts";
+```
+
 ## 使用 uni_modules 插件
 ### 下载uni_modules插件
 1. 在[插件市场](https://ext.dcloud.net.cn/)查找uni_modules插件

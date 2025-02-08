@@ -1,3 +1,22 @@
+#### 4.52.2025020807-alpha
+* 【uni-app】
+  + App平台 新增 uni.chooseMedia [文档](https://uniapp.dcloud.net.cn/api/media/video.html#choosemedia)
+  + App平台 vue3项目 修复 v-if 在某些情况下子组件不能被正确销毁的Bug [详情](https://ask.dcloud.net.cn/question/205222)
+* 【uni-app x】
+  + 修复 4.51版本引发的 编译器 uni-app兼容模式组件uts插件内utssdk目录、平台目录下均无index.uts时编译报错的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15502)
+  + Web平台、微信小程序平台 新增 CSS var支持安全区域相关变量 [文档](https://doc.dcloud.net.cn/uni-app-x/css/common/function.html)
+  + App平台 修复 4.51版本引发的 API showActionSheet appTheme 设置 auto 时，未适配系统主题问题 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15501)
+  + App平台 修复 API uni.downloadFile 下载时断网不会触发回调事件 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15497)
+  + App-Android平台 修复 组件 button 拆分设置border相关样式不起作用 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15526)
+  + App-Android平台 修复 4.51版本引发的 API showActionSheet 某些时机底部安全区适配失败 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15500)
+  + App-Android平台 修复 API uni.setAppBadgeNumber 在MIUI12以上系统设置角标不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15231)
+  + App-iOS平台 修复 4.51版本引发的 组件 video 播放控件上的按钮点击无效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15545)
+* 【uts插件】
+  + App平台 修复 4.51版本引发的 部分情况下类型收窄编译报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15491)
+* 【uniCloud】
+  + 新增 uni-ai 支持 DeepSeek 模型 [详情](https://doc.dcloud.net.cn/uniCloud/uni-ai.html#get-llm-manager)
+  + 修复 支付宝云数据库 count 查询时没有显式返回数量的Bug [详情](https://ask.dcloud.net.cn/question/204598)
+
 #### 4.51.2025012123-alpha
 * 【uni-app-x】
   + Web平台、App平台 新增 API UniPage 补充更多信息属性 [文档](https://doc.dcloud.net.cn/uni-app-x/api/unipage.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=10587>

@@ -249,7 +249,9 @@ package.json在每个`uni_modules`插件中都必须存在，包含了插件的�
 | 前端组件			| 通用组件				| component-vue				|
 | 前端组件			| 小程序组件			| component-mp				|
 | JS SDK			| 通用 SDK				| sdk-js					|
-| uts插件			| uts插件				| uts						|
+| uts插件			| API插件				| uts						|
+| uts插件			| uni-app兼容模式组件	| component-uts				|
+| uts插件			| 标准模式组件	| uts-vue-component			|
 | uni-app前端模板	| 前端页面模板			| uniapp-template-page		|
 | uni-app前端模板	| uni-app前端项目模板	| uniapp-template-project	|
 | uniCloud			| 云函数模板			| unicloud-template-function|

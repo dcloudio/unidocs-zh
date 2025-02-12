@@ -16,7 +16,7 @@ App-Android平台云端打包相关配置
 |minSdkVersion|String|Android平台最低支持版本，详情参考：[Android平台设置minSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-minsdkversion)|
 |targetSdkVersion|String|Android平台目标版本，详情参考：[Android平台设置targetSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion)|
 |enableResourceOptimizations|Boolean|是否开启Android原生res资源文件优化|
-|aaptOptions|Array|Android平台云端打包时build.gradle的packagingOptions配置项，示例："aaptOptions": ["noCompress 'png', 'jpg', 'jpeg'"]|
+|aaptOptions|Array|Android平台云端打包时build.gradle的aaptOptions配置项，示例："aaptOptions": ["noCompress 'png', 'jpg', 'jpeg'"]|
 |buildFeatures|Object|Android平台云端打包时build.gradle的buildFeatures配置项，[详见](/collocation/manifest?id=buildFeatures)|
 |packagingOptions|Array|Android平台云端打包时build.gradle的packagingOptions配置项，示例："packagingOptions": ["doNotStrip '*/armeabi-v7a/*.so'","merge '**/LICENSE.txt'"]|
 |jsEngine|String|uni-app使用的JS引擎，可取值v8、jsc，**将废弃，后续不再支持jsc引擎**|

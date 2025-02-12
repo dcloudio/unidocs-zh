@@ -335,13 +335,13 @@ nvue map 更换箭头图标格式参考: [https://ask.dcloud.net.cn/article/3790
 	* 从微信基础库2.8.3开始，支持map组件的同层渲染，不再有层级问题。
 	* app的iOS、Android、鸿蒙新增了腾讯地图，腾讯地图在这3个平台使用web渲染，没有层级问题。
 - 微信小程序端 `controls` 属性即将废弃，[详情](https://developers.weixin.qq.com/miniprogram/dev/component/map.html)。如果所用基础库支持同层渲染，则可以直接使用 `<view>` 组件，否则使用`<cover-view>`组件
-- App端nvue文件的map和小程序拉齐度更高。vue里的map则与plus.map功能一致，和小程序的地图略有差异。**App端使用map推荐使用nvue。**
+- App端nvue文件的map和小程序拉齐度更高。vue里的高德地图则与plus.map功能一致，和小程序的地图略有差异。App端如使用高德地图，推荐使用nvue。
 - App端使用到本地图像的话，打包前需要设置资源为释放模式，在manifest文件内app-plus新增runmode节点，设置值为liberate。
 - 在涉及层级问题的小程序中和app-vue中，请勿在 scroll-view、swiper、picker-view、movable-view 中使用 `<map>` 组件。
 - 小程序和 app-vue 中，css 动画对 `<map>` 组件无效。
 - map 组件使用的经纬度是国测局坐标，调用 uni.getLocation 接口需要指定 type 为 gcj02。
 - `<map>` 组件在不同平台的底层引擎是不同的：微信小程序为腾讯地图；H5为腾讯地图或谷歌地图或高德地图；App、支付宝（中国大陆地区版本）小程序为高德地图；百度小程序、快应用为百度地图。app-vue也可以使用百度地图，在manifest中配置，打包后生效，但app-nvue只支持高德地图。另外选择地图、查看地图位置的API也仅支持高德地图。App端如无特殊必要，建议使用高德地图。
-- map 组件默认的api是参考微信小程序的，如需要使用plus.map，可以通过`$getAppMap`获取原生地图对象，[详见](/api/location/map)。注意nvue的map组件不是plus.map对象，无法使用`$getAppMap`
+- map 组件默认的api是参考微信小程序的，如需要使用plus.map，可以通过`$getAppMap`获取原生地图对象，[详见](/api/location/map)。注意nvue的map组件不是plus.map对象，无法使用`$getAppMap`。**腾讯地图不支持plus.map，请使用uni的标准API**。app平台如果仅使用腾讯地图，未打包高德，却使用plus.map的API，会在调用plus.map时弹框“打包时未添加map模块”
 - H5 端获取定位信息，需要部署在 **https** 服务上，本地预览（localhost）仍然可以使用 http 协议。
 - 无GPS模块或GPS无信号的 PC 设备使用 Chrome 浏览器的时候，位置信息是连接谷歌服务器获取的，国内用户可能获取位置信息失败。
 - App 端使用地图组件需要**向高德或百度等三方服务商申请SDK资质，获取AppKey，打包时需要在manifest文件中勾选相应模块，在SDK配置中填写Appkey。注意申请包名和打包时的包名需匹配一致，证书信息匹配**。在manifest可视化界面有详细申请指南。

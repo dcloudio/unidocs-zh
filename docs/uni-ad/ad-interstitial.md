@@ -144,11 +144,12 @@ export default {
 
 `options` 为 object 类型，属性如下：
 
-|属性名		|类型		|必填	|描述			|最低支持版本								|
-|:-:			|:-:		|:-:	|:-:			|:-:												|
-|adpid		|string	|是		|广告位 id|App 3.1.10+								|
-|adUnitId	|string	|是		|广告位 id|微信小程序2.6.0+, QQ0.1.26+|
+|属性名		|类型		|必填	|描述			|最低支持版本									|平台兼容性	|
+|:-:			|:-:		|:-:	|:-:			|:-:												|:-:			|
+|adpid		|string	|是		|广告位 id	|App 3.1.10+								|App			|
+|adUnitId	|string	|是		|广告位 id	|微信小程序2.6.0+, QQ0.1.26+	|微信小程序	|
 
+uni-ad 不支持在微信上使用API接入，仅支持组件方式`<ad-interstitial>`, 组件支持跨平台
 
 #### 广告创建
 

@@ -72,7 +72,7 @@ HBuilderX 4.19起，DCloud提供了一种云编译的手段来解决前端插件
 
 目前前端插件加密，仅支持uni-app x下uni_modules形式的、符合 [easycom](https://uniapp.dcloud.net.cn/component/#easycom) 规范的组件。插件可在全平台加密，包括web端、app端。
 
-如需发布付费插件，可对插件设置`普通授权版`及`源码授权版`的价格。DCloud插件市场会**自动加密付费插件中所有uvue、uts、js、ts文件（除hybrid、static目录外）**。
+如需发布付费插件，可对插件设置`普通授权版`及`源码授权版`的价格。DCloud插件市场会**自动加密付费插件中所有vue、uvue、uts、js、ts文件（除pages、hybrid、static目录外）**。
 
 HBuilderX发布插件界面暂未支持前端组件价格设置，插件作者可在插件package.json中手动配置价格后提交发布，后续ui上将支持前端组件价格设置。
 配置方式参考[uni_modules配置](https://uniapp.dcloud.net.cn/plugin/uni_modules.html#package-json)，在package.json`dcloudext`下添加`sale`销售信息。
@@ -140,7 +140,10 @@ uts插件开发详见[插件开发文档](https://uniapp.dcloud.net.cn/plugin/ut
 
 uts付费插件分为`普通授权版`及`源码授权版`，两种付费方式区别[详见说明文档](https://uniapp.dcloud.net.cn/plugin/plugin-ext-introduction.html#payment)。
 
-如需发布付费插件，可对插件设置`普通授权版`及`源码授权版`的价格。DCloud插件市场会**自动加密付费插件中除interface.uts之外的所有uts文件**。
+如需发布付费插件，可对插件设置`普通授权版`及`源码授权版`的价格。DCloud插件市场会对付费插件自动加密，付费插件加密规则：
+
+- 加密除 interface.uts 之外的所有uts文件
+- 加密utssdk/app-android及utssdk/app-ios目录下的java、kt、swift等混编文件
 
 当插件用户试用插件时，无法查阅这些加密的源码。uts插件试用只能用于打包自定义基座，不能用于正式发布。
 

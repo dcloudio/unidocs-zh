@@ -3,7 +3,7 @@
 
 |元服务|
 |:-:|
-|x|
+|1.0.4+|
 
 <!-- UNIAPPAPIJSON.onCompassChange.compatibility -->
 
@@ -36,7 +36,7 @@ uni.onCompassChange(callback);
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|x|x|
+|HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|x|1.0.4+|
 
 <!-- UNIAPPAPIJSON.offCompassChange.compatibility -->
 
@@ -62,7 +62,7 @@ uni.offCompassChange(callback);
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|x|√|√|√|√|x|x|
+|√|√|√|x|√|√|√|√|x|1.0.4+|
 
 <!-- UNIAPPAPIJSON.startCompass.compatibility -->
 

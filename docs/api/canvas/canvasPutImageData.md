@@ -4,7 +4,7 @@
 
 |元服务|
 |:-:|
-|x|
+|1.0.3+|
 
 <!-- UNIAPPAPIJSON.canvasGetImageData.compatibility -->
 

@@ -108,6 +108,16 @@ uni.getBatteryInfo的插件和源码详见：[https://ext.dcloud.net.cn/plugin?i
 
 uts插件开发的详细指南见：[https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)
 
+***注意事项***
+
+使用 import 导入uts插件时，仅支持导入到插件根目录，不支持导入插件内部的文件。
+```ts
+// 正确的写法
+import { test } from "@/uni_modules/uts-osapi";
+// 错误的写法
+import { test } from "@/uni_modules/uts-osapi/index.uts";
+```
+
 ## 使用 uni_modules 插件
 ### 下载uni_modules插件
 1. 在[插件市场](https://ext.dcloud.net.cn/)查找uni_modules插件
@@ -122,7 +132,9 @@ uts插件开发的详细指南见：[https://doc.dcloud.net.cn/uni-app-x/plugin/
 ```js
 import {test} from '@/uni_modules/xx-yy/js_sdk/test.js'
 ```
-
+- 如果是加密插件，加密文件不支持单独对外导出，即：不能使用 import 语句直接导入插件内的某个加密文件（uts加密插件导入插件根目录即可）
+- uni-app项目下uts插件不支持导入非utssdk以外的uts文件
+- uts插件utssdk内的文件以及这些文件引入的非utssdk内的uts文件均不支持单独对外导出
 - 如果要使用uni_modules中的页面，[见下](#pages-init)
 
 
@@ -237,7 +249,9 @@ package.json在每个`uni_modules`插件中都必须存在，包含了插件的�
 | 前端组件			| 通用组件				| component-vue				|
 | 前端组件			| 小程序组件			| component-mp				|
 | JS SDK			| 通用 SDK				| sdk-js					|
-| uts插件			| uts插件				| uts						|
+| uts插件			| API插件				| uts						|
+| uts插件			| uni-app兼容模式组件	| component-uts				|
+| uts插件			| 标准模式组件	| uts-vue-component			|
 | uni-app前端模板	| 前端页面模板			| uniapp-template-page		|
 | uni-app前端模板	| uni-app前端项目模板	| uniapp-template-project	|
 | uniCloud			| 云函数模板			| unicloud-template-function|

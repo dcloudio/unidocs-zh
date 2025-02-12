@@ -1517,6 +1517,11 @@ uni统计支持sourcemap，可直观了解到底哪行代码写的有问题。[�
 答：首先登录[uniCloud控制台](https://unicloud.dcloud.net.cn/)，检查在出现问题的统计项配置的时间点(参考：[定时任务配置说明](#定时任务配置说明))，`uni-stat-cron`云函数的运行日志，如果运行日志前面的状态标识是灰色的，代表云函数运行超时了，此时在云函数详情中将`uni-stat-cron`云函数的超时时间设置到最大值即可。如果运行日志的状态标识是绿色的，则需要检查日志内容是否有报错，然后根据报错内容做出调整。
 
 
+### 9. 为什么注册用户统计没有数据？
+
+答：uni统计能够产出注册用户统计数据的前提是，开通uni统计的应用与`uni-admin`项目关联了同一个服务空间，且用户模块使用了[uni-id用户体系](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)，如果你应用的用户存储在非uniCloud业务，或者没有使用[uni-id用户体系](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)，uni统计将无法自动统计注册用户数据。
+
+
 ## 参考资料
 
 不掌握如下文档，很难对 `uni统计2.0` 吃透和做二次开发

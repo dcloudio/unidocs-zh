@@ -90,17 +90,21 @@ uni.login({
 详细步骤参考：[一键登录服务开通指南](https://doc.dcloud.net.cn/uniCloud/uni-login/service)
 
 
-**注意**
-> 应用开通uni一键登录服务后，需要等审核通过后才能正式使用。在审核期间可以使用HBuilder标准基座真机运行调用一键登录功能，调用时会从你的账户中扣费；但在审核期间不可以使用自定义基座调用一键登录功能，调用时会返回错误。
+::: warning 注意
+- 应用开通uni一键登录服务后，需要`等审核通过`后才能正式使用。\
+- 在审核期间可以使用`HBuilder标准基座`真机运行调用一键登录功能，调用时会从你的账户中扣费；但审核期间不可以使用自定义基座调用一键登录功能，调用时会返回错误。
+:::
 
 
 ### 开通uniCloud服务
-一键登录在客户端获取 `access_token` 后，必须在 [uniCloud](https://uniapp.dcloud.io/uniCloud/README) 换取手机号码。
+
+一键登录在客户端获取 `access_token` 后，必须在 [uniCloud](https://doc.dcloud.net.cn/uniCloud/uni-login/dev.html) 换取手机号码。
 
 在uniCloud的云函数中拿到手机号后，可以直接使用，也可以再转给传统服务器处理，也可以通过[云函数url化](https://uniapp.dcloud.io/uniCloud/http)方式生成普通的http接口给5+ App使用。
 
-注意:
+::: warning 注意
 **虽然一键登录需要uniCloud，但并不要求开发者把所有的后台服务都迁移到uniCloud**
+:::
 
 服务器API详见：[uniCloud云函数中使用一键登录](https://doc.dcloud.net.cn/uniCloud/uni-login/dev)
 
@@ -650,7 +654,3 @@ uniCloud产生的费用对于一键登陆可以忽略，[详见](https://doc.dcl
 - **使用有其他疑问**
 欢迎扫码加入 一键登录 微信交流群讨论：
     <br/><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E4%B8%80%E9%94%AE%E8%AE%A4%E8%AF%81.png" width="250"/>
-
-
-
-

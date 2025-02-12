@@ -3,9 +3,11 @@
 
 **平台差异说明**
 
-|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|x|√|√|√|√|√|x|√|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|√|√|√|x|√|x|
+
+<!-- UNIAPPAPIJSON.saveFile.compatibility -->
 
 **注意：saveFile 会把临时文件移动，因此调用成功后传入的 tempFilePath 将不可用**
 
@@ -47,9 +49,11 @@ uni.chooseImage({
 
 **平台差异说明**
 
-|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|x|√|√|√|√|√|x|√|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|√|√|√|x|√|x|
+
+<!-- UNIAPPAPIJSON.getSavedFileList.compatibility -->
 
 > _微信小程序已停止维护[wx.getSavedFileList(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.getSavedFileList.html)接口，建议使用[FileSystemManager](https://uniapp.dcloud.io/api/file/getFileSystemManager.html)对象中的方法。_
 
@@ -91,9 +95,11 @@ uni.getSavedFileList({
 
 **平台差异说明**
 
-|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|x|√|√|√|x|√|x|√|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|√|x|√|x|√|x|
+
+<!-- UNIAPPAPIJSON.getSavedFileInfo.compatibility -->
 
 > _微信小程序已停止维护[wx.getSavedFileInfo(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.getSavedFileInfo.html)接口，建议使用[FileSystemManager](https://uniapp.dcloud.io/api/file/getFileSystemManager.html)对象中的方法。_
 
@@ -132,9 +138,11 @@ uni.getSavedFileInfo({
 
 **平台差异说明**
 
-|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|x|√|√|√|√|√|x|√|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|√|√|√|x|√|x|
+
+<!-- UNIAPPAPIJSON.removeSavedFile.compatibility -->
 
 > _微信小程序已停止维护[wx.removeSavedFile(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.removeSavedFile.html)接口，建议使用[FileSystemManager](https://uniapp.dcloud.io/api/file/getFileSystemManager.html)对象中的方法。_
 
@@ -169,9 +177,11 @@ uni.getSavedFileList({
 
 **平台差异说明**
 
-|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|√|√|√|x|√|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|√|√|x|√|x|
+
+<!-- UNIAPPAPIJSON.getFileInfo.compatibility -->
 
 > _微信小程序已停止维护[wx.getFileInfo(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.getFileInfo.html)接口，建议使用[FileSystemManager](https://uniapp.dcloud.io/api/file/getFileSystemManager.html)对象中的方法。_
 
@@ -198,9 +208,11 @@ uni.getSavedFileList({
 
 **平台差异说明**
 
-|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|x|√|√|√|√|√|x|√|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|√|√|√|x|√|x|
+
+<!-- UNIAPPAPIJSON.openDocument.compatibility -->
 
 **OBJECT 参数说明：**
 

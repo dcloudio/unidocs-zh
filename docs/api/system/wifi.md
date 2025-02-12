@@ -42,6 +42,10 @@
 
 关闭 Wi-Fi 模块
 
+|元服务|
+|:-:|
+|x|
+
 <!-- UNIAPPAPIJSON.stopWifi.compatibility -->
 
 **OBJECT 参数说明**
@@ -57,6 +61,10 @@
 ## uni.getConnectedWifi(OBJECT)
 
 获取已连接的 Wi-Fi 信息
+
+|元服务|
+|:-:|
+|1.0.4+|
 
 <!-- UNIAPPAPIJSON.getConnectedWifi.compatibility -->
 
@@ -81,6 +89,10 @@
 
 ## uni.getWifiList(OBJECT)
 
+|元服务|
+|:-:|
+|1.0.4+|
+
 请求获取 Wi-Fi 列表。wifiList 数据会在 onGetWifiList 注册的回调中返回。
 
 **OBJECT 参数说明**
@@ -103,6 +115,10 @@
 ## uni.onGetWifiList(CALLBACK)
 
 监听获取到 Wi-Fi 列表数据事件。
+
+|元服务|
+|:-:|
+|1.0.4+|
 
 <!-- UNIAPPAPIJSON.onGetWifiList.compatibility -->
 
@@ -127,6 +143,10 @@
 
 移除获取到 Wi-Fi 列表数据事件的监听函数。
 
+|元服务|
+|:-:|
+|1.0.4+|
+
 **CALLBACK 参数说明**
 
 onGetWifiList 传入的监听函数。不传此参数则移除所有监听函数。
@@ -142,6 +162,10 @@ onGetWifiList 传入的监听函数。不传此参数则移除所有监听函数
 ## uni.connectWifi(OBJECT)
 
 连接 Wi-Fi。若已知 Wi-Fi 信息，可以直接利用该接口连接。
+
+|元服务|
+|:-:|
+|1.0.4+|
 
 **OBJECT 参数说明**
 
@@ -167,6 +191,10 @@ onGetWifiList 传入的监听函数。不传此参数则移除所有监听函数
 ## uni.onWifiConnected(CALLBACK)
 
 监听连接上 Wi-Fi 的事件。
+
+|元服务|
+|:-:|
+|1.0.4+|
 
 **CALLBACK 参数说明**
 
@@ -196,9 +224,9 @@ onWifiConnected 传入的监听函数。不传此参数则移除所有监听函�
 
 **平台差异说明**
 
-|App-Android|App-iOS|
-|:-:|:-:|
-|√|x|
+|App-Android|App-iOS|元服务|
+|:-:|:-:|:-:|
+|√|x|1.0.4+|
 
 <!-- UNIAPPAPIJSON.offWifiConnected.compatibility -->
 

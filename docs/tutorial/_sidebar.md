@@ -112,7 +112,8 @@
     * [iOS本地离线打包](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios)
   * [App 加固](app-security.md)
   * [App 隐私合规检测](app-privacy-detect.md)
-  * [App 上架注意](store.md)
+  * App 应用市场上架
+    * [概述](store.md)
     * [国内应用市场上架](android-store.md)
     * [Android平台隐私与政策提示框](app-privacy-android.md)
     * [未同意隐私政策模式运行](app-disagreemode.md)
@@ -125,6 +126,7 @@
   * [运行和发行](harmony/runbuild.md)
   * [调用鸿蒙原生API](harmony/native-api.md)
   * [内置模块说明](harmony/built-in-module.md)
+  * [鸿蒙案例](https://uniapp.dcloud.net.cn/case.html#鸿蒙next)
   * [历史变更](harmony/history.md)
 * [鸿蒙元服务专题](mp-harmony/intro.md)
 * 小程序专题
@@ -146,7 +148,7 @@
   * [App平台：uni-app debug](debug/debug-app.md)
   * [App平台：Android uts调试](debug/uni-uts-debug.md)
   * [App平台：iOS uts调试](debug/uni-uts-debug-ios.md)
-  * [App平台：鸿蒙的运行和发行](run/run-app-harmony.md)
+  * [App平台：鸿蒙的运行和发行](run/run-app-harmony-moved.md)
   * [小程序平台：运行调试](debug/debug-mp.md)
   * [uni-vue-devtools 调试](debug/uni-vue-devtools.md)
 * [高效开发技巧](snippet.md)

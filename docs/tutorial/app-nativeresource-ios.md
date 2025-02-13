@@ -263,6 +263,11 @@ uni-app/uni-app x 项目可以通过编辑`UniApp.entitlements`文件配置`Capa
 - Configuring an associated domain，参考：[https://developer.apple.com/documentation/xcode/configuring-an-associated-domain](https://developer.apple.com/documentation/xcode/configuring-an-associated-domain)  
 
 
+### 配置文件PrivacyInfo.xcprivacy @privacyinfo
+
+PrivacyInfo.xcprivacy用于配置应用隐私清单文件，详情参考[uni-app/uni-app x如何配置隐私清单](https://uniapp.dcloud.net.cn/tutorial/app-ios-privacyinfo.html#uni-app-uni-app-x%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%9A%90%E7%A7%81%E6%B8%85%E5%8D%95)。
+
+
 ### Bundle资源目录 （Bundle Resources）@bundle  
 
 在“ios”目录下创建“Resources”子目录，结构如下：  

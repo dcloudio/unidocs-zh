@@ -17,11 +17,11 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 	</a>
 </div>
 
-<a href="//m3w.cn/__uni__1e99193" target="_blank" class="clear-style"><b>新闻/资讯类App模板：</b></a>nvue 典型案例，App端纯原生渲染，可左右拖动的复杂长列表，满足苛刻的性能要求。并同时能编译为小程序和H5。本项目源码在HBuilderX中新建项目选新闻模块可获得。
+<a href="https://im.dcloud.net.cn/uni-portal.html" target="_blank" class="clear-style"><b>DCloud：</b></a>uni-im的经典案例，此App的内置聊天模块即是基于uni-im开发。基于uni-app，实现 App、小程序、web 全端兼容，搭配uni-push2实现稳定推送，前后端代码全免费开源，项目源码在插件市场[下载](https://ext.dcloud.net.cn/plugin?name=uni-im)即可获取。
 
 <div style="display:flex;justify-content: space-around;">
-	<a href="//m3w.cn/__uni__1e99193" target="_blank" class="clear-style barcode-view">
-		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/case/news.png" width="200"/>
+	<a href="https://im.dcloud.net.cn/uni-portal.html" target="_blank" class="clear-style barcode-view">
+		<img src="https://web-ext-storage.dcloud.net.cn/doc/uni-im-qrcode.png" width="200"/>
 		<span style="margin-top:15px;">App及H5的通用快码</span>
 	</a>
 </div>

@@ -362,6 +362,12 @@ getphonenumber(e){
 3. 参考 [获取用户级凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-obtain-user-token-V5) 通过上一步骤的 code 获取 `access_token`
 4. 参考 [其他场景获取用户信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-otherscene-getuserinfo-V5) 接口通过 `access_token` 获取用户手机号。
 
+用户侧第一次使用会有系统控件弹窗申请，同意之后，后续会自动同意。如果撤回同意，或者测试控件效果，需要手机打开 设置-华为账号-账号安全-使用华为账号的应用-删除授权。
+
+用户侧控件效果如下，默认展示手机系统登录的账号，也可以通过管理手机号，手动验证其他手机号。
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/153e4b27-07bb-4fb1-aaaf-1685d555abf5.png)
+
 ### API 获取网络类型失败、手机震动不等效
 
 需要 `GET_NETWORK_INFO` 和 `vibrate` 权限。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5) 进行查询。按照 **配置权限模版** 章节进行配置。

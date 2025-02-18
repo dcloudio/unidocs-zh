@@ -17,7 +17,7 @@
 
 ### 开发环境准备
 
-- HBuilderX 4.34+ [下载地址](https://www.dcloud.io/hbuilderx.html)
+- HBuilderX 4.51+ [下载地址](https://www.dcloud.io/hbuilderx.html)
 - DevEco-Studio 5.0.5.200+ [下载地址](https://developer.huawei.com/consumer/cn/download/)
 
 ### 元服务 appid 注册@register-app-id
@@ -30,7 +30,7 @@
 
 元服务上架需要提前做好备案，强烈建议注册元服务时候立刻开始备案流程，避免临上架才开始备案，耽误上架时间。参考 [App 备案相关注意事项](https://developer.huawei.com/consumer/cn/doc/app/50130-FAQ).
 
-如果你的元服务需要应到登录、支付权限，也立即开始着手准备申请相关权限，参考 [华为支付服务开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/payment-preparations-V5)。
+如果你的元服务需要使用登录、支付权限，也立即开始着手准备申请相关权限，参考 [华为支付服务开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/payment-preparations-V5)。
 
 ### 准备签名证书
 
@@ -65,7 +65,7 @@
 - 这种自动签名的方式只能用于运行与调试，需要发行上架时候请参考 **发行与上架** 章节修改签名文件。
 - 签名操作需要连接鸿蒙真机设备。
 
-这个时候点击 `Run - Run 'entry'` 或者编辑器顶部的小三角选择运行。如果可以运行成功官方的 Hello World 示例，说明相关环境、证书配置完成。
+这个时候点击 `Run - Run 'entry'` 或者编辑器顶部的小三角选择运行。如果可以运行成功官方的 Hello World 示例，说明相关环境、证书配置完成。后续用到登录、支付、定位等权限时候需要使用调试证书，到时候替换正确的手动签名证书即可，本部分目的是配置元服务环境，减少上手阻碍。
 
 到这里前置工作就准备完成了。因为元服务还在开发迭代，下面补充相关注意事项。
 
@@ -97,7 +97,7 @@
 
 需要配置签名证书，这里依赖 [准备签名证书](#准备签名证书) 部分。项目根目录创建 `harmony-mp-configs/build-profile.json5` 文件，下载 [这个模版](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/build-profile.json5) 修改，只替换签名部分。
 
-![配置签名证书](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/116bc7de-00e0-4250-ac78-508b2dfa803f.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dac3b26f-7db8-415b-9df6-43e5964043ab.png)
 
 ### 3. 配置 `module.json5`
 
@@ -331,7 +331,7 @@ uni.authorize({
 
 参考[鸿蒙 Account Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-config-permissions-V5#section132012717318) 设置相关权限，添加 scope 权限。
 
-易错点： 1. 签名证书不能是自动签名，设置的是 agc 上下载的调试证书 2. `mp-configs/entry/src/main/modueljson5` 里有个 metadata client_id 确保值正确。 3. AGC 后台配置了指纹，添加了证书。
+易错点： 1. 签名证书不能是自动签名，设置的是 agc 上下载的调试证书 2. `mp-configs/entry/src/main/modueljson5` 里有个 metadata client_id 确保值正确。 3. AGC 后台 - 我的项目，配置指纹，添加了调试证书。
 
 通过 `uni.login` 可以得到 `code`，流程和其他小程序登录流程相似。参考 [解析凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-get-token-info-V5) 得到用户的 UnionID，开发者在这一步骤自行判断是已绑定华为 UnionID，如果未绑定，引导用户绑定现有账号体系。
 
@@ -485,7 +485,7 @@ XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申�
 
 - 场景一 `[AppGalleryConnectPublishServicelapp state can not be modified!` 当前应用可能已经在审核中
 
-### HBuilderX Alpha 4.51 版本无法启动
+### HBuilderX Alpha 4.51 版本无法启动@run-on-451
 
 从 HBuilderX Alpha 4.51 开始，鸿蒙元服务启用了新的内置模版，适配 ASCF 最新能力，产生了不兼容变化，需要手动处理。
 

@@ -148,7 +148,7 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **一码游贵州：** 贵州省委宣传部指导，贵州本土智慧文旅产业生态平台，鸿蒙应用市场搜索“一码游贵州”，[详情](https://appgallery.huawei.com/app/detail?id=com.dsy.ymygz)
 
-**黔警通：** 一站式便民服务，便捷办理公安业务，鸿蒙应用市场搜索“黔警通”，[详情](https://appgallery.huawei.com/app/detail?id=hmos.com.qxnga.qjt)
+**黔警通：** 黔西南公安局为市民打造的一站式便民服务，便捷办理公安业务，鸿蒙应用市场搜索“黔警通”，[详情](https://appgallery.huawei.com/app/detail?id=hmos.com.qxnga.qjt)
 
 **地质云：** 中国地质调查局主持研发的一套综合性地址信息服务系统，鸿蒙应用市场搜索“地质云”，[详情](https://appgallery.huawei.com/app/detail?id=com.cgs.gov.geoapp)
 

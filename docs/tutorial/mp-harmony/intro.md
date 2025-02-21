@@ -411,9 +411,9 @@ getphonenumber(e){
 
 参考文档顶部 **开发环境准备** 部分，请确认：
 
-1. 真机是鸿蒙 Next 真机，系统版本是 鸿蒙 5.0+。如果是鸿蒙 4.x 版本不属于鸿蒙 Next 系统，模拟器暂不支持。具体支持机型参考 [HarmonyOS NEXT 支持机型](https://consumer.huawei.com/cn/support/harmonyos/models-next/)
-2. 如果你调整过 hvigor 文件，可能锁定了 hbigor 版本为 1.0.0，请恢复 `hvigor/hvigor-config.json5` 文件。
-3. 第一次启动会跳转到应用市场访问应用，网络问题可能会超时，重试两次就可以。正式上架后不会出现此问题。出现此问题时，请用鸿蒙 Next 真机，在手机搜索框或手机里的华为应用市场里搜索 uniapp，并点击出现的元服务 helloUniApp，点打开，等待加载完成，然后再关闭，最后在 HBuilderX 重启项目即可。
+1. 真机是鸿蒙 Next 真机，系统版本是 鸿蒙 5.0+，模拟器暂不支持。
+2. 你可能调整过 hvigor 文件，目前普通用户不需要调整。请删除 `harmony-mp-configs/hvigor/hvigor-config.json5` 文件，使用默认的配置文件即可。如果不存在可以忽略。
+3. 第一次启动会跳转到应用市场访问应用，有可能会网络超时卡在浏览器页面，重试两次就可以。正式上架后不会出现此问题。出现此问题时，请用鸿蒙 Next 真机，在手机搜索框或手机里的华为应用市场里搜索 uniapp，并点击出现的元服务 helloUniApp，点打开，等待加载完成，然后再关闭，最后在 HBuilderX 重启项目即可。
 4. HBuilderX Alpha 4.51 起，内置依赖的 ascf 框架发生了变化，如果仍有问题，可以 IM 群内沟通。
 
 在终端中运行 `hdc shell bm dump-shared -a` 观察返回值是否包含 `com.huawei.hms.ascfruntime`，如果不包含，请打开应用市场搜索 `helloUniApp` 访问体验一次，然后重试。

@@ -1,3 +1,27 @@
+#### 4.53.2025022409-alpha
+* 【uni-app】
+  + App-Android平台 修复 使用uts插件云端打包后没有包含隐私清单的Bug
+  + App-Harmony平台 修复 4.51 引发的使用 uni.chooseImage 选择图片无法显示的Bug
+  + 快手小程序平台 修复 自定义组件 ref 获取失败的 bug [详情](https://ask.dcloud.net.cn/question/204250)
+* 【uni-app x】
+  + 修复 编译器 as 语法导致对象引用丢失 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15705)
+  + App平台 新增 组件 兼容支持 cover-view、cover-image [文档](https://doc.dcloud.net.cn/uni-app-x/component/cover-view.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=15771>
+  + App-iOS平台、微信小程序平台 新增 DOM API 关键帧动画 [文档](https://doc.dcloud.net.cn/uni-app-x/dom/unielement.html#animate) <https://issues.dcloud.net.cn/pages/issues/detail?id=15642>
+  + App-Android平台 修复 组件 canvas 设置textBaseline="Top"绘制位置不准确 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15634)
+  + App-Android平台 修复 组件 canvas Image释放后不会立即回收内存 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15645)
+  + App-Android平台 修复 组件 web-view 底部textarea弹出的软键盘遮挡界面元素 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15678)
+  + App-Android平台 修复 API dialogPage 在app的onLaunch或在页面的onLoad中打开dialogPage时获取不到安全区域信息 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15489)
+  + App-Android平台 修复 CSS border 安卓运行时解析 border 和编译时表现不一致 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15510)
+  + App-iOS平台 修复 4.51版本引发的 组件 Touch 事件 move 中执行 preventDefault 可能导致页面始终无法滚动 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15617)
+  + App-iOS平台 修复 组件 canvas ios端 Image对象 本地路径结尾带问号参数时无法被canvas渲染 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15784)
+  + App-iOS平台 修复 4.11版本引发的 组件 web-view 重写了 window.postMessage 函数 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15796)
+  + 微信小程序平台 修复 onShareAppMessage, onShareTimeline需要import才可使用 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15707)
+  + 微信小程序平台 修复 组合式api页面中 onShareAppMessage, onShareTimeline声明后页面也无法分享 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15708)
+* 【uts插件】
+  + Web平台、App-iOS平台、微信小程序平台 修复 部分对象字面量未转化为UTSJSONObject [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15557)
+* 【uniCloud】
+  + 修复 4.32版本引发的 uni-app-x 腾讯云云函数、云对象等网络请求返回的数据没有被转为UTSJSONObject [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=15653)
+
 #### 4.52.2025020807-alpha
 * 【uni-app】
   + App平台 新增 uni.chooseMedia [文档](https://uniapp.dcloud.net.cn/api/media/video.html#choosemedia)

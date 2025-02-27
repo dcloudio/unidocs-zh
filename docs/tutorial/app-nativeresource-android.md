@@ -153,9 +153,9 @@ uni-app 项目请在 `manifest.json` 可视化界面的 `App常用其它设置` 
 
 android平台的`activity`内容载体，部分特殊功能需修改[activity注册配置](https://developer.android.google.cn/guide/topics/manifest/activity-element?hl=zh-cn)才能实现功能，因此提供如下方式修改注册的配置信息。
 
-#### uni-app
+#### 5+ App/uni-app 项目
 
-uni-app x 页面 activity 如下:
+5+ App/uni-app 项目 页面 activity 如下:
 
 + 所有页面activity为io.dcloud.PandoraEntryActivity
 
@@ -171,9 +171,9 @@ uni-app x 页面 activity 如下:
 </manifest>
 ```
 
-#### uni-app x
+#### uni-app x 项目
 
-uni-app x 页面 activity 如下:
+uni-app x 项目页面 activity 如下:
 
 + 首页的activity为io.dcloud.uniapp.UniAppActivity
 + 次级页面跟随屏幕方向的activity为io.dcloud.uniapp.appframe.activity.UniPageActivity

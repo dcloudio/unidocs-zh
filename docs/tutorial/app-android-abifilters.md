@@ -55,7 +55,7 @@ HBuilderX已适配支持以下主流CPU类型：
 打开项目的manifest.json文件，切换到“源码视图”，根据项目类型进行配置
 
 - uni-app项目
-在 "app-plus"->"distribute"->"android" 节点的 abiFilters 属性配置支持的CPU类型，示例如下：
+在 "app-plus" -> "distribute" -> "android" 节点的 abiFilters 属性配置支持的CPU类型，示例如下：
 ``` js
   "app-plus": {
     "distribute": {
@@ -72,7 +72,24 @@ HBuilderX已适配支持以下主流CPU类型：
   },
   //..
 ```
-
+ - uni-app x项目
+ 在 "app" -> "distribute" -> "android" 节点的 abiFilters 属性配置支持的CPU类型，示例如下：
+ ``` js
+  "app": {
+    "distribute": {
+      "android": {
+        "abiFilters": [
+          "armeabi-v7a",
+          "arm64-v8a"
+        ]
+        //...
+      },
+      //...
+    },
+    //...
+  },
+  //..
+```
 
 #### 离线打包配置
 使用Android studio打开Android原生项目，打开对应项目的build.gradle文件。
@@ -135,7 +152,7 @@ Performing Streamed Install
 adb: failed to install android_debug.apk: Failure [INSTALL_FAILED_NO_MATCHING_ABIS: Failed to extract native libraries, res=-113]
 ```
 
-使用Android Studio自带的x86模拟器，将不包含x86 cpu类型的apk拖到模拟器安装时会弹出如下提示框：
+使用Android Studio自带的x86模拟器，将不包含x86 cpu类型的apk拖到模拟器安装时会弹出如下提示框：  
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/abifilters-error.png)
 
 

@@ -48,10 +48,14 @@ HBuilderX已适配支持以下主流CPU类型：
 
 ### 配置支持的CPU类型
 **可视化界面配置**
-打开项目的manifest.json文件，在 “App常用其它设置” -> “Android设置” -> “支持CPU类型” 项中勾选需要支持的CPU类型：
+
+uni-app项目，打开manifest.json文件，在 “App常用其它设置” -> “Android设置” -> “支持CPU类型” 项中勾选需要支持的CPU类型：
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/abifilters-manifest.png)
 
+> uni-app x 项目暂不支持可视化配置  
+
 **源码视图配置**
+
 打开项目的manifest.json文件，切换到“源码视图”，根据项目类型进行配置
 
 - uni-app项目
@@ -122,6 +126,7 @@ ARM64位（arm64-v8a）CPU可以兼容ARM32的指令，也就是说只选择arme
 
 ### 查看apk支持的CPU类型
 使用解压工具打开apk，在lib目录下可以查看到支持的CPU类型，如下图所示：
+
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/abifilters-apk.png)
 
 
@@ -152,7 +157,8 @@ Performing Streamed Install
 adb: failed to install android_debug.apk: Failure [INSTALL_FAILED_NO_MATCHING_ABIS: Failed to extract native libraries, res=-113]
 ```
 
-使用Android Studio自带的x86模拟器，将不包含x86 cpu类型的apk拖到模拟器安装时会弹出如下提示框：  
+使用Android Studio自带的x86模拟器，将不包含x86 cpu类型的apk拖到模拟器安装时会弹出如下提示框：
+
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/abifilters-error.png)
 
 

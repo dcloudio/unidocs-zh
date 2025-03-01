@@ -439,4 +439,5 @@ HBuilderX中合并路由界面效果图：
  - 插件文档，迁移至插件根目录的readme.md中
  - 右键package.json，点击`发布到插件市场`，选择分类，填写插件信息（尽可能与插件市场已有信息保持一致）
  - 发布成功后，您可以在插件市场的插件详情页右侧，查看到您的插件已同时提供了`uni_modules`版本和非`uni_modules`版本（仅保留最后一个非`uni_modules`版本）
+ 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ext_uni_modules.png)

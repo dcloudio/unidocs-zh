@@ -69,7 +69,7 @@ uni-app x 中加载字体图标，详见 hello uni-app x 的 [loadFontFace](http
 
 ## uni.rpx2px()
 
-将rpx单位值转换成px
+将rpx单位值转换成px。在 App 上暂不支持，可先使用 upx2px
 
 ```js
 <script>

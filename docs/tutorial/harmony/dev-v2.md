@@ -62,7 +62,9 @@ moduleName是在packageName的基础上生成的，移除@符号，将/替换为
 以uni-getBatteryInfo为例，在`oh-package.json5`文件内`dependencies`字段下添加如下内容
 
 ```json
-"@uni_modules/uni-getBatteryInfo": "./uni_modules/uni-getBatteryInfo"
+{
+  "@uni_modules/uni-getBatteryInfo": "./uni_modules/uni-getBatteryInfo"
+}
 ```
 
 4. 修改鸿蒙项目`build-profile.json5`

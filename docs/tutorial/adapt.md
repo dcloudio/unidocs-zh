@@ -156,7 +156,7 @@ leftWindow比较适合放置导航页面。如果你的应用首页有很多tab�
 
 leftWindow除了适用于手机应用适配大屏，也适用于重新开发的PC应用，尤其是PC Admin管理控制台。
 
-DCloud官方基于uni-app的pc版，推出了unicloud Admin：[https://uniapp.dcloud.net.cn/uniCloud/admin](https://uniapp.dcloud.net.cn/uniCloud/admin)
+DCloud官方基于uni-app的pc版，推出了unicloud Admin：[https://doc.dcloud.net.cn/uniCloud/admin](https://doc.dcloud.net.cn/uniCloud/admin)
 
 目前的leftWindow、rightWindow、topWindow 只支持web端。计划后续在Pad App上实现该配置。小程序无法支持该配置。
 

@@ -1,4 +1,4 @@
-#### custom-tab-bar
+### custom-tab-bar
 
 自定义tabBar组件。
 
@@ -15,6 +15,8 @@
 **平台兼容性**
 
 __仅 H5 支持__，HBuilderX 2.9.9 + 。
+
+<!-- UNIAPPCOMJSON.custom-tab-bar.compatibility -->
 
 **属性说明**
 

@@ -47,7 +47,7 @@
 
 **注意**
 - **应用生命周期仅可在`App.vue`中监听，在其它页面监听无效**。
-- 以组合式 API 使用时，在 Vue2 和 Vue3 中存在一定区别，请分别参考：[Vue2 组合式 API 使用文档](/tutorial/vue-composition-api.html) 和 [Vue3 组合式 API 使用文档](/tutorial/vue3-composition-api.html)。
+- 以组合式 API 使用时，在 Vue2 和 Vue3 中存在一定区别，请分别参考：[Vue2 组合式 API 使用文档](/tutorial/vue-composition-api.md) 和 [Vue3 组合式 API 使用文档](/tutorial/vue3-composition-api.md)。
 - 应用启动参数，可以在API `uni.getLaunchOptionsSync`获取，[详见](https://uniapp.dcloud.net.cn/api/getLaunchOptionsSync.html#getlaunchoptionssync)
 - onlaunch里进行页面跳转，如遇白屏报错，请参考[https://ask.dcloud.net.cn/article/35942](https://ask.dcloud.net.cn/article/35942)
 - `App.vue` 不能写模板
@@ -55,7 +55,7 @@
 
 ## globalData
 
-小程序有globalData，这是一种简单的全局变量机制。这套机制在uni-app里也可以使用，并且全端通用（uni-app x不支持）。
+小程序有globalData，这是一种简单的全局变量机制。这套机制在uni-app里也可以使用，并且全端通用。
 
 当然vue框架的全局变量，另有其他方式定义。
 

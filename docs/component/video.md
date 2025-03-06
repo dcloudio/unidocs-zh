@@ -1,5 +1,9 @@
-#### video
+> 视频需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
+
+## video
 视频播放组件。
+
+<!-- UNIAPPCOMJSON.video.compatibility -->
 
 **属性说明**
 
@@ -59,6 +63,7 @@
 
 `<video>` 默认宽度 300px、高度 225px，可通过 css 设置宽高。
 
+<!-- UNIAPPCOMJSON.video.attribute -->
 
 ##### direction 的合法值
 
@@ -182,6 +187,10 @@ export default {
 	* 小程序平台：各小程序平台支持程度不同，详见各家文档：[微信小程序视频组件文档](https://developers.weixin.qq.com/miniprogram/dev/component/video.html)、[支付宝小程序video组件](https://docs.alipay.com/mini/component/video)、[百度小程序视频组件文档](https://smartprogram.baidu.com/docs/develop/component/media/#video/)、[抖音小程序视频组件文档](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/media-component/video/)、[QQ小程序视频组件文档](https://q.qq.com/wiki/develop/miniprogram/component/media/camera.html)、[华为快应用视频组件文档](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-component-video)
 	* App平台： 支持本地视频(mp4/flv)、网络视频地址（mp4/flv/m3u8）及流媒体（rtmp/hls/rtsp）。
 
+App平台video组件使用ijkplayer库实现：[https://github.com/bilibili/ijkplayer](https://github.com/bilibili/ijkplayer)；
+
+ijkplayer作为一个开源库，比腾讯视频等商业sdk仍有差距。如无法在开源库上满足需求，可在插件市场寻找商业sdk插件：[腾讯视频](https://ext.dcloud.net.cn/search?q=%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91&orderBy=Relevance&cat1=5&cat2=51)、[阿里云视频](https://ext.dcloud.net.cn/search?q=%E9%98%BF%E9%87%8C%E4%BA%91%E8%A7%86%E9%A2%91&orderBy=Relevance&cat1=5&cat2=51)
+
 - video**全屏**后，如何自行绘制界面？比如加个标题、加个分享按钮
 	* 微信基础库 2.4.0 以上可通过cover-view来绘制界面覆盖元素
 	* app端 2.1.5 以上nvue页面的video也可以通过cover-view来绘制界面覆盖元素
@@ -197,8 +206,13 @@ export default {
 
 - App平台：使用 `<video/>` 组件，打包 App 时必须勾选 manifest.json->App 模块权限配置->VideoPlayer 模块。此模块体积较大，非默认内置。
 - App平台：如果使用的视频路径为本地路径，需要配置资源为释放模式：在 manifest.json 文件内 app-plus 节点下新增 runmode 配置，设置值为liberate。
-- App平台：如果想使用非原生的video，即原来普通的html5自带video，可使用web-view组件load html页面，在其中使用普通h5 video。
+- App平台：如果想使用非原生的video，即原来普通的html5自带video。有2种方案：
+	* 1. 可使用web-view组件load html页面，在其中使用普通h5 video
+	* 2. 使用renderjs，在渲染层直接创建video组件。插件市场有这方面的[插件](https://ext.dcloud.net.cn/search?q=%E8%A7%86%E9%A2%91%E5%B1%82%E7%BA%A7&orderBy=Relevance&cat1=2&cat2=21)
+	使用webview的video，好处是没有层级覆盖问题，部分video格式的兼容性更好；坏处是受webview版本限制，在低端Android（5、6）上表现逊于原生video。如果不考虑老Android手机，可以使用这种方案。
 - App平台：app-vue即使选择了使用x5内核，也不会使用x5的video播放，仍然使用uni-app的App引擎自带的原生视频播放。
 - App平台：3.6.14 以及 手机系统 iOS16 以上video**全屏** 需要配置应用支持横屏： 在 manifest.json 文件内 app-plus 节点下新增 screenOrientation 配置，设置值为["portrait-primary","portrait-secondary","landscape-primary","landscape-secondary"]。
 - H5平台： 在部分浏览器中会强制调用原生播放器播放（如：微信内置浏览器、UC浏览器等），在 x5 内核的浏览器中支持配置[同层播放器](https://x5.tencent.com/docs/video.html)。
 - HBuilderX内置浏览器，使用video标签暂时存在问题，请先使用其他外部浏览器。
+
+<!-- UNIAPPCOMJSON.video.reference -->

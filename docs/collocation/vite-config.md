@@ -11,7 +11,7 @@ vite.config.js 是一个可选的配置文件，如果项目的根目录中存�
 
 部分配置项会被编译配置覆盖，例如：
 
-- base：支持
+- base：web 平台支持
 - root：不支持
 - mode：不支持
 - publicDir: 不支持，固定为 static
@@ -107,6 +107,8 @@ export default defineConfig({
 	},
 });
 ```
+
+注意：在 HBuilderX 中读取 `.env` 环境变量可以通过 `loadEnv` 获取，注意第二个参数不要使用 `processs.cwd()`， 第二个参数需要填写配置文件所在的绝对路径： `const env = loadEnv(mode, __dirname);`
 
 **发布时删除 console**
 

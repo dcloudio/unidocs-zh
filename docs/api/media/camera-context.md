@@ -1,11 +1,11 @@
-### uni.createCameraContext()
+## uni.createCameraContext()
 创建并返回 camera 组件的上下文 cameraContext 对象。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|√|√|√|x|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|√|√|√|√|x|√|√|√|1.0.4+|x|
 
 本API为 camera 组件配套的js API，与 camera 组件的平台兼容性相同，可实现非全屏摄像头。App端可通过[plus.camera](https://www.html5plus.org/doc/zh_cn/camera.html)实现全屏摄像头。
 
@@ -19,7 +19,7 @@
 |stopRecord|Object|结束录像，成功则返回封面与视频。||
 |onCameraFrame|Function|获取 Camera 实时帧数据。|微信小程序[详情](https://developers.weixin.qq.com/miniprogram/dev/api/CameraContext.onCameraFrame.html)、支付宝小程序[详情](https://opendocs.alipay.com/mini/03qitt)、抖音小程序支持[详情](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/media/camera/camera-context/camera-context-on-camera-frame)|
 
-### cameraContext.takePhoto
+## cameraContext.takePhoto
 **takePhoto 的 Object 参数列表：**
 
 |参数|类型|必填|说明|
@@ -30,7 +30,7 @@
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-### cameraContext.setZoom
+## cameraContext.setZoom
 **setZoom 的 Object 参数列表：**
 
 |参数|类型|必填|说明|
@@ -40,7 +40,7 @@
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-### cameraContext.startRecord
+## cameraContext.startRecord
 **startRecord 的 Object 参数列表：**
 
 |参数|类型|必填|说明|
@@ -52,7 +52,7 @@
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-### cameraContext.stopRecord
+## cameraContext.stopRecord
 **stopRecord 的 Object 参数列表：**
 
 |参数|类型|默认值|必填|说明|

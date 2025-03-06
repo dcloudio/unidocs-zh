@@ -41,7 +41,7 @@ HBuilderX3.1.6+版本授权登录界面支持全屏模式
 ```js
 uni.login({
 	provider: 'univerify',
-	univerifyStyle: { 
+	univerifyStyle: {
     fullScreen: true
   }
 })
@@ -87,31 +87,34 @@ uni.login({
 ### 开通uni一键登录服务
 开发者需要登录[uniCloud控制台](https://unicloud.dcloud.net.cn/pages/uni-login/login-account)，申请开通一键登录服务。
 
-详细步骤参考：[一键登录服务开通指南](https://uniapp.dcloud.net.cn/uniCloud/uni-login/service)
+详细步骤参考：[一键登录服务开通指南](https://doc.dcloud.net.cn/uniCloud/uni-login/service)
 
-开通成功后会得到 apiKey、apiSecret。这2个信息，后续需要配置在uniCloud的云函数里。同时注意保密，这2个信息也是计费凭证。
 
-**注意**
-> 应用开通uni一键登录服务后，需要等审核通过后才能正式使用。在审核期间可以使用HBuilder标准基座真机运行调用一键登录功能，调用时会从你的账户中扣费；但在审核期间不可以使用自定义基座调用一键登录功能，调用时会返回错误。
+::: warning 注意
+- 应用开通uni一键登录服务后，需要`等审核通过`后才能正式使用。\
+- 在审核期间可以使用`HBuilder标准基座`真机运行调用一键登录功能，调用时会从你的账户中扣费；但审核期间不可以使用自定义基座调用一键登录功能，调用时会返回错误。
+:::
 
 
 ### 开通uniCloud服务
-一键登录在客户端获取 `access_token` 后，必须在 [uniCloud](https://uniapp.dcloud.io/uniCloud/README) 换取手机号码。
+
+一键登录在客户端获取 `access_token` 后，必须在 [uniCloud](https://doc.dcloud.net.cn/uniCloud/uni-login/dev.html) 换取手机号码。
 
 在uniCloud的云函数中拿到手机号后，可以直接使用，也可以再转给传统服务器处理，也可以通过[云函数url化](https://uniapp.dcloud.io/uniCloud/http)方式生成普通的http接口给5+ App使用。
 
-注意:
+::: warning 注意
 **虽然一键登录需要uniCloud，但并不要求开发者把所有的后台服务都迁移到uniCloud**
+:::
 
-服务器API详见：[uniCloud云函数中使用一键登录](https://uniapp.dcloud.net.cn/uniCloud/uni-login/dev)
+服务器API详见：[uniCloud云函数中使用一键登录](https://doc.dcloud.net.cn/uniCloud/uni-login/dev)
 
-uniCloud产生的费用对于一键登陆可以忽略，[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-login/price)
+uniCloud产生的费用对于一键登陆可以忽略，[详见](https://doc.dcloud.net.cn/uniCloud/uni-login/price)
 
 ## 开发
 
 本文主要介绍uni-app的客户端调用方法。5+ App（Wap2App）请另行参考：[5+ App一键登录使用指南](https://ask.dcloud.net.cn/article/38009)
 
-DCloud还提供了更易用的封装。在[uni-id](/uniCloud/uni-id)里已经预置了`uni一键登录`，并基于`uni-id`提供了[云端一体应用快速开发基本项目模版](https://ext.dcloud.net.cn/plugin?id=5057)，该项目模版内置了包括一键登录在内的各种常用登录示例，开发者可以拿去直接用
+DCloud还提供了更易用的封装。在[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/old.html)里已经预置了`uni一键登录`，并基于`uni-id`提供了[云端一体应用快速开发基本项目模版](https://ext.dcloud.net.cn/plugin?id=5057)，该项目模版内置了包括一键登录在内的各种常用登录示例，开发者可以拿去直接用
 
 接下来继续介绍原始API的用法。
 
@@ -185,57 +188,59 @@ uni.login({
 univerifyStyle 数据结构：
 
 ```json
-{  
+{
     "fullScreen": false, // 是否全屏显示，默认值： false
     "backgroundColor": "#ffffff",  // 授权页面背景颜色，默认值：#ffffff
-    "backgroundImage": "", // 全屏显示的背景图片，默认值："" （仅支持本地图片，只有全屏显示时支持）  
-    "icon": {  
+    "backgroundImage": "", // 全屏显示的背景图片，默认值："" （仅支持本地图片，只有全屏显示时支持）
+    "icon": {
         "path": "static/xxx.png", // 自定义显示在授权框中的logo，仅支持本地图片 默认显示App logo
         "width":  "60px",  //图标宽度 默认值：60px
         "height": "60px"   //图标高度 默认值：60px
-    },  
-    "closeIcon": {  
-        "path": "static/xxx.png" // 自定义关闭按钮，仅支持本地图片。 HBuilderX3.3.7+版本支持
-    },  
-    "phoneNum": {  
-        "color": "#202020"  // 手机号文字颜色 默认值：#202020  
-    },  
-    "slogan": {  
-        "color": "#BBBBBB"  //  slogan 字体颜色 默认值：#BBBBBB  
-    },  
-    "authButton": {  
-        "normalColor": "#3479f5", // 授权按钮正常状态背景颜色 默认值：#3479f5  
-        "highlightColor": "#2861c5",  // 授权按钮按下状态背景颜色 默认值：#2861c5（仅ios支持）  
-        "disabledColor": "#73aaf5",  // 授权按钮不可点击时背景颜色 默认值：#73aaf5（仅ios支持）  
-        "textColor": "#ffffff",  // 授权按钮文字颜色 默认值：#ffffff  
-        "title": "本机号码一键登录", // 授权按钮文案 默认值：“本机号码一键登录”  
+    },
+    "closeIcon": {
+        "path": "static/xxx.png", // 自定义显示在授权框中的logo，仅支持本地图片
+        "width":  "60px",  //图标宽度 默认值：60px (HBuilderX 4.0+ 仅iOS支持)
+        "height": "60px"   //图标高度 默认值：60px (HBuilderX 4.0+ 仅iOS支持)
+    },
+    "phoneNum": {
+        "color": "#202020"  // 手机号文字颜色 默认值：#202020
+    },
+    "slogan": {
+        "color": "#BBBBBB"  //  slogan 字体颜色 默认值：#BBBBBB
+    },
+    "authButton": {
+        "normalColor": "#3479f5", // 授权按钮正常状态背景颜色 默认值：#3479f5
+        "highlightColor": "#2861c5",  // 授权按钮按下状态背景颜色 默认值：#2861c5（仅ios支持）
+        "disabledColor": "#73aaf5",  // 授权按钮不可点击时背景颜色 默认值：#73aaf5（仅ios支持）
+        "textColor": "#ffffff",  // 授权按钮文字颜色 默认值：#ffffff
+        "title": "本机号码一键登录", // 授权按钮文案 默认值：“本机号码一键登录”
         "borderRadius": "24px"	// 授权按钮圆角 默认值："24px" （按钮高度的一半）
-    },  
-    "otherLoginButton": {  
-        "visible": true, // 是否显示其他登录按钮，默认值：true  
-        "normalColor": "", // 其他登录按钮正常状态背景颜色 默认值：透明 
-        "highlightColor": "", // 其他登录按钮按下状态背景颜色 默认值：透明 
-        "textColor": "#656565", // 其他登录按钮文字颜色 默认值：#656565  
-        "title": "其他登录方式", // 其他登录方式按钮文字 默认值：“其他登录方式”  
-        "borderColor": "",  //边框颜色 默认值：透明（仅iOS支持）  
+    },
+    "otherLoginButton": {
+        "visible": true, // 是否显示其他登录按钮，默认值：true
+        "normalColor": "", // 其他登录按钮正常状态背景颜色 默认值：透明
+        "highlightColor": "", // 其他登录按钮按下状态背景颜色 默认值：透明
+        "textColor": "#656565", // 其他登录按钮文字颜色 默认值：#656565
+        "title": "其他登录方式", // 其他登录方式按钮文字 默认值：“其他登录方式”
+        "borderColor": "",  //边框颜色 默认值：透明（仅iOS支持）
         "borderRadius": "0px" // 其他登录按钮圆角 默认值："24px" （按钮高度的一半）
-    },  
-    "privacyTerms": {  
+    },
+    "privacyTerms": {
         "defaultCheckBoxState":true, // 条款勾选框初始状态 默认值： true
         "isCenterHint":false, //未勾选服务条款时点击登录按钮的提示是否居中显示 默认值: false (3.7.13+ 版本支持)
-        "uncheckedImage":"", // 可选 条款勾选框未选中状态图片（仅支持本地图片 建议尺寸 24x24px）(3.2.0+ 版本支持)   
-        "checkedImage":"", // 可选 条款勾选框选中状态图片（仅支持本地图片 建议尺寸24x24px）(3.2.0+ 版本支持)   
+        "uncheckedImage":"", // 可选 条款勾选框未选中状态图片（仅支持本地图片 建议尺寸 24x24px）(3.2.0+ 版本支持)
+        "checkedImage":"", // 可选 条款勾选框选中状态图片（仅支持本地图片 建议尺寸24x24px）(3.2.0+ 版本支持)
         "checkBoxSize":12, // 可选 条款勾选框大小
-        "textColor": "#BBBBBB", // 文字颜色 默认值：#BBBBBB  
-        "termsColor": "#5496E3", //  协议文字颜色 默认值： #5496E3  
-        "prefix": "我已阅读并同意", // 条款前的文案 默认值：“我已阅读并同意”  
-        "suffix": "并使用本机号码登录", // 条款后的文案 默认值：“并使用本机号码登录”  
-        "privacyItems": [  // 自定义协议条款，最大支持2个，需要同时设置url和title. 否则不生效  
-            {  
-                "url": "https://", // 点击跳转的协议详情页面  
-                "title": "用户服务协议" // 协议名称  
-            }  
-        ]  
+        "textColor": "#BBBBBB", // 文字颜色 默认值：#BBBBBB
+        "termsColor": "#5496E3", //  协议文字颜色 默认值： #5496E3
+        "prefix": "我已阅读并同意", // 条款前的文案 默认值：“我已阅读并同意”
+        "suffix": "并使用本机号码登录", // 条款后的文案 默认值：“并使用本机号码登录”
+        "privacyItems": [  // 自定义协议条款，最大支持2个，需要同时设置url和title. 否则不生效
+            {
+                "url": "https://", // 点击跳转的协议详情页面
+                "title": "用户服务协议" // 协议名称
+            }
+        ]
     },
     "buttons": {  // 自定义页面下方按钮仅全屏模式生效（3.1.14+ 版本支持）
         "iconWidth": "45px", // 图标宽度（高度等比例缩放） 默认值：45px
@@ -243,7 +248,7 @@ univerifyStyle 数据结构：
             {
                 "provider": "apple",
                 "iconPath": "/static/apple.png" // 图标路径仅支持本地图片
-            }, 
+            },
             {
                 "provider": "weixin",
                 "iconPath": "/static/wechat.png" // 图标路径仅支持本地图片
@@ -337,7 +342,7 @@ univerifyManager.login({
             {
                 "provider": "apple",
                 "iconPath": "/static/apple.png"
-            }, 
+            },
             {
                 "provider": "weixin",
                 "iconPath": "/static/wechat.png"
@@ -417,16 +422,14 @@ exports.main = async (event, context) => {
   const res = await uniCloud.getPhoneNumber({
   	appid: '_UNI_ABCDEFG', // 替换成自己开通一键登录的应用的DCloud appid
   	provider: 'univerify',
-  	apiKey: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiKey
-  	apiSecret: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiSecret
   	access_token: event.access_token,
   	openid: event.openid
   })
-  
+
   console.log(res); // res里包含手机号
   // 执行用户信息入库等操作，正常情况下不要把完整手机号返回给前端
   // 如果数据库在uniCloud上，可以直接入库
-  // 如果数据库不在uniCloud上，可以通过 uniCloud.httpclient API，将手机号通过http方式传递给其他服务器的接口，详见：https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=httpclient
+  // 如果数据库不在uniCloud上，可以通过 uniCloud.httpclient API，将手机号通过http方式传递给其他服务器的接口，详见：https://doc.dcloud.net.cn/uniCloud/cf-functions?id=httpclient
   return {
     code: 0,
     message: '获取手机号成功'
@@ -482,14 +485,12 @@ exports.main = async(event) => {
   const res = await uniCloud.getPhoneNumber({
   	provider: 'univerify',
     appid: 'xxx', // DCloud appid，不同于callFunction方式调用，使用云函数Url化需要传递DCloud appid参数！！！
-  	apiKey: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiKey
-  	apiSecret: 'xxx', // 在在uniCloud控制台开通一键登录服务并获取apiSecret
   	access_token: access_token,
   	openid: openid
   })
   console.log(res); // res里包含手机号
-  // 如果数据库不在uniCloud上，可以通过 uniCloud.httpclient API，将手机号通过http方式传递给其他服务器的接口，详见：https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=httpclient
-  
+  // 如果数据库不在uniCloud上，可以通过 uniCloud.httpclient API，将手机号通过http方式传递给其他服务器的接口，详见：https://doc.dcloud.net.cn/uniCloud/cf-functions?id=httpclient
+
   return {  // 不建议把完整手机号返回给前端
     code: 0,
     message: '获取手机号成功'
@@ -534,23 +535,23 @@ const sign = hmac.digest('hex')
 // 云函数验证签名，此示例中以接受GET请求为例作演示
 const crypto = require('crypto')
 exports.main = async(event) => {
-  
+
   const secret = 'your-secret-string' // 自己的密钥不要直接使用示例值，且注意不要泄露
   const hmac = crypto.createHmac('sha256', secret);
-  
+
   let params = event.queryStringParameters
   const sign = params.sign
   delete params.sign
   const signStr = Object.keys(params).sort().map(key => {
     return `${key}=${params[key]}`
   }).join('&')
-  
+
   hmac.update(signStr);
-  
+
   if(sign!==hmac.digest('hex')){
     throw new Error('非法访问')
   }
-  
+
   const {
     access_token,
     openid
@@ -558,8 +559,6 @@ exports.main = async(event) => {
   const res = await uniCloud.getPhoneNumber({
   	provider: 'univerify',
     appid: 'xxx', // DCloud appid，不同于callFunction方式调用，使用云函数Url化需要传递DCloud appid参数
-  	apiKey: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiKey
-  	apiSecret: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiSecret
   	access_token: access_token,
   	openid: openid
   })
@@ -606,7 +605,7 @@ exports.main = async(event) => {
 | 30001	|  当前网络环境不适合执行该操作  | 无 |
 | 30002 |  用户点击了其他登录方式  | 无 |
 | 30003 |  用户关闭验证界面  | 无 |
-| 30004 |  其他错误  | [30004章节](#30004)自查或联系官方人员 |
+| 30004 |  其他错误  | [30004章节](#_30004)自查或联系官方人员 |
 | 30005 |  预登录失败  | 不具备一键登录的使用前提，设备不支持/未开启数据流量/其他原因 |
 | 30006 |  一键登录失败  | 无 |
 | 30007 |  获取本机号码校验token失败  | 校验异常，联系官方人员|
@@ -626,7 +625,7 @@ exports.main = async(event) => {
 
 ## 运行基座和打包
 
-- 使用`uni一键登录`，不需要制作自定义基座，使用HBuilder标准真机运行基座即可。在云函数中配置好apiKey、apiSecret后，一样从你的账户充值中扣费。
+- 使用`uni一键登录`，安卓平台不需要制作自定义基座，使用HBuilder标准真机运行基座即可，调用时会从你的账户中扣费。iOS平台使用标准基座必须要用`io.dcloud.HBuilder`这个bundleId重签，其他bundleId重签无法登录。
 
 - 云端打包
 在项目manifest.json页面“App模块配置”项的“OAuth(登录鉴权)”下勾选“一键登录(uni-verify)”。
@@ -650,12 +649,8 @@ exports.main = async(event) => {
 大多数情况 是因为部分特定设备，不支持双卡双待的网络环境。
 
 - **uniCloud费用贵不贵？**
-uniCloud产生的费用对于一键登陆可以忽略，[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-login/price)
+uniCloud产生的费用对于一键登陆可以忽略，[详见](https://doc.dcloud.net.cn/uniCloud/uni-login/price)
 
 - **使用有其他疑问**
 欢迎扫码加入 一键登录 微信交流群讨论：
     <br/><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E4%B8%80%E9%94%AE%E8%AE%A4%E8%AF%81.png" width="250"/>
-
-
-
-

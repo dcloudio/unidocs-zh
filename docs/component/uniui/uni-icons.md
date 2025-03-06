@@ -1,5 +1,6 @@
+# uni-icons 图标
 
-::: tip 组件名：uni-icons
+::: tip 组件名：uni-icons（已支持 uni-app x）
 > 代码块： `uIcons`
 
 [点击下载&安装](https://ext.dcloud.net.cn/plugin?name=uni-icons)
@@ -30,7 +31,8 @@
 |size	|Number		|24		|图标大小			|
 |type	|String		|-		|图标图案，参考示例	|
 |color	|String		|-		|图标颜色			|
-|customPrefix	|String		|-		|自定义图标|
+|customPrefix`[即将废弃]`|String		|-	|自定义图标 |
+|fontFamily	|String		|-		|自定义图标 `2.0.0+支持`|
 
 
 
@@ -40,7 +42,68 @@
 |:-:	|:-:			|:-:  |
 |@click|点击 Icon 触发事件|-    |
 
-## 自定义图标 
+## 通过 fontFamily 自定义图标 
+1. 引入字体图标
+2. 页面 `style` 中定义 `font-family` 属性，并正确引入字体
+```css
+@font-face {
+	font-family: CustomFont;
+	src: url('./iconfont.ttf');
+}
+```
+3. 组件声明 `fontFamily` 属性，值为 步骤2 的 `font-family`  ,此时组件的 `type` 属性将不生效
+4. 组件内需要使用字体的 `unicode` 码作为图标显示内容
+```html
+<uni-icons fontFamily="CustomFont" :size="26">{{'\uebc6'}}</uni-icons>
+
+```
+5. 方便使用扩展，推荐将 `unicode` 与显示内容做一个map映射
+
+```html
+<template>
+<view class="icon-content">
+	<view v-for="(item,index) in customIcons" :key="index">
+		<uni-icons fontFamily="CustomFont" >{{item.unicode}}</uni-icons>
+		<text>{{item.name}}</text>
+	</view>
+</view>
+</template>
+<script>
+export default {
+	data() {
+		return {
+			icons: [],
+			customIcons: [
+				{
+					name: "home",
+					unicode: "\ue601",
+				},
+				{
+					name: "my",
+					unicode: "\ue6ba",
+				},
+				{
+					name: "back",
+					unicode: "\ue634",
+				}
+			]
+		}
+	},
+	created() {},
+}
+</script>
+<style>
+@font-face {
+	font-family: CustomFont;
+	src: url('./iconfont.ttf');
+}
+</style>
+
+```
+
+
+
+## 通过 customPrefix 自定义图标 （即将废弃）
 ::: warning 注意
 nvue 页面暂时不支持自定义图标，如需在 nvue 中使用 ，请自行引入字体文件
 :::
@@ -58,7 +121,7 @@ nvue 页面暂时不支持自定义图标，如需在 nvue 中使用 ，请自�
 
 
 1. 访问 [阿里图标库](https://www.iconfont.cn/)，搜索图标并加入购物车：
-![搜索图标](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/1.png)
+![搜索图标](https://web-ext-storage.dcloud.net.cn/doc/uni-icon-custom.jpg)
 
 2. 点击页面右上角购物车图标 ，点击`添加至项目`，如没有项目，需要点击下图第二步的图标添加一个项目目录，如已经有项目则可以略过第二步，选择项目后点击确定：
 

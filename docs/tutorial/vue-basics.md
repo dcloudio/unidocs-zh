@@ -54,18 +54,18 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 - 以前一个 `html` 大节点，里面有 `script` 和 `style` 节点；
 
 ```html
-	<!DOCTYPE html>  
-	<html>  
-		<head>  
-			<meta charset="utf-8" />  
-			<title></title>  
-			<script type="text/javascript">  
-			</script>  
-			<style type="text/css">  
-			</style>  
-		</head>  
-		<body>  
-		</body>  
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8" />
+			<title></title>
+			<script type="text/javascript">
+			</script>
+			<style type="text/css">
+			</style>
+		</head>
+		<body>
+		</body>
 	</html>
 ```
 
@@ -73,16 +73,16 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 - 现在 `template` 是一级节点，用于写tag组件， `script` 和 `style` 是并列的一级节点，也就是有3个一级节点。这个叫[vue单文件组件规范sfc](https://cn.vuejs.org/v2/guide/single-file-components.html)。
 
 ```html
-	<template>  
-		<view>  
-		注意必须有一个view，且只能有一个根view。所有内容写在这个view下面。  
-		</view>  
-	</template>  
-	<script>  
-		export default {  
-		}  
-	</script>  
-	<style>  
+	<template>
+		<view>
+		注意必须有一个view，且只能有一个根view。所有内容写在这个view下面。
+		</view>
+	</template>
+	<script>
+		export default {
+		}
+	</script>
+	<style>
 	</style>
 ```
 
@@ -92,7 +92,7 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 - 以前通过script src、link href引入外部的js和css；
 
 ```html
-	<script src="js/jquery-1.10.2.js" type="text/javascript"></script>  
+	<script src="js/jquery-1.10.2.js" type="text/javascript"></script>
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
 ```
 
@@ -104,20 +104,20 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 
 
 ```html
-	<script>  
-		var util = require('../../../common/util.js');  //require这个js模块  
-		var formatedPlayTime = util.formatTime(playTime); //调用js模块的方法  
+	<script>
+		var util = require('../../../common/util.js');  //require这个js模块
+		var formatedPlayTime = util.formatTime(playTime); //调用js模块的方法
 	</script>
 ```
 
 而在这个 `util.js` 里，要把之前的 `function` 封装为对象的方法
 
 ```js
-	function formatTime(time) {  
-		return time;//这里没写逻辑  
-	}  
-	module.exports = {  
-		formatTime: formatTime  
+	function formatTime(time) {
+		return time;//这里没写逻辑
+	}
+	module.exports = {
+		formatTime: formatTime
 	}
 ```
 
@@ -125,26 +125,26 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 当然还有一些高级的用法
 
 ```js
-	// 直接使用js模块的属性。在hello uni-app有示例 
-	var dateUtils = require('../../../common/util.js').dateUtils; 
-	// 将js导入并重命名为echarts，然后使用echarts.来继续执行方法。在hello uni-app有示例 
-	import * as echarts from '/components/echarts/echarts.simple.min.js'; 
+	// 直接使用js模块的属性。在hello uni-app有示例
+	var dateUtils = require('../../../common/util.js').dateUtils;
+	// 将js导入并重命名为echarts，然后使用echarts.来继续执行方法。在hello uni-app有示例
+	import * as echarts from '/components/echarts/echarts.simple.min.js';
 ```
 
 **css外部文件导入**。全局样式，在根目录下的 `app.vue` 里写入，每个页面都会加载 `app.vue` 里的样式。
 
 
 ```html
-	<style>  
-		@import "./common/uni.css";  
-		.uni-hello-text{  
-			color:#7A7E83;  
-		}  
+	<style>
+		@import "./common/uni.css";
+		.uni-hello-text{
+			color:#7A7E83;
+		}
 	</style>
 ```
 
 
-**另外，vue支持组件导入，可以更方便的封装一个包括界面、js、样式的库**。[详见](/vue-components.md)
+**另外，vue支持组件导入，可以更方便的封装一个包括界面、js、样式的库**。[详见](./vue-components.md)
 
 
 ### 组件/标签的变化
@@ -164,22 +164,22 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 - 以前的 DOM 操作，如果你想改变某个 DOM 元素的显示内容，比如一个view的显示文字：给view设id，然后js里通过选择器获取 DOM 元素，进一步通过js进行赋值操作，修改 DOM 元素的属性或值。
 
 ```html
-	<html>  
-		<head>  
-			<script type="text/javascript">  
-				document.addEventListener("DOMContentLoaded",function () {  
-					document.getElementById("spana").innerText="456"  
-				})  
-				function changetextvalue () {  
-					document.getElementById("spana").innerText="789"  
-				}  
-			</script>  
-		</head>  
-		<body>  
-			<span id="spana">123</span>  
-			<button type="button" onclick="changetextvalue()">修改为789</button>  
-		</body>  
-	</html>  
+	<html>
+		<head>
+			<script type="text/javascript">
+				document.addEventListener("DOMContentLoaded",function () {
+					document.getElementById("spana").innerText="456"
+				})
+				function changetextvalue () {
+					document.getElementById("spana").innerText="789"
+				}
+			</script>
+		</head>
+		<body>
+			<span id="spana">123</span>
+			<button type="button" onclick="changetextvalue()">修改为789</button>
+		</body>
+	</html>
 ```
 
 
@@ -189,29 +189,29 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 
 
 ```html
-	<template>  
-		<view>  
-			<text>{{textvalue}}</text><!-- 这里演示了组件值的绑定 -->  
-			<button :type="buttontype" @click="changetextvalue()">修改为789</button><!-- 这里演示了属性和事件的绑定 -->  
-		</view>  
-	</template>  
-	<script>  
-		export default {  
-			data() {  
-				return {  
-					textvalue:"123",  
-					buttontype:"primary"  
-				};  
-			},  
-			onLoad() {  
-				this.textvalue="456"//这里修改textvalue的值，其实123都来不及显示就变成了456  
-			},  
-			methods: {  
-				changetextvalue() {  
-					this.textvalue="789"//这里修改textvalue的值，页面自动刷新为789  
-				}  
-			}  
-		}  
+	<template>
+		<view>
+			<text>{{textvalue}}</text><!-- 这里演示了组件值的绑定 -->
+			<button :type="buttontype" @click="changetextvalue()">修改为789</button><!-- 这里演示了属性和事件的绑定 -->
+		</view>
+	</template>
+	<script>
+		export default {
+			data() {
+				return {
+					textvalue:"123",
+					buttontype:"primary"
+				};
+			},
+			onLoad() {
+				this.textvalue="456"//这里修改textvalue的值，其实123都来不及显示就变成了456
+			},
+			methods: {
+				changetextvalue() {
+					this.textvalue="789"//这里修改textvalue的值，页面自动刷新为789
+				}
+			}
+		}
 	</script>
 ```
 
@@ -223,8 +223,8 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 
 相比Web平台， Vue.js 在 `uni-app` 中使用差异主要集中在两个方面：
 
-- 新增：`uni-app` 除了支持 Vue 实例的组件生命周期，还拥有[应用生命周期](/collocation/App.html#applifecycle)及[页面的生命周期](/tutorial/page.html#lifecycle)。
-- 受限：相比 Web 平台，在小程序和 App 端部分功能支持不完善，具体见[兼容性列表](/vue3-api)。
+- 新增：`uni-app` 除了支持 Vue 实例的组件生命周期，还拥有[应用生命周期](/collocation/App.md#applifecycle)及[页面的生命周期](/tutorial/page.md#lifecycle)。
+- 受限：相比 Web 平台，在小程序和 App 端部分功能支持不完善，具体见[兼容性列表](./vue3-api)。
 
 
 
@@ -367,7 +367,7 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 > - `Set`
 > - `JSON`
 > - `Intl`
-> 
+>
 > 你不应该在模板表达式中试图访问用户定义的全局变量。
 
 
@@ -398,10 +398,10 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 	<image v-bind:src="imgUrl"></image>
 	<!-- 缩写 -->
 	<image :src="imgUrl"></image>
-	
+
 	<!-- prop 绑定。“prop”必须在 my-component 中声明。-->
 	<my-component :prop="someThing"></my-component>
-	
+
 	<button v-bind:disabled="isButtonDisabled">Button</button>
 ```
 
@@ -416,7 +416,7 @@ v-on 指令，它用于监听 DOM 事件。v-on缩写为‘ @ ’，下文简称
 
 ```html
 	<!-- 完整语法 -->
-	<view v-on:click="doSomething">点击</view>	
+	<view v-on:click="doSomething">点击</view>
 	<!-- 缩写 -->
 	<view @click="doSomething">点击</view>
 ```
@@ -1351,7 +1351,7 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 每一个计算属性都包含一个 `getter` 和一个 `setter` ，默认是利用 `getter` 来读取。所有 `getter` 和 `setter` 的 `this` 上下文自动地绑定为 Vue 实例。
 
 
-#### 计算属性的 getter 
+#### 计算属性的 getter
 
 
 在模板中绑定表达式是非常便利的，但是它们实际上只用于简单的操作。在模板中放入太多的逻辑会让模板过重且难以维护。例如：
@@ -1549,8 +1549,11 @@ Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据�
 
 ### 侦听器watch
 
-- 类型：{ [key: string]: string | Function | Object | Array }
+- 类型
 
+	```ts
+	interface Watch { [key: string]: string | Function | Object | Array }
+	```
 
 - 一个对象，键是需要观察的表达式，值是对应回调函数。值也可以是方法名，或者包含选项的对象。Vue 实例将会在实例化时调用 `$watch()` ，遍历 `watch` 对象的每一个 `property` 。
 

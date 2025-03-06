@@ -1,6 +1,0 @@
-* [pages.json](pagesjson.md)
-* [main.uts](https://uniapp.dcloud.net.cn/collocation/main.html)
-* [app.uvue](https://uniapp.dcloud.net.cn/collocation/App.html)
-* [manifest.json](manifest.md)
-* [AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
-* [uni.scss](https://uniapp.dcloud.net.cn/collocation/uni-scss.html)

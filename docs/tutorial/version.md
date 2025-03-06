@@ -14,7 +14,7 @@ DCloud在每次更新发版时，随着HBuilderX的升级，会一起发布uni-a
 
 在HBuilderX 3.9以前，采用的是3段式版本号规则，大版本、小版本、补丁版本，如3.8.12。
 
-这个版本号，在uni-app中使用[uni.getSystemInfo](https://uniapp.dcloud.net.cn/api/system/info.html)可以获得。具体属性是`uniRuntimeVersion`和`uniCompileVersion`，类型是字符串。
+这个版本号，在uni-app中使用[uni.getSystemInfo](../api/system/info.md)可以获得。具体属性是`uniRuntimeVersion`和`uniCompileVersion`，类型是字符串。
 
 在HBuilderX界面显示时，还会在末尾再增加一段发版日期，如3.8.12.20230817。上述api不会返回末段日期。
 
@@ -30,10 +30,10 @@ DCloud在每次更新发版时，随着HBuilderX的升级，会一起发布uni-a
 
 基于向下兼容的考虑，`uniRuntimeVersion`和`uniCompileVersion`仍然是字符串。
 
-但在uni-app x的[uni.getAppBaseInfo](https://uniapp.dcloud.net.cn/uni-app-x/api/getappbaseinfo.html)和[uni.getSystemInfo](https://uniapp.dcloud.net.cn/uni-app-x/api/getsysteminfo.html)中，
-返回值新增了2个属性，`uniCompileVersionCode`和`uniRuntimeVersionCode`，这2个是数字类型，可以直接用于比较。
+但在uni-app x的[uni.getAppBaseInfo](https://doc.dcloud.net.cn/uni-app-x/api/get-app-base-info.html)和[uni.getSystemInfo](https://doc.dcloud.net.cn/uni-app-x/api/get-system-info.html)中，
+返回值新增了2个属性，`uniCompilerVersionCode`和`uniRuntimeVersionCode`，这2个是数字类型，可以直接用于比较。
 
-另外，从HBuilderX 3.9起，条件编译也可以按版本号来编译，比如低版本编译成这样、高版本编译成另一个样子。这种条件编译也可以直接使用比较运算符来比较了。[详见](platform.md#uniVersion)
+另外，从HBuilderX 3.9起，条件编译也可以按版本号来编译，比如低版本编译成这样、高版本编译成另一个样子。这种条件编译也可以直接使用比较运算符来比较了。[详见](platform.md#universion)
 
 ## 编译器、运行时、打包机的版本差异
 
@@ -94,26 +94,22 @@ wgt升级意味着编译wgt的HBuilderX版本和手机端已经存在的包的�
 
 HBuilderX已经有几百个版本了，因资源有限，不可能都每个版本都提供云打包机。
 
-HBuilderX Alpha，只有1套云打包机，不管你的HBuilderX alpha版本多少，对应的打包机一定是最新的alpha版的客户端引擎。
-
-HBuilderX正式版，有2套打包机，一个是最新正式版，一个是次新正式版。
-
-中间的紧急更新版本没有独立打包机。
+自HBuilderX 3.9起，云打包机版本保留了多个可用的版本，具体可用的云端打包版本参考下方的版本对应表。
+打包时，服务端会根据用户使用的HBuilderX或cli版本去匹配最合适的打包版本，规则如下（匹配优先级从高到低）：
+1. HBuilderX或cli版本与云端版本完全一致；
+2. HBuilderX或cli版本的大版本(如3.9x，4.0x, 4.1x等)与云端一致时，使用该大版本的最新版本；如打包机上有[3.92, 3.93, 3.99, 4.01, 4.10]，则HBuilderX3.91使用3.99云端打包版本。
+3. 当以上规则无法匹配时，使用云端最新版本。
 
 举个例子：
-
-HBuilderX 有3.8.7、3.8.12、3.90、3.91这几个正式版。
-
-那么当前可用的打包机有3.8.12和3.91这2台。（即每个小版本的最后一个版本，版本号分为大版本、小版本、补丁版本）
-
-除了这2个HBuilderX版本外，其他版本的云打包都指向最新的3.91版对应的打包机。
-
-即，除了正式版的次新版还有一个对应打包机，其他正式版均指向正式版的最新版打包机。
+当云打包机有以下版本[3.7.11, 3.8.12, 3.92, 3.93, 3.99, 4.01, 4.15]可用时：
+- 如果HBuilderX使用3.7.11, 3.8.12, 3.92, 3.93, 3.99, 4.08, 4.15这些版本时，版本号完全匹配，直接使用同版本号打包机；
+- 如果HBuilderX使用3.7.3，则云端打包机使用3.7.11版本；HBuilderX使用3.91，则云端打包机使用3.99版本；HBuilderX使用4.01版本，则云端打包机使用4.08版本；
+- 如果HBuilderX使用3.7以下的版本，则云端打包机使用最新版本4.15。
 
 ### 版本列表
 
 下面提供 `uni-app` 开发中各产品的版本对应表：
-<iframe src="https://dev.dcloud.net.cn/product/versions/view" width="100%" height="500px" frameborder="0" scrolling="no" style="border: 1px solid #eee; border-radius: 4px;"> </iframe>
+<iframe src="https://dev.dcloud.net.cn/product/versions/view" width="100%" height="680px" frameborder="0" scrolling="no" style="border: 1px solid #eee; border-radius: 4px;"> </iframe>
 
 
 想避免版本兼容问题，还是推荐使用HBuilderX完成一切工作，包括创建项目、运行编译、云打包app。

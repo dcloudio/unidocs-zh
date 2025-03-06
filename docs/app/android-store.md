@@ -18,7 +18,7 @@
 		android.permission.READ_EXTERNAL_STORAG
 	</td>
 	<td>存储文件</td>
-	<td><a href="http://doc.weex.io/zh/" target="_blank">http://doc.weex.io/zh</a></td>
+	<td><a href="https://weexapp.com/zh/" target="_blank">https://weexapp.com/zh/</a></td>
   </tr>
   <tr>
     <td>Fresco图库</td>
@@ -345,7 +345,7 @@ Map & Geolocation模块集成的三方SDK说明
   </tr>
 </table>
 
-### uni-AD
+### uni-ad
 
 <a id="uniAd"/>
 
@@ -362,14 +362,14 @@ uni-AD广告模块集成的三方SDK说明
     <th style="width:10%">SDK隐私政策链接/目的</th>
   </tr>
   <tr>
-    <td>uni-AD</td>
+    <td>uni-ad</td>
     <td></td>
     <td>基础广告 </td>
     <td style="font-size:12px">设备品牌、型号、操作系统版本、OAID、分辨率、IMEI、android ID、SIM 卡 IMSI 信息、应用名称、应用包名、应用版本号、网络信息、应用安装列表、位置信息 </td>
     <td style="font-size:12px">
 	android.permission.ACCESS_NETWORK_STATE <br>
 	android.permission.READ_PHONE_STATE <br>
-	android.permission.ACCESS_COARSE_LOCATION 
+	android.permission.ACCESS_COARSE_LOCATION
 	</td>
     <td>广告投放合作，广告归因、反作弊、安全 </td>
     <td><a href="https://doc.dcloud.net.cn/markdown-share-docs/1d821cdd3cdf2681045ec4be94bc8404/" target="_blank">隐私协议</a></td>
@@ -382,7 +382,7 @@ uni-AD广告模块集成的三方SDK说明
 	<td style="font-size:12px">
 	android.permission.ACCESS_NETWORK_STATE <br>
 	android.permission.READ_PHONE_STATE <br>
-	android.permission.ACCESS_COARSE_LOCATION 
+	android.permission.ACCESS_COARSE_LOCATION
 	</td>
 	<td style="font-size:12px">识别广告、活动作弊行为；改善 SDK 崩溃率、推送个性化广告；广告投放。 </td>
 	<td><a href= "https://yun.tuia.cn/tuia/sdk/agreement/index.html" target="_blank">推啊隐私协议</a></td>
@@ -398,7 +398,7 @@ uni-AD广告模块集成的三方SDK说明
 	android.permission.READ_PHONE_STATE <br>
 	android.permission.ACCESS_WIFI_STATE <br>
 	android.permission.REQUEST_INSTALL_PACKAGES <br>
-	android.permission.VIBRATE 
+	android.permission.VIBRATE
 	</td>
     <td>广告投放、广告归因、反作弊、安全 </td>
     <td><a href="https://www.kuaishou.com/about/policy" target="_blank">快手隐私协议</a></td>
@@ -434,11 +434,11 @@ uni-AD广告模块集成的三方SDK说明
 	android.permission.ACCESS_NETWORK_STATE <br>
 	android.permission.ACCESS_WIFI_STATE <br>
 	android.permission.REQUEST_INSTALL_PACKAGES <br>
-	android.permission.CHANGE_NETWORK_STATE<br> 
+	android.permission.CHANGE_NETWORK_STATE<br>
 	android.permission.QUERY_ALL_PACKAGES <br>
 	android.permission.REORDER_TASKS<br>
     android.permission.VIBRATE <br>
-	android.permission.ACCESS_COARSE_LOCATION 
+	android.permission.ACCESS_COARSE_LOCATION
 	</td>
     <td style="font-size:12px">广告投放与监测归因、广告主统计投放结果、减少App崩溃、确保服务器正常运行、提升可扩展性和性能</td>
     <td><a href="https://imgcache.qq.com/gdt/cdn/adn/uniondoc/ylh_sdk_privacy_statement.html"target="_blank">优量汇隐私协议</a></td>
@@ -451,7 +451,7 @@ uni-AD广告模块集成的三方SDK说明
     <td style="font-size:12px">
 	android.permission.ACCESS_NETWORK_STATE <br>
 	android.permission.READ_PHONE_STATE <br>
-	android.permission.WRITE_EXTERNAL_STORAGE 
+	android.permission.WRITE_EXTERNAL_STORAGE
 	</td>
     <td>广告投放合作、广告归因、反作弊 </td>
     <td><a href="https://www.pangle.cn/privacy/partner" target="_blank">穿山甲隐私协议</a></td>

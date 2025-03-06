@@ -24,6 +24,8 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
 
 各平台的 API 新增，不需要 uni-app 升级，开发者就可以直接使用。
 
+各平台 API 独有的字段，如快手小程序 `ks.pay` 的 `payType`、`paymentChannel` 字段，开发者在调用 API 时正常传入即可，会透传至快手小程序的 API 上
+
 ## 补充说明
 
 - uni.on 开头的 API 是监听某个事件发生的 API 接口，接受一个 CALLBACK 函数作为参数。当该事件触发时，会调用 CALLBACK 函数。
@@ -41,11 +43,11 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
 
      ```js
       // 正常使用
-      const task = uni.connectSocket(
+      const task = uni.connectSocket({
        success(res){
         console.log(res)
        }
-      )
+      })
 
       // Promise 化
       uni.connectSocket().then(res => {
@@ -177,6 +179,10 @@ uni.addInterceptor({
     }
     return new Promise((resolve, reject) => {
       res.then((res) => {
+        if (!res) {
+          resolve(res);
+          return;
+        }
         if (res[0]) {
           reject(res[0]);
         } else {
@@ -386,7 +392,7 @@ uni.addInterceptor({
 | :-------------------------------------------------------- | :--------------------------------------------------- |
 | [uni.getSystemInfo](system/info?id=getsysteminfo)         | 获取系统信息                                         |
 | [uni.getSystemInfoSync](system/info?id=getsysteminfosync) | 获取系统信息                                         |
-| [uni.canIUse](/api/system/info?id=caniuse)                | 判断应用的 API，回调，参数，组件等是否在当前版本可用 |
+| [uni.canIUse](caniuse)                | 判断应用的 API，回调，参数，组件等是否在当前版本可用 |
 
 #### 内存
 
@@ -575,7 +581,7 @@ uni.addInterceptor({
 | :------------------------------------------------- | :--------------------- |
 | [uni.pageScrollTo](/api/ui/scroll?id=pagescrollto) | 将页面滚动到目标位置。 |
 
-#### 绘画
+#### 画布
 
 | API                                                          | 说明                 |
 | :----------------------------------------------------------- | :------------------- |
@@ -629,9 +635,9 @@ uni.addInterceptor({
 
 | API                                                                  | 说明                                                     |
 | :------------------------------------------------------------------- | :------------------------------------------------------- |
-| [uni.hideKeyboard](/api/key.html#hidekeyboard)                       | 隐藏已经显示的软键盘，如果软键盘没有显示则不做任何操作。 |
-| [uni.onKeyboardHeightChange](/api/key.html#onkeyboardheightchange)   | 监听键盘高度变化                                         |
-| [uni.offKeyboardHeightChange](/api/key.html#offkeyboardheightchange) | 取消监听键盘高度变化事件                                 |
+| [uni.hideKeyboard](/api/key.md#hidekeyboard)                       | 隐藏已经显示的软键盘，如果软键盘没有显示则不做任何操作。 |
+| [uni.onKeyboardHeightChange](/api/key.md#onkeyboardheightchange)   | 监听键盘高度变化                                         |
+| [uni.offKeyboardHeightChange](/api/key.md#offkeyboardheightchange) | 取消监听键盘高度变化事件                                 |
 | [uni.getSelectedTextRange](/api/key?id=getselectedtextrange)         | 在 input、textarea 等 focus 之后，获取输入框的光标位置   |
 
 ### 第三方服务
@@ -650,26 +656,25 @@ uni.addInterceptor({
 | [uni.share](/api/plugins/share?id=share)                             | 分享                                                            |
 | [uni.shareWithSystem](/api/plugins/share?id=sharewithsystem)         | 使用系统分享                                                    |
 | [uni.requestPayment](/api/plugins/payment?id=requestpayment)         | 支付                                                            |
-| [uni.subscribePush](/api/plugins/push?id=subscribepush)              | 开启推送                                                        |
-| [uni.unsubscribePush](/api/plugins/push?id=unsubscribepush)          | 关闭推送                                                        |
-| [uni.onPush](/api/plugins/push?id=onpush)                            | 监听透传数据                                                    |
-| [uni.offPush](/api/plugins/push?id=offpush)                          | 移除监听透传数据                                                |
+| [uni.onPushMessage](/api/plugins/push?id=onpushmessage)              | 启动监听推送消息事件     |
+| [uni.offPushMessage](/api/plugins/push?id=offpushmessage)          | 关闭推送消息监听事件  |
+
 
 ### 广告
 
 | API                                             | 说明                                                             |
 | :---------------------------------------------- | :--------------------------------------------------------------- |
-| [激励视频广告](/api/a-d/rewarded-video.html)    | 激励视频广告，是 cpm 收益最高的广告形式                          |
-| [全屏视频广告](/api/a-d/full-screen-video.html) | 全屏视频广告                                                     |
-| [内容联盟广告](/api/a-d/content-page.html)      | 内容联盟广告                                                     |
-| [插屏广告](/api/a-d/interstitial.html)          | 插屏广告                                                         |
-| [互动游戏](/api/a-d/interactive.html)           | 互动游戏是 DCloud 联合三方服务商为开发者提供新的广告场景增值服务 |
+| [激励视频广告](/api/a-d/rewarded-video.md)    | 激励视频广告，是 cpm 收益最高的广告形式                          |
+| [全屏视频广告](/api/a-d/full-screen-video.md) | 全屏视频广告                                                     |
+| [内容联盟广告](/api/a-d/content-page.md)      | 内容联盟广告                                                     |
+| [插屏广告](/api/a-d/interstitial.md)          | 插屏广告                                                         |
+| [互动游戏](/api/a-d/interactive.md)           | 互动游戏是 DCloud 联合三方服务商为开发者提供新的广告场景增值服务 |
 
 ### 平台扩展
 
 | API                                                                         | 说明              |
 | :-------------------------------------------------------------------------- | :---------------- |
-| [uni.requireNativePlugin](/api/extend/native-plugin?id=requirenativeplugin) | 引入 App 原生插件 |
+| [uni.requireNativePlugin](/plugin/native-plugin.md#requirenativeplugin) | 引入 App 原生插件 |
 
 ### 其他
 

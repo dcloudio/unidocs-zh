@@ -1,5 +1,7 @@
 <!-- #### vue2 项目迁移 vue3，必须适配的部分 -->
 
+首先强调下：vue3支持选项式！vue3不是只支持组合式！
+
 以下列举迁移到 vue3，必须适配的几个点，vue2 项目才能正常运行在 vue3 上。更多查看完整的[非兼容特性列表](https://github.com/vuejs/vue-next/tree/master/packages/vue-compat#incompatible)
 
 ## main.js
@@ -339,6 +341,10 @@ uni.addInterceptor({
     }
     return new Promise((resolve, reject) => {
       res.then((res) => {
+        if (!res) {
+          resolve(res)
+          return;
+        }
         if (res[0]) {
           reject(res[0]);
         } else {
@@ -520,6 +526,10 @@ vue3 出于性能考虑，style 中暂不支持 div、p 等 HTML 标签选择器
   > Android < 4.4，配置 X5 内核支持，首次需要联网下载，可以配置下载 X5 内核成功后启动应用，[详情](https://uniapp.dcloud.net.cn/collocation/manifest.html#appwebview)
 
 
+## 小程序自定义组件
+
+web 平台、app 平台 vue3 项目不再支持小程序自定义组件
+
 ## vue3 nvue 暂不支持 recycle-list 组件
 
 vue3 nvue 暂不支持 recycle-list 组件
@@ -587,4 +597,10 @@ const messages = {
     greeting: ({ named }) => `hello, ${named('name')}!`
   }
 }
+```
+
+```html
+<template>
+  {{$t('index', {num: 123})}}
+</template>
 ```

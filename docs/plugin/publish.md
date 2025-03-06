@@ -33,9 +33,9 @@ uni插件其实是uni-app项目下一部分代码，但提交时注意：
 
 插件市场分多种插件，分类介绍如下：
 
-## 前端组件
+## 前端组件@components
 
-前端组件指uni-app前端使用vue/nvue/wxml等技术开发的、用于页面内嵌的组件。它又进一步细分为vue组件、nvue组件、小程序自定义组件。这个分类不包含uts原生组件。
+前端组件指uni-app前端使用vue/nvue/wxml等技术开发的、用于页面内嵌的组件。它又进一步细分为vue组件、uvue组件、nvue组件、小程序自定义组件。这个分类不包含uts原生组件。
 
 我们以小明开发的tag组件（插件ID为：xiaoming-tag）为例，上传插件市场时，目录结构要求如下：
 
@@ -51,6 +51,50 @@ Tips：
 - 通用组件、nvue组件、目录结构要求相同
 - 小程序组件的一级目录，名字需从 components 变更为 wxcomponents ，其它结构要求相同
 - 组件不能包含根目录的 manifest.json、pages.json、App.vue、main.js 等文件
+
+### 付费前端插件@components-pay
+
+插件市场很早就支持原生插件和uniCloud云插件的加密保护。但前端插件，比如ui库，尤其是可编译到web和小程序的插件，由于其载体的特殊开放性，很难做知识产权保护。
+
+HBuilderX 4.19起，DCloud提供了一种云编译的手段来解决前端插件的知识产权保护问题。
+
+插件作者设置加密后，插件使用者下载到的插件是加密后的版本。在运行、发行对前端代码编译时，uni-app x的编译器会将加密插件发送到DCloud的云编译服务器进行编译，将编译结果混入本地编译工程。从而实现插件使用者可以使用插件但无法获取插件源码的效果。这种云编译仅在第一次进行，云编译一次后会有缓存。
+
+当然插件使用者可以获取到编译后的代码，但就像uni-app (x)编译后的代码非常难懂，更不会有人去改一样，这种方式虽然不严谨但大体上还是有效保护的了前端插件作者的知识产权。
+
+这个过程不会把插件使用者的项目源码整体发送到DCloud服务器，云编译和解密的仅包括加密插件。
+
+插件市场所有加密付费的插件，均有普通授权和源码授权两种版本。如果购买了源码授权，插件作者可以得到插件的完整源码，此时不再发送插件源码到云编译服务器。
+
+不管是`普通授权版`还是`源码授权版`，都是绑定唯一的appid和包名。如购买者更换了这2个信息中的一个，需要重新购买授权。注意参考插件购买协议。
+
+通过开发工具、编译器、运行时的整体配合，DCloud给前端插件作者提供了以往不存在的、更为优秀的知识产权保护方案。包括源码授权版，DCloud也会检查盗版行为。
+
+目前前端插件加密，仅支持uni-app x下uni_modules形式的、符合 [easycom](https://uniapp.dcloud.net.cn/component/#easycom) 规范的组件。插件可在全平台加密，包括web端、app端。
+
+如需发布付费插件，可对插件设置`普通授权版`及`源码授权版`的价格。DCloud插件市场会**自动加密付费插件中所有vue、uvue、uts、js、ts文件（除pages、hybrid、static目录外）**。
+
+HBuilderX发布插件界面暂未支持前端组件价格设置，插件作者可在插件package.json中手动配置价格后提交发布，后续ui上将支持前端组件价格设置。
+配置方式参考[uni_modules配置](https://uniapp.dcloud.net.cn/plugin/uni_modules.html#package-json)，在package.json`dcloudext`下添加`sale`销售信息。
+
+前端组件付费插件支持试用，当插件用户试用插件时，无法查阅这些加密的源码。插件试用只能用于本地运行或打包自定义基座，不能用于正式发布。
+
+如果插件用户购买了普通授权版，也看不到这些加密文件的源码，运行或打包时，会提交到云端进行验证、解密及编译。
+
+前端组件付费插件开发注意事项：
+- 目前仅支持`uni-app x`项目，不支持`uni-app`项目，且最低需要HBuilderX 4.19+
+- 不支持混搭`utssdk`目录、不支持页面加密、仅支持符合 [easycom](https://uniapp.dcloud.net.cn/component/#easycom) 规范的组件。可通过依赖的方式配置其他插件（目前仅支持依赖同样加密的插件）。
+- 插件需要对外导出方法、类型等内容时，需要在插件根目录 index.uts 做导出，使用者不能直接引入插件内部的文件
+- 加密组件属性的代码提示配置在发布时云端会自动生成，[点此查看配置说明](./components-config.md)
+- 前端组件付费插件使用时会单独上传至云端独立编译（此时不会包含项目内的其他内容），所以插件不能引入项目内其他目录资源，此类需求，可以通过API让插件使用者传入对应的数据
+- app-android 平台，不支持导出 vue 的 plugin 和 mixin
+
+前端组件付费插件使用注意事项：
+- 当项目包含前端付费插件时，首次运行或发行到指定平台时，会触发付费插件在该平台的云端编译，此时需要您的电脑处于联网状态，且您登录的HBuilderX账号需要具备使用该插件的权限（购买、试用、协作等），一旦云端编译成功，后续将使用本地缓存，如果更新了的插件版本、HBuilderX版本或运行时勾选了清除缓存，会再次触发云端编译。
+- 不支持直接引入插件内部的文件，仅支持导入插件根目录
+
+	* 正确的引入方式：`import { test } from '@/uni_modules/test-components' // 需要插件作者在 index.uts 中 导出 test`
+	* 错误的引入方式：`import { test } from '@/uni_modules/test-components/test.uts'`
 
 ## uni-app前端模板
 
@@ -94,15 +138,16 @@ uts插件开发详见[插件开发文档](https://uniapp.dcloud.net.cn/plugin/ut
 
 uts付费插件分为`普通授权版`及`源码授权版`，两种付费方式区别[详见说明文档](https://uniapp.dcloud.net.cn/plugin/plugin-ext-introduction.html#payment)。
 
-如需发布付费插件，可对插件设置`普通授权版`及`源码授权版`的价格。DCloud插件市场会**自动加密付费插件中除interface.uts之外的所有uts文件**。
+如需发布付费插件，可对插件设置`普通授权版`及`源码授权版`的价格。DCloud插件市场会对付费插件自动加密，付费插件加密规则：
+
+- 加密除 interface.uts 之外的所有uts文件
+- 加密utssdk/app-android及utssdk/app-ios目录下的java、kt、swift等混编文件
 
 当插件用户试用插件时，无法查阅这些加密的源码。uts插件试用只能用于打包自定义基座，不能用于正式发布。
 
 如果插件用户购买了`普通授权版`，也看不到这些加密文件的源码，提交云打包时，会在云端验证并解密文件进行打包。
 
 如果插件作者上传插件时，设置了提供源码授权版，且插件使用者购买了源码授权版，才能下载到插件的源码。
-
-若插件作者提供了源码授权版并且价格在100元以上，需签署第三方电子合同。当意向买方在电子合同签名后，DCloud会短信通知插件作者，提醒插件作者也对该电子合同进行签名。请及时留意合同待签通知。
 
 不管是`普通授权版`还是`源码授权版`，都是绑定唯一的appid和包名。如购买者更换了这2个信息中的一个，需要重新购买授权。
 
@@ -163,7 +208,7 @@ HBuilderX插件是安装在HBuilderX工具里的。是编辑器的插件，不�
 {
 	"uni_modules": {
 		"encrypt": [ // 配置要加密的文件，为插件包中真实存在且相对根目录的文件路径，需注意uniCloud目录的后缀需与项目一致
-			"uniCloud-aliyun/cloudfunctions/function/index.js" 
+			"uniCloud-aliyun/cloudfunctions/function/index.js"
 		],
 	}
 }
@@ -176,8 +221,6 @@ encrypt数组中可灵活配置uniCloud/cloudfunctions下云函数及公共模�
 即便插件用户购买了插件的普通授权版，也看不到这些加密云函数的源码，但这些云函数可以正常运行在他购买时绑定的服务空间上。且无法上传到其他服务空间。
 
 如果插件作者上传插件时，同时提供了源码授权版，且插件使用者购买了源码授权版，才能拿到插件的所有源码。
-
-若插件作者提供了源码授权版并且价格在100元以上，需签署第三方电子合同。当意向买方在电子合同签名后，DCloud会短信通知插件作者，提醒插件作者也对该电子合同进行签名。请及时留意合同待签通知。
 
 关于普通授权版和源码授权版的区别，详见：[https://ask.dcloud.net.cn/article/38040](https://ask.dcloud.net.cn/article/38040)
 
@@ -207,7 +250,7 @@ encrypt数组中可灵活配置uniCloud/cloudfunctions下云函数及公共模�
 - js_sdk、components、static等目录下的子目录及文件命名需要包含“-”
 - 不能包含根目录的 manifest.json、App.vue、main.js 等文件
 - 如需注册页面到项目的pages.json中，参考[uni_modules文档](uni_modules.md?id=pages-init)
- 
+
 ### 前后一体项目模板
 与uni-app前端项目模板目录结构基本一致，但是必须包含uniCloud相关目录（uniCloud-aliyun、uniCloud-tcb）
 
@@ -216,7 +259,7 @@ encrypt数组中可灵活配置uniCloud/cloudfunctions下云函数及公共模�
 在使用[uniCloud admin基础框架](https://ext.dcloud.net.cn/plugin?id=3268)后，可以进一步集成插件作者写好的admin插件，以丰富自己的admin系统的功能。
 插件作者也可以按此文档提交插件，在插件市场的上传发布页面选择``uniCloud`` 分类的 ``Admin 插件`` 。
 
-因文档较长，请单独参阅：[uniCloud admin插件开发指南](https://uniapp.dcloud.net.cn/uniCloud/admin?id=admin-%e6%8f%92%e4%bb%b6%e5%bc%80%e5%8f%91)
+因文档较长，请单独参阅：[uniCloud admin插件开发指南](https://doc.dcloud.net.cn/uniCloud/admin?id=admin-%e6%8f%92%e4%bb%b6%e5%bc%80%e5%8f%91)
 
 ### DB Schema及验证函数
 主要用于提交数据表schema及校验函数，所以必须包含uniCloud-aliyun/database 或 uniCloud-tcb/database目录

@@ -170,3 +170,35 @@ export default {
 **错误码**
 
 [错误码相关问题排查](https://uniapp.dcloud.net.cn/uni-ad/ad-error-code.html)
+
+## 短剧
+
+### 穿山甲短剧
+
+由于uni-ad暂未支持穿山甲短剧，接入短剧功能需要按照[uts插件开发文档](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)，开发对应的短剧插件。
+
+#### 开发前准备
+
+- 应用开通uni-ad并且成功托管穿山甲账号。
+- 升级HBuilderX到4.34版。
+
+#### 开发时注意事项
+
+1. 短剧插件不能包含穿山甲广告相关API，包括穿山甲广告SDK的初始化API。
+2. config.json中不能包含穿山甲广告SDK相关依赖，否则会导致打包失败。
+3. 打包时需要勾选`穿山甲GroMore`模块。
+4. 插件中不能包含穿山甲广告SDK，否则会因为SDK冲突导致打包失败。
+5. 为确保穿山甲短剧的初始化成功，需要在初始化穿山甲短剧之前调用任意一个广告API，触发广告回调之后，再去初始化穿山甲短剧。参考示例：
+	```vue
+	var interstitialAd = this.interstitialAd = uni.createInterstitialAd({adpid: '自己的真实广告位'});
+	interstitialAd.onLoad(() => {
+		// 初始化短剧
+	});
+	interstitialAd.onError((err) => {
+		// 初始化短剧
+	});
+	interstitialAd.load()
+	```
+6. 由于目前接入穿山甲短剧需要添加穿山甲的私有仓库地址，HBuilderX暂不支持配置。建议开发者先在android studio中将短剧功能封装成一个库并提供一些对外API让uts插件调用。
+
+如果插件开发中遇到问题，可以去[uni-ad广告群](https://im.dcloud.net.cn/#/?joinGroup=65d85fc09847e92db03ff81a)咨询。

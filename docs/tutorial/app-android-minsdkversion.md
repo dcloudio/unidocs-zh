@@ -13,6 +13,7 @@ minSdkVersion值为Number类型，且必须为正整数，取值范围参考`And
 **源码视图配置**  
 打开项目的manifest.json文件，切换到“源码视图”，根据项目类型进行配置。  
 
+
 - uni-app项目  
 在 "app-plus" -> "distribute" -> "android" 节点的 minSdkVersion 属性配置，示例如下：
 ``` js

@@ -29,6 +29,7 @@
 |max|Number	|100|最大值|
 |step|Number|1|每次点击改变的间隔大小|
 |disabled|Boolean|false	|是否为禁用状态|
+|width|Number|40	|宽度（单位：px）|
 
 ### NumberBox Events
 

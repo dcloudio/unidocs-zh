@@ -1,4 +1,7 @@
-### uni.vibrate(OBJECT)
+## uni.vibrate(OBJECT)
+
+> HarmonyOS Next 不支持
+
 使手机发生振动。
 
 **OBJECT 参数说明**
@@ -19,7 +22,14 @@ uni.vibrate({
 });
 ```
 
-### uni.vibrateLong(OBJECT)
+## uni.vibrateLong(OBJECT)
+
+|元服务|
+|:-:|
+|√|
+
+> HarmonyOS Next 不支持
+
 使手机发生较长时间的振动（400ms）。
 
 **OBJECT 参数说明**
@@ -40,7 +50,14 @@ uni.vibrateLong({
 });
 ```
 
-### uni.vibrateShort(OBJECT)
+## uni.vibrateShort(OBJECT)
+
+|元服务|
+|:-:|
+|√|
+
+> HarmonyOS Next 不支持
+
 使手机发生较短时间的振动（15ms）。
 
 **OBJECT 参数说明**

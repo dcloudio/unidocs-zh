@@ -38,11 +38,6 @@ export const navbar = [
         link: '/api/'
       },
       {
-        text: 'UTS',
-        type: 'link',
-        link: '/uni-app-x/uts/'
-      },
-      {
         text: '插件',
         type: 'link',
         link: '/plugin/'
@@ -51,6 +46,11 @@ export const navbar = [
         text: '工程化',
         type: 'link',
         link: '/worktile/'
+      },
+      {
+        text: 'UTS',
+        type: 'link',
+        link: 'https://doc.dcloud.net.cn/uni-app-x/uts/'
       },
       {
         text: '其他规范',
@@ -122,6 +122,16 @@ export const navbar = [
             type: 'link',
             link: 'https://weexapp.com/zh/'
           },
+          {
+            text: '鸿蒙元服务',
+            type: 'link',
+            link: 'https://developer.huawei.com/consumer/cn/doc/atomic-guides-V5/atomic-service-V5'
+          },
+          {
+            text: "小红书小程序",
+            type: "link",
+            link: "https://miniapp.xiaohongshu.com/docsV2/doc/DC026595",
+          },
         ]
       },
       {
@@ -134,64 +144,17 @@ export const navbar = [
   },
   {
     text: 'uni-app x',
-    link: '/uni-app-x/',
-    items: [
-      {
-        text: '介绍',
-        type: 'link',
-        link: '/uni-app-x/'
-      },
-      {
-        text: '编译器',
-        type: 'link',
-        link: '/uni-app-x/compiler/'
-      },
-      {
-        text: 'UTS',
-        type: 'link',
-        link: '/uni-app-x/uts/'
-      },
-      {
-        text: '全局文件',
-        type: 'link',
-        link: '/uni-app-x/collocation/pagesjson'
-      },
-      {
-        text: '组件',
-        type: 'link',
-        link: '/uni-app-x/component/'
-      },
-      {
-        text: 'API',
-        type: 'link',
-        link: '/uni-app-x/api/'
-      },
-      {
-        text: 'CSS',
-        type: 'link',
-        link: '/uni-app-x/css/'
-      },
-      {
-        text: 'DOM',
-        type: 'link',
-        link: '/uni-app-x/dom/'
-      },
-      {
-        text: '插件',
-        type: 'link',
-        link: '/uni-app-x/plugin/'
-      },
-      {
-        text: '工程化',
-        type: 'link',
-        link: '/uni-app-x/worktile/'
-      }
-    ]
+    link: 'https://doc.dcloud.net.cn/uni-app-x/',
+    type: "link",
+    target: '_blank',
+    needOutbound: false
   },
   {
     text: 'uniCloud',
-    type: 'link',
-    link: '/uniCloud/'
+    link: 'https://doc.dcloud.net.cn/uniCloud/',
+    type: "link",
+    target: '_blank',
+    needOutbound: false
   },
   {
     text: 'HBuilder',
@@ -202,9 +165,15 @@ export const navbar = [
   },
   {
     text: 'uni 小程序 sdk',
-    link: 'https://nativesupport.dcloud.net.cn/README',
+    link: 'https://nativesupport.dcloud.net.cn/',
     type: "link",
     target: '_blank',
+    needOutbound: false
+  },
+  {
+    text: 'uni-ad广告',
+    link: '/uni-ad/',
+    type: "link",
     needOutbound: false
   },
   /* {

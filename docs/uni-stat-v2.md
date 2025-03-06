@@ -2,21 +2,19 @@
 
 uni统计2 是开源、全端、云端一体、更适合uni-app的统计平台。
 
-> `HBuilderX 3.4.10 +`起支持
-
-> `HBuilderX 3.6.7 +`修复了Android10多个设备deviceId相同导致统计数据减少的bug
+> 欢迎加入[uni统计2.0技术交流群](https://im.dcloud.net.cn/#/?joinGroup=663b1aacea24b10030b08f16)
 
 ## demo体验
 
 体验系统：[https://hellouniadmin.dcloud.net.cn/](https://hellouniadmin.dcloud.net.cn/)
 
-注：uni统计内置在[uni-admin](/uniCloud/admin)中，体验系统的数据会定期重置。
+注：uni统计内置在[uni-admin](https://doc.dcloud.net.cn/uniCloud/admin)中，体验系统的数据会定期重置。
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/admin3.png)
 
 ## 产品特色
 
-无需开发，在`manifest`的 `uni统计` 中打勾并发行，在[uniCloud](/uniCloud/)服务空间部署[uni-admin](/uniCloud/admin)，即可查看报表。
+无需开发，在`manifest`的 `uni统计` 中打勾并发行，在[uniCloud](https://doc.dcloud.net.cn/uniCloud/)服务空间部署[uni-admin](https://doc.dcloud.net.cn/uniCloud/admin)，即可查看报表。
 
 同时开发者也可以自定义打点数据、自定义展现报表。
 
@@ -51,8 +49,9 @@ uni统计支持sourcemap，可直观了解到底哪行代码写的有问题。[�
 **5. 默认功能丰富**
 
 - 设备统计
-- 注册用户统计（基于[uni-id](https://uniapp.dcloud.io/uniCloud/uni-id.html)）
+- 注册用户统计（基于[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)）
 - 页面统计
+- 内容统计
 - 新增、活跃、留存、跳出率分析
 - 渠道分析：辅助渠道推广
 - 错误统计和上报：辅助产品质量提升
@@ -67,11 +66,11 @@ uni统计深入uni-app和uniCloud框架底层，提供了众多其他统计平�
 - 自动捕获js错误，上报app端原生崩溃日志
 - 兼容uni-app渠道包打包体系，自动识别渠道包
 - 基于uni-id账户体系，自动出具注册用户（不是设备）的新增、活跃、留存报表
-- 兼容uniCloud [opendb规范](/uniCloud/opendb)，从服务器端统计各项数据
+- 兼容uniCloud [opendb规范](https://doc.dcloud.net.cn/uniCloud/opendb)，从服务器端统计各项数据
 
 **7. 开放生态**
 
-uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了插件机制，会有更多插件作者提供各种丰富的统计插件（如电商统计、内容统计等）。见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
+uni统计的开源且基于[uni-admin](https://doc.dcloud.net.cn/uniCloud/admin)的插件规范提供了插件机制，会有更多插件作者提供各种丰富的统计插件（如电商统计、内容统计等）。见[插件市场](https://ext.dcloud.net.cn/?cat1=7&cat2=74&type=HotList)
 
 **DCloud非常重视数据驱动开发者业务的增长，近期联合专业的大数据服务商<a href="https://www.sensorsdata.cn/" target="_blank">神策</a>和<a href="https://tj.aldwx.com/" target="_blank">阿拉丁</a>共同完善Uni统计2.0的产品模块和生态建设。
 如果你对数据分析有任何需求，欢迎您填写<a href="https://sdmarketing.wjx.cn/vj/h2UFHnx.aspx" target="_blank">需求调研问卷</a>，我们会根据您的宝贵建议，在原有Uni统计产品的基础上，完成迭代更新。**
@@ -174,11 +173,7 @@ uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了�
 
 部署uni统计时可以选择使用uniCloud的阿里云版或腾讯云版，不同云厂商对应的域名不同（文章后面章节会有服务空间相关配置）
 
-| uniCloud服务提供商 |      request 合法域名       |
-| :--------: | :-------------------------: |
-|   阿里云公测版   |       api.bspapp.com        |
-|   阿里云正式版   |       api.next.bspapp.com        |
-|   腾讯云   | tcb-api.tencentcloudapi.com |
+点击查看各厂商[request合法域名](https://doc.dcloud.net.cn/uniCloud/publish.html#useinmp)。
 
 根据选择的uniCloud云厂商，配置相应的域名到小程序的域名白名单配置里即可。
 
@@ -216,7 +211,7 @@ uni统计的开源且基于[uni-admin](/uniCloud/admin)的插件规范提供了�
 	usv: "0.0.1"
 	ut: "h5"
 	// ...
-} 
+}
 === 采集结束 ===
 
 // 数据上报成功
@@ -283,7 +278,7 @@ uni统计新增的文件主要包括：
 你可以根据需要修改`定时任务云函数（uni-stat-cron）`的触发周期到分钟级(即每隔n分钟触发一次)，但要注意触发周期修改后，需要确保[定时任务配置项](#定时任务配置说明)中设置的分钟数是否会被触发，比如你的配置项中设置的是每小时的第10分钟触发（表达式：`* * * 10`），而定时触发器设置的为每20分钟触发1次（`0 1/20 * * * * *`），那这个配置项将永远不会触发。
 
 ::: warning 注意
-1. 现阶段阿里云仅支持小时级的定时任务（即阿里云云函数的定时触发的最小间隔只能设置为每小时触发一次），因此现阶段阿里云用户如想将`定时任务云函数（uni-stat-cron）`的触发周期设置为分钟级须先向DCloud申请后再开启。[申请方式](https://uniapp.dcloud.io/uniCloud/price.html#aliyun)
+1. 阿里云正式版最低触发间隔为1分钟，支付宝云与腾讯云最低触发间隔为1秒
 2. 因云函数单次最大运行时长为10分钟，所以开启分钟级定时任务后，如果想重新设置定时任务中触发时间的话，最好确保各定时任务之间的触发间隔时间要大于等于10分钟，防止出现运行超时的问题。默认定时任务类型和触发时间可参考下方[定时任务配置说明](#定时任务配置说明)的说明。
 :::
 
@@ -322,7 +317,7 @@ uni统计新增的文件主要包括：
 2. 分别在数据`上报数据接收器（uni-stat-receiver）`和`定时任务云函数（uni-stat-cron）`下的`package.json`文件中添加redis拓展库。
 3. 重新上传部署数据`上报数据接收器（uni-stat-receiver）`、`定时任务云函数（uni-stat-cron）`和`配置中心（uni-config-center）`。
 
-::: preview 
+::: preview
 > 配置uni-stat-receiver的redis拓展库
 ``` javascript
 {
@@ -336,7 +331,7 @@ uni统计新增的文件主要包括：
 		"uni-cloud-redis": {} // 配置为此云函数开启redis扩展库，值为空对象留作后续追加参数，暂无内容。如拷贝此配置项到package.json文件，切记去除注释。
 	}
 }
-``` 
+```
 > 配置uni-stat-cron的redis拓展库
 ``` javascript
 {
@@ -377,7 +372,7 @@ uni统计新增的文件主要包括：
 为了让用户端App采集到的数据，可以被`uni-admin`中的云函数正确接收并统计，需保证用户端项目和admin项目，关联同样的服务空间。
 
 1. 选择用户端项目（需采集用户数据的项目）
-2. 若该项目之前未启用`uniCloud`，右键并选择 `创建uniCloud云开发环境 -> 阿里云|腾讯云`；否则，进入第3步；
+2. 若该项目之前未启用`uniCloud`，右键并选择 `创建uniCloud云开发环境 -> 支付宝云|阿里云|腾讯云`（数据量大推荐使用`支付宝云`）；否则，进入第3步；
 
 ![关联前后台数据](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/iShot2022-04-01%2015.11.18.png)
 
@@ -385,7 +380,7 @@ uni统计新增的文件主要包括：
 
 ![关联前后台数据](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/iShot2022-04-01%2015.08.51.png)
 
-### 错误解析 <Badge text="uni-admin 1.9.4+" />@sourcemap-parse-error 
+### 错误解析 <Badge text="uni-admin 1.9.4+" />@sourcemap-parse-error
 
 > 此功能只支持 web平台、App平台、微信小程序平台
 
@@ -393,7 +388,7 @@ uni统计新增的文件主要包括：
 
 #### 使用环境@sourcemap-parse-error-env
 
-1. 腾讯云服务空间（uni-admin 1.9.4+），阿里云服务空间（uni-admin 2.3.4+）
+1. 腾讯云服务空间（uni-admin 1.9.4+），阿里云服务空间（uni-admin 2.3.4+），支付宝云服务空间（uni-admin 2.4.3+）
 2. HBuiderX 3.5.3+
 3. 不支持 IE，不支持hbx内置浏览器，推荐使用谷歌浏览器
 
@@ -708,7 +703,7 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
 ├── components                         # 自定义组件
 ├── js_sdk                             # js sdk
 │   └── uni-stat                       # uni统计相关工具方法
-│       └── util.js                      
+│       └── util.js
 ├── pages                              # 页面
 │   └── uni-stat                       # uni统计页面
 │       │── channel                    # 渠道（app）
@@ -716,71 +711,76 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
 │       │   └── fieldsMap.js           # 字段配置（下同）
 │       │── device                     # 设备统计
 │       │   │── activity               # 渠道/场景分析
-│       │   │   │── activity.vue      
-│       │   │   └── fieldsMap.js    
+│       │   │   │── activity.vue
+│       │   │   └── fieldsMap.js
 │       │   │── comparison             # 平台对比
-│       │   │   │── comparison.vue      
-│       │   │   └── fieldsMap.js    
+│       │   │   │── comparison.vue
+│       │   │   └── fieldsMap.js
 │       │   │── overview               # 今日概览
-│       │   │   │── overview.vue      
-│       │   │   └── fieldsMap.js    
+│       │   │   │── overview.vue
+│       │   │   └── fieldsMap.js
 │       │   │── retention              # 留存
-│       │   │   │── retention.vue      
-│       │   │   └── fieldsMap.js    
+│       │   │   │── retention.vue
+│       │   │   └── fieldsMap.js
 │       │   │── stickiness             # 粘性
-│       │   │   │── stickiness.vue      
-│       │   │   └── fieldsMap.js    
+│       │   │   │── stickiness.vue
+│       │   │   └── fieldsMap.js
 │       │   └── trend                  # 趋势分析
-│       │       │── trend.vue           
-│       │       └── fieldsMap.js        
+│       │       │── trend.vue
+│       │       └── fieldsMap.js
 │       │── error                      # 错误分析
-│       │   │── error.vue             
-│       │   └── fieldsMap.js            
+│       │   │── error.vue
+│       │   └── fieldsMap.js
 │       │── event                       # 事件分析
-│       │   │── event.vue             
-│       │   └── fieldsMap.js            
+│       │   │── event.vue
+│       │   └── fieldsMap.js
 │       │── index                       # 统计首页
-│       │   │── index.vue             
-│       │   └── fieldsMap.js            
+│       │   │── index.vue
+│       │   └── fieldsMap.js
 │       │── page-ent                    # 入口页
-│       │   │── page-ent.vue             
-│       │   └── fieldsMap.js            
+│       │   │── page-ent.vue
+│       │   └── fieldsMap.js
 │       │── page-res                    # 受访页
-│       │   │── page-res.vue             
-│       │   └── fieldsMap.js            
+│       │   │── page-res.vue
+│       │   └── fieldsMap.js
+│       │── page-content                # 内容统计
+│       │   │── page-content.vue
+│       │   └── fieldsMap.js
+│       │── page-rule                   # 页面规则
+│       │   │── page-rule.vue
 │       │── pay-order                   # 支付统计
 │           │── funnel                  # 支付/漏斗分析
-│           │   │── funnel.vue      
-│           │   └── fieldsMap.js              
+│           │   │── funnel.vue
+│           │   └── fieldsMap.js
 │           │── list                    # 支付/订单明细
-│           │   │── list.vue      
+│           │   │── list.vue
 │           │── overview                # 支付/订单概况
-│           │   │── overview.vue      
-│           │   └── fieldsMap.js      
+│           │   │── overview.vue
+│           │   └── fieldsMap.js
 │           └── ranking                 # 支付/用户价值排行
-│               └── ranking.vue           
+│               └── ranking.vue
 │       │── scene                       # 场景值（小程序）
-│       │   │── scene.vue             
-│       │   └── fieldsMap.js            
+│       │   │── scene.vue
+│       │   └── fieldsMap.js
 │       └── user                        # 用户统计
 │           │── activity                # 渠道/场景分析
-│           │   │── activity.vue      
-│           │   └── fieldsMap.js    
+│           │   │── activity.vue
+│           │   └── fieldsMap.js
 │           │── comparison              # 平台对比
-│           │   │── comparison.vue      
-│           │   └── fieldsMap.js    
+│           │   │── comparison.vue
+│           │   └── fieldsMap.js
 │           │── overview                # 今日概览
-│           │   │── overview.vue      
-│           │   └── fieldsMap.js    
+│           │   │── overview.vue
+│           │   └── fieldsMap.js
 │           │── retention               # 留存
-│           │   │── retention.vue      
-│           │   └── fieldsMap.js    
+│           │   │── retention.vue
+│           │   └── fieldsMap.js
 │           │── stickiness              # 粘性
-│           │   │── stickiness.vue      
-│           │   └── fieldsMap.js    
+│           │   │── stickiness.vue
+│           │   └── fieldsMap.js
 │           └── trend                   # 趋势分析
-│               │── trend.vue           
-│               └── fieldsMap.js        
+│               │── trend.vue
+│               └── fieldsMap.js
 ├── static
 ├── store
 ├── admin.config.js
@@ -836,6 +836,8 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
 │   │   │── index.js                    # 入口文件，提供对外访问模块
 │   │   │── loyalty.js                  # 设备/用户忠诚度（粘性）统计模型，统计设备/用户的粘性，粘性判断依据为：访问时长和访问页面数量
 │   │   │── page.js                     # 页面模型，提供应用的页面字典
+│   │   │── pageDetail.js               # 页面内容模型，提供页面规则匹配到的页面详情字典
+│   │   │── pageDetailResult.js         # 页面内容统计模型，汇总统计页面内容的访问设备、时长、分享等数据
 │   │   │── pageLog.js                  # 页面日志模型，记录上报的页面访问日志
 │   │   │── pageResult.js               # 页面结果统计模型，统计汇总页面访问日志中的数据
 │   │   │── platform.js                 # 应用平台模型，提供应用的平台字典
@@ -861,18 +863,19 @@ uni统计配置项存放于uniCloud配置中心（`uni-config-center`）下的 `
 
 **基础参数**
 
-|配置项				|默认值		|说明																																																|
-| :--------:		|:---------:|:-------------------:																																												|
-|  debug			|  false	|开启调试模式 true: 开启，false:关闭，开启后会产生大量日志，生产环境请关闭。																														|
-|  redis			|  false	|开启redis缓存，开启后可以降低数据库查询压力，提升uni统计性能，可按需决定是否开启。[开启方法](#开启redis缓存)																					|
-|  cachetime		|  604800	|redis缓存有效期，单位秒。																																											|
-|  sessionExpireTime|  1800		|会话过期时间，该配置用来判断当前会话是否已过期，一般情况下无需修改此项。																															|
-|  realtimeStat		|  true		|开启实时统计，true: 开启，false:关闭，开启后会每小时统计一次，数据库读写次数会增多，可按需决定是否开启。																							|
+|配置项				|默认值		|说明																																																		|
+| :--------:		|:---------:|:-------------------:																																														|
+|  debug			|  false	|开启调试模式 true: 开启，false:关闭，开启后会产生大量日志，生产环境请关闭。																																		|
+|  redis			|  false	|开启redis缓存，开启后可以降低数据库查询压力，提升uni统计性能，可按需决定是否开启。[开启方法](#开启redis缓存)																										|
+|  cachetime		|  604800	|redis缓存有效期，单位秒。																																													|
+|  sessionExpireTime|  1800		|会话过期时间，该配置用来判断当前会话是否已过期，一般情况下无需修改此项。																																			|
+|  realtimeStat		|  true		|开启实时统计，true: 开启，false:关闭，开启后会每小时统计一次，数据库读写次数会增多，可按需决定是否开启。																											|
 |  cronMin			|  false	|开启分钟级定时任务，true: 开启，false:关闭。开启后定时任务将细分到分钟级执行，分摊数据计算压力，适合应用日活较大或有特殊需求的用户群体。具体的开启方法见[设置定时任务云函数的触发周期](#设置定时任务云函数的触发周期)。	|
-|  cron				|  -		|用于配置定时任务触发时间，详情见下方[定时任务配置说明](#定时任务配置说明)。																														|
-|  batchInsertNum	|  5000		|当有批量写入操作时，限制单次写入数据库的最大条数。为防止写入超时，最大值为5000条。																													|
-|  errorCheck		|  -		|错误检测，此项用于在规定时间内限制相同的错误日志写入数据库，防止有高频错误产生时造成大量的数据库写入操作。[详情](#错误检测配置说明)																|
-|  cleanLog			|  -		|日志清理，此项用于配置定时清理过期的日志，减少数据库数据的存储量，提升uni统计性能。[详情](#日志清理配置说明)																						|
+|  cron				|  -		|用于配置定时任务触发时间，详情见下方[定时任务配置说明](#定时任务配置说明)。																																		|
+|  pageDetailStat	|  false	|开启页面内容统计 true: 开启，false:关闭，开启后会产生大量日志，请按需开启。uni-admin	2.4.0起支持配置此项。																										|
+|  batchInsertNum	|  5000		|当有批量写入操作时，限制单次写入数据库的最大条数。为防止写入超时，最大值为5000条。																																|
+|  errorCheck		|  -		|错误检测，此项用于在规定时间内限制相同的错误日志写入数据库，防止有高频错误产生时造成大量的数据库写入操作。[详情](#错误检测配置说明)																					|
+|  cleanLog			|  -		|日志清理，此项用于配置定时清理过期的日志，减少数据库数据的存储量，提升uni统计性能。[详情](#日志清理配置说明)																										|
 
 
 #### 定时任务配置说明
@@ -911,13 +914,16 @@ uni统计配置项存放于uniCloud配置中心（`uni-config-center`）下的 `
 - `page`：页面数据统计，统计维度包括：
   - 日统计，默认`每天上午3点（20分钟）`触发，统计前一天的页面数据
 
+- `page-detail`：页面内容统计，统计维度包括：
+  - 日统计，默认`每天上午7点（10分钟）`触发，统计前一天的页面内容数据
+
 - `event`：事件数据统计，统计维度包括：
   - 日统计，默认`每天上午4点（20分钟）`触发，统计前一天的事件数据
 
 - `error`：错误数据统计，统计维度包括：
   - 日统计，默认`每天上午5点（20分钟）`触发，统计前一天的错误数据
 
-- `clean`：错误数据统计，统计维度包括：
+- `clean`：过期日志清理定时任务：
   - 日志清理，默认`每天上午5点（30分钟）`触发，清理过期的日志数据
 
 - `pay-result`：支付数据结果统计，统计维度包括：
@@ -950,6 +956,8 @@ uni统计配置项存放于uniCloud配置中心（`uni-config-center`）下的 `
 - `事件日志：eventLog`，默认保留`7`天的日志。
 - `分享日志：shareLog`，默认保留`7`天的日志。
 - `错误日志：errorLog`，默认保留`7`天的日志。
+- `实时统计数据：resultHourLog`，默认保留`30`天的日志。
+- `app崩溃日志：appCrashLog`，默认保留`7`天的日志。
 
 ::: warning 注意事项
 - 客户端和统计后台两个项目务必关联同一个服务空间，且uni-admin中所有云函数、公共模板等都已经上传部署到该服务空间
@@ -962,7 +970,7 @@ uni统计配置项存放于uniCloud配置中心（`uni-config-center`）下的 `
 ## 扩展和自定义方式
 uni统计提供了基础的数据报表，如不能达到预期的数据采集，可以在客户端通过 `uni.report(eventKey,param)`  自由上报数据 ，并通过 uni-admin 增加页面 ，自行统计数据。
 
-### 前端 uni.report 基础用法 
+### 前端 uni.report 基础用法
 
 这里列出 `uni.report(eventKey,param)` 的基本用法，完整`API`查看：[详情](https://uniapp.dcloud.io/api/other/report.html)
 
@@ -994,13 +1002,15 @@ const db = uniCloud.database()
 db.collection('uni-stat-event-logs')
 ```
 
-不管是新上报的数据，还是[opendb](https://uniapp.dcloud.net.cn/uniCloud/opendb.html)的数据、或者开发者自己的业务数据库里的数据，都可以自己编写报表进行统计分析。
+不管是新上报的数据，还是[opendb](https://doc.dcloud.net.cn/uniCloud/opendb.html)的数据、或者开发者自己的业务数据库里的数据，都可以自己编写报表进行统计分析。
 
 与普通uni-app页面一样，新建页面，编写代码。
 
 在`uni-admin`中注册左侧菜单时，需要参考文档：[uni-admin 左侧窗口-菜单栏](https://uniapp.dcloud.io/uniCloud/admin.html#%E5%B7%A6%E4%BE%A7%E7%AA%97%E5%8F%A3-%E8%8F%9C%E5%8D%95%E6%A0%8F)
 
 ## 版本升级 @upgrade
+
+### 升级到1.9.0+ 版本@upgrade1
 
 `uni-admin1.9.0`版本开始（对应`HBuilderX 3.5.1`），`uni统计`和`uni升级中心`复用相同的应用版本表（即`opendb-app-versions`表） ，废弃原来的`uni-stat-app-versions`表。
 
@@ -1032,7 +1042,7 @@ exports.main = async (event, context) => {
 		for (let oldKey in oldVersionDataRes.data) {
 			//老版本表的数据
 			const oldVersionData = oldVersionDataRes.data[oldKey]
-			
+
 			//组装数据
 			const newVersionData = {
 				_id: oldVersionData._id,//_id 两个表数据要保持一致
@@ -1047,10 +1057,116 @@ exports.main = async (event, context) => {
 			await db.collection('opendb-app-versions').add(newVersionData)
 		}
 	}
-	
+
 	return true
 };
 ```
+
+### 升级到2.4.0+ 含内容统计的版本@upgrade2
+
+`uni-admin2.4.0` 版本开始，新增了内容统计，可以通过设置页面规则进行内容统计。内容统计模块默认处于关闭状态，开启内容统计后会增加大量的数据库读写次数，请按需开启。开启内容统计的方式，可参考[公共模块配置项说明](#公共模块配置项说明)。
+
+**演示图**
+
+内容统计
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/uni-admin/447.png)
+
+页面规则
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/uni-admin/448.png)
+
+设置页面规则
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/uni-admin/449.png)
+
+**注意**
+
+如果升级uni-admin后，你的uni统计没有出现内容统计的菜单，则点击菜单管理里的【更新内置菜单】按钮即可（需uni-admin版本>=2.4.0）
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/uni-admin/450.png)
+
+
+### 升级到2.4.24+ 含鸿蒙平台的版本@upgrade3
+
+`uni-admin2.4.24` 版本开始，新增了对`App-Harmony`（即鸿蒙App）平台的统计。
+
+![](https://web-ext-storage.dcloud.net.cn/doc/uni-stat/20241118-193219.png)
+
+若您部署过`uni-admin2.4.24`之前的版本，需要先将`uni-admin`升级到`2.4.24`之后的版本。
+
+**升级uni-admin项目的方法**
+
+1. 通过`HBuilderX`部署`uni-admin项目`的用户，可直接在`HBuilerX` 中，找到`uni-admin项目根目录/package.json`文件，右键 => 从插件市场更新，合并项目文件后重新打包、发布`uni-admin项目`即可。
+
+::: warning 注意
+- 若之前自行修改过uni-admin项目，需要手动合并处理，否则修改的内容可能会被覆盖。
+:::
+
+
+![](https://web-ext-storage.dcloud.net.cn/doc/uni-stat/screenshot_2024-11-06_17-06-09.png)
+
+
+2. 通过插件市场`在线部署`功能，部署`uni-admin项目`的用户，可重新在[插件市场](https://ext.dcloud.net.cn/plugin?id=3268)选择`在线部署`，注意`appid`需要与原`uni-admin项目`的AppId保持一致，否则将会导致管理员账号无法登录，原`uni-admin项目`的AppId，可在插件市场的[插件部署记录](https://ext.dcloud.net.cn/manage/one-click-deployment)模块查看。
+
+![](https://web-ext-storage.dcloud.net.cn/doc/uni-stat/screenshot_2024-11-06_17-20-15.png)
+
+
+**在uni-admin项目中添加App-Harmony服务平台**
+
+如果您在`uni-admin项目`中，无法找到`App-Harmony`平台，您需要在HBuilderX中，找到`uni-admin项目根目录/uniCloud/database/JQL查询.jql`文件，添加以下`jql语句`并运行。
+
+::: warning 注意
+- 通过插件市场`在线部署`功能，部署`uni-admin项目`的用户，需要先在`HBuilderX`中创建`uni-admin项目`，并关联原部署`uni-admin项目`服务空间，再进行如上操作。
+:::
+
+```js
+db.collection('uni-stat-app-platforms').add({
+	"name": "App-Harmony",
+	"code": "harmony",
+	"order": 2,
+	"enable": true,
+	"create_time": 1730886932506
+})
+```
+
+
+**升级HBuilderX至4.33+，重新打包、发布您要统计的应用**
+
+uni-admin项目更新后，即可正常接收和统计`App-Harmony`平台的相关数据。此外，您还需要升级`uni统计2.0`的前端采集SDK，采集数据才能正常上报，即需要将`HBuilderX`版本升级至`4.33+`后，重新打包发布您要统计的应用。
+
+
+### 升级到2.4.25+ 含鸿蒙元服务平台的版本@upgrade4
+
+`uni-admin2.4.25` 版本开始，新增了对`鸿蒙元服务`平台的统计。
+
+![](https://web-ext-storage.dcloud.net.cn/doc/uni-stat/QQ20241202-164941-yfw.png)
+
+若您部署过`uni-admin2.4.25`之前的版本，需要先将`uni-admin`升级到`2.4.25`之后的版本，升级`uni-admin`项目的方法，可参考上方[升级到2.4.24+ 含鸿蒙平台的版本](#upgrade3)中的说明。
+
+**在uni-admin项目中添加鸿蒙元服务平台**
+
+如果您在`uni-admin项目`中，无法找到`鸿蒙元服务`平台，您需要在HBuilderX中，找到`uni-admin项目根目录/uniCloud/database/JQL查询.jql`文件，添加以下`jql语句`并运行。
+
+::: warning 注意
+- 通过插件市场`在线部署`功能，部署`uni-admin项目`的用户，需要先在`HBuilderX`中创建`uni-admin项目`，并关联原部署`uni-admin项目`服务空间，再进行如上操作。
+:::
+
+```js
+db.collection('uni-stat-app-platforms').add({
+    "name":"鸿蒙元服务",
+    "code":"mp-harmony",
+    "order":16,
+    "enable":true,
+    "create_time":163998979103
+})
+```
+
+
+**升级HBuilderX至4.33+，重新打包、发布您要统计的应用**
+
+uni-admin项目更新后，即可正常接收和统计`鸿蒙元服务`平台的相关数据。此外，您还需要升级`uni统计2.0`的前端采集SDK，采集数据才能正常上报，即需要将`HBuilderX`版本升级至`4.33+`后，重新打包发布您要统计的应用。
+
 
 ## uni统计2.0费用评测@cost
 
@@ -1058,7 +1174,7 @@ exports.main = async (event, context) => {
 
 近期，uniCloud阿里云版开始正式商用，部分开发者对基于uniCloud的`uni统计`等云端一体业务，开始纠结，不清楚这些业务预计会花费多少钱，不清楚相比传统服务器而言，何种方案性价比更好。
 
-本文尝试算细账、算总账，以阿里云[按量计费](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)为例，详细预测`uni统计`在不同用户规模下的资源消耗及对应费用，帮助大家明智选择，无忧开发。
+本文尝试算细账、算总账，以阿里云[按量计费](https://doc.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)为例，详细预测`uni统计`在不同用户规模下的资源消耗及对应费用，帮助大家明智选择，无忧开发。
 
 本文主要分为三个部分：
 
@@ -1083,7 +1199,7 @@ exports.main = async (event, context) => {
 
 启用`uni统计`后，你的每一个在线用户默认每10秒会请求一次`uni-stat-receiver`云函数（如果你的日活在1万以上，可以改成60秒，可以减少费用。时间间隔可在manifest.json内设置，如果用户一直停留在一个页面，那么此时不会重复上报）
 
-我们按照[uniCloud官网](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)列出的按量计费规则，计算一下云函数的资源消耗。
+我们按照[uniCloud官网](https://doc.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)列出的按量计费规则，计算一下云函数的资源消耗。
 
 |资源分类			|资源细项							|售价（元）	|
 |:-------:		|:----------------:		|:-------:	|
@@ -1131,8 +1247,8 @@ exports.main = async (event, context) => {
 
 同理，我们可推导出日活为1000、10000、10万的App，其`uni-stat-receiver`云函数每月费用如下表：
 
-|  日活	| 资源使用量计费（元/日）	|	调用次数计费（元/日）	|  出网流量计费（元/日）	| 日合计（元/日）	|  月合计（元/月）	|	
-| :----:| :-----------------:		|:-------------------:|:--------------------:	|:----------:		|:---------:			| 
+|  日活	| 资源使用量计费（元/日）	|	调用次数计费（元/日）	|  出网流量计费（元/日）	| 日合计（元/日）	|  月合计（元/月）	|
+| :----:| :-----------------:		|:-------------------:|:--------------------:	|:----------:		|:---------:			|
 |   100 |			0.001382					|			0.00133					|  0.000534							|    0.0032			|    0.10 				|
 |  1000	|			0.01382						|			0.0133					|  0.00534							|    0.0325			|    0.98  				|
 | 10000	|			0.1382						|			0.133						|  0.0534								|    0.3246			|    9.74					|
@@ -1166,7 +1282,7 @@ exports.main = async (event, context) => {
 同理，我们可推导出日活为1000、10000、10万的App，其`uni-stat-receiver`云函数每月费用如下表：
 
 |  日活	|  平均耗时（秒）	| 资源使用量计费（元/日）	|  调用次数计费（元/日）	|  出网流量计费（元/日）	|   日合计（元/日）	|  月合计（元/月）	|
-| :----:| :------:			|:-------------------:	|:-------------------:	|:-------------------:	|:---------:			| :--------:			| 
+| :----:| :------:			|:-------------------:	|:-------------------:	|:-------------------:	|:---------:			| :--------:			|
 |   100	|   1						|      0.001327					|       0.00003192			|  0										|   0.0014				|  0.04						|
 |  1000	|   3						|      0.003981					|       0.00003192			|  0										|   0.0040				|  0.12						|
 | 10000	|  30						|      0.039813					|       0.00003192			|  0										|   0.0398				|  1.19						|
@@ -1176,7 +1292,7 @@ exports.main = async (event, context) => {
 
 ### 云数据库@cost-db
 
-按照[uniCloud官网](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)介绍，云数据库费用 = `容量费用 + 读操作次数费用 + 写操作次数费用`，其中：
+按照[uniCloud官网](https://doc.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)介绍，云数据库费用 = `容量费用 + 读操作次数费用 + 写操作次数费用`，其中：
 
 - 容量费用：数据库存储容量（单位为G） * 0.07
 - 读操作次数费用：读操作次数（万次） * 0.015
@@ -1235,7 +1351,7 @@ redis只影响数据库的读操作，通过官方统计示例项目使用redis�
 
 `uni统计`需要和`uni-admin`配合使用，`uni-admin`需要部署在前端网页托管中。`uni-admin`主要是管理员使用，使用频次较少，流量也较低。
 
-按照[uniCloud官网](https://uniapp.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)介绍，前端网页托管费用 = `容量费 + 流量费`。
+按照[uniCloud官网](https://doc.dcloud.net.cn/uniCloud/price.html#aliyun-postpay)介绍，前端网页托管费用 = `容量费 + 流量费`。
 
 #### 容量费
 
@@ -1249,15 +1365,15 @@ redis只影响数据库的读操作，通过官方统计示例项目使用redis�
 
 每月费用不到1分钱，可忽略。
 
-### 费用合并@cost-total 
+### 费用合并@cost-total
 
 细项对比完了，我们来合并看看，使用`uni统计`，每月到底需要花多少钱。
 
 |日活		    |云函数（元/月）	|云数据库（元/月）	|前端网页托管	（元/月）	|  月合计（元/月）	|
 | :--------:| :--------:		|:-----------:		|:-----------------:	|:---------------:|
 |   100	    |   0.14	  		|   0.42					|可忽略不计						|   0.56					|
-|  1000		  |   1.10   			|   4.24					|可忽略不计						|   5.34					| 
-| 10000	   	|  10.93				|  42.38					|可忽略不计						|  53.31					|  
+|  1000		  |   1.10   			|   4.24					|可忽略不计						|   5.34					|
+| 10000	   	|  10.93				|  42.38					|可忽略不计						|  53.31					|
 |100000		  | 100.97	 			| 423.85					|可忽略不计						| 524.82					|
 
 ### uni统计 给你带来的收益
@@ -1307,8 +1423,8 @@ uni统计支持sourcemap，可直观了解到底哪行代码写的有问题。[�
 |日活		    |云函数（元/月）	|云数据库（元/月）	|前端网页托管	（元/月）	|  月合计（元/月）	|
 | :--------:| :--------:		|:-----------:		|:-----------------:	|:---------------:|
 |   100	    |   0.14	  		|   0.42					|可忽略不计						|   0.56					|
-|  1000		  |   1.10   			|   4.24					|可忽略不计						|   5.34					| 
-| 10000	   	|  10.93				|  42.38					|可忽略不计						|  53.31					|  
+|  1000		  |   1.10   			|   4.24					|可忽略不计						|   5.34					|
+| 10000	   	|  10.93				|  42.38					|可忽略不计						|  53.31					|
 |100000		  | 100.97	 			| 423.85					|可忽略不计						| 524.82					|
 
 不重复制造轮子，聚焦业务，快速验证模式，实现商业增长，才应该是聪明工程师的追求。
@@ -1335,7 +1451,7 @@ uni统计支持sourcemap，可直观了解到底哪行代码写的有问题。[�
 答：
 - 确保分清楚，业务App 和 admin 是2个工程。业务App是采集端，admin是报表端
 - 确保使用HBuilderX 3.4.14+。如果是cli创建的项目，需要升级cli到uni-app 3.4.14+
-- 确保在需要统计的业务App工程的manifest里勾选了开启 uni统计2.0，并关联和正确的uniCloud服务空间
+- 确保在需要统计的业务App工程的manifest里勾选了开启 uni统计2.0，并关联了正确的uniCloud服务空间
 - 确保重新发行过业务App（在HBuilder里发行即可，不需要上架应用商店或小程序商店），数据上报只发生在项目发行后或者运行项目开启了调试模式，其他情况不会上报数据。[详情](#report-time)
 - 确保`uni-admin`项目的`uniCloud`目录下的云函数都上传到了与App相同的uniCloud服务空间
 - 在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的云函数日志中，可以看到`uni-stat-receiver`云函数有正确的请求日志
@@ -1348,13 +1464,13 @@ uni统计支持sourcemap，可直观了解到底哪行代码写的有问题。[�
 
 ### 4. 如何创建或授权`uni统计`运营管理员账号
 
-答：参考[uni-admin 给系统创建多个登录账户并设置不同的权限](https://uniapp.dcloud.net.cn/uniCloud/admin.html#mutiladmin)
+答：参考[uni-admin 给系统创建多个登录账户并设置不同的权限](https://doc.dcloud.net.cn/uniCloud/admin.html#mutiladmin)
 
 ### 5. 为什么总设备数比活跃设备数少？
 
 答：总设备数计算公式为：总设备数 = 原设备数 + 新设备数，而判断一个设备是否为新设备的依据是在客户端SDK中是否已储存该设备上次访问某一应用的时间，未存储则认为是该应用的新设备(即lvts=0时为新设备，lvts>0时为老设备)。 因此如果之前某一设备已经访问过某一应用，就算此时清除数据库中的数据，由于已经在客户端SDK中储存该设备上次访问应用的时间（即此时lvts > 0），所以该设备也不会再被认为是该应用的新设备从而不会再被计算进该应用的总设备数中而只会计算进活跃设备数中，此时可能就会出现总设备数小于活跃设备数的情况。
 
-### 6. uni-stat-cron运行日志显示 Not Found the cofnig file
+### 6. uni-stat-cron运行日志显示 Not Found the config file
 
 业务App 和 admin 是2个工程。业务App是采集端，admin是报表端；这两个项目均包含`uni-config-center`；如果这两个项目关联（复用）相同的服务空间时，很容易出现`uni-config-center`的互相覆盖问题；此时建议单点维护，方案有2种：
 - 以业务App为主：将`uni-admin`项目中`uni-config-center` 下面的`uni-stat`文件夹，复制到业务App项目下的`uni-config-center`目录下，然后重新上传业务App项目下的`uni-config-center`公共模块即可。
@@ -1396,9 +1512,20 @@ uni统计支持sourcemap，可直观了解到底哪行代码写的有问题。[�
 
 **第三步：前往菜单管理，对每一个uni统计的页面（包含子页面）设置下权限 `READ_UNI_STAT`（菜单只有拥有对应权限才会显示）**
 
+### 8. 某统计项突然没有数据怎么办？
+
+答：首先登录[uniCloud控制台](https://unicloud.dcloud.net.cn/)，检查在出现问题的统计项配置的时间点(参考：[定时任务配置说明](#定时任务配置说明))，`uni-stat-cron`云函数的运行日志，如果运行日志前面的状态标识是灰色的，代表云函数运行超时了，此时在云函数详情中将`uni-stat-cron`云函数的超时时间设置到最大值即可。如果运行日志的状态标识是绿色的，则需要检查日志内容是否有报错，然后根据报错内容做出调整。
+
+
+### 9. 为什么注册用户统计没有数据？
+
+答：uni统计能够产出注册用户统计数据的前提是，开通uni统计的应用与`uni-admin`项目关联了同一个服务空间，且用户模块使用了[uni-id用户体系](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)，如果你应用的用户存储在非uniCloud业务，或者没有使用[uni-id用户体系](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)，uni统计将无法自动统计注册用户数据。
+
+
 ## 参考资料
 
 不掌握如下文档，很难对 `uni统计2.0` 吃透和做二次开发
-- uni-admin文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/admin.html)
-- uni-id文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-id.html)
-- opendb文档：[详见](https://uniapp.dcloud.net.cn/uniCloud/opendb.html)
+- uni-admin文档：[详见](https://doc.dcloud.net.cn/uniCloud/admin.html)
+- uni-id文档：[详见](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)
+- opendb文档：[详见](https://doc.dcloud.net.cn/uniCloud/opendb.html)
+

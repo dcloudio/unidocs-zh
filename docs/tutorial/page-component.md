@@ -47,4 +47,4 @@ Vue 3.x增加了`script setup`特性，将三步优化为两步，无需注册�
 
 在 uni-app 项目中，页面引用组件和组件引用组件的方式都是一样的（可以理解为：页面是一种特殊的组件），均支持通过 `easycom` 方式直接引用。
 
-easycom 规范详细介绍，参考：[easycom](/collocation/pages.html#easycom)
+easycom 规范详细介绍，参考：[easycom](/collocation/pages.md#easycom)

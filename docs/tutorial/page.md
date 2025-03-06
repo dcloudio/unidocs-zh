@@ -6,7 +6,7 @@ uni-app项目中，一个页面就是一个符合`Vue SFC规范`的 vue 文件�
 
 - 在 uni-app js 引擎版中，后缀名是`.vue`文件或`.nvue`文件。
 	这些页面均全平台支持，差异在于当 uni-app 发行到App平台时，`.vue`文件会使用webview进行渲染，`.nvue`会使用原生进行渲染，详见：[nvue原生渲染](/tutorial/nvue-outline)。
-	
+
 	一个页面可以同时存在vue和nvue，在[pages.json](../collocation/pages.md)的路由注册中不包含页面文件名后缀，同一个页面可以对应2个文件名。重名时优先级如下：
 	- 在非app平台，先使用vue，忽略nvue
 	- 在app平台，使用nvue，忽略vue
@@ -14,7 +14,7 @@ uni-app项目中，一个页面就是一个符合`Vue SFC规范`的 vue 文件�
 - 在 uni-app x 中，后缀名是`.uvue`文件
 
 	uni-app x 中没有js引擎和webview，不支持和vue页面并存。
-	
+
 	uni-app x 在app-android上，每个页面都是一个全屏activity，不支持透明。
 
 ## 页面管理
@@ -136,7 +136,7 @@ template中文名为`模板`，它类似html的标签。但有2个区别：
 		<text>标题</text>
 	</view>
 	<scroll-view>
-		
+
 	</scroll-view>
 </template>
 ```
@@ -260,7 +260,7 @@ style的写法与web的css基本相同。
 
 ## 页面生命周期@lifecycle
 
-`uni-app` 页面除支持 Vue 组件生命周期外还支持下方页面生命周期函数，当以组合式 API 使用时，在 Vue2 和 Vue3 中存在一定区别，请分别参考：[Vue2 组合式 API 使用文档](/tutorial/vue-composition-api.html) 和 [Vue3 组合式 API 使用文档](/tutorial/vue3-composition-api.html)。
+`uni-app` 页面除支持 Vue 组件生命周期外还支持下方页面生命周期函数，当以组合式 API 使用时，在 Vue2 和 Vue3 中存在一定区别，请分别参考：[Vue2 组合式 API 使用文档](/tutorial/vue-composition-api.md) 和 [Vue3 组合式 API 使用文档](/tutorial/vue3-composition-api.md)。
 
 |函数名|说明|平台差异说明|最低版本|
 |:-|:-|:-|:-|
@@ -271,7 +271,7 @@ style的写法与web的css基本相同。
 |onHide|监听页面隐藏|||
 |onUnload|监听页面卸载|||
 |onResize|监听窗口尺寸变化|App、微信小程序、快手小程序||
-|onPullDownRefresh|监听用户下拉动作，一般用于下拉刷新，参考[示例](api/ui/pulldown)|||
+|onPullDownRefresh|监听用户下拉动作，一般用于下拉刷新，参考[示例](/api/ui/pulldown.md)|||
 |onReachBottom|页面滚动到底部的事件（不是scroll-view滚到底），常用于下拉下一页数据。具体见下方注意事项|||
 |onTabItemTap|点击 tab 时触发，参数为Object，具体见下方注意事项|微信小程序、QQ小程序、支付宝小程序、百度小程序、H5、App、快手小程序、京东小程序||
 |onShareAppMessage|用户点击右上角分享|微信小程序、QQ小程序、支付宝小程序、抖音小程序、飞书小程序、快手小程序、京东小程序||
@@ -283,6 +283,14 @@ style的写法与web的css基本相同。
 |onNavigationBarSearchInputClicked|监听原生标题栏搜索输入框点击事件（pages.json 中的 searchInput 配置 disabled 为 true 时才会触发）|App、H5|1.6.0|
 |onShareTimeline|监听用户点击右上角转发到朋友圈|微信小程序|2.8.1+|
 |onAddToFavorites|监听用户点击右上角收藏|微信小程序、QQ小程序|2.8.1+|
+
+## Vue2 页面及组件生命周期流程图@vue2-lifecycle-flow
+
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/uni-app-lifecycle-vue2.jpg)#{.zooming width=1000 margin=auto}
+
+## Vue3 页面及组件生命周期流程图@vue3-lifecycle-flow
+
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/uni-app-lifecycle-vue3.jpg)#{.zooming width=1000 margin=auto}
 
 ### 页面加载时序介绍@timeline
 
@@ -342,14 +350,14 @@ onReady后，页面元素就可以自由操作了，比如ref获取节点。同�
 了解了页面加载时序原理，我们就知道如何避免页面加载常见的问题：
 
 - 优化白屏的方法：
-1. 页面dom太多，注意有的组件写的不好，会拖累整体页面。uni-app x 里减少dom数量的策略，[详见](../uni-app-x/performance.md)
+1. 页面dom太多，注意有的组件写的不好，会拖累整体页面。uni-app x 里减少dom数量的策略，[详见](https://doc.dcloud.net.cn/uni-app-x/performance.html)
 2. 联网不要在onReady里，那样太慢了，在onLoad里早点联网
 3. 在pages.json里配置原生导航栏和背景色
 4. 有的页面template内容非常少，整页就是一个需要联网加载的列表，这会造成虽然首批dom飞快渲染了，但页面其实还是白的，联网后才能显示字和图。
 	此时需要在template里做一些简单占位组件，比如loading组件、骨架屏，让本地先显示一些内容。
 
 - 卡住动画不启动的原因：
-1. 页面dom太多，注意有的组件写的不好，会拖累整体页面。uni-app x 里减少dom数量的策略，[详见](../uni-app-x/performance.md)
+1. 页面dom太多，注意有的组件写的不好，会拖累整体页面。uni-app x 里减少dom数量的策略，[详见](https://doc.dcloud.net.cn/uni-app-x/performance.html)
 2. onLoad里执行了耗时的同步计算
 
 ### onShow和onHide
@@ -377,7 +385,7 @@ a页面刚进入时，会触发a页面的onShow。
 
 **注意**
 
-- `uni-app x android` 平台，如需获取 [activity 实例](plugin/uts-for-android.md#activity)，此时当前页面的 `activity 实例`并未创建完成，会获取到上一个页面的 `activity 实例`（首页会获取应用默认的 `activity 实例`）。如需获取当前页面的 `activity 实例`，应在 `onShow` 或 `onReady` 生命周期中获取。
+- `uni-app x android` 平台，如需获取 [activity 实例](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-android.html#activity)，此时当前页面的 `activity 实例`并未创建完成，会获取到上一个页面的 `activity 实例`（首页会获取应用默认的 `activity 实例`）。如需获取当前页面的 `activity 实例`，应在 `onShow` 或 `onReady` 生命周期中获取。
 
 ### onReachBottom
 
@@ -426,6 +434,7 @@ export default {
 **注意**
 
 - `onBackPress`上不可使用`async`，会导致无法阻止默认返回
+- iOS 端侧滑返回不会触发 `onBackPress`
 - 支付宝小程序只有真机可以监听到非`navigateBack`引发的返回事件（使用小程序开发工具时不会触发`onBackPress`），不可以阻止默认返回行为
 
 详细说明及使用：[onBackPress 详解](http://ask.dcloud.net.cn/article/35120)
@@ -508,7 +517,7 @@ app.doSomething() // 调用 App.vue methods 中的 doSomething 方法
 
 ### getCurrentPages()
 
-```getCurrentPages()``` 函数用于获取当前[页面栈](#页面栈)的实例，以数组形式按栈的顺序给出，数组中的元素为页面实例，第一个元素为首页，最后一个元素为当前页面。
+`getCurrentPages()` 函数用于获取当前[页面栈](#页面栈)的实例，以数组形式按栈的顺序给出，数组中的元素为页面实例，第一个元素为首页，最后一个元素为当前页面。
 
 每个页面实例的方法属性列表：
 
@@ -526,7 +535,7 @@ Tips：
 
 - `navigateTo`, `redirectTo` 只能打开非 tabBar 页面。
 - `switchTab` 只能打开 `tabBar` 页面。
-- `reLaunch`` 可以打开任意页面。
+- `reLaunch` 可以打开任意页面。
 - 页面底部的 `tabBar` 由页面决定，即只要是定义为 `tabBar` 的页面，底部都有 `tabBar`。
 - 不能在首页 `onReady` 之前进行页面跳转。
 
@@ -625,13 +634,13 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 	})
 ```
 
-### uni.$off([eventName, callback]) @off
+### uni.$off(eventName, callback) @off
 
 移除全局自定义事件监听器。
 
 |属性		|类型			|描述			|
 |---		|---			|---			|
-|eventName	|Array＜String＞ |事件名			|
+|eventName	|String |事件名			|
 |callback	|Function		|事件的回调函数	|
 
 **Tips**
@@ -739,7 +748,7 @@ uni-app自带的web-view组件，是页面中新插入的一个子webview。获�
 
 ## 页面代码规范介绍 @template-block
 
-`uni-app` 支持在 template 模板中嵌套 `<template/>` 和 `<block/>`，用来进行 [列表渲染](/tutorial/vue-basics?id=listrendering) 和 [条件渲染](/tutorial/vue-basics?id=condition)。
+`uni-app` 支持在 template 模板中嵌套 `<template/>` 和 `<block/>`，用来进行 [条件渲染](/tutorial/vue-basics?id=condition) 和 [列表渲染](/tutorial/vue-basics?id=listrendering)。
 
 `<template/>` 和 `<block/>` 并不是一个组件，它们仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。
 

@@ -34,7 +34,7 @@ code|message|
 4. 激励视频因为有奖励，很容易招惹灰黑产，为防止被刷，推荐使用：
   - 1) 开通激励视频的服务器回调 [详情](ad-rewarded-video.md#callback)
   - 2) 不使用短信验证码等不安全登录手段，改为[App一键登陆](../univerify.md)、uni金融级实人认证（含活体检测）等更安全的身份校验
-  - 3) 使用uni云端一体安全网络，防止伪造客户端 [详情](../uniCloud/secure-network.md)
+  - 3) 使用uni云端一体安全网络，防止伪造客户端 [详情](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
 
 #### 不治本的绕过型方案
 

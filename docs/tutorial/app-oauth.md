@@ -2,10 +2,10 @@ App端OAuth(登录鉴权)模块封装了市场上主流的三方登录SDK，提�
 
 |项目类型|API|
 |:-|:-|
-|uni-app|[uni.preLogin(OBJECT)](https://uniapp.dcloud.io/api/plugins/login?id=prelogin)、[uni.login(OBJECT)](api/plugins/login?id=login)、[uni.getUserInfo(OBJECT)](https://uniapp.dcloud.io/api/plugins/login?id=getuserinfo)、[uni.closeAuthView()](https://uniapp.dcloud.io/api/plugins/login?id=closeauthview)、[uni.getCheckBoxState(OBJECT)](https://uniapp.dcloud.io/api/plugins/login?id=getcheckboxstate)、[uni.getUniverifyManager(OBJECT)](https://uniapp.dcloud.io/api/plugins/login?id=getuniverifymanager)|
+|uni-app|[uni.preLogin(OBJECT)](https://uniapp.dcloud.io/api/plugins/login?id=prelogin)、[uni.login(OBJECT)](/api/plugins/login.md#login)、[uni.getUserInfo(OBJECT)](https://uniapp.dcloud.io/api/plugins/login?id=getuserinfo)、[uni.closeAuthView()](https://uniapp.dcloud.io/api/plugins/login?id=closeauthview)、[uni.getCheckBoxState(OBJECT)](https://uniapp.dcloud.io/api/plugins/login?id=getcheckboxstate)、[uni.getUniverifyManager(OBJECT)](https://uniapp.dcloud.io/api/plugins/login?id=getuniverifymanager)|
 |5+App/Wap2App|[plus.oauth.*](https://www.html5plus.org/doc/zh_cn/oauth.html)
 
-如果服务端使用[uniCloud](https://uniapp.dcloud.io/uniCloud/README)，官方提供了[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)云端统一登录服务，把微信登录、短信验证码登录及角色权限管理等服务端登录开发，进行了统一的封装。前端统一的`uni.login`和云端统一的`uni-id`搭配，可以极大提升登录业务的开发效率，强烈推荐给开发者使用。uni-id的文档另见：[https://uniapp.dcloud.net.cn/uniCloud/uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)
+如果服务端使用[uniCloud](https://uniapp.dcloud.io/uniCloud/README)，官方提供了[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)云端统一登录服务，把微信登录、短信验证码登录及角色权限管理等服务端登录开发，进行了统一的封装。前端统一的`uni.login`和云端统一的`uni-id`搭配，可以极大提升登录业务的开发效率，强烈推荐给开发者使用。
 
 使用登录鉴权功能需在项目manifest.json的“App模块配置”中勾选“OAuth(登录鉴权)”，并根据项目实际情况勾选使用的三方登录平台：
 ![](https://native-res.dcloud.net.cn/images/uniapp/oauth/modules.png)
@@ -18,11 +18,11 @@ App端OAuth(登录鉴权)模块封装了市场上主流的三方登录SDK，提�
 - 在App项目中调用API进行登录，成功后获取到授权标识提交到业务服务器完成登录操作
 
 支持的三方登录平台：
-- [一键登录（univerify）](univerify.md)
+- [一键登录（univerify）](/univerify.md)
 - [苹果登录（Sign in with Apple）](app-oauth-apple.md)
 - [微信登录](app-oauth-weixin.md)
 - [QQ登录](app-oauth-qq.md)
-- [新浪微博登录](app-oauth-sina.md)
+- [新浪微博登录](app-oauth-weixin.md)
 - [Google登录](app-oauth-google.md)
 - [Facebook登录](app-oauth-facebook.md)
 

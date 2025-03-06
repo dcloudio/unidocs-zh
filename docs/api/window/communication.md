@@ -1,8 +1,10 @@
 > 自 HBuilderX 2.0.0 起支持，[使用指南](https://ask.dcloud.net.cn/article/36010)
 
-### uni.$emit(eventName,OBJECT)
+## uni.$emit(eventName,OBJECT)
 
 触发全局的自定义事件，附加参数都会传给监听器回调函数。
+
+<!-- UNIAPPAPIJSON.$emit.compatibility -->
 
 |属性		|类型	|描述				|
 |---		|---	|---				|
@@ -14,10 +16,13 @@
 	uni.$emit('update',{msg:'页面更新'})
 ```
 
+<!-- UNIAPPAPIJSON.$emit.tutorial -->
 
-### uni.$on(eventName,callback)
+## uni.$on(eventName,callback)
 
 监听全局的自定义事件，事件由 `uni.$emit` 触发，回调函数会接收事件触发函数的传入参数。
+
+<!-- UNIAPPAPIJSON.$on.compatibility -->
 
 |属性		|类型		|描述			|
 |---		|---		|---			|
@@ -32,10 +37,13 @@
 	})
 ```
 
+<!-- UNIAPPAPIJSON.$on.tutorial -->
 
-### uni.$once(eventName,callback)
+## uni.$once(eventName,callback)
 
 监听全局的自定义事件，事件由 `uni.$emit` 触发，但仅触发一次，在第一次触发之后移除该监听器。
+
+<!-- UNIAPPAPIJSON.$once.compatibility -->
 
 |属性		|类型		|描述			|
 |---		|---		|---			|
@@ -50,13 +58,17 @@
 	})
 ```
 
-### uni.$off([eventName, callback])
+<!-- UNIAPPAPIJSON.$once.tutorial -->
+
+## uni.$off(eventName, callback)
 
 移除全局自定义事件监听器。
 
+<!-- UNIAPPAPIJSON.$off.compatibility -->
+
 |属性		|类型			|描述			|
 |---		|---			|---			|
-|eventName	|Array＜String＞ |事件名			|
+|eventName	|String |事件名			|
 |callback	|Function		|事件的回调函数	|
 
 **Tips**
@@ -78,7 +90,7 @@
 			<button type="primary" @click="comunicationOff">结束监听</button>
 		</view>
 	</template>
-	
+
 	<script>
 		export default {
 			data() {
@@ -104,7 +116,7 @@
 			}
 		}
 	</script>
-	
+
 	<style>
 		.content {
 			display: flex;
@@ -112,23 +124,25 @@
 			align-items: center;
 			justify-content: center;
 		}
-	
+
 		.data {
 			text-align: center;
 			line-height: 40px;
 			margin-top: 40px;
 		}
-	
+
 		button {
 			width: 200px;
 			margin: 20px 0;
 		}
 	</style>
-	
+
 ```
 
+<!-- UNIAPPAPIJSON.$off.tutorial -->
 
 **注意事项**
 - uni.$emit、 uni.$on 、 uni.$once 、uni.$off 触发的事件都是 App 全局级别的，跨任意组件，页面，nvue，vue 等
 - 使用时，注意及时销毁事件监听，比如，页面 onLoad 里边 uni.$on 注册监听，onUnload 里边 uni.$off 移除，或者一次性的事件，直接使用 uni.$once 监听
 - 注意 uni.$on 定义完成后才能接收到 uni.$emit 传递的数据
+- `eventName` 应避免使用 `uni` 开头，以免与 uni-app 内置事件冲突

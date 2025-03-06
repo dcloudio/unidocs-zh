@@ -1,4 +1,4 @@
-### uni.createMapContext(mapId,this)
+## uni.createMapContext(mapId, componentInstance?)
 创建并返回 map 上下文 ``mapContext`` 对象。在自定义组件下，第二个参数传入组件实例this，以操作组件内 ``<map>`` 组件。
 
 **注意：uni.createMapContext(mapId, this)**
@@ -8,11 +8,13 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|1.9.0+|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|√|1.9.0+|√|√|√|
 
-mapContext
+<!-- UNIAPPAPIJSON.createMapContext.compatibility -->
+
+## mapContext
 
 ``mapContext`` 通过 mapId 跟一个 ``<map>`` 组件绑定，通过它可以操作对应的 ``<map>`` 组件。
 
@@ -20,9 +22,9 @@ mapContext
 
 |方法|参数|说明|平台差异说明|
 |:-|:-|:-|:-|
-|getCenterLocation|OBJECT|获取当前地图中心的经纬度，返回的是 gcj02 坐标系，可以用于 [uni.openLocation](api/location/location?id=getlocation)||
+|getCenterLocation|OBJECT|获取当前地图中心的经纬度，返回的是 gcj02 坐标系，可以用于 [uni.openLocation](/api/location/location.md#getlocation)||
 |moveToLocation|OBJECT|将地图中心移动到当前定位点，需要配合map组件的show-location使用||
-|translateMarker|OBJECT|平移marker，带动画|app-nvue 2.1.5+、微信小程序带动画、抖音、支付宝、京东、百度、QQ小程序|
+|translateMarker|OBJECT|平移marker，带动画|app-nvue 2.1.5+、H5、微信小程序带动画、抖音、支付宝、京东、百度、QQ小程序|
 |includePoints|OBJECT|缩放视野展示所有经纬度|app-nvue 2.1.5+、微信、抖音、支付宝、京东、百度、快手、QQ小程序|
 |getRegion|OBJECT|获取当前地图的视野范围||
 |getRotate|OBJECT|获取当前地图的旋转角|微信、抖音、支付宝、京东、QQ小程序|
@@ -79,8 +81,8 @@ mapContext
 |:-|:-|:-|:-|
 |markerId|Number|是|指定 marker|
 |destination|Object|是|指定 marker 移动到的目标点|
-|autoRotate|Boolean|是|移动过程中是否自动旋转 marker|
-|rotate|Number|是|marker 的旋转角度|
+|autoRotate|Boolean|否|移动过程中是否自动旋转 marker|
+|rotate|Number|否|marker 的旋转角度|
 |moveWithRotate|Boolean|否|平移和旋转同时进行，默认值false（仅微信小程序2.13.0支持）|
 |duration|Number|否|动画持续时长，默认值1000ms，平移与旋转分别计算|
 |animationEnd|Function|否|动画结束回调函数|
@@ -404,17 +406,17 @@ App nvue 3.6.9+ 支持
 ```
 
 
-### mapSearch 模块(仅app-nvue支持，Goolge地图不支持)
+## mapSearch 模块(仅app-nvue支持，Google地图不支持)
 
-#### reverseGeocode(Object,callback);@reverseGeocode
+### reverseGeocode(Object,callback);@reverseGeocode
 > 反向地理编码
 
-##### Object
+#### Object
 属性|类型 |默认值|必填|说明
 :--|:--|:--|:--|:--|
 point|Object| |是|{latitude: 纬度, longitude: 经度}
 
-##### callback 返回 Object 参数说明
+#### callback 返回 Object 参数说明
 属性|类型 |说明
 :--|:--|:--|
 type|String|"success" 表示成功， "fail" 表示失败
@@ -422,10 +424,10 @@ code|Number| 成功返回 0,失败返回相应 code 码
 message|String|失败描述
 address|String|查询后地址 （成功时返回）
 
-#### poiSearchNearBy（Object,callback);@poiSearchNearBy
+### poiSearchNearBy（Object,callback);@poiSearchNearBy
 > 周边检索
 
-##### Object
+#### Object
 属性|类型 |默认值|必填|说明
 :--|:--|:--|:--|:--|
 point|Object| |是|检索的中心点坐标 {latitude: 纬度, longitude: 经度}
@@ -434,7 +436,7 @@ radius|Number|3000|否|检索的半径，单位为米
 index|Number|1|否|要获取检索结果的页号索引
 offset|Number|10|否|设置每页条目数（默认每页10条数据）。HBuilder 3.2.13+
 
-##### callback 返回 Object 参数说明
+#### callback 返回 Object 参数说明
 属性|类型 |说明
 :--|:--|:--|
 type|String|"success" 表示成功， "fail" 表示失败
@@ -446,7 +448,7 @@ pageNumber|Number|页数
 pageIndex|Number|当前页号索引
 poiList|Array.&lt;poiObject&gt;|POI信息数组
 
-##### poiObject
+#### poiObject
 属性|类型 |说明
 :--|:--|:--|
 location|Object|{latitude: 纬度, longitude: 经度}
@@ -455,10 +457,10 @@ type|String|类型
 distance|Number|距离（单位米）
 address|String|地址
 
-#### poiKeywordsSearch（Object,callback);@poiKeywordsSearch
+### poiKeywordsSearch（Object,callback);@poiKeywordsSearch
 > 关键字检索
 
-##### Object
+#### Object
 属性|类型 |默认值|必填|说明
 :--|:--|:--|:--|:--|
 key|String| | 是|搜索关键字
@@ -470,7 +472,7 @@ sortrule|Number|0|否|排序规则, 0-距离排序；1-综合排序, 默认0
 offset|Number|10|否|设置每页条目数（默认每页10条数据）。HBuilder 3.2.13+
 cityLimit| Boolean | false | 否 | 强制城市限制功能 默认 false，例如：在上海搜索天安门，如果citylimit为true，将不返回北京的天安门相关的POI。HBuilder 3.2.13+
 
-##### callback 返回 Object 参数说明
+#### callback 返回 Object 参数说明
 属性|类型 |说明
 :--|:--|:--|
 type|String|"success" 表示成功， "fail" 表示失败
@@ -494,10 +496,10 @@ poiList|Array.&lt;poiObject&gt;|POI信息数组
 - H5 端使用地图和定位相关，需要在 [manifest.json](https://uniapp.dcloud.io/collocation/manifest.html#h5sdkconfig) 内配置腾讯或谷歌等三方地图服务商申请的秘钥（key）。
 - ``<map>`` 组件默认为国测局坐标，调用 ``uni.getLocation`` 返回结果传递给 ``<map>`` 组件时，需指定 type 为 gcj02。
 
-### 三方定位和地图服务收费说明
+## 三方定位和地图服务收费说明
 
 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 
-DCloud为开发者争取了福利，可优惠获取高德的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
+DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
 
 详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)

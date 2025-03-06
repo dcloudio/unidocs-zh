@@ -1,4 +1,4 @@
-## 分享
+# 分享
 
 <!--
 /// meta
@@ -8,12 +8,12 @@ keyword: 分享,share
 在不同平台，分享的调用方式和逻辑有较大差异。
 - App：可以自主控制分享内容、分享形式及分享平台
 1. 使用 ``uni.share`` API方式调用社交sdk分享
-2. 使用[plus.share.sendWithSystem](http://www.html5plus.org/doc/zh_cn/share.html#plus.share.sendWithSystem)呼起手机os的系统分享菜单
+2. 使用 `uni.shareWithSystem` 呼起手机os的系统分享菜单
 - 小程序：不支持API调用，只能用户主动点击触发分享。可使用自定义按钮方式 &lt;button open-type="share"&gt; 或监听系统右上角的分享按钮 onShareAppMessage 进行自定义分享内容
 - H5：如果是普通浏览器，浏览器自带分享按钮；如果是在微信内嵌浏览器中，可调用js-sdk进行分享，[参考](https://ask.dcloud.net.cn/article/35380)
 - APP：可以直接使用已经封装好的uni-share插件[详情](https://ext.dcloud.net.cn/plugin?id=4860)
 
-### uni.share(OBJECT)
+## uni.share(OBJECT)
 uni-app的App引擎已经封装了微信、QQ、微博的分享SDK，开发者可以直接调用相关功能。
 
 可以分享到微信、QQ、微博，每个社交平台被称为分享服务提供商，即provider。
@@ -22,9 +22,9 @@ uni-app的App引擎已经封装了微信、QQ、微博的分享SDK，开发者�
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|x|x|x|x|x|x|x|x|x|
 
 
 **OBJECT 参数说明**
@@ -88,7 +88,7 @@ uni-app的App引擎已经封装了微信、QQ、微博的分享SDK，开发者�
 * 分享微信朋友圈多图，微信官方已经禁掉这个功能。可以考虑把多张图用canvas合并成一张图分享出去。
 * 从APP分享到微信时，无法判断用户是否点击取消分享，因为微信官方禁掉了分享成功的返回值。
 
-#### 分享到微信聊天界面示例代码
+### 分享到微信聊天界面示例代码
 
 **分享文字**
 ```javascript
@@ -146,7 +146,7 @@ uni.share({
 ```
 
 
-#### 分享到微信朋友圈示例代码
+### 分享到微信朋友圈示例代码
 
 **分享文字**
 ```javascript
@@ -224,12 +224,12 @@ uni.share({
 ```
 
 
-#### uni.share 在App端各社交平台分享配置说明
+### uni.share 在App端各社交平台分享配置说明
 
 - 第一步，打开 manifest.json -> App模块权限配置，勾选 Share(分享)；
 - 第二步，按如下文档具体配置微信、微博、QQ的参数。
 
-##### 微信分享
+#### 微信分享
 
 在 manifest.json 的 App SDK 配置里，勾选微信消息及朋友圈，并填写 appid，如需在iOS平台使用还需要配置通用链接。
 
@@ -240,12 +240,12 @@ uni.share({
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-weixin-manifest-share.png)
 
-##### 新浪微博分享
+#### 新浪微博分享
 在 manifest.json 的 App SDK 配置里，勾选勾选新浪微博，并填写相关appkey，新浪微博 appkey 申请步骤可参考：[https://ask.dcloud.net.cn/article/209](https://ask.dcloud.net.cn/article/209)。
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni2019022502.png)
 
-##### QQ 分享
+#### QQ 分享
 在 manifest.json 的 App SDK 配置里，勾选分享到QQ好友，并填写相关appkey，QQ分享 appkey 申请步骤：
 
 1. 前往 QQ 开放平台：[https://connect.qq.com/index.html](https://connect.qq.com/index.html)；
@@ -261,23 +261,24 @@ uni.share({
 如果手机端未安装QQ、微博，调用时会启动这些平台的wap页面分享，如果已安装相应客户端，会启动它们的客户端分享。
 
 
-##### FAQ
+#### FAQ
 - Q：App端如何集成其他分享SDK，如facebook分享、twitter分享
 - A：插件市场已有相关插件，[详见](https://ext.dcloud.net.cn/search?q=share)；也可以根据原生插件教程自行开发，原生插件开发文档见[https://ask.dcloud.net.cn/article/35428](https://ask.dcloud.net.cn/article/35428)
 
 - Q：弹出分享菜单，是否有已经写好的插件？
 - A：插件市场有很多封装好的分享菜单插件，[底部图标菜单](https://ext.dcloud.net.cn/search?q=%E5%BA%95%E9%83%A8%E5%9B%BE%E6%A0%87%E8%8F%9C%E5%8D%95)，可直接弹出菜单，并且没有遮挡层级问题，推荐使用。
 
-### uni.shareWithSystem(OBJECT)
+## uni.shareWithSystem(OBJECT)
 
 调用系统分享组件发送分享消息，不需要配置分享SDK
 
 **平台差异说明**
 
-|App				|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|京东小程序|
-|:-:				|:-:	|:-:		|:-:					|:-:			|:-:				|:-:			|:-:			|
-|√(App 2.6.4+)	|x		|x			|x						|x				|x					|x				|x				|
+|App				|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|京东小程序|元服务|
+|:-:				|:-:		|:-:					|:-:			|:-:				|:-:			|:-:			|:-:			|:-:|
+|√(App 2.6.4+)	|x		|x			|x						|x				|x					|x				|x				|x|
 
+<!-- UNIAPPAPIJSON.shareWithSystem.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -295,6 +296,7 @@ uni.share({
 
 - Android端当msg参数中设置图片（`imageUrl`属性）时，分享类型自动变为为`image`，在分享时可能只会发送图片（如微信）；没有设置图片时分享类型则认为是文本`text`。
 - Android端高版本无法分析私有路径的图片，只能分享来自相册的图片（使用 uni.chooseImage 选择图像时请设置为原图）。
+- 新版本Android的文件权限有较大的调整，如遇到无法分享的情况，推荐使用uts插件来解决：[插件市场](https://ext.dcloud.net.cn/search?q=%E5%88%86%E4%BA%AB&orderBy=Relevance&uni-appx=1)
 - iOS端不同的分享程序对分享内容有要求，如微信分享时必需添加链接地址`href`，否则微信分享失败。 注：iOS8.0及以上系统触发成功回调则表示发送消息成功。
 
 **示例代码**
@@ -311,8 +313,8 @@ uni.shareWithSystem({
   }
 })
 ```
-
-### plus.share.sendWithSystem(msg, successCB, errorCB)
+<!--
+## plus.share.sendWithSystem(msg, successCB, errorCB)
 
 Android和iOS都有应用注册分享接口的机制，基本上所有有接收分享内容功能的应用，都会注册分享接口。
 
@@ -322,9 +324,10 @@ App端可调用手机的系统分享，实现所有注册分享的应用的呼�
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|x|x|x|x|x|x|x|x|
+
 
 说明：
 调用系统分享组件分享消息，通过msg参数设置分享内容。 发送成功后通过successCB回调函数通知操作完成，发送失败则通过errorCB回调返回。
@@ -358,7 +361,9 @@ App端可调用手机的系统分享，实现所有注册分享的应用的呼�
 - iOS：不同的分享程序对分享内容有要求，如微信分享时必需添加链接地址（msg.href），否则微信分享失败。 注：iOS8.0及以上系统表示分享操作成功则表示发送消息成功。
 - 很多App的做法是点击分享按钮首先弹出一个自定义菜单，放置微信好友、朋友圈、QQ、微博等功能图标，然后再放置一个更多分享，点击后会调用系统分享。类似插件在[插件市场](https://ext.dcloud.net.cn/search?q=%E5%BA%95%E9%83%A8%E5%9B%BE%E6%A0%87%E8%8F%9C%E5%8D%95)很多。
 
-### onShareAppMessage(OBJECT)
+-->
+
+## onShareAppMessage(OBJECT)
 
 小程序中用户点击分享后，在 js 中定义 onShareAppMessage 处理函数（和 onLoad 等生命周期函数同级），设置该页面的分享信息。
 
@@ -421,21 +426,21 @@ export default {
 * 微信、头条平台：只有定义了此事件处理函数，小程序右上角菜单才会显示“转发”按钮
 * QQ小程序还支持通过[qq.offShareAppMessage](https://q.qq.com/wiki/develop/game/API/share/qq.offShareAppMessage.html)取消对系统分享按钮的监听。
 
-### uni.showShareMenu(OBJECT)
+## uni.showShareMenu(OBJECT)
 
 小程序的原生菜单中显示分享按钮
 
 **平台差异说明**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
-|:-:|:-:|:-:				|:-:			|:-:				|:-:				|:-:			|:-:				|:-:			|
-|x	|x	|√					|√					|√					|√					|√				|√					|√				|
+|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:				|:-:			|:-:				|:-:				|:-:			|:-:				|:-:			|:-:|
+|x	|x	|√					|√					|√					|√					|√				|√					|√				|x|
 
 
 
 |属性						|类型			|必填	|说明			|平台差异说明	|
 |:-							|:-				|:-		|:-							|:-						|
-|withShareTicket|Boolean	|否		|是否使用带 shareTicket 的转发，默认为 flase。[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html)|微信小程序		|
+|withShareTicket|Boolean	|否		|是否使用带 shareTicket 的转发，默认为 false。[详情](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html)|微信小程序		|
 |title					|String		|否		|分享标题			|百度小程序		|
 |content				|String		|否		|分享内容						|百度小程序		|
 |imageUrl				|String		|否		|分享图标						|百度小程序		|
@@ -445,14 +450,14 @@ export default {
 |complete				|Function	|否		|接口调用结束的回调函数（调用成功、失败都会执行）	|&nbsp;				|
 
 
-### uni.hideShareMenu(OBJECT)
+## uni.hideShareMenu(OBJECT)
 小程序的原生菜单中隐藏分享按钮
 
 **平台差异说明**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
-|:-:|:-:|:-:				|:-:					|:-:				|:-:				|:-:			|:-:				|:-:			|
-|x	|x	|√					|√(1.17.0+)	|x					|√					|√				|√					|√				|
+|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:				|:-:					|:-:				|:-:				|:-:			|:-:				|:-:|:-:			|
+|x	|x	|√					|√(1.17.0+)	|x					|√					|√				|√					|√				|x|
 
 
 |属性						|类型			|必填	|说明				|平台差异说明	|

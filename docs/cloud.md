@@ -11,15 +11,15 @@ UniPush即降低了开发成本、又提高了push送达率，并且免费，是
 
 uni-app，自带免费统计平台。无需到处对接统计sdk，可以在一张报表里看到所有端（iOS、Android、H5及各家小程序）的运营数据。
 
-uni统计官网地址：[https://tongji.dcloud.net.cn/](https://tongji.dcloud.net.cn/) 
+uni统计官网地址：[https://tongji.dcloud.net.cn/](https://tongji.dcloud.net.cn/)
 
 ### 广告变现
 
-`uni-app` 支持接入`uni-AD`广告联盟，开发者可实现**一次开发，多端变现**。
+`uni-app` 支持接入`uni-ad`广告联盟，开发者可实现**一次开发，多端变现**。
 
-`uni-AD`支持开屏、信息流、激励视频、悬浮红包、推送等丰富的广告形式，且聚合了腾讯广点通、今日头条穿山甲、快手、360联盟等主流广告源，有更高的广告填充率。
+`uni-ad`支持开屏、信息流、激励视频、悬浮红包、推送等丰富的广告形式，且聚合了腾讯广点通、今日头条穿山甲、快手、360联盟等主流广告源，有更高的广告填充率。
 
-更多信息参考 [uni-AD 广告联盟](https://uniad.dcloud.net.cn)
+更多信息参考 [uni-ad 广告联盟](https://uniad.dcloud.net.cn)
 
 ### 制作统一发行页面
 

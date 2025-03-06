@@ -34,7 +34,7 @@ code|message|
 4. 激励视频因为有奖励，很容易招惹灰黑产，为防止被刷，推荐使用：
   - 1) 开通激励视频的服务器回调 [详情](ad-rewarded-video.md#callback)
   - 2) 不使用短信验证码等不安全登录手段，改为[App一键登陆](../univerify.md)、uni金融级实人认证（含活体检测）等更安全的身份校验
-  - 3) 使用uni云端一体安全网络，防止伪造客户端 [详情](../uniCloud/secure-network.md)
+  - 3) 使用uni云端一体安全网络，防止伪造客户端 [详情](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
 
 #### 不治本的绕过型方案
 
@@ -197,8 +197,7 @@ code|message|
 
 
 ### **广告商详细错误码**
-- App端聚合的穿山甲(iOS)：[错误码详情](https://ad.oceanengine.com/union/media/union/download/detail?id=16&docId=5de8d574b1afac00129330d5&osType=ios)
-- App端聚合的穿山甲(Android)：[错误码详情](https://ad.oceanengine.com/union/media/union/download/detail?id=4&docId=5de8d9b925b16b00113af0ed&osType=android)
+- App端聚合的穿山甲：[错误码详情](https://www.csjplatform.com/supportcenter/5886)
 - App端聚合的广点通(iOS)：[错误码详情](https://developers.adnet.qq.com/doc/ios/union/union_debug#%E9%94%99%E8%AF%AF%E7%A0%81)
 - App端聚合的广点通(Android)：[错误码详情](https://developers.adnet.qq.com/doc/android/union/union_debug#sdk%20%E9%94%99%E8%AF%AF%E7%A0%81)
 - App端聚合的Sigmob(iOS)：[错误码详情](https://doc.sigmob.com/#/Sigmob%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/SDK%E9%9B%86%E6%88%90%E8%AF%B4%E6%98%8E/iOS/%E9%94%99%E8%AF%AF%E7%A0%81/)

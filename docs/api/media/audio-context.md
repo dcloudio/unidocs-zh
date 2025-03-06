@@ -1,11 +1,13 @@
-### uni.createInnerAudioContext()
+## uni.createInnerAudioContext()
 创建并返回内部 audio 上下文 `innerAudioContext` 对象。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|1.23.4+|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|1.23.4+|√|√|√|√|√|x|x|
+
+<!-- UNIAPPAPIJSON.createInnerAudioContext.compatibility -->
 
 **innerAudioContext 对象的属性列表**
 
@@ -84,12 +86,17 @@ errCode 说明
 |aiff	|√|x|
 |caf	|√|x|
 
+**tips**
+
+- ape 格式的支持取决于 rom 厂商，在App移动端使用`uni.createInnerAudioContext()`不涉及专利授权问题，因为没有单独使用三方解码器
+
+
 **示例**
 
 ```javascript
 const innerAudioContext = uni.createInnerAudioContext();
 innerAudioContext.autoplay = true;
-innerAudioContext.src = 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-hello-uniapp/2cc220e0-c27a-11ea-9dfb-6da8e309e0d8.mp3';
+innerAudioContext.src = 'https://web-ext-storage.dcloud.net.cn/uni-app/ForElise.mp3';
 innerAudioContext.onPlay(() => {
   console.log('开始播放');
 });
@@ -97,6 +104,21 @@ innerAudioContext.onError((res) => {
   console.log(res.errMsg);
   console.log(res.errCode);
 });
+
+
+**当出现-99错误时** 可以按照下面思路进行排查：
+
+```javascript
+// 多次会调用播放新的文件时，提前销毁实例，可避免-99错误
+if (innerAudioContext) {
+  try {
+    innerAudioContext.pause();
+    innerAudioContext.destroy()
+    innerAudioContext = null
+  } catch (e) {
+    //TODO handle the exception
+  }
+}
 ```
 
 **tips**

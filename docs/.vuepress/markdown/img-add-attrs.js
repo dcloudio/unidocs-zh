@@ -40,7 +40,7 @@ function addLoadingAttr(attribs) {
  */
 function matchSrc(src) {
 	return typeof src === 'string'
-		? src.indexOf('qiniu-web-assets.dcloud.net.cn') > -1
+		? (src.indexOf('qiniu-web-assets.dcloud.net.cn') > -1 || src.indexOf('web-ext-storage.dcloud.net.cn') > -1)
 		: false;
 }
 
@@ -61,6 +61,7 @@ function replaceHTML(token, replace, env) {
 	const htmlparser = require('htmlparser2');
 	const serializer = require('dom-serializer');
 	const dom = new htmlparser.parseDocument(token.content, {
+		lowerCaseTags: false,
 		recognizeCDATA: true,
 		recognizeSelfClosing: true,
 	});

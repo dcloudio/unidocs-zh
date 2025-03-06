@@ -35,6 +35,7 @@
 |cancelButton|String|auto	|是否显示取消按钮，可选值`always`-一直显示、`auto`-输入框不为空时显示、`none`-一直不显示	|
 |cancelText|String	|取消|取消按钮的文字|
 |bgColor|String	|#F8F8F8|输入框背景颜色|
+|textColor|String	|#F8F8F8|输入时文字颜色|
 |maxlength|Number|100|输入最大长度|
 |focus|Boolean	|false	||
 

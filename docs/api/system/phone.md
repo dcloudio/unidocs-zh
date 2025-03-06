@@ -1,5 +1,11 @@
-### uni.makePhoneCall(OBJECT)
+## uni.makePhoneCall(OBJECT)
 拨打电话。
+
+|元服务|
+|:-:|
+|√|
+
+<!-- UNIAPPAPIJSON.makePhoneCall.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -9,6 +15,8 @@
 |success|Function|否|接口调用成功的回调|
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
+
+<!-- UNIAPPAPIJSON.makePhoneCall.param -->
 
 **示例**
 
@@ -28,3 +36,4 @@ uni.makePhoneCall({
 注意需要赋予相关权限。
 - 钉钉小程序端拨打电话，详见[https://open.dingtalk.com/document/orgapp-client/call-menu](https://open.dingtalk.com/document/orgapp-client/call-menu)
 
+<!-- UNIAPPAPIJSON.makePhoneCall.tutorial -->

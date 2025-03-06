@@ -3,7 +3,7 @@
 ## 2023-05-24
 ### 激励视频支持配置云对象
 
-[云对象](https://uniapp.dcloud.net.cn/uniCloud/cloud-obj.html)
+[云对象](https://doc.dcloud.net.cn/uniCloud/cloud-obj.html)
 
 ## 2023-05-10
 ### uni-ad 管理后台页面调整通知

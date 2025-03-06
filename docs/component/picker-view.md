@@ -1,8 +1,10 @@
-#### picker-view
+## picker-view
 
 嵌入页面的滚动选择器。
 
 相对于`picker`组件，`picker-view`拥有更强的灵活性。当需要对自定义选择的弹出方式和UI表现时，往往需要使用`picker-view`。
+
+<!-- UNIAPPCOMJSON.picker-view.compatibility -->
 
 **属性说明**
 
@@ -12,17 +14,23 @@
 |indicator-style|String|设置选择器中间选中框的样式||
 |indicator-class|String|设置选择器中间选中框的类名，注意页面或组件的style中写了scoped时，需要在类名前写/deep/|app-nvue与抖音小程序与飞书小程序不支持|
 |mask-style|String|设置蒙层的样式||
-|mask-top-style|String|设置蒙层上半部分的样式|仅 app-nvue（3.6.7+） 支持|
-|mask-bottom-style|String|设置蒙层下半部分的样式|仅 app-nvue（3.6.7+） 支持|
+|mask-top-style|String|设置蒙层上半部分的样式（使用 background-image 覆盖）|仅 app-nvue（3.6.7+） 支持|
+|mask-bottom-style|String|设置蒙层下半部分的样式（使用 background-image 覆盖）|仅 app-nvue（3.6.7+） 支持|
 |mask-class|String|设置蒙层的类名|app-nvue与抖音小程序与飞书小程序不支持|
-|immediate-change|Boolean|是否在手指松开时立即触发 change 事件。若不开启则会在滚动动画结束后触发 change 事件。|微信小程序 2.21.1|                                                                 
+|immediate-change|Boolean|是否在手指松开时立即触发 change 事件。若不开启则会在滚动动画结束后触发 change 事件。|微信小程序 2.21.1|
 |@change|EventHandle|当滚动选择，value 改变时触发 change 事件，event.detail = {value: value}；value为数组，表示 picker-view 内的 picker-view-column 当前选择的是第几项（下标从 0 开始）|&nbsp;|
 |@pickstart|eventhandle|当滚动选择开始时候触发事件|微信小程序2.3.1、快手小程序|
 |@pickend|eventhandle|当滚动选择结束时候触发事件|微信小程序2.3.1、快手小程序|
 
+<!-- UNIAPPCOMJSON.picker-view.attribute -->
+
 **注意：**其中只可放置 `<picker-view-column/>` 组件，其他节点不会显示。
 
-#### picker-view-column
+<!-- UNIAPPCOMJSON.picker-view.reference -->
+
+## picker-view-column
+
+<!-- UNIAPPCOMJSON.picker-view-column.compatibility -->
 
 `<picker-view />` 的子组件，仅可放置于 `<picker-view />` 中，其子节点的高度会自动设置成与 picker-view 的选中框的高度一致。
 
@@ -123,3 +131,5 @@
 
 **扩展**
 - uni ui提供了增强版`<uni-data-picker>`组件，详见：[https://ext.dcloud.net.cn/plugin?id=3796](https://ext.dcloud.net.cn/plugin?id=3796)
+
+<!-- UNIAPPCOMJSON.picker-view-column.reference -->

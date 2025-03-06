@@ -1,11 +1,11 @@
-### uni.requestSubscribeMessage(Object object)
+## uni.requestSubscribeMessage(Object object)
 
- 
+
 **平台差异说明**
 
-|App|H5	|微信小程序				|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|
-|:-:	|:-:|:-:							|:-:					|:-:				|:-:				|:-:			|
-|x		|x	|基础库版本>=2.8.2|x						|x					|x					|x				|
+|App|H5	|微信小程序				|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|元服务|
+|:-:	|:-:|:-:							|:-:					|:-:				|:-:				|:-:			|:-:|
+|x		|x	|基础库版本>=2.8.2|x						|x					|x					|x				|√|
 
 **object参数说明**
 

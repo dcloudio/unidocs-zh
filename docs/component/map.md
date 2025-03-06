@@ -6,17 +6,19 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|1.63+|1.9.0+|√|x|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|1.63+|1.9.0+|√|x|√|√|√|
+
+<!-- UNIAPPCOMJSON.map.compatibility -->
 
 **地图服务商说明**
 
-|地图服务商|App|H5|微信小程序|
-|:-:|:-:|:-:|:-:|
-|高德|√|3.6.0+||
-|Goolge|3.4+ 仅nvue页面|3.2.10+||
-|腾讯||√|√|
+|地图服务商	|安卓/iOS								|HarmonyOS Next	|H5			|微信小程序	|
+|:-:			|:-:										|:-:						|:-:		|:-:			|
+|高德			|√											|x							|3.6.0+	|					|
+|Google		|3.4+ 仅nvue页面					|x							|3.2.10+|					|
+|腾讯			|4.31+ 仅vue3项目vue页面	|4.25+					|√			|√				|
 
 
 **属性说明**
@@ -35,11 +37,14 @@
 |circles|Array||圆||
 |controls|Array||控件||
 |include-points|Array||缩放视野以包含所有给定的坐标点|App-nvue 2.1.5+、微信小程序、H5、百度小程序、支付宝小程序、京东小程序|
+|zIndex|number|false|显示层级|微信小程序2.3.0|
 |enable-3D|Boolean|false|是否显示3D楼块|App-nvue 2.1.5+、微信小程序2.3.0|
 |show-compass|Boolean|false|是否显示指南针|App-nvue 2.1.5+、微信小程序2.3.0|
 |enable-zoom|Boolean|true|是否支持缩放|App-nvue 2.1.5+、微信小程序2.3.0|
 |enable-scroll|Boolean|true|是否支持拖动|App-nvue 2.1.5+、微信小程序2.3.0|
 |enable-rotate|Boolean|false|是否支持旋转|App-nvue 2.1.5+、微信小程序2.3.0|
+|rotate|Number|0|旋转角度(范围0-360)地图正北和设备 y 轴角度的夹角|微信小程序2.5.0、支付宝小程序、抖音小程序、QQ小程序|
+|skew|Number|0|倾斜角度，范围 0 ~ 40 , 关于 z 轴的倾角|微信小程序2.5.0、支付宝小程序、抖音小程序、QQ小程序|
 |enable-overlooking|Boolean|false|是否开启俯视|App-nvue 2.1.5+、微信小程序2.3.0|
 |enable-satellite|Boolean|false|是否开启卫星图|App-nvue 2.1.5+、微信小程序2.7.0|
 |enable-traffic|Boolean|false|是否开启实时路况|App-nvue 2.1.5+、微信小程序2.7.0|
@@ -65,6 +70,28 @@
 - App平台 `layer-style` 属性需要在地图服务商后台创建，值设置为高德后台申请的字符串，[详情](https://developer.amap.com/api/android-sdk/guide/create-map/custom)。
 - H5 端高德地图 include-points 属性仅支持 2 个坐标点，表示显示范围的西南角和东北角。
 
+### 腾讯地图服务商说明
+
+**申请及使用key**
+
+App平台（包含iOS、安卓、鸿蒙）腾讯地图使用web方案，在申请key时注意将页面域名白名单设置为空，如下图
+
+![](https://web-ext-storage.dcloud.net.cn/doc/uniapp/component/app-tencent-map-web-service-key.jpg)
+
+出于安全考虑，安卓、iOS端manifest.json内配置的key仅用来展示地图，uni.chooseLocation所依赖的地点搜索、逆地址解析功能需要通过uniCloud云对象[uni-map-co](https://ext.dcloud.net.cn/plugin?id=13872)来调用，开发者可以通过安全网络来保障服务端api不被他人盗用，详情参考[uni.chooseLocation](../api/location/location.md#chooselocation)文档。开发者可以将manifest.json内配置的key的所有api额度设置为0，避免key泄露产生额外的资源消耗。
+
+鸿蒙平台由于暂不支持安全网络，所以chooseLocation依然使用manifest.json内配置的key来调用地点搜索、逆地址解析。
+
+### 高德地图审图号
+
+- 普通地图：GS (2023)551号 | GS (2023)2175号
+- 卫星地图：GS (2023)4047号
+- 地形图：GS(2021)6352号
+
+### 腾讯地图审图号
+
+- 普通地图：GS粤（2023）1171号
+
 ### 近期新增功能
 1. 支持点聚合，适用于marker过多场景。
 2. 支持彩虹蚯蚓线，常用于路线规划场景。
@@ -86,7 +113,7 @@
 |alpha|标注的透明度|Number|否|默认1，无透明，范围 0 ~ 1|App-nvue 2.1.5+、微信小程序、支付宝小程序、百度小程序、京东小程序|
 |width|标注图标宽度|Number|否|默认为图片实际宽度|App-nvue 2.1.5+、微信小程序、H5、支付宝小程序、百度小程序、京东小程序|
 |height|标注图标高度|Number|否|默认为图片实际高度|App-nvue 2.1.5+、微信小程序、H5、支付宝小程序、百度小程序、京东小程序|
-|callout|自定义标记点上方的气泡窗口|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、微信小程序、支付宝小程序、百度小程序、京东小程序|
+|callout|自定义标记点上方的气泡窗口|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、H5、微信小程序、支付宝小程序、百度小程序、京东小程序|
 |label|为标记点旁边增加标签|Object|否|支持的属性见下表，可识别换行符。|App-nvue 2.1.5+、微信小程序、H5、App、百度小程序、支付宝小程序|
 |anchor|经纬度在标注图标的锚点，默认底边中点|Object|否|{x, y}，x表示横向(0-1)，y表示竖向(0-1)。{x: .5, y: 1} 表示底边中点|App-nvue 2.1.5+、微信小程序、H5、百度小程序、京东小程序|
 |clusterId|自定义点聚合簇效果时使用|Number|否||App-nvue 3.1.0+、微信小程序|
@@ -122,11 +149,11 @@
 |y |label的坐标，原点是 marker 对应的经纬度|Number|H5、百度小程序|
 |anchorX |label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、微信小程序|
 |anchorY |label的坐标，原点是 marker 对应的经纬度|Number|App-nvue 2.1.5+、微信小程序|
-|borderWidth|边框宽度|Number|微信小程序、百度小程序|
-|borderColor|边框颜色|String|微信小程序、百度小程序|
-|borderRadius|边框圆角|Number|App-nvue 2.1.5+、微信小程序、百度小程序、支付宝小程序|
-|bgColor|背景色|String|App-nvue 2.1.5+、微信小程序、百度小程序、支付宝小程序|
-|padding|文本边缘留白|Number|App-nvue 2.1.5+、微信小程序、百度小程序、支付宝小程序|
+|borderWidth|边框宽度|Number|H5、微信小程序、百度小程序|
+|borderColor|边框颜色|String|H5、微信小程序、百度小程序|
+|borderRadius|边框圆角|Number|App-nvue 2.1.5+、H5、微信小程序、百度小程序、支付宝小程序|
+|bgColor|背景色|String|App-nvue 2.1.5+、H5、微信小程序、百度小程序、支付宝小程序|
+|padding|文本边缘留白|Number|App-nvue 2.1.5+、H5、微信小程序、百度小程序、支付宝小程序|
 |textAlign|文本对齐方式。有效值: left, right, center|String|App-nvue 2.1.5+、微信小程序、百度小程序|
 |aria-label|无障碍访问，（属性）元素的额外描述|String|App-nvue 3.1.0+、微信小程序|
 
@@ -296,21 +323,25 @@ export default {
 |arrowIconPath|更换箭头图标	|已支持				|Android不支持 iOS支持		|
 
 
-**map 组件相关操作的 JS API**：[uni.createMapContext](api/location/map?id=createmapcontext)
+**map 组件相关操作的 JS API**：[uni.createMapContext](../api/location/map.md#createmapcontext)
 
 nvue map 更换箭头图标格式参考: [https://ask.dcloud.net.cn/article/37901](https://ask.dcloud.net.cn/article/37901)
 
 **注意事项**
 
-- 小程序和app-vue中，`<map>` 组件是由引擎创建的原生组件，它的层级是最高的，不能通过 z-index 控制层级。在`<map>`上绘制内容，可使用组件自带的`marker、controls`等属性，也可以使用`<cover-view>`组件。App端还可以使用plus.nativeObj.view 或 subNVue 绘制原生内容，[参考](/component/native-component)。另外App端nvue文件不存在层级问题。从微信基础库2.8.3开始，支持map组件的同层渲染，不再有层级问题。
+- App端 map 组件实例同时存在个数有上限（大概10个）超过后会显示黑色，如果页面深度过深，每个页面都需要显示map组件，可以使用 v-if 控制一下，页面隐藏的时候销毁当前页面的 map 组件，页面显示的时候在创建。
+- 小程序和app-vue中，`<map>` 组件是由引擎创建的原生组件，它的层级是最高的，不能通过 z-index 控制层级。在`<map>`上绘制内容，可使用组件自带的`marker、controls`等属性，也可以使用`<cover-view>`组件。App端还可以使用plus.nativeObj.view 或 subNVue 绘制原生内容，[参考](/component/native-component)。
+	* App端nvue文件不存在层级问题。
+	* 从微信基础库2.8.3开始，支持map组件的同层渲染，不再有层级问题。
+	* app的iOS、Android、鸿蒙新增了腾讯地图，腾讯地图在这3个平台使用web渲染，没有层级问题。
 - 微信小程序端 `controls` 属性即将废弃，[详情](https://developers.weixin.qq.com/miniprogram/dev/component/map.html)。如果所用基础库支持同层渲染，则可以直接使用 `<view>` 组件，否则使用`<cover-view>`组件
-- App端nvue文件的map和小程序拉齐度更高。vue里的map则与plus.map功能一致，和小程序的地图略有差异。**App端使用map推荐使用nvue。**
+- App端nvue文件的map和小程序拉齐度更高。vue里的高德地图则与plus.map功能一致，和小程序的地图略有差异。App端如使用高德地图，推荐使用nvue。
 - App端使用到本地图像的话，打包前需要设置资源为释放模式，在manifest文件内app-plus新增runmode节点，设置值为liberate。
 - 在涉及层级问题的小程序中和app-vue中，请勿在 scroll-view、swiper、picker-view、movable-view 中使用 `<map>` 组件。
 - 小程序和 app-vue 中，css 动画对 `<map>` 组件无效。
 - map 组件使用的经纬度是国测局坐标，调用 uni.getLocation 接口需要指定 type 为 gcj02。
 - `<map>` 组件在不同平台的底层引擎是不同的：微信小程序为腾讯地图；H5为腾讯地图或谷歌地图或高德地图；App、支付宝（中国大陆地区版本）小程序为高德地图；百度小程序、快应用为百度地图。app-vue也可以使用百度地图，在manifest中配置，打包后生效，但app-nvue只支持高德地图。另外选择地图、查看地图位置的API也仅支持高德地图。App端如无特殊必要，建议使用高德地图。
-- map 组件默认的api是参考微信小程序的，如需要使用plus.map，可以通过`$getAppMap`获取原生地图对象，[详见](/api/location/map)。注意nvue的map组件不是plus.map对象，无法使用`$getAppMap`
+- map 组件默认的api是参考微信小程序的，如需要使用plus.map，可以通过`$getAppMap`获取原生地图对象，[详见](/api/location/map)。注意nvue的map组件不是plus.map对象，无法使用`$getAppMap`。**腾讯地图不支持plus.map，请使用uni的标准API**。app平台如果仅使用腾讯地图，未打包高德，却使用plus.map的API，会在调用plus.map时弹框“打包时未添加map模块”
 - H5 端获取定位信息，需要部署在 **https** 服务上，本地预览（localhost）仍然可以使用 http 协议。
 - 无GPS模块或GPS无信号的 PC 设备使用 Chrome 浏览器的时候，位置信息是连接谷歌服务器获取的，国内用户可能获取位置信息失败。
 - App 端使用地图组件需要**向高德或百度等三方服务商申请SDK资质，获取AppKey，打包时需要在manifest文件中勾选相应模块，在SDK配置中填写Appkey。注意申请包名和打包时的包名需匹配一致，证书信息匹配**。在manifest可视化界面有详细申请指南。
@@ -334,11 +365,7 @@ A: App 3.4+ 已支持 Google 地图， App 3.4 以下版本使用下面的方案
 
 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 
-DCloud为开发者争取了福利，可优惠获取商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`企业微信`发起在线咨询，扫描以下二维码获取地图福利。如您需要快速回复，一定注明公司名称、应用名称/介绍、以及HBuilder账户，感谢你的理解与配合。
-
-- 腾讯地图商业授权现优惠政策：买1年送1个月，买2年送1年。如需购买，请速扫以下二维码咨询与购买！
-
-![](https://web-assets.dcloud.net.cn/unidoc/zh/uni-ad/sc-weixin.png)
+DCloud为开发者争取了福利，可优惠获取商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以通过`uni-im`发起在线咨询，地址：[地图商业授权咨询](https://ask.dcloud.net.cn/explore/map/)。
 
 详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)
 
@@ -348,7 +375,7 @@ DCloud为开发者争取了福利，可优惠获取商业授权。如有需求�
 
 > 下载地址：[https://ext.dcloud.net.cn/plugin?name=unicloud-map](https://ext.dcloud.net.cn/plugin?name=unicloud-map)
 
-> 文档地址：[https://uniapp.dcloud.net.cn/uniCloud/unicloud-map.html](https://uniapp.dcloud.net.cn/uniCloud/unicloud-map.html)
+> 文档地址：[https://doc.dcloud.net.cn/uniCloud/unicloud-map.html](https://doc.dcloud.net.cn/uniCloud/unicloud-map.html)
 
 **渲染静态POI运行效果图**
 
@@ -364,3 +391,6 @@ DCloud为开发者争取了福利，可优惠获取商业授权。如有需求�
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/408.png)
 
+### 【福利】高德拉新
+
+一键注册高德企业开发者，最高可获取210元奖励金，详见[https://ask.dcloud.net.cn/article/41279](https://ask.dcloud.net.cn/article/41279)

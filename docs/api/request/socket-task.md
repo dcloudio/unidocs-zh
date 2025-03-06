@@ -4,7 +4,7 @@
 
 支付宝小程序、抖音小程序，没有明确的文档来具体说明这个对象，而是指向了 [Web Websocket](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket) 对象。
 
-### SocketTask.onMessage(CALLBACK)
+## SocketTask.onMessage(CALLBACK)
 监听 WebSocket 接受到服务器的消息事件
 
 **回调函数**
@@ -21,7 +21,7 @@ WebSocket 接受到服务器的消息事件的回调函数
 |:-|:-|:-|
 |data|String/ArrayBuffer|服务器返回的消息|
 
-### SocketTask.send(OBJECT)
+## SocketTask.send(OBJECT)
 通过 WebSocket 连接发送数据
 
 **参数**
@@ -33,7 +33,7 @@ WebSocket 接受到服务器的消息事件的回调函数
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-### SocketTask.close(OBJECT)
+## SocketTask.close(OBJECT)
 关闭 WebSocket 连接
 
 **参数**
@@ -46,7 +46,7 @@ WebSocket 接受到服务器的消息事件的回调函数
 |fail|Function||否|接口调用失败的回调函数|
 |complete|Function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-### SocketTask.onOpen(CALLBACK)
+## SocketTask.onOpen(CALLBACK)
 监听 WebSocket 连接打开事件
 
 **回调函数**
@@ -63,7 +63,7 @@ WebSocket 连接打开事件的回调函数
 |:-|:-|:-|
 |data|String/ArrayBuffer|服务器返回的消息|
 
-### SocketTask.onClose(CALLBACK)
+## SocketTask.onClose(CALLBACK)
 监听 WebSocket 连接关闭事件
 
 **回调函数**
@@ -81,7 +81,7 @@ WebSocket 连接关闭事件的回调函数
 |code|number|一个数字值表示关闭连接的状态号，表示连接被关闭的原因。|HBuilderX(3.7.12+)|
 |reason|string|一个可读的字符串，表示连接被关闭的原因。|HBuilderX(3.7.12+)|
 
-### SocketTask.onError(CALLBACK)
+## SocketTask.onError(CALLBACK)
 监听 WebSocket 错误事件
 
 **回调函数**

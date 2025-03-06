@@ -1,4 +1,3 @@
-
 ::: tip 组件名：uni-forms
 > 代码块： `uForms`、`uni-forms-item`
 > 关联组件：`uni-forms-item`、`uni-easyinput`、`uni-data-checkbox`、`uni-group`。
@@ -113,7 +112,7 @@ uni-app的内置组件已经有了 `<form>`组件，用于提交表单内容。
 
 
 ::: warning 注意
-- uni-forms 1.4.0 版本后，binddata 方法不在推荐，请使用 uni-forms-item 上的 onFieldChange 方法代替
+- uni-forms 1.4.0 版本后，binddata 方法不再推荐，请使用 uni-forms-item 上的 onFieldChange 方法代替
 :::
 
 **完整示例**
@@ -548,7 +547,7 @@ export default {
 
 ### 表单校验时机说明
 
-`uni-forms 1.4.0` 后，只有 `uni-forms`上可以配置 `validateTrigger`，不在支持单独控制没个子表单的校验时机
+`uni-forms 1.4.0` 后，只有 `uni-forms`上可以配置 `validateTrigger`，不再支持单独控制每个子表单的校验时机
 
 如果需要子表单需要单独的校验时机，可以使用 `uni-forms-item` 的 `rules` 属性和 `onFieldChange` 配合
 ```html

@@ -1,4 +1,4 @@
-### uni.onMemoryWarning(CALLBACK)
+## uni.onMemoryWarning(CALLBACK)
 
 监听内存不足告警事件。
 
@@ -6,9 +6,11 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|Android 3.6.9+、iOS 3.6.11+|x|√|√|√|x|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|Android 3.6.9+、iOS 3.6.11+|x|√|√|√|x|√|√|√|x|
+
+<!-- UNIAPPAPIJSON.onMemoryWarning.compatibility -->
 
 > 本 API 是 [uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)，需下载插件：[https://ext.dcloud.net.cn/plugin?id=10071](https://ext.dcloud.net.cn/plugin?id=10071)
 
@@ -17,6 +19,8 @@
 |参数名|类型|说明|
 |---|---|---|
 |level|Number|仅 Android 有该字段，对应系统内存告警等级宏定义|
+
+<!-- UNIAPPAPIJSON.onMemoryWarning.param -->
 
 **level 的合法值**
 
@@ -35,21 +39,26 @@ const callback = function (res) {
 uni.onMemoryWarning(callback);
 ```
 
-### uni.offMemoryWarning(CALLBACK)
+<!-- UNIAPPAPIJSON.onMemoryWarning.tutorial -->
+
+## uni.offMemoryWarning(CALLBACK)
 
 取消监听内存不足告警事件。不传入 callback 则取消所有监听。
 
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|√|√|x|x|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|√|√|√|x|x|√|√|x|
 
+<!-- UNIAPPAPIJSON.offMemoryWarning.compatibility -->
 
 |属性	|	类型|说明|
 |--	|--	|--	|
 |	回调函数|	Function|内存不足告警事件的回调函数|
+
+<!-- UNIAPPAPIJSON.offMemoryWarning.param -->
 
 **代码示例**
 
@@ -64,3 +73,4 @@ uni.offMemoryWarning(callback);
 **Tips**
 - `CALLBACK`为调用`uni.onMemoryWarning`时传入的`CALLBACK`
 
+<!-- UNIAPPAPIJSON.offMemoryWarning.tutorial -->

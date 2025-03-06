@@ -9,6 +9,7 @@ const xmlAfter = `\n</urlset>`
 
 module.exports = (links, callback = () => { }) => {
   const xmlItems = links.map(url => {
+    if (!url.endsWith('/') && !url.endsWith('html')) url += '.html'
     return `  <url>
     <loc>${domain + url}</loc>
   </url>`

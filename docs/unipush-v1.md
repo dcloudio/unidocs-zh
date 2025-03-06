@@ -1,10 +1,9 @@
-::: warning 注意  
- 1. 您正在浏览的是老版uni-push1.0的文档。推荐升级到[uni-push2.0](unipush-v2.html)
- 2. 老版uni-push1.0不支持uni-app-x，如需请使用[uni-push2.0](unipush-v2.html)
+::: warning 注意
+ 您正在浏览的是老版uni-push1.0的文档。推荐升级到[uni-push2.0](unipush-v2.md)
 :::
 
-> 从HBuilderX 2.0.3 起，uni-app、5+App、wap2app均支持UniPush  
->从HBuilderX2.7.10开始，支持谷歌FCM，参考：[https://ask.dcloud.net.cn/article/37356](https://ask.dcloud.net.cn/article/37356)  
+> 从HBuilderX 2.0.3 起，uni-app、5+App、wap2app均支持UniPush
+>从HBuilderX2.7.10开始，支持谷歌FCM，参考：[https://ask.dcloud.net.cn/article/37356](https://ask.dcloud.net.cn/article/37356)
 
 
 
@@ -317,7 +316,7 @@ public class UnipushTest {
         iosDTO.setAps(aps);
         iosDTO.setType("notify");
         pushChannel.setIos(iosDTO);
-        
+
         pushDTO.setPushChannel(pushChannel);
 
         // 进行cid单推
@@ -462,16 +461,16 @@ UniPush 推送服务已经封装好 iOS&Android 平台的原生集成工作，�
 
 
 ## 注意事项
-### 推送通道选择逻辑  
-- Android平台  
-  **APP在线（个推推送通道可用）**  
-  推送通知和透传消息都使用个推的推送通道下发推送消息。  
-  **APP离线（个推推送通道不可用）**  
+### 推送通道选择逻辑
+- Android平台
+  **APP在线（个推推送通道可用）**
+  推送通知和透传消息都使用个推的推送通道下发推送消息。
+  **APP离线（个推推送通道不可用）**
   推送通知，使用个推离线推送通道，离线消息会存储在消息离线库，离线时间内APP在线后下发推送消息。
   透传消息，如果符合厂商推送的厂商手机（配置了手机厂商推送参数并且在对应厂商的手机上），则使用厂商推送通道下发推送消息；否则使用个推的离线推送通道，离线消息会存储在消息离线库，离线时间内APP在线后下发推送消息。
 
-- iOS平台  
-推送通知，uniPush后台管理界面中不支持下发此类型，个推提供的服务端API支持下发推送通知（设置APN参数则通过苹果的APNS通道，否则使用个推通道）。  
+- iOS平台
+推送通知，uniPush后台管理界面中不支持下发此类型，个推提供的服务端API支持下发推送通知（设置APN参数则通过苹果的APNS通道，否则使用个推通道）。
 透传消息，设置APN参数则通过苹果的APNS通道下发推送消息，没有设置APN参数则使用个推的推送通道下发。
 
 ### Android平台厂商通道
@@ -489,7 +488,7 @@ UniPush 推送服务已经封装好 iOS&Android 平台的原生集成工作，�
 
 HBuilderX3.0.7 之后，华为除了配置原有的厂商信息之外，需要新增配置  agconnect-services.json文件。
 
-该文件，需要从华为开发者后台--项目设置界面下载  
+该文件，需要从华为开发者后台--项目设置界面下载
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/huawei-apconnect-services.png)
 
 
@@ -502,7 +501,7 @@ HBuilderX3.0.7 之后，华为除了配置原有的厂商信息之外，需要�
 - 1个自然日内相同文案的运营消息给同个设备发，vivo会在客户端做去重处理，导致消息不展示
 - 支持vivo推送功能HBuilderX最低版2.1.0及以上。
 
-具体请参考图中数据  
+具体请参考图中数据
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/vivo-datas.png)
 
 
@@ -516,7 +515,7 @@ HBuilderX3.0.7 之后，华为除了配置原有的厂商信息之外，需要�
 
 
 #### 小米厂商通道
-- 机型版本要求：小米rom且小米服务框架（包名：com.xiaomi.xmsf）版本号⼤于等于 105 
+- 机型版本要求：小米rom且小米服务框架（包名：com.xiaomi.xmsf）版本号⼤于等于 105
 - 检查手机通知权限设置，小米有不重要通知功能，部分消息可能会存在通知栏不重要通知里
 
 #### 魅族厂商通道
@@ -532,7 +531,7 @@ HBuilderX3.0.7 之后，华为除了配置原有的厂商信息之外，需要�
 #### 其它厂商通道
 如果应用在线可以接收到推送消息，离线时使用厂商通道无法接收到推送消息，可参考**UniPush厂商通道常见问题[https://ask.dcloud.net.cn/article/36611](https://ask.dcloud.net.cn/article/36611)**
 
-**最后也可以登录[个推官网](https://www.getui.com/)，或使用微信扫描下面二维码，进行技术咨询**  
+**最后也可以登录[个推官网](https://www.getui.com/)，或使用微信扫描下面二维码，进行技术咨询**
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/getui-service.jpg)
 
 
@@ -544,19 +543,17 @@ HBuilderX3.0.7 之后，华为除了配置原有的厂商信息之外，需要�
 - 如何自定义推送通知的图标：[https://uniapp.dcloud.net.cn/unipush-custom-icon.html](https://uniapp.dcloud.net.cn/tutorial/app-push-unipush.html#unipush-icons)
 
 ## FAQ
-- Q：5+app和wap2app需要uniPush怎么办？  
+- Q：5+app和wap2app需要uniPush怎么办？
 A：HBuilderX 2.0.3起，5+app和wap2app也支持了uniPush。
 5+app和wap2app升级uniPush不需要改动app前端代码，只需要在HBuilderX中打开manifest.json的“SDK配置”页，在“推送”下勾选“DCloud UniPush”，并点击“配置”，在后台开通unipush服务，配置好厂商推送参数重新提交云端打包即可。后端服务器需要参考第二步对接个推推送服务。
 
-- Q：离线打包如何配置？  
+- Q：离线打包如何配置？
 A：[Android平台App离线打包-Push](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/push?id=unipush)
 [iOS平台App离线打包-Push](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/push?id=unipush)
 
-- Q：iOS平台如何实现应用启动后不立即弹出“发送通知”系统授权框？  
+- Q：iOS平台如何实现应用启动后不立即弹出“发送通知”系统授权框？
 A：参考：[https://ask.dcloud.net.cn/article/36955](https://ask.dcloud.net.cn/article/36955#push)
 
-- Q：为什么Android应用进入后台后（App未销毁），点击通知消息无法拉起App。      
+- Q：为什么Android应用进入后台后（App未销毁），点击通知消息无法拉起App。
 A：检查设备是否有禁止后台弹出界面，路径>>设置-应用管理-测试应用-权限管理-后台弹出界面，(一般是小米、oppo、
 vivo设备)。
-
-

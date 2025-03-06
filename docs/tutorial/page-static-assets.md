@@ -13,8 +13,8 @@
 **注意**
 
 - `@`开头的绝对路径以及相对路径会经过 base64 转换规则校验
-- 引入的静态资源在非 h5 平台，均不转为 base64。
-- H5 平台，小于 4kb 的资源会被转换成 base64，其余不转。
+- 引入的静态资源在非 web 平台，均不转为 base64。
+- web 平台，小于 4kb 的资源会被转换成 base64，其余不转。
 - 自`HBuilderX 2.6.6`起`template`内支持`@`开头路径引入静态资源，旧版本不支持此方式
 - App 平台自`HBuilderX 2.6.9`起`template`节点中引用静态资源文件时（如：图片），调整查找策略为【基于当前文件的路径搜索】，与其他平台保持一致
 - 支付宝小程序组件内 image 标签不可使用相对路径
@@ -47,10 +47,10 @@ background-image: url(../../static/logo.png);
 
 **Tips**
 
-- 引入字体图标请参考，[字体图标](/tutorial/syntax-css.html#字体图标)
+- 引入字体图标请参考，[字体图标](/tutorial/syntax-css.md#字体图标)
 - `@`开头的绝对路径以及相对路径会经过 base64 转换规则校验
 - 不支持本地图片的平台，小于 40kb，一定会转 base64。（共四个平台 mp-weixin, mp-qq, mp-toutiao, app v2）
-- h5 平台，小于 4kb 会转 base64，超出 4kb 时不转。
+- web 平台，小于 4kb 会转 base64，超出 4kb 时不转。
 - 其余平台不会转 base64
 
 ### js/uts 引入静态资源
@@ -58,7 +58,7 @@ background-image: url(../../static/logo.png);
 
 例：有如下目录结构 ，在static 和页面文件夹下分别有静态资源
 
-```base
+```text
 
 ├── pages                            
 │   └── index
@@ -83,7 +83,7 @@ background-image: url(../../static/logo.png);
 
 ```
 
-而引入 index 下的 icons.png 不管是相对还是绝对路径，都无法显示，所以这时候需要在 js/uts 中 使用 import 来引入
+而引入 index 下的 icon.png 不管是相对还是绝对路径，都无法显示，所以这时候需要在 js/uts 中 使用 import 来引入
 
 ``` html
 <!-- /pages/index/index.vue -->
@@ -118,3 +118,17 @@ export default {
 - 在模板或者 `css` 文件使用 `static` 目录中的静态资源，无需特殊处理，可直接通过相对路径或者绝对路径直接引入。
 - 在 `js/uts` 文件使用静态资源，需要使用 `import` 来引入。
 - 不管在任何文件引入非 `static` 目中的静态资源，均需在 `js/uts` 文件使用 `import` 来引入。
+
+
+### 静态资源编译规则
+
+ 项目 `static` 目录下的静态资源，会被直接拷贝到编译后目录的 `static` 目录下。
+ 
+ 非`static`目录下的静态资源在`vue3`下，被引用的资源会编译到 `assets` 目录下，并重新命名为 `原始名称+内容hash`,如：`logo.png` 会编译为类似 `logo.cfd8fa94.png` 的名称。如果该静态资源未被引用，则不会被编译器处理。
+ 
+ 非`static`目录下的静态资源在`vue2`不同平台下，编译规则有些不同：
+ > 自 `HBuilderX 4.0` 起已和 `vue3` 保持一致
+
+- web: 静态资源将会编译到 `static -> img` 下, 如小于 4k 则转为base64
+- 小程序：静态资源将会编译到资源同名文件下，如小于 40kb 则转base64
+- app: 静态资源将会编译到资源同名文件下

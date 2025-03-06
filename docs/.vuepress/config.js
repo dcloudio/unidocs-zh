@@ -8,7 +8,7 @@ const { simplifySlugText, tabs } = require('./utils')
 const copyOptions = require('./config/copy');
 
 const config = {
-  theme: 'vuepress-theme-uni-app-test',
+  theme: 'vuepress-theme-uniapp-official',
   title: 'uni-app官网',
   description: 'uni-app,uniCloud,serverless',
   evergreen: process.env.NODE_ENV === 'development',
@@ -24,7 +24,7 @@ const config = {
     ['meta', {
       name: 'keywords', content: 'serverless,云开发,数字天堂,前端开发,web开发,小程序开发,跨平台,跨平台开发,跨端开发,混合开发,app开发,多端开发,开发工具,HTML5,vue,react,native,rn,flutter,weex,cordova,微信小程序,阿里小程序,支付宝小程序,百度小程序,头条小程序,抖音小程序,QQ小程序,快应用,流应用,云函数'
     }],
-    ['script', { src: `/js/redirect.js?${Date.now()}&v=${Date.now()}&version=${Date.now()}` }],
+    ['script', { src: `/js/redirect.js` }],
     ['script', { src: 'https://hm.baidu.com/hm.js?fe3b7a223fc08c795f0f4b6350703e6f' }],
     ['script', { src: '/miku-delivery-1.2.1.js' }],
     ['script', { src: `/js/miku.js?${Date.now()}&v=${Date.now()}&version=${Date.now()}` }]
@@ -95,20 +95,8 @@ const config = {
 				.plugin('img-add-attrs')
 				.use(require('./markdown/img-add-attrs'))
         .end()
-				.plugin('attrs')
-        .use(require('markdown-it-attrs'),[{
-          leftDelimiter: '#{',
-          rightDelimiter: '}'
-        }])
-        .end()
-        .plugin('task-lists')
-        .use(require('markdown-it-task-lists'))
-        .end()
         .plugin('inject-json-to-md')
         .use(require('./markdown/inject-json-to-md'))
-        .end()
-        .plugin('markdown-it-raw-table')
-        .use(require('markdown-it-raw-table'))
     }
   },
   chainWebpack (config, isServer) {
@@ -119,27 +107,7 @@ const config = {
   },
   patterns: ['**/!(_sidebar).md', '**/*.vue'],
   plugins: [
-    ["vuepress-plugin-juejin-style-copy", copyOptions],
-    [
-      'named-chunks',
-      {
-        layoutChunkName: (layout) => 'layout-' + layout.componentName,
-        pageChunkName: page => {
-          const _context = page._context
-          const pageHeaders = (page.headers || []).map(item => item.title).join(',')
-          if (pageHeaders) {
-            const originDescription = page.frontmatter.description || ''
-            page.frontmatter = {
-              ...page.frontmatter,
-              description: `${_context.siteConfig.description ? `${_context.siteConfig.description},` : ''}${pageHeaders}${originDescription ? `,${originDescription}` : ''}`.slice(0, 150),
-            }
-          }
-          const pagePath = page.path.indexOf('.html') === -1 ? page.path + 'index' : page.path
-          const curPath = 'docs/' + pagePath.replace('docs/', '').substring(1).replace(/\.html/g, "")
-          return curPath
-        }
-      }
-    ]
+    ["vuepress-plugin-juejin-style-copy", copyOptions]
   ],
   /**
    *

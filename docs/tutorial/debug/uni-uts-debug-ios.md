@@ -1,26 +1,40 @@
 # uts ios调试
 
-HBuilderX 3.7.6+，uni-app uts插件，运行到iOS，支持Debug调试
+uts插件，运行到iOS（限iOS17以下），支持Debug，打断点调试。
+> uni-app 需 HBuilderX 3.7.6+
 
-## 开启调试
+> uni-app x 需 HBuilderX 4.18+
 
-运行uni-app uts项目到iOS，运行成功后，HBuilder控制台点击`红色虫子`图标，下拉菜单选择【uts调试】，即可开启uts调试功能。
+## uniapp开启调试
+
+运行uni-app uts项目到iOS，运行成功后，HBuilder控制台点击`红色虫子`图标，下拉菜单选择【uts插件调试】，即可开启uts插件调试功能。
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-ios-debug-open.jpg" style="zoom: 50%;" />
 
+## uniapp x开启调试
+
+> uts调试功能，需 HBuilderX 4.31+
+
+运行uni-app x项目到iOS，运行成功后，HBuilder控制台点击`红色虫子`图标，下拉菜单选择【uts插件调试】，即可开启uts插件调试功能；下拉菜单选择【uts调试】，即可开启uts调试功能。
+
+<img src="https://web-ext-storage.dcloud.net.cn/hx/debug/unix_open_debug.png" style="zoom: 50%;" />
 
 ## uts-ios调试注意事项
 
-- uts调试，依赖uts调试插件，弹窗提示安装依赖插件，请务必点击安装，否则无法进行调试。
+- uts调试及uts插件调试，依赖uts调试插件，弹窗提示安装依赖插件，请务必点击安装，否则无法进行调试。
 
   <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-ios-debug-install.jpg" style="zoom: 45%;border-radius: 20px;" />
 
-- 首次点击【uts调试】，需要重新编译动态库，当遇到下面的确认弹窗时，请点击【确定】按钮。
+- 首次点击【uts插件调试】，需要重新编译动态库，当遇到下面的确认弹窗时，请点击【确定】按钮。
 
   <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-ios-debug-firstpromt.jpg" style="zoom: 50%;border-radius: 20px;" />
 
-- 点击【uts调试】，uts调试开启，可能需要十几秒
+- 点击【uts插件调试】，uts插件调试开启，可能需要十几秒
 - 调试进程`codelldb`会占用较大的内存。
+- uts 调试需要手机在 “设置” > “Safari” > “高级” > “Web检查器” 设置为打开
+
+<img src="https://web-ext-storage.dcloud.net.cn/hx/debug/unix_iphone_safari_setting.jpg?t=1" style="zoom: 30%;" />
+
 
 ## 添加/删除断点@add-breakpoint
 
@@ -36,7 +50,7 @@ HBuilderX 3.7.6+，uni-app uts插件，运行到iOS，支持Debug调试
 
 调试视图分为5部分:
 
-- [调试工具栏](#DebugActions)
+- [调试工具栏](#debugactions)
 - 变量窗口 (`复制值`、`复制表达式`、`添加到监视`)
 - 监视窗口（包含`添加`/`编辑`/`删除`表达式，以及`复制值`）
 - 调用堆栈窗口

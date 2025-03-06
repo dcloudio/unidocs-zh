@@ -12,17 +12,29 @@
 - HBuilderX 4.41+ 开始运行到鸿蒙设备时支持修改代码后热刷更新
 - HBuilderX 4.41+ 开始运行到鸿蒙设备时控制台显示的应用日志支持回源代码
 - HBuilderX 4.43+ 开始支持将 `mainfest.json` 里面配置的应用版本名称/应用版本号（`versionName`/`versionCode`）应用于鸿蒙平台，且优先于 `harmony-configs/AppScope/app.json5` 中的设置
+- HBuilderX 4.54+ 开始支持 uni-app x 项目，且支持开启调试功能
+- HBuilderX 4.54+ 开始支持配置签名证书，且支持自动申请调试证书
 
 ## 开发环境要求@env
 
 - HBuilderX 4.24+ [下载地址](https://www.dcloud.io/hbuilderx.html)
 - DevEco Studio [下载地址](https://developer.huawei.com/consumer/cn/download/)
-  - HBuilderX 4.24+ 要求 DevEco Studio 5.0.3.400+，HBuilderX 4.31+ 要求 DevEco Studio 5.0.3.800+。
+  - HBuilderX 4.24+ 要求 DevEco Studio 5.0.3.400+
+  - HBuilderX 4.31+ 要求 DevEco Studio 5.0.3.800+。
+  - HBuilderX 4.54+ 针对 uni-app x 项目要求 DevEco Studio 5.0.7.100+。
   - 鸿蒙系统版本 API 12 以上 （DevEco Studio有内置鸿蒙模拟器）
 - 如果没有符合兼容性要求的模拟器，就需要有真机作为运行设备
 - **项目的路径不要太深，如果项目路径过长会导致编译失败，建议将项目放在盘符根目录下。也不要包含中文、空格和其它特殊字符。**
 
-### 调试运行的方式@run-mode
+### 配置 HBuilderX 的 Settings.json@hbxsettings
+
+HBuilderX 依赖于 DevEco Studio 里面带的鸿蒙工具链，所以需要电脑已经安装了符合版本要求的 DevEco Studio。
+
+打开HBuilderX，点击上方菜单 - 工具 - 设置，再点击 运行配置，在鸿蒙运行配置中设置 DevEco Studio 的安装路径。
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0c206e8a-868f-49de-8ca2-e7a2d2b768a8.png)#{.zooming style="max-height:200px"}
+
+## 运行的方式@run-mode
 
 HBuilderX 4.24 版本开始支持【运行到鸿蒙】，具体的方式是开发者下载鸿蒙工程模板并创建独立的鸿蒙工程目录，
 然后在 uni-app 项目中的 `manifest.json` 里面设置 `app-harmony.projectPath` 属性来指向这个鸿蒙工程目录，
@@ -39,6 +51,7 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 ### 启动鸿蒙模拟器@connectvirtually
 
+鸿蒙模拟器只能在 DevEco Studio 中启动。
 在 DevEco Studio 中打开任意一个项目（也可以新建一个空项目），然后在下图的位置进入设备管理器：
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085379828ap3pkhhfmig.png)#{.zooming style="max-height:200px"}
@@ -64,15 +77,11 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720091392422r91cpejpp7g.png)#{.zooming style="max-height:200px"}
 
-## 配置 HBuilderX settings.json@hbxsettings
+### 运行项目到鸿蒙设备@run
 
-打开HBuilderX，点击上方菜单 - 工具 - 设置，再点击 运行配置，在鸿蒙运行配置中设置 DevEco Studio 的安装路径。
+连接好鸿蒙设备之后，就可以在 HBuilderX 中把当前打开的 uni-app (x) 项目运行到鸿蒙设备上了。
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0c206e8a-868f-49de-8ca2-e7a2d2b768a8.png)#{.zooming style="max-height:200px"}
-
-## 运行 uni-app 项目到鸿蒙@run
-
-1. HBuilderX 新建一个空白的 uni-app 项目，选vue3（也可使用已有的uni-app vue3项目）
+1. HBuilderX 打开项目，或者新建一个空白的 uni-app 项目，选vue3（也可使用已有的uni-app vue3项目）
 
 2. 编译 uni-app 到鸿蒙
 
@@ -86,37 +95,117 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 4. 选择运行设备
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/20240914152406.jpg)#{.zooming style="max-height:200px"}
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/71b5157e-27ae-4228-a3ab-e17f8d4e2c97.png)#{.zooming style="max-height:200px"}
 
-5. 【首次运行之后】配置签名证书资料
+有时候，在开发过程中反复修改代码和配置，会出现构建缓存错乱的情况，如果出现运行结果不符合预期的奇怪情况，可以尝试在运行的时候勾选【清理构建缓存】。
 
+如果是运行到真机设备上，需要配置签名证书资料。
+HBuilderX 4.54+ 开始支持直接配置证书资料，点击对话框中的【配置调试证书】按钮打开配置对话框，支持自动申请调试证书。
+对于更早版本的 HBuilderX，需要在首次运行之后，在 `unpackage` 目录下找到自动生成的鸿蒙工程目录，在 DevEco Studio 里面打开它再去申请证书。
 参考：[证书签名配置指南](#signing)
+
+## 调试的方式@debug-mode
+
+HBuilderX 4.54+ 开始支持针对 uni-app x 项目的调试功能，支持断点调试，可以在控制台里面点击调试按钮开启。
+
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/b7c69c0e-0447-41f1-b974-35eb8d076cc8.png)#{.zooming style="max-height:60px;border:1px solid silver"}
+
+点击【开启调试】按钮的时候如果还在编译阶段，则会在后续应用运行起来的时候进入调试状态。
+
+如果点击时应用已经运行起来，则直接进入调试状态，此后代码运行遇到断点就会停下来，但应用启动阶段的代码断点因为已经错过了时机而不会停下来，要想调试那些代码的话可以点击旁边的【重启应用】按钮。
+
+如果要退出调试状态，再次点击该按钮即可。
 
 ## 证书签名配置指南@signing
 
-数字签名证书需要配置到 `harmony-configs/build-profile.json5` 中，这个文件等同于一个普通的鸿蒙工程中对应的文件。
+数字签名证书的配置最终需要落在鸿蒙工程根目录中的 `build-profile.json5` 文件中起作用。
 
-申请证书的操作要在 DevEco Studio 中完成，如果是自己在华为的 AppGallery Connect 网站上手动申请证书，也需要 DevEco Studio 配合才能最终得到所需的 `build-profile.json5` 文件。
+对于 HBuilderX 4.54 以前的版本，需要手动配置 `harmony-configs/build-profile.json5` 文件，该文件在构建阶段会覆盖到自动生成的鸿蒙工程的 `build-profile.json5` 文件中。
 
-DevEco Studio 且须先打开一个鸿蒙工程才可进行证书相关的操作，建议先执行一次【运行到鸿蒙】，然后在项目的 `unpackage` 目录下找到临时生成的鸿蒙工程目录，
+从 HBuilderX 4.54+ 开始支持以交互方式配置相关信息（且支持自动申请调试证书），这些信息在构建阶段会被填写到鸿蒙工程的 `build-profile.json5` 文件中。
+不过，为了兼容以前的版本，如果已经在 `harmony-configs/build-profile.json5` 中配置过相关信息，则仍会优先被使用。
+
+### 在 HBuilderX 里面直接配置证书签名@signing-configs
+
+从 HBuilderX 4.54+ 开始支持这种配置方式。在【运行到鸿蒙】操作的【选择运行设备】对话框中，点击【配置调试证书】按钮，打开配置对话框：
+
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/c6a539d8-9f7b-44ac-8cb7-5f9ff8f025c3.png)#{.zooming style="max-height:200px"}
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/960fb2bd-d899-4ce9-8b32-8b2f577c56ee.png)#{.zooming style="max-height:200px"}
+
+如果已经在 AppGallery Connect 中手动申请过证书，则可以填写到对话框中使用。
+
+对于调试证书，还可以选择自动申请，此时 HBuilderX 会使用开发者授权的账号身份调用 AppGallery Connect 的 API 来自动完成证书的申请和配置。
+
+::: warning 注意
+受限于 API 的限制暂时无法申请到包含了 ACL 权限的调试证书，如果应用中有使用到 ACL 权限，则仍需采用 [下一节介绍的方式](#signing-deveco) 配置签名证书。
+:::
+
+点击【自动申请】按钮，会触发浏览器打开华为的登录授权页面：
+
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/87c07603-e9b8-479b-a116-9de37167df66.png)#{.zooming style="max-height:200px;border:1px solid silver"}
+
+完成登录授权：
+
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/b00dcd88-7754-463f-9605-86d839f4b6b5.png)#{.zooming style="max-height:100px;border:1px solid silver"}
+
+回到 HBuilderX 的对话框中，正常情况下完成自动申请之后，点击【确定】按钮保存即可。
+
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/be2d5c31-5fb1-4869-9017-6dfc04d733b4.png)#{.zooming style="max-height:200px"}
+
+如果自动申请过程中出现错误，可根据错误提示信息进行处理：
+
+::: danger 尚未完成开发者注册
+数字证书是由华为的 [AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) 服务系统（简称 AGC）颁发的，开发者首先需要在 AGC 中完成开发者注册，才能申请数字证书。
+:::
+
+::: danger 未找到包名为 xx 的应用
+登录 AGC 之后，进入【证书、APP ID和Profile】中的【APP ID】页面，为指定的包名创建应用，然后才能为该应用申请证书。
+:::
+
+::: danger 没查到运行设备的注册信息
+申请的调试证书中需要包含当前正在使用的鸿蒙设备（手机或者模拟器）的标识，该设备标识首先需要在 AGC 中注册。
+
+HBuilderX 会尝试自动把当前运行设备的标识注册到 AGC 中，如果失败，请手动在 AGC 中注册：
+登录 AGC 之后，进入【证书、APP ID和Profile】中的【设备】页面，把当前设备的 UDID 添加到设备列表中。
+
+可以通过如下的命令行来获取当前连接的鸿蒙设备的 UDID 标识，具体请参考 [华为的官方文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/bm-tool-V5#%E8%8E%B7%E5%8F%96udid%E5%91%BD%E4%BB%A4get)：
+```
+hdc shell bm get -u
+```
+:::
+
+::: danger 证书个数已经达到限制
+AGC 中每个开发者账号可以创建的证书是有数量限制的，如果已经达到限制则需要删除一些以释放额度。
+
+登录 AGC 之后，进入【证书、APP ID和Profile】中的【证书】页面，从证书列表中删除掉一些已经不再需要的证书。
+
+需要注意的是，如果删除了某个证书，则基于该证书生成的 profile 文件也将失效，可以进入【Profile】页面在列表中找到失效的 profile 并删除掉。
+:::
+
+### 通过 DevEco Studio 获取证书签名配置@signing-deveco
+
+HBuilderX 4.54 之前的版本，只能通过 `harmony-configs/build-profile.json5` 文件来配置签名证书，里面的证书资料信息只能由 DevEco Studio 来生成,
+即使是自己在华为 AppGallery Connect 网站上手动申请的证书，也需要填写到 DevEco Studio 里面才能最终得到所需的 `build-profile.json5` 文件。
+
+DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，建议先执行一次【运行到鸿蒙】，然后在项目的 `unpackage` 目录下找到临时生成的鸿蒙工程目录，
 在 DevEco Studio 里面打开后再进行后面的操作。
 如果是自己在 DevEco Studio 里面独立创建一个新的鸿蒙工程，虽然也可以用于申请证书，但需注意以下几点：
 
 1. 由于证书资料中包含应用的包名，所以在这个鸿蒙工程中设置的应用包名应该与将要开发的 uni-app 应用项目中设置的鸿蒙应用包名（在 `manifest.json` 中设置）相一致，这样申请到的证书资料才会有效；
 
-2. 这个鸿蒙工程的根目录中的 `build-profile.json5` 文件中的内容应该与 HBuilderX 自动生成的鸿蒙工程中的对应文件保持一致，否则在后续操作中可能产生异常。
+2. 这个鸿蒙工程的根目录中的 `build-profile.json5` 文件中的内容应该与 HBuilderX 自动生成的鸿蒙工程中的对应文件保持一致（随着版本迭代该文件的内容可能会有少许变化），否则在后续操作中可能产生异常。
 
 3. 如果有用到 ACL 权限，需在 `entry/src/main/module.json5` 中声明，这样获得的证书中才能包含相关的授权。参考 [权限配置指南](#permission)
 
 完成申请证书的操作之后，把这个鸿蒙工程中的 `build-profile.json5` 文件复制到 uni-app 项目的 `harmony-configs/build-profile.json5` 即可。
 
-### 打开证书配置对话框@signing-dialog
+#### 打开证书配置对话框@signing-dialog
 
 点击 DevEco Studio 上方菜单 File - Project Structure...
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720087126462d9133uo0hmg.png)#{.zooming style="max-height:200px"}
 
-### 调试用的数字签名证书@signing-debug
+#### 调试用的数字签名证书@signing-debug
 
 在使用模拟器进行调试运行的时候，一般是不需要做数字签名的，但如果是用真机进行调试运行，或者业务代码用到了 ACL 权限，那么就需要申请并配置一个**调试证书**用于数字签名。
 
@@ -136,7 +225,7 @@ DevEco Studio 且须先打开一个鸿蒙工程才可进行证书相关的操作
 
 完成以上操作后，鸿蒙工程中的 `build-profile.json5` 文件就包含了完整的调试证书配置信息（在 `app.signingConfigs` 数组里，`name` 属性的值是 `"default"`）。
 
-### 发布用的数字签名证书@signing-release
+#### 发布用的数字签名证书@signing-release
 
 在发行安装包的时候，一定需要配置一个**发布证书**，否则只能拿到一个未签名的安装包，是无法实际使用的。
 
@@ -150,7 +239,7 @@ DevEco Studio 且须先打开一个鸿蒙工程才可进行证书相关的操作
 
 完成以上操作后，鸿蒙工程中的 `build-profile.json5` 文件就包含了完整的发布证书配置信息（在 `app.signingConfigs` 数组里，`name` 属性的值是 `"release"`）。
 
-### 把生成的证书配置信息拷贝到 uni-app 项目中@signing-profile
+#### 把生成的证书配置信息拷贝到 uni-app 项目中@signing-profile
 
 无论是调试证书还是发布证书，生成的证书资料信息都在鸿蒙工程根目录下的 `build-profile.json5` 文件中，把这个文件复制到 uni-app 项目的 `harmony-configs/build-profile.json5` 即可。
 
@@ -210,12 +299,18 @@ HBuilderX 早期版本所创建目录初始会存在几个常用的配置文件�
 
 所以，`harmony-configs` 目录中的所有文件最终都会原样进入鸿蒙工程目录参与项目构建，所有需要对鸿蒙工程的定制化配置都可以写在这个目录下。
 
-**注意**：在 `manifest.json` 支持的鸿蒙相关的配置项将具有更高的优先级。
+::: warning 注意
+在 `manifest.json` 支持的鸿蒙相关的配置项将具有更高的优先级。
+:::
 
-**注意**：`harmony-configs` 目录下应该**仅放置必要的文件**，多余的文件有可能对鸿蒙工具链的执行产生意外的干扰，导致项目无法正常编译打包。
+::: warning 注意
+`harmony-configs` 目录下应该**仅放置必要的文件**，多余的文件有可能对鸿蒙工具链的执行产生意外的干扰，导致项目无法正常编译打包。
+:::
 
-**注意**：当升级 HBuilderX 到新版本之后，由于其内置的鸿蒙工程模板有可能调整，导致与旧版本的配置文件产生不兼容的情况，所以如果以前正常的项目在升级后出现打包错误的话，
+::: warning 注意
+当升级 HBuilderX 到新版本之后，由于其内置的鸿蒙工程模板有可能调整，导致与旧版本的配置文件产生不兼容的情况，所以如果以前正常的项目在升级后出现打包错误的话，
 建议清空 `harmony-configs` 目录的原有内容（注意做好备份），再删除 `unpackage` 目录，重新运行之后再按需要逐步恢复 `harmony-configs` 里面应有的配置。
+:::
 
 关于 `harmony-configs` 目录的使用要遵守鸿蒙的技术规范，具体可参考 [鸿蒙官方文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-configuration-file-stage-V5)
 
@@ -224,6 +319,8 @@ HBuilderX 早期版本所创建目录初始会存在几个常用的配置文件�
 - `harmony-configs/build-profile.json5`
 
     其中的 `app.signingConfigs` 用于设置数字签名资料，参见 [证书签名配置指南](#signing)
+
+    HBuilderX 4.54+ 开始已经支持[在 HBuilderX 里面直接配置证书签名](#signing-configs)，建议采用此方式，无需使用 `build-profile.json5`。
 
 - `harmony-configs/entry/src/main/module.json5`
 

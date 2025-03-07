@@ -130,7 +130,7 @@ HBuilderX 4.61+ 开始支持针对 uni-app x 项目的调试功能，支持断�
 从 HBuilderX 4.61+ 开始支持这种配置方式。在【运行到鸿蒙】操作的【选择运行设备】对话框中，点击【配置调试证书】按钮，打开配置对话框：
 
 ![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/c6a539d8-9f7b-44ac-8cb7-5f9ff8f025c3.png)#{.zooming style="max-height:200px"}
-![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/960fb2bd-d899-4ce9-8b32-8b2f577c56ee.png)#{.zooming style="max-height:200px"}
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/b57c4eca-9d1b-4c73-b33f-78516e9a7410.png)#{.zooming style="max-height:200px"}
 
 如果已经在 AppGallery Connect 中手动申请过证书，则可以填写到对话框中使用。
 
@@ -148,9 +148,9 @@ HBuilderX 4.61+ 开始支持针对 uni-app x 项目的调试功能，支持断�
 
 ![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/b00dcd88-7754-463f-9605-86d839f4b6b5.png)#{.zooming style="max-height:100px;border:1px solid silver"}
 
-回到 HBuilderX 的对话框中，正常情况下完成自动申请之后，点击【确定】按钮保存即可。
+回到 HBuilderX 的对话框中，正常情况下完成自动申请之后，点击【保存】按钮保存即可。
 
-![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/be2d5c31-5fb1-4869-9017-6dfc04d733b4.png)#{.zooming style="max-height:200px"}
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/aa49375d-0314-4130-bfbe-c675d3abe5be.png)#{.zooming style="max-height:200px"}
 
 如果自动申请过程中出现错误，可根据错误提示信息进行处理：
 

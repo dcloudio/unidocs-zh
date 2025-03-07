@@ -1,3 +1,13 @@
+#### 4.54.2025030608-alpha
+* 【uni-app】
+  + App-iOS 修复 uni.requestPayment 使用苹果应用内购 IAP 在 iOS18 系统 username 参数类型不为字符串时会引起应用闪退的Bug [详情](https://ask.dcloud.net.cn/question/206161)
+* 【uts插件】
+  + 新增 in 操作符支持 type 定义的类型 [文档](https://doc.dcloud.net.cn/uni-app-x/uts/data-type.html#in-%E6%93%8D%E4%BD%9C%E7%AC%A6)
+  + App-Android平台 修复 4.51版本引发的 UTSJSONObject 对象使用 in 操作符编译报错的Bug
+* 【App插件(含5+App和uni-app的App端)】
+  + iOS平台 更新 新浪微博SDK 为 3.4.0 版本，解决在 iOS18 系统无法登录的Bug [详情](https://ask.dcloud.net.cn/question/206323)
+  + iOS平台 修复 uni-AD 开屏显示快手广告时频繁前后台切换可能导致页面显示不正常的Bug
+
 #### 4.53.2025022409-alpha
 * 【uni-app】
   + App-Android平台 修复 使用uts插件云端打包后没有包含隐私清单的Bug

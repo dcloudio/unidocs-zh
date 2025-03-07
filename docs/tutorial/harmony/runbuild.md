@@ -132,7 +132,7 @@ HBuilderX 4.61+ 开始支持针对 uni-app x 项目的调试功能，支持断�
 ![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/c6a539d8-9f7b-44ac-8cb7-5f9ff8f025c3.png)#{.zooming style="max-height:200px"}
 ![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/b57c4eca-9d1b-4c73-b33f-78516e9a7410.png)#{.zooming style="max-height:200px"}
 
-如果已经在 AppGallery Connect 中手动申请过证书，则可以填写到对话框中使用。
+如果已经在 AppGallery Connect 中手动申请过证书，则可以填写到对话框中使用。其中三个文件的位置如果填写的是相对路径，则按照相对于 `harmony-configs` 目录来计算。
 
 对于调试证书，还可以选择自动申请，此时 HBuilderX 会使用开发者授权的账号身份调用 AppGallery Connect 的 API 来自动完成证书的申请和配置。
 

@@ -53,7 +53,6 @@ API等级与Android版本对应列表如下：
 
 | API等级 | Android版本号 | Android版本名称 |  
 | :-- | :-- | :-- |  
-| :-- | :-- | :-- |  
 | 36 | Android16 | Android W |  
 | 35 | Android15 | Android V, Vanilla Ice Cream |  
 | 34 | Android14 | Android U, Upside Down Cake |  

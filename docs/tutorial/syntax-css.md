@@ -17,7 +17,7 @@ uni-app 支持less、sass、scss、stylus等预处理器。
 
 **注意：**
 
-HBuilderX 4.56+ vue2 项目默认启用 dart-sass 预编译，[sass-lang](https://sass-lang.com/)官方已经不再维护[node-sass](https://www.npmjs.com/package/node-sass）
+HBuilderX 4.56+ vue2 项目默认启用 dart-sass 预编译，[sass-lang](https://sass-lang.com/) 官方已经不再维护 [node-sass](https://www.npmjs.com/package/node-sass)
 - 如果您希望继续使用`node-sass`，可以在`manifest.json`根节点配置: "sassImplementationName": "node-sass"; 可选值 "dart-sass" | "node-sass"。
 - sassImplementationName 配置仅限 uni-app（vue2）项目且非 HBuilderX Mac Arm 版本，Arm 版本仅支持`dart-sass`。
 

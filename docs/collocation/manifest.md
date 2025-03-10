@@ -16,6 +16,7 @@
 |networkTimeout|Object||网络超时时间，[详见](/collocation/manifest?id=networktimeout)||
 |debug|Boolean|false|是否开启 debug 模式，开启后调试信息以 ``info`` 的形式给出，其信息有页面的注册，页面路由，数据更新，事件触发等||
 |uniStatistics|Object||[是否开启 uni 统计，全局配置](/collocation/manifest?id=uniStatistics)|2.2.3+|
+|sassImplementationName|dart-sass或node-sass||[使用的scss预编译库，仅限vue2项目，默认值：dart-sass，HBuilderX Mac Arm版始终为dart-sass](/tutorial/syntax-css.html#css-preprocessor)|4.56+|
 |app-plus|Object||[App 特有配置](/collocation/manifest?id=app-plus)||
 |h5|Object||[H5 特有配置](/collocation/manifest?id=h5)||
 |quickapp|Object||快应用特有配置，即将支持||

@@ -147,9 +147,9 @@ setTimeout(function () {
 |content|String|否|提示的内容||
 |showCancel|Boolean|否|是否显示取消按钮，默认为 true||
 |cancelText|String|否|取消按钮的文字，默认为"取消"||
-|cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5、微信小程序、百度小程序、抖音小程序（2.62.0+）|
+|cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5、微信小程序、百度小程序、抖音小程序（2.62.0+）、支付宝小程序|
 |confirmText|String|否|确定按钮的文字，默认为"确定"||
-|confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"，微信小程序平台默认为"#576B95"，百度小程序平台默认为"#3c76ff"|H5、微信小程序、百度小程序、抖音小程序（2.62.0+）|
+|confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"，微信小程序平台默认为"#576B95"，百度小程序平台默认为"#3c76ff"|H5、微信小程序、百度小程序、抖音小程序（2.62.0+）、支付宝小程序|
 |editable|Boolean|否|是否显示输入框|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)、抖音小程序（2.62.0+）|
 |placeholderText|String|否|显示输入框时的提示文本|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)、抖音小程序（2.62.0+）|
 |success|Function|否|接口调用成功的回调函数||
@@ -189,7 +189,7 @@ uni.showModal({
 - 小程序平台，`cancelText`和`confirmText`有长度限制，最多允许 4 个字符；
 - 钉钉小程序真机与模拟器表现有差异，真机title，content均为必填项
 - 各家小程序平台对于 `confirm`、`cancel` 字段返回规则可能不尽相同，包含两种情况：`{ confirm: true, cancel: false }` 或 `{ confirm: true }`，但并不影响使用 if 去做判断
-
+- 钉钉小程序本身不支持设置 cancelColor/confirmColor 属性
 
 ## uni.showActionSheet(OBJECT)
 

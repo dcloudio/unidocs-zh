@@ -1,4 +1,3 @@
-
 # 页面样式与布局
 
 uni-app 有 vue 页面、nvue 页面、uvue页面。
@@ -15,6 +14,20 @@ uni-app 的 css 与 web 的 css 基本一致。本文没有讲解 css 的用法�
 uni-app 支持less、sass、scss、stylus等预处理器。
 
 参考： [css预处理器](https://developer.mozilla.org/zh-CN/docs/Glossary/CSS_preprocessor)
+
+**注意：**
+
+HBuilderX 4.56+ vue2 项目默认启用 dart-sass 预编译（[sass-lang](https://sass-lang.com/)官方已经不再维护[node-sass](https://www.npmjs.com/package/node-sass））
+- 如果您希望继续使用`node-sass`，可以在`manifest.json`根节点配置: "sassImplementationName": "node-sass"; 可选值 "dart-sass" | "node-sass"。
+- sassImplementationName 配置仅限 uni-app（vue2）项目且非 HBuilderX Mac Arm 版本，Arm 版本仅支持`dart-sass`。
+
+node-sass升级dart-sass常见问题：
+- SassError: expected selector. /deep/
+> 解决方案：/deep/ 替换成::v-deep
+- WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+> 解决方案：使用 math.div() 替换除法运算符 [详情](https://sass-lang.com/d/slash-div)
+- SassError: xxx and xxx are incompatible.
+> 解决方案：calc 在特定情况需要带单位，比如：`width: calc(100% - 215)` 修改为：`width: calc(100% - 215px)`
 
 
 ## 尺寸单位

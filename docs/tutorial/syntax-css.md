@@ -9,7 +9,7 @@ uni-app 的 css 与 web 的 css 基本一致。本文没有讲解 css 的用法�
 
 本文重点介绍 vue 页面，也就是webview中的样式注意事项。
 
-## css预处理器支持
+## css预处理器支持@css-preprocessor
 
 uni-app 支持less、sass、scss、stylus等预处理器。
 
@@ -17,7 +17,7 @@ uni-app 支持less、sass、scss、stylus等预处理器。
 
 **注意：**
 
-HBuilderX 4.56+ vue2 项目默认启用 dart-sass 预编译（[sass-lang](https://sass-lang.com/)官方已经不再维护[node-sass](https://www.npmjs.com/package/node-sass））
+HBuilderX 4.56+ vue2 项目默认启用 dart-sass 预编译，[sass-lang](https://sass-lang.com/)官方已经不再维护[node-sass](https://www.npmjs.com/package/node-sass）
 - 如果您希望继续使用`node-sass`，可以在`manifest.json`根节点配置: "sassImplementationName": "node-sass"; 可选值 "dart-sass" | "node-sass"。
 - sassImplementationName 配置仅限 uni-app（vue2）项目且非 HBuilderX Mac Arm 版本，Arm 版本仅支持`dart-sass`。
 

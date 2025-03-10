@@ -34,3 +34,4 @@ uni.canIUse('button.open-type.contact');
 
 **Tips**
 - App、web 端暂不支持 ``${API}.${method}.${param}.${options}`` 方式调用，只支持 ``${API}``
+- App、Web 端部分 API 实际未实现，具体结果以 API 页面实现表格为准

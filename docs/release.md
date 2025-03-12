@@ -1,3 +1,13 @@
+#### 4.56.2025031210
+* 【uni-app】
+  + 【重要】Vue2 项目scss预编译器默认改用dart-sass，HBuilderX 非 Mac Arm 版可以在manifest.json中根节点配置"sassImplementationName": "node-sass"手动指定，继续使用node-sass。这2种sass编译器有语法差异 [文档](https://uniapp.dcloud.net.cn/tutorial/syntax-css.html#css-preprocessor) [详情](https://ask.dcloud.net.cn/question/206506)
+  + App-Android平台 修复 4.55版本引发的 组件 Button 在 nvue 页面设置 border-radius、border 和 iOS 表现不一致的Bug [详情](https://ask.dcloud.net.cn/question/206548)
+* 【uni-app-x】
+  + Web平台、微信小程序平台 修复 4.55版本引发的 编译器 运行时会提交云端编译仅App端支持的uts加密插件的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16242)
+  + App-Android平台 修复 4.41版本引发的 组件 waterflow 触发下拉刷新可能出现app卡死 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16133)
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 修复 4.41版本引发的 uni-AD 快捷开屏广告可能会不展示的Bug
+
 #### 4.55.2025030718
 * 【uni-app】
   + Web平台 App平台 调整 movable-view 的最小缩放比例为 0.1 [详情](https://ask.dcloud.net.cn/question/203268)

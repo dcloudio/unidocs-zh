@@ -95,12 +95,12 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 4. 选择运行设备
 
-![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/71b5157e-27ae-4228-a3ab-e17f8d4e2c97.png)#{.zooming style="max-height:200px"}
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/b28d3e2d-fd5d-4600-8626-2faa5acce823.png)#{.zooming style="max-height:200px"}
 
 在编译代码构建运行包的时候，有三个缓存使用策略可供选择：
-- 使用缓存加速构建：正常使用缓存来避免重复操作，提高构建效率。
-- 直接使用缓存的构建结果：如果没有修改代码，只想重新运行起来，则可以使用这种方式，如果检查到已经有构建好的运行包存在，则直接安装运行，否则按正常方式构建再运行。
-- 清除缓存重新构建：如果运行时出现结果不符合预期的奇怪情况，可以尝试使用这种方式重新构建运行，以消除缓存错乱带来的干扰。
+- **根据变化差量更新缓存**：正常使用缓存来避免重复操作，提高构建效率。
+- **强制使用缓存，跳过编译**：如果没有修改代码，只想重新运行起来，则可以使用这种方式，如果检查到已经有构建好的运行包存在，则直接安装运行，否则按正常方式构建再运行。
+- **清空缓存**：如果运行时出现结果不符合预期的奇怪情况，可以尝试使用这种方式重新构建运行，以消除缓存错乱带来的干扰。
 
 如果是运行到真机设备上，需要配置签名证书资料。
 HBuilderX 4.61+ 开始支持直接配置证书资料，点击对话框中的【配置调试证书】按钮打开配置对话框，支持自动申请调试证书。
@@ -132,7 +132,7 @@ HBuilderX 4.61+ 开始支持针对 uni-app x 项目的调试功能，支持断�
 
 从 HBuilderX 4.61+ 开始支持这种配置方式。在【运行到鸿蒙】操作的【选择运行设备】对话框中，点击【配置调试证书】按钮，打开配置对话框：
 
-![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/c6a539d8-9f7b-44ac-8cb7-5f9ff8f025c3.png)#{.zooming style="max-height:200px"}
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/809e96c5-0a38-4453-bfd6-b2b13c8fb763.png)#{.zooming style="max-height:200px"}
 ![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/b57c4eca-9d1b-4c73-b33f-78516e9a7410.png)#{.zooming style="max-height:200px"}
 
 如果已经在 AppGallery Connect 中手动申请过证书，则可以填写到对话框中使用。其中三个文件的位置如果填写的是相对路径，则按照相对于 `harmony-configs` 目录来计算。

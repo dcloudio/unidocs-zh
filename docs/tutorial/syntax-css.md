@@ -41,7 +41,7 @@ node-sass升级dart-sass常见问题及改进方法：
 - SassError: expected selector. /deep/
 > 解决方案：/deep/ 替换成::v-deep
 - WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
-> 解决方案：使用 math.div() 替换除法运算符 [详情](https://sass-lang.com/d/slash-div)
+> 解决方案：使用 math.div() 替换除法运算符 [详情](https://sass-lang.com/d/slash-div)，如果遇到@use 'sass:math';编译报错，可以在uni.scss中定义，[详情](https://ask.dcloud.net.cn/question/206689)
 - SassError: xxx and xxx are incompatible.
 > 解决方案：calc 在特定情况需要带单位，比如：`width: calc(100% - 215)` 修改为：`width: calc(100% - 215px)`
 

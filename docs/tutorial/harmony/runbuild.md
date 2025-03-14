@@ -571,6 +571,12 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 也可能是自行配置的 `harmony-configs/build-profile.json5` 文件里面有错误，导致 DevEco Studio 无法正确解析。
 请参考 [文档](#config-dir) 的方法确保配置正确。
 
+### 报错 `签名证书资料配置错误`@signing-configs-failed
+
+如果项目中配置的签名证书资料有误，则会报这个错，常见的原因是指向的文件不存在，或者密码设置错误。
+
+请参考 [证书签名配置指南](#signing) 检查相关的配置项。
+
 ### 报错 `运行所需的权限没有签名授权`@permissions-failed
 
 参考 [权限配置指南](#permission)

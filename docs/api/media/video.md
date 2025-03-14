@@ -84,7 +84,7 @@ export default {
 
 ## uni.chooseMedia(OBJECT)
 
-拍摄或从手机相册中选择图片或视频。
+拍摄或从手机相册中选择图片或视频。注意在app平台，相册选择使用的是系统相册。系统相册选择不需要本地媒体访问权限，但上面的UI无法定制，不能自行添加类似“原图”的单选框，
 
 若选择和上传非图像、视频文件，另行参考：[https://uniapp.dcloud.io/api/media/file](https://uniapp.dcloud.io/api/media/file)。
 

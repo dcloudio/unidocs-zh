@@ -11,18 +11,6 @@ npm install -g @vue/cli
 
 ## 创建uni-app
 
-* 使用正式版（对应HBuilderX最新正式版）
-
-  ```shell
-  vue create -p dcloudio/uni-preset-vue my-project
-  ```
-
-* 使用alpha版（对应HBuilderX最新alpha版）
-
-  ```shell
-  vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project
-  ```
-
 * 使用Vue3/Vite版
   * 创建以 javascript 开发的工程（如命令行创建失败，请直接访问 [gitee](https://gitee.com/dcloud/uni-preset-vue/repository/archive/vite.zip) 下载模板）
     ```shell
@@ -41,6 +29,19 @@ npm install -g @vue/cli
 <div>
 <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/h5-cli-01.png" width="300">
 </div>
+
+
+* 使用正式版（对应HBuilderX最新正式版）创建 vue2 项目
+
+  ```shell
+  vue create -p dcloudio/uni-preset-vue my-project
+  ```
+
+* 使用alpha版（对应HBuilderX最新alpha版）创建 vue2 项目
+
+  ```shell
+  vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project
+  ```
 
 **注意**
 

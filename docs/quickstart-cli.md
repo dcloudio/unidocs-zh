@@ -1,17 +1,10 @@
 除了HBuilderX可视化界面，也可以使用 `cli` 脚手架，可以通过 `vue-cli` 创建 `uni-app` 项目。
 
 
-## 环境安装 @install-vue-cli
-
-全局安装 vue-cli
-
-```shell
-npm install -g @vue/cli
-```
 
 ## 创建uni-app
 
-* 使用Vue3/Vite版
+* 创建 vue3 项目
   * 创建以 javascript 开发的工程（如命令行创建失败，请直接访问 [gitee](https://gitee.com/dcloud/uni-preset-vue/repository/archive/vite.zip) 下载模板）
     ```shell
     npx degit dcloudio/uni-preset-vue#vite my-vue3-project
@@ -24,24 +17,26 @@ npm install -g @vue/cli
     npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
     ```
 
+* 创建 vue2 项目
+  > 需要全局安装 vue-cli `npm install -g @vue/cli`
+
+  * 使用正式版（对应HBuilderX最新正式版）
+
+    ```shell
+    vue create -p dcloudio/uni-preset-vue my-project
+    ```
+
+  * 使用alpha版（对应HBuilderX最新alpha版）
+
+    ```shell
+    vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project
+    ```
+
 此时，会提示选择项目模板（使用Vue3/Vite版不会提示，目前只支持创建默认模板），初次体验建议选择 `hello uni-app` 项目模板，如下所示：
 
 <div>
 <img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/h5-cli-01.png" width="300">
 </div>
-
-
-* 使用正式版（对应HBuilderX最新正式版）创建 vue2 项目
-
-  ```shell
-  vue create -p dcloudio/uni-preset-vue my-project
-  ```
-
-* 使用alpha版（对应HBuilderX最新alpha版）创建 vue2 项目
-
-  ```shell
-  vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project
-  ```
 
 **注意**
 

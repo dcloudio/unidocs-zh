@@ -656,3 +656,12 @@ hdc 是安装 DevEco Studio 时自带的鸿蒙工具链中的一个重要工具�
 - Mac 环境下为 `<DevEco Studio安装目录>/Contents/sdk/default/openharmony/toolchains/hdc`
 
 在命令行中执行 `hdc kill -r` 命令以重启 hdc server，然后在 HBuilderX 里面重新运行到鸿蒙即可。
+
+如果上述命令仍未能解决问题，就需要自行查找 hdc server 进程并杀掉它。在 MacOS 系统下可以使用下面的命令：
+```sh
+# 先查找出 hdc server 的进程号
+ps -ef | grep hdc
+# 再杀掉指定的进程
+kill -9 进程号
+```
+在 Windows 系统下可以打开任务管理器找到 hdc 进程（一般显示名为 `POSIX WinThreads for Windows`）杀掉即可。

@@ -118,6 +118,7 @@ uni.requestPayment({
     - 配置密钥（获取公钥、私钥）
 
   具体可参考支付宝官方文档： [App支付快速接入](https://docs.open.alipay.com/204/105297/)
+  关于支付宝支付，当传入orderinfo参数后，app-android平台可以成功调用支付宝，但app-ios平台有时会出现奔溃&卡顿，这时候需要检测后端 ‘out_trade_no’ 参数是否设置为string类型，参考[支付宝文档：业务请求参数](https://opendocs.alipay.com/open/02e7gm)
 
 
 如果手机端未安装支付宝，调用时会启动支付宝的wap页面登录，如果已安装相应客户端，会启动其客户端登录。

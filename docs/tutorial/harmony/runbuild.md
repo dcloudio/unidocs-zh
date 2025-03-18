@@ -504,10 +504,12 @@ HBuilderX 4.31起支持uniPush推送，具体配置请参考[文档](https://uni
 
 ### harmony应用怎样调试？@q13
 
-目前 HBuilderX 尚不支持断点方式对运行于鸿蒙设备上的 uni-app 应用进行调试，必要时可借助 DevEco Studio 在鸿蒙工程层面进行调试。
+> HBuilderX 4.61+ 开始支持uts、uvue、ets的调试[文档地址](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-harmony.html)
 
-HBuilderX 4.27+ 开始不再自动调起 DevEco Studio，需要手动调起 DevEco Studio 打开由 HBuilderX 自动生成的鸿蒙工程目录，
-该目录可以在 `unpackage` 目录下找到，一般是在类似 `unpackage/debug/app-harmony-xxx` 的位置，如果是 cli 项目的话则是在 `dist` 目录下。
+~~目前 HBuilderX 尚不支持断点方式对运行于鸿蒙设备上的 uni-app 应用进行调试，必要时可借助 DevEco Studio 在鸿蒙工程层面进行调试。~~
+
+~~HBuilderX 4.27+ 开始不再自动调起 DevEco Studio，需要手动调起 DevEco Studio 打开由 HBuilderX 自动生成的鸿蒙工程目录，
+该目录可以在 `unpackage` 目录下找到，一般是在类似 `unpackage/debug/app-harmony-xxx` 的位置，如果是 cli 项目的话则是在 `dist` 目录下。~~
 
 可以参考鸿蒙的文档 [使用DevTools工具调试前端页面](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/web-debugging-with-devtools-V5) 进行处理。
 

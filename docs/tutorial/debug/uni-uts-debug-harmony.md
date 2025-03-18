@@ -1,19 +1,21 @@
-# uts Android调试
+# uni-app-x 鸿蒙调试
 
-HBuilderX 3.6.20+ uni-app uts插件、HBuilderX 4.0+ uni-app-x uts插件、HBuilderX 4.61+支持uni-app-x下调试uvue和kt文件，运行到Android，支持Debug调试
+HBuilderX 4.61+ 运行到鸿蒙，支持Debug调试
 
 ## 开启调试
 
-如下Gif动画所示，运行uni-app uts项目到Android，运行成功后，HBuilder控制台点击`红色虫子`图标，下拉菜单选择【uts调试】，即可开启uts调试功能。
+如下图所示，运行uni-app-x项目到鸿蒙，运行成功后，HBuilder控制台点击`红色虫子`图标，下拉菜单选择【开启调试】，即可开启鸿蒙调试功能。
 
-<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-android.gif" style="zoom: 72%;" />
+<img src="https://web-ext-storage.dcloud.net.cn/hx/harmony/harmony-debug.png" style="zoom: 72%;" />
 
-> 注意：uts调试，依赖uts调试插件，弹窗提示安装依赖插件，请务必点击安装，否则无法进行调试。
+> 注意：鸿蒙调试，依赖鸿蒙调试插件，弹窗提示安装依赖插件，请务必点击安装，否则无法进行调试。
+
 > 注意：如果需要触发应用初始化中的断点，比如App.uvue的onLaunch中，需要点击`红色虫子`图标右边的`重启应用`按钮，重启之后应用初始化中的断点才会生效
+
 
 ## 添加/删除断点@add-breakpoint
 
-打开要调试的uts文件，在代码行号上，鼠标右击或双击添加断点。
+打开要调试的uts、uvue、ets文件，在代码行号上，鼠标右击或双击添加断点。
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-add-breakpoint.png" style="zoom: 50%;" />
 

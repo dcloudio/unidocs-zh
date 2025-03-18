@@ -523,9 +523,14 @@ XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申�
 目前已支持通过 Vue3 CLI 开发元服务：
 
 - 全新项目可使用 `npx degit dcloudio/uni-preset-vue#vite-alpha my-vue3-project` 创建项目。
-- 在现有的 cli 项目中使用 `npx @dcloudio/uvm@latest alpha` 可以升级最新 alpha 依赖，并添加 `package.json` 的 `scripts`
-  - 添加 `"dev:mp-harmony": "uni -p mp-harmony"`
-  - 添加 `"build:mp-harmony": "uni build -p mp-harmony"`
+- 在现有的 cli 项目中使用 `npx @dcloudio/uvm@latest alpha` 可以升级最新 alpha 依赖，修改 package.json 的 scripts ，添加：
+
+```json
+{
+  "dev:mp-harmony": "uni -p mp-harmony",
+  "build:mp-harmony": "uni build -p mp-harmony"
+}
+```
 
 目前已支持通过 Vue2 CLI 开发元服务:
 

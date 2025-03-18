@@ -203,6 +203,7 @@ export const navbarLanguage = {
       text: 'English',
       link: 'javascript:;',
       click() {
+        localStorage.setItem('__UNIDOCS_LANGUAGE', 'en')
         location.href = 'https://en.uniapp.dcloud.io' + location.pathname + location.hash + location.search
       }
     }

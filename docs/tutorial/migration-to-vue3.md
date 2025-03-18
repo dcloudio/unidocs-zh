@@ -604,3 +604,31 @@ const messages = {
   {{$t('index', {num: 123})}}
 </template>
 ```
+
+## sass预处理器
+参考：[css预处理器支持](https://uniapp.dcloud.net.cn/tutorial/syntax-css.html#css-preprocessor)
+
+因为`node-sass`已经停止维护，所以`vue3`默认使用`dart-sass`。
+
+从 HBuilderX 4.56+ ，vue2 项目也将默认使用`dart-sass`预编译器。
+
+### 升级方式 
+
+``` base
+# 卸载已安装的 node-sass
+npm uninstall node-sass 
+# 安装 dart-sass
+npm install sass --save-dev 
+```
+
+### node-sass升级dart-sass常见问题及改进方法
+
+- SassError: expected selector. /deep/
+> 解决方案：/deep/ 替换成::v-deep
+
+- WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+> 解决方案：使用 math.div() 替换除法运算符 详情，如果遇到@use 'sass:math';编译报错，可以在uni.scss中定义，详情
+
+- SassError: xxx and xxx are incompatible.
+> 解决方案：calc 在特定情况需要带单位，比如：width: calc(100% - 215) 修改为：width: calc(100% - 215px)
+

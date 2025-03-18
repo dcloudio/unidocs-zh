@@ -8,7 +8,7 @@
 
 ::: warning 注意
 
-- 目前仅支持 Vue3 项目编译到鸿蒙元服务平台，Vue2 项目升级 Vue3 项目请参考：[Vue2 项目迁移到 Vue3](../migration-to-vue3.md)。
+- 目前已支持 Vue2/Vue3 使用 HBuilderX/CLI 方式运行到元服务。cli 参考 [如何使用 cli 创建元服务？](#using-by-cli)
 - 目前仅支持鸿蒙 Next 真机，鸿蒙 ARM 模拟器开始内测，[点击链接](#arm-emulator)了解如何申请。
 - 目前支持鸿蒙 5.0，鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/)。
   :::
@@ -517,3 +517,28 @@ XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申�
 - 您提交的元服务（名称/图标与最近任务列表的元服务名称/元服务图标不一致）处理方案：参考 [如何修改元服务默认标题、图标、启动图等信息？](#how-to-change-icon)
 - 您元服务内的隐私政策/在 AppGallery Connect 上提交的隐私政策网址内元服务名称与开发者提交的元服务名称信息不一致。处理方案：隐私协议是在华为后台自己填写表格构建的，观察表格里顶部的名称是否和 appid 对应的名称是否一致。
 - 您元服务内用户协议展示的元服务名称与在 AppGallery Connect 上提交的元服务名称不一致。处理方案：用户协议网址一般是在华为后台自己添加的，观察填写的 URL 内容和当前的元服务名称是否一样，元服务名称华为后台 appid 对应的名称一致。
+
+### 如何使用 cli 创建元服务？@using-by-cli
+
+目前已支持通过 Vue3 CLI 开发元服务：
+
+- 全新项目可使用 `npx degit dcloudio/uni-preset-vue#vite-alpha my-vue3-project` 创建项目。
+- 在现有的 cli 项目中使用 `npx @dcloudio/uvm@latest alpha` 可以升级最新 alpha 依赖，并添加 `package.json` 的 `scripts`
+  - 添加 `"dev:mp-harmony": "uni -p mp-harmony"`
+  - 添加 `"build:mp-harmony": "uni build -p mp-harmony"`
+
+目前已支持通过 Vue2 CLI 开发元服务:
+
+```shell
+yarn add @dcloudio/uni-mp-harmony@2.0.2-alpha-4050720250316001
+yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
+```
+
+修改 package.json 的 scripts ，添加
+
+```json
+{
+"dev:mp-harmony": "cross-env NODE_ENV=development UNI_PLATFORM=mp-harmony vue-cli-service uni-build --watch",
+"build:mp-harmony": "cross-env NODE_ENV=production UNI_PLATFORM=mp-harmony vue-cli-service uni-build"
+}
+```

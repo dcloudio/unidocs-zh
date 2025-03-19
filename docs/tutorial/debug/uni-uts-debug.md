@@ -10,6 +10,8 @@ HBuilderX 3.6.20+ uni-app uts插件、HBuilderX 4.0+ uni-app-x uts插件、HBuil
 
 > 注意：如果需要触发应用初始化中的断点，比如App.uvue的onLaunch中，需要点击`红色虫子`图标右边的`重启应用`按钮，重启之后应用初始化中的断点才会生效
 
+> 注意：目前部分变量的显示可能还是以kotlin的方式显示，因为uts编译结果是kotlin
+
 
 ## 添加/删除断点@add-breakpoint
 

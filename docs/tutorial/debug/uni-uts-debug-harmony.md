@@ -10,6 +10,7 @@ HBuilderX 4.61+ 运行到鸿蒙，支持Debug调试
 
 > 注意：如果需要触发应用初始化中的断点，比如App.uvue的onLaunch中，需要点击`红色虫子`图标右边的`重启应用`按钮，重启之后应用初始化中的断点才会生效
 
+> 注意：目前部分变量的显示可能还是以ets的方式显示，因为uts编译结果是ets
 
 ## 添加/删除断点@add-breakpoint
 
@@ -53,18 +54,3 @@ HBuilderX 4.61+ 运行到鸿蒙，支持Debug调试
 断点调试过程中，将鼠标悬停在要查看的变量上，即可打开悬停窗口。
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-hovering_window.jpg" style="zoom: 60%;" />
-# uts Android调试
-
-HBuilderX 3.6.20+ uni-app uts插件、HBuilderX 4.0+ uni-app-x uts插件，运行到Android，支持Debug调试
-HBuilderX 3.6.20+ uni-app uts插件、HBuilderX 4.0+ uni-app-x uts插件、HBuilderX 4.61+支持uni-app-x下调试uvue和kt文件，运行到Android，支持Debug调试
-
-## 开启调试
-
-<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-android.gif" style="zoom: 72%;" />
-
-> 注意：uts调试，依赖uts调试插件，弹窗提示安装依赖插件，请务必点击安装，否则无法进行调试。
-
-> 注意：如果需要触发应用初始化中的断点，比如App.uvue的onLaunch中，需要点击`红色虫子`图标右边的`重启应用`按钮，重启之后应用初始化中的断点才会生效
-
-## 添加/删除断点@add-breakpoint
-

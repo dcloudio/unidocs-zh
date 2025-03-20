@@ -223,7 +223,7 @@
       } else if (/toutiaomicroapp/i.test(userAgent)) {
         // 头条小程序 JS-SDK 如果不需要兼容头条小程序，则无需引用此 JS 文件。
         document.write(
-          '<script type="text/javascript" src="https://s3.pstatp.com/toutiao/tmajssdk/jssdk-1.0.1.js"><\/script>');
+          '<script type="text/javascript" src="https://lf1-cdn-tos.bytegoofy.com/goofy/developer/jssdk/jssdk-1.2.0.js"><\/script>');
       } else if (/swan/i.test(userAgent)) {
         // 百度小程序 JS-SDK 如果不需要兼容百度小程序，则无需引用此 JS 文件。
         document.write(

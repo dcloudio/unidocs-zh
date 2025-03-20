@@ -143,7 +143,23 @@ HBuilderX 4.61+ 开始支持针对 uni-app x 项目的调试功能，支持断�
 ![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/809e96c5-0a38-4453-bfd6-b2b13c8fb763.png)#{.zooming style="max-height:200px"}
 ![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/b57c4eca-9d1b-4c73-b33f-78516e9a7410.png)#{.zooming style="max-height:200px"}
 
+#### 证书资料文件@signing-configs-files
+
 如果已经在 AppGallery Connect 中手动申请过证书，则可以填写到对话框中使用。其中三个文件的位置如果填写的是相对路径，则按照相对于 `harmony-configs` 目录来计算。
+
+如果是通过 DevEco Studio 自动申请的调试证书，在 `build-profile.json5` 文件里能找到证书配置信息，那里面有三个文件的存储位置。
+需注意的是，在保存那三个文件的目录里还应该有一个 `material` 子目录，它跟私钥库文件（`.p12`）是配合使用的，如果想把私钥库文件移到别的地方去，这个 `material` 也要复制过去。
+
+#### 密码@signing-configs-password
+
+私钥库密码和私钥密码需符合一定的要求：须由 `6 ~ 64` 个字符组成，可包含大小写字母、数字以及如下特殊字符 `~!@#$%^&*()-_=+\|[{}];:\'",<.>/?`，首字符不能为连字符（`-`）。
+
+如果是在 AppGallery Connect 中手动申请的证书，开发者应该知道申请时所使用的密码，直接在这里填写就可以了。
+
+如果是通过 DevEco Studio 自动申请的调试证书，在 `build-profile.json5` 文件里能找到证书配置信息，但是那里面的密码是加密过的，一般是 76 个或更多的 HEX 字符。
+这种加密后的密码也可以直接填写到这里，但需要注意，这种密码需要跟前面提到的 `material` 目录配合使用，否则在签名时将会发生错误。
+
+#### 自动申请调试证书@signing-configs-auto
 
 对于调试证书，还可以选择自动申请，此时 HBuilderX 会使用开发者授权的账号身份调用 AppGallery Connect 的 API 来自动完成证书的申请和配置。
 

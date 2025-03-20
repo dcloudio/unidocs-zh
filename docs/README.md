@@ -19,7 +19,7 @@ pageClass: custom-page-class
         <div class="barcode-img-box">
           <img src="https://web-ext-storage.dcloud.net.cn/uni-app-x/hello-uniappx-qrcode.png" width="160" />
         </div>
-        <b style="width:160px;">Android、iOS(uni-app x)</b>
+        <b>Android、iOS(uni-app x)</b>
       </a>
       <a href="#" target="_blank" class="clear-style barcode-view" style="pointer-events: none;">
         <div class="barcode-img-box">

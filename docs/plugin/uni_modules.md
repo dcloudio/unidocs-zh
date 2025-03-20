@@ -8,7 +8,7 @@ uni-app是大一统开发，包括客户端和uniCloud服务器。在客户端�
 
 在uni-app中可以调用npm库，可以调用Android仓储里的aar，可以调用iOS的cocoapods里framework，以及鸿蒙的ohpm。
 
-甚至uts语言本身也可以编译为js、kotlin、swift。
+甚至uts语言本身也可以编译为js、kotlin、swift、arkTs。
 
 那么uni-app的开发者，需要一个大一统的包管理方案，那就是`uni_modules`。
 
@@ -96,15 +96,21 @@ HBuilderX 中打开配有引用图标指示的文件，会打开原始地址。
 #### uts插件
 在uni_modules的utssdk目录，可以放置uts插件。
 
-uts插件是非常重要的一种跨端插件。它支持API插件和组件插件。
+**uts插件是非常重要的一种跨端插件**。它支持API插件和组件插件，可通过原生能力，封装后给uni-app(x)扩展API和组件。
 
-在utssdk目录下，可以放置一个interface.uts的声明，然后可以新建app-android、app-ios、web、mp-weixin、app-harmony等目录，每个目录下可以存放不同客户端平台的代码。
+在utssdk目录下，然后可以新建app-android、app-ios、app-harmony、web、mp-weixin等目录，每个目录下可以存放不同客户端平台的专用代码。
+
+在app-android、app-ios、app-harmony目录，可以放置Android原生的aar、so库，iOS原生的framework，鸿蒙的har，也支持配置Android仓储、iOS的cocoapods、鸿蒙的ohpm。
+
+在web和mp目录下，也支持放置npm库。
+
+虽然utssdk目录下有这么多平台专用目录，但utssdk的根目录下可以放置一个`interface.uts`的声明。这个文件统一了不同平台的接口，把不同平台的原生能力，转换为统一的API或组件，给前端开发者使用。
+
+这是非常重要的设计，这也是uni-app区别于其他跨平台工具的重要特色。
 
 以获取电量的API为例，uni.getBatteryInfo()，在根目录的interface.uts中定义了api的对外暴露接口、定义统一的错误码，然后在各个客户端平台的目录中，实现电量获取这个API。
 
 uni.getBatteryInfo的插件和源码详见：[https://ext.dcloud.net.cn/plugin?id=9295](https://ext.dcloud.net.cn/plugin?id=9295)
-
-在app-android、app-ios目录，可以放置Android原生的aar、iOS原生的framework，也支持配置Android仓储和iOS的cocoapods。
 
 uts插件开发的详细指南见：[https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)
 
@@ -118,7 +124,7 @@ import { test } from "@/uni_modules/uts-osapi";
 import { test } from "@/uni_modules/uts-osapi/index.uts";
 ```
 
-## 使用 uni_modules 插件
+## HBuilderX中使用 uni_modules 插件
 ### 下载uni_modules插件
 1. 在[插件市场](https://ext.dcloud.net.cn/)查找uni_modules插件
 2. 在插件详情页,右侧会标明该插件是否支持uni_modules，点击`使用 HBuilderX 导入插件`
@@ -154,10 +160,12 @@ uni_modules插件目录是独立存在的，如果您不再需要该插件，可
 - 导入uni_modules规范插件需要使用 3.1.0 以上版本的 HBuilderX
 
 
-## 配置
-### package.json@package-json
+## uni_modules的插件配置
+如果你是插件作者，需要了解uni_modules的配置。如果是使用者，可无需关心本章节。
 
-package.json在每个`uni_modules`插件中都必须存在，包含了插件的基本信息。以下是package.json的详细配置说明
+### package.json@package-json
+package.json在每个`uni_modules`插件中都必须存在，包含了插件的基本信息。以下是package.json的详细配置说明。
+其中有些配置仅发布到插件市场时需要，如果你做的uni_modules并不对外发布到插件市场，相关字段可忽略。
 ```json
 {
     // 注意，不能直接拷贝本段代码到编辑器中，package.json 目前不支持注释。本段代码加的注释只是用于解释代码。

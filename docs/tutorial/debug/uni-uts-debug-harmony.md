@@ -1,8 +1,8 @@
-HBuilderX 4.61+ 运行到鸿蒙，支持Debug调试
+HBuilderX 4.61+ 运行到鸿蒙，支持Debug调试。包括uvue、uts、混编的ets都支持。
 
 ## 开启调试
 
-如下图所示，运行uni-app-x项目到鸿蒙，运行成功后，HBuilder控制台点击`红色虫子`图标，下拉菜单选择【开启调试】，即可开启鸿蒙调试功能。
+如下图所示，运行uni-app x项目到鸿蒙，运行成功后，HBuilderX控制台点击`红色虫子`图标，下拉菜单选择【开启调试】，即可开启鸿蒙调试功能。
 
 <img src="https://web-ext-storage.dcloud.net.cn/hx/harmony/harmony-debug.png" style="zoom: 72%;" />
 
@@ -12,7 +12,7 @@ HBuilderX 4.61+ 运行到鸿蒙，支持Debug调试
 
 > 注意：目前部分变量的显示可能还是以ets的方式显示，因为uts编译结果是ets
 
-## 添加/删除断点@add-breakpoint
+## 打断点@add-breakpoint
 
 打开要调试的uts、uvue、ets文件，在代码行号上，鼠标右击或双击添加断点。
 

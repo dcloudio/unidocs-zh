@@ -1,3 +1,15 @@
+#### 4.57.2025032014-alpha
+* 【uni-app】
+  + 【重要】Vue2 项目scss预编译器默认改用dart-sass，HBuilderX 非 Mac Arm 版可以在manifest.json中根节点配置"sassImplementationName": "node-sass"手动指定，继续使用node-sass。这2种sass编译器有语法差异 [文档](https://uniapp.dcloud.net.cn/tutorial/syntax-css.html#css-preprocessor) [详情](https://ask.dcloud.net.cn/question/206506)
+  + App-Android平台 修复 4.55版本引发的 组件 Button 在 nvue 页面设置 border-radius、border 和 iOS 表现不一致的Bug [详情](https://ask.dcloud.net.cn/question/206548)
+  + MP-Harmony平台 新增 鸿蒙元服务支持 vue2 项目类型
+* 【uni-app-x】
+  + Web平台、微信小程序平台 修复 4.55版本引发的 编译器 运行时会提交云端编译仅App端支持的uts加密插件的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16242)
+  + App-Android平台 修复 4.41版本引发的 组件 waterflow 触发下拉刷新可能出现app卡死 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16133)
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 修复 4.41版本引发的 uni-AD 快捷开屏广告可能会不展示的Bug
+  + Android平台 修复 4.51版本引发的 部分设备启动白屏或停留在启动界面无法启动的Bug [详情](https://ask.dcloud.net.cn/question/206890)
+
 #### 4.54.2025030608-alpha
 * 【uni-app】
   + App-iOS 修复 uni.requestPayment 使用苹果应用内购 IAP 在 iOS18 系统 username 参数类型不为字符串时会引起应用闪退的Bug [详情](https://ask.dcloud.net.cn/question/206161)

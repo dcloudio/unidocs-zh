@@ -1,3 +1,9 @@
+#### 4.57.2025032507
+* 【uni-app】
+  + MP-Harmony平台 新增 鸿蒙元服务支持 vue2 项目类型
+* 【App插件(含5+App和uni-app的App端)】
+  + 【重要】Android平台 修复 4.51版本引发的 部分设备启动白屏或停留在启动界面无法启动的Bug。请使用该版本打包过的开发者尽快升级重新打包 [详情](https://ask.dcloud.net.cn/question/206890)
+
 #### 4.56.2025031210
 * 【uni-app】
   + 【重要】Vue2 项目scss预编译器默认改用dart-sass，HBuilderX 非 Mac Arm 版可以在manifest.json中根节点配置"sassImplementationName": "node-sass"手动指定，继续使用node-sass。这2种sass编译器有语法差异 [文档](https://uniapp.dcloud.net.cn/tutorial/syntax-css.html#css-preprocessor) [详情](https://ask.dcloud.net.cn/question/206506)

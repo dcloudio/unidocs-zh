@@ -114,11 +114,11 @@ uni-app x项目manifest.json中没有提供Android权限的配置，需在此And
 
 ### Android url scheme配置@urlScheme  
 
-#### uni-app
+#### 5+ App/uni-app 项目
 
 uni-app 项目请在 `manifest.json` 可视化界面的 `App常用其它设置` 中配置，详情参考[Android设置url scheme](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#urlscheme)
 
-#### uni-app x
+#### uni-app x 项目
 
 应用需要向系统注册url scheme，以便在浏览器中通过scheme打开App，可根据需求在`AndroidManifest.xml`文件中添加`android:scheme`数据，如下示例：
 ```xml

@@ -160,7 +160,7 @@ DCloud官方基于uni-app的pc版，推出了unicloud Admin：[https://doc.dclou
 
 leftWindow、rightWindow、topWindow 只支持web端。
 
-#### 2. App分栏@split
+#### 2. 分栏@split
 一些pad应用，或折叠屏应用，有左右分栏。
 
 虽然leftWindow、rightWindow也可以实现类似效果，但仅web支持。
@@ -171,9 +171,9 @@ leftWindow、rightWindow、topWindow 只支持web端。
 
 还是以列表(list.vue)和详情(detail.vue)为例，如果是竖屏手机，list页面全屏，点击item后通过navigateTo调整到detail页面；
 
-如果是pad分栏，则在一个页面中并排放置list组件和detail组件，还是那2个vue文件。点击list的item，通过eventbus让detail加载新的响应式数据。
+如果是pad分栏，则在list页面中并排放置list组件和detail组件，把detail.vue文件从页面变成组件。点击list的item，通过eventbus让detail加载新的响应式数据。
 
-示例代码如下
+示例代码如下：
 
 - list页面：
 ```vue

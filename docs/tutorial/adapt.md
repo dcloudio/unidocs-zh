@@ -158,10 +158,128 @@ leftWindow除了适用于手机应用适配大屏，也适用于重新开发的P
 
 DCloud官方基于uni-app的pc版，推出了unicloud Admin：[https://doc.dcloud.net.cn/uniCloud/admin](https://doc.dcloud.net.cn/uniCloud/admin)
 
-目前的leftWindow、rightWindow、topWindow 只支持web端。计划后续在Pad App上实现该配置。小程序无法支持该配置。
+leftWindow、rightWindow、topWindow 只支持web端。
 
+#### 2. App分栏@split
+一些pad应用，或折叠屏应用，有左右分栏。
 
-#### 2. 组件级适配方案：match-media组件
+虽然leftWindow、rightWindow也可以实现类似效果，但仅web支持。
+
+如果有跨端的分栏需求，不推荐使用rightWindow等方案。
+
+利用vue文件可以做页面，也可以做组件的特性，uni-app封装了rightWindow等方案，但其实uni-app不封装，开发者也可以自己做，灵活度会更高。
+
+还是以列表(list.vue)和详情(detail.vue)为例，如果是竖屏手机，list页面全屏，点击item后通过navigateTo调整到detail页面；
+
+如果是pad分栏，则在一个页面中并排放置list组件和detail组件，还是那2个vue文件。点击list的item，通过eventbus让detail加载新的响应式数据。
+
+示例代码如下
+
+- list页面：
+```vue
+<template>
+	<view style="display: flex;flex-direction: row;">
+		<view :class="isWide?'list-narrow':'list-wide'">
+			<view v-for="(item,index) in listData">
+				<text @click="showDetail(item.id)">{{item.title}}</text>
+			</view>
+		</view>
+		<detail v-if="isWide" style="width: 50%;"></detail>
+	</view>
+</template>
+
+<script>
+	import detail from './detail'
+	export default {
+		components: {
+			detail
+		},
+		data() {
+			return {
+				listData: [
+					{
+						"id":"1",
+						"title":"title1"
+					},
+					{
+						"id":"2",
+						"title":"title2"
+					},
+					{
+						"id":"3",
+						"title":"title3"
+					}
+				],
+				isWide: false
+			}
+		},
+		onLoad() {
+			this.isWide = (uni.getDeviceInfo().deviceType=="pad" || uni.getDeviceInfo().deviceType=="pc")?true:false
+		},
+		methods: {
+			showDetail(e) {
+				console.log(e);
+				if(this.isWide) {
+					uni.$emit('detailId', e)
+				} else {
+					uni.navigateTo({
+						url: '/pages/detail?id=' + e
+					})
+				}
+			}
+		}
+		
+	}
+</script>
+
+<style>
+	.list-wide {
+		width: 100%;
+	}
+	.list-narrow {
+		width: 50%;
+		border-right: 1px solid #000;
+	}
+</style>
+
+```
+
+- detail页面
+```vue
+<template>
+	<view style="width: 100%;align-items: center;">
+		<text>第{{detailId}}个</text>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				detailId:""
+			}
+		},
+		created() {
+			uni.$on('detailId', (id) => {
+				this.detailId = id
+			})
+		},
+		onLoad(e) {
+			console.log(e);
+			if(e.id != null) {
+				this.detailId = e.id
+			}
+		},
+		beforeDestroy() {
+			uni.$off('detailId')
+		}
+	}
+</script>
+```
+
+上述思路也适用于uni-app x，但uni-app x的Android端，暂不支持页面和组件同时使用，后续会修复此问题。
+
+#### 3. 组件级适配方案：match-media组件
 
 leftWindow等方案是页面窗体级适配方案。适于独立的页面。那么在同一个页面中，是否可以适配不同屏宽？当然可以，此时可以使用组件级适配方案。
 
@@ -183,7 +301,7 @@ uni-app提供了 [match-media组件](https://uniapp.dcloud.net.cn/component/matc
 
 uni-app的屏幕适配推荐方案是运行时动态适配，而不是为PC版单独条件编译（虽然您也可以通过自定义条件编译来实现单独的PC版）。这样设计的好处是在ipad等设备的浏览器上可以方便的横竖屏切换。
 
-#### 3. 内容缩放拉伸的处理
+#### 4. 内容缩放拉伸的处理
 
 除了根据屏宽动态显示和隐藏内容，其实还有一大类屏幕适配需求，即：内容不会根据屏宽动态显示隐藏，而是缩放或拉伸。
 
@@ -281,6 +399,7 @@ module.exports = {
   }
 }
 ```
+
 
 #### 非webkit浏览器适配
 

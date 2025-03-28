@@ -580,7 +580,7 @@ export default {
 |:-:			|:-:		|:-:						|:-:															|
 |adpid		|String	|DCloud广告位id	|																	|
 |provider	|String	|广告服务商			|china、global					|
-|platform	|String	|平台						|iOS、Android											|
+|platform	|String	|平台						|iOS、Android、weixin-mp										|
 |sign			|String	|签名						|																	|
 |trans_id	|String	|交易id					|完成观看的唯一交易ID							|
 |user_id	|String	|用户id					|调用SDK透传，应用对用户的唯一标识|

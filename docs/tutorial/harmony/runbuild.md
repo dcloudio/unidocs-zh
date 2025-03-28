@@ -99,8 +99,9 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 在编译代码构建运行包的时候，有三个缓存使用策略可供选择：
 - **根据变化差量更新缓存**：正常使用缓存来避免重复操作，提高构建效率。
-- **强制使用缓存，跳过编译**：如果没有修改代码，只想重新运行起来，则可以使用这种方式，如果检查到已经有构建好的运行包存在，则直接安装运行，否则按正常方式构建再运行。
-- **清空缓存**：如果运行时出现结果不符合预期的奇怪情况，可以尝试使用这种方式重新构建运行，以消除缓存错乱带来的干扰。
+- **强制使用缓存，跳过编译**：如果没有修改代码，只想重新运行起来，则可以使用这种方式，此时若 HBuilderX 检查到已经有构建好的运行包存在，则直接安装运行，否则按正常方式构建再运行。
+- **清空缓存**：每次升级 HBuilderX 之后，新旧版本的鸿蒙工程目录可能不完全兼容，为避免旧版本的干扰，首次运行的时候可以选择这个选项。
+    另外，如果运行时出现结果不符合预期的奇怪情况，可以尝试使用这种方式重新构建运行，以消除缓存错乱带来的干扰。
 
 如果是运行到真机设备上，需要配置签名证书资料。
 HBuilderX 4.61+ 开始支持直接配置证书资料，点击对话框中的【配置调试证书】按钮打开配置对话框，支持自动申请调试证书。
@@ -141,7 +142,15 @@ HBuilderX 4.61+ 开始支持针对 uni-app x 项目的调试功能，支持断�
 从 HBuilderX 4.61+ 开始支持这种配置方式。在【运行到鸿蒙】操作的【选择运行设备】对话框中，点击【配置调试证书】按钮，打开配置对话框：
 
 ![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/809e96c5-0a38-4453-bfd6-b2b13c8fb763.png)#{.zooming style="max-height:200px"}
-![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/b57c4eca-9d1b-4c73-b33f-78516e9a7410.png)#{.zooming style="max-height:200px"}
+
+在 `manifest.json` 的编辑页面中，【鸿蒙App配置】里面也有打开配置对话框的按钮，分别用于配置调试证书和发布证书：
+
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/e86e28dc-637d-4f76-ba28-7fbef140d5d3.png)#{.zooming style="max-height:200px"}
+
+配置证书的对话框：
+
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/24685aaa-9362-468b-9437-0f4ccbb1a762.png)#{.zooming style="max-height:200px"}
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/1edad4f0-5fe3-40eb-9a77-130b950d2d02.png)#{.zooming style="max-height:200px"}
 
 #### 证书资料文件@signing-configs-files
 
@@ -151,10 +160,28 @@ HBuilderX 4.61+ 开始支持针对 uni-app x 项目的调试功能，支持断�
 - 签名描述文件（`.p7b`）：由华为颁发，里面包含了跟应用相关的签名信息，如包名、ACL 权限等，调试证书还包括可用于调试运行的设备列表。在 AppGallery Connect 手动添加并下载获得，或者在自动生成调试证书时自动下载。
 
 如果已经在 AppGallery Connect 中手动申请过证书，则开发者手中应该已经掌握了所有的必备信息（三个文件，两个密码和一个私钥别名），填写到对话框中即完成配置。
-其中三个文件的位置如果填写的是相对路径，则按照相对于 `harmony-configs` 目录来计算。
+其中三个文件的位置如果位于 `harmony-configs` 目录里面，则会被处理为相对路径。
 
 如果是通过 DevEco Studio 自动申请的调试证书，在 `build-profile.json5` 文件里能找到完整的证书配置信息。
 需注意的是，在保存那三个文件的目录里还应该有一个 `material` 子目录，它跟私钥库文件（`.p12`）和两个密码是配合使用的，如果想把私钥库文件移到别的地方去，这个 `material` 目录也要复制过去（否则密码将失效）。
+
+#### 应用包名@signing-configs-bundle-name
+
+自动申请得到的签名描述文件是跟给定的包名绑定的，只能用于对设置了相同包名的项目进行签名。
+
+如果是自己手动申请的签名证书，请注意与这里的包名保持一致，否则在填写了签名描述文件之后会出现提示警告。
+
+#### 运行设备@signing-configs-devices
+
+只有在配置调试证书的对话框里有这项内容。当自动申请调试证书的时候，得到的签名描述文件与给定的设备是绑定的，签名后的应用只能运行于这里列出的设备。
+
+如果是自己手动申请的签名证书，请注意签名描述文件里面包含了这里列出的所有设备，否则在填写了签名描述文件之后会出现提示警告。
+
+点击左侧的【检测】按钮会自动检测出当前已经连接的运行设备（真机或者模拟器），并自动填写到文本框里。
+
+填写的内容是设备的唯一标识，可以填写多个，用半角逗号或者换行符分隔。
+
+如果没有填写有效的设备唯一标识，则无法进行自动申请调试证书的操作。
 
 #### 密码@signing-configs-password
 
@@ -183,7 +210,7 @@ HBuilderX 4.61+ 开始支持针对 uni-app x 项目的调试功能，支持断�
 
 回到 HBuilderX 的对话框中，正常情况下完成自动申请之后，点击【保存】按钮保存即可。
 
-![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/aa49375d-0314-4130-bfbe-c675d3abe5be.png)#{.zooming style="max-height:200px"}
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/a796976c-9a8a-4623-8212-8fd8bab94b37.png)#{.zooming style="max-height:200px"}
 
 如果自动申请过程中出现错误，可根据错误提示信息进行处理：
 
@@ -196,12 +223,13 @@ HBuilderX 4.61+ 开始支持针对 uni-app x 项目的调试功能，支持断�
 :::
 
 ::: danger 没查到运行设备的注册信息
-申请的调试证书中需要包含当前正在使用的鸿蒙设备（手机或者模拟器）的标识，该设备标识首先需要在 AGC 中注册。
+申请的调试证书中需要包含当前正在使用的鸿蒙设备（真机或者模拟器）的标识，该设备标识首先需要在 AGC 中注册。
 
 HBuilderX 会尝试自动把当前运行设备的标识注册到 AGC 中，如果失败，请手动在 AGC 中注册：
 登录 AGC 之后，进入【证书、APP ID和Profile】中的【设备】页面，把当前设备的 UDID 添加到设备列表中。
 
-可以通过如下的命令行来获取当前连接的鸿蒙设备的 UDID 标识，具体请参考 [华为的官方文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/bm-tool-V5#%E8%8E%B7%E5%8F%96udid%E5%91%BD%E4%BB%A4get)：
+可以在前面提到的 [运行设备](#signing-configs-devices) 得到鸿蒙设备的 UDID 标识，
+也可以通过如下的命令行来获取，具体请参考 [华为的官方文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/bm-tool-V5#%E8%8E%B7%E5%8F%96udid%E5%91%BD%E4%BB%A4get)：
 ```
 hdc shell bm get -u
 ```
@@ -658,6 +686,11 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 由于未知原因导致【App真机运行】插件出现破损，需要重新安装。
 请在 HX 主菜单中选择【工具>插件安装】，找到【App真机运行】插件并点击卸载，然后在主菜单中选择【运行>运行到手机或模拟器>下载真机运行插件】重新安装。
 如果安装过【App真机运行(uni-app x)】插件，需要先卸载掉，否则无法卸载【App真机运行】插件。
+
+### 报错 `无法删除旧的鸿蒙工程目录`@remove-harmony-project-failed
+
+为了能够重建完整的鸿蒙工程目录，HBuilderX 需要先删除旧的鸿蒙工程目录，但是由于某些原因（比如其中有文件被其它程序占用）导致删除失败。
+为确保正确执行后续的操作，请先设法手工删除该目录，然后再重新开始操作。
 
 ### 报错 `未正确配置鸿蒙应用的包名`@bundlename-incorrect
 

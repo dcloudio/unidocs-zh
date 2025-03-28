@@ -134,8 +134,8 @@ HBuilderX 4.61+ 开始支持针对 uni-app x 项目的调试功能，支持断�
 
 对于 HBuilderX 4.61 以前的版本，需要手动配置 `harmony-configs/build-profile.json5` 文件，该文件在构建阶段会覆盖到自动生成的鸿蒙工程的 `build-profile.json5` 文件中。
 
-从 HBuilderX 4.61+ 开始支持以交互方式配置相关信息（且支持自动申请调试证书），这些信息在构建阶段会被填写到鸿蒙工程的 `build-profile.json5` 文件中。
-不过，为了兼容以前的版本，如果已经在 `harmony-configs/build-profile.json5` 中配置过相关信息，则仍会优先被使用。
+从 HBuilderX 4.61+ 开始支持以交互方式配置相关信息（且支持自动申请调试证书），这些信息在构建阶段会被覆盖填写到鸿蒙工程的 `build-profile.json5` 文件中。
+为了兼容以前的版本，如果没有以交互方式配置签名证书，则在 `harmony-configs/build-profile.json5` 中配置的相关信息仍会有效。
 
 ### 在 HBuilderX 里面直接配置证书签名@signing-configs
 

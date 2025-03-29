@@ -218,8 +218,17 @@ uni.getSavedFileList({
 
 |参数名|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
-|filePath|String|是|文件路径，可通过 downFile 获得||
-|fileType|String|支付宝小程序必填，其他平台非必填|文件类型，指定文件类型打开文件，有效值 doc, xls, ppt, pdf, docx, xlsx, pptx，支付宝小程序仅支持pdf|微信小程序、支付宝小程序、京东小程序|
+|filePath|String|是|文件路径（本地路径），可通过 downloadFile 获得||
+|fileType|String|支付宝小程序必填，其他平台非必填|文件类型，指定文件类型打开文件，支付宝小程序仅支持pdf|微信小程序、支付宝小程序、京东小程序、HarmonyOS|
+@|合法值|说明|
+@|:-|:-|
+@|doc|doc 格式|
+@|docx|docx 格式|
+@|xls|xls 格式|
+@|xlsx|xlsx 格式|
+@|ppt|ppt 格式|
+@|pptx|pptx 格式|
+@|pdf|pdf 格式|
 |showMenu|Boolean|否|右上角是否有可以转发分享的功能|微信小程序|
 |success|String|否|接口调用成功的回调函数||
 |fail|String|否|接口调用失败的回调函数|微信小程序、京东小程序|

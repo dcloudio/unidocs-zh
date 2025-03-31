@@ -24,7 +24,21 @@
   - HBuilderX 4.61+ 针对 uni-app x 项目要求 DevEco Studio 5.0.7.100+。
   - uni-app 项目要求鸿蒙系统版本 API 12 以上，uni-app x 项目要求鸿蒙系统版本 API 14 以上（DevEco Studio有内置鸿蒙模拟器）
 - 如果没有符合兼容性要求的模拟器，就需要有真机作为运行设备
-- **项目的路径不要太深，如果项目路径过长会导致编译失败，建议将项目放在盘符根目录下。也不要包含中文、空格和其它特殊字符。**
+- 默认的鸿蒙工程目录在项目的 `unpackage` 目录下游，鸿蒙工具链对工程所在的路径有一定要求，为避免鸿蒙工具链执行异常，
+  **项目的路径不要太深，如果项目路径过长会导致编译失败，建议将项目放在盘符根目录下。也不要包含中文、空格和其它特殊字符。**
+  从 HBuilderX 4.61+ 开始支持通过配置指定使用特定的目录作为鸿蒙工程目录，方法是在项目目录中的 `.hbuilderx/launch.json` 中添加如下内容
+  （如果该文件不存在则手动创建）：
+    ```json
+    {
+        "version" : "1.0",
+        "configurations" : [
+            {
+                "type" : "uni-app:app-harmony",
+                "distPath" : "D:/harmony-project"
+            }
+        ]
+    }
+    ```
 
 ### 配置 HBuilderX 的 Settings.json@hbxsettings
 

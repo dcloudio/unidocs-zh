@@ -43,9 +43,11 @@
     ```
     其中 `distPathDev` 用于指定调试运行的时候使用的鸿蒙工程目录，`distPathBuild` 用于指定发行打包的时候使用的鸿蒙工程目录。
 
-    如果没有指定则仍会使用默认的目录：
-    - 调试运行的时候使用的鸿蒙工程目录位于 `unpackage/dist/dev/app-harmony`
-    - 发行打包的时候使用的鸿蒙工程目录位于 `unpackage/dist/build/app-harmony`
+    指定的目录不必已经存在，HBuilderX 会创建所需的目录，如果目录已经存在但内容不符合要求，HBuilderX 会尝试删除然后重建。
+
+    如果没有指定则 HBuilderX 仍会使用默认的目录：
+    - 调试运行的时候默认使用的鸿蒙工程目录位于 `unpackage/dist/dev/app-harmony`
+    - 发行打包的时候默认使用的鸿蒙工程目录位于 `unpackage/dist/build/app-harmony`
 
 ### 配置 HBuilderX 的 Settings.json@hbxsettings
 

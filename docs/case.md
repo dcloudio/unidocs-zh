@@ -210,6 +210,30 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **维汉翻译通：** 免费翻译维吾尔语国语，鸿蒙应用市场搜索“维汉翻译通”，[详情](https://appgallery.huawei.com/app/detail?id=com.sjfc.whfyt.harm)
 
+**土星计划：** 一款集合个人日程计划、笔记、记账、便签、代办等多种日程功能的App，鸿蒙应用市场搜索“土星计划”，[详情](https://appgallery.huawei.com/app/detail?id=net.gibbous.honmeng)
+
+**施工眼：** 暖通行业移动关联专家，鸿蒙应用市场搜索“施工眼”，[详情](https://appgallery.huawei.com/app/detail?id=com.sungu.mybts)
+
+**飞蚂蚁旧衣服回收：** 一个旧衣、家电、旧书等综合环保回收、闲置物品处理的平台，鸿蒙应用市场搜索“飞蚂蚁旧衣服回收”，[详情](https://appgallery.huawei.com/app/detail?id=com.app.feimayi.cn)
+
+**指北者动态谱：** 为你提供优质的乐谱资源、在线教学、谱友交流的音乐平台，鸿蒙应用市场搜索“指北者动态谱”，[详情](https://appgallery.huawei.com/app/detail?id=com.xp.xpdynamic)
+
+**企学星：** 提供一站式企业培训解决方案，鸿蒙应用市场搜索“企学星”，[详情](https://appgallery.huawei.com/app/detail?id=qixuexing.learn.huawei)
+
+**车百路：** 随时随地查询车辆位置信息轨迹回放，鸿蒙应用市场搜索“车百路”，[详情](https://appgallery.huawei.com/app/detail?id=chebailu.example.myapplication)
+
+**ai换脸软件神器：** 一键AI换脸，轻松拍出大片既视感，鸿蒙应用市场搜索“ai换脸软件神器”，[详情](https://appgallery.huawei.com/app/detail?id=com.aiface.kongdi)
+
+**有爱清单：** 发现目标、愿望和梦想记录相关动态，鸿蒙应用市场搜索“有爱清单”，[详情](https://appgallery.huawei.com/app/detail?id=com.moyun.yourlist_hm)
+
+**远火：** 一款能在发布供需信息时对供需双方信息进行对称化关联匹配平台，鸿蒙应用市场搜索“远火”，[详情](https://appgallery.huawei.com/app/detail?id=hm.yuanhuo.cn)
+
+**易智教：** 一款在线学习的App，鸿蒙应用市场搜索“易智教”，[详情](https://appgallery.huawei.com/app/detail?id=cn.campsg.obe)
+
+**亲兄弟：** 用于企业记账、门店进销存客户管理，鸿蒙应用市场搜索“亲兄弟”，[详情](https://appgallery.huawei.com/app/detail?id=com.ensoft.finance_huawei)
+
+**地震预警：** 一款支持地震预警服务、预警设置、灾情上传、预警科普的App，鸿蒙应用市场搜索“地震预警”，[详情](https://appgallery.huawei.com/app/detail?id=com.huania.harmonyearthquake)
+
 **塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
 
 **多点计算器：** 一款功能强大的计算器，支持科学计算、BMI指数计算、体脂率计算等，鸿蒙元服务，鸿蒙应用市场搜索“多点计算器”

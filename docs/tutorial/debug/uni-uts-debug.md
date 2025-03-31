@@ -1,6 +1,6 @@
 # uts Android调试
 
-HBuilderX 3.6.20+ uni-app uts插件、HBuilderX 4.0+ uni-app-x uts插件、HBuilderX 4.61+支持uni-app-x下调试uvue和kt文件，运行到Android，支持Debug调试
+HBuilderX 3.6.20+ uni-app uts插件、HBuilderX 4.0+ uni-app-x uts插件、HBuilderX 4.61+支持uni-app-x下调试uvue和混编的kt文件
 
 ## 开启调试
 
@@ -12,6 +12,7 @@ HBuilderX 3.6.20+ uni-app uts插件、HBuilderX 4.0+ uni-app-x uts插件、HBuil
 
 > 注意：目前部分变量的显示可能还是以kotlin的方式显示，因为uts编译结果是kotlin
 
+> 注意：断点时App可能会出现Application Not Responding(应用无响应)的弹框，这是因为调试默认是以Attach的方式连接，Android系统不允许UI线程被阻塞太长时间，点击下一步或者断点结束时该弹框会自动消失。(开启断点之后点击点击`红色虫子`图标右边的`重启应用`按钮会以调试模式启动, 此时断点时不会出现`应用无响应`的弹框)
 
 ## 添加/删除断点@add-breakpoint
 

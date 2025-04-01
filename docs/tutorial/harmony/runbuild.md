@@ -24,32 +24,41 @@
   - HBuilderX 4.61+ 针对 uni-app x 项目要求 DevEco Studio 5.0.7.100+。
   - uni-app 项目要求鸿蒙系统版本 API 12 以上，uni-app x 项目要求鸿蒙系统版本 API 14 以上（DevEco Studio有内置鸿蒙模拟器）
 - 如果没有符合兼容性要求的模拟器，就需要有真机作为运行设备
-- 默认自动生成的鸿蒙工程目录在项目的 `unpackage` 目录下游，鸿蒙工具链对工程所在的路径有一定要求，为避免鸿蒙工具链执行异常，
-    **项目的路径不要太深，如果项目路径过长会导致编译失败，建议将项目放在盘符根目录下。也不要包含中文、空格和其它特殊字符。**
 
-    从 HBuilderX 4.61+ 开始支持通过配置指定使用特定的目录作为鸿蒙工程目录，方法是在项目根目录下的 `.hbuilderx/launch.json` 中添加如下内容
-    （如果该文件不存在则手动创建）：
-    ```json
-    {
-        "version" : "1.0",
-        "configurations" : [
-            {
-                "type" : "uni-app:app-harmony",
-                "distPathDev" : "D:/harmony-project-dev",
-                "distPathBuild" : "D:/harmony-project-build"
-            }
-        ]
-    }
-    ```
-    其中 `distPathDev` 用于指定调试运行的时候使用的鸿蒙工程目录，`distPathBuild` 用于指定发行打包的时候使用的鸿蒙工程目录。
+### 项目根目录与鸿蒙工程目录@project-path
 
-    指定的目录不必已经存在，HBuilderX 会创建所需的目录，如果目录已经存在但内容不符合要求，HBuilderX 会尝试删除然后重建。
+默认情况下，HBuilderX 会在项目内的 `unpackage` 目录下游创建鸿蒙工程目录，用于构建鸿蒙的运行包和发行包：
 
-    如果没有指定则 HBuilderX 仍会使用默认的目录：
-    - 调试运行的时候默认使用的鸿蒙工程目录位于 `unpackage/dist/dev/app-harmony`
-    - 发行打包的时候默认使用的鸿蒙工程目录位于 `unpackage/dist/build/app-harmony`
+- 调试运行的时候默认使用的鸿蒙工程目录位于 `unpackage/dist/dev/app-harmony`
+- 发行打包的时候默认使用的鸿蒙工程目录位于 `unpackage/dist/build/app-harmony`
 
-### 配置 HBuilderX 的 Settings.json@hbxsettings
+鸿蒙工具链对于鸿蒙工程目录的路径有一定的限制条件：不能包含中文字符和某些特殊字符，准确地说，允许在路径中使用的字符仅限于大小写英文字母、数字、正斜杠、反斜杠、下划线、连字符、冒号、句点，
+如果安装了较新版本的 DevEco Studio 则还允许包含空格。
+
+鸿蒙工具链在对鸿蒙工程目录进行构建的过程中，会在内部产生一些路径比较长的文件，在 Windows 系统中很容易超过系统对于文件路径长度的限制，从而导致构建失败。
+从实测来看，留给鸿蒙工程目录本身的路径长度大约 110 个字符。如果 HBuilderX 使用了默认的鸿蒙工程目录位置，那么 uni-app 项目根目录的路径长度大约最多可以用到 77 个字符。
+
+所以，一般而言，为了避免鸿蒙工程构建过程中出现异常情况，uni-app 项目所在的根目录应该**路径不要太长，也不要包含中文或者其它特殊字符**。
+
+从 HBuilderX 4.61+ 开始支持通过配置指定使用特定的目录作为鸿蒙工程目录，这样就可以避免上述对于 uni-app 项目路径的额外限制了。
+方法是在项目根目录下的 `.hbuilderx/launch.json` 中添加如下内容（如果该文件不存在则手动创建）：
+```json
+{
+    "version" : "1.0",
+    "configurations" : [
+        {
+            "type" : "uni-app:app-harmony",
+            "distPathDev" : "D:/harmony-project-dev",
+            "distPathBuild" : "D:/harmony-project-build"
+        }
+    ]
+}
+```
+其中 `distPathDev` 用于指定调试运行的时候使用的鸿蒙工程目录，`distPathBuild` 用于指定发行打包的时候使用的鸿蒙工程目录。
+
+指定的目录不必已经存在，HBuilderX 会创建所需的目录，如果目录已经存在的话 HBuilderX 还可能根据需要尝试删除然后重建。
+
+### 在 HBuilderX 中设置 DevEco Studio 的安装位置@hbxsettings
 
 HBuilderX 依赖于 DevEco Studio 里面带的鸿蒙工具链，所以需要电脑已经安装了符合版本要求的 DevEco Studio。
 

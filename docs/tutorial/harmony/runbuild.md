@@ -12,8 +12,8 @@
 - HBuilderX 4.41+ 开始运行到鸿蒙设备时支持修改代码后热刷更新
 - HBuilderX 4.41+ 开始运行到鸿蒙设备时控制台显示的应用日志支持回源代码
 - HBuilderX 4.43+ 开始支持将 `mainfest.json` 里面配置的应用版本名称/应用版本号（`versionName`/`versionCode`）应用于鸿蒙平台，且优先于 `harmony-configs/AppScope/app.json5` 中的设置
-- HBuilderX 4.61+ 开始支持 uni-app x 项目，且支持开启调试功能
-- HBuilderX 4.61+ 开始支持配置签名证书，且支持自动申请调试证书
+- HBuilderX 4.61+ （即将发布）开始支持 uni-app x 项目，且支持开启调试功能
+- HBuilderX 4.61+ （即将发布）开始支持配置签名证书，且支持自动申请调试证书
 
 ## 开发环境要求@env
 
@@ -36,9 +36,7 @@ HBuilderX 依赖于 DevEco Studio 里面带的鸿蒙工具链，所以需要电�
 
 ## 运行的方式@run-mode
 
-HBuilderX 4.24 版本开始支持【运行到鸿蒙】，具体的方式是开发者下载鸿蒙工程模板并创建独立的鸿蒙工程目录，
-然后在 uni-app 项目中的 `manifest.json` 里面设置 `app-harmony.projectPath` 属性来指向这个鸿蒙工程目录，
-uni-app 项目在编译时把编译产物输出到鸿蒙工程目录，然后调起 DevEco Studio 打开鸿蒙工程目录，由开发者手动完成后续的运行调试工作。
+HBuilderX 4.27 版本之前需要配置 `manifest.json` 里面设置 `app-harmony.projectPath` 属性。
 
 HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【运行到鸿蒙】时自动创建鸿蒙工程目录，与 uni-app 项目的编译产物合并，
 然后调用鸿蒙工具链完成打包和安装、运行等操作，同时从运行设备上收集输出的日志显示到 HBuilderX 的控制台。

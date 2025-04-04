@@ -1,3 +1,41 @@
+#### 4.61.2025040322-alpha
+* 【uni-app】
+  + 修复 Vue2 项目 使用预编译器 dart-sass 时非 uni.scss 文件不能使用 @use 语法的Bug [详情](https://ask.dcloud.net.cn/question/206689)
+  + Web 平台 修复 在使用国际化时，leftWindow、topWindow 和 rightWindow 初始语言默认显示为英文的Bug [详情](https://github.com/dcloudio/uni-app/issues/5243)
+  + App 平台 修复 Canvas 设置不支持字体小数、 font-weight 不支持更多自重和数字的Bug [详情](https://github.com/dcloudio/uni-app/issues/5329)
+  + App 平台 修复 textarea 组件在某些情况下，在APP端 iOS 模拟器中无法渲染的Bug [详情](https://ask.dcloud.net.cn/question/206746)
+  + App 平台 修复 在有拦截器的情况下，切换 tabbar 时索引与页面不对应的Bug [详情](https://ask.dcloud.net.cn/question/147649)
+  + App-Android 平台 修复 Vue2 模式下 data 相同值赋值不会触发 nextTick 的Bug [详情](https://ask.dcloud.net.cn/question/206600)
+  + App-Harmony平台 新增 通过交互界面配置鸿蒙的数字签名证书，支持自动申请调试证书
+  + App-Harmony平台 新增 运行到鸿蒙时可以选择构建过程的缓存策略
+  + App-Harmony平台 调整 运行到鸿蒙时不再先尝试卸载原有应用，以保持应用存储的连续性
+  + App-Harmony平台 新增 UniMP 实例支持访问 appId 属性
+  + App-Harmony平台 新增 uni.getBackgroundAudioManager 现可以在通知栏中显示音频播放控制
+  + App-Harmony平台 调整 navigateBar 高度，调整返回按钮点击区域，调整 loading 改为在左侧
+  + App-Harmony平台 修复 setTimeout 传入错误参数导致崩溃的Bug
+  + App-Harmony平台 修复 createWebviewContext  的相关方法调用之后闪退的Bug
+  + App-Harmony平台 修复 getWindowInfo 部分设备获取的 windowHeight 少1px的Bug
+  + App-Harmony平台 修复 部分情况下主应用和小程序切换时调用 uni api 报错的Bug
+  + App-Harmony平台 修复 uni.request data 传入字符串被额外 JSON.stringify 了一次的Bug [详情](https://ask.dcloud.net.cn/question/207554)
+  + 小程序平台 修复 Node 高版本废弃部分 API 导致运行失败的Bug [详情](https://github.com/dcloudio/uni-app/issues/5300)
+  + 小程序平台 修复 编译 style 产物存在冗余 runtime 判断逻辑的Bug [详情](https://github.com/dcloudio/uni-app/issues/5333)
+  + 微信小程序平台 新增 支持 useExtendedLib 属性，引入 weui 工具库 [详情](https://ask.dcloud.net.cn/question/206730)
+  + 支付宝小程序平台 修复 getSystemInfo 时 osName 错误的Bug [详情](https://ask.dcloud.net.cn/question/207186)
+  + MP-Harmony平台 新增 鸿蒙元服务支持 vue2 项目类型
+  + 小红书小程序平台 修复 产物目录下无法编入 ext.json 的Bug
+  + 抖音小程序平台 修复 产物目录下无法编入 package.json 的Bug
+* 【uni-app x】
+  + 【重要】新增 编译App到HarmonyOS平台 [详见](https://doc.dcloud.net.cn/uni-app-x/app-harmony/)
+  + App-Android平台 修复 4.53版本引发的 组件 text 触摸事件可能不响应 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16132)
+* 【uts】
+  + Web平台、App-iOS平台、微信小程序平台 修复 getString/getNumber 等get方法默认值参数部分情况不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16094)
+  + App-Harmony平台 新增 convert2AbsFullPath、getResourcePath 方法 [详情](https://doc.dcloud.net.cn/uni-app-x/uts/utsharmony.html)
+* 【unicloud】
+  + 新增 软件版服务空间支持跨服务空间调用云函数
+  + 修复 阿里云云数据库 updateAdnReturn 传入空间不会报错的Bug [详情](https://ask.dcloud.net.cn/question/206249)
+  + 修复 HBuilderX 项目存在多服务空间时，运行本地云函数不支持集群空间运行的Bug
+  + 修复 下载云函数时如果本地已存在云函数弹出对话框，点击关闭会继续下载的Bug
+
 #### 4.57.2025032014-alpha
 * 【uni-app】
   + 【重要】Vue2 项目scss预编译器默认改用dart-sass，HBuilderX 非 Mac Arm 版可以在manifest.json中根节点配置"sassImplementationName": "node-sass"手动指定，继续使用node-sass。这2种sass编译器有语法差异 [文档](https://uniapp.dcloud.net.cn/tutorial/syntax-css.html#css-preprocessor) [详情](https://ask.dcloud.net.cn/question/206506)

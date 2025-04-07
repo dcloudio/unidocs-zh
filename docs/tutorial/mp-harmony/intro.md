@@ -32,6 +32,8 @@
 
 如果你的元服务需要使用登录、支付权限，也立即开始着手准备申请相关权限，参考 [华为支付服务开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/payment-preparations-V5)。
 
+常见问题：我已经备案、上架了安卓应用，参考 [HarmonyOS应用/元服务应如何进行备案？](https://developer.huawei.com/consumer/cn/doc/app/50130)
+
 ### 准备签名证书
 
 初次运行元服务，需要配置好证书签名、权限设置等信息，第一次参与鸿蒙开发的新手请仔细阅读下面相关建议，否则可能会影响开发元服务。

@@ -8,7 +8,7 @@ uni-app是大一统开发，包括客户端和uniCloud服务器。在客户端�
 
 在uni-app中可以调用npm库，可以调用Android仓储里的aar，可以调用iOS的cocoapods里framework，以及鸿蒙的ohpm。
 
-甚至uts语言本身也可以编译为js、kotlin、swift、arkTs。
+甚至uts语言本身也可以编译为js、kotlin、swift、ArkTS。
 
 那么uni-app的开发者，需要一个大一统的包管理方案，那就是`uni_modules`。
 

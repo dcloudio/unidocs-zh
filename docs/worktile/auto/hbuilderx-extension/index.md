@@ -3,7 +3,7 @@
 ## 插件说明@description
 
 
-本插件，用于在HBuilderX内运行uni-app自动化测试，支持H5、微信小程序、android、ios自动化测试。
+本插件，用于在HBuilderX内运行uni-app自动化测试，支持H5、微信小程序、Android、iOS、Harmony自动化测试。
 
 主要功能有：
 

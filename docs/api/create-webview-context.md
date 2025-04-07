@@ -1,5 +1,7 @@
 ## uni.createWebviewContext(webviewId, component?) @createwebviewcontext
 
+> 仅 HarmonyOS 支持
+
 <!-- UNIAPPAPIJSON.createWebviewContext.description -->
 
 |元服务|

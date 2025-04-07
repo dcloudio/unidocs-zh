@@ -296,6 +296,7 @@
 
 
 ## **App端web-view的扩展**
+
 App端的webview是非常强大的，可以更灵活的控制和拥有更丰富的API。
 
 每个vue页面，其实都是一个webview，而vue页面里的web-view组件，其实是webview里的一个子webview。这个子webview被append到父webview上。
@@ -445,6 +446,11 @@ uni.webView.navigateTo 示例，注意uni sdk放到body下面
 	}
 </script>
 ```
+
+### HarmonyOS 使用问题
+
+`HarmonyOS` 不支持 `plus`，但可以直接使用行内样式或者 class 控制显示效果。如果需要使用 `back`、`evalJS` 等方法，请使用 [`uni.createWebviewContext`](https://uniapp.dcloud.net.cn/api/create-webview-context.html)
+
 
 ### FAQ
 

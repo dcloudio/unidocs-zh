@@ -1516,6 +1516,17 @@ exports.main = async (event, context) => {
 	}
 }
 
+//uni-admin部署在软件版集群空间配置示例
+"uniStatistics" : {
+	"enable" : true,
+	"version" : "2",
+	"uniCloud" : {
+		"spaceId" : "spaceId",
+		"provider" : "dcloud",
+		"clientSecret": "ClientSecret"
+	}
+}
+
 ```
 
 

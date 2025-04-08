@@ -127,6 +127,8 @@ uni://form-field
 |name|String|在表单中的字段名|
 |value|任意|在表单中的字段值|
 
+h5 vue3 暂不支持使用 behaviors 扩展表单组件
+
 示例如下：
 
 ```html

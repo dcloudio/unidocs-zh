@@ -235,6 +235,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 #### 微信小程序开发注意
 
 - 建议关注[微信小程序当前bug列表](https://developers.weixin.qq.com/community/develop/issueList?type=%E4%BF%AE%E5%A4%8D%E4%B8%AD&block=bug)，对已知Bug，想办法避让。
+* `ios` 真机调试时，需要开启 `详情` 下 `本地设置` 的 `上传代码时自动压缩脚本文件` 选项，否则会报错。
 
 #### 支付宝小程序开发注意
 

@@ -177,3 +177,7 @@ export default defineConfig({
 
 - HBuilderX 创建的项目勾选运行-->运行到小程序模拟器-->运行时是否压缩代码
 - cli 创建的项目可以在`package.json`中添加参数`--minify`
+
+## 注意事项
+
+- 在 Mac M1 系列芯片电脑安装 `lightningcss` 等包含不同 CPU 架构二进制文件 npm 包的时候，会提示 `Cannot find module '../lightningcss.darwin-x64.node'`，可以下载 [HBuilderX Arm](https://www.dcloud.io/hbuilderx.html) 版本规避此类问题。

@@ -1523,7 +1523,8 @@ exports.main = async (event, context) => {
 	"uniCloud" : {
 		"spaceId" : "spaceId",
 		"provider" : "dcloud",
-		"clientSecret": "ClientSecret"
+		"clientSecret": "ClientSecret",
+		"endpoint": "http://xxx.xx.xxx"
 	}
 }
 

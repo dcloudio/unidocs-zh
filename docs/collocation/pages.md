@@ -154,6 +154,7 @@
 |animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)|App|
 |animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms|App|
 |app-plus|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)|App|
+|app-harmony|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-harmony](/collocation/pages?id=app-harmony)|App|
 |h5|Object||设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)|H5|
 |mp-alipay|Object||设置编译到 mp-alipay 平台的特定样式，配置项参考下方 [MP-ALIPAY](/collocation/pages?id=mp-alipay)|支付宝小程序|
 |mp-weixin|Object||设置编译到 mp-weixin 平台的特定样式，配置项参考下方 [MP-WEIXIN](/collocation/pages?id=mp-weixin)|微信小程序|
@@ -352,6 +353,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 |transparentTitle|String|none|导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP|
 |titlePenetrate|String|NO|导航栏点击穿透|支付宝小程序、H5|
 |app-plus|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)|App|
+|app-harmony|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-harmony](/collocation/pages?id=app-harmony)|App|
 |h5|Object||设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)|H5|
 |mp-alipay|Object||设置编译到 mp-alipay 平台的特定样式，配置项参考下方 [MP-ALIPAY](/collocation/pages?id=mp-alipay)|支付宝小程序|
 |mp-weixin|Object||设置编译到 mp-weixin 平台的特定样式|微信小程序|
@@ -428,7 +430,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 
 ### app-plus
 
-配置编译到 App 平台时的特定样式，部分常用配置 H5 平台也支持。以下仅列出常用，更多配置项参考 [WebviewStyles](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewStyles)。
+配置编译到 App（安卓、iOS） 平台时的特定样式，部分常用配置 H5 平台也支持。以下仅列出常用，更多配置项参考 [WebviewStyles](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewStyles)。
 
 |属性|类型|默认值|描述|平台兼容|
 |:-|:-|:-|:-|:-|
@@ -766,6 +768,15 @@ searchInput的点击输入框onNavigationBarSearchInputClicked、文本变化onN
     ]
 }
 ```
+
+
+### app-harmony
+
+配置编译到 app-harmony 平台时的特定样式。
+
+|属性|类型|默认值|描述|平台兼容|
+|:-|:-|:-|:-|:-|
+|softinputMode|String|adjustPan|软键盘弹出模式，支持 adjustResize、adjustPan 两种模式|App-Harmony|
 
 ### h5
 配置编译到 H5 平台时的特定样式

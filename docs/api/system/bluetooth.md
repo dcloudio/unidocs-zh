@@ -293,7 +293,7 @@ uni.getConnectedBluetoothDevices({
 **res.devices 的结构**
 
 |属性|类型|说明|
-|---|---|---|---|
+|---|---|---|
 |name|string|蓝牙设备名称，某些设备可能没有|
 |deviceId|string|用于区分设备的 id|
 |RSSI|number|当前蓝牙设备的信号强度|

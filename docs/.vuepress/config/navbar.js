@@ -110,7 +110,7 @@ export const navbar = [
           {
             text: '华为快应用',
             type: 'link',
-            link: 'https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-component-view'
+            link: 'https://developer.huawei.com/consumer/cn/doc/quickApp-References/quickapp-filestructure-0000001074564510'
           },
           {
             text: '360小程序',

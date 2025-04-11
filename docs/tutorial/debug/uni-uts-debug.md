@@ -26,6 +26,10 @@ HBuilderX 3.6.20+ uni-app uts插件、HBuilderX 4.0+ uni-app-x uts插件、HBuil
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-debug-view.jpg" style="zoom: 60%;" />
 
+下图中包含了uvue、uts、kotlin的调试步骤
+
+<img src="https://web-ext-storage.dcloud.net.cn/hx/debug/android-debug.gif" style="zoom: 60%;" />
+
 调试视图分为5部分:
 
 - [调试工具栏](#debugactions)

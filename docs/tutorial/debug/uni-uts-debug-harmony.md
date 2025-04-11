@@ -24,6 +24,10 @@ HBuilderX 4.61+ 运行到鸿蒙，支持Debug调试。包括uvue、uts、混编�
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-debug-view.jpg" style="zoom: 60%;" />
 
+下图中包含了uvue、uts、ets的调试步骤
+
+<img src="https://web-ext-storage.dcloud.net.cn/hx/debug/harmony-debug.gif" style="zoom: 60%;" />
+
 调试视图分为5部分:
 
 - [调试工具栏](#debugactions)

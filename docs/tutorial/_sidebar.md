@@ -125,6 +125,7 @@
   * [概述](harmony/intro.md)
   * [运行和发行](harmony/runbuild.md)
   * [调用鸿蒙原生API](harmony/native-api.md)
+  * [嵌入鸿蒙原生组件](harmony/native-component.md)
   * [内置模块说明](harmony/built-in-module.md)
   * [鸿蒙案例](https://uniapp.dcloud.net.cn/case.html#鸿蒙next)
   * [历史变更](harmony/history.md)

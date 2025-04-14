@@ -142,6 +142,7 @@
   * [web平台：内置浏览器运行调试](debug/debug-web-via-hx.md)
   * [web平台：debug](debug/debug-web-via-chrome.md)
   * [App平台：真机运行](run/run-app.md)
+  * [App平台：WIFI连接Android真机](run/run-app-android-wifi.md)
   * [App平台：设备连接失败常见原因](run/run-app-faq.md)
   * [App平台：模拟器安装指南](run/installSimulator.md)
   * [App平台：Android uts插件运行编译配置](run/uts-development-android.md)

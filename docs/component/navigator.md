@@ -28,11 +28,11 @@
 
 |值|说明|平台差异说明|
 |:-|:-|:-|
-|navigate|对应 uni.navigateTo 的功能||
-|redirect|对应 uni.redirectTo 的功能||
-|switchTab|对应 uni.switchTab 的功能||
-|reLaunch|对应 uni.reLaunch 的功能|抖音小程序与飞书小程序不支持|
-|navigateBack|对应 uni.navigateBack 的功能||
+|navigate|对应 uni.navigateTo 的功能，保留当前页面，跳转到应用内的某个页面||
+|redirect|对应 uni.redirectTo 的功能，关闭当前页面，跳转到应用内的某个页面||
+|switchTab|对应 uni.switchTab 的功能，跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面||
+|reLaunch|对应 uni.reLaunch 的功能，关闭所有页面，打开到应用内的某个页面|抖音小程序与飞书小程序不支持|
+|navigateBack|对应 uni.navigateBack 的功能，关闭当前页面，返回上一页面或多级页面||
 |exit|退出小程序，target="miniProgram"时生效|微信2.1.0+、百度2.5.2+、QQ1.4.7+|
 
 这些细节可在[页面路由API文档](https://uniapp.dcloud.io/api/router?id=navigateto)查阅。

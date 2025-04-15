@@ -1,6 +1,22 @@
-## uni.getFileSystemManager()
+## uni.getFileSystemManager() @getfilesystemmanager
 
-获取全局唯一的文件管理器
+> 仅 HarmonyOS 支持
+
+<!-- UNIAPPAPIJSON.getFileSystemManager.description -->
+
+<!-- UNIAPPAPIJSON.getFileSystemManager.compatibility -->
+
+<!-- UNIAPPAPIJSON.getFileSystemManager.param -->
+
+<!-- UNIAPPAPIJSON.getFileSystemManager.returnValue -->
+
+<!-- UNIAPPAPIJSON.getFileSystemManager.example -->
+
+<!-- UNIAPPAPIJSON.getFileSystemManager.tutorial -->
+
+<!-- UNIAPPAPIJSON.getFileSystemManager.example -->
+
+## 其他平台
 
 - 微信小程序平台，[规范详情](https://developers.weixin.qq.com/miniprogram/dev/api/wx.getFileSystemManager.html)
 - 抖音小程序平台，[规范详情](https://developer.open-douyin.com/docs/resource/zh-CN/interaction/develop/api/file/tt-get-file-system-manager/)

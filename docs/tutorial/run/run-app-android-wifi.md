@@ -2,8 +2,8 @@
 
 ### 环境说明
 
-1. 当前HBuilderX内置的adb版本太低，不支持无线adb。如果电脑本身没有配置Android SDK环境，请先配置Android SDK环境。
-2. [Android官网platform-tools下载地址](https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn)
+1. HBuilderX 4.61之前的版本，内置的adb版本，不支持无线adb。如果您的HBuilderX版本低于4.61，请自行配置adb。
+2. HBuilderX 4.61+版本，内置adb已支持无线调试。内置adb路径：`<HBuilderX安装目录>/plugins/launcher-tools/tools/adbs`
 3. 如果hx已启动，在操作系统任务管理器中杀掉hx的adb进程。
 
 ### 注意事项
@@ -37,6 +37,11 @@ adb pair 192.168.31.196:38255
 
 <img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/cmd-pair.jpg"  style="zoom: 60%; border: 1px solid #eee;" />
 
+### HBuilderX内查看配对手机
+
+上面的步骤操作完成后，在HBuilderX的运行界面就可以看到这个配对好的手机了。
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/uni-run-android.jpg" style="zoom: 60%; border: 1px solid #eee;" />
 
 ### 扩展
 

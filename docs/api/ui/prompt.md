@@ -22,7 +22,7 @@
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-<!-- UNIAPPAPIJSON.showToast.param -->
+
 
 **icon 值说明**
 
@@ -95,7 +95,7 @@ uni.hideToast();
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-<!-- UNIAPPAPIJSON.showLoading.param -->
+
 
 **示例**
 
@@ -156,7 +156,7 @@ setTimeout(function () {
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-<!-- UNIAPPAPIJSON.showModal.param -->
+
 
 **success返回参数说明**
 
@@ -225,7 +225,7 @@ uni.showModal({
 |:-|:-|:-|
 |tapIndex|Number|用户点击的按钮，从上到下的顺序，从0开始|
 
-<!-- UNIAPPAPIJSON.showActionSheet.param -->
+
 
 **示例**
 

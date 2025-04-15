@@ -37,7 +37,7 @@
 |@transition|EventHandle||swiper-item 的位置发生改变时会触发 transition 事件，event.detail = {dx: dx, dy: dy}，支付宝小程序暂不支持dx, dy|App、H5、微信小程序、支付宝小程序、抖音小程序、飞书小程序、QQ小程序、快手小程序|
 |@animationfinish|EventHandle||动画结束时会触发 animationfinish 事件，event.detail = {current: current, source: source}|抖音小程序与飞书小程序不支持|
 
-<!-- UNIAPPCOMJSON.swiper.attribute -->
+
 
 change 事件返回 detail 中包含一个 source 字段，表示导致变更的原因，可能值如下：
 
@@ -85,7 +85,7 @@ change 事件返回 detail 中包含一个 source 字段，表示导致变更的
 |:-|:-|:-|:-|
 |item-id|String||该 swiper-item 的标识符|
 
-<!-- UNIAPPCOMJSON.swiper-item.attribute -->
+
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/swiper/swiper)
 

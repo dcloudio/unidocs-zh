@@ -30,7 +30,7 @@
 |height|Number|图像数据矩形的高度|
 |data|Uint8ClampedArray|图像像素点数据，一维数组，每四项表示一个像素点的rgba|
 
-<!-- UNIAPPAPIJSON.canvasGetImageData.param -->
+
 
 **示例代码**
 

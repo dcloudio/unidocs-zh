@@ -49,7 +49,7 @@ html规范中input不仅是输入框，还有radio、checkbox、时间、日期�
 |@keyboardheightchange|eventhandle||键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration}|微信小程序基础库2.7.0+、App 3.1.0+|
 
 
-<!-- UNIAPPCOMJSON.input.attribute -->
+
 
 
 **Tips**

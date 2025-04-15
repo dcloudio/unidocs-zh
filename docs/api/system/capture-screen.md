@@ -19,7 +19,7 @@
 | --	| --		| --								|
 | path	| string	| 截屏文件路径，仅App-Android平台支持	|
 
-<!-- UNIAPPAPIJSON.onUserCaptureScreen.param -->
+
 
 **代码示例**
 
@@ -57,7 +57,7 @@ Android的截屏监听原理是监听相册中截屏目录的文件新增，需�
 |--	|--	|--	|
 |回调函数|	Function|用户主动截屏事件的回调函数|
 
-<!-- UNIAPPAPIJSON.offUserCaptureScreen.param -->
+
 
 <!-- UNIAPPAPIJSON.offUserCaptureScreen.tutorial -->
 

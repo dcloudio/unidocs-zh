@@ -35,7 +35,7 @@
 |color|String|字体图标颜色|
 |selectedColor|String|字体图标选中颜色|
 
-<!-- UNIAPPAPIJSON.setTabBarItem.param -->
+
 
 **示例代码**
 
@@ -101,7 +101,7 @@ uni.setTabBarItem({
 |fail|Funtion||否|接口调用失败的回调函数|
 |complete|Funtion||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.setTabBarStyle.param -->
+
 
 **backgroundImage创建线性渐变说明**
 
@@ -152,7 +152,7 @@ uni.setTabBarStyle({
 |fail|Funtion||否|接口调用失败的回调函数|
 |complete|Funtion||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.hideTabBar.param -->
+
 
 <!-- UNIAPPAPIJSON.hideTabBar.tutorial -->
 
@@ -177,7 +177,7 @@ uni.setTabBarStyle({
 |fail|Funtion||否|接口调用失败的回调函数|
 |complete|Funtion||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.showTabBar.param -->
+
 
 <!-- UNIAPPAPIJSON.showTabBar.tutorial -->
 
@@ -202,7 +202,7 @@ uni.setTabBarStyle({
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.setTabBarBadge.param -->
+
 
 **示例代码**
 
@@ -236,7 +236,7 @@ uni.setTabBarBadge({
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 
-<!-- UNIAPPAPIJSON.removeTabBarBadge.param -->
+
 
 <!-- UNIAPPAPIJSON.removeTabBarBadge.tutorial -->
 
@@ -260,7 +260,7 @@ uni.setTabBarBadge({
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.showTabBarRedDot.param -->
+
 
 <!-- UNIAPPAPIJSON.showTabBarRedDot.tutorial -->
 
@@ -284,7 +284,7 @@ uni.setTabBarBadge({
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.hideTabBarRedDot.param -->
+
 
 <!-- UNIAPPAPIJSON.hideTabBarRedDot.tutorial -->
 

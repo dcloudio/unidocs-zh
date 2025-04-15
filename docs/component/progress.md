@@ -19,7 +19,7 @@
 |duration|Number|30|进度增加1%所需毫秒数|App-nvue2.6.1+、微信基础库2.8.2+、H5 3.1.11+、App-Vue 3.1.11+、快手小程序、京东小程序|
 |@activeend		|EventHandle|			|动画完成事件											|微信小程序、京东小程序			|
 
-<!-- UNIAPPCOMJSON.progress.attribute -->
+
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/progress/progress)
 

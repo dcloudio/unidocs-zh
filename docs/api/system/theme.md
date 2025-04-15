@@ -17,7 +17,7 @@
 |:-|:-|:-|:-|
 |theme|String|主题名称(`dark`, `light`)|
 
-<!-- UNIAPPAPIJSON.onThemeChange.param -->
+
 
 **示例**
 

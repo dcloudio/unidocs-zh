@@ -32,7 +32,7 @@
 |@change|EventHandle||拖动过程中触发的事件，event.detail = {x: x, y: y, source: source}，其中source表示产生移动的原因，值可为touch（拖动）、touch-out-of-bounds（超出移动范围）、out-of-bounds（超出移动范围后的回弹）、friction（惯性）和空字符串（setData）||
 |@scale|EventHandle||缩放过程中触发的事件，event.detail = {x: x, y: y, scale: scale}，||
 
-<!-- UNIAPPCOMJSON.movable-view.attribute -->
+
 
 除了基本事件外，movable-view提供了两个特殊事件
 

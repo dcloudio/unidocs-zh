@@ -32,7 +32,7 @@
 |:-|:-|:-|
 |locale|String|是|
 
-<!-- UNIAPPAPIJSON.setLocale.param -->
+
 
 ## uni.onLocaleChange(callback)
 
@@ -46,7 +46,7 @@
 
 <!-- UNIAPPAPIJSON.onLocaleChange.compatibility -->
 
-<!-- UNIAPPAPIJSON.onLocaleChange.param -->
+
 
 **callback返回参数说明**
 

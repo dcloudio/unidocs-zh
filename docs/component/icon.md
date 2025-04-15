@@ -30,7 +30,7 @@
 |支付宝小程序|info, warn, waiting, cancel, download, search, clear, success, success_no_circle,loading|
 |百度小程序|success, info, warn, waiting, success_no_circle, clear, search, personal, setting, top, close, cancel, download, checkboxSelected, radioSelected, radioUnselect|
 
-<!-- UNIAPPCOMJSON.icon.attribute -->
+
 
 **示例**
 ```html

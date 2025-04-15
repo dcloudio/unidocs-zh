@@ -10,7 +10,7 @@
 |:-|:-|:-|:-|
 |@change|EventHandle||``<radio-group>`` 中的选中项发生变化时触发 change 事件，event.detail = {value: 选中项radio的value}|
 
-<!-- UNIAPPCOMJSON.radio-group.attribute -->
+
 
 <!-- UNIAPPCOMJSON.radio-group.reference -->
 
@@ -34,7 +34,7 @@
 |activeBorderColor|Color||radio选中时的边框颜色|H5(3.99+)、App-Vue(3.99+)|
 |iconColor|Color|#ffffff|radio的图标颜色|H5(3.99+)、App-Vue(3.99+)|
 
-<!-- UNIAPPCOMJSON.radio.attribute -->
+
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/radio/radio)
 

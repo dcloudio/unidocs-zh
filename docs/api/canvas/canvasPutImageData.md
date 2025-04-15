@@ -23,7 +23,7 @@
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
 
-<!-- UNIAPPAPIJSON.canvasGetImageData.param -->
+
 
 **示例代码**
 

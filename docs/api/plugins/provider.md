@@ -32,7 +32,7 @@
 |push|推送|
 
 
-<!-- UNIAPPAPIJSON.getProvider.param -->
+
 
 
 **success 返回参数说明**

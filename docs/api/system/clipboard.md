@@ -19,7 +19,7 @@
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
 
-<!-- UNIAPPAPIJSON.setClipboardData.param -->
+
 
 **示例**
 
@@ -47,7 +47,7 @@ uni.setClipboardData({
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.getClipboardData.param -->
+
 
 **success 返回参数说明**
 

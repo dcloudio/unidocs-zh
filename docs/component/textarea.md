@@ -39,7 +39,7 @@
 |@confirm|EventHandle||点击完成时， 触发 confirm 事件，event.detail = {value: value}|微信小程序、百度小程序、QQ小程序、京东小程序|
 |@keyboardheightchange|Eventhandle||键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration}|微信小程序基础库2.7.0+、App 3.1.0+|
 
-<!-- UNIAPPCOMJSON.textarea.attribute -->
+
 
 **confirm-type 有效值**
 

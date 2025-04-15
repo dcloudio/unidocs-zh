@@ -20,7 +20,7 @@
 |---|---|---|
 |level|Number|仅 Android 有该字段，对应系统内存告警等级宏定义|
 
-<!-- UNIAPPAPIJSON.onMemoryWarning.param -->
+
 
 **level 的合法值**
 
@@ -58,7 +58,7 @@ uni.onMemoryWarning(callback);
 |--	|--	|--	|
 |	回调函数|	Function|内存不足告警事件的回调函数|
 
-<!-- UNIAPPAPIJSON.offMemoryWarning.param -->
+
 
 **代码示例**
 

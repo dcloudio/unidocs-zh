@@ -19,7 +19,7 @@
 |@load					|HandleEvent|				|当图片载入完毕时，发布到 AppService 的事件名，事件对象event.detail = {height:'图片高度px', width:'图片宽度px'}	|&nbsp;											|
 
 
-<!-- UNIAPPCOMJSON.image.attribute -->
+
 
 ## 图片格式说明：
 - 当使用浏览器/webview渲染时，支持哪些图片格式由webview决定，[详见](https://developer.mozilla.org/zh-CN/docs/Web/Media/Formats/Image_types#webp_image)

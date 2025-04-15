@@ -19,7 +19,7 @@
 |decode		|Boolean|false	|是否解码		|百度、钉钉小程序不支持	|
 
 
-<!-- UNIAPPCOMJSON.text.attribute -->
+
 
 **space 值说明**
 

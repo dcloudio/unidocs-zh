@@ -40,7 +40,7 @@ Lottie动画组件，动画资源参考[Lottie官方链接](https://airbnb.desig
 | hidden		| Boolean		| true	| 是否隐藏动画						|
 | @bindended	| EventHandle	|		| 当播放到末尾时触发 ended 事件（自然播放结束会触发回调，循环播放结束及手动停止动画不会触发）	|
 
-<!-- UNIAPPCOMJSON.animation-view.attribute -->
+
 
 **注意**
 * 百度小程序平台path属性目前不支持远程地址，仅支持本地绝对路径，[详情](https://smartprogram.baidu.com/docs/develop/component/animation-view-Lottie/)

@@ -13,7 +13,7 @@
 |:-|:-|:-|
 |direction|Number|面对的方向度数|
 
-<!-- UNIAPPAPIJSON.onCompassChange.param -->
+
 
 **Tips**
 - H5端获取罗盘信息，需要部署在 **https** 服务上，本地预览（localhost）仍然可以使用 http 协议。
@@ -74,7 +74,7 @@ uni.offCompassChange(callback);
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.startCompass.param -->
+
 
 **示例**
 
@@ -97,7 +97,7 @@ uni.startCompass();
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.stopCompass.param -->
+
 
 **示例**
 

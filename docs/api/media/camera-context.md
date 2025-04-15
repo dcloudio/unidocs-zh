@@ -69,3 +69,4 @@
 - 可以通过用户授权API来判断用户是否给应用授予摄像头的访问权限[https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
 - 各家小程序平台对API的实现情况可能不一致，比如支付宝小程序调用createCameraContext时需要传参cameraId，使用时请以具体文档为准。
 - 支付宝小程序开发者工具（IDE）暂不支持调试此 API，请使用真机调试功能在真机进行调试。
+- 鸿蒙元服务使用需要提前配置 `entry/src/main/module.json5` 权限，并在运行时调用 `uni.authorize` 申请权限。参考 [scope.camera 文档](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/develop-authorization#section234119171375)

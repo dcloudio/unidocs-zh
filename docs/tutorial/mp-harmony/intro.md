@@ -9,7 +9,7 @@
 ::: warning 注意
 
 - 目前已支持 Vue2/Vue3 使用 HBuilderX/CLI 方式运行到元服务。cli 参考 [如何使用 cli 创建元服务？](#using-by-cli)
-- 目前仅支持鸿蒙 Next 真机，鸿蒙 ARM 模拟器开始内测，[点击链接](#arm-emulator)了解如何申请。
+- 目前仅支持鸿蒙 Next 真机，鸿蒙 Mac ARM 模拟器开始内测，[点击链接](#arm-emulator)了解如何申请。
 - 目前支持鸿蒙 5.0，鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/)。
   :::
 
@@ -339,7 +339,7 @@ uni.authorize({
 
 也可以参考下面手机号接口申请，快速绑定手机号，具体见下个问题。
 
-欢迎使用 [uni-id-pages](https://doc.dcloud.net.cn/uniCloud/uni-id/app.html) 插件加速元服务开发落地。
+欢迎使用 [uni-id-pages](https://doc.dcloud.net.cn/uniCloud/uni-id/app.html) 插件加速元服务开发落地，这里封装号了服务端开发的逻辑。在 uni-pay 中也提供了华为元服务支付的服务端逻辑封装，接入更方便。
 
 ### 如何获取用户手机号？@how-to-get-phonenumber
 
@@ -413,7 +413,7 @@ getphonenumber(e){
 
 参考文档顶部 **开发环境准备** 部分，请确认：
 
-1. 真机是鸿蒙 Next 真机，系统版本是 鸿蒙 5.0+，模拟器暂不支持。
+1. 真机是鸿蒙 Next 真机，系统版本是 鸿蒙 5.0+，如果是 Mac M1 系列芯片电脑（ARM 架构）可以申请，[点击链接](#arm-emulator)了解如何申请。
 2. 你可能调整过 hvigor 文件，目前普通用户不需要调整。请删除 `harmony-mp-configs/hvigor/hvigor-config.json5` 文件，使用默认的配置文件即可。如果不存在可以忽略。
 3. 第一次启动会跳转到应用市场访问应用，有可能会网络超时卡在浏览器页面，重试两次就可以。正式上架后不会出现此问题。出现此问题时，请用鸿蒙 Next 真机，在手机搜索框或手机里的华为应用市场里搜索 uniapp，并点击出现的元服务 helloUniApp，点打开，等待加载完成，然后再关闭，最后在 HBuilderX 重启项目即可。
 4. HBuilderX Alpha 4.51 起，内置依赖的 ascf 框架发生了变化，如果仍有问题，可以 IM 群内沟通。
@@ -434,29 +434,7 @@ getphonenumber(e){
 
 基于 ARM 架构 Mac M1 等系列芯片用户，目前可以申请 ARM 模拟器运行和调试鸿蒙元服务。如需申请，请发送邮件向华为运营人员申请。在收到邮件申请后，华为运营人员将在 1-3 个工作日内为你安排对接人员。
 
-申请方法如下：
-
-- 申请邮箱地址：`atomicservice@huawei.com`
-- 邮件标题：`[模拟器联调版本申请]-[元服务名称]-[APP ID]-[Developer ID]`，APP ID 等查询方法见下方信息。
-- 邮件正文：
-
-```text
-XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申请携带ASCF框架特性直板机模拟器 Mac Arm联调版本，用于XXX。
-【使用范围】：开发调试XXX元服务
-【版本接收人】：XXXX (接收人邮箱)
-【华为账号ID】：XXXX (开发者ID，不是账号名称)
-【使用时限】： 2024年X月XX日 - 2024年12月31日 （在结束时间点需要完成版本收编）
-我承诺：我清楚该版本是非正式发布版本，可能存在部分问题。如遇到问题，我愿意参与帮助改进。该版本仅用于功能测试和问题联调，受限使用不会扩散，版本会按时收编。
-
-承诺人：XX
-日期：202X年X月XX日
-```
-
-**注意**：如何查询 APP ID 和 Developer ID？
-
-打开 [华为 AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myApp)，打开 **我的项目 - 选择项目** ，也在页面顶部选择当前的元服务应用。页面中包含 Developer ID 和 APPID （APPID 也就是元服务包名中的数字部分）。
-
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/803608f0-9e24-4492-ac36-a60072f2a751.png)
+详细说明请参考 [其他问题：元服务是否支持模拟器运行](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/faqs-others-simulator-running)
 
 ### 我希望自动化来处理元服务的创建、更新和维护@automation-cli
 
@@ -483,7 +461,7 @@ XXX元服务当前正在进行鸿蒙化开发，由于样机不足等，特申�
 
 ### API uploadFile 报错，其他端正常
 
-已知问题，等下修复。观察上传参数里是否有数字类型参数，强转为字符串。
+观察上传参数里是否有数字类型参数，强转为字符串。
 
 ### 元服务构建在 Windows 系统下卡死
 

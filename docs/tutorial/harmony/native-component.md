@@ -92,7 +92,7 @@ defineNativeEmbed('button', {
 | 属性名  | 类型   | 说明                                                   |
 | ------- | ------ | ------------------------------------------------------ |
 | tag     | string | 必填，原生组件的标签名                                 |
-| options | object | 可选，原生组件的属性集合，具体属性请参考原生组件的定义 |
+| options | object | 可选，原生组件的属性集合，具体属性请参考原生组件 BuilderOptions 中的定义，更新时需要对 options 重新赋值|
 
 ### 事件
 
@@ -117,6 +117,9 @@ defineNativeEmbed('button', {
         methods: {
             onClick(e) {
                 console.log('onClick', e.detail.text)
+                this.options = {
+                    label: 'world'
+                }
             }
         }
     }

@@ -238,6 +238,26 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **0663批发网：** 揭阳军埔批发市场服装货源展示平台，鸿蒙应用市场搜索“0663批发网”，[详情](https://appgallery.huawei.com/app/detail?id=com.jp0663.m)
 
+**律图法律咨询：** 律师免费在线咨询，司法案件诉讼委托服务，鸿蒙应用市场搜索“律图法律咨询”，[详情](https://appgallery.huawei.com/app/detail?id=com.lvtu.user.hm)
+
+**乔视界：** 深圳市乔安科技有限公司内部办公协同应用，包含资产管理、考勤管理、流程发起、代办事项等功能，鸿蒙应用市场搜索“乔视界”，[详情](https://appgallery.huawei.com/app/detail?id=com.qiaoan.qiaoanqiaobao_hm)
+
+**少儿围棋教学合集：** 助4到13岁儿童轻松学围棋，鸿蒙应用市场搜索“少儿围棋教学合集”，[详情](https://appgallery.huawei.com/app/detail?id=com.miracle.weqipack)
+
+**地震预警：** 成都高新减灾所，及时预警，ICL，鸿蒙应用市场搜索“地震预警”，[详情](https://appgallery.huawei.com/app/detail?id=com.huania.harmonyearthquake)
+
+**铝加工安全：** 铝加工企业智慧可信安全生产监管软件，鸿蒙应用市场搜索“铝加工安全”，[详情](https://appgallery.huawei.com/app/detail?id=com.yzzn.harmonyAppDev)
+
+**企业名录：** 高效搜索全国企业联系方式的APP，鸿蒙应用市场搜索“企业名录”，[详情](https://appgallery.huawei.com/app/detail?id=com.douyekeji.qyml.hm)
+
+**美的光伏：** 美的光伏 APP，助力记录光伏业务全程信息，鸿蒙应用市场搜索“美的光伏”，[详情](https://appgallery.huawei.com/app/detail?id=com.mideahk.solar)
+
+**广州智慧阅读：** 分析学生阅读行为，个性化匹配阅读图，鸿蒙应用市场搜索“广州智慧阅读”，[详情](https://appgallery.huawei.com/app/detail?id=smart.reading.gz)
+
+**点点建安：** 智慧消防 APP 集成烟感、主机等多设备报警功能，鸿蒙应用市场搜索“点点建安”，[详情](https://appgallery.huawei.com/app/detail?id=diandian.com.huawei)
+
+**营销宝：** 一款专为企业打造的智能营销工具，鸿蒙应用市场搜索“营销宝”，[详情](https://appgallery.huawei.com/app/detail?id=com.touchsee.huawei)
+
 **塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
 
 **多点计算器：** 一款功能强大的计算器，支持科学计算、BMI指数计算、体脂率计算等，鸿蒙元服务，鸿蒙应用市场搜索“多点计算器”

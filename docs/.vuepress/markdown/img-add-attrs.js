@@ -65,6 +65,8 @@ function replaceHTML(token, replace, env) {
 		recognizeCDATA: true,
 		recognizeSelfClosing: true,
 	});
+	// 会将 <a> 标签解析成 <a></a>，所以要判断一下
+	if (!dom.firstChild || dom.firstChild.name === 'a') return
 	replaceNodes(dom.children, replace, env, token);
 	token.content = serializer.render(dom, { encodeEntities: 'utf8' });
 }

@@ -19,7 +19,7 @@
 |scroll-into-view		|String		|		|值应为某子元素id（id不能以数字开头）。设置哪个方向可滚动，则在哪个方向滚动到该元素				|			|
 |scroll-with-animation	|Boolean	|false	|在设置滚动条位置时使用动画过渡																	|			|
 |enable-back-to-top		|Boolean	|false	|iOS点击顶部状态栏、安卓双击标题栏时，滚动条返回顶部，只支持竖向								|app-nvue，微信小程序	|
-|show-scrollbar         |Boolean	|false	|控制是否出现滚动条| App-nvue 2.1.5+ |
+|show-scrollbar         |Boolean	|true	|控制是否出现滚动条| App-nvue 2.1.5+ |
 |refresher-enabled		|Boolean	|false	|开启自定义下拉刷新|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
 |refresher-threshold	|Number		|45		|设置自定义下拉刷新阈值|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
 |refresher-default-style|String		|"black"|设置自定义下拉刷新默认样式，支持设置 black，white，none，none 表示不使用默认样式|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|

@@ -1,6 +1,13 @@
 # uts Android调试
 
-HBuilderX 3.6.20+ uni-app uts插件、HBuilderX 4.0+ uni-app-x uts插件、HBuilderX 4.61+支持uni-app-x下调试uvue和混编的kt文件
+uts在Android上的调试，包括3部分：
+1. uni-app和uni-app x的uts插件的uts代码。需HBuilderX 4.0+ 
+1. uni-app和uni-app x的uts插件的混编kt代码。需HBuilderX 4.61+ 
+3. uni-app x的uvue页面。需HBuilderX 4.61+
+
+uts、uvue、kt，这三种文件，本质上都是在调试运行时的kt文件。
+
+HBuilderX中可以对这3种文件打断点，联编、跨语言、跨文件跳转断点。
 
 ## 开启调试
 

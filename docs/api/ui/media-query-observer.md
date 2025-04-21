@@ -20,7 +20,7 @@ MediaQueryObserver 对象，用于监听页面 media query 状态的变化，如
 >tips: 和 UI 相关的 api 在组件 mounted 后执行
 
 |方法|说明|
-|:-|:-|:-|
+|:-|:-|
 |MediaQueryObserver.observe(Object descriptor, function callback)|开始监听页面 media query 变化情况|
 |MediaQueryObserver.disconnect()|停止监听，回调函数将不再触发|
 

@@ -210,7 +210,7 @@ uni.showModal({
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-**popover 值说明（仅App生效）**
+**popover 值说明**
 
 |值|类型|说明|
 |:-|:-|:-|

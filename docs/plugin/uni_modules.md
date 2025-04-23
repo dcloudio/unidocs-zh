@@ -244,10 +244,19 @@ package.json在每个`uni_modules`插件中都必须存在，包含了插件的�
                     "联盟": "u"
                 }
             }
+        },
+        "treeShaking": { //摇树配置
+            "app": {
+                "android": true,  //Android平台需要摇树
+                "ios": true, //iOS平台需要摇树
+                "harmony": false  //鸿蒙平台不需要摇树
+            },
+            "web": false //Web平台不需要摇树
         }
     }
 }
 ```
+
 **Tips**
 - 上述配置基于npm [package.json](https://docs.npmjs.com/cli/v6/configuring-npm/package-json)规范扩展，故标准的package.json属性也同样支持，比如可以通过files来控制要上传的插件包内容
 - 插件市场分类标识（对应：package.json->dcloudext->type）
@@ -268,6 +277,48 @@ package.json在每个`uni_modules`插件中都必须存在，包含了插件的�
 | uniCloud			| Admin插件				| unicloud-admin			|
 | uniCloud			| DB Schema及验证函数	| unicloud-database			|
 
+
+#### 摇树配置@treeShaking  
+
+配置模块是否需要摇树：
+- true 表示需要摇树，即项目的代码中使用了发布时才包含此模块
+- false 表示不需要摇树，即项目的代码中没有使用也会包含此模块
+
+默认值为true。
+
+规范：
+```json
+{
+  "uni_modules": {
+    "treeShaking": boolean | Record<string,boolean|Record<string,boolean>>
+  }
+}
+```
+
+配置所有平台都不需要摇树：
+```json
+{
+  "uni_modules": {
+    "treeShaking": false
+  }
+}
+```
+
+按平台分别配置是否需要摇树：
+```json
+{
+  "uni_modules": {
+    "treeShaking": {
+        "app": {
+            "android": false,
+            "ios": true,
+            "harmony": false
+        },
+        "web": false
+    }
+  }
+}
+```
 
 
 ### uni_modules.config.json

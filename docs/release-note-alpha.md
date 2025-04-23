@@ -1,3 +1,21 @@
+#### 4.63.2025042307-alpha
+* 【uni-app x】
+  + App平台 新增 组件 web-view 支持获取内容高度及内容高度变化事件 [文档](https://doc.dcloud.net.cn/uni-app-x/component/web-view.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=16625>
+  + Android、iOS平台 新增 API uni.makePhoneCall 支持拨打电话 [文档](https://doc.dcloud.net.cn/uni-app-x/api/make-phone-call.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=16592>
+  + Android、iOS平台 修复 4.51版本引发的 API uni.showActionSheet 主题监听导致内存泄漏问题 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17201)
+  + Android、iOS平台 修复 4.61版本引发的 API uni.showModal 主题监听导致内存泄漏问题 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17230)
+  + Android、iOS平台 修复 4.61版本引发的 API uni.showModal 应用主题设置为跟随系统时暗黑效果不正确 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17226)
+  + Android平台 修复 组件 web-view 网页中输入框获取焦点后可能被软键盘遮挡 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17222)
+  + Android平台 修复 DOM API UniElement animate 方法设置 opacity 导致动画不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17191)
+  + iOS平台 新增 API uni.connectEventSource 支持SSE [文档](https://doc.dcloud.net.cn/uni-app-x/api/connect-event-source.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=15664>
+  + iOS平台 修复 4.55版本引发的 组件 text selectable 文本可选效果可能无效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17199)
+  + 鸿蒙平台 新增 编译器 支持模块摇树，根据使用情况自动添加 [文档](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#treeshaking) <https://issues.dcloud.net.cn/pages/issues/detail?id=17140>
+  + 鸿蒙平台 新增 组件 web-view 支持 bounces 属性 [文档](https://doc.dcloud.net.cn/uni-app-x/component/web-view.html)
+  + 鸿蒙平台 修复 运行调试 uni-app x 项目启用了 uni-push 模块时运行到鸿蒙报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17159)
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 修复 plus.runtime.showPrivacyDialog 弹出隐私协议框点击`同意`后需重启才能生效的Bug
+  + iOS平台 修复 模拟器运行时调用 plus.nativeUI.setUIStyle 可能会导致应用崩溃的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16708)
+
 #### 4.62.2025041603-alpha
 * 【uni-app】
   + App-iOS平台 修复 google 地图卫星视图模式不显示建筑和道路名称的Bug [详情](https://ask.dcloud.net.cn/question/207738)

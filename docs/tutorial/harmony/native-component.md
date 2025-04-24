@@ -1,6 +1,6 @@
 # 嵌入鸿蒙原生组件
 
-鸿蒙系统有很多原生组件，从 uni-app 4.62 版开始可以通过 uts 插件方式注册为 WebView 支持的原生组件，并且支持同层渲染。
+鸿蒙系统有很多原生组件，从 HBuilderX 4.62 版开始 uni-app 可以通过 uts 插件方式注册为 WebView 支持的原生组件，并且支持同层渲染。
 
 目前鸿蒙原生组件仅支持定义在 ets 文件中，uts 插件支持导入 ets 文件，本章节主要介绍在 ets 文件中注册原生组件，其他与[调用鸿蒙原生 API](native-api.md)相同，请参考[调用鸿蒙原生 API](native-api.md)章节。
 
@@ -32,7 +32,7 @@ export declare function defineNativeEmbed<
 
 ### 示例代码
 
-```ets
+```ts
 import { NativeEmbedBuilderOptions, defineNativeEmbed } from "@dcloudio/uni-app-runtime"
 
 interface ButtonBuilderOptions extends NativeEmbedBuilderOptions {

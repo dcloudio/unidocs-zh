@@ -107,6 +107,7 @@ query
 | properties | Array＜string＞ | [] | 否 | 指定属性名列表，返回节点对应属性名的当前属性值（只能获得组件文档中标注的常规属性值，id class style 和事件绑定的属性值不可获取） | 仅 App 和微信小程序支持 |
 | computedStyle | Array＜string＞ | [] | 否 | 指定样式名列表，返回节点对应样式名的当前值 | 仅 App 和微信小程序支持 |
 | context | Boolean | false | 否 | 是否返回节点对应的 Context 对象 | 仅 App 和微信小程序支持 |
+| node | Boolean | false | 否 | 是否返回节点对应的 Node 实例，当前仅支持 canvas 实例的获取 | H5, 微信小程序, 抖音小程序, 快手小程序 |
 
 ### nodesRef.boundingClientRect(callback)
 

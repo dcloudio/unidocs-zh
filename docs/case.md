@@ -258,6 +258,44 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **营销宝：** 一款专为企业打造的智能营销工具，鸿蒙应用市场搜索“营销宝”，[详情](https://appgallery.huawei.com/app/detail?id=com.touchsee.huawei)
 
+**瀚宁易企用车：** 一款助力企业内部车辆管理、规范用车的APP，鸿蒙应用市场搜索“瀚宁易企用车”，[详情](https://appgallery.huawei.com/app/detail?id=hanning.huawei.com)
+
+**宁通行：** 公交轮渡查询和智能规划的出行一体化服务系统，鸿蒙应用市场搜索“宁通行”，[详情](https://appgallery.huawei.com/app/detail?id=con.njmass.app)
+
+**易隆创：** 一个基于互联网架构，集创业与服务为一体的开放型一站式平台，鸿蒙应用市场搜索“易隆创”，[详情](https://appgallery.huawei.com/app/detail?id=com.longstron.huawei)
+
+**和畅数字化营销：** 一款助力销售团队高效管理的移动应用，鸿蒙应用市场搜索“和畅数字化营销”，[详情](https://appgallery.huawei.com/app/detail?id=cn.mga1.zhyx)
+
+**手机数据库：** 一款集数据查询、管理、对比于一体的便捷App，鸿蒙应用市场搜索“手机数据库”，[详情](https://appgallery.huawei.com/app/detail?id=com.xingyueldh.phonedatabase)
+
+**电梯维保管家：** 一款助力维保单位实现电梯无纸化全过程维保记录的App，鸿蒙应用市场搜索“电梯维保管家”，[详情](https://appgallery.huawei.com/app/detail?id=com.khnt.dtwbmanager)
+
+**安师傅：** 一款提供多样代驾服务、随叫随到的出行App，鸿蒙应用市场搜索“安师傅”，[详情](https://appgallery.huawei.com/app/detail?id=com.anshifu.user)
+
+**裕空间：** 一款集人事、考勤、行政等模块的裕同集团内部员工App ，鸿蒙应用市场搜索“裕空间”，[详情](https://appgallery.huawei.com/app/detail?id=io.dcloud.UNIB005761)
+
+**地调安全：** 一款服务于野外地质调查安全保障工作的APP，鸿蒙应用市场搜索“地调安全”，[详情](https://appgallery.huawei.com/app/detail?id=com.cgssafety.ohapp)
+
+**触见：** 一款融合B2C与O2O模式、多端一体的极速配送医疗健康APP ，鸿蒙应用市场搜索“触见”，[详情](https://appgallery.huawei.com/app/detail?id=com.touchsee.huawei)
+
+**混沌排盘：** 一款专业精准、使用便捷的八字排盘与分析APP ，鸿蒙应用市场搜索“混沌排盘”，[详情](https://appgallery.huawei.com/app/detail?id=com.hdpp.kxt.hmos)
+
+**电喷之家：** 一款提供海量商用车、工程机械维修资料与技术支持的APP，鸿蒙应用市场搜索“电喷之家”，[详情](https://appgallery.huawei.com/app/detail?id=com.zcx.hm.dpzj)
+
+**心灵伙伴云：** 一款融合技术与专业量表，助力学校管理学生心理健康的测评工具，鸿蒙应用市场搜索“心灵伙伴云”，[详情](https://appgallery.huawei.com/app/detail?id=com.xlhb.cloud.app.ho)
+
+**掌上新大：** 一款与“一站式办事大厅”协同，为师生提供优质信息化服务、实现便捷审批的APP，鸿蒙应用市场搜索“掌上新大”，[详情](https://appgallery.huawei.com/app/detail?id=com.uni.UNIBD487D4)
+
+**征信网点导航：** 一款集便捷征信查询、网点导航、信用信息获取及交流分享于一体的实用 APP，鸿蒙应用市场搜索“征信网点导航”，[详情](https://appgallery.huawei.com/app/detail?id=com.caigee.credit)
+
+**风智子：** 一款设备全、信息透、服务优的风电主吊设备租赁一站式APP ，鸿蒙应用市场搜索“风智子”，[详情](https://appgallery.huawei.com/app/detail?id=fzzhm.sdqzu.com)
+
+**网单云：** 一款可同步多平台订单、比价配送、打印、统一回客服消息的APP ，鸿蒙应用市场搜索“瀚宁易企用车”，[详情](https://appgallery.huawei.com/app/detail?id=com.zhuandanbao.wdy)
+
+**太原防汛通：** 一款用于汛期应急救援及快速响应联动指挥中心的APP ，鸿蒙应用市场搜索“太原防汛通”，[详情](https://appgallery.huawei.com/app/detail?id=topevery.tyfxt.com)
+
+**中标一证通：** 一款在政务、政府采购领域，为企事业单位提供跨地区无介质移动电子认证等服务的 APP，鸿蒙应用市场搜索“中标一证通”，[详情](https://appgallery.huawei.com/app/detail?id=com.xsca.zbyzt)
+
 **塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
 
 **多点计算器：** 一款功能强大的计算器，支持科学计算、BMI指数计算、体脂率计算等，鸿蒙元服务，鸿蒙应用市场搜索“多点计算器”

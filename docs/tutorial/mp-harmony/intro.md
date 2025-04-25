@@ -32,7 +32,7 @@
 
 如果你的元服务需要使用登录、支付权限，也立即开始着手准备申请相关权限，参考 [华为支付服务开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/payment-preparations-V5)。
 
-常见问题：我已经备案、上架了安卓应用，参考 [HarmonyOS应用/元服务应如何进行备案？](https://developer.huawei.com/consumer/cn/doc/app/50130)
+常见问题：我已经备案、上架了安卓应用，参考 [HarmonyOS 应用/元服务应如何进行备案？](https://developer.huawei.com/consumer/cn/doc/app/50130)
 
 ### 准备签名证书
 
@@ -147,14 +147,13 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0cc21275-cb13-4a68-968b-24438a4b2d0d.png)
 
-需要填写 4 处资料：
+需要填写 3 处资料：
 
 1. 设置 `应用上架 - 应用信息 - 应用分类标签` 填写应用分类标签，是为了下一步的内容分级做准备。
 2. 填写 **内容分级** 表单。
 3. 填写 **隐私声明**，包含隐私政策、用户协议。
    - 务必认真核对隐私政策中的权限申请要和实际代码中的 `requestPermissions` 字段一致，否则会被驳回。
    - 记录好生成的隐私政策链接、填写的用户协议地址。上架时候还需要使用。
-4. 同意并勾选 `版权信息 - 免责函` 选项。
 
 填写完点击页面右上角的 **保存** 按钮，其他没有提到的数据无需填写，这一步骤作用是填写上架所需的特定数据。
 
@@ -357,14 +356,6 @@ getphonenumber(e){
 
 需要 `GET_NETWORK_INFO` 和 `vibrate` 权限。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5) 进行查询。按照 **配置权限模版** 章节进行配置。
 
-### 组件 rich-text 渲染空白不展示
-
-已修复。
-
-### 组件 Image 选择本地图片不展示
-
-已知问题，等待元服务修复。目前 `image` 组件不支持本地路径，可临时通过路径字符串展示、或者上传后提供远程 URL 规避。
-
 ### 运行报错 `failed to install bundle. code:9568296 error: install failed due to error bundle type`
 
 模拟器或者真机上已经安装了当前 BundleName 的应用。可能是证书复用导致的错误，重新确认当前证书是元服务证书，而不是鸿蒙 App 的证书。
@@ -396,7 +387,7 @@ getphonenumber(e){
 
 参考文档顶部 **开发环境准备** 部分，请确认：
 
-1. 真机是鸿蒙 Next 真机，系统版本是 鸿蒙 5.0+，如果是 Mac M1 系列芯片电脑（ARM 架构）可以申请，[点击链接](#arm-emulator)了解如何申请。
+1. 真机是鸿蒙 Next 真机，系统版本是 鸿蒙 5.0+。如果是 Mac M1 系列芯片电脑（ARM 架构）可以申请，[点击链接](#arm-emulator)了解如何申请。其他系统和架构暂不支持模拟器。
 2. 你可能调整过 hvigor 文件，目前普通用户不需要调整。请删除 `harmony-mp-configs/hvigor/hvigor-config.json5` 文件，使用默认的配置文件即可。如果不存在可以忽略。
 3. 第一次启动会跳转到应用市场访问应用，有可能会网络超时卡在浏览器页面，重试两次就可以。正式上架后不会出现此问题。出现此问题时，请用鸿蒙 Next 真机，在手机搜索框或手机里的华为应用市场里搜索 uniapp，并点击出现的元服务 helloUniApp，点打开，等待加载完成，然后再关闭，最后在 HBuilderX 重启项目即可。
 4. HBuilderX Alpha 4.51 起，内置依赖的 ascf 框架发生了变化，如果仍有问题，可以 IM 群内沟通。
@@ -406,10 +397,6 @@ getphonenumber(e){
 在终端中运行 `hdc shell bm dump-shared -a` 观察返回值是否包含 `com.huawei.hms.ascfruntime`，如果不包含，请打开应用市场搜索 `helloUniApp` 访问体验一次，然后重试。
 
 ### 分包 `The subpackage path name does not meet the requirements`
-
-已修复。参考 [运行报错](#failed-to-install-the-hap-or-hsp) 调整 hvigor 版本号。
-
-### 之后突然报错 `Cannot find module '@atomicservice/ascf-toolkit'`
 
 已修复。参考 [运行报错](#failed-to-install-the-hap-or-hsp) 调整 hvigor 版本号。
 
@@ -434,7 +421,7 @@ getphonenumber(e){
 
 首先建议缩小问题范围，注释页面相关逻辑，锁定出问题的页面、组件、逻辑，从而针对性的调试。如果希望开启远程调试，可以按照下面方法操作。
 
-阅读官方文档 [使用 DevTools 工具调试前端页面](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/web-debugging-with-devtools-V5)
+阅读官方文档 [运行调试元服务](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/debug-ascf-code)
 
 按照文档操作，简单来说可以分成三个步骤：
 
@@ -455,6 +442,8 @@ getphonenumber(e){
 ### 发行应用时候提示上传失败
 
 - 场景一 `[AppGalleryConnectPublishServicelapp state can not be modified!` 当前应用可能已经在审核中
+- 场景二 `submit version for review failed, additional msg is [[5]]` 这表示代码和上传时候设备勾选的不统一，代码中搜索 `tablet` 配置项删掉并重新发布，在 uniapp 后台改为仅手机，不勾选平板。
+- 场景三 `请检查华为后台隐私政策中 xxx 是否填写完整`，这表示 AGC 的隐私协议表单缺少对应项。你可以在 AGC 后台 - 用户与访问 - 授权管理 -应用授权，临时取消服务商绑定。操作好之后点击保存，重新走服务商绑定。
 
 ### HBuilderX Alpha 4.51 版本无法启动@run-on-451
 
@@ -506,7 +495,7 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 ```json
 {
-"dev:mp-harmony": "cross-env NODE_ENV=development UNI_PLATFORM=mp-harmony vue-cli-service uni-build --watch",
-"build:mp-harmony": "cross-env NODE_ENV=production UNI_PLATFORM=mp-harmony vue-cli-service uni-build"
+  "dev:mp-harmony": "cross-env NODE_ENV=development UNI_PLATFORM=mp-harmony vue-cli-service uni-build --watch",
+  "build:mp-harmony": "cross-env NODE_ENV=production UNI_PLATFORM=mp-harmony vue-cli-service uni-build"
 }
 ```

@@ -296,6 +296,34 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **中标一证通：** 一款在政务、政府采购领域，为企事业单位提供跨地区无介质移动电子认证等服务的 APP，鸿蒙应用市场搜索“中标一证通”，[详情](https://appgallery.huawei.com/app/detail?id=com.xsca.zbyzt)
 
+**中邮智选车物流管理系统：** 一款以全流程数字化赋能仓储，模块化配置助力企业降本增效的智慧管理APP，鸿蒙应用市场搜索“中邮智选车物流管理系统”，[详情](https://appgallery.huawei.com/app/detail?id=ptac.logistics.mobile)
+
+**破解数织：** 一款能拍照解数织题、带丰富题库的APP，鸿蒙应用市场搜索“破解数织”，[详情](https://appgallery.huawei.com/app/detail?id=cn.yorry.nonogram)
+
+**i一起：** 一款集新闻资讯推送、移动打卡、多样工作审批等功能的高效移动办公APP，鸿蒙应用市场搜索“i一起”，[详情](https://appgallery.huawei.com/app/detail?id=com.isyn.hw)
+
+**民政通：** 民政一体化政务服务平台移动端，鸿蒙应用市场搜索“民政通”，[详情](https://appgallery.huawei.com/app/detail?id=com.huawei.jmggfw)
+
+**巧多棋院：** 涵盖各种棋类的对弈和学习平台，鸿蒙应用市场搜索“巧多棋院”，[详情](https://appgallery.huawei.com/app/detail?id=com.miracle.qdqyhm)
+
+**数字东安：** 企业内部员工管理OA，鸿蒙应用市场搜索“数字东安”，[详情](https://appgallery.huawei.com/app/detail?id=com.AECCHarbinDongAnHM.digitalDA)
+
+**破解数织：** 一款能拍照解数织题、带丰富题库的APP，鸿蒙应用市场搜索“破解数织”，[详情](https://appgallery.huawei.com/app/detail?id=cn.yorry.nonogram)
+
+**智记本：** 一款基于AI 聚合日程+记账+记事的APP，鸿蒙应用市场搜索“智记本”，[详情](https://appgallery.huawei.com/app/detail?id=com.xiaod.zhijiben)
+
+**门诊患者健康风险预警管理平台：** 一款实时预警患者健康风险的管理APP，鸿蒙应用市场搜索“门诊患者”，[详情](https://appgallery.huawei.com/app/detail?id=huawei.hkwjhealth.hzfxyj)
+
+**金店无忧：** 一款助力珠宝门店省心管理的APP，鸿蒙应用市场搜索“金店无忧”，[详情](https://appgallery.huawei.com/app/detail?id=com.uniapp.jdappcommon)
+
+**设备云售后：** 一款集成多功能、覆盖多场景的售后工单协同管理APP，鸿蒙应用市场搜索“设备云售后”，[详情](https://appgallery.huawei.com/app/detail?id=com.gtkj.yunshouhou)
+
+**CMSV7：** 一款专用于货运平台视频监控和定位管理的APP，鸿蒙应用市场搜索“CMSV7”，[详情](https://appgallery.huawei.com/app/detail?id=com.babelstar.uniappV7)
+
+**中邮云物流平台：** 一款集订单、审核等多样功能于一体的云物流平台APP，鸿蒙应用市场搜索“中邮云物流平台”，[详情](https://appgallery.huawei.com/app/detail?id=ptac.oms.mobile)
+
+**众行管家：** 一款可远程点火熄火、分享钥匙的智能控车APP，鸿蒙应用市场搜索“众行管家”，[详情](https://appgallery.huawei.com/app/detail?id=com.kdwl.dazhong.hm)
+
 **塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
 
 **多点计算器：** 一款功能强大的计算器，支持科学计算、BMI指数计算、体脂率计算等，鸿蒙元服务，鸿蒙应用市场搜索“多点计算器”

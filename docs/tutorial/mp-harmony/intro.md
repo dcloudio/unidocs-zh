@@ -42,12 +42,12 @@
 
 签名证书分成两类：
 
-- 面向一台鸿蒙设备的自动签名证书。签名过程比较简单，可用于调试，不能用于上架。
-- 面向企业级协作的调试、发行证书。统一管理设备注册、权限管理等，调试证书可以用于开发，发行证书可以用于上架。
+- 面向一台鸿蒙设备的自动签名证书。签名过程比较简单，可用于调试，不能用于上架，熟悉上手后再迁移成手动签名
+- 面向企业级协作的调试、发行证书。统一管理设备注册、鸿蒙权限管理等，调试证书可以用于开发，发行证书可以用于上架。
 
 接下来文档会面向新手，详细介绍如何使用自动签名证书。发行证书会在文档下方的 **发行与上架** 部分进行介绍。
 
-建议用户动手使用 DevEco Studio 编辑器创建元服务的原生项目（下面称原生工程），完成相关配置，以保证开发环境配置正确。
+建议用户动手使用 DevEco Studio 编辑器创建元服务的原生项目（下面称原生工程），完成相关配置，以保证开发环境配置正确。**先保证空模板项目能运行**，再继续进行 uniapp 元服务的开发。
 
 打开 DevEco Studio 编辑器，选择 `新建工程 - 元服务 AtomService - Empty Ability`，下面的截图来自 DevEco Studio：
 
@@ -97,7 +97,9 @@
 
 ### 2. 配置 `build-profile.json5`
 
-需要配置签名证书，这里依赖 [准备签名证书](#准备签名证书) 部分。项目根目录创建 `harmony-mp-configs/build-profile.json5` 文件，下载 [这个模版](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/build-profile.json5) 修改，只替换签名部分。
+需要配置签名证书，这里依赖 [准备签名证书](#准备签名证书) 部分。项目根目录创建 `harmony-mp-configs/build-profile.json5` 文件。
+
+考虑到新手用户不熟悉配置，建议下载 [这个模版](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/build-profile.json5) 修改，只替换签名 `signingConfigs`部分，其他配置项不要修改。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dac3b26f-7db8-415b-9df6-43e5964043ab.png)
 

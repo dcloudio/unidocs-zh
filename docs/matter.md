@@ -301,7 +301,8 @@ sign放到项目根目录，编译后自动拷贝到 .quickapp/sign，每次编�
 
 #### 鸿蒙元服务@mp-harmony
 
-- 目前 uni-app 开发鸿蒙元服务还在开发迭代，暂不支持模拟器，只支持鸿蒙 Next 真机。
 - 鸿蒙常见问题，请参考 [元服务开发注意事项](/tutorial/mp-harmony/intro#注意事项)
 
 #### 小红书小程序@mp-xhs
+
+- 小红书全局变量不包含 `navigator`，使用 `globalThis` 进行特征判断需要真机运行验证

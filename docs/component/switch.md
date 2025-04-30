@@ -7,7 +7,7 @@
 **属性说明**
 
 |属性名|类型|默认值|说明|平台差异说明|
-|:-|:-|:-|:-|:-|:-|
+|:-|:-|:-|:-|:-|
 |checked|Boolean|false|是否选中||
 |disabled|Boolean|false|是否禁用|抖音小程序与飞书小程序不支持|
 |type|String|switch|样式，有效值：switch, checkbox||

@@ -11,8 +11,8 @@
 |checked|Boolean|false|是否选中||
 |disabled|Boolean|false|是否禁用|抖音小程序与飞书小程序不支持|
 |type|String|switch|样式，有效值：switch, checkbox||
-|color|Color|switch 的颜色，同 css 的 color|||
-|@change|EventHandle|checked 改变时触发 change 事件，event.detail={ value:checked}|||
+|color|Color|-|switch 的颜色，同 css 的 color||
+|@change|EventHandle|-|checked 改变时触发 change 事件，event.detail={ value:checked}||
 
 
 

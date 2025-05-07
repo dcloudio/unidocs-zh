@@ -16,8 +16,8 @@
 |deviceId|string|设备 id	。由 uni-app 框架生成并存储，清空 Storage 会导致改变||
 |deviceModel|string|设备型号||
 |deviceType|string|设备类型`phone`、`pad`、`pc`||
-|deviceOrientation|string|设备方向 `竖屏 portrait`、`横屏 landscape`|`App、H5`。微信小程序请使用 `(getSystemInfo Api)[/api/system/info.html]` 获取|
-|devicePixelRatio|string|设备像素比|`App、H5`。微信小程序请使用 `(getSystemInfo Api)[/api/system/info.html]` 获取|
+|deviceOrientation|string|设备方向 `竖屏 portrait`、`横屏 landscape`|`App、H5`。微信小程序请使用 [`getSystemInfo Api`](/api/system/info.html) 获取|
+|devicePixelRatio|string|设备像素比|`App、H5`。微信小程序请使用 [`getSystemInfo Api`](/api/system/info.html) 获取|
 |system|string|操作系统及版本||
 |platform|string|客户端平台||
 |osName|string|系统名称|HBuilderX 4.32+，`weixin 4.33`支持|

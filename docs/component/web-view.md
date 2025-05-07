@@ -18,13 +18,14 @@
 |update-title|Boolean|是否自动更新当前页面标题。默认值：`true`|App-vue (HBuilder X 3.3.8+)|
 |@message|EventHandler|网页向应用 `postMessage` 时，会在特定时机（后退、组件销毁、分享）触发并收到消息。|H5 暂不支持（可以直接使用 [window.postMessage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage)）|
 |@onPostMessage|EventHandler|网页向应用实时 `postMessage`|App-nvue|
-|@load|EventHandler|网页加载成功时候触发此事件。|微信小程序、支付宝小程序、抖音小程序、QQ小程序|
+|@load|EventHandler|网页加载成功时候触发此事件。|微信小程序、支付宝小程序、抖音小程序、QQ小程序、H5|
 |@error|EventHandler|网页加载失败的时候触发此事件。|微信小程序、支付宝小程序、抖音小程序、QQ小程序|
 
 
 
 **注意**
 - `update-title` 仅支持 `App-vue` 。`小程序` 恒为 `true`，`H5、nvue` 恒为 `false`
+- `H5` 平台仅支持 `load` 事件，即使加载失败，也会触发 `load`，[参考文档](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference/Elements/iframe#error_%E5%92%8C_load_%E4%BA%8B%E4%BB%B6%E8%A1%8C%E4%B8%BA)
 
 **src**
 

@@ -58,8 +58,7 @@ vue3 下还可以在`page-meta`内使用浏览器原生 head 标签，**此用�
     root-font-size="16px"
   >
     <head>
-      // 仅vue3
-      ssr支持，此节点下的元素会被拷贝到h5页面的head标签下，可以利用此特性进行seo优化
+      // 仅vue3 ssr支持，此节点下的元素会被拷贝到h5页面的head标签下，可以利用此特性进行seo优化
       <meta name="keyword" :content="title" />
     </head>
   </page-meta>

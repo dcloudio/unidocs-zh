@@ -9,8 +9,8 @@
 ::: warning 注意
 
 - 目前已支持 Vue2/Vue3 使用 HBuilderX/CLI 方式运行到元服务。cli 参考 [如何使用 cli 创建元服务？](#using-by-cli)
-- 目前仅支持鸿蒙 Next 真机，鸿蒙 Mac ARM 模拟器开始内测，[点击链接](#arm-emulator)了解如何申请。
-- 目前支持鸿蒙 5.0，鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/)。
+- 目前仅支持鸿蒙 Next 真机，鸿蒙 Mac M1 系列芯片电脑可申请 ARM 模拟器内测，[点击链接](#arm-emulator)了解如何申请。
+- 目前支持鸿蒙 5.0，鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/)，第一次版本不视为鸿蒙 Next
   :::
 
 ## 前置准备
@@ -18,7 +18,7 @@
 ### 开发环境准备
 
 - HBuilderX 4.51+ [下载地址](https://www.dcloud.io/hbuilderx.html)
-- DevEco-Studio 5.0.5.200+ [下载地址](https://developer.huawei.com/consumer/cn/download/)
+- DevEco-Studio 5.0.5.200+ 最新的 release 版本 [下载地址](https://developer.huawei.com/consumer/cn/download/)
 
 ### 元服务 appid 注册@register-app-id
 
@@ -42,7 +42,7 @@
 
 签名证书分成两类：
 
-- 面向一台鸿蒙设备的自动签名证书。签名过程比较简单，可用于调试，不能用于上架，熟悉上手后再迁移成手动签名
+- 自动签名证书。签名过程比较简单，可用于调试，不能用于上架，熟悉上手后再迁移成手动签名
 - 面向企业级协作的调试、发行证书。统一管理设备注册、鸿蒙权限管理等，调试证书可以用于开发，发行证书可以用于上架。
 
 接下来文档会面向新手，详细介绍如何使用自动签名证书。发行证书会在文档下方的 **发行与上架** 部分进行介绍。
@@ -91,7 +91,7 @@
 
 ### 1. 配置 manifest.json 文件
 
-项目运行需要配置元服务包名，打开项目根目录的 `mainefest.json` 填写 `鸿蒙元服务配置 - 应用包名`，结构类似 `com.atomicservice.[你的AppID]`。
+项目运行需要配置元服务包名，打开项目根目录的 `mainefest.json` 填写 `鸿蒙元服务 - 应用包名`，结构类似 `com.atomicservice.[你的AppID]`。
 
 ![配置 manifest.json 文件](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/f7a94969-59d3-42ad-84be-adf5bcadcd54.png)
 
@@ -161,7 +161,7 @@
 
 ### 发行与上架步骤
 
-在 HBuilderX 中开发 uni-app 上架到鸿蒙元服务需要下面 5 个步骤：
+在 HBuilderX 中开发 uni-app 上架到鸿蒙元服务需要下面几个步骤：
 
 1. 授权 DCloud 完成上架流程。
 2. 配置发行签名证书。
@@ -189,6 +189,8 @@
 开发调试期间的证书不可用于应用上架。元服务发布证书的申请流程和鸿蒙应用开发类似，访问 [鸿蒙发布元服务文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-harmonyos-releaseservice-0000001946273965) 进行发布证书的获取。
 
 修改 `build-profile.json5` 里的 release 证书签名。务必注意调试和发行证书是两套，不能混用。
+
+参考下方常见问题，配置 `module.json5` 设置图标、启动图等自定义配置项。
 
 ### 3. 应用打包
 
@@ -252,7 +254,7 @@
 }
 ```
 
-元服务图标必须在华为提供的标准图标底板上设计，参考 [生成元服务图标](https://developer.huawei.com/consumer/cn/doc/atomic-guides-V5/atomic-service-icon-generation-V5) 生成图标，否则会上架审核不通过。最终得到 216x216 的图标放置在 `harmony-mp-configs/entry/src/main/resources/base/media/app_icon.png` 路径内。
+元服务图标必须在华为提供的标准图标底板上设计，参考 [生成元服务图标](https://developer.huawei.com/consumer/cn/doc/atomic-guides-V5/atomic-service-icon-generation-V5) 生成图标，否则会上架审核不通过。最终得到 512x512 的图标放置在 `harmony-mp-configs/entry/src/main/resources/base/media/app_icon.png` 路径内。
 
 上架时候，这个图标文件也需要在 DCloud 管理后台进行配置。
 
@@ -319,7 +321,7 @@ uni.authorize({
 
 易错点： 1. 签名证书不能是自动签名，设置的是 agc 上下载的调试证书 2. `mp-configs/entry/src/main/modueljson5` 里有个 metadata client_id 确保值正确。 3. AGC 后台 - 我的项目，配置指纹，添加了调试证书。
 
-通过 `uni.login` 可以得到 `code`，流程和其他小程序登录流程相似。参考 [解析凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-get-token-info-V5) 得到用户的 UnionID，开发者在这一步骤自行判断是已绑定华为 UnionID，如果未绑定，引导用户绑定现有账号体系。
+通过 `uni.login` 可以得到 `code`，流程和其他小程序登录流程相似。参考 [解析凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-get-token-info-V5) 得到用户的 UnionID，开发者在这一步骤自行判断是已绑定华为 UnionID，如果未绑定，引导用户绑定现有账号体系。如果你没有 code 返回值，观察接口错误提示，一般是 client_id 设置错误。
 
 也可以参考下面手机号接口申请，快速绑定手机号，具体见下个问题。
 
@@ -344,6 +346,8 @@ getphonenumber(e){
   console.log(e.detail.code);
 }
 ```
+
+如果没有返回值，参考 client_id 是否正确设置。
 
 3. 参考 [获取用户级凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-obtain-user-token-V5) 通过上一步骤的 code 获取 `access_token`
 4. 参考 [其他场景获取用户信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-otherscene-getuserinfo-V5) 接口通过 `access_token` 获取用户手机号。

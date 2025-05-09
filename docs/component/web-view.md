@@ -139,6 +139,7 @@
 
 - 传递的消息信息，必须写在 data 对象中。
 - `event.detail.data` 中的数据，以数组的形式接收每次 post 的消息。（注：支付宝小程序除外，支付宝小程序中以对象形式接受）
+- 应用如何传递数据到 web-view？参考 [create-webview-context](https://uniapp.dcloud.net.cn/api/create-webview-context.html#evaljs) 通过 evalJS 传递
 
 ### uni.getEnv(CALLBACK)
 

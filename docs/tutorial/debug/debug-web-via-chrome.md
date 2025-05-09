@@ -6,7 +6,7 @@
 
 - 运行uni-app到web后，支持在HBuilder自带的调试面板中调试js代码。
 - 调试需要本机安装chrome浏览器，因为使用了chrome debug 协议
-- 调试支持的文件类型：`vue`文件、`nvue`文件、`ts`文件、`js`文件，断点只能打在js或ts代码中，请勿在vue文件template、style节点添加断点。
+- 调试支持的文件类型：`vue`文件、`uvue`文件、`nvue`文件、`uts`文件、`ts`文件、`js`文件，断点只能打在js等script代码中，请勿在vue文件template、style节点添加断点。
 
 **注意事项：**
 1. uni-app，某些生命周期方法内，添加断点，debug调试后，断点无法进入。

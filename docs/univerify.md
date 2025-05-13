@@ -28,7 +28,7 @@
 
 + 支持版本：HBuilderX 3.0+
 + 支持项目类型：uni-app的App端，5+ App，Wap2App
-+ 支持系统平台: Android，iOS
++ 支持系统平台: Android，iOS，HarmonyOS(4.61)
 + 支持运营商: 中国移动，中国联通，中国电信
 
 ![](https://img-cdn-aliyun.dcloud.net.cn/client/doc/univerify/demo.png)
@@ -38,6 +38,9 @@
 HBuilderX3.1.6+版本授权登录界面支持全屏模式
 
 调用uni.login时设置univerifyStyle中的fullScreen属性值为true即可：
+
+> HarmonyOS 不支持使用 uni.login 调用一键登录，请使用 [univerifyManager](https://uniapp.dcloud.net.cn/api/plugins/login.html#getuniverifymanager)
+
 ```js
 uni.login({
 	provider: 'univerify',
@@ -124,6 +127,8 @@ DCloud还提供了更易用的封装。在[uni-id](https://doc.dcloud.net.cn/uni
 
 其中一键登录对应的 provider ID为 'univerify'，当获取provider列表时发现包含 'univerify' ，则说明当前环境打包了一键登录的sdk。
 
+> HarmonyOS 不支持，请使用 [univerifyManager](https://uniapp.dcloud.net.cn/api/plugins/login.html#getuniverifymanager)
+
 ```js
 uni.getProvider({
   service: 'oauth',
@@ -139,6 +144,8 @@ uni.getProvider({
 如果当前设备环境不支持一键登录，此时应该显示其他的登录选项。
 
 如果手机没有插入有效的sim卡，或者手机蜂窝数据网络关闭，都有可能造成预登录校验失败。
+
+> HarmonyOS 不支持，请使用 [univerifyManager](https://uniapp.dcloud.net.cn/api/plugins/login.html#getuniverifymanager)
 
 `uni.preLogin(options)`
 
@@ -163,6 +170,8 @@ uni.preLogin({
 
 弹出用户授权界面。根据用户操作及授权结果返回对应的回调，拿到 `access_token`
 
+> HarmonyOS 不支持使用 uni.login 调用一键登录，请使用 [univerifyManager](https://uniapp.dcloud.net.cn/api/plugins/login.html#getuniverifymanager)
+
 `uni.login(options);`
 
 ```js
@@ -181,12 +190,13 @@ uni.login({
 })
 ```
 
-
 `uni一键登录`的授权弹出界面是默认是半屏的，也可以配置为全屏。这个界面本质是运营商sdk弹出的，它询问手机用户是否授权自己的手机号给这个App使用。
 
 这个授权弹出界面可以通过 univerifyStyle 设置有限定制。
 
 univerifyStyle 数据结构：
+
+> `HamronyOS` 仅支持 `fullScreen（是否全屏显示）`、`logoPath（自定义 logo 地址）`、`backgroundColor（背景颜色）`、`loginBtnText（登录按钮文本）`
 
 ```json
 {
@@ -280,6 +290,8 @@ univerifyStyle 属性对应配置的界面指示图
 
 ### 客户端关闭一键登录授权界面
 
+> HarmonyOS 不支持，请使用 [univerifyManager](https://uniapp.dcloud.net.cn/api/plugins/login.html#getuniverifymanager)
+
 请求登录认证操作完成后，不管成功或失败都不会关闭一键登录界面，需要主动调用`closeAuthView`方法关闭。
 
 客户端登录认证完成只是说明获取 `access_token` 成功，需要将此数据提交到服务器获取手机号码，完成业务服务登录逻辑后通知客户端关闭登录界面。
@@ -289,6 +301,8 @@ uni.closeAuthView()
 ```
 
 ### 用户点击一键登录自定义按钮
+
+> HarmonyOS 不支持
 
 `univerifyStyle`中如果配置了`"fullScreen": "true"`和`buttons`选项并且`buttons`数组不为空时，在全屏的时候会渲染出自定义按钮。
 
@@ -304,6 +318,8 @@ uni.closeAuthView()
 ```
 
 ### 获取用户是否选中了勾选框（HBuilderX 3.2.5+ 版本支持）
+
+> HarmonyOS 不支持，请使用 [univerifyManager](https://uniapp.dcloud.net.cn/api/plugins/login.html#getuniverifymanager)
 
 `uni.getCheckBoxState(options)`
 
@@ -635,6 +651,7 @@ exports.main = async(event) => {
 - 离线打包
   + Android平台：[一键登录Android离线打包配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/oauth?id=%e4%b8%80%e9%94%ae%e7%99%bb%e5%bd%95)
   + iOS平台：[一键登录iOS离线打包配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/oauth?id=%e4%b8%80%e9%94%ae%e7%99%bb%e5%bd%95%ef%bc%88univerify%ef%bc%89h)
+  + HarmonyOS：无
 
 
 ## 常见问题@question

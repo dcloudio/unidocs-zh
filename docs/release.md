@@ -1,3 +1,11 @@
+#### 4.65.2025051206
+* 【uni-app】
+  + iOS平台 修复 4.61版本引发的 API uni.getPrivacySetting 提示`未添加uni-privacy模块`的Bug [详情](https://ask.dcloud.net.cn/question/209014)
+* 【uni-app x】
+  + Android平台 修复 组件 web-view 网页iframe中输入框获取焦点后可能被软键盘遮挡 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17365)
+* 【App插件(含5+App和uni-app的App端)】
+  + iOS平台 更新 支付宝SDK为 15.8.32.5 版，解决在 iOS18 系统无法跳转到香港支付宝的问题 [详情](https://ask.dcloud.net.cn/question/208662)
+
 #### 4.64.2025042916
 * 【uni-app】
   + 修复 Vue2 项目 使用预编译器 dart-sass 时非 uni.scss 文件不能使用 @use 语法的Bug [详情](https://ask.dcloud.net.cn/question/206689)

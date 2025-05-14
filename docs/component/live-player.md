@@ -14,6 +14,7 @@
 
 - App的实时音视频播放，不是使用 live-player，而是直接使用 video 组件。
 - H5 下可用 video 播放符合 HTML5 规范的流媒体，rtmp 等非 HTML5 标准的流媒体格式，仅在部分支持 flash 的国内手机浏览器上可播放。在 pc 浏览器上，需要安装 flash 插件才能播放 rtmp 等格式。
+- 相关api：[uni.createLivePlayerContext](/api/media/live-player-context.html#createliveplayercontext)
 
 
 **属性说明**

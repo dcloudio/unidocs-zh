@@ -268,7 +268,7 @@ errMsg|string|
 </script>
 ```
 
-相关api：[uni.createLivePusherContext](/api/media/live-pusher-context?id=createLivePusherContext)
+相关api：[uni.createLivePusherContext](/api/media/live-player-context.md?id=createlivepushercontext)
 
 
 

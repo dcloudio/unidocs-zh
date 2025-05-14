@@ -55,6 +55,7 @@ const routerMap = {
   '/api/plugins/getEnterOptionsSync.html': '/api/getEnterOptionsSync.html',
   '/api/lifetime': '/collocation/App.html#applifecycle',
   '/api/extend/native-plugin': '/plugin/native-plugin.html',
+  '/api/media/live-pusher-context': '/api/media/live-player-context.html',
 
   '/vue-components': '/tutorial/vue-components.html',
   '/vue-basics': '/tutorial/vue-basics.html',
@@ -106,14 +107,14 @@ const routerMap = {
   '/uni-app-x/manifest': '/uni-app-x/collocation/manifest.html',
   '/uniCloud/': 'https://doc.dcloud.net.cn/uniCloud/',
   '/uni-app-x/': 'https://doc.dcloud.net.cn/uni-app-x/',
-	
+
 	'/tutorial/harmony/dev#env': '/tutorial/harmony/runbuild.html',
 	'/tutorial/harmony/dev#nativeapi': '/tutorial/harmony/native-api.html',
 	'/tutorial/harmony/dev#nativelibs': '/tutorial/harmony/native-api.html',
 	'/tutorial/harmony/dev#publish': '/tutorial/harmony/runbuild.html#publish',
 	'/tutorial/harmony/dev#harmonyos特性说明': '/tutorial/harmony/built-in-module.html',
 	'/tutorial/harmony/dev': '/tutorial/harmony/intro.html',
-	
+
 	'/tutorial/run/run-app-harmony.': '/tutorial/harmony/runbuild.',
 }
 

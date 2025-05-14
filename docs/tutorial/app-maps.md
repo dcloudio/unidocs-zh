@@ -13,8 +13,6 @@ App端地图模块封装了市场上主流的三方地图SDK，提供JS API统�
 **注意**
 - 使用高德地图、百度地图需要商业授权，详情参考 [商业授权相关说明](app-geolocation?id=business)
 - uni-app项目中仅nvue页面支持使用原生SDK
-- uni-app项目暂时不支持使用百度地图
-
 
 ### 高德地图
 

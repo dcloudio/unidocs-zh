@@ -295,13 +295,13 @@ Map 和相关定位需要 [华为 AppGallery Connect 后台](https://developer.h
 
 ```js
 uni.authorize({
-  scope: "scope.userLocation",
+  scope: 'scope.userLocation',
   success: () => {
     uni.getLocation({});
   },
   fail: () => {
     uni.showToast({
-      title: "未授权获取地理位置权限",
+      title: '未授权获取地理位置权限',
     });
   },
 });
@@ -319,7 +319,11 @@ uni.authorize({
 
 参考[鸿蒙 Account Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-config-permissions-V5#section132012717318) 设置相关权限，添加 scope 权限。
 
-易错点： 1. 签名证书不能是自动签名，设置的是 agc 上下载的调试证书 2. `mp-configs/entry/src/main/modueljson5` 里有个 metadata client_id 确保值正确。 3. AGC 后台 - 我的项目，配置指纹，添加了调试证书。
+易错点：
+
+1. 签名证书不能是自动签名，设置的是 agc 上下载的调试证书
+2. `mp-configs/entry/src/main/modueljson5` 里有个 metadata client_id 确保值正确。
+3. 访问 [AGC 开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject) - 我的项目，选择对应的项目和应用，打开 常规 - 应用，配置指纹，确保添加了调试证书。
 
 通过 `uni.login` 可以得到 `code`，流程和其他小程序登录流程相似。参考 [解析凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-get-token-info-V5) 得到用户的 UnionID，开发者在这一步骤自行判断是已绑定华为 UnionID，如果未绑定，引导用户绑定现有账号体系。如果你没有 code 返回值，观察接口错误提示，一般是 client_id 设置错误。
 
@@ -333,6 +337,10 @@ uni.authorize({
 
 1. 获取手机号权限。访问 [开发者后台- API 服务 - 授权管理 - 敏感权限](https://developer.huawei.com/consumer/cn/console/api/scopeManage) 申请获取您的手机号权限。等待审核通过后继续下面操作
 2. 页面中使用下面按钮获取手机号授权 code。
+3. 参考 [获取用户级凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-obtain-user-token-V5) 通过上一步骤的 code 获取 `access_token`
+4. 参考 [其他场景获取用户信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-otherscene-getuserinfo-V5) 接口通过 `access_token` 获取用户手机号。
+
+如果手机号申请失败，一般是没有严格按照手机号申请的要求完整填写，确保包含三个部分，应用的分类、场景的具体操作步骤、请求频率。尤其是第二部分，参考描述详细步骤。
 
 ```html
 <button open-type="getPhoneNumber" @getphonenumber="getphonenumber">
@@ -347,10 +355,13 @@ getphonenumber(e){
 }
 ```
 
-如果没有返回值，参考 client_id 是否正确设置。
+如果有返回值，说明配置项正确。可以让服务端解析数据。如果点击无反应，在 HBuilderX 中打开展示原生日志，观察是否有类似 `Failed to check the fringerprint` 的告警，排查错误方案如下：
 
-3. 参考 [获取用户级凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-obtain-user-token-V5) 通过上一步骤的 code 获取 `access_token`
-4. 参考 [其他场景获取用户信息](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-otherscene-getuserinfo-V5) 接口通过 `access_token` 获取用户手机号。
+1. 签名证书不能是自动签名，设置的是 agc 上下载的调试证书
+2. 确保你联调的元服务已经申请得到了获取手机号权限，如果你在开发多个元服务可能会错误配置
+3. 访问 [AGC 开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject) - 我的项目，选择对应的项目和应用，打开 常规 - 应用，配置指纹，确保添加了调试证书。
+4. `mp-configs/entry/src/main/modueljson5` 里有个 metadata client_id 确保值正确，是应用的 ClientID，不是项目的 ClinetID
+5. 如果修改过配置参数没有立刻生效，真机打开设置 - 应用与元服务，找到正在开发的应用选择移除，重新运行
 
 用户侧第一次使用会有系统控件弹窗申请，同意之后，后续会自动同意。如果撤回同意，或者测试控件效果，需要手机打开 设置-华为账号-账号安全-使用华为账号的应用-删除授权。
 
@@ -358,9 +369,21 @@ getphonenumber(e){
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/153e4b27-07bb-4fb1-aaaf-1685d555abf5.png)
 
+最终解析 token 得到最终结果，最终结果数据是下面的结构，供 mock 参考，包含了 unionID/mobileNunber 字段，后面执行用户关联操作。
+
+```json
+{
+  "unionID": "xxx",
+  "phoneCountryCode": "0086",
+  "mobileNumber": "13000000000",
+  "openID": "xxx",
+  "purePhoneNumber": "13000000000"
+}
+```
+
 ### API 获取网络类型失败、手机震动不等效
 
-需要 `GET_NETWORK_INFO` 和 `vibrate` 权限。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5) 进行查询。按照 **配置权限模版** 章节进行配置。
+新版模版已内置，如果你自定义过权限，需要存在 `GET_NETWORK_INFO` 和 `vibrate` 权限。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5) 进行查询。按照 **配置权限模版** 章节进行配置。
 
 ### 运行报错 `failed to install bundle. code:9568296 error: install failed due to error bundle type`
 

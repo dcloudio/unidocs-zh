@@ -37,7 +37,7 @@ export default {
 				},
 				{
 					subTitle: 'uni-id',
-					url: 'https://uniapp.dcloud.net.cn/uniCloud/uni-id',
+					url: 'https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html',
 				},
         {
         	subTitle: 'uni-cdn',

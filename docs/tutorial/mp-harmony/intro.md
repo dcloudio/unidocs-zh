@@ -329,7 +329,7 @@ uni.authorize({
 
 也可以参考下面手机号接口申请，快速绑定手机号，具体见下个问题。
 
-欢迎使用 [uni-id-pages](https://doc.dcloud.net.cn/uniCloud/uni-id/app.html) 插件加速元服务开发落地，这里封装号了服务端开发的逻辑。在 uni-pay 中也提供了华为元服务支付的服务端逻辑封装，接入更方便。
+欢迎使用 [uni-id-pages](https://doc.dcloud.net.cn/uniCloud/uni-id/app.html) 插件加速元服务开发落地，这里封装了服务端开发的逻辑。在 uni-pay 中也提供了华为元服务支付的服务端逻辑封装，接入更方便。
 
 ### 如何获取用户手机号？@how-to-get-phonenumber
 

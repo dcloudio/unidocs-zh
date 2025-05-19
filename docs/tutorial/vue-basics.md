@@ -1333,7 +1333,7 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 			},
 			methods: {
 				radioChange(e) {
-					console.log('radio发生change事件，携带value值为：', e.target.value)
+					console.log('radio发生change事件，携带value值为：', e.detail.value)
 				}
 			}
 		}

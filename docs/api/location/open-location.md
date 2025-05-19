@@ -9,6 +9,10 @@
 
 <!-- UNIAPPAPIJSON.openLocation.compatibility -->
 
+**地图服务商说明**
+
+[点击查看地图服务商兼容性](../../component/map.md)
+
 **OBJECT 参数说明**
 
 |参数名|类型|必填|说明|平台差异说明|

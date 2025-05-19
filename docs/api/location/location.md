@@ -19,6 +19,10 @@ Web平台本API之前调用了腾讯地图的gcj02坐标免费转换接口，该
 
 <!-- UNIAPPAPIJSON.getLocation.compatibility -->
 
+**地图服务商说明**
+
+[点击查看地图服务商兼容性](../../component/map.md)
+
 **OBJECT 参数说明**
 
 |参数名|类型|必填|说明|平台差异说明|
@@ -126,6 +130,10 @@ Web平台和App平台，本API之前调用了腾讯地图的gcj02坐标免费，
 |√|√|√|√|√|√|√|x|x|x|
 
 <!-- UNIAPPAPIJSON.chooseLocation.compatibility -->
+
+**地图服务商说明**
+
+[点击查看地图服务商兼容性](../../component/map.md)
 
 
 **OBJECT 参数说明**

@@ -80,29 +80,28 @@ Under vue3, you can also use the browser's native head tag in `page-meta`. **Thi
     page-style="color: green"
     root-font-size="16px"
   >
-		<head> // 仅vue3 ssr支持，此节点下的元素会被拷贝到h5页面的head标签下，可以利用此特性进行seo优化
-			<meta name="keyword" :content="title" />
-		</head>
+    <head>
+      // 仅vue3 ssr支持，此节点下的元素会被拷贝到h5页面的head标签下，可以利用此特性进行seo优化
+      <meta name="keyword" :content="title" />
+    </head>
   </page-meta>
-  <view class="content">
-  </view>
+  <view class="content"> </view>
 </template>
 
 <script>
   export default {
     data() {
       return {
-				keyword: '',
-      }
+        keyword: "",
+      };
     },
-		serverPrefetch(){ // 仅vue3版本支持
-			this.keyword = "ServerKeyword"
-		},
-    onLoad() {
+    serverPrefetch() {
+      // 仅vue3版本支持
+      this.keyword = "ServerKeyword";
     },
-    methods: {
-    }
-  }
+    onLoad() {},
+    methods: {},
+  };
 </script>
 ```
 

@@ -1,4 +1,3 @@
-
 # 页面样式与布局
 # Page style and layout
 
@@ -12,11 +11,41 @@ The css of uni-app is basically the same as the css of web. This article does no
 
 本文重点介绍 vue 页面，也就是webview中的样式注意事项。
 
-## css预处理器支持
+## css预处理器支持@css-preprocessor
 
 uni-app 支持less、sass、scss、stylus等预处理器。
 
 参考： [css预处理器](https://developer.mozilla.org/zh-CN/docs/Glossary/CSS_preprocessor)
+
+**vue2开发者sass预处理注意：**
+
+sass的预处理器，早年使用[node-sass](https://www.npmjs.com/package/node-sass)，也就是vue2最初默认的编译器。
+
+[sass官方](https://sass-lang.com/)推出了dart-sass来替代。node-sass已经停维很久了。
+
+vue3默认使用的是dart-sass。
+
+另外node-sass不支持arm cpu，也即Apple的M系列CPU，导致HBuilderX的arm版只能使用dart-sass。
+
+node-sass有些淘汰的写法，在dart-sass里已不再支持。
+
+所以开发者在从vue2升vue3时，使用HBuilderX arm版时，会发现老的vue2项目如果写了废弃scss语法，会编译报错。
+
+这种分裂也导致插件生态混乱，导致多人协作时，比如一个项目有人用arm专版，有人使用intel版，造成协作障碍。
+
+DCloud推荐开发者尽快升级到vue3，改用dart-sass。
+
+从 HBuilderX 4.56+ ，vue2 项目也将默认使用 dart-sass 预编译器。
+- 如果您希望继续使用`node-sass`，可以在`manifest.json`根节点配置: "sassImplementationName": "node-sass"; 可选值 "dart-sass" | "node-sass"。
+- sassImplementationName 配置仅限 uni-app（vue2）项目且非 HBuilderX Mac Arm 版本，HBuilder Mac Arm 版本以及uni-app vue3和uni-app x项目仅支持`dart-sass`。
+
+node-sass升级dart-sass常见问题及改进方法：
+- SassError: expected selector. /deep/
+> 解决方案：/deep/ 替换成::v-deep
+- WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+> 解决方案：使用 math.div() 替换除法运算符 [详情](https://sass-lang.com/d/slash-div)，如果遇到@use 'sass:math';编译报错，可以在uni.scss中定义，[详情](https://ask.dcloud.net.cn/question/206689)
+- SassError: xxx and xxx are incompatible.
+> 解决方案：calc 在特定情况需要带单位，比如：`width: calc(100% - 215)` 修改为：`width: calc(100% - 215px)`
 
 
 ## 尺寸单位

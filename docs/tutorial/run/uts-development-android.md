@@ -17,17 +17,17 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持通过 Gr
 
 ## 环境配置
 
-> 下载插件后打开 HBuilderX 到 【设置 - 插件配置】（HBuilderX 4.27之前）：如图
-
-![image](https://web-ext-storage.dcloud.net.cn/hx/uts-android-2.png)
-
-> HBuilderX 4.27+ 配置迁移到 【设置 - 运行配置】：如图
+入口【设置 - 运行配置】：如图
 
 ![image](https://web-ext-storage.dcloud.net.cn/hx/uts-android-4.png)
+
+HBuilderX 4.27之前，入口在 设置-插件配置 中。
 
 ### 上面的截图展示了以下配置：
 
 #### 配置 Gradle
+
+gradle是Android的库管理工具。如果你的电脑没有单独安装gradle的话（Android Studio自带的gradle版本太低），按如下步骤下载。
 
 1. 点击图标 1 的下载地址进入下载页面。如图所示，点击红圈部分下载工具包。
 
@@ -37,14 +37,15 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持通过 Gr
 
 **注意** 
 
-- 内置的下载模板中 Android Gradle Plugin 使用的最低版本为 7.4.0，所以Gradle 最低版本要求7.5及以上。
+- 内置的下载模板中 Android Gradle Plugin 使用的最低版本为 7.4.0，所以 Gradle **最低版本要求7.5**及以上。
 - mac 为`%解压路径%/bin/gradle`；window 为`%解压路径%\bin\gradle.bat`。
 
 #### 配置 Gradle JDK
 
 - 不同版本 Gradle 依赖不同版本的 JDK 。HbuilderX 4.27之前 内置的 JDK 为 11，HBuilderX 4.27+ 内置的 JDK 为 17。Gradle8.0 以上，JDK 最低要求为17。请根据HbuilderX实际版本手动下载并配置 JDK 路径。配置方式如下
 
-1. 点击图标 3 的下载地址进入下载页面，选择所需要的版本。（如本地已安装 JDK 可跳过此步骤）
+1. 点击图标 3 的下载地址进入下载页面，选择所需要的版本。
+	如本地已安装 JDK 可跳过此步骤。如果本地安装过Android Studio，那么其自带JDK，路径一般在“C:\Program Files\Android\Android Studio\jre”。
 
 2. 将步骤 1 下载的内容解压，填入图标 4 处（Mac电脑找到 Home 目录，Win电脑为解压后的根目录），可参考文档最后的示例。
 
@@ -53,9 +54,9 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持通过 Gr
 - HBuilderX 4.02+支持此配置项
 - Gradle8.0 最低要求 JDK 版本为 17。更多版本要求[参考文档](https://developer.android.google.cn/build/releases/past-releases?hl=zh-cn)
 
-#### 配置 SDK
+#### 配置 Android SDK
 
-点击图标 5 的下载地址进入安卓官网，提供如下两种形式。
+点击图标 5 的下载地址进入安卓官网，提供如下两种形式，下载Android Studio 或 单独下载 Command line tools only。
 
 ##### ◇ 下载 Android Studio
 
@@ -63,13 +64,13 @@ HBuilderX 3.6.9+， 新增 uts 插件 Android 平台 真机运行支持通过 Gr
 
 ![image](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/sdk-2.png)
 
-2. 安装后获取 Android Studio 中 sdk 的路径地址填入图标 6 处。
-
-**注意**
+2. 安装后必须启动 Android Studio，Android Studio 启动后会开始自动下载 Android SDK（需翻墙）。Android Studio初始化完毕后，一般会在如下目录找到 Android Studio 中 sdk 的路径，然后填入图标 6 处。
 
 - 默认路径 mac 为`/Users/用户名/Library/Android/sdk`；window 为`C:\Users\用户名\AppData\Local\Android\Sdk`
 
-##### ◇ 如不需要安装 Android Studio 可通过下载 Command line tools only
+##### ◇ 如不想安装 Android Studio 可通过下载 Command line tools only
+
+Android Studio占用体积较大，空间不足时可考虑单独下载 Command line tools only
 
 1. 如图所示，根据平台下载 Command line tools only。
 
@@ -107,6 +108,6 @@ win系统配置后如下图（根据本地目录结构有所不同）
 - 此插件依赖 sdk 目录下 build-tools 版本不低于 30.0.0
 - 此插件依赖 sdk 目录下 platforms 版本不低于 android-30
 
-## 特别注意
+## gradle缓存
 
 > 项目依赖的三方仓储下载完成后会生成缓存，缓存如果有效，下次运行将直接跳过配置检测和下载过程。如需要缓存主动失效可清理gradle的缓存目录，正常存放于`用户目录/.gradle/caches`。

@@ -19,7 +19,7 @@
 |hover-start-time|Number|50|按住后多久出现点击态，单位毫秒|
 |hover-stay-time|Number|400|手指松开后点击态保留时间，单位毫秒|
 
-<!-- UNIAPPCOMJSON.view.attribute -->
+
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/view/view)
 

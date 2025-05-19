@@ -245,6 +245,14 @@ Create a local notification bar message (supported from HBuilderX 3.5.2)
 - 如何自定义推送通知的图标：[https://ask.dcloud.net.cn/article/35537](https://ask.dcloud.net.cn/article/35537)
 - How to customize the icon of push notification: [https://ask.dcloud.net.cn/article/35537](https://ask.dcloud.net.cn/article/35537)
 
+## uni.setAppBadgeNumber(num)@setAppBadgeNumber
+设置应用图标上显示的角标数字    
+注意：此api仅鸿蒙平台支持，iOS和Android平台请使用`plus.runtime.setBadgeNumber`[详情参考](https://www.html5plus.org/doc/zh_cn/runtime.html#plus.runtime.setBadgeNumber)
+|参数名	|类型		|必填	|说明																			|
+|:-			|:-			|:-		|:-																				|
+|num		|number	|是		|要显示的角标数字值，参数为0则表示清除角标数字。	|
+
+
 ## 小程序平台
 
 小程序平台的类似概念叫做`模板消息`，也有的平台改名为`订阅消息`。

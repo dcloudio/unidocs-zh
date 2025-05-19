@@ -1,6 +1,5 @@
 ## uni.openLocation(OBJECT)
-使用应用内置地图查看位置。
-Use the built-in map to view locations.
+使用应用内置地图查看位置。openLocation会使用项目配置的地图服务商来展示地图，地图服务商支持情况参考：[map组件](../../component/map.md)。
 
 **平台差异说明**
 **Platform difference description**
@@ -10,6 +9,10 @@ Use the built-in map to view locations.
 |√|√|√|√|√|√|x|x|x|√|√|
 
 <!-- UNIAPPAPIJSON.openLocation.compatibility -->
+
+**地图服务商说明**
+
+[点击查看地图服务商兼容性](../../component/map.md)
 
 **OBJECT 参数说明**
 **OBJECT parameter description**

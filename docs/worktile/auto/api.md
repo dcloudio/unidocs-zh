@@ -190,8 +190,8 @@ Sample code:
 
 ##### program.screenshot
 
-对当前页面截图，目前只有开发者工具模拟器支持，客户端无法使用。
-The screenshot of the current page is currently only supported by the developer tool simulator, and the client cannot use it.
+对当前页面截图。\
+微信小程序只有开发者工具模拟器支持，客户端无法使用。
 
 `program.screenshot(options?: Object): Promise<string | void>`
 

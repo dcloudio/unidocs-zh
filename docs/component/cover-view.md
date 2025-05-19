@@ -35,7 +35,7 @@ app-vue和小程序框架，渲染引擎是webview的。但为了优化体验，
 - 抖音小程序不需要`cover-view`，因其原生组件均实现了同层渲染。
 - 360小程序不存在原生组件，无此概念。
 - cover-view使用注意：京东小程序[详见](https://mp-docs.jd.com/doc/dev/component/548)、快手小程序[详见](https://mp.kuaishou.com/docs/develop/components/view/cover-view.html)、QQ小程序[详见](https://q.qq.com/wiki/develop/miniprogram/component/view-container/cover.html#cover-view) 。
-
+- App-Harmony 端由前端实现，层级会低于 map/web-view 原生组件。
 
 
 **微信小程序的cover-view使用注意：**

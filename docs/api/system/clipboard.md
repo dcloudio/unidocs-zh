@@ -28,7 +28,7 @@ Set the contents of the system clipboard.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
 |complete|Function|No|The callback function of the end of the interface call (the call will be executed if the call succeeds or fails)||
 
-<!-- UNIAPPAPIJSON.setClipboardData.param -->
+
 
 **示例**
 **Example**
@@ -63,7 +63,7 @@ Get the contents of the system clipboard.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function| No| Callback function for closed interface calling (available both for successful and failed calling)|
 
-<!-- UNIAPPAPIJSON.getClipboardData.param -->
+
 
 **success 返回参数说明**
 **success return parameter description**

@@ -48,7 +48,7 @@ Cloud packaging configures related modules and SDK information in the manifest, 
 |push|Push|
 
 
-<!-- UNIAPPAPIJSON.getProvider.param -->
+
 
 
 **success 返回参数说明**
@@ -78,9 +78,7 @@ Cloud packaging configures related modules and SDK information in the manifest, 
 ||sinaweibo|新浪微博登录||
 ||sinaweibo|Sina Weibo Login||
 ||xiaomi|小米登录||
-||xiaomi|Xiaomi Login||
-||univerify|[一键登录](/univerify)|App 3.0.0+|
-||univerify|[One-click login](/univerify)|App 3.0.0+|
+||univerify|[一键登录](/univerify)|App 3.0.0+、`HarmonyOS` 不支持，使用 [getUniverifyManager](./login.md#getuniverifymanager)|
 ||apple|[Apple登录](https://ask.dcloud.net.cn/article/36651)| iOS13+支持，App 2.4.7+|
 ||google|[谷歌登录](/tutorial/app-oauth-facebook)|App 3.4.0+|
 ||facebook|[Facebook登录](/tutorial/app-oauth-google)|App 3.4.0+|

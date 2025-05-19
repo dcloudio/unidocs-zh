@@ -33,9 +33,7 @@ Through the operator's underlying SDK, the App can directly obtain the mobile ph
 + 支持版本：HBuilderX 3.0+
 + Supported version: HBuilderX 3.0+
 + 支持项目类型：uni-app的App端，5+ App，Wap2App
-+ Supported project types: App side of uni-app, 5+ App, Wap2App
-+ 支持系统平台: Android，iOS
-+ Support system platform: Android, iOS
++ 支持系统平台: Android，iOS，HarmonyOS(4.61)
 + 支持运营商: 中国移动，中国联通，中国电信
 + Supported operators: China Mobile, China Unicom, China Telecom
 
@@ -47,7 +45,9 @@ HBuilderX3.1.6+版本授权登录界面支持全屏模式
 HBuilderX3.1.6+ version authorization login interface supports full screen mode
 
 调用uni.login时设置univerifyStyle中的fullScreen属性值为true即可：
-When calling uni.login, set the fullScreen property value in unverifyStyle to true:
+
+> HarmonyOS 不支持使用 uni.login 调用一键登录，请使用 [univerifyManager](https://uniapp.dcloud.net.cn/api/plugins/login.html#getuniverifymanager)
+
 ```js
 uni.login({
 	provider: 'univerify',
@@ -119,24 +119,23 @@ precondition:
 详细步骤参考：[一键登录服务开通指南](https://doc.dcloud.net.cn/uniCloud/uni-login/service)
 
 
-**注意**
-**Notice**
-> 应用开通uni一键登录服务后，需要等审核通过后才能正式使用。在审核期间可以使用HBuilder标准基座真机运行调用一键登录功能，调用时会从你的账户中扣费；但在审核期间不可以使用自定义基座调用一键登录功能，调用时会返回错误。
-> After the application has opened the uni one-click login service, it needs to wait for the approval before it can be officially used. During the review period, you can use the HBuilder standard base to run the one-key login function, and the fee will be deducted from your account when you call it; but during the review period, you cannot use the custom base to call the one-key login function, and the call will return mistake.
+::: warning 注意
+- 应用开通uni一键登录服务后，需要`等审核通过`后才能正式使用。\
+- 在审核期间可以使用`HBuilder标准基座`真机运行调用一键登录功能，调用时会从你的账户中扣费；但审核期间不可以使用自定义基座调用一键登录功能，调用时会返回错误。
+  - `鸿蒙` 不支持使用基座运行到手机调试，需要在`申请开通`一键登录服务后，在`应用管理`添加应用；将所添加应用的包名填写到 `manifest` 中，然后运行到手机上调试查看效果
+:::
 
 
 ### 开通uniCloud服务
-### Enable uniCloud service
-一键登录在客户端获取 `access_token` 后，必须在 [uniCloud](https://uniapp.dcloud.io/uniCloud/README) 换取手机号码。
-One-click login After obtaining `access_token` on the client side, you must exchange your mobile phone number at [uniCloud](https://uniapp.dcloud.io/uniCloud/README).
+
+一键登录在客户端获取 `access_token` 后，必须在 [uniCloud](https://doc.dcloud.net.cn/uniCloud/uni-login/dev.html) 换取手机号码。
 
 在uniCloud的云函数中拿到手机号后，可以直接使用，也可以再转给传统服务器处理，也可以通过[云函数url化](https://uniapp.dcloud.io/uniCloud/http)方式生成普通的http接口给5+ App使用。
 After getting the phone number in the cloud function of uniCloud, you can use it directly, or transfer it to a traditional server for processing, or you can use the [cloud function url](https://uniapp.dcloud.io/uniCloud/http) method Generate a common http interface for 5+ apps to use.
 
-注意:
-Notice:
+::: warning 注意
 **虽然一键登录需要uniCloud，但并不要求开发者把所有的后台服务都迁移到uniCloud**
-**Although one-click login requires uniCloud, it does not require developers to migrate all background services to uniCloud**
+:::
 
 服务器API详见：[uniCloud云函数中使用一键登录](https://doc.dcloud.net.cn/uniCloud/uni-login/dev)
 
@@ -161,6 +160,8 @@ One-click login is parallel to providers such as WeChat login and QQ login in un
 其中一键登录对应的 provider ID为 'univerify'，当获取provider列表时发现包含 'univerify' ，则说明当前环境打包了一键登录的sdk。
 The provider ID corresponding to one-click login is 'univerify'. When the provider list is obtained and found to contain 'univerify', it means that the current environment has packaged the one-click login SDK.
 
+> HarmonyOS 不支持，请使用 [univerifyManager](https://uniapp.dcloud.net.cn/api/plugins/login.html#getuniverifymanager)
+
 ```js
 uni.getProvider({
   service: 'oauth',
@@ -180,6 +181,8 @@ If the current device environment does not support one-click login, other login 
 
 如果手机没有插入有效的sim卡，或者手机蜂窝数据网络关闭，都有可能造成预登录校验失败。
 If a valid SIM card is not inserted into the phone, or the cellular data network of the phone is turned off, the pre-login verification may fail.
+
+> HarmonyOS 不支持，请使用 [univerifyManager](https://uniapp.dcloud.net.cn/api/plugins/login.html#getuniverifymanager)
 
 `uni.preLogin(options)`
 
@@ -209,6 +212,8 @@ uni.preLogin({
 弹出用户授权界面。根据用户操作及授权结果返回对应的回调，拿到 `access_token`
 The user authorization interface pops up. Return the corresponding callback according to the user operation and authorization result, and get the `access_token`
 
+> HarmonyOS 不支持使用 uni.login 调用一键登录，请使用 [univerifyManager](https://uniapp.dcloud.net.cn/api/plugins/login.html#getuniverifymanager)
+
 `uni.login(options);`
 
 ```js
@@ -228,7 +233,6 @@ uni.login({
 })
 ```
 
-
 `uni一键登录`的授权弹出界面是默认是半屏的，也可以配置为全屏。这个界面本质是运营商sdk弹出的，它询问手机用户是否授权自己的手机号给这个App使用。
 The authorization pop-up interface of `uni one-click login` is half-screen by default, and can also be configured to be full-screen. This interface is essentially popped up by the operator's sdk, which asks the mobile phone user whether to authorize their mobile phone number to be used by the app.
 
@@ -237,6 +241,8 @@ This authorization popup interface can be limitedly customized via the unverifyS
 
 univerifyStyle 数据结构：
 unverifyStyle data structure:
+
+> `HamronyOS` 仅支持 `fullScreen（是否全屏显示）`、`logoPath（自定义 logo 地址）`、`backgroundColor（背景颜色）`、`loginBtnText（登录按钮文本）`
 
 ```json
 {
@@ -334,6 +340,8 @@ Return data example
 ### 客户端关闭一键登录授权界面
 ### The client closes the one-click login authorization interface
 
+> HarmonyOS 不支持，请使用 [univerifyManager](https://uniapp.dcloud.net.cn/api/plugins/login.html#getuniverifymanager)
+
 请求登录认证操作完成后，不管成功或失败都不会关闭一键登录界面，需要主动调用`closeAuthView`方法关闭。
 After the request for login authentication is completed, the one-key login interface will not be closed regardless of success or failure. You need to actively call the `closeAuthView` method to close it.
 
@@ -346,6 +354,8 @@ uni.closeAuthView()
 
 ### 用户点击一键登录自定义按钮
 ### User clicks one-click login custom button
+
+> HarmonyOS 不支持
 
 `univerifyStyle`中如果配置了`"fullScreen": "true"`和`buttons`选项并且`buttons`数组不为空时，在全屏的时候会渲染出自定义按钮。
 If the `"fullScreen": "true"` and `buttons` options are configured in `univerifyStyle` and the `buttons` array is not empty, custom buttons will be rendered in full screen.
@@ -364,6 +374,8 @@ When the user clicks the `custom button`, the `fail` callback of `uni.login` is 
 
 ### 获取用户是否选中了勾选框（HBuilderX 3.2.5+ 版本支持）
 ### Get whether the user has checked the checkbox (supported by HBuilderX 3.2.5+)
+
+> HarmonyOS 不支持，请使用 [univerifyManager](https://uniapp.dcloud.net.cn/api/plugins/login.html#getuniverifymanager)
 
 `uni.getCheckBoxState(options)`
 
@@ -773,7 +785,7 @@ exports.main = async(event) => {
   + Android平台：[一键登录Android离线打包配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/oauth?id=%e4%b8%80%e9%94%ae%e7%99%bb%e5%bd%95)
   + Android platform: [One-click login Android offline package configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/oauth?id=%e4%b8%80%e9%94%ae%e7 %99%bb%e5%bd%95)
   + iOS平台：[一键登录iOS离线打包配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/oauth?id=%e4%b8%80%e9%94%ae%e7%99%bb%e5%bd%95%ef%bc%88univerify%ef%bc%89h)
-  + iOS platform: [One-click login for iOS offline package configuration](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/oauth?id=%e4%b8%80%e9%94%ae%e7 %99%bb%e5%bd%95%ef%bc%88univerify%ef%bc%89h)
+  + HarmonyOS：无
 
 
 ## 常见问题@question
@@ -803,7 +815,3 @@ uniCloud产生的费用对于一键登陆可以忽略，[详见](https://doc.dcl
 - **Other questions about use**
 欢迎扫码加入 一键登录 微信交流群讨论：
     <br/><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E4%B8%80%E9%94%AE%E8%AE%A4%E8%AF%81.png" width="250"/>
-
-
-
-

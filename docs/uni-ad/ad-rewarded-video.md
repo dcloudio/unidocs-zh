@@ -145,6 +145,9 @@ export default {
 </script>
 ```
 
+**提示**
+- adpid：1507000689 为app平台测试广告位，其他平台暂不支持测试广告位
+
 #### 组件API调用示例
 
 除了使用组件的点击外，也可以使用API来启动激励视频。
@@ -289,8 +292,9 @@ export default {
 |:-:								|:-:		|:-:																																																													|
 |detail: { isEnded }|boolean|视频是否是在用户完整观看的情况下被关闭的，true 表示用户是在视频播放完以后关闭的视频，false 表示用户在视频播放过程中关闭了视频|
 
+isEnded 作为一个客户端参数，仅作为参考，需通过服务器回调来判断最终结果。
 
-开发者需要根据 isEnded 判断是否视频是否播放结束。但 isEnded 作为一个客户端参数，无法确定是完整看完了视频，还是提前结束。需通过服务器回调来判断。在 isEnd 后，客户端应该向服务器请求确认，服务器如确认成功播放完毕则应该向用户发放奖励，
+海外广告的 isEnded 参数并不准确，需要通过服务器收到结果来验证。
 
 ```html
 <template>
@@ -541,9 +545,6 @@ export default {
 </script>
 ```
 
-
-### 服务器回调说明
-
 #### 服务器回调基于 [uniCloud](https://doc.dcloud.net.cn/uniCloud/)
 
 1. 由于多家广告商的回调和签名验证逻辑不同，开发者需要写很多逻辑，`uniCloud` 中的云函数 `uniAdCallback` 已抹平了差异，开发者按照统一的参数处理即可
@@ -573,13 +574,13 @@ export default {
 - 多个uni-app项目支持关联一个服务空间，都会调用同一个云函数uniAdCallbck，通过接收回调参数中的属性广告位adpid区分
 
 
-### 服务器回调参数@uniAdCallbackParameters
+#### 服务器回调参数@uniAdCallbackParameters
 
 |字段定义	|类型		|字段名称				|备注															|
 |:-:			|:-:		|:-:						|:-:															|
 |adpid		|String	|DCloud广告位id	|																	|
 |provider	|String	|广告服务商			|china、global					|
-|platform	|String	|平台						|iOS、Android											|
+|platform	|String	|平台						|iOS、Android、weixin-mp										|
 |sign			|String	|签名						|																	|
 |trans_id	|String	|交易id					|完成观看的唯一交易ID							|
 |user_id	|String	|用户id					|调用SDK透传，应用对用户的唯一标识|
@@ -609,13 +610,13 @@ sign = sha256(secret:transid)
 |:-|:-|:-|:-|
 |isValid|校验结果|Blean|判定结果，是否发放奖励，具体发放奖励由用户自己的业务系统决定|
 
-### 老用户升级@upgrade
+#### 老用户升级@upgrade
 
 1. 在传统服务器增加[签名校验](/uni-ad/ad-rewarded-video.md#sign)
 2. 登陆 uni-ad [Web控制台](https://uniad.dcloud.net.cn/)，找到广告位对应的配置激励视频，选择 "业务在传统服务器" 并配置服务器HTTP地址
 
 
-### 微信小程序说明@callbackweixin
+#### 微信小程序说明@callbackweixin
 
 3.6.8+ 支持微信小程序服务器回调
 

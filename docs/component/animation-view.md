@@ -50,7 +50,7 @@ Lottie animation components, animation resource reference [Lottie official link]
 | @bindended	| EventHandle	|		| 当播放到末尾时触发 ended 事件（自然播放结束会触发回调，循环播放结束及手动停止动画不会触发）	|
 | @bindended | EventHandle | | The ended event is triggered when the playback reaches the end (the callback will be triggered when the natural playback ends, and the end of the loop playback and manual stop animation will not be triggered) |
 
-<!-- UNIAPPCOMJSON.animation-view.attribute -->
+
 
 **注意**
 * 百度小程序平台path属性目前不支持远程地址，仅支持本地绝对路径，[详情](https://smartprogram.baidu.com/docs/develop/component/animation-view-Lottie/)

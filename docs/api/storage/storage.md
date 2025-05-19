@@ -13,7 +13,7 @@
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.setStorage.param -->
+
 
 **示例**
 
@@ -64,7 +64,7 @@ try {
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.getStorage.param -->
+
 
 **success 返回参数说明**
 
@@ -96,7 +96,7 @@ uni.getStorage({
 |:-|:-|:-|:-|
 |key|String|是|本地缓存中的指定的 key|
 
-<!-- UNIAPPAPIJSON.getStorageSync.param -->
+
 
 **示例**
 
@@ -132,7 +132,7 @@ try {
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.getStorageInfo.param -->
+
 
 **success 返回参数说明**
 
@@ -198,7 +198,7 @@ try {
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.removeStorage.param -->
+
 
 **示例**
 
@@ -224,7 +224,7 @@ uni.removeStorage({
 |:-|:-|:-|:-|
 |key|String|是|本地缓存中的指定的 key|
 
-<!-- UNIAPPAPIJSON.removeStorageSync.param -->
+
 
 **示例**
 

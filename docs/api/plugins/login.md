@@ -63,11 +63,8 @@ If you don’t use uni-id, when the WeChat embedded browser runs the H5 version,
 |scopes|String/Array|见平台差异说明|授权类型，默认 auth_base。支持 auth_base（静默授权）/ auth_user（主动授权） / auth_zhima（芝麻信用）|支付宝小程序|
 | scopes| String/Array|See platform difference description|Authorization type, default auth_base. Support auth_base (silent authorization) / auth_user (active authorization) / auth_zhima (Sesame Credit) | Alipay MiniApp|
 |timeout|Number|否|超时时间，单位ms|微信小程序、百度小程序、京东小程序|
-| timeout| Number|No|Timeout time, unit ms|WeChat MiniApp, Baidu MiniApp, Jingdong MiniApp|
-|univerifyStyle|Object|否|[一键登录](/univerify)页面样式|App 3.0.0+|
-| univerifyStyle| Object|No|[one-key login](/univerify) page style| App 3.0.0+|
-|onlyAuthorize|Boolean|否|`微信登录`仅请求授权认证|App 3.2.6+|
-| onlyAuthorize| Boolean|No| `WeChat Login` only requests authorization authentication | App 3.2.6+|
+|univerifyStyle|Object|否|[一键登录](/univerify)页面样式|App 3.0.0+、`HarmonyOS 不支持`|
+|onlyAuthorize|Boolean|否|`微信登录`仅请求授权认证|App 3.2.6+、`HarmonyOS 不支持`|
 |success|Function|否|接口调用成功的回调||
 | success| Function|No|Interface call success callback||
 |fail|Function|否|接口调用失败的回调函数||
@@ -531,7 +528,7 @@ Get the globally unique one-click login manager univerifyManager
 
 |App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√ (3.2.13+)|x|x|x|x|x|x|x|x|x|x|
+|√ (3.2.13+)|4.61|x|x|x|x|x|x|x|x|x|
 
 **univerifyManager 方法说明**
 **univerifyManager method description**
@@ -546,11 +543,8 @@ Get the globally unique one-click login manager univerifyManager
 |close|Function|关闭一键登陆页面|
 | close| Function|Close one-click landing page|
 |getCheckBoxState|Function|获取一键登录条款勾选框状态|
-| getCheckBoxState| Function|Get the checkbox state of one-click login terms|
-|onButtonsClick|Function|订阅一键登录自定义按钮点击事件|
-| onButtonsClick| Function|Subscribe to one-click login custom button click event|
-|offButtonsClick|Function|取消订阅一键登录自定义按钮点击事件|
-| offButtonsClick| Function|Unsubscribe one-click login custom button click event|
+|onButtonsClick|Function|订阅一键登录自定义按钮点击事件；`HarmonyOS 不支持`|
+|offButtonsClick|Function|取消订阅一键登录自定义按钮点击事件；`HarmonyOS 不支持`|
 
 **使用示例**
 **Usage example**
@@ -618,3 +612,51 @@ univerifyManager.onButtonsClick(callback)
 // unsubscribe custom button click event
 univerifyManager.offButtonsClick(callback)
 ```
+
+### HarmonyOS 使用 getUniverifyManager 注意事项 @harmonyos-univerify
+
+- 在使用 `getUniverifyManager().login` 时，其中 `univerifyStyle 参数` 只支持传递（支持情况和 [uni-app x 一键登录 login 一致](https://doc.dcloud.net.cn/uni-app-x/api/get-univerify-manager.html#login)）:
+  - `fullScreen` 是否全屏显示一键登录弹框
+  - `logoPath` 一键登录弹框顶部 logo 图片路径
+  - `loginBtnText` 一键登录按钮文案
+- 运行到鸿蒙手机调试，必须在 [开通一键登录](https://uniapp.dcloud.net.cn/univerify.html#%E5%BC%80%E9%80%9A) 后，在 uniCloud `一键登录 -> 应用管理` 添加应用，并将所添加应用的包名配置在 `manifest` 中才可以调试运行，否则运行报错
+- 需要在 `modules.json5` 中配置以下权限：
+  ```json
+  "requestPermissions": [
+    {
+      //允许应用程序联网，用于访问网关和认证服务器
+      "name": "ohos.permission.INTERNET",
+    },
+    {
+      //获取网络状态，判断是否数据、wifi等
+      "name": "ohos.permission.GET_NETWORK_INFO"
+    },
+    {
+      //允许获取wifi信息
+      "name": "ohos.permission.GET_WIFI_INFO"
+    },
+    {
+      //允许应用配置数据网络
+      "name": "ohos.permission.SET_NETWORK_INFO"
+    },
+    {
+      //用于创建唯一的gyuid标识
+      "name": "ohos.permission.APP_TRACKING_CONSENT",
+      "usedScene": {
+        "abilities": [
+          "EntryAbility"
+        ]
+      },
+      "reason": "$string:gy_oaid_tracking" // 此项需要在 `harmony-config/AppScope/resources/base/element/string.json` 中配置，[配置文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/resource-categories-and-access-V5#%E8%B5%84%E6%BA%90%E7%BB%84%E7%9B%AE%E5%BD%95)
+    }
+  ]
+  ```
+- 配置CHANNEL(非必选)，项目的module.json5文件中配置 GT_INSTALL_CHANNEL:
+  ```json
+  "metadata": [
+    {
+      "name": "GT_INSTALL_CHANNEL",
+      "value": "CHANNEL" // 填写你想要的渠道名
+    }
+  ]
+  ```

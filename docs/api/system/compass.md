@@ -4,7 +4,7 @@ Monitor compass data, frequency: 5 times per second, it will automatically start
 
 |元服务|
 |:-:|
-|x|
+|1.0.4+|
 
 <!-- UNIAPPAPIJSON.onCompassChange.compatibility -->
 
@@ -17,7 +17,7 @@ Monitor compass data, frequency: 5 times per second, it will automatically start
 |direction|Number|面对的方向度数|
 | direction| Number|Facing direction in degrees|
 
-<!-- UNIAPPAPIJSON.onCompassChange.param -->
+
 
 **Tips**
 - H5端获取罗盘信息，需要部署在 **https** 服务上，本地预览（localhost）仍然可以使用 http 协议。
@@ -44,7 +44,7 @@ Cancel listening to compass data.
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|x|x|
+|HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|x|1.0.4+|
 
 <!-- UNIAPPAPIJSON.offCompassChange.compatibility -->
 
@@ -75,7 +75,7 @@ Start listening to compass data.
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|x|√|√|√|√|x|x|
+|√|√|√|x|√|√|√|√|x|1.0.4+|
 
 <!-- UNIAPPAPIJSON.startCompass.compatibility -->
 
@@ -92,7 +92,7 @@ Start listening to compass data.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
-<!-- UNIAPPAPIJSON.startCompass.param -->
+
 
 **示例**
 **example**
@@ -122,7 +122,7 @@ Stop listening to compass data.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
-<!-- UNIAPPAPIJSON.stopCompass.param -->
+
 
 **示例**
 **example**

@@ -55,6 +55,10 @@ Initialize the Wi-Fi module
 关闭 Wi-Fi 模块
 Turn off the Wi-Fi module
 
+|元服务|
+|:-:|
+|x|
+
 <!-- UNIAPPAPIJSON.stopWifi.compatibility -->
 
 **OBJECT 参数说明**
@@ -76,6 +80,10 @@ Turn off the Wi-Fi module
 
 获取已连接的 Wi-Fi 信息
 Get connected Wi-Fi information
+
+|元服务|
+|:-:|
+|1.0.4+|
 
 <!-- UNIAPPAPIJSON.getConnectedWifi.compatibility -->
 
@@ -109,6 +117,10 @@ Get connected Wi-Fi information
 
 ## uni.getWifiList(OBJECT)
 
+|元服务|
+|:-:|
+|1.0.4+|
+
 请求获取 Wi-Fi 列表。wifiList 数据会在 onGetWifiList 注册的回调中返回。
 Request a Wi-Fi list. The wifiList data will be returned in the callback registered by onGetWifiList.
 
@@ -140,6 +152,10 @@ Request a Wi-Fi list. The wifiList data will be returned in the callback registe
 监听获取到 Wi-Fi 列表数据事件。
 Listen to the event of getting Wi-Fi list data.
 
+|元服务|
+|:-:|
+|1.0.4+|
+
 <!-- UNIAPPAPIJSON.onGetWifiList.compatibility -->
 
 **CALLBACK 参数说明**
@@ -169,6 +185,10 @@ Obtain the listener function of the Wi-Fi list data event
 移除获取到 Wi-Fi 列表数据事件的监听函数。
 Remove the listener function for getting the Wi-Fi list data event.
 
+|元服务|
+|:-:|
+|1.0.4+|
+
 **CALLBACK 参数说明**
 **CALLBACK parameter description**
 
@@ -188,6 +208,10 @@ The listener function passed in by onGetWifiList. If this parameter is not passe
 
 连接 Wi-Fi。若已知 Wi-Fi 信息，可以直接利用该接口连接。
 Connect to Wi-Fi. If the Wi-Fi information is known, you can directly use this interface to connect.
+
+|元服务|
+|:-:|
+|1.0.4+|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -226,6 +250,10 @@ Connect to Wi-Fi. If the Wi-Fi information is known, you can directly use this i
 监听连接上 Wi-Fi 的事件。
 Listen for Wi-Fi connected events.
 
+|元服务|
+|:-:|
+|1.0.4+|
+
 **CALLBACK 参数说明**
 **CALLBACK parameter description**
 
@@ -263,9 +291,9 @@ onWifiConnected incoming listener function. If this parameter is not passed, all
 **平台差异说明**
 **Platform Difference Description**
 
-|App-Android|App-iOS|
-|:-:|:-:|
-|√|x|
+|App-Android|App-iOS|元服务|
+|:-:|:-:|:-:|
+|√|x|1.0.4+|
 
 <!-- UNIAPPAPIJSON.offWifiConnected.compatibility -->
 

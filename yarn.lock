@@ -2099,6 +2099,11 @@ argparse@^1.0.7:
   dependencies:
     sprintf-js "~1.0.2"
 
+argparse@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npmmirror.com/argparse/-/argparse-2.0.1.tgz#246f50f3ca78a3240f6c997e8a9bd1eac49e4b38"
+  integrity sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==
+
 arr-diff@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmmirror.com/arr-diff/-/arr-diff-4.0.0.tgz#d6461074febfec71e7e15235761a329a5dc7c520"
@@ -4392,10 +4397,10 @@ entities@^4.2.0, entities@^4.5.0:
   resolved "https://registry.npmmirror.com/entities/-/entities-4.5.0.tgz#5d268ea5e7113ec74c4d033b79ea5a35a488fb48"
   integrity sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==
 
-entities@~1.1.1:
-  version "1.1.2"
-  resolved "https://registry.npmmirror.com/entities/-/entities-1.1.2.tgz#bdfa735299664dfafd34529ed4f8522a275fea56"
-  integrity sha512-f2LZMYl1Fzu7YSBKg+RoROelpOaNrcGmE9AZubeDfrCEia483oW4MI4VyFd5VNHIgQ/7qm1I0wUHK1eJnn2y2w==
+entities@~3.0.1:
+  version "3.0.1"
+  resolved "https://registry.npmmirror.com/entities/-/entities-3.0.1.tgz#2b887ca62585e96db3903482d336c1006c3001d4"
+  integrity sha512-WiyBqoomrwMdFG1e0kqvASYfnlb0lp8M5o5Fw2OFq1hNZxxcNk8Ik0Xm7LxzBhuidnZB/UtBqVCgUz3kBOP51Q==
 
 envify@^4.0.0:
   version "4.1.0"
@@ -6315,10 +6320,10 @@ latest-version@^5.0.0:
   dependencies:
     package-json "^6.3.0"
 
-linkify-it@^2.0.0:
-  version "2.2.0"
-  resolved "https://registry.npmmirror.com/linkify-it/-/linkify-it-2.2.0.tgz#e3b54697e78bf915c70a38acd78fd09e0058b1cf"
-  integrity sha512-GnAl/knGn+i1U/wjBz3akz2stz+HrHLsxMwHQGofCDfPvlf+gDKN58UtfmUquTY4/MXeE2x7k19KQmeoZi94Iw==
+linkify-it@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.npmmirror.com/linkify-it/-/linkify-it-4.0.1.tgz#01f1d5e508190d06669982ba31a7d9f56a5751ec"
+  integrity sha512-C7bfi1UZmoj8+PQx22XyeXCuBlokoyWQL5pWSP+EI6nzRylyThouddufc2c1NDIcP9k5agmN9fLpA7VNJfIiqw==
   dependencies:
     uc.micro "^1.0.1"
 
@@ -6541,14 +6546,14 @@ markdown-it-task-lists@^2.1.1:
   resolved "https://registry.npmmirror.com/markdown-it-task-lists/-/markdown-it-task-lists-2.1.1.tgz#f68f4d2ac2bad5a2c373ba93081a1a6848417088"
   integrity sha512-TxFAc76Jnhb2OUu+n3yz9RMu4CwGfaT788br6HhEDlvWfdeJcLUsxk1Hgw2yJio0OXsxv7pyIPmvECY7bMbluA==
 
-markdown-it@^8.4.1:
-  version "8.4.2"
-  resolved "https://registry.npmmirror.com/markdown-it/-/markdown-it-8.4.2.tgz#386f98998dc15a37722aa7722084f4020bdd9b54"
-  integrity sha512-GcRz3AWTqSUphY3vsUqQSFMbgR38a4Lh3GWlHRh/7MRwz8mcu9n2IO7HOh+bXHrR9kOPDl5RNCaEsrneb+xhHQ==
+"markdown-it@< 14", markdown-it@^8.4.1:
+  version "13.0.2"
+  resolved "https://registry.npmmirror.com/markdown-it/-/markdown-it-13.0.2.tgz#1bc22e23379a6952e5d56217fbed881e0c94d536"
+  integrity sha512-FtwnEuuK+2yVU7goGn/MJ0WBZMM9ZPgU9spqlFs7/A/pDIUNSOQZhUgOqYCficIuR2QaFnrt8LHqBWsbTAoI5w==
   dependencies:
-    argparse "^1.0.7"
-    entities "~1.1.1"
-    linkify-it "^2.0.0"
+    argparse "^2.0.1"
+    entities "~3.0.1"
+    linkify-it "^4.0.1"
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
 
@@ -9559,10 +9564,12 @@ vuepress-plugin-container@^2.0.2:
     "@vuepress/shared-utils" "^1.2.0"
     markdown-it-container "^2.0.0"
 
-vuepress-plugin-expandable-row@^1.0.9:
-  version "1.0.9"
-  resolved "https://registry.npmmirror.com/vuepress-plugin-expandable-row/-/vuepress-plugin-expandable-row-1.0.9.tgz#97a74741c13df062af090208fd09544444e25d13"
-  integrity sha512-CSLv5eRLRARuHUec6y3uzf4HnFRmiGls7O1WAery8pBGmK4DXnrBcHENNtBtsIWAuSOtE8vSNtjTJTJtBXOXmw==
+vuepress-plugin-expandable-row@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-expandable-row/-/vuepress-plugin-expandable-row-1.0.10.tgz#7152250d937edd4df321718c07c94e0121e3f608"
+  integrity sha512-Dt/9lcPtGyK27NM8pKrMQPxTxGaXhGgv6lXCnYGCGV6LRmi71mkTuvRJmYVg0B95Jr6edebqhhp3Y9t50um6LQ==
+  dependencies:
+    markdown-it-raw-table "^1.0.0"
 
 vuepress-plugin-juejin-style-copy@^1.0.4:
   version "1.0.4"
@@ -9597,10 +9604,10 @@ vuepress-plugin-zooming@^1.1.8:
   dependencies:
     zooming "^2.1.1"
 
-vuepress-theme-uniapp-official@^1.4.32:
-  version "1.4.32"
-  resolved "https://registry.npmmirror.com/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.4.32.tgz#0d70d0715ee6281a40688b9e62fda609d3183b0d"
-  integrity sha512-AeyGbx3zr22+kah8rnNgLaF/HuQJnMojeKRvRe4z0oBO3mmjHHDyKZ5W6Lox44yxaY4Fv+Y4IYxZKGILp4wIqQ==
+vuepress-theme-uniapp-official@^1.4.35:
+  version "1.4.35"
+  resolved "https://registry.npmmirror.com/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.4.35.tgz#3b2874bc736164c7bf5e86eaf120570d77f02005"
+  integrity sha512-M/w2trKdlIzhXfLOiCdBcczsYbce+U8/UuPcF8Uvk5+Jida17RHp9zKxE9Qy23LnGxQ2m1Zv+8zEAY2Mkz9psg==
   dependencies:
     "@docsearch/css" "^3.6.0"
     "@vuepress/plugin-back-to-top" "^1.9.5"
@@ -9611,7 +9618,7 @@ vuepress-theme-uniapp-official@^1.4.32:
     markdown-it-task-lists "^2.1.1"
     qr-code-with-logo "^1.1.0"
     vuepress-plugin-check-md2 "^1.0.5"
-    vuepress-plugin-expandable-row "^1.0.9"
+    vuepress-plugin-expandable-row "^1.0.10"
     vuepress-plugin-juejin-style-copy "^1.0.4"
     vuepress-plugin-mermaidjs "1.9.1"
     vuepress-plugin-named-chunks "^1.1.4"

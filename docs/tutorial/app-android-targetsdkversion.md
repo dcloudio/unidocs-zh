@@ -70,10 +70,11 @@ The corresponding list of API levels and Android versions is as follows:
 
 | API等级 | Android版本号 | Android版本名称 |  
 | :-- | :-- | :-- |  
-| 35 | Android15 | Android V, Vanilla Ice Cream|
-| 34 | Android14 | Android U, Upside Down Cake|
+| 36 | Android16 | Android W |  
+| 35 | Android15 | Android V, Vanilla Ice Cream |  
+| 34 | Android14 | Android U, Upside Down Cake |  
 | 33 | Android13 | Android T, Tiramisu |  
-| 32 | Android12L | Android S_V2 |  
+| 32 | Android12L | Android Sv2 |  
 | 31 | Android12 | Android S, Snow Cone |  
 | 30 | Android11 | Android R, Red Velvet Cake |  
 | 29 | Android10 | Android Q, Quince Tart |  

@@ -7,7 +7,7 @@ Create and return the context cameraContext object of the camera component.
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|√|√|√|x|√|√|√|x|x|
+|x|x|√|√|√|√|x|√|√|√|1.0.4+|x|
 
 本API为 camera 组件配套的js API，与 camera 组件的平台兼容性相同，可实现非全屏摄像头。App端可通过[plus.camera](https://www.html5plus.org/doc/zh_cn/camera.html)实现全屏摄像头。
 This API is the js API supporting the camera component, which has the same platform compatibility as the camera component, and can realize a non-full-screen camera. The app can realize full-screen camera through [plus.camera](https://www.html5plus.org/doc/zh_cn/camera.html).
@@ -106,4 +106,4 @@ This API is the js API supporting the camera component, which has the same platf
 - 各家小程序平台对API的实现情况可能不一致，比如支付宝小程序调用createCameraContext时需要传参cameraId，使用时请以具体文档为准。
 - Different MiniApp platforms may have different API implementations. For example, Alipay MiniApp needs to pass the parameter cameraId when calling createCameraContext. Please refer to the specific document when using it.
 - 支付宝小程序开发者工具（IDE）暂不支持调试此 API，请使用真机调试功能在真机进行调试。
-- The Alipay MiniApp Developer Tool (IDE) does not support debugging this API at the moment, please use the real device debugging function to debug on a real device.
+- 鸿蒙元服务使用需要提前配置 `entry/src/main/module.json5` 权限，并在运行时调用 `uni.authorize` 申请权限。参考 [scope.camera 文档](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/develop-authorization#section234119171375)

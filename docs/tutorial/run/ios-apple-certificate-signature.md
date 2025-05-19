@@ -13,8 +13,8 @@ Because Apple prohibits enterprise certificates from being used by non-enterpris
 运行标准基座到iOS真机设备前，需要使用开发者的证书对基座签名后才能运行。（运行到xcode模拟器不受限制）
 Before running the standard base to the real iOS device, the base needs to be signed with the developer's certificate before it can run. (Runs to xcode simulator unrestricted)
 
-**注意：**: `HBuilderX每次升级，因为标准基座更新，都需要重新对iOS标准基座进行签名。`
-**Note:**: `Every time HBuilderX is upgraded, because the standard base is updated, the iOS standard base needs to be re-signed. `
+**注意**: `HBuilderX每次升级，因为标准基座更新，需要重新对iOS标准基座进行签名。`
+
 
 ## 如何用Apple证书对iOS标准基座签名
 ## How to sign iOS standard base with Apple certificate
@@ -29,8 +29,20 @@ In the iOS standard base signature window, enter `Bundle ID`, `Certificate Priva
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ios%E6%A0%87%E5%87%86%E5%9F%BA%E5%BA%A7%E7%AD%BE%E5%90%8D2.jpg" style="zoom: 50%" />
 
+::: warning 提示
+
+项目中包含`uts插件`，在 Mac OS 系统中如果安装了 XCode 环境，在以下情况下会重新编译 uts插件，自动弹出重签名界面。  
+
+- 真机运行时勾选了`清除构建缓存`  
+- 修改了`uts插件`的源码  
+
+:::
+
+
 ## 其他签名方案
 ## Other signature schemes
+
+> 项目中包含uts插件时，在 Mac OS 系统存在 XCode 时会自动编译uts插件，这时需要对安装包重新签名，这种场景不适用其它签名方案，请使用HBuilderX自带签名功能。  
 
 Windows系统，HBuilderX 3.6.20以下版本，没有内置重签功能，开发者可以使用三方工具（如爱思助手）对标准基座签名。
 For Windows systems, versions below HBuilderX 3.6.20 do not have a built-in re-sign function. Developers can use third-party tools (such as Aisi Assistant) to sign the standard base.

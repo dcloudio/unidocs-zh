@@ -11,7 +11,7 @@ The frequency of Alipay applet is 500ms/time, and the frequency of WeChat applet
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|√|x|x|x|
+|x|x|√|√|x|x|1.0.4+|
 
 **CALLBACK 参数说明**
 **CALLBACK parameter description**
@@ -44,7 +44,7 @@ Start listening for gyroscope data.
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|√|x|x|x|
+|x|x|√|√|x|x|1.0.4+|
 
 |属性|类型|默认值|必填|说明|平台说明|
 |Attribute|Type|Default|Required|Description|Platform Description|
@@ -68,7 +68,7 @@ Stop listening for gyroscope data.
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|√|x|x|x|
+|x|x|√|√|x|x|1.0.4+|
 
 |属性|类型|必填|说明|
 |Attribute|Type|Required|Description|

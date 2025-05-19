@@ -56,7 +56,7 @@ Dynamically set the content of a tabBar item
 |selectedColor|String|字体图标选中颜色|
 | selectedColor| String| font icon selected color|
 
-<!-- UNIAPPAPIJSON.setTabBarItem.param -->
+
 
 **示例代码**
 **Example Code**
@@ -136,7 +136,7 @@ Dynamically set the overall style of tabBar
 |complete|Funtion||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function||No|The callback function of the end of the interface call (it will be executed when the call succeeds or fails)|
 
-<!-- UNIAPPAPIJSON.setTabBarStyle.param -->
+
 
 **backgroundImage创建线性渐变说明**
 **backgroundImage creates a linear gradient description**
@@ -204,7 +204,7 @@ hide tabBar
 |complete|Funtion||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function||No|The callback function of the end of the interface call (it will be executed when the call succeeds or fails)|
 
-<!-- UNIAPPAPIJSON.hideTabBar.param -->
+
 
 <!-- UNIAPPAPIJSON.hideTabBar.tutorial -->
 
@@ -236,7 +236,7 @@ show tabBar
 |complete|Funtion||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function||No|The callback function of the end of the interface call (it will be executed when the call succeeds or fails)|
 
-<!-- UNIAPPAPIJSON.showTabBar.param -->
+
 
 <!-- UNIAPPAPIJSON.showTabBar.tutorial -->
 
@@ -270,7 +270,7 @@ Add text to the upper right corner of an item in the tabBar.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
-<!-- UNIAPPAPIJSON.setTabBarBadge.param -->
+
 
 **示例代码**
 **Example Code**
@@ -313,7 +313,7 @@ Remove the text in the upper right corner of an item in the tabBar.
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
 
-<!-- UNIAPPAPIJSON.removeTabBarBadge.param -->
+
 
 <!-- UNIAPPAPIJSON.removeTabBarBadge.tutorial -->
 
@@ -345,7 +345,7 @@ Displays a red dot in the upper right corner of an item in the tabBar.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
-<!-- UNIAPPAPIJSON.showTabBarRedDot.param -->
+
 
 <!-- UNIAPPAPIJSON.showTabBarRedDot.tutorial -->
 
@@ -377,7 +377,7 @@ Hide the red dot in the upper right corner of an item in the tabBar.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
-<!-- UNIAPPAPIJSON.hideTabBarRedDot.param -->
+
 
 <!-- UNIAPPAPIJSON.hideTabBarRedDot.tutorial -->
 

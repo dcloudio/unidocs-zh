@@ -352,7 +352,7 @@ For volume control, refer to the following:
 #### WeChat MiniApp Development Attention
 
 - 建议关注[微信小程序当前bug列表](https://developers.weixin.qq.com/community/develop/issueList?type=%E4%BF%AE%E5%A4%8D%E4%B8%AD&block=bug)，对已知Bug，想办法避让。
-- It is recommended to pay attention to [WeChat MiniApp Current Bug List](https://developers.weixin.qq.com/community/develop/issueList?type=%E4%BF%AE%E5%A4%8D%E4%B8%AD&block=bug), find ways to avoid known bugs.
+* `ios` 真机调试时，需要开启 `详情` 下 `本地设置` 的 `上传代码时自动压缩脚本文件` 选项，否则会报错。
 
 #### 支付宝小程序开发注意
 #### Pay attention to Alipay MiniApp development
@@ -454,7 +454,8 @@ sign放到项目根目录，编译后自动拷贝到 .quickapp/sign，每次编�
 
 #### 鸿蒙元服务@mp-harmony
 
-- 目前 uni-app 开发鸿蒙元服务还在开发迭代，暂不支持模拟器，只支持鸿蒙 Next 真机。
 - 鸿蒙常见问题，请参考 [元服务开发注意事项](/tutorial/mp-harmony/intro#注意事项)
 
 #### 小红书小程序@mp-xhs
+
+- 小红书全局变量不包含 `navigator`，使用 `globalThis` 进行特征判断需要真机运行验证

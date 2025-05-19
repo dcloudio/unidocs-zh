@@ -25,7 +25,7 @@ The `manifest.json` file is the configuration file of the application, which is 
 |debug|Boolean|false|是否开启 debug 模式，开启后调试信息以 ``info`` 的形式给出，其信息有页面的注册，页面路由，数据更新，事件触发等||
 | debug| Boolean| false|Whether to enable the debug mode, the debugging information will be given in the form of ``info`` after it is enabled, and its information includes page registration, page routing, data update, event triggering, etc. ||
 |uniStatistics|Object||[是否开启 uni 统计，全局配置](/collocation/manifest?id=uniStatistics)|2.2.3+|
-| uniStatistics| Object||[Whether to enable uni statistics, global configuration](/collocation/manifest?id=uniStatistics)| 2.2.3+|
+|sassImplementationName|dart-sass或node-sass||[使用的scss预编译库，仅限vue2项目，默认值：dart-sass，HBuilderX Mac Arm版始终为dart-sass](/tutorial/syntax-css.html#css-preprocessor)|4.56+|
 |app-plus|Object||[App 特有配置](/collocation/manifest?id=app-plus)||
 | app-plus| Object||[App specific configuration](/collocation/manifest?id=app-plus)||
 |h5|Object||[H5 特有配置](/collocation/manifest?id=h5)||
@@ -632,7 +632,7 @@ Tips: For treeshaking optimization (treeShaking) principle and optimization resu
 |uniStatistics|Object|[微信小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 | uniStatistics| Object|[Whether to enable uni statistics in the WeChat MiniApp, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
-|mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.md#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
+|mergeVirtualHostAttributes|Boolean|合并由 Vue 组件编译而成的小程序组件[虚拟节点](/tutorial/vue-api.md#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性，目前仅支持 id（v4.42+）、style（v3.5.1+）、class（v3.5.1+）以及 v-show 指令生成的 hidden（v4.41+） 属性|
 |slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
 |embeddedAppIdList|Array|要半屏跳转的小程序appid。[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html)|
 |requiredPrivateInfos|Array|地理位置相关接口。[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#requiredPrivateInfos)|
@@ -720,7 +720,7 @@ After configuring the directory, you need to create a new `vue.config.js` in the
 |uniStatistics				|Object	|[支付宝小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 | uniStatistics | Object |[Whether the Alipay MiniApp enables uni statistics, the configuration method is the same as the global configuration](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
-|mergeVirtualHostAttributes|Boolean|合并组件[虚拟节点](/tutorial/vue-api.md#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性（目前仅支持 style、class 属性），uni-app 3.5.1+ 开始支持|
+|mergeVirtualHostAttributes|Boolean|合并由 Vue 组件编译而成的小程序组件[虚拟节点](/tutorial/vue-api.md#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性，目前仅支持 id（v4.42+）、style（v3.5.1+）、class（v3.5.1+）以及 v-show 指令生成的 hidden（v4.41+） 属性|
 |slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
 |lazyCodeLoading|String|是否开启代码按需执行。|
 |styleIsolation|String|组件样式隔离方式，默认值为 `apply-shared`，具体配置 [详见](https://opendocs.alipay.com/mini/framework/page-acss)。 uni-app 3.99+ 开始支持|

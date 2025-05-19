@@ -74,6 +74,7 @@ WeChat MiniApp`signType` description
 ### Precautions
 - APP端，如果你的应用在用户完成支付后；立即给支付的用户push消息通知。会与前端支付回调相互冲突，请延迟执行推送。
 - 抖音小程序支付接口调整使用时请注意[发起头条支付](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/pay/tt-pay)
+- 鸿蒙系统（HarmonyOS Next）暂仅支持 `支付宝支付`
 
 ### orderInfo 注意事项@orderInfo
 ### orderInfo Notes @orderInfo
@@ -158,8 +159,8 @@ uni.requestPayment({
     - 开通App支付功能
     - 配置密钥（获取公钥、私钥）
 
-  具体可参考支付宝官方文档： [App支付快速接入](https://docs.open.alipay.com/204/105297/)
-  For details, please refer to the official Alipay documentation: [Quick access to App payment](https://docs.open.alipay.com/204/105297/)
+  - 具体可参考支付宝官方文档： [App支付快速接入](https://docs.open.alipay.com/204/105297/)
+  - 关于支付宝支付，当传入orderinfo参数后，app-android平台可以成功调用支付宝，但app-ios平台有时会出现奔溃&卡顿，这时候需要检测后端 ‘out_trade_no’ 参数是否设置为string类型，参考[支付宝文档：业务请求参数](https://opendocs.alipay.com/open/cd12c885_alipay.trade.app.pay)
 
 
 如果手机端未安装支付宝，调用时会启动支付宝的wap页面登录，如果已安装相应客户端，会启动其客户端登录。

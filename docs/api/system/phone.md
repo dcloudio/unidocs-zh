@@ -16,7 +16,7 @@
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.makePhoneCall.param -->
+
 
 **示例**
 
@@ -35,6 +35,5 @@ uni.makePhoneCall({
 - Android遍历读取短信：[https://ask.dcloud.net.cn/article/12934](https://ask.dcloud.net.cn/article/12934)
 注意需要赋予相关权限。
 - 钉钉小程序端拨打电话，详见[https://open.dingtalk.com/document/orgapp-client/call-menu](https://open.dingtalk.com/document/orgapp-client/call-menu)
-- `HarmonyOS Next` 平台使用时需要添加权限 `ohos.permission.PLACE_CALL`
 
 <!-- UNIAPPAPIJSON.makePhoneCall.tutorial -->

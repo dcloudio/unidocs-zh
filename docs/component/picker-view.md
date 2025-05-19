@@ -22,7 +22,7 @@
 |@pickstart|eventhandle|当滚动选择开始时候触发事件|微信小程序2.3.1、快手小程序|
 |@pickend|eventhandle|当滚动选择结束时候触发事件|微信小程序2.3.1、快手小程序|
 
-<!-- UNIAPPCOMJSON.picker-view.attribute -->
+
 
 **注意：**其中只可放置 `<picker-view-column/>` 组件，其他节点不会显示。
 

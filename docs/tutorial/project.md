@@ -14,7 +14,7 @@ A uni-app project contains the following directories and files by default:
 ┌─uniCloud              云空间目录，支付宝小程序云为uniCloud-alipay，阿里云为uniCloud-aliyun，腾讯云为uniCloud-tcb（详见<a href="https://uniapp.dcloud.io/uniCloud/quickstart?structure&id=structure">uniCloud</a>）
 │─components            符合vue组件规范的uni-app组件目录
 │  └─comp-a.vue         可复用的a组件
-├─utssdk                存放uts文件
+├─utssdk                存放uts文件（已废弃）
 ├─pages                 业务页面文件存放的目录
 │  ├─index
 │  │  └─index.vue       index页面

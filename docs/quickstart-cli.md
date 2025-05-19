@@ -2,35 +2,11 @@
 In addition to the HBuilderX visual interface, you can also use `cli` scaffolding, and you can create an `uni-app` project through `vue-cli`.
 
 
-## 环境安装 @install-vue-cli
-## Environment installation @install-vue-cli
-
-全局安装 vue-cli
-Install vue-cli globally
-
-```shell
-npm install -g @vue/cli
-```
 
 ## 创建uni-app
 ## Create uni-app
 
-* 使用正式版（对应HBuilderX最新正式版）
-* Use the official version (corresponding to the latest official version of HBuilderX)
-
-  ```shell
-  vue create -p dcloudio/uni-preset-vue my-project
-  ```
-
-* 使用alpha版（对应HBuilderX最新alpha版）
-* Use the alpha version (corresponding to the latest alpha version of HBuilderX)
-
-  ```shell
-  vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project
-  ```
-
-* 使用Vue3/Vite版
-* Use Vue3/Vite version
+* 创建 vue3 项目
   * 创建以 javascript 开发的工程（如命令行创建失败，请直接访问 [gitee](https://gitee.com/dcloud/uni-preset-vue/repository/archive/vite.zip) 下载模板）
   * Create a project developed with javascript (if the command line creation fails, please visit [gitee](https://gitee.com/dcloud/uni-preset-vue/repository/archive/vite.zip) to download the template directly)
     ```shell
@@ -43,6 +19,21 @@ npm install -g @vue/cli
   * Create a project developed with typescript (if the command line fails to create, please visit [gitee](https://gitee.com/dcloud/uni-preset-vue/repository/archive/vite-ts.zip) directly to download the template)
     ```shell
     npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
+    ```
+
+* 创建 vue2 项目
+  > 需要全局安装 vue-cli `npm install -g @vue/cli`
+
+  * 使用正式版（对应HBuilderX最新正式版）
+
+    ```shell
+    vue create -p dcloudio/uni-preset-vue my-project
+    ```
+
+  * 使用alpha版（对应HBuilderX最新alpha版）
+
+    ```shell
+    vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project
     ```
 
 此时，会提示选择项目模板（使用Vue3/Vite版不会提示，目前只支持创建默认模板），初次体验建议选择 `hello uni-app` 项目模板，如下所示：

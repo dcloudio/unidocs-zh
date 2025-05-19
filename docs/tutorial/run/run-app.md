@@ -100,6 +100,8 @@ The plugin has a built-in "Standard Run Dock", which uses DCloud's package name,
 
 运行成功后，HBuilder底部的控制台显示成功日志。此后修改代码会差量同步到手机上，手机程序会动态热刷。同时console.log代码会打印到控制台上，点击打印日志可以跳转到相关代码。
 
+注意：uni-app x 的 web-view 组件网页日志和错误从 HBuilderX 4.51+ 开始支持同步显示到控制台。
+
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/run-app-console.jpg" style="zoom: 50%;" />
 
 ### 运行项目到iOS真机App自启动@ios-app-automatically-open

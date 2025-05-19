@@ -21,11 +21,11 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 	</a>
 </div>
 
-<a href="//m3w.cn/__uni__1e99193" target="_blank" class="clear-style"><b>新闻/资讯类App模板：</b></a>nvue 典型案例，App端纯原生渲染，可左右拖动的复杂长列表，满足苛刻的性能要求。并同时能编译为小程序和H5。本项目源码在HBuilderX中新建项目选新闻模块可获得。
+<a href="https://im.dcloud.net.cn/uni-portal.html" target="_blank" class="clear-style"><b>DCloud：</b></a>uni-im的经典案例，此App的内置聊天模块即是基于uni-im开发。基于uni-app，实现 App、小程序、web 全端兼容，搭配uni-push2实现稳定推送，前后端代码全免费开源，项目源码在插件市场[下载](https://ext.dcloud.net.cn/plugin?name=uni-im)即可获取。
 
 <div style="display:flex;justify-content: space-around;">
-	<a href="//m3w.cn/__uni__1e99193" target="_blank" class="clear-style barcode-view">
-		<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/case/news.png" width="200"/>
+	<a href="https://im.dcloud.net.cn/uni-portal.html" target="_blank" class="clear-style barcode-view">
+		<img src="https://web-ext-storage.dcloud.net.cn/doc/uni-im-qrcode.png" width="200"/>
 		<span style="margin-top:15px;">App及H5的通用快码</span>
 		<span style="margin-top:15px;">Universal quick code for App and H5</span>
 	</a>
@@ -155,6 +155,201 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 
 **极志愿：** 专业高考志愿填报。**<span style="color:#42b983">多端获客典型案例，1个月获得400万用户</span>**，[详见报道](https://mp.weixin.qq.com/s?__biz=MzU3NTU5NDc0NA==&mid=2247491214&idx=1&sn=7e334d079146d9e31cea407f45bd8624)。体验方式：[App、微信小程序、百度小程序、H5 官网地址](https://www.jizhy.com/home/)
 **Extremely voluntary:** Volunteer to fill in the professional college entrance examination. **<span style="color:#42b983">Typical case of multi-terminal customer acquisition, 4 million users in one month</span>**, [see report for details](https://mp.weixin.qq.com/s?__biz=MzU3NTU5NDc0NA==&mid=2247491214&idx=1&sn=7e334d079146d9e31cea407f45bd8624). Experience method: [App, WeChat MiniApp, Baidu MiniApp, H5official website address]( <a href="https://www.jizhy.com/home/">https://www.jizhy.com/home/</a> )
+
+
+### 鸿蒙Next
+
+> 鸿蒙App的商店地址，仅支持 HarmonyOS NEXT 以上的设备查看；
+
+**华为：** 莫塞尔商城,同时支持[鸿蒙App](https://appgallery.huawei.com/app/detail?id=com.huawei.mosselhm)和鸿蒙元服务
+
+**海信商城：** 鸿蒙应用市场搜索“海信商城”，[详情](https://appgallery.huawei.com/app/detail?id=com.terminus.hisensemobile_hm)
+
+**美好买菜：** 鸿蒙应用市场搜索“美好买菜”，[详情](https://appgallery.huawei.com/app/detail?id=com.sc.meihao)；另见[iOS App](https://apps.apple.com/cn/app/%E7%BE%8E%E5%A5%BD%E4%B9%B0%E8%8F%9C/id1567375058)、[Android App](https://appgallery.huawei.com/app/C104333959)
+
+**一码游贵州：** 贵州省委宣传部指导，贵州本土智慧文旅产业生态平台，鸿蒙应用市场搜索“一码游贵州”，[详情](https://appgallery.huawei.com/app/detail?id=com.dsy.ymygz)
+
+**黔警通：** 黔西南公安局为市民打造的一站式便民服务，便捷办理公安业务，鸿蒙应用市场搜索“黔警通”，[详情](https://appgallery.huawei.com/app/detail?id=hmos.com.qxnga.qjt)
+
+**地质云：** 中国地质调查局主持研发的一套综合性地址信息服务系统，鸿蒙应用市场搜索“地质云”，[详情](https://appgallery.huawei.com/app/detail?id=com.cgs.gov.geoapp)
+
+**康强医疗人才网：** 医生护士招聘求职平台，鸿蒙应用市场搜索“康强医疗人才网”，[详情](https://appgallery.huawei.com/app/detail?id=com.kq.kq520.com)
+
+**禾望云：** 提供电站的运营分析和移动运维服务，鸿蒙应用市场搜索“禾望云”，[详情](https://appgallery.huawei.com/app/detail?id=com.hopewind.hopecloud)
+
+**睿学在线：** 高等院校成人教育的移动端在线学习与考试平台，鸿蒙应用市场搜索“睿学在线”，[详情](https://appgallery.huawei.com/app/detail?id=com.whaty.HMRXZX)
+
+**优冠商网：** 专注于体育行业商品流通的分享式平台，鸿蒙应用市场搜索“优冠商网”，[详情](https://appgallery.huawei.com/app/detail?id=com.ucrownbuy.huawei)
+
+**星际高球联盟-高尔夫：** 高尔夫预定平台，鸿蒙应用市场搜索“星际高球联盟”，[详情](https://appgallery.huawei.com/app/detail?id=net.gibbous.honmeng)
+
+**艾掌控：** 一款物联网应用工具，鸿蒙应用市场搜索“艾掌控”，[详情](https://appgallery.huawei.com/app/detail?id=com.aifxc.izhangkong3.app)
+
+**掌上古诗词古文阅读：** 学习鉴赏中国古典诗词精华，鸿蒙应用市场搜索“掌上古诗词古文阅读”，[详情](https://appgallery.huawei.com/app/detail?id=cn.zhangshangReader.poetry)
+
+**MBTI职业性格测试：** MBTI心理测评工具，鸿蒙应用市场搜索“MBTI职业性格测试”，[详情](https://appgallery.huawei.com/app/detail?id=com.mbticeshi.zhiyeceshihms)
+
+**遇见系统：** 一款面向个人的时间管理工具，鸿蒙应用市场搜索“遇见系统”，[详情](https://appgallery.huawei.com/app/detail?id=meet.popsoft.tech)
+
+**破解数独：** 各类数独的题目、答案、逐步讲解，鸿蒙应用市场搜索“破解数独”，[详情](https://appgallery.huawei.com/app/detail?id=cn.yorry.sudoku)
+
+**新材智猛：** 一款面向搅拌站、施工单位、原材料厂家、运输单位等多方角色参与的管理类App，鸿蒙应用市场搜索“新材智猛”，[详情](https://appgallery.huawei.com/app/detail?id=com.dsbos.bjjgxczmhm)
+
+**i资源：** OA协同办公系统，鸿蒙应用市场搜索“i资源”，[详情](https://appgallery.huawei.com/app/detail?id=com.scnrig.iziyuan.hw)
+
+**曼曼测吧：** 简单易用有趣的娱乐测试应用，鸿蒙应用市场搜索“曼曼测吧”，[详情](https://appgallery.huawei.com/app/detail?id=com.whmanyan.testbar)
+
+**曼衍照片处理大师：** 简单易用的照片处理工具，鸿蒙应用市场搜索“曼衍照片处理大师”，[详情](https://appgallery.huawei.com/app/detail?id=com.whmanyan.photoeditor)
+
+**曼曼Ps水印：** 轻松照片水印处理，鸿蒙应用市场搜索“曼曼Ps水印”，[详情](https://appgallery.huawei.com/app/detail?id=com.whmanyan.pswatermark)
+
+**海报大师：** 一款集海报制作、智能抠图和智能美颜于一体的设计工具，鸿蒙应用市场搜索“海报大师”，[详情](https://appgallery.huawei.com/app/detail?id=com.whmanyan.postermaster)
+
+**乐居蚌埠：** 综合性房产交易服务平台，鸿蒙应用市场搜索“乐居蚌埠”，[详情](https://appgallery.huawei.com/app/detail?id=com.funi.hsportalhongmong)
+
+**CMSV7：** 一款用于货运平台视频监控和定位管理的APP，鸿蒙应用市场搜索“CMSV7”，[详情](https://appgallery.huawei.com/app/detail?id=com.babelstar.uniappV7)
+
+**快销客：** 手机开单、一键分享、进销好帮手，鸿蒙应用市场搜索“快销客”，[详情](https://appgallery.huawei.com/app/detail?id=com.lzwl.hmr.kxk)
+
+**尤伴：** 陪伴游玩旅游交友，鸿蒙应用市场搜索“尤伴”，[详情](https://appgallery.huawei.com/app/detail?id=com.ttbyou.huawei)
+
+**便签记事：** 一款简单实用的桌面便签记事本便利贴，鸿蒙应用市场搜索“便签记事”，[详情](https://appgallery.huawei.com/app/detail?id=com.mvtrail.notepad.zjhw)
+
+**时光助手：** 个人时间管理工具，鸿蒙应用市场搜索“时光助手”，[详情](https://appgallery.huawei.com/app/detail?id=meet.popsoft.tech)
+
+**阿特麦：** 一款聚集手办、周边、潮玩、文创的购物商城，鸿蒙应用市场搜索“阿特麦”，[详情](https://appgallery.huawei.com/app/detail?id=com.atemai.haros.app)
+
+**向阳花守护家长端：** 一款家长管理孩子手机，远程控制的App，鸿蒙应用市场搜索“向阳花守护家长端”，[详情](https://appgallery.huawei.com/app/detail?id=com.shmrt.xyhguard.hmos)
+
+**青蓝家园教师端：** 家长和老师实名认证的互动平台，鸿蒙应用市场搜索“青蓝家园”，[详情](https://appgallery.huawei.com/app/detail?id=com.qinglanjiayuan.teacher.huawei)
+
+**轻糖：** 附件交友通常约会软件，鸿蒙应用市场搜索“轻糖”，[详情](https://appgallery.huawei.com/app/detail?id=com.qingtangapp.huawei)
+
+**智之屋：** 一款智慧社区综合服务App，鸿蒙应用市场搜索“智之屋”，[详情](https://appgallery.huawei.com/app/detail?id=com.zzwtec.smarthouse)
+
+**云慧养：** 数字化智慧养猪解决方案，鸿蒙应用市场搜索“云慧养”，[详情](https://appgallery.huawei.com/app/detail?id=com.zm.cloud.hm)
+
+**维汉翻译通：** 免费翻译维吾尔语国语，鸿蒙应用市场搜索“维汉翻译通”，[详情](https://appgallery.huawei.com/app/detail?id=com.sjfc.whfyt.harm)
+
+**土星计划：** 一款集合个人日程计划、笔记、记账、便签、代办等多种日程功能的App，鸿蒙应用市场搜索“土星计划”，[详情](https://appgallery.huawei.com/app/detail?id=net.gibbous.honmeng)
+
+**施工眼：** 暖通行业移动关联专家，鸿蒙应用市场搜索“施工眼”，[详情](https://appgallery.huawei.com/app/detail?id=com.sungu.mybts)
+
+**飞蚂蚁旧衣服回收：** 一个旧衣、家电、旧书等综合环保回收、闲置物品处理的平台，鸿蒙应用市场搜索“飞蚂蚁旧衣服回收”，[详情](https://appgallery.huawei.com/app/detail?id=com.app.feimayi.cn)
+
+**指北者动态谱：** 为你提供优质的乐谱资源、在线教学、谱友交流的音乐平台，鸿蒙应用市场搜索“指北者动态谱”，[详情](https://appgallery.huawei.com/app/detail?id=com.xp.xpdynamic)
+
+**企学星：** 提供一站式企业培训解决方案，鸿蒙应用市场搜索“企学星”，[详情](https://appgallery.huawei.com/app/detail?id=qixuexing.learn.huawei)
+
+**车百路：** 随时随地查询车辆位置信息轨迹回放，鸿蒙应用市场搜索“车百路”，[详情](https://appgallery.huawei.com/app/detail?id=chebailu.example.myapplication)
+
+**ai换脸软件神器：** 一键AI换脸，轻松拍出大片既视感，鸿蒙应用市场搜索“ai换脸软件神器”，[详情](https://appgallery.huawei.com/app/detail?id=com.aiface.kongdi)
+
+**有爱清单：** 发现目标、愿望和梦想记录相关动态，鸿蒙应用市场搜索“有爱清单”，[详情](https://appgallery.huawei.com/app/detail?id=com.moyun.yourlist_hm)
+
+**远火：** 一款能在发布供需信息时对供需双方信息进行对称化关联匹配平台，鸿蒙应用市场搜索“远火”，[详情](https://appgallery.huawei.com/app/detail?id=hm.yuanhuo.cn)
+
+**易智教：** 一款在线学习的App，鸿蒙应用市场搜索“易智教”，[详情](https://appgallery.huawei.com/app/detail?id=cn.campsg.obe)
+
+**亲兄弟：** 用于企业记账、门店进销存客户管理，鸿蒙应用市场搜索“亲兄弟”，[详情](https://appgallery.huawei.com/app/detail?id=com.ensoft.finance_huawei)
+
+**差旅管家：** 新一代商务出行平台，鸿蒙应用市场搜索“差旅管家”，[详情](https://appgallery.huawei.com/app/detail?id=com.ceekee.steward.hmos)
+
+**财鸽记账：** 全功能免费多账本记账工具，鸿蒙应用市场搜索“财鸽记账”，[详情](https://appgallery.huawei.com/app/detail?id=com.caigee.app)
+
+**0663批发网：** 揭阳军埔批发市场服装货源展示平台，鸿蒙应用市场搜索“0663批发网”，[详情](https://appgallery.huawei.com/app/detail?id=com.jp0663.m)
+
+**律图法律咨询：** 律师免费在线咨询，司法案件诉讼委托服务，鸿蒙应用市场搜索“律图法律咨询”，[详情](https://appgallery.huawei.com/app/detail?id=com.lvtu.user.hm)
+
+**乔视界：** 深圳市乔安科技有限公司内部办公协同应用，包含资产管理、考勤管理、流程发起、代办事项等功能，鸿蒙应用市场搜索“乔视界”，[详情](https://appgallery.huawei.com/app/detail?id=com.qiaoan.qiaoanqiaobao_hm)
+
+**少儿围棋教学合集：** 助4到13岁儿童轻松学围棋，鸿蒙应用市场搜索“少儿围棋教学合集”，[详情](https://appgallery.huawei.com/app/detail?id=com.miracle.weqipack)
+
+**地震预警：** 成都高新减灾所，及时预警，ICL，鸿蒙应用市场搜索“地震预警”，[详情](https://appgallery.huawei.com/app/detail?id=com.huania.harmonyearthquake)
+
+**铝加工安全：** 铝加工企业智慧可信安全生产监管软件，鸿蒙应用市场搜索“铝加工安全”，[详情](https://appgallery.huawei.com/app/detail?id=com.yzzn.harmonyAppDev)
+
+**企业名录：** 高效搜索全国企业联系方式的APP，鸿蒙应用市场搜索“企业名录”，[详情](https://appgallery.huawei.com/app/detail?id=com.douyekeji.qyml.hm)
+
+**美的光伏：** 美的光伏 APP，助力记录光伏业务全程信息，鸿蒙应用市场搜索“美的光伏”，[详情](https://appgallery.huawei.com/app/detail?id=com.mideahk.solar)
+
+**广州智慧阅读：** 分析学生阅读行为，个性化匹配阅读图，鸿蒙应用市场搜索“广州智慧阅读”，[详情](https://appgallery.huawei.com/app/detail?id=smart.reading.gz)
+
+**点点建安：** 智慧消防 APP 集成烟感、主机等多设备报警功能，鸿蒙应用市场搜索“点点建安”，[详情](https://appgallery.huawei.com/app/detail?id=diandian.com.huawei)
+
+**营销宝：** 一款专为企业打造的智能营销工具，鸿蒙应用市场搜索“营销宝”，[详情](https://appgallery.huawei.com/app/detail?id=com.touchsee.huawei)
+
+**瀚宁易企用车：** 一款助力企业内部车辆管理、规范用车的APP，鸿蒙应用市场搜索“瀚宁易企用车”，[详情](https://appgallery.huawei.com/app/detail?id=hanning.huawei.com)
+
+**宁通行：** 公交轮渡查询和智能规划的出行一体化服务系统，鸿蒙应用市场搜索“宁通行”，[详情](https://appgallery.huawei.com/app/detail?id=con.njmass.app)
+
+**易隆创：** 一个基于互联网架构，集创业与服务为一体的开放型一站式平台，鸿蒙应用市场搜索“易隆创”，[详情](https://appgallery.huawei.com/app/detail?id=com.longstron.huawei)
+
+**和畅数字化营销：** 一款助力销售团队高效管理的移动应用，鸿蒙应用市场搜索“和畅数字化营销”，[详情](https://appgallery.huawei.com/app/detail?id=cn.mga1.zhyx)
+
+**手机数据库：** 一款集数据查询、管理、对比于一体的便捷App，鸿蒙应用市场搜索“手机数据库”，[详情](https://appgallery.huawei.com/app/detail?id=com.xingyueldh.phonedatabase)
+
+**电梯维保管家：** 一款助力维保单位实现电梯无纸化全过程维保记录的App，鸿蒙应用市场搜索“电梯维保管家”，[详情](https://appgallery.huawei.com/app/detail?id=com.khnt.dtwbmanager)
+
+**安师傅：** 一款提供多样代驾服务、随叫随到的出行App，鸿蒙应用市场搜索“安师傅”，[详情](https://appgallery.huawei.com/app/detail?id=com.anshifu.user)
+
+**裕空间：** 一款集人事、考勤、行政等模块的裕同集团内部员工App ，鸿蒙应用市场搜索“裕空间”，[详情](https://appgallery.huawei.com/app/detail?id=io.dcloud.UNIB005761)
+
+**地调安全：** 一款服务于野外地质调查安全保障工作的APP，鸿蒙应用市场搜索“地调安全”，[详情](https://appgallery.huawei.com/app/detail?id=com.cgssafety.ohapp)
+
+**触见：** 一款融合B2C与O2O模式、多端一体的极速配送医疗健康APP ，鸿蒙应用市场搜索“触见”，[详情](https://appgallery.huawei.com/app/detail?id=com.touchsee.huawei)
+
+**混沌排盘：** 一款专业精准、使用便捷的八字排盘与分析APP ，鸿蒙应用市场搜索“混沌排盘”，[详情](https://appgallery.huawei.com/app/detail?id=com.hdpp.kxt.hmos)
+
+**电喷之家：** 一款提供海量商用车、工程机械维修资料与技术支持的APP，鸿蒙应用市场搜索“电喷之家”，[详情](https://appgallery.huawei.com/app/detail?id=com.zcx.hm.dpzj)
+
+**心灵伙伴云：** 一款融合技术与专业量表，助力学校管理学生心理健康的测评工具，鸿蒙应用市场搜索“心灵伙伴云”，[详情](https://appgallery.huawei.com/app/detail?id=com.xlhb.cloud.app.ho)
+
+**掌上新大：** 一款与“一站式办事大厅”协同，为师生提供优质信息化服务、实现便捷审批的APP，鸿蒙应用市场搜索“掌上新大”，[详情](https://appgallery.huawei.com/app/detail?id=com.uni.UNIBD487D4)
+
+**征信网点导航：** 一款集便捷征信查询、网点导航、信用信息获取及交流分享于一体的实用 APP，鸿蒙应用市场搜索“征信网点导航”，[详情](https://appgallery.huawei.com/app/detail?id=com.caigee.credit)
+
+**风智子：** 一款设备全、信息透、服务优的风电主吊设备租赁一站式APP ，鸿蒙应用市场搜索“风智子”，[详情](https://appgallery.huawei.com/app/detail?id=fzzhm.sdqzu.com)
+
+**网单云：** 一款可同步多平台订单、比价配送、打印、统一回客服消息的APP ，鸿蒙应用市场搜索“瀚宁易企用车”，[详情](https://appgallery.huawei.com/app/detail?id=com.zhuandanbao.wdy)
+
+**太原防汛通：** 一款用于汛期应急救援及快速响应联动指挥中心的APP ，鸿蒙应用市场搜索“太原防汛通”，[详情](https://appgallery.huawei.com/app/detail?id=topevery.tyfxt.com)
+
+**中标一证通：** 一款在政务、政府采购领域，为企事业单位提供跨地区无介质移动电子认证等服务的 APP，鸿蒙应用市场搜索“中标一证通”，[详情](https://appgallery.huawei.com/app/detail?id=com.xsca.zbyzt)
+
+**中邮智选车物流管理系统：** 一款以全流程数字化赋能仓储，模块化配置助力企业降本增效的智慧管理APP，鸿蒙应用市场搜索“中邮智选车物流管理系统”，[详情](https://appgallery.huawei.com/app/detail?id=ptac.logistics.mobile)
+
+**破解数织：** 一款能拍照解数织题、带丰富题库的APP，鸿蒙应用市场搜索“破解数织”，[详情](https://appgallery.huawei.com/app/detail?id=cn.yorry.nonogram)
+
+**i一起：** 一款集新闻资讯推送、移动打卡、多样工作审批等功能的高效移动办公APP，鸿蒙应用市场搜索“i一起”，[详情](https://appgallery.huawei.com/app/detail?id=com.isyn.hw)
+
+**民政通：** 民政一体化政务服务平台移动端，鸿蒙应用市场搜索“民政通”，[详情](https://appgallery.huawei.com/app/detail?id=com.huawei.jmggfw)
+
+**巧多棋院：** 涵盖各种棋类的对弈和学习平台，鸿蒙应用市场搜索“巧多棋院”，[详情](https://appgallery.huawei.com/app/detail?id=com.miracle.qdqyhm)
+
+**数字东安：** 企业内部员工管理OA，鸿蒙应用市场搜索“数字东安”，[详情](https://appgallery.huawei.com/app/detail?id=com.AECCHarbinDongAnHM.digitalDA)
+
+**破解数织：** 一款能拍照解数织题、带丰富题库的APP，鸿蒙应用市场搜索“破解数织”，[详情](https://appgallery.huawei.com/app/detail?id=cn.yorry.nonogram)
+
+**智记本：** 一款基于AI 聚合日程+记账+记事的APP，鸿蒙应用市场搜索“智记本”，[详情](https://appgallery.huawei.com/app/detail?id=com.xiaod.zhijiben)
+
+**门诊患者健康风险预警管理平台：** 一款实时预警患者健康风险的管理APP，鸿蒙应用市场搜索“门诊患者”，[详情](https://appgallery.huawei.com/app/detail?id=huawei.hkwjhealth.hzfxyj)
+
+**金店无忧：** 一款助力珠宝门店省心管理的APP，鸿蒙应用市场搜索“金店无忧”，[详情](https://appgallery.huawei.com/app/detail?id=com.uniapp.jdappcommon)
+
+**设备云售后：** 一款集成多功能、覆盖多场景的售后工单协同管理APP，鸿蒙应用市场搜索“设备云售后”，[详情](https://appgallery.huawei.com/app/detail?id=com.gtkj.yunshouhou)
+
+**CMSV7：** 一款专用于货运平台视频监控和定位管理的APP，鸿蒙应用市场搜索“CMSV7”，[详情](https://appgallery.huawei.com/app/detail?id=com.babelstar.uniappV7)
+
+**中邮云物流平台：** 一款集订单、审核等多样功能于一体的云物流平台APP，鸿蒙应用市场搜索“中邮云物流平台”，[详情](https://appgallery.huawei.com/app/detail?id=ptac.oms.mobile)
+
+**众行管家：** 一款可远程点火熄火、分享钥匙的智能控车APP，鸿蒙应用市场搜索“众行管家”，[详情](https://appgallery.huawei.com/app/detail?id=com.kdwl.dazhong.hm)
+
+**塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
+
+**多点计算器：** 一款功能强大的计算器，支持科学计算、BMI指数计算、体脂率计算等，鸿蒙元服务，鸿蒙应用市场搜索“多点计算器”
+
+**木瓜天气：** 一款精准、及时、便捷、风格优美的天气预报助手，鸿蒙元服务，鸿蒙应用市场搜索“木瓜天气”
 
 
 ### 互联网公司
@@ -289,6 +484,8 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 
 **叮咚买菜：** 微信小程序搜索 “叮咚买菜”、[公众号H5](http://wx.m.ddxq.mobi/#/)
 **Dingdong Shopping:** Search for "Dingdong Shopping" in the WeChat MiniApp, [Official Account H5](http://wx.m.ddxq.mobi/#/)
+
+**美好买菜：** [iOS](https://apps.apple.com/cn/app/%E7%BE%8E%E5%A5%BD%E4%B9%B0%E8%8F%9C/id1567375058)、[Android](https://appgallery.huawei.com/app/C104333959)、[鸿蒙Next](https://appgallery.huawei.com/app/detail?id=com.sc.meihao)
 
 **新浪健康：** 病情咨询，[H5](https://health.sina.cn/patient_consult_h5/)
 **Sina Health:** Condition consultation, [H5](https://health.sina.cn/patient_consult_h5/)
@@ -609,6 +806,8 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 **Official App of Tongji Hospital:** [App official website download page](https://tjhapp.com.cn/app/appdown.html)
 
 **SINOPEC PLUS：** 中国石化香港分公司为全港市民推出的便利加油应用，[Android](https://play.google.com/store/apps/details?id=uni.UNI42811E9)、[iOS](https://apps.apple.com/hk/app/sinopec-plus/id1459721711)
+
+**沃尔沃汽车：** 抖音小程序搜同名
 
 **广汽丰田：** 微信小程序搜同名
 **GAC Toyota:** Wechat MiniApp search with the same name

@@ -18,12 +18,11 @@ listen to system theme state changes.
 **CALLBACK return parameter**
 
 |参数|类型|说明|
-|Parameter|Type|Description|
-|:-|:-|:-|:-|
+|:-|:-|:-|
 |theme|String|主题名称(`dark`, `light`)|
 | theme| String|Theme name (`dark`, `light`)|
 
-<!-- UNIAPPAPIJSON.onThemeChange.param -->
+
 
 **示例**
 **Example**

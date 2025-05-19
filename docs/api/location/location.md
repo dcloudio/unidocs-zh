@@ -20,6 +20,10 @@ Web平台本API之前调用了腾讯地图的gcj02坐标免费转换接口，该
 
 <!-- UNIAPPAPIJSON.getLocation.compatibility -->
 
+**地图服务商说明**
+
+[点击查看地图服务商兼容性](../../component/map.md)
+
 **OBJECT 参数说明**
 **OBJECT parameter description**
 
@@ -152,8 +156,7 @@ uni.getLocation({
 - `HarmonyOS Next平台`调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`，需自行在项目中配置权限。
 
 ## uni.chooseLocation(OBJECT)
-打开地图选择位置。
-Open the map to select a location.
+打开地图选择位置。chooseLocation会使用项目配置的地图服务商来展示地图，地图服务商支持情况参考：[map组件](../../component/map.md)。
 
 ::: warning 注意
 Web平台和App平台，本API之前调用了腾讯地图的gcj02坐标免费，该接口从2024年7月18日起被腾讯逐步下线，导致老版本中本API无法使用。请立即升级到 `uni-app 4.24版`。
@@ -177,6 +180,10 @@ Web平台和App平台，本API之前调用了腾讯地图的gcj02坐标免费，
 |√|√|√|√|√|√|√|x|x|x|
 
 <!-- UNIAPPAPIJSON.chooseLocation.compatibility -->
+
+**地图服务商说明**
+
+[点击查看地图服务商兼容性](../../component/map.md)
 
 
 **OBJECT 参数说明**

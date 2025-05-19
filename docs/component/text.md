@@ -24,7 +24,7 @@
 | decode | Boolean| false |Whether to decode |Baidu and DingTalk MiniApp do not support |
 
 
-<!-- UNIAPPCOMJSON.text.attribute -->
+
 
 **space 值说明**
 **space value description**

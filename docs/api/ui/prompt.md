@@ -3,6 +3,10 @@
 显示消息提示框。
 Displays the message prompt box.
 
+|元服务|
+|:-:|
+|√|
+
 <!-- UNIAPPAPIJSON.showToast.compatibility -->
 
 **OBJECT参数说明**
@@ -26,7 +30,7 @@ Displays the message prompt box.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 | complete| Function| No| Callback function for closed interface calling (available both for successful and failed calling)|  |
 
-<!-- UNIAPPAPIJSON.showToast.param -->
+
 
 **icon 值说明**
 **icon value description**
@@ -95,6 +99,10 @@ uni.hideToast();
 
 显示 loading 提示框, 需主动调用 [uni.hideLoading](#hideloading) 才能关闭提示框。
 
+|元服务|
+|:-:|
+|√|
+
 <!-- UNIAPPAPIJSON.showLoading.compatibility -->
 
 **OBJECT参数说明**
@@ -112,7 +120,7 @@ uni.hideToast();
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 | complete| Function| No| Callback function for closed interface calling (available both for successful and failed calling)|  |
 
-<!-- UNIAPPAPIJSON.showLoading.param -->
+
 
 **示例**
 **Example**
@@ -129,6 +137,10 @@ uni.showLoading({
 
 隐藏 loading 提示框。
 Hide the loading prompt box.
+
+|元服务|
+|:-:|
+|x|
 
 <!-- UNIAPPAPIJSON.hideLoading.compatibility -->
 
@@ -150,6 +162,10 @@ setTimeout(function () {
 显示模态弹窗，可以只有一个确定按钮，也可以同时有确定和取消按钮。类似于一个API整合了 html 中：alert、confirm。
 Display the modal pop-up window with only one OK button or both OK and Cancel buttons. Similar to an API integrating alert and confirm in html.
 
+|元服务|
+|:-:|
+|√|
+
 <!-- UNIAPPAPIJSON.showModal.compatibility -->
 
 **OBJECT参数说明**
@@ -165,9 +181,9 @@ Display the modal pop-up window with only one OK button or both OK and Cancel bu
 |showCancel|Boolean|否|是否显示取消按钮，默认为 true||
 | showCancel| Boolean| No| Whether to display the Cancel button, with true as default| |
 |cancelText|String|否|取消按钮的文字，默认为"取消"||
-|cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5、微信小程序、百度小程序、抖音小程序（2.62.0+）|
+|cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5、微信小程序、百度小程序、抖音小程序（2.62.0+）、支付宝小程序|
 |confirmText|String|否|确定按钮的文字，默认为"确定"||
-|confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"，微信小程序平台默认为"#576B95"，百度小程序平台默认为"#3c76ff"|H5、微信小程序、百度小程序、抖音小程序（2.62.0+）|
+|confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"，微信小程序平台默认为"#576B95"，百度小程序平台默认为"#3c76ff"|H5、微信小程序、百度小程序、抖音小程序（2.62.0+）、支付宝小程序|
 |editable|Boolean|否|是否显示输入框|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)、抖音小程序（2.62.0+）|
 |placeholderText|String|否|显示输入框时的提示文本|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)、抖音小程序（2.62.0+）|
 |success|Function|否|接口调用成功的回调函数||
@@ -177,7 +193,7 @@ Display the modal pop-up window with only one OK button or both OK and Cancel bu
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 | complete| Function| No| Callback function for closed interface calling (available both for successful and failed calling)|  |
 
-<!-- UNIAPPAPIJSON.showModal.param -->
+
 
 **success返回参数说明**
 **Success return parameter description**
@@ -219,17 +235,12 @@ uni.showModal({
 - 钉钉小程序真机与模拟器表现有差异，真机title，content均为必填项
 - DingTalk MiniApp has different performance between the real device and the emulator, the title and content of the real device are required
 - 各家小程序平台对于 `confirm`、`cancel` 字段返回规则可能不尽相同，包含两种情况：`{ confirm: true, cancel: false }` 或 `{ confirm: true }`，但并不影响使用 if 去做判断
-- Various MiniApp platforms may have different return rules for `confirm` and `cancel` fields, including two cases: `{ confirm: true, cancel: false }` or `{ confirm: true }`, but not Affect the use of if to make judgments
-
+- 钉钉小程序本身不支持设置 cancelColor/confirmColor 属性
 
 ## uni.showActionSheet(OBJECT)
 
 从底部向上弹出操作菜单
 Pop up the operation menu from the bottom up
-
-|元服务|
-|:-:|
-|x|
 
 <!-- UNIAPPAPIJSON.showActionSheet.compatibility -->
 
@@ -253,8 +264,7 @@ Pop up the operation menu from the bottom up
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 | complete| Function| No| Callback function for closed interface calling (available both for successful and failed calling)|  |
 
-**popover 值说明（仅App生效）**
-**popover value description (only valid for App)**
+**popover 值说明**
 
 |值|类型|说明|
 | Value| Type| Instruction|
@@ -277,7 +287,7 @@ Pop up the operation menu from the bottom up
 |tapIndex|Number|用户点击的按钮，从上到下的顺序，从0开始|
 | tapIndex| Number| The buttons clickable by user, from top to bottom, starting from 0|
 
-<!-- UNIAPPAPIJSON.showActionSheet.param -->
+
 
 **示例**
 **Example**

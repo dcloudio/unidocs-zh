@@ -14,12 +14,12 @@
 |fade-show				|Boolean	|true			|图片显示动画效果																								|仅App-nvue 2.3.4+ Android有效					|
 |webp					|boolean	|false			|在系统不支持webp的情况下是否单独启用webp。默认false，只支持网络资源。webp支持详见下面说明						|微信小程序2.9.0								|
 |show-menu-by-longpress	|boolean	|false			|开启长按图片显示识别小程序码菜单																				|微信小程序2.7.0								|
-|draggable				|boolean	|true			|是否能拖动图片																									|H5 3.1.1+、App（iOS15+）						|
+|draggable				|boolean	|false			|是否能拖动图片																									|H5 3.1.1+、App（iOS15+）						|
 |@error					|HandleEvent|				|当错误发生时，发布到 AppService 的事件名，事件对象event.detail = {errMsg: 'something wrong'}					|												|
 |@load					|HandleEvent|				|当图片载入完毕时，发布到 AppService 的事件名，事件对象event.detail = {height:'图片高度px', width:'图片宽度px'}	|&nbsp;											|
 
 
-<!-- UNIAPPCOMJSON.image.attribute -->
+
 
 ## 图片格式说明：
 - 当使用浏览器/webview渲染时，支持哪些图片格式由webview决定，[详见](https://developer.mozilla.org/zh-CN/docs/Web/Media/Formats/Image_types#webp_image)

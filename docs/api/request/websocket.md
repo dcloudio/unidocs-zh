@@ -3,6 +3,12 @@
 
 > 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。
 
+uni-app的socket，分全局socket和socketTask。全局socket只能有一个，一旦被占用就无法再开启。**所以不推荐使用全局socket，一般使用socketTask。**
+
+小程序上，socketTask也有数量限制，具体需要参阅各家小程序文档。
+
+注意：小程序的运行日志回显、uniPush的小程序版，均基于socket，都会占用socketTask通道数量。运行日志回显是可以关闭的，[详见](https://uniapp.dcloud.net.cn/tutorial/run/mp-log.html)
+
 <!-- UNIAPPAPIJSON.connectSocket.compatibility -->
 
 **OBJECT 参数说明**
@@ -18,7 +24,7 @@
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-<!-- UNIAPPAPIJSON.connectSocket.param -->
+
 
 **示例代码**
 
@@ -63,6 +69,8 @@ var socketTask = uni.connectSocket({
 ## uni.onSocketOpen(CALLBACK)
 监听WebSocket连接打开事件。
 
+> 已废弃，使用 SocketTask 的 onOpen 替换。
+
 **平台兼容性**
 
 抖音小程序不支持
@@ -75,7 +83,7 @@ var socketTask = uni.connectSocket({
 |:-|:-|:-|
 |header|Object|连接成功的 HTTP 响应 Header|
 
-<!-- UNIAPPAPIJSON.onSocketOpen.param -->
+
 
 <!-- UNIAPPAPIJSON.onSocketOpen.tutorial -->
 
@@ -93,6 +101,8 @@ uni.onSocketOpen(function (res) {
 
 ## uni.onSocketError(CALLBACK)
 监听WebSocket错误。
+
+> 已废弃，使用 SocketTask 的 onError 替换。
 
 **平台兼容性**
 
@@ -117,6 +127,8 @@ uni.onSocketError(function (res) {
 ## uni.sendSocketMessage(OBJECT)
 通过 WebSocket 连接发送数据，需要先 [uni.connectSocket](/api/request/websocket?id=connectsocket)，并在 [uni.onSocketOpen](/api/request/websocket?id=onsocketopen) 回调之后才能发送。
 
+> 已废弃，使用 SocketTask 的 send 替换。
+
 **平台兼容性**
 
 抖音小程序不支持
@@ -132,7 +144,7 @@ uni.onSocketError(function (res) {
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.sendSocketMessage.param -->
+
 
 <!-- UNIAPPAPIJSON.sendSocketMessage.tutorial -->
 
@@ -172,6 +184,8 @@ function sendSocketMessage(msg) {
 ## uni.onSocketMessage(CALLBACK)
 监听WebSocket接受到服务器的消息事件。
 
+> 已废弃，使用 SocketTask 的 onMessage 替换。
+
 **平台兼容性**
 
 抖音小程序不支持
@@ -184,7 +198,7 @@ function sendSocketMessage(msg) {
 |:-|:-|:-|
 |data|String/ArrayBuffer|服务器返回的消息|
 
-<!-- UNIAPPAPIJSON.onSocketMessage.param -->
+
 
 <!-- UNIAPPAPIJSON.onSocketMessage.tutorial -->
 
@@ -203,6 +217,8 @@ uni.onSocketMessage(function (res) {
 ## uni.closeSocket(OBJECT)
 关闭 WebSocket 连接。
 
+> 已废弃，使用 SocketTask 的 close 替换。
+
 **平台兼容性**
 
 抖音小程序不支持
@@ -219,10 +235,12 @@ uni.onSocketMessage(function (res) {
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.closeSocket.param -->
+
 
 ## uni.onSocketClose(CALLBACK)
 监听WebSocket关闭。
+
+> 已废弃，使用 SocketTask 的 onClose 替换。
 
 **平台兼容性**
 
@@ -230,7 +248,7 @@ uni.onSocketMessage(function (res) {
 
 <!-- UNIAPPAPIJSON.onSocketClose.compatibility -->
 
-<!-- UNIAPPAPIJSON.onSocketClose.param -->
+
 
 ```javascript
 uni.connectSocket({

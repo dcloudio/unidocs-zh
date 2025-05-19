@@ -5,8 +5,7 @@
 ## plugin description @description
 
 
-本插件，用于在HBuilderX内运行uni-app自动化测试，支持H5、微信小程序、android、ios自动化测试。
-This plugin is used to run uni-app automated tests in HBuilderX, and supports H5, WeChat applet, android, ios automated tests.
+本插件，用于在HBuilderX内运行uni-app自动化测试，支持H5、微信小程序、Android、iOS、Harmony自动化测试。
 
 主要功能有：
 The main functions are:

@@ -8,7 +8,7 @@ uni-app是大一统开发，包括客户端和uniCloud服务器。在客户端�
 
 在uni-app中可以调用npm库，可以调用Android仓储里的aar，可以调用iOS的cocoapods里framework，以及鸿蒙的ohpm。
 
-甚至uts语言本身也可以编译为js、kotlin、swift。
+甚至uts语言本身也可以编译为js、kotlin、swift、ArkTS。
 
 那么uni-app的开发者，需要一个大一统的包管理方案，那就是`uni_modules`。
 
@@ -108,19 +108,35 @@ Opening a file indicated by a reference icon in HBuilderX will open the original
 #### uts插件
 在uni_modules的utssdk目录，可以放置uts插件。
 
-uts插件是非常重要的一种跨端插件。它支持API插件和组件插件。
+**uts插件是非常重要的一种跨端插件**。它支持API插件和组件插件，可通过原生能力，封装后给uni-app(x)扩展API和组件。
 
-在utssdk目录下，可以放置一个interface.uts的声明，然后可以新建app-android、app-ios、web、mp-weixin、app-harmony等目录，每个目录下可以存放不同客户端平台的代码。
+在utssdk目录下，然后可以新建app-android、app-ios、app-harmony、web、mp-weixin等目录，每个目录下可以存放不同客户端平台的专用代码。
+
+在app-android、app-ios、app-harmony目录，可以放置Android原生的aar、so库，iOS原生的framework，鸿蒙的har，也支持配置Android仓储、iOS的cocoapods、鸿蒙的ohpm。
+
+在web和mp目录下，也支持放置npm库。
+
+虽然utssdk目录下有这么多平台专用目录，但utssdk的根目录下可以放置一个`interface.uts`的声明。这个文件统一了不同平台的接口，把不同平台的原生能力，转换为统一的API或组件，给前端开发者使用。
+
+这是非常重要的设计，这也是uni-app区别于其他跨平台工具的重要特色。
 
 以获取电量的API为例，uni.getBatteryInfo()，在根目录的interface.uts中定义了api的对外暴露接口、定义统一的错误码，然后在各个客户端平台的目录中，实现电量获取这个API。
 
 uni.getBatteryInfo的插件和源码详见：[https://ext.dcloud.net.cn/plugin?id=9295](https://ext.dcloud.net.cn/plugin?id=9295)
 
-在app-android、app-ios目录，可以放置Android原生的aar、iOS原生的framework，也支持配置Android仓储和iOS的cocoapods。
-
 uts插件开发的详细指南见：[https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)
 
-## 使用 uni_modules 插件
+***注意事项***
+
+使用 import 导入uts插件时，仅支持导入到插件根目录，不支持导入插件内部的文件。
+```ts
+// 正确的写法
+import { test } from "@/uni_modules/uts-osapi";
+// 错误的写法
+import { test } from "@/uni_modules/uts-osapi/index.uts";
+```
+
+## HBuilderX中使用 uni_modules 插件
 ### 下载uni_modules插件
 1. 在[插件市场](https://ext.dcloud.net.cn/)查找uni_modules插件
 1. Find the uni_modules plugin in [Plugin Market](https://ext.dcloud.net.cn/)
@@ -137,7 +153,9 @@ uts插件开发的详细指南见：[https://doc.dcloud.net.cn/uni-app-x/plugin/
 ```js
 import {test} from '@/uni_modules/xx-yy/js_sdk/test.js'
 ```
-
+- 如果是加密插件，加密文件不支持单独对外导出，即：不能使用 import 语句直接导入插件内的某个加密文件（uts加密插件导入插件根目录即可）
+- uni-app项目下uts插件不支持导入非utssdk以外的uts文件
+- uts插件utssdk内的文件以及这些文件引入的非utssdk内的uts文件均不支持单独对外导出
 - 如果要使用uni_modules中的页面，[见下](#pages-init)
 - If you want to use pages from uni_modules, [see below](#pages-init)
 
@@ -161,11 +179,12 @@ The uni_modules plug-in directory is standalone. If you no longer need the plug-
 - Importing the uni_modules specification plug-in requires HBuilderX 3.1.0+
 
 
-## 配置
-### package.json@package-json
+## uni_modules的插件配置
+如果你是插件作者，需要了解uni_modules的配置。如果是使用者，可无需关心本章节。
 
-package.json在每个`uni_modules`插件中都必须存在，包含了插件的基本信息。以下是package.json的详细配置说明
-package.json must exist in every `uni_modules` plug-in and contains the basic information of plug-ins. The following is a detailed configuration description of package.json
+### package.json@package-json
+package.json在每个`uni_modules`插件中都必须存在，包含了插件的基本信息。以下是package.json的详细配置说明。
+其中有些配置仅发布到插件市场时需要，如果你做的uni_modules并不对外发布到插件市场，相关字段可忽略。
 ```json
 {
     // 注意，不能直接拷贝本段代码到编辑器中，package.json 目前不支持注释。本段代码加的注释只是用于解释代码。
@@ -245,10 +264,19 @@ package.json must exist in every `uni_modules` plug-in and contains the basic in
                     "联盟": "u"
                 }
             }
+        },
+        "treeShaking": { //摇树配置
+            "app": {
+                "android": true,  //Android平台需要摇树
+                "ios": true, //iOS平台需要摇树
+                "harmony": false  //鸿蒙平台不需要摇树
+            },
+            "web": false //Web平台不需要摇树
         }
     }
 }
 ```
+
 **Tips**
 - 上述配置基于npm [package.json](https://docs.npmjs.com/cli/v6/configuring-npm/package-json)规范扩展，故标准的package.json属性也同样支持，比如可以通过files来控制要上传的插件包内容
 - The above configuration is based on the npm [package.json](https://docs.npmjs.com/cli/v6/configuring-npm/package-json) specification extension, so the standard package.json attributes are also supported, for example, through files to control the content of the plugin package to be uploaded
@@ -263,9 +291,9 @@ package.json must exist in every `uni_modules` plug-in and contains the basic in
 | 前端组件			| 小程序组件			| component-mp				|
 | front-end components | MiniApp components | component-mp |
 | JS SDK			| 通用 SDK				| sdk-js					|
-| JS SDK | Universal SDK | sdk-js |
-| uts插件			| uts插件				| uts						|
-| uts plugin | uts plugin | uts |
+| uts插件			| API插件				| uts						|
+| uts插件			| uni-app兼容模式组件	| component-uts				|
+| uts插件			| 标准模式组件	| uts-vue-component			|
 | uni-app前端模板	| 前端页面模板			| uniapp-template-page		|
 | uni-app front-end template | front-end page template | uniapp-template-page |
 | uni-app前端模板	| uni-app前端项目模板	| uniapp-template-project	|
@@ -281,6 +309,48 @@ package.json must exist in every `uni_modules` plug-in and contains the basic in
 | uniCloud			| DB Schema及验证函数	| unicloud-database			|
 | uniCloud | DB Schema and validation functions | unicloud-database |
 
+
+#### 摇树配置@treeShaking  
+
+配置模块是否需要摇树：
+- true 表示需要摇树，即项目的代码中使用了发布时才包含此模块
+- false 表示不需要摇树，即项目的代码中没有使用也会包含此模块
+
+默认值为true。
+
+规范：
+```json
+{
+  "uni_modules": {
+    "treeShaking": boolean | Record<string,boolean|Record<string,boolean>>
+  }
+}
+```
+
+配置所有平台都不需要摇树：
+```json
+{
+  "uni_modules": {
+    "treeShaking": false
+  }
+}
+```
+
+按平台分别配置是否需要摇树：
+```json
+{
+  "uni_modules": {
+    "treeShaking": {
+        "app": {
+            "android": false,
+            "ios": true,
+            "harmony": false
+        },
+        "web": false
+    }
+  }
+}
+```
 
 
 ### uni_modules.config.json
@@ -502,4 +572,5 @@ When your plug-in has added new functions or fixed bugs, and a new version needs
  - 右键package.json，点击`发布到插件市场`，选择分类，填写插件信息（尽可能与插件市场已有信息保持一致）
  - Right-click package.json and click `Release to plug-in market`, select the classification, and fill in the plug-in information (consistent with the existing information in the plug-in market as much as possible)
  - 发布成功后，您可以在插件市场的插件详情页右侧，查看到您的插件已同时提供了`uni_modules`版本和非`uni_modules`版本（仅保留最后一个非`uni_modules`版本）
+ 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ext_uni_modules.png)

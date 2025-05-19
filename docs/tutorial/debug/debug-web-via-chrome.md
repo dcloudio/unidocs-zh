@@ -10,9 +10,7 @@
 - 运行uni-app到web后，支持在HBuilder自带的调试面板中调试js代码。
 - After running uni-app to the web, it supports debugging js code in the debugging panel that comes with HBuilder.
 - 调试需要本机安装chrome浏览器，因为使用了chrome debug 协议
-- Debugging requires the chrome browser to be installed locally, because the chrome debug protocol is used
-- 调试支持的文件类型：`vue`文件、`nvue`文件、`ts`文件、`js`文件，断点只能打在js或ts代码中，请勿在vue文件template、style节点添加断点。
-- Debugging supported file types: `vue` file, `nvue` file, `ts` file, `js` file, breakpoints can only be placed in js or ts code, do not add breakpoints to template and style nodes in vue files point.
+- 调试支持的文件类型：`vue`文件、`uvue`文件、`nvue`文件、`uts`文件、`ts`文件、`js`文件，断点只能打在js等script代码中，请勿在vue文件template、style节点添加断点。
 
 **注意事项：**
 **Precautions:**

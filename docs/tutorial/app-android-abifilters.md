@@ -1,8 +1,7 @@
 Android平台配置CPU类型针对的是为了提高运行效率使用C/C++语言开发生成的so库，需要为各cpu类型平台单独编译生成对应指令的so库。Java语言开发的代码运行在虚拟机中，由虚拟机适配CPU类型，不涉及到此问题。
 The Android platform configures the CPU type for the so library developed and generated using the C/C++ language in order to improve the operating efficiency. It is necessary to compile and generate the corresponding instruction so library for each CPU type platform separately. The code developed in the Java language runs in the virtual machine, and the virtual machine adapts the CPU type, which does not involve this problem.
 
-HBuilder/HBuilderX中使用so库的功能（模块）
-Functions (modules) using the so library in HBuilder/HBuilderX
+5+ app/uni-app 项目中使用so库的功能（模块）
 - Audio（录音）：支持mp3格式
 - Audio (recording): supports mp3 format
 - Geolocation（定位）：百度
@@ -80,15 +79,19 @@ A small number of tablets use x86, when intel x86 is selected in the AS simulato
 
 ### 配置支持的CPU类型
 **可视化界面配置**
-打开项目的manifest.json文件，在 “App常用其它设置” -> “Android设置” -> “支持CPU类型” 项中勾选需要支持的CPU类型：
+
+5+ app/uni-app 项目，打开manifest.json文件，在 “App常用其它设置” -> “Android设置” -> “支持CPU类型” 项中勾选需要支持的CPU类型：
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/abifilters-manifest.png)
 
+> uni-app x 项目暂不支持可视化配置  
+
 **源码视图配置**
+
 打开项目的manifest.json文件，切换到“源码视图”，根据项目类型进行配置
 Open the manifest.json file of the project, switch to the "source view", and configure according to the project type
 
-- uni-app项目
-在 "app-plus"->"distribute"->"android" 节点的 abiFilters 属性配置支持的CPU类型，示例如下：
+- 5+ app/uni-app 项目
+在 "app-plus" -> "distribute" -> "android" 节点的 abiFilters 属性配置支持的CPU类型，示例如下：
 ``` js
   "app-plus": {
     "distribute": {
@@ -105,7 +108,24 @@ Open the manifest.json file of the project, switch to the "source view", and con
   },
   //..
 ```
-
+ - uni-app x项目
+ 在 "app" -> "distribute" -> "android" 节点的 abiFilters 属性配置支持的CPU类型，示例如下：
+ ``` js
+  "app": {
+    "distribute": {
+      "android": {
+        "abiFilters": [
+          "armeabi-v7a",
+          "arm64-v8a"
+        ]
+        //...
+      },
+      //...
+    },
+    //...
+  },
+  //..
+```
 
 #### 离线打包配置
 #### Offline packaging configuration
@@ -143,6 +163,7 @@ ARM64-bit (arm64-v8a) CPU is compatible with ARM32 instructions, that is to say,
 
 ### 查看apk支持的CPU类型
 使用解压工具打开apk，在lib目录下可以查看到支持的CPU类型，如下图所示：
+
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/abifilters-apk.png)
 
 
@@ -181,6 +202,7 @@ adb: failed to install android_debug.apk: Failure [INSTALL_FAILED_NO_MATCHING_AB
 ```
 
 使用Android Studio自带的x86模拟器，将不包含x86 cpu类型的apk拖到模拟器安装时会弹出如下提示框：
+
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/abifilters-error.png)
 
 

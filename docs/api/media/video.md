@@ -109,8 +109,7 @@ export default {
 
 ## uni.chooseMedia(OBJECT)
 
-拍摄或从手机相册中选择图片或视频。
-Take a photo or select a picture or video from your phone gallery.
+拍摄或从手机相册中选择图片或视频。注意在app平台，相册选择使用的是系统相册。系统相册选择不需要本地媒体访问权限，但上面的UI无法定制，不能自行添加类似“原图”的单选框，
 
 若选择和上传非图像、视频文件，另行参考：[https://uniapp.dcloud.io/api/media/file](https://uniapp.dcloud.io/api/media/file)。
 If you select and upload non-image and video files, please refer to: [https://uniapp.dcloud.io/api/media/file](https://uniapp.dcloud.io/api/media/file).
@@ -120,7 +119,7 @@ If you select and upload non-image and video files, please refer to: [https://un
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|2.10.0+|x|x|√|x|x|√|√|√|
+|4.52+|x|2.10.0+|x|x|√|x|x|√|√|√|
 
 <!-- UNIAPPAPIJSON.chooseMedia.compatibility -->
 
@@ -252,6 +251,7 @@ uni.chooseMedia({
 * Most of the selected files are for uploading, uni ui encapsulates a more complete [uni-file-picker component] (https://ext.dcloud.net.cn/plugin?id=4079), file selection, uploading to uniCloud is free One-stop integration in storage and cdn. Highly recommended.
 * 经开发者提醒，微信小程序ios真机可以选择的文件个数不能大于9，详见帖子[https://ask.dcloud.net.cn/question/115561](https://ask.dcloud.net.cn/question/115561)
 * 微信小程序在2023年10月17日之后，使用API需要配置[隐私协议](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)
+* app-android/app-ios平台使用此API需要勾选“Camera&Gallery(相机和相册)”模块
 
 
 ## uni.saveVideoToPhotosAlbum(OBJECT)

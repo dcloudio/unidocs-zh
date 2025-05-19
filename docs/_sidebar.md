@@ -24,7 +24,7 @@
   * [统一发行页面](https://doc.dcloud.net.cn/uniCloud/uni-portal.html)
   * [前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting.html)
   * [App升级中心](https://doc.dcloud.net.cn/uniCloud/upgrade-center.html)
-  * [uni一键登录](univerify.md)
+  * [uni一键登录](https://doc.dcloud.net.cn/uniCloud/uni-login/summary.html)
   * [uni实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
   * [uni-push统一推送](unipush.md)
     * [uni-push1.0](unipush-v1.md)

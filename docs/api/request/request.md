@@ -56,7 +56,7 @@ Make a network request.
 |complete|Function|否||接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 | complete| Function|No||The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|&nbsp;|
 
-<!-- UNIAPPAPIJSON.request.param -->
+
 
 **method 有效值**
 **method Valid Values**

@@ -71,17 +71,22 @@ The corresponding list of API levels and Android versions is as follows:
 | API等级 | Android版本号 | Android版本名称 |  
 | API level | Android version number | Android version name |
 | :-- | :-- | :-- |  
-| 19 | Android4.4 | Kitkat |  
+| 36 | Android16 | Android W |  
+| 35 | Android15 | Android V, Vanilla Ice Cream |  
+| 34 | Android14 | Android U, Upside Down Cake |  
+| 33 | Android13 | Android T, Tiramisu |  
+| 32 | Android12L | Android Sv2 |  
+| 31 | Android12 | Android S, Snow Cone |  
+| 30 | Android11 | Android R, Red Velvet Cake |  
+| 29 | Android10 | Android Q, Quince Tart |  
+| 28 | Android9 | Android P, Pie |  
+| 27 | Android8.1 | Android O_MR1 |  
+| 26 | Android8.0 | Android O, Oreo |  
+| 25 | Android7.1 | Android N_MR1 |  
+| 24 | Android7.0 | Android N, Nougat |  
+| 23 | Android6.0 | Android M, Marshmallow |  
+| 22 | Android5.1 | Android L_MR1 |  
+| 21 | Android5.0 | Android L, Lollipop |  
 | 20 | Android4.4W | Kitkat Watch |  
-| 21 | Android5.0 | Lollipop |  
-| 22 | Android5.1 | Lollipop |  
-| 23 | Android6.0 | Marshmallow |  
-| 24 | Android7.0 | Nougat |  
-| 25 | Android7.1 | Nougat |  
-| 26 | Android8.0 | Oreo |  
-| 27 | Android8.1 | Oreo |  
-| 28 | Android9.0 | Pie |  
-| 29 | Android10.0 | Android Q |  
-| 30 | Android11.0 | Android R |  
-| 31 | Android12.0 | Android S |  
+| 19 | Android4.4 | Kitkat |  
 

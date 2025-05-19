@@ -10,7 +10,7 @@
 |:-|:-|:-|:-|
 |@change|EventHandle||``<checkbox-group>``中选中项发生改变是触发 change 事件，detail = {value:[选中的checkbox的value的数组]}|
 
-<!-- UNIAPPCOMJSON.checkbox-group.attribute -->
+
 
 <!-- UNIAPPCOMJSON.checkbox-group.reference -->
 
@@ -34,7 +34,7 @@
 |activeBorderColor|Color|#d1d1d1|checkbox选中时的边框颜色|H5(3.99+)、App-Vue(3.99+)|
 |iconColor|Color|#007aff|checkbox的图标颜色|H5(3.99+)、App-Vue(3.99+)|
 
-<!-- UNIAPPCOMJSON.checkbox.attribute -->
+
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/checkbox/checkbox)
 

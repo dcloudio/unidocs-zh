@@ -26,8 +26,7 @@ Custom component instance. **The applet does not support this parameter, the inp
 > tips: UI-related api will be executed after the component is mounted
 
 |方法|说明|
-| Method| Instruction|
-|:-|:-|:-|
+|:-|:-|
 |MediaQueryObserver.observe(Object descriptor, function callback)|开始监听页面 media query 变化情况|
 | MediaQueryObserver.observe(Object descriptor, function callback)| Start listening to the changes of the page media query|
 |MediaQueryObserver.disconnect()|停止监听，回调函数将不再触发|

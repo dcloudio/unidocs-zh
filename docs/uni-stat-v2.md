@@ -1961,6 +1961,97 @@ This is also the most effective way to reduce the number of `unistatistics 2.0` 
 实时统计指云端实时运算统计报表。但现实中大多数人只关心昨天的统计报表。只有今天要搞促销时才会实时关注数据报表。可以在日常配置为按天统计，在搞活动时再调整配置为实时统计。修改方法：将实时统计的配置项设置为关闭状态，然后重新上传配置中心（`uni-config-center`）到关联的服务空间即可。配置项说明可查看上文[公共模块配置项说明](#公共模块配置项说明)。
 Real-time statistics refer to cloud real-time computing statistical reports. But in reality, most people only care about yesterday's statistical report. Only when there is a promotion today will I pay attention to the data report in real time. It can be configured for daily statistics, and then adjusted for real-time statistics during activities. Modification method: Set the configuration item of real-time statistics to off, and then re-upload the configuration center (`uni-config-center`) to the associated service space. For the configuration item description, please refer to the above [common module configuration item description](#%E5%85%AC%E5%85%B1%E6%A8%A1%E5%9D%97%E9%85%8D%E7%BD %AE%E9%A1%B9%E8%AF%B4%E6%98%8E).
 
+## 开发小技巧
+
+### 在开发阶段快速生成统计数据
+
+因为`uni统计2.0`的统计数据最小颗粒度为小时数据（即每小时统计上一个小时的数据），所以，在上报数据后一个小时左右，方可在`uni-admin`管理后台看到统计数据。若想在测试阶段快速看到统计数据，可在`uni-admin`项目下创建一个云函数，并在`HBuilderX`中右键关联`uni-stat`公共模块，然后复制下方示例代码至测试云函数中，按需修改任务类型、运行时间、批次类型等参数后，在`HBuilderX`中右键云函数目录，选择本地运行云函数即可。
+
+::: warning 注意
+- 生成统计数据后，系统将不会再次跑批，因此测试后需手动删除测试数据。
+:::
+
+示例代码：
+
+``` javascript
+'use strict';
+const uniStatCron = require('uni-stat').initStat()
+//手动跑批任务，需要先关联uni-stat公共模块
+exports.main = async (event, context) => {
+	const date = new Date()
+	const thisTime = date.getTime()
+	
+	let res = await uniStatCron.stat({
+		type: 'stat', //任务类型，stat:基础统计、page:页面统计。。。，任务类型及跑批时间可查看文档(https://uniapp.dcloud.net.cn/uni-stat-v2.html#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E)
+		date: thisTime, //运行时间，设置为当日，跑昨天的数据
+		dimension: 'day', //批次类型，hour：小时 day：天  week：周 month：月
+		reset: true //是否重置数据，设置为true后，若存在该批次数据则会删除后重新跑批
+	})
+	
+	//返回数据给客户端
+	return res
+};
+```
+
+
+### 开通统计的项目与uni-admin项目分别部署至不同服务空间的方法
+
+在`HBuilderX`中找到需要统计的项目，点击根目录下的`mainifest.json`文件，然后点击`源码视图`，找到最外层的`uniStatistics`节点（注意是最外层的`uniStatistics`节点，不是各平台节点下的`uniStatistics`节点！），并在此节点添加`uniCloud`配置项。配置项中有关服务空间的配置信息，可登录[uniCloud控制台](https://unicloud.dcloud.net.cn/)，点击服务空间`详情`查看。
+
+::: warning 注意
+- 项目分别部署，可能会导致uni统计无法统计到注册用户数据，想要解决此问题，可将注册用户通过接口同步至`uni-admin`项目关联的服务空间下的数据库中。
+:::
+
+`uniCloud`节点配置项示例：
+
+``` json
+//uni-admin部署在支付宝服务空间配置示例
+"uniStatistics" : {
+	"enable" : true,
+	"version" : "2",
+	"uniCloud" : {
+		"spaceId" : "spaceId",
+		"provider" : "alipay",
+		"secretId": "AK",
+		"secretKey":"SK",
+		"appId":"SpaceAppId"
+	}
+}
+//uni-admin部署在阿里云服务空间配置示例
+"uniStatistics" : {
+	"enable" : true,
+	"version" : "2",
+	"uniCloud" : {
+		"spaceId" : "spaceId",
+		"provider" : "aliyun",
+		"clientSecret": "ClientSecret"
+	}
+}
+//uni-admin部署在腾讯云服务空间配置示例
+"uniStatistics" : {
+	"enable" : true,
+	"version" : "2",
+	"uniCloud" : {
+		"spaceId" : "spaceId",
+		"provider" : "tcb"
+	}
+}
+
+//uni-admin部署在软件版集群空间配置示例
+"uniStatistics" : {
+	"enable" : true,
+	"version" : "2",
+	"uniCloud" : {
+		"spaceId" : "spaceId",
+		"provider" : "dcloud",
+		"clientSecret": "ClientSecret",
+		"endpoint": "http://xxx.xx.xxx"
+	}
+}
+
+```
+
+
 ## 常见问题
 ## common problem
 
@@ -2050,6 +2141,11 @@ Business App and admin are 2 projects. The business app is the collection end, a
 ### 8. 某统计项突然没有数据怎么办？
 
 答：首先登录[uniCloud控制台](https://unicloud.dcloud.net.cn/)，检查在出现问题的统计项配置的时间点(参考：[定时任务配置说明](#定时任务配置说明))，`uni-stat-cron`云函数的运行日志，如果运行日志前面的状态标识是灰色的，代表云函数运行超时了，此时在云函数详情中将`uni-stat-cron`云函数的超时时间设置到最大值即可。如果运行日志的状态标识是绿色的，则需要检查日志内容是否有报错，然后根据报错内容做出调整。
+
+
+### 9. 为什么注册用户统计没有数据？
+
+答：uni统计能够产出注册用户统计数据的前提是，开通uni统计的应用与`uni-admin`项目关联了同一个服务空间，且用户模块使用了[uni-id用户体系](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)，如果你应用的用户存储在非uniCloud业务，或者没有使用[uni-id用户体系](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)，uni统计将无法自动统计注册用户数据。
 
 
 ## 参考资料

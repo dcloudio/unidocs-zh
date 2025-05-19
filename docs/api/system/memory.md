@@ -27,7 +27,7 @@ This event is triggered when iOS/Android issues a memory warning to the MiniApp 
 |level|Number|仅 Android 有该字段，对应系统内存告警等级宏定义|
 | level| Number|Only Android has this field, which corresponds to the system memory alarm level macro definition|
 
-<!-- UNIAPPAPIJSON.onMemoryWarning.param -->
+
 
 **level 的合法值**
 **Legal values for level**
@@ -75,7 +75,7 @@ Cancel listening to insufficient memory warning events. If no callback is passed
 |	回调函数|	Function|内存不足告警事件的回调函数|
 | Callback function| Function|Callback function for low memory alarm event|
 
-<!-- UNIAPPAPIJSON.offMemoryWarning.param -->
+
 
 **代码示例**
 **code example**

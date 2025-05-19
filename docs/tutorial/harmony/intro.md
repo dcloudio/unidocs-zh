@@ -10,7 +10,8 @@
 
 1. [运行和发行](runbuild.md)
 2. [调用鸿蒙原生API](native-api.md)
-3. [内置模块说明](built-in-module.md)
-4. [历史变更](history.md)
+3. [嵌入鸿蒙原生组件](native-component.md)
+4. [内置模块说明](built-in-module.md)
+5. [历史变更](history.md)
 
 欢迎加入 [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)

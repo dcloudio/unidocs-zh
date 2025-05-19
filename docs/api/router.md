@@ -16,7 +16,7 @@
 |fail|Function|否||接口调用失败的回调函数||
 |complete|Function|否||接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-<!-- UNIAPPAPIJSON.navigateTo.param -->
+
 
 **object.success 回调函数**
 
@@ -253,7 +253,7 @@ uni.switchTab({
 |fail|Function|否||接口调用失败的回调函数||
 |complete|Function|否||接口调用结束的回调函数（调用成功、失败都会执行）||
 
-<!-- UNIAPPAPIJSON.navigateBack.param -->
+
 
 **示例**
 

@@ -200,3 +200,5 @@ export default {
 	interstitialAd.load()
 	```
 6. 由于目前接入穿山甲短剧需要添加穿山甲的私有仓库地址，HBuilderX暂不支持配置。建议开发者先在android studio中将短剧功能封装成一个库并提供一些对外API让uts插件调用。
+
+如果插件开发中遇到问题，可以去[uni-ad广告群](https://im.dcloud.net.cn/#/?joinGroup=65d85fc09847e92db03ff81a)咨询。

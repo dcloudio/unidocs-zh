@@ -28,7 +28,7 @@
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-<!-- UNIAPPAPIJSON.uploadFile.param -->
+
 
 **注意**：
 
@@ -169,7 +169,7 @@ uni.chooseImage({
 |fail|Function|否|接口调用失败的回调函数| |
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）| |
 
-<!-- UNIAPPAPIJSON.downloadFile.param -->
+
 
 **注：文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](/api/file/file?id=savefile)，才能在应用下次启动时访问得到。**
 

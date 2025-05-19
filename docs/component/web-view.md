@@ -13,18 +13,19 @@
 |src|String|webview 指向网页的链接|&nbsp;|
 |allow|String|用于为 [iframe](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe) 指定其[特征策略](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/策略特征)|H5|
 |sandbox|String|该属性对呈现在 [iframe](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe) 框架中的内容启用一些额外的限制条件。|H5|
-|fullscreen|Boolean|是否铺满整个页面，默认值：`true`。|H5 (HBuilder X 3.5.4+)|
+|fullscreen|Boolean|是否铺满整个页面，默认值：`true`。|H5 (HBuilder X 3.5.4+)、App-HarmonyOS|
 |webview-styles|Object|webview 的样式|App-vue|
 |update-title|Boolean|是否自动更新当前页面标题。默认值：`true`|App-vue (HBuilder X 3.3.8+)|
 |@message|EventHandler|网页向应用 `postMessage` 时，会在特定时机（后退、组件销毁、分享）触发并收到消息。|H5 暂不支持（可以直接使用 [window.postMessage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage)）|
 |@onPostMessage|EventHandler|网页向应用实时 `postMessage`|App-nvue|
-|@load|EventHandler|网页加载成功时候触发此事件。|微信小程序、支付宝小程序、抖音小程序、QQ小程序|
+|@load|EventHandler|网页加载成功时候触发此事件。|微信小程序、支付宝小程序、抖音小程序、QQ小程序、H5|
 |@error|EventHandler|网页加载失败的时候触发此事件。|微信小程序、支付宝小程序、抖音小程序、QQ小程序|
 
-<!-- UNIAPPCOMJSON.web-view.attribute -->
+
 
 **注意**
 - `update-title` 仅支持 `App-vue` 。`小程序` 恒为 `true`，`H5、nvue` 恒为 `false`
+- `H5` 平台仅支持 `load` 事件，即使加载失败，也会触发 `load`，[参考文档](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference/Elements/iframe#error_%E5%92%8C_load_%E4%BA%8B%E4%BB%B6%E8%A1%8C%E4%B8%BA)
 
 **src**
 
@@ -138,6 +139,7 @@
 
 - 传递的消息信息，必须写在 data 对象中。
 - `event.detail.data` 中的数据，以数组的形式接收每次 post 的消息。（注：支付宝小程序除外，支付宝小程序中以对象形式接受）
+- 应用如何传递数据到 web-view？参考 [create-webview-context](https://uniapp.dcloud.net.cn/api/create-webview-context.html#evaljs) 通过 evalJS 传递
 
 ### uni.getEnv(CALLBACK)
 
@@ -223,7 +225,7 @@
       } else if (/toutiaomicroapp/i.test(userAgent)) {
         // 头条小程序 JS-SDK 如果不需要兼容头条小程序，则无需引用此 JS 文件。
         document.write(
-          '<script type="text/javascript" src="https://s3.pstatp.com/toutiao/tmajssdk/jssdk-1.0.1.js"><\/script>');
+          '<script type="text/javascript" src="https://lf1-cdn-tos.bytegoofy.com/goofy/developer/jssdk/jssdk-1.2.0.js"><\/script>');
       } else if (/swan/i.test(userAgent)) {
         // 百度小程序 JS-SDK 如果不需要兼容百度小程序，则无需引用此 JS 文件。
         document.write(
@@ -296,6 +298,7 @@
 
 
 ## **App端web-view的扩展**
+
 App端的webview是非常强大的，可以更灵活的控制和拥有更丰富的API。
 
 每个vue页面，其实都是一个webview，而vue页面里的web-view组件，其实是webview里的一个子webview。这个子webview被append到父webview上。
@@ -439,12 +442,17 @@ uni.webView.navigateTo 示例，注意uni sdk放到body下面
 			},
 			// 调用 webview 内部逻辑
 			evalJs: function() {
-				this.$refs.webview.evalJs("document.body.style.background ='#00FF00'");
+				this.$refs.webview.evalJS("document.body.style.background ='#00FF00'");
 			}
 		}
 	}
 </script>
 ```
+
+### HarmonyOS 使用问题
+
+`HarmonyOS` 不支持 `plus`，但可以直接使用行内样式或者 class 控制显示效果。如果需要使用 `back`、`evalJS` 等方法，请使用 [`uni.createWebviewContext`](https://uniapp.dcloud.net.cn/api/create-webview-context.html)
+
 
 ### FAQ
 

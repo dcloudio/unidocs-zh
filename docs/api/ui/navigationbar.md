@@ -13,7 +13,7 @@
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.setNavigationBarTitle.param -->
+
 
 **示例**
 
@@ -52,7 +52,7 @@ uni.setNavigationBarTitle({
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-<!-- UNIAPPAPIJSON.setNavigationBarColor.param -->
+
 
 **注意**
 - Android 上的 backgroundColor 参数有限制，黑色大于 rgb(30,30,30), 白色小于 rgb(235,235,235)

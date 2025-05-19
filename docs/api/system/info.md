@@ -1,5 +1,7 @@
 ## 系统信息的概念
 
+> 本 API 在微信小程序上使用会产生警告，请使用 uni.getSystemSetting、uni.getAppAuthorizeSetting、uni.getDeviceInfo、uni.getWindowInfo、uni.getAppBaseInfo 代替
+
 uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的2个API获取系统信息。
 uni-app provides two asynchronous (`uni.getSystemInfo`) and synchronous (`uni.getSystemInfoSync`) APIs to obtain system information.
 
@@ -89,10 +91,8 @@ Get system information asynchronously
 | | uniRuntimeVersion | uni runtime version. [See](#uniplatform)|`3.4.10`, `3.2.9`, etc. |`3.4.10`, `3.2.9`, etc.|`3.4.10`, `3.2.9`, etc.|| uni -app 3.4.10+|
 |app	|appId|`manifest` 中应用appid，即DCloud appid。			|||||uni-app 3.4.10+|
 |			|appName			|`manifest` 中应用名称	||||和`抖音小程序`字段冲突，`抖音小程序`原字段与`hostName`一致|uni-app 3.4.10+|
-|			|appVersion			|`manifest` 中应用版本名称。		|||||uni-app 3.4.10+|
-| | appVersion | The app version name in `manifest`. |||||uni-app 3.4.10+|
-|			|appVersionCode		|`manifest` 中应用版本名号。		|||||uni-app 3.4.10+|
-| | appVersionCode |The application version name in `manifest`. |||||uni-app 3.4.10+|
+|			|appVersion			|`manifest` 中应用版本名称。(标准基座模式下获取到的是基座的应用版本名称)		|||||uni-app 3.4.10+|
+|			|appVersionCode		|`manifest` 中应用版本号。(标准基座模式下获取到的是基座的应用版本号)		|||||uni-app 3.4.10+|
 |			|appWgtVersion		|应用资源（wgt）的版本名称。		|||||uni-app 3.4.15+|
 | | appWgtVersion | Version name of the application resource (wgt). |||||uni-app 3.4.15+|
 |			|appLanguage		|应用设置的语言|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`||uni-app 3.4.13+|
@@ -114,7 +114,7 @@ Get system information asynchronously
 |			|safeArea			|在竖屏正方向下的安全区域。由于此属性理解和使用比较困难，更推荐使用 safeAreaInsets 属性。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、抖音、飞书、支付宝（iOS真机）、快手、QQ小程序、华为快应用|||
 |			|safeAreaInsets		|在竖屏正方向下的安全区域插入位置。与小程序定义的 safeArea 用途相同，但是规范参考 iOS 平台的 [safeAreaInsets](https://developer.apple.com/documentation/uikit/uiview/2891103-safeareainsets) 更利于理解和使用。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、抖音、飞书、支付宝小程序（iOS真机）、华为快应用||uni-app 2.5.3+|
 
-<!-- UNIAPPAPIJSON.getSystemInfo.param -->
+
 
 ### 某些小程序特殊的返回参数
 

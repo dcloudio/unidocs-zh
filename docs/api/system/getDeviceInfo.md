@@ -22,11 +22,8 @@ Get basic device information
 |deviceModel|string|设备型号||
 |deviceModel|string|Device Model||
 |deviceType|string|设备类型`phone`、`pad`、`pc`||
-|deviceType|string|device type `phone`, `pad`, `pc`||
-|deviceOrientation|string|设备方向 `竖屏 portrait`、`横屏 landscape`|`App、H5`。微信小程序请使用 `(getSystemInfo Api)[/api/system/info.html]` 获取|
-|deviceOrientation|string|Device orientation `portrait`, `landscape`|`App, H5`. For WeChat applet, please use `(getSystemInfo Api)[/api/system/info.html]` to get|
-|devicePixelRatio|string|设备像素比|`App、H5`。微信小程序请使用 `(getSystemInfo Api)[/api/system/info.html]` 获取|
-|devicePixelRatio|string|Device pixel ratio|`App, H5`. For WeChat applet, please use `(getSystemInfo Api)[/api/system/info.html]` to get|
+|deviceOrientation|string|设备方向 `竖屏 portrait`、`横屏 landscape`|`App、H5`。微信小程序请使用 [`getSystemInfo Api`](/api/system/info.html) 获取|
+|devicePixelRatio|string|设备像素比|`App、H5`。微信小程序请使用 [`getSystemInfo Api`](/api/system/info.html) 获取|
 |system|string|操作系统及版本||
 |platform|string|客户端平台||
 |osName|string|系统名称|HBuilderX 4.32+，`weixin 4.33`支持|

@@ -40,7 +40,7 @@ Set current language
 |locale|String|是|
 | locale| String| Yes|
 
-<!-- UNIAPPAPIJSON.setLocale.param -->
+
 
 ## uni.onLocaleChange(callback)
 
@@ -56,7 +56,7 @@ Used to listen to the application language switching
 
 <!-- UNIAPPAPIJSON.onLocaleChange.compatibility -->
 
-<!-- UNIAPPAPIJSON.onLocaleChange.param -->
+
 
 **callback返回参数说明**
 **Description of callback return parameter**

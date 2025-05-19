@@ -11,7 +11,7 @@ Hide the displayed soft keyboard, and do nothing if the soft keyboard is not dis
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|x|√|√|√|√|x|
+|√|√|√|√|x|√|√|√|√|1.0.4+|
 
 <!-- UNIAPPAPIJSON.hideKeyboard.compatibility -->
 
@@ -25,7 +25,7 @@ Monitor keyboard height changes
 
 |App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|HBuilderX 2.2.3+|HBuilderX 4.23|x|基础库2.7+|HBuilderX 3.6.8+|x|x|√|√|√|x|
+|HBuilderX 2.2.3+|HBuilderX 4.23|x|基础库2.7+|HBuilderX 3.6.8+|x|x|√|√|√|1.0.4+|
 
 **参数**
 **parameter**
@@ -96,7 +96,7 @@ After input, textarea, etc. focus, get the cursor position of the input box. Not
 
 |App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|HBuilderX 2.8.12+|x|HBuilderX 2.8.12+|基础库 2.7.0+|x|x|x|x|√|x|x|
+|HBuilderX 2.8.12+|x|HBuilderX 2.8.12+|基础库 2.7.0+|x|x|x|x|√|x|1.0.4+|
 
 **OBJECT 参数说明：**
 **OBJECT parameter description:**

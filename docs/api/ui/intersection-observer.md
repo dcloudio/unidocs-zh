@@ -5,7 +5,7 @@
 
 |元服务|
 |:-:|
-|x|
+|1.0.4+|
 
 <!-- UNIAPPAPIJSON.createIntersectionObserver.compatibility -->
 
@@ -21,7 +21,7 @@
 |initialRatio|Number|初始的相交比例，如果调用时检测到的相交比例与这个值不相等且达到阈值，则会触发一次监听器的回调函数。默认为 ``0``。|
 |observeAll|Boolean|是否同时观测多个参照节点（而非一个），如果设为 ``true``，``observe`` 的 ``targetSelector`` 将选中多个节点（注意：同时选中过多节点将影响渲染性能）|
 
-<!-- UNIAPPAPIJSON.createIntersectionObserver.param -->
+
 
 ## IntersectionObserver 对象的方法列表
 

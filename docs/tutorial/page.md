@@ -559,7 +559,7 @@ app.doSomething() // 调用 App.vue methods 中的 doSomething 方法
 
 ### getCurrentPages()
 
-```getCurrentPages()``` 函数用于获取当前[页面栈](#页面栈)的实例，以数组形式按栈的顺序给出，数组中的元素为页面实例，第一个元素为首页，最后一个元素为当前页面。
+`getCurrentPages()` 函数用于获取当前[页面栈](#页面栈)的实例，以数组形式按栈的顺序给出，数组中的元素为页面实例，第一个元素为首页，最后一个元素为当前页面。
 
 每个页面实例的方法属性列表：
 List of method properties for each page instance:
@@ -581,7 +581,7 @@ Tips：
 
 - `navigateTo`, `redirectTo` 只能打开非 tabBar 页面。
 - `switchTab` 只能打开 `tabBar` 页面。
-- `reLaunch`` 可以打开任意页面。
+- `reLaunch` 可以打开任意页面。
 - 页面底部的 `tabBar` 由页面决定，即只要是定义为 `tabBar` 的页面，底部都有 `tabBar`。
 - 不能在首页 `onReady` 之前进行页面跳转。
 

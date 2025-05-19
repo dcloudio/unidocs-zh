@@ -4,7 +4,7 @@ Monitoring acceleration data, frequency: 5 times per second, the monitoring will
 
 |元服务|
 |:-:|
-|x|
+|1.0.4+|
 
 <!-- UNIAPPAPIJSON.onAccelerometerChange.compatibility -->
 
@@ -31,7 +31,7 @@ Object res
 |z|Number|Z 轴|
 | z| Number| Z axYes|
 
-<!-- UNIAPPAPIJSON.onAccelerometerChange.param -->
+
 
 **Tips**
 
@@ -60,7 +60,7 @@ Cancel listening to acceleration data.
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|√|x|
+|HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|√|1.0.4+|
 
 <!-- UNIAPPAPIJSON.offAccelerometerChange.compatibility -->
 
@@ -94,7 +94,7 @@ Start monitoring acceleration data.
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|x|√|√|√|√|√|x|
+|√|√|√|x|√|√|√|√|√|1.0.4+|
 
 <!-- UNIAPPAPIJSON.startAccelerometer.compatibility -->
 
@@ -126,7 +126,7 @@ Legal values for `interval`
 |normal|普通的回调频率，在 200ms/次 左右|
 | normal|Normal callback frequency, about 200ms/time|
 
-<!-- UNIAPPAPIJSON.startAccelerometer.param -->
+
 
 **示例**
 **example**
@@ -143,7 +143,7 @@ Stop listening to acceleration data.
 
 |元服务|
 |:-:|
-|x|
+|1.0.4+|
 
 <!-- UNIAPPAPIJSON.stopAccelerometer.compatibility -->
 
@@ -160,7 +160,7 @@ Stop listening to acceleration data.
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 | complete| Function|No|The callback function for the end of the interface call (it will be executed when the call succeeds or fails)|
 
-<!-- UNIAPPAPIJSON.stopAccelerometer.param -->
+
 
 **示例**
 **example**

@@ -78,7 +78,7 @@ The input in the html specification is not only an input box, but also radio, ch
 |@keyboardheightchange| eventhandle||This event is triggered when the keyboard height changes, event.detail = {height: height, duration: duration}|WeChat MiniApp base library 2.7.0+, App 3.1.0+|
 
 
-<!-- UNIAPPCOMJSON.input.attribute -->
+
 
 
 **Tips**

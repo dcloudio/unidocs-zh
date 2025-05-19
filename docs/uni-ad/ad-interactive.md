@@ -17,8 +17,8 @@
 [开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
 
 注意
-- 3.6.11+ 支持Web平台。开通方式不是单独开通，而是需要开启 App 基础广告，收益报表在基础广告里看。如未在[uniad后台](https://uniad.dcloud.net.cn/)开通，又在界面上使用了本组件，会显示DCloud公益广告。
-- 在和Web平台不需要设置广告位属性 `adpid`
+- 3.6.11+ 支持Web平台。开通方式不是单独开通，而是需要开启 App DCloud快捷广告，收益报表在快捷广告里看。如未在[uniad后台](https://uniad.dcloud.net.cn/)开通，又在界面上使用了本组件，会显示DCloud公益广告。
+- Web平台不需要设置广告位属性 `adpid`
 
 ## 语法
 

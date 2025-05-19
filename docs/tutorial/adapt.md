@@ -27,11 +27,7 @@ Interactive communication among these windows are supported.
 
 还有一批开源示例：
 - hello uni-app：[https://hellouniapp.dcloud.net.cn/](https://hellouniapp.dcloud.net.cn/)
-- 分栏式的新闻模板：[https://static-mp-08d051ca-bb38-4570-b781-086c1b7c0360.next.bspapp.com/](https://static-mp-08d051ca-bb38-4570-b781-086c1b7c0360.next.bspapp.com/)，这个示例对应的源码在：[https://github.com/dcloudio/uni-template-news](https://github.com/dcloudio/uni-template-news)
-
-新闻示例项目，预览地址https://static-7d133019-9a7e-474a-b7c2-c01751f00ca5.bspapp.com/#/显示The requested file was not found on this server.
-News sample project, preview address https://static-7d133019-9a7e-474a-b7c2-c01751f00ca5.bspapp.com/#/ shows The requested file was not found on this server.
-
+- 分栏式的新闻模板：源码 [https://github.com/dcloudio/uni-template-news](https://github.com/dcloudio/uni-template-news)
 
 以上示例建议使用最新版的chrome、Safari、或firefox访问。可以在PC模式和手机模式分别体验。以上示例源码的运行需使用HBuilderX 2.9+
 It is suggested to use the latest version of Chrome, Safari, or Firefox to run the above examples. You can experience it in PC mode and mobile phone mode respectively. HBuilderX 2.9+ is required to run the above example source code
@@ -109,7 +105,7 @@ If there is a uni-app designed for small screen at hand and it is intended to us
 如果应用的首页是列表，二级页是详情，此时适合的做法是，将原有的小屏列表作为主window，在右边扩展rightWindow来显示详情。
 If the parent page of the application is a list and the child page is the details, it is appropriate to use the original small-screen list as the main window and extend the rightWindow to display the details on the right.
 
-以新闻示例项目为例，预览地址[https://static-mp-08d051ca-bb38-4570-b781-086c1b7c0360.next.bspapp.com/](https://static-mp-08d051ca-bb38-4570-b781-086c1b7c0360.next.bspapp.com/)。这个项目的源码已经内置于HBuilderX 2.9中，新建uni-app项目时选择新闻/资讯模板。
+以新闻示例项目为例。这个项目的源码已经内置于HBuilderX 2.9中，新建uni-app项目时选择新闻/资讯模板。
 
 首先在这个项目的`pages.json`文件中，配置[`rightWindow`选项](https://uniapp.dcloud.net.cn/collocation/pages?id=rightwindow)，放置一个新页面`right-window.vue`。
 First, configure [`rightWindow`option](https://uniapp.dcloud.net.cn/collocation/pages?id=rightwindow) in the `pages.json` file of this project, and place a new page `right-window.vue`.
@@ -191,12 +187,128 @@ LeftWindow is not only suitable for mobile phone applications to be adapted to l
 
 DCloud官方基于uni-app的pc版，推出了unicloud Admin：[https://doc.dcloud.net.cn/uniCloud/admin](https://doc.dcloud.net.cn/uniCloud/admin)
 
-目前的leftWindow、rightWindow、topWindow 只支持web端。计划后续在Pad App上实现该配置。小程序无法支持该配置。
-The current leftWindow, rightWindow, and topWindow only support the web side. It is planned to implement this configuration on the Pad App in the future. The applet cannot support this configuration.
+leftWindow、rightWindow、topWindow 只支持web端。
 
+#### 2. 分栏@split
+一些pad应用，或折叠屏应用，有左右分栏。
 
-#### 2. 组件级适配方案：match-media组件
-#### 2. Component-level adaptation scheme: match-media component
+虽然leftWindow、rightWindow也可以实现类似效果，但仅web支持。
+
+如果有跨端的分栏需求，不推荐使用rightWindow等方案。
+
+利用vue文件可以做页面，也可以做组件的特性，uni-app封装了rightWindow等方案，但其实uni-app不封装，开发者也可以自己做，灵活度会更高。
+
+还是以列表(list.vue)和详情(detail.vue)为例，如果是竖屏手机，list页面全屏，点击item后通过navigateTo调整到detail页面；
+
+如果是pad分栏，则在list页面中并排放置list组件和detail组件，把detail.vue文件从页面变成组件。点击list的item，通过eventbus让detail加载新的响应式数据。
+
+示例代码如下：
+
+- list页面：
+```vue
+<template>
+	<view style="display: flex;flex-direction: row;">
+		<view :class="isWide?'list-narrow':'list-wide'">
+			<view v-for="(item,index) in listData">
+				<text @click="showDetail(item.id)">{{item.title}}</text>
+			</view>
+		</view>
+		<detail v-if="isWide" style="width: 50%;"></detail>
+	</view>
+</template>
+
+<script>
+	import detail from './detail'
+	export default {
+		components: {
+			detail
+		},
+		data() {
+			return {
+				listData: [
+					{
+						"id":"1",
+						"title":"title1"
+					},
+					{
+						"id":"2",
+						"title":"title2"
+					},
+					{
+						"id":"3",
+						"title":"title3"
+					}
+				],
+				isWide: false
+			}
+		},
+		onLoad() {
+			this.isWide = (uni.getDeviceInfo().deviceType=="pad" || uni.getDeviceInfo().deviceType=="pc")?true:false
+		},
+		methods: {
+			showDetail(e) {
+				console.log(e);
+				if(this.isWide) {
+					uni.$emit('detailId', e)
+				} else {
+					uni.navigateTo({
+						url: '/pages/detail?id=' + e
+					})
+				}
+			}
+		}
+		
+	}
+</script>
+
+<style>
+	.list-wide {
+		width: 100%;
+	}
+	.list-narrow {
+		width: 50%;
+		border-right: 1px solid #000;
+	}
+</style>
+
+```
+
+- detail页面
+```vue
+<template>
+	<view style="width: 100%;align-items: center;">
+		<text>第{{detailId}}个</text>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				detailId:""
+			}
+		},
+		created() {
+			uni.$on('detailId', (id) => {
+				this.detailId = id
+			})
+		},
+		onLoad(e) {
+			console.log(e);
+			if(e.id != null) {
+				this.detailId = e.id
+			}
+		},
+		beforeDestroy() {
+			uni.$off('detailId')
+		}
+	}
+</script>
+```
+
+上述思路也适用于uni-app x，但uni-app x的Android端，暂不支持页面和组件同时使用，后续会修复此问题。
+
+#### 3. 组件级适配方案：match-media组件
 
 leftWindow等方案是页面窗体级适配方案。适于独立的页面。那么在同一个页面中，是否可以适配不同屏宽？当然可以，此时可以使用组件级适配方案。
 For leftwindow and others, the page and window level adaptation scheme are used. Suitable for standalone pages. Whether one page is able to adapt to different screen widths? Yes, of course. Component-level adaptation scheme can be used in such case.
@@ -230,8 +342,7 @@ Certainly, developers can continue to use css media queries to adapt the screen,
 uni-app的屏幕适配推荐方案是运行时动态适配，而不是为PC版单独条件编译（虽然您也可以通过自定义条件编译来实现单独的PC版）。这样设计的好处是在ipad等设备的浏览器上可以方便的横竖屏切换。
 It is recommended to use the dynamic screen adaptation scheme at runtime for uni-app, rather than independent conditional compilation for PC version (although the latter is realizable with customized conditions). The advantage of such design is that you can easily switch between landscape and portrait screens of the browsers on the devices like iPad.
 
-#### 3. 内容缩放拉伸的处理
-#### 3. Processing of content scaling and stretching
+#### 4. 内容缩放拉伸的处理
 
 除了根据屏宽动态显示和隐藏内容，其实还有一大类屏幕适配需求，即：内容不会根据屏宽动态显示隐藏，而是缩放或拉伸。
 In addition to dynamically displaying and hiding content based on the screen width, there is also a major requirement for screen adaptation, i.e.: content scaling and stretching other than dynamically displaying and hiding according to the screen width.
@@ -296,8 +407,7 @@ In such case, there are two solutions: one is to modify the code to change the c
 不少开发者之前对rpx的使用过于没有节制，后来为了适配宽屏，想要改用“局部拉伸：页面内容划分为固定区域和长宽动态适配区域”的策略，此时将回归px。
 Many developers used rpx excessively before, but later, in order to adapt to the widescreen, they wanted to switch to the strategy of "partial stretching: divide the page content into fixed areas and length-width dynamic adaptation areas", back to px.
 
-比如[DCloud社区的宽屏适配示例](https://static-1afcc27f-ce2f-4a6d-9416-c65a6f87d24e.bspapp.com/#/)和[新闻模板](https://static-7d133019-9a7e-474a-b7c2-c01751f00ca5.bspapp.com)都没有使用rpx。
-For example, neither [Example of widescreen adaptation in DCloud community](https://static-1afcc27f-ce2f-4a6d-9416-c65a6f87d24e.bspapp.com/#/) nor [News template](https://static-7d133019-9a7e-474a-b7c2-c01751f00ca5.bspapp.com) uses rpx.
+比如 DCloud社区的宽屏适配示例 和 新闻模板 都没有使用rpx。
 
 如果想把rpx转px，可以在源码里正则替换，也可以使用三方已经写好的单位转换库。下面介绍下三方库的用法。
 If you want to convert rpx to px, you can replace it regularly in the source code, or use the unit conversion library written by the third party. The following describes the usage of the third party library.
@@ -354,6 +464,7 @@ module.exports = {
   }
 }
 ```
+
 
 #### 非webkit浏览器适配
 #### Non-webkit browser adaptation

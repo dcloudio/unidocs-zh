@@ -3,7 +3,7 @@
 
 |App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|x|√|√|x|x|√|x|x|√|x|
+|√|x|x|√|√|x|x|√|x|x|√|1.0.4+|
 
 ## uni.openBluetoothAdapter(OBJECT)
 
@@ -436,8 +436,7 @@ Get all discovered Bluetooth devices during the Bluetooth module's effective per
 **Structure of res.devices**
 
 |属性|类型|说明|
-| Attribute| Type| Instruction|
-|---|---|---|---|
+|---|---|---|
 |name|string|蓝牙设备名称，某些设备可能没有|
 | name| string| Bluetooth device name. Some devices may not have a name|
 |deviceId|string|用于区分设备的 id|

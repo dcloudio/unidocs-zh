@@ -262,8 +262,7 @@ The above two solutions have their own advantages and disadvantages, and the fir
 2. jssdk（`manifest.json`->`APP 模块配置`->`uniPush 2.0`配置界面，仅勾选在线推送，未勾选离线推送时启用的 sdk），获取到的 cid 的 phoneType 均为小程序，而不管实际上你的客户端是 APP、小程序还是 web。
 
 ### 客户端启用uni-push2.0
-
-- uni-app x 框架的App端  
+#### uni-app x 框架的App端@enable-x-app  
   标准基座不包含uni-push模块，如果需要使用此模块，应当在提交云打包时，项目代码中包含uni-push相关客户端api。[点此](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#treeshaking)了解uni-app x的摇树机制
   
   所以在开发调试时，需要先写一段包含uni-push相关客户端api代码，再打一个自定义基座。  
@@ -286,14 +285,14 @@ The above two solutions have their own advantages and disadvantages, and the fir
   
   接下来即可使用 uni-push 相关客户端 api
 
-- uni-app 框架App端  
+#### uni-app 框架App端@enable-app  
 操作步骤打开`manifest.json` - `App模块配置` - 中勾选`uni-push 2.0` - `重新编译项目`
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20220525105852.jpg)
 
-- h5端
+#### h5端
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20220525105914.jpg)
 
--  微信小程序端
+#### 微信小程序端
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/87accaa0-e6a4-4916-9a74-87719142abaa.jpg)
 
 

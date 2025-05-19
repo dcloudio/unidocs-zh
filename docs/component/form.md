@@ -22,7 +22,7 @@ When clicking the ``<button>`` component whose formType is submit in the ``<form
 |@reset|EventHandle|表单重置时会触发 reset 事件|&nbsp;|
 |@reset| EventHandle|The reset event will be triggered when the form is reset|&nbsp;|
 
-<!-- UNIAPPCOMJSON.form.attribute -->
+
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/form/form)
 
@@ -144,6 +144,8 @@ Make custom components behave like form controls. The form component can recogni
 | name| String|Field name in the form|
 |value|任意|在表单中的字段值|
 |value|any|field value in the form|
+
+h5 vue3 暂不支持使用 behaviors 扩展表单组件
 
 示例如下：
 Examples are as follows:

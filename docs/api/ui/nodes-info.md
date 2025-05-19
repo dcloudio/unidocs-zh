@@ -121,7 +121,7 @@ Obtain information about the nodes. The first parameter is node related informat
 | computedStyle | Array＜string＞ | [] | 否 | 指定样式名列表，返回节点对应样式名的当前值 | 仅 App 和微信小程序支持 |
 | computedStyle | Array<string> | [] | No | Specify a list of style names and return the current value of the style name corresponding to the node | Only supported by App and WeChat applet |
 | context | Boolean | false | 否 | 是否返回节点对应的 Context 对象 | 仅 App 和微信小程序支持 |
-| context | Boolean | false | No | Whether to return the Context object corresponding to the node | Only supported by App and WeChat applet |
+| node | Boolean | false | 否 | 是否返回节点对应的 Node 实例，当前仅支持 canvas 实例的获取 | H5, 微信小程序, 抖音小程序, 快手小程序 |
 
 ### nodesRef.boundingClientRect(callback)
 

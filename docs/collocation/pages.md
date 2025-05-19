@@ -172,7 +172,7 @@ Used to set the status bar, navigation bar, title, window background color, etc.
 |animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)|App|
 |animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms|App|
 |app-plus|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)|App|
-| app-plus| Object||Set the specific style compiled to the App platform, the configuration items refer to the following [app-plus](/collocation/pages?id=app-plus)| App|
+|app-harmony|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-harmony](/collocation/pages?id=app-harmony)|App|
 |h5|Object||设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)|H5|
 | h5| Object||Set the specific style compiled to the H5 platform, the configuration items refer to [H5](/collocation/pages?id=h5)| H5|
 |mp-alipay|Object||设置编译到 mp-alipay 平台的特定样式，配置项参考下方 [MP-ALIPAY](/collocation/pages?id=mp-alipay)|支付宝小程序|
@@ -421,7 +421,7 @@ The configuration items in the page will override the same configuration items i
 |titlePenetrate|String|NO|导航栏点击穿透|支付宝小程序、H5|
 | titlePenetrate| String| NO|Click to penetrate the navigation bar|Alipay MiniApp, H5|
 |app-plus|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)|App|
-| app-plus| Object||Set the specific style compiled to the App platform, the configuration items refer to the following [app-plus](/collocation/pages?id=app-plus)| App|
+|app-harmony|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-harmony](/collocation/pages?id=app-harmony)|App|
 |h5|Object||设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)|H5|
 | h5| Object||Set the specific style compiled to the H5 platform, the configuration items refer to [H5](/collocation/pages?id=h5)| H5|
 |mp-alipay|Object||设置编译到 mp-alipay 平台的特定样式，配置项参考下方 [MP-ALIPAY](/collocation/pages?id=mp-alipay)|支付宝小程序|
@@ -528,8 +528,7 @@ In view of the above problems, try to use native navigation when native navigati
 
 ### app-plus
 
-配置编译到 App 平台时的特定样式，部分常用配置 H5 平台也支持。以下仅列出常用，更多配置项参考 [WebviewStyles](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewStyles)。
-Configure the specific style when compiling to the App platform, and some commonly used configurations are also supported by the H5 platform. The following are only common ones. For more configuration items, please refer to [WebviewStyles](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewStyles).
+配置编译到 App（安卓、iOS） 平台时的特定样式，部分常用配置 H5 平台也支持。以下仅列出常用，更多配置项参考 [WebviewStyles](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewStyles)。
 
 |属性|类型|默认值|描述|平台兼容|
 |Properties|Type|Default|Description|Platform Compatibility|
@@ -1005,6 +1004,15 @@ Under the App platform, you can customize the partial pull-to-refresh configurat
     ]
 }
 ```
+
+
+### app-harmony
+
+配置编译到 app-harmony 平台时的特定样式。
+
+|属性|类型|默认值|描述|平台兼容|
+|:-|:-|:-|:-|:-|
+|softinputMode|String|adjustPan|软键盘弹出模式，支持 adjustResize、adjustPan 两种模式|App-Harmony|
 
 ### h5
 配置编译到 H5 平台时的特定样式
@@ -1560,8 +1568,7 @@ The so-called main package is to place the default startup page/TabBar page, and
 在小程序启动时，默认会下载主包并启动主包内页面，当用户进入分包内某个页面时，会把对应分包自动下载下来，下载完成后再进行展示。此时终端界面会有等待提示。
 When the MiniApp is started, the main package will be downloaded by default and the pages in the main package will be launched. When the user enters a page in the subpackage, the corresponding subpackage will be downloaded automatically, and then displayed after the download is complete. At this time, there will be a waiting prompt on the terminal interface.
 
-App默认为整包。从uni-app 2.7.12+ 开始，也兼容了小程序的分包配置。其目的不用于下载提速，而用于首页是vue时的启动提速。App下开启分包，除在pages.json中配置分包规则外，还需要在manifest中设置在app端开启分包设置，详见：[https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization](https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization)
-App defaults to the whole package. Starting from uni-app 2.7.12+, it is also compatible with subpackage configuration of MiniApp. Its purpose is not to speed up the download, but to speed up the startup when the home page is vue. To enable subcontracting under App, in addition to configuring subcontracting rules in pages.json, you also need to set subcontracting settings on the app side in the manifest. For details, see: [https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization](https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization)
+App默认为整包。从uni-app 2.7.12+ 开始，vue2模式也兼容了小程序的分包配置。其目的不用于下载提速，而用于首页是vue时的启动提速。App下开启分包，除在pages.json中配置分包规则外，还需要在manifest中设置在app端开启分包设置，详见：[https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization](https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization)
 
 subPackages 节点接收一个数组，数组每一项都是应用的子包，其属性值如下：
 The subPackages node receives an array, each item in the array is a sub-package of the application, and its attribute values are as follows:

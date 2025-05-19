@@ -26,7 +26,7 @@ app-nvue不支持本api，而是使用 Weex 提供的 DOM.addRule 加载自定�
 |fail|Function||否|接口调用失败的回调函数|
 |complete|Function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-<!-- UNIAPPAPIJSON.loadFontFace.param -->
+
 
 **source**
 
@@ -66,6 +66,25 @@ uni-app x 中加载字体图标，详见 hello uni-app x 的 [loadFontFace](http
 - 工具里提示 Faild to load font可以忽略
 
 <!-- UNIAPPAPIJSON.loadFontFace.tutorial -->
+
+## uni.rpx2px()
+
+将rpx单位值转换成px。在 App 上暂不支持，可先使用 upx2px
+
+```js
+<script>
+	export default {
+		data() {
+			return {
+				boxWidth:""
+			}
+		},
+		onLoad() {
+			this.boxWidth = uni.rpx2px(600) + 'px';
+		}
+	}
+</script>
+```
 
 ## uni.upx2px()
 

@@ -63,9 +63,9 @@ HBuilderX 4.61+ 运行到鸿蒙，支持Debug调试。包括uvue、uts、混编�
 
 ### 开启方式
 
-在 uni-app x 项目根目录中的 `.hbuilderx/launcher.json` 文件中添加如下内容（如果文件不存在则手动创建）：
+在 uni-app x 项目根目录中的 `.hbuilderx/launch.json` 文件中添加如下内容（如果文件不存在则手动创建）：
 
-_部分内容可参考线上文档 [项目根目录与鸿蒙工程目录](https://uniapp.dcloud.net.cn/tutorial/harmony/runbuild.html#project-path)
+部分内容可参考线上文档 [项目根目录与鸿蒙工程目录](https://uniapp.dcloud.net.cn/tutorial/harmony/runbuild.html#project-path)
 
 ```json
 {

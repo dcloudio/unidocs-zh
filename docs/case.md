@@ -210,7 +210,7 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **维汉翻译通：** 免费翻译维吾尔语国语，鸿蒙应用市场搜索“维汉翻译通”，[详情](https://appgallery.huawei.com/app/detail?id=com.sjfc.whfyt.harm)
 
-**土星计划：** 一款集合个人日程计划、笔记、记账、便签、代办等多种日程功能的App，鸿蒙应用市场搜索“土星计划”，[详情](https://appgallery.huawei.com/app/detail?id=net.gibbous.honmeng)
+**土星计划：** 一款集合个人日程计划、笔记、记账、便签、代办等多种日程功能的App，鸿蒙应用市场搜索“土星计划”，[详情](https://appgallery.huawei.com/grey/app/detail?id=tothink.scitico.huawei)
 
 **施工眼：** 暖通行业移动关联专家，鸿蒙应用市场搜索“施工眼”，[详情](https://appgallery.huawei.com/app/detail?id=com.sungu.mybts)
 
@@ -323,6 +323,30 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 **中邮云物流平台：** 一款集订单、审核等多样功能于一体的云物流平台APP，鸿蒙应用市场搜索“中邮云物流平台”，[详情](https://appgallery.huawei.com/app/detail?id=ptac.oms.mobile)
 
 **众行管家：** 一款可远程点火熄火、分享钥匙的智能控车APP，鸿蒙应用市场搜索“众行管家”，[详情](https://appgallery.huawei.com/app/detail?id=com.kdwl.dazhong.hm)
+
+**凤凰会：** 凤凰会是碧桂园业主官方服务平台，全面升级物业服务，为碧桂园业主提供从购房到入住社区生活一站式服务，鸿蒙应用市场搜索“凤凰会”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.bgy.fhh)
+
+**多问律师端：** 多问-律师端是律师一站式移动办公软件，为律师提供了工具和接案功能，鸿蒙应用市场搜索“多问律师端”，[详情](https://appgallery.huawei.com/grey/app/detail?id=duowen__88.huawei.com)
+
+**选豆：** 一款汇聚全球咖啡豆、提供咖啡行业资讯及专业知识库的APP，鸿蒙应用市场搜索“选豆”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.gbyc.coffeeApp)
+
+**智赋城：** 一款融合前沿技术、支持多端操作，为 IoT 智能数码商贸企业提供多业态 ERP/SCRM 管理及多类系统的智赋城云平台 App，鸿蒙应用市场搜索“智赋城”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.zfucity.r6)
+
+**乳链惠：** 伊利产业链金融业务数字化平台，鸿蒙应用市场搜索“乳链惠”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.yili.rlhapp)
+
+**小翼智慧：** 小翼专用ERP配套APP，鸿蒙应用市场搜索“小翼智慧”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.zfucity.xiaoyi)
+
+**BALS Pro：** 一款用于控制智慧面膜的硬件设备的APP，鸿蒙应用市场搜索“BALS Pro”，[详情](https://appgallery.huawei.com/grey/app/detail?id=cn.xinzhishengwu.com)
+
+**顺络家园：** 一款服务于顺络园区生活，提供多端平台，人脸识别等技术的智慧 APP，鸿蒙应用市场搜索“顺络家园”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.tce.shunluo)
+
+**美宜佳：** 一款宜佳会员APP，鸿蒙应用市场搜索“美宜佳”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.myj.memberapp)
+
+**营销宝：** 营销宝是一款专为企业打造的智能营销工具，鸿蒙应用市场搜索“营销宝”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.example.yingxiaobao)
+
+**柳钢之家：** 一款为职工提供普惠服务、体育赛事、生活保障等网上服务的APP，鸿蒙应用市场搜索“柳钢之家”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.lg.next)
+
+**PTE单词：** PTE考试必备智能刷词APP，鸿蒙应用市场搜索“PTE单词”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.beatpte.alpacapteword)
 
 **塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
 

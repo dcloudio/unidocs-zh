@@ -450,13 +450,25 @@ getphonenumber(e){
 
 首先建议缩小问题范围，注释页面相关逻辑，锁定出问题的页面、组件、逻辑，从而针对性的调试。如果希望开启远程调试，可以按照下面方法操作。
 
-阅读官方文档 [运行调试元服务](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/debug-ascf-code)
+调试分成两个部分，一个是视图层的 WebView 调试，一个是逻辑层 V8 的调试。阅读官方文档 [运行调试元服务](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/debug-ascf-code)
 
-按照文档操作，简单来说可以分成三个步骤：
+WebView 调试按照文档操作，简单来说可以分成三个步骤：
 
 1. 确认插入了设备执行 `hdc shell "cat /proc/net/unix | grep devtools"` 记录返回数据尾部的数字部分
 2. 转发端口 `hdc fport tcp:9222 localabstract:webview_devtools_remote_[刚才的数字部分]` 返回 OK
 3. 打开浏览器 `chrome://inspect/#devices` 观察 Remoet Target 进行调试。
+
+V8 引擎调试可以这样操作
+
+- 阅读 [获取 ASCF 插件](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/ascf-plugin) 安装 DevEco 插件
+- 在 DevEco 中创建新工程，选择 Atomic Service - ASCF Ability 模版。如果没有说明上个步骤没有安装正确。
+- 找到 HBuilderX 的编译产物 `unpackage/dist/dev/.mp-harmony` 内容放置到 DevEco 工程中的 ascf_src 目录下
+- 选择启动，确保应用可以正确访问，需要配置证书签名，同步 HBuilderX 工程中的 harmony-mp-configs 目录内容。如果用到了分包，选择 entry- Editor Configure - Deploy Multi Hap,勾选全部 Module。本步骤是保证项目正常运行
+- 选择 debugger 模式。点击顶部图标小虫子 `debug Entry'
+- 终端执行 `hdc fport tcp:9229 tcp:9225`， 打开浏览器 `chrome://inspect/#devices` 应该可以找到 RemoteTarget。如果找不到，检查上面步骤操作正确
+- 默认情况下看不到源码，此为鸿蒙问题，需要把当前应用返回桌面，再从历史记录中激活，此时 debugger 会正常出现
+
+如果你遇到应用几秒后闪退，说明不是 debugger 模式，正常运行情况下阻塞 6s 系统会让应用闪退。
 
 ### API uploadFile 报错，其他端正常
 

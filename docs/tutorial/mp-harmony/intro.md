@@ -528,3 +528,12 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
   "build:mp-harmony": "cross-env NODE_ENV=production UNI_PLATFORM=mp-harmony vue-cli-service uni-build"
 }
 ```
+
+### 元服务如何开发服务卡片 Widget？
+
+在鸿蒙应用、鸿蒙元服务中可以开发卡片，放置到桌面上，展示特定的应用数据、提供快速启动应用的入口。目前，卡片开发有两种方式：
+
+- ArkTS UI 开发，需要使用 ArkTS 语法编写布局、支持自定义 Canvas，同时支持鸿蒙应用和元服务，属于原生开发，具体参考 [开发基于 ArkTS UI 的卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-working-principles) 文章。
+- JS UI 开发，**不支持元服务**，仅支持鸿蒙应用开发。提供了类似 HTML+CSS 的方案实现布局，相比 ArkTS UI 有一些能力限制。具体参考 [开发基于 JS UI 的卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-development)
+
+官方推荐的方案是 ArkTS 原生开发方案，元服务中也能共享逻辑。不能直接使用 uni-app 提供的 vue 范式开发服务卡片。

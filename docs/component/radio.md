@@ -49,7 +49,7 @@
 		<view class="uni-padding-wrap">
 			<view class="uni-title">默认样式</view>
 			<view>
-				<label class="radio"><radio value="r1" checked="true" />选中</label>
+				<label class="radio"><radio value="r1" :checked="true" />选中</label>
 				<label class="radio"><radio value="r2" />未选中</label>
 			</view>
 		</view>

@@ -785,6 +785,6 @@ kill -9 进程号
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/ad4d4808-9fac-4f5d-bfa9-5616372a8e1f.png)
 
-此时，就有了默认的卡片，点击开篇会打开默认应用入口。
+此时，就有了默认的卡片，点击会打开默认应用入口。
 
 更多 API 和数据共享参考 [开发卡片事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-development)

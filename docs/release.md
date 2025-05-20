@@ -1,3 +1,7 @@
+#### 4.66.2025051912
+* 【App插件(含5+App和uni-app的App端)】
+  + 更新 uni-AD模块 腾讯优量汇SDK Android为 4.640.1510 版，iOS为 4.15.40 版；快手广告和快手内容联盟SDK Android为 3.3.76.5 版；穿山甲&GroMore SDK Android为 6.8.1.7 版，iOS为 6.8.0.5 版；Sigmob广告联盟SDK Android为 4.22.2 版，iOS为 4.18.2 版；Octopus章鱼移动广告SDK Android为 1.6.3.6 版，iOS为 1.6.3.1 版；AdScope倍孜广告SDK Android为 5.2.1.3 版；泛连SDK Android为 2.8.4 版，iOS为 2.8.3.0.5 版；华夏乐游SDK Android为 3.11.3 版，iOS为 2.13.0 版，助力618促销
+
 #### 4.65.2025051206
 * 【uni-app】
   + iOS平台 修复 4.61版本引发的 API uni.getPrivacySetting 提示`未添加uni-privacy模块`的Bug [详情](https://ask.dcloud.net.cn/question/209014)

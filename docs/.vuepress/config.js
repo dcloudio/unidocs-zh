@@ -1,11 +1,16 @@
 const path = require('path');
 const { slugify } = require('@vuepress/shared-utils')
 const highlight = require('@vuepress/markdown/lib/highlight')
-const translatePlugin = require('./markdown/translate')
-const headerPlugin = require('./markdown/header')
-const createSidebar = require('./markdown/createSidebar')
-const { simplifySlugText, tabs } = require('./utils')
+const { simplifySlugText } = require('./utils')
 const copyOptions = require('./config/copy');
+const {
+  translate,
+  header,
+  enhanceMd,
+  createSidebar,
+  normalizeLink,
+  createLLMSText,
+} = require('@dcloudio/docs-utils')
 
 const config = {
   theme: 'vuepress-theme-uniapp-official',
@@ -37,7 +42,7 @@ const config = {
   themeConfig: {
     titleLogo: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app.png',
     logo: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/logo.png',
-    sidebar: createSidebar(tabs),
+    sidebar: createSidebar(path.resolve(__dirname, '../'), __dirname, 'https://zh.uniapp.dcloud.io'),
     sidebarDepth: 0,
     nextLinks: false,
     prevLinks: false,
@@ -84,16 +89,16 @@ const config = {
 
       config
         .plugin('translate')
-        .use(translatePlugin)
+        .use(translate)
         .end()
         .plugin('convert-header')
-        .use(headerPlugin)
+        .use(header)
         .end()
-        .plugin('normallize-link')
-        .use(require('./markdown/normallizeLink'))
+        .plugin('normalize-link')
+        .use(normalizeLink)
         .end()
-				.plugin('img-add-attrs')
-				.use(require('./markdown/img-add-attrs'))
+				.plugin('enhance-md')
+				.use(enhanceMd)
         .end()
         .plugin('inject-json-to-md')
         .use(require('./markdown/inject-json-to-md'))
@@ -107,7 +112,8 @@ const config = {
   },
   patterns: ['**/!(_sidebar).md', '**/*.vue'],
   plugins: [
-    ["vuepress-plugin-juejin-style-copy", copyOptions]
+    ["vuepress-plugin-juejin-style-copy", copyOptions],
+    [createLLMSText]
   ],
   /**
    *

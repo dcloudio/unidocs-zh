@@ -10,7 +10,7 @@
     "dev": "vuepress dev docs",
     "build": "node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs --no-cache",
     "build-lite": "cross-env DOCS_LITE=true node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs-lite --no-cache",
-    "check-md":"vuepress check-md2 docs"
+    "check-md": "vuepress check-md2 docs"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "htmlparser2": "^9.0.0"
   },
   "dependencies": {
+    "@dcloudio/docs-utils": "^1.0.3",
     "vuepress": "1.9.9",
     "vuepress-theme-uniapp-official": "^1.4.35"
   },

@@ -150,7 +150,7 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **黔警通：** 黔西南公安局为市民打造的一站式便民服务，便捷办理公安业务，鸿蒙应用市场搜索“黔警通”，[详情](https://appgallery.huawei.com/app/detail?id=hmos.com.qxnga.qjt)
 
-**地质云：** 中国地质调查局主持研发的一套综合性地址信息服务系统，鸿蒙应用市场搜索“地质云”，[详情](https://appgallery.huawei.com/app/detail?id=com.cgs.gov.geoapp)
+**地质云：** 中国地质调查局主持研发的一套综合性地质信息服务系统，鸿蒙应用市场搜索“地质云”，[详情](https://appgallery.huawei.com/app/detail?id=com.cgs.gov.geoapp)
 
 **康强医疗人才网：** 医生护士招聘求职平台，鸿蒙应用市场搜索“康强医疗人才网”，[详情](https://appgallery.huawei.com/app/detail?id=com.kq.kq520.com)
 

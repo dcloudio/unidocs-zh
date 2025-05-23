@@ -6,6 +6,8 @@
 
 图片组件。
 
+**属性说明**
+
 |属性名					|类型		|默认值			|说明																											|平台差异说明									|
 |:-						|:-			|:-				|:-																												|:-												|
 |src					|String		|				|图片资源地址																									|												|
@@ -17,6 +19,11 @@
 |draggable				|boolean	|false			|是否能拖动图片																									|H5 3.1.1+、App（iOS15+）						|
 |@error					|HandleEvent|				|当错误发生时，发布到 AppService 的事件名，事件对象event.detail = {errMsg: 'something wrong'}					|												|
 |@load					|HandleEvent|				|当图片载入完毕时，发布到 AppService 的事件名，事件对象event.detail = {height:'图片高度px', width:'图片宽度px'}	|&nbsp;											|
+
+
+|draggable				|boolean	|false			|是否能拖动图片																									|H5 3.1.1+、App（iOS15+）						|
+|@error					|HandleEvent|				|当错误发生时，发布到 AppService 的事件名，事件对象event.detail = {errMsg: string}					|												|
+|@load					|HandleEvent|				|当图片载入完毕时，发布到 AppService 的事件名，事件对象event.detail = {height:string, width:string}	|&nbsp;											|
 
 
 

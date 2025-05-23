@@ -1,0 +1,81 @@
+[
+  {
+    "component": "map",
+    "interfaces": [
+      {
+        "name": "Map",
+        "titleName": "属性说明",
+        "titleLevel": "bold"
+      },
+      {
+        "name": "MapMarker",
+        "titleName": "MapMarker",
+        "titleLevel": "bold",
+        "isComponent": false
+      },
+      {
+        "name": "MapMarkerLabel",
+        "titleName": "MapMarkerLabel",
+        "titleLevel": "bold",
+        "isComponent": false
+      },
+      {
+        "name": "MapMarkerCallOut",
+        "titleName": "MapMarkerCallOut",
+        "titleLevel": "bold",
+        "isComponent": false
+      },
+      {
+        "name": "MapPolyLine",
+        "titleName": "MapPolyLine",
+        "titleLevel": "bold",
+        "isComponent": false
+      },
+      {
+        "name": "MapPolygon",
+        "titleName": "MapPolygon",
+        "titleLevel": "bold",
+        "isComponent": false
+      },
+      {
+        "name": "MapCircle",
+        "titleName": "MapCircle",
+        "titleLevel": "bold",
+        "isComponent": false
+      },
+      {
+        "name": "MapControl",
+        "titleName": "MapControl",
+        "titleLevel": "bold",
+        "isComponent": false
+      },
+      {
+        "name": "MapPosition",
+        "titleName": "MapPosition",
+        "titleLevel": "bold",
+        "isComponent": false
+      },
+      {
+        "name": "MapPoint",
+        "titleName": "MapPoint",
+        "titleLevel": "bold",
+        "isComponent": false
+      }
+    ]
+  },
+  {
+    "component": "radio",
+    "interfaces": [
+      {
+        "name": "RadioGroup",
+        "titleName": "radio-group",
+        "titleLevel": "h3"
+      },
+      {
+        "name": "Radio",
+        "titleName": "radio\\n",
+        "titleLevel": "h3"
+      }
+    ]
+  }
+]

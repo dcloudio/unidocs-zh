@@ -29,7 +29,7 @@
 :::
 
 
-## 属性说明
+**属性说明**
 
 | 属性 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | --- | --- | --- |
@@ -39,9 +39,9 @@
 | show-img-toolbar | boolean | false | 否 | 点击图片时显示工具栏控件 |
 | show-img-resize | boolean | false | 否 | 点击图片时显示修改尺寸控件 |
 | @ready | eventhandle |  | 否 | 编辑器初始化完成时触发 |
-| @focus | eventhandle |  | 否 | 编辑器聚焦时触发，event.detail = {html, text, delta} |
-| @blur | eventhandle |  | 否 | 编辑器失去焦点时触发，detail = {html, text, delta} |
-| @input | eventhandle |  | 否 | 编辑器内容改变时触发，detail = {html, text, delta} |
+| @focus | eventhandle |  | 否 | 编辑器聚焦时触发，event.detail = {html:string, text:string, delta: any[]} |
+| @blur | eventhandle |  | 否 | 编辑器失去焦点时触发，detail = {html:string, text:string, delta: any[]} |
+| @input | eventhandle |  | 否 | 编辑器内容改变时触发，detail = {html:string, text:string, delta: any[]} |
 | @statuschange | eventhandle |  | 否 | 通过 Context 方法改变编辑器内样式时触发，返回选区已设置的样式 |
 
 ## HTML 标签和 style 内联样式支持情况

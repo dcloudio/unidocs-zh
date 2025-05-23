@@ -1,12 +1,12 @@
-#### uni.preloadPage(OBJECT)
+## uni.preloadPage(OBJECT)
 
 预加载页面，是一种性能优化技术。被预载的页面，在打开时速度更快。
 
 **平台差异说明**
 
-|App-nvue|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√(2.7.12+)|√(2.7.12+)|x|x|x|x|x|
+|App-nvue|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√(2.7.12+)|x|√(2.7.12+)|x|x|x|x|x|x|x|
 
 
 |属性|类型|必填|说明|
@@ -17,14 +17,14 @@
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 
-#### H5 平台
+### H5 平台
 
 预加载 /pages/test/test 对应的js文件，不执行页面预渲染逻辑
 ```js
 uni.preloadPage({url: "/pages/test/test"});
 ```
 
-#### App-nvue 平台
+### App-nvue 平台
 
 预加载nvue页面 /pages/test/test
 ```js
@@ -49,7 +49,13 @@ uni.navigateTo({url: "/pages/test/test?a=b"}); // url不匹配，正常打开新
 
 HBuilderX 2.7.12+的hello uni-app，在navigator示例和uni ui的日历示例中增加了页面预载示例。
 
-#### uni.unPreloadPage(OBJECT)
+## uni.unPreloadPage(OBJECT)
+
+|元服务|
+|:-:|
+|x|
+
+> HarmonyOS Next 不支持
 
 取消预载页面。
 

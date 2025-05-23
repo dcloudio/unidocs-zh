@@ -1,13 +1,15 @@
-### uni.getBackgroundAudioManager()
+## uni.getBackgroundAudioManager()
 获取**全局唯一**的背景音频管理器 ``backgroundAudioManager``。
 
 背景音频，不是游戏的背景音乐，而是类似QQ音乐那样，App在后台时，仍然在播放音乐。如果你不需要在App切后台时继续播放，那么不应该使用本API，而应该使用普通音频API[uni.createInnerAudioContext](https://uniapp.dcloud.io/api/media/audio-context)。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|x|√|√|x|√|x|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|1.11.0|√|√|5.20.0|√|√|√|x|x|
+
+<!-- UNIAPPAPIJSON.getBackgroundAudioManager.compatibility -->
 
 **backgroundAudioManager 对象的属性列表**
 
@@ -63,7 +65,7 @@ const bgAudioManager = uni.getBackgroundAudioManager();
 bgAudioManager.title = '致爱丽丝';
 bgAudioManager.singer = '暂无';
 bgAudioManager.coverImgUrl = 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/music-a.png';
-bgAudioManager.src = 'https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-hello-uniapp/2cc220e0-c27a-11ea-9dfb-6da8e309e0d8.mp3';
+bgAudioManager.src = 'https://web-ext-storage.dcloud.net.cn/uni-app/ForElise.mp3';
 ```
 
 

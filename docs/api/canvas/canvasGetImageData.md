@@ -1,6 +1,12 @@
-### uni.canvasGetImageData(OBJECT,this)
+## uni.canvasGetImageData(OBJECT, componentInstance)
 
 返回一个数组，用来描述 canvas 区域隐含的像素数据，在自定义组件下，第二个参数传入自定义组件实例 this，以操作组件内 `<canvas>` 组件。
+
+|元服务|
+|:-:|
+|x|
+
+<!-- UNIAPPAPIJSON.canvasGetImageData.compatibility -->
 
 **OBJECT参数说明：**
 
@@ -25,6 +31,7 @@
 |data|Uint8ClampedArray|图像像素点数据，一维数组，每四项表示一个像素点的rgba|
 
 
+
 **示例代码**
 
 ```javascript
@@ -43,3 +50,4 @@ uni.canvasGetImageData({
 })
 ```
 
+<!-- UNIAPPAPIJSON.canvasGetImageData.tutorial -->

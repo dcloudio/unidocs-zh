@@ -10,10 +10,14 @@ var _hmt = _hmt || [];
 // window.__UNI_DOCS_ZH_KEY__ = 'unidocs-zh-language'
 
 if (host === 'uniapp.dcloud.io') {
+  var unidocsLanguage = localStorage.getItem('__UNIDOCS_LANGUAGE')
   var website_finally =
     navigator.language.indexOf('zh') !== -1
       ? website_ZH
       : website_EN;
+  if (unidocsLanguage) {
+    website_finally = unidocsLanguage === LOCAL_ZH ? website_ZH : website_EN
+  }
   window.location.href = website_finally + pathname + hash + search;
 } else {
   // overwrite referrer

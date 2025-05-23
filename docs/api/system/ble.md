@@ -1,10 +1,10 @@
 **低功耗蓝牙 API 平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|x|x|√|x|x|√|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|x|√|√|x|x|√|x|x|√|1.0.4+|
 
-### uni.setBLEMTU(OBJECT)
+## uni.setBLEMTU(OBJECT)
 
 2.8.4+
 
@@ -20,7 +20,7 @@
 |fail|function||否|接口调用失败的回调函数|
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-### uni.writeBLECharacteristicValue(OBJECT)
+## uni.writeBLECharacteristicValue(OBJECT)
 
 向低功耗蓝牙设备特征值中写入二进制数据。注意：必须设备的特征值支持 write 才可以成功调用。
 
@@ -46,7 +46,7 @@
 |writeNoResponse|强制无回复写，不支持时报错|
 
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |---|---|---|
@@ -66,14 +66,14 @@
 |10012|operate time out|连接超时|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
-#### 注意
+### 注意
 
 *   并行调用多次会存在写失败的可能性。
 *   APP不会对写入数据包大小做限制，但系统与蓝牙设备会限制蓝牙4.0单次传输的数据大小，超过最大字节数后会发生写入错误，建议每次写入不超过20字节。
 *   若单次写入数据过长，iOS 上存在系统不会有任何回调的情况（包括错误回调）。
 *   安卓平台上，在调用 `notifyBLECharacteristicValueChange` 成功后立即调用 `writeBLECharacteristicValue` 接口，在部分机型上会发生 10008 系统错误
 
-#### 示例代码
+### 示例代码
 
 ```js
 // 向蓝牙设备发送一个0x00的16进制数据
@@ -95,7 +95,7 @@ uni.writeBLECharacteristicValue({
 })
 ```
 
-### uni.readBLECharacteristicValue(OBJECT)
+## uni.readBLECharacteristicValue(OBJECT)
 
 读取低功耗蓝牙设备的特征值的二进制数据值。注意：必须设备的特征值支持 read 才可以成功调用。
 
@@ -110,7 +110,7 @@ uni.writeBLECharacteristicValue({
 |fail|function||否|接口调用失败的回调函数|
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |---|---|---|
@@ -130,12 +130,12 @@ uni.writeBLECharacteristicValue({
 |10012|operate time out|连接超时|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
-#### 注意
+### 注意
 
 *   并行调用多次会存在读失败的可能性。
 *   接口读取到的信息需要在 `onBLECharacteristicValueChange` 方法注册的回调中获取。
 
-#### 示例代码
+### 示例代码
 
 ```js
 // 必须在这里的回调才能获取
@@ -155,7 +155,7 @@ uni.readBLECharacteristicValue({
 })
 ```
 
-### uni.onBLEConnectionStateChange(CALLBACK)
+## uni.onBLEConnectionStateChange(CALLBACK)
 
 监听低功耗蓝牙连接状态的改变事件。包括开发者主动连接或断开连接，设备丢失，连接异常断开等等
 
@@ -166,7 +166,7 @@ uni.readBLECharacteristicValue({
 |deviceId|string|蓝牙设备ID|
 |connected|boolean|是否处于已连接状态|
 
-#### 示例代码
+### 示例代码
 
 ```js
 uni.onBLEConnectionStateChange(function (res) {
@@ -175,7 +175,7 @@ uni.onBLEConnectionStateChange(function (res) {
 })
 ```
 
-### uni.onBLECharacteristicValueChange(CALLBACK)
+## uni.onBLECharacteristicValueChange(CALLBACK)
 
 监听低功耗蓝牙设备的特征值变化事件。必须先启用 `notifyBLECharacteristicValueChange` 接口才能接收到设备推送的 notification。
 
@@ -188,7 +188,7 @@ uni.onBLEConnectionStateChange(function (res) {
 |characteristicId|string|蓝牙特征值的 uuid|
 |value|ArrayBuffer|特征值最新的值|
 
-#### 示例代码
+### 示例代码
 
 ```js
 // ArrayBuffer转16进度字符串示例
@@ -207,7 +207,7 @@ uni.onBLECharacteristicValueChange(function (res) {
 })
 ```
 
-### uni.notifyBLECharacteristicValueChange(OBJECT)
+## uni.notifyBLECharacteristicValueChange(OBJECT)
 
 启用低功耗蓝牙设备特征值变化时的 notify 功能，订阅特征值。注意：必须设备的特征值支持 notify 或者 indicate 才可以成功调用。
 另外，必须先启用 `notifyBLECharacteristicValueChange` 才能监听到设备 `characteristicValueChange` 事件
@@ -224,7 +224,7 @@ uni.onBLECharacteristicValueChange(function (res) {
 |fail|function||否|接口调用失败的回调函数|
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |---|---|---|
@@ -244,12 +244,12 @@ uni.onBLECharacteristicValueChange(function (res) {
 |10012|operate time out|连接超时|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
-#### 注意
+### 注意
 
 *   订阅操作成功后需要设备主动更新特征值的 value，才会触发 [`uni.onBLECharacteristicValueChange`](/api/system/ble?id=onblecharacteristicvaluechange) 回调。
 *   安卓平台上，在调用 `notifyBLECharacteristicValueChange` 成功后立即调用 `writeBLECharacteristicValue` 接口，在部分机型上会发生 10008 系统错误
 
-#### 示例代码
+### 示例代码
 
 ```js
 uni.notifyBLECharacteristicValueChange({
@@ -266,7 +266,7 @@ uni.notifyBLECharacteristicValueChange({
 })
 ```
 
-### uni.getBLEDeviceServices(OBJECT)
+## uni.getBLEDeviceServices(OBJECT)
 
 获取蓝牙设备所有服务(service)。
 
@@ -292,7 +292,7 @@ uni.notifyBLECharacteristicValueChange({
 |uuid|string|蓝牙设备服务的 uuid|
 |isPrimary|boolean|该服务是否为主服务|
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |---|---|---|
@@ -312,7 +312,7 @@ uni.notifyBLECharacteristicValueChange({
 |10012|operate time out|连接超时|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
-#### 示例代码
+### 示例代码
 
 ```js
 uni.getBLEDeviceServices({
@@ -325,7 +325,7 @@ uni.getBLEDeviceServices({
 ```
 
 
-### uni.getBLEDeviceRSSI(OBJECT)
+## uni.getBLEDeviceRSSI(OBJECT)
 
 2.8.4+
 
@@ -341,7 +341,7 @@ uni.getBLEDeviceServices({
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 
-### uni.getBLEDeviceCharacteristics(OBJECT)
+## uni.getBLEDeviceCharacteristics(OBJECT)
 
 获取蓝牙设备某个服务中所有特征值(characteristic)。
 
@@ -377,7 +377,7 @@ uni.getBLEDeviceServices({
 |notify|boolean|该特征值是否支持 notify 操作|
 |indicate|boolean|该特征值是否支持 indicate 操作|
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |---|---|---|
@@ -393,7 +393,7 @@ uni.getBLEDeviceServices({
 |10008|system error|其余所有系统上报的异常|
 |10009|system not support|Android 系统特有，系统版本低于 4.3 不支持 BLE|
 
-#### 示例代码
+### 示例代码
 
 ```js
 uni.getBLEDeviceCharacteristics({
@@ -407,7 +407,7 @@ uni.getBLEDeviceCharacteristics({
 })
 ```
 
-### uni.createBLEConnection(OBJECT)
+## uni.createBLEConnection(OBJECT)
 
 连接低功耗蓝牙设备。
 
@@ -423,7 +423,7 @@ uni.getBLEDeviceCharacteristics({
 |fail|function||否|接口调用失败的回调函数|
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |---|---|---|
@@ -443,13 +443,13 @@ uni.getBLEDeviceCharacteristics({
 |10012|operate time out|连接超时|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
-#### 注意
+### 注意
 
 *   请保证尽量成对的调用 `createBLEConnection` 和 `closeBLEConnection` 接口。安卓如果多次调用 `createBLEConnection` 创建连接，有可能导致系统持有同一设备多个连接的实例，导致调用 `closeBLEConnection` 的时候并不能真正的断开与设备的连接。
 *   蓝牙连接随时可能断开，建议监听 [`uni.onBLEConnectionStateChange`](/api/system/ble?id=onbleconnectionstatechange) 回调事件，当蓝牙设备断开时按需执行重连操作
 *   若对未连接的设备或已断开连接的设备调用数据读写操作的接口，会返回 10006 错误，建议进行重连操作。
 
-#### 示例代码
+### 示例代码
 
 ```js
 uni.createBLEConnection({
@@ -461,7 +461,7 @@ uni.createBLEConnection({
 })
 ```
 
-### uni.closeBLEConnection(OBJECT)
+## uni.closeBLEConnection(OBJECT)
 
 断开与低功耗蓝牙设备的连接。
 
@@ -474,7 +474,7 @@ uni.createBLEConnection({
 |fail|function||否|接口调用失败的回调函数|
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-#### 错误
+### 错误
 
 |错误码|错误信息|说明|
 |---|---|---|
@@ -494,7 +494,7 @@ uni.createBLEConnection({
 |10012|operate time out|连接超时|
 |10013|invalid_data|连接 deviceId 为空或者是格式不正确|
 
-#### 示例代码
+### 示例代码
 
 ```js
 uni.closeBLEConnection({

@@ -89,19 +89,23 @@ uni.login({
 
 详细步骤参考：[一键登录服务开通指南](https://doc.dcloud.net.cn/uniCloud/uni-login/service)
 
-开通成功后会得到 apiKey、apiSecret。这2个信息，后续需要配置在uniCloud的云函数里。同时注意保密，这2个信息也是计费凭证。
 
-**注意**
-> 应用开通uni一键登录服务后，需要等审核通过后才能正式使用。在审核期间可以使用HBuilder标准基座真机运行调用一键登录功能，调用时会从你的账户中扣费；但在审核期间不可以使用自定义基座调用一键登录功能，调用时会返回错误。
+::: warning 注意
+- 应用开通uni一键登录服务后，需要`等审核通过`后才能正式使用。\
+- 在审核期间可以使用`HBuilder标准基座`真机运行调用一键登录功能，调用时会从你的账户中扣费；但审核期间不可以使用自定义基座调用一键登录功能，调用时会返回错误。
+  - `鸿蒙` 不支持使用基座运行到手机调试，需要在`申请开通`一键登录服务后，在`应用管理`添加应用；将所添加应用的包名填写到 `manifest` 中，然后运行到手机上调试查看效果
+:::
 
 
 ### 开通uniCloud服务
-一键登录在客户端获取 `access_token` 后，必须在 [uniCloud](https://uniapp.dcloud.io/uniCloud/README) 换取手机号码。
+
+一键登录在客户端获取 `access_token` 后，必须在 [uniCloud](https://doc.dcloud.net.cn/uniCloud/uni-login/dev.html) 换取手机号码。
 
 在uniCloud的云函数中拿到手机号后，可以直接使用，也可以再转给传统服务器处理，也可以通过[云函数url化](https://uniapp.dcloud.io/uniCloud/http)方式生成普通的http接口给5+ App使用。
 
-注意:
+::: warning 注意
 **虽然一键登录需要uniCloud，但并不要求开发者把所有的后台服务都迁移到uniCloud**
+:::
 
 服务器API详见：[uniCloud云函数中使用一键登录](https://doc.dcloud.net.cn/uniCloud/uni-login/dev)
 
@@ -111,7 +115,7 @@ uniCloud产生的费用对于一键登陆可以忽略，[详见](https://doc.dcl
 
 本文主要介绍uni-app的客户端调用方法。5+ App（Wap2App）请另行参考：[5+ App一键登录使用指南](https://ask.dcloud.net.cn/article/38009)
 
-DCloud还提供了更易用的封装。在[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id)里已经预置了`uni一键登录`，并基于`uni-id`提供了[云端一体应用快速开发基本项目模版](https://ext.dcloud.net.cn/plugin?id=5057)，该项目模版内置了包括一键登录在内的各种常用登录示例，开发者可以拿去直接用
+DCloud还提供了更易用的封装。在[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/old.html)里已经预置了`uni一键登录`，并基于`uni-id`提供了[云端一体应用快速开发基本项目模版](https://ext.dcloud.net.cn/plugin?id=5057)，该项目模版内置了包括一键登录在内的各种常用登录示例，开发者可以拿去直接用
 
 接下来继续介绍原始API的用法。
 
@@ -195,7 +199,9 @@ univerifyStyle 数据结构：
         "height": "60px"   //图标高度 默认值：60px
     },
     "closeIcon": {
-        "path": "static/xxx.png" // 自定义关闭按钮，仅支持本地图片。 HBuilderX3.3.7+版本支持
+        "path": "static/xxx.png", // 自定义显示在授权框中的logo，仅支持本地图片
+        "width":  "60px",  //图标宽度 默认值：60px (HBuilderX 4.0+ 仅iOS支持)
+        "height": "60px"   //图标高度 默认值：60px (HBuilderX 4.0+ 仅iOS支持)
     },
     "phoneNum": {
         "color": "#202020"  // 手机号文字颜色 默认值：#202020
@@ -417,8 +423,6 @@ exports.main = async (event, context) => {
   const res = await uniCloud.getPhoneNumber({
   	appid: '_UNI_ABCDEFG', // 替换成自己开通一键登录的应用的DCloud appid
   	provider: 'univerify',
-  	apiKey: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiKey
-  	apiSecret: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiSecret
   	access_token: event.access_token,
   	openid: event.openid
   })
@@ -482,8 +486,6 @@ exports.main = async(event) => {
   const res = await uniCloud.getPhoneNumber({
   	provider: 'univerify',
     appid: 'xxx', // DCloud appid，不同于callFunction方式调用，使用云函数Url化需要传递DCloud appid参数！！！
-  	apiKey: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiKey
-  	apiSecret: 'xxx', // 在在uniCloud控制台开通一键登录服务并获取apiSecret
   	access_token: access_token,
   	openid: openid
   })
@@ -558,8 +560,6 @@ exports.main = async(event) => {
   const res = await uniCloud.getPhoneNumber({
   	provider: 'univerify',
     appid: 'xxx', // DCloud appid，不同于callFunction方式调用，使用云函数Url化需要传递DCloud appid参数
-  	apiKey: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiKey
-  	apiSecret: 'xxx', // 在uniCloud控制台开通一键登录服务并获取apiSecret
   	access_token: access_token,
   	openid: openid
   })
@@ -606,7 +606,7 @@ exports.main = async(event) => {
 | 30001	|  当前网络环境不适合执行该操作  | 无 |
 | 30002 |  用户点击了其他登录方式  | 无 |
 | 30003 |  用户关闭验证界面  | 无 |
-| 30004 |  其他错误  | [30004章节](#30004)自查或联系官方人员 |
+| 30004 |  其他错误  | [30004章节](#_30004)自查或联系官方人员 |
 | 30005 |  预登录失败  | 不具备一键登录的使用前提，设备不支持/未开启数据流量/其他原因 |
 | 30006 |  一键登录失败  | 无 |
 | 30007 |  获取本机号码校验token失败  | 校验异常，联系官方人员|
@@ -626,7 +626,7 @@ exports.main = async(event) => {
 
 ## 运行基座和打包
 
-- 使用`uni一键登录`，不需要制作自定义基座，使用HBuilder标准真机运行基座即可。在云函数中配置好apiKey、apiSecret后，一样从你的账户充值中扣费。
+- 使用`uni一键登录`，安卓平台不需要制作自定义基座，使用HBuilder标准真机运行基座即可，调用时会从你的账户中扣费。iOS平台使用标准基座必须要用`io.dcloud.HBuilder`这个bundleId重签，其他bundleId重签无法登录。
 
 - 云端打包
 在项目manifest.json页面“App模块配置”项的“OAuth(登录鉴权)”下勾选“一键登录(uni-verify)”。
@@ -655,7 +655,3 @@ uniCloud产生的费用对于一键登陆可以忽略，[详见](https://doc.dcl
 - **使用有其他疑问**
 欢迎扫码加入 一键登录 微信交流群讨论：
     <br/><img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/Dcloud-%E4%B8%80%E9%94%AE%E8%AE%A4%E8%AF%81.png" width="250"/>
-
-
-
-

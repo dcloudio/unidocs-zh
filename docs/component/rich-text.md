@@ -1,8 +1,10 @@
-#### rich-text
+## rich-text
 
 富文本。
 
 支持默认事件，包括：click、touchstart、touchmove、touchcancel、touchend、longpress。
+
+<!-- UNIAPPCOMJSON.rich-text.compatibility -->
 
 **属性说明**
 
@@ -14,6 +16,8 @@
 |image-menu-prevent|Boolean|false|阻止长按图片时弹起默认菜单（将该属性设置为image-menu-prevent或image-menu-prevent="true"），只在初始化时有效，不能动态变更；若不想阻止弹起默认菜单，则不需要设置此属性|百度小程序|
 |preview|Boolean||富文本中的图片是否可点击预览。在不设置的情况下，若 rich-text 未监听点击事件，则默认开启。未显示设置 preview 时会进行点击默认预览判断，建议显示设置 preview|百度小程序|
 |@itemclick|EventHandle||拦截点击事件（只支持 `a`、`img`标签），返回当前node信息 `event.detail={node}`|H5 (3.2.13+)、App-Vue (3.2.13+)|
+
+
 
 ##### nodes
 
@@ -34,7 +38,7 @@ nodes 值为 HTML String 时，在组件内部将自动解析为节点列表，�
 |属性|说明|类型|必填|备注|
 |:-|:-|:-|:-|:-|
 |text|文本|String|是|支持 entities|
- 
+
 ##### 受信任的HTML节点及属性
 
 全局支持 class 和 style 属性，**不支持 id 属性**。
@@ -151,3 +155,5 @@ export default {
 - 非 App 平台 img 标签仅支持网络图片。
 - 如果在自定义组件中使用 rich-text 组件，那么仅自定义组件的 css 样式对 rich-text 中的 class 生效。
 - 使用 `itemclick` 时，如果发生节点嵌套，外层 `a标签` 优先级高。
+
+<!-- UNIAPPCOMJSON.rich-text.reference -->

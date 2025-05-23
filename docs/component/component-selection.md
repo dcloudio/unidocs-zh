@@ -1,4 +1,4 @@
-### 组件的概念
+## 组件的概念
 组件是现代开发的重要里程碑。组件重构了分工模型，让大量的轮子出现，让开发者可以拿来轮子直接用，大幅提升了整个产业的效率。
 
 uni-app是有[内置组件](https://uniapp.dcloud.io/component/README)的。这和web开发不一样。
@@ -12,7 +12,7 @@ uni-app的[插件市场](https://ext.dcloud.net.cn/)，有很多扩展组件，�
 有些开发者喜欢成套的组件，但注意成套扩展组件也不可能覆盖所有需求，很多场景还是需要单独下载专业组件。
 
 
-### 扩展组件的选择
+## 扩展组件的选择
 
 众多扩展组件如何选择？我们首先要搞清楚组件的分类。
 组件分2大类：1、vue组件（文件后缀为vue）；2、小程序自定义组件（文件后缀为wxml或其他小程序平台特有后缀名称）
@@ -45,7 +45,7 @@ vant的web版操作了dom，所以只能用于web端；而vant weapp是微信小
 - nvue支持：如果开发App，可能会涉及到nvue原生渲染页面，这种渲染方式支持的css有限，此时就要甄别组件是否兼容nvue。
 
 再来看看各种成套UI的优劣分析
-#### uni ui
+### uni ui
 DCloud官方出了一套扩展组件，即[uni-ui](https://uniapp.dcloud.io/component/uniui/uni-ui)
 这些扩展组件支持单个组件从插件市场下载，也支持[npm引入](https://ext.dcloud.net.cn/plugin?id=55)uni ui，当然更方便的是在HBuilderX新建项目时直接选择`uni ui项目模板`
 uni ui有如下优势：
@@ -65,7 +65,7 @@ uni ui有如下优势：
 ![](https://ask.dcloud.net.cn/uploads/article/20200424/dc948a41cd85a418e84cde325c055a75.jpg)
 ![](http://img.cdn.aliyun.dcloud.net.cn/uni-app/doc/uni-ui-snippet.jpg)
 
-#### 插件市场更多组件
+### 插件市场更多组件
 插件市场，[https://ext.dcloud.net.cn](https://ext.dcloud.net.cn)，有各种玲琅满目的组件、模板。
 其中成套的全端兼容ui库包括：
 - [uViewUI](https://www.uviewui.com)：整合了非常多组件，功能丰富、文档清晰，但不支持nvue(2.x已支持nvue)
@@ -77,7 +77,7 @@ uni ui有如下优势：
 
 
 
-### 其他
+## 其他
 - 如果你仍坚持使用微信小程序的自定义组件ui，插件市场也有很多vant weapp版的集成示例[https://ext.dcloud.net.cn/search?q=vant](https://ext.dcloud.net.cn/search?q=vant)。同时要注意，小程序自定义组件的性能不如vue组件。
 - 如果你的nvue文件使用weex编译模式，也支持weex ui。三方商业ui库有graceUI weex版。但weex编译模式属于被淘汰技术，不再提供技术支持，nvue开发请使用uni-app编译模式。
 

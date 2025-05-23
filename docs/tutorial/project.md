@@ -1,6 +1,6 @@
 ## 工程简介
 
-一个 uni-app 工程，就是一个 Vue 项目，你可以通过 HBuilderX 或 cli 方式快速创建 uni-app 工程，详见：[快速上手](/quickstart-hx.html)。
+一个 uni-app 工程，就是一个 Vue 项目，你可以通过 HBuilderX 或 cli 方式快速创建 uni-app 工程，详见：[快速上手](/quickstart-hx.md)。
 
 ## 目录结构
 
@@ -8,32 +8,37 @@
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
-┌─uniCloud              云空间目录，阿里云为uniCloud-aliyun,腾讯云为uniCloud-tcb（详见<a href="https://uniapp.dcloud.io/uniCloud/quickstart?structure&id=structure">uniCloud</a>）
+┌─uniCloud              云空间目录，支付宝小程序云为uniCloud-alipay，阿里云为uniCloud-aliyun，腾讯云为uniCloud-tcb（详见<a href="https://uniapp.dcloud.io/uniCloud/quickstart?structure&id=structure">uniCloud</a>）
 │─components            符合vue组件规范的uni-app组件目录
 │  └─comp-a.vue         可复用的a组件
-├─utssdk                存放uts文件
+├─utssdk                存放uts文件（已废弃）
 ├─pages                 业务页面文件存放的目录
 │  ├─index
 │  │  └─index.vue       index页面
 │  └─list
 │     └─list.vue        list页面
 ├─static                存放应用引用的本地静态资源（如图片、视频等）的目录，<b>注意：</b>静态资源都应存放于此目录
-├─uni_modules           存放[uni_module](/uni_modules)。
+├─uni_modules           存放uni_module <a href="https://uniapp.dcloud.net.cn/plugin/uni_modules.html">详见</a>
 ├─platforms             存放各平台专用页面的目录，<a href="/tutorial/platform?id=%E6%95%B4%E4%BD%93%E7%9B%AE%E5%BD%95%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91">详见</a>
 ├─nativeplugins         App原生语言插件 <a href="https://nativesupport.dcloud.net.cn/NativePlugin/README">详见</a>
 ├─nativeResources       App端原生资源目录
 │  ├─android            Android原生资源目录 <a href="https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android">详见</a>
 |  └─ios                iOS原生资源目录 <a href="https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6-bundle-resources">详见</a>
 ├─hybrid                App端存放本地html文件的目录，<a href="/component/web-view">详见</a>
-├─wxcomponents          存放小程序组件的目录，<a href="/tutorial/miniprogram-subject?id=%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81">详见</a>
+├─wxcomponents          存放微信小程序、QQ小程序组件的目录，<a href="/tutorial/miniprogram-subject?id=%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81">详见</a>
+├─mycomponents          存放支付宝小程序组件的目录，<a href="/tutorial/miniprogram-subject?id=%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81">详见</a>
+├─swancomponents        存放百度小程序组件的目录，<a href="/tutorial/miniprogram-subject?id=%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81">详见</a>
+├─ttcomponents          存放抖音小程序、飞书小程序组件的目录，<a href="/tutorial/miniprogram-subject?id=%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81">详见</a>
+├─kscomponents          存放快手小程序组件的目录，<a href="/tutorial/miniprogram-subject?id=%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81">详见</a>
+├─jdcomponents          存放京东小程序组件的目录，<a href="/tutorial/miniprogram-subject?id=%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BB%84%E4%BB%B6%E6%94%AF%E6%8C%81">详见</a>
 ├─unpackage             非工程代码，一般存放运行或发行的编译结果
-├─AndroidManifest.xml   Android原生应用清单文件 <a href="https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android">详见</a>
-├─Info.plist            iOS原生应用配置文件 <a href="https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios">详见</a>
 ├─main.js               Vue初始化入口文件
 ├─App.vue               应用配置，用来配置App全局样式以及监听 <a href="/collocation/App#应用生命周期">应用生命周期</a>
-├─manifest.json         配置应用名称、appid、logo、版本等打包信息，<a href="/collocation/manifest">详见</a>
 ├─pages.json            配置页面路由、导航条、选项卡等页面类信息，<a href="/collocation/pages">详见</a>
-└─uni.scss              这里是uni-app内置的常用样式变量
+├─manifest.json         配置应用名称、appid、logo、版本等打包信息，<a href="/collocation/manifest">详见</a>
+├─AndroidManifest.xml   Android原生应用清单文件 <a href="https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android">详见</a>
+├─Info.plist            iOS原生应用配置文件 <a href="https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios">详见</a>
+└─uni.scss              内置的常用样式变量
 	</code>
 </pre>
 
@@ -46,7 +51,7 @@
 
 uni-app编译器根据pages.json扫描需要编译的页面，并根据页面引入的js、css合并打包文件。\
 对于本地的图片、字体、视频、文件等资源，如果可以直接识别，那么也会把这些资源文件打包进去，但如果这些资源以变量的方式引用，
-比如：```<image :src="url"></image>```，甚至可能有更复杂的函数计算，此时编译器无法分析。\
+比如：```<image :src="url"></image>```，甚至可能有更复杂的函数计算，此时编译器无法分析。
 
 那么有了static目录，编译器就会把这个目录整体复制到最终编译包内。这样只要运行时确实能获取到这个图片，就可以显示。
 
@@ -60,8 +65,8 @@ uni-app编译器根据pages.json扫描需要编译的页面，并根据页面引
 
 - static目录和App原生资源目录有关系吗？
 
-uni-app支持App原生资源目录nativeResources，下面有assets、res等目录，[详见](app-nativeresource-android.md#nativeResources)。但和static目录没有关系。
+uni-app支持App原生资源目录nativeResources，下面有assets、res等目录，[详见](app-nativeresource-android.md#nativeresources)。但和static目录没有关系。
 
-static目录下的文件，在app第一次启动时，解压到了app的外部存储目录（external-path）。
+static目录下的文件，在app第一次启动时，解压到了app的外部存储目录（external-path）。（uni-app x 从3.99+不再解压）
 
 所以注意控制static目录的大小，太大的static目录和太多文件，会造成App安装后第一次启动变慢。

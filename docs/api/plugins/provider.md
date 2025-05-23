@@ -1,4 +1,4 @@
-### uni.getProvider(OBJECT)
+## uni.getProvider(OBJECT)
 获取服务供应商。
 
 在App平台，可用的服务商，是打包环境中配置的服务商，与手机端是否安装了该服务商的App没有关系。
@@ -7,9 +7,11 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|企业微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|
-|:-|:-|:-|:-|:-|:-|:-|:-|
-|√|x|√|x|√|√|√|√|
+|App|H5|微信小程序|企业微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|元服务|
+|:-|:-|:-|:-|:-|:-|:-|:-|:-:|
+|√|x|√|x|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.getProvider.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -30,6 +32,9 @@
 |push|推送|
 
 
+
+
+
 **success 返回参数说明**
 
 |参数名|类型|说明|
@@ -47,10 +52,11 @@
 ||qq|QQ登录||
 ||sinaweibo|新浪微博登录||
 ||xiaomi|小米登录||
-||univerify|[一键登录](/univerify)|App 3.0.0+|
+||univerify|[一键登录](/univerify)|App 3.0.0+、`HarmonyOS` 不支持，使用 [getUniverifyManager](./login.md#getuniverifymanager)|
 ||apple|[Apple登录](https://ask.dcloud.net.cn/article/36651)| iOS13+支持，App 2.4.7+|
 ||google|[谷歌登录](/tutorial/app-oauth-facebook)|App 3.4.0+|
 ||facebook|[Facebook登录](/tutorial/app-oauth-google)|App 3.4.0+|
+||huawei|HarmonyOS Next [华为账号服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-introduction-V5)|HBuilderX 4.31+|
 |share|sinaweibo|新浪微博分享||
 ||qq|分享到QQ好友||
 ||weixin|分享微信消息、朋友圈及微信小程序||

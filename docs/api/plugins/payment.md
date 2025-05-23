@@ -1,4 +1,4 @@
-# uni.requestPayment(OBJECT)
+## uni.requestPayment(OBJECT)
 支付
 
 uni.requestPayment是一个统一各平台的客户端支付API，不管是在某家小程序还是在App中，客户端均使用本API调用支付。
@@ -9,19 +9,22 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 
 比如微信有App支付、小程序支付、H5支付等不同的申请入口和使用流程，对应到uni-app，在App端要申请微信的App支付，而小程序端则申请微信的小程序支付。
 
-如果服务端使用[uniCloud](https://uniapp.dcloud.io/uniCloud/README)，那么官方提供了[uniPay](https://uniapp.dcloud.io/uniCloud/unipay)云端统一支付服务，把App、微信小程序、支付宝小程序里的服务端支付开发进行了统一的封装。
+如果服务端使用[uniCloud](https://uniapp.dcloud.io/uniCloud/README)，那么官方提供了[uniPay](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)云端统一支付服务，把App、微信小程序、支付宝小程序里的服务端支付开发进行了统一的封装。
 
-前端统一的`uni.requestPayment`和云端统一的`uniPay`搭配，可以极大提升支付业务的开发效率，强烈推荐给开发者使用。`uniPay`的文档另见：[https://uniapp.dcloud.io/uniCloud/unipay](https://uniapp.dcloud.io/uniCloud/unipay)
+前端统一的`uni.requestPayment`和云端统一的`uniPay`搭配，可以极大提升支付业务的开发效率，强烈推荐给开发者使用。`uniPay`的文档另见：[https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|[说明](/api/plugins/payment?id=h5-payment)|√|√|√|√|x|√|√|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|[说明](/api/plugins/payment?id=h5-payment)|√|√|√|√|x|√|√|x|√|
+
+
+<!-- UNIAPPAPIJSON.requestPayment.compatibility -->
 
 **OBJECT 参数说明**
 
-|参数名|类型|必填|说明|平台差异说明|
+|参数名|类型|必填#{width=120px}|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
 |provider|String|是|服务提供商，通过 [uni.getProvider](/api/plugins/provider) 获取。||
 |orderInfo|String/Object|是|订单数据，[注意事项](/api/plugins/payment?id=orderinfo)|App、支付宝小程序、百度小程序、抖音小程序|
@@ -50,6 +53,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 ### 注意事项
 - APP端，如果你的应用在用户完成支付后；立即给支付的用户push消息通知。会与前端支付回调相互冲突，请延迟执行推送。
 - 抖音小程序支付接口调整使用时请注意[发起头条支付](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/pay/tt-pay)
+- 鸿蒙系统（HarmonyOS Next）暂仅支持 `支付宝支付`
 
 ### orderInfo 注意事项@orderInfo
 1. 百度小程序的 orderInfo 为 Object 类型，详细的数据结构，参考：[百度收银台支付](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/)。
@@ -60,14 +64,13 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 6. App端，苹果应用内支付 orderInfo 为Object 类型，{productid: 'productid'}。
 
 ## H5 平台@h5-payment
-- 普通浏览器平台的支付，仍然是常规web做法。uni-app未封装。
+- 普通浏览器平台的支付，仍然是常规web做法。uni-app未封装。但DCloud提供了`uni-pay`插件，已封装了web支付，[详见](https://doc.dcloud.net.cn/uniCloud/uni-pay.html)
 - 在普通浏览器里也可以调起微信进行支付，这个在微信叫做H5支付，此功能未开放给普通开发者，需向微信单独申请，[详见](https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=15_1)
-- 微信内嵌浏览器运行H5版时，可通过js sdk实现微信支付，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)
+- 微信内嵌浏览器运行H5版时，可通过js sdk实现微信支付，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)，也可以直接使用[uni-pay](https://doc.dcloud.net.cn/uniCloud/uni-pay.html)，无需再单独引入其他js
 
 **各平台支持的支付情况说明**
 - 微信小程序里只支持微信小程序支付，在 [微信商户平台](https://pay.weixin.qq.com) 申请支付时，选择公众号支付。
-- App 里支持微信sdk支付、支付宝sdk支付、苹果iap应用内支付，在各平台申请支付时选择 App 支付。
-- 其他支付（如银联）请使用web-view组件以H5方式实现。
+- App 里支持微信sdk支付、支付宝sdk支付、苹果iap应用内支付，在各平台申请支付时选择 App 支付。其他支付（如银联）请使用web-view组件以H5方式实现或在插件市场搜索相应插件。
 - 支付宝小程序只支持支付宝支付。
 - 百度小程序为百度支付，其二次封装了度小满、支付宝、微信支付。
 - Hello uniapp 里演示了各种支付。
@@ -110,11 +113,12 @@ uni.requestPayment({
 
     登录支付宝账号，创建应用接入支付宝App支付能力，包括以下步骤：
 
-    - 创建应用（获取appid） 
-    - 开通App支付功能 
-    - 配置密钥（获取公钥、私钥） 
-    
-  具体可参考支付宝官方文档： [App支付快速接入](https://docs.open.alipay.com/204/105297/)
+    - 创建应用（获取appid）
+    - 开通App支付功能
+    - 配置密钥（获取公钥、私钥）
+
+  - 具体可参考支付宝官方文档： [App支付快速接入](https://docs.open.alipay.com/204/105297/)
+  - 关于支付宝支付，当传入orderinfo参数后，app-android平台可以成功调用支付宝，但app-ios平台有时会出现奔溃&卡顿，这时候需要检测后端 ‘out_trade_no’ 参数是否设置为string类型，参考[支付宝文档：业务请求参数](https://opendocs.alipay.com/open/cd12c885_alipay.trade.app.pay)
 
 
 如果手机端未安装支付宝，调用时会启动支付宝的wap页面登录，如果已安装相应客户端，会启动其客户端登录。
@@ -127,22 +131,22 @@ uni.requestPayment({
   - 应用接入 [微信商户平台](https://pay.weixin.qq.com)，选择 App 支付
   - 开通支付功能后可获取支付业务服务器配置数据：PARTNER（财付通商户号）、PARTNER_KEY（财付通密钥）、PAYSIGNKEY（支付签名密钥）
   - 需要将从微信开放平台申请的appid，填回到 manifest-App SDK配置-支付-微信支付 中。打包后生效。
-    
+
   具体可参考微信官方文档： [移动应用开发](https://open.weixin.qq.com/cgi-bin/frame?t=home/app_tmpl&lang=zh_CN)
-  
+
   注意微信的App支付、小程序支付、H5支付是不同的体系。微信小程序支付在 [微信商户平台](https://pay.weixin.qq.com) 申请支付时，选择公众号支付；普通浏览器里也可以调起微信进行支付，这个在微信叫做H5支付，此功能未开放给普通开发者，需向微信单独申请，[详见](https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=15_1)
 
 ### 示例代码
 
 ```javascript
 uni.requestPayment({
-    "provider": "wxpay", 
+    "provider": "wxpay",
     "orderInfo": {
         "appid": "wx499********7c70e",  // 微信开放平台 - 应用 - AppId，注意和微信小程序、公众号 AppId 可能不一致
         "noncestr": "c5sEwbaNPiXAF3iv", // 随机字符串
         "package": "Sign=WXPay",        // 固定值
         "partnerid": "148*****52",      // 微信支付商户号
-        "prepayid": "wx202254********************fbe90000", // 统一下单订单号 
+        "prepayid": "wx202254********************fbe90000", // 统一下单订单号
         "timestamp": 1597935292,        // 时间戳（单位：秒）
         "sign": "A842B45937F6EFF60DEC7A2EAA52D5A0" // 签名，这里用的 MD5/RSA 签名
     },
@@ -219,7 +223,7 @@ uni.getProvider({
 所有 `fail` 回调格式为 `{ errCode: xxx, errMsg: '' }`
 
 
-### 请求支付 `uni.requestPayment()` 
+### 请求支付 `uni.requestPayment()`
 
 ```js
 uni.requestPayment({
@@ -696,8 +700,8 @@ uni.requestPayment({
 ## 服务器相关
 
 ### uniCloud开发
-- 前端：使用`unicloud.callfunction`调用指定的云函数。
-- 服务端：使用[uniPay](https://uniapp.dcloud.io/uniCloud/unipay)，该服务对应的演示工程在插件市场：[https://ext.dcloud.net.cn/plugin?id=1835](https://ext.dcloud.net.cn/plugin?id=1835)，此示例为完整的前后端支付演示，使用`uniPay`可极快的完成支付业务开发。
+- 前端：使用 `uni-pay` 组件发起支付。
+- 服务端：使用[uniPay](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)，该服务对应的演示工程在插件市场：[https://ext.dcloud.net.cn/plugin?id=1835](https://ext.dcloud.net.cn/plugin?id=1835)，此示例为完整的前后端支付演示，使用`uniPay`可极快的完成支付业务开发。
 
 ### php开发
 - 前端：使用 ``uni.request`` 请求服务端接口，得到订单数据，使用 ``uni.requestPayment`` 向支付平台发起支付请求，拉起支付平台的客户端进行支付。在hello uni-app里详细代码。

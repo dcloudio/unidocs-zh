@@ -15,7 +15,7 @@
 - 走路赚钱、看短视频赚钱、猜歌赚钱等应用也非常多
 - 网赚应用中，做各种任务赚钱，或者想要接赚钱的任务，前提是观看激励视频
 - 增值内容消费，比如小说、电影看一半，剩下的需要看广告后才能继续
-- 区块链应用融合激励视频，比如看广告提高收益或提高挖矿成功率
+- 区块链应用融合激励视频，比如看广告提高收益
 - 游戏内看广告复活、看广告拿高级道具
 
 注意激励不能直接发钱，那会被视为积分墙，而被广告平台禁封。
@@ -27,9 +27,9 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√（3.4.8+）|x|√（3.4.8+）|x|x|x|x|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√（3.4.8+）|x|√（3.4.8+）|x|x|x|x|x|x|x|x|x|
 
 ### 流程概述
 
@@ -55,17 +55,17 @@
 
 **属性说明**
 
-|属性名														|类型													|默认值		|说明																																									|平台差异	|
-|:-																|:-														|:-				|:-																																										|:-				|
-|adpid														|String&#124;Number|					|广告位id，到uniad后台申请。|					|
-|preload													|Boolean											|true			|页面就绪后加载广告数据																																|					|
-|loadnext													|Boolean											|false		|自动加载下一条广告数据																																|					|
-|disabled													|Boolean											|false		|禁用默认点击行为																																			|					|
-|url-callback											|Object												|					|服务器回调透传数据																																		|					|
-|v-slot:default="{loading, error}"|															|					|作用域插槽可以获取组件内部广告加载状态和加载错误信息																	|					|
-|@load														|EventHandle									|加载事件	|																																											|					|
-|@close														|EventHandle									|关闭事件	|																																											|					|
-|@error														|EventHandle									|错误事件	|																																											|					|
+|属性名														|类型								|默认值	|说明																													|平台差异	|
+|:-																|:-									|:-			|:-																														|:-			|
+|adpid														|String&#124;Number	|				|广告位id，到[uni-ad后台](https://uniad.dcloud.net.cn/)后台申请。	|				|
+|preload													|Boolean						|true		|页面就绪后加载广告数据																						|				|
+|loadnext													|Boolean						|false	|自动加载下一条广告数据																						|				|
+|disabled													|Boolean						|false	|禁用默认点击行为																								|				|
+|url-callback											|Object							|				|服务器回调透传数据																							|				|
+|v-slot:default="{loading, error}"|										|				|作用域插槽可以获取组件内部广告加载状态和加载错误信息									|				|
+|@load														|EventHandle				|加载事件	|																															|				|
+|@close														|EventHandle				|关闭事件	|																															|				|
+|@error														|EventHandle				|错误事件	|																															|				|
 
 **url-callback说明**
 
@@ -144,6 +144,9 @@ export default {
 }
 </script>
 ```
+
+**提示**
+- adpid：1507000689 为app平台测试广告位，其他平台暂不支持测试广告位
 
 #### 组件API调用示例
 
@@ -225,17 +228,11 @@ export default {
 
 返回值 为 string 类型
 
-|值			|描述											|
-|:-:		|:-:											|
-|wm			|uniMP激励视频						|
-|csj		|穿山甲										|
-|gm			|穿山甲gromore						|
-|gdt		|腾讯优量汇（前称广点通）	|
-|ks			|快手											|
-|sigmob	|Sigmob										|
-|bd			|百度											|
-|gg			|Google AdMob							|
-|pg			|海外穿山甲								|
+|值			|描述	|
+|:-:		|:-:	|
+|china	|国内	|
+|global	|国际	|
+
 
 **示例代码**
 
@@ -295,8 +292,9 @@ export default {
 |:-:								|:-:		|:-:																																																													|
 |detail: { isEnded }|boolean|视频是否是在用户完整观看的情况下被关闭的，true 表示用户是在视频播放完以后关闭的视频，false 表示用户在视频播放过程中关闭了视频|
 
+isEnded 作为一个客户端参数，仅作为参考，需通过服务器回调来判断最终结果。
 
-开发者需要根据 isEnded 判断是否视频是否播放结束。但 isEnded 作为一个客户端参数，无法确定是完整看完了视频，还是提前结束。需通过服务器回调来判断。在 isEnd 后，客户端应该向服务器请求确认，服务器如确认成功播放完毕则应该向用户发放奖励，
+海外广告的 isEnded 参数并不准确，需要通过服务器收到结果来验证。
 
 ```html
 <template>
@@ -505,13 +503,17 @@ rewardedVideoAd.onClose(res => {
 
 ### 服务器回调@callback
 
-App平台 3.1.15+ 支持穿山甲/优量汇/快手
+App平台 3.1.15+ 支持服务器回调
 
 激励视频广告可以支持广告服务器到业务服务器的回调，用于业务系统判断是否提供奖励给观看广告的用户。配置服务器回调后，当用户成功看完广告时，广告服务器会访问配置的云函数，通知用户完成观看激励视频。
 
 服务器回调将更加安全，可以依赖广告平台的反作弊机制来避免用户模拟观看广告完成的事件。
 
-![激励视频回调](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniAdCallback-01-29.png)
+- 业务代码在uniCloud，流程图如下：
+![激励视频回调](https://web-ext-storage.dcloud.net.cn/doc/ad/uniCloud-uniAdCallback-20240726.png)
+
+- 业务代码在开发者传统服务器，流程图如下：
+![激励视频回调](https://web-ext-storage.dcloud.net.cn/doc/ad/tr-servers-uniAdCallback-20240726.png)
 
 如何使用
 1. 申请激励视频广告位时开启服务器回调
@@ -543,10 +545,7 @@ export default {
 </script>
 ```
 
-
-### 服务器回调说明
-
-#### 服务器回调基于 [uniCloud](https://uniapp.dcloud.net.cn/uniCloud/README)
+#### 服务器回调基于 [uniCloud](https://doc.dcloud.net.cn/uniCloud/)
 
 1. 由于多家广告商的回调和签名验证逻辑不同，开发者需要写很多逻辑，`uniCloud` 中的云函数 `uniAdCallback` 已抹平了差异，开发者按照统一的参数处理即可
 2. 开发者的服务器有可能响应慢或失去响应造成回调数据丢失, 使用 `uniCloud` 可以帮助开发者保存一份来自广告商服务器的回调数据到开发者的云数据中，以便开发者主动查询
@@ -566,7 +565,7 @@ export default {
 注意：
 1. 新建的云函数名称不能使用 `uniAdCallback`
 2. 服务器通信和前端事件是并行的，前端需要轮询向服务器请求并验证结果
-3. 不建议在 `uni-ad` web控制台修改回调的服务空间名称，因为修改后广告商生效需要一段时间
+3. 不支持在web控制台修改回调的服务空间名称，如果更新需要重新创建广告位
 4. 看一次广告收到2次回调结果，且 `trans_id` 相同，产生2次的可能原因有
   - 没有正确响应JSON格式数据 `{"isValid": true}`
   - 服务器响应过慢，广告商服务器重试
@@ -575,13 +574,13 @@ export default {
 - 多个uni-app项目支持关联一个服务空间，都会调用同一个云函数uniAdCallbck，通过接收回调参数中的属性广告位adpid区分
 
 
-### 服务器回调参数@uniAdCallbackParameters
+#### 服务器回调参数@uniAdCallbackParameters
 
 |字段定义	|类型		|字段名称				|备注															|
 |:-:			|:-:		|:-:						|:-:															|
 |adpid		|String	|DCloud广告位id	|																	|
-|provider	|String	|广告服务商			|wm、csj、ks、gdt、sigmob					|
-|platform	|String	|平台						|iOS、Android											|
+|provider	|String	|广告服务商			|china、global					|
+|platform	|String	|平台						|iOS、Android、weixin-mp										|
 |sign			|String	|签名						|																	|
 |trans_id	|String	|交易id					|完成观看的唯一交易ID							|
 |user_id	|String	|用户id					|调用SDK透传，应用对用户的唯一标识|
@@ -593,7 +592,7 @@ export default {
 sign = sha256(secret:transid)
 ```
 
-提示：`Security key` 在 [uni-ad 广告联盟](https://uniad.dcloud.net.cn) 对应的广告位，配置激励视频服务器回调后可看到
+提示：`secret` 在 [uni-ad 广告联盟](https://uniad.dcloud.net.cn) 对应的广告位，配置激励视频服务器回调后，点击广告位左侧下拉后可以看到
 
 #### 签名验证方式
 
@@ -611,25 +610,58 @@ sign = sha256(secret:transid)
 |:-|:-|:-|:-|
 |isValid|校验结果|Blean|判定结果，是否发放奖励，具体发放奖励由用户自己的业务系统决定|
 
-### 老用户升级@upgrade
+#### 老用户升级@upgrade
 
-1. 在传统服务器增加[签名校验](/uni-ad/ad-rewarded-video.html#sign)
+1. 在传统服务器增加[签名校验](/uni-ad/ad-rewarded-video.md#sign)
 2. 登陆 uni-ad [Web控制台](https://uniad.dcloud.net.cn/)，找到广告位对应的配置激励视频，选择 "业务在传统服务器" 并配置服务器HTTP地址
 
 
-### 微信小程序说明@callbackweixin
+#### 微信小程序说明@callbackweixin
 
-3.6.8+ 支持微信小程序服务器回调，目前仅支持使用 [uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html) 用户体系的小程序，后续支持非 uni-id 用户系统
+3.6.8+ 支持微信小程序服务器回调
 
+依赖微信提供的安全网络，安全网络依赖微信提供的 `access_token` `session_key` `encrypt_key`
 
-#### 接入流程
+由于上面三个值之间存在时效和依赖关系，比较复杂，所以需要使用 [uni-open-bridge](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html) 来接管
+
+注意：
+1. 需要发行模式
+2. 需要配置 request 域名白名单，[详情](https://doc.dcloud.net.cn/uniCloud/publish.html)
+
+#### 接入流程(uni-id用户体系)
 
 1. 项目使用了 [uni-id-co](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#save-user-token) 并更新到 1.0.8+
 2. 使用 [uni-open-bridge](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html) 托管三方开放平台数据
 3. 配置 [安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
 
+#### 接入流程(传统用户系统)
 
-#### 安全注意
+1. 配置 [uni-open-bridge](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html) 托管三方开放平台数据，详情如下:
+- 1.1 参考文档[uni-open-bridge的使用流程](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html#uni-open-bridge%E7%9A%84%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B) ，下载插件uni-open-bridge，完成配置并上传服务空间。
+- 1.2 云函数URL化配置：在[uniCloud 的 web控制台](https://unicloud.dcloud.net.cn) 服务空间--》云函数/云对象--》uni-open-bridge--》详情--》云函数URL化--》编辑配置`/uni-open-bridge`保存。
+- 1.3 由 传统服务器从微信获取到相关凭据通过 http 的方式主动将微信小程序的 `access_token` `session_key` 通过[setAccessToken](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html#setaccesstoken)，[setSessionKey](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html#setsessionkey) ，同步到 uni-open-bridge，`encrypt_key` 由 uni-open-bridge 自动向微信服务器获取。
+
+2. 配置 [安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
+3. 在微信小程序客户端初始化安全网络并传递 openid，通过 uni.checkSession() 检查登录是否过期，过期后需要重新登录并由开发者服务器将 `session_key` 同步到 uni-open-bridge
+
+```html
+<script>
+  export default {
+    onLaunch: async function() {
+      // #ifdef MP-WEIXIN
+      // 调用自有服务、云函数进行微信登录或以其他方式获取 openid
+      // 通过调用 uni.login(), 获取 code，然后在服务器上请求微信服务器换取 openid, 获取的 code 只能使用一次
+      const openid = ''
+      await uniCloud.initSecureNetworkByWeixin({
+        openid: openid
+      })
+      // #endif
+    }
+  }
+</script>
+```
+
+### 安全注意
 
 由于激励视频对应着用户奖励，可能会遇到恶意刷激励奖励但实际上并不看广告的情况。此时广告平台不给结算，但开发者却可能把激励送出去。
 
@@ -705,7 +737,7 @@ sign = sha256(secret:transid)
 
 注意
 1. 在实际业务中云函数费用可能会出现稍微偏高，如：开发者的服务器响应过慢时，广告商的服务器会重试，导致调用次数增加
-2. 业务系统不在uniCloud的费用采用服务器配置升级后的计算方式，[升级参考](/component/ad-rewarded-video.html#upgrade)
+2. 业务系统不在uniCloud的费用采用服务器配置升级后的计算方式，[升级参考](https://doc.dcloud.net.cn/uniCloud/uni-login/price.html)
 
 #### 总结
 
@@ -740,6 +772,7 @@ sign = sha256(secret:transid)
 - 多次调用 `RewardedVideoAd.onLoad()`、`RewardedVideoAd.onError()`、`RewardedVideoAd.onClose()` 等方法监听广告事件会产生多次事件回调，建议在创建广告后监听一次即可。
 - 为避免滥用广告资源，目前每个用户每天可观看激励式视频广告的次数有限，建议展示广告按钮前先判断广告是否拉取成功。
 - App平台，建议每个广告商每个设备每天调用次数不超过`15`，中间要有间隔时间，否则可能触发系统的反作弊策略导致流量收益下降。
+- 快手反作弊23年开始做了调整，原来被风控命中的用户直接不返回广告；现在风控分两种，一种是设备风控，一种是单次广告风控，如果是单次广告风控，单次拉取不给服务器回调，下次拉取广告是还能拉取到的，如测试时遇到快手广告无服务器会回调，请更换设备、网络重新进行测试。
 
 ### 案例参考
 - 项目源码《养猫合成游戏》，拿走就能用，[https://ext.dcloud.net.cn/plugin?id=4095](https://ext.dcloud.net.cn/plugin?id=4095)

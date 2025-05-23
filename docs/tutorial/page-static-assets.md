@@ -47,7 +47,7 @@ background-image: url(../../static/logo.png);
 
 **Tips**
 
-- 引入字体图标请参考，[字体图标](/tutorial/syntax-css.html#字体图标)
+- 引入字体图标请参考，[字体图标](/tutorial/syntax-css.md#字体图标)
 - `@`开头的绝对路径以及相对路径会经过 base64 转换规则校验
 - 不支持本地图片的平台，小于 40kb，一定会转 base64。（共四个平台 mp-weixin, mp-qq, mp-toutiao, app v2）
 - web 平台，小于 4kb 会转 base64，超出 4kb 时不转。
@@ -58,7 +58,7 @@ background-image: url(../../static/logo.png);
 
 例：有如下目录结构 ，在static 和页面文件夹下分别有静态资源
 
-```base
+```text
 
 ├── pages                            
 │   └── index
@@ -122,5 +122,13 @@ export default {
 
 ### 静态资源编译规则
 
-- 项目 `static` 目录下的静态资源，会被直接拷贝到编译后目录的 `static` 目录下。
-- 项目非 `static` 目录下的静态资源，被引用的资源会编译到 `assets` 目录下，并重新命名为 `原始名称+内容hash`,如：`logo.png` 会编译为类似 `logo.cfd8fa94.png` 的名称。如果该静态资源未被引用，则不会被编译器处理。
+ 项目 `static` 目录下的静态资源，会被直接拷贝到编译后目录的 `static` 目录下。
+ 
+ 非`static`目录下的静态资源在`vue3`下，被引用的资源会编译到 `assets` 目录下，并重新命名为 `原始名称+内容hash`,如：`logo.png` 会编译为类似 `logo.cfd8fa94.png` 的名称。如果该静态资源未被引用，则不会被编译器处理。
+ 
+ 非`static`目录下的静态资源在`vue2`不同平台下，编译规则有些不同：
+ > 自 `HBuilderX 4.0` 起已和 `vue3` 保持一致
+
+- web: 静态资源将会编译到 `static -> img` 下, 如小于 4k 则转为base64
+- 小程序：静态资源将会编译到资源同名文件下，如小于 40kb 则转base64
+- app: 静态资源将会编译到资源同名文件下

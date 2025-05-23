@@ -1,17 +1,18 @@
 **激励视频广告**
 
-# 此文档已过期，新文档: [https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)
-
-===========以下为过期文档=========
+::: danger
+<div style="font-weight:bold;font-size:2em;">
+此文档已过期, 请前往 <a href="https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html">新文档</a>
+</div>
+:::
 
 [激励视频广告介绍](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html)
 
-
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√（2.5.11+）|x|√|x|x|√（1.57.0+）|x|√（0.1.26+）|√|x|
+|App|HarmonyOS Next|Web|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√（2.5.11+）|x|x|√|x|x|√（1.57.0+）|x|√（0.1.26+）|√|x|x|
 
 
 **开通配置广告**

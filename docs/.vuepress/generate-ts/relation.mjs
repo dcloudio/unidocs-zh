@@ -1,5 +1,10 @@
-import relationConfig from './type-relations.json' assert { type: "json" }
+// import relationConfig from './type-relations.json' with { type: "json" } /** node v22 */
+// import relationConfig from './type-relations.json' assert { type: "json" } /** node v17-v21 */
+import { readFile } from 'node:fs/promises'
+import { join } from 'node:path'
 import { generateInterface, generateInterfaceTableFields } from "./interface.mjs";
+
+const relationConfig = await readFile(join(import.meta.dirname, './type-relations.json'), { encoding: 'utf8' }).then(r => JSON.parse(r))
 
 /**
  * json声明接口的属性

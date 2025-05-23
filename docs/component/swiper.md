@@ -1,10 +1,12 @@
-### swiper
+## swiper
 
 滑块视图容器。
 
 一般用于左右滑动或上下滑动，比如banner轮播图。
 
 注意滑动切换和滚动的区别，滑动切换是一屏一屏的切换。swiper下的每个swiper-item是一个滑动切换区域，不能停留在2个滑动区域之间。
+
+<!-- UNIAPPCOMJSON.swiper.compatibility -->
 
 **属性说明**
 
@@ -35,6 +37,8 @@
 |@transition|EventHandle||swiper-item 的位置发生改变时会触发 transition 事件，event.detail = {dx: number, dy: number}，支付宝小程序暂不支持dx, dy|App、H5、微信小程序、支付宝小程序、抖音小程序、飞书小程序、QQ小程序、快手小程序|
 |@animationfinish|EventHandle||动画结束时会触发 animationfinish 事件，event.detail = {current: number, source: any}|抖音小程序与飞书小程序不支持|
 
+
+
 change 事件返回 detail 中包含一个 source 字段，表示导致变更的原因，可能值如下：
 
 - autoplay 自动播放导致swiper变化。
@@ -50,15 +54,15 @@ change 事件返回 detail 中包含一个 source 字段，表示导致变更的
 
 - 如果 nvue 页面 ``@animationfinish`` 事件不能返回正确的数据，可同时监听 ``@change`` 事件。
 - 使用竖向滚动时，需要给 ``<scroll-view>`` 一个固定高度，通过 css 设置 height。
-- 注意：其中只可放置 ``<swiper-item>`` 组件，否则会导致未定义的行为。 
-- 如果遇到current、current-item-id属性设置不生效的问题参考：[组件属性设置不生效解决办法](/tutorial/vue-api.html#componentsolutions)
+- 注意：其中只可放置 ``<swiper-item>`` 组件，否则会导致未定义的行为。
+- 如果遇到current、current-item-id属性设置不生效的问题参考：[组件属性设置不生效解决办法](/tutorial/vue-api.md#componentsolutions)
 - banner图的切换效果和指示器的样式，有多种风格可自定义，可在[uni-app插件市场](https://ext.dcloud.net.cn/search?q=%E8%BD%AE%E6%92%AD)搜索
 - 如需banner管理后台，参考uniCloud admin banner插件：[https://ext.dcloud.net.cn/plugin?id=4117](https://ext.dcloud.net.cn/plugin?id=4117)
 - swiper在App的vue中、百度支付宝头条QQ小程序中，不支持内嵌video、map等原生组件。在微信基础库2.4.4起和App nvue2.1.5起支持内嵌原生组件。竖向的swiper内嵌视频可实现抖音、映客等视频垂直拖动切换效果。
 - 同时监听 change transition，开始滑动时触发transition, 放开手后，在ios平台触发顺序为 transition... change，Android/微信小程序/支付宝为 transition... change transition...
- 
- 
-#### easing-function 
+
+
+#### easing-function
 
 |值	|	说明|
 |--	|--	|
@@ -68,15 +72,20 @@ change 事件返回 detail 中包含一个 source 字段，表示导致变更的
 |easeOutCubic	|缓出动画	|
 |easeInOutCubic	|	缓入缓出动画	|
 
- 
- 
- 
+
+<!-- UNIAPPCOMJSON.swiper.reference -->
+
+
 #### swiper-item
 仅可放置在 ``<swiper>`` 组件中，宽高自动设置为100%。注意：宽高100%是相对于其父组件，不是相对于子组件，不能被子组件自动撑开。
+
+<!-- UNIAPPCOMJSON.swiper-item.compatibility -->
 
 |属性名|类型|默认值|说明|
 |:-|:-|:-|:-|
 |item-id|String||该 swiper-item 的标识符|
+
+
 
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/swiper/swiper)
 
@@ -102,7 +111,7 @@ change 事件返回 detail 中包含一个 source 字段，表示导致变更的
 				</swiper-item>
 			</swiper>
 		</view>
-		
+
 		<view class="swiper-list">
 			<view class="uni-list-cell uni-list-cell-pd">
 				<view class="uni-list-cell-db">指示点</view>
@@ -113,7 +122,7 @@ change 事件返回 detail 中包含一个 source 字段，表示导致变更的
 				<switch :checked="autoplay" @change="changeAutoplay" />
 			</view>
 		</view>
-		
+
 		<view class="uni-padding-wrap">
 			<view class="uni-common-mt">
 				<text>幻灯片切换时长(ms)</text>
@@ -195,3 +204,4 @@ export default {
 ```
 :::
 
+<!-- UNIAPPCOMJSON.swiper-item.reference -->

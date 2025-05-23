@@ -1,29 +1,10 @@
 除了HBuilderX可视化界面，也可以使用 `cli` 脚手架，可以通过 `vue-cli` 创建 `uni-app` 项目。
 
 
-## 环境安装 @install-vue-cli
-
-全局安装 vue-cli
-
-```shell
-npm install -g @vue/cli
-```
 
 ## 创建uni-app
 
-* 使用正式版（对应HBuilderX最新正式版）
-
-  ```shell
-  vue create -p dcloudio/uni-preset-vue my-project
-  ```
-
-* 使用alpha版（对应HBuilderX最新alpha版）
-
-  ```shell
-  vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project
-  ```
-
-* 使用Vue3/Vite版
+* 创建 vue3 项目
   * 创建以 javascript 开发的工程（如命令行创建失败，请直接访问 [gitee](https://gitee.com/dcloud/uni-preset-vue/repository/archive/vite.zip) 下载模板）
     ```shell
     npx degit dcloudio/uni-preset-vue#vite my-vue3-project
@@ -36,6 +17,21 @@ npm install -g @vue/cli
     npx degit dcloudio/uni-preset-vue#vite-ts my-vue3-project
     ```
 
+* 创建 vue2 项目
+  > 需要全局安装 vue-cli `npm install -g @vue/cli`
+
+  * 使用正式版（对应HBuilderX最新正式版）
+
+    ```shell
+    vue create -p dcloudio/uni-preset-vue my-project
+    ```
+
+  * 使用alpha版（对应HBuilderX最新alpha版）
+
+    ```shell
+    vue create -p dcloudio/uni-preset-vue#alpha my-alpha-project
+    ```
+
 此时，会提示选择项目模板（使用Vue3/Vite版不会提示，目前只支持创建默认模板），初次体验建议选择 `hello uni-app` 项目模板，如下所示：
 
 <div>
@@ -44,7 +40,7 @@ npm install -g @vue/cli
 
 **注意**
 
-- Vue3/Vite版要求 node 版本`^14.18.0 || >=16.0.0`
+- Vue3/Vite版要求 node 版本 18+、20+
 - 如果使用 HBuilderX（3.6.7以下版本）运行 Vue3/Vite 创建的最新的 cli 工程，需要在 HBuilderX 运行配置最底部设置 node路径 为自己本机高版本 node 路径（注意需要重启 HBuilderX 才可以生效）
     * HBuilderX Mac 版本菜单栏左上角 HBuilderX->偏好设置->运行配置->node路径
     * HBuilderX Windows 版本菜单栏 工具->设置->运行配置->node路径
@@ -173,7 +169,7 @@ HBuilderX可视化创建、运行、发布项目，底层调用的也是npm的ru
 
 ### 为什么要提供HBuilderX可视化模式
 
-1. 为了提升易用性，较低门槛
+1. 为了提升易用性，降低门槛
 
 很多开发者对node不熟悉、对命令行有心理抵触。不要想当然认为所有开发者都会node，HBuilder有几百万开发者，其中掌握node的开发者连一半都占不到。
 
@@ -224,13 +220,11 @@ HBuilderX提供的免node开发，除了易用，还更高效。
 
 ### 其他注意事项
 
-* `cli` 创建的项目，编译器安装在项目下。并且不会跟随HBuilderX升级。如需升级编译器，可以参考：[更新依赖到指定版本](/quickstart-cli.html#cliversion)。
+* `cli` 创建的项目，编译器安装在项目下。并且不会跟随HBuilderX升级。如需升级编译器，可以参考：[更新依赖到指定版本](/quickstart-cli.md#cliversion)。
 * 已经使用`cli`创建的项目，如果想继续在HBuilderX里使用，可以把工程拖到HBuilderX中。注意如果是把整个项目拖入HBuilderX，则编译时走的是项目下的编译器。如果是把src目录拖入到HBuilderX中，则走的是HBuilderX安装目录下plugin目录下的编译器。
 * `cli`创建的项目，内置了d.ts，同其他常规npm库一样，可在[vscode](https://ask.dcloud.net.cn/article/36286)、[webstorm](https://ask.dcloud.net.cn/article/36307)等支持d.ts的开发工具里正常开发并有语法提示。
 * 使用HBuilderX创建的项目不带d.ts，HBuilderX内置了uni-app语法提示库。如需把HBuilderX创建的项目在其他编辑器打开并且补充d.ts，可以在项目下先执行 `npm init`，然后`npm i @dcloudio/types -D`，来补充d.ts。
 * HBuilderX创建的项目，一样可以使用npm，参考：[NPM 支持](/tutorial/page-script?id=npm支持)
 * vscode等其他开发工具，在vue或uni-app领域，开发效率比不过HBuilderX。详见：[https://ask.dcloud.net.cn/article/35451](https://ask.dcloud.net.cn/article/35451)
 * 发布App时，仍然需要使用HBuilderX。其他开发工具无法发布App，但可以发布H5、各种小程序。如需开发App，可以先在HBuilderX里运行起来，然后在其他编辑器里修改保存代码，代码修改后会自动同步到手机基座。
-* 如果使用``cli``创建项目，HBuilderX插件列表中的uni-app编译器可以不安装
-* 对 `cli` 使用有疑问，欢迎扫码加入 uni-app 微信交流群讨论：
-    <br/><img src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/wx-barcode.png" width="250"/>
+* 如果使用`cli`创建项目，HBuilderX插件列表中的uni-app编译器可以不安装

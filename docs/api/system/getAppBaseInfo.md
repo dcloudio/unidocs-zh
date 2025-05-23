@@ -1,10 +1,12 @@
-### uni.getAppBaseInfo()
+## uni.getAppBaseInfo()
 
 获取微信 APP 基础信息
 
-|App|H5|微信小程序|支付宝小程序|抖音小程序|快手小程序|QQ小程序|百度小程序|京东小程序|钉钉小程序|飞书小程序|
-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
-|√ `(3.4.13+)`|√ `(3.4.13+)`|√ `(2.20.1+)`|x|x|x|x|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|抖音小程序|快手小程序|QQ小程序|百度小程序|京东小程序|钉钉小程序|飞书小程序|元服务|
+|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-:|
+|√ `(3.4.13+)`|√ `(3.4.13+)`|√ `(2.20.1+)`|x|x|x|x|x|x|x|x|x|
+
+<!-- UNIAPPAPIJSON.getAppBaseInfo.compatibility -->
 
 **返回参数说明**
 
@@ -16,12 +18,16 @@
 |appVersionCode|string|`manifest.json` 中应用版本名号。||
 |appLanguage|string|应用设置的语言`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`App`、`H5`|
 |appWgtVersion|string|应用资源（wgt）的版本名称。	|App 3.5.5+|
+|isUniAppX|string|是否uni-app x|HBuilderX 4.33+|
+|uniPlatform|string|uni-app 运行平台，与条件编译平台相同|HBuilderX 4.33+|
+|uniCompilerVersion|string|uni 编译器版本|HBuilderX 4.33+|
+|uniRuntimeVersion|string|uni 编译器版本|HBuilderX 4.34+|
 |hostLanguage|string|小程序宿主语言|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
 |hostVersion|string|App、小程序宿主版本。如：微信版本号|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
 |hostName|string|小程序宿主名称|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
 |hostPackageName|string|小程序宿主包名|`仅 UNIMPSDK 支持`|
 |hostSDKVersion|string|uni小程序SDK版本、小程序客户端基础库版本|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
-|hostTheme|string|系统当前主题，取值为light或dark。微信小程序全局配置"darkmode":true时才能获取，否则为 undefined （不支持小游戏）|`App 仅 UNIMPSDK 支持`、`H5 不支持`|
+|hostTheme|string|宿主当前主题，取值为light或dark。微信小程序全局配置"darkmode":true时才能获取，否则为 undefined （不支持小游戏）|`App 仅 UNIMPSDK 支持`|
 |hostFontSizeSetting|string|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|`仅 小程序 支持`|
 
 小程序特殊的返回参数
@@ -39,3 +45,5 @@
 |:-|:-|:-|:-|
 |language|string|应用设置的语言|`H5 不支持`|
 |version|string|引擎版本号、微信版本号||
+
+<!-- UNIAPPAPIJSON.getAppBaseInfo.returnValue -->

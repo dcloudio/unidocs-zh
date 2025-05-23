@@ -1,7 +1,8 @@
-
-### getCurrentPages()
+## getCurrentPages()
 
 ```getCurrentPages()``` 函数用于获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。
+
+<!-- UNIAPPAPIJSON.getCurrentPages.compatibility -->
 
 **注意：** ``getCurrentPages()``仅用于展示页面栈的情况，请勿修改页面栈，以免造成页面状态错误。
 
@@ -13,14 +14,15 @@
 |page.$vm|当前页面的 Vue 实例||
 |page.route|获取当前页面的路由|&nbsp;|
 
-Tips：
+**注意：**
 * ``navigateTo``, ``redirectTo`` 只能打开非 tabBar 页面。
 * ``switchTab`` 只能打开 ``tabBar`` 页面。
 * ``reLaunch`` 可以打开任意页面。
 * 页面底部的 ``tabBar`` 由页面决定，即只要是定义为 ``tabBar`` 的页面，底部都有 ``tabBar``。
 * 不能在首页 ```onReady``` 之前进行页面跳转。
+* 使用`选项式 API` 时，不可创建 `route` 响应式变量，否则会覆盖当前 `page 实例` 的 `route` 属性。
 
-### $getAppWebview()
+## $getAppWebview()
 
 ```uni-app``` 在 ```getCurrentPages()```获得的页面里内置了一个方法 ```$getAppWebview()``` 可以得到当前webview的对象实例，从而实现对 webview 更强大的控制。在 html5Plus 中，plus.webview具有强大的控制能力，可参考：[WebviewObject](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject)。
 
@@ -63,7 +65,7 @@ console.log(currentWebview.isVisible());//查询当前webview是否可见
 uni-app自带的web-view组件，是页面中新插入的一个子webview。获取该对象的方法见：[https://ask.dcloud.net.cn/article/35036](https://ask.dcloud.net.cn/article/35036)
 
 
-### $vm
+## $vm
 
 当前页面的 Vue 实例
 

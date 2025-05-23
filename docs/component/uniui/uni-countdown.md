@@ -41,6 +41,8 @@
 |minute				|Number	|0		|分钟				|
 |second				|Number	|0		|秒					|
 |showDay			|Boolean|true	|是否显示天数		|
+|showHour			|Boolean|true	|是否显示小时		|
+|showMinute			|Boolean|true	|是否显示分钟		|
 |showColon			|Boolean|true	|是否以冒号为分隔符	|
 |start				|Boolean|true	|是否初始化组件后就开始倒计时|
 

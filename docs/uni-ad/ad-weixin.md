@@ -3,7 +3,7 @@
 3.4.10+ 支持
 
 在微信小程序上，有2种广告类型：
-1. DCloud的uni-ad广告（简称uni-ad广告），uni-ad微信小程序广告开通指南[点击这里](https://ask.dcloud.net.cn/article/39928)
+1. DCloud的uni-ad广告（简称uni-ad广告），uni-ad微信小程序广告开通指南[点击这里](https://uniapp.dcloud.net.cn/uni-ad/ad-weixin-dcloud.html)
 2. 微信小程序自带的流量主广告（简称wx广告）
 
 这两者的区别是：
@@ -23,26 +23,29 @@ uni-ad可以一套代码全端变现，包括app、web、微信小程序；wx广
 
 有高有低，不同小程序cpm不同，需要开发者测试比较
 
-4. 结算周期
+5. 结算周期
 
 相比微信自带流量主广告，uni-ad开发者可以申请相对更短的结算周期和垫资服务。具体扫码加企业微信咨询。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/eryunweixin.jpg)
+<figure style="margin: 50px 0;">
+  <img src="https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/uni-ad-wx-1.png">
+  <img style="margin-left: 100px" src="https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/uni-ad-wx-2.png">
+</figure>
 
-5. 安全防护
+6. 安全防护
 
 uni-ad内置了安全防护策略，减少广告被刷风险
 
-3.6.8+ 支持激励视频服务器安全回调，[详情](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html#callback)
+3.6.8+ 支持激励视频服务器安全回调，[详情](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html#callback)
 
 服务器回调用于业务系统判断是否提供奖励给观看广告的用户。配置服务器回调后，当用户成功看完广告时，[uniCloud](https://doc.dcloud.net.cn/uniCloud/)服务器会访问配置的云函数，通知用户完成观看激励视频。
 相对来讲服务器回调将更加安全
 
-6. 开通方式
+7. 开通方式
 
 uni-ad由开发者在DCloud网站[uniad.dcloud.net.cn](https://uniad.dcloud.net.cn)申请，开发者与DCloud开票结算；而wx广告在微信小程序后台申请，开发者与微信开票结算
 
-7. 代码写法
+8. 代码写法
 
 两者在开发时，都使用相同的组件，比如`<ad>`组件、`<ad-rewarded-video>`组件，但uni-ad的组件属性是adpid（广告位id的缩写），微信小程序的组件属性是unit-id。
 
@@ -58,15 +61,15 @@ uni-ad由开发者在DCloud网站[uniad.dcloud.net.cn](https://uniad.dcloud.net.
 ## 不同广告类型的开发文档
 - banner/信息流广告
 
-详细开发文档地址：[https://uniapp.dcloud.io/component/ad](https://uniapp.dcloud.io/component/ad)
+详细开发文档地址：[https://uniapp.dcloud.net.cn/uni-ad/ad-component.html](https://uniapp.dcloud.net.cn/uni-ad/ad-component.html)
 
 - 激励视频广告
 
-详细开发文档地址：[https://uniapp.dcloud.io/component/ad-rewarded-video](https://uniapp.dcloud.io/component/ad-rewarded-video)
+详细开发文档地址：[https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html)
 
 - 插屏广告
 
-详细开发文档地址：[https://uniapp.dcloud.io/component/ad-interstitial](https://uniapp.dcloud.io/component/ad-interstitial)
+详细开发文档地址：[https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)
 
 ## adpid和unit-id详解
 
@@ -103,5 +106,9 @@ uni-ad由开发者在DCloud网站[uniad.dcloud.net.cn](https://uniad.dcloud.net.
 
 ### 方案二
 
-登陆微信公众平台 [https://mp.weixin.qq.com/](https://mp.weixin.qq.com/)，点击左侧栏 `设置`，然后找到顶部页签 `第三方设置`，向下滚动屏幕到 `插件管理`,
-点击 `添加插件` 按钮，搜索 `uniAD` 和 `珊瑚运营平台` 并添加
+登陆微信公众平台 [https://mp.weixin.qq.com/](https://mp.weixin.qq.com/)，点击左侧栏底部[小程序名称] -> `账号设置`，然后找到顶部页签 `第三方设置`，向下滚动屏幕到 `插件管理`,
+点击 `添加插件` 按钮，搜索 `uni-ad` 和 `珊瑚运营平台` 并添加
+
+**提示**
+- 安装2个插件（uniAD和珊瑚运营平台）后直接提交广告申请即可。其中“珊瑚运营平台”插件会显示【待确认】状态，属于正常现象，直接提交广告开通申请，待广告位开通后会显示【已通过】
+- 接入广告组件后，自动引入上面的2个插件，移除广告组件重新运行即可移除相关插件的依赖

@@ -1,10 +1,12 @@
-#### navigator
+## navigator
 
 页面跳转。
 
 该组件类似HTML中的`<a>`组件，但只能跳转本地页面。目标页面必须在pages.json中注册。
 
 除了组件方式，API方式也可以实现页面跳转，另见：[https://uniapp.dcloud.io/api/router?id=navigateto](https://uniapp.dcloud.io/api/router?id=navigateto)
+
+<!-- UNIAPPCOMJSON.navigator.compatibility -->
 
 **属性说明**
 
@@ -15,6 +17,7 @@
 |delta|Number||当 open-type 为 'navigateBack' 时有效，表示回退的层数||
 |animation-type|String|pop-in/out|当 open-type 为 navigate、navigateBack 时有效，窗口的显示/关闭动画效果，详见：[窗口动画](/api/router?id=animation)|App|
 |animation-duration|Number|300|当 open-type 为 navigate、navigateBack 时有效，窗口显示/关闭动画的持续时间。|App|
+|render-link|boolean|true|是否给 navigator 组件加一层 a 标签控制 ssr 渲染|web3.7.6+、App-vue3.7.6+|
 |hover-class|String|navigator-hover|指定点击时的样式类，当hover-class="none"时，没有点击态效果||
 |hover-stop-propagation|Boolean|false|指定是否阻止本节点的祖先节点出现点击态|微信小程序|
 |hover-start-time|Number|50|按住后多久出现点击态，单位毫秒||
@@ -25,11 +28,11 @@
 
 |值|说明|平台差异说明|
 |:-|:-|:-|
-|navigate|对应 uni.navigateTo 的功能||
-|redirect|对应 uni.redirectTo 的功能||
-|switchTab|对应 uni.switchTab 的功能||
-|reLaunch|对应 uni.reLaunch 的功能|抖音小程序与飞书小程序不支持|
-|navigateBack|对应 uni.navigateBack 的功能||
+|navigate|对应 uni.navigateTo 的功能，保留当前页面，跳转到应用内的某个页面||
+|redirect|对应 uni.redirectTo 的功能，关闭当前页面，跳转到应用内的某个页面||
+|switchTab|对应 uni.switchTab 的功能，跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面||
+|reLaunch|对应 uni.reLaunch 的功能，关闭所有页面，打开到应用内的某个页面|抖音小程序与飞书小程序不支持|
+|navigateBack|对应 uni.navigateBack 的功能，关闭当前页面，返回上一页面或多级页面||
 |exit|退出小程序，target="miniProgram"时生效|微信2.1.0+、百度2.5.2+、QQ1.4.7+|
 
 这些细节可在[页面路由API文档](https://uniapp.dcloud.io/api/router?id=navigateto)查阅。
@@ -44,7 +47,7 @@
 - Vue3 项目因 SSR 需要，H5 端会在外层嵌套 a 标签
 
 **示例** [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/navigator/navigator)
- 
+
 ::: preview https://hellouniapp.dcloud.net.cn/pages/component/navigator/navigator
 
 ```html
@@ -87,4 +90,3 @@ onLoad: function (option) {
 	const item = JSON.parse(decodeURIComponent(option.item));
 }
 ```
-

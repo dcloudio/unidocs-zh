@@ -55,14 +55,14 @@ npm install puppeteer@14.0.0 --save-dev
 
 2. 根据API编写测试的js代码，参考测试用例
 API文档见：[https://uniapp.dcloud.io/collocation/auto/api](https://uniapp.dcloud.io/collocation/auto/api)
-测试文件目录配置见 [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
+测试文件目录配置见 [jest.config.js](./quick-start.md#jestconfigjs)
 
-3. 运行测试
+1. 运行测试
 ```shell
 npm run test:h5
 ```
 
-4. 测试结果
+1. 测试结果
 ```js
 >> cross-env UNI_PLATFORM=h5 jest -i
 ...
@@ -72,14 +72,14 @@ Snapshots:   0 total
 Time:        14.995s, estimated 16s
 ```
 
-更多配置参考 [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
+更多配置参考 [jest.config.js](./quick-start.md#jestconfigjs)
 
 
 ### App-Android测试流程
 
 1. 配置全局 `adb` 环境变量
 
-2. 配置 `Hbuilder` 调试基座/自定义基座 `android_base.apk` 目录，参考 [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
+2. 配置 `Hbuilder` 调试基座/自定义基座 `android_base.apk` 目录，参考 [jest.config.js](./quick-start.md#jestconfigjs)
 
 3. 创建 `cli` 工程/现有 `cli` 工程
 切换到工程目录，安装依赖包 `adbkit`
@@ -104,9 +104,9 @@ npm run test:android
 npm install node-simctl --save-dev
 ```
 
-2. 配置模拟器id，参考 [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
+2. 配置模拟器id，参考 [jest.config.js](./quick-start.md#jestconfigjs)
 
-3. 配置 `Hbuilder` 调试基座/自定义基座 `Pandora_simulator.app` 目录，参考 [jest.config.js](collocation/auto/quick-start?id=jestconfigjs)
+3. 配置 `Hbuilder` 调试基座/自定义基座 `Pandora_simulator.app` 目录，参考 [jest.config.js](./quick-start.md#jestconfigjs)
 
 4. 编写测试代码，参考测试用例
 

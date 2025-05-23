@@ -1,6 +1,6 @@
 MediaQueryObserver 对象，用于监听页面 media query 状态的变化，如界面的宽高是不是在某个指定的范围内。
 
-### uni.createMediaQueryObserver([this])
+## uni.createMediaQueryObserver([this])
 创建并返回一个 ``MediaQueryObserver`` 对象实例。
 
 **this说明：**
@@ -9,18 +9,18 @@ MediaQueryObserver 对象，用于监听页面 media query 状态的变化，如
 
 **平台兼容性**
 
-|app|微信小程序|H5|支付宝小程序|qq小程序|百度小程序|抖音小程序|飞书小程序|360小程序|快应用|
-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|
-|2.8.12+，app-vue|基础库 2.11.1+|√|√|√|√|√|x|√|x|
+|App|HarmonyOS Next|微信小程序|H5|支付宝小程序|qq小程序|百度小程序|抖音小程序|飞书小程序|360小程序|快应用|元服务|
+|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-:|
+|2.8.12+，app-vue|HBuilderX 4.31|基础库 2.11.1+|√|√|√|√|√|x|√|x|x|
 
 注意：支付宝小程序、qq小程序、百度小程序、抖音小程序，暂不支持监听屏幕动态改变，即只执行一次媒体查询。
 
-### MediaQueryObserver 对象的方法列表
+## MediaQueryObserver 对象的方法列表
 
 >tips: 和 UI 相关的 api 在组件 mounted 后执行
 
 |方法|说明|
-|:-|:-|:-|
+|:-|:-|
 |MediaQueryObserver.observe(Object descriptor, function callback)|开始监听页面 media query 变化情况|
 |MediaQueryObserver.disconnect()|停止监听，回调函数将不再触发|
 
@@ -42,7 +42,7 @@ MediaQueryObserver 对象，用于监听页面 media query 状态的变化，如
 |:-|:-|:-|
 |matches|boolean|页面的当前状态是否满足所指定的 media query|
 
-### 代码示例
+## 代码示例
 
 以下示例代码，推荐使用HBuilderX，新建uni-app项目，可直接体验完整示例。
 
@@ -71,7 +71,7 @@ MediaQueryObserver 对象，用于监听页面 media query 状态的变化，如
         onLoad() {
 
         },
-        
+
         // 和 UI 相关的 api 在组件 mountd 后执行
         mounted() {
             this.testMediaQueryObserver()

@@ -1,5 +1,7 @@
 ## 小程序自定义组件支持
 
+> 
+
 `uni-app`在支持vue组件之外，也实现了对小程序自定义组件的兼容。
 
 小程序组件不是vue组件，并且每家小程序都有自己的组件规范，比如微信小程序的组件是wxml格式。
@@ -12,8 +14,8 @@
 
 |平台|支持情况|小程序组件存放目录|
 |---|---|---|
-|H5|支持微信小程序组件（2.4.7+）|wxcomponents|
-|App（不含nvue）|支持微信小程序组件|wxcomponents|
+|H5|vue2项目支持微信小程序组件（2.4.7+），vue3不支持|wxcomponents|
+|App（不含nvue）|vue2项目支持微信小程序组件，vue3不支持|wxcomponents|
 |微信小程序|支持微信小程序组件|wxcomponents|
 |支付宝小程序|支持支付宝小程序组件|mycomponents|
 |百度小程序|支持百度小程序组件|swancomponents|
@@ -462,4 +464,4 @@ export default {
 - `nvue`页面暂不支持wxs、sjs、filter.js
 - 各个`script`标签会分别被打包至对应支持平台，不需要额外写条件编译
 - 自`HBuilderX 2.2.5`开始，不推荐使用各个小程序自有的引入方式，推荐使用`script`标签引入
-- App和H5端，提供了wxs的升级版，更加强大，见下面的 [renderjs](/tutorial/renderjs.html) 章节
+- App和H5端，提供了wxs的升级版，更加强大，见下面的 [renderjs](/tutorial/renderjs.md) 章节

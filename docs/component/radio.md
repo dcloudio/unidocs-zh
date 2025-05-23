@@ -1,6 +1,8 @@
-#### radio-group
+## radio-group
 
 单项选择器，内部由多个 ``<radio>`` 组成。通过把多个`radio`包裹在一个`radio-group`下，实现这些`radio`的单选。
+
+<!-- UNIAPPCOMJSON.radio-group.compatibility -->
 
 **属性说明**
 
@@ -8,9 +10,15 @@
 |:-|:-|:-|:-|
 |@change|EventHandle||``<radio-group>`` 中的选中项发生变化时触发 change 事件，event.detail = {value: string}|
 
+
+
+<!-- UNIAPPCOMJSON.radio-group.reference -->
+
 #### radio
 
 单选项目。
+
+<!-- UNIAPPCOMJSON.radio.compatibility -->
 
 **属性说明**
 
@@ -26,8 +34,10 @@
 |activeBorderColor|Color||radio选中时的边框颜色|H5(3.99+)、App-Vue(3.99+)|
 |iconColor|Color|#ffffff|radio的图标颜色|H5(3.99+)、App-Vue(3.99+)|
 
+
+
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/radio/radio)
- 
+
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/component/radio/radio
@@ -115,3 +125,5 @@ export default {
 
 **扩展**
 - uni-ui提供了增强的uni-data-checkbox组件，基于[datacom规范](/component/datacom)，只需传入data数据，即可自动生成一组单选框，使用方式更简洁，并且支持[uni-forms](https://ext.dcloud.net.cn/plugin?id=2773)的表单验证。uni-data-checkbox组件详见[https://ext.dcloud.net.cn/plugin?id=3456](https://ext.dcloud.net.cn/plugin?id=3456)
+
+<!-- UNIAPPCOMJSON.radio-group.reference -->

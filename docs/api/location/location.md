@@ -1,5 +1,23 @@
-### uni.getLocation(OBJECT)
+## uni.getLocation(OBJECT)
 获取当前的地理位置、速度。
+
+::: warning 注意
+Web平台本API之前调用了腾讯地图的gcj02坐标免费转换接口，该接口从2024年7月18日起被腾讯逐步下线，导致老版本中本API无法使用。请立即升级到 `uni-app 4.24版`。
+
+升级后注意：
+1. cli项目需升级cli
+2. App平台 manifest中配置好自己的地图厂商key，在地图厂商的后台，填写正确包名和证书摘要。地图厂商的sdk会在运行时校验key、包名、证书的一致性
+5. Web平台 manifest中配置好自己的地图厂商key，使用web接口如涉及白名单，需确保自己的域名在地图厂商那里正确配置了域名白名单
+3. 确保在地图厂商那里配额足够
+4. 确保在地图厂商那里有周边服务的权限。否则无法获取周围地址
+
+如果运行在微信浏览器中，可以使用微信的jssdk的定位能力。这个是微信向腾讯地图申请的key，开发者无需配置自己的key。
+
+地图厂商的商业授权较贵，如需购买，请点击[获取优惠](https://ask.dcloud.net.cn/explore/map/)。
+
+:::
+
+<!-- UNIAPPAPIJSON.getLocation.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -63,7 +81,7 @@ uni.getLocation({
   - 国产安卓手机上，H5若无法定位，检查手机是否开通位置服务、GPS，ROM是否给该浏览器位置权限、浏览器是否对网页弹出请求给予定位的询问框。
   - `安卓手机` 在原生App内嵌H5时，无法定位需要原生App处理Webview。
   - `移动端浏览器` 普遍仅支持GPS定位，在GPS信号弱的地方可能定位失败。
-  - `PC 设备` 使用 Chrome 浏览器的时候，位置信息是连接谷歌服务器获取的，国内用户可能获取位置信息失败。
+  - `PC 设备` 使用 Chrome 浏览器的时候，位置信息是连接谷歌服务器获取的，国内用户可能获取位置信息失败，推荐使用Edge进行获取位置信息
   - 微信公众号可使用微信js sdk，[详见](https://ask.dcloud.net.cn/article/35380)
   - `2.9.9 版本以上`，优化 uni.getLocation 支持通过 IP 定位。默认通过 GPS 获取，如果获取失败，备选方案是通过 IP 定位获取，需填写三方地图服务平台的秘钥（key）。key配置：manifest.json ---> H5配置 ---> 定位和地图 ---> key。
 - `App 平台`
@@ -73,22 +91,41 @@ uni.getLocation({
   - 定位 和 map 是两个东西。通过 `getLocation` 得到位置坐标后，可以在任意map地图上展示，比如定位使用高德，地图使用 google 的 webview 版地图。如果坐标系不同时，注意转换坐标系。
   - 如果使用 `web-view` 加载地图，无需在manifest里配地图的sdk配置。
   - 持续定位方案：iOS端可以申请持续定位权限，[参考](https://ask.dcloud.net.cn/article/12569)。Android如果进程被杀，代码无法执行，可以在插件市场搜索[保活](https://ext.dcloud.net.cn/search?q=%E4%BF%9D%E6%B4%BB&cat1=5)相关原生语言插件避免App被系统杀死。即使使用了原生语言插件保活，也很容易被杀，此时可以使用[unipush](https://uniapp.dcloud.net.cn/unipush-v2.html) ，通过推送消息提示用户激活App
-  - `3.3.0 版本以上` 优化系统定位模块，可不使用三方定位SDK的进行高精度定位，具体参考：[系统定位](app/geolocation)。
+  - `3.3.0 版本以上` 优化系统定位模块，可不使用三方定位SDK的进行高精度定位，具体参考：[系统定位](/app/geolocation)。
   - 鸿蒙系统 不支持系统定位，需要配置三方sdk，比如高德，同时设置坐标系参数为 `type: 'gcj02'`
-  - 如需使用腾讯定位sdk，可下载[腾讯定位插件](https://ext.dcloud.net.cn/plugin?id=14569)，在插件中配置key打包后生效，腾讯定位是[ext api插件](../../api/extapi.md)引用到工程后，会覆盖uni.getLocation的实现，替换掉系统定位。
+  - Android/iOS平台使用腾讯定位SDK需到 [腾讯位置服务](https://lbs.qq.com/) 官网申请应用Key并配置：  
+    + `4.31 版本及以上` HBuilderX内置支持腾讯定位，在manifest.json勾选配置，详情参考[Geolocation定位](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html)  
+    + `4.31 版本之前` 可下载[腾讯定位插件](https://ext.dcloud.net.cn/plugin?id=14569)，在插件中配置key打包后生效，腾讯定位是[ext api插件](../../api/extapi.md)引用到工程后，会覆盖uni.getLocation的实现，替换掉系统定位。
 - `小程序平台`
   - api默认不返回详细地址中文描述。需要中文地址有2种方式：1、使用高德地图小程序sdk，在app和微信上都可以获得中文地址，[参考](http://ask.dcloud.net.cn/article/35070)。2、只考虑app，使用``plus.geolocation``也可以获取中文地址。manifest里的App SDK配置仅用于app，小程序无需在这里配置。
   - 可以通过用户授权API来判断用户是否给应用授予定位权限，[详见](https://uniapp.dcloud.io/api/other/authorize)
   - 在 `微信小程序` 中，当用户离开应用后，此接口无法调用，需要申请 [后台持续定位权限](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html) ，另外新版本中需要使用 [wx.onLocationChange](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html) 监听位置信息变化；当用户点击“显示在聊天顶部”时，此接口可继续调用。
+- `HarmonyOS Next平台`调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`，需自行在项目中配置权限。
 
-### uni.chooseLocation(OBJECT)
-打开地图选择位置。
+## uni.chooseLocation(OBJECT)
+打开地图选择位置。chooseLocation会使用项目配置的地图服务商来展示地图，地图服务商支持情况参考：[map组件](../../component/map.md)。
+
+::: warning 注意
+Web平台和App平台，本API之前调用了腾讯地图的gcj02坐标免费，该接口从2024年7月18日起被腾讯逐步下线，导致老版本中本API无法使用。请立即升级到 `uni-app 4.24版`。
+
+升级后注意：
+1. 如果是cli或离线打包，需要配套升级cli和离线sdk
+2. manifest中配置好自己的地图厂商key。web和app都需要。一般标准基座正常，自定义基座和打包后异常，都是这个原因
+3. 确保在地图厂商那里配额足够
+4. 确保在地图厂商那里有周边服务的权限。否则无法获取周围地址
+5. web平台确保自己的域名在地图厂商那里正确配置了域名白名单
+
+地图厂商的商业授权较贵，如需购买，请点击[获取优惠](https://ask.dcloud.net.cn/explore/map/)。
+
+:::
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|√|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|√|√|x|x|x|
+
+<!-- UNIAPPAPIJSON.chooseLocation.compatibility -->
 
 
 **OBJECT 参数说明**
@@ -98,13 +135,43 @@ uni.getLocation({
 |latitude|Number|否|目标地纬度|微信小程序（2.9.0+）、H5-Vue3（3.2.10+）|
 |longitude|Number|否|目标地经度|微信小程序（2.9.0+）、H5-Vue3（3.2.10+）|
 |keyword|String|否|搜索关键字，仅App平台支持||
+|useSecureNetwork|Boolea|否|是否通过安全网络调用地点搜索、逆地址解析，默认false||
 |success|Function|是|接口调用成功的回调函数，返回内容详见返回参数说明。||
 |fail|Function|否|接口调用失败的回调函数（获取定位失败、用户取消等情况下触发）||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）||
 
+**腾讯地图服务商说明**
+
+出于安全考虑，安卓、iOS端manifest.json内配置的key仅用来展示地图，uni.chooseLocation所依赖的地点搜索、逆地址解析功能需要通过uniCloud云对象[uni-map-co](https://ext.dcloud.net.cn/plugin?id=13872)来调用，开发者可以通过安全网络来保障服务端api不被他人盗用。
+
+鸿蒙平台由于暂不支持安全网络，所以chooseLocation依然使用manifest.json内配置的key来调用地点搜索、逆地址解析。
+
+默认情况下，uni.chooseLocation不会使用安全网络请求uni-map-co。如果需要使用安全网络请求uni-map-co，需按如下步骤操作：
+
+1. 项目关联uniCloud服务空间
+2. 参考[uni-map-co](https://ext.dcloud.net.cn/plugin?id=13872)文档导入uni-map-common插件，并配置好地图的key。
+3. 参考[安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)文档，将应用关联到服务空间。
+4. 在项目manifest.json中`安卓/iOS模块配置`中勾选安全网络模块。
+5. 修改uni-map-co入口文件`index.obj.js`内添加如下代码，拦截非法请求：
+
+  ```javascript
+  module.exports = {
+    _before: function() {
+      const clientInfo = this.getClientInfo()
+      const methodName = this.getMethodName()
+      const secretType = clientInfo.secretType
+      if(methodName === 'chooseLocation' && secretType !== 'both' && secretType !== 'request') {
+        throw new Error('Unauthorized client')
+      }
+    }
+  }
+  ```
+6. 上传uni-map-co云对象、uni-config-center公共模块、uni-map-common公共模块。
+7. 调用uni.chooseLocation时，将useSecureNetwork设置为true。
+
 **注意**
 - 因平台差异，如果SDK配置百度地图，需要设置 keyword，才能显示相关地点
-- [非 weex 编译模式](/collocation/manifest.html#app-plus)不支持百度地图
+- [非 weex 编译模式](/collocation/manifest.md#app-plus)不支持百度地图
 
 
 **success 返回参数说明**
@@ -139,15 +206,15 @@ uni.chooseLocation({
 - 若 `Android App端` 位置不准，见上文 uni.getLocation 的注意事项
 - 微信小程序在2023年10月17日之后，使用API需要配置[隐私协议](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)
 
-### 三方定位和地图服务收费说明
+## 三方定位和地图服务收费说明
 
 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 
-DCloud为开发者争取了福利，可优惠获取高德的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
+DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
 
 详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)
 
-### unicloud-city-select 城市选择组件
+## unicloud-city-select 城市选择组件
 
 若想要实现城市选择功能，可以使用 `unicloud-city-select` 城市选择组件。
 
@@ -158,3 +225,7 @@ DCloud为开发者争取了福利，可优惠获取高德的商业授权。如�
 > 下载地址：[https://ext.dcloud.net.cn/plugin?name=unicloud-city-select](https://ext.dcloud.net.cn/plugin?name=unicloud-city-select)
 
 > 文档地址：[https://doc.dcloud.net.cn/uniCloud/unicloud-city-select.html](https://doc.dcloud.net.cn/uniCloud/unicloud-city-select.html)
+
+## 【福利】高德拉新活动
+
+一键注册高德企业开发者，最高可获取210元奖励金，详见[https://ask.dcloud.net.cn/article/41279](https://ask.dcloud.net.cn/article/41279)

@@ -2,7 +2,7 @@
 
 
 > 已经了解 Vue2，只想了解 Vue3 新功能可以参阅[vue3新功能](https://v3.cn.vuejs.org/guide/migration/introduction.html#%E6%A6%82%E8%A7%88)！
->  
+>
 > 已经有 Vue2 项目，需要适配 Vue3 的可参阅[vue2 项目迁移 vue3](https://uniapp.dcloud.io/tutorial/migration-to-vue3)！
 
 
@@ -57,18 +57,18 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 - 以前一个 `html` 大节点，里面有 `script` 和 `style` 节点；
 
 ```html
-	<!DOCTYPE html>  
-	<html>  
-		<head>  
-			<meta charset="utf-8" />  
-			<title></title>  
-			<script type="text/javascript">  
-			</script>  
-			<style type="text/css">  
-			</style>  
-		</head>  
-		<body>  
-		</body>  
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8" />
+			<title></title>
+			<script type="text/javascript">
+			</script>
+			<style type="text/css">
+			</style>
+		</head>
+		<body>
+		</body>
 	</html>
 ```
 
@@ -76,16 +76,16 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 - 现在 `template` 是一级节点，用于写tag组件， `script` 和 `style` 是并列的一级节点，也就是有3个一级节点。这个叫[vue单文件组件规范sfc](vue3-components.md)。
 
 ```html
-	<template>  
-		<view>  
-		注意必须有一个view，且只能有一个根view。所有内容写在这个view下面。  
-		</view>  
-	</template>  
-	<script>  
-		export default {  
-		}  
-	</script>  
-	<style>  
+	<template>
+		<view>
+		注意必须有一个view，且只能有一个根view。所有内容写在这个view下面。
+		</view>
+	</template>
+	<script>
+		export default {
+		}
+	</script>
+	<style>
 	</style>
 ```
 
@@ -95,7 +95,7 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 - 以前通过script src、link href引入外部的js和css；
 
 ```html
-	<script src="js/jquery-1.10.2.js" type="text/javascript"></script>  
+	<script src="js/jquery-1.10.2.js" type="text/javascript"></script>
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
 ```
 
@@ -108,20 +108,20 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 
 
 ```html
-	<script>  
-		var util = require('../../../common/util.js');  //require这个js模块  
-		var formatedPlayTime = util.formatTime(playTime); //调用js模块的方法  
+	<script>
+		var util = require('../../../common/util.js');  //require这个js模块
+		var formatedPlayTime = util.formatTime(playTime); //调用js模块的方法
 	</script>
 ```
 
 而在这个 `util.js` 里，要把之前的 `function` 封装为模块（module）的方法并导出（exports）。只有被导出的方法和属性才能被外部调用，不导出的属于模块内部函数和变量。这是es6的模块规范。
 
 ```js
-	function formatTime(time) {  
-		return time;//这里没写逻辑  
-	}  
-	module.exports = {  
-		formatTime: formatTime  
+	function formatTime(time) {
+		return time;//这里没写逻辑
+	}
+	module.exports = {
+		formatTime: formatTime
 	}
 ```
 
@@ -129,21 +129,21 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 当然还有一些高级的用法，比如在导出时可以重命名
 
 ```js
-	// 直接使用js模块的属性。在hello uni-app有示例 
-	var dateUtils = require('../../../common/util.js').dateUtils; 
+	// 直接使用js模块的属性。在hello uni-app有示例
+	var dateUtils = require('../../../common/util.js').dateUtils;
 	// 将js导入并重命名为echarts，然后使用echarts.来继续执行方法。在hello uni-app有示例
-	import * as echarts from '/components/echarts/echarts.simple.min.js'; 
+	import * as echarts from '/components/echarts/echarts.simple.min.js';
 ```
 
 **css外部文件导入**。全局样式，在根目录下的 `app.vue` 里写入，每个页面都会加载 `app.vue` 里的样式。
 
 
 ```html
-	<style>  
-		@import "./common/uni.css";  
-		.uni-hello-text{  
-			color:#7A7E83;  
-		}  
+	<style>
+		@import "./common/uni.css";
+		.uni-hello-text{
+			color:#7A7E83;
+		}
 	</style>
 ```
 
@@ -166,12 +166,12 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 
 - 以前script里随便写js变量和function
 ```html
-<script type="text/javascript">  
-	var a; 
-	function funa () {  
-		  
+<script type="text/javascript">
+	var a;
+	function funa () {
+
 	}
-</script> 
+</script>
 ```
 
 - 现在script里默认有export default，在里面写data、事件和method
@@ -183,33 +183,33 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 	* 模板里要调用的方法，都需要写在`methods`下面。每个方法也需要用逗号分隔。不需要再使用`function`声明，只要写在`methods`下的函数，都可以在template里调用。同样，HBuilderX里敲`vmethods`代码块，也可以生成相应结构。
 
 ```html
-<template>  
-		<view>  
+<template>
+		<view>
 			<text>{{textvalue}}</text><!-- 这里演示了组件值的绑定 -->
 			<button :type="buttontype" @click="changetextvalue()">修改为789</button><!-- 这里演示了属性和事件的绑定 -->
-		</view>  
-	</template> 
+		</view>
+	</template>
 <script>
 	var globalvar = 1
 	function globalfun(){}
-	export default {  
-		data() {  
-			return {  
-				textvalue:"123",  
-				buttontype:"primary"  
-			};  
-		},  
-		onLoad() {  
+	export default {
+		data() {
+			return {
+				textvalue:"123",
+				buttontype:"primary"
+			};
+		},
+		onLoad() {
 			globalvar = 2
 			globalfun()
 			this.textvalue="456"//这里修改textvalue的值
-		},  
-		methods: {  
-			changetextvalue() {  
+		},
+		methods: {
+			changetextvalue() {
 				this.textvalue="789"//这里修改textvalue的值
-			}  
-		}  
-	}  
+			}
+		}
+	}
 </script>
 ```
 
@@ -218,22 +218,22 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 - 以前的 DOM 操作，如果你想改变某个 DOM 元素的显示内容，比如一个view的显示文字：给view设id，然后js里通过选择器获取 DOM 元素，进一步通过js进行赋值操作，修改 DOM 元素的属性或值。
 
 ```html
-	<html>  
-		<head>  
-			<script type="text/javascript">  
-				document.addEventListener("DOMContentLoaded",function () {  
-					document.getElementById("spana").innerText="456"  
-				})  
-				function changetextvalue () {  
-					document.getElementById("spana").innerText="789"  
-				}  
-			</script>  
-		</head>  
-		<body>  
-			<span id="spana">123</span>  
-			<button type="button" onclick="changetextvalue()">修改为789</button>  
-		</body>  
-	</html>  
+	<html>
+		<head>
+			<script type="text/javascript">
+				document.addEventListener("DOMContentLoaded",function () {
+					document.getElementById("spana").innerText="456"
+				})
+				function changetextvalue () {
+					document.getElementById("spana").innerText="789"
+				}
+			</script>
+		</head>
+		<body>
+			<span id="spana">123</span>
+			<button type="button" onclick="changetextvalue()">修改为789</button>
+		</body>
+	</html>
 ```
 
 
@@ -243,29 +243,29 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 
 
 ```html
-	<template>  
-		<view>  
-			<text>{{textvalue}}</text><!-- 这里演示了组件值的绑定 -->  
-			<button :type="buttontype" @click="changetextvalue()">修改为789</button><!-- 这里演示了属性和事件的绑定 -->  
-		</view>  
-	</template>  
-	<script>  
-		export default {  
-			data() {  
-				return {  
-					textvalue:"123",  
-					buttontype:"primary"  
-				};  
-			},  
-			onLoad() {  
-				this.textvalue="456"//这里修改textvalue的值，其实123都来不及显示就变成了456  
-			},  
-			methods: {  
-				changetextvalue() {  
-					this.textvalue="789"//这里修改textvalue的值，页面自动刷新为789  
-				}  
-			}  
-		}  
+	<template>
+		<view>
+			<text>{{textvalue}}</text><!-- 这里演示了组件值的绑定 -->
+			<button :type="buttontype" @click="changetextvalue()">修改为789</button><!-- 这里演示了属性和事件的绑定 -->
+		</view>
+	</template>
+	<script>
+		export default {
+			data() {
+				return {
+					textvalue:"123",
+					buttontype:"primary"
+				};
+			},
+			onLoad() {
+				this.textvalue="456"//这里修改textvalue的值，其实123都来不及显示就变成了456
+			},
+			methods: {
+				changetextvalue() {
+					this.textvalue="789"//这里修改textvalue的值，页面自动刷新为789
+				}
+			}
+		}
 	</script>
 ```
 
@@ -279,8 +279,8 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 
 相比Web平台， Vue.js 在 `uni-app` 中使用差异主要集中在两个方面：
 
-- 新增：`uni-app` 除了支持 Vue 实例的组件生命周期，还拥有[应用生命周期](/collocation/App.html#applifecycle)及[页面的生命周期](/tutorial/page.html#lifecycle)。
-- 受限：相比 Web 平台，在小程序和 App 端部分功能支持不完善，具体见[兼容性列表](/vue3-api)。
+- 新增：`uni-app` 除了支持 Vue 实例的组件生命周期，还拥有[应用生命周期](/collocation/App.md#applifecycle)及[页面的生命周期](/tutorial/page.md#lifecycle)。
+- 受限：相比 Web 平台，在小程序和 App 端部分功能支持不完善，具体见[兼容性列表](./vue3-api)。
 
 [uni-app 项目支持 vue 3.0介绍，及升级指南](https://ask.dcloud.net.cn/article/37834)
 
@@ -328,7 +328,7 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 	</script>
 ```
 
-{{msg}}里的内容将会被替代为对应数据对象上msg的值。无论何时，绑定的数据对象上msg发生了改变，插值处的内容都会更新。
+`{{ msg }}`里的内容将会被替代为对应数据对象上msg的值。无论何时，绑定的数据对象上msg发生了改变，插值处的内容都会更新。
 
 
 #### 使用 JavaScript 表达式
@@ -442,7 +442,7 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 > - `JSON`
 > - `Intl`
 > - `BigInt`
-> 
+>
 > 你不应该在模板表达式中试图访问用户定义的全局变量。
 
 
@@ -465,7 +465,7 @@ vue 是单页面应用，使页面局部刷新，不用每次跳转页面都要�
 	<image v-bind:src="imgUrl"></image>
 	<!-- 缩写 -->
 	<image :src="imgUrl"></image>
-	
+
 	<button v-bind:disabled="isButtonDisabled">Button</button>
 ```
 
@@ -480,15 +480,9 @@ v-on 指令，它用于监听 `DOM` 事件。v-on缩写为‘ @ ’，下文简�
 
 ```html
 	<!-- 完整语法 -->
-	<view v-on:click="doSomething">点击</view>	
+	<view v-on:click="doSomething">点击</view>
 	<!-- 缩写 -->
 	<view @click="doSomething">点击</view>
-```
-**注意：`uni-app x` 中函数 `event` 参数需要显式指定类型**
-
-```html
-<view @click="(e: any) => foo(e)">event must has type</view>
-<view @click="foo($event as MouseEvent)">event must has type</view>
 ```
 
 #### v-once
@@ -508,7 +502,6 @@ v-on 指令，它用于监听 `DOM` 事件。v-on缩写为‘ @ ’，下文简�
 		<text>{{msg}}</text>
 	</view>
 ```
-**注意：`uni-app x` 暂不支持**
 
 #### v-html
 
@@ -537,8 +530,6 @@ v-on 指令，它用于监听 `DOM` 事件。v-on缩写为‘ @ ’，下文简�
 		}
 	</script>
 ```
-
-**注意：`uni-app x` 暂不支持**
 
 ## Data 选项
 
@@ -1069,7 +1060,7 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 - 有相同父元素的子元素必须有独特的 key。重复的 key 会造成渲染错误。
 
 > 不要使用对象或数组之类的非基本类型值作为 v-for 的 key。请用字符串或数值类型的值。
-> 
+>
 > 如不提供 :key，会报一个 `warning`， 如果明确知道该列表是静态，或者不必关注其顺序，可以选择忽略。
 
 示例：
@@ -1108,8 +1099,6 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 
 ### 注意事项
 
-- 在H5平台 使用 v-for 循环整数时和其他平台存在差异，如 `v-for="(item, index) in 10"` 中，在H5平台 item 从 1 开始，其他平台 item 从 0 开始，可使用第二个参数 index 来保持一致。
-- 在非H5平台 循环对象时不支持第三个参数，如 `v-for="(value, name, index) in object"` 中，index 参数是不支持的。
 - 小程序端数据为差量更新方式，由于小程序不支持删除对象属性，使用的设置值为 null 的方式替代，导致遍历时可能出现不符合预期的情况，需要自行过滤一下值为 null 的数据（[相关反馈](https://ask.dcloud.net.cn/question/103269)）。
 
 
@@ -1351,7 +1340,6 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 
 
 **注意**
-- `uni-app x` 只支持 `stop` 和 `once`。
 - 为兼容各端，事件需使用 **@** 的方式绑定，请勿使用小程序端的 `bind` 和 `catch` 进行事件绑定；也不能在 JS 中使用`event.preventDefault()`和`event.stopPropagation()`方法。
 - 若需要禁止蒙版下的页面滚动，可使用 `@touchmove.stop.prevent="moveHandle"`，`moveHandle` 可以用来处理 `touchmove` 的事件，也可以是一个空函数。
 
@@ -1411,7 +1399,7 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 
 > v-model 会忽略所有表单元素的 `value`、`checked`、`selected` attribute 的初始值而总是将 Vue 实例的数据作为数据来源。你应该通过 JavaScript 在组件的 data 选项中声明初始值。
 
-在下面的示例中，输入框通过`v-model`绑定了`message`，用户在输入框里输入内容时，这个内容会实施赋值给`message`。当然在代码里为`message`赋值也会实时同步到界面上input里。这就是双向绑定。
+在下面的示例中，输入框通过`v-model`绑定了`message`，用户在输入框里输入内容时，这个内容会实时赋值给`message`。当然在代码里为`message`赋值也会实时同步到界面上input里。这就是双向绑定。
 
 ```html
 	<template>
@@ -1531,7 +1519,7 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 每一个计算属性都包含一个 `getter` 函数和一个 `setter`函数 ，默认是利用 `getter` 函数来读取。所有 `getter` 和 `setter` 函数的 `this` 上下文自动地绑定为 Vue 实例。
 
 
-#### 计算属性的 getter 
+#### 计算属性的 getter
 
 
 模板内的表达式非常便利，但是设计它们的初衷是用于简单运算的。在模板中放入太多的逻辑会让模板过重且难以维护。例如，有一个嵌套数组对象：
@@ -1861,7 +1849,6 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 		}
 	</script>
 ```
-**注意：`uni-app x` 暂不支持**
 
 #### 监听对象中单个属性
 
@@ -1886,8 +1873,6 @@ v-for 指令可以实现基于一个数组来渲染一个列表。
 		}
 	}
 ```
-
-**注意：uni-app x 暂不支持**
 
 ### 计算属性 vs 侦听属性
 

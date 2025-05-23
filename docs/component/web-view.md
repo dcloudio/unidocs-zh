@@ -4,6 +4,8 @@
 
 > 各小程序平台，web-view 加载的 url 需要在后台配置域名白名单，包括内部再次 iframe 内嵌的其他 url 。
 
+<!-- UNIAPPCOMJSON.web-view.compatibility -->
+
 **属性说明**
 
 |属性名|类型|说明|平台差异说明|
@@ -11,13 +13,14 @@
 |src|String|webview 指向网页的链接|&nbsp;|
 |allow|String|用于为 [iframe](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe) 指定其[特征策略](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/策略特征)|H5|
 |sandbox|String|该属性对呈现在 [iframe](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe) 框架中的内容启用一些额外的限制条件。|H5|
-|fullscreen|Boolean|是否铺满整个页面，默认值：`true`。|H5 (HBuilder X 3.5.4+)|
+|fullscreen|Boolean|是否铺满整个页面，默认值：`true`。|H5 (HBuilder X 3.5.4+)、App-HarmonyOS|
 |webview-styles|{[k:string]:string&#124;number}|webview 的样式|App-vue|
 |update-title|Boolean|是否自动更新当前页面标题。默认值：`true`|App-vue (HBuilder X 3.3.8+)|
 |@message|EventHandler|网页向应用 `postMessage` 时，会在特定时机（后退、组件销毁、分享）触发并收到消息。|H5 暂不支持（可以直接使用 [window.postMessage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage)）|
 |@onPostMessage|EventHandler|网页向应用实时 `postMessage`|App-nvue|
 |@load|EventHandler|网页加载成功时候触发此事件。|微信小程序、支付宝小程序、抖音小程序、QQ小程序|
 |@error|EventHandler|网页加载失败的时候触发此事件。|微信小程序、支付宝小程序、抖音小程序、QQ小程序|
+
 
 **注意**
 - `update-title` 仅支持 `App-vue` 。`小程序` 恒为 `true`，`H5、nvue` 恒为 `false`
@@ -77,7 +80,7 @@
 - 小程序仅支持加载网络网页，不支持本地html
 - 补充说明：app-vue下web-view组件不支持自定义样式，而v-show的本质是改变组件的样式。即组件支持v-if而不是支持v-show。
 - 小程序端 web-view 组件一定有原生导航栏，下面一定是全屏的 web-view 组件，navigationStyle: custom 对 web-view 组件无效。
-- App 端使用 uni.web-view.js 的最低版为 [uni.webview.1.5.4.js](https://gitee.com/dcloud/uni-app/raw/dev/dist/uni.webview.1.5.4.js)
+- App 端使用 uni.web-view.js 的最低版为 [uni.webview.1.5.4.js](https://gitcode.net/dcloud/uni-app/-/raw/dev/dist/uni.webview.1.5.4.js)
 - App 平台同时支持网络网页和本地网页，但本地网页及相关资源（js、css等文件）必须放在 `uni-app 项目根目录->hybrid->html` 文件夹下或者 `static` 目录下，如下为一个加载本地网页的`uni-app`项目文件目录示例：
 - nvue `web-view` 必须指定样式宽高
 - App 网页向应用 `postMessage` 为实时消息
@@ -219,7 +222,7 @@
       } else if (/toutiaomicroapp/i.test(userAgent)) {
         // 头条小程序 JS-SDK 如果不需要兼容头条小程序，则无需引用此 JS 文件。
         document.write(
-          '<script type="text/javascript" src="https://s3.pstatp.com/toutiao/tmajssdk/jssdk-1.0.1.js"><\/script>');
+          '<script type="text/javascript" src="https://lf1-cdn-tos.bytegoofy.com/goofy/developer/jssdk/jssdk-1.2.0.js"><\/script>');
       } else if (/swan/i.test(userAgent)) {
         // 百度小程序 JS-SDK 如果不需要兼容百度小程序，则无需引用此 JS 文件。
         document.write(
@@ -234,8 +237,8 @@
       }
     </script>
     <!-- uni 的 SDK -->
-    <!-- 需要把 uni.webview.1.5.4.js 下载到自己的服务器 -->
-    <script type="text/javascript" src="https://unpkg.com/@dcloudio/uni-webview-js@0.0.3/index.js"></script>
+    <!-- 需要把 uni.webview.1.5.6.js 下载到自己的服务器 -->
+    <script type="text/javascript" src="https://gitcode.net/dcloud/uni-app/-/raw/dev/dist/uni.webview.1.5.6.js"></script>
     <script type="text/javascript">
       // 待触发 `UniAppJSBridgeReady` 事件后，即可调用 uni 的 API。
       document.addEventListener('UniAppJSBridgeReady', function() {
@@ -292,6 +295,7 @@
 
 
 ## **App端web-view的扩展**
+
 App端的webview是非常强大的，可以更灵活的控制和拥有更丰富的API。
 
 每个vue页面，其实都是一个webview，而vue页面里的web-view组件，其实是webview里的一个子webview。这个子webview被append到父webview上。
@@ -382,7 +386,7 @@ web-view组件在App和小程序中层级较高，如需要在vue页面中写代
 - `<web-view>` 组件默认铺满全屏并且层级高于前端组件。App端想调节大小或在其上覆盖内容需使用plus规范，H5端可以改为直接使用 iframe。
 - `<web-view>` 组件所在窗口的标题，跟随页面的 `<title>` 值的变化而变化（不含H5端）。
 - App-vue的`web-view`加载的html页面可以运行plus的api，但注意如果该页面调用了plus.key的API监听了back按键（或使用mui的封装），会造成back监听冲突。需要该html页面移除对back的监听。或按照上面的示例代码禁止网页使用plus对象。app-nvue页面的`web-view`组件不能运行plus API。
-- `uni.webview.js` 最新版地址：[https://gitee.com/dcloud/uni-app/raw/dev/dist/uni.webview.1.5.4.js](https://gitee.com/dcloud/uni-app/raw/dev/dist/uni.webview.1.5.4.js)
+- `uni.webview.js` 最新版地址：[https://gitcode.net/dcloud/uni-app/-/raw/dev/dist/uni.webview.1.5.6.js](https://gitcode.net/dcloud/uni-app/-/raw/dev/dist/uni.webview.1.5.6.js)
 - 小程序平台，个人类型与海外类型的小程序使用 `web-view` 组件，提交审核时注意微信等平台是否允许使用
 - 小程序平台， `src` 指向的链接需登录小程序管理后台配置域名白名单。`App`和`H5` 无此限制。
 
@@ -402,8 +406,8 @@ uni.webView.navigateTo 示例，注意uni sdk放到body下面
     <!-- built files will be auto injected -->
   </body>
   <!-- uni 的 SDK -->
-  <!-- 需要把 uni.webview.1.5.4.js 下载到自己的服务器 -->
-  <script type="text/javascript" src="https://unpkg.com/@dcloudio/uni-webview-js@0.0.3/index.js"></script>
+  <!-- 需要把 uni.webview.1.5.6.js 下载到自己的服务器 -->
+  <script type="text/javascript" src="https://gitcode.net/dcloud/uni-app/-/raw/dev/dist/uni.webview.1.5.6.js"></script>
   <script>
     document.addEventListener('UniAppJSBridgeReady', function() {
       uni.webView.getEnv(function(res) {
@@ -435,12 +439,17 @@ uni.webView.navigateTo 示例，注意uni sdk放到body下面
 			},
 			// 调用 webview 内部逻辑
 			evalJs: function() {
-				this.$refs.webview.evalJs("document.body.style.background ='#00FF00'");
+				this.$refs.webview.evalJS("document.body.style.background ='#00FF00'");
 			}
 		}
 	}
 </script>
 ```
+
+### HarmonyOS 使用问题
+
+`HarmonyOS` 不支持 `plus`，但可以直接使用行内样式或者 class 控制显示效果。如果需要使用 `back`、`evalJS` 等方法，请使用 [`uni.createWebviewContext`](https://uniapp.dcloud.net.cn/api/create-webview-context.html)
+
 
 ### FAQ
 
@@ -452,3 +461,5 @@ A：加载的 HTML 中是有 5+ 环境的，在 plusready 后调用即可。参�
 
 Q: web-view 加载 uni-app H5，内部跳转冲突如何解决
 A：使用 uni.webView.navigateTo...
+
+<!-- UNIAPPCOMJSON.web-view.reference -->

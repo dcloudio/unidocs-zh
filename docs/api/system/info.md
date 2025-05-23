@@ -1,4 +1,6 @@
-### 系统信息的概念
+## 系统信息的概念
+
+> 本 API 在微信小程序上使用会产生警告，请使用 uni.getSystemSetting、uni.getAppAuthorizeSetting、uni.getDeviceInfo、uni.getWindowInfo、uni.getAppBaseInfo 代替
 
 uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的2个API获取系统信息。
 
@@ -6,14 +8,16 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 
 按照运行环境层级排序，从底层向上，uni-app有6个概念：
 - `device`：运行应用的设备，如iphone、huawei
-- `os`：设备的操作系统，如 ios、android、windows、mac、linux
+- `os`：设备的操作系统，如 ios、android、windows、mac、linux、harmonyos（OpenHarmony）
 - `rom`：基于操作系统的定制，Android系统特有概念，如miui、鸿蒙
 - `host`：运行应用的宿主程序，即OS和应用之间的运行环境，如浏览器、微信等小程序宿主、集成uniMPSDK的App。uni-app直接开发的app没有host概念
 - `uni`：uni-app框架相关的信息，如uni-app框架的编译器版本、运行时版本
 - `app`：开发者的应用相关的信息，如应用名称、版本
 
-### uni.getSystemInfo(OBJECT)
+## uni.getSystemInfo(OBJECT)
 异步获取系统信息
+
+<!-- UNIAPPAPIJSON.getSystemInfo.compatibility -->
 
 **OBJECT 参数说明：**
 
@@ -23,7 +27,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-#### success 返回参数说明
+### success 返回参数说明
 
 |参数分类	|参数|说明			|App平台值域		|Web平台值域		|小程序平台值域	|备注	|uni框架最低版本要求	|
 |:-			|:-|:-|:-|:-|:-|:-|:-|
@@ -33,7 +37,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |			|deviceModel		|设备型号		||部分设备无法获取	|||uni-app 3.4.10+|
 |			|deviceOrientation		|设备方向		|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`|`竖屏 portrait`、`横屏 landscape`。仅微信百度小程序支持||uni-app 3.4.13+|
 |			|devicePixelRatio		|设备像素比		||	|||uni-app 3.4.13+|
-|os		|osName|系统名称|ios、android|ios、android、windows、macos、linux|ios、android、windows、macos||uni-app 3.4.10+|
+|os		|osName|系统名称|ios、android|ios、android、windows、macos、linux、harmonyos|ios、android、windows、macos||uni-app 3.4.10+|
 |			|osVersion			|操作系统版本。如 ios 版本，android 版本|||||uni-app 3.4.10+|
 |			|osLanguage			|操作系统语言[详见](#tips)|Android仅支持主语言+地区：`zh-CN 中文简体`、iOS支持主语言+次语言+地区`zh-Hans-CN 中文简体` |与浏览器语言一致	|不支持	|	|uni-app 3.4.10+|
 |			|osTheme			|操作系统主题			|light、dark。iOS平台只有将应用主题设置为跟随系统时才能获取到系统的主题|不支持	|不支持	||uni-app 3.4.10+|
@@ -45,17 +49,18 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |host	|hostName			|小程序宿主或uniMPSDK的集成宿主名称，如：`WeChat`、`FeiShu`|仅 UniMPSDK 支持	|不支持|[详见](#hostname)|微信小程序真机运行才有真值|uni-app 3.4.10+|
 |			|hostVersion		|宿主版本。如：微信版本号|仅 UniMPSDK 支持	|不支持|小程序宿主版本||uni-app 3.4.10+|
 |			|hostLanguage		|宿主语言|仅 UniMPSDK 支持	|不支持|小程序宿主语言||uni-app 3.4.10+|
-|			|hostTheme			|宿主主题|`light`、`dark`。仅 UniMPSDK 支持	|不支持|`light`、`dark`。前提是微信小程序全局配置"darkmode":true时才能获取||uni-app 3.4.10+|
+|			|hostTheme			|宿主主题|`light`、`dark`。仅 UniMPSDK 支持	|`light`、`dark`|`light`、`dark`。前提是微信小程序全局配置"darkmode":true时才能获取||uni-app 3.4.10+|
 |			|hostFontSizeSetting	|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|不支持|不支持|微信小程序、支付宝小程序、百度小程序、QQ小程序、抖音小程序(2.53.0+)||uni-app 3.4.13+|
 |			|hostPackageName	|小程序宿主包名|仅 UniMPSDK 支持	|不支持|不支持||uni-app 3.4.10+|
 |			|hostSDKVersion	|uni小程序SDK版本、小程序客户端基础库版本|仅 UniMPSDK 支持	|不支持|||uni-app 3.4.13+|
 |uni-app框架	|uniPlatform		|uni-app 运行平台，与条件编译平台相同。[详见](#uniplatform) |app|`web`或`h5`|各家小程序，如`mp-weixin`||uni-app 3.4.10+|
 |			|uniCompileVersion	|uni 编译器版本号。[详见](#uniplatform)|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||uni-app 3.4.10+|
+|			|uniCompilerVersion	|uni 编译器版本号。[详见](#uniplatform)|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||uni-app +|
 |			|uniRuntimeVersion	|uni 运行时版本。[详见](#uniplatform)|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等|`3.4.10`、`3.2.9` 等||uni-app 3.4.10+|
 |app	|appId|`manifest` 中应用appid，即DCloud appid。			|||||uni-app 3.4.10+|
 |			|appName			|`manifest` 中应用名称	||||和`抖音小程序`字段冲突，`抖音小程序`原字段与`hostName`一致|uni-app 3.4.10+|
-|			|appVersion			|`manifest` 中应用版本名称。		|||||uni-app 3.4.10+|
-|			|appVersionCode		|`manifest` 中应用版本名号。		|||||uni-app 3.4.10+|
+|			|appVersion			|`manifest` 中应用版本名称。(标准基座模式下获取到的是基座的应用版本名称)		|||||uni-app 3.4.10+|
+|			|appVersionCode		|`manifest` 中应用版本号。(标准基座模式下获取到的是基座的应用版本号)		|||||uni-app 3.4.10+|
 |			|appWgtVersion		|应用资源（wgt）的版本名称。		|||||uni-app 3.4.15+|
 |			|appLanguage		|应用设置的语言|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`|`en`、`zh-Hans`、`zh-Hant`、`fr`、`es`||uni-app 3.4.13+|
 |其他	 |ua| userAgent标识	|||不支持		||uni-app 3.4.10+|
@@ -65,11 +70,13 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |			|windowHeight		|可使用窗口高度	|||||		|
 |			|windowTop			|可使用窗口的顶部位置	|||||		|
 |			|windowBottom		|可使用窗口的底部位置	|||||		|
-|			|statusBarHeight	|手机状态栏的高度||||||		
-|			|safeArea			|在竖屏正方向下的安全区域。由于此属性理解和使用比较困难，更推荐使用 safeAreaInsets 属性。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、抖音、飞书、支付宝（iOS真机）、快手、QQ小程序、华为快应用|||	
+|			|statusBarHeight	|手机状态栏的高度||||||
+|			|safeArea			|在竖屏正方向下的安全区域。由于此属性理解和使用比较困难，更推荐使用 safeAreaInsets 属性。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、抖音、飞书、支付宝（iOS真机）、快手、QQ小程序、华为快应用|||
 |			|safeAreaInsets		|在竖屏正方向下的安全区域插入位置。与小程序定义的 safeArea 用途相同，但是规范参考 iOS 平台的 [safeAreaInsets](https://developer.apple.com/documentation/uikit/uiview/2891103-safeareainsets) 更利于理解和使用。[详见](#safearea)|||微信、百度（开发者工具暂不支持，真机有效）、抖音、飞书、支付宝小程序（iOS真机）、华为快应用||uni-app 2.5.3+|
 
-#### 某些小程序特殊的返回参数
+
+
+### 某些小程序特殊的返回参数
 
 |参数|说明|平台差异说明|
 |:-|:-|:-|
@@ -86,13 +93,14 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |notificationAlertAuthorized	|	允许微信通知带有提醒的开关（仅 iOS 有效）	|微信小程序|
 |notificationBadgeAuthorized	|	允许微信通知带有标记的开关（仅 iOS 有效）	|微信小程序|
 |notificationSoundAuthorized	|	允许微信通知带有声音的开关（仅 iOS 有效）	|微信小程序|
-|bluetoothEnabled	|	蓝牙的系统开关	|微信小程序|
-|locationEnabled	|	地理位置的系统开关	|微信小程序|
-|wifiEnabled	|	Wi-Fi 的系统开关	|微信小程序|
+|bluetoothEnabled	|	蓝牙的系统开关	|微信小程序、鸿蒙元服务|
+|locationEnabled	|	地理位置的系统开关	|微信小程序、鸿蒙元服务|
+|wifiEnabled	|	Wi-Fi 的系统开关	|微信小程序、鸿蒙元服务|
 |cacheLocation|上一次缓存的位置信息|百度小程序(安卓端最低基础库版本 3.40.4 ；iOS 最低支持版本 3.70.2)|
 |storage|设备磁盘容量|支付宝小程序|
+|OSApiVersion|系统 Api 版本|鸿蒙元服务|
 
-#### 不推荐使用的返回参数，仅为向下兼容保留
+### 不推荐使用的返回参数，仅为向下兼容保留
 
 |参数|说明|平台差异说明|
 |:-|:-|:-|
@@ -111,7 +119,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序、抖音小程序(2.53.0+)|
 
 
-#### uniPlatform 返回值说明 @uniplatform
+### uniPlatform 返回值说明 @uniplatform
 
 |值|生效条件|
 |:-|:-|
@@ -126,6 +134,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |mp-kuaishou|快手小程序|
 |mp-jd|京东小程序|
 |mp-360|360小程序|
+|mp-harmony|鸿蒙元服务|
 |quickapp-webview|快应用通用(包含联盟、华为)|
 |quickapp-webview-union|快应用联盟|
 |quickapp-webview-huawei|快应用华为|
@@ -139,7 +148,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 - App离线打包，使用了不匹配的离线SDK
 - App wgt升级，即手机上安装的App是老版的`uniRuntimeVersion`，wgt的新版使用了不同版本的HBuilder或uni-app cli版本，并且实施了应用资源升级
 
-#### romName 返回值说明 @romname
+### romName 返回值说明 @romname
 
 |值|解释|
 |:-|:-|
@@ -152,9 +161,13 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |FLymeOS|魅族|
 |SmartisanOS|锤子|
 
-注意：不同rom的版本号规则不同，比如`MIUI`版本号是`V130`，而`HarmonyOS`的版本号是`2.0.0`
+注意：
 
-#### hostName 返回值说明 @hostname
+- 不同rom的版本号规则不同，比如`MIUI`版本号是`V130`，而`HarmonyOS`的版本号是`2.0.0`
+- Harmony OS Next目前没有返回romName，此属性对应鸿蒙 deviceInfo 的 distributionOSName，目前Harmony OS Next deviceInfo 的 distributionOSName 属性为空字符串。
+
+
+### hostName 返回值说明 @hostname
 
 |值|解释|
 |:-|:-|
@@ -171,8 +184,9 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |[抖音宿主平台枚举值列表](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info/#appname-%E8%AF%B4%E6%98%8E)|抖音系列|
 |qq|QQ|
 |KUAISHOU|快手|
+|HarmonyOS|鸿蒙|
 
-#### safeArea 返回值说明 @safearea
+### safeArea 返回值说明 @safearea
 
 |参数	|类型	|说明		|
 |:-		|:-			|:-			|
@@ -192,7 +206,7 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |top	|Number	|安全区顶部插入位置			|
 |bottom	|Number	|安全区域底部插入位置			|
 
-#### language 返回值说明
+### language 返回值说明
 
 language的国际规范是`BCP47规范`，分为三段，主语言-次语言-地区。例如`zh-Hans-CN`，表示 中文-简体-中国大陆
 
@@ -204,7 +218,7 @@ language的国际规范是`BCP47规范`，分为三段，主语言-次语言-地
 
 所以获取语言后，不能直接字符串比较，需要拆段比较，npm上也有专门做`BCP47语言规范`比较的库。
 
-#### deviceId 返回值说明
+### deviceId 返回值说明
 
 Web、小程序、iOS，属于对用户隐私保护比较严格的平台，在这些平台很难获取有效的设备唯一标记。
 
@@ -221,22 +235,23 @@ deviceId，在`app-android`平台，会根据优先使用imei、mac（仅在用�
 
 app下需要广告追踪的场景，在iOS上可以使用[idfa](https://ask.dcloud.net.cn/article/36107)、部分国产Android手机可以使用[OAID](http://www.html5plus.org/doc/zh_cn/device.html#plus.device.getOAID)
 
-#### deviceModel 返回值说明
+### deviceModel 返回值说明
 uni-app 3.5.1+ 版本规范了 deviceModel 返回值，例如之前返回 `iPhone11ProMax` 新版本返回值为 `iPhone 11 Pro Max`，各设备型号[参考规范](https://www.theiphonewiki.com/wiki/Models) 中 Generation 对应的值
 
 注意：新机型刚推出一段时间会显示 Unknown，官方会尽快进行适配。
 
-#### 其他注意 @tips
+### 其他注意 @tips
 - `deviceType`：
-  - `app-ios` 只支持 `phone`、`pad`。
-  - `app-android` 支持 `phone`、`pad`、`tv`、`car`、`watch`、`vr`、`appliance`、`undefined`、`unknown`，关于各个类型的更详细解释参考[Android官方文档](https://developer.android.com/guide/)。
-  - 其中，`app-android` 平台下 `pad` 类型的判断，在国产pad等非google官方设备上并不一定准确。如果有需要开发者可自行根据型号或屏幕大小判断。uni-app框架源码中判断`pad`的java代码如下，供参考：
+	- `app-ios` 只支持 `phone`、`pad`。
+	- `app-android` 支持 `phone`、`pad`、`tv`、`car`、`watch`、`vr`、`appliance`、`undefined`、`unknown`，关于各个类型的更详细解释参考[Android官方文档](https://developer.android.com/guide/)。
+	- 其中，`app-android` 平台下 `pad` 类型的判断，在国产pad等非google官方设备上并不一定准确。如果有需要开发者可自行根据型号或屏幕大小判断。uni-app框架源码中判断`pad`的java代码如下，供参考：
 
 	```java
 	public static boolean isTablet(Context context) {
 		return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
 	}
 	```
+	- `app-harmony` 支持 `phone`、`pad`、`tv`、`watch`、`pc`、`unknown`、`car`、`vr`、`undefined`。
 - `osTheme`：`app-ios` 只有将应用主题设置为跟随系统时才能获取到系统的主题。小程序也有类似限制。
 - 屏幕高度 = 原生NavigationBar高度（含状态栏高度）+ 可使用窗口高度 + 原生TabBar高度
 - windowHeight不包含NavigationBar和TabBar的高度
@@ -256,7 +271,7 @@ uni-app 3.5.1+ 版本规范了 deviceModel 返回值，例如之前返回 `iPhon
 - [京东小程序](https://mp-docs.jd.com/api/equipment/system.html)
 - [华为快应用](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-systeminfo-0000001126227753)
 
-#### 示例 @getsysteminfo-new-fields
+### 示例 @getsysteminfo-new-fields
 
 调用代码示例
 ```javascript
@@ -303,8 +318,9 @@ uni.getSystemInfo({
 |uniCompileVersion|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|
 |uniRuntimeVersion|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|3.4.13|
 
+<!-- UNIAPPAPIJSON.getSystemInfo.tutorial -->
 
-### uni.getSystemInfoSync()
+## uni.getSystemInfoSync()
 
 获取系统信息的同步接口。`调用参数和返回值同上getSystemInfo`。
 

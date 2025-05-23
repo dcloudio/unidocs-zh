@@ -1,7 +1,9 @@
-#### form
+## form
 表单，将组件内的用户输入的``<switch>`` ``<input>`` ``<checkbox>`` ``<slider>`` ``<radio>`` ``<picker>`` 提交。
 
 当点击 ``<form>`` 表单中 formType 为 submit 的 ``<button>`` 组件时，会将表单组件中的 value 值进行提交，需要在表单组件中加上 name 来作为 key。
+
+<!-- UNIAPPCOMJSON.form.compatibility -->
 
 **属性说明**
 
@@ -12,8 +14,10 @@
 |@submit|EventHandle|携带 form 中的数据触发 submit 事件，event.detail = {value : {name: string} , formId: string}，report-submit 为 true 时才会返回 formId||
 |@reset|EventHandle|表单重置时会触发 reset 事件|&nbsp;|
 
+
+
 **示例** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/form/form)
- 
+
 以下示例代码，来自于[hello uni-app项目](https://github.com/dcloudio/hello-uniapp)，推荐使用HBuilderX，新建uni-app项目，选择hello uni-app模板，可直接体验完整示例。
 
 ::: preview https://hellouniapp.dcloud.net.cn/pages/component/form/form
@@ -68,7 +72,7 @@
 		</view>
 	</view>
 </template>
-``` 
+```
 > Script
 ``` vue
 <script>
@@ -92,7 +96,7 @@
 		}
 	}
 </script>
-``` 
+```
 > Style
 ``` vue
 <style>
@@ -123,33 +127,35 @@ uni://form-field
 |name|String|在表单中的字段名|
 |value|任意|在表单中的字段值|
 
+h5 vue3 暂不支持使用 behaviors 扩展表单组件
+
 示例如下：
 
 ```html
 <!-- /pages/index/index.vue -->
-<template>  
-    <view class="content">  
-        <form @submit="onSubmit">  
-            <compInput name="test" v-model="testValue"></compInput>  
-            <button form-type="submit">Submit</button>  
-        </form>  
-    </view>  
-</template>  
+<template>
+    <view class="content">
+        <form @submit="onSubmit">
+            <compInput name="test" v-model="testValue"></compInput>
+            <button form-type="submit">Submit</button>
+        </form>
+    </view>
+</template>
 
-<script>  
-    export default {  
-        data() {  
-            return {  
-                testValue: 'Hello'  
-            }  
-        },  
-        methods: {  
-            onSubmit(e) {  
-                console.log(e)  
-            }  
-        }  
-    }  
-</script>  
+<script>
+    export default {
+        data() {
+            return {
+                testValue: 'Hello'
+            }
+        },
+        methods: {
+            onSubmit(e) {
+                console.log(e)
+            }
+        }
+    }
+</script>
 ```
 
 ::: preview
@@ -158,43 +164,14 @@ uni://form-field
 
 ```html
 <!-- /components/compInput/compInput.vue -->
-<template>  
-    <view>  
-        <input name="test" style="border: solid 1px #999999;height: 80px;" type="text" @input="onInput" :value="value" />  
-    </view>  
-</template>  
+<template>
+    <view>
+        <input name="test" style="border: solid 1px #999999;height: 80px;" type="text" @input="onInput" :value="value" />
+    </view>
+</template>
 
-<script>  
-    export default {  
-        name: 'compInput',  
-        behaviors: ['uni://form-field'],
-		data(){
-			return{
-				value:""
-			}
-		},
-        methods: {  
-            onInput(e) {  
-                this.$emit('input', e.detail.value)  
-            }  
-        }  
-    }  
-</script>  
-```
-
-
-> Vue3
-
-```html
-<!-- /components/compInput/compInput.vue -->
-<template>  
-    <view>  
-        <input name="test" style="border: solid 1px #999999;height: 80px;" type="text" @input="onInput" :value="value" />  
-    </view>  
-</template>  
-
-<script>  
-    export default {  
+<script>
+    export default {
         name: 'compInput',
         behaviors: ['uni://form-field'],
 		data(){
@@ -202,13 +179,42 @@ uni://form-field
 				value:""
 			}
 		},
-        methods: {  
-            onInput(e) {  
-                this.$emit('update:modelValue',e.detail.value) 
-            }  
-        }  
-    }  
-</script>  
+        methods: {
+            onInput(e) {
+                this.$emit('input', e.detail.value)
+            }
+        }
+    }
+</script>
+```
+
+
+> Vue3
+
+```html
+<!-- /components/compInput/compInput.vue -->
+<template>
+    <view>
+        <input name="test" style="border: solid 1px #999999;height: 80px;" type="text" @input="onInput" :value="value" />
+    </view>
+</template>
+
+<script>
+    export default {
+        name: 'compInput',
+        behaviors: ['uni://form-field'],
+		data(){
+			return{
+				value:""
+			}
+		},
+        methods: {
+            onInput(e) {
+                this.$emit('update:modelValue',e.detail.value)
+            }
+        }
+    }
+</script>
 ```
 :::
 
@@ -219,3 +225,5 @@ uni://form-field
 - 有很多表单自助生成辅助工具
   * 如果使用uniCloud的`DB Schema`可以自动生成全套表单，包括界面、校验逻辑、提交入库，[详见](https://uniapp.dcloud.io/uniCloud/schema?id=autocode).
   * 不使用uniCloud的话，插件市场有可视化拖拽表单插件：[详见](https://ext.dcloud.net.cn/search?q=%E5%8F%AF%E8%A7%86%E5%8C%96)。这类插件只生成界面，没有逻辑。
+
+<!-- UNIAPPCOMJSON.form.reference -->

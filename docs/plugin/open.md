@@ -19,7 +19,7 @@ DSP入驻DCloud开放平台后，需配置希望获取开发者哪些信息，�
 ## DSP注册SDK
 - DSP按照uniapp插件规范开发相关插件，并发布到[插件市场](https://ext.dcloud.net.cn)；
 - 注册SDK产品，补充完善以下信息：
-	- SDK支持的平台，如app-android, app-ios, mp-weixin等；
+	- SDK支持的平台，如`app-android`, `app-ios`, `mp-weixin`等；
 	- 各平台开通服务时，需要的应用信息字段（区分必填、选填；如应用名称、包名、证书摘要等）；
 	- 插件市场的插件ID（必填）；
 	- 是否支持测试包名、测试证书；

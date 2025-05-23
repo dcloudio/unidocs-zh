@@ -1,26 +1,28 @@
-### 生物认证说明
+## 生物认证说明
 
 生物认证，包含手机的指纹识别、faceid两部分。即通过人体身体特征来进行身份认证识别。
 
 如需要专业的活体检测、人脸识别、金融级实人认证，需另见文档[uni实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
 
-### uni.startSoterAuthentication(OBJECT)
+## uni.startSoterAuthentication(OBJECT)
 
 开始 SOTER 生物认证。
 
 **平台差异说明**
 
-|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|
-|:-	|:-	|:-					|:-						|:-					|:-					|:-				|
-|√（2.3.8+）	|x	|√					|x						|x					|x					|x				|
+|App|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|元服务|
+|:-	|:-					|:-						|:-					|:-					|:-				|:-				|:-:|
+|√（2.3.8+）	|x	|√					|x						|x					|x					|x				|x|
 
+
+<!-- UNIAPPAPIJSON.startSoterAuthentication.compatibility -->
 
 **OBJECT参数说明**
 
 |属性							|类型			|默认值	|必填	|说明																																																																																																		| 平台差异说明	|
 |:-								|:-				|:-			|:-		|:-																																																																																																			|:-							|
 |requestAuthModes	|Array		|				|是		|请求使用的可接受的生物认证方式																																																																																					|APP、微信小程序|
-|challenge				|String		|				|是		|挑战因子。挑战因子为调用者为此次生物鉴权准备的用于签名的字符串关键识别信息，将作为 resultJSON 的一部分，供调用者识别本次请求。例如：如果场景为请求用户对某订单进行授权确认，则可以将订单号填入此参数。	|微信小程序			|
+|challenge				|String		|				|是		|挑战因子。挑战因子为调用者为此次生物鉴权准备的用于签名的字符串关键识别信息，将作为 resultJSON 的一部分，供调用者识别本次请求。例如：如果场景为请求用户对某订单进行授权确认，则可以将订单号填入此参数。	|微信小程序、HarmonyOS Next			|
 |authContent			|String		|''			|否		|验证描述，即识别过程中显示在界面上的对话框提示内容																																																																											|APP、微信小程序|
 |success					|Function	|				|否		|接口调用成功的回调函数																																																																																									|								|
 |fail							|Function	|				|否		|接口调用失败的回调函数																																																																																									|								|
@@ -32,11 +34,6 @@
 |:-					|:-				|
 |fingerPrint|指纹识别	|
 |facial			|人脸识别	|
-
-注意：
-- App端指纹识别，Android平台从Android6.0起才提供了官方API，uni-app也是从Android6起支持。对于更低版本的安卓，某些rom私有的指纹识别API，uni-app并不支持。
-- App端人脸识别，iOS平台使用自带的faceID。Android平台需另行使用uni实人认证，另见[https://doc.dcloud.net.cn/uniCloud/frv/intro.html](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
-
 
 **OBJECT.success返回值说明**
 
@@ -80,9 +77,16 @@
 |90010	|重试次数过多被冻结																|
 |90011	|用户未录入所选识别方式														|
 
-### uni.checkIsSupportSoterAuthentication(OBJECT)
+::: warning 注意
+- App端指纹识别，Android平台从Android6.0起才提供了官方API，uni-app也是从Android6起支持。对于更低版本的安卓，某些rom私有的指纹识别API，uni-app并不支持。
+- App端人脸识别，iOS平台使用自带的faceID。Android平台需另行使用uni实人认证，另见[https://doc.dcloud.net.cn/uniCloud/frv/intro.html](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
+:::
+
+## uni.checkIsSupportSoterAuthentication(OBJECT)
 
 获取本机支持的 SOTER 生物认证方式
+
+<!-- UNIAPPAPIJSON.checkIsSupportSoterAuthentication.compatibility -->
 
 **OBJECT参数说明**
 
@@ -98,7 +102,13 @@
 |:-					|:-		|:-																			|
 |supportMode|Array|该设备支持的可被SOTER识别的生物识别方式|
 
-### uni.checkIsSoterEnrolledInDevice(OBJECT)
+::: warning
+- `HarmonyOS Next` 平台使用时需要添加权限 `ohos.permission.ACCESS_BIOMETRIC`
+:::
+
+## uni.checkIsSoterEnrolledInDevice(OBJECT)
+
+<!-- UNIAPPAPIJSON.checkIsSoterEnrolledInDevice.compatibility -->
 
 获取设备内是否录入如指纹等生物信息的接口
 
@@ -125,7 +135,11 @@
 |isEnrolled	|boolean|是否已录入信息	|
 |errMsg			|string	|错误信息				|
 
-#### 代码示例
+::: warning
+- `HarmonyOS Next` 平台使用时需要添加权限 `ohos.permission.ACCESS_BIOMETRIC`
+:::
+
+### 代码示例
 
 ```html
 
@@ -236,7 +250,7 @@
 
 ```
 
-#### 注意事项
+### 注意事项
 
 - App端打包时，注意需要在manifest的模块中选择指纹、faceID、实人认证等模块，否则打包后无法运行相关功能。
 - hello uni-app已经集成相关示例，最新版HBuilderX新建新版hello uni-app示例项目真机运行可见，在API-设备-生物认证里。

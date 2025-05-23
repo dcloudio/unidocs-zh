@@ -1,4 +1,3 @@
-
 ::: tip 组件名：uni-transition
 > 代码块： `uTransition`
 
@@ -134,12 +133,12 @@ export default {
 	},
 	methods: {
 		run() {
-			// 同时右平移到 100px,旋转 360 读
+			// 同时右平移到 100px,旋转 360 度
 			this.$refs.ani.step({
 				translateX: '100px',
 				rotate: '360'
 			})
-			// 上面的动画执行完成后，等待200毫秒平移到 0px,旋转到 0 读
+			// 上面的动画执行完成后，等待200毫秒平移到 0px,旋转到 0 度
 			this.$refs.ani.step({
 				translateX: '0px',
 				rotate: '0'

@@ -8,7 +8,7 @@
 
 ## uni cli
 
-### [环境安装](/quickstart-cli.html#install-vue-cli)
+### [环境安装](/quickstart-cli.md#install-vue-cli)
 
 ### 编译运行
 

@@ -1,5 +1,8 @@
-### uni.addInterceptor(STRING, OBJECT)
+## uni.addInterceptor(STRING, OBJECT)
 添加拦截器
+
+
+<!-- UNIAPPAPIJSON.addInterceptor.compatibility -->
 
 **STRING 参数说明**
 
@@ -35,16 +38,16 @@ uni.request({
 
 uni.addInterceptor('request', {
   invoke(args) {
-    // request 触发前拼接 url 
+    // request 触发前拼接 url
     args.url = 'https://www.example.com/'+args.url
   },
   success(args) {
     // 请求成功后，修改code值为1
     args.data.code = 1
-  }, 
+  },
   fail(err) {
     console.log('interceptor-fail',err)
-  }, 
+  },
   complete(res) {
     console.log('interceptor-complete',res)
   }
@@ -59,8 +62,10 @@ uni.addInterceptor({
 
 ```
 
-### uni.removeInterceptor(STRING)
+## uni.removeInterceptor(STRING)
 删除拦截器
+
+<!-- UNIAPPAPIJSON.removeInterceptor.compatibility -->
 
 **STRING 参数说明**
 

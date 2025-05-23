@@ -600,7 +600,7 @@ BindingX是一种规则，解析快，但没有js那样足够强的编程灵活�
 
 ##### 步骤：
 
-1. 在 `vue` 里使用 `plus.webview.postMessageToUniNView(data,nvueId)` 发送消息，`data` 为 `JSON` 格式（键值对的值仅支持String），`nvueId` 为 `nvue` 所在 webview 的 id，webview的 id 获取方式参考：[$getAppWebview()](/tutorial/page.html#getappwebview)。
+1. 在 `vue` 里使用 `plus.webview.postMessageToUniNView(data,nvueId)` 发送消息，`data` 为 `JSON` 格式（键值对的值仅支持String），`nvueId` 为 `nvue` 所在 webview 的 id，webview的 id 获取方式参考：[$getAppWebview()](/tutorial/page.md#getappwebview)。
 2. 在 `nvue` 里引用 `globalEvent` 模块监听 `plusMessage` 事件，如下： 
 
 
@@ -740,7 +740,7 @@ nvue 支持大部分 uni-app API ，下面只列举目前还**不支持的 API**
 |--			|--			|
 |uni.createIntersectionObserver()	|创建并返回一个 IntersectionObserver 对象实例	|
 
-##### 绘画
+##### 画布
 
 canvas API使用，[详见canvas文档](https://uniapp.dcloud.net.cn/api/canvas/createCanvasContext)。
 

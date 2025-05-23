@@ -4,11 +4,11 @@ export default {
       text: 'uni-app',
       type: 'algolia',
     },
-    /* {
+    {
       text: 'uni-app x',
       type: 'algolia',
     },
-    {
+    /* {
       text: 'uniCloud',
       type: 'algolia',
     }, */
@@ -16,13 +16,13 @@ export default {
       text: '问答社区',
       tag: 'ask',
       type: 'link',
-      link: 'https://ask.dcloud.net.cn/search/q-'
+      link: 'https://ask.dcloud.net.cn/search/q-',
     },
     {
       text: '插件市场',
       tag: 'ext',
       type: 'link',
-      link: 'https://ext.dcloud.net.cn/search?q='
+      link: 'https://ext.dcloud.net.cn/search?q=',
     },
     {
       text: '原生开发文档',
@@ -39,12 +39,13 @@ export default {
     searchBox: {
       buttonText: '取消',
       placeholder: '搜索内容',
-      searchBy: '搜索提供者'
+      searchBy: '搜索提供者',
     },
     resultsScreen: {
       resultsText: '${resultHits}个相关结果',
       noResultsText: '没有找到${categoryText}相关内容',
-      askNoResultsText: '以下为${categoryText}相关内容'
-    }
-  }
+      askNoResultsText: '以下为${categoryText}相关内容',
+    },
+  },
+  extraFacetFilters: ['category:uni-ad广告', 'tag:UTS', 'tag:插件'],
 }

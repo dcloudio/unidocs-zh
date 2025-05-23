@@ -1,12 +1,14 @@
-### uni.setTabBarItem(OBJECT)
+## uni.setTabBarItem(OBJECT)
 
 动态设置 tabBar 某一项的内容
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√（钉钉小程序不支持）|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√（钉钉小程序不支持）|√|√|√|√|√|x|
+
+<!-- UNIAPPAPIJSON.setTabBarItem.compatibility -->
 
 **OBJECT参数说明：**
 
@@ -32,6 +34,7 @@
 |fontSize|String|字体图标字号(px)|
 |color|String|字体图标颜色|
 |selectedColor|String|字体图标选中颜色|
+
 
 
 **示例代码**
@@ -69,15 +72,19 @@ uni.setTabBarItem({
 }
 ```
 
-### uni.setTabBarStyle(OBJECT)
+<!-- UNIAPPAPIJSON.setTabBarItem.tutorial -->
+
+## uni.setTabBarStyle(OBJECT)
 
 动态设置 tabBar 的整体样式
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|√|√|√|√|x|
+
+<!-- UNIAPPAPIJSON.setTabBarStyle.compatibility -->
 
 **OBJECT参数说明：**
 
@@ -88,11 +95,13 @@ uni.setTabBarItem({
 |backgroundColor|String||否|tab 的背景色，HexColor|
 |backgroundImage|String||否|图片背景。支持设置本地图片或创建线性渐变如，优先级高于 backgroundColor，仅 App 2.7.1+ 支持|
 |backgroundRepeat|String||否|背景图平铺方式。repeat：背景图片在垂直方向和水平方向平铺；repeat-x：背景图片在水平方向平铺，垂直方向拉伸；repeat-y：背景图片在垂直方向平铺，水平方向拉伸；no-repeat：背景图片在垂直方向和水平方向都拉伸。 默认使用 no-repeat。仅 App 2.7.1+ 支持|
-|borderStyle|String||否|tabBar上边框的颜色， 仅支持 black/white|
+|borderStyle|String||否|tabBar上边框的颜色， 仅支持 black/white，black对应颜色rgba(0,0,0,0.33)，white对应颜色rgba(255,255,255,0.33)。|
 |midButton|Object||否|中间按钮 仅在 list 项为偶数时有效 [详情](https://uniapp.dcloud.net.cn/collocation/pages.html#tabbar)。HBuilderX 3.6.9+|
 |success|Funtion||否|接口调用成功的回调函数|
 |fail|Funtion||否|接口调用失败的回调函数|
 |complete|Funtion||否|接口调用结束的回调函数（调用成功、失败都会执行）|
+
+
 
 **backgroundImage创建线性渐变说明**
 
@@ -120,15 +129,19 @@ uni.setTabBarStyle({
 })
 ```
 
-### uni.hideTabBar(OBJECT)
+<!-- UNIAPPAPIJSON.setTabBarStyle.tutorial -->
+
+## uni.hideTabBar(OBJECT)
 
 隐藏 tabBar
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.hideTabBar.compatibility -->
 
 **OBJECT参数说明：**
 
@@ -139,15 +152,21 @@ uni.setTabBarStyle({
 |fail|Funtion||否|接口调用失败的回调函数|
 |complete|Funtion||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-### uni.showTabBar(OBJECT)
+
+
+<!-- UNIAPPAPIJSON.hideTabBar.tutorial -->
+
+## uni.showTabBar(OBJECT)
 
 显示 tabBar
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.showTabBar.compatibility -->
 
 **OBJECT参数说明：**
 
@@ -158,14 +177,20 @@ uni.setTabBarStyle({
 |fail|Funtion||否|接口调用失败的回调函数|
 |complete|Funtion||否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-### uni.setTabBarBadge(OBJECT)
+
+
+<!-- UNIAPPAPIJSON.showTabBar.tutorial -->
+
+## uni.setTabBarBadge(OBJECT)
 为 tabBar 某一项的右上角添加文本。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.setTabBarBadge.compatibility -->
 
 **OBJECT参数说明：**
 
@@ -177,6 +202,8 @@ uni.setTabBarStyle({
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
+
+
 **示例代码**
 
 ```javascript
@@ -186,14 +213,18 @@ uni.setTabBarBadge({
 })
 ```
 
-### uni.removeTabBarBadge(OBJECT)
+<!-- UNIAPPAPIJSON.setTabBarBadge.tutorial -->
+
+## uni.removeTabBarBadge(OBJECT)
 移除 tabBar 某一项右上角的文本。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.removeTabBarBadge.compatibility -->
 
 **OBJECT参数说明：**
 
@@ -204,14 +235,21 @@ uni.setTabBarBadge({
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-### uni.showTabBarRedDot(OBJECT)
+
+
+
+<!-- UNIAPPAPIJSON.removeTabBarBadge.tutorial -->
+
+## uni.showTabBarRedDot(OBJECT)
 显示 tabBar 某一项的右上角的红点。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|√|√|√|√|x|
+
+<!-- UNIAPPAPIJSON.showTabBarRedDot.compatibility -->
 
 **OBJECT参数说明：**
 
@@ -222,14 +260,20 @@ uni.setTabBarBadge({
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-### uni.hideTabBarRedDot(OBJECT)
+
+
+<!-- UNIAPPAPIJSON.showTabBarRedDot.tutorial -->
+
+## uni.hideTabBarRedDot(OBJECT)
 隐藏 tabBar 某一项的右上角的红点。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|√|√|√|√|x|
+
+<!-- UNIAPPAPIJSON.hideTabBarRedDot.compatibility -->
 
 **OBJECT参数说明：**
 
@@ -240,15 +284,20 @@ uni.setTabBarBadge({
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
-### uni.onTabBarMidButtonTap(CALLBACK)
+
+
+<!-- UNIAPPAPIJSON.hideTabBarRedDot.tutorial -->
+
+## uni.onTabBarMidButtonTap(CALLBACK)
 监听中间按钮的点击事件
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√（HBuilderX 2.3.4+）|√|x|x|x|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√（HBuilderX 2.3.4+）|√|x|x|x|x|x|x|x|x|
 
+<!-- UNIAPPAPIJSON.onTabBarMidButtonTap.compatibility -->
 
 **Tip**
 - tabbar是原生的，层级高于前端元素

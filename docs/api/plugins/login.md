@@ -1,4 +1,4 @@
-### uni.login(OBJECT)
+## uni.login(OBJECT)
 登录
 
 uni.login是一个客户端API，统一封装了各个平台的各种常见的登录方式，包括App手机号一键登陆、三方登录（微信、微博、QQ、Apple、google、facebook）、各家小程序内置登录。
@@ -7,22 +7,24 @@ uni.login是一个客户端API，统一封装了各个平台的各种常见的�
 
 **平台差异说明**
 
-|App|Web|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|√|√|√|√|
+|App|Web|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.login.compatibility -->
 
 大多数登录方式，都需要申请开通相关服务，具体点击下面的文档查看。
 
-#### App平台支持的登录方式
+### App平台支持的登录方式
 - [手机号一键登录（univerify）](/univerify.md)
 - [苹果登录（Sign in with Apple）](/tutorial/app-oauth-apple.md)
 - [微信登录](/tutorial/app-oauth-weixin.md)
 - [QQ登录](/tutorial/app-oauth-qq.md)
-- [新浪微博登录](/tutorial/app-oauth-sina.md)
+- [新浪微博登录](/tutorial/app-oauth-weibo.md)
 - [Google登录](/tutorial/app-oauth-google.md)
 - [Facebook登录](/tutorial/app-oauth-facebook.md)
 
-#### 小程序平台支持的登录方式
+### 小程序平台支持的登录方式
 * [微信小程序登录](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)
 * [支付宝小程序登录](https://docs.alipay.com/mini/introduce/authcode)
 * [百度小程序登录](https://smartprogram.baidu.com/docs/develop/api/open_log/#%E6%8E%88%E6%9D%83%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E/)
@@ -31,20 +33,20 @@ uni.login是一个客户端API，统一封装了各个平台的各种常见的�
 * [快手小程序登录](https://mp.kuaishou.com/docs/develop/api-next/open/login/ks.login.html)
 * [京东小程序登录](https://mp-docs.jd.com/api/openInterface/login.html)
 
-#### web平台支持的登录方式
+### web平台支持的登录方式
 Web平台常见的登录包括用户名密码、短信验证码、pc端微信扫描、微信公众号登录。这些没有封装在 uni.login API中，但都封装在了uni-id中。请另行参考[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)
 
 如不使用uni-id，微信内嵌浏览器运行H5版时，可通过js sdk实现微信登录，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)
 
-#### OBJECT 参数说明
+### OBJECT 参数说明
 
 |参数名|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
 |provider|String|否|登录服务提供商，通过 [uni.getProvider](/api/plugins/provider) 获取，如果不设置则弹出登录列表选择界面||
 |scopes|String/Array|见平台差异说明|授权类型，默认 auth_base。支持 auth_base（静默授权）/ auth_user（主动授权） / auth_zhima（芝麻信用）|支付宝小程序|
 |timeout|Number|否|超时时间，单位ms|微信小程序、百度小程序、京东小程序|
-|univerifyStyle|Object|否|[一键登录](/univerify)页面样式|App 3.0.0+|
-|onlyAuthorize|Boolean|否|`微信登录`仅请求授权认证|App 3.2.6+|
+|univerifyStyle|Object|否|[一键登录](/univerify)页面样式|App 3.0.0+、`HarmonyOS 不支持`|
+|onlyAuthorize|Boolean|否|`微信登录`仅请求授权认证|App 3.2.6+、`HarmonyOS 不支持`|
 |success|Function|否|接口调用成功的回调||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
@@ -59,7 +61,7 @@ Web平台常见的登录包括用户名密码、短信验证码、pc端微信扫
 |:-|:-|:-|
 |authResult|登录服务商提供的登录信息，服务商不同返回的结果不完全相同|微信登录配置`onlyAuthorize:true`则此项为空，App 3.2.6+ |
 |code|用户登录凭证。开发者需要在开发者服务器后台，使用 code 换取 openid 和 session_key 等信息|微信登录配置`onlyAuthorize:true`才会返回，App 3.2.6+、京东小程序 |
-|appleInfo|Object|否|`苹果登录`返回的信息|App 3.4.3+|
+|appleInfo|`苹果登录`返回的信息|App 3.4.3+|
 |errMsg|描述信息||
 
 **示例**
@@ -73,19 +75,19 @@ uni.login({
 });
 ```
 
-#### 注意事项
+### 注意事项
 - 百度小程序平台需要在button组件的@login事件后再调用 uni.login ，[详见](https://smartprogram.baidu.com/docs/develop/function/login/),否则会返回“请登录”的错误信息，建议在@login事件中调用。
-- uni.login 已针对百度小程序[兼容性升级](https://smartprogram.baidu.com/forum/topic/show/125547)转为 getLoginCode 调用，但某些情况下，百度小程序发布时兼容性诊断依然提示swan.login非兼容性改造，[详见](https://github.com/dcloudio/uni-app/issues/2443)，可使用 [uni.getLoginCode](#getLoginCode) 替代 uni.login 解决。
+- uni.login 已针对百度小程序[兼容性升级](https://smartprogram.baidu.com/forum/topic/show/125547)转为 getLoginCode 调用，但某些情况下，百度小程序发布时兼容性诊断依然提示swan.login非兼容性改造，[详见](https://github.com/dcloudio/uni-app/issues/2443)，可使用 [uni.getLoginCode](#getlogincode) 替代 uni.login 解决。
 - 京东小程序IDE 暂时不支持此uni.login()，请用真机查看；IDE调用，只能返回模拟数据 code为200。
 
-### uni.getLoginCode(OBJECT)@getLoginCode
+## uni.getLoginCode(OBJECT)@getLoginCode
 获取宿主 App 登录凭证（Authorization Code）
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|x|x|√|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|x|x|√|x|x|x|x|x|
 
 **OBJECT 参数说明**
 
@@ -102,16 +104,16 @@ uni.login({
 |:-|:-|:-|
 |code|String|用户登录凭证（有效期十分钟），开发者需要在开发者服务器后台调用 API ，使用 code 换取 session_key 等信息。用户登录凭证 code 只能使用一次。|
 
-### uni.checkSession
+## uni.checkSession
 检查登录状态是否过期
 
 > 1.6.0 新增
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|√|√|√|√|√|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|√|x|√|√|√|√|√|x|x|
 
 |属性|类型|必填|说明|
 |:-|:-|:-|:-|
@@ -120,22 +122,25 @@ uni.login({
 |complete|function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 
-### uni.getUserInfo(OBJECT)
+## uni.getUserInfo(OBJECT)
 
 > 微信小程序端用户头像昵称获取规则已调整，参考 [用户信息接口调整说明](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801)、[小程序用户头像昵称获取规则调整公告](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01)
+> 支付宝小程序获取用户头像昵称规则已调整，将在 2024年09月15日正式生效。参考 [关于小程序用户头像昵称获取规则调整公告](https://open.alipay.com/portal/forum/post/173201040)
 
 获取用户信息。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|√|√|√|√|√|x|
+
+<!-- UNIAPPAPIJSON.getUserInfo.compatibility -->
 
 **注意：**
 - 微信小程序端，在用户未授权过的情况下调用此接口，不会出现授权弹窗，会直接进入 fail 回调（详见[《微信小程序公告》](https://developers.weixin.qq.com/community/develop/doc/0000a26e1aca6012e896a517556c01)）。在用户已授权的情况下调用此接口，可成功获取用户信息。
 - 京东小程序端，在用户未授权，调用该接口将直接报错。用户已经授权过，可使用该接口直接获取用户信息，不会弹二次授权框
-- 抖音小程序此接口将逐步废弃，请切换使用[uni.getUserProfile](#getUserProfile)。[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-info)
+- 抖音小程序此接口将逐步废弃，请切换使用[uni.getUserProfile](#getuserprofile)。[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-info)
 
 **OBJECT 参数说明**
 
@@ -164,7 +169,7 @@ uni.login({
 |参数|类型|说明|平台差异说明|
 |:-|:-|:-|:-|
 |userInfo|OBJECT|用户信息对象||
-|rawData|String|不包括敏感信息的原始数据字符串，用于计算签名。||
+|rawData|String|不包括敏感信息的原始数据字符串，用于计算签名。|微信小程序、抖音小程序、飞书小程序、快手小程序、京东小程序|
 |signature|String|使用 sha1( rawData + sessionkey ) 得到字符串，用于校验用户信息。|微信小程序、抖音小程序、飞书小程序、快手小程序、京东小程序|
 |encryptedData|String|包括敏感数据在内的完整用户信息的加密数据，详细见加密数据解密算法。|微信小程序、抖音小程序、飞书小程序、快手小程序|
 |iv|String|加密算法的初始向量，详细见加密数据解密算法。|微信小程序、抖音小程序、飞书小程序、快手小程序|
@@ -181,7 +186,7 @@ uni.login({
 
 除了以上三个必有的信息外，不同服务供应商返回的其它信息会存在差异。
 
-#### App端登录的扩展说明
+### App端登录的扩展说明
 
 App端还支持更多登录相关API，如`logout`，[详见](https://www.html5plus.org/doc/zh_cn/oauth.html)
 
@@ -212,7 +217,7 @@ uni.login({
 });
 ```
 
-#### App端集成其他登录SDK如支付宝、淘宝登录的说明 @app-oauth
+### App端集成其他登录SDK如支付宝、淘宝登录的说明 @app-oauth
 1. 在插件市场寻找插件
 - [支付宝登录](https://ext.dcloud.net.cn/search?q=%E6%94%AF%E4%BB%98%E5%AE%9D%E7%99%BB%E9%99%86)
 - [淘宝登录](https://ext.dcloud.net.cn/search?q=%E7%99%BE%E5%B7%9D)
@@ -222,7 +227,7 @@ uni.login({
 3. 开发原生插件集成三方sdk，[详见](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
 
-### uni.getUserProfile(OBJECT)@getUserProfile
+## uni.getUserProfile(OBJECT)@getUserProfile
 
 > 微信小程序端基础库2.27.1及以上版本，**[wx.getUserProfile 接口](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserProfile.html)被收回**，详见[《小程序用户头像昵称获取规则调整公告》](https://developers.weixin.qq.com/community/develop/doc/00022c683e8a80b29bed2142b56c01)。
 
@@ -230,9 +235,9 @@ uni.login({
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√（基础库2.10.4）|x|x|√（基础库2.30.0）|x|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|√（基础库2.10.4）|x|x|√（基础库2.30.0）|x|x|x|x|
 
 **注意：**
 
@@ -302,14 +307,14 @@ uni.login({
 |zh_TW|繁体中文|
 
 
-### uni.preLogin(OBJECT)
+## uni.preLogin(OBJECT)
 预登录。用于App手机号一键登录。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|3.0.0+|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|3.0.0+|x|x|x|x|x|x|x|x|x|x|
 
 **OBJECT 参数说明**
 
@@ -321,26 +326,26 @@ uni.login({
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 
-### uni.closeAuthView()
+## uni.closeAuthView()
 关闭[一键登录](/univerify)页面。
 
 按照中国移动、中国联通、中国电信等运营商的要求，一键登录必须有界面。可用此API关闭页面。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|3.0.0+|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|3.0.0+|x|x|x|x|x|x|x|x|x|x|
 
 
-### uni.getCheckBoxState(OBJECT)
+## uni.getCheckBoxState(OBJECT)
 获取[一键登录](/univerify)条款勾选框状态。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|3.2.3+|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|3.2.3+|x|x|x|x|x|x|x|x|x|x|
 
 **OBJECT 参数说明**
 
@@ -357,14 +362,14 @@ uni.login({
 |state|Boolean|一键登录条款勾选框状态|
 |errMsg|String|描述信息|
 
-### uni.getUniverifyManager(OBJECT)
+## uni.getUniverifyManager(OBJECT)
 获取全局唯一的一键登录管理器 univerifyManager
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√ (3.2.13+)|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√ (3.2.13+)|4.61|x|x|x|x|x|x|x|x|x|
 
 **univerifyManager 方法说明**
 
@@ -374,8 +379,8 @@ uni.login({
 |preLogin|Function|一键登录预登录|
 |close|Function|关闭一键登陆页面|
 |getCheckBoxState|Function|获取一键登录条款勾选框状态|
-|onButtonsClick|Function|订阅一键登录自定义按钮点击事件|
-|offButtonsClick|Function|取消订阅一键登录自定义按钮点击事件|
+|onButtonsClick|Function|订阅一键登录自定义按钮点击事件；`HarmonyOS 不支持`|
+|offButtonsClick|Function|取消订阅一键登录自定义按钮点击事件；`HarmonyOS 不支持`|
 
 **使用示例**
 
@@ -431,3 +436,51 @@ univerifyManager.onButtonsClick(callback)
 // 取消订阅自定义按钮点击事件
 univerifyManager.offButtonsClick(callback)
 ```
+
+### HarmonyOS 使用 getUniverifyManager 注意事项 @harmonyos-univerify
+
+- 在使用 `getUniverifyManager().login` 时，其中 `univerifyStyle 参数` 只支持传递（支持情况和 [uni-app x 一键登录 login 一致](https://doc.dcloud.net.cn/uni-app-x/api/get-univerify-manager.html#login)）:
+  - `fullScreen` 是否全屏显示一键登录弹框
+  - `logoPath` 一键登录弹框顶部 logo 图片路径
+  - `loginBtnText` 一键登录按钮文案
+- 运行到鸿蒙手机调试，必须在 [开通一键登录](https://uniapp.dcloud.net.cn/univerify.html#%E5%BC%80%E9%80%9A) 后，在 uniCloud `一键登录 -> 应用管理` 添加应用，并将所添加应用的包名配置在 `manifest` 中才可以调试运行，否则运行报错
+- 需要在 `modules.json5` 中配置以下权限：
+  ```json
+  "requestPermissions": [
+    {
+      //允许应用程序联网，用于访问网关和认证服务器
+      "name": "ohos.permission.INTERNET",
+    },
+    {
+      //获取网络状态，判断是否数据、wifi等
+      "name": "ohos.permission.GET_NETWORK_INFO"
+    },
+    {
+      //允许获取wifi信息
+      "name": "ohos.permission.GET_WIFI_INFO"
+    },
+    {
+      //允许应用配置数据网络
+      "name": "ohos.permission.SET_NETWORK_INFO"
+    },
+    {
+      //用于创建唯一的gyuid标识
+      "name": "ohos.permission.APP_TRACKING_CONSENT",
+      "usedScene": {
+        "abilities": [
+          "EntryAbility"
+        ]
+      },
+      "reason": "$string:gy_oaid_tracking" // 此项需要在 `harmony-config/AppScope/resources/base/element/string.json` 中配置，[配置文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/resource-categories-and-access-V5#%E8%B5%84%E6%BA%90%E7%BB%84%E7%9B%AE%E5%BD%95)
+    }
+  ]
+  ```
+- 配置CHANNEL(非必选)，项目的module.json5文件中配置 GT_INSTALL_CHANNEL:
+  ```json
+  "metadata": [
+    {
+      "name": "GT_INSTALL_CHANNEL",
+      "value": "CHANNEL" // 填写你想要的渠道名
+    }
+  ]
+  ```

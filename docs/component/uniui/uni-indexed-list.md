@@ -20,7 +20,7 @@
 |属性名|类型|默认值|说明|
 |:-:|:-:|:-:|:-:|
 |options|Object	|-|索引列表需要的数据对象|
-|showSelect	|Boolean|-| 展示模式，true 为展示默认，false 为选择模式，默认为 false	|
+|showSelect	|Boolean|false| 展示模式，true 为展示默认，false 为选择模式，默认为 false	|
 
 **options 数据格式说明**
 

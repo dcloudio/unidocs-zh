@@ -1,20 +1,26 @@
 # image
 
+> 图片需要上传？推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
+
+<!-- UNIAPPCOMJSON.image.compatibility -->
+
 图片组件。
 
 **属性说明**
 
-|属性名|类型|默认值|说明|平台差异说明|
-|:-|:-|:-|:-|:-|
-|src|String||图片资源地址||
-|mode|String|'scaleToFill'|图片裁剪、缩放的模式|<div style="width:68px;"></div>|
-|lazy-load|Boolean|false|图片懒加载。只针对page与scroll-view下的image有效|微信小程序、百度小程序、抖音小程序、飞书小程序|
-|fade-show|Boolean|true|图片显示动画效果|仅App-nvue 2.3.4+ Android有效|
-|webp|boolean|false|在系统不支持webp的情况下是否单独启用webp。默认false，只支持网络资源。webp支持详见下面说明|微信小程序2.9.0|
-|show-menu-by-longpress|boolean|false|开启长按图片显示识别小程序码菜单|微信小程序2.7.0|
-|draggable|boolean|true|是否能拖动图片|H5 3.1.1+、App（iOS15+）|
-|@error|HandleEvent||当错误发生时，发布到 AppService 的事件名，事件对象event.detail = {errMsg: string}||
-|@load|HandleEvent||当图片载入完毕时，发布到 AppService 的事件名，事件对象event.detail = {height:string, width:string}|&nbsp;|
+|属性名					|类型		|默认值			|说明																											|平台差异说明									|
+|:-						|:-			|:-				|:-																												|:-												|
+|src					|String		|				|图片资源地址																									|												|
+|mode					|String		|'scaleToFill'	|图片裁剪、缩放的模式																							|<div style="width:68px;"></div>				|
+|lazy-load				|Boolean	|false			|图片懒加载。只针对page与scroll-view下的image有效																|微信小程序、百度小程序、抖音小程序、飞书小程序	|
+|fade-show				|Boolean	|true			|图片显示动画效果																								|仅App-nvue 2.3.4+ Android有效					|
+|webp					|boolean	|false			|在系统不支持webp的情况下是否单独启用webp。默认false，只支持网络资源。webp支持详见下面说明						|微信小程序2.9.0								|
+|show-menu-by-longpress	|boolean	|false			|开启长按图片显示识别小程序码菜单																				|微信小程序2.7.0								|
+|draggable				|boolean	|false			|是否能拖动图片																									|H5 3.1.1+、App（iOS15+）						|
+|@error					|HandleEvent|				|当错误发生时，发布到 AppService 的事件名，事件对象event.detail = {errMsg: string}					|												|
+|@load					|HandleEvent|				|当图片载入完毕时，发布到 AppService 的事件名，事件对象event.detail = {height:string, width:string}	|&nbsp;											|
+
+
 
 
 ## 图片格式说明：
@@ -67,7 +73,7 @@ mode 有 14 种模式，其中 5 种是缩放模式，9 种是裁剪模式。
 
 ## 示例
 [查看示例](https://hellouniapp.dcloud.net.cn/pages/component/image/image)
- 
+
 ::: preview
 > Template
 ```vue
@@ -195,8 +201,9 @@ bottom right：不缩放图片，只显示图片的右下边区域
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/cat-12.png)
 
 
+<!-- UNIAPPCOMJSON.image.reference -->
 
-<!-- 
+<!--
 - 默认的图片加载失败，是空白。如需自定义，可监听error事件进行重定义，如下
 ```html
 <template>

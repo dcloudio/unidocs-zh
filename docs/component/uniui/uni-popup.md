@@ -1,3 +1,4 @@
+# uni-popup 弹出层
 
 ::: tip 组件名：uni-popup
 > 代码块： `uPopup`
@@ -20,6 +21,7 @@
 - 使用 `npm` 方式引入组件，如果确认引用正确，但是提示未注册组件或显示不正常，请尝试重新编译项目
 - `uni-popup` 中尽量不要使用 `scroll-view` 嵌套过多的内容，可能会影响组件的性能，导致组件无法打开或者打开卡顿
 - `uni-popup` 不会覆盖原生 tabbar 和原生导航栏
+- `uni-popup` 为了防止快速打开关闭的情况，组件默认设置了300毫秒延迟显示，如果需要去除，可到uni_modules下修改组件代码
 - app-vue 中组件无法遮盖 video ，ad 等原生组件 ，建议使用 nvue 
 - 组件支持 nvue ，需要在 `manifest.json > app-plus` 节点下配置 `"nvueStyleCompiler" : "uni-app"` 
 :::
@@ -29,7 +31,7 @@
 <template>
 	<view>
 		<button @click="open">打开弹窗</button>
-		<uni-popup ref="popup" type="bottom">底部弹出 Popup</uni-popup>
+		<uni-popup ref="popup" type="bottom" border-radius="10px 10px 0 0">底部弹出 Popup 自定义圆角</uni-popup>
 	</view>
 </template>
 <script>
@@ -51,7 +53,7 @@ export default {
 
 而也有特例，需要我们主动去设置背景色，例如 `type = 'bottom'` 的时候 ，在异型屏中遇到了底部安全区问题（如 iphone 11），因为 `uni-popup`的主要内容避开了安全区（设置`safe-area:true`），导致底部的颜色我们无法自定义，这时候使用 `background-color` 就可以解决这个问题。 
 
-**示例**
+**底部弹窗示例**
 
 ```html
 <button @click="open">打开弹窗</button>
@@ -61,7 +63,7 @@ export default {
 ### 禁用打开动画
 在某些场景 ，可能不希望弹层有动画效果 ，只需要将 `animation` 属性设置为 `false` 即可以关闭动画。
 
-**示例**
+**居中弹窗示例**
 
 ```html
 <button @click="open">打开弹窗</button>
@@ -111,6 +113,7 @@ export default {
 |is-mask-click **[1.7.4新增]**|Boolean|true|蒙版点击是否关闭弹窗|
 |mask-background-color **[1.7.4新增]**|rgba|rgba(0,0,0,0.4)|蒙版颜色，建议使用 rgba 颜色值|
 |background-color|String|'none'|主窗口背景色|
+|borderRadius|String|无| 设置圆角(左上、右上、右下和左下) 示例:"10px 10px 10px 10px"|
 |safe-area|Boolean|true|是否适配底部安全区|
 
 #### Type Options
@@ -235,8 +238,11 @@ export default {
 |content|String|-|对话框内容，base模式下生效|
 |confirmText **[1.7.4新增]**|String|-|定义确定按钮文本|
 |cancelText **[1.7.4新增]**|String|-|定义取消按钮文本|
-|value| String\Number|-|输入框默认值，input模式下生效|
+|maxlength **[1.8.6新增]**|Number|-|限制输入框字数（当mode="input"时生效）|
+|showClose **[1.8.5新增]**|Boolean|-|是否显示取消按钮|
+|value| String\Number|-|输入框值，input模式下生效 注：1.9.0之后为双向绑定,vue2通过value,vue3通过v-model绑定|
 |placeholder|String|-|输入框提示文字，input模式下生效|
+|borderRadius|String|-|四周圆角值（左上、右上、右下、左下） 示例："20px 20px 20px 20px"|
 |before-close|Boolean|false	| 是否拦截按钮事件，如为true，则不会关闭对话框，关闭需要手动执行 uni-popup 的 close 方法|
 
 #### PopupDialog Events
@@ -258,7 +264,7 @@ export default {
 
 将 `uni-popup` 的 `type` 属性改为 `share`，并引入对应组件即可使用 ，*该组件不支持单独使用*
 
-**示例**
+#### 示例
 
 ```html
 <uni-popup ref="popup" type="share">
@@ -279,7 +285,7 @@ export default {
 |:-:|:-:|:-:|
 |select|选择触发|e = {item,index}：所选参数|
 
-**Tips**
+#### 注意
 - share 分享组件，只是作为一个扩展示例，如果需要修改数据源，请到组件内修改
 
 
@@ -327,7 +333,7 @@ export default {
 
 ```
 
-**Tips**
+#### tips
 - h5 滚动穿透不需要处理 
 - wx、app 需要 使用 page-meta 组件配合阻止滚动穿透
 - 注意 page-meta 组件，一个页面只能存在一个
@@ -335,7 +341,7 @@ export default {
 
 
 
-## 示例
+#### 示例
 ::: warning 注意
 示例依赖了 `uni-card` `uni-section` `uni-scss` 等多个组件，直接拷贝示例代码将无法正常运行 。
 

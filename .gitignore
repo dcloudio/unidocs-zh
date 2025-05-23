@@ -4,3 +4,5 @@ docs/.vuepress/dist
 **/sitemap.xml
 docs-lite
 dist
+docs/.vuepress/.cache
+docs/.vuepress/.temp

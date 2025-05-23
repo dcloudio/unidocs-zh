@@ -172,12 +172,12 @@ iOS App打包需要向Apple申请证书。
    3. 在抖音小程序开发者工具中，导入生成的抖音小程序项目，测试项目代码运行正常后，点击“上传”按钮上传代码，在 [抖音小程序后台](https://microapp.bytedance.com/applist)，选择刚提交的版本点击提交审核，详见：[抖音小程序文档](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/guide/release/package-audit/)。
 
 #### 发布为360小程序：
-   4. 入驻360小程序，参考：[360小程序教程](https://mp.360.cn/doc/miniprogram/dev/#/)。
-   5. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-360"，即可在 ``/unpackage/dist/build/mp-360`` 生成360小程序项目代码。
+   1. 入驻360小程序，参考：[360小程序教程](https://mp.360.cn/doc/miniprogram/dev/#/)。
+   2. 在HBuilderX中顶部菜单依次点击 "发行" => "小程序-360"，即可在 ``/unpackage/dist/build/mp-360`` 生成360小程序项目代码。
      <div align=center>
        <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-release-mp-360.png"/>
      </div>
-   6. 在360浏览器中，导入生成的360小程序项目
+   3. 在360浏览器中，导入生成的360小程序项目
 
 **注意**
 - 目前仅windows平台支持。360浏览器自身不支持mac平台。
@@ -193,16 +193,20 @@ iOS App打包需要向Apple申请证书。
 
 
 #### 发布为快应用(webview) - 华为：
-  4. 入驻华为快应用，参考：[华为快应用教程](https://developer.huawei.com/consumer/cn/quickApp)。
-  5. 在HBuilderX中顶部菜单依次点击 "发行" => "快应用-华为"，即可在 ``/unpackage/dist/build/quickapp-webview`` 生成华为快应用项目代码。
+  1. 入驻华为快应用，参考：[华为快应用教程](https://developer.huawei.com/consumer/cn/quickApp)。
+  2. 在HBuilderX中顶部菜单依次点击 "发行" => "快应用-华为"，即可在 ``/unpackage/dist/build/quickapp-webview`` 生成华为快应用项目代码。
     <div align=center>
       <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-run-release-quickapp-webview-huawei.png"/>
     </div>
-  6. 在华为开发者工具中，导入生成的华为快应用项目，测试项目代码运行正常后，点击”构建“打包正式版，在[华为快应用后台](https://developer.huawei.com/consumer/cn/quickApp)上传。
+  3. 在华为开发者工具中，导入生成的华为快应用项目，测试项目代码运行正常后，点击”构建“打包正式版，在[华为快应用后台](https://developer.huawei.com/consumer/cn/quickApp)上传。
 
 
-#### 发布为QQ、快手、飞书、京东小程序：
+#### 发布为QQ、快手、飞书、京东、小红书小程序：
 内容同上，不再重复。
+
+#### 发布为鸿蒙元服务：
+  1. 注册鸿蒙元服务，参考： [元服务 appid 注册](/tutorial/mp-harmony/intro#register-app-id)
+  2. 请参考 [元服务发行与上架](tutorial/mp-harmony/intro#发行与上架步骤) 进行上架前准备。在 HBuilderX 中顶部菜单依次点击 **发行 - 鸿蒙元服务**，HBuilderX 会自动构建并上传到开发者后台，请点击控制台显示的链接进行操作。
 
 发布的快捷键是`Ctrl+u`。同样可拉下快速发布菜单并按数字键选择。
 

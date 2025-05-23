@@ -1,6 +1,12 @@
-### uni.showToast(OBJECT)
+## uni.showToast(OBJECT)
 
 显示消息提示框。
+
+|元服务|
+|:-:|
+|√|
+
+<!-- UNIAPPAPIJSON.showToast.compatibility -->
 
 **OBJECT参数说明**
 
@@ -15,6 +21,8 @@
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+
+
 
 **icon 值说明**
 
@@ -48,9 +56,17 @@ uni.showToast({
 
 - App端可通过[plus.nativeUI.toast API](https://www.html5plus.org/doc/zh_cn/nativeui.html#plus.nativeUI.toast)实现更多功能。
 
-### uni.hideToast()
+<!-- UNIAPPAPIJSON.showToast.tutorial -->
+
+## uni.hideToast()
 
 隐藏消息提示框。
+
+|元服务|
+|:-:|
+|x|
+
+<!-- UNIAPPAPIJSON.hideToast.compatibility -->
 
 **示例**
 
@@ -59,9 +75,15 @@ uni.hideToast();
 ```
 
 
-### uni.showLoading(OBJECT)
+## uni.showLoading(OBJECT)@showloading
 
-显示 loading 提示框, 需主动调用 [uni.hideLoading](api/ui/prompt?id=hideloading) 才能关闭提示框。
+显示 loading 提示框, 需主动调用 [uni.hideLoading](#hideloading) 才能关闭提示框。
+
+|元服务|
+|:-:|
+|√|
+
+<!-- UNIAPPAPIJSON.showLoading.compatibility -->
 
 **OBJECT参数说明**
 
@@ -73,6 +95,8 @@ uni.hideToast();
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
+
+
 **示例**
 
 ```javascript
@@ -81,9 +105,17 @@ uni.showLoading({
 });
 ```
 
-### uni.hideLoading()
+<!-- UNIAPPAPIJSON.showLoading.tutorial -->
+
+## uni.hideLoading()@hideloading
 
 隐藏 loading 提示框。
+
+|元服务|
+|:-:|
+|x|
+
+<!-- UNIAPPAPIJSON.hideLoading.compatibility -->
 
 **示例**
 
@@ -97,9 +129,15 @@ setTimeout(function () {
 }, 2000);
 ```
 
-### uni.showModal(OBJECT)
+## uni.showModal(OBJECT)@showmodal
 
 显示模态弹窗，可以只有一个确定按钮，也可以同时有确定和取消按钮。类似于一个API整合了 html 中：alert、confirm。
+
+|元服务|
+|:-:|
+|√|
+
+<!-- UNIAPPAPIJSON.showModal.compatibility -->
 
 **OBJECT参数说明**
 
@@ -109,14 +147,16 @@ setTimeout(function () {
 |content|String|否|提示的内容||
 |showCancel|Boolean|否|是否显示取消按钮，默认为 true||
 |cancelText|String|否|取消按钮的文字，默认为"取消"||
-|cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5、微信小程序、百度小程序、抖音小程序（2.62.0+）|
+|cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5、微信小程序、百度小程序、抖音小程序（2.62.0+）、支付宝小程序|
 |confirmText|String|否|确定按钮的文字，默认为"确定"||
-|confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"，微信小程序平台默认为"#576B95"，百度小程序平台默认为"#3c76ff"|H5、微信小程序、百度小程序、抖音小程序（2.62.0+）|
+|confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"，微信小程序平台默认为"#576B95"，百度小程序平台默认为"#3c76ff"|H5、微信小程序、百度小程序、抖音小程序（2.62.0+）、支付宝小程序|
 |editable|Boolean|否|是否显示输入框|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)、抖音小程序（2.62.0+）|
 |placeholderText|String|否|显示输入框时的提示文本|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)、抖音小程序（2.62.0+）|
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+
+
 
 **success返回参数说明**
 
@@ -149,11 +189,13 @@ uni.showModal({
 - 小程序平台，`cancelText`和`confirmText`有长度限制，最多允许 4 个字符；
 - 钉钉小程序真机与模拟器表现有差异，真机title，content均为必填项
 - 各家小程序平台对于 `confirm`、`cancel` 字段返回规则可能不尽相同，包含两种情况：`{ confirm: true, cancel: false }` 或 `{ confirm: true }`，但并不影响使用 if 去做判断
+- 钉钉小程序本身不支持设置 cancelColor/confirmColor 属性
 
-
-### uni.showActionSheet(OBJECT)
+## uni.showActionSheet(OBJECT)
 
 从底部向上弹出操作菜单
+
+<!-- UNIAPPAPIJSON.showActionSheet.compatibility -->
 
 **OBJECT参数说明**
 
@@ -168,7 +210,7 @@ uni.showModal({
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
-**popover 值说明（仅App生效）**
+**popover 值说明**
 
 |值|类型|说明|
 |:-|:-|:-|
@@ -182,6 +224,8 @@ uni.showModal({
 |参数|类型|说明|
 |:-|:-|:-|
 |tapIndex|Number|用户点击的按钮，从上到下的顺序，从0开始|
+
+
 
 **示例**
 
@@ -206,3 +250,5 @@ uni.showActionSheet({
 
 - 在非H5端，本章的所有弹出控件都是原生控件，层级最高，可覆盖video、map、tabbar等原生控件。
 - [uni-app插件市场](https://ext.dcloud.net.cn/)有很多封装好的前端组件，但注意前端组件层级不是最高，无法覆盖原生组件，除非使用cover-view或nvue。
+
+<!-- UNIAPPAPIJSON.showActionSheet.tutorial -->

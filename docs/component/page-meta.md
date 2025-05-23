@@ -1,4 +1,4 @@
-#### page-meta
+## page-meta
 
 页面属性配置节点，用于指定页面的一些属性、监听页面事件。可部分替代pages.json的功能。
 
@@ -10,9 +10,11 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√ 2.6.3+|2.6.3+|√ 2.9.0+|√|√|√|x|√|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√ 2.6.3+|2.6.3+|√ 2.9.0+|√|√|√|x|√|x|x|x|
+
+<!-- UNIAPPCOMJSON.page-meta.compatibility -->
 
 从HBuilderX 2.6.3起，编译到所有平台均支持`page-meta`，但编译到微信时，受微信基础库版本限制；编译到其他平台不受平台版本限制。
 
@@ -26,8 +28,8 @@
 |background-color-bottom|string||否|底部窗口的背景色，必须为十六进制颜色值，仅 iOS 支持|微信基础库 2.9.0|
 |scroll-top|string|""|否|滚动位置，可以使用 px 或者 rpx 为单位，在被设置时，页面会滚动到对应位置|微信基础库 2.9.0、H5 3.7.0、App-vue 3.7.0|
 |scroll-duration|number|300|否|滚动动画时长|微信基础库 2.9.0|
-|page-style|string|""|否|页面根节点样式，页面根节点是所有页面节点的祖先节点，相当于 HTML 中的 body 节点|微信基础库 2.9.0、H5 2.6.7、App-vue 2.6.7|
-|root-font-size|string|""|否|页面的根字体大小，页面中的所有 rem 单位，将使用这个字体大小作为参考值，即 1rem 等于这个字体大小|微信基础库 2.9.0、H5 2.6.7、App-vue 2.6.7|
+|page-style|string|""|否|页面根节点样式，页面根节点是所有页面节点的祖先节点，相当于 HTML 中的 body 节点|微信基础库 2.9.0|
+|root-font-size|string|""|否|页面的根字体大小，页面中的所有 rem 单位，将使用这个字体大小作为参考值，即 1rem 等于这个字体大小|微信基础库 2.9.0|
 |enable-pull-down-refresh|Boolean|""|否|是否开启下拉刷新|App 2.6.7|
 |@resize|eventhandle||否|页面尺寸变化时会触发 resize 事件， event.detail = { size: { windowWidth: number, windowHeight: number } }|微信基础库 2.9.0|
 |@scroll|eventhandle||否|页面滚动时会触发 scroll 事件， event.detail = { scrollTop: number }|微信基础库 2.9.0|
@@ -55,29 +57,28 @@ vue3 下还可以在`page-meta`内使用浏览器原生 head 标签，**此用�
     page-style="color: green"
     root-font-size="16px"
   >
-		<head> // 仅vue3 ssr支持，此节点下的元素会被拷贝到h5页面的head标签下，可以利用此特性进行seo优化
-			<meta name="keyword" :content="title" />
-		</head>
+    <head>
+      // 仅vue3 ssr支持，此节点下的元素会被拷贝到h5页面的head标签下，可以利用此特性进行seo优化
+      <meta name="keyword" :content="title" />
+    </head>
   </page-meta>
-  <view class="content">
-  </view>
+  <view class="content"> </view>
 </template>
 
 <script>
   export default {
     data() {
       return {
-				keyword: '',
-      }
+        keyword: "",
+      };
     },
-		serverPrefetch(){ // 仅vue3版本支持
-			this.keyword = "ServerKeyword"
-		},
-    onLoad() {
+    serverPrefetch() {
+      // 仅vue3版本支持
+      this.keyword = "ServerKeyword";
     },
-    methods: {
-    }
-  }
+    onLoad() {},
+    methods: {},
+  };
 </script>
 ```
 

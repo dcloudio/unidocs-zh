@@ -1,6 +1,6 @@
 
 > 已经了解 Vue 2，只想了解 Vue 3 的新功能可以参阅[vue3新功能](https://v3.cn.vuejs.org/guide/migration/introduction.html#%E6%A6%82%E8%A7%88)！
->  
+>
 > 已经有 Vue 2项目，需要适配 Vue 3 的可参阅[vue2 项目迁移 vue3](https://uniapp.dcloud.io/migration-to-vue3)！
 
 
@@ -113,7 +113,7 @@
 ```
 
 2. `index.vue` 里可直接使用组件
- 
+
 
 ```html
 	<template>
@@ -146,7 +146,7 @@
 	<script>
 		import uniBadge from '@/components/uni-badge/uni-badge.vue';//1.导入组件（这步属于传统vue规范，但在uni-app的easycom下可以省略这步）
 		export default {
-			components:{uniBadge }//2.注册组件（这步属于传统vue规范，但在uni-app的easycom下可以省略这步） 
+			components:{uniBadge }//2.注册组件（这步属于传统vue规范，但在uni-app的easycom下可以省略这步）
 		}
 	</script>
 ```
@@ -203,17 +203,13 @@
 
 |选项	|类型	|说明	|
 |--	|--	|--	|
-|type	| `String` 、 `Number` 、 `Boolean` 、 `Array` 、 `Object` 、 `Date` 、 `Function` 、 `Symbol(uni-app x 不支持)` ，任何自定义构造函数、或上述内容组成的数组	|会检查一个 `prop` 是否是给定的类型，否则抛出警告，复杂数据类型需要通过 `PropType` 标记类型，[详见](https://cn.vuejs.org/guide/typescript/options-api.html#typing-component-props)。	|
+|type	| `String` 、 `Number` 、 `Boolean` 、 `Array` 、 `Object` 、 `Date` 、 `Function` 、 `Symbol` ，任何自定义构造函数、或上述内容组成的数组	|会检查一个 `prop` 是否是给定的类型，否则抛出警告，复杂数据类型需要通过 `PropType` 标记类型，[详见](https://cn.vuejs.org/guide/typescript/options-api.html#typing-component-props)。	|
 |default	|any	|为该 `prop` 指定一个默认值。如果该 `prop` 没有被传入，则换做用这个值。对象或数组的默认值必须从一个工厂函数返回。|
 |required	|Boolean	|定义该 `prop` 是否是必填项。|
 |validator	|Function	|自定义验证函数会将该 `prop` 的值作为唯一的参数代入。在非生产环境下，如果该函数返回一个 `false` 的值 (也就是验证失败)，一个控制台警告将会被抛出。|
 
 
 ##### 示例：
-
-::: preview
-
-> uni-app js 引擎版
 
 ```html
 	<template>
@@ -239,34 +235,6 @@
 	</script>
 ```
 
-> uni-app x
-
-```html
-	<template>
-		<view>
-			<!-- 我是子组件componentA -->
-			<view>{{age}}</view>
-		</view>
-	</template>
-	<script lang="uts">
-		export default {
-			props: {
-				// 检测类型 + 其他验证
-				age: {
-					type: Number,
-					default: 0,
-					required: true,
-					validator: function(value: number): boolean {
-						return value >= 0
-					}
-				}
-			}
-		}
-	</script>
-```
-
-:::
-
 ```html
 	<template>
 		<view>
@@ -290,7 +258,7 @@
 ```html
 	<!-- 动态赋予一个变量的值 -->
 	<blog-post :title="post.title"></blog-post>
-	
+
 	<!-- 动态赋予一个复杂表达式的值 -->
 	<blog-post :title="post.title + ' by ' + post.author.name"></blog-post>
 ```
@@ -349,7 +317,7 @@
 	<!-- 即便对象是静态的，我们仍然需要 `v-bind` 来告诉 Vue -->
 	<!-- 这是一个 JavaScript 表达式而不是一个字符串。-->
 	<blog-post :author="{ name: 'Veronica',company: 'Veridian Dynamics'}"></blog-post>
- 
+
 	<!-- 用一个变量进行动态赋值。-->
 	<blog-post :author="post.author"></blog-post>
 ```
@@ -389,10 +357,6 @@
 
 1. **这个 `prop` 用来传递一个初始值**；这个子组件接下来希望将其作为一个本地的 `prop` 数据来使用。在这种情况下，最好定义一个本地的 `data property `并将这个 `prop` 作为其初始值：
 
-::: preview
-
-> uni-app js 引擎版
-
 ```html
 	<template>
 		<view>
@@ -411,33 +375,6 @@
 		}
 	</script>
 ```
-
-> uni-app x
-
-```html
-	<template>
-		<view>
-			<!-- 我是子组件componentA -->
-			<view>{{myTitle}}</view>
-		</view>
-	</template>
-	<script lang="uts">
-		export default {
-			props: {
-				title: {
-					type: String
-				}
-			},
-			data() {
-				return {
-					myTitle:this.title as string
-				}
-			}
-		}
-	</script>
-```
-
-:::
 
 ```html
 	<template>
@@ -461,10 +398,6 @@
 
 2. **这个 `prop` 以一种原始的值传入且需要进行转换**。在这种情况下，最好使用这个 `prop` 的值来定义一个计算属性：
 
-::: preview
-
-> uni-app js 引擎版
-
 ```html
 	<template>
 		<view>
@@ -483,33 +416,6 @@
 		}
 	</script>
 ```
-
-> uni-app x
-
-```html
-	<template>
-		<view>
-			<!-- 我是子组件componentA -->
-			<view>{{normalizedSize}}</view>
-		</view>
-	</template>
-	<script lang="uts">
-		export default {
-			props: {
-				size: {
-					type: String
-				}
-			},
-			computed: {
-				normalizedSize: function (): string {
-					return this.size.toLowerCase()
-				}
-			}
-		}
-	</script>
-```
-
-:::
 
 ```html
 	<template>
@@ -541,10 +447,6 @@
 我们可以为组件的 `prop` 指定验证要求，例如你知道的这些类型。如果有一个需求没有被满足，则 `Vue` 会在浏览器控制台中警告你。这在开发一个会被别人用到的组件时尤其有帮助。
 
 为了定制 `prop` 的验证方式，你可以为 `props` 中的值提供一个带有验证需求的对象，而不是一个字符串数组。例如：
-
-::: preview
-
-> uni-app js 引擎版
 
 ```js
 	props: {
@@ -588,52 +490,6 @@
 	}
 ```
 
-> uni-app x
-
-```js
-	props: {
-		propA: {
-			type: Number
-		},
-		// 必填的字符串
-		propC: {
-			type: String,
-			required: true
-		},
-		// 带有默认值的数字
-		propD: {
-			type: Number,
-			default: 100
-		},
-		// 带有默认值的对象
-		propE: {
-			type: Object,
-			// 对象或数组默认值必须从一个工厂函数获取
-			default: function(): Object {
-			  return { message: 'hello' }
-			}
-		},
-		// 自定义验证函数
-		propF: {
-			type: String,
-			validator: function(value: string): boolean {
-			  // 这个值必须匹配下列字符串中的一个
-			  return ['success', 'warning', 'danger'].indexOf(value) != -1
-			}
-		},
-		// 具有默认值的函数
-		propG: {
-			type: Function,
-			// 与对象或数组默认值不同，这不是一个工厂函数 —— 这是一个用作默认值的函数
-			default: function(): string {
-			  return 'Default function'
-			}
-		}
-	}
-```
-
-:::
-
 当 `prop` 验证失败的时候，(开发环境构建版本的) `Vue` 将会产生一个控制台的警告。
 
 **tips**
@@ -674,16 +530,10 @@
 
 用于验证 `author` prop 的值是否是通过 `new Person` 创建的。
 
-**注意：uni-app x 暂不支持**
-
 ### Prop 的大小写命名
 
 
 `HTML` 中的 `attribute` 名是大小写不敏感的，所以浏览器会把所有大写字符解释为小写字符。这意味着当你使用 `DOM` 中的模板时，`camelCase` (驼峰命名法) 的 `prop` 名需要使用其等价的 `kebab-case` (短横线分隔命名) 命名：
-
-::: preview
-
-> uni-app js 引擎版
 
 ```html
 	<template>
@@ -699,29 +549,6 @@
 		}
 	</script>
 ```
-
-> uni-app x
-
-```html
-	<template>
-		<view>
-			<!-- 我是子组件componentA -->
-			<view>{{postTitle}}</view>
-		</view>
-	</template>
-
-	<script lang="uts">
-		export default {
-			props: {
-				postTitle: {
-					type: String
-				}
-			}
-		}
-	</script>
-```
-
-:::
 
 ```html
 	<template>
@@ -1009,8 +836,6 @@
 	}
 ```
 
-**注意：uni-app x 暂不支持**
-
 ### v-model 参数
 
 
@@ -1164,8 +989,6 @@
 	</script>
 ```
 
-**注意：uni-app x 暂不支持 capitalize 修饰符**
-
 ```html
 	<!-- 我是 my-component子组件-->
 	<template>
@@ -1234,7 +1057,7 @@
 ### 插槽内容
 
 
-Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 [Web Components 规范草案](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md)，将 `<slot>` 元素作为承载分发内容的出口。
+Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 [Web Components 规范草案](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Slots-Proposal.html)，将 `<slot>` 元素作为承载分发内容的出口。
 
 
 它允许你像这样合成组件：
@@ -1590,18 +1413,6 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 [Web C
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/scoped-slot.png)
 
 在这个例子中，我们选择将包含所有插槽 `prop` 的对象命名为 `slotProps`，但你也可以使用任意你喜欢的名字。
-
-**注意：** `uni-app x` 中需要为作用域插槽指定类型，以 `todo-list` 组件为例，需要补充如下代码：
-
-```js
-	import { SlotsType } from 'vue'
-	export default {
-		slots: Object as SlotsType<{
-			default: { item: string }
-		}>
-	}
-```
-
 
 #### 独占默认插槽的缩写语法
 

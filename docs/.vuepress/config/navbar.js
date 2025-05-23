@@ -110,7 +110,7 @@ export const navbar = [
           {
             text: '华为快应用',
             type: 'link',
-            link: 'https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-component-view'
+            link: 'https://developer.huawei.com/consumer/cn/doc/quickApp-References/quickapp-filestructure-0000001074564510'
           },
           {
             text: '360小程序',
@@ -121,6 +121,16 @@ export const navbar = [
             text: 'Weex',
             type: 'link',
             link: 'https://weexapp.com/zh/'
+          },
+          {
+            text: '鸿蒙元服务',
+            type: 'link',
+            link: 'https://developer.huawei.com/consumer/cn/doc/atomic-guides-V5/atomic-service-V5'
+          },
+          {
+            text: "小红书小程序",
+            type: "link",
+            link: "https://miniapp.xiaohongshu.com/docsV2/doc/DC026595",
           },
         ]
       },
@@ -155,9 +165,15 @@ export const navbar = [
   },
   {
     text: 'uni 小程序 sdk',
-    link: 'https://nativesupport.dcloud.net.cn/README',
+    link: 'https://nativesupport.dcloud.net.cn/',
     type: "link",
     target: '_blank',
+    needOutbound: false
+  },
+  {
+    text: 'uni-ad广告',
+    link: '/uni-ad/',
+    type: "link",
     needOutbound: false
   },
   /* {
@@ -187,6 +203,7 @@ export const navbarLanguage = {
       text: 'English',
       link: 'javascript:;',
       click() {
+        localStorage.setItem('__UNIDOCS_LANGUAGE', 'en')
         location.href = 'https://en.uniapp.dcloud.io' + location.pathname + location.hash + location.search
       }
     }

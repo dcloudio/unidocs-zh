@@ -93,6 +93,9 @@ const routerMap = {
   '/m3w': '/uniCloud/uni-portal.html',
   '/tutorial/syntax-uts': '/uni-app-x/uts/',
 
+	'/harmony/dev': '/tutorial/harmony/dev.html',
+	'/harmony/dev.html': '/tutorial/harmony/dev.html',
+
   '/uniCloud/uni-id-summary': '/uniCloud/uni-id/summary.html',
   '/uniCloud/uni-id-pages': '/uniCloud/uni-id/redirect.html',
   '/uniCloud/uni-id-common': '/uniCloud/uni-id/cloud-common.html',
@@ -102,15 +105,33 @@ const routerMap = {
   '/uni-app-x/pagesjson': '/uni-app-x/collocation/pagesjson.html',
   '/uni-app-x/manifest': '/uni-app-x/collocation/manifest.html',
   '/uniCloud/': 'https://doc.dcloud.net.cn/uniCloud/',
-  '/uni-app-x/': 'https://doc.dcloud.net.cn/uni-app-x/'
+  '/uni-app-x/': 'https://doc.dcloud.net.cn/uni-app-x/',
+	
+	'/tutorial/harmony/dev#env': '/tutorial/harmony/runbuild.html',
+	'/tutorial/harmony/dev#nativeapi': '/tutorial/harmony/native-api.html',
+	'/tutorial/harmony/dev#nativelibs': '/tutorial/harmony/native-api.html',
+	'/tutorial/harmony/dev#publish': '/tutorial/harmony/runbuild.html#publish',
+	'/tutorial/harmony/dev#harmonyos特性说明': '/tutorial/harmony/built-in-module.html',
+	'/tutorial/harmony/dev': '/tutorial/harmony/intro.html',
+	
+	'/tutorial/run/run-app-harmony.': '/tutorial/harmony/runbuild.',
+}
+
+function fileNameToLowerCase (path) {
+  return path.replace(/\/[\w-]+\.(html|md)/, ($1) => {
+    return $1.toLocaleLowerCase()
+  })
 }
 
 export default ({ fullPath, path, hash }) => {
+  if (!hash && fullPath !== path) {
+    hash = fullPath.replace(path, '').replace('?id=', '#')
+  }
   fullPath = decodeURIComponent(fullPath)
   const matchFullPath = routerMap[fullPath.replace('?id=', '#').replace('.html', '')];
   if (matchFullPath) {
     return {
-      path: matchFullPath,
+      path: fileNameToLowerCase(matchFullPath),
       replace: true
     }
   }
@@ -118,7 +139,7 @@ export default ({ fullPath, path, hash }) => {
   const matchPath = routerMap[path] || routerMap[path.replace('.html', '')]
   if (matchPath) {
     return {
-      path: matchPath,
+      path: fileNameToLowerCase(matchPath),
       hash,
       replace: true
     }
@@ -126,7 +147,17 @@ export default ({ fullPath, path, hash }) => {
 
   if (path.indexOf('/app-') === 0 || path.indexOf('/android-') === 0 || path.indexOf('/ios-') === 0) {
     return {
-      path: `/tutorial${path}`,
+      path: `/tutorial${fileNameToLowerCase(path)}`,
+      hash,
+      replace: true
+    }
+  }
+
+  const matchUTSPlugin = path.match(/\/(plugin\/uts-\S+(\.html)*\S*)/)
+  if (matchUTSPlugin) {
+    const utsPluginPath = matchUTSPlugin[1]
+    return {
+      path: routerMap['/uni-app-x/'] + utsPluginPath,
       hash,
       replace: true
     }
@@ -137,7 +168,8 @@ export default ({ fullPath, path, hash }) => {
   routerMapKeys.forEach(key => {
     if (path.indexOf(key) === 0 && routerMap[key].indexOf(key) !== 0 && routerMap[key] !== path) {
       return returnPathConfig = {
-        path: path.replace(key, routerMap[key]),
+        // fixed: 文件名转为小写
+        path: fileNameToLowerCase(path.replace(key, routerMap[key])),
         hash,
         replace: true
       }

@@ -88,7 +88,7 @@ uni-list不包含下拉刷新和上拉翻页。上拉翻页另见组件：[uni-l
 ```
 
 ### 开启点击反馈和右侧箭头
-- 设置 `clickable` 为 `true` ，则表示这是一个可点击的列表，会默认给一个点击效果，并可以监听 `click` 事件
+- 设置 `clickable` 为 `true` ，则表示这是一个可点击的列表，会默认给一个点击效果，并可以监听 `click` 事件，`click` 事件也在此绑定
 - 设置 `link` 属性，会自动开启点击反馈，并给列表右侧添加一个箭头
 - 设置 `to` 属性，可以跳转页面，`link` 的值表示跳转方式，如果不指定，默认为 `navigateTo`
 
@@ -204,7 +204,7 @@ export default {
 |badgeStyle  |Object   |-      | 数字角标样式，使用uni-badge的custom-style参数|
 |rightText|String|-|右侧文字内容|
 |disabled|Boolean|false|是否禁用	|
-|showArrow|Boolean|true|是否显示箭头图标	|		
+|showArrow|Boolean|false|是否显示箭头图标	|		
 |link|String|navigateTo	|新页面跳转方式，可选值见下表|
 |to|String|-|新页面跳转地址，如填写此属性，click 会返回页面是否跳转成功|
 |clickable|Boolean	|false|	是否开启点击反馈|

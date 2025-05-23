@@ -6,7 +6,9 @@ targetSdkVersion用于指定应用的目标Android版本（API等级），默认
 随着Android系统的升级，一些应用市场会要求设置较高的targetSdkVersion才可以提交，HBuilderX中可在项目的manifest.json中进行配置。
 
 
-**️注意: App升级时 targetSdkVersion 只能增加不能降低，也就是说 targetSdkVersion 高的App无法被 targetSdkVersion 低的App覆盖安装，开发者需要注意！**
+**️注意:**
++  App升级时 targetSdkVersion 只能增加不能降低，也就是说 targetSdkVersion 高的App无法被 targetSdkVersion 低的App覆盖安装，开发者需要注意！
++  android 15 设备对 targetSdkVersion 版本有要求，低于24无法正常在android 15设备上正常安装，开发者需要注意！
 
 ### 设置targetSdkVersion  
 targetSdkVersion值为Number类型，且必须为正整数，取值范围参考`Android版本列表`中的`API等级`。
@@ -51,17 +53,22 @@ API等级与Android版本对应列表如下：
 
 | API等级 | Android版本号 | Android版本名称 |  
 | :-- | :-- | :-- |  
-| 19 | Android4.4 | Kitkat |  
+| 36 | Android16 | Android W |  
+| 35 | Android15 | Android V, Vanilla Ice Cream |  
+| 34 | Android14 | Android U, Upside Down Cake |  
+| 33 | Android13 | Android T, Tiramisu |  
+| 32 | Android12L | Android Sv2 |  
+| 31 | Android12 | Android S, Snow Cone |  
+| 30 | Android11 | Android R, Red Velvet Cake |  
+| 29 | Android10 | Android Q, Quince Tart |  
+| 28 | Android9 | Android P, Pie |  
+| 27 | Android8.1 | Android O_MR1 |  
+| 26 | Android8.0 | Android O, Oreo |  
+| 25 | Android7.1 | Android N_MR1 |  
+| 24 | Android7.0 | Android N, Nougat |  
+| 23 | Android6.0 | Android M, Marshmallow |  
+| 22 | Android5.1 | Android L_MR1 |  
+| 21 | Android5.0 | Android L, Lollipop |  
 | 20 | Android4.4W | Kitkat Watch |  
-| 21 | Android5.0 | Lollipop |  
-| 22 | Android5.1 | Lollipop |  
-| 23 | Android6.0 | Marshmallow |  
-| 24 | Android7.0 | Nougat |  
-| 25 | Android7.1 | Nougat |  
-| 26 | Android8.0 | Oreo |  
-| 27 | Android8.1 | Oreo |  
-| 28 | Android9.0 | Pie |  
-| 29 | Android10.0 | Android Q |  
-| 30 | Android11.0 | Android R |  
-| 31 | Android12.0 | Android S |  
+| 19 | Android4.4 | Kitkat |  
 

@@ -8,7 +8,7 @@
 更多信息详见 [申请开通Paypal操作指南](https://uniapp.dcloud.io/app-payment-paypal-open)
 
 **注意**
-- iOS系统仅支持iOS11.0及以上版本
+- iOS系统仅支持iOS13.0及以上版本
 
 ### 配置  
 在manifest.json文件“App模块配置”项的“Payment(支付)”下，勾选“paypal支付”项并配置相关参数
@@ -115,4 +115,7 @@ plus.payment.getChannels(function(channels){
 - 授权订单付款参考paypal官方文档：[Authorize payment for order](https://developer.paypal.com/api/orders/v2/#orders_authorize)  
 - 捕获订单付款参考paypal官方文档：[Capture payment for order](https://developer.paypal.com/api/orders/v2/#orders_capture)  
 
+## 注意事项
+
+* Android端需要注意应用包名和return_url要小写
 

@@ -78,14 +78,22 @@ export default {
 | startDate	|String|-| 日期选择范围-开始日期|
 | endDate|String|-| 日期选择范围-结束日期|
 | range|Boolean|false| 范围选择|
-| insert|Boolean|false| 插入模式,可选值，ture：插入模式；false：弹窗模式；默认为插入模式|
+| insert|Boolean|true| 插入模式，可选值，ture：插入模式；false：弹窗模式；默认为插入模式|
 |clearDate|Boolean|true|弹窗模式是否清空上次选择内容|
 | selected|Array|-| 打点，期待格式[{date: '2019-06-27', info: '签到', data: { custom: '自定义信息', name: '自定义消息头',xxx:xxx... }}]|
 |showMonth	|Boolean|true| 是否显示月份为背景|
 
-### Calendar Events
+### DataSelect Events
 
-|事件名|说明|返回值|
+| 事件名  |        事件说明        | 返回参数 |
+| :-----: | :--------------------: | :------: |
+| @change | 仅插入模式时生效 日期改变时触发  |    {"year":2024,"month":2,"date":24}     |
+| @confirm | 仅弹出模式时生效 确认选择时触发 |    {"year":2024,"month":2,"date":24}     |
+| @monthSwitch | 切换月份时触发 |     {"year":2024,"month":2}     |
+
+### Calendar Methods
+
+|方法名|说明|返回值|
 |:-:|:-:|:-:|
 |open|弹出日历组件，`insert :false` 时生效|-|
 

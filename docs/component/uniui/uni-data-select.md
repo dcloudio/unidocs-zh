@@ -21,7 +21,7 @@
 >
 > - 组件需要依赖 `sass` 插件 ，请自行手动安装
 > - 本组件为数据驱动，目的是快速投入使用，只可通过 style 覆盖有限样式，不支持自定义更多样式
-> - 如使用过程中有任何问题，或者您对 uni-ui 有一些好的建议，欢迎加入 uni-ui 交流群：871950839
+> - 如使用过程中有任何问题，或者您对 uni-ui 有一些好的建议，欢迎加入 [uni-im](https://im.dcloud.net.cn/#/?joinGroup=65aa42e5465fe748c837da2b)
 > - 组件支持 nvue ，需要在 `manifest.json > app-plus` 节点下配置 `"nvueStyleCompiler" : "uni-app"`
 > - 如组件显示有问题 ，请升级 `HBuilderX` 为 `v3.1.0` 以上
 
@@ -51,7 +51,7 @@
 export default {
   data() {
     return {
-      value: 0,
+      value: 1,
       range: [
         { value: 0, text: "篮球" },
         { value: 1, text: "足球" },
@@ -88,18 +88,21 @@ export default {
 
 ### DataSelect Props
 
-|    属性名     |     类型      | 可选值 |  默认值  |                                说明                                 |
-| :-----------: | :-----------: | :----: | :------: | :-----------------------------------------------------------------: |
-| value/v-model | String/Number |   -    |    -     |                         已选择数据的 value 值                    |
-|   localdata   |     Array     |   -    |    -     |                           本地渲染数据                            |
-|     clear     |    Boolean    |   -    |    -     |                         是否可以清空已选项                          |
-|     label     |    String     |        |          |                              左侧标题                               |
-|  placeholder  |    String     |   -    |  请选择  |                          输入框的提示文字                           |
-|   emptyText   |    String     |   -    | 暂无数据 |                 没有数据时显示的文字 ，本地数据无效                 |
+|    属性名     |     类型      |   可选值   |  默认值  |                         说明                         |
+| :-----------: | :-----------: | :--------: | :------: | :--------------------------------------------------: |
+| value/v-model | String/Number |     -      |    -     | 已选择数据的 value 值（当其值为0时不进行初始化赋值） |
+|   localdata   |     Array     |     -      |    -     |                     本地渲染数据                     |
+|     clear     |    Boolean    |     -      |    -     |                  是否可以清空已选项                  |
+|     label     |    String     |            |          |                       左侧标题                       |
+|  placeholder  |    String     |     -      |  请选择  |                   输入框的提示文字                   |
+|   emptyTips   |    String     |     -      | 暂无数据 |         没有数据时显示的文字 ，本地数据无效          |
+|   placement   |    String     | bottom,top |  bottom  |                      弹出时位置                      |
+|   page-size   |    Number     |     -      |    20    | 返回的数据量（云端请求时有效，更多云端属性详见下方） |
 
-#### DataCom Props
 
-更多 DataCom 支持的属性参考[更多](https://uniapp.dcloud.net.cn/component/datacom.html#%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C)
+#### 使用云端数据时的属性（DataCom Props）
+
+更多 DataCom 支持的属性参考（包括：设置返回20个的默认大小）[更多](https://uniapp.dcloud.net.cn/component/datacom.html#%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C)
 
 #### Localdata Options
 

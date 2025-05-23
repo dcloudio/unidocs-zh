@@ -1,12 +1,14 @@
-#### live-pusher
+## live-pusher
 
 实时音视频录制，也称直播推流。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√(nvue)、vue 3.4.1+|x|√|x|x|x|x|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√(nvue)、vue 3.4.1+|x|√|x|x|x|x|x|x|x|x|x|x|
+
+<!-- UNIAPPCOMJSON.live-pusher.compatibility -->
 
 app平台的 3.4.1+ vue页面已支持 live-pusher，3.4.1以前的版本
 需编写条件编译代码，使用 `plus.video.LivePusher`，[业务指南](https://ask.dcloud.net.cn/article/13416)、[规范文档](http://www.html5plus.org/doc/zh_cn/video.html#plus.video.LivePusher)。还是推荐直接使用nvue里的`live-pusher`组件。

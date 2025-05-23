@@ -19,9 +19,9 @@
   - 跳转微信打开广告前有微信的二次确认框。
   - 不支持从微信直接返回App，用户需要手动返回。
 
-上架微信开放平台的流程如下:
+**上架微信开放平台**的流程如下:
 
-1. 确认应用已上架国内的任意应用市场(上架前需要提供软著), 微信开放平台需要已上架的应用下载地址
+1. 确认应用已上架国内的任意应用市场(上架前需要提供软著,[点此前往](https://market.aliyun.com/common/agents/yscdcloud?userCode=yp4pevgx#4)加急办理软著登记), 微信开放平台需要已上架的应用下载地址
 2. 登录微信开放平台 [https://open.weixin.qq.com/](https://open.weixin.qq.com/)
 3. 在微信开放平台 `创建移动应用`，按照提示填写相关信息至完成。创建成功后会生成 `AppID`
 4. 确认在微信开放平台创建的应用状态为 `已上架`
@@ -29,7 +29,7 @@
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-ad/uni-ad-unimp-open-weixin-status.png)
 
 
-开通步骤
+**激励视频开通步骤:**
 
 1. 登录 [uni-ad 广告联盟](https://uniad.dcloud.net.cn)，找到广告应用设置并点击 App广告 -> DCloud快捷广告 -> 申请开通
 
@@ -39,7 +39,7 @@
 
 2. 在广告位列表中点击新建广告位
 
-3. 必须开启[服务器回调](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html#callback)，且响应正确的格式
+3. 激励视频广告位必须开启[服务器回调](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html#callback)，且回调测试请求响应正确的格式。
 
 
 提示

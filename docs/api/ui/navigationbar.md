@@ -1,6 +1,8 @@
-### uni.setNavigationBarTitle(OBJECT)
+## uni.setNavigationBarTitle(OBJECT)
 
 动态设置当前页面的标题。
+
+<!-- UNIAPPAPIJSON.setNavigationBarTitle.compatibility -->
 
 **OBJECT参数说明**
 
@@ -10,6 +12,8 @@
 |success|Function|否|接口调用成功的回调函数|
 |fail|Function|否|接口调用失败的回调函数|
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
+
+
 
 **示例**
 
@@ -23,16 +27,19 @@ uni.setNavigationBarTitle({
 
 - 如果需要在页面进入时设置标题，可以在`onReady`内执行，以避免被框架内的修改所覆盖。如果必须在`onShow`内执行需要延迟一小段时间
 
+<!-- UNIAPPAPIJSON.setNavigationBarTitle.tutorial -->
 
-### uni.setNavigationBarColor(OBJECT)
+## uni.setNavigationBarColor(OBJECT)
 
 设置页面导航条颜色。**如果需要进入页面就设置颜色，请延迟执行，防止被框架内设置颜色逻辑覆盖**
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|x|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|x|√|√|√|√|√|√|
+
+<!-- UNIAPPAPIJSON.setNavigationBarColor.compatibility -->
 
 **OBJECT参数说明**
 
@@ -44,6 +51,8 @@ uni.setNavigationBarTitle({
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+
+
 
 **注意**
 - Android 上的 backgroundColor 参数有限制，黑色大于 rgb(30,30,30), 白色小于 rgb(235,235,235)
@@ -84,17 +93,21 @@ uni.setNavigationBarColor({
 })
 ```
 
-### uni.showNavigationBarLoading(OBJECT)
+<!-- UNIAPPAPIJSON.setNavigationBarColor.tutorial -->
+
+## uni.showNavigationBarLoading(OBJECT)
 
 在当前页面显示导航条加载动画。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|√|√|√|√|x|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|√|√|√|√|1.48.0+|x|√|√|√|x|
 
-App平台调用此API时会在屏幕中间悬浮显示loading
+<!-- UNIAPPAPIJSON.showNavigationBarLoading.compatibility -->
+
+App平台（不包括 HarmonyOS Next）调用此API时会在屏幕中间悬浮显示loading
 
 **OBJECT参数说明**
 
@@ -110,17 +123,19 @@ App平台调用此API时会在屏幕中间悬浮显示loading
 uni.showNavigationBarLoading()
 ```
 
-### uni.hideNavigationBarLoading(OBJECT)
+## uni.hideNavigationBarLoading(OBJECT)
 
 在当前页面隐藏导航条加载动画。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|√|√|√|√|x|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|√|√|√|√|1.48.0+|x|√|√|√|x|
 
-App平台调用此API时会关闭屏幕中间悬浮显示的loading
+<!-- UNIAPPAPIJSON.hideNavigationBarLoading.compatibility -->
+
+App平台（不包括 HarmonyOS Next）调用此API时会关闭屏幕中间悬浮显示的loading
 
 **OBJECT参数说明**
 
@@ -137,15 +152,15 @@ uni.hideNavigationBarLoading()
 ```
 
 
-### uni.hideHomeButton(OBJECT)
+## uni.hideHomeButton(OBJECT)
 
 隐藏返回首页按钮。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|x|1.48.0+|1.10.0+|x|√|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|x|√|x|x|1.48.0+|x|1.10.0+|x|√|x|
 
 
 **OBJECT参数说明**

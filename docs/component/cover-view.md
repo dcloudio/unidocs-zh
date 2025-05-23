@@ -1,4 +1,4 @@
-### cover-view
+## cover-view
 覆盖在原生组件上的文本视图。
 
 app-vue和小程序框架，渲染引擎是webview的。但为了优化体验，部分组件如map、video、textarea、canvas通过原生控件实现，原生组件层级高于前端组件（类似flash层级高于div）。为了能正常覆盖原生组件，设计了cover-view。
@@ -6,10 +6,14 @@ app-vue和小程序框架，渲染引擎是webview的。但为了优化体验，
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|x|√|√|x|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|x|√|√|x|√|√|x|x|
 
+
+<!-- UNIAPPCOMJSON.cover-image.compatibility -->
+
+支持的事件：`click`
 
 **属性说明**
 
@@ -34,7 +38,7 @@ app-vue和小程序框架，渲染引擎是webview的。但为了优化体验，
 - 抖音小程序不需要`cover-view`，因其原生组件均实现了同层渲染。
 - 360小程序不存在原生组件，无此概念。
 - cover-view使用注意：京东小程序[详见](https://mp-docs.jd.com/doc/dev/component/548)、快手小程序[详见](https://mp.kuaishou.com/docs/develop/components/view/cover-view.html)、QQ小程序[详见](https://q.qq.com/wiki/develop/miniprogram/component/view-container/cover.html#cover-view) 。
-
+- App-Harmony 端由前端实现，层级会低于 map/web-view 原生组件。
 
 
 **微信小程序的cover-view使用注意：**

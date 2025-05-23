@@ -1,11 +1,13 @@
-### uni.getRecorderManager()
+## uni.getRecorderManager()
 获取**全局唯一**的录音管理器 ``recorderManager``。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|√|√|√|√|√|x|x|
+
+<!-- UNIAPPAPIJSON.getRecorderManager.compatibility -->
 
 **recorderManager 对象的方法列表**
 
@@ -32,7 +34,7 @@
 |onError|callback|录音错误事件, 会回调错误信息|&nbsp;|
 |offError|callback|取消监听录音错误事件|仅支付宝小程序支持|
 
-**start(options) 说明**
+## start(options)
 
 |属性|类型|必填|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
@@ -46,22 +48,33 @@
 |audioSource|String|否|指定录音的音频输入源。|微信小程序[详见](https://developers.weixin.qq.com/miniprogram/dev/api/media/recorder/RecorderManager.start.html)、支付宝小程序[详见](https://opendocs.alipay.com/mini/api/recordermanager/start?pathHash=4ebf0019)、百度小程序[详见](https://smartprogram.baidu.com/docs/develop/api/media/recorder_RecorderManager-start/)、快手小程序|
 |detectDecibel|Boolean|否|检测声音分贝数。[详见](https://opendocs.alipay.com/mini/api/recordermanager/start?pathHash=4ebf0019)|支付宝小程序10.2.0+|
 
+::: tip 编码格式与采样率、码率的关系
 
-其中，采样率和码率有一定要求，具体有效值如下：
+`Android、iOS、微信小程序`
 
 |采样率|编码码率|
 |:-|:-|
-|8000|16000 ~ 48000|
-|11025|16000 ~ 48000|
-|12000|24000 ~ 64000|
-|16000|24000 ~ 96000|
-|22050|32000 ~ 128000|
-|24000|32000 ~ 128000|
-|32000|48000 ~ 192000|
-|44100|64000 ~ 320000|
-|48000|64000 ~ 320000|
+|8000|16000 - 48000|
+|11025|16000 - 48000|
+|12000|24000 - 64000|
+|16000|24000 - 96000|
+|22050|32000 - 128000|
+|24000|32000 - 128000|
+|32000|48000 - 192000|
+|44100|64000 - 320000|
+|48000|64000 - 320000|
 
-**onStop(callback) 回调结果说明**
+`HarmonyOS`
+
+- aac 编码格式支持码率范围[32000 - 500000]
+- mp 编码格式支持码率范围[8000, 16000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000, 224000, 256000, 320000]
+  - 采样率使用16K以下时，对应码率范围为[8000 - 64000]
+  - 采样率使用16K~32K时对应的码率范围为[8000 - 160000]
+  - 采样率使用32K以上时对应的码率范围为[32000 - 320000]
+- wav 编码格式时，补丁码率 8000，采样率 64000，通道数 1
+:::
+
+## onStop(callback)
 
 |属性|类型|说明|
 |:-|:-|:-|
@@ -70,24 +83,26 @@
 |fileSize|Number|录音文件大小。单位：Byte。（仅支付宝10.2.90+支持）|
 
 
-**onFrameRecorded(callback) 回调结果说明**
+## onFrameRecorded(callback)
 
 |属性|类型|说明|
 |:-|:-|:-|
 |frameBuffer|ArrayBuffer|录音分片结果数据|
 |isLastFrame|Boolean|当前帧是否正常录音结束前的最后一帧|
 
-**onError(callback) 回调结果说明**
+## onError(callback)
 
 |属性|类型|说明|
 |:-|:-|:-|
 |errMsg|String|错误信息|
 
-**注意**
-
+::: warning 注意
 - 可以通过用户授权API来判断用户是否给应用授予麦克风的访问权限[https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
+- `HarmonyOS Next` 平台使用时需要添加权限 `ohos.permission.MICROPHONE`
+:::
 
-**示例**
+
+## 示例
 
 ```html
 <template>

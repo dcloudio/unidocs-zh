@@ -1,4 +1,3 @@
-
 ::: tip 组件名：uni-badge
 > 代码块： `uBadge`
 
@@ -34,7 +33,7 @@
 |:-:|:-:|:-:|:-:|
 |text|String|-|角标内容|
 |type|String|default|颜色类型，可选值：default（灰色）、primary（蓝色）、success（绿色）、warning(黄色)、error(红色)|
-|size|String|normal	|Badge 大小，可取值：normal、small|
+|size|String|small	|Badge 大小，可取值：normal、small|
 |is-dot|Boolean|false|不展示数字，只有一个小点|
 |max-num|String/Numbuer|99|展示封顶的数字值，超过 99 显示99+|		
 |custom-style|Object|{}|自定义 Badge 样式, 样式对象语法|

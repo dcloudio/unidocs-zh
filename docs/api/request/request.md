@@ -1,7 +1,9 @@
-### uni.request(OBJECT)
+## uni.request(OBJECT)
 发起网络请求。
 
 > 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。
+
+<!-- UNIAPPAPIJSON.request.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -31,6 +33,8 @@
 |fail|Function|否||接口调用失败的回调函数||
 |complete|Function|否||接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
 
+
+
 **method 有效值**
 
 注意：method有效值必须大写，每个平台支持的method有效值不同，详细见下表。
@@ -54,6 +58,8 @@
 |statusCode|Number|开发者服务器返回的 HTTP 状态码|
 |header|Object|开发者服务器返回的 HTTP Response Header|
 |cookies|``Array.<string>``|开发者服务器返回的 cookies，格式为字符串数组|
+
+<!-- UNIAPPAPIJSON.request.returnValue -->
 
 **data 数据说明**
 
@@ -144,14 +150,15 @@ requestTask.abort();
 - 离线打包不支持 `sslVerify` 配置
 - 单次网络请求数据量建议控制在50K以下（仅指json数据，不含图片），过多数据应分页获取，以提升应用体验。
 
+<!-- UNIAPPAPIJSON.request.tutorial -->
 
-### uni.configMTLS(OBJECT)
+## uni.configMTLS(OBJECT)
 
 https 请求配置自签名证书
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√`(3.2.7+)`|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√`(3.2.7+)`|x|x|x|x|x|x|x|x|x|
 
 **OBJECT 参数说明**
 
@@ -167,10 +174,11 @@ https 请求配置自签名证书
 
 |参数|类型|必填|说明|
 |:--|:--|:--|:--|
-| host | String |是| 对应请求的域名（注意：不要协议部分） |
-| client | String |否| 客户端证书（服务器端需要验证客户端证书时需要配置此项，格式要求请参考下面的证书格式说明，注意 `iOS` 平台客户端证书只支持 `.p12` 类型的证书）|
-| clientPassword | String |否| 客户端证书对应的密码（客户端证书存在时必须配置此项）|
-| server |Array&lt;String&gt;|否| 服务器端证书（客户端需要对服务器端证书做校验时需要配置此项，通常使用自签名证书时才需要配置，格式要求请参考下面的证书格式说明，注意 `iOS` 平台服务器端证书只支持 `.cer` 类型的证书，并且证书要包含完整的信息）|
+| host | string |是| 对应请求的域名（注意：不要协议部分） |
+| client | string |否| 客户端证书（服务器端需要验证客户端证书时需要配置此项，格式要求请参考下面的证书格式说明，注意 `iOS` 平台客户端证书只支持 `.p12` 类型的证书。HarmonyOS Next 上是证书路径 [文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/js-apis-http-V5#clientcert11)）|
+|keyPath|string|否|证书秘钥的路径，只支持 HarmonyOS Next (HBuilderX 4.31)|
+| clientPassword | string |否| 客户端证书对应的密码（客户端证书存在时必须配置此项。HarmonyOS Next 上是证书秘钥的密码 [文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/js-apis-http-V5#clientcert11)）|
+| server |Array&lt;string&gt;|否| 服务器端证书（客户端需要对服务器端证书做校验时需要配置此项，通常使用自签名证书时才需要配置，格式要求请参考下面的证书格式说明，注意 `iOS` 平台服务器端证书只支持 `.cer` 类型的证书，不仅仅验证公钥，还要验证整个证书链，请保证证书的完整性。HarmonyOS Next 不支持）|
 
 **证书格式说明**
 

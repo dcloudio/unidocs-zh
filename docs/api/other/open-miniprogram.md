@@ -1,12 +1,12 @@
-### uni.navigateToMiniProgram(OBJECT)
+## uni.navigateToMiniProgram(OBJECT)
 
 打开另一个小程序。
 
 **平台差异说明**
 
-|App|H5|[微信小程序](https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html)|[支付宝小程序](https://docs.alipay.com/mini/api/open-miniprogram)|[百度小程序](https://smartprogram.baidu.com/docs/develop/api/open_smartprogram/#swan-navigateToSmartProgram/)|[抖音小程序](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/mini-app-forward/tt-navigate-to-mini-program/)|[QQ小程序](https://q.qq.com/wiki/develop/miniprogram/API/open_port/port_change.html#qq-navigatetominiprogram)|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x(见下)|x|√|√|√|√(1.15.0+)|√|√|
+|App|H5|[微信小程序](https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html)|[支付宝小程序](https://docs.alipay.com/mini/api/open-miniprogram)|[百度小程序](https://smartprogram.baidu.com/docs/develop/api/open_smartprogram/#swan-navigateToSmartProgram/)|[抖音小程序](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/mini-app-forward/tt-navigate-to-mini-program/)|[QQ小程序](https://q.qq.com/wiki/develop/miniprogram/API/open_port/port_change.html#qq-navigatetominiprogram)|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x(见下)|x|√|√|√|√(1.15.0+)|√|√|x|
 
 - App平台打开微信小程序，使用plus.share的[launchMiniProgram](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService.launchMiniProgram)。注意uni-app不需要plus ready，将plus ready里的代码写到页面的onLoad生命周期即可。使用此功能需在manifest中配置微信分享SDK信息，打包后生效。
 - 各小程序平台对跳转到其他小程序有一些限制和规定，需要遵守，具体见各平台文档。
@@ -40,15 +40,15 @@ uni.navigateToMiniProgram({
 
 
 
-### uni.navigateBackMiniProgram(OBJECT)
+## uni.navigateBackMiniProgram(OBJECT)
 
 跳转回上一个小程序，只有当另一个小程序跳转到当前小程序时才会能调用成功。
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|√|√|√|x|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|√|√|√|√|x|√|√|√|x|
 
 **OBJECT参数说明**
 
@@ -71,7 +71,7 @@ uni.navigateBackMiniProgram({
 })
 ```
 
-### uni.openEmbeddedMiniProgram(OBJECT)
+## uni.openEmbeddedMiniProgram(OBJECT)
 
 微信小程序跳转小程序（半屏模式）（从微信础库 2.20.1 开始支持）
 

@@ -1,12 +1,15 @@
-### uni.uploadFile(OBJECT)
+## uni.uploadFile(OBJECT)
 将本地资源上传到开发者服务器，客户端发起一个 ``POST`` 请求，其中 ``content-type`` 为 ``multipart/form-data``。
-如页面通过 [uni.chooseImage](api/media/image?id=chooseimage) 等接口获取到一个本地资源的临时文件路径后，可通过此接口将本地资源上传到指定服务器。另外选择和上传非图像、视频文件参考：[https://ask.dcloud.net.cn/article/35547](https://ask.dcloud.net.cn/article/35547)。
+如页面通过 [uni.chooseImage](/api/media/image.md#chooseimage) 等接口获取到一个本地资源的临时文件路径后，可通过此接口将本地资源上传到指定服务器。另外选择和上传非图像、视频文件参考：[https://ask.dcloud.net.cn/article/35547](https://ask.dcloud.net.cn/article/35547)。
 
 > 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。
 
 **推荐开发者上传到uniCloud，uniCloud提供了免费CDN和更好的易用性，包括安全的cdn直传。**
-- uniCloud的上传API：[https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile](https://uniapp.dcloud.io/uniCloud/storage?id=uploadfile)
+- uniCloud的上传API：[https://doc.dcloud.net.cn/uniCloud/storage/dev.html#uploadfile](https://doc.dcloud.net.cn/uniCloud/storage/dev.html#uploadfile)
 - 封装的更完善的[uni-file-picker组件](https://ext.dcloud.net.cn/plugin?id=4079)，文件选择、上传到uniCloud，一站式集成。
+- 推荐`uni-cdn`，帮你节省至少30%的 CDN 费用！[详情](https://doc.dcloud.net.cn/uniCloud/uni-cdn/intro.html)。
+
+<!-- UNIAPPAPIJSON.uploadFile.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -24,6 +27,8 @@
 |success|Function|否|接口调用成功的回调函数||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+
+
 
 **注意**：
 
@@ -109,6 +114,8 @@ uploadTask.abort();
 |totalBytesSent|Number|已经上传的数据长度，单位 Bytes|
 |totalBytesExpectedToSend|Number|预期需要上传的数据总长度，单位 Bytes|
 
+<!-- UNIAPPAPIJSON.uploadFile.returnValue -->
+
 **示例**
 
 ```javascript
@@ -141,10 +148,14 @@ uni.chooseImage({
 });
 ```
 
-### uni.downloadFile(OBJECT)@downloadfile
+<!-- UNIAPPAPIJSON.uploadFile.tutorial -->
+
+## uni.downloadFile(OBJECT)@downloadfile
 下载文件资源到本地，客户端直接发起一个 HTTP GET 请求，返回文件的本地临时路径。
 
 > 在各个小程序平台运行时，网络相关的 API 在使用前需要配置域名白名单。在h5上是跨域的，用户需要处理好跨域问题。
+
+<!-- UNIAPPAPIJSON.downloadFile.compatibility -->
 
 **OBJECT 参数说明**
 
@@ -158,6 +169,8 @@ uni.chooseImage({
 |fail|Function|否|接口调用失败的回调函数| |
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）| |
 
+
+
 **注：文件的临时路径，在应用本次启动期间可以正常使用，如需持久保存，需在主动调用 [uni.saveFile](/api/file/file?id=savefile)，才能在应用下次启动时访问得到。**
 
 **success 返回参数说明**
@@ -169,6 +182,8 @@ uni.chooseImage({
 |apFilePath|String|下载文件保存的路径（本地临时文件）。入参未指定 filePath 的情况下可用|支付宝小程序|
 |filePath|String|用户文件路径 (本地路径)。传入 filePath 时会返回，跟传入的 filePath 一致|微信小程序、支付宝小程序、抖音小程序、飞书小程序|
 |fileContent|Buffer|文件内容|QQ小程序|
+
+<!-- UNIAPPAPIJSON.downloadFile.returnValue -->
 
 **注意**
 - 网络请求的 ``超时时间`` 可以统一在 ``manifest.json`` 中配置 [networkTimeout](/collocation/manifest?id=networktimeout)。
@@ -243,3 +258,5 @@ downloadTask.onProgressUpdate((res) => {
 	}
 });
 ```
+
+<!-- UNIAPPAPIJSON.downloadFile.tutorial -->

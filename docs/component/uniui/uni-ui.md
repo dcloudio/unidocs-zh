@@ -1,10 +1,12 @@
-uni-ui是DCloud提供的一个跨端ui库，它是基于vue组件的、flex布局的、无dom的跨全端ui框架。
+# uni-ui 介绍
 
-uni-ui不包括基础组件，**它是基础组件的补充**。
+uni-ui 是DCloud提供的一个跨端ui库，它是基于vue组件的、flex布局的、无dom的跨全端ui框架。
 
-#### uni-ui产品特点
+`uni-ui` 不包括内置组件，**它是内置组件的补充**。
 
-1、高性能
+## uni-ui产品特点
+
+### 1、高性能
 
 目前为止，在小程序和混合app领域，uni-ui是性能的标杆。
 
@@ -27,7 +29,7 @@ uni-ui不包括基础组件，**它是基础组件的补充**。
 
 而uni-ui的组件，会自动判断自己的显示状态，在组件不再可见时，不会再消耗硬件资源。
 
-2、全端
+### 2、全端
 
 uni-ui的组件都是多端自适应的，底层会抹平很多小程序平台的差异或bug。
 
@@ -38,27 +40,28 @@ uni-ui还支持nvue原生渲染。
 
 uni-ui还支持pc等宽屏设备，可以通过PC浏览器访问[https://hellouniapp.dcloud.net.cn/pages/extUI/badge/badge](https://hellouniapp.dcloud.net.cn/pages/extUI/badge/badge)体验
 
-3、风格扩展
+### 3、风格扩展
 
 uni-ui的默认风格是中型的，与uni-app基础组件风格一致。但它支持[uni.scss](https://uniapp.dcloud.io/collocation/uni-scss)，可以方便的扩展和切换应用的风格。
 
-ui是一种需求非常发散的产品，DCloud官方也无意用uni-ui压制第三方ui插件的空间，但官方有义务在性能和跨端方面提供一个开源的标杆给大家。
+UI 是一种需求非常发散的产品，DCloud官方也无意用uni-ui压制第三方 UI 插件的空间，但官方有义务在性能和跨端方面提供一个开源的标杆给大家。
 
-我们欢迎更多优秀的ui组件出现，也欢迎更多人贡献uni-ui的主题风格，满足更多用户的需求。
+我们欢迎更多优秀的 UI 组件出现，也欢迎更多人贡献uni-ui的主题风格，满足更多用户的需求。
 
-4、与uniCloud协作
+### 4、与uniCloud协作
 
 uni-ui里很多组件与uniCloud打通，可大幅提升开发效率
 
-5、与uni统计自动集成实现免打点
+### 5、与uni统计自动集成实现免打点
 
-uni统计是优秀的多端统计平台，见[tongji.dcloud.net.cn](https://tongji.dcloud.net.cn)。
+uni统计是优秀的多端统计平台，见 [tongji.dcloud.net.cn](https://tongji.dcloud.net.cn)。
 
-除了一张报表看全端，它的另一个重要特点是免打点。
+除了一张报表看全端，它的另一个重要特点是免打点，也成为无侵入式埋点。
+
 比如使用uni-ui的navbar标题栏、收藏、购物车等组件，均可实现自动打点，统计页面标题等各种行为数据。
+
 当然你也可以关闭uni统计，这不是强制的。
 
-6、uni-ui符合全套DCloud组件规范
+### 6、uni-ui符合全套DCloud组件规范
 
-包括easycom、uni_module、datacom，全部遵循。
-
+包括 `easycom`、`uni_module`、`datacom`，全部遵循。

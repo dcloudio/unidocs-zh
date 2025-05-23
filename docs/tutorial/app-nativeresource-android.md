@@ -112,6 +112,95 @@ uni-app x项目manifest.json中没有提供Android权限的配置，需在此And
 </manifest>
 ```
 
+### Android url scheme配置@urlScheme  
+
+#### 5+ App/uni-app 项目
+
+uni-app 项目请在 `manifest.json` 可视化界面的 `App常用其它设置` 中配置，详情参考[Android设置url scheme](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#urlscheme)
+
+#### uni-app x 项目
+
+应用需要向系统注册url scheme，以便在浏览器中通过scheme打开App，可根据需求在`AndroidManifest.xml`文件中添加`android:scheme`数据，如下示例：
+```xml
+<?xml version="1.0" encoding="utf-8"?>  
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"   
+  package="io.dcloud.nativeresouce">  
+    <application>  
+        <!--meta-data-->  
+        <activity android:name="io.dcloud.uniapp.UniLaunchProxyActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="myappuniappx"/>
+      </intent-filter>
+    </activity>
+    </application>  
+</manifest>
+```
+
+> uni-app x 项目支持通过此方式配置url scheme，需 HBuilderX4.18及以上版本    
+
+**注意**  
+- `intent-filter` 下 `data` 节点的 `android:scheme` 属性值配置的是需要注册的scheme，上面示例配置了myappuniappx，请根据应用实际需求修改，可添加多个data节点配置多个scheme值。为了避免与其他应用产生冲突，请配置自己应用特有的字符串来避免冲突。  
+- `intent-filter` 下 `action` 和 `category` 节点数据是固定值，不要修改。  
+
+**相关参考**  
+- Android应用清单文件`intent-filter`节点，参考：[https://developer.android.google.cn/guide/topics/manifest/intent-filter-element](https://developer.android.google.cn/guide/topics/manifest/intent-filter-element?hl=zh-cn)  
+- Android应用清单文件`data`节点，参考：[https://developer.android.google.cn/guide/topics/manifest/data-element](https://developer.android.google.cn/guide/topics/manifest/data-element?hl=zh-cn)  
+
+### Android 修改`activity`注册配置信息
+
+android平台的`activity`内容载体，部分特殊功能需修改[activity注册配置](https://developer.android.google.cn/guide/topics/manifest/activity-element?hl=zh-cn)才能实现功能，因此提供如下方式修改注册的配置信息。
+
+#### 5+ App/uni-app 项目
+
+5+ App/uni-app 项目 页面 activity 如下:
+
++ 所有页面activity为io.dcloud.PandoraEntryActivity
+
+如下示例：
+```xml
+<?xml version="1.0" encoding="utf-8"?>  
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"   
+  package="io.dcloud.nativeresouce">  
+    <application>  
+        <activity android:name="io.dcloud.PandoraEntryActivity" 
+                  android:配置项 = "配置内容"/> 
+    </application>  
+</manifest>
+```
+
+#### uni-app x 项目
+
+uni-app x 项目页面 activity 如下:
+
++ 首页的activity为io.dcloud.uniapp.UniAppActivity
++ 次级页面跟随屏幕方向的activity为io.dcloud.uniapp.appframe.activity.UniPageActivity
++ 次级页面固定横屏的activity为io.dcloud.uniapp.appframe.activity.UniLandscapePageActivity
++ 次级页面固定竖屏的activity为io.dcloud.uniapp.appframe.activity.UniPortraitPageActivity
+
+如下示例：
+```xml
+<?xml version="1.0" encoding="utf-8"?>  
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"   
+  package="io.dcloud.nativeresouce">  
+    <application>  
+        <activity android:name="io.dcloud.uniapp.UniAppActivity" 
+                  android:配置项 = "配置内容"/>
+        <activity android:name="io.dcloud.uniapp.appframe.activity.UniPageActivity"
+                  android:配置项 = "配置内容"/>
+        <activity android:name="io.dcloud.uniapp.appframe.activity.UniLandscapePageActivity"
+                  android:配置项 = "配置内容"/>
+        <activity android:name="io.dcloud.uniapp.appframe.activity.UniPortraitPageActivity"
+                  android:配置项 = "配置内容"/>
+    </application>  
+</manifest>
+```
+
+**注意** 
+- activity 注册配置项theme、screenOrientation、configChanges、windowSoftInputMode、launchMode禁止设置，随意配置可能会导致app出现不可预估问题
+- 不可通过该方式自行配置scheme，请通过`Android url scheme配置`实现
 
 ## 应用资源@nativeResources
 
@@ -128,7 +217,7 @@ HBuilderX中对项目右键菜单 "新建" -> "目录"
 **注意**
 - android目录下不支持放java/kotlin源码文件，需要开发源码建议使用[UTS插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)或[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)  
 - assets、res目录中的资源不能通过uni API使用，需通过 Android 原生 API 访问，参考[Android应用资源概览](https://developer.android.google.cn/guide/topics/resources/providing-resources)。也就是在uni-app中，访问这些资源需要通过uts代码访问或编写[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)  
-- assets目录中已经保留使用以下文件，需注意避免冲突
+- uni-app项目assets目录中已经保留使用以下文件，需注意避免冲突
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
@@ -152,10 +241,45 @@ HBuilderX中对项目右键菜单 "新建" -> "目录"
 └─uni-jsframework-vue3-dev.js  //uni-app vue3框架（开发模式）
 	</code>
 </pre>
+  
+- uni-app x 项目assets目录中已经保留使用以下文件，需注意避免冲突
+
+<pre v-pre="" data-lang="">
+	<code class="lang-" style="padding:0">
+┌─apps                          //应用资源目录
+│  └─[AppID]                    //使用DCloud AppID作为目录名称
+├─font                          //内置字体文件目录
+│  └─dcloud_iconfont.ttf
+├─uniappx                       //内置unix资源目录
+│  ├─fonts
+│  └─version.json
+└─uni-uts                       //内置uts资源目录
+   ├─uni-prompt
+   └─...
+	</code>
+</pre>
 
 - res目录资源将合并到主项目中编译，会覆盖其它模块的资源
 - 其它文件在云打包时将会拷贝到应用级根目录（app）下
 - 应用资源目录配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
+
+### manifestPlaceholders.json @manifestplaceholders  
+在 Android 原生开发中可以在 `build.gradle` 文件配置 `manifestPlaceholders` 数据用于替换 `AndroidManifest.xml` 中的占位符，例如 ${api_key} 。
+为了满足此需求，在项目的 nativeResources/android 目录下可添加 `manifestPlaceholders.json` 文件来配置 `manifestPlaceholders` 数据。
+
+示例如下：
+```json
+{
+  "api_key": "我的api key"
+}
+```
+
+ `manifestPlaceholders.json` 文件中的键名和键值必需是字符串，其中键名为占位符的名称，如占位符 ${api_key} 的键名为 api_key，键值为要替换 `AndroidManifest.xml` 中的占位符的值。  
+
+**注意**  
+云端打包默认保留以下`manifestPlaceholders`，避免使用
+- apk.applicationId: 用于保存应用 ID，作用与 android 构建环境内置的 [applicationId](https://developer.android.google.cn/build/configure-app-module?hl=zh-cn#set-application-id) 一致。  
+
 
 ## 离线打包  
 离线打包时应用清单文件和资源需要开发者手动合并到Android原生工程中。

@@ -1,4 +1,6 @@
-#### cell
+## cell
+
+> HarmonyOS Next 不支持
 
 app端nvue专用组件。它的重要价值在于告诉原生引擎，哪些部分是可重用的。
 

@@ -124,9 +124,10 @@ message|string| 具体的网络状态信息
 #####  返回参数（detail）的详细说明
 参数|类型|说明
 :--|:--|:--|
-code|Number|
+code|Number| 
 message|string|
 
+`code` 具体字段值参考文档: [LivePusher](https://www.html5plus.org/doc/zh_cn/video.html#plus.video.LivePusher)
 
 #### netstatus
 > 网络状态通知事件

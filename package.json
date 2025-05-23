@@ -11,7 +11,7 @@
     "dev": "vuepress dev docs",
     "build": "node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs --no-cache",
     "build-lite": "cross-env DOCS_LITE=true node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs-lite --no-cache",
-    "check-md": "vuepress check-md2 docs",
+    "check-md":"vuepress check-md2 docs",
     "generate-ts": "node docs/.vuepress/generate-ts/index.mjs"
   },
   "repository": {
@@ -39,6 +39,5 @@
   "resolutions": {
     "terser-webpack-plugin": "1.4.6",
     "markdown-it": "< 14"
-  },
-  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
+  }
 }

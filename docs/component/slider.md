@@ -24,6 +24,9 @@
 
 
 
+
+
+
 <!-- |color|Color|#e9e9e9|背景条的颜色（请使用 backgroundColor）|
 |selected-color|Color|#1aad19|已选择的颜色（请使用 activeColor）| -->
 **Tips**

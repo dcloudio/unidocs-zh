@@ -11,7 +11,6 @@
 |@change|EventHandle||``<radio-group>`` 中的选中项发生变化时触发 change 事件，event.detail = {value: string}|
 
 
-
 <!-- UNIAPPCOMJSON.radio-group.reference -->
 
 #### radio

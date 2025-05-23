@@ -39,6 +39,8 @@
 
 
 
+
+
 change 事件返回 detail 中包含一个 source 字段，表示导致变更的原因，可能值如下：
 
 - autoplay 自动播放导致swiper变化。

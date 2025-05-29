@@ -92,4 +92,6 @@ HBuilderX中可以对这3种文件打断点，联编、跨语言、跨文件跳�
 
 启动时选择使用自定义基座运行,设置调试包名和基座项目。之后开启调试时就可以在关联的项目中打断点
 
-<img src="https://web-ext-storage.dcloud.net.cn/hx/debug/compilation.png"/>
+如下图: 关联项目中设置Android原生工程的路径，调试的包名就是应用包名。设置然后启动，开启调试时就可以调试Android原生工程中的kt和java代码
+
+<img src="https://web-ext-storage.dcloud.net.cn/hx/debug/compilation-debug.png"/>

@@ -345,6 +345,7 @@ package.json在每个`uni_modules`插件中都必须存在，包含了插件的�
 ```
 
 **界面变化：**
+
 HBuilderX 4.71之前版本
 ![](https://web-ext-storage.dcloud.net.cn/hx/uni_modules/client-platform.png)
 

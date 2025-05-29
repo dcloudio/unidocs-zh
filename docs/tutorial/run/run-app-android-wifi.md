@@ -1,61 +1,93 @@
 # 使用WIFI连接Android真机@AndroidWifi
 
-### 环境说明
+### 环境要求
 
-1. HBuilderX 4.61之前的版本，内置的adb版本，不支持无线adb。如果您的HBuilderX版本低于4.61，请自行配置adb。
-2. HBuilderX 4.61+版本，内置adb已支持无线调试。内置adb路径：`<HBuilderX安装目录>/plugins/launcher-tools/tools/adbs`
-3. 如果hx已启动，在操作系统任务管理器中杀掉hx的adb进程。
+##### 软件版本
+- **HBuilderX 4.61+**：内置adb已支持无线调试  
+  - 内置adb路径：`<HBuilderX安装目录>/plugins/launcher-tools/tools/adbs`
+- **低于4.61版本**：需自行配置adb
 
-### 注意事项
+##### 设备要求
+- **手机**：Android 11（API 级别 30）或更高版本
+- **TV/WearOS**：Android 13（API 级别 33）或更高版本
 
-1. 确保您的电脑和设备已连接到同一无线网络。
-2. 确保您的设备是 Android 11（API 级别 30）或更高版本（针对手机），或者 Android 13（API 级别 33）或更高版本（针对 TV 和 WearOS）。
+##### 准备工作
+1. 确保电脑和设备连接同一WiFi网络
+2. 关闭防火墙或设置信任规则（企业网络可能需要）
 
-### 在HBuilderX中连接 Wi-Fi
+### 通过 Wi-Fi 连接到设备说明
 
-> 需要再HBuilderX 4.67之后的版本
+1. 包含配对和连接两个过程
 
-1.打开 HBuilderX 选择运行到Android App基座，然后弹出设备选择框，点击无线连接按钮
+- 配对（Pair）	输入配对码 / 扫二维码，手机和电脑建立一次性信任
 
-<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-1.png" style="zoom: 60%;" />
+- 连接（Connect）	使用 IP:端口，建立正式的调试连接
 
-2.系统会弹出 使用WIFI配对设备 窗口
+2. 配对成功一次后，短期内可以直接连接（打开/关闭无线调试），无需重复配对。重启设备、断网或换 Wi-Fi 后，可能需要重新配对。
 
-<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-2.png" style="zoom: 60%;" />
+3. 如果配对完成但是没有连接到设备可参考 [无线连接常见的问题](#无线连接常见的问题)，正常会基于mDNS服务自动连接。
 
-3.在您的设备上，点按无线调试，然后配对您的设备
+### 通过HBuilderX配对（推荐）
 
-<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-7.png" style="zoom: 60%;" />
+> 需要再HBuilderX 4.71之后的版本
 
-a.如使用二维码配对设备，请选择使用 二维码配对设备，然后扫描 使用WIFI配对设备 窗口中提供的二维码
+1. **启动连接**：
 
-<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-2.png" style="zoom: 60%;" />
+- 选择"运行到Android App基座"
+- 在设备选择框点击"无线连接"按钮
 
-b.如使用配对码配对设备，请先在 使用WIFI配对设备 窗口中选择配对码配对。然后在您的设备上，选择使用 配对码配对设备，并记下提供的 6 位数配对码。设备显示在 使用WIFI配对设备 窗口中后，输入设备上显示的 6 位数配对码。
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-1.png" style="zoom: 20%;" />
 
-<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-3.png" style="zoom: 60%;" />
+2. **配对方式选择**：（二选一）
 
-<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-6.png" style="zoom: 60%;" />
+- 系统弹出"使用WIFI配对设备"窗口
 
-4.配对完成后，你可以在设备列表查看此设备。
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-2.png" style="zoom: 20%;" />
 
-<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-4.png" style="zoom: 60%;" />
+- 设备端开启"无线调试"功能
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-7.png" style="zoom: 20%;" />
+
+- 二维码配对：
+
+a. 设备选择"二维码配对"
+
+b. 扫描HBuilderX窗口中的二维码
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-2.png" style="zoom: 20%;" />
+
+- 配对码配对：
+
+a. HBuilderX选择"配对码配对"
+
+b. 设备选择"配对码配对"
+
+c. 输入设备显示的6位数配对码
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-3.png" style="zoom: 20%;" />
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-6.png" style="zoom: 20%;" />
+
+3. **完成连接**：
+- 配对成功后设备将出现在列表中
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-4.png" style="zoom: 20%;" />
 
 
-### 使用命令行连接 Wi-Fi
+### 使用命令行配对
 
 > 如果您想在不使用 HBuilderX 的情况下，通过命令行连接到您的设备，请按以下步骤操作：
 
-1. 在手机开发者选项里，打开无线调试。
-2. 打开终端窗口并前往 <HBuilderX安装目录>/plugins/launcher-tools/tools/adbs。
+1. 在设备开发者选项中启用"无线调试"
+2. 打开终端，进入adb目录： `<HBuilderX安装目录>/plugins/launcher-tools/tools/adbs`
 3. 选择使用 配对码配对设备，找到您的 IP 地址、端口号和配对码。记下设备上显示的 IP 地址、端口号和配对码。
-4. 在终端上，运行 adb pair ipaddr:port。请使用上述 IP 地址和端口号。
+4. 在终端上，运行 `adb pair ipaddr:port`。请使用上述 IP 地址和端口号。
 
-<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-6.png" style="zoom: 60%;" />
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-6.png" style="zoom: 20%;" />
 
 5. 收到提示时，输入配对码，如果命令输出`Successfully paired`, 就代表配对成功。
 
-<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-5.png" style="zoom: 60%;" />
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-5.png" style="zoom: 20%;" />
 
 6.配对设备后，你可以在设备列表查看此设备。
 
@@ -67,7 +99,7 @@ b.如使用配对码配对设备，请先在 使用WIFI配对设备 窗口中选
 
 1.如果您的网络或设备配置不支持 mDNS 或已停用 mDNS，则需要使用 adb connect ip:port 手动连接到设备。ip和port可以在设备端无线调试中看到。
 
-<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-8.png" style="zoom: 60%;" />
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/android-wifi/android-wifi-settings-8.png" style="zoom: 20%;" />
 
 2.如果您的设备支持，也可能由于adb缓存等原因导致不能自动连接。可以尝试关闭无线连接后重新打开，重试重新配对连接。
 

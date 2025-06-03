@@ -14,6 +14,7 @@
 - HBuilderX 4.43+ 开始支持将 `mainfest.json` 里面配置的应用版本名称/应用版本号（`versionName`/`versionCode`）应用于鸿蒙平台，且优先于 `harmony-configs/AppScope/app.json5` 中的设置
 - HBuilderX 4.61+ 开始支持 uni-app x 项目，且支持开启调试功能
 - HBuilderX 4.61+ 开始支持配置签名证书，且支持自动申请调试证书
+- HBuilderX 4.71+ 开始支持 uni-app x 项目运行到 x86_64 平台的鸿蒙模拟器
 
 ## 开发环境要求@env
 

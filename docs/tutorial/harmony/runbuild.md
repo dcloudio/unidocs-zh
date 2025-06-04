@@ -18,6 +18,7 @@
 
 ## 开发环境要求@env
 
+- 注册鸿蒙开发者账号，[地址](https://developer.huawei.com/consumer/cn/?ha_source=Dcloud&ha_sourceId=89000448)
 - HBuilderX 4.24+ [下载地址](https://www.dcloud.io/hbuilderx.html)
 - DevEco Studio [下载地址](https://developer.huawei.com/consumer/cn/download/)
   - HBuilderX 4.24+ 要求 DevEco Studio 5.0.3.400+

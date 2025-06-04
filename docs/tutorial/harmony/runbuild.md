@@ -20,7 +20,7 @@
 
 - 注册鸿蒙开发者账号，[地址](https://developer.huawei.com/consumer/cn/?ha_source=Dcloud&ha_sourceId=89000448)
 - HBuilderX 4.24+ [下载地址](https://www.dcloud.io/hbuilderx.html)
-- DevEco Studio [下载地址](https://developer.huawei.com/consumer/cn/download/)
+- DevEco Studio [下载地址](https://developer.huawei.com/consumer/cn/download/?ha_source=Dcloud&ha_sourceId=89000448)
   - HBuilderX 4.24+ 要求 DevEco Studio 5.0.3.400+
   - HBuilderX 4.31+ 要求 DevEco Studio 5.0.3.800+。
   - HBuilderX 4.61+ 针对 uni-app x 项目要求 DevEco Studio 5.0.7.100+。
@@ -251,7 +251,7 @@ HBuilderX 4.61+ 开始支持针对 uni-app x 项目的调试功能，支持断�
 如果自动申请过程中出现错误，可根据错误提示信息进行处理：
 
 ::: danger 尚未完成开发者注册
-数字证书是由华为的 AppGallery Connect 服务系统（简称 AGC）颁发的，开发者首先需要先[注册鸿蒙开发者账号]((https://developer.huawei.com/consumer/cn/?ha_source=Dcloud&ha_sourceId=89000448))，然后再到 [AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) 申请数字证书。
+数字证书是由华为的 AppGallery Connect 服务系统（简称 AGC）颁发的，开发者首先需要先[注册鸿蒙开发者账号]((https://developer.huawei.com/consumer/cn/?ha_source=Dcloud&ha_sourceId=89000448))，然后再到 [AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html?ha_source=Dcloud&ha_sourceId=89000448) 申请数字证书。
 :::
 
 ::: danger 未找到包名为 xx 的应用
@@ -265,7 +265,7 @@ HBuilderX 会尝试自动把当前运行设备的标识注册到 AGC 中，如�
 登录 AGC 之后，进入【证书、APP ID 和 Profile】中的【设备】页面，把当前设备的 UDID 添加到设备列表中。
 
 可以在前面提到的 [运行设备](#signing-configs-devices) 得到鸿蒙设备的 UDID 标识，
-也可以通过如下的命令行来获取，具体请参考 [华为的官方文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/bm-tool-V5#%E8%8E%B7%E5%8F%96udid%E5%91%BD%E4%BB%A4get)：
+也可以通过如下的命令行来获取，具体请参考 [华为的官方文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/bm-tool-V5#%E8%8E%B7%E5%8F%96udid%E5%91%BD%E4%BB%A4get?ha_source=Dcloud&ha_sourceId=89000448)：
 
 ```
 hdc shell bm get -u
@@ -308,13 +308,13 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 在使用模拟器进行调试运行的时候，一般是不需要做数字签名的，但如果是用真机进行调试运行，或者业务代码用到了 ACL 权限，那么就需要申请并配置一个**调试证书**用于数字签名。
 
-参考 [申请调试证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugcert-0000001914263178)
+参考 [申请调试证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugcert-0000001914263178?ha_source=Dcloud&ha_sourceId=89000448)
 
 在对话框中选择 Project - Signing Configs，并勾选 Automatically generate signature，即可自动生成签名证书资料
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200873385940vk5oj9ihk.png)#{.zooming style="max-height:200px"}
 
-参考 [自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-signing-V5#section18815157237)
+参考 [自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-signing-V5#section18815157237?ha_source=Dcloud&ha_sourceId=89000448)
 
 通过 DevEco Studio 自动申请得到的证书，缺省会保存到电脑的用户目录下，在 Windows 系统中一般是 `%USERPROFILE%\.ohos\config`，在 Mac 系统中一般是 `~/.ohos/config`。
 配置信息中包含的三个文件缺省都是采用绝对路径来表示，也可以把这些文件移到 `harmony-configs` 目录下，这样就可以使用相对路径来表示，相对于 `harmony-configs` 目录。
@@ -330,7 +330,7 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 发布证书只能手动申请，申请完成后把拿到的相关资料文件填写到 DevEco Studio 里面，填写的时候注意三个文件要在同一个目录。
 
-参考 [申请发布证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-releasecert-0000001946273961)
+参考 [申请发布证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-releasecert-0000001946273961?ha_source=Dcloud&ha_sourceId=89000448)
 
 在对话框中选择 Project - Signing Configs，不要勾选 Automatically generate signature，创建一个名为 `release` 的配置项。
 
@@ -356,7 +356,7 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 3. 配置完证书资料后，再次点击【发行】- 【App-Harmony-本地打包】即可得到已签名的 `.app` 安装包文件
 
-4. 最后还需参考鸿蒙官方文档发布鸿蒙应用到应用市场，详见[文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-releaseharmony-0000001933963166)
+4. 最后还需参考鸿蒙官方文档发布鸿蒙应用到应用市场，详见[文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-releaseharmony-0000001933963166?ha_source=Dcloud&ha_sourceId=89000448)
 
 ## 权限配置指南@permission
 
@@ -366,9 +366,9 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 具体请查看以下文档
 
-1. [声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/declare-permissions-V5)
-2. [基础权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5)
-3. [受限权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/restricted-permissions-V5)
+1. [声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/declare-permissions-V5?ha_source=Dcloud&ha_sourceId=89000448)
+2. [基础权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5?ha_source=Dcloud&ha_sourceId=89000448)
+3. [受限权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/restricted-permissions-V5?ha_source=Dcloud&ha_sourceId=89000448)
 
 ## 更多配置指南@configs
 
@@ -405,7 +405,7 @@ HBuilderX 早期版本所创建目录初始会存在几个常用的配置文件�
 建议清空 `harmony-configs` 目录的原有内容（注意做好备份），再删除 `unpackage` 目录，重新运行之后再按需要逐步恢复 `harmony-configs` 里面应有的配置。
 :::
 
-关于 `harmony-configs` 目录的使用要遵守鸿蒙的技术规范，具体可参考 [鸿蒙官方文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-configuration-file-stage-V5)
+关于 `harmony-configs` 目录的使用要遵守鸿蒙的技术规范，具体可参考 [鸿蒙官方文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-configuration-file-stage-V5?ha_source=Dcloud&ha_sourceId=89000448)
 
 经常会用到的配置文件有：
 
@@ -443,7 +443,7 @@ HBuilderX 早期版本所创建目录初始会存在几个常用的配置文件�
 
 manifest.json 里面已经支持一些应用配置项，未直接支持的可以通过 `harmony-configs` 来设置，详情参见 [更多配置指南](#configs)。
 
-同时可以参考鸿蒙官方文档：[应用/组件级配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-component-configuration-stage-V5)
+同时可以参考鸿蒙官方文档：[应用/组件级配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-component-configuration-stage-V5?ha_source=Dcloud&ha_sourceId=89000448)
 
 ### 应用图标资源规范@q2
 
@@ -491,7 +491,7 @@ console.log('安卓、苹果不会编译，鸿蒙会编译，小程序和Web也�
 
 ### 鸿蒙 DevEco Studio 如何开启热重载@q4
 
-HBuilderX 4.27 以前的版本需要在 DevEco Studio 中运行由 uni-app 项目生成的鸿蒙工程，虽然鸿蒙官方文档提供了如何开启热重载，详见[文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hot-reload-0000001527628941-V5)，
+HBuilderX 4.27 以前的版本需要在 DevEco Studio 中运行由 uni-app 项目生成的鸿蒙工程，虽然鸿蒙官方文档提供了如何开启热重载，详见[文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hot-reload-0000001527628941-V5?ha_source=Dcloud&ha_sourceId=89000448)，
 但目前只能针对 ets 文件的修改进行热更，还无法针对 uni-app 打包的 js 文件进行热更。
 
 HBuilderX 4.27+ 支持直接运行到鸿蒙设备，修改源代码之后需重新调用鸿蒙工具链编译打包，并重新安装到鸿蒙设备上运行，不支持热重载。
@@ -593,7 +593,7 @@ HBuilderX 4.31 起支持 uniPush 推送，具体配置请参考[文档](https://
 ~~HBuilderX 4.27+ 开始不再自动调起 DevEco Studio，需要手动调起 DevEco Studio 打开由 HBuilderX 自动生成的鸿蒙工程目录，~~
 ~~该目录可以在 `unpackage` 目录下找到，一般是在类似 `unpackage/debug/app-harmony-xxx` 的位置，如果是 cli 项目的话则是在 `dist` 目录下。~~
 
-~~可以参考鸿蒙的文档 [使用 DevTools 工具调试前端页面](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/web-debugging-with-devtools-V5) 进行处理。~~
+~~可以参考鸿蒙的文档 [使用 DevTools 工具调试前端页面](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/web-debugging-with-devtools-V5?ha_source=Dcloud&ha_sourceId=89000448) 进行处理。~~
 
 在 uni-app 的开发模式 `setWebDebuggingAccess` 会自动开启，此步骤可以跳过。
 
@@ -690,8 +690,8 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 
 当运行到鸿蒙时，在把打包后的 `.hap` 安装到设备上时，可能会遇到这个报错。
 一个常见的原因是当前使用的设备没有添加到签名用的 profile 文件中，要解决这个问题，
-首先要 [注册调试设备](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-device-0000001946142249)，
-然后 [申请调试 Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102)
+首先要 [注册调试设备](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-device-0000001946142249?ha_source=Dcloud&ha_sourceId=89000448)，
+然后 [申请调试 Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102?ha_source=Dcloud&ha_sourceId=89000448)
 或修改已有的 profile 文件并重新下载。
 
 ### 报错 `没有签名无法安装`@no-signature-file
@@ -727,11 +727,11 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 
 ### 报错 `未正确配置鸿蒙应用的包名`@bundlename-incorrect
 
-应该在 `manifest.json` 的【鸿蒙配置】中设置正确的包名，具体要求请参考 [配置应用包名](https://developer.huawei.com/consumer/cn/doc/app/agc-help-createharmonyapp-0000001945392297)
+应该在 `manifest.json` 的【鸿蒙配置】中设置正确的包名，具体要求请参考 [配置应用包名](https://developer.huawei.com/consumer/cn/doc/app/agc-help-createharmonyapp-0000001945392297?ha_source=Dcloud&ha_sourceId=89000448)
 
 ### HBuilder X 升级至 `4.51` 后报错 `owns a higher api version or a higher sdkReleaseType compared to current compilation process.`
 
-需要在工程级的 `build-profile.json5` 的 `products` 字段（如果有多项都要配置）中配置 `compatibleSdkVersionStage: "beta6"` 后重新运行 [鸿蒙文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hvigor-build-profile-V5)
+需要在工程级的 `build-profile.json5` 的 `products` 字段（如果有多项都要配置）中配置 `compatibleSdkVersionStage: "beta6"` 后重新运行 [鸿蒙文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hvigor-build-profile-V5?ha_source=Dcloud&ha_sourceId=89000448)
 
 ### 报错 `没有连接到正在运行的应用，热更新失败，请尝试重新运行以建立连接`@hmr-failed
 
@@ -762,8 +762,8 @@ kill -9 进程号
 
 在鸿蒙应用、鸿蒙元服务中可以开发卡片，放置到桌面上，展示特定的应用数据、提供快速启动应用的入口。目前，卡片开发有两种方式：
 
-- ArkTS UI 开发，需要使用 ArkTS 语法编写布局、支持自定义 Canvas，同时支持鸿蒙应用和元服务，属于原生开发，具体参考 [开发基于 ArkTS UI 的卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-working-principles) 文章。
-- JS UI 开发，不支持元服务，仅支持鸿蒙应用开发。提供了类似 HTML+CSS 的方案实现布局，相比 ArkTS UI 有一些能力限制。具体参考 [开发基于 JS UI 的卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-development)
+- ArkTS UI 开发，需要使用 ArkTS 语法编写布局、支持自定义 Canvas，同时支持鸿蒙应用和元服务，属于原生开发，具体参考 [开发基于 ArkTS UI 的卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-working-principles?ha_source=Dcloud&ha_sourceId=89000448) 文章。
+- JS UI 开发，不支持元服务，仅支持鸿蒙应用开发。提供了类似 HTML+CSS 的方案实现布局，相比 ArkTS UI 有一些能力限制。具体参考 [开发基于 JS UI 的卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-development?ha_source=Dcloud&ha_sourceId=89000448)
 
 下面介绍如何开发基于 UI 的卡片，思路和原生开发一致，推荐在 DevEco 中完成卡片开发。
 
@@ -783,4 +783,4 @@ kill -9 进程号
 
 此时，就有了默认的卡片，点击会打开默认应用入口。
 
-更多 API 和数据共享参考 [开发卡片事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-development)
+更多 API 和数据共享参考 [开发卡片事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-development?ha_source=Dcloud&ha_sourceId=89000448)

@@ -1,6 +1,6 @@
 # 历史变更
 
-自 uni-app 4.31 版本开始，鸿蒙运行时架构进行了较大的变更。逻辑层从 ArkTS 环境加载改为使用 [JSVM](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/jsvm-introduction-V5) 加载。uts插件仍然是ArkTS环境，仅开发者编写的普通代码和vue框架运行在 JSVM 中。
+自 uni-app 4.31 版本开始，鸿蒙运行时架构进行了较大的变更。逻辑层从 ArkTS 环境加载改为使用 [JSVM](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/jsvm-introduction-V5?ha_source=Dcloud&ha_sourceId=89000448) 加载。uts插件仍然是ArkTS环境，仅开发者编写的普通代码和vue框架运行在 JSVM 中。
 
 其影响如下：
 
@@ -11,4 +11,4 @@
 
 升级至 uni-app 4.51 版本后，由于 SDK 调整，影响如下：
 
-- 需要在工程级的 `build-profile.json5` 的 `products` 字段（如果有多项都要配置）中配置 `compatibleSdkVersionStage: "beta6"` [鸿蒙文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hvigor-build-profile-V5)
+- 需要在工程级的 `build-profile.json5` 的 `products` 字段（如果有多项都要配置）中配置 `compatibleSdkVersionStage: "beta6"` [鸿蒙文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hvigor-build-profile-V5?ha_source=Dcloud&ha_sourceId=89000448)

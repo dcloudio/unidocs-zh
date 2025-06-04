@@ -9,12 +9,12 @@
 
 
 ### 华为  
-- [应用审核指南](https://developer.huawei.com/consumer/cn/doc/app/50104)  
-- [应用资质审核要求](https://developer.huawei.com/consumer/cn/doc/app/80301)  
-- [应用审核FAQ](https://developer.huawei.com/consumer/cn/doc/app/50106)  
-- [应用资质FAQ](https://developer.huawei.com/consumer/cn/doc/app/50111)  
-- [APP备案FAQ](https://developer.huawei.com/consumer/cn/doc/app/50130)  
-- [APP备案补充指引](https://developer.huawei.com/consumer/cn/doc/app/50130-FAQ)
+- [应用审核指南](https://developer.huawei.com/consumer/cn/doc/app/50104?ha_source=Dcloud&ha_sourceId=89000448)  
+- [应用资质审核要求](https://developer.huawei.com/consumer/cn/doc/app/80301?ha_source=Dcloud&ha_sourceId=89000448)  
+- [应用审核FAQ](https://developer.huawei.com/consumer/cn/doc/app/50106?ha_source=Dcloud&ha_sourceId=89000448)  
+- [应用资质FAQ](https://developer.huawei.com/consumer/cn/doc/app/50111?ha_source=Dcloud&ha_sourceId=89000448)  
+- [APP备案FAQ](https://developer.huawei.com/consumer/cn/doc/app/50130?ha_source=Dcloud&ha_sourceId=89000448)  
+- [APP备案补充指引](https://developer.huawei.com/consumer/cn/doc/app/50130-FAQ?ha_source=Dcloud&ha_sourceId=89000448)
 
 
 ### 小米  

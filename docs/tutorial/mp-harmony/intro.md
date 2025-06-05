@@ -571,3 +571,25 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 如果报错中包含 xxx is not defined，可能是对应的 api 在元服务中还未实现，比如 uni.createAnimation、获取胶囊位置、获取激励视频等。此类问题需要使用条件编译进行规避。
 
 如果报错中包含 vendor.js 中有报错，可能是三方组件库不兼容元服务，可以参考 debug 文档进行错误定位。
+
+### 元服务提交审核常见报错
+
+#### 请检查华为后台隐私政策中 “设备权限调用” 是否填写完整
+
+检查代码中 `module.json5` 中的 requestPermissions 和 AGC 后台的隐私协议权限第二条 设备权限调用要严格一致。
+
+**注意：**
+
+- 位置权限中，精准 `ohos.permission.LOCATION` +模糊定位 `ohos.permission.APPROXIMATELY_LOCATION` 务必成对出现。
+- 不要勾选 `ohos.permission.WRITE_IMAGEVIDEO` 和 `ohos.permission.READ_IMAGEVIDEO` 读取和写入，这是敏感权限，一般情况下使用 uni.chooseMedia 和 uni.saveFile 就可以
+- 不要勾选剪切板 `ohos.permission.READ_PASTEBOARD` 权限，这是敏感权限需要华为申请下来才能使用，一般场景无法申请，设置剪切板功能 `uni.setClipboardData` 可正常使用。
+
+#### sumit version for review failed, additional msg is xxx
+
+- xxx 为 `[[5]]` ，报错一般是代码中 deviceType 和 uniapp 后台里选择的不一致。元服务建议值勾选 Phone 手机。保持一致即可。
+- xxx 为 AppGalleryConnectAppMetaInfoService version's privacyAgreementId is empty。这个一般是一些协议没有选择，错误通过了校验审核
+
+#### 提交审核按钮为灰色无法提交
+
+观察按钮右侧有个联系方式，可以和 uniapp 发起沟通，看是否有更好的激励政策
+

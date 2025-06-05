@@ -372,6 +372,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 **注意**
 
 - 使用 `maxWidth` 时，页面内fixed元素需要使用--window-left,--window-right来保证布局位置正确
+- 鸿蒙中使用 `backgroundColor` 时不支持设置为透明 transparent
 
 **代码示例：**
 

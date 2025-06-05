@@ -31,9 +31,9 @@
     "htmlparser2": "^9.0.0"
   },
   "dependencies": {
-    "@dcloudio/docs-utils": "^1.0.4",
+    "@dcloudio/docs-utils": "^1.0.6",
     "vuepress": "1.9.9",
-    "vuepress-theme-uniapp-official": "^1.4.35"
+    "vuepress-theme-uniapp-official": "^1.4.37"
   },
   "resolutions": {
     "terser-webpack-plugin": "1.4.6",

@@ -1118,10 +1118,10 @@
   resolved "https://registry.npmmirror.com/@braintree/sanitize-url/-/sanitize-url-3.1.0.tgz#8ff71d51053cd5ee4981e5a501d80a536244f7fd"
   integrity sha512-GcIY79elgB+azP74j8vqkiXz8xLFfIzbQJdlwOPisgbKT00tviJQuEghOXSMVxJ00HoYJbGswr4kcllUc4xCcg==
 
-"@dcloudio/docs-utils@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.npmmirror.com/@dcloudio/docs-utils/-/docs-utils-1.0.4.tgz#997581fea92c8d6dfabc75dc02fd4b76d6b8c647"
-  integrity sha512-rh0g26uTKg0lsFokymqgINtRAc14bh6IQOHeY4r1/ckmWeYBziqv6BQNIbbxQlKJ8FNClhJ7BUwgmU6f6bs/gQ==
+"@dcloudio/docs-utils@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.npmmirror.com/@dcloudio/docs-utils/-/docs-utils-1.0.6.tgz#9a163848f5161dc079585eb6c3952a5003ad1d57"
+  integrity sha512-b4L4vFRgQQYXbO/unuUvOkX47DloOLya5uTaLbcz3UeLq+KLthKuNQ2HNJ8OcyfYj3V2HSvoYvAOau20v/gHyA==
   dependencies:
     glob "10.4.5"
     gray-matter "^4.0.3"
@@ -9767,10 +9767,10 @@ vuepress-plugin-zooming@^1.1.8:
   dependencies:
     zooming "^2.1.1"
 
-vuepress-theme-uniapp-official@^1.4.35:
-  version "1.4.35"
-  resolved "https://registry.npmmirror.com/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.4.35.tgz#3b2874bc736164c7bf5e86eaf120570d77f02005"
-  integrity sha512-M/w2trKdlIzhXfLOiCdBcczsYbce+U8/UuPcF8Uvk5+Jida17RHp9zKxE9Qy23LnGxQ2m1Zv+8zEAY2Mkz9psg==
+vuepress-theme-uniapp-official@^1.4.37:
+  version "1.4.37"
+  resolved "https://registry.npmmirror.com/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.4.37.tgz#9d951c3024de7d31836bf852cd305b594381df5c"
+  integrity sha512-Vzf9txo8HORv/3qetufo9/a8Shon/lCybF+ZQ1tjP4rJG4sihnGjUM2jKKWhQh0ZbSs7HwgfvPBYkv7ufMALgg==
   dependencies:
     "@docsearch/css" "^3.6.0"
     "@vuepress/plugin-back-to-top" "^1.9.5"

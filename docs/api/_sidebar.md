@@ -142,6 +142,7 @@
   * 支付```{"collapsable": true}```
     * [requestPayment](plugins/payment.md)
     * [requestVirtualPayment](plugins/virtualPayment.md)
+    * [转账确认收款（requestMerchantTransfer）](plugins/request-merchant-transfer.md)
   * [推送](plugins/push.md)
   * [语音](plugins/voice.md)
   * [实人认证](plugins/facialRecognitionVerify.md)

@@ -36,18 +36,20 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 可以多设备运行，每个运行设备会在HBuilder底部控制台新开一个独立窗口，互不干扰。
 但一个设备同时只能运行一个项目，不同的项目运行到相同手机只有最后一个项目生效。
 
+HBuilderX 4.71+版本，Android设备支持[无线连接设备](https://uniapp.dcloud.net.cn/tutorial/run/run-app-android-wifi.html)。
+
 > 连接设备过程中如果找不到手机，可以尝试点击“刷新”按钮，如果还是无法找到手机请参考[真机运行常见问题](run-app-faq.md)
 
 ### Android设备选择
 
-<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/select-android.jpeg" style="zoom: 50%;" />
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/select-android.png" style="zoom: 50%;" />
 
 **注意事项**
 - 如果电脑里安装有模拟器（Android模拟器需要先启动），HBuilder会直接检测到设备并显示在候选列表中。可以参考[如何安装模拟器](installSimulator.md)
 - 确认Android手机设置中`USB调试`模式已开启。通常在手机的【设置】【开发者选项】里，有的手机在插上数据线后在系统通知栏里也可以设置，注意不能设置为u盘模式，如果是充电模式则必须同时设置充电时`允许usb调试`。
 
 
-### iOS设备选择@ios-device
+### iOS设备选择 @ios-device
 
 > HBuilderX中自带的标准真机运行基座使用DCloud向苹果申请的企业开发者证书签名，根据[苹果开发者企业计划许可协议](https://developer.apple.com/support/downloads/terms/apple-developer-enterprise-program/Apple-Developer-Enterprise-Program-License-Agreement-20220606-Chinese-Simplified.pdf)要求，使用企业开发者证书签名的App只允许企业员工内部使用，不允许企业外部人员安装使用。
 > 因收到苹果公司警告，自2022年9月14日起iOS真机设备不再支持使用标准真机运行基座，详情见论坛公告：[https://ask.dcloud.net.cn/article/40041](https://ask.dcloud.net.cn/article/40041)
@@ -60,12 +62,14 @@ HBuilder支持itunes协议，在HBuilder运行的电脑上，使用usb线连接i
 - 如果windows电脑连接iOS设备需电脑安装iTunes软件，并确保apple的mobile device服务开启、iTunes可找到手机
 - 手机连接电脑后，确保在手机上弹出的“要信任此电脑吗？”提示框中点了“信任”按钮
 
-#### iOS模拟器 @ios-simulator
+#### iOS模拟器设备选择 @ios-simulator
 
 如果是Mac电脑安装XCode后，“标准运行基座”支持使用iOS模拟器
+
 ![](https://native-res.dcloud.net.cn/images/hx/run/ios-sim.png)
 
 点击后进入iOS模拟器选择界面
+
 ![](https://native-res.dcloud.net.cn/images/hx/run/ios-sim-select.png)
 
 上面的界面会额外显示搜索框，因XCode的iOS模拟器非常多，可通过搜索框过滤快速选择需要使用的模拟器。
@@ -114,7 +118,7 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 - 手机处于息屏状态
 - 项目编译运行失败、或安装基座失败
 
-## 标准基座@playground
+## 使用标准基座运行@playground
 标准运行基座，是DCloud为方便开发者低门槛调试而提供的，此基座App使用的是DCloud的包名、证书和三方SDK配置。
 
 在原生层不变的情况下，js等动态代码可以在运行基座上动态加载，实现热重载运行。
@@ -125,7 +129,9 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 - iOS平台
 要求iOS10及以上系统，如需在iOS9.*设备真机运行，请使用自定义基座。更多App支持的最低版本设置参考manifest.json的[deploymentTarget](https://uniapp.dcloud.net.cn/collocation/manifest-app.html#ios)
 
-## 自定义基座@customplayground
+## 使用自定义基座运行@customplayground
+
+### 云打包自定基座
 如果要自定义原生层，则需要走一遍iOS或Android的打包流程，由XCode或Android studio编译打包生成ipa或apk安装包。
 
 但打包后无法方便调试，不能热重载和显示控制台日志。所以HBuilder在打包时提供了一个特殊选项，打包“自定义运行基座”。
@@ -145,21 +151,38 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 
 一个项目只能生成一个自定义基座，多次生成只保留最后一次结果。
 
-生成自定义基座后，在设备选择窗口，可以选择自定义基座，如下图所示：
+生成自定义基座后，在设备选择窗口，选择自定义基座-本地基座，如下图所示：
 
-<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/hx_select_base.jpg" style="zoom: 50%;" />
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/android-localBase.png" style="zoom: 50%;" />
 
 注意：自定义运行基座必须在HBuilderX中真机运行使用，不可直接安装使用，启动时会弹出toast提示信息。正式发版时需要按正常打包方式重新打包。
 
 > HBuilderX 3.7.13起，MacOSX系统，App项目，支持运行自定义基座到iOS模拟器。[参考文档](https://uniapp.dcloud.net.cn/tutorial/run/run-custom-base-ios-simulator.html)
 
-## 离线打包生成自定义运行基座
+### 离线打包自定基座
 
-可使用离线SDK打包生成自定义运行基座(不支持cli方式,将src拖拽到编辑器中，并重新识别项目类型)，生成后将apk和ipa包存放在项目目录/unpackage/debug目录下，文件名分别为android_debug.apk和iOS_debug.ipa。
+- [Android平台离线生成自定义调试基座(uni-app)](https://ask.dcloud.net.cn/article/35482)
+- [Android平台离线生成自定义调试基座(uni-app x)](https://doc.dcloud.net.cn/uni-app-x/native/debug/android.html)
+- [iOS平台离线生成自定义调试基座(uni-app)](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios?id=%e5%a6%82%e4%bd%95%e7%94%a8%e7%a6%bb%e7%ba%bf%e6%89%93%e5%8c%85%e5%b7%a5%e7%a8%8b%e5%88%b6%e4%bd%9c%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9f%ba%e5%ba%a7)
+- [iOS平台离线生成自定义调试基座(uni-app x)](https://doc.dcloud.net.cn/uni-app-x/native/debug/ios.html)
 
-- [Android平台离线生成自定义调试基座](https://ask.dcloud.net.cn/article/35482)
-- [iOS平台离线生成自定义调试基座](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios?id=%e5%a6%82%e4%bd%95%e7%94%a8%e7%a6%bb%e7%ba%bf%e6%89%93%e5%8c%85%e5%b7%a5%e7%a8%8b%e5%88%b6%e4%bd%9c%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9f%ba%e5%ba%a7)
+>HBuilderX 4.71之前
 
+使用离线SDK打包生成自定义运行基座(不支持cli方式,将src拖拽到编辑器中，并重新识别项目类型)，生成后将apk和ipa包存放在项目目录/unpackage/debug目录下，文件名分别为android_debug.apk和iOS_debug.ipa。
+
+可以在设备选择窗口，选择自定义基座-本地基座，如下图所示：
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/android-localBase.png" style="zoom: 50%;" />
+
+> HBuilderX 4.71+（仅Android）
+
+Android通过离线SDK打包生成的自定义基座后，如果基座已通过其他Ide已安装到手机中。
+
+可以在设备选择窗口，选择自定义基座-已安装基座，并选择对应调试的包名。如下图所示：
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/android-installedBase.png" style="zoom: 50%;" />
+
+如果配置关联项目后，还可以在HBuilderX中[原生联调（仅uni-app x）](https://doc.dcloud.net.cn/uni-app-x/native/debug/android.html#installedapk)
 
 ## 基座闪退获取日志
 

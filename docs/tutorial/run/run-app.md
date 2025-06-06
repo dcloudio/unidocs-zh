@@ -1,4 +1,4 @@
-因手机差异较大，HBuilder并没有提供App的模拟器。不管uni-app或5+App/wap2app项目，都需要连接真实的手机或手机模拟器来运行测试，称之为“真机运行”。
+因手机差异较大，HBuilder并没有提供App的模拟器。不管uni-app (x)或5+App/wap2app项目，都需要连接真实的手机或手机模拟器来运行测试，称之为“真机运行”。
 
 - Android平台
 HBuilder支持adb协议，在HBuilder运行的电脑上，可以使用usb线连接Android设备，也可以使用安装在电脑上的Android模拟器（包括google官方模拟器，三方模拟器如“雷电”、“夜神”等）
@@ -120,8 +120,10 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 
 ## 使用标准基座运行@playground
 标准运行基座，是DCloud为方便开发者低门槛调试而提供的，此基座App使用的是DCloud的包名、证书和三方SDK配置。
+- uni-app/5+App的标准基座的包名为：io.dcloud.HBuilder。图标为绿色H。
+- uni-app x的标准基座包名为：io.dcloud.uniappx。图标为绿色U。
 
-在原生层不变的情况下，js等动态代码可以在运行基座上动态加载，实现热重载运行。
+在原生层不变的情况下，js等动态代码可以在运行基座上动态加载，实现热重载运行。（uni-app x的Android端，uts代码编译为kt后通过dex动态加载来实现热刷新）
 
 **HBuilderX3.7.1版本调整标准基座支持的系统版本**
 - Android平台
@@ -131,21 +133,26 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 
 ## 使用自定义基座运行@customplayground
 
-### 云打包自定基座
-如果要自定义原生层，则需要走一遍iOS或Android的打包流程，由XCode或Android studio编译打包生成ipa或apk安装包。
+标准基座仅能更新热刷代码和资源文件，其他诸如修改包名、应用名称、证书、权限、原生模块变更、xml等资源变更、引入三方sdk等，需要完整的执行Android/iOS的打包流程，由Android studio或XCode编译打包生成apk或ipa安装包，才能生效。
 
-但打包后无法方便调试，不能热重载和显示控制台日志。所以HBuilder在打包时提供了一个特殊选项，打包“自定义运行基座”。
-
-<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/build-app-customplayground.jpg" style="zoom: 50%;" />
-
-> 打包App的入口在HBuilder顶部发行菜单，或快捷键【Ctrl+u】
+但真的打包为正式包，又无法调试，不能热重载和显示控制台日志。所以HBuilder在运行打包时提供了一个特殊选项，“自定义运行基座”。
 
 自定义运行基座可以所有配置生效（主要是manifest.json的配置），包括：
 - App名称、图标、封面splash、包名、证书
 - App模块配置、三方sdk配置（如微信、推送、地图、语音识别等三方sdk配置）
 - App权限配置
-- uni原生插件
+- 引入原生插件/SDK
 - 其他manifest.json文档提到的需打包生效的配置
+
+可以云打包自定义基座，也可以本地打包自定义基座。
+
+### 云打包自定基座
+
+使用云打包，开发者不必配置原生打包环境。
+
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/build-app-customplayground.jpg" style="zoom: 50%;" />
+
+> 打包App的入口在HBuilder顶部发行菜单，或快捷键【Ctrl+u】
 
 打包自定义运行基座后，HBuilder会自动将生成后的apk和ipa包存放在 项目目录/unpackage/debug目录下，文件名分别为`android_debug.apk`和`iOS_debug.ipa`。
 
@@ -166,7 +173,7 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 - [iOS平台离线生成自定义调试基座(uni-app)](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios?id=%e5%a6%82%e4%bd%95%e7%94%a8%e7%a6%bb%e7%ba%bf%e6%89%93%e5%8c%85%e5%b7%a5%e7%a8%8b%e5%88%b6%e4%bd%9c%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9f%ba%e5%ba%a7)
 - [iOS平台离线生成自定义调试基座(uni-app x)](https://doc.dcloud.net.cn/uni-app-x/native/debug/ios.html)
 
->HBuilderX 4.71之前
+> HBuilderX 4.71之前
 
 使用离线SDK打包生成自定义运行基座(不支持cli方式,将src拖拽到编辑器中，并重新识别项目类型)，生成后将apk和ipa包存放在项目目录/unpackage/debug目录下，文件名分别为android_debug.apk和iOS_debug.ipa。
 
@@ -176,8 +183,7 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 
 > HBuilderX 4.71+（仅Android）
 
-Android通过离线SDK打包生成的自定义基座后，如果基座已通过其他Ide已安装到手机中。
-
+Android通过离线SDK打包生成的自定义基座后，如果基座已通过Android Studio的运行安装到手机中。
 可以在设备选择窗口，选择自定义基座-已安装基座，并选择对应调试的包名。如下图所示：
 
 <img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/android-installedBase.png" style="zoom: 50%;" />
@@ -186,7 +192,7 @@ Android通过离线SDK打包生成的自定义基座后，如果基座已通过�
 
 ## 基座闪退获取日志
 
-### android平台
+### uni-app的android平台
 
 **默认标准基座**闪退 可以查看手机存储根目录 `/Android/data/io.dcloud.HBuilder/logs/io.dcloud.HBuilder/crash/` 崩溃日志文件
 
@@ -197,3 +203,10 @@ Android通过离线SDK打包生成的自定义基座后，如果基座已通过�
 apk包名是“uni.UNIB89CXX”，目录则为：`/Android/data/uni.UNIB89CXX/logs/uni.UNIB89CXX/crash/`
 
 **注意不是所有崩溃都能捕获到并保存文件**
+
+### uni-app x
+uni-app x的闪退日志有多种查看方式。
+- 运行控制台右上角勾选原生日志，可以查看
+- 在应用的沙盒目录下cache缓存目录的uni-crash目录查看。 [详见](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#cache)。标准基座和自定义基座均可，uni-app x的标准基座的包名为io.dcloud.uniappx。
+
+不管是uni-app还是uni-app x，线上应用还可以通过[uni统计](https://uniapp.dcloud.net.cn/uni-stat-v2.html)查看崩溃日志。

@@ -253,7 +253,7 @@ HBuilderX 4.61+ 开始支持针对 uni-app x 项目的调试功能，支持断�
 如果自动申请过程中出现错误，可根据错误提示信息进行处理：
 
 ::: danger 尚未完成开发者注册
-数字证书是由华为的 AppGallery Connect 服务系统（简称 AGC）颁发的，开发者首先需要先[注册鸿蒙开发者账号]((https://developer.huawei.com/consumer/cn/?ha_source=Dcloud&ha_sourceId=89000448))，然后再到 [AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html?ha_source=Dcloud&ha_sourceId=89000448) 申请数字证书。
+数字证书是由华为的 AppGallery Connect 服务系统（简称 AGC）颁发的，开发者首先需要先[注册鸿蒙开发者账号](https://developer.huawei.com/consumer/cn/?ha_source=Dcloud&ha_sourceId=89000448)，然后再到 [AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html?ha_source=Dcloud&ha_sourceId=89000448) 申请数字证书。
 :::
 
 ::: danger 未找到包名为 xx 的应用

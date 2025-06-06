@@ -62,6 +62,8 @@
 
 指定的目录不必已经存在，HBuilderX 会创建所需的目录，如果目录已经存在的话 HBuilderX 还可能根据需要尝试删除然后重建。
 
+通过指定鸿蒙工程目录的位置，还可以实现与原生鸿蒙工程的联编调试，具体方法可以参考 [联编调试](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-harmony.html#%E8%81%94%E7%BC%96%E8%B0%83%E8%AF%95)
+
 ### 在 HBuilderX 中设置 DevEco Studio 的安装位置@hbxsettings
 
 HBuilderX 依赖于 DevEco Studio 里面带的鸿蒙工具链，所以需要电脑已经安装了符合版本要求的 DevEco Studio。

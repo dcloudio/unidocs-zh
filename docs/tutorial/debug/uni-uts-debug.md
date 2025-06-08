@@ -85,25 +85,3 @@ HBuilderX中可以对这3种文件打断点，联编、跨语言、跨文件跳�
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-hovering_window.jpg" style="zoom: 60%;" />
 
-
-## 原生项目联编调试
-
-此功能是在[原生工程中集成uni-app x 原生SDK](https://doc.dcloud.net.cn/uni-app-x/native/)时，在HBuilder X中可以同时断点调试原生代码(java、kotlin)和uni-app x项目代码(uts、uvue)
-
-> HBuilderX 4.71以上开始支持该功能
-
-### 如何使用
-
-1、[在原生工程集成uni-app-x的SDK](https://doc.dcloud.net.cn/uni-app-x/native/)
-
-2、在Android Studio里将上面的原生工程成功运行到Android设备
-
-3、打开uni-app-x项目，然后如下图: 关联项目中设置Android原生工程项目路径，调试的包名就是原生工程的包名。需要设置Android原生工程项目路径，若仅调试uni-app x项目代码，无需配置。
-
-<img src="https://web-ext-storage.dcloud.net.cn/hx/debug/compilation-debug.png" style="zoom: 50%;" />
-
-
-### 示例
-
-<img src="https://web-ext-storage.dcloud.net.cn/hx/debug/compilation-debug-example-1.png"/>
-

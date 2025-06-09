@@ -150,7 +150,13 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 
 使用云打包，开发者不必配置原生打包环境。
 
-<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/build-app-customplayground.jpg" style="zoom: 50%;" />
+- uni-app 打包自定义基座
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/build-app-customplayground.jpg" style="zoom: 50%;" />
+
+- uni-app x 打包自定义基座
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/make-custom-for-uni-app-x.jpg?t=1" style="zoom: 50%;" />
 
 > 打包App的入口在HBuilder顶部发行菜单，或快捷键【Ctrl+u】
 

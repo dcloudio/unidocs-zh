@@ -1,6 +1,6 @@
 ### 插屏广告
 
-[插屏广告介绍](https://uniapp.dcloud.net.cn/component/ad-interstitial.html)
+[插屏广告介绍](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)
 
 **平台差异说明**
 

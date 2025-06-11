@@ -280,33 +280,76 @@ PrivacyInfo.xcprivacy用于配置应用隐私清单文件，详情参考[uni-app
 - ios目录下不支持放Object-C/Swift源码文件，需要开发源码建议使用[UTS插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)或[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)  
 - resources目录中的资源文件不能通过uni API使用，需通过 iOS 原生 API 访问，参考[Accessing a Bundle's Contents](https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/Introduction/Introduction.html#//apple_ref/doc/uid/10000123i-CH1-SW1)。也就是在uni-app/uni-app x项目中这些资源需要通过uts代码访问，uni-app项目也可编写[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)访问  
 - resources目录中已经保留使用以下文件，需注意避免冲突
+  + uni-app/5+ App 项目  
+  <pre v-pre="" data-lang="">
+    <code class="lang-" style="padding:0">
+  ├─Pandora                       //uni-app资源目录
+  │  └─apps                       //应用资源目录
+  │    └─[AppID]                  //使用DCloud AppID作为目录名称
+  ├─PandoraApi.bundle             //uni-app SDK内置资源目录
+  ├─control.xml                   //uni-app模块配置文件
+  ├─dcloud_logo@2x.png           //应用logo图片
+  ├─dcloud_logo@3x.png           //应用logo图片
+  ├─uni-jsframework.js           //uni-app vue2框架
+  ├─uni-jsframework-vue3.js      //uni-app vue3框架
+  ├─uni-jsframework-dev.js       //uni-app vue2框架（开发模式）
+  ├─uni-jsframework-vue3-dev.js  //uni-app vue3框架（开发模式）
+  ├─unincomponents.ttf           //uni-app内置字体图标
+  └─userPosition@2x.png          //地图模块当前位置图标
+    </code>
+  </pre>
+  + uni-app x 项目  
+  <pre v-pre="" data-lang="">
+    <code class="lang-" style="padding:0">
+  ├─uni-app-x                    //uni-app x 项目资源
+  ├─DCUniVideo                   //video组件目录
+  ├─uni_uts_toast_error.png      //uni.showToast 使用的图标
+  └─uni_uts_toast_success.png    //uni.showToast 使用的图标
+    </code>
+  </pre>
+- 应用资源目录配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
+
+
+### Watch 应用目录 @watch  
+
+> HBuilderX 4.71 及以上版本新增支持  
+
+uni-app/uni-app x 本身不支持开发 Watch App，但支持需要使用原生开发工程生成的 Watch App 添加 uni-app/uni-app x 开发的手机 App 中。  
+在原生资源目录 “nativeResources” 的 “ios” 目录下创建 “Watch”子目录，结构如下：  
 
 <pre v-pre="" data-lang="">
-	<code class="lang-" style="padding:0">
-// uni-app/5+ App 项目  
-┌─Pandora                       //uni-app资源目录
-│  └─apps                       //应用资源目录
-│    └─[AppID]                  //使用DCloud AppID作为目录名称
-├─PandoraApi.bundle             //uni-app SDK内置资源目录
-├─control.xml                   //uni-app模块配置文件
-├─dcloud_logo@2x.png           //应用logo图片
-├─dcloud_logo@3x.png           //应用logo图片
-├─uni-jsframework.js           //uni-app vue2框架
-├─uni-jsframework-vue3.js      //uni-app vue3框架
-├─uni-jsframework-dev.js       //uni-app vue2框架（开发模式）
-├─uni-jsframework-vue3-dev.js  //uni-app vue3框架（开发模式）
-├─unincomponents.ttf           //uni-app内置字体图标
-└─userPosition@2x.png          //地图模块当前位置图标
-
-// uni-app x 项目
-┌─uni-app-x                    //uni-app x 项目资源
-├─DCUniVideo                   //video组件目录
-├─uni_uts_toast_error.png      //uni.showToast 使用的图标
-└─uni_uts_toast_success.png    //uni.showToast 使用的图标
-
-	</code>
+  <code class="lang-" style="padding:0">
+├─nativeResources       // App原生资源目录
+│  └─ios                  // iOS平台目录
+│    ├─Resources            //资源文件存放目录，可选
+│    ├─Watch                //Watch App目录，可选
+│    │  └─myWatchApp.app      //需要添加的 Watch App 二进制文件
+│    ├─ios-watch.json       //Watch App 配置文件，可选
+│    └─info.plist           //应用主 info.plist 配置文件，可选
+└─manifest.json         // uni-app/uni-appx 项目清单文件  
+</code>
 </pre>
-- 应用资源目录配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
+
+#### myWatchApp.app  
+需要添加的 Watch App 可执行文件，需在原生XCode环境中开发添加 Watch Target，编译并以发布方式导出包含此 Watch App 的ipa包，将ipa解压后在Payload/XXX.app/Watch/ 下可以找到.app文件，将.app添加到如上所示的 nativeResources -> ios -> Watch 目录中。  
+
+#### ios-watch.json  
+可选配置文件，仅在需要配置 Watch App 的包名和profile文件时使用，格式如下：  
+```json
+{
+  "myWatchApp.app": {
+    "identifier": "com.my.app.watch",
+    "profile": "embedded.mobileprovision"
+  }
+}
+```
+
+- myWatchApp.app  
+  Watch App 文件名称，与添加到 nativeResources -> ios -> Watch 目录中的 .app 文件名称一致  
+- identifier  
+  打包时 Watch App 使用的 Bundle identifier，如不设置则默认使用 profile 文件中的绑定的 Bundle identifier，如果 profile 绑定的值使用了通配符则使用 Watch app 中配置的值  
+- profile  
+  打包时使用的 Provisioning Profile，相对于ios-watch.json文件所在目录的路径  
 
 ## 离线打包  
 离线打包时应用清单文件和资源需要开发者手动合并到XCode原生工程中。

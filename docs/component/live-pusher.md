@@ -276,4 +276,5 @@ errMsg|string|
 **注意**
 
 * live-pusher 是原生组件，在小程序端层级高于前端组件，需使用cover-view覆盖。在低版本微信中，live-pusher无法内嵌于 scroll-view、swiper、picker-view、movable-view 中。在App端的nvue文件中，live-pusher没有这类限制。
+* 微信小程序上,原生组件均已支持同层渲染,建议使用 view 替代 [详见](https://developers.weixin.qq.com/miniprogram/dev/component/cover-view.html)
 * App平台：使用 `<live-pusher/>` 组件，打包 App 时必须勾选 manifest.json->App 模块权限配置->LivePusher(直播推流) 模块。

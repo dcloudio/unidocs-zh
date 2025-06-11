@@ -310,12 +310,13 @@ PrivacyInfo.xcprivacy用于配置应用隐私清单文件，详情参考[uni-app
 - 应用资源目录配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 
 
-### Watch 应用目录 @watch  
+### Watch 目录 @watchapp  
 
-> HBuilderX 4.71 及以上版本新增支持  
+> HBuilderX 4.71 及以上版本新增支持嵌入 Watch App  
 
-uni-app/uni-app x 本身不支持开发 Watch App，但支持需要使用原生开发工程生成的 Watch App 添加 uni-app/uni-app x 开发的手机 App 中。  
-在原生资源目录 “nativeResources” 的 “ios” 目录下创建 “Watch”子目录，结构如下：  
+uni-app/uni-app x 本身还不支持直接用于开发 Watch App。如果已经存在使用 XCode 开发完成的 Watch App，可以将其添加到使用 uni-app/uni-app x 开发的主应用中，提交云端打包即可嵌入到 ipa 中提交。  
+
+在 uni-app/uni-app x 项目原生资源目录 “nativeResources” 的 “ios” 目录下创建 “Watch”子目录，并添加 Watch App 二级制文件，结构如下：  
 
 <pre v-pre="" data-lang="">
   <code class="lang-" style="padding:0">
@@ -331,7 +332,9 @@ uni-app/uni-app x 本身不支持开发 Watch App，但支持需要使用原生�
 </pre>
 
 #### myWatchApp.app  
-需要添加的 Watch App 可执行文件，需在原生XCode环境中开发添加 Watch Target，编译并以发布方式导出包含此 Watch App 的ipa包，将ipa解压后在Payload/XXX.app/Watch/ 下可以找到.app文件，将.app添加到如上所示的 nativeResources -> ios -> Watch 目录中。  
+uni-app/uni-app x 中要添加的 Watch App 可执行文件。  
+需在原生 XCode 环境中添加 Watch Target，选择 “Watch App for Existing iOS App”，并在 XCode 中完成开发调试后编译并以发布方式导出包含此 Watch App 的 ipa 包，将 ipa 解压后在 Payload/XXX.app/Watch/ 目录下可以找到对应的 .app 文件。  
+将此 .app 文件添加到如上所示 uni-app/uni-app x 项目的 nativeResources -> ios -> Watch 目录中。  
 
 #### ios-watch.json  
 可选配置文件，仅在需要配置 Watch App 的包名和profile文件时使用，格式如下：  
@@ -348,6 +351,7 @@ uni-app/uni-app x 本身不支持开发 Watch App，但支持需要使用原生�
   Watch App 文件名称，与添加到 nativeResources -> ios -> Watch 目录中的 .app 文件名称一致  
 - identifier  
   打包时 Watch App 使用的 Bundle identifier，如不设置则默认使用 profile 文件中的绑定的 Bundle identifier，如果 profile 绑定的值使用了通配符则使用 Watch app 中配置的值  
+  注意：Watch App 的 Bundle identifier
 - profile  
   打包时使用的 Provisioning Profile，相对于ios-watch.json文件所在目录的路径  
 

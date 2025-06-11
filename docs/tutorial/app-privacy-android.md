@@ -36,7 +36,7 @@ DCloud联合业内主流隐私合规检测厂商推出了`uni隐私合规检测`
 
 **请在《隐私政策》中必告知用户您的应用基于DCloud uni-app(5+ App/Wap2App)开发，增加如下参考条款**
 
-`我们的产品基于DCloud uni-app(5+ App/Wap2App)开发，应用运行期间需要收集您的设备唯一识别码（IMEI/android ID/DEVICE_ID/IDFA、SIM 卡 IMSI 信息、OAID）以提供统计分析服务，并通过应用启动数据及异常错误日志分析改进性能和用户体验，为用户提供更好的服务。详情内容请访问《DCloud用户服务条款》。（DCloud用户服务条款超链至：https://ask.dcloud.net.cn/protocol.html）`
+`我们的产品基于DCloud uni-app(5+ App/Wap2App)开发，应用运行期间需要收集您的设备唯一识别码（IMEI/android ID/DEVICE_ID/IDFA、SIM 卡 IMSI 信息、OAID）以提供统计分析服务，并通过应用启动数据及异常错误日志分析改进性能和用户体验，为用户提供更好的服务。详情内容请访问《DCloud App引擎隐私政策》。（DCloud App引擎隐私政策超链至：https://dcloud.io/license/appprivacy.html）`
 
 
 ### 配置方式

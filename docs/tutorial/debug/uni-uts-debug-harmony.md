@@ -58,6 +58,7 @@ HBuilderX 4.61+ 运行到鸿蒙，支持Debug调试。包括uvue、uts、混编�
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-hovering_window.jpg" style="zoom: 60%;" />
 
 ## 联编调试
+> HBuilderX 4.71+ 版本支持联编调试，针对 uni-app x 项目有效。
 
 在 HX 里面把 uni-app x 项目运行到鸿蒙时，不仅支持在 uni-app x 项目中进行断点调试，也同时支持对鸿蒙工程目录中的源代码（比如 `.ets` 文件）进行断点调试。
 
@@ -65,7 +66,7 @@ HBuilderX 4.61+ 运行到鸿蒙，支持Debug调试。包括uvue、uts、混编�
 
 在 uni-app x 项目根目录中的 `.hbuilderx/launch.json` 文件中添加如下内容（如果文件不存在则手动创建）：
 
-部分内容可参考线上文档 [项目根目录与鸿蒙工程目录](https://uniapp.dcloud.net.cn/tutorial/harmony/runbuild.html#project-path)
+联编功能的介绍可参考线上文档 [项目根目录与鸿蒙工程目录](https://doc.dcloud.net.cn/uni-app-x/native/debug/harmony.html)
 
 ```json
 {

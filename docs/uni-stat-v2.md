@@ -234,7 +234,7 @@ uni统计的开源且基于[uni-admin](https://doc.dcloud.net.cn/uniCloud/admin)
 
 目前安装`uni-admin`的方式分为两种：`一键部署` 和 `手动安装`。
 
-`一键部署uni-admin`仅需要前往[插件市场](https://ext.dcloud.net.cn)搜索找到`uni-admin`插件后，选择进入[uni-admin插件详情页](https://ext.dcloud.net.cn/plugin?id=3268)并点击`一键部署插件到uniCloud`按钮，然后选择需要部署`uni-admin`项目的服务空间后耐心等待系统自动部署完成即可。
+`一键部署uni-admin`仅需要前往[插件市场](https://ext.dcloud.net.cn)搜索找到`uni-admin`插件后，选择进入[uni-admin插件详情页](https://ext.dcloud.net.cn/plugin?id=3268)并点击`在线体验/部署`按钮，选择`部署在我的服务空间`，然后选择需要部署`uni-admin`项目的服务空间后耐心等待系统自动部署完成即可。
 
 
 `手动安装uni-admin`则请参考[uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-admin-%E6%A1%86%E6%9E%B6-%E5%8E%9F%E5%90%8D-unicloud-admin)文档，完成如下操作：

@@ -9,7 +9,7 @@
 ::: warning 注意
 
 - 目前已支持 Vue2/Vue3 使用 HBuilderX/CLI 方式运行到元服务。cli 参考 [如何使用 cli 创建元服务？](#using-by-cli)
-- 目前仅支持鸿蒙 Next 真机，鸿蒙 Mac M1 系列芯片电脑可申请 ARM 模拟器内测，[点击链接](#arm-emulator)了解如何申请。
+- 元服务的开发支持鸿蒙真机，现已支持使用模拟器开发，不区分 Mac/Windows，需要下载 [5.1.1 beta 版本的 DevEco]((https://developer.huawei.com/consumer/cn/download/?ha_source=Dcloud&ha_sourceId=89000448))，提供的 API 19 Beta 模拟器。
 - 目前支持鸿蒙 5.0，鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/)，第一次版本不视为鸿蒙 Next
   :::
 
@@ -65,7 +65,7 @@
 
 - 也可以通过 `File - Project Structure...` 打开。
 - 这种自动签名的方式只能用于运行与调试，需要发行上架时候请参考 **发行与上架** 章节修改签名文件。
-- 签名操作需要连接鸿蒙真机设备。
+- 签名操作需要连接鸿蒙设备。
 
 这个时候点击 `Run - Run 'entry'` 或者编辑器顶部的小三角选择运行。如果可以运行成功官方的 Hello World 示例，说明相关环境、证书配置完成。后续用到登录、支付、定位等权限时候需要使用调试证书，到时候替换正确的手动签名证书即可，本部分目的是配置元服务环境，减少上手阻碍。
 
@@ -420,9 +420,9 @@ getphonenumber(e){
 
 参考文档顶部 **开发环境准备** 部分，请确认：
 
-1. 真机是鸿蒙 Next 真机，系统版本是 鸿蒙 5.0+。如果是 Mac M1 系列芯片电脑（ARM 架构）可以申请，[点击链接](#arm-emulator)了解如何申请。其他系统和架构暂不支持模拟器。
-2. 你可能调整过 hvigor 文件，目前普通用户不需要调整。请删除 `harmony-mp-configs/hvigor/hvigor-config.json5` 文件，使用默认的配置文件即可。如果不存在可以忽略。
-3. 第一次启动会跳转到应用市场访问应用，有可能会网络超时卡在浏览器页面，重试两次就可以。正式上架后不会出现此问题。出现此问题时，请用鸿蒙 Next 真机，在手机搜索框或手机里的华为应用市场里搜索 uniapp，并点击出现的元服务 helloUniApp，点打开，等待加载完成，然后再关闭，最后在 HBuilderX 重启项目即可。
+1. 如果使用真机，需要使用鸿蒙 Next 真机，系统版本是鸿蒙 5.0+。
+2. 如果使用模拟器，目前需要在 `harmony-mp-configs/entry/oh-package.json5` 找到 `dependencies` 字段，修改为 `"@atomicservice/ascfapi": "1.0.10"`，来保证功能正常运行。
+3. 第一次启动会跳转到应用市场访问应用，有可能会网络超时卡在浏览器页面，正式上架后不会出现此问题。出现此问题时，请用鸿蒙 Next 真机，在手机搜索框或手机里的华为应用市场里搜索 uniapp，并点击出现的元服务 helloUniApp，点打开，等待加载完成，然后再关闭，最后在 HBuilderX 重启项目即可。
 4. HBuilderX Alpha 4.51 起，内置依赖的 ascf 框架发生了变化，如果仍有问题，可以 IM 群内沟通。
 
 在终端运行 `hdc --version` 观察返回值是否大于 3.x，如果提示 `1.x` 版本可能之前安装过早期版本的鸿蒙相关依赖，需要移除旧依赖。参考 [鸿蒙 HDC 文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/hdc-V5#环境准备?ha_source=Dcloud&ha_sourceId=89000448) 进行配置。
@@ -556,7 +556,33 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 - ArkTS UI 开发，需要使用 ArkTS 语法编写布局、支持自定义 Canvas，同时支持鸿蒙应用和元服务，属于原生开发，具体参考 [开发基于 ArkTS UI 的卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-working-principles?ha_source=Dcloud&ha_sourceId=89000448) 文章。
 - JS UI 开发，**不支持元服务**，仅支持鸿蒙应用开发。提供了类似 HTML+CSS 的方案实现布局，相比 ArkTS UI 有一些能力限制。具体参考 [开发基于 JS UI 的卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-development?ha_source=Dcloud&ha_sourceId=89000448)
 
-官方推荐的方案是 ArkTS 原生开发方案，元服务中也能共享逻辑。不能直接使用 uni-app 提供的 vue 范式开发服务卡片。
+在元服务中，只能通过 ArkTS UI 开发实现布局，参考文档方案如下：
+
+1. 在 DevEco 创建卡片模板
+2. 开发卡片功能：快速唤起元服务、共享元服务数据
+3. 移动代码放置到 HBuilderX 工程中
+
+下面介绍如何开发基于 UI 的卡片，思路和原生开发一致，推荐在 DevEco 中完成卡片开发验证，之后再迁移到 HBuilderX 工程中。首先在 DevEco 中先创建一个 ascf 工程。
+
+- 打开 entry/src/build-profile.json5 文件
+- 选择 DevEco 的菜单 File - New - Service Widget - Dynamic Widget。如果没有找个选项，说明没有打开上面的文件
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/1f6ddb67-ef68-4d06-a9a4-5e75acd56180.png)
+
+- 选择 Hello World 模版
+- 在打开的 Configure Your Service Widget 选择 ArkTS 模板。
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0f4c22e8-d444-4407-84d8-895ad1f2aa1f.png)
+
+这里推荐通过 git 来管理文件变化，选择默认的 2x2 和 2x4 会自动生成模板文件。
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/9f62a690-2007-4a2f-a1d4-8d945c0e84b5.png)
+
+在默认的模板中，定义了一个 Hello World 卡片，点击卡片时候会自动打开元服务。复制这些文件放置到 mp-harmony-configs 文件夹，比如 `entry/src/main/module.json5` 文件放到 `harmony-mp-configs/entry/src/main/module.json5` 中，保持路径一致，构建时候会自动做替换。
+
+运行服务之后，滚动手机到负一屏，选择卡片，点击加号，添加卡片，卡片可以放到负一屏，也可以长按拖动到桌面中。
+
+更多开发细节参阅鸿蒙文档：[开发基于 ArkTS UI 的卡片](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widget-working-principles?ha_source=Dcloud&ha_sourceId=89000448)
 
 ### 元服务的日志如何查看、分析？
 

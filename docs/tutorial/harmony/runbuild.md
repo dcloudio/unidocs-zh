@@ -8,7 +8,7 @@
 - 鸿蒙开发只支持 Vue3、不支持 Vue2，不支持 plus、但支持 nvue
 - nvue 编译到鸿蒙后非原生渲染，而是与 web 一样渲染（自动注入一些默认样式进行兼容）
 - Vue3 也支持选项式代码风格，参考[Vue2 升 Vue3 指南](https://uniapp.dcloud.net.cn/tutorial/migration-to-vue3.html)
-- HBuilderX 4.31+ 构建的鸿蒙运行包不支持 x86_64 平台，会影响到 Windows 系统和部分 Mac 系统的鸿蒙模拟器无法使用，需使用真机调试
+<!-- - HBuilderX 4.31+ 构建的鸿蒙运行包不支持 x86_64 平台，会影响到 Windows 系统和部分 Mac 系统的鸿蒙模拟器无法使用，需使用真机调试 -->
 - HBuilderX 4.41+ 开始运行到鸿蒙设备时支持修改代码后热刷更新
 - HBuilderX 4.41+ 开始运行到鸿蒙设备时控制台显示的应用日志支持回源代码
 - HBuilderX 4.43+ 开始支持将 `mainfest.json` 里面配置的应用版本名称/应用版本号（`versionName`/`versionCode`）应用于鸿蒙平台，且优先于 `harmony-configs/AppScope/app.json5` 中的设置
@@ -25,7 +25,7 @@
   - HBuilderX 4.31+ 要求 DevEco Studio 5.0.3.800+。
   - HBuilderX 4.61+ 针对 uni-app x 项目要求 DevEco Studio 5.0.7.100+。
   - uni-app 项目要求鸿蒙系统版本 API 12 以上，uni-app x 项目要求鸿蒙系统版本 API 14 以上（DevEco Studio 有内置鸿蒙模拟器）
-- 如果没有符合兼容性要求的模拟器，就需要有真机作为运行设备
+- [点击下载](https://developer.huawei.com/consumer/cn/download/?ha_source=Dcloud&ha_sourceId=89000448) DevEco5.1.1Beta 版本，下载 API19 模拟器即可运行 uni-app 鸿蒙项目和元服务，除此之外的模拟器暂不支持。
 
 ### 项目根目录与鸿蒙工程目录@project-path
 

@@ -9,7 +9,7 @@
 ::: warning 注意
 
 - 目前已支持 Vue2/Vue3 使用 HBuilderX/CLI 方式运行到元服务。cli 参考 [如何使用 cli 创建元服务？](#using-by-cli)
-- 元服务的开发支持鸿蒙真机，现已支持使用模拟器开发，不区分 Mac/Windows，需要下载 [5.1.1 beta 版本的 DevEco]((https://developer.huawei.com/consumer/cn/download/?ha_source=Dcloud&ha_sourceId=89000448))，提供的 API 19 Beta 模拟器。如果遇到 hsp 报错，[查看解决方法](#failed-to-install-the-hap-or-hsp)
+- 元服务的开发支持鸿蒙真机，现已支持使用模拟器开发，不区分 Mac/Windows，需要下载 [5.1.1 beta 版本的 DevEco](https://developer.huawei.com/consumer/cn/download/?ha_source=Dcloud&ha_sourceId=89000448)，提供的 API 19 Beta 模拟器。如果遇到 hsp 报错，[查看解决方法](#failed-to-install-the-hap-or-hsp)
 - 目前支持鸿蒙 5.0，鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/)，第一次版本不视为鸿蒙 Next
   :::
 

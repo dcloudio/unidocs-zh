@@ -9,7 +9,7 @@
 ::: warning 注意
 
 - 目前已支持 Vue2/Vue3 使用 HBuilderX/CLI 方式运行到元服务。cli 参考 [如何使用 cli 创建元服务？](#using-by-cli)
-- 元服务的开发支持鸿蒙真机，现已支持使用模拟器开发，不区分 Mac/Windows，需要下载 [5.1.1 beta 版本的 DevEco]((https://developer.huawei.com/consumer/cn/download/?ha_source=Dcloud&ha_sourceId=89000448))，提供的 API 19 Beta 模拟器。
+- 元服务的开发支持鸿蒙真机，现已支持使用模拟器开发，不区分 Mac/Windows，需要下载 [5.1.1 beta 版本的 DevEco]((https://developer.huawei.com/consumer/cn/download/?ha_source=Dcloud&ha_sourceId=89000448))，提供的 API 19 Beta 模拟器。如果遇到 hsp 报错，[查看解决方法](#failed-to-install-the-hap-or-hsp)
 - 目前支持鸿蒙 5.0，鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/)，第一次版本不视为鸿蒙 Next
   :::
 
@@ -421,9 +421,24 @@ getphonenumber(e){
 参考文档顶部 **开发环境准备** 部分，请确认：
 
 1. 如果使用真机，需要使用鸿蒙 Next 真机，系统版本是鸿蒙 5.0+。
-2. 如果使用模拟器，目前需要在 `harmony-mp-configs/entry/oh-package.json5` 找到 `dependencies` 字段，修改为 `"@atomicservice/ascfapi": "1.0.10"`，来保证功能正常运行。
+2. 如果使用模拟器，需要新建 `harmony-mp-configs/entry/oh-package.json5`，填充下面内容。使用真机时候不需要执行这个操作。
+
+```json
+{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "@atomicservice/ascfapi": "1.0.10"
+  }
+}
+```
+
 3. 第一次启动会跳转到应用市场访问应用，有可能会网络超时卡在浏览器页面，正式上架后不会出现此问题。出现此问题时，请用鸿蒙 Next 真机，在手机搜索框或手机里的华为应用市场里搜索 uniapp，并点击出现的元服务 helloUniApp，点打开，等待加载完成，然后再关闭，最后在 HBuilderX 重启项目即可。
-4. HBuilderX Alpha 4.51 起，内置依赖的 ascf 框架发生了变化，如果仍有问题，可以 IM 群内沟通。
+4. 如果仍有问题，可以 IM 群内沟通。
 
 在终端运行 `hdc --version` 观察返回值是否大于 3.x，如果提示 `1.x` 版本可能之前安装过早期版本的鸿蒙相关依赖，需要移除旧依赖。参考 [鸿蒙 HDC 文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/hdc-V5#环境准备?ha_source=Dcloud&ha_sourceId=89000448) 进行配置。
 

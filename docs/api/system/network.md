@@ -44,6 +44,8 @@ uni.getNetworkType({
 });
 ```
 
+- 注意：本API在小程序平台是`同步`接口，在其它平台是`异步`接口
+
 <!-- UNIAPPAPIJSON.getNetworkType.tutorial -->
 
 ## uni.onNetworkStatusChange(CALLBACK)

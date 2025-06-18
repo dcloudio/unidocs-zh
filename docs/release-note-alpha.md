@@ -1,3 +1,16 @@
+#### 4.72.2025061803-alpha
+* 【uni-app x】
+  + Android平台 修复 组件 text 嵌套text可能出现闪退 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18770)
+  + Android平台 修复 4.61版本引发的 CSS transition 动态修改style执行动画可能闪烁 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18799) [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18799)
+  + iOS平台 修复 4.71版本引发的 组件 scroll-view scroll-top 设置相同值时不应触发 scrollend 事件 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18773)
+  + iOS平台 修复 组件 text 嵌套显示多行文本时 line-height 样式不正确 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18068)
+  + iOS平台 修复 组件 picker-view 切换展示时立即修改数据会引起应用闪退 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18747)
+  + iOS平台 修复 4.61版本引发的 API uni.getFileSystemManager readFile 和 readFileSync 方法参数 encoding 为 base64 时编码错误 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18802)
+  + 鸿蒙平台 新增 app.uvue 支持 onExit 生命周期 [文档](https://doc.dcloud.net.cn/uni-app-x/collocation/app.html#onexit) <https://issues.dcloud.net.cn/pages/issues/detail?id=17508>
+  + 新增 uni-ai-x 开源的、全平台的、原生的、云端一体的ai聊天插件 [详情](https://ext.dcloud.net.cn/plugin?name=uni-ai-x)
+* 【uts插件】
+  + 【重要】Android平台 修复 UTS 部分正则表现与Web平台不一致的问题，项目中使用的`PCRE`风格正则表达式需调整为标准`ECMAScript`正则表达式 [文档](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/regexp.html#regexp) <https://issues.dcloud.net.cn/pages/issues/detail?id=16951>
+
 #### 4.71.2025061206-alpha
 * 【uni-app】
   + App平台 修复 vue3 cli 项目 nvue 页面可能编译失败的Bug [详情](https://ask.dcloud.net.cn/question/210084)

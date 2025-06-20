@@ -125,7 +125,7 @@ export const navbar = [
           {
             text: '鸿蒙元服务',
             type: 'link',
-            link: 'https://developer.huawei.com/consumer/cn/doc/atomic-guides-V5/atomic-service-V5'
+            link: 'https://developer.huawei.com/consumer/cn/doc/atomic-ascf/ascf-overview'
           },
           {
             text: "小红书小程序",

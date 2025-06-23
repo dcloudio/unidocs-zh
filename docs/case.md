@@ -509,6 +509,8 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **人力资源和社会保障部：** 微信小程序搜“电子社保卡”
 
+**国家移民管理局：** 微信小程序搜“移民局12367”
+
 **全国住房公积金公共服务：** 微信小程序搜“全国住房公积金公共服务”
 
 **农交安（5+App）：** 公安部交通管理局，农村道路交通安全信息系统App。[Android](https://android.myapp.com/myapp/detail.htm?apkName=com.tmri.nda)、[iOS](https://itunes.apple.com/cn/app/id1445388528)

@@ -221,6 +221,22 @@
 
 ## 注意事项
 
+### 如何配置元服务签名证书？如何配置权限？
+
+建议先阅读上面调试开发文档，了解大致流程。也可参考 [鸿蒙签名文件配置](https://uniapp.dcloud.net.cn/tutorial/harmony/runbuild.html#signing-configs-files) 了解如何生成证书。
+
+新用户面对鸿蒙签名相关文件会不确定怎么调整。这里对概念做进一步解释：签名文件总共需要四个配置文件（p12/csr/cer/p7b），和两个配置选项（alias/password）。
+
+- p12/csr 是本地生成的配置文件，这两个文件和鸿蒙应用、鸿蒙元服务无关，可兼容使用。
+- cer 文件区分调试证书、发行证书，这个文件和和鸿蒙应用、鸿蒙元服务无关，可兼容使用。
+- p7b 文件和具体应用、绑定设备、ACL 权限有关，新增的设备必须重新下载，
+
+访问 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html?ha_source=Dcloud&ha_sourceId=89000448) 的 证书/APPID/Profile 页面中可以下载。
+
+文档调试章节提到了权限配置、metadata 等信息配置。HBuilderX 工程文件重点关注 `harmony-mp-configs` 这个文件夹，内部的文件在编译时候会自动同步到最终鸿蒙工程中，如果没有需要新建对应文件。
+
+在 `harmony-mp-configs/entry/src/main/module.json5`，可以设置权限、metadata、隐私协议托管等功能，完整配置文档可以参考 [module.json5 配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file?ha_source=Dcloud&ha_sourceId=89000448)
+
 ### 如何修改元服务默认标题、图标、启动图等信息？@how-to-change-icon
 
 如果你开发过鸿蒙应用，会发现元服务工程和鸿蒙应用开发设置一致，配置文件同样遵循 module.json5 效果优先于 app.json5 ，参考 [鸿蒙应用组件配置文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-component-configuration-stage-V5?ha_source=Dcloud&ha_sourceId=89000448)。推荐在组件级别进行配置。
@@ -620,6 +636,14 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 - xxx 为 `[[5]]` ，报错一般是代码中 deviceType 和 uniapp 后台里选择的不一致。元服务建议值勾选 Phone 手机。保持一致即可。
 - xxx 为 AppGalleryConnectAppMetaInfoService version's privacyAgreementId is empty。这个一般是一些协议没有选择，错误通过了校验审核
+
+#### [amis] submit version for review faied, additional msg is [appAdapters devices can not own entry main packages]
+
+代码内应用适配平台和鸿蒙后台勾选的设备不匹配，也就是代码中设备清单和线上资料不一样。
+
+代码工程中，需要在 `harmony-mp-configs/entry/src/main/module.json5` 中搜索 `deviceTypes`，通常只设置 phone 值，表示兼容手机
+
+在 AGC 后台或者 uni-app 提审后台，也有适配设备选项，确保和代码中保持一致，通常勾选 手机 Phone 值，表示兼容手机
 
 #### 提交审核按钮为灰色无法提交
 

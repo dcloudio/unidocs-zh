@@ -10,7 +10,7 @@
 
 - 目前已支持 Vue2/Vue3 使用 HBuilderX/CLI 方式运行到元服务。cli 参考 [如何使用 cli 创建元服务？](#using-by-cli)
 - 元服务的开发支持鸿蒙真机，现已支持使用模拟器开发，不区分 Mac/Windows，需要下载 [5.1.1 beta 版本的 DevEco](https://developer.huawei.com/consumer/cn/download/?ha_source=Dcloud&ha_sourceId=89000448)，提供的 API 19 Beta 模拟器。如果遇到 hsp 报错，[查看解决方法](#failed-to-install-the-hap-or-hsp)
-- 目前支持鸿蒙 5.0，鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/)，第一次版本不视为鸿蒙 Next
+- 目前支持鸿蒙 5.0，低于此版本（比如鸿蒙 4.x）不视为鸿蒙 Next。鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/?ha_source=Dcloud&ha_sourceId=89000448)
   :::
 
 ## 前置准备
@@ -416,12 +416,18 @@ getphonenumber(e){
 
 `MP-HARMONY`，具体参考 [条件编译文档](https://uniapp.dcloud.net.cn/tutorial/platform.html)。
 
-### 运行报错 `Failed to install the HAP or HSP`@failed-to-install-the-hap-or-hsp
+### 运行报错 `Failed to install the HAP or HSP because the dependent module does not exist.`@failed-to-install-the-hap-or-hsp
 
-参考文档顶部 **开发环境准备** 部分，请确认：
+错误原因：表明当前环境缺少元服务运行所必须的基础依赖，通常出现在初次运行的错误提示。
 
-1. 如果使用真机，需要使用鸿蒙 Next 真机，系统版本是鸿蒙 5.0+。
-2. 如果使用模拟器，需要新建 `harmony-mp-configs/entry/oh-package.json5`，填充下面内容。使用真机时候不需要执行这个操作。
+解决方案：
+
+在终端中运行 `hdc shell bm dump-shared -a`，观察返回值是否包含 `com.huawei.hms.ascfruntime`，如果不包含运行元服务会出现此错误。
+
+1. 如果使用真机，需要使用鸿蒙 Next 真机，确保系统版本是鸿蒙 5.0+，其他版本不支持。应用市场搜索 “helloUniapp”，随后直接运行以自动安装 ASCF 引擎。
+2. 如果使用模拟器开发，需要下载 [5.1.1 beta 版本的 DevEco](https://developer.huawei.com/consumer/cn/download/?ha_source=Dcloud&ha_sourceId=89000448)，下载 API 19 Beta 模拟器，其他版本模拟器无法运行元服务。
+
+注意：如果使用模拟器仍然报错上述错误，临时方案需要新建 `harmony-mp-configs/entry/oh-package.json5`，填充下面内容。使用真机时候不需要执行这个操作。此为鸿蒙 Bug，后续鸿蒙会优化处理。
 
 ```json
 {
@@ -437,26 +443,11 @@ getphonenumber(e){
 }
 ```
 
-3. 第一次启动会跳转到应用市场访问应用，有可能会网络超时卡在浏览器页面，正式上架后不会出现此问题。出现此问题时，请用鸿蒙 Next 真机，在手机搜索框或手机里的华为应用市场里搜索 uniapp，并点击出现的元服务 helloUniApp，点打开，等待加载完成，然后再关闭，最后在 HBuilderX 重启项目即可。
-4. 如果仍有问题，可以 IM 群内沟通。
-
-在终端运行 `hdc --version` 观察返回值是否大于 3.x，如果提示 `1.x` 版本可能之前安装过早期版本的鸿蒙相关依赖，需要移除旧依赖。参考 [鸿蒙 HDC 文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/hdc-V5#环境准备?ha_source=Dcloud&ha_sourceId=89000448) 进行配置。
-
-在终端中运行 `hdc shell bm dump-shared -a` 观察返回值是否包含 `com.huawei.hms.ascfruntime`，如果不包含，请打开应用市场搜索 `helloUniApp` 访问体验一次，然后重试。
+3. 如果仍有问题，可以在 [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)沟通。
 
 ### 分包页面无法打开
 
 已修复，在 HBuilderX alpha 4.63 上有问题，请参考 [这个问题](https://ask.dcloud.net.cn/question/209765) 进行兼容。
-
-### 元服务 ARM 模拟器申请@arm-emulator
-
-如果我是 windows x86 电脑， Mac Intel 芯片电脑怎么办？目前鸿蒙还不支持在上述平台上运行元服务，上述模拟器运行鸿蒙也会提示问题。
-
-也可使用鸿蒙真机，老款的 Nova12、新款 Nova14 价格比较低可以升级鸿蒙 5，也可以在支付宝租机平台租借 nova12 手机，租期一个月价格不贵（大约 200 元内）。
-
-基于 ARM 架构 Mac M1 等系列芯片用户，目前可以申请 ARM 模拟器运行和调试鸿蒙元服务。如需申请，请发送邮件向华为运营人员申请。在收到邮件申请后，华为运营人员将在 1-3 个工作日内为你安排对接人员。
-
-详细说明请参考 [其他问题：元服务是否支持模拟器运行](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/faqs-others-simulator-running?ha_source=Dcloud&ha_sourceId=89000448)
 
 ### 我希望自动化来处理元服务的创建、更新和维护@automation-cli
 
@@ -494,7 +485,7 @@ V8 引擎调试可以这样操作
 
 ### API uploadFile 报错，其他端正常
 
-观察上传参数里是否有数字类型参数，强转为字符串。
+观察上传参数里是否有数字类型参数，强转为字符串。可进一步参考 [鸿蒙相关问题](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/faqs-runtime-uploadfile-error)
 
 ### 元服务构建在 Windows 系统下卡死
 
@@ -632,5 +623,4 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 #### 提交审核按钮为灰色无法提交
 
-观察按钮右侧有个联系方式，可以和 uniapp 发起沟通，看是否有更好的激励政策
-
+观察按钮右侧有个联系方式，可以和 uniapp 发起沟通，看是否有更好的激励政策。如果仍有问题，可以在 [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)沟通。

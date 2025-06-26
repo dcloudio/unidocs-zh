@@ -97,20 +97,13 @@ uni-app x项目manifest.json中没有提供Android权限的配置，需在此And
 
 
 ### 移除Android权限@removepermissions  
-如果应用使用了三方SDK（[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)或[uni原生插件](https://nativesupport.dcloud.net.cn/NativePlugin/)）默认包含了一些Android权限，而实际可能不需要用到，则可以在应用清单文件文件中配置权限并添加tools:node="remove"移除，如下示例是移除"android.permission.INSTALL_PACKAGES"、"android.permission.REQUEST_INSTALL_PACKAGES"权限：  
-```xml
-<?xml version="1.0" encoding="utf-8"?>  
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"   
-  package="io.dcloud.nativeresouce">  
-    <!--按下面方式配置需要移除的permissions-->  
-    <uses-permission android:name="android.permission.INSTALL_PACKAGES" tools:node="remove"/>  
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" tools:node="remove"/>  
+如果应用使用了三方SDK（[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)或[uni原生插件](https://nativesupport.dcloud.net.cn/NativePlugin/)）默认包含了一些Android权限，而实际可能不需要用到，则可以在 manifest.json 中的 “安卓/iOS权限配置” -> “Android云打包权限配置” -> “强制移除的权限” 中添加要移除的权限，如下例是移除"android.permission.INSTALL_PACKAGES"、"android.permission.REQUEST_INSTALL_PACKAGES"权限：  
 
-    <application>  
-        <!--meta-data-->  
-    </application>  
-</manifest>
-```
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/excloudpermissions.png)  
+
+uni-app x 项目参考[这里](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-android.html#excludepermissions)。  
+
+> 注：在应用清单文件文件中配置权限并添加tools:node="remove"移除在某些场景下可能不生效，推荐在 manifest.json 的可视化界面配置。
 
 ### Android url scheme配置@urlScheme  
 

@@ -5,7 +5,7 @@
 
 ## 操作步骤
         
-1、使用 DCloud 账号登录[开发者中心](http://dev.dcloud.net.cn)，在添加项目成员之前需要当前账号先完成开发者实名认证，如何进行实名认证请参考文档《[DCloud 开发者实名认证流程](dev/account/real-name-authentication.md)》。
+1、使用 DCloud 账号登录[开发者中心](http://dev.dcloud.net.cn)，在添加项目成员之前需要当前账号先完成开发者实名认证，如何进行实名认证请参考文档《[DCloud 开发者实名认证流程](../account/real-name-verification.md)》。
     
 2、如果已经完成实名认证，登录后，点击“应用列表”，会看到如下页面，该页面显示了当前用户创建的所有应用。
 

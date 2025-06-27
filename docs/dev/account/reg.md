@@ -1,4 +1,11 @@
-在开始使用 DCloud 服务之前，您需要先注册一个 DCloud 账号。拥有 DCloud 账号后，您可以使用该登录使用 DCloud 所有相关产品和服务，包括 [登录HBuilderX](https://hx.dcloud.net.cn/)、[开发者中心](https://dev.dcloud.net.cn/)、[问答中心](https://ask.dcloud.net.cn/)、[uni-ad后台](https://uniad.dcloud.net.cn/)、[uniCloud控制台](https://unicloud.dcloud.net.cn/)、[插件市场](https://ext.dcloud.net.cn/)、[用户开放平台](https://open.dcloud.net.cn/)等。
+在开始使用 DCloud 云服务之前，您需要先注册一个 DCloud 账号。拥有 DCloud 账号后，您可以使用该登录使用 DCloud 所有相关产品和服务，包括且不限于以下产品和服务：
+- [HBuilderX](https://hx.dcloud.net.cn/)
+- [uni-ad管理后台](https://uniad.dcloud.net.cn/)
+- [uniCloud控制台](https://unicloud.dcloud.net.cn/)
+- [插件市场](https://ext.dcloud.net.cn/)
+- [开发者中心](https://dev.dcloud.net.cn/)
+- [问答社区](https://ask.dcloud.net.cn/)
+- [用户开放平台](https://open.dcloud.net.cn/)
 
 ## 步骤1：前往注册页面
 
@@ -17,7 +24,7 @@ DCloud 账号注册目前支持以下两种方式：
 
 1. 注册页面默认为"邮箱注册"。
 2. 输入您的邮箱地址，输入图片验证码、设置登录密码。
-3. 获取邮箱验证码并输入。
+3. 获取并输入邮箱验证码。
 4. 阅读并勾选"同意用户服务协议"。
 5. 点击"注册"按钮。
 

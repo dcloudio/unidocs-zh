@@ -11,13 +11,13 @@
 2. 个人作为应用协作者，为应用属主代为下单`云打包（包括打包个数、App大小超限、独享打包机；不含企业打包机）`、`插件购买`、`uni安全（加固、隐私合规检测）`业务，且应用属主账号已完成企业实名认证，则个人可选择相应订单开具应用属主的实名认证企业抬头发票；否则，个人认证账号仅能开具个人发票，不可开具公司发票；如您需要开具企业发票，您可前往账号中心完成企业实名认证升级后再申请开票，详见[实名认证变更流程](../account/modify-real-name-verification.md)。
 
 ## 自助申请发票流程
-- 登录[开发者中心](https://dev.dcloud.net.cn)，进入“个人中心”-“发票申请”页面，点击“去开票”，进入订单列表，勾选需要开票的订单，然后点击“开票”。
+- 登录[开发者中心](https://dev.dcloud.net.cn)，点击“个人中心”-“发票申请”，进入“发票申请”页面后，勾选需要开票的订单，然后点击“开票”。
 
-![](https://web-ext-storage.dcloud.net.cn/doc/dev/finance/invoice-order-list.png)
+![](https://web-ext-storage.dcloud.net.cn/doc/dev/finance/invoice-order-list-uni-trade.png)
 
-- 开票成功后，在“查看开票记录”中下载发票
+- 开票成功后，在“开票记录”中查看或下载发票
 
-![](https://web-ext-storage.dcloud.net.cn/doc/dev/finance/invoice-list.png)
+![](https://web-ext-storage.dcloud.net.cn/doc/dev/finance/invoice-list-uni-trade.png)
 
 ## 个人用户如何开具企业发票@personal
 只有以下两种场景，个人认证用户可以开具企业发票。其它场景请将账号变更为企业认证。

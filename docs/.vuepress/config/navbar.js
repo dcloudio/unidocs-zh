@@ -176,6 +176,12 @@ export const navbar = [
     type: "link",
     needOutbound: false
   },
+  {
+    text: '开发者服务',
+    link: '/dev/',
+    type: "link",
+    needOutbound: false
+  },
   /* {
     text: '问答社区',
     link: 'https://ask.dcloud.net.cn/explore/',

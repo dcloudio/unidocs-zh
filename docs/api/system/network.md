@@ -96,6 +96,7 @@ uni.onNetworkStatusChange(function (res) {
 ::: warning 注意
 - `CALLBACK`必须为调用`uni.onNetworkStatusChange`时传入的`CALLBACK`
 - `HarmonyOS Next` 平台使用时需要添加权限 `ohos.permission.GET_NETWORK_INFO`
+- 支付宝小程序等平台支持此 API, 但是需要注意监听和取消监听的时候，都使用 `my.` 方法操作
 :::
 
 例如：

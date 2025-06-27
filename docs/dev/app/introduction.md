@@ -1,5 +1,3 @@
-# DCloud appid 用途/作用/使用说明
-
 DCloud appid（以后简称 appid） 是 DCloud 应用的唯一标识，在 DCloud 提供的所有服务中，都会以 appid 来标记一个应用。
 
 ::: warning 注意
@@ -27,11 +25,11 @@ DCloud appid（以后简称 appid） 是 DCloud 应用的唯一标识，在 DClo
 ### 增加项目成员（协作者）
 1个应用有一个管理员，但可以有多名协作开发者。
 在使用app云端打包时，协作开发者也有权对该Appid进行云打包。
- [如何授权应用（设置协作者）](dev/app/add-member.md) 
+ [如何授权应用（设置协作者）](add-member.md) 
 
 ### 转让应用
 应用的所有者可以将应用转让给他人。常见于员工离职和外包商转让给甲方。
- [如何转让应用](dev/app/transfer.md)
+ [如何转让应用](transfer.md)
 
 ## 使用场景
 - 云打包
@@ -47,7 +45,7 @@ DCloud appid（以后简称 appid） 是 DCloud 应用的唯一标识，在 DClo
 - uni云端一体安全网络
 
 ## 修改 appid@modify-appid
-- 在 HBuilderX 打开 manifest.json，在“基础配置”界面点击“重新获取”，可以生成新的 appid。**注意：**项目名称不变时，不会分配新的 appid。
+- 在 HBuilderX 打开 manifest.json，在“基础配置”界面点击“重新获取”，可以生成新的 appid。 **注意：** 项目名称不变时，不会分配新的 appid。
 - 通过 manifest.json 源码视图修改 appid，适用于需要将 appid 修改回历史 appid 的场景。
 
 ## 修改 appid 将会引发的问题@modify-appid-impact

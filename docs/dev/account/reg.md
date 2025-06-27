@@ -1,5 +1,3 @@
-# 注册 DCloud 账号
-
 在开始使用 DCloud 服务之前，您需要先注册一个 DCloud 账号。拥有 DCloud 账号后，您可以使用该登录使用 DCloud 所有相关产品和服务，包括 [登录HBuilderX](https://hx.dcloud.net.cn/)、[开发者中心](https://dev.dcloud.net.cn/)、[问答中心](https://ask.dcloud.net.cn/)、[uni-ad后台](https://uniad.dcloud.net.cn/)、[uniCloud控制台](https://unicloud.dcloud.net.cn/)、[插件市场](https://ext.dcloud.net.cn/)、[用户开放平台](https://open.dcloud.net.cn/)等。
 
 ## 步骤1：前往注册页面
@@ -39,13 +37,13 @@ DCloud 账号注册目前支持以下两种方式：
 
 注册成功后，建议您：
 
-- 绑定邮箱/手机号，便于找回密码，[查看如何绑定或修改邮箱/手机号？](dev/account/modify.md)
-- 根据需要进行个人实名认证或企业实名认证，[查看如何实名认证？](dev/account/real-name-verification.md)
+- 绑定邮箱/手机号，便于找回密码，[查看如何绑定或修改邮箱/手机号？](modify.md)
+- 根据需要进行个人实名认证或企业实名认证，[查看如何实名认证？](real-name-verification.md)
 
 ## 常见问题
 
 - **收不到验证邮件怎么办？**
-  - [参考文档](dev/faq/email.md)
+  - [参考文档](../faq/email.md)
   
 - **手机号收不到验证码怎么办？**
   - 检查手机信号，确认短信未被拦截，或尝试更换网络环境。

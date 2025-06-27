@@ -1,4 +1,3 @@
-# 修改账号信息
 用户可以在开发者中心，[“个人中心”-“账户信息”页面](https://dev.dcloud.net.cn/pages/user/info)，修改自己的基本信息，包括邮箱、手机号、微信、实名认证、联系方式等。
 
 ## 基本信息
@@ -25,13 +24,13 @@
 解绑微信前需要先进行安全验证，参考`修改邮箱`的安全验证方式。验证通过后，即可完成微信解绑。
 
 ## 实名认证
-参考文档：[实名认证](dev/account/real-name-verification.md)
+参考文档：[实名认证](real-name-verification.md)
 
 ## 联系方式
 点击页面“修改联系方式”，修改保存后即可。
 
 ## 账号注销
-参考文档：[DCloud账号注销流程](dev/account/deletion.md)
+参考文档：[DCloud账号注销流程](deletion.md)
 
 ## 修改密码
 用户可以登录[开发者中心](https://dev.dcloud.net.cn)，点击页面顶部导航“修改密码”，输入原密码和新密码，点击“修改”，即可完成密码修改。

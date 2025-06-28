@@ -2,12 +2,13 @@
 
 获取启动时的参数。
 
-注意：各平台在启动时，参数获取存在差异，详细如下：
+::: warning 各平台在启动时，参数获取存在差异，详细如下
 - App平台：返回值与App.onLaunch的回调参数一致；
 - Web平台：返回值与App.onLaunch的回调参数一致，不同Vue版本支持情况有差异：
 	* `vue3`项目：uni-app 3.2.13+ 支持；
 	* `vue2`项目：uni-app 3.5.1+ 支持。
 - 小程序平台：如果当前小程序是冷启动，则返回值与 App.onLaunch 的回调参数一致；如果当前是热启动，则返回值与 App.onShow 一致。关于微信小程序冷启动热启动的概念，[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/operating-mechanism.html)
+:::
 
 **平台兼容性说明**
 

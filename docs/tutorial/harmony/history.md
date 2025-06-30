@@ -12,3 +12,6 @@
 升级至 uni-app 4.51 版本后，由于 SDK 调整，影响如下：
 
 - 需要在工程级的 `build-profile.json5` 的 `products` 字段（如果有多项都要配置）中配置 `compatibleSdkVersionStage: "beta6"` [鸿蒙文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hvigor-build-profile-V5?ha_source=Dcloud&ha_sourceId=89000448)
+
+
+自鸿蒙模拟器更新到 HarmonyOs 5.1.1(19) Beta1（2025-06-12）对应 DevEco Studio 5.1.1 Beta，由 4.31 产生的 uniapp 项目无法运行到 windows的 x86_64 电脑的问题得到了修复，开发者可以通过升级鸿蒙模拟器的版本之后，点击运行不兼容的对话框中的 `强制继续运行` 按钮。

@@ -221,7 +221,7 @@
 
 ## 注意事项
 
-### 如何配置元服务签名证书？如何配置权限？
+### 如何配置元服务签名证书？如何配置权限？@permission
 
 建议先阅读上面调试开发文档，了解大致流程。也可参考 [鸿蒙签名文件配置](https://uniapp.dcloud.net.cn/tutorial/harmony/runbuild.html#signing-configs-files) 了解如何生成证书。
 

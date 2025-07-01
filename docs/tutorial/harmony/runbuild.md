@@ -787,3 +787,17 @@ kill -9 进程号
 此时，就有了默认的卡片，点击会打开默认应用入口。
 
 更多 API 和数据共享参考 [开发卡片事件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-development?ha_source=Dcloud&ha_sourceId=89000448)
+
+### 鸿蒙如何设置隐私协议弹窗？
+
+[鸿蒙平台文档要求](https://developer.huawei.com/consumer/cn/doc/architecture-guides/user_agreement_and_privacy_policy-0000002331953689) 用户首次打开应用，需要同意用户协议与隐私政策，才可进入应用。
+
+也请开发者注意 “App不得因用户不同意提供非必要个人信息，而拒绝用户使用其基本功能服务” 这一条规则，根据自己实际情况，开放符合自己业务规范的基本服务。具体请参考 [《未同意隐私政策模式运行》](/tutorial/app-disagreemode)
+
+在具体技术实现时候，在应用首页引用相关自定义组件进行弹窗，并持久化用户的选择。目前隐私弹窗不需要额外的配置，在 UI 层自行实现即可。
+
+其他平台鸿蒙用户可访问：
+
+- 鸿蒙元服务用户，可参考 [元服务如何配置权限](/tutorial/mp-harmony/intro#permission)
+- uni-app x 用户，可参考 组件[dialogPage](https://doc.dcloud.net.cn/uni-app-x/api/dialog-page)
+- 其他平台用户，可参考 [App 完整 manifest.json](/collocation/manifest-app#privacyregistermode) 相关说明。

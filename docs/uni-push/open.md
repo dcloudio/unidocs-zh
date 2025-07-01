@@ -1,11 +1,10 @@
-## 开通 uni-push
 `uni-push` 需要在 [开发者中心](https://dev.dcloud.net.cn) 申请开通后，方可使用。`uni-push 1.0`和`uni-push 2.0`开通方式基本一致，本文以`uni-push 2.0`为例进行说明。
 
 **Tips:** 目前只有应用所有者可以操作`uni-push`。应用协作者暂不支持。
 
-## uni-push 配置页面
+## `uni-push`配置页面
 
-有两个入口可以进入 uni-push 配置页面：
+有两个入口可以进入`uni-push`配置页面：
 - 通过 HBuilderX 进入
 - 通过开发者中心进入
 
@@ -17,7 +16,7 @@
 ### 通过开发者中心进入
 1. 使用 DCloud 账号登录 [开发者中心](https://dev.dcloud.net.cn) ，登录后会进入“我的应用”列表，在列表中可以看到各应用的`uni-push`开通状态。
 
-2. 在左侧菜单点击“uni-push”，然后选择 1.0或2.0，进入uni-push 信息页，左上角显示为当前要操作的应用，点击可以切换应用。如下图所示：
+2. 在左侧菜单点击“uni-push”，然后选择 1.0或2.0，进入`uni-push`信息页，左上角显示为当前要操作的应用，点击可以切换应用。如下图所示：
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniPush2-info.jpg)
 
 **注意：** 1.0和2.0的配置页面信息略有不同，2.0开通时需要绑定服务空间，1.0不需要。
@@ -57,7 +56,7 @@
 ### 修改应用信息
 `uni-push`开通完成后，后续仍可以在配置页面修改应用相关信息。
 
-### 关闭UniPush
+### 关闭`uni-push`
 当应用不再使用`uni-push`时，可在配置页面关闭该功能。
 
 ### 其它配置@other-config
@@ -77,5 +76,5 @@
 
 ## 使用推送
 推送使用方法，参考文档 
-- [uni-push 2.0](unipush-v2.md)
-- [uni-push 1.0](unipush-v1.md)
+- [uni-push 2.0](../unipush-v2.md)
+- [uni-push 1.0](../unipush-v1.md)

@@ -80,6 +80,84 @@
 - 2.0版文档地址（推荐）：[https://uniapp.dcloud.net.cn/unipush-v2.html](https://uniapp.dcloud.net.cn/unipush-v2.html)
 - 1.0版文档地址：[https://uniapp.dcloud.net.cn/unipush-v1.html](https://uniapp.dcloud.net.cn/unipush-v1.html)
 
+## 注意事项
+### 推送通道选择逻辑  
+- Android平台  
+  **APP在线（个推推送通道可用）**  
+  推送通知和透传消息都使用个推的推送通道下发推送消息。  
+  **APP离线（个推推送通道不可用）**  
+  推送通知，使用个推离线推送通道，离线消息会存储在消息离线库，离线时间内APP在线后下发推送消息。
+  透传消息，如果符合厂商推送的厂商手机（配置了手机厂商推送参数并且在对应厂商的手机上），则使用厂商推送通道下发推送消息；否则使用个推的离线推送通道，离线消息会存储在消息离线库，离线时间内APP在线后下发推送消息。
+
+- iOS平台  
+推送通知，`uni-push`后台管理界面中不支持下发此类型，个推提供的服务端API支持下发推送通知（设置APN参数则通过苹果的APNS通道，否则使用个推通道）。  
+透传消息，设置APN参数则通过苹果的APNS通道下发推送消息，没有设置APN参数则使用个推的推送通道下发。
+
+### Android平台厂商通道
+#### 华为厂商通道
+在华为手机上必须安装“华为移动服务”才能使用华为的厂商推送通道，首先确保手机上已经安装“华为移动服务”应用。
+如果在华为手机应用退出后无法接收到推送消息，需要确保：
+
+1. 机型版本要求：华为rom且华为rom版本大于等于 emui4.1, 华为移动服务(可在应用列表或华为应用市场中查看)版本大于等于 2.5.2。
+2. 需要提交云打包，打自有证书-签名包（包名要确认与华为平台一致）。
+3. 华为平台【我的项目】-【项目设置】-【常规】中填写“SHA256证书指纹”，点右侧对勾保存证书指纹。
+4. emui10的华为手机，检查手机通知权限设置，将【营销通知】的权限也打开，不要默认静默，静默的话是需要下拉通知栏才能看到。
+5. 手机通知栏消息是否有存满，清除已存的通知栏消息看下新的消息是否能展示。
+6. 清除华为移动服务（HMS Core）（apk（手机设置--应用--应用管理--点击显示系统进程--搜索（华为移动服务）--存储--清空缓存））的缓存
+
+
+HBuilderX 3.0.7 之后，华为除了配置原有的厂商信息之外，需要新增配置`agconnect-services.json`文件。
+
+该文件，需要从华为开发者后台--项目设置界面下载  
+![](https://native-res.dcloud.net.cn/images/uniapp/push/huawei-apconnect-services.png)
+
+
+#### VIVO厂商通道
+**需要在VIVO应用商店上线才能申请VIVO的厂商推送**
+注意事项：
+
+- vivo【运营消息】，一个设备一天只能收到5条离线消息
+- vivo要求：通知文案中不能带 “包含测试、test字符”、“纯数字”、“纯表情”、“符号”或者“符号+数 字”、“表情+数字”、“表情＋符号” 。
+- 1个自然日内相同文案的运营消息给同个设备发，vivo会在客户端做去重处理，导致消息不展示
+- 支持vivo推送功能HBuilderX最低版2.1.0及以上。
+
+具体请参考图中数据  
+![](https://native-res.dcloud.net.cn/images/uniapp/push/vivo-datas.png)
+
+
+#### OPPO厂商通道
+**需要在OPPO应用商店上线才能申请OPPO的厂商推送**
+
+并且有以下要求：
+- 机型系统要求：oppo colorOS rom且版本号大于等于3.1
+- 检查手机通知权限是否打开，oppo是默认关闭的，将通知权限下的【Default】通道权限也打开。
+- 手机系统时间是否正常
+
+
+#### 小米厂商通道
+- 机型版本要求：小米rom且小米服务框架（包名：com.xiaomi.xmsf）版本号⼤于等于 105 
+- 检查手机通知权限设置，小米有不重要通知功能，部分消息可能会存在通知栏不重要通知里
+
+#### 魅族厂商通道
+- 机型版本要求：魅族rom且魅族rom版本⼤于等于5.x
+- 检查消息是否存入了魅族手机右上角【魅族消息盒子】中
+- 清除缓存：魅族手机在设置 ---> 应用管理 ---> 所有应用 ---> 推送服务 ，点击里面的清除数据，然后再重新安装一下应用。
+
+
+#### 谷歌FCM通道
+需Android手机已经安装GMS，且手机网络可以连通谷歌FCM推送服务器。
+详细教程另见：[如何使用FCM](uni-push/google-fcm.md)。
+
+#### 其它厂商通道
+如果应用在线可以接收到推送消息，离线时使用厂商通道无法接收到推送消息，可参考**`uni-push`厂商通道常见问题[https://ask.dcloud.net.cn/article/36611](https://ask.dcloud.net.cn/article/36611)**
+
+
+## 其他相关资源
+- 检查应用是否被授予推送权限：[https://ext.dcloud.net.cn/plugin?id=594](https://ext.dcloud.net.cn/plugin?id=594)
+- 开启关闭推送服务：[https://ext.dcloud.net.cn/plugin?id=727](https://ext.dcloud.net.cn/plugin?id=727)
+- 自定义推送铃声：[https://ext.dcloud.net.cn/plugin?id=7482](https://ext.dcloud.net.cn/plugin?id=7482)
+- 如何自定义推送通知的图标：[https://uniapp.dcloud.net.cn/unipush-custom-icon.html](https://uniapp.dcloud.net.cn/tutorial/app-push-unipush.html#unipush-icons)
+
 ## 常见问题@faq
 
 有了`uni-push`，开发者不应该再使用其他push方案了。但我们发现很多开发者有误解，导致还在错误使用其他推送。

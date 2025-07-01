@@ -1,4 +1,4 @@
-::: warning
+::: tip 提示
 本文为`uni-push 2.0`（需要HBuilderX 3.5.1 及其以上版本支持）的介绍，如果旧项目需要使用老版本的`uni-push 1.0`，另见：[uni-push 1.0](unipush-v1.md)
 :::
 

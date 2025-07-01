@@ -13,7 +13,7 @@
 
 ### 1.1 开通 `uni-push` 推送服务
 
-`uni-push` 内部封装好了个推及主流厂商 SDK，开发者在使用前必须开通相关服务：[点此查看如何开通uni-push推送服务](uni-push/open.md) 。
+`uni-push` 内部封装好了个推及主流厂商 SDK，开发者在使用前必须开通相关服务：[点此查看如何开通uni-push推送服务](./uni-push/open.md) 。
 
 **完成以上步骤后，ios 支持在线、离线推送；android 仅支持在线推送。**
 
@@ -106,7 +106,7 @@ plus.push.getClientInfoAsync((info) => {
 
 
 
-### 2.2 个推服务端 api 推送@request_getui
+### 2.2 个推服务端 api 推送@request-getui
 
 #### 2.2.1 服务端消息下发流程（必读）
 

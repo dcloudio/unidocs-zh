@@ -6,7 +6,7 @@
 **使用FCM时手机端需安装Google移动服务（GMS），并且可以正常连接Google服务（国内网络需要翻墙）**
 
 使用FCM必须先开通使用`uni-push`：
-- 开通`uni-push`服务参考：[如何开通uni-push](uni-push/open.md)
+- 开通`uni-push`服务参考：[如何开通uni-push](open.md)
 - App端使用`uni-push`参考：
   - [uni-push 2.0](../unipush-v2.md)
   - [uni-push 1.0](../unipush-v1.md)

@@ -106,7 +106,7 @@
 
 - 5+app和wap2app支持`uni-push`吗？  
 	
-	HBuilderX 2.0.3起，5+app和wap2app可以使用`uni-push 1.0`，暂不支持使用`uni-push 2.0`。5+app和wap2app升级`uni-push`不需要改动app前端代码，只需要在HBuilderX中打开manifest.json的“模块配置”页，在“Push(消息推送)”下勾选“uniPush”，并点击“配置”，在后台开通`uni-push`服务，配置好厂商推送参数重新提交云端打包即可。后端服务器需要参考[uni-push 1.0文档](unipush-v1.md#request_getui)中的第二步对接个推推送服务。
+	HBuilderX 2.0.3起，5+app和wap2app可以使用`uni-push 1.0`，暂不支持使用`uni-push 2.0`。5+app和wap2app升级`uni-push`不需要改动app前端代码，只需要在HBuilderX中打开manifest.json的“模块配置”页，在“Push(消息推送)”下勾选“uniPush”，并点击“配置”，在后台开通`uni-push`服务，配置好厂商推送参数重新提交云端打包即可。后端服务器需要参考[uni-push 1.0文档](unipush-v1.md#request-getui)中的第二步对接个推推送服务。
 
 - uni-app x项目如何使用`uni-push`？
   

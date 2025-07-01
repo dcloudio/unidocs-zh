@@ -6,12 +6,12 @@
 > 从HBuilderX 2.7.10开始，支持谷歌FCM，参考：[如何使用FCM](uni-push/google-fcm.md)  
 
 
-# `uni-push`介绍
+## uni-push介绍
 [查看uni-push介绍](unipush.md)
 
-# 一、客户端集成
+## 一、客户端集成
 
-## 1.1 开通 `uni-push` 推送服务
+### 1.1 开通 `uni-push` 推送服务
 
 `uni-push` 内部封装好了个推及主流厂商 SDK，开发者在使用前必须开通相关服务：[点此查看如何开通uni-push推送服务](./uni-push/open.md) 。
 
@@ -19,7 +19,7 @@
 
 
 
-## 1.2 开通离线厂商推送服务
+### 1.2 开通离线厂商推送服务
 
 若需要支持主流 android 厂商客户端接收离线推送，您需要完成 ：[android 多厂商配置](https://uniapp.dcloud.net.cn/unipush_vendor_config.html) 。
 
@@ -31,9 +31,9 @@
 
 
 
-## 1.3 集成验证
+### 1.3 集成验证
 
-### 1.3.1 cid 获取
+#### 1.3.1 cid 获取
 
 在应用安装后第一次运行时应该调用 [5+ API](https://www.html5plus.org/doc/zh_cn/push.html) 的 **plus.push.getClientInfoAsync** 方法获取客户端标识。
 
@@ -47,7 +47,7 @@ plus.push.getClientInfoAsync((info) => {
 
 
 
-### 1.3.2 确认离线厂商是否可用
+#### 1.3.2 确认离线厂商是否可用
 
 若不需要使用离线推送，则可忽略此步骤。
 
@@ -84,13 +84,13 @@ plus.push.getClientInfoAsync((info) => {
 
 
 
-# 二、服务端推送消息
+## 二、服务端推送消息
 
 开发者可通过以下三种方式推送消息，选择其中一种即可。
 
 若您在测试过程中遇到无法收到推送的情况，请先按照 [uni-push 1.0常见问题](https://ask.dcloud.net.cn/article/36611) 中的排查思路自助排查一下，例如常见问题：**安卓离线收不到通知** 。
 
-## 2.1 开发者中心后台Web页面推送
+### 2.1 开发者中心后台Web页面推送
 
 登录 [DCloud开发者中心](https://dev.dcloud.net.cn/)，在左侧导航选择“uni-push”-“1.0（老版本）”-“消息推送”，打开消息推送页面。
 
@@ -106,9 +106,9 @@ plus.push.getClientInfoAsync((info) => {
 
 
 
-## 2.2 个推服务端 api 推送@request-getui
+### 2.2 个推服务端 api 推送@request-getui
 
-### 2.2.1 服务端消息下发流程（必读）
+#### 2.2.1 服务端消息下发流程（必读）
 
 - **当 CID 在线(即 app 在前台打开运行)时**：
 
@@ -120,7 +120,7 @@ plus.push.getClientInfoAsync((info) => {
 
   对于没有开启对应厂商功能的，消息将存在个推的离线库中，等待 CID 在线，再通过个推通道下发到客户端。
 
-### 2.2.2 服务端api使用
+#### 2.2.2 服务端api使用
 
 个推服务端接口文档可查看：[服务端 RestAPI V2](https://docs.getui.com/getui/server/rest_v2/push/) ，支持以下 2 种方式调用，选择其中一种即可，推荐您使用 Http 请求。
 
@@ -283,9 +283,9 @@ public class UnipushTest {
 
 
 
-### 2.2.3 特殊参数说明
+#### 2.2.3 特殊参数说明
 
-#### 2.2.3.1 Intent
+##### 2.2.3.1 Intent
 
 鉴于各厂商SDK打开应用自定义页面有多种方式，且有些方式互不兼容，为了保持统一并且方便开发者，个推提供一种标准且唯一的打开App 内自定义页面方式，通过服务端 API 指定 intent 参数。
 
@@ -311,7 +311,7 @@ intent://io.dcloud.unipush/?#Intent;scheme=unipush;launchFlags=0x4000000;compone
 
 
 
-#### 2.2.3.2 特殊透传消息
+##### 2.2.3.2 特殊透传消息
 
 `uni-push`推送服务对透传消息的数据符合以下格式时做了特殊处理，会将如下格式的透传消息，直接在通知栏中展示通知。
 
@@ -326,24 +326,24 @@ intent://io.dcloud.unipush/?#Intent;scheme=unipush;launchFlags=0x4000000;compone
 
 
 
-## 2.3 uniCloud开发服务器
+### 2.3 uniCloud开发服务器
 
 使用封装好的服务器端开发易用插件，详情可查看：[uniPush的uniCloud版【V2】](https://ext.dcloud.net.cn/plugin?id=1680)
 
 
 
-# 三、客户端处理推送消息
+## 三、客户端处理推送消息
 
-## 3.1 支持消息范围
+### 3.1 支持消息范围
 
 | 客户端  | 个推通知 | 个推透传 | 厂商通知 | 厂商透传 |
 | ------- | -------- | -------- | -------- | -------- |
 | android | 支持     | 支持     | 支持     | 不支持   |
 | ios     | 不支持   | 支持     | 支持     | 不支持   |
 
-## 3.2 客户端 api
+### 3.2 客户端 api
 
-### 3.2.1 消息处理
+#### 3.2.1 消息处理
 
 `uni-push` 推送服务已经封装好 iOS&Android 平台的原生集成工作，开发者只需要调用 JS 代码处理推送消息的业务逻辑。
 
@@ -358,7 +358,7 @@ intent://io.dcloud.unipush/?#Intent;scheme=unipush;launchFlags=0x4000000;compone
 - 使用[条件编译](https://uniapp.dcloud.io/platform)直接调用 5+ Push 接口，参考[5+ APP推送开发指南](https://ask.dcloud.net.cn/article/34)
 - uni 的客户端 js api 仍然是 plus.push，之前使用 plus.push 开发的代码仍然可以使用。
 
-### 3.2.2 应用桌面图标的角标
+#### 3.2.2 应用桌面图标的角标
 
 对于支持角标设置的机型，app 在线推送时可调用 5+ API plus.runtime.setBadgeNumber 设置或清零角标。
 
@@ -408,7 +408,7 @@ intent://io.dcloud.unipush/?#Intent;scheme=unipush;launchFlags=0x4000000;compone
 
 
 
-# 常见问题
+## 常见问题
 [参考文档](unipush.md#faq)
 
 **如有其它疑问，可使用微信扫描下面二维码，进行技术咨询**  

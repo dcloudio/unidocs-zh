@@ -2,70 +2,18 @@
  您正在浏览的是老版uni-push1.0的文档。推荐升级到[uni-push2.0](unipush-v2.md)
 :::
 
-> 从HBuilderX 2.0.3 起，uni-app、5+App、wap2app均支持UniPush  
->从HBuilderX2.7.10开始，支持谷歌FCM，参考：[https://ask.dcloud.net.cn/article/37356](https://ask.dcloud.net.cn/article/37356)  
+> 从HBuilderX 2.0.3 起，uni-app、5+App、wap2app均支持`uni-push`  
+> 从HBuilderX 2.7.10开始，支持谷歌FCM，参考：[如何使用FCM](uni-push/google-fcm.md)  
 
 
-
-## 概述
-
-### 产品介绍
-
-UniPush 是 DCloud 联合个推公司推出的集成型统一推送服务，内建了苹果、华为、小米、OPPO、VIVO、魅族、谷歌 FCM 等手机厂商的系统级推送和个推等第三方推送。
-
-国内Android的Push是一个混乱的世界，因为 Google 的 Push 服务 FCM 被墙，所以一些国内的安卓手机厂商各自做了自己的推送，比如华为、小米、OPPO、VIVO、魅族等，但还有很多国产手机厂商没有提供官方推送方案。三方独立公司如个推，则提供了独立的 push 方案。
-在没有 uniPush 以前，如果只使用三方 push，会在很多国产手机上因为节电设置而无法保活 push 进程，导致无法推送。
-而如果每个安卓手机的官方 Push SDK 都集成开发一遍，这么多平台，工作量会非常巨大，管理维护也很麻烦。
-
-uniPush 解决了这个难题，开发者只需要开发一次。系统会自动在不同手机上选择最可靠的推送通道发送 push 消息，保障送达率。
-
-UniPush 即降低了开发成本、又提高了 push 送达率，并且免费，是当前推送的最佳解决方案。
-
-### 常见答疑
-
-有了 unipush，开发者不应该再使用其他 push 方案了。但我们发现很多开发者有误解，导致还在错误使用其他推送。
-
-- 常见误解 1：“uniPush的专业性，和专业的个推、极光等服务可相比吗？”
-
-  答：uniPush 是由个推将其本来收费的 push 产品，其中重要VIP部分功能免费提供给了DCloud的开发者。它与个推 vip push 的只有 2 个区别：
-
-  - 免费
-  - 账户使用的是 DCloud 开发者账户，而无需再重新注册个推账户。个推是A股上市公司，专业性在推送领域领先。
-
-- 常见误解 2：“uniPush好麻烦，我就喜欢个推、极光这种简单 sdk，不想去各个 rom 厂商去申请一圈”
-  答：uniPush不建立在申请手机厂商授权的基础上，如果你不申请那些，使用起来和用普通的个推是一样的。但是要特别注意，推送行业的现状就是：**不集成rom厂商的推送，就无法在App离线时发送push。**。按照普通个推模式使用，后果就是在华为、小米、OPPO、VIVO、魅族上发不了离线消息。
-
-- 常见误解 3：“uniPush的送达率还是不够，是否可以付费来提升送达率，个推是有付费提升送达率的方法的”
-  答：前文已经说了。个推的付费提升送达率的产品就是 vip push，而uniPush就是个推的 vip Push。DCloud 通过谈判免费给 DCloud的开发者使用了。
-
-- 常见误解 4：开通 uniPush 要实名认证，还得传身份证，开通普通个推不用这么麻烦。
-  答：此问题之前曾存在，后来已经处理，保持和个推需要的身份信息相同，不再需要身份证。
-
-### 技术架构
-
-![img](https://native-res.dcloud.net.cn/images/uniapp/push/architecture.png)
-
-### 名词解释
-
-| 名词     | 解释                                                         |
-| -------- | ------------------------------------------------------------ |
-| 通知消息 | 指定通知标题和内容后，由个推SDK自动处理在系统通知栏中展示通知栏消息，同时响铃或震动提醒用户(响铃和震动受手机系统的设置状态影响)。 |
-| 透传消息 | 即自定义消息，消息体格式客户可以自己定义，如纯文本、json 串等。透传消息个推只传递数据，不做任何处理，客户端接收到透传消息后需要自己去做后续动作处理，如通知栏展示、弹框等。 |
-| ClientId | 个推业务层中的对外用户标识，用于标识客户端身份，由第三方客户端获取并保存到第三方服务端，是个推 SDK 的唯一识别号，简称 CID。 |
-| 在线推送 | app 在前台打开运行时，通过个推渠道下发消息。                 |
-| 离线推送 | app在后台、锁屏、进程关闭时，通过厂商渠道下发消息。若未集成 android 多厂商、未配置 ios 推送证书，则该机型无法使用离线推送。 |
-
-更多名词解释参考：[个推名词解释](https://docs.getui.com/getui/more/word/)
-
-### 消息推送流程
-
-![img](https://native-res.dcloud.net.cn/images/uniapp/push/dispatch.svg)
+## uni-push介绍
+[查看uni-push介绍](unipush.md)
 
 ## 一、客户端集成
 
-### 1.1 开通 unipush 推送服务
+### 1.1 开通 `uni-push` 推送服务
 
-unipush 内部封装好了个推及主流厂商 SDK，开发者在使用前必须开通相关服务：[点此查看如何开通UniPush推送服务](https://ask.dcloud.net.cn/article/35716) 。
+`uni-push` 内部封装好了个推及主流厂商 SDK，开发者在使用前必须开通相关服务：[点此查看如何开通uni-push推送服务](uni-push/open.md) 。
 
 **完成以上步骤后，ios 支持在线、离线推送；android 仅支持在线推送。**
 
@@ -103,7 +51,7 @@ plus.push.getClientInfoAsync((info) => {
 
 若不需要使用离线推送，则可忽略此步骤。
 
-在【Uni Push】-【配置管理】-【故障排查】-【 状态查询】中输入CID 查询，看是否会返回 devicetoken 。
+在【uni-push/1.0/消息推送】-【配置管理】-【故障排查】-【状态查询】中输入CID 查询，看是否会返回 devicetoken 。
 
 ![img](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/devicetoken1.png)
 
@@ -140,11 +88,11 @@ plus.push.getClientInfoAsync((info) => {
 
 开发者可通过以下三种方式推送消息，选择其中一种即可。
 
-若您在测试过程中遇到无法收到推送的情况，请先按照 [Unipush常见问题](https://ask.dcloud.net.cn/article/36611) 中的排查思路自助排查一下，例如常见问题：**安卓离线收不到通知** 。
+若您在测试过程中遇到无法收到推送的情况，请先按照 [uni-push 1.0常见问题](https://ask.dcloud.net.cn/article/36611) 中的排查思路自助排查一下，例如常见问题：**安卓离线收不到通知** 。
 
 ### 2.1 开发者中心后台Web页面推送
 
-登录 [DCloud开发者中心](https://dev.dcloud.net.cn/)，在“我创建的应用”列表中选择应用，左侧选择“Uni Push”，打开消息推送页面。
+登录 [DCloud开发者中心](https://dev.dcloud.net.cn/)，在左侧导航选择“uni-push”-“1.0（老版本）”-“消息推送”，打开消息推送页面。
 
 **测试在线通知消息推荐您使用：**
 
@@ -176,7 +124,7 @@ plus.push.getClientInfoAsync((info) => {
 
 个推服务端接口文档可查看：[服务端 RestAPI V2](https://docs.getui.com/getui/server/rest_v2/push/) ，支持以下 2 种方式调用，选择其中一种即可，推荐您使用 Http 请求。
 
-服务端集成时首先需要获取 AppId、AppKey、MasterSecret 参数，登录 [DCloud开发者中心](https://dev.dcloud.net.cn/) ，在“Uni Push”下的“应用配置”页面中获取，如下图所示：
+服务端集成时首先需要获取 AppId、AppKey、MasterSecret 参数，登录 [DCloud开发者中心](https://dev.dcloud.net.cn/) ，在“uni-push”-“1.0（老版本）”-“消息推送”下的“应用配置”页面中获取，如下图所示：
 
 ![img](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/dev/app_config_info.png)
 
@@ -350,7 +298,7 @@ intent://io.dcloud.unipush/?#Intent;scheme=unipush;launchFlags=0x4000000;compone
 
 **注意事项：**
 
-component=io.dcloud.HBuilder/io.dcloud.PandoraEntry，其中 io.dcloud.HBuilder 为 App 包名，需要替换为自己 App 的包名，与 App 云端打包界面设置的 Android 包名一致。
+`component=io.dcloud.HBuilder/io.dcloud.PandoraEntry`，其中 `io.dcloud.HBuilder` 为 App 包名，需要替换为自己 App 的包名，与 App 云端打包界面设置的 Android 包名一致。
 
 ![img](https://native-res.dcloud.net.cn/images/uniapp/push/packagename2.png)
 
@@ -365,7 +313,7 @@ component=io.dcloud.HBuilder/io.dcloud.PandoraEntry，其中 io.dcloud.HBuilder 
 
 ##### 2.2.3.2 特殊透传消息
 
-UniPush推送服务对透传消息的数据符合以下格式时做了特殊处理，会将如下格式的透传消息，直接在通知栏中展示通知。
+`uni-push`推送服务对透传消息的数据符合以下格式时做了特殊处理，会将如下格式的透传消息，直接在通知栏中展示通知。
 
 **注意事项：**
 
@@ -397,9 +345,9 @@ UniPush推送服务对透传消息的数据符合以下格式时做了特殊处�
 
 #### 3.2.1 消息处理
 
-UniPush 推送服务已经封装好 iOS&Android 平台的原生集成工作，开发者只需要调用 JS 代码处理推送消息的业务逻辑。
+`uni-push` 推送服务已经封装好 iOS&Android 平台的原生集成工作，开发者只需要调用 JS 代码处理推送消息的业务逻辑。
 
-若您需要在客户端接收处理推送 UniPush 推送内容，请先阅读了解此对接指南开头的 “**消息推送流程**”，客户端回调处理可参考：[在 uni-app 中使用 UniPush](https://ask.dcloud.net.cn/article/35726) 。
+若您需要在客户端接收处理推送 `uni-push` 推送内容，请先阅读了解此对接指南开头的 “**消息推送流程**”，客户端回调处理可参考：[在 uni-app 中使用 `uni-push`](uni-push/v1/how-to-use-in-uniapp.md) 。
 
 **注意事项：**
 
@@ -428,7 +376,7 @@ UniPush 推送服务已经封装好 iOS&Android 平台的原生集成工作，�
 
   - add方式支持版本： **EMUI版本8.0.0且推送服务应用版本 8.0.0及以上**
 
-  - 服务端 rest-v2 设置示例，注意Unipush用户的class的值请固定使用'io.dcloud.PandoraEntry'
+  - 服务端 rest-v2 设置示例，注意`uni-push`用户的class的值请固定使用'io.dcloud.PandoraEntry'
 
     ```js
     {
@@ -450,7 +398,7 @@ UniPush 推送服务已经封装好 iOS&Android 平台的原生集成工作，�
 
 **iOS 平台**
 
-根据接收到的推送消息处理桌面图标的角标，在uniPush后台的“iOS配置”项中可配置 badge 参数对角标进行设置，可取值：
+根据接收到的推送消息处理桌面图标的角标，在`uni-push`后台的“iOS配置”项中可配置 badge 参数对角标进行设置，可取值：
 
 - “+1”，表示当前角标+1；
 - “-1”，表示当前角标-1（角标>=0）；
@@ -470,7 +418,7 @@ UniPush 推送服务已经封装好 iOS&Android 平台的原生集成工作，�
   透传消息，如果符合厂商推送的厂商手机（配置了手机厂商推送参数并且在对应厂商的手机上），则使用厂商推送通道下发推送消息；否则使用个推的离线推送通道，离线消息会存储在消息离线库，离线时间内APP在线后下发推送消息。
 
 - iOS平台  
-推送通知，uniPush后台管理界面中不支持下发此类型，个推提供的服务端API支持下发推送通知（设置APN参数则通过苹果的APNS通道，否则使用个推通道）。  
+推送通知，`uni-push`后台管理界面中不支持下发此类型，个推提供的服务端API支持下发推送通知（设置APN参数则通过苹果的APNS通道，否则使用个推通道）。  
 透传消息，设置APN参数则通过苹果的APNS通道下发推送消息，没有设置APN参数则使用个推的推送通道下发。
 
 ### Android平台厂商通道
@@ -486,7 +434,7 @@ UniPush 推送服务已经封装好 iOS&Android 平台的原生集成工作，�
 6. 清除华为移动服务（HMS Core）（apk（手机设置--应用--应用管理--点击显示系统进程--搜索（华为移动服务）--存储--清空缓存））的缓存
 
 
-HBuilderX3.0.7 之后，华为除了配置原有的厂商信息之外，需要新增配置  agconnect-services.json文件。
+HBuilderX 3.0.7 之后，华为除了配置原有的厂商信息之外，需要新增配置`agconnect-services.json`文件。
 
 该文件，需要从华为开发者后台--项目设置界面下载  
 ![](https://native-res.dcloud.net.cn/images/uniapp/push/huawei-apconnect-services.png)
@@ -526,14 +474,10 @@ HBuilderX3.0.7 之后，华为除了配置原有的厂商信息之外，需要�
 
 #### 谷歌FCM通道
 需Android手机已经安装GMS，且手机网络可以连通谷歌FCM推送服务器。
-详细教程另见：[https://ask.dcloud.net.cn/article/37356](https://ask.dcloud.net.cn/article/37356)。
+详细教程另见：[如何使用FCM](uni-push/google-fcm.md)。
 
 #### 其它厂商通道
-如果应用在线可以接收到推送消息，离线时使用厂商通道无法接收到推送消息，可参考**UniPush厂商通道常见问题[https://ask.dcloud.net.cn/article/36611](https://ask.dcloud.net.cn/article/36611)**
-
-**最后也可以登录[个推官网](https://www.getui.com/)，或使用微信扫描下面二维码，进行技术咨询**  
-![](https://native-res.dcloud.net.cn/images/uniapp/push/getui-service.jpg)
-
+如果应用在线可以接收到推送消息，离线时使用厂商通道无法接收到推送消息，可参考**`uni-push`厂商通道常见问题[https://ask.dcloud.net.cn/article/36611](https://ask.dcloud.net.cn/article/36611)**
 
 
 ## 其他相关资源
@@ -542,20 +486,9 @@ HBuilderX3.0.7 之后，华为除了配置原有的厂商信息之外，需要�
 - 自定义推送铃声：[https://ext.dcloud.net.cn/plugin?id=7482](https://ext.dcloud.net.cn/plugin?id=7482)
 - 如何自定义推送通知的图标：[https://uniapp.dcloud.net.cn/unipush-custom-icon.html](https://uniapp.dcloud.net.cn/tutorial/app-push-unipush.html#unipush-icons)
 
-## FAQ
-- Q：5+app和wap2app需要uniPush怎么办？  
-A：HBuilderX 2.0.3起，5+app和wap2app也支持了uniPush。
-5+app和wap2app升级uniPush不需要改动app前端代码，只需要在HBuilderX中打开manifest.json的“SDK配置”页，在“推送”下勾选“DCloud UniPush”，并点击“配置”，在后台开通unipush服务，配置好厂商推送参数重新提交云端打包即可。后端服务器需要参考第二步对接个推推送服务。
+## 常见问题
+[参考文档](unipush.md#faq)
 
-- Q：离线打包如何配置？  
-A：[Android平台App离线打包-Push](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/push?id=unipush)
-[iOS平台App离线打包-Push](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/push?id=unipush)
-
-- Q：iOS平台如何实现应用启动后不立即弹出“发送通知”系统授权框？  
-A：参考：[https://ask.dcloud.net.cn/article/36955](https://ask.dcloud.net.cn/article/36955#push)
-
-- Q：为什么Android应用进入后台后（App未销毁），点击通知消息无法拉起App。      
-A：检查设备是否有禁止后台弹出界面，路径>>设置-应用管理-测试应用-权限管理-后台弹出界面，(一般是小米、oppo、
-vivo设备)。
-
+**如有其它疑问，可使用微信扫描下面二维码，进行技术咨询**  
+![](https://native-res.dcloud.net.cn/images/uniapp/push/getui-service.jpg)
 

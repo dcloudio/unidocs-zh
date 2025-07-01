@@ -15,9 +15,11 @@
   * [App升级中心](https://doc.dcloud.net.cn/uniCloud/upgrade-center.html)
   * [uni一键登录](https://doc.dcloud.net.cn/uniCloud/uni-login/summary.html)
   * [uni实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
-  * [uni-push统一推送](unipush.md)
-    * [uni-push1.0](unipush-v1.md)
-    * [uni-push2.0](unipush-v2.md)
+  * uni-push统一推送
+    * [简介](unipush.md)
+    * [如何开通](/uni-push/open.md)
+    * [uni-push 1.0](unipush-v1.md)
+    * [uni-push 2.0](unipush-v2.md)
       * [业务文档](unipush-v2.md)
       * 开发文档
         * [uni-app客户端api](https://uniapp.dcloud.net.cn/api/plugins/push.html)

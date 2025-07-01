@@ -347,7 +347,7 @@ intent://io.dcloud.unipush/?#Intent;scheme=unipush;launchFlags=0x4000000;compone
 
 `uni-push` 推送服务已经封装好 iOS&Android 平台的原生集成工作，开发者只需要调用 JS 代码处理推送消息的业务逻辑。
 
-若您需要在客户端接收处理推送 `uni-push` 推送内容，请先阅读了解此对接指南开头的 “**消息推送流程**”，客户端回调处理可参考：[在 uni-app 中使用 `uni-push`](uni-push/v1/how-to-use-in-uniapp.md) 。
+若您需要在客户端接收处理推送 `uni-push` 推送内容，请先阅读了解此对接指南开头的 “**消息推送流程**”，客户端回调处理可参考：[在uni-app中使用uni-push](uni-push/v1/how-to-use-in-uniapp.md) 。
 
 **注意事项：**
 

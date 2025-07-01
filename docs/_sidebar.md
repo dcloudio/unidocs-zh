@@ -26,6 +26,8 @@
         * [uni-app x客户端api](https://doc.dcloud.net.cn/uni-app-x/api/push.html)
         * [服务端api](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/api.html)
       * [uni-push2.0、uni-id、uni统计的组合](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/mate.html)
+    * [安卓厂商推送配置](unipush_vendor_config.md)
+    * [谷歌FCM配置](uni-push/google-fcm.md)
   * [uni统计](uni-stat.md)
     * [uni统计2.0](uni-stat-v2.md)
     * [uni统计1.0](uni-stat-v1.md)

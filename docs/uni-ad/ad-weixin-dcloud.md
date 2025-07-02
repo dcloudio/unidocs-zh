@@ -35,7 +35,7 @@ uni-ad微信小程序广告的优势在于：
 >整体流程：创建小程序应用 -> 开通广告 -> 资质审核 -> 广告插件审核 -> 广告代码集成 -> 查看报表
 
 #### 创建小程序应用
-进入 uni-ad 广告联盟后台（[https://uniad.dcloud.net.cn](https://uniad.dcloud.net.cn)） ，使用DCloud开发者账号登陆广告联盟管理后台，点击左侧菜单栏【广告设置】，点击页面上面的“创建应用”按钮
+进入 uni-ad 广告联盟后台（[https://uniad.dcloud.net.cn](https://uniad.dcloud.net.cn)） ，使用DCloud开发者账号登陆广告联盟管理后台，点击左侧菜单栏【广告设置】，点击页面上面的“创建应用”按钮，如页面已存在相关应用则不需要重复创建
 ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_dcloud/app_list.png)
 
 如果你的小程序是uni-app开发，请选择“uni-app应用”。如果是原生小程序开发，请选择“原生应用”。输入小程序的实际名称，点击“创建应用”

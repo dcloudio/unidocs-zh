@@ -620,6 +620,52 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 如果报错中包含 vendor.js 中有报错，可能是三方组件库不兼容元服务，可以参考 debug 文档进行错误定位。
 
+### 如何使用分包异步化能力？
+
+[分包异步化](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/asynchronous-subcontracting) 能力默认是支持的。开发者使用不生效一般是下面错误原因：
+
+`pages.json` 配置错误
+
+- 通用分包没有在 的 subPackages 中设置 `common:true`
+- 主包、分包引用时候没有设置 `componentPlaceholder` 属性
+- 配置 `componentPlaceholder` 名称和实际引用的组件名称不一致
+
+参考写法如下：
+
+```json
+{
+    "pages": [{
+    "path": "pages/index/index",
+    "style": {
+      "navigationBarTitleText": "Index",
+      "componentPlaceholder": {
+        "custom-button": "view"
+      }
+    }
+  }],
+  "subPackages": [{
+      "root": "packageA",
+      "pages": [{
+        "path": "index/index",
+        "style": {
+          "navigationBarTitleText": "分包页面",
+          "componentPlaceholder": {
+            "custom-button": "view"
+          }
+        }
+      }]
+    },
+    {
+      "root": "packageB",
+      "pages": [],
+      "common": true
+    }
+  ]
+}
+```
+
+在页面中正常使用： `import CustomButton from "@/packageB/components/component1/index.vue";`
+
 ### 元服务提交审核常见报错
 
 #### 请检查华为后台隐私政策中 “设备权限调用” 是否填写完整

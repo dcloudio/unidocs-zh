@@ -63,7 +63,7 @@ HBuilder 3.6.7+ 或原生广告 SDK 5.0.0+版本 uni-ad 开屏、信息流、激
 目前系统已自动开启 Bidding 配置，无需开发者配置。
 
 ## 瀑布流@waterfall
-瀑布流功能，可配置多个广告位，自动切换广告位，提高广告填充率。 您需瀑布流的配置请通过[uni-im](https://im.dcloud.net.cn/#/?joinGroup=65d85fc09847e92db03ff81a&&oauthToken=ffa042cb5287136b8aba3b13a9ce5821)联系uni-ad商务/运营，或发邮件至uniad@dcloud.io
+瀑布流功能，1个广告位id可配置多个渠道广告位，自动切换广告位，提高广告填充率。 如需瀑布流的配置请通过[uni-im](https://im.dcloud.net.cn/#/?joinGroup=65d85fc09847e92db03ff81a&&oauthToken=ffa042cb5287136b8aba3b13a9ce5821)联系uni-ad商务/运营，或发邮件至uniad@dcloud.io
 
 ## 广告相关组件/API
 

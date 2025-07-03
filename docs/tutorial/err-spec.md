@@ -53,7 +53,7 @@ function CallBack(err:UniError){
 ## SourceError
 用于保存引起错误的源错误，如app端三方SDK的错误信息，包括以下属性：
 - subject
-	源错误（如app端三方SDK）模块名称，如uni-AD中的穿山甲广告SDK的模块名称为"csj"
+	源错误（如app端三方SDK）模块名称，如uni-ad中的穿山甲广告SDK的模块名称为"csj"
 - code
 	源错误（如app端三方SDK）的原始错误码
 - message
@@ -62,7 +62,7 @@ function CallBack(err:UniError){
 	上级源错误，只有一个源错误时是SourceError，包含多个源错误时封装成AggregateError
 
 **注意**
-源错误可以根据业务情况扩展其它属性，如uni-AD中，可以添加slotId来表示聚合的三方广告位标识
+源错误可以根据业务情况扩展其它属性，如uni-ad中，可以添加slotId来表示聚合的三方广告位标识
 
 ## UniAggregateError
 用于保存多个源错误，如app端某个错误可能是由多个三方SDK的错误引起，可将多个源错误组成UniAggregateError对象。

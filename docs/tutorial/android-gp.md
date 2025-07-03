@@ -48,7 +48,7 @@ uni-app中部分功能模块不符合Google Play审核要求，请仔细阅读�
 请不要集成qq_mta-sdk-xxx.jar，qq_sdk_vxxx.jar等SDK。如果有请删除
 
 ### 不要使用国内增强广告SDK
-uni-AD国内增强广告（如穿山甲、广点通、快手等SDK）显示的广告落地页可能会引导用户下载安装apk，不符合Google Play的审核要求，因此提交到Google Play时不要勾选增强广告SDK
+uni-ad国内增强广告（如穿山甲、优量汇、快手等SDK）显示的广告落地页可能会引导用户下载安装apk，不符合Google Play的审核要求，因此提交到Google Play时不要勾选增强广告SDK
 
 ![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/app/android/googleplay/ad.png)
 

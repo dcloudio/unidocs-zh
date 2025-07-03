@@ -349,7 +349,7 @@ Map & Geolocation模块集成的三方SDK说明
 
 <a id="uniAd"/>
 
-uni-AD广告模块集成的三方SDK说明
+uni-ad广告模块集成的三方SDK说明
 
 <table style="word-break:break-all">
   <tr>

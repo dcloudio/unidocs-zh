@@ -45,7 +45,7 @@
   <img style="margin-left: 100px" src="https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/uni-ad-wx-2.png">
 </figure>
 
-## 开通配置广告步骤@start
+## 开通配置广告步骤
 
 1. 开通广告
    需在广告平台后台操作：
@@ -56,13 +56,13 @@
 2. 在页面合适位置编写代码，放置组件，配上广告位 id。
 3. App 端打包后生效，打包时必须选择要集成的广告 SDK（穿山甲、优量汇、快手、百度等渠道）。
 
-## 实时竞价 Bidding@bidding
+## 实时竞价 Bidding
 
 HBuilder 3.6.7+ 或原生广告 SDK 5.0.0+版本 uni-ad 开屏、信息流、激励视频、插屏广告支持实时竞价功能。
 支持多家广告（腾讯优量汇广告联盟、快手广告联盟、百度百青藤广告联盟等）参与实时竞价，展示高价格 eCPM 广告，可有效提升填充，释放运营人力，最大化流量价值。
 目前系统已自动开启 Bidding 配置，无需开发者配置。
 
-## 瀑布流@waterfall
+## 瀑布流
 瀑布流功能，1个广告位id可配置多个渠道广告位，自动切换广告位，提高广告填充率。 如需瀑布流的配置请通过[uni-im](https://im.dcloud.net.cn/#/?joinGroup=65d85fc09847e92db03ff81a&&oauthToken=ffa042cb5287136b8aba3b13a9ce5821)联系uni-ad商务/运营，或发邮件至uniad@dcloud.io
 
 ## 广告相关组件/API

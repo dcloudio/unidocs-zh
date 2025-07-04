@@ -132,10 +132,10 @@ easyinput 组件是对原生input组件的增强 ，是专门为配合表单组�
 |suffixIcon|String|-|-|输入框尾部图标|
 |trim|Boolean/String|见 trim Options	| false |	是否自动去除空格，传入类型为 Boolean 时，自动去除前后空格|
 |inputBorder|Boolean|-|true|是否显示input输入框的边框|
-|styles|Object|-|-|	样式自定义|
+|styles|Object|见 styles options|-|	自定义颜色|
 |passwordIcon|Boolean|-| true |	type=password 时，是否显示小眼睛图标|
 |adjust-position|Boolean|-| true| 弹起键盘时，是否上推页面，平台差异性与内置input组件一致
-|primaryColor|String|-| #2979ff | 设置清除按钮focus时的颜色
+|primaryColor|String|-| #2979ff | 设置主题色
 |cursorSpacing|Number|-| 0 |  指定光标与键盘的距离，单位 px 。取 textarea/input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离。详见[textarea](https://uniapp.dcloud.net.cn/component/textarea.html)/[input](https://uniapp.dcloud.net.cn/component/input.html)|
 
 

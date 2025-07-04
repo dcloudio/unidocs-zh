@@ -610,6 +610,14 @@ sign = sha256(secret:transid)
 |:-|:-|:-|:-|
 |isValid|校验结果|Blean|判定结果，是否发放奖励，具体发放奖励由用户自己的业务系统决定|
 
+返回数据示例
+
+```json
+{
+  "isValid": true
+}
+```
+
 #### 老用户升级@upgrade
 
 1. 在传统服务器增加[签名校验](/uni-ad/ad-rewarded-video.md#sign)

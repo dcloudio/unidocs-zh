@@ -12,3 +12,8 @@
 * [微信小程序视频广告](uni-ad/ad-video.md)
 * [微信小程序格子广告](uni-ad/ad-grid.md)
 * [广告错误码](uni-ad/ad-error-code.md)
+* 常见问题```{"collapsable": false}```
+  * [广告开通常见问题](uni-ad/faq/ad-open-faq.md)
+  * [开发接入常见问题](uni-ad/faq/ad-dev-faq.md)
+  * [收益数据常见问题](uni-ad/faq/income-faq.md)
+  * [财务结算常见问题](uni-ad/faq/payment-faq.md)

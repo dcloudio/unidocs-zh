@@ -52,7 +52,7 @@
 
 注意：
 - 如果列表中没有你想要的应用，请注意检查你登录uni-ad后台的账户是否是应用的创建者或所有者。如果仅仅是协作者，是不能操作广告后台的。
-- 可以申请转让应用，具体参考[https://ask.dcloud.net.cn/article/12861](https://ask.dcloud.net.cn/article/12861)
+- 可以申请转让应用，具体参考[https://uniapp.dcloud.net.cn/dev/app/transfer.html](https://uniapp.dcloud.net.cn/dev/app/transfer.html)
 
 
 #### 1. 实名认证
@@ -79,7 +79,7 @@ DCloud快捷广告的特点是：
 渠道SDK广告需要集成三方SDK，如腾讯优量汇、字节跳动穿山甲、快手广告（无上架要求，但需提供软著）、百度、Sigmob广告（无上架要求，无需软著）。审核门槛较高，广告收益更高。
 
 开通渠道SDK广告，需要选择对应的`广告平台`右侧点击`申请开通`按钮。
-
+![](https://mp-7f3d7cc7-8148-4746-9d3c-2463e7ea14ea.cdn.bspapp.com/ad-open/channel_app_open.png)
 填写`基础信息`、`设备信息`、`平台资质信息`相关信息后，点击`确认开通`。
 ![](https://mp-7f3d7cc7-8148-4746-9d3c-2463e7ea14ea.cdn.bspapp.com/ad-open/baidu_open1.png)
 ![](https://mp-7f3d7cc7-8148-4746-9d3c-2463e7ea14ea.cdn.bspapp.com/ad-open/baidu_open2.png)
@@ -90,7 +90,7 @@ DCloud快捷广告的特点是：
 - 可以只开通安卓或只开通iOS
 - 优量汇、穿山甲、百度、华为都需要应用上架应用商店后才可进行申请。
 - 优量汇、百度申请时都需要上传授权书，不同的平台不同的应用授权书都不一样，请在应用开通页面下载对应的授权书。
-- 开通渠道SDK广告需要审核，广告渠道正常审核时间是1-3个工作日，遇节假日顺延，请您及时关注后台变化。如果超过3个工作日还未审核成功，请联系：uniad@dcloud.io。
+- 开通渠道SDK广告需要审核，广告渠道正常审核时间是1-3个工作日，遇节假日顺延，请您及时关注后台变化。如果超过3个工作日还未审核成功，咨询uni-im交流群：[点击加入](https://im.dcloud.net.cn/#/?joinGroup=65d85fc09847e92db03ff81a)
 - 三方广告SDK真机运行不生效，打包后生效，并且需要HBuilderX 2.5.11+版本，manifest或打包界面选择渠道SDK广告SDK。
 
 

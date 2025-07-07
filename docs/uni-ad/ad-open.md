@@ -111,23 +111,16 @@ DCloud快捷广告的特点是：
 ![](https://mp-7f3d7cc7-8148-4746-9d3c-2463e7ea14ea.cdn.bspapp.com/ad-open/add_adp.png)
 
 
-填写广告位名称（此名称仅用于开发者自己的识别和报表展现），选择广告类型，即可新建广告位
-
+填写广告位名称（此名称仅用于开发者自己的识别和报表展现），选择广告类型，点击`新增`
+![](https://mp-7f3d7cc7-8148-4746-9d3c-2463e7ea14ea.cdn.bspapp.com/ad-open/add_adp2.png)
 **开屏广告** 不需要单独申请，也不需要开发者进行编码。开发者的应用通过审核后，同时uni-ad开启了开屏广告，系统就会自动打开开屏广告。
 
-**[信息流广告又名原生广告](https://uniapp.dcloud.net.cn/component/ad)** 在应用内列表页不影响用户浏览体验时出现，uni-ad支持四种信息流广告形式模板，两种素材类型（图片和视频）的选择。在创建信息流广告后还可以自定义样式。
-
-**[插屏广告](https://uniapp.dcloud.net.cn/component/ad-interstitial.html)** 是由客户端原生的图片、文本、视频控件组成的弹窗式广告；插屏广告与信息流相比展现尺寸更大，同样能够满足大量曝光和用户转化的需求,可以选择插屏-全屏，插屏-半屏，插屏-优选
-
-**[全屏视频广告](https://uniapp.dcloud.net.cn/component/ad-fullscreen-video.html)** 在应用中可以在游戏闯关结束或者场景切换时让用户进行观看。另外激励视频广告填充不足时也用全屏视频广告来代替。**该广告位类型已下架，使用插屏-全屏广告代替**
-
-**[激励视频广告](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)** 用于一些特定的激励场景，该广告类型强制用户观看后（15秒或者30秒）给予一定的奖励，请在创建广告位名称时做好标注，如：激励视频-登录、游戏复活，激励任务。有助于区分场景填充广告
-
-**[Draw视频广告](https://uniapp.dcloud.net.cn/component/ad-draw.html#%E6%B2%89%E6%B5%B8%E8%A7%86%E9%A2%91%E6%B5%81%E5%B9%BF%E5%91%8A)** 是短视频类应用在滑动若干个视频后出现的一种竖屏全屏式的沉浸式体验广告
-
-**[短视频内容联盟广告](https://uniapp.dcloud.net.cn/api/a-d/content-page)** 是⼀个视频内容频道，支持上下滑动切换视频内容，在滑动视频后穿插视频广告。这种形式会丰富开发者的应用内容，同时增加了额外的广告收益。如果需要嵌入到页面控制大小请使用[短视频内容联盟组件](https://uniapp.dcloud.net.cn/component/ad-content-page.html)
-
-![](https://mp-7f3d7cc7-8148-4746-9d3c-2463e7ea14ea.cdn.bspapp.com/ad-open/add_adp2.png)
+**[信息流广告又名原生广告](https://uniapp.dcloud.net.cn/component/ad)** 在应用内列表页不影响用户浏览体验时出现，uni-ad支持四种信息流广告形式模板，两种素材类型（图片和视频）的选择。在创建信息流广告后还可以自定义样式。  
+**[全屏视频广告](https://uniapp.dcloud.net.cn/component/ad-fullscreen-video.html)** 在应用中可以在游戏闯关结束或者场景切换时让用户进行观看。另外激励视频广告填充不足时也用全屏视频广告来代替。**该广告位类型已下架，使用插屏-全屏广告代替**  
+**[激励视频广告](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)** 用于一些特定的激励场景，该广告类型强制用户观看后（15秒或者30秒）给予一定的奖励，请在创建广告位名称时做好标注，如：激励视频-登录、游戏复活，激励任务。有助于区分场景填充广告  
+**[Draw视频广告](https://uniapp.dcloud.net.cn/component/ad-draw.html#%E6%B2%89%E6%B5%B8%E8%A7%86%E9%A2%91%E6%B5%81%E5%B9%BF%E5%91%8A)** 是短视频类应用在滑动若干个视频后出现的一种竖屏全屏式的沉浸式体验广告  
+**[短视频内容联盟广告](https://uniapp.dcloud.net.cn/api/a-d/content-page)** 是⼀个视频内容频道，支持上下滑动切换视频内容，在滑动视频后穿插视频广告。这种形式会丰富开发者的应用内容，同时增加了额外的广告收益。如果需要嵌入到页面控制大小请使用[短视频内容联盟组件](https://uniapp.dcloud.net.cn/component/ad-content-page.html)  
+**[插屏广告](https://uniapp.dcloud.net.cn/component/ad-interstitial.html)** 是由客户端原生的图片、文本、视频控件组成的弹窗式广告；插屏广告与信息流相比展现尺寸更大，同样能够满足大量曝光和用户转化的需求,可以选择插屏-全屏，插屏-半屏，插屏-优选  
 
 **3. 使用广告位ID（adpid）**
 新建广告位后，会生成对应的广告位ID，即`adpid`，需等待广告位审核通过。不同平台广告位的审核速度不一样。

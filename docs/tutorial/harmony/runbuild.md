@@ -15,7 +15,7 @@
 - HBuilderX 4.61+ 开始支持 uni-app x 项目，且支持开启调试功能
 - HBuilderX 4.61+ 开始支持配置签名证书，且支持自动申请调试证书
 - HBuilderX 4.71+ 开始支持 uni-app x 项目运行到 x86_64 平台的鸿蒙模拟器
-- 鸿蒙模拟器升级到 HarmonyOs 5.1.1(19) Beta1 开始支持运行 uniapp 项目
+- x86_64 平台的鸿蒙模拟器升级到 HarmonyOs 5.1.1(19) Beta1 开始支持运行 uniapp 项目
 
 ## 开发环境要求@env
 

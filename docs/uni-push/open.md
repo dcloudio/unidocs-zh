@@ -4,13 +4,13 @@
 
 ## `uni-push`配置页面
 
-有两个入口可以进入`uni-push`配置页面：
-- 通过 HBuilderX 进入
-- 通过开发者中心进入
+开发者可以通过以下方式进入`uni-push`配置页面：
+1. 通过开发者中心进入
+2. 通过 HBuilderX 进入
 
-### 通过 HBuilderX 进入
-打开 HBuilderX，双击项目中的 “manifest.json” 文件，选择“安卓/iOS模块配置”，在配置页面中向下找到“Push(消息推送)”，勾选后，点击相应版本的配置链接，即可进入 `uni-push` 配置页面。如下图所示：
-![HX开通示例](https://web-ext-storage.dcloud.net.cn/doc/uni-push/hx-push-config.png)
+::: waring 注意
+`uni-app`项目支持以上两种方式，`uni-app x`项目目前只支持方式1进入配置页面。
+:::
 
 
 ### 通过开发者中心进入
@@ -20,6 +20,10 @@
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uniPush2-info.jpg)
 
 **注意：** 1.0和2.0的配置页面信息略有不同，2.0开通时需要绑定服务空间，1.0不需要。
+
+### 通过 HBuilderX 进入
+打开 HBuilderX，双击项目中的 “manifest.json” 文件，选择“安卓/iOS模块配置”，在配置页面中向下找到“Push(消息推送)”，勾选后，点击相应版本的配置链接，即可进入 `uni-push` 配置页面。如下图所示：
+![HX开通示例](https://web-ext-storage.dcloud.net.cn/doc/uni-push/hx-push-config.png)
 
 
 ### 首次开通 `uni-push`

@@ -94,6 +94,9 @@ plus.oauth.getServices(function(services) {
 > 相关API文档： [plus.oauth.getServices](https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.getServices)，[plus.oauth.AuthService](https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.AuthService)
 
 #### 配置参数安全性问题
+
+> HarmonyOS 不支持配置 appsecret 参数，推荐使用 uniCloud 获取微信用户信息 [获取 access_token](https://doc.dcloud.net.cn/uniCloud/uni-id/old.html#获取微信openid)、[获取微信用户信息](https://doc.dcloud.net.cn/uniCloud/uni-id/old.html#get-weixin-user-info)
+
 HBuilderX中配置的appsecret参数，云端打包后会保存在apk/ipa中，存在参数泄露的风险！HBuilderX3.4.18+ 不再提供此参数的可视化配置。
 
 对于安全性要求较低的开发者，可以通过manifest.json -> 源码视图 -> app-plus -> distribute -> sdkConfigs -> oauth -> weixin -> 添加appsecret 配置。即可不经业务服务器验证完成登录：

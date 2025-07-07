@@ -8,7 +8,7 @@
 1. 通过开发者中心进入
 2. 通过 HBuilderX 进入
 
-::: waring 注意
+::: warning 注意
 `uni-app`项目支持以上两种方式，`uni-app x`项目目前只支持方式1进入配置页面。
 :::
 

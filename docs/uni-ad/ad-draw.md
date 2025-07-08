@@ -143,7 +143,6 @@
 
 **注意**
 - iOS平台配置应用使用广告标识（IDFA）详见：[https://ask.dcloud.net.cn/article/36107](https://ask.dcloud.net.cn/article/36107)
-- App端广告开通指南和收益相关问题：[https://ask.dcloud.net.cn/article/36769](https://ask.dcloud.net.cn/article/36769)
 - App端除了ad组件，ad-draw组件，还支持开屏、激励视频、全屏广告等多种广告形式。详见[uni-ad官网](https://uniad.dcloud.net.cn/)
 - App端uni-ad聚合了优量汇、穿山甲、快手、百度等广告渠道，打包时必须勾选相应的sdk，详见：[https://ask.dcloud.net.cn/article/36718](https://ask.dcloud.net.cn/article/36718)
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ad.jpg)

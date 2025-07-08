@@ -108,11 +108,13 @@ DCloud快捷广告的特点是：
 应用内广告是需要编程的，它用于[信息流/原生广告](https://uniapp.dcloud.net.cn/component/ad)、[激励视频](https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html)、[插屏广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)等广告场景。信息流可以模拟插屏的广告形式具体参考：信息流文档中的“使用 ad/ad-draw 模拟插屏广告效果”部分。
 
 首先点击 `新增广告位`
+
 ![](https://mp-7f3d7cc7-8148-4746-9d3c-2463e7ea14ea.cdn.bspapp.com/ad-open/add_adp.png)
 
-
 填写广告位名称（此名称仅用于开发者自己的识别和报表展现），选择广告类型，点击`新增`
+
 ![](https://mp-7f3d7cc7-8148-4746-9d3c-2463e7ea14ea.cdn.bspapp.com/ad-open/add_adp2.png)
+
 **开屏广告** 不需要单独申请，也不需要开发者进行编码。开发者的应用通过审核后，同时uni-ad开启了开屏广告，系统就会自动打开开屏广告。
 
 **[信息流广告又名原生广告](https://uniapp.dcloud.net.cn/component/ad)** 在应用内列表页不影响用户浏览体验时出现，uni-ad支持四种信息流广告形式模板，两种素材类型（图片和视频）的选择。在创建信息流广告后还可以自定义样式。  

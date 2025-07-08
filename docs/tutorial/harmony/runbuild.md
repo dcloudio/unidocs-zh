@@ -801,3 +801,12 @@ kill -9 进程号
 - 鸿蒙元服务用户，可参考 [元服务如何配置权限](/tutorial/mp-harmony/intro#permission)
 - uni-app x 用户，可参考 组件[dialogPage](https://doc.dcloud.net.cn/uni-app-x/api/dialog-page)
 - 其他平台用户，可参考 [App 完整 manifest.json](/collocation/manifest-app#privacyregistermode) 相关说明。
+
+### 鸿蒙提审报应用使用了 HarmonyOS beta 版本的 API
+
+鸿蒙应用提审时候提示：
+
+经检测发现，您的应用使用了HarmonyOS beta版本的API。
+修改建议：为提升消费者使用体验，请使用HarmonyOS release版本的API开发应用，申请上架。请参考版本说明集成release版本API
+
+解决方案：重新下载 release 版本的 DevEco。代码不变，重新发行打包，之后上传提审即可。

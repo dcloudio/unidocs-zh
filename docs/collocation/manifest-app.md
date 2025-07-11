@@ -106,9 +106,9 @@ iOS平台云端打包相关配置
 为了统计应用的崩溃信息，应用在启动时需要获取idfv，虽然不影响苹果审核但是可能被部分合规检测机构判定为不合规。需要通过隐私合规检测的应用可以将字段配置为manual，并且在用户点击同意隐私政策的方法里执行`plus.runtime.argeePrivacy()`即可。  
 注意：配置后如未调用`plus.runtime.argeePrivacy()`会导致崩溃统计失效。
 
+###  App Harmony@harmony
 
-
-
+在鸿蒙开发中不会读取`app-plus` 下配置的选项，在 `app-harmony` 节点下可以设置鸿蒙参数。
 
 ### 完整 manifest.json@full-manifest
 

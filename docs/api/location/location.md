@@ -34,7 +34,7 @@ Web平台本API之前调用了腾讯地图的gcj02坐标免费转换接口，该
 |timeout|String|否|默认为 5，定位超时时间，单位秒|仅飞书小程序支持|
 |cacheTimeout|Number|否|定位缓存超时时间，单位秒；每次定位缓存当前定位数据，并记下时间戳，当下次调用在cacheTimeout之内时，返回缓存数据|仅飞书小程序、支付宝小程序支持|
 |accuracy|String|否|默认为 high，指定期望精度，支持 high，best。当指定 high 时，期望精度值为100m，当指定 best 时期望精度值为20m。当定位得到的精度不符合条件时，在timeout之前会继续定位，尝试拿到符合要求的定位结果|仅飞书小程序支持|
-|isHighAccuracy|Boolean|否|开启高精度定位|App (3.4.0+)、H5 (3.4.0+)、微信小程序 (基础库 2.9.0+)|
+|isHighAccuracy|Boolean|否|开启高精度定位|App (3.4.0+)、H5 (3.4.0+)、微信小程序 (基础库 2.9.0+)、抖音小程序（2.26.0+）|
 |success|Function|是|接口调用成功的回调函数，返回内容详见返回参数说明。||
 |fail|Function|否|接口调用失败的回调函数||
 |complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|

@@ -14,8 +14,8 @@
 |:-|:-|:-|:-|:-|
 |title|String|是|提示的内容，长度与 icon 取值有关。||
 |icon|String|否|图标，有效值详见下方说明，默认：success。||
-|image|String|否|自定义图标的本地路径（app端暂不支持gif）|App、H5、微信小程序、百度小程序、抖音小程序（2.62.0+）|
-|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App、微信小程序、抖音小程序（2.47.0+）|
+|image|String|否|自定义图标的本地路径（app端暂不支持gif）|App、H5、微信小程序、百度小程序、抖音小程序（2.62.0+）、小红书小程序|
+|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|App、微信小程序、抖音小程序（2.47.0+）、小红书小程序|
 |duration|Number|否|提示的延迟时间，单位毫秒，默认：1500||
 |position|String|否|纯文本轻提示显示位置，填写有效值后只有 `title` 属性生效，且不支持通过 uni.hideToast 隐藏。有效值详见下方说明。|App|
 |success|Function|否|接口调用成功的回调函数||

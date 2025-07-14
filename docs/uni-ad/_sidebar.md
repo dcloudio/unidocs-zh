@@ -1,5 +1,6 @@
 * [业务介绍](README.md)
 * [app广告开通指南](ad-open.md)
+* [app各广告渠道差异](ad-channel-diff.md)
 * [开屏广告](ad-splash.md)
 * [信息流(Banner)广告](ad-component.md)
 * [激励视频广告](ad-rewarded-video.md)

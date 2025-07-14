@@ -256,7 +256,7 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **点点建安：** 智慧消防 APP 集成烟感、主机等多设备报警功能，鸿蒙应用市场搜索“点点建安”，[详情](https://appgallery.huawei.com/app/detail?id=diandian.com.huawei)
 
-**营销宝：** 一款专为企业打造的智能营销工具，鸿蒙应用市场搜索“营销宝”，[详情](https://appgallery.huawei.com/app/detail?id=com.touchsee.huawei)
+**营销宝：** 一款专为企业打造的智能营销工具，鸿蒙应用市场搜索“营销宝”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.example.yingxiaobao)
 
 **瀚宁易企用车：** 一款助力企业内部车辆管理、规范用车的APP，鸿蒙应用市场搜索“瀚宁易企用车”，[详情](https://appgallery.huawei.com/app/detail?id=hanning.huawei.com)
 
@@ -308,8 +308,6 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **数字东安：** 企业内部员工管理OA，鸿蒙应用市场搜索“数字东安”，[详情](https://appgallery.huawei.com/app/detail?id=com.AECCHarbinDongAnHM.digitalDA)
 
-**破解数织：** 一款能拍照解数织题、带丰富题库的APP，鸿蒙应用市场搜索“破解数织”，[详情](https://appgallery.huawei.com/app/detail?id=cn.yorry.nonogram)
-
 **智记本：** 一款基于AI 聚合日程+记账+记事的APP，鸿蒙应用市场搜索“智记本”，[详情](https://appgallery.huawei.com/app/detail?id=com.xiaod.zhijiben)
 
 **门诊患者健康风险预警管理平台：** 一款实时预警患者健康风险的管理APP，鸿蒙应用市场搜索“门诊患者”，[详情](https://appgallery.huawei.com/app/detail?id=huawei.hkwjhealth.hzfxyj)
@@ -318,7 +316,6 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **设备云售后：** 一款集成多功能、覆盖多场景的售后工单协同管理APP，鸿蒙应用市场搜索“设备云售后”，[详情](https://appgallery.huawei.com/app/detail?id=com.gtkj.yunshouhou)
 
-**CMSV7：** 一款专用于货运平台视频监控和定位管理的APP，鸿蒙应用市场搜索“CMSV7”，[详情](https://appgallery.huawei.com/app/detail?id=com.babelstar.uniappV7)
 
 **中邮云物流平台：** 一款集订单、审核等多样功能于一体的云物流平台APP，鸿蒙应用市场搜索“中邮云物流平台”，[详情](https://appgallery.huawei.com/app/detail?id=ptac.oms.mobile)
 
@@ -341,8 +338,6 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 **顺络家园：** 一款服务于顺络园区生活，提供多端平台，人脸识别等技术的智慧 APP，鸿蒙应用市场搜索“顺络家园”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.tce.shunluo)
 
 **美宜佳：** 一款宜佳会员APP，鸿蒙应用市场搜索“美宜佳”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.myj.memberapp)
-
-**营销宝：** 营销宝是一款专为企业打造的智能营销工具，鸿蒙应用市场搜索“营销宝”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.example.yingxiaobao)
 
 **柳钢之家：** 一款为职工提供普惠服务、体育赛事、生活保障等网上服务的APP，鸿蒙应用市场搜索“柳钢之家”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.lg.next)
 

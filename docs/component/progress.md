@@ -11,7 +11,7 @@
 |show-info		|Boolean	|false		|在进度条右侧显示百分比									|						|
 |border-radius|Number/String|0|圆角大小|app-nvue、微信基础库2.3.1+、QQ小程序、快手小程序、京东小程序|
 |font-size|Number/String|16|右侧百分比字体大小|app-nvue、微信基础库2.3.1+、QQ小程序、京东小程序|
-|stroke-width	|Number		|6			|进度条线的宽度，单位px									|						|
+|stroke-width	|Number/String	|6			|进度条线的宽度，接受 px 和 rpx 值									|						|
 |activeColor	|Color		|#09BB07（百度为#E6E6E6）	|已选择的进度条的颜色									|						|
 |backgroundColor|Color		|#EBEBEB	|未选择的进度条的颜色									|						|
 |active			|Boolean	|false		|进度条从左往右的动画									|						|

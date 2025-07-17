@@ -77,7 +77,7 @@ The effect of running the app project to the android emulator is as follows:
 
 ## 鸿蒙模拟器@harmony
 
-安装鸿蒙模拟器，需要先安装[DevEco-Studio](https://developer.huawei.com/consumer/cn/deveco-developer-suite/enabling/kit?currentPage=1&pageSize=100)；
+安装鸿蒙模拟器，需要先安装[DevEco-Studio](https://developer.huawei.com/consumer/cn/deveco-developer-suite/enabling/kit?currentPage=1&pageSize=100?ha_source=Dcloud&ha_sourceId=89000448)；
 
 **Windows系统如使用模拟器则需要开启以下功能**
 

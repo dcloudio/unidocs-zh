@@ -260,9 +260,9 @@ To obtain network picture information under the MiniApp, you need to configure t
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|√|√|√|√|√|√|
 
 <!-- UNIAPPAPIJSON.getImageInfo.compatibility -->
 
@@ -292,11 +292,8 @@ To obtain network picture information under the MiniApp, you need to configure t
 |height|Number|图片高度，单位px||
 | height| Number|image height, unit px||
 |path|String|返回图片的本地路径||
-| path| String|Returns the local path of the image||
-|orientation|String|返回图片的方向，有效值见下表|App、小程序、京东小程序|
-|orientation| String|Returns the orientation of the image, see the table below for valid values| App, MiniApp, Jingdong MiniApp|
-|type|String|返回图片的格式|App、小程序、京东小程序|
-| type| String|The format of the returned image| App, MiniApp, Jingdong MiniApp|
+|orientation|String|返回图片的方向，有效值见下表|App、小程序|
+|type|String|返回图片的格式|App、小程序|
 
 **orientation 参数说明**
 **orientation parameter description**

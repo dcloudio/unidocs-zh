@@ -4,7 +4,7 @@
 
 ::: danger
 <div style="font-weight:bold;font-size:2em;">
-此文档已过期, 请前往 <a href="https://uniapp.dcloud.net.cn/component/ad-rewarded-video.html">新文档</a>
+此文档已过期, 请前往 <a href="https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html">新文档</a>
 </div>
 :::
 

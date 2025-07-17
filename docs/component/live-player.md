@@ -80,6 +80,7 @@ sound-mode 的合法值
 * live-player 默认宽度 300px、高度 225px；
 * live-player 是原生组件，层级高于前端组件，请勿在 scroll-view、swiper、picker-view、movable-view 中使用
 * 小程序下覆盖live-player需要使用cover-view。[详见](/component/native-component)
+* 微信小程序上,原生组件均已支持同层渲染,建议使用 view 替代 [详见](https://developers.weixin.qq.com/miniprogram/dev/component/cover-view.html)
 * live-player 组件相关 JS API：[createLivePlayerContext](/api/media/live-player-context)
 * 小程序平台使用live-player有审核限制，请注意参考各家文档。
 * App端使用直播，推荐nvue页面下用video组件，可避免复杂的层级问题和全屏覆盖问题。

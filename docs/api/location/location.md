@@ -41,9 +41,7 @@ Web平台本API之前调用了腾讯地图的gcj02坐标免费转换接口，该
 |cacheTimeout|Number|否|定位缓存超时时间，单位秒；每次定位缓存当前定位数据，并记下时间戳，当下次调用在cacheTimeout之内时，返回缓存数据|仅飞书小程序、支付宝小程序支持|
 |cacheTimeout|Number|No|Location cache timeout, in seconds; the current location data is cached every time, and the timestamp is recorded. When the next call is within cacheTimeout, the cached data will be returned|Only Feishu MiniApp, Alipay MiniApp Support |
 |accuracy|String|否|默认为 high，指定期望精度，支持 high，best。当指定 high 时，期望精度值为100m，当指定 best 时期望精度值为20m。当定位得到的精度不符合条件时，在timeout之前会继续定位，尝试拿到符合要求的定位结果|仅飞书小程序支持|
-|accuracy|String|No|The default is high, specify the expected accuracy, support high, best. When specifying high, the expected precision value is 100m, and when specifying best, the expected precision value is 20m. When the accuracy obtained from the positioning does not meet the conditions, the positioning will continue before the timeout, and try to obtain the positioning results that meet the requirements|Only supported by MiniApp|
-|isHighAccuracy|Boolean|否|开启高精度定位|App (3.4.0+)、H5 (3.4.0+)、微信小程序 (基础库 2.9.0+)|
-|isHighAccuracy|Boolean|No|Enable high-precision positioning|App (3.4.0+), H5 (3.4.0+), WeChat MiniApp(basic library 2.9.0+)|
+|isHighAccuracy|Boolean|否|开启高精度定位|App (3.4.0+)、H5 (3.4.0+)、微信小程序 (基础库 2.9.0+)、抖音小程序（2.26.0+）|
 |success|Function|是|接口调用成功的回调函数，返回内容详见返回参数说明。||
 |success|Function| is the callback function for the successful call of the interface. For details, please refer to the return parameter description. ||
 |fail|Function|否|接口调用失败的回调函数||
@@ -153,7 +151,7 @@ uni.getLocation({
   - 可以通过用户授权API来判断用户是否给应用授予定位权限，[详见](https://uniapp.dcloud.io/api/other/authorize)
   - The user authorization API can be used to determine whether the user has granted the application location permission, [see details](https://uniapp.dcloud.io/api/other/authorize)
   - 在 `微信小程序` 中，当用户离开应用后，此接口无法调用，需要申请 [后台持续定位权限](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html) ，另外新版本中需要使用 [wx.onLocationChange](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html) 监听位置信息变化；当用户点击“显示在聊天顶部”时，此接口可继续调用。
-- `HarmonyOS Next平台`调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`，需自行在项目中配置权限。
+- `HarmonyOS Next平台`调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`，需自行在项目中配置权限。具体位置在 `harmony-configs/entry/src/main/module.json5` 中的 requestPermissions 字段。该配置文件在构建产物中原始鸿蒙工程相同目录内。
 
 ## uni.chooseLocation(OBJECT)
 打开地图选择位置。chooseLocation会使用项目配置的地图服务商来展示地图，地图服务商支持情况参考：[map组件](../../component/map.md)。

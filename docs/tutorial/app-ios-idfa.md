@@ -36,7 +36,7 @@ Resources
 - uni原生插件也也可能会读取IDFA，建议提交APP Store审核不通过，提示违反5.1.2规则且内容中包含`App Tracking Transparency`都可以通过配置开启IDFA解决
 
 > 注意：
-> uni-AD中的基础广告无需访问IDFA，没有勾选三方增强广告SDK时可以不开启广告标识（IDFA）
+> uni-ad中的基础广告无需访问IDFA，没有勾选三方增强广告SDK时可以不开启广告标识（IDFA）
 > 对于非广告类的三方SDK，我们会密切关注其官方的版本更新，待官方出了不包含IDFA的版本我们会尽快适配升级
 
 
@@ -50,9 +50,9 @@ Resources
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-privacy.png)
 
 隐私描述是为了告诉用户，应用为什么要跟踪用户及访问设备的IDFA，配置的描述内容会展示在授权框上，参考以下建议描述说明：
-- 包含uni-AD功能时
+- 包含uni-ad功能时
 “请放心，开启权限不会获取您在其他站点的隐私信息，该权限仅用于标识设备、第三方广告、并保障服务安全与提示浏览体验”
-- 不包含uni-AD功能时
+- 不包含uni-ad功能时
 “请放心，开启权限不会获取您在其他站点的隐私信息，该权限仅用于标识设备并保障服务安全与提示浏览体验”
 "Please rest assured that turning on the permission will not obtain your private information on other sites. This permission is only used to identify the device and ensure the security of the service and prompt the browsing experience"
 

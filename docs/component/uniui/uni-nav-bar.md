@@ -124,11 +124,13 @@ Tips:
 - 如使用 Number 类型传值默认单位为 px，使用 String 类型传值则必须带单位，如传值无效 ，则使用默认值
 - If you use Number type to pass the value, the default unit is px, if you use String type to pass the value, you must have the unit. If the passed value is invalid, use the default value
 
-```html
-<uni-nav-bar height="120rpx" title="自定义高度" />
-```
-
-
+	```html
+	<uni-nav-bar height="120rpx" title="自定义高度" />
+	```
+- 在小程序中，如果 `fixed` 属性设置为 `true` 后，为了确保高度和右侧插槽与小程序的胶囊按钮，保持和谐的大小和位置，需要将 height 属性 设置为 0，让组件内部自动计算高度和位置。
+	```html
+	<uni-nav-bar :height="0" title="避让小程序胶囊" right-icon="cart"/>
+	```
 ## API
 
 ### NavBar Props

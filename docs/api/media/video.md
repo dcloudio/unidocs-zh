@@ -27,9 +27,7 @@ If you select and upload non-image and video files, please refer to: [https://un
 |extension|Array&lt;String&gt;|否|根据文件拓展名过滤，每一项都不能是空字符串。默认不过滤。|H5(HBuilder X 2.9.9+)|
 |compressed|Boolean|否|是否压缩所选的视频源文件，默认值为 true，需要压缩。|微信小程序、百度小程序、抖音小程序、飞书小程序、京东小程序、App(HBuilder X 3.2.7+)|
 |maxDuration|Number|否|拍摄视频最长拍摄时间，单位秒。最长支持 60 秒。|APP平台 1.9.7+(iOS支持，Android取决于ROM的拍照组件是否实现此功能，如果没实现此功能则忽略此属性。) 微信小程序、百度小程序、京东小程序|
-|maxDuration|Number|No|The longest video recording time, in seconds. A maximum of 60 seconds is supported. |APP platform 1.9.7+ (iOS support, Android depends on whether the camera component of ROM implements this function, if this function is not implemented, this property is ignored.) WeChat applet, Baidu applet, Jingdong applet|
-|camera|String|否|'front'、'back'，默认'back'|APP、微信小程序、京东小程序|
-|camera|String|No|'front', 'back', default 'back'|APP, WeChat applet, Jingdong applet|
+|camera|String|否|'front'、'back'，默认'back'|APP、微信小程序、京东小程序、抖音小程序|
 |success|Function|否|接口调用成功，返回视频文件的临时文件路径，详见返回参数说明。||
 | success| Function| No| The interface is successfully called, and the temporary file path of the video file is returned. See the description of return parameters for details.| |
 |fail|Function|否|接口调用失败的回调函数||
@@ -264,7 +262,7 @@ Save the video to the system album.
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|√|√|√|x|x|√|
+|√|x|√|√|√|√|√|√|x|√|√|
 
 <!-- UNIAPPAPIJSON.saveVideoToPhotosAlbum.compatibility -->
 
@@ -350,7 +348,7 @@ Get video details
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|3.1.10+|3.1.10+|2.11.0+|x|x|x|x|√|x|x|√|
+|3.1.10+|3.1.10+|2.11.0+|x|x|x|x|√|x|√|√|
 
 <!-- UNIAPPAPIJSON.getVideoInfo.compatibility -->
 
@@ -427,7 +425,7 @@ Compressed video interface. Developers can specify the compression quality (qual
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|3.1.10+|x|2.11.0+|x|x|x|x|x|x|x|√|
+|3.1.10+|x|2.11.0+|x|x|x|x|x|x|√|√|
 
 <!-- UNIAPPAPIJSON.compressVideo.compatibility -->
 

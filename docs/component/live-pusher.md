@@ -205,9 +205,10 @@ message|string| Specific network status information
 参数|类型|说明
 parameter|type|description
 :--|:--|:--|
-code|Number|
+code|Number| 
 message|string|
 
+`code` 具体字段值参考文档: [LivePusher](https://www.html5plus.org/doc/zh_cn/video.html#plus.video.LivePusher)
 
 #### netstatus
 > 网络状态通知事件
@@ -376,6 +377,6 @@ errMsg|string|
 **Notice**
 
 * live-pusher 是原生组件，在小程序端层级高于前端组件，需使用cover-view覆盖。在低版本微信中，live-pusher无法内嵌于 scroll-view、swiper、picker-view、movable-view 中。在App端的nvue文件中，live-pusher没有这类限制。
-* live-pusher is a native component, which is higher than the front-end component on the applet side and needs to be covered with cover-view. In lower versions of WeChat, live-pusher cannot be embedded in scroll-view, swiper, picker-view, and movable-view. In the nvue file on the App side, live-pusher has no such restrictions.
+* 微信小程序上,原生组件均已支持同层渲染,建议使用 view 替代 [详见](https://developers.weixin.qq.com/miniprogram/dev/component/cover-view.html)
 * App平台：使用 `<live-pusher/>` 组件，打包 App 时必须勾选 manifest.json->App 模块权限配置->LivePusher(直播推流) 模块。
 * App platform: When using the `<live-pusher/>` component, you must check manifest.json->App module permission configuration->LivePusher module when packaging the App.

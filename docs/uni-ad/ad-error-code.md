@@ -14,6 +14,9 @@ code|message|
 -5008|广告已过期，请重新加载数据
 -5100|其他错误，聚合广告商内部错误
 
+### -5002详细说明@-5002
+-5002 当前的基座和广告位不匹配，使用正式广告位需要[自定义基座调试](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
+
 ### -5005详细说明@-5005
 
 -5005即广告没有填充，尤其是激励视频较为常见。
@@ -25,6 +28,7 @@ code|message|
 3. 设备太旧，广告主不投放
 4. 终端用户在刷广告，比如使用了云手机或手机墙，广告主不投放
 5. 如果配置了 bidding 分层，无法满足条件的也会抛出此错误
+6. 开通的广告渠道过少或应用未上架应用市场导致广告填充率过低
 
 #### 正确解决方案
 
@@ -198,8 +202,8 @@ code|message|
 
 ### **广告商详细错误码**
 - App端聚合的穿山甲：[错误码详情](https://www.csjplatform.com/supportcenter/5886)
-- App端聚合的广点通(iOS)：[错误码详情](https://developers.adnet.qq.com/doc/ios/union/union_debug#%E9%94%99%E8%AF%AF%E7%A0%81)
-- App端聚合的广点通(Android)：[错误码详情](https://developers.adnet.qq.com/doc/android/union/union_debug#sdk%20%E9%94%99%E8%AF%AF%E7%A0%81)
+- App端聚合的优量汇(iOS)：[错误码详情](https://developers.adnet.qq.com/doc/ios/union/union_debug#%E9%94%99%E8%AF%AF%E7%A0%81)
+- App端聚合的优量汇(Android)：[错误码详情](https://developers.adnet.qq.com/doc/android/union/union_debug#sdk%20%E9%94%99%E8%AF%AF%E7%A0%81)
 - App端聚合的Sigmob(iOS)：[错误码详情](https://doc.sigmob.com/#/Sigmob%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/SDK%E9%9B%86%E6%88%90%E8%AF%B4%E6%98%8E/iOS/%E9%94%99%E8%AF%AF%E7%A0%81/)
 - App端聚合的Sigmob(Android)：[错误码详情](https://doc.sigmob.com/#/Sigmob%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/SDK%E9%9B%86%E6%88%90%E8%AF%B4%E6%98%8E/Android/%E9%94%99%E8%AF%AF%E7%A0%81/)
 - App端聚合的快手错误码

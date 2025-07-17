@@ -32,6 +32,7 @@
 
 **Tips：**
 * camera 组件是由客户端创建的原生组件，它的层级是最高的，不能通过 z-index 控制层级。可使用 cover-view cover-image 覆盖在上面。
+* 微信小程序上,原生组件均已支持同层渲染,建议使用 view 替代 [详见](https://developers.weixin.qq.com/miniprogram/dev/component/cover-view.html)
 * 请勿在 scroll-view、swiper、picker-view、movable-view 中使用 camera 组件。
 * 同一页面只能插入一个 camera 组件。
 * 相关API：[createCameraContext](/api/media/camera-context)

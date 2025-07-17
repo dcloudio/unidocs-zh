@@ -1,10 +1,10 @@
 const fs = require('fs')
 const path = require('path')
-const MarkdownIt = require('markdown-it');
+const MarkdownIt = require('markdown-it')
 const createMarkdownArray = require('./createMarkdownArray')
 const { isExternal } = require('../utils')
-const createSiteMap = require('./createSiteMap');
-const { translate } = require('./translate');
+const { translate } = require('./translate')
+const createSiteMap = require('@dcloudio/docs-utils/lib/createSidebar/createSiteMap').default
 
 const links = []
 
@@ -14,7 +14,14 @@ function parseBar(tab, file, options) {
   const contents = []
 
   new MarkdownIt()
-    .parse(fs.readFileSync(file, { encoding: 'utf-8' }).replace(/<!--([\s\S]*?)-->/g, "").replace(/\t/g, '  '))
+    .parse(
+      translate(
+        fs
+          .readFileSync(file, { encoding: 'utf-8' })
+          .replace(/<!--([\s\S]*?)-->/g, '')
+          .replace(/\t/g, '  ')
+      )
+    )
     .forEach(token => {
       if (token.type === 'inline') {
         let text
@@ -24,18 +31,18 @@ function parseBar(tab, file, options) {
           switch (child.type) {
             case 'text':
               text = text || child.content
-              break;
+              break
             case 'link_open':
               link = link || new Map(child.attrs).get('href')
-              break;
+              break
             case 'code_inline':
               try {
                 config = JSON.parse(child.content)
-              } catch (error) { }
-              break;
+              } catch (error) {}
+              break
 
             default:
-              break;
+              break
           }
         })
 
@@ -47,10 +54,15 @@ function parseBar(tab, file, options) {
             }
           }
 
-          link = path.join('/', link.replace(/\.md\b/, '')
-            .replace(/\bREADME\b/, '')
-            .replace(/\/index/, '/')
-            .replace(/\?id=/, '#'))
+          link = path
+            .join(
+              '/',
+              link
+                .replace(/\.md\b/, '')
+                .replace(/\bREADME\b/, '')
+                .replace(/\/index/, '/')
+                .replace(/\?id=/, '#')
+            )
             .replace(/\\/g, '/')
 
           links.push(link)
@@ -60,7 +72,7 @@ function parseBar(tab, file, options) {
           level: token.level,
           [textName]: text,
           [linkName]: link,
-          ...config
+          ...config,
         })
       }
     })
@@ -68,17 +80,19 @@ function parseBar(tab, file, options) {
   return createMarkdownArray(contents, options.children)
 }
 
+const domain = process.env.DOCS_LOCAL === 'en' ? 'https://en.uniapp.dcloud.io' : 'https://zh.uniapp.dcloud.io'
+
 module.exports = function (tabs = []) {
   const sidebar = {}
 
   tabs.forEach(tab => {
     sidebar[tab] = parseBar(tab, path.join(__dirname, '../../', tab, '_sidebar.md'), {
       text: 'title',
-      link: 'path'
+      link: 'path',
     })
   })
 
-  createSiteMap(links, () => links.length = 0)
+  createSiteMap(domain, links, path.resolve(__dirname, '../'), () => (links.length = 0))
 
   return tabs.length ? sidebar : false
 }

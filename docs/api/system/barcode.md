@@ -111,7 +111,7 @@ uni.scanCode({
 
 **Tip**
 
-- App的扫码引擎，使用业内开源的通用扫码库，识别效率比不过微信、支付宝、华为、谷歌等商业扫码库。如需更强的扫码效果，推荐使用uts插件：[https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&orderBy=Relevance&cat1=8&cat2=81](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&orderBy=Relevance&cat1=8&cat2=81)
+- Android/iOS的扫码引擎，使用zxing等开源库，识别效率较弱。如需更强的扫码效果，推荐使用uts插件：[https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&orderBy=Relevance&cat1=8&cat2=81](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&orderBy=Relevance&cat1=8&cat2=81)。此外，uni-app x的扫码要优于uni-app很多，扫码效果、UI自定义性，都更好，升级uni-app x也是推荐选项。[详情](https://doc.dcloud.net.cn/uni-app-x/api/scan-code.html)
 - App-vue如果想自定义扫码，可参考[uni-app中如何使用5+的原生界面控件](http://ask.dcloud.net.cn/article/35036)和[plus.barcode API](https://www.html5plus.org/doc/zh_cn/barcode.html)
 - If App-vue wants to customize the code scanning, please refer to [How to use 5+ native interface controls in uni-app](http://ask.dcloud.net.cn/article/35036) and [plus.barcode API ](https://www.html5plus.org/doc/zh_cn/barcode.html)
 - App-nvue，支持barcode组件，可自定义扫码界面。[详见](https://uniapp.dcloud.io/component/barcode)。App端自定义扫码界面，建议使用nvue方式。

@@ -22,6 +22,8 @@ As shown in the following Gif animation, run the uni-app uts project to Android.
 
 > 注意：目前部分变量的显示可能还是以kotlin的方式显示，因为uts编译结果是kotlin
 
+> 如果需要调试kt代码的话，需要安装插件kotlin-language。(在打开kt文件时hx会自动提示需要安装该插件)
+
 > 注意：断点时App可能会出现Application Not Responding(应用无响应)的弹框(部分机型的表现是app会重启)，这是因为调试默认是以Attach的方式连接，Android系统不允许UI线程被阻塞太长时间，点击下一步或者断点结束时该弹框会自动消失。(开启断点之后点击点击`红色虫子`图标右边的`重启应用`按钮会以调试模式启动, 此时断点时不会出现`应用无响应`的弹框)
 
 ## 注意事项
@@ -105,13 +107,3 @@ During breakpoint debugging, hover the mouse over the variable to be viewed to o
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-hovering_window.jpg" style="zoom: 60%;" />
 
-
-## 联编调试
-
-在 HX 里面把 uni-app x 项目运行到Android时，不仅支持在 uni-app x 项目中进行断点调试，也同时支持对基座工程目录中的源代码（比如 `.kt` 文件）进行断点调试。
-
-### 开启方式
-
-启动时选择使用自定义基座运行,设置调试包名和基座项目。之后开启调试时就可以在关联的项目中打断点
-
-<img src="https://web-ext-storage.dcloud.net.cn/hx/debug/compilation.png"/>

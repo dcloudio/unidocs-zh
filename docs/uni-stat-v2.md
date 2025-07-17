@@ -326,8 +326,7 @@ The background statistics report of `uni statistics 2.0` is a built-in plugin of
 目前安装`uni-admin`的方式分为两种：`一键部署` 和 `手动安装`。
 Currently, there are two ways to install `uni-admin`: `one-click deployment` and `manual installation`.
 
-`一键部署uni-admin`仅需要前往[插件市场](https://ext.dcloud.net.cn)搜索找到`uni-admin`插件后，选择进入[uni-admin插件详情页](https://ext.dcloud.net.cn/plugin?id=3268)并点击`一键部署插件到uniCloud`按钮，然后选择需要部署`uni-admin`项目的服务空间后耐心等待系统自动部署完成即可。
-`One-click deployment of uni-admin` only needs to go to the [Plugin Market](https://ext.dcloud.net.cn) to search and find the `uni-admin` plug-in, and choose to enter the [uni-admin plug-in details page](https://ext.dcloud.net.cn) ://ext.dcloud.net.cn/plugin?id=3268) and click the `one-click deployment plug-in to uniCloud` button, then select the service space where the `uni-admin` project needs to be deployed, and wait patiently for the system to automatically deploy. Can.
+`一键部署uni-admin`仅需要前往[插件市场](https://ext.dcloud.net.cn)搜索找到`uni-admin`插件后，选择进入[uni-admin插件详情页](https://ext.dcloud.net.cn/plugin?id=3268)并点击`在线体验/部署`按钮，选择`部署在我的服务空间`，然后选择需要部署`uni-admin`项目的服务空间后耐心等待系统自动部署完成即可。
 
 
 `手动安装uni-admin`则请参考[uni-admin](https://uniapp.dcloud.io/uniCloud/admin.html#uni-admin-%E6%A1%86%E6%9E%B6-%E5%8E%9F%E5%90%8D-unicloud-admin)文档，完成如下操作：

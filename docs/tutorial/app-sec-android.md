@@ -3,7 +3,7 @@ Recently, we received feedback from developers that the uni-app/5+ App project w
 
 首先我们需要理解漏洞风险并不代表真实存在安全漏洞，比如[WebView远程代码执行漏洞](#webview-jsinterface)，仅在Android4.2及以下版本系统存在，目前HBuilderX发现App最低要求版本Android4.4；比如[Activity、Service、Receiver等组件导出风险](#export)，有些功能依赖的组件必须设置为导出，实际上并不存在安全问题。而安全平台会把所有可能存在的漏洞或风险都列出来，很多安全问题都可能是误报或夸大了安全漏洞的隐患。
 
-**因此对于存在漏洞风险问题的基本解决方案是使用`APK加固`，推荐[uni安全加固](/tutorial/app-security.md)其背后支持对接多个加固服务商，包括腾讯云和蚂蚁小程序云**
+**因此对于存在漏洞风险问题的基本解决方案是使用`APK加固`，推荐[uni安全加固](/tutorial/app-security.md)，目前由蚂蚁小程序云提供支持，可有效提升应用整体安全性。**
 
 如果加固还不能解决问题，或者安全平台要求加固前进行检测，请在[官方论坛ask](https://ask.dcloud.net.cn/explore/)发帖反馈，添加话题为“安全漏洞”、“安全检测”，上传完整安全检测报告及检测的apk文件。
 If the hardening still cannot solve the problem, or the security platform requires testing before hardening, please post feedback on the [official forum ask](https://ask.dcloud.net.cn/explore/), and add the topics as "Security Vulnerability", "Security Test", upload the complete security test report and the tested apk file.
@@ -101,7 +101,7 @@ The UniPush module uses a push SDK, and the internal functions involve component
 The signature certificate is the only identifier for the identity of the app developer. If the program does not verify the signature certificate, it may be decompiled and repackaged and re-signed with another signature certificate. If the re-signed app can be started normally, it may cause the app to be counterfeited and pirated, affecting its legitimate income, and may even be added with phishing code, virus code, and malicious code, resulting in the leakage of user sensitive information or malicious attacks.
 
 **修复方案**
-对APK进行加固，推荐[uni安全加固](/tutorial/app-security.md)其背后支持对接多个加固服务商，包括腾讯云和蚂蚁小程序云。
+对APK进行加固，推荐[uni安全加固](/tutorial/app-security.md)，目前由蚂蚁小程序云提供支持，可有效提升应用整体安全性。
 
 #### APK可被反编译后取得源代码风险
 **风险描述**
@@ -109,7 +109,7 @@ The signature certificate is the only identifier for the identity of the app dev
 The native APK packaged as an App can be decompiled to obtain the Java source code.
 
 **修复方案**
-对APK进行加固，推荐[uni安全加固](/tutorial/app-security.md)其背后支持对接多个加固服务商，包括腾讯云和蚂蚁小程序云。
+对APK进行加固，推荐[uni安全加固](/tutorial/app-security.md)，目前由蚂蚁小程序云提供支持，可有效提升应用整体安全性。
 
 #### WebView远程代码执行漏洞  @webview-jsinterface
 **风险描述**
@@ -142,7 +142,7 @@ SO文件为APK中包含的动态链接库文件，Android利用NDK技术将C/C++
 The SO file is the dynamic link library file contained in the APK. Android uses the NDK technology to compile the core code implemented by the C/C++ language into the SO library file for the Java layer to call. The cracked SO file may lead to the disclosure of the core functional codes and algorithms of the application. Using core functions and algorithms, attackers can easily capture sensitive client data and decrypt it, resulting in user privacy leakage or direct property loss
 
 **修复方案**
-对APK中的SO文件进行加固保护,推荐[uni安全加固](/tutorial/app-security.md)其背后支持对接多个加固服务商，包括腾讯云和蚂蚁小程序云。
+对APK中的SO文件进行加固保护,推荐[uni安全加固](/tutorial/app-security.md)，目前由蚂蚁小程序云提供支持，可有效提升应用整体安全性。
 
 #### Strandhogg漏洞
 **风险描述**

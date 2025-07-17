@@ -192,7 +192,7 @@ App平台video组件使用ijkplayer库实现：[https://github.com/bilibili/ijkp
 ijkplayer作为一个开源库，比腾讯视频等商业sdk仍有差距。如无法在开源库上满足需求，可在插件市场寻找商业sdk插件：[腾讯视频](https://ext.dcloud.net.cn/search?q=%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91&orderBy=Relevance&cat1=5&cat2=51)、[阿里云视频](https://ext.dcloud.net.cn/search?q=%E9%98%BF%E9%87%8C%E4%BA%91%E8%A7%86%E9%A2%91&orderBy=Relevance&cat1=5&cat2=51)
 
 - video**全屏**后，如何自行绘制界面？比如加个标题、加个分享按钮
-	* 微信基础库 2.4.0 以上可通过cover-view来绘制界面覆盖元素
+	* 微信基础库 2.4.0 以上可通过 view 来绘制界面覆盖元素 (之前需要使用 cover-view) [详见](https://developers.weixin.qq.com/miniprogram/dev/component/)
 	* app端 2.1.5 以上nvue页面的video也可以通过cover-view来绘制界面覆盖元素
 	* H5端可通过通用h5做法实现
 	* 其他端无法全屏后自行绘制内容

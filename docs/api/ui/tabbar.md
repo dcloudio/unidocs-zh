@@ -184,9 +184,9 @@ hide tabBar
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|√|√|√|√|√|√|
 
 <!-- UNIAPPAPIJSON.hideTabBar.compatibility -->
 
@@ -196,7 +196,7 @@ hide tabBar
 |属性|类型|默认值|必填|说明|
 |Attribute|Type|Default|Required|Description|
 |:-|:-|:-|:-|:-|
-|animation|boolean|false|否|是否需要动画效果，仅微信小程序、支付宝小程序、百度小程序、抖音小程序、飞书小程序、QQ小程序、快手小程序、京东小程序支持|
+|animation|boolean|false|否|是否需要动画效果，仅小程序支持|
 |success|Funtion||否|接口调用成功的回调函数|
 | success| Function||No|Callback function for successful interface call|
 |fail|Funtion||否|接口调用失败的回调函数|
@@ -216,9 +216,9 @@ show tabBar
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|√|√|√|√|√|√|
 
 <!-- UNIAPPAPIJSON.showTabBar.compatibility -->
 
@@ -228,7 +228,7 @@ show tabBar
 |属性|类型|默认值|必填|说明|
 |Attribute|Type|Default|Required|Description|
 |:-|:-|:-|:-|:-|
-|animation|boolean|false|否|是否需要动画效果，仅微信小程序、支付宝小程序、百度小程序、抖音小程序、飞书小程序、QQ小程序、快手小程序、京东小程序支持|
+|animation|boolean|false|否|是否需要动画效果，仅小程序支持|
 |success|Funtion||否|接口调用成功的回调函数|
 | success| Function||No|Callback function for successful interface call|
 |fail|Funtion||否|接口调用失败的回调函数|

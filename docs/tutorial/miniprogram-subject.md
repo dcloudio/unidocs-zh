@@ -31,7 +31,7 @@ The applet component is not a vue component, and each applet has its own compone
 |快手小程序|支持快手小程序组件|kscomponents|
 | Kuaishou applet|Support Kuaishou applet components|kscomponents|
 |京东小程序|支持京东小程序组件|jdcomponents|
-|JD Mini Programs|Support JD Mini Program Components|jdcomponents|
+|鸿蒙元服务|支持鸿蒙元服务组件|hascomponents|
 
 此文档要求开发者对各端小程序的**自定义组件**有一定了解，没接触过小程序**自定义组件**的可以参考：
 This document requires developers to have a certain understanding of the **custom components** of the applet at each end. Those who have not touched the **custom components** of the applet can refer to:
@@ -49,7 +49,7 @@ This document requires developers to have a certain understanding of the **custo
 - [快手小程序自定义组件](https://mp.kuaishou.com/docs/develop/frame/custom_comp/component_temp_style.html)
 - [Custom Component of Kuaishou Mini Program](https://mp.kuaishou.com/docs/develop/frame/custom_comp/component_temp_style.html)
 - [京东小程序自定义组件](https://mp-docs.jd.com/framework/customcomponent/)
-- [JD Mini Program Custom Component](https://mp-docs.jd.com/framework/customcomponent/)
+- [鸿蒙元服务自定义组件](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/custom-components)
 
 **目录结构**
 **Directory Structure**
@@ -259,6 +259,7 @@ slide-view.vue
 **注意事项**
 **Precautions**
 
+* 页面路由中的文件不能引用项目特殊文件夹 ``wxcomponents``（或 mycomponents、swancomponents）下的js文件，否则这些文件会被编译。
 * 小程序组件需要放在项目特殊文件夹 ``wxcomponents``（或 mycomponents、swancomponents）。HBuilderX 建立的工程 ``wxcomponents`` 文件夹在 项目根目录下。vue-cli 建立的工程 ``wxcomponents`` 文件夹在 ``src`` 目录下。可以在 vue.config.js 中自定义其他目录
 * The applet components need to be placed in the project special folder ``wxcomponents`` (or mycomponents, swancomponents). The ``wxcomponents`` folder of the project created by HBuilderX is in the project root directory. The ``wxcomponents`` folder of the project created by vue-cli is in the ``src`` directory. Additional directories can be customized in vue.config.js
 * 小程序组件的性能，不如vue组件。使用小程序组件，需要自己手动setData，很难自动管理差量数据更新。而使用vue组件会自动diff更新差量数据。所以如无明显必要，建议使用vue组件而不是小程序组件。比如某些小程序ui组件，完全可以用更高性能的uni ui替代。

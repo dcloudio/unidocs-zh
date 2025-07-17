@@ -67,9 +67,7 @@ When using the QQ login and sharing function, if the QQ application is not insta
 Please do not integrate SDKs such as qq_mta-sdk-xxx.jar, qq_sdk_vxxx.jar, etc. If there is, please delete
 
 ### 不要使用国内增强广告SDK
-### Do not use the domestic enhanced advertising SDK
-uni-AD国内增强广告（如穿山甲、广点通、快手等SDK）显示的广告落地页可能会引导用户下载安装apk，不符合Google Play的审核要求，因此提交到Google Play时不要勾选增强广告SDK
-The landing page of the uni-AD domestic enhanced advertisement (such as pangolin, Guangdiantong, Kuaishou, etc. SDK) may guide users to download and install the apk, which does not meet the review requirements of Google Play, so do not check the enhanced advertisement when submitting to Google Play SDK
+uni-ad国内增强广告（如穿山甲、优量汇、快手等SDK）显示的广告落地页可能会引导用户下载安装apk，不符合Google Play的审核要求，因此提交到Google Play时不要勾选增强广告SDK
 
 ![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/app/android/googleplay/ad.png)
 

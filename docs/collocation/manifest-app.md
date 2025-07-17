@@ -142,9 +142,9 @@ iOS platform cloud packaging related configuration
 为了统计应用的崩溃信息，应用在启动时需要获取idfv，虽然不影响苹果审核但是可能被部分合规检测机构判定为不合规。需要通过隐私合规检测的应用可以将字段配置为manual，并且在用户点击同意隐私政策的方法里执行`plus.runtime.argeePrivacy()`即可。  
 注意：配置后如未调用`plus.runtime.argeePrivacy()`会导致崩溃统计失效。
 
+###  App Harmony@harmony
 
-
-
+在鸿蒙开发中不会读取`app-plus` 下配置的选项，在 `app-harmony` 节点下可以设置鸿蒙参数。
 
 ### 完整 manifest.json@full-manifest
 ### full manifest.json@full-manifest
@@ -520,25 +520,41 @@ iOS platform cloud packaging related configuration
                         "config_android" : ""                   //必填，字符串类型，Google Firebase统计开发者后台获取的Android平台配置文件路径
                     }
                 },
-                "ad": {                 //可选，JSON对象，uni-AD配置
-                    "360": {                        //可选，JSON对象，使用360广告联盟SDK，无需手动配置，在uni-AD后台申请开通后自动获取配置参数
+                "ad": {                 //可选，JSON对象，uni-ad配置
+                    "gm": {                        //可选，JSON对象，使用穿山甲/GroMore广告联盟SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
                     },
-                    "csj": {                        //可选，JSON对象，使用今日头条穿山甲广告联盟SDK，无需手动配置，在uni-AD后台申请开通后自动获取配置参数
+                    "gdt": {                        //可选，JSON对象，使用腾讯优量汇广告联盟SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
                     },
-                    "gdt": {                        //可选，JSON对象，使用腾讯优量汇广告联盟SDK，无需手动配置，在uni-AD后台申请开通后自动获取配置参数
+                    "ks": {                         //可选，JSON对象，使用快手广告联盟SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
                     },
-                    "ks": {                         //可选，JSON对象，使用快手广告联盟SDK，无需手动配置，在uni-AD后台申请开通后自动获取配置参数
+                    "ks-content": {                 //可选，JSON对象，使用快手内容联盟SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
                     },
-                    "ks-content": {                 //可选，JSON对象，使用快手内容联盟SDK，无需手动配置，在uni-AD后台申请开通后自动获取配置参数
+                    "sigmob": {                     //可选，JSON对象，使用Sigmob广告联盟SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
                     },
-                    "sigmob": {                     //可选，JSON对象，使用Sigmob广告联盟SDK，无需手动配置，在uni-AD后台申请开通后自动获取配置参数
+                    "hw": {                         //可选，JSON对象，使用华为广告联盟SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
                     },
-                    "hw": {                         //可选，JSON对象，使用华为广告联盟SDK，无需手动配置，在uni-AD后台申请开通后自动获取配置参数
+                    "bd": {                         //可选，JSON对象，使用百度百青藤广告联盟SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
                     },
-                    "bd": {                         //可选，JSON对象，使用百度百青藤广告联盟SDK，无需手动配置，在uni-AD后台申请开通后自动获取配置参数
+                    "zy": {                         //可选，JSON对象，使用Octopus章鱼移动广告SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
                     },
-                    "BXM-AD": {                     //可选，JSON对象，使用互动游戏(变现猫)SDK，无需手动配置，在uni-AD后台申请开通后自动获取配置参数
-                    }                    
+                    "bz": {                         //可选，JSON对象，使用AdScope倍孜广告SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
+                    },
+                    "fl": {                         //可选，JSON对象，使用泛连SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
+                    },
+                    "jl": {                         //可选，JSON对象，使用聚力SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
+                    },
+                    "gg": {                         //可选，JSON对象，使用Google AdMob(谷歌广告)SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
+                    },
+                    "unity": {                         //可选，JSON对象，使用unity SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
+                    },
+                    "liftoff": {                         //可选，JSON对象，使用liftoff SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
+                    },
+                    "inmobi": {                         //可选，JSON对象，使用inmobi SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
+                    },
+                    "ironsource": {                         //可选，JSON对象，使用ironsource SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
+                    },
+                    "mintegral": {                         //可选，JSON对象，使用mintegral SDK，无需手动配置，在uni-ad后台申请开通后自动获取配置参数
+                    }
                 }
             },
             "icons": {              //可选，JSON对象，应用图标相关配置

@@ -2,8 +2,7 @@
 ### 全屏视频广告
 ### Full Screen Video Ads
 
-[全屏视频广告介绍](https://uniapp.dcloud.net.cn/component/ad-fullscreen-video.html)
-[Introduction to Full Screen Video Ads](https://uniapp.dcloud.net.cn/component/ad-fullscreen-video.html)
+[全屏视频广告介绍](https://uniapp.dcloud.net.cn/uni-ad/ad-fullscreen-video.html)
 
 **平台差异说明**
 **Platform Difference Description**

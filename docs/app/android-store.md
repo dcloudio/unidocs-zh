@@ -423,8 +423,7 @@ Three-party SDK description for Map & Geolocation module integration
 
 <a id="uniAd"/>
 
-uni-AD广告模块集成的三方SDK说明
-Three-party SDK description for uni-AD advertising module integration
+uni-ad广告模块集成的三方SDK说明
 
 <table style="word-break:break-all">
   <tr>

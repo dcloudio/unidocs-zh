@@ -7,7 +7,7 @@ Create and return the context cameraContext object of the camera component.
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|√|√|√|x|√|√|√|1.0.4+|x|
+|x|x|√|√|√|√|x|√|√|√|√|x|
 
 本API为 camera 组件配套的js API，与 camera 组件的平台兼容性相同，可实现非全屏摄像头。App端可通过[plus.camera](https://www.html5plus.org/doc/zh_cn/camera.html)实现全屏摄像头。
 This API is the js API supporting the camera component, which has the same platform compatibility as the camera component, and can realize a non-full-screen camera. The app can realize full-screen camera through [plus.camera](https://www.html5plus.org/doc/zh_cn/camera.html).

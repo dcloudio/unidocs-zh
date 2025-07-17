@@ -125,7 +125,7 @@ export const navbar = [
           {
             text: '鸿蒙元服务',
             type: 'link',
-            link: 'https://developer.huawei.com/consumer/cn/doc/atomic-guides-V5/atomic-service-V5'
+            link: 'https://developer.huawei.com/consumer/cn/doc/atomic-ascf/ascf-overview'
           },
           {
             text: "小红书小程序",
@@ -157,7 +157,7 @@ export const navbar = [
     needOutbound: false
   },
   {
-    text: 'HBuilder',
+    text: 'HBuilder X',
     link: 'https://hx.dcloud.net.cn/',
     type: "link",
     target: '_blank',
@@ -173,6 +173,12 @@ export const navbar = [
   {
     text: 'uni-ad广告',
     link: '/uni-ad/',
+    type: "link",
+    needOutbound: false
+  },
+  {
+    text: '开发者服务',
+    link: '/dev/',
     type: "link",
     needOutbound: false
   },

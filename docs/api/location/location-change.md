@@ -63,7 +63,7 @@ Web平台本API之前调用了腾讯地图的gcj02坐标免费转换接口，该
 - This method will continuously monitor the changes of the geographic location information. It is recommended to call the `uni.stopLocationUpdate` method to cancel the monitoring after you do not need to monitor the changes of the geographic location information.
 - `微信小程序`若使用该接口，需要在 app.json 中进行声明，否则将无法正常使用该接口，[详情](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html)
 - `抖音小程序`调用此 API 需要申请高精度权限，具体信息见[高精度定位运营规范](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/operation/platform-capabilities/high-progress-targeting/gaojingdu/)。
-- `HarmonyOS Next平台`调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`，需自行在项目中配置权限。
+- `HarmonyOS Next平台`调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`，需自行在项目中配置权限。具体位置在 `harmony-configs/entry/src/main/module.json5` 中的 requestPermissions 字段。该配置文件在构建产物中原始鸿蒙工程相同目录内。
 
 **示例**
 **Example**
@@ -249,7 +249,7 @@ Turn off the monitoring of real-time location changes, and both the front and ba
 
 **注意**
 
-- `HarmonyOS Next平台`调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`及后台定位权限`ohos.permission.LOCATION_IN_BACKGROUND`，需自行在项目中配置权限。
+- `HarmonyOS Next平台`调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`及后台定位权限`ohos.permission.LOCATION_IN_BACKGROUND`，需自行在项目中配置权限。具体位置在 `harmony-configs/entry/src/main/module.json5` 中的 requestPermissions 字段。该配置文件在构建产物中原始鸿蒙工程相同目录内。
 
 
 ## 三方定位和地图服务收费说明

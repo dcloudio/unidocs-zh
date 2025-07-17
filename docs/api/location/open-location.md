@@ -23,9 +23,7 @@
 |latitude|Float|是|纬度，范围为-90~90，负数表示南纬，使用 gcj02 国测局坐标系||
 | latitude| Float| Yes| Latitude, from -90 to 90. Negative number indicates south latitude, using gcj02 coordinate of State Bureau of Surveying and Mapping of China| |
 |longitude|Float|是|经度，范围为-180~180，负数表示西经，使用 gcj02 国测局坐标系||
-| longitude| Float| Yes| Longitude, from -180 to 180. Negative number indicates west longitude, using gcj02 coordinate of State Bureau of Surveying and Mapping of China.| |
-|scale|Int|否|缩放比例，范围5~18，默认为18|微信小程序|
-|scale|Int|No|Scale, the range is 5~18, the default is 18|WeChat applet|
+|scale|Int|否|缩放比例，范围5~18，默认为18|微信小程序、支付宝小程序|
 |name|String|否|位置名|支付宝必填|
 |name|String|No|Location Name|Alipay Required|
 |address|String|否|地址的详细说明|支付宝必填|

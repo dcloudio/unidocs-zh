@@ -430,6 +430,19 @@ onPageScroll : function(e) { //nvue暂不支持滚动监听，可用bindingx代�
 - 在webview渲染时，比如app-vue、微信小程序、H5中，也可以使用wxs监听滚动，[参考](https://uniapp.dcloud.io/tutorial/miniprogram-subject#wxs)；在app-nvue中，可以使用bindingx监听滚动，[参考](https://uniapp.dcloud.io/tutorial/nvue-api#nvue-里使用-bindingx)。
 - 如果想实现滚动时标题栏透明渐变，在App和H5下，可在pages.json中配置titleNView下的type为transparent，[参考](https://uniapp.dcloud.io/collocation/pages?id=app-titlenview)。(uni-app x不支持)
 - 如果需要滚动吸顶固定某些元素，推荐使用css的粘性布局，参考[插件市场](https://ext.dcloud.net.cn/plugin?id=715)。插件市场也有其他js实现的吸顶插件，但性能不佳，需要时可自行搜索。（uni-app x可自由在uts中设置固定位置）
+- 如果是使用 `defineComponent`，`onPageScroll` 要和 `setup` 同层级才会生效，参考下方示例代码
+
+```javascript
+<script>  
+    import { defineComponent } from 'vue'  
+    export default defineComponent({  
+        setup() { },  
+        onPageScroll() { 
+		  // xxx
+		}  
+    })  
+</script>
+```
 
 
 ### onBackPress

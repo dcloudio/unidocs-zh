@@ -7,11 +7,11 @@
 {
   "plugins": {
     "uni-ad": {
-      "version": "1.2.1",
+      "version": "1.3.7",
       "provider": "wxf72d316417b6767f"
     },
     "coral-adv": {
-      "version": "1.0.24",
+      "version": "1.0.27",
       "provider": "wx0e203209e27b1e66"
     }
   }
@@ -55,6 +55,7 @@
 
 ```
 
+注意事项：通过 wx:if 销毁组件时会自动销毁广告示例，并关闭广告效果
 
 **page.js**
 

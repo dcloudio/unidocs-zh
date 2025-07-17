@@ -1,4 +1,3 @@
-
 ## 全局配置
 ## Global configuration
 
@@ -316,7 +315,7 @@ When Vue components are compiled to the applet platform, they will be compiled i
 |multipleSlots|Boolean|true|在组件定义时的选项中启动多slot支持||
 |styleIsolation|String|apply-shared|组件样式隔离方式，具体配置选项参见：[组件样式隔离](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/wxml-wxss.html#%E7%BB%84%E4%BB%B6%E6%A0%B7%E5%BC%8F%E9%9A%94%E7%A6%BB)|微信小程序|
 |addGlobalClass|Boolean|true|~~这个选项等价于设置 styleIsolation: apply-shared ，但设置了 styleIsolation 选项后这个选项会失效~~|微信小程序|
-|virtualHost|Boolean|false|将自定义节点设置成虚拟的，更加接近Vue组件的表现。我们不希望自定义组件的这个节点本身可以设置样式、响应 flex 布局等，而是希望自定义组件内部的第一层节点能够响应 flex 布局或者样式由自定义组件本身完全决定，启用后可以通过 [mergeVirtualHostAttributes](/collocation/manifest.md#mp-weixin) 合并合并组件虚拟节点外层属性|微信小程序、支付宝小程序（默认值为 true）、抖音小程序（4.02+）|
+|virtualHost|Boolean|false|将自定义节点设置成虚拟的，更加接近Vue组件的表现。我们不希望自定义组件的这个节点本身可以设置样式、响应 flex 布局等，而是希望自定义组件内部的第一层节点能够响应 flex 布局或者样式由自定义组件本身完全决定，启用后可以通过 [mergeVirtualHostAttributes](/collocation/manifest.md#mp-weixin) 合并合并组件虚拟节点外层属性|支付宝小程序（默认值为 true）、微信小程序、抖音小程序（4.02+）|
 
 ```js
 export default {

@@ -58,14 +58,15 @@ HBuilderX 4.61+ 运行到鸿蒙，支持Debug调试。包括uvue、uts、混编�
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-hovering_window.jpg" style="zoom: 60%;" />
 
 ## 联编调试
+> HBuilderX 4.71+ 版本支持联编调试，针对 uni-app x 项目有效。
 
 在 HX 里面把 uni-app x 项目运行到鸿蒙时，不仅支持在 uni-app x 项目中进行断点调试，也同时支持对鸿蒙工程目录中的源代码（比如 `.ets` 文件）进行断点调试。
 
 ### 开启方式
 
-在 uni-app x 项目根目录中的 `.hbuilderx/launcher.json` 文件中添加如下内容（如果文件不存在则手动创建）：
+在 uni-app x 项目根目录中的 `.hbuilderx/launch.json` 文件中添加如下内容（如果文件不存在则手动创建）：
 
-_部分内容可参考线上文档 [项目根目录与鸿蒙工程目录](https://uniapp.dcloud.net.cn/tutorial/harmony/runbuild.html#project-path)
+联编功能的介绍可参考线上文档 [项目根目录与鸿蒙工程目录](https://doc.dcloud.net.cn/uni-app-x/native/debug/harmony.html)
 
 ```json
 {
@@ -73,17 +74,15 @@ _部分内容可参考线上文档 [项目根目录与鸿蒙工程目录](https:
   "configurations": [
     {
       "type": "uni-app:app-harmony",
-      "debugHarmony": true,
-      "distPathDev": "D:/harmony-project-dev"
+      "debugWithNativeHarmony": true,
+      "nativeHarmonyProjectPath": "D:/native-harmony-project"
     }
   ]
 }
 ```
 
 其中：
-- `type` 固定值为 `"uni-app:app-harmony"`
-- `debugHarmony` 用于开启联编模式，缺省为 `false`
-- `distPathDev` 用于指定调试运行的时候使用的鸿蒙工程目录，缺省为 `unpackage/dist/dev/app-harmony`
+- `type` 固定值为 `"uni-app:app-harmony"`。
+- `debugWithNativeHarmony` 用于开启联编调试功能，缺省为 `false` 不开启。
+- `nativeHarmonyProjectPath` 用于指定调试运行的时候使用的鸿蒙工程目录（即导入 HbuilderX 的那个宿主应用项目的根目录），无缺省值，如果开启了联编调试则此项必填，且指向的目录必须已存在。
 
-在未开启联编模式时，HX 会根据实际需要对鸿蒙工程目录进行重建（比如 HX 升级了内置鸿蒙工程模板，或者运行到鸿蒙的时候选择了【清空缓存】）；
-如果开启了联编模式，则 HX 只会在发现鸿蒙工程目录不存在时用内置模板解压来创建鸿蒙工程目录，不会主动删除已经存在的鸿蒙工程目录。

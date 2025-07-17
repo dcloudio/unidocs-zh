@@ -11,8 +11,7 @@ Call up the client applet setting interface and return the operation result set 
 |x|x|√|√|√|√|√|√|√|√|
 
 |属性|类型|必填|说明|
-|Attribute|Type|Required|Description|
-|---|---|---|---|---|
+|---|---|---|---|
 |success|function|否|接口调用成功的回调函数|
 |success|function|No|Callback function for successful interface call|
 |fail|function|否|接口调用失败的回调函数|

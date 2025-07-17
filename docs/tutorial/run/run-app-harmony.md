@@ -81,8 +81,8 @@ HX 里面有两个专门与鸿蒙相关的功能入口：
 
 当运行到鸿蒙时，在把打包后的 `.hap` 安装到设备上时，可能会遇到这个报错。
 一个常见的原因是当前使用的设备没有添加到签名用的 profile 文件中，要解决这个问题，
-首先要 [注册调试设备](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-device-0000001946142249)，
-然后 [申请调试Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102)
+首先要 [注册调试设备](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-device-0000001946142249?ha_source=Dcloud&ha_sourceId=89000448)，
+然后 [申请调试Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102?ha_source=Dcloud&ha_sourceId=89000448)
 或修改已有的 profile 文件并重新下载。
 
 ### 报错 `没有签名无法安装`@no-signature-file
@@ -106,19 +106,19 @@ HX 里面有两个专门与鸿蒙相关的功能入口：
 
 ### 报错 `未正确配置鸿蒙应用的包名`@bundlename-incorrect
 
-应该在 `manifest.json` 的【鸿蒙配置】中设置正确的包名，具体要求请参考 [配置应用包名](https://developer.huawei.com/consumer/cn/doc/app/agc-help-createharmonyapp-0000001945392297)
+应该在 `manifest.json` 的【鸿蒙配置】中设置正确的包名，具体要求请参考 [配置应用包名](https://developer.huawei.com/consumer/cn/doc/app/agc-help-createharmonyapp-0000001945392297?ha_source=Dcloud&ha_sourceId=89000448)
 
 ## 关于数字签名证书的配置@signing
 
 ### 调试用的数字签名证书@signing-debug
 
-参考 [申请调试证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugcert-0000001914263178)
+参考 [申请调试证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugcert-0000001914263178?ha_source=Dcloud&ha_sourceId=89000448)
 
 在使用模拟器进行调试运行的时候，一般是不需要做数字签名的，但如果是用真机进行调试运行，或者业务代码用到了 ACL 权限，那么就需要申请并配置一个**调试证书**用于数字签名。
 
 数字签名证书需要配置到 `harmony-configs/build-profile.json5` 中，这个文件等同于一个普通的鸿蒙工程中对应的文件。
 
-为了便于操作，可以用 DevEco Studio 创建或打开的鸿蒙工程，在里面完成申请证书的操作，具体方法可参考 [自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-signing-V5#section18815157237)，
+为了便于操作，可以用 DevEco Studio 创建或打开的鸿蒙工程，在里面完成申请证书的操作，具体方法可参考 [自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-signing-V5#section18815157237?ha_source=Dcloud&ha_sourceId=89000448)，
 然后把 `build-profile.json5` 文件中 `app.signingConfigs` 的内容复制到 `harmony-configs/build-profile.json5` 中。
 
 用于申请证书的这个鸿蒙工程需注意以下几点：
@@ -135,7 +135,7 @@ HX 里面有两个专门与鸿蒙相关的功能入口：
 
 ### 发布用的数字签名证书@signing-release
 
-参考 [申请发布证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-releasecert-0000001946273961)
+参考 [申请发布证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-releasecert-0000001946273961?ha_source=Dcloud&ha_sourceId=89000448)
 
 在发行安装包的时候，一定需要配置一个**发布证书**，否则只能拿到一个未签名的安装包，是无法实际使用的。
 

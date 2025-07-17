@@ -70,7 +70,7 @@ struct ButtonComponent {
 function ButtonBuilder(options: ButtonBuilderOptions) {
   ButtonComponent({
     label: options.label,
-    onButtonClick: options?.on?.get('click')
+    onButtonClick: options?.on?.get('buttonclick')
   })
     .width(options.width)
     .height(options.height)
@@ -102,7 +102,7 @@ defineNativeEmbed('button', {
 
 ```vue
 <template>
-    <embed class="native-button" tag="button" :options="options" @click="onClick"></embed>
+    <embed class="native-button" tag="button" :options="options" @buttonclick="onClick"></embed>
 </template>
 
 <script>

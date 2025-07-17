@@ -171,7 +171,7 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 
 **黔警通：** 黔西南公安局为市民打造的一站式便民服务，便捷办理公安业务，鸿蒙应用市场搜索“黔警通”，[详情](https://appgallery.huawei.com/app/detail?id=hmos.com.qxnga.qjt)
 
-**地质云：** 中国地质调查局主持研发的一套综合性地址信息服务系统，鸿蒙应用市场搜索“地质云”，[详情](https://appgallery.huawei.com/app/detail?id=com.cgs.gov.geoapp)
+**地质云：** 中国地质调查局主持研发的一套综合性地质信息服务系统，鸿蒙应用市场搜索“地质云”，[详情](https://appgallery.huawei.com/app/detail?id=com.cgs.gov.geoapp)
 
 **康强医疗人才网：** 医生护士招聘求职平台，鸿蒙应用市场搜索“康强医疗人才网”，[详情](https://appgallery.huawei.com/app/detail?id=com.kq.kq520.com)
 
@@ -231,7 +231,7 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 
 **维汉翻译通：** 免费翻译维吾尔语国语，鸿蒙应用市场搜索“维汉翻译通”，[详情](https://appgallery.huawei.com/app/detail?id=com.sjfc.whfyt.harm)
 
-**土星计划：** 一款集合个人日程计划、笔记、记账、便签、代办等多种日程功能的App，鸿蒙应用市场搜索“土星计划”，[详情](https://appgallery.huawei.com/app/detail?id=net.gibbous.honmeng)
+**土星计划：** 一款集合个人日程计划、笔记、记账、便签、代办等多种日程功能的App，鸿蒙应用市场搜索“土星计划”，[详情](https://appgallery.huawei.com/grey/app/detail?id=tothink.scitico.huawei)
 
 **施工眼：** 暖通行业移动关联专家，鸿蒙应用市场搜索“施工眼”，[详情](https://appgallery.huawei.com/app/detail?id=com.sungu.mybts)
 
@@ -277,7 +277,7 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 
 **点点建安：** 智慧消防 APP 集成烟感、主机等多设备报警功能，鸿蒙应用市场搜索“点点建安”，[详情](https://appgallery.huawei.com/app/detail?id=diandian.com.huawei)
 
-**营销宝：** 一款专为企业打造的智能营销工具，鸿蒙应用市场搜索“营销宝”，[详情](https://appgallery.huawei.com/app/detail?id=com.touchsee.huawei)
+**营销宝：** 一款专为企业打造的智能营销工具，鸿蒙应用市场搜索“营销宝”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.example.yingxiaobao)
 
 **瀚宁易企用车：** 一款助力企业内部车辆管理、规范用车的APP，鸿蒙应用市场搜索“瀚宁易企用车”，[详情](https://appgallery.huawei.com/app/detail?id=hanning.huawei.com)
 
@@ -329,8 +329,6 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 
 **数字东安：** 企业内部员工管理OA，鸿蒙应用市场搜索“数字东安”，[详情](https://appgallery.huawei.com/app/detail?id=com.AECCHarbinDongAnHM.digitalDA)
 
-**破解数织：** 一款能拍照解数织题、带丰富题库的APP，鸿蒙应用市场搜索“破解数织”，[详情](https://appgallery.huawei.com/app/detail?id=cn.yorry.nonogram)
-
 **智记本：** 一款基于AI 聚合日程+记账+记事的APP，鸿蒙应用市场搜索“智记本”，[详情](https://appgallery.huawei.com/app/detail?id=com.xiaod.zhijiben)
 
 **门诊患者健康风险预警管理平台：** 一款实时预警患者健康风险的管理APP，鸿蒙应用市场搜索“门诊患者”，[详情](https://appgallery.huawei.com/app/detail?id=huawei.hkwjhealth.hzfxyj)
@@ -339,17 +337,46 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 
 **设备云售后：** 一款集成多功能、覆盖多场景的售后工单协同管理APP，鸿蒙应用市场搜索“设备云售后”，[详情](https://appgallery.huawei.com/app/detail?id=com.gtkj.yunshouhou)
 
-**CMSV7：** 一款专用于货运平台视频监控和定位管理的APP，鸿蒙应用市场搜索“CMSV7”，[详情](https://appgallery.huawei.com/app/detail?id=com.babelstar.uniappV7)
 
 **中邮云物流平台：** 一款集订单、审核等多样功能于一体的云物流平台APP，鸿蒙应用市场搜索“中邮云物流平台”，[详情](https://appgallery.huawei.com/app/detail?id=ptac.oms.mobile)
 
 **众行管家：** 一款可远程点火熄火、分享钥匙的智能控车APP，鸿蒙应用市场搜索“众行管家”，[详情](https://appgallery.huawei.com/app/detail?id=com.kdwl.dazhong.hm)
+
+**凤凰会：** 凤凰会是碧桂园业主官方服务平台，全面升级物业服务，为碧桂园业主提供从购房到入住社区生活一站式服务，鸿蒙应用市场搜索“凤凰会”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.bgy.fhh)
+
+**多问律师端：** 多问-律师端是律师一站式移动办公软件，为律师提供了工具和接案功能，鸿蒙应用市场搜索“多问律师端”，[详情](https://appgallery.huawei.com/grey/app/detail?id=duowen__88.huawei.com)
+
+**选豆：** 一款汇聚全球咖啡豆、提供咖啡行业资讯及专业知识库的APP，鸿蒙应用市场搜索“选豆”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.gbyc.coffeeApp)
+
+**智赋城：** 一款融合前沿技术、支持多端操作，为 IoT 智能数码商贸企业提供多业态 ERP/SCRM 管理及多类系统的智赋城云平台 App，鸿蒙应用市场搜索“智赋城”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.zfucity.r6)
+
+**乳链惠：** 伊利产业链金融业务数字化平台，鸿蒙应用市场搜索“乳链惠”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.yili.rlhapp)
+
+**小翼智慧：** 小翼专用ERP配套APP，鸿蒙应用市场搜索“小翼智慧”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.zfucity.xiaoyi)
+
+**BALS Pro：** 一款用于控制智慧面膜的硬件设备的APP，鸿蒙应用市场搜索“BALS Pro”，[详情](https://appgallery.huawei.com/grey/app/detail?id=cn.xinzhishengwu.com)
+
+**顺络家园：** 一款服务于顺络园区生活，提供多端平台，人脸识别等技术的智慧 APP，鸿蒙应用市场搜索“顺络家园”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.tce.shunluo)
+
+**美宜佳：** 一款宜佳会员APP，鸿蒙应用市场搜索“美宜佳”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.myj.memberapp)
+
+**柳钢之家：** 一款为职工提供普惠服务、体育赛事、生活保障等网上服务的APP，鸿蒙应用市场搜索“柳钢之家”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.lg.next)
+
+**PTE单词：** PTE考试必备智能刷词APP，鸿蒙应用市场搜索“PTE单词”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.beatpte.alpacapteword)
 
 **塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
 
 **多点计算器：** 一款功能强大的计算器，支持科学计算、BMI指数计算、体脂率计算等，鸿蒙元服务，鸿蒙应用市场搜索“多点计算器”
 
 **木瓜天气：** 一款精准、及时、便捷、风格优美的天气预报助手，鸿蒙元服务，鸿蒙应用市场搜索“木瓜天气”
+
+**钓鱼天气预报：** 一款钓鱼人专属的天气查询和钓况分析工具，鸿蒙元服务，鸿蒙应用市场搜索“钓鱼天气预报”
+
+**黔爽巴士：** 贵阳公交，实时工具查询平台，鸿蒙元服务，鸿蒙应用市场搜索“黔爽巴士 ”
+
+**快通驾考 ：** 科一科四语音速成技巧，鸿蒙元服务，鸿蒙应用市场搜索“快通驾考”
+
+**易快运 ：** 承运商与司机的协同办公平台，鸿蒙元服务，鸿蒙应用市场搜索“易快运”
 
 
 ### 互联网公司
@@ -545,6 +572,8 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 **登记注册身份验证（5+App）：** 国家工商总局，企业登记注册身份验证。[Android](https://android.myapp.com/myapp/detail.htm?apkName=gov.zwfw.samr.djzc)、[iOS](https://apps.apple.com/cn/app/%E7%99%BB%E8%AE%B0%E6%B3%A8%E5%86%8C%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81/id1466043859)
 
 **人力资源和社会保障部：** 微信小程序搜“电子社保卡”
+
+**国家移民管理局：** 微信小程序搜“移民局12367”
 
 **全国住房公积金公共服务：** 微信小程序搜“全国住房公积金公共服务”
 

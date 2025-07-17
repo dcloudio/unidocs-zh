@@ -179,5 +179,4 @@ Since the custom protocol is only supported on iOS11 and above devices, it is re
 熟悉原生的开发者可将敏感信息存放于原生代码中，再与js进行交互。
 Developers who are familiar with native can store sensitive information in native code, and then interact with js.
 
-对安全性要求较高的开发者，除了对前端js进行加密外，还应该对整个apk再进行一次加固。推荐[uni安全加固](/tutorial/app-security.md)其背后支持对接多个加固服务商，包括腾讯云和蚂蚁小程序云。
-
+对安全性要求较高的开发者，除了对前端js进行加密外，还应该对整个apk再进行一次加固。推荐[uni安全加固](/tutorial/app-security.md)，目前由蚂蚁小程序云提供支持，可有效提升应用整体安全性。

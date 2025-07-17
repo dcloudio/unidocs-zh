@@ -31,14 +31,14 @@ DCloud联合业内主流隐私合规检测厂商推出了`uni隐私合规检测`
 
 ### DCloud数据采集说明
 为了持续优化应用及提供统计报表功能，在运行过程中会采集应用启动时间、异常错误日志等数据，其中包含设备唯一识别码。
-> DCloud通过了国家信息安全等级保护三级，证书编号：11010813802-20001，保障相关数据的安全性
-> DCloud并非大数据公司，采集的数据是为开发者提供统计服务和产品持续优化，不包含个人隐私信息
+
+> DCloud通过了国家信息安全等级保护三级，证书编号：11010813802-20001，保障相关数据的安全性  
+> DCloud并非大数据公司，采集的数据是为开发者提供统计服务和产品持续优化，不包含个人隐私信息  
 
 **请在《隐私政策》中必告知用户您的应用基于DCloud uni-app(5+ App/Wap2App)开发，增加如下参考条款**
 **Please inform users in the "Privacy Policy" that your app is developed based on DCloud uni-app (5+ App/Wap2App), and add the following reference terms**
 
-`我们的产品基于DCloud uni-app(5+ App/Wap2App)开发，应用运行期间需要收集您的设备唯一识别码（IMEI/android ID/DEVICE_ID/IDFA、SIM 卡 IMSI 信息、OAID）以提供统计分析服务，并通过应用启动数据及异常错误日志分析改进性能和用户体验，为用户提供更好的服务。详情内容请访问《DCloud用户服务条款》。（DCloud用户服务条款超链至：https://ask.dcloud.net.cn/protocol.html）`
-`Our product is developed based on DCloud uni-app (5+ App/Wap2App), during the running of the application, you need to collect your device unique identification code (IMEI/android ID/DEVICE_ID/IDFA, SIM card IMSI information, OAID) to provide statistical analysis Service, and improve performance and user experience through application startup data and exception error log analysis, to provide users with better services. For details, please visit "DCloud User Terms of Service". (DCloud user terms of service hyperlink to: https://ask.dcloud.net.cn/protocol.html)`
+`我们的产品基于DCloud uni-app(5+ App/Wap2App)开发，应用运行期间需要收集您的设备唯一识别码（IMEI/android ID/DEVICE_ID/IDFA、SIM 卡 IMSI 信息、OAID）以提供统计分析服务，并通过应用启动数据及异常错误日志分析改进性能和用户体验，为用户提供更好的服务。详情内容请访问《[DCloud App引擎隐私政策](https://dcloud.io/license/appprivacy.html)》。`
 
 
 ### 配置方式

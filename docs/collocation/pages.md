@@ -451,7 +451,7 @@ The configuration items in the page will override the same configuration items i
 **Notice**
 
 - 使用 `maxWidth` 时，页面内fixed元素需要使用--window-left,--window-right来保证布局位置正确
-- When using `maxWidth`, the fixed elements in the page need to use --window-left, --window-right to ensure the correct layout position
+- 鸿蒙中使用 `backgroundColor` 时不支持设置为透明 transparent
 
 **代码示例：**
 **Code sample:**

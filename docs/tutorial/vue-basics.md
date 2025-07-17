@@ -1176,8 +1176,7 @@ Example:
 ### 注意事项
 ### Precautions
 
-- 在H5平台 使用 v-for 循环整数时和其他平台存在差异，如 `v-for="(item, index) in 10"` 中，在H5平台 item 从 1 开始，其他平台 item 从 0 开始，可使用第二个参数 index 来保持一致。
-- Differences and other platforms when the platforms H5 integer v-for loop, as `v-for="(item, index) in 10"`in, item 1 from the start, other platforms item from zero, the second parameter may be used in index H5 platform consistent.
+- 在H5平台 使用 v-for 循环整数时和其他平台存在差异，如 `v-for="(item, index) in 10"` 中，在H5和小程序平台 item 从 1 开始，其他平台 item 从 0 开始，可使用第二个参数 index 来保持一致。
 - 在非H5平台 循环对象时不支持第三个参数，如 `v-for="(value, name, index) in object"` 中，index 参数是不支持的。
 - The third parameter is not supported in the non-cyclic object H5 platform, such as `v-for="(value, name, index) in object"`in, index parameter is not supported.
 - 小程序端数据为差量更新方式，由于小程序不支持删除对象属性，使用的设置值为 null 的方式替代，导致遍历时可能出现不符合预期的情况，需要自行过滤一下值为 null 的数据（[相关反馈](https://ask.dcloud.net.cn/question/103269)）。

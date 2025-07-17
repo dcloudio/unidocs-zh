@@ -1,5 +1,4 @@
-因手机差异较大，HBuilder并没有提供App的模拟器。不管uni-app或5+App/wap2app项目，都需要连接真实的手机或手机模拟器来运行测试，称之为“真机运行”。
-Due to the large differences in mobile phones, HBuilder does not provide an App simulator. Regardless of uni-app or 5+App/wap2app projects, you need to connect a real mobile phone or mobile phone emulator to run the test, which is called "real machine running".
+因手机差异较大，HBuilder并没有提供App的模拟器。不管uni-app (x)或5+App/wap2app项目，都需要连接真实的手机或手机模拟器来运行测试，称之为“真机运行”。
 
 - Android平台
 HBuilder支持adb协议，在HBuilder运行的电脑上，可以使用usb线连接Android设备，也可以使用安装在电脑上的Android模拟器（包括google官方模拟器，三方模拟器如“雷电”、“夜神”等）
@@ -46,12 +45,14 @@ Actually activates the toolbar run button. You can continue to match the number 
 但一个设备同时只能运行一个项目，不同的项目运行到相同手机只有最后一个项目生效。
 But a device can only run one project at the same time, and when different projects run to the same mobile phone, only the last project takes effect.
 
+HBuilderX 4.71+版本，Android设备支持[无线连接设备](https://uniapp.dcloud.net.cn/tutorial/run/run-app-android-wifi.html)。
+
 > 连接设备过程中如果找不到手机，可以尝试点击“刷新”按钮，如果还是无法找到手机请参考[真机运行常见问题](run-app-faq.md)
 > If you can't find your phone during the process of connecting the device, you can try to click the "Refresh" button. If you still can't find your phone, please refer to [Real Phone Running FAQs](run-app-faq.md)
 
 ### Android设备选择
 
-<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/select-android.jpeg" style="zoom: 50%;" />
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/select-android.png" style="zoom: 50%;" />
 
 **注意事项**
 - 如果电脑里安装有模拟器（Android模拟器需要先启动），HBuilder会直接检测到设备并显示在候选列表中。可以参考[如何安装模拟器](installSimulator.md)
@@ -59,7 +60,7 @@ But a device can only run one project at the same time, and when different proje
 - Make sure the `USB debugging` mode is turned on in the Android phone settings. Usually in the [Settings] [Developer Options] of the mobile phone, some mobile phones can also be set in the system notification bar after plugging in the data cable. Note that it cannot be set to U disk mode. If it is charging mode, you must set the charging time at the same time. `Allow usb debugging`.
 
 
-### iOS设备选择@ios-device
+### iOS设备选择 @ios-device
 
 > HBuilderX中自带的标准真机运行基座使用DCloud向苹果申请的企业开发者证书签名，根据[苹果开发者企业计划许可协议](https://developer.apple.com/support/downloads/terms/apple-developer-enterprise-program/Apple-Developer-Enterprise-Program-License-Agreement-20220606-Chinese-Simplified.pdf)要求，使用企业开发者证书签名的App只允许企业员工内部使用，不允许企业外部人员安装使用。
 > 因收到苹果公司警告，自2022年9月14日起iOS真机设备不再支持使用标准真机运行基座，详情见论坛公告：[https://ask.dcloud.net.cn/article/40041](https://ask.dcloud.net.cn/article/40041)
@@ -72,12 +73,14 @@ But a device can only run one project at the same time, and when different proje
 - 如果windows电脑连接iOS设备需电脑安装iTunes软件，并确保apple的mobile device服务开启、iTunes可找到手机
 - 手机连接电脑后，确保在手机上弹出的“要信任此电脑吗？”提示框中点了“信任”按钮
 
-#### iOS模拟器 @ios-simulator
+#### iOS模拟器设备选择 @ios-simulator
 
 如果是Mac电脑安装XCode后，“标准运行基座”支持使用iOS模拟器
+
 ![](https://native-res.dcloud.net.cn/images/hx/run/ios-sim.png)
 
 点击后进入iOS模拟器选择界面
+
 ![](https://native-res.dcloud.net.cn/images/hx/run/ios-sim-select.png)
 
 上面的界面会额外显示搜索框，因XCode的iOS模拟器非常多，可通过搜索框过滤快速选择需要使用的模拟器。
@@ -139,12 +142,12 @@ On MacOSX, if the App cannot be started automatically, please check the followin
 - 项目编译运行失败、或安装基座失败
 - Failed to compile and run the project, or failed to install the base
 
-## 标准基座@playground
+## 使用标准基座运行@playground
 标准运行基座，是DCloud为方便开发者低门槛调试而提供的，此基座App使用的是DCloud的包名、证书和三方SDK配置。
-The standard operating base is provided by DCloud to facilitate the low-threshold debugging of developers. This base App uses DCloud's package name, certificate and third-party SDK configuration.
+- uni-app/5+App的标准基座的包名为：io.dcloud.HBuilder。图标为绿色H。
+- uni-app x的标准基座包名为：io.dcloud.uniappx。图标为绿色U。
 
-在原生层不变的情况下，js等动态代码可以在运行基座上动态加载，实现热重载运行。
-Under the condition that the native layer remains unchanged, dynamic codes such as js can be dynamically loaded on the running base to realize hot reload operation.
+在原生层不变的情况下，js等动态代码可以在运行基座上动态加载，实现热重载运行。（uni-app x的Android端，uts代码编译为kt后通过dex动态加载来实现热刷新）
 
 **HBuilderX3.7.1版本调整标准基座支持的系统版本**
 - Android平台
@@ -153,26 +156,36 @@ Under the condition that the native layer remains unchanged, dynamic codes such 
 要求iOS10及以上系统，如需在iOS9.*设备真机运行，请使用自定义基座。更多App支持的最低版本设置参考manifest.json的[deploymentTarget](https://uniapp.dcloud.net.cn/collocation/manifest-app.html#ios)
 Requires iOS10 and above. If you need to run on iOS9.* devices, please use a custom dock. For more minimum version settings supported by App, refer to [deploymentTarget] of manifest.json (https://uniapp.dcloud.net.cn/collocation/manifest-app.html#ios)
 
-## 自定义基座@customplayground
-如果要自定义原生层，则需要走一遍iOS或Android的打包流程，由XCode或Android studio编译打包生成ipa或apk安装包。
-If you want to customize the native layer, you need to go through the packaging process of iOS or Android, and compile and package by XCode or Android studio to generate an ipa or apk installation package.
+## 使用自定义基座运行@customplayground
 
-但打包后无法方便调试，不能热重载和显示控制台日志。所以HBuilder在打包时提供了一个特殊选项，打包“自定义运行基座”。
-However, after packaging, it cannot be easily debugged, and cannot be hot reloaded and console logs displayed. So HBuilder provides a special option when packaging, packaging a "custom run base".
+标准基座仅能更新热刷代码和资源文件，其他诸如修改包名、应用名称、证书、权限、原生模块变更、xml等资源变更、引入三方sdk等，需要完整的执行Android/iOS的打包流程，由Android studio或XCode编译打包生成apk或ipa安装包，才能生效。
 
-<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/build-app-customplayground.jpg" style="zoom: 50%;" />
-
-> 打包App的入口在HBuilder顶部发行菜单，或快捷键【Ctrl+u】
-> The entry of the packaged App is in the release menu at the top of HBuilder, or the shortcut key [Ctrl+u]
+但真的打包为正式包，又无法调试，不能热重载和显示控制台日志。所以HBuilder在运行打包时提供了一个特殊选项，“自定义运行基座”。
 
 自定义运行基座可以所有配置生效（主要是manifest.json的配置），包括：
 - App名称、图标、封面splash、包名、证书
 - App模块配置、三方sdk配置（如微信、推送、地图、语音识别等三方sdk配置）
 - App module configuration, third-party sdk configuration (such as WeChat, push, map, voice recognition, etc. third-party sdk configuration)
 - App权限配置
-- uni原生插件
+- 引入原生插件/SDK
 - 其他manifest.json文档提到的需打包生效的配置
 - Configurations mentioned in other manifest.json documents that need to be packaged to take effect
+
+可以云打包自定义基座，也可以本地打包自定义基座。
+
+### 云打包自定基座
+
+使用云打包，开发者不必配置原生打包环境。
+
+- uni-app 打包自定义基座
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/build-app-customplayground.jpg" style="zoom: 50%;" />
+
+- uni-app x 打包自定义基座
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/make-custom-for-uni-app-x.jpg?t=1" style="zoom: 50%;" />
+
+> 打包App的入口在HBuilder顶部发行菜单，或快捷键【Ctrl+u】
 
 打包自定义运行基座后，HBuilder会自动将生成后的apk和ipa包存放在 项目目录/unpackage/debug目录下，文件名分别为`android_debug.apk`和`iOS_debug.ipa`。
 After packaging the custom runtime base, HBuilder will automatically store the generated apk and ipa packages in the project directory/unpackage/debug directory, and the file names are `android_debug.apk` and `iOS_debug.ipa` respectively.
@@ -180,28 +193,41 @@ After packaging the custom runtime base, HBuilder will automatically store the g
 一个项目只能生成一个自定义基座，多次生成只保留最后一次结果。
 Only one custom pedestal can be generated for a project, and multiple generation only keeps the last result.
 
-生成自定义基座后，在设备选择窗口，可以选择自定义基座，如下图所示：
+生成自定义基座后，在设备选择窗口，选择自定义基座-本地基座，如下图所示：
 
-<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/hx_select_base.jpg" style="zoom: 50%;" />
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/android-localBase.png" style="zoom: 50%;" />
 
 注意：自定义运行基座必须在HBuilderX中真机运行使用，不可直接安装使用，启动时会弹出toast提示信息。正式发版时需要按正常打包方式重新打包。
 
 > HBuilderX 3.7.13起，MacOSX系统，App项目，支持运行自定义基座到iOS模拟器。[参考文档](https://uniapp.dcloud.net.cn/tutorial/run/run-custom-base-ios-simulator.html)
 
-## 离线打包生成自定义运行基座
-## Offline packaging to generate a custom running base
+### 离线打包自定基座
 
-可使用离线SDK打包生成自定义运行基座(不支持cli方式,将src拖拽到编辑器中，并重新识别项目类型)，生成后将apk和ipa包存放在项目目录/unpackage/debug目录下，文件名分别为android_debug.apk和iOS_debug.ipa。
-You can use the offline SDK package to generate a custom running base (the cli method is not supported, drag and drop the src into the editor, and re-identify the project type), and store the apk and ipa packages in the project directory/unpackage/debug directory after generation , and the file names are android_debug.apk and iOS_debug.ipa respectively.
+- [Android平台离线生成自定义调试基座(uni-app)](https://ask.dcloud.net.cn/article/35482)
+- [Android平台离线生成自定义调试基座(uni-app x)](https://doc.dcloud.net.cn/uni-app-x/native/debug/android.html)
+- [iOS平台离线生成自定义调试基座(uni-app)](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios?id=%e5%a6%82%e4%bd%95%e7%94%a8%e7%a6%bb%e7%ba%bf%e6%89%93%e5%8c%85%e5%b7%a5%e7%a8%8b%e5%88%b6%e4%bd%9c%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9f%ba%e5%ba%a7)
+- [iOS平台离线生成自定义调试基座(uni-app x)](https://doc.dcloud.net.cn/uni-app-x/native/debug/ios.html)
 
-- [Android平台离线生成自定义调试基座](https://ask.dcloud.net.cn/article/35482)
-- [Android platform generates custom debugging dock offline](https://ask.dcloud.net.cn/article/35482)
-- [iOS平台离线生成自定义调试基座](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios?id=%e5%a6%82%e4%bd%95%e7%94%a8%e7%a6%bb%e7%ba%bf%e6%89%93%e5%8c%85%e5%b7%a5%e7%a8%8b%e5%88%b6%e4%bd%9c%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9f%ba%e5%ba%a7)
+> HBuilderX 4.71之前
 
+使用离线SDK打包生成自定义运行基座(不支持cli方式,将src拖拽到编辑器中，并重新识别项目类型)，生成后将apk和ipa包存放在项目目录/unpackage/debug目录下，文件名分别为android_debug.apk和iOS_debug.ipa。
+
+可以在设备选择窗口，选择自定义基座-本地基座，如下图所示：
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/android-localBase.png" style="zoom: 50%;" />
+
+> HBuilderX 4.71+（仅Android）
+
+Android通过离线SDK打包生成的自定义基座后，如果基座已通过Android Studio的运行安装到手机中。
+可以在设备选择窗口，选择自定义基座-已安装基座，并选择对应调试的包名。如下图所示：
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/android-installedBase.png" style="zoom: 50%;" />
+
+如果配置关联项目后，还可以在HBuilderX中[原生联调（仅uni-app x）](https://doc.dcloud.net.cn/uni-app-x/native/debug/android.html#installedapk)
 
 ## 基座闪退获取日志
 
-### android平台
+### uni-app的android平台
 
 **默认标准基座**闪退 可以查看手机存储根目录 `/Android/data/io.dcloud.HBuilder/logs/io.dcloud.HBuilder/crash/` 崩溃日志文件
 
@@ -212,3 +238,10 @@ You can use the offline SDK package to generate a custom running base (the cli m
 apk包名是“uni.UNIB89CXX”，目录则为：`/Android/data/uni.UNIB89CXX/logs/uni.UNIB89CXX/crash/`
 
 **注意不是所有崩溃都能捕获到并保存文件**
+
+### uni-app x
+uni-app x的闪退日志有多种查看方式。
+- 运行控制台右上角勾选原生日志，可以查看
+- 在应用的沙盒目录下cache缓存目录的uni-crash目录查看。 [详见](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#cache)。标准基座和自定义基座均可，uni-app x的标准基座的包名为io.dcloud.uniappx。
+
+不管是uni-app还是uni-app x，线上应用还可以通过[uni统计](https://uniapp.dcloud.net.cn/uni-stat-v2.html)查看崩溃日志。

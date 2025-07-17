@@ -15,8 +15,8 @@
 |参数名		|类型		|必填	|说明														|
 |:-			|:-			|:-		|:-															|
 |scrollTop	|Number		|否		|滚动到页面的目标位置（单位px）								|
-|selector	|String		|否		|元素选择器，用于指定要滚动到的元素位置，App、H5、微信小程序2.7.3+ 、支付宝小程序1.20.0+支持|
-|duration	|Number		|否		|滚动动画的时长，默认300ms，单位 ms							|
+|selector	|String		|否		|元素选择器，用于指定要滚动到的元素位置，App、H5、抖音小程序2.62.0+、微信小程序2.7.3+ 、支付宝小程序1.20.0+支持|
+|duration	|Number		|否		|滚动动画的时长，默认300，单位 ms							|
 |success	|function	|否		|接口调用成功的回调函数										|
 |fail		|function	|否		|接口调用失败的回调函数										|
 |complete	|function	|否		|接口调用结束的回调函数（调用成功、失败都会执行）			|

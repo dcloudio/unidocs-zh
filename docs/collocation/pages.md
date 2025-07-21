@@ -1139,11 +1139,16 @@ midButton没有pagePath，需监听点击事件，自行处理点击后的行为
 |path|String|是|启动页面路径|
 |query|String|否|启动参数，可在页面的 [onLoad](/tutorial/page.md#lifecycle) 函数里获得|
 
-**注意：** 在 App 里真机运行可直接打开配置的页面，微信开发者工具里需要手动改变编译模式，如下图：
+**注意：** 
+
+* 在 App 里真机运行可直接打开配置的页面，微信开发者工具里需要手动改变编译模式，如下图：
 
 <div style="text-align:center;">
 	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/condition.png" />
 </div>
+
+* 快手小程序需要在 `project.private.config.json` 文件中配置，参考 [官方文档](https://open.kuaishou.com/docs/develop/developerTools/Localization-project.html#%E6%94%AF%E6%8C%81%E5%AD%97%E6%AE%B5)
+
 
 **代码示例：**
 

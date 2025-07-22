@@ -341,7 +341,39 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **柳钢之家：** 一款为职工提供普惠服务、体育赛事、生活保障等网上服务的APP，鸿蒙应用市场搜索“柳钢之家”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.lg.next)
 
-**PTE单词：** PTE考试必备智能刷词APP，鸿蒙应用市场搜索“PTE单词”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.beatpte.alpacapteword)
+**环保小智：** 一个「环保专业的云端知识库」的APP，鸿蒙应用市场搜索“环保小智”，[详情](https://appgallery.huawei.com/app/detail?id=com.pdep.huawei)
+
+**玩转线性代数：** 一款矩阵计算器，覆盖线性代数、高等代数、矩阵论的数学问题，鸿蒙应用市场搜索“玩转线性代数”，[详情](https://appgallery.huawei.com/app/detail?id=com.math666.matrix.hm)
+
+**生产线设备档案管理系统：** 生产线设备信息管理、点检管理、润滑管理、维修管理，鸿蒙应用市场搜索“生产线设备档案管理系统”，[详情](https://appgallery.huawei.com/app/detail?id=eqms.jmry.xabyzp)
+
+**万华集团电商：** 一款集多功能于一体的化工商品购物平台，鸿蒙应用市场搜索“万华集团电商”，[详情](https://appgallery.huawei.com/app/detail?id=com.ewhchem.buyer_harmony)
+
+**中国医促会OA平台：** 一款实现无纸化办公的平台，可提高管理水平与工作效率，鸿蒙应用市场搜索“中国医促会OA平台”，[详情](https://appgallery.huawei.com/app/detail?id=com.ychoa.app)
+
+**易软云：** 一款专为物业管理从业者开发的移动办公软件，鸿蒙应用市场搜索“易软云”，[详情](https://appgallery.huawei.com/app/detail?id=com.easysoft.yry)
+
+**金益康：** 一个为临床人员提供沟通、健康管理、数据分析、诊疗及转诊等功能的系统，鸿蒙应用市场搜索“金益康”，[详情](https://appgallery.huawei.com/app/detail?id=com.jinyikang.app)
+
+**甘愿办：** 一款智能办公应用，旨在提升团队协作效率，简化日常管理流程，鸿蒙应用市场搜索“甘愿办”，[详情](https://appgallery.huawei.com/app/detail?id=gqsj.oa.app)
+
+**LOY SPACE：** 一款控制wifi、蓝牙设备屏的创意酷玩的APP产品，鸿蒙应用市场搜索“LOY SPACE”，[详情](https://appgallery.huawei.com/app/detail?id=com.ys.loywf)
+
+**艺考生志愿填报：** 一款专为艺术类考生打造的专业化志愿填报辅助工具，鸿蒙应用市场搜索“艺考生志愿填报”，[详情](https://appgallery.huawei.com/app/detail?id=com.ykszytb.guanghe)
+
+**匠人百科：** 一个聚焦艺术家与手艺人的百科全书平台，鸿蒙应用市场搜索“匠人百科”，[详情](https://appgallery.huawei.com/app/detail?id=www.jiangrenbaike.com)
+
+**家庭记账宝：** 一款专为家庭生活设计的免费多用户同步记账工具，鸿蒙应用市场搜索“家庭记账宝”，[详情](https://appgallery.huawei.com/app/detail?id=cn.qtapp.jzb)
+
+**易消课：** 一款专为培训机构打造的极简课时管理工具，鸿蒙应用市场搜索“易消课”，[详情](https://appgallery.huawei.com/app/detail?id=com.yunhuibai.yixiaokeHM)
+
+**伍道：** 一款聚焦于团队管理工具，鸿蒙应用市场搜索“伍道”，[详情](https://appgallery.huawei.com/app/detail?id=com.wudaoweizhihw.app)
+
+**海聚英才通：** 面向全市乃至全球各类人才的人才服务“一件事”网上办理平台，鸿蒙应用市场搜索“海聚英才通”，[详情](https://appgallery.huawei.com/app/detail?id=uni.UNI10AE0F1.har.production)
+
+**电子记录本：** 一款实现飞行、客舱、机务快速填报记录信息的APP，鸿蒙应用市场搜索“电子记录本”，[详情](https://appgallery.huawei.com/app/detail?id=com.example.elbclient)
+
+**一应黔行：** 一款支持手机乘车码便捷过闸的 APP，鸿蒙应用市场搜索“一应黔行”，[详情](https://appgallery.huawei.com/app/detail?id=com.gz.hm.subway)
 
 **塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
 

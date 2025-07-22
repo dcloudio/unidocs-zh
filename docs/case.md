@@ -421,6 +421,36 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **未来医生工作室：** 一款专为医生打造的 AI 助手应用，鸿蒙应用市场搜索“未来医生工作室”，[详情](https://appgallery.huawei.com/app/detail?id=com.medlinker.doctorstudioharmony)
 
+**民生宝：** 一款为用户提供了线上查询缴费、自助抄表、线下上门安装维修等管道燃气服务的APP，鸿蒙应用市场搜索“民生宝”，[详情](https://appgallery.huawei.com/app/detail?id=com.msht.minshengbao.hw)
+
+**康熙字典专业版：** 一个提供康熙字典在线查字的平台，鸿蒙应用市场搜索“康熙字典专业版”，[详情](https://appgallery.huawei.com/app/detail?id=kangxi.aikangxi.com)
+
+**武高新：** 一款集协同办公、项目管理、统一门户、移动规建于一体的武进高新区综合办公平台 APP，鸿蒙应用市场搜索“武高新”，[详情](https://appgallery.huawei.com/app/detail?id=com.example.wizappharmonyos)
+
+**秒通：** 华强方特集团为满足内部办公需求打造的一款智能办公App，鸿蒙应用市场搜索“秒通”，[详情](https://appgallery.huawei.com/app/detail?id=com.hytch.mutone.hm.company)
+
+**招标采购导航网：** 一个专业的招投标信息综合服务平台，鸿蒙应用市场搜索“招标采购导航网”，[详情](https://appgallery.huawei.com/app/detail?id=hm.okcis.zbcgdhw)
+
+**感控工作间：** 为医疗机构专门提供的医院感染管理移动工作间，鸿蒙应用市场搜索“感控工作间”，[详情](https://appgallery.huawei.com/app/detail?id=com.deya.huawei)
+
+**仁禾中衡：** 一个将特定流程与日常事务关联的公司 OA 系统，鸿蒙应用市场搜索“仁禾中衡”，[详情](https://appgallery.huawei.com/app/detail?id=renhe.demo.test)
+
+**库管大师：** 一个手机就能管的仓库存存管理系统，鸿蒙应用市场搜索“库管大师”，[详情](https://appgallery.huawei.com/app/detail?id=com.jky.kgds)
+
+**首都疫苗服务：** 北京市为预防接种服务对象倾心打造的一款移动应用服务平台，鸿蒙应用市场搜索“首都疫苗服务”，[详情](https://appgallery.huawei.com/app/detail?id=com.app.sdymfw)
+
+**旦春：** 一款连接茶艺师与实体门店的APP，鸿蒙应用市场搜索“旦春”，[详情](https://appgallery.huawei.com/app/detail?id=com.danchunchaye.tea.hmos)
+
+**海旅免税会员购：** 海旅免税旗下的大型旅游零售会员店，鸿蒙应用市场搜索“海旅免税会员购”，[详情](https://appgallery.huawei.com/app/detail?id=com.hltmsp.s)
+
+**宏扬网校：** 自考用户首选的自考学历提升学习APP，鸿蒙应用市场搜索“宏扬网校”，[详情](https://appgallery.huawei.com/app/detail?id=com.hongcai.study)
+
+**办案大全：** 一款免费法律大全的APP，鸿蒙应用市场搜索“办案大全”，[详情](https://appgallery.huawei.com/app/detail?id=com.badq.huawei)
+
+**成绩一百：** 一款涵盖成绩记录，成绩图表分析，成绩拍照留档等功能的APP，鸿蒙应用市场搜索“成绩一百”，[详情](https://appgallery.huawei.com/app/detail?id=chengji100.com.www)
+
+**小麦排队通：** 一款通过手机APP取号、叫号机制确保排队公平性的APP，鸿蒙应用市场搜索“小麦排队通”，[详情](https://appgallery.huawei.com/app/detail?id=com.xiaomaicard.pdthm)
+
 **塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
 
 **多点计算器：** 一款功能强大的计算器，支持科学计算、BMI指数计算、体脂率计算等，鸿蒙元服务，鸿蒙应用市场搜索“多点计算器”

@@ -238,7 +238,7 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **财鸽记账：** 全功能免费多账本记账工具，鸿蒙应用市场搜索“财鸽记账”，[详情](https://appgallery.huawei.com/app/detail?id=com.caigee.app)
 
-**0663批发网：** 揭阳军埔批发市场服装货源展示平台，鸿蒙应用市场搜索“0663批发网”，[详情](https://appgallery.huawei.com/app/detail?id=com.jp0663.m)
+**0663批发网：** 一个专注于服装批发的电子商务平台，鸿蒙应用市场搜索“0663批发网”，[详情](https://appgallery.huawei.com/app/detail?id=com.jp0663.www)
 
 **律图法律咨询：** 律师免费在线咨询，司法案件诉讼委托服务，鸿蒙应用市场搜索“律图法律咨询”，[详情](https://appgallery.huawei.com/app/detail?id=com.lvtu.user.hm)
 
@@ -292,7 +292,7 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **风智子：** 一款设备全、信息透、服务优的风电主吊设备租赁一站式APP ，鸿蒙应用市场搜索“风智子”，[详情](https://appgallery.huawei.com/app/detail?id=fzzhm.sdqzu.com)
 
-**网单云：** 一款可同步多平台订单、比价配送、打印、统一回客服消息的APP ，鸿蒙应用市场搜索“瀚宁易企用车”，[详情](https://appgallery.huawei.com/app/detail?id=com.zhuandanbao.wdy)
+**网单云：** 一款可同步多平台订单、比价配送、打印、统一回客服消息的APP ，鸿蒙应用市场搜索“网单云”，[详情](https://appgallery.huawei.com/app/detail?id=com.zhuandanbao.wdy)
 
 **太原防汛通：** 一款用于汛期应急救援及快速响应联动指挥中心的APP ，鸿蒙应用市场搜索“太原防汛通”，[详情](https://appgallery.huawei.com/app/detail?id=topevery.tyfxt.com)
 
@@ -456,8 +456,6 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **小麦库存通：** 一个助管理者查看库存、支持盘点的库存管理系统，鸿蒙应用市场搜索“小麦库存通”，[详情](https://appgallery.huawei.com/app/detail?id=com.xiaomaicard.kcthm)
 
-**办案大全：** 一款免费法律大全的APP，鸿蒙应用市场搜索“办案大全”，[详情](https://appgallery.huawei.com/app/detail?id=com.badq.huawei)
-
 **厦门人才网：** 厦门市人才服务中心推出的专业求职软件，提供职位查询、简历投递等多种服务，助力求职招聘，鸿蒙应用市场搜索“厦门人才网”，[详情](https://appgallery.huawei.com/app/detail?id=cn.com.xmrc.hm)
 
 **买商标：** 一个集商标注册、买卖、查询、转让等服务于一体的专业平台，鸿蒙应用市场搜索“买商标”，[详情](https://appgallery.huawei.com/app/detail?id=com.trademarkbuy.huawei)
@@ -547,8 +545,6 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 **ToDo目标：** 一款助力目标管理，含番茄计时等功能的ToDo目标APP，鸿蒙应用市场搜索“ToDo目标”，[详情](https://appgallery.huawei.com/app/detail?id=uni.UNIE10F3E5.a)
 
 **联通爱听：** 超海量超好看听书神器，鸿蒙应用市场搜索“联通爱听”，[详情](https://appgallery.huawei.com/app/detail?id=harmonyWoread.huaiwei.com)
-
-**0663批发网：** 一个专注于服装批发的电子商务平台，鸿蒙应用市场搜索“0663批发网”，[详情](https://appgallery.huawei.com/app/detail?id=com.jp0663.www)
 
 **羊驼PTE：** 为用户提供全面的备考练习材料与AI智能测评的一站式练习平台，鸿蒙应用市场搜索“羊驼PTE”，[详情](https://appgallery.huawei.com/app/detail?id=com.beatpte.alpacapte)
 

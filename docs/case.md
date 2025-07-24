@@ -202,6 +202,8 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **青蓝家园教师端：** 家长和老师实名认证的互动平台，鸿蒙应用市场搜索“青蓝家园”，[详情](https://appgallery.huawei.com/app/detail?id=com.qinglanjiayuan.teacher.huawei)
 
+**青蓝家园家长端：** 一款供家长和老师实名认证互动，含学生成长档案及学校教学管理系统的平台，鸿蒙应用市场搜索“青蓝家园”，[详情](https://appgallery.huawei.com/app/detail?id=com.qinglanjiayuan.parent.huawei)
+
 **轻糖：** 附件交友通常约会软件，鸿蒙应用市场搜索“轻糖”，[详情](https://appgallery.huawei.com/app/detail?id=com.qingtangapp.huawei)
 
 **智之屋：** 一款智慧社区综合服务App，鸿蒙应用市场搜索“智之屋”，[详情](https://appgallery.huawei.com/app/detail?id=com.zzwtec.smarthouse)
@@ -486,6 +488,52 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 **比分脉冲：** 一个基于ai解析的足球分析平台，鸿蒙应用市场搜索“比分脉冲”，[详情](https://appgallery.huawei.com/app/detail?id=cn.net.zxcc.scorepulse.hos)
 
 **百川超级学霸：** 一款全方位服务考证学习的手机应用，鸿蒙应用市场搜索“百川超级学霸”，[详情](https://appgallery.huawei.com/app/detail?id=com.bc.xueba)
+
+**话机学堂：** 一款融合视频真人检测机制、为3C零售企业提供员工在线训练与测评的APP，鸿蒙应用市场搜索“话机学堂”，[详情](https://appgallery.huawei.com/app/detail?id=com.hjsj.hjsjpos)
+
+**雅方咨询：** 一家专注于研究、指导、咨询、培训家庭教育于一体的专业教育机构，鸿蒙应用市场搜索“雅方咨询”，[详情](https://appgallery.huawei.com/app/detail?id=com.yafangwanhui.hongmeng)
+
+**掌上湘窖：** 一个供业务员移动访销，支持客户管理与订单处理的系统，鸿蒙应用市场搜索“掌上湘窖”，[详情](https://appgallery.huawei.com/app/detail?id=com.vats.zsxj)
+
+**陪玩派对：** 一个专注于游戏社交与情感陪伴的创新陪玩平台，鸿蒙应用市场搜索“陪玩派对”，[详情](https://appgallery.huawei.com/app/detail?id=com.moyin.peiwanpaidui.hmos)
+
+**千年游戏盒子：** 一个集多款精美千年游戏的玩家交流平台，鸿蒙应用市场搜索“千年游戏盒子”，[详情](https://appgallery.huawei.com/app/detail?id=com.box.qiannian)
+
+**交通运输共享平台：** 一个融合多技术的运输管理系统，以全流程数字化实现高效运输管理，鸿蒙应用市场搜索“交通运输共享平台”，[详情](https://appgallery.huawei.com/app/detail?id=com.example.transportZhrj)
+
+**题小小作文批改：** 一个专业作文批改平台，鸿蒙应用市场搜索“题小小作文批改”，[详情](https://appgallery.huawei.com/app/detail?id=com.tixiaoxiao.zuowen.app)
+
+**我的溧阳：** 溧阳市融媒体中心运营的智慧城市创新运用平台，溧阳本地信息惠民的公共服务平台，鸿蒙应用市场搜索“我的溧阳”，[详情](https://appgallery.huawei.com/app/detail?id=com.myliyang.city)
+
+**货运拍档配送版：** 为供应商和经销商提供高效的物流方案，鸿蒙应用市场搜索“货运拍档配送版”，[详情](https://appgallery.huawei.com/app/detail?id=com.hebg3.tms_location)
+
+**数字减灾：** 一个连接政府、企业与公众的资源协调与信息交互机制，覆盖灾前中后，协调资源信息的工作平台，鸿蒙应用市场搜索“数字减灾”，[详情](https://appgallery.huawei.com/app/detail?id=com.szfzjz.cn.hm)
+
+**PP体育：** 服务全体球迷的互联网体育平台，提供全时段资讯，鸿蒙应用市场搜索“PP体育”，[详情](https://appgallery.huawei.com/app/detail?id=com.pplive.hongmengapp)
+
+**风铃天气3.0：** 一个服务决策用户与专业人员的决策气象平台，鸿蒙应用市场搜索“风铃天气3.0”，[详情](https://appgallery.huawei.com/app/detail?id=com.sqxt.fengling)
+
+**货满满货主端：** 一款用于运输物流、寻找货源、发布车源信息的综合物流服务软件，鸿蒙应用市场搜索“货满满货主端”，[详情](https://appgallery.huawei.com/app/detail?id=uni.app.UNI9D65CFA)
+
+**批菜网：** 一个以生鲜食材配送为主的专业移动应用商城，专业的B2B及B2C模商业模式，鸿蒙应用市场搜索“批菜网”，[详情](https://appgallery.huawei.com/app/detail?id=com.jmlide.ywshop1)
+
+**信用中国：** 一款提供信用查询、报告下载核验的信用中国APP，鸿蒙应用市场搜索“信用中国”，[详情](https://appgallery.huawei.com/app/detail?id=com.digitalgd.creditchina)
+
+**云医签：** 一款供移动终端，提供数字证书等服务的APP，鸿蒙应用市场搜索“云医签”，[详情](https://appgallery.huawei.com/app/detail?id=com.custle.hmyunyiqian)
+
+**荣装网商户端：** 一个改造家装产业链，实现消费者利益最大化的平台，鸿蒙应用市场搜索“荣装网商户端”，[详情](https://appgallery.huawei.com/app/detail?id=com.rongzw.hmbusiness)
+
+**蓝靛之陆：** 一个售卖蓝靛果饮品及衍生品的自营商城，鸿蒙应用市场搜索“蓝靛之陆”，[详情](https://appgallery.huawei.com/app/detail?id=com.lddl.app)
+
+**伊鸣科技：** 一款专业流量管理，支持支付与客服的工具，鸿蒙应用市场搜索“伊鸣科技”，[详情](https://appgallery.huawei.com/app/detail?id=com.yimingkeji.app)
+
+**111医药馆：** 一个提供24h在线家庭医生与送药的平台，鸿蒙应用市场搜索“111医药馆”，[详情](https://appgallery.huawei.com/app/detail?id=com.harmonys.yiyaoguan111)
+
+**魔方后勤：** 一套集信息化、智能化于一体的后勤管理综合管理平台，鸿蒙应用市场搜索“魔方后勤”，[详情](https://appgallery.huawei.com/app/detail?id=com.forchange.ilogistics)
+
+**创云书园：** 一个综合性的培训管理和移动学习平台，鸿蒙应用市场搜索“创云书园”，[详情](https://appgallery.huawei.com/app/detail?id=com.capitalgroup.learning.hm.pro)
+
+**砼赢家APP：** 一个配合砼鑫ERP PC版的搅拌站人员使用系统，鸿蒙应用市场搜索“砼赢家”，[详情](https://appgallery.huawei.com/app/detail?id=com.hntxrj.spterp)
 
 **塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
 

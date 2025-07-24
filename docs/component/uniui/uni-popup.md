@@ -113,7 +113,7 @@ export default {
 |is-mask-click **[1.7.4新增]**|Boolean|true|蒙版点击是否关闭弹窗|
 |mask-background-color **[1.7.4新增]**|rgba|rgba(0,0,0,0.4)|蒙版颜色，建议使用 rgba 颜色值|
 |background-color|String|'none'|主窗口背景色|
-|borderRadius|String|无| 设置圆角(左上、右上、右下和左下) 示例:"10px 10px 10px 10px"|
+|borderRadius|String|-| 设置圆角(左上、右上、右下和左下) 示例:"10px 10px 10px 10px"|
 |safe-area|Boolean|true|是否适配底部安全区|
 
 #### Type Options

@@ -451,6 +451,42 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **小麦排队通：** 一款通过手机APP取号、叫号机制确保排队公平性的APP，鸿蒙应用市场搜索“小麦排队通”，[详情](https://appgallery.huawei.com/app/detail?id=com.xiaomaicard.pdthm)
 
+**办案大全：** 一款免费法律大全的APP，鸿蒙应用市场搜索“办案大全”，[详情](https://appgallery.huawei.com/app/detail?id=com.badq.huawei)
+
+**厦门人才网：** 厦门市人才服务中心推出的专业求职软件，提供职位查询、简历投递等多种服务，助力求职招聘，鸿蒙应用市场搜索“厦门人才网”，[详情](https://appgallery.huawei.com/app/detail?id=cn.com.xmrc.hm)
+
+**买商标：** 一个集商标注册、买卖、查询、转让等服务于一体的专业平台，鸿蒙应用市场搜索“买商标”，[详情](https://appgallery.huawei.com/app/detail?id=com.trademarkbuy.huawei)
+
+**乳链惠渠道版：** 伊利产业链金融业务数字化平台渠道端，鸿蒙应用市场搜索“乳链惠渠道版”，[详情](https://appgallery.huawei.com/app/detail?id=com.yili.rlhqdapp)
+
+**云查车：** 一款集司机端，管理端于一体的应用，随时掌握自身位置与车辆状态，鸿蒙应用市场搜索“云查车”，[详情](https://appgallery.huawei.com/app/detail?id=com.example.cloudCar)
+
+**龙大夫国药堂：** 龙大夫 APP 是国医大师背书的普惠药房，提供一站式中医健康管理与中药调理服务，鸿蒙应用市场搜索“龙大夫国药堂”，[详情](https://appgallery.huawei.com/app/detail?id=com.dst111.drlong)
+
+**银企通：** 一款用于用户核对账户的APP，鸿蒙应用市场搜索“银企通”，[详情](https://appgallery.huawei.com/app/detail?id=io.dcloud.H51D6B84A)
+
+**智慧浩翔：** 一款高效协作的办公系统，鸿蒙应用市场搜索“智慧浩翔”，[详情](https://appgallery.huawei.com/app/detail?id=com.hx.wisdomhaoxiang)
+
+**梅花智能：** 一款通过智能锁互联，支持多方式开锁，守护家门安全便捷的APP，鸿蒙应用市场搜索“梅花智能”，[详情](https://appgallery.huawei.com/app/detail?id=com.meihua.harmonyblossomlock)
+
+**天翼云办公：** 一款面向党政机关、企事业单位等客户提供XC化融合型办公服务的平台，鸿蒙应用市场搜索“天翼云办公”，[详情](https://appgallery.huawei.com/app/detail?id=com.zdww.oayun)
+
+**智能电瓶断电开关：** 一款搭配固定硬件，通过蓝牙来控制电瓶断电开关的APP，鸿蒙应用市场搜索“智能电瓶断电开关”，[详情](https://appgallery.huawei.com/app/detail?id=com.rieiek.carswitch)
+
+**互站：** 知名数字资产交易平台，提供源码等交易及安全保障，可随时管理交易，鸿蒙应用市场搜索“互站”，[详情](https://appgallery.huawei.com/app/detail?id=com.huzhan.app)
+
+**医患服务平台：** 患者端，一个供患者订餐、查就诊记录等的医患服务平台，鸿蒙应用市场搜索“医患服务平台”，[详情](https://appgallery.huawei.com/app/detail?id=com.nethospital.hz)
+
+**医患综合服务平台：** 医生端，一款可查病历、就诊记录，编辑资料订餐的平台。鸿蒙应用市场搜索“医患综合服务平台”，[详情](https://appgallery.huawei.com/app/detail?id=com.nethospital.ys)
+
+**新生代：** 一款高效的业务管理系统，旨在简化业务流程，提高团队协作效率，鸿蒙应用市场搜索“新生代”，[详情](https://appgallery.huawei.com/app/detail?id=com.xsdHarmony.pro)
+
+**智渔投喂管家：** 一款集投喂、检测设备及数字服务于一体的APP，鸿蒙应用市场搜索“智渔投喂管家”，[详情](https://appgallery.huawei.com/app/detail?id=com.sft.tej)
+
+**比分脉冲：** 一个基于ai解析的足球分析平台，鸿蒙应用市场搜索“比分脉冲”，[详情](https://appgallery.huawei.com/app/detail?id=cn.net.zxcc.scorepulse.hos)
+
+**百川超级学霸：** 一款全方位服务考证学习的手机应用，鸿蒙应用市场搜索“百川超级学霸”，[详情](https://appgallery.huawei.com/app/detail?id=com.bc.xueba)
+
 **塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
 
 **多点计算器：** 一款功能强大的计算器，支持科学计算、BMI指数计算、体脂率计算等，鸿蒙元服务，鸿蒙应用市场搜索“多点计算器”

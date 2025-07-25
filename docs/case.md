@@ -568,7 +568,37 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **天马平台：** 一个集一站式工业品采购、冗余库存共享消纳、全球核电供应链平台于一体的工业品在线采购服务平台，鸿蒙应用市场搜索“天马平台”，[详情](https://appgallery.huawei.com/app/detail?id=com.qwharmony.tianma)
 
-**抖素材：** 原创视频剪辑带货素材智能成片神器，鸿蒙应用市场搜索“抖素材”，[详情](https://appgallery.huawei.com/app/detail?id=com.yddj.dousc.hos)
+**抖素材：** 原创视频剪辑带货素材智能成片神器，鸿蒙应用市场搜索“抖素材”，[详情](https://appgallery.huawei.com/app/detail?id=com.weiq.influencer.hm)
+
+**WeiQ自媒体：** 为自媒体量身打造提供专业大数据服务与分析评估的平台，鸿蒙应用市场搜索“WeiQ自媒体”，[详情](https://appgallery.huawei.com/app/detail?id=com.yddj.dousc.hos)
+
+**农商云办公：** 移动办公，鸿蒙应用市场搜索“农商云办公”，[详情](https://appgallery.huawei.com/app/detail?id=com.cdrcb.oa)
+
+**鸭题库：** 一款多门类移动智能学习平台，涵盖医护类、建筑类、财经类、专升本、教资类、金融类等数十种职业培训课程，鸿蒙应用市场搜索“鸭题库”，[详情](https://appgallery.huawei.com/app/detail?id=com.youxuedianzi.yatikuHarmonyApp)
+
+**思联三维看图：** 一款轻量化手机看图纸、分享图纸、团队协同办公的轻量化CAD三维模型APP，鸿蒙应用市场搜索“思联三维看图”，[详情](https://appgallery.huawei.com/app/detail?id=com.dgt.wis3d.huawei)
+
+**科学选股：** 一款基于人工智能与大数据的股票投资分析工具，鸿蒙应用市场搜索“科学选股”，[详情](https://appgallery.huawei.com/app/detail?id=com.kexuexuanguprod.stock)
+
+**房产俱乐部：** 一款可查看动态、聊天赠礼的房产俱乐部APP，鸿蒙应用市场搜索“房产俱乐部”，[详情](https://appgallery.huawei.com/app/detail?id=com.huifubao.fangchanclub)
+
+**开发票助手：** 一款保存查看发票信息、支持扫码识别的工具，鸿蒙应用市场搜索“开发票助手”，[详情](https://appgallery.huawei.com/app/detail?id=io.assitant.invoice)
+
+**资证通：** 一款快速精准的企业信息查询工具，鸿蒙应用市场搜索“资证通”，[详情](https://appgallery.huawei.com/app/detail?id=uzztong.huawei.com)
+
+**爱占星：** 一款集星座运势、星盘分析及多样占星功能于一体的软件，鸿蒙应用市场搜索“爱占星”，[详情](https://appgallery.huawei.com/app/detail?id=com.leo.astro.hm)
+
+**顺络家园：** 一款服务顺络园区生活的智慧APP，鸿蒙应用市场搜索“顺络家园”，[详情](https://appgallery.huawei.com/app/detail?id=com.tce.shunluo)
+
+**华西证券益理财：** 一款由华西证券股份有限公司打造的轻量化投资策略交易工具，鸿蒙应用市场搜索“华西证券益理财”，[详情](https://appgallery.huawei.com/app/detail?id=com.hx.mall.hm)
+
+**摩耶上门按摩：** 一个专注于上门服务领域的线上按摩品牌，24小时O2O上门按摩服务平台，鸿蒙应用市场搜索“摩耶上门按摩”，[详情](https://appgallery.huawei.com/app/detail?id=com.moyeuser.hw)
+
+**亿企查：** 全国免费的一站式企业信息查询平台，鸿蒙应用市场搜索“亿企查”，[详情](https://appgallery.huawei.com/app/detail?id=com.yiqicha.hm)
+
+**欧气喵一番赏：** 模玩手办盲盒购物平台，鸿蒙应用市场搜索“欧气喵一番赏”，[详情](https://appgallery.huawei.com/app/detail?id=com.wewezen.ouqimiao)
+
+**工程经济管理信息系统：** 一款助客户查看项目进度，提升协作透明度的应用，鸿蒙应用市场搜索“工程经济管理信息系统”，[详情](https://appgallery.huawei.com/app/detail?id=com.subei.crtg_hm)
 
 **塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
 

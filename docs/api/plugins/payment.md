@@ -60,7 +60,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 3. 抖音小程序的 orderInfo 为 Object 类型，详见：[发起头条支付](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/pay/tt-pay/)
 4. App端，支付宝支付 orderInfo 为 String 类型。
 5. App端，Android和iOS系统，微信支付 orderInfo 为 Object 类型。
-6. App端，鸿蒙系统（HarmonyOS Next），微信支付 orderInfo 为 String 类型。
+6. App端，鸿蒙系统（HarmonyOS Next），微信支付 orderInfo 为 String 类型，即需要执行 `JSON.stringify(orderInfo)`
 7. App端，苹果应用内支付 orderInfo 为Object 类型，{productid: 'productid'}。
 
 ## H5 平台@h5-payment

@@ -600,6 +600,18 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **工程经济管理信息系统：** 一款助客户查看项目进度，提升协作透明度的应用，鸿蒙应用市场搜索“工程经济管理信息系统”，[详情](https://appgallery.huawei.com/app/detail?id=com.subei.crtg_hm)
 
+**金色年华：** 一款聚合校内服务、方便师生的金色年华APP，鸿蒙应用市场搜索“金色年华”，[详情](https://appgallery.huawei.com/app/detail?id=cn.jhc.goldenAgeh)
+
+**账王业财：** 企业经营账财务管理软件，鸿蒙应用市场搜索“账王业财”，[详情](https://appgallery.huawei.com/app/detail?id=cn.cash360.lionhm)
+
+**舆情秘书专业版：** 提供互联网舆情监测的大数据平台，鸿蒙应用市场搜索“舆情秘书专业版”，[详情](https://appgallery.huawei.com/app/detail?id=com.istarshine.yqms4harmonyos)
+
+**动泳：** 一个整合多模块、保障数据安全的企业办公解决方案APP，鸿蒙应用市场搜索“动泳”，[详情](https://appgallery.huawei.com/app/detail?id=com.shangshuipool.dongyonghm)
+
+**我要查快递：** 一个可查天气、快递和生肖信息的工具，鸿蒙应用市场搜索“我要查快递”，[详情](https://appgallery.huawei.com/app/detail?id=com.youjuda.woyaochakuaidi)
+
+**蘑力色彩：** 一款助力穿衣搭配、提升衣品的配色利器，鸿蒙应用市场搜索“蘑力色彩”，[详情](https://appgallery.huawei.com/app/detail?id=tech.honki.mlsc)
+
 **塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
 
 **多点计算器：** 一款功能强大的计算器，支持科学计算、BMI指数计算、体脂率计算等，鸿蒙元服务，鸿蒙应用市场搜索“多点计算器”

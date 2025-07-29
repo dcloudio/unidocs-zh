@@ -129,6 +129,8 @@
   * [内置模块说明](harmony/built-in-module.md)
   * [鸿蒙案例](https://uniapp.dcloud.net.cn/case.html#鸿蒙next)
   * [历史变更](harmony/history.md)
+	* 其它配置
+    * [鸿蒙配置 URL Scheme](harmony/url-scheme.md)
 * [鸿蒙元服务专题](mp-harmony/intro.md)
 * 小程序专题
   * [组件与WXS](miniprogram-subject.md)

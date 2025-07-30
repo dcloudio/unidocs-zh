@@ -261,7 +261,7 @@ uni-app可以将wxs代码编译到微信小程序、QQ小程序、app-vue、H5�
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√(不支持nvue)|√|√|SJS|Filter|x|√|
+|√(不支持nvue)|√|√|SJS|Filter|SJS|√|
 
 App端nvue解决此类需求，不应该使用wxs，而是使用bindingx。
 

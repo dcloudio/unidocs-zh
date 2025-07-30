@@ -36,7 +36,7 @@ usb和线的问题，可以通过交叉验证来排查具体的问题。
 
 Android11起支持无线adb，可不插线进行开发调试，插件市场有三方插件可用，[详见](https://ext.dcloud.net.cn/search?q=%E6%97%A0%E7%BA%BFadb&orderBy=Relevance&cat1=1)
 
-老版的windows需要安装手机驱动。如果拒绝安装驱动，也无法检测到手机。安装`驱动精灵`或`360、腾讯的各种手机助手`或[华为手机助手](https://consumer.huawei.com/cn/support/content/zh-cn00731203/?ivk_sa=1024320u)可解决驱动安装问题。
+老版的windows需要安装手机驱动。如果拒绝安装驱动，也无法检测到手机。安装`驱动精灵`或`360、腾讯的各种手机助手`或[华为手机助手](https://consumer.huawei.com/cn/support/content/zh-cn00731203/?ivk_sa=1024320u?ha_source=Dcloud&ha_sourceId=89000448)可解决驱动安装问题。
 
 如果在启动HBuilderX后才安装驱动连接上手机，可能需要重启HBuilderX。
 

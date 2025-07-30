@@ -399,7 +399,7 @@ DCloud为开发者争取了福利，可优惠获取商业授权。如有需求�
 
 鸿蒙应用可免费使用鸿蒙系统提供的地图服务。开通方式如下：
 
-- 登录 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) 选择开发与服务 - 选择应用 - 项目设置 - API 管理 - 开启地图服务
+- 登录 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html?ha_source=Dcloud&ha_sourceId=89000448) 选择开发与服务 - 选择应用 - 项目设置 - API 管理 - 开启地图服务
 - 下载并导入 [鸿蒙花瓣地图插件](https://ext.dcloud.net.cn/plugin?id=23082)，参考文档完成接入。
 
 也可阅读插件文档中提到的 [UTS 插件开放文档](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)、[uni-app 中嵌入鸿蒙原生组件](https://uniapp.dcloud.net.cn/tutorial/harmony/native-component.html)，参考插件逻辑自行完成能力封装。

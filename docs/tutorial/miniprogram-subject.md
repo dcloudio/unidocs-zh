@@ -35,7 +35,7 @@
 - [QQ小程序自定义组件](https://q.qq.com/wiki/develop/miniprogram/frame/diy_components/)
 - [快手小程序自定义组件](https://mp.kuaishou.com/docs/develop/frame/custom_comp/component_temp_style.html)
 - [京东小程序自定义组件](https://mp-docs.jd.com/framework/customcomponent/)
-- [鸿蒙元服务自定义组件](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/custom-components)
+- [鸿蒙元服务自定义组件](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/custom-components?ha_source=Dcloud&ha_sourceId=89000448)
 
 **目录结构**
 

@@ -202,7 +202,7 @@ manager.setPushChannel({
 |delay		|number					|否		|提示消息延迟显示的时间</br>当设备接收到推送消息后，可不立即显示，而是延迟一段时间显示，延迟时间单位为s，默认为0s，立即显示。</br>Harmony - ALL (不支持)																																																																																																																																							|
 |when			|Date						|否		|消息上显示的提示时间</br>默认为当前时间，如果延迟显示则使用延时后显示消息的时间。</br>Android (支持)</br>iOS - 5.0+ 和 Harmony - ALL (不支持): 不支持设定消息的显示时间，由系统自动管理消息的创建时间。																																																																																																									|
 |channelId|string					|否		|渠道id， 支持的版本：HBuilder X 4.02+	，Harmony - ALL (不支持)																																																																																																																																																																									|
-|category	|string					|否		|通知类别，支持的版本：HBuilder X 4.02+	，Harmony支持的category值[详情查看](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/notification-slot-V5#通知渠道类型说明)																																																																																																																																																																									|
+|category	|string					|否		|通知类别，支持的版本：HBuilder X 4.02+	，Harmony支持的category值[详情查看](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/notification-slot-V5#通知渠道类型说明?ha_source=Dcloud&ha_sourceId=89000448)																																																																																																																																																																									|
 |success	|Function				|否		|接口调用成功的回调函数																																																																																																																																																																																		|
 |fail			|Function				|否		|接口调用失败的回调函数																																																																																																																																																																																		|
 |complete	|Function				|否		|接口调用结束的回调函数（调用成功、失败都会执行）																																																																																																																																																																							|
@@ -240,6 +240,6 @@ manager.setPushChannel({
 
 QQ小程序订阅消息文档：[https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open_message.html#%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF](https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open_message.html#%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF)
 
-华为快应用推送文档：[https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwpush](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwpush)
+华为快应用推送文档：[https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwpush](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwpush?ha_source=Dcloud&ha_sourceId=89000448)
 
 ## 服务端API [详情参考](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/api)

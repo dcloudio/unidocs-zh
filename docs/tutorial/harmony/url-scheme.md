@@ -29,11 +29,11 @@
 - Deep Linking 类似 URL Scheme ，自定义 uri
 - App Linking 类似 Universal Links，在华为 AGC 后台认证域名
 
-可参考鸿蒙文档 [鸿蒙应用间跳转](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inter-app-redirection)
+可参考鸿蒙文档 [鸿蒙应用间跳转](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inter-app-redirection?ha_source=Dcloud&ha_sourceId=89000448)
 
 ### Deep Linking 方案
 
-官方文档地址《[使用 Deep Linking 实现应用间跳转](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/deep-linking-startup)》
+官方文档地址《[使用 Deep Linking 实现应用间跳转](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/deep-linking-startup?ha_source=Dcloud&ha_sourceId=89000448)》
 
 使用 Deep Linking 方案，需要 1 个步骤
 
@@ -80,13 +80,13 @@
 
 ### App Linking 方案
 
-官方文档 [使用 App Linking 实现应用间跳转](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-linking-startup)
+官方文档 [使用 App Linking 实现应用间跳转](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-linking-startup?ha_source=Dcloud&ha_sourceId=89000448)
 
 这种方案可以实现二维码扫码直达、点击链接直接唤起应用。有验证机制，不会其其他应用仿冒，比较安全。
 
 使用 App Linking 方案需要 4 个步骤
 
-1. 开通功能关联应用。访问 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) - 开发与服务 - 增长 - App Linking， 开启 App Linking 功能
+1. 开通功能关联应用。访问 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html?ha_source=Dcloud&ha_sourceId=89000448) - 开发与服务 - 增长 - App Linking， 开启 App Linking 功能
 
 2. 在落地页的域名根目录创建 `/.well-known/applinking.json`，内部填写应用 AppID，结构可以参考 [https://uniapp.dcloud.net.cn/.well-known/applinking.json](https://uniapp.dcloud.net.cn/.well-known/applinking.json) 保证你的落地页域名可以访问该路径。
 
@@ -122,7 +122,7 @@
 - `entities`/ `actions`/ `domainVerify` 字段为固定写法，必填，不可更改
 - uris 追加新字段，注意此处的 `Scheme:https` 为固定写法，不可更改
 - host 字段为 applinking.json 所在的域名，必须和后台一致
-- patStartWith 字段为指定路径，可选的还有 path 字段，可进一步参考 [uris 标签说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-uri-config#uris%E6%A0%87%E7%AD%BE%E8%AF%B4%E6%98%8E)
+- patStartWith 字段为指定路径，可选的还有 path 字段，可进一步参考 [uris 标签说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-uri-config#uris%E6%A0%87%E7%AD%BE%E8%AF%B4%E6%98%8E?ha_source=Dcloud&ha_sourceId=89000448)
 
 通过上面设置，当用户直接访问对应的 url 时候会直接唤起应用。如果用户未安装会停留在当前页面。如果用户已经在访问相同 host 的网页，应用不会主动唤起不会干扰用户的正常访问。
 

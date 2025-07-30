@@ -212,12 +212,12 @@ HBuilderX 还提供了快捷运行菜单，可以按数字快速选择要运行�
 
 
 **发布为快应用(webview) - 华为：**
-1. 入驻华为快应用，参考：[华为快应用教程](https://developer.huawei.com/consumer/cn/quickApp)。
+1. 入驻华为快应用，参考：[华为快应用教程](https://developer.huawei.com/consumer/cn/quickApp?ha_source=Dcloud&ha_sourceId=89000448)。
 2. 在HBuilderX中顶部菜单依次点击 "发行" => "快应用-华为"，即可在 ``/unpackage/dist/build/quickapp-webview`` 生成华为快应用项目代码。
 <div align=center>
-  <img src="![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-run-release-quickapp-webview-huawei.png)g"/>
+  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-run-release-quickapp-webview-huawei.png"/>
 </div>
-3. 在华为开发者工具中，导入生成的华为快应用项目，测试项目代码运行正常后，点击”构建“打包正式版，在[华为快应用后台](https://developer.huawei.com/consumer/cn/quickApp)上传
+3. 在华为开发者工具中，导入生成的华为快应用项目，测试项目代码运行正常后，点击”构建“打包正式版，在 [华为快应用后台](https://developer.huawei.com/consumer/cn/quickApp?ha_source=Dcloud&ha_sourceId=89000448)上传
 
 
 **发布为QQ小程序：**
@@ -313,7 +313,7 @@ HBuilderX 2.7.12+ 版支持
 #### 运行并发布快应用(webview)-华为@quickapp-webview-huawei
 HBuilderX 2.7.10+ 版支持
 
-华为快应用文档-小程序转快应用 [https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure)
+华为快应用文档-小程序转快应用 [https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure?ha_source=Dcloud&ha_sourceId=89000448)
 
 
 **其他：**

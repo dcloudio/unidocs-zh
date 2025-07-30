@@ -119,7 +119,7 @@ HBuilderX 2.7.12+ 版支持
 #### 运行并发布快应用(webview)-华为@quickapp-webview-huawei
 HBuilderX 2.7.10+ 版支持
 
-华为快应用文档-小程序转快应用 [https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure)
+华为快应用文档-小程序转快应用 [https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure?ha_source=Dcloud&ha_sourceId=89000448)
 
 
 **其他：**

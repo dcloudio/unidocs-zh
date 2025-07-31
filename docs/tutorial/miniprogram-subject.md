@@ -24,6 +24,7 @@
 |快手小程序|支持快手小程序组件|kscomponents|
 |京东小程序|支持京东小程序组件|jdcomponents|
 |鸿蒙元服务|支持鸿蒙元服务组件|hascomponents|
+|小红书小程序|支持小红书小程序组件|xhscomponents|
 
 此文档要求开发者对各端小程序的**自定义组件**有一定了解，没接触过小程序**自定义组件**的可以参考：
 
@@ -36,6 +37,7 @@
 - [快手小程序自定义组件](https://mp.kuaishou.com/docs/develop/frame/custom_comp/component_temp_style.html)
 - [京东小程序自定义组件](https://mp-docs.jd.com/framework/customcomponent/)
 - [鸿蒙元服务自定义组件](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/custom-components?ha_source=Dcloud&ha_sourceId=89000448)
+- [小红书小程序自定义组件](https://miniapp.xiaohongshu.com/doc/DC838684)
 
 **目录结构**
 

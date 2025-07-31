@@ -610,6 +610,54 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **蘑力色彩：** 一款助力穿衣搭配、提升衣品的配色利器，鸿蒙应用市场搜索“蘑力色彩”，[详情](https://appgallery.huawei.com/app/detail?id=tech.honki.mlsc)
 
+**e万源：** 智慧社区业务的互联网社区综合服务平台，鸿蒙应用市场搜索“e万源”，[详情](https://appgallery.huawei.com/app/detail?id=com.ht.ewy)
+
+**SOULNEST：** 一款提供物品寄存服务的移动应用，鸿蒙应用市场搜索“SOULNEST”，[详情](https://appgallery.huawei.com/app/detail?id=com.soulnest.bd)
+
+**威博士：** 智慧环卫运营管理专家，鸿蒙应用市场搜索“威博士”，[详情](https://appgallery.huawei.com/app/detail?id=com.jwkj.wbs)
+
+**VINI：** 一款融合科技与中式美味的智能餐饮 APP，鸿蒙应用市场搜索“VINI”，[详情](https://appgallery.huawei.com/app/detail?id=com.vini.restaurant.hmos)
+
+**简单进销存库存管理：** 一款简单好用的进销存库存管理软件，鸿蒙应用市场搜索“简单进销存库存管理”，[详情](https://appgallery.huawei.com/app/detail?id=com.uafoo.jxcdisturb)
+
+**康悦到家技师端：** 一款技师接单与订单流水管理 APP，鸿蒙应用市场搜索“康悦到家技师端”，[详情](https://appgallery.huawei.com/app/detail?id=com.technician.kangyue)
+
+**有猿题：** 一款涵盖医考全科目题库的备考 APP，鸿蒙应用市场搜索“有猿题”，[详情](https://appgallery.huawei.com/app/detail?id=com.yyt.app)
+
+**易快运司机：** 一款承运商与司机的协同移动应用，鸿蒙应用市场搜索“易快运司机”，[详情](https://appgallery.huawei.com/app/detail?id=com.atomicservice.6917573650233408080)
+
+**托业听力：** 高品质TOEIC听力软件，鸿蒙应用市场搜索“托业听力”，[详情](https://appgallery.huawei.com/app/detail?id=com.iyuba.hmtoeic)
+
+**联光元和：** 一款集成企业制度与流程审批的管理 APP，鸿蒙应用市场搜索“联光元和”，[详情](https://appgallery.huawei.com/app/detail?id=com.netted.lgyh2)
+
+**美题：** 一款针对各种职业资格考试的软件，鸿蒙应用市场搜索“美题”，[详情](https://appgallery.huawei.com/app/detail?id=com.meitiapp.meitihm)
+
+**费用报销：** 为企业提供了便捷的线上报销流程，鸿蒙应用市场搜索“费用报销”，[详情](https://appgallery.huawei.com/app/detail?id=com.inhehm.baoxiao)
+
+**易绘门窗：** 一款门窗阳光房专用的简易绘图软件，鸿蒙应用市场搜索“易绘门窗”，[详情](https://appgallery.huawei.com/app/detail?id=com.gongshuokeji.ychm)
+
+**智能云仓库存管理：** 一个三屏合一的口袋式仓储管理系统，鸿蒙应用市场搜索“智能云仓库存管理”，[详情](https://appgallery.huawei.com/app/detail?id=com.loafish.ckgl)
+
+**护师刷题宝：** 提供各类职业资格证书考试题库，鸿蒙应用市场搜索“护师刷题宝”，[详情](https://appgallery.huawei.com/app/detail?id=com.weimei168.hushi)
+
+**车辆抢单平台：** 交通运输共享平台车辆抢单，鸿蒙应用市场搜索“车辆抢单平台”，[详情](https://appgallery.huawei.com/app/detail?id=com.example.qiangdanHarmonyOS)
+
+**井唐：** 一站式智能数据管理中心，鸿蒙应用市场搜索“井唐”，[详情](https://appgallery.huawei.com/app/detail?id=uni.app.UNI473102C)
+
+**点Ta：** 一款以游戏陪玩服务为核心的具备社交属性的软件，鸿蒙应用市场搜索“点Ta”，[详情](https://appgallery.huawei.com/app/detail?id=pw.z.dianta.hm)
+
+**白鲸鱼旧衣服回收：** 一站式旧物回收服务系统，鸿蒙应用市场搜索“白鲸鱼旧衣服回收”，[详情](https://appgallery.huawei.com/app/detail?id=com.bjy.app)
+
+**考狐狸：** 一款多专业免费医学类高质量题库 APP，鸿蒙应用市场搜索“考狐狸”，[详情](https://appgallery.huawei.com/app/detail?id=com.bc.kaohuli)
+
+**微胎心医师版：** 一款孕晚期远程胎心监护与 NST 系统，鸿蒙应用市场搜索“微胎心医师版”，[详情](https://appgallery.huawei.com/app/detail?id=cn.weitaixin.app.doctorhm)
+
+**BALS Pro：** 一款蓝牙连接的智慧面膜控制与报告 APP，鸿蒙应用市场搜索“BALS Pro”，[详情](https://appgallery.huawei.com/app/detail?id=hm.xinzhishengwu.com)
+
+**T+智能称重移动端：** 一款 T + 智能称重移动端记录查看统计 APP，鸿蒙应用市场搜索“T+智能称重移动端”，[详情](https://appgallery.huawei.com/app/detail?id=LX.TLDAPP.HUAWEI)
+
+**考狐狸：** 一款多专业免费医学类高质量题库 APP，鸿蒙应用市场搜索“考狐狸”，[详情](https://appgallery.huawei.com/app/detail?id=com.bc.kaohuli)
+
 **塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
 
 **多点计算器：** 一款功能强大的计算器，支持科学计算、BMI指数计算、体脂率计算等，鸿蒙元服务，鸿蒙应用市场搜索“多点计算器”

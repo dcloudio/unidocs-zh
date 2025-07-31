@@ -76,6 +76,8 @@
 
 验证效果如图所示，会在华为浏览器底部出现弹窗提示，这里的文案不可修改，点击之后可以唤起应用。
 
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/show_deep_link.gif)
+
 参数获取可滚动到 [参数解析](#argument-parse) 继续查看。
 
 ### App Linking 方案

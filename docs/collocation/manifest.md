@@ -656,6 +656,7 @@ HBuilderX 3.6.16+ 支持项目根目录(cli 项目为 src 目录)下创建配置
 |飞书|project.lark.json|
 |快手|project.ks.json|
 |京东|project.config.json|
+|小红书|project.xhs.json|
 
 ### 关于分包优化的说明
 

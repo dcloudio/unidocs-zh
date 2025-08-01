@@ -85,17 +85,17 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |currentBattery|当前电量百分比|支付宝小程序|
 |navigationBarHeight|导航栏的高度|百度小程序|
 |titleBarHeight|标题栏高度|支付宝小程序|
-|albumAuthorized	|	允许微信使用相册的开关（仅 iOS 有效）	|微信小程序|
-|cameraAuthorized	|	允许微信使用摄像头的开关	|微信小程序|
-|locationAuthorized	|	允许微信使用定位的开关	|微信小程序|
-|microphoneAuthorized	|	允许微信使用麦克风的开关	|微信小程序|
-|notificationAuthorized	|	允许微信通知的开关	|微信小程序|
+|albumAuthorized	|	允许微信使用相册的开关（仅 iOS 有效）	|微信小程序、小红书小程序|
+|cameraAuthorized	|	允许微信使用摄像头的开关	|微信小程序、小红书小程序|
+|locationAuthorized	|	允许微信使用定位的开关	|微信小程序、小红书小程序|
+|microphoneAuthorized	|	允许微信使用麦克风的开关	|微信小程序、小红书小程序|
+|notificationAuthorized	|	允许微信通知的开关	|微信小程序、小红书小程序|
 |notificationAlertAuthorized	|	允许微信通知带有提醒的开关（仅 iOS 有效）	|微信小程序|
-|notificationBadgeAuthorized	|	允许微信通知带有标记的开关（仅 iOS 有效）	|微信小程序|
-|notificationSoundAuthorized	|	允许微信通知带有声音的开关（仅 iOS 有效）	|微信小程序|
-|bluetoothEnabled	|	蓝牙的系统开关	|微信小程序、鸿蒙元服务|
-|locationEnabled	|	地理位置的系统开关	|微信小程序、鸿蒙元服务|
-|wifiEnabled	|	Wi-Fi 的系统开关	|微信小程序、鸿蒙元服务|
+|notificationBadgeAuthorized	|	允许微信通知带有标记的开关（仅 iOS 有效）	|微信小程序、小红书小程序|
+|notificationSoundAuthorized	|	允许微信通知带有声音的开关（仅 iOS 有效）	|微信小程序、小红书小程序|
+|bluetoothEnabled	|	蓝牙的系统开关	|微信小程序、鸿蒙元服务、小红书小程序|
+|locationEnabled	|	地理位置的系统开关	|微信小程序、鸿蒙元服务、小红书小程序|
+|wifiEnabled	|	Wi-Fi 的系统开关	|微信小程序、鸿蒙元服务、小红书小程序|
 |cacheLocation|上一次缓存的位置信息|百度小程序(安卓端最低基础库版本 3.40.4 ；iOS 最低支持版本 3.70.2)|
 |storage|设备磁盘容量|支付宝小程序|
 |OSApiVersion|系统 Api 版本|鸿蒙元服务|
@@ -105,18 +105,18 @@ uni-app提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的
 |参数|说明|平台差异说明|
 |:-|:-|:-|
 |pixelRatio			|设备像素比		||
-|brand|设备品牌。uni-app 3.4.10+ 后该字段为全小写，可能要做兼容处理|App、微信小程序、百度小程序、抖音小程序、飞书小程序、QQ小程序|
+|brand|设备品牌。uni-app 3.4.10+ 后该字段为全小写，可能要做兼容处理|App、微信小程序、百度小程序、抖音小程序、飞书小程序、QQ小程序、小红书小程序|
 |model|设备型号|全平台支持。Web 端部分设备无法获取具体型号|
 |system|操作系统名称及版本，如Android 10||
 |language|应用设置的语言||
 |version|引擎版本号|Web不支持|
 |platform|客户端平台，值域为：`ios`、`android`、`mac（3.1.10+）`、`windows（3.1.10+）`、`linux（3.1.10+）`||
-|host|宿主平台|百度小程序|
+|host|宿主平台|百度小程序、小红书小程序|
 |SDKVersion|客户端基础库版本|支付宝小程序和Web不支持|
 |swanNativeVersion|宿主平台版本号|百度小程序|
 |app|当前运行的客户端|支付宝小程序|
 |AppPlatform|App平台|QQ小程序|
-|fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序、抖音小程序(2.53.0+)|
+|fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序、抖音小程序(2.53.0+)、小红书小程序(Android)|
 
 
 ### uniPlatform 返回值说明 @uniplatform
@@ -270,6 +270,7 @@ uni-app 3.5.1+ 版本规范了 deviceModel 返回值，例如之前返回 `iPhon
 - [快手小程序](https://mp.kuaishou.com/docs/develop/api-next/basic/system/ks.getSystemInfoSync.html#systeminfo)
 - [京东小程序](https://mp-docs.jd.com/api/equipment/system.html)
 - [华为快应用](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-systeminfo-0000001126227753?ha_source=Dcloud&ha_sourceId=89000448)
+- [小红书小程序](https://miniapp.xiaohongshu.com/doc/DC243850)
 
 ### 示例 @getsysteminfo-new-fields
 

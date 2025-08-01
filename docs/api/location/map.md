@@ -8,9 +8,9 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|1.9.0+|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|√|√|√|1.9.0+|√|√|√|√|
 
 <!-- UNIAPPAPIJSON.createMapContext.compatibility -->
 
@@ -24,8 +24,8 @@
 |:-|:-|:-|:-|
 |getCenterLocation|OBJECT|获取当前地图中心的经纬度，返回的是 gcj02 坐标系，可以用于 [uni.openLocation](/api/location/location.md#getlocation)||
 |moveToLocation|OBJECT|将地图中心移动到当前定位点，需要配合map组件的show-location使用||
-|translateMarker|OBJECT|平移marker，带动画|app-nvue 2.1.5+、H5、微信小程序带动画、抖音、支付宝、京东、百度、QQ小程序|
-|includePoints|OBJECT|缩放视野展示所有经纬度|app-nvue 2.1.5+、微信、抖音、支付宝、京东、百度、快手、QQ小程序|
+|translateMarker|OBJECT|平移marker，带动画|app-nvue 2.1.5+、H5、微信小程序带动画、抖音、支付宝、京东、百度、QQ小程序、小红书小程序|
+|includePoints|OBJECT|缩放视野展示所有经纬度|app-nvue 2.1.5+、微信、抖音、支付宝、京东、百度、快手、QQ小程序、小红书小程序|
 |getRegion|OBJECT|获取当前地图的视野范围||
 |getRotate|OBJECT|获取当前地图的旋转角|微信、抖音、支付宝、京东、QQ小程序|
 |getScale|OBJECT|获取当前地图的缩放级别||

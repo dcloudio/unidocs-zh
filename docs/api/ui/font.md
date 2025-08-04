@@ -6,9 +6,9 @@
 
 ### 平台差异说明
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|app-vue 1.9.0+；app-uvue 3.9+|2.3.4+|基础库 2.1.0+| 1.11.0+ |x|x|x|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|app-vue 1.9.0+；app-uvue 3.9+|2.3.4+|基础库 2.1.0+| 1.11.0+ |x|x|x|√|√|
 
 <!-- UNIAPPAPIJSON.loadFontFace.compatibility -->
 
@@ -22,6 +22,7 @@ app-nvue不支持本api，而是使用 Weex 提供的 DOM.addRule 加载自定�
 |family|String||是|定义的字体名称|
 |source|String||是|字体资源的地址。见下|
 |desc|Object||否|可选的字体描述符（uni-app x 暂不支持）|
+|scopes|Array|webview|否|字体作用范围，可选值为 webview / native，默认 webview，设置 native 可在 Canvas 2D 下使用(仅在小红书小程序上生效)|
 |success|Function||否|接口调用成功的回调函数|
 |fail|Function||否|接口调用失败的回调函数|
 |complete|Function||否|接口调用结束的回调函数（调用成功、失败都会执行）|

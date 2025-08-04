@@ -63,7 +63,7 @@
 **content配置项：**
 
 |  参数|类型	| 说明|
-| :-:|  :-:| :-:| :-:|
+| :-:|  :-:| :-:|
 | iconPath| String| 图片路径|
 | selectedIconPath| String	| 选中后图片路径|
 | text| String	| 文字|

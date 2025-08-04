@@ -4,9 +4,9 @@
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|√|√|√|√|x|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|√|x|√|√|√|√|x|√|√|
 
 注意：App平台的授权判断方式，另见：[https://ext.dcloud.net.cn/plugin?id=594](https://ext.dcloud.net.cn/plugin?id=594)
 
@@ -25,7 +25,7 @@
 |---|---|---|---|
 |scope.userInfo	|[uni.getUserInfo](/api/plugins/login?id=getuserinfo)	|用户信息||
 |scope.userLocation|[uni.getLocation](/api/location/location?id=getlocation), [uni.chooseLocation](/api/location/location?id=chooselocation)	|地理位置||
-|scope.userLocationBackground|wx.userLocationBackground|后台定位|微信小程序|
+|scope.userLocationBackground|wx.userLocationBackground|后台定位|微信小程序、小红书小程序|
 |scope.address	|[uni.chooseAddress](/api/other/choose-address)	|通信地址||
 |scope.record	|[uni.getRecorderManager](/api/media/record-manager?id=getrecordermanager)	|录音功能||
 |scope.writePhotosAlbum	|[uni.saveImageToPhotosAlbum](/api/media/image?id=saveimagetophotosalbum), [uni.saveVideoToPhotosAlbum](/api/media/video?id=savevideotophotosalbum)	|保存到相册|抖音小程序的返回值是scope.album|

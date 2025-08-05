@@ -27,7 +27,7 @@
 |fgColorChecked	|String	|#FFFFFF											|已收藏时的文字颜色	|
 |circle				|Boolean|false												|是否为圆角			|
 |checked			|Boolean|false												|是否为已收藏		|
-|contentText		|Object	|```{contentDefault: '收藏',contentFav: '已收藏'}```|收藏按钮文字		|
+|contentText		|Object	|`{contentDefault: '收藏',contentFav: '已收藏'}`|收藏按钮文字		|
 
 
 ### Fav Events
@@ -83,7 +83,7 @@
 		</view>
 	</view>
 </template>
-``` 
+```
 > Script
 ``` html
 <script>
@@ -107,7 +107,7 @@
 		}
 	}
 </script>
-``` 
+```
 > Style
 ``` html
 <style lang="scss">

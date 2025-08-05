@@ -1,6 +1,6 @@
 ## getCurrentPages()
 
-```getCurrentPages()``` 函数用于获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。
+`getCurrentPages()` 函数用于获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。
 
 <!-- UNIAPPAPIJSON.getCurrentPages.compatibility -->
 
@@ -19,12 +19,12 @@
 * ``switchTab`` 只能打开 ``tabBar`` 页面。
 * ``reLaunch`` 可以打开任意页面。
 * 页面底部的 ``tabBar`` 由页面决定，即只要是定义为 ``tabBar`` 的页面，底部都有 ``tabBar``。
-* 不能在首页 ```onReady``` 之前进行页面跳转。
+* 不能在首页 `onReady` 之前进行页面跳转。
 * 使用`选项式 API` 时，不可创建 `route` 响应式变量，否则会覆盖当前 `page 实例` 的 `route` 属性。
 
 ## $getAppWebview()
 
-```uni-app``` 在 ```getCurrentPages()```获得的页面里内置了一个方法 ```$getAppWebview()``` 可以得到当前webview的对象实例，从而实现对 webview 更强大的控制。在 html5Plus 中，plus.webview具有强大的控制能力，可参考：[WebviewObject](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject)。
+`uni-app` 在 `getCurrentPages()`获得的页面里内置了一个方法 `$getAppWebview()` 可以得到当前webview的对象实例，从而实现对 webview 更强大的控制。在 html5Plus 中，plus.webview具有强大的控制能力，可参考：[WebviewObject](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject)。
 
 但`uni-app`框架有自己的窗口管理机制，请不要自己创建和销毁webview，如有需求覆盖子窗体上去，请使用[原生子窗体subNvue](/api/window/subNVues)。
 

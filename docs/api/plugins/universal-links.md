@@ -13,7 +13,7 @@
 
 ``` javascript
 Error code = -5000
-Error message: 
+Error message:
 Error: not set parameter 'UniversalLinks' @'oauth-weixin'
 ```
 
@@ -67,7 +67,7 @@ HBuilderX (3.2.0 版本起) 新增QQ互联和新浪微博开放平台的通用�
 打开QQ[开放平台](https://connect.qq.com/index.html)，在“管理中心”页面的“移动应用”下找到已经申请的应用（没有申请应用请点击“创建移动应用”新建应用），点击“查看”打开应用详情页面。
 在“开发信息”栏后点击修改，在“iOS应用”下的“Universal Links”项中配置应用的通用链接，如下图所示：
 ![](https://img-cdn-aliyun.dcloud.net.cn/client/ulink/QQ.jpeg)
-* 注意：QQ开放平台在填写时 只需要填写到host,后边的path QQ会自动生成,比如 HBuilder中一键生成 ```https://static-fa42aa5f-xxxxxxx-xxxxxxxx.bspapp.com/qq_conn/11111233333/``` 只需要填写 ```https://static-fa42aa5f-xxxxxxx-xxxxxxxx.bspapp.com/```,具体请查看 [QQ 填写及校验universallinks](https://wiki.connect.qq.com/%E5%A1%AB%E5%86%99%E5%8F%8A%E6%A0%A1%E9%AA%8Cuniversallinks)
+* 注意：QQ开放平台在填写时 只需要填写到host,后边的path QQ会自动生成,比如 HBuilder中一键生成 `https://static-fa42aa5f-xxxxxxx-xxxxxxxx.bspapp.com/qq_conn/11111233333/` 只需要填写 `https://static-fa42aa5f-xxxxxxx-xxxxxxxx.bspapp.com/`,具体请查看 [QQ 填写及校验universallinks](https://wiki.connect.qq.com/%E5%A1%AB%E5%86%99%E5%8F%8A%E6%A0%A1%E9%AA%8Cuniversallinks)
 
 #### 微博
 
@@ -92,16 +92,16 @@ HBuilderX (3.2.0 版本起) 新增QQ互联和新浪微博开放平台的通用�
 
 	在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)打开旧的服务空间 -> 前端网页托管 -> 参数配置 -> 域名信息 配置网站域名 -> 点击删除
 
-2. 绑定域名到新服务空间  
+2. 绑定域名到新服务空间
 
 	在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)打开新服务空间 -> 前端网页托管 -> 参数配置 -> 域名信息 配置网站域名 -> 添加域名(添加后CNAME的值不会马上出现，需要过一会后点击右上角的刷新按钮，直至出现) -> 解析域名
 
-3. 指定要生成通用链接的服务空间  
+3. 指定要生成通用链接的服务空间
 
 	在HBuilderX中点击项目的 manifest.json -> App模块配置 OAuth（登录鉴权）-> 微信登录（其他模块同理），点击自动生成 -> 选择“新开通的服务空间“ -> 下一步 -> 自定义域名 -> 完成
 
 4. 自动生成与部署
-	
+
 	直接提交云打包即可。注意：提交云打包，只是为了触发：“生成新的通用文件并自动部署到新服务空间”，用户的客户端无需更新。
 
 #### 客户端处理通用链接。
@@ -135,9 +135,9 @@ HBuilderX (3.2.0 版本起) 新增QQ互联和新浪微博开放平台的通用�
 你可以将通用链接输入到iphone自带Safari浏览器中，下拉即可看到通用链接对应到应用名称和一个打开按钮，点击按钮即可直接在浏览器打开对应的APP。详情：[点此查看演示视频](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91.mp4)
 
 
-3.使用微信登录、分享、支付等功能时，用户非首次调起微信，仍然出现二次跳转app  
+3.使用微信登录、分享、支付等功能时，用户非首次调起微信，仍然出现二次跳转app
 
-微信SDK要求通用链接apple-app-site-association文件中 path不能带query参数，且末尾必须添加通配符*号。如下: 
+微信SDK要求通用链接apple-app-site-association文件中 path不能带query参数，且末尾必须添加通配符*号。如下:
 
 ```
 {

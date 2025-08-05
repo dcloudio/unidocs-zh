@@ -35,7 +35,7 @@
 - 新增 `nvueStyleCompiler` 配置，支持组合选择器（相邻兄弟选择器、普通兄弟选择器、子选择器、后代选择器）。[详见](https://ask.dcloud.net.cn/article/38751)
 
 
-- nvue的```uni-app```编译模式下，App.vue 中的样式，会编译到每个 nvue文件。对于共享样式，如果有不合法属性控制台会给出警告，可以通过[条件编译](https://uniapp.dcloud.io/tutorial/platform#preprocessor)```APP-PLUS-NVUE```屏蔽 App 中的警告。
+- nvue的`uni-app`编译模式下，App.vue 中的样式，会编译到每个 nvue文件。对于共享样式，如果有不合法属性控制台会给出警告，可以通过[条件编译](https://uniapp.dcloud.io/tutorial/platform#preprocessor)`APP-PLUS-NVUE`屏蔽 App 中的警告。
 
 
 ## 盒模型
@@ -85,26 +85,26 @@ padding {length}：内边距，内容和边框之间的距离，默认值 0。�
 
 
 ##### 边框
-```border-style``` 设定边框样式，如果四个方向的边框样式不同，可分别设置：
+`border-style` 设定边框样式，如果四个方向的边框样式不同，可分别设置：
 
 |可选值	|描述					|
 |--		|--						|
-|border-left-style {string}		|可选值为 ```solid```， ```dashed```， ```dotted```，默认值 ```solid```	|
-|border-top-style {string}		|可选值为 ```solid```， ```dashed```， ```dotted```，默认值 ```solid```	|
-|border-right-style {string}	|可选值为 ```solid```， ```dashed```， ```dotted```，默认值 ```solid```	|
-|border-bottom-style {string}	|可选值为 ```solid```， ```dashed```， ```dotted```，默认值 ```solid```	|
+|border-left-style {string}		|可选值为 `solid`， `dashed`， `dotted`，默认值 `solid`	|
+|border-top-style {string}		|可选值为 `solid`， `dashed`， `dotted`，默认值 `solid`	|
+|border-right-style {string}	|可选值为 `solid`， `dashed`， `dotted`，默认值 `solid`	|
+|border-bottom-style {string}	|可选值为 `solid`， `dashed`， `dotted`，默认值 `solid`	|
 
 
 
 |可选值	|描述					|
 |--		|--						|
-|solid	|实线边框，默认值 ```solid```	|
+|solid	|实线边框，默认值 `solid`	|
 |dashed	|方形虚线边框			|
 |dotted	|圆点虚线边框			|
 
 
 ##### border-width
-```border-width```：设定边框宽度，非负值, 默认值 0，如果四个方向的边框宽度不同，可分别设置：
+`border-width`：设定边框宽度，非负值, 默认值 0，如果四个方向的边框宽度不同，可分别设置：
 
 |可选值							|描述				|
 |--								|--					|
@@ -115,19 +115,19 @@ padding {length}：内边距，内容和边框之间的距离，默认值 0。�
 |border-bottom-width {length}	|非负值, 默认值 0	|
 
 ##### border-color
-```border-color```：设定边框颜色，默认值 ```#000000```，如果四个方向的边框颜色不同，可分别设置：
+`border-color`：设定边框颜色，默认值 `#000000`，如果四个方向的边框颜色不同，可分别设置：
 
 
 |可选值						|描述					|
 |--							|--						|
-|border-color {color}		|默认值 ```#000000```	|
-|border-left-color {color}	|默认值 ```#000000```	|
-|border-top-color {color}	|默认值 ```#000000```	|
-|border-right-color {color}	|默认值 ```#000000```	|
-|border-bottom-color {color}|默认值 ```#000000```	|
+|border-color {color}		|默认值 `#000000`	|
+|border-left-color {color}	|默认值 `#000000`	|
+|border-top-color {color}	|默认值 `#000000`	|
+|border-right-color {color}	|默认值 `#000000`	|
+|border-bottom-color {color}|默认值 `#000000`	|
 
 ##### border-radius
-```border-radius```：设置边框的圆角，默认值 0，如果四个方向的圆角弧度不同，可分别设置：
+`border-radius`：设置边框的圆角，默认值 0，如果四个方向的圆角弧度不同，可分别设置：
 
 |可选值								|描述				|
 |--									|--					|
@@ -137,7 +137,7 @@ padding {length}：内边距，内容和边框之间的距离，默认值 0。�
 |border-top-left-radius {length}	|非负值, 默认值 0	|
 |border-top-right-radius {length}	|非负值, 默认值 0	|
 
-> ```border-radius```和```border-width```定义了圆心角为90度的椭圆弧的长轴和半长轴的大小。如果邻接两边```border-radius``` 或 ```border-width```不一致，nvue绘制的边框曲线可能不够平滑。
+> `border-radius`和`border-width`定义了圆心角为90度的椭圆弧的长轴和半长轴的大小。如果邻接两边`border-radius` 或 `border-width`不一致，nvue绘制的边框曲线可能不够平滑。
 
 
 ##### 外边距
@@ -156,12 +156,12 @@ margin {length}：外边距，元素和元素之间的空白距离，默认值 0
 
 ##### Android 兼容性
 
-尽管 ```overflow: hidden``` 在 Android 上是默认行为，但只有下列条件都满足时，一个父 view 才会去剪切它的子 ```view```。
+尽管 `overflow: hidden` 在 Android 上是默认行为，但只有下列条件都满足时，一个父 view 才会去剪切它的子 `view`。
 
-- 父view是```view```, ```cell```, ```refresh``` 或 ```loading```。
+- 父view是`view`, `cell`, `refresh` 或 `loading`。
 - 系统版本是 Android 4.3 或更高。
 - 系统版本不是 Andorid 7.0。
-- 父 view 没有 ```background-image``` 属性或系统版本是 Android 5.0 或更高。
+- 父 view 没有 `background-image` 属性或系统版本是 Android 5.0 或更高。
 
 
 
@@ -174,39 +174,39 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型�
 
 nvue布局模型基于 CSS Flexbox，以便所有页面元素的排版能够一致可预测，同时页面布局能适应各种设备或者屏幕尺寸。Flexbox 包含 flex 容器和 flex 成员项。如果一个nvue元素可以容纳其他元素，那么它就成为 flex 容器。
 
-> 文档中未说明的 flexbox 属性**均不支持**：如 ```order```、```flex-grow``` 、```flex-shrink``` 、 ```flex-basis```、```align-content```、```align-self``` 等。
+> 文档中未说明的 flexbox 属性**均不支持**：如 `order`、`flex-grow` 、`flex-shrink` 、 `flex-basis`、`align-content`、`align-self` 等。
 
-**在 nvue中，Flexbox 是默认且唯一的布局模型，所以你不需要手动为元素添加 ```display: flex;``` 属性。**
+**在 nvue中，Flexbox 是默认且唯一的布局模型，所以你不需要手动为元素添加 `display: flex;` 属性。**
 
 
 ### flex-direction
 
-定义了 flex 容器中 flex 成员项的排列方向，默认值为 ```column```
+定义了 flex 容器中 flex 成员项的排列方向，默认值为 `column`
 
 |可选值			|描述								|
 |--				|--									|
 |column			|竖排，从上到下排列					|
-|column-reverse	|反向竖排，排布方向与```flex-direction:column```相反|
+|column-reverse	|反向竖排，排布方向与`flex-direction:column`相反|
 |row			|横排，从左到右排布						|
-|row-reverse	|反向横排，排布方向与```flex-direction:row```相反	|
+|row-reverse	|反向横排，排布方向与`flex-direction:row`相反	|
 
 
 
 ### flex-wrap
 
-决定了 flex 成员项在一行还是多行分布，默认值为```nowrap```
+决定了 flex 成员项在一行还是多行分布，默认值为`nowrap`
 
 |可选值			|描述												|
 |--				|--													|
 |nowrap			| 不换行，flex 成员项在一行排布，排布的开始位置由direction指定	|
 |wrap			| 换行，第一行在上方，flex 成员项在多行排布，排布的开始位置由direction指定	|
-|wrap-reverse	|换行，第一行在下方，行为类似于```wrap```，排布方向与其相反						|
+|wrap-reverse	|换行，第一行在下方，行为类似于`wrap`，排布方向与其相反						|
 
 
 
 ### justify-content
 
-定义了 flex 容器中 flex 成员项在主轴方向上如何排列以处理空白部分。默认值为 ```flex-start```
+定义了 flex 容器中 flex 成员项在主轴方向上如何排列以处理空白部分。默认值为 `flex-start`
 
 |可选值			|描述										|
 |--				|--											|
@@ -245,7 +245,7 @@ flex {number}：值为 number 类型。
 
 **注意**
 
-**Flex 成员项暂不支持 ```flex-shrink``` 、 ```flex-basis```、```align-content``` 属性**。
+**Flex 成员项暂不支持 `flex-shrink` 、 `flex-basis`、`align-content` 属性**。
 
 **该属性不支持 flex: flex-grow | flex-shrink | flex-basis 的简写。**
 
@@ -313,7 +313,7 @@ flex {number}：值为 number 类型。
 
 ## position 定位
 
-设置定位类型。默认值为 ```relative```。
+设置定位类型。默认值为 `relative`。
 
 |可选值		|描述													|
 |--			|--														|
@@ -357,14 +357,14 @@ flex {number}：值为 number 类型。
 
 > Android 兼容性
 
-如果定位元素超过容器边界，在 Android 下，超出部分将不可见，原因在于 Android 端元素 ```overflow``` 默认值为 ```hidden```，但目前 Android 暂不支持设置 ```overflow: visible```。
+如果定位元素超过容器边界，在 Android 下，超出部分将不可见，原因在于 Android 端元素 `overflow` 默认值为 `hidden`，但目前 Android 暂不支持设置 `overflow: visible`。
 
 
 ## Transition
 
-```transition```允许 CSS 的属性值在一定的时间区间内平滑地过渡。
+`transition`允许 CSS 的属性值在一定的时间区间内平滑地过渡。
 #### transition-property
-设置过渡动画的属性名，设置不同样式 ```transition``` 效果的键值对，默认值为空，表示不执行任何过渡效果
+设置过渡动画的属性名，设置不同样式 `transition` 效果的键值对，默认值为空，表示不执行任何过渡效果
 
 
 |参数名				|描述				|
@@ -389,7 +389,7 @@ flex {number}：值为 number 类型。
 指定请求过渡操作到执行过渡之间的时间间隔 (单位是毫秒或者秒)，默认值是 0，表示没有延迟，在请求后立即执行过渡。
 
 #### transition-timing-function
-描述过渡执行的速度曲线，用于使过渡更为平滑。默认值是 ```ease```。下表列出了所有合法的属性：
+描述过渡执行的速度曲线，用于使过渡更为平滑。默认值是 `ease`。下表列出了所有合法的属性：
 
 
 |参数名							|描述																																			|
@@ -464,18 +464,18 @@ flex {number}：值为 number 类型。
 |--								|--																																				|
 |`translateX({<length/percentage>})`	|X 轴方向平移，支持长度单位或百分比。																												|
 |`translateY({<length/percentage>})`	|Y 轴方向平移，支持长度单位或百分比。																	|
-|`translate({<length/percentage>} {<length/percentage>})`	|X 轴和 Y 轴方向同时平移，```translateX``` + ```translateY``` 简写。									|
+|`translate({<length/percentage>} {<length/percentage>})`	|X 轴和 Y 轴方向同时平移，`translateX` + `translateY` 简写。									|
 |`scaleX(<number>)`				|X 轴方向缩放，值为数值，表示缩放比例，不支持百分比。							|
 |`scaleY(<number>)`						|Y 轴方向缩放，值为数值，表示缩放比例，不支持百分比。																													|
-|`scale(<number>)`|X 轴和 Y 轴方向同时缩放，```scaleX``` + ```scaleY``` 简写。|
-|`rotate(<angle/degree>)`|将元素围绕一个定点（由 ```transform-origin``` 属性指定）旋转而不变形的转换。指定的角度定义了旋转的量度。若角度为正，则顺时针方向旋转，否则逆时针方向旋转。|
+|`scale(<number>)`|X 轴和 Y 轴方向同时缩放，`scaleX` + `scaleY` 简写。|
+|`rotate(<angle/degree>)`|将元素围绕一个定点（由 `transform-origin` 属性指定）旋转而不变形的转换。指定的角度定义了旋转的量度。若角度为正，则顺时针方向旋转，否则逆时针方向旋转。|
 |`rotateX(<angle/degree>)`|X 轴方向的旋转。|
 |`rotateY(<angle/degree>)`|Y 轴方向的旋转。|
 |`rotateZ(<angle/degree>)`|Z 轴方向的旋转。|
 |`perspective(<length>)`|指定了观察者与 z=0 平面的距离，使具有三维位置变换的元素产生透视效果。z>0 的三维元素比正常大，而 z<0 时则比正常小，大小程度由该属性的值决定。Android 4.1及以上版本支持。|
 |`transform-origin {length/percentage/关键字(top/left/right/bottom)}:`|设置一个元素变形的原点，仅支持 2D 坐标。|
 
-> 除了```perspective```和```transform-origin```，```transition```支持了```transform```的全部能力。 其中transform的```rotate``` 和```rotatez``` 等效.
+> 除了`perspective`和`transform-origin`，`transition`支持了`transform`的全部能力。 其中transform的`rotate` 和`rotatez` 等效.
 
 
 
@@ -594,13 +594,13 @@ flex {number}：值为 number 类型。
 |参数名		|描述								|
 |--			|--									|
 |active		|所有组件都支持						|
-|focus		|只有 ```input``` 组件和 ```textarea``` 组件支持|
-|disabled	|只有 ```input``` 组件和 ```textarea``` 组件支持|
-|enabled	|只有 ```input``` 组件和 ```textarea``` 组件支持|
+|focus		|只有 `input` 组件和 `textarea` 组件支持|
+|disabled	|只有 `input` 组件和 `textarea` 组件支持|
+|enabled	|只有 `input` 组件和 `textarea` 组件支持|
 
 **注意**
 > 同时生效的时候，优先级高覆盖优先级低。
-> 例如：```input:active:enabled``` 和 ```input:active``` 同时生效，前者覆盖后者
+> 例如：`input:active:enabled` 和 `input:active` 同时生效，前者覆盖后者
 
 - 互联规则如下所示
 
@@ -610,7 +610,7 @@ flex {number}：值为 number 类型。
 ## 线性渐变
 
 所有组件均支持线性渐变。[CSS3 渐变](https://www.w3cschool.cn/css3/oj26bfli.html)
-你可以通过  ``` background-image ```属性创建线性渐变。
+你可以通过  ` background-image `属性创建线性渐变。
 ``` javascript
 	background-image:linear-gradient(to bottom right,#AD18F9,#05DFC7);
 ```
@@ -628,8 +628,8 @@ flex {number}：值为 number 类型。
 
 **注意**
 
-> ```background-image``` 优先级高于 ```background-color```，这意味着同时设置 ```background-image``` 和 ```background-color```，```background-color``` 被覆盖。
-> ```background``` 不支持简写。
+> `background-image` 优先级高于 `background-color`，这意味着同时设置 `background-image` 和 `background-color`，`background-color` 被覆盖。
+> `background` 不支持简写。
 >
 > **目前暂不支持 radial-gradient（径向渐变）。**
 
@@ -639,7 +639,7 @@ flex {number}：值为 number 类型。
 
 ## 阴影@boxshadow
 
-### 阴影```box-shadow```@ios-box-shadow
+### 阴影`box-shadow`@ios-box-shadow
 
 
 	{box-shadow:inset offset-x offset-y blur-radius color}
@@ -648,7 +648,7 @@ flex {number}：值为 number 类型。
 
 |参数			|描述																										|
 |--				|--																											|
-|inset（可选）	|默认阴影在边框外。使用 ```inset``` 后，阴影在边框内（即使是透明边框），背景之上内容之下。						|
+|inset（可选）	|默认阴影在边框外。使用 `inset` 后，阴影在边框内（即使是透明边框），背景之上内容之下。						|
 |offset-x		|设置水平偏移量，如果是负值则阴影位于元素左边。																|
 |offset-y		|设置垂直偏移量，如果是负值则阴影位于元素上面。																|
 |blur-radius	|设置模糊半径，px 单位长度值，值越大，模糊面积越大，阴影就越大越淡。不能为负值。默认为0，此时阴影边缘锐利。	|
@@ -663,14 +663,14 @@ flex {number}：值为 number 类型。
 
 **注意**
 - 每个元素只支持设置一个阴影效果，不支持多个阴影同时作用于一个元素。
-- Android平台 设置```box-shadow```的组件需要让出阴影渲染位置，否则会出现阴影显示不全的问题。
+- Android平台 设置`box-shadow`的组件需要让出阴影渲染位置，否则会出现阴影显示不全的问题。
 
 
 ### Android平台：阴影@android-box-shadow
 
-#### 阴影```box-shadow```
+#### 阴影`box-shadow`
 
-从HBuilderX3.4.3起，重新支持阴影样式(box-shadow)。修复老版本组件设置```box-shadow```后在不同系统版本出现的显示异常及闪烁问题! 但需要注意设置阴影样式(box-shadow) 的组件需要让出阴影渲染位置，否则会出现阴影显示不全的问题。
+从HBuilderX3.4.3起，重新支持阴影样式(box-shadow)。修复老版本组件设置`box-shadow`后在不同系统版本出现的显示异常及闪烁问题! 但需要注意设置阴影样式(box-shadow) 的组件需要让出阴影渲染位置，否则会出现阴影显示不全的问题。
 
 
 示例
@@ -697,7 +697,7 @@ flex {number}：值为 number 类型。
 
 ```
 
-#### 阴影```elevation```
+#### 阴影`elevation`
 
 目前Android平台对阴影样式(box-shadow)支持的还不太完善，有设置圆角边框时阴影样式显示不正常、占用组件视图渲染区域等问题。
 
@@ -712,12 +712,12 @@ flex {number}：值为 number 类型。
 
 
 #### 注意
-- 设置```elevation```属性产生的阴影暂时无法修改颜色
-- 设置```elevation```后当前组件的层级会高于其他未设置elevation组件的层级，都设置```elevation```值域越大则层级越高！组件覆盖的场景需要留意
-- 为了避免```elevation```属性的阴影效果与阴影样式(```box-shadow```)冲突，设置```elevation```属性后```box-shadow```样式失效
-- 使用```elevation```需要阴影元素的父元素大于阴影范围，否则会对阴影进行裁剪
-- IOS不支持```elevation```属性，请使用```box-shadow```设置阴影
-- 设置```box-shadow```需要当前组件让出阴影位置。否则无法正常看到阴影
+- 设置`elevation`属性产生的阴影暂时无法修改颜色
+- 设置`elevation`后当前组件的层级会高于其他未设置elevation组件的层级，都设置`elevation`值域越大则层级越高！组件覆盖的场景需要留意
+- 为了避免`elevation`属性的阴影效果与阴影样式(`box-shadow`)冲突，设置`elevation`属性后`box-shadow`样式失效
+- 使用`elevation`需要阴影元素的父元素大于阴影范围，否则会对阴影进行裁剪
+- IOS不支持`elevation`属性，请使用`box-shadow`设置阴影
+- 设置`box-shadow`需要当前组件让出阴影位置。否则无法正常看到阴影
 
 
 
@@ -731,24 +731,24 @@ color {color}：文字颜色，支持如下字段：
  * 精简写法的十六进制（ #f00 ）
  * 色值关键字（red）
 
-> 只有```text```标签可以设置字体颜色
+> 只有`text`标签可以设置字体颜色
 
 ### font-size
-font-size {number}：文字大小，只有```text```标签可以设置字体大小
+font-size {number}：文字大小，只有`text`标签可以设置字体大小
 
 ### font-style
-font-style {string}：字体类别。可选值 ```normal``` | ```italic```，默认为 ```normal```。
+font-style {string}：字体类别。可选值 `normal` | `italic`，默认为 `normal`。
 
 ### font-weight
-font-weight {string}：字体粗细程度。默认值: ```normal```；
+font-weight {string}：字体粗细程度。默认值: `normal`；
 
-- 可选值: ```normal```, ```bold```, 100, 200, 300, 400, 500, 600, 700, 800, 900
-- ```normal``` 等同于 400, ```bold``` 等同于 700；
-- iOS 支持 9 种 ```font-weight```值；Android 仅支持 400 和 700, 其他值会设为 400 或 700
-- 类似 ```lighter```, ```bolder``` 这样的值暂时不支持
+- 可选值: `normal`, `bold`, 100, 200, 300, 400, 500, 600, 700, 800, 900
+- `normal` 等同于 400, `bold` 等同于 700；
+- iOS 支持 9 种 `font-weight`值；Android 仅支持 400 和 700, 其他值会设为 400 或 700
+- 类似 `lighter`, `bolder` 这样的值暂时不支持
 
 ### text-decoration
-```text-decoration {string}```：字体装饰。默认值为 ```none```。
+`text-decoration {string}`：字体装饰。默认值为 `none`。
 
 |可选值			|描述						|
 |--				|--							|
@@ -757,13 +757,13 @@ font-weight {string}：字体粗细程度。默认值: ```normal```；
 |line-through	|定义穿过文本下的一条线	|
 
 
-> 只支持 ```text``` 和 ```richtext```
+> 只支持 `text` 和 `richtext`
 >
-> 不支持 ```text-decoration:overline```
+> 不支持 `text-decoration:overline`
 
 
 ### text-align
-```text-align {string}```：对齐方式。默认值为 ```left```。
+`text-align {string}`：对齐方式。默认值为 `left`。
 
 |可选值	|描述				|
 |--		|--					|
@@ -771,33 +771,33 @@ font-weight {string}：字体粗细程度。默认值: ```normal```；
 |center	|把文本排列到中间	|
 |right	|把文本排列到右边|
 
-> 不支持```text-align:justify```
+> 不支持`text-align:justify`
 
 
 ### font-family
-```font-family {string}```：设置字体。这个设置不保证在不同平台，设备间的一致性。
+`font-family {string}`：设置字体。这个设置不保证在不同平台，设备间的一致性。
 如所选设置在平台上不可用，将会降级到平台默认字体。
 如果需要加载自定义字体，请参考相关[DOM.addRule](/tutorial/nvue-api?id=addrule)
 
 ### text-overflow
-```text-overflow {string}```：设置内容超长时的省略样式。
+`text-overflow {string}`：设置内容超长时的省略样式。
 
 |可选值		|描述							|
 |--			|--								|
 |clip		|修剪文本						|
 |ellipsis	|显示省略符号来代表被修剪的文本	|
-> 只支持 ```text``` 和 ```richtext```
+> 只支持 `text` 和 `richtext`
 
 ### lines
-```lines {number}```: 正整数，指定最大文本行数，默认```lines```值为0，表示不限制最大行数```lines```。如果文本不够长，实际展示行数会小于指定行数。
+`lines {number}`: 正整数，指定最大文本行数，默认`lines`值为0，表示不限制最大行数`lines`。如果文本不够长，实际展示行数会小于指定行数。
 
 ### line-height
-line-height {length}: 正整数，每行文字高度。```line-height```是 top 至 bottom的距离。
-```line-height```与```font-size```没有关系，因为```line-height```被 top 和 bottom 所限制，
-```font-size``` 被 glyph 所解析。```line-height```和```font-size```相等一般会导致文字被截断。
+line-height {length}: 正整数，每行文字高度。`line-height`是 top 至 bottom的距离。
+`line-height`与`font-size`没有关系，因为`line-height`被 top 和 bottom 所限制，
+`font-size` 被 glyph 所解析。`line-height`和`font-size`相等一般会导致文字被截断。
 
 ### word-wrap
-```word-wrap:<string>```  对nvue来说 ```anywhere``` 表示在以字符为最小元素做截断换行，其它值或不指定该属性，都以英文单词为单位进行换行。
+`word-wrap:<string>`  对nvue来说 `anywhere` 表示在以字符为最小元素做截断换行，其它值或不指定该属性，都以英文单词为单位进行换行。
 
 |可选值		|描述								|
 |--			|--									|

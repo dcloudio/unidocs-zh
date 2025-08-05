@@ -83,8 +83,8 @@ export default {
 
 **注意**
 
-- 支付宝小程序```startPullDownRefresh```在开发者工具里会提示``暂未开放，请勿使用``
-- 支付宝小程序```startPullDownRefresh```请使用真机调试（非真机预览）
+- 支付宝小程序`startPullDownRefresh`在开发者工具里会提示``暂未开放，请勿使用``
+- 支付宝小程序`startPullDownRefresh`请使用真机调试（非真机预览）
 - 后续支付宝小程序开发工具更新可能会有所修改
 
 

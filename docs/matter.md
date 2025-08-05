@@ -74,7 +74,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 
 1. `uni-app` 基于`Vue 2.0`实现，开发者需注意Vue 1.0 -> 2.0 的使用差异，详见[从 Vue 1.x 迁移](https://cn.vuejs.org/v2/guide/migration.html)
 2. data 属性必须声明为返回一个初始数据对象的函数；否则页面关闭时，数据不会自动销毁，再次打开该页面时，会显示上次数据
-  	
+
     ```javascript
   	//正确用法，使用函数返回对象
   	data() {
@@ -88,15 +88,15 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
   	}
   	```
 3. 在微信小程序端，`uni-app` 将数据绑定功能委托给`Vue`，开发者需按`Vue 2.0`的写法实现数据绑定，不支持微信小程序的数据绑定写法，故如下写法不支持：
-	
+
 	```vue
-	  <view id="item-{{id}}"></view>	
+	  <view id="item-{{id}}"></view>
 	```
 	需修改为：
 	```vue
-	<view v-bind:id="'item-' + id "></view>	
+	<view v-bind:id="'item-' + id "></view>
 	```
- 
+
 ### 区别于传统 web 开发的注意
 你之前可能习惯自由的web开发，但目前各家小程序都有很多限制。
 当然限制是为了在框架层更好的优化用户体验，所以小程序的体验要优于web。
@@ -120,7 +120,7 @@ vue页面在App端的渲染引擎默认是系统webview（不是手机自带浏�
 	- 自定义组件：放到`component`目录
 	- 静态资源：如图片，固定放到`static`目录下。这是`webpack`的规则
 5. 数据绑定方式的注意
-	- ```uni-app``` 基于```Vue 2.0```实现，开发者需注意Vue 1.0 -> 2.0 的使用差异，详见[从 Vue 1.x 迁移](https://cn.vuejs.org/v2/guide/migration.html)
+	- `uni-app` 基于`Vue 2.0`实现，开发者需注意Vue 1.0 -> 2.0 的使用差异，详见[从 Vue 1.x 迁移](https://cn.vuejs.org/v2/guide/migration.html)
 6. 每个页面支持使用原生title，首页支持使用原生底部tab，这些是要在pages.json里配置，这些并不是vue页面的一部分。当然vue里的js api也可以动态修改原生title
 7. 虽然使用vue，但在app和小程序里，不是spa而是mpa
 8. 位置坐标系统一为国测局坐标系gcj02，这种坐标系可以被多端支持。老版5+的百度定位和百度地图使用的是百度私有坐标系bd09ll，这种坐标系需要转换。新版uni-app里的百度地图已经默认改为gcj02。高德地图不受影响，一直是gcj02

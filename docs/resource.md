@@ -2,7 +2,7 @@
 
 建议第二步，通过[快速上手](https://uniapp.dcloud.io/quickstart-hx)，亲身体验下uni-app。
 
-#### 如果你熟悉h5，但不熟悉vue和小程序 
+#### 如果你熟悉h5，但不熟悉vue和小程序
 1. 看完这篇[白话uni-app](/vernacular.md)
 2. DCloud与vue合作，在[vue.js官网](https://cn.vuejs.org/)提供了免费视频教程，也可以直达教程地址：[https://learning.dcloud.io](https://learning.dcloud.io)
 3. 不需要专门去学习小程序的语法，uni-app使用的是vue的语法，不是小程序自定义的语法。
@@ -38,7 +38,7 @@
 
 
 
-<!-- * [《跟枫桥一起开发App》](https://www.lusita.cn)，出品人：唐枫桥，来源：源码商城（注：源码商城App、小程序本身就是基于```uni-app```开发的） -->
+<!-- * [《跟枫桥一起开发App》](https://www.lusita.cn)，出品人：唐枫桥，来源：源码商城（注：源码商城App、小程序本身就是基于`uni-app`开发的） -->
 <!-- * [《广州番禺职业技术学院 uni-app课程》](http://doc.zengqs.com/1143144)，出品人：曾教授 -->
 
 

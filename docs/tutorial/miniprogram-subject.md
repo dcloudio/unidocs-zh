@@ -1,6 +1,6 @@
 ## 小程序自定义组件支持
 
-> 
+>
 
 `uni-app`在支持vue组件之外，也实现了对小程序自定义组件的兼容。
 
@@ -458,7 +458,7 @@ export default {
 - vue3 项目不支持 `setup script` 用法
 - 目前各个小程序正在完善相关规范，可能会有较大改动，请务必仔细阅读相应平台的文档
 - 支付宝小程序请使用sjs规范，[详见](https://docs.alipay.com/mini/framework/sjs)
-- 支付宝小程序sjs只能定义在.sjs 文件中，然后使用```<script>```标签引入
+- 支付宝小程序sjs只能定义在.sjs 文件中，然后使用`<script>`标签引入
 - 支付宝小程序`script`的标签属性`name`、`from`被统一为了`module`、`src`以便后续实现多平台统一写法
 - 百度小程序中请使用Filter规范，[详见](https://smartprogram.baidu.com/docs/develop/framework/view_filter/)
 - 百度小程序Filter只能导出`function`函数

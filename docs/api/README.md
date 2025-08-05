@@ -1,48 +1,73 @@
 # API 概述
+# API Overview
 
 `uni-app`的 js API 由标准 ECMAScript 的 js API 和 uni 扩展 API 这两部分组成。
+The js APIs of `uni-app` consist of two parts: standard ECMAScript js APIs and uni extension APIs.
 
 标准 ECMAScript 的 js 仅是最基础的 js。浏览器基于它扩展了 window、document、navigator 等对象。小程序也基于标准 js 扩展了各种 wx.xx、my.xx、swan.xx 的 API。node 也扩展了 fs 等模块。
+Standard ECMAScript js is just the fundamental js. Browsers extend it with objects like window, document, navigator. Mini-programs also extend standard js with APIs such as wx.xx, my.xx, swan.xx. Node extends it with modules such as fs.
 
 uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序保持兼容。
+uni-app extends ECMAScript with the uni object, and the API naming remains compatible with mini-programs.
 
 ## 标准 js 和浏览器 js 的区别
+## Differences between Standard js and Browser js
 
 `uni-app`的 js 代码，web 端运行于浏览器中。非 web 端（包含小程序和 App），Android 平台运行在 v8 引擎中，iOS 平台运行在 iOS 自带的 jscore 引擎中，都没有运行在浏览器或 webview 里。
+The js code of `uni-app` runs in the browser for web platforms. On non-web platforms (including mini-programs and App), Android runs in the v8 engine, iOS runs in the native jscore engine, and does not run in a browser or webview.
 
 非 web 端，虽然不支持 window、document、navigator 等浏览器的 js API，但也支持标准 ECMAScript。
+On non-web platforms, browser js APIs such as window, document, navigator are not supported, but standard ECMAScript is supported.
 
 请注意不要把浏览器里的 js 等价于标准 js。
+Please note that browser js is not equivalent to standard js.
 
 所以 uni-app 的非web端，一样支持标准 js，支持 if、for 等语法，支持字符串、数字、时间、布尔值、数组、自定义对象等变量类型及各种处理方法。仅仅是不支持 window、document、navigator 等浏览器专用对象。
+Therefore, uni-app's non-web platforms also support standard js, including syntax like if, for, variable types such as strings, numbers, dates, booleans, arrays, custom objects, and their processing methods. Only browser-specific objects such as window, document, navigator are not supported.
 
 ## 各端特色 API 调用
+## Platform-specific API Calls
 
 除了 uni-app 框架内置的跨端 API，各端自己的特色 API 也可通过[条件编译](https://uniapp.dcloud.io/platform)自由使用。
+In addition to the cross-platform APIs built into the uni-app framework, platform-specific APIs can also be freely used via [conditional compilation](https://uniapp.dcloud.io/platform).
 
 各端特色 API 规范参考各端的开发文档。其中 App 端的 JS API 参考[html5plus.org](https://www.html5plus.org/doc/h5p.html)；uni-app 也支持通过扩展原生插件来丰富 App 端的开发能力，具体参考[插件开发文档](http://ask.dcloud.net.cn/article/35408)
+Refer to each platform's development documentation for specific API specifications. For App-side JS APIs, refer to [html5plus.org](https://www.html5plus.org/doc/h5p.html); uni-app also supports enhancing App-side development capabilities with native plugins, see [plugin development documentation](http://ask.dcloud.net.cn/article/35408).
 
 各平台的 API 新增，不需要 uni-app 升级，开发者就可以直接使用。
+When a new API is added to a platform, developers can use it directly without upgrading uni-app.
 
 各平台 API 独有的字段，如快手小程序 `ks.pay` 的 `payType`、`paymentChannel` 字段，开发者在调用 API 时正常传入即可，会透传至快手小程序的 API 上
+Platform-specific API fields, such as `payType` and `paymentChannel` in Kuaishou mini-program's `ks.pay`, can be passed directly during API calls and will be forwarded to the respective platform's API.
 
 ## 补充说明
+## Additional Notes
 
 - uni.on 开头的 API 是监听某个事件发生的 API 接口，接受一个 CALLBACK 函数作为参数。当该事件触发时，会调用 CALLBACK 函数。
+- APIs starting with uni.on are event listener APIs, which accept a CALLBACK function as a parameter. When the event is triggered, the CALLBACK function will be called.
 - 如未特殊约定，其他 API 接口都接受一个 OBJECT 作为参数。
+- Unless otherwise specified, other API interfaces accept an OBJECT as a parameter.
 - OBJECT 中可以指定 success，fail，complete 来接收接口调用结果。
+- The OBJECT can specify success, fail, and complete to receive the results of the API call.
 - **平台差异说明**若无特殊说明，则表示所有平台均支持。
+- **Platform Differences** If not otherwise specified, all platforms are supported.
 - 异步 API 会返回 `errMsg` 字段，同步 API 则不会。比如：`getSystemInfoSync` 在返回结果中不会有 `errMsg`。
+- Asynchronous APIs return the `errMsg` field, while synchronous APIs do not. For example, `getSystemInfoSync` does not include `errMsg` in the return value.
 
 ## API `Promise 化`
+## API Promisification
 
 1. 具体 API `Promise 化` 的策略：
+   1. Specific strategies for API promisification:
 
    - 异步的方法，如果不传入 success、fail、complete 等 callback 参数，将以 Promise 返回数据。例如：`uni.getImageInfo()`
+   - For asynchronous methods, if success, fail, complete and other callback parameters are not provided, the data will be returned as a Promise. For example: `uni.getImageInfo()`
    - 异步的方法，且有返回对象，如果希望获取返回对象，必须至少传入一项 success、fail、complete 等 callback 参数。例如：
+   - Asynchronous methods that return an object: if you want to get the returned object, you must pass at least one callback parameter (success, fail, complete), for example:
 
      ```js
       // 正常使用
+      // Normal usage
       const task = uni.connectSocket({
        success(res){
         console.log(res)
@@ -50,28 +75,42 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
       })
 
       // Promise 化
+      // Promisified usage
       uni.connectSocket().then(res => {
         // 此处即为正常使用时 success 回调的 res
+        // This is the 'res' returned from the success callback in normal usage
         // uni.connectSocket() 正常使用时是会返回 task 对象的，如果想获取 task ，则不要使用 Promise 化
+        // Normally, uni.connectSocket returns a task object. If you need the task object, do not use promise style.
         console.log(res)
       })
      ```
 
 2. 不进行 `Promise 化` 的 API：
+   2. APIs that are not promisified:
+
    - 同步的方法（即以 sync 结束）。例如：`uni.getSystemInfoSync()`
+   - Synchronous methods (ending with sync), e.g.: `uni.getSystemInfoSync()`
    - 以 create 开头的方法。例如：`uni.createMapContext()`
+   - Methods starting with create, e.g.: `uni.createMapContext()`
    - 以 manager 结束的方法。例如：`uni.getBackgroundAudioManager()`
+   - Methods ending with manager, e.g.: `uni.getBackgroundAudioManager()`
 
 ### Vue 2 和 Vue 3 的 API `Promise 化`
+### API Promisification in Vue 2 and Vue 3
 
 > Vue 2 和 Vue 3 项目中 `API Promise 化` 返回格式不一致，以下为 `不同点` 和 `返回格式互相转换`
+> The return format for API Promisification differs between Vue 2 and Vue 3 projects. Below are the differences and how to convert between the formats.
 
 - 不同点
+- Differences
 
   - Vue2 对部分 API 进行了 Promise 封装，返回数据的第一个参数是错误对象，第二个参数是返回数据。此时使用 `catch` 是拿不到报错信息的，因为内部对错误进行了拦截。
+  - Vue 2 wraps some APIs with Promises, returning an array where the first item is the error object and the second item is the data. In this case, using `catch` does not catch errors because errors are intercepted internally.
   - Vue3 对部分 API 进行了 Promise 封装，调用成功会进入 `then 方法` 回调。调用失败会进入 `catch 方法` 回调
+  - Vue 3 wraps some APIs with Promises, a successful call triggers the `then` callback, while a failed call triggers the `catch` callback.
 
   **使用示例：**
+  **Usage Example:**
 
   ::: preview
 
@@ -79,6 +118,7 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
 
   ```js
   // 默认方式
+  // Default usage
   uni.request({
     url: "https://www.example.com/request",
     success: (res) => {
@@ -96,8 +136,11 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
     })
     .then((data) => {
       // data为一个数组
+      // 'data' is an array
       // 数组第一项为错误信息 即为 fail 回调
+      // First item is error info, i.e. the fail callback
       // 第二项为返回数据
+      // Second item is the returned data
       var [err, res] = data;
       console.log(res.data);
     });
@@ -115,6 +158,7 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
 
   ```js
   // 默认方式
+  // Default usage
   uni.request({
     url: "https://www.example.com/request",
     success: (res) => {
@@ -126,29 +170,35 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
   });
 
   // 使用 Promise then/catch 方式调用
+  // Use Promise then/catch
   uni
     .request({
       url: "https://www.example.com/request",
     })
     .then((res) => {
       // 此处的 res 参数，与使用默认方式调用时 success 回调中的 res 参数一致
+      // The 'res' parameter here is the same as in the success callback of default usage
       console.log(res.data);
     })
     .catch((err) => {
       // 此处的 err 参数，与使用默认方式调用时 fail 回调中的 err 参数一致
+      // The 'err' parameter here is the same as in the fail callback of default usage
       console.error(err);
     });
 
   // 使用 Async/Await 方式调用
+  // Use Async/Await
   async function request() {
     try {
       var res = await uni.request({
         url: "https://www.example.com/request",
       });
       // 此处的 res 参数，与使用默认方式调用时 success 回调中的 res 参数一致
+      // The 'res' parameter here is the same as in the success callback of default usage
       console.log(res);
     } catch (err) {
       // 此处的 err 参数，与使用默认方式调用时 fail 回调中的 err 参数一致
+      // The 'err' parameter here is the same as in the fail callback of default usage
       console.error(err);
     }
   }
@@ -157,6 +207,7 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
   :::
 
 - 返回格式互相转换
+- Converting Return Formats
 
 ::: preview
 
@@ -164,6 +215,7 @@ uni-app 基于 ECMAScript 扩展了 uni 对象，并且 API 命名与小程序�
 
 ```js
 // Vue 2 转 Vue 3, 在 main.js 中写入以下代码即可
+// Convert Vue 2 to Vue 3: Add the following code to main.js
 function isPromise(obj) {
   return (
     !!obj &&
@@ -198,6 +250,7 @@ uni.addInterceptor({
 
 ```js
 // Vue 3 转 Vue 2, 在 main.js 中写入以下代码即可
+// Convert Vue 3 to Vue 2: Add the following code to main.js
 function isPromise(obj) {
   return (
     !!obj &&
@@ -225,107 +278,176 @@ uni.addInterceptor({
 ```
 
 :::
-
+<!-- @ifdef ZH -->
 ## API 列表
+## API List
 
 ### 基础
+### Basics
 
 日志打印等。
+Logging and similar functions.
 
 | API                                            | 说明                                  |
 | :--------------------------------------------- | :------------------------------------ |
 | [日志打印](log)                                | 向控制台打印日志信息                  |
+| [Log](log)                                     | Print log information to console      |
 | [定时器](timer)                                | 在定时到期以后执行注册的回调函数      |
+| [Timer](timer)                                 | Execute registered callback after timeout |
 | [uni.base64ToArrayBuffer](base64ToArrayBuffer) | 将 Base64 字符串转成 ArrayBuffer 对象 |
+| [uni.base64ToArrayBuffer](base64ToArrayBuffer) | Convert Base64 string to ArrayBuffer object |
 | [uni.arrayBufferToBase64](arrayBufferToBase64) | 将 ArrayBuffer 对象转成 Base64 字符串 |
+| [uni.arrayBufferToBase64](arrayBufferToBase64) | Convert ArrayBuffer object to Base64 string |
 | 启动|-|
+| Startup |-|
 @|API|说明|
 @|:--|:--|
 @|[getLaunchOptionsSync](getLaunchOptionsSync)|获取启动时的参数。返回值与App.onLaunch的回调参数一致|
+@|[getLaunchOptionsSync](getLaunchOptionsSync)|Get launch parameters. Return value is same as App.onLaunch callback parameter|
 @|[getEnterOptionsSync](getEnterOptionsSync)|获取启动时的参数|
+@|[getEnterOptionsSync](getEnterOptionsSync)|Get launch parameters|
 | [应用级事件](application)                 | 监听应用事件                          |
+| [Application-level events](application)    | Listen to application events          |
 | [拦截器](interceptor)                          | 拦截 Api 等调用并执行回调             |
+| [Interceptor](interceptor)                   | Intercept Api calls and execute callback |
 | [全局 API](global)                             | 可全局调用 Api                        |
+| [Global API](global)                           | APIs callable globally                |
 | [canIUse](caniuse)                             | 判断应用的 API，回调，参数，组件等是否在当前版本可用                        |
+| [canIUse](caniuse)                             | Check if API, callback, parameter, component, etc. are available in current version |
 
 ### 网络
+### Network
 
 |API|说明|
 | :-- | :-- |
 |发起请求|-|
+|Send request |-|
 @| API                                       | 说明         |
 @| :---------------------------------------- | :----------- |
 @| [uni.request](request/request?id=request) | 发起网络请求 |
+@| [uni.request](request/request?id=request) | Send network request |
 |上传、下载|-|
+|Upload, download |-|
 @| API                                                      | 说明     |
 @| :------------------------------------------------------- | :------- |
 @| [uni.uploadFile](request/network-file?id=uploadfile)     | 上传文件 |
+@| [uni.uploadFile](request/network-file?id=uploadfile)     | Upload file |
 @| [uni.downloadFile](request/network-file?id=downloadfile) | 下载文件 |
+@| [uni.downloadFile](request/network-file?id=downloadfile) | Download file |
 |WebSocket|-|
+|WebSocket |-|
 @| API                                                             | 说明                |
 @| :-------------------------------------------------------------- | :------------------ |
 @| [uni.connectSocket](request/websocket?id=connectsocket)         | 创建 WebSocket 连接 |
+@| [uni.connectSocket](request/websocket?id=connectsocket)         | Create WebSocket connection |
 @| [uni.onSocketOpen](request/websocket?id=onsocketopen)           | 监听 WebSocket 打开 |
+@| [uni.onSocketOpen](request/websocket?id=onsocketopen)           | Listen for WebSocket open |
 @| [uni.onSocketError](request/websocket?id=onsocketerror)         | 监听 WebSocket 错误 |
+@| [uni.onSocketError](request/websocket?id=onsocketerror)         | Listen for WebSocket error |
 @| [uni.sendSocketMessage](request/websocket?id=sendsocketmessage) | 发送 WebSocket 消息 |
+@| [uni.sendSocketMessage](request/websocket?id=sendsocketmessage) | Send WebSocket message |
 @| [uni.onSocketMessage](request/websocket?id=onsocketmessage)     | 接受 WebSocket 消息 |
+@| [uni.onSocketMessage](request/websocket?id=onsocketmessage)     | Receive WebSocket message |
 @| [uni.closeSocket](request/websocket?id=closesocket)             | 关闭 WebSocket 连接 |
+@| [uni.closeSocket](request/websocket?id=closesocket)             | Close WebSocket connection |
 @| [uni.onSocketClose](request/websocket?id=onsocketclose)         | 监听 WebSocket 关闭 |
+@| [uni.onSocketClose](request/websocket?id=onsocketclose)         | Listen for WebSocket close |
 |SocketTask|-|
+|SocketTask |-|
 @| API | 说明 |
 @| :-- | :-- |
 @| [SocketTask.send](request/socket-task?id=sockettasksend)           | 通过 WebSocket 连接发送数据           |
+@| [SocketTask.send](request/socket-task?id=sockettasksend)           | Send data through WebSocket connection |
 @| [SocketTask.close](request/socket-task?id=sockettaskclose)         | 关闭 WebSocket 连接                   |
+@| [SocketTask.close](request/socket-task?id=sockettaskclose)         | Close WebSocket connection            |
 @| [SocketTask.onOpen](request/socket-task?id=sockettaskonopen)       | 监听 WebSocket 连接打开事件           |
+@| [SocketTask.onOpen](request/socket-task?id=sockettaskonopen)       | Listen for WebSocket connection open  |
 @| [SocketTask.onClose](request/socket-task?id=sockettaskonclose)     | 监听 WebSocket 连接关闭事件           |
+@| [SocketTask.onClose](request/socket-task?id=sockettaskonclose)     | Listen for WebSocket connection close |
 @| [SocketTask.onError](request/socket-task?id=sockettaskonerror)     | 监听 WebSocket 错误事件               |
+@| [SocketTask.onError](request/socket-task?id=sockettaskonerror)     | Listen for WebSocket error event      |
 @| [SocketTask.onMessage](request/socket-task?id=sockettaskonmessage) | 监听 WebSocket 接受到服务器的消息事件 |
+@| [SocketTask.onMessage](request/socket-task?id=sockettaskonmessage) | Listen for WebSocket message from server |
 |[mDNS](request/mDNS)|mDNS 服务|
+|[mDNS](request/mDNS)|mDNS service|
 |[UDP 通信](request/UDP)|UDP 通信|
+|[UDP Communication](request/UDP)|UDP communication|
 
 ### 页面和路由
+### Page and Routing
 
 | API                                             | 说明                                                                         |
 | :---------------------------------------------- | :--------------------------------------------------------------------------- |
 | [uni.navigateTo](router?id=navigateto)     | 保留当前页面，跳转到应用内的某个页面，使用 uni.navigateBack 可以返回到原页面 |
+| [uni.navigateTo](router?id=navigateto)     | Retain current page and navigate to another page in the app. Use uni.navigateBack to return to the original page. |
 | [uni.redirectTo](router?id=redirectto)     | 关闭当前页面，跳转到应用内的某个页面                                         |
+| [uni.redirectTo](router?id=redirectto)     | Close the current page and navigate to another page in the app.              |
 | [uni.reLaunch](router?id=relaunch)         | 关闭所有页面，打开到应用内的某个页面                                         |
+| [uni.reLaunch](router?id=relaunch)         | Close all pages and open a specific page in the app.                         |
 | [uni.switchTab](router?id=switchtab)       | 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面                             |
+| [uni.switchTab](router?id=switchtab)       | Switch to a tabBar page and close all other non-tabBar pages.                |
 | [uni.navigateBack](router?id=navigateback) | 关闭当前页面，返回上一页面或多级页面                                         |
+| [uni.navigateBack](router?id=navigateback) | Close the current page and return to the previous or multi-level page.       |
 | [EventChannel](router.md#event-channel) | 页面间事件通信通道                                    |
+| [EventChannel](router.md#event-channel) | Event communication channel between pages                                    |
 | [preloadPage](preload-page) | 预加载页面，是一种性能优化技术。被预载的页面，在打开时速度更快。                                         |
+| [preloadPage](preload-page) | Preload page, a performance optimization technique. Preloaded pages open faster.|
 | [窗口动画](router.md#animation) | 窗口的显示/关闭动画效果，支持在 API、组件、pages.json 中配置                                         |
+| [Window Animation](router.md#animation) | Window show/close animation effects, configurable via API, component, or pages.json |
 |页面|-|
+|Page |-|
 @| API | 说明 |
 @| :-- | :-- |
 @| [getCurrentPages](window/window.md) | 函数用于获取当前页面栈的实例                                       |
+@| [getCurrentPages](window/window.md) | Function for getting current page stack instance                   |
 @| [$getAppWebview](window/window.md#getappwebview) | 当前webview的对象实例                                     |
+@| [$getAppWebview](window/window.md#getappwebview) | Instance of the current webview object                           |
 @| [$vm](window/window.md#vm) | 当前页面的 Vue 实例                                    |
+@| [$vm](window/window.md#vm) | Vue instance of the current page                              |
 |[页面通讯](window/communication)|$emit、$on、$off、$once|
+|[Page Communication](window/communication)|$emit, $on, $off, $once|
 |subNVue 原生子窗体|-|
+|subNVue native sub window |-|
 @| API | 说明 |
 @| :-- | :-- |
 @| [getSubNVueById](window/subNVues.md#app-getsubnvuebyid) | 通过 ID 获取 subNVues 原生子窗体的实例 |
+@| [getSubNVueById](window/subNVues.md#app-getsubnvuebyid) | Get subNVues native sub window instance by ID |
 @| [$getCurrentSubNVue](window/subNVues.md#app-getcurrentsubnvue) | 在一个subnvue窗体的nvue页面代码中，获取当前 subNVues 原生子窗体的实例。 |
+@| [$getCurrentSubNVue](window/subNVues.md#app-getcurrentsubnvue) | In subnvue window's nvue page code, get the current subNVues native sub window instance. |
 @| [subNVue.show](window/subNVues.md#subnvue-show) | 显示原生子窗体 |
+@| [subNVue.show](window/subNVues.md#subnvue-show) | Show native sub window |
 @| [subNVue.hide](window/subNVues.md#subnvue-hide) | 隐藏原生子窗体 |
+@| [subNVue.hide](window/subNVues.md#subnvue-hide) | Hide native sub window |
 @| [subNVue.setStyle](window/subNVues.md#subnvue-setstyle) | 设置原生子窗体的样式 |
+@| [subNVue.setStyle](window/subNVues.md#subnvue-setstyle) | Set native sub window style |
 @| [subNVue.postMessage](window/subNVues.md#subnvue-postmessage) | 发送消息，此通讯方式已过时，请使用`uni.$emit`进行通讯，[参考](/tutorial/page.md#emit) |
+@| [subNVue.postMessage](window/subNVues.md#subnvue-postmessage) | Send message (deprecated, use `uni.$emit` for communication, [see reference](/tutorial/page.md#emit))|
 @| [subNVue.onMessage](window/subNVues.md#subnvue-onmessage) | 监听消息，此通讯方式已过时，请使用`uni.$on`进行通讯，[参考](/tutorial/page.md#on) |
+@| [subNVue.onMessage](window/subNVues.md#subnvue-onmessage) | Listen to message (deprecated, use `uni.$on` for communication, [see reference](/tutorial/page.md#on))|
 
 ### 数据缓存
+### Data Storage
 
 | API                                                             | 说明                   |
 | :-------------------------------------------------------------- | :--------------------- |
 | [uni.getStorage](storage/storage?id=setstorage)                 | 获取本地数据缓存       |
+| [uni.getStorage](storage/storage?id=setstorage)                 | Get local data storage |
 | [uni.getStorageSync](storage/storage?id=setstoragesync)         | 获取本地数据缓存       |
+| [uni.getStorageSync](storage/storage?id=setstoragesync)         | Get local data storage |
 | [uni.setStorage](storage/storage?id=getstorage)                 | 设置本地数据缓存       |
+| [uni.setStorage](storage/storage?id=getstorage)                 | Set local data storage |
 | [uni.setStorageSync](storage/storage?id=getstoragesync)         | 设置本地数据缓存       |
+| [uni.setStorageSync](storage/storage?id=getstoragesync)         | Set local data storage |
 | [uni.getStorageInfo](storage/storage?id=getstorageinfo)         | 获取本地缓存的相关信息 |
+| [uni.getStorageInfo](storage/storage?id=getstorageinfo)         | Get related info of local storage |
 | [uni.getStorageInfoSync](storage/storage?id=getstorageinfosync) | 获取本地缓存的相关信息 |
+| [uni.getStorageInfoSync](storage/storage?id=getstorageinfosync) | Get related info of local storage |
 | [uni.removeStorage](storage/storage?id=removestorage)           | 删除本地缓存内容       |
+| [uni.removeStorage](storage/storage?id=removestorage)           | Remove local storage content |
 | [uni.removeStorageSync](storage/storage?id=removestoragesync)   | 删除本地缓存内容       |
+| [uni.removeStorageSync](storage/storage?id=removestoragesync)   | Remove local storage content |
 | [uni.clearStorage](storage/storage?id=clearstorage)             | 清理本地数据缓存       |
+| [uni.clearStorage](storage/storage?id=clearstorage)             | Clear local data storage |
 | [uni.clearStorageSync](storage/storage?id=clearstoragesync)     | 清理本地数据缓存       |
 
 ### 位置
@@ -790,3 +912,4 @@ uni.addInterceptor({
 | [uni.getExtConfigSync](other/get-extconfig?id=getextconfigsync) | uni.getExtConfig 的同步版本。    |
 
 因文档同步原因，本页面列出的 API 可能不全。如在本文未找到相关 API，可以在左侧树中寻找或使用文档右上角的搜索功能。
+<!-- @endif -->

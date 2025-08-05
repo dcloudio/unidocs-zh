@@ -30,9 +30,9 @@ The Baidu applet `Editor` rich text editor dynamic library provides the `createE
 **平台差异说明**
 **Platform difference description**
 
-|App|HarmonyOS Next|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|
-|:-:|:-:		|:-:		|:-:				|:-:			|:-:				|:-:		|:-:		|:-:	|:-:  |
-|√	|4.23|2.4.5+	|√			|x					|需引入动态库	|x				|x			|x			|x		|
+|App|HarmonyOS Next|H5	|微信小程序	|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|快手小程序|京东小程序|小红书小程序|
+|:-:|:-:		|:-:		|:-:				|:-:			|:-:				|:-:		|:-:		|:-:	|:-:  |:-:  |
+|√	|4.23|2.4.5+	|√			|x					|需引入动态库	|x				|x			|x			|x		|√|
 
 
 **百度小程序引入动态库**
@@ -343,10 +343,9 @@ The editor is out of focus and the keyboard is retracted at the same time.
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.8.3`|x|√|x|x|x|x|
-|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`Basic library 2.8.3`|x|√|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.8.3`|x|√|x|x|x|x|√|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -369,10 +368,9 @@ Make the editor cursor scroll to the visible area of the window.
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.8.3`|x|√|x|x|x|x|
-|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`Basic library 2.8.3`|x|√|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.8.3`|x|√|x|x|x|x|√|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -395,10 +393,9 @@ Get the plain text content within the selected area of the editor. When the edit
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.10.2`|x|√|x|x|x|x|
-|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`Basic library 2.10.2`|x|√|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√`HBuilderX 3.0.3`|√`HBuilderX 3.0.3`|√`基础库2.10.2`|x|√|x|x|x|x|√|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**

@@ -6,9 +6,9 @@ Open another applet.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|[微信小程序](https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html)|[支付宝小程序](https://docs.alipay.com/mini/api/open-miniprogram)|[百度小程序](https://smartprogram.baidu.com/docs/develop/api/open_smartprogram/#swan-navigateToSmartProgram/)|[抖音小程序](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/mini-app-forward/tt-navigate-to-mini-program/)|[QQ小程序](https://q.qq.com/wiki/develop/miniprogram/API/open_port/port_change.html#qq-navigatetominiprogram)|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x(见下)|x|√|√|√|√(1.15.0+)|√|√|x|
+|App|H5|[微信小程序](https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html)|[支付宝小程序](https://docs.alipay.com/mini/api/open-miniprogram)|[百度小程序](https://smartprogram.baidu.com/docs/develop/api/open_smartprogram/#swan-navigateToSmartProgram/)|[抖音小程序](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/mini-app-forward/tt-navigate-to-mini-program/)|[QQ小程序](https://q.qq.com/wiki/develop/miniprogram/API/open_port/port_change.html#qq-navigatetominiprogram)|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x(见下)|x|√|√|√|√(1.15.0+)|√|√|x|x|
 
 - App平台打开微信小程序，使用plus.share的[launchMiniProgram](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService.launchMiniProgram)。注意uni-app不需要plus ready，将plus ready里的代码写到页面的onLoad生命周期即可。使用此功能需在manifest中配置微信分享SDK信息，打包后生效。
 - Open the WeChat Mini Program on the App platform and use the [launchMiniProgram] of plus.share (https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService.launchMiniProgram). Note that uni-app does not need plus ready, just write the code in plus ready to the onLoad life cycle of the page. To use this function, you need to configure WeChat to share SDK information in the manifest, and it will take effect after packaging.
@@ -61,9 +61,9 @@ Jump back to the previous applet, only when another applet jumps to the current 
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|√|√|√|x|√|√|√|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|√|√|√|√|x|√|√|√|x|x|
 
 **OBJECT参数说明**
 **OBJECT parameter description**

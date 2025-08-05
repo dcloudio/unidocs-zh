@@ -13,6 +13,7 @@
 * [微信小程序广告开通指南](ad-weixin-dcloud.md)
 * [微信小程序视频广告](ad-video.md)
 * [微信小程序格子广告](ad-grid.md)
+* [微信小程序原生接入](ad-weixin-native.md)
 * [广告错误码](ad-error-code.md)
 * 常见问题```{"collapsable": false}```
   * [广告开通常见问题](faq/ad-open-faq.md)

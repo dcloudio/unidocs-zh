@@ -107,9 +107,7 @@ Obtain information about the nodes. The first parameter is node related informat
 | Field name| Type| Defaults| Required| Instruction| Platform difference description|
 |:-|:-|:-|:-|:-|:-|
 |id|Boolean|false|否|是否返回节点 ``id``||
-| id| Boolean| false| No| Whether to return the node `id`| |
-|dataset|Boolean|false|否|是否返回节点 ``dataset``| App、微信小程序、H5 |
-|dataset|Boolean|false|No|return node ``dataset``| App, WeChat applet, H5 |
+|dataset|Boolean|false|否|是否返回节点 ``dataset``| App、微信小程序、H5、小红书小程序|
 |rect|Boolean|false|否|是否返回节点布局位置（``left`` ``right`` ``top`` ``bottom``）||
 | rect| Boolean| false| No| Whether to return the node layout location (`left` `right` `top` `bottom`)| |
 |size|Boolean|false|否|是否返回节点尺寸（``width`` ``height``）||
@@ -117,10 +115,8 @@ Obtain information about the nodes. The first parameter is node related informat
 |scrollOffset|Boolean|false|否|是否返回节点的 ``scrollLeft`` ``scrollTop``，节点必须是 ``scroll-view`` 或者 ``viewport``||
 | scrollOffset| Boolean| false| No| Whether to return `scrollLeft` `scrollTop` of the node, and the node must be `scroll-view` or `viewport`| |
 | properties | Array＜string＞ | [] | 否 | 指定属性名列表，返回节点对应属性名的当前属性值（只能获得组件文档中标注的常规属性值，id class style 和事件绑定的属性值不可获取） | 仅 App 和微信小程序支持 |
-| properties | Array<string> | [] | No | Specify a list of property names, and return the current property value of the property name corresponding to the node (only the general property values marked in the component document, id class style and event binding property values can be obtained Not available) | App and WeChat applet only support |
-| computedStyle | Array＜string＞ | [] | 否 | 指定样式名列表，返回节点对应样式名的当前值 | 仅 App 和微信小程序支持 |
-| computedStyle | Array<string> | [] | No | Specify a list of style names and return the current value of the style name corresponding to the node | Only supported by App and WeChat applet |
-| context | Boolean | false | 否 | 是否返回节点对应的 Context 对象 | 仅 App 和微信小程序支持 |
+| computedStyle | Array＜string＞ | [] | 否 | 指定样式名列表，返回节点对应样式名的当前值 | 仅 App 和微信小程序支持、小红书小程序|
+| context | Boolean | false | 否 | 是否返回节点对应的 Context 对象 | 仅 App 和微信小程序支持、小红书小程序|
 | node | Boolean | false | 否 | 是否返回节点对应的 Node 实例，当前仅支持 canvas 实例的获取 | H5, 微信小程序, 抖音小程序, 快手小程序 |
 
 ### nodesRef.boundingClientRect(callback)
@@ -163,9 +159,9 @@ Add a query request for the Context object of the node. Support the access of [`
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|HBuilderX 2.4.7+|√|x|x|x|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|HBuilderX 2.4.7+|√|x|x|x|√|√|√|√|
 
 **callback 返回参数**
 **callback return parameter**
@@ -183,9 +179,9 @@ Get the `Node` node instance. Currently supports fetching of `Canvas`.
 **平台差异说明**
 **Platform difference description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|x|x|x|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|√|x|x|x|x|√|√|x|
 
 **callback 返回参数**
 **callback return parameter**

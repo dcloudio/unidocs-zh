@@ -53,14 +53,11 @@ package.json extension configuration usage:
 
 Tips：
 
-- `UNI_PLATFORM`仅支持填写`uni-app`默认支持的基准平台，目前仅限如下枚举值：`h5`、`mp-weixin`、`mp-alipay`、`mp-baidu`、`mp-toutiao`、`mp-qq`
-- `UNI_PLATFORM` only supports filling in the benchmark platforms supported by `uni-app` by default, currently only the following enumeration values: `h5`, `mp-weixin`, `mp-alipay`, `mp-baidu`, `mp -toutiao`, `mp-qq`
-- `browser` 仅在`UNI_PLATFORM`为`h5`时有效,目前仅限如下枚举值：`chrome`、`firefox`、`ie`、`edge`、`safari`、`hbuilderx`
-- `browser` is only valid when `UNI_PLATFORM` is `h5`, currently only the following enumeration values: `chrome`, `firefox`, `ie`, `edge`, `safari`, `hbuilderx`
-- `package.json`文件中不允许出现注释，否则扩展配置无效
-- Comments are not allowed in the `package.json` file, otherwise the extension configuration will be invalid
-- `vue-cli`需更新到最新版，HBuilderX需升级到 2.1.6+ 版本
-- `vue-cli` needs to be updated to the latest version, and HBuilderX needs to be upgraded to version 2.1.6+
+- `UNI_PLATFORM` 仅支持填写 `uni-app` 默认支持的基准平台，目前仅限如下枚举值：`h5`、`mp-weixin`、`mp-alipay`、`mp-baidu`、`mp-toutiao`、`mp-qq`
+- `browser` 仅在 `UNI_PLATFORM` 为 `h5` 时有效,目前仅限如下枚举值：`chrome`、`firefox`、`ie`、`edge`、`safari`、`hbuilderx`
+- `package.json` 文件中不允许出现注释，否则扩展配置无效
+- `vue-cli` 需更新到最新版，HBuilderX需升级到 2.1.6+ 版本
+- `vue2` 可以通过 `process.UNI_SCRIPT_ENV` 获取对应平台配置的 `env`，`vue3` 可以通过 `process.env.UNI_CUSTOM_DEFINE` 获取
 
 ### 示例：钉钉小程序
 

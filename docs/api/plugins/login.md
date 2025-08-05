@@ -10,9 +10,9 @@ uni.login is a client API that unifies and encapsulates various common login met
 **平台差异说明**
 **Platform Difference Description**
 
-|App|Web|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|√|√|√|√|√|
+|App|Web|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|√|√|√|√|√|√|√|
 
 <!-- UNIAPPAPIJSON.login.compatibility -->
 
@@ -45,7 +45,7 @@ For most login methods, you need to apply for the activation of related services
 * [快手小程序登录](https://mp.kuaishou.com/docs/develop/api-next/open/login/ks.login.html)
 * [Kuaishou MiniApp login](https://mp.kuaishou.com/docs/develop/api-next/open/login/ks.login.html)
 * [京东小程序登录](https://mp-docs.jd.com/api/openInterface/login.html)
-* [Jingdong MiniApp login](https://mp-docs.jd.com/api/openInterface/login.html)
+* [小红书小程序登录](https://miniapp.xiaohongshu.com/doc/DC473950)
 
 ### web平台支持的登录方式
 Web平台常见的登录包括用户名密码、短信验证码、pc端微信扫描、微信公众号登录。这些没有封装在 uni.login API中，但都封装在了uni-id中。请另行参考[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)
@@ -61,8 +61,7 @@ If you don’t use uni-id, when the WeChat embedded browser runs the H5 version,
 |provider|String|否|登录服务提供商，通过 [uni.getProvider](/api/plugins/provider) 获取，如果不设置则弹出登录列表选择界面||
 | provider| String|No|Login service provider, obtained through [uni.getProvider](/api/plugins/provider), if not set, the login list selection interface will pop up||
 |scopes|String/Array|见平台差异说明|授权类型，默认 auth_base。支持 auth_base（静默授权）/ auth_user（主动授权） / auth_zhima（芝麻信用）|支付宝小程序|
-| scopes| String/Array|See platform difference description|Authorization type, default auth_base. Support auth_base (silent authorization) / auth_user (active authorization) / auth_zhima (Sesame Credit) | Alipay MiniApp|
-|timeout|Number|否|超时时间，单位ms|微信小程序、百度小程序、京东小程序|
+|timeout|Number|否|超时时间，单位ms|微信小程序、百度小程序、京东小程序、小红书小程序|
 |univerifyStyle|Object|否|[一键登录](/univerify)页面样式|App 3.0.0+、`HarmonyOS 不支持`|
 |onlyAuthorize|Boolean|否|`微信登录`仅请求授权认证|App 3.2.6+、`HarmonyOS 不支持`|
 |success|Function|否|接口调用成功的回调||
@@ -116,9 +115,9 @@ Obtain the host App login credentials (Authorization Code)
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|x|x|√|x|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|x|x|√|x|x|x|x|x|x|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -154,9 +153,9 @@ Check if the login status has expired
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|√|√|√|√|√|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|√|x|√|√|√|√|√|x|x|√|
 
 |属性|类型|必填|说明|
 |Attribute|Type|Required|Description|
@@ -180,9 +179,9 @@ Get user information.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|√|√|√|√|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|√|√|√|√|√|x|√|
 
 <!-- UNIAPPAPIJSON.getUserInfo.compatibility -->
 
@@ -327,9 +326,9 @@ Get user information. An authorization window will pop up for each request, and 
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√（基础库2.10.4）|x|x|√（基础库2.30.0）|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|√（基础库2.10.4）|x|x|√（基础库2.30.0）|x|x|x|x|√|
 
 **注意：**
 
@@ -449,9 +448,9 @@ pre-login. It is used for one-click login with App phone number.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|3.0.0+|x|x|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|3.0.0+|x|x|x|x|x|x|x|x|x|x|x|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -479,9 +478,9 @@ According to the requirements of China Mobile, China Unicom, China Telecom and o
 **平台差异说明**
 **Platform Difference Description**
 
-|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|3.0.0+|x|x|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|3.0.0+|x|x|x|x|x|x|x|x|x|x|x|
 
 
 ## uni.getCheckBoxState(OBJECT)
@@ -491,9 +490,9 @@ Get the checkbox status of [one-key login](/univerify) clause.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|3.2.3+|x|x|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|3.2.3+|x|x|x|x|x|x|x|x|x|x|x|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -526,9 +525,9 @@ Get the globally unique one-click login manager univerifyManager
 **平台差异说明**
 **Platform Difference Description**
 
-|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√ (3.2.13+)|4.61|x|x|x|x|x|x|x|x|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√ (3.2.13+)|4.61|x|x|x|x|x|x|x|x|x|x|
 
 **univerifyManager 方法说明**
 **univerifyManager method description**
@@ -647,7 +646,7 @@ univerifyManager.offButtonsClick(callback)
           "EntryAbility"
         ]
       },
-      "reason": "$string:gy_oaid_tracking" // 此项需要在 `harmony-config/AppScope/resources/base/element/string.json` 中配置，[配置文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/resource-categories-and-access-V5#%E8%B5%84%E6%BA%90%E7%BB%84%E7%9B%AE%E5%BD%95)
+      "reason": "$string:gy_oaid_tracking" // 此项需要在 `harmony-config/AppScope/resources/base/element/string.json` 中配置，[配置文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/resource-categories-and-access-V5#%E8%B5%84%E6%BA%90%E7%BB%84%E7%9B%AE%E5%BD%95?ha_source=Dcloud&ha_sourceId=89000448)
     }
   ]
   ```

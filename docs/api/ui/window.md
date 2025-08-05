@@ -8,9 +8,9 @@ Listen for window size change events
 **平台差异说明**
 **Platform Difference Description**
 
-|App|HarmonyOS Next|H5|微信小程序	|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|HBuilderX 4.25|√|√|x|x|x|√|√|x|
+|App|HarmonyOS Next|H5|微信小程序	|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|HBuilderX 4.25|√|√|x|x|x|√|√|x|x|
 
 **CALLBACK 参数说明**
 **CALLBACK parameter description**
@@ -48,9 +48,9 @@ Cancel listening window size change event
 平台差异说明
 Explanation of Platform Differences
 
-|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|HBuilderX 4.31|√|√|x|x|x|√|x|
+|App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|HBuilderX 4.31|√|√|x|x|x|√|x|x|
 
 **Tips**
 - `CALLBACK`为调用`uni.onWindowResize`时传入的`CALLBACK`

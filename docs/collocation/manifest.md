@@ -903,7 +903,7 @@ HBuilderX 3.6.16+ supports creating a configuration file in the project root dir
 |快手|project.ks.json|
 | Kuaishou| project.ks.json|
 |京东|project.config.json|
-|Jingdong| project.config.json|
+|小红书|project.xhs.json|
 
 ### 关于分包优化的说明
 ### Explanation on subpackage optimization

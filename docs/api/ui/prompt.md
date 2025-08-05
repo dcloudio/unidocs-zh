@@ -112,7 +112,7 @@ uni.hideToast();
 | Parameter| Type| Required| Instruction| Platform difference description|
 |:-|:-|:-|:-|:-|
 |title|String|是|提示的文字内容，显示在loading的下方||
-|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|H5、App、微信小程序、百度小程序、抖音小程序（2.47.0+）|
+|mask|Boolean|否|是否显示透明蒙层，防止触摸穿透，默认：false|H5、App、微信小程序、百度小程序、抖音小程序（2.47.0+）、小红书小程序|
 |success|Function|否|接口调用成功的回调函数||
 | success| Function| No| Callback function for successful interface calling| |
 |fail|Function|否|接口调用失败的回调函数||
@@ -181,11 +181,11 @@ Display the modal pop-up window with only one OK button or both OK and Cancel bu
 |showCancel|Boolean|否|是否显示取消按钮，默认为 true||
 | showCancel| Boolean| No| Whether to display the Cancel button, with true as default| |
 |cancelText|String|否|取消按钮的文字，默认为"取消"||
-|cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5、微信小程序、百度小程序、抖音小程序（2.62.0+）、支付宝小程序|
+|cancelColor|HexColor|否|取消按钮的文字颜色，默认为"#000000"|H5、微信小程序、百度小程序、抖音小程序（2.62.0+）、支付宝小程序、小红书小程序|
 |confirmText|String|否|确定按钮的文字，默认为"确定"||
-|confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"，微信小程序平台默认为"#576B95"，百度小程序平台默认为"#3c76ff"|H5、微信小程序、百度小程序、抖音小程序（2.62.0+）、支付宝小程序|
-|editable|Boolean|否|是否显示输入框|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)、抖音小程序（2.62.0+）|
-|placeholderText|String|否|显示输入框时的提示文本|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)、抖音小程序（2.62.0+）|
+|confirmColor|HexColor|否|确定按钮的文字颜色，H5平台默认为"#007aff"，微信小程序平台默认为"#576B95"，百度小程序平台默认为"#3c76ff"|H5、微信小程序、百度小程序、抖音小程序（2.62.0+）、支付宝小程序、小红书小程序|
+|editable|Boolean|否|是否显示输入框|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)、抖音小程序（2.62.0+）、小红书小程序|
+|placeholderText|String|否|显示输入框时的提示文本|H5 (3.2.10+)、App (3.2.10+)、微信小程序 (2.17.1+)、抖音小程序（2.62.0+）、小红书小程序|
 |success|Function|否|接口调用成功的回调函数||
 | success| Function| No| Callback function for successful interface calling| |
 |fail|Function|否|接口调用失败的回调函数||

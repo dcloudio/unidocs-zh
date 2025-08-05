@@ -6,9 +6,9 @@ Get the current account information and return the Appid of the MiniApp. If the 
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|√|x|x|√|√|√|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|√|√|x|x|√|√|√|x|√|
 
 **返回值**
 **return value**
@@ -22,9 +22,7 @@ account information
 | Property | Type | Description |Platform Difference Description|
 | --- | --- | --- |--- |
 | miniProgram | Object| 小程序帐号信息 ||
-| miniProgram | Object| MiniApp account information||
-| plugin | Object | 插件帐号信息（仅在插件中调用时包含这一项） |京东、快手小程序不支持|
-| plugin | Object | Plug-in account information (only included when called in the plug-in) |JD.com and Kuaishou MiniApp do not support|
+| plugin | Object | 插件帐号信息（仅在插件中调用时包含这一项） |京东、快手小程序、小红书小程序不支持|
 
 
 **miniProgram 的结构**

@@ -59,7 +59,7 @@ Conditional compilation is marked with special comments which are the basic of c
 |MP-360|360小程序||
 |MP-HARMONY|鸿蒙元服务|HBuilderX 4.34+|
 |MP-XHS|小红书小程序||
-|MP|微信小程序/支付宝小程序/百度小程序/抖音小程序/飞书小程序/QQ小程序/360小程序/鸿蒙元服务||
+|MP|微信小程序/支付宝小程序/百度小程序/抖音小程序/飞书小程序/QQ小程序/360小程序/鸿蒙元服务/小红书小程序/京东小程序/快手小程序||
 |QUICKAPP-WEBVIEW|快应用通用(包含联盟、华为)||
 |QUICKAPP-WEBVIEW-UNION|快应用联盟||
 |QUICKAPP-WEBVIEW-HUAWEI|快应用华为||

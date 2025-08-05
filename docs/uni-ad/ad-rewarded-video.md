@@ -576,15 +576,16 @@ export default {
 
 #### 服务器回调参数@uniAdCallbackParameters
 
-|字段定义	|类型		|字段名称				|备注															|
-|:-:			|:-:		|:-:						|:-:															|
-|adpid		|String	|DCloud广告位id	|																	|
-|provider	|String	|广告服务商			|china、global					|
-|platform	|String	|平台						|iOS、Android、weixin-mp										|
-|sign			|String	|签名						|																	|
-|trans_id	|String	|交易id					|完成观看的唯一交易ID							|
-|user_id	|String	|用户id					|调用SDK透传，应用对用户的唯一标识|
-|extra		|String	|自定义数据			|调用SDK传入并透传，如无需要则为空|
+|   字段定义	   |  类型		   |    字段名称				    |            备注															            |
+|:---------:|:-------:|:--------------:|:---------------------------------------:|
+|  adpid		  | String	 |  DCloud广告位id	  |            																	            |
+| provider	 | String	 |    广告服务商			    |            china、global					            |
+| platform	 | String	 |    平台						    |     iOS、Android、weixin-mp										     |
+|  sign			  | String	 |    签名						    |            																	            |
+| trans_id	 | String	 |   交易id					    |           完成观看的唯一交易ID							            |
+| user_id	  | String	 |   用户id					    |           调用SDK透传，应用对用户的唯一标识            |
+|  extra		  | String	 |    自定义数据			    |           调用SDK传入并透传，如无需要则为空            |
+|   cpm		   |  int	   | 千次曝光收益，单位：分			 | cpm/1000则为本次观看收益，默认没有该参数，需通过[uni-im](https://im.dcloud.net.cn/#/?joinGroup=65d85fc09847e92db03ff81a)联系商务/运营申请开通 |
 
 #### 签名生成方式@sign
 

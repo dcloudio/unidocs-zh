@@ -167,9 +167,7 @@ Tips:
 |leftWidth|Number/String|120rpx|导航栏左侧插槽宽度|
 |leftWidth|Number/String|120rpx|The width of the left slot of the navigation bar|
 |rightWidth|Number/String|120rpx|导航栏右侧插槽宽度|
-|rightWidth|Number/String|120rpx|Slot width on the right side of the navigation bar|
-|stat|Boolean/String|120rpx|是否开启统计标题功能。**注意：只有使用title 属性 ，且开启了统计功能才生效**|
-|stat|Boolean/String|120rpx|Whether to enable the statistics title function. **Note: It will only take effect if the title attribute is used and the statistics function is turned on**|
+|stat|Boolean||是否开启统计标题功能。**注意：只有使用title 属性 ，且开启了统计功能才生效**|
 
 **Tips**
 - `leftWidth` 和 `rightWidth` 如无必要不需要设置

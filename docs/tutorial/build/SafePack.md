@@ -38,9 +38,10 @@ Offline packaging is not only inconvenient, but also has two important functions
   4. 在本地电脑上使用打包证书对未签名安装包进行签名操作，生成安装包
   4. Use the packaging certificate to sign the unsigned installation package on the local computer and generate the installation package
 - 非首次打包
-- Not first time packing
-  1. HBuilderX判断缓存的原生代码包是否可以复用，如果没有修改App模块配置或影响原生代码包配置操作继续下一步，否则转`首次打包`流程，以下情况也会触发`首次打包`流程：
-  1. HBuilderX determines whether the cached native code package can be reused. If the App module configuration is not modified or the native code package configuration operation is not affected, continue to the next step. Otherwise, go to the `first package` process. The following conditions will also trigger the `first package` process:
+  1. HBuilderX判断缓存的原生代码包是否可以复用，如果没有修改App模块配置或影响原生代码包配置操作继续下一步，否则转`首次打包`流程。以下情况会触发`首次打包`流程：
+	+ 修改App模块配置
+	+ 修改应用名称、包名、证书信息
+	+ 修改权限配置
     + 使用了uni原生插件，本地无法判断原生插件是否更新了，因此项目中只要包含uni原生插件都会走`首次打包`流程
     + The uni native plugin is used, and it is impossible to determine whether the native plugin has been updated locally, so as long as the uni native plugin is included in the project, it will go through the `first packaging` process
     + HBuilderX更新，本地缓存原生代码包需要更新，需要走`首次打包`流程生成新版本原生代码包

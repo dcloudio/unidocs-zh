@@ -2146,6 +2146,14 @@ Business App and admin are 2 projects. The business app is the collection end, a
 
 答：uni统计能够产出注册用户统计数据的前提是，开通uni统计的应用与`uni-admin`项目关联了同一个服务空间，且用户模块使用了[uni-id用户体系](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)，如果你应用的用户存储在非uniCloud业务，或者没有使用[uni-id用户体系](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html)，uni统计将无法自动统计注册用户数据。
 
+### 10. 为什么在本地调试时会报“未匹配到云函数[uni-stat-receiver]”的错误？
+
+答：因为本地调试时，默认连接的是本地云函数（即当前项目下的云函数），而接收上报数据的云函数`uni-stat-receiver`，存在于`uni-admin`项目中，不在当前项目下，所以会出现此错误，因此在本地调试时，需要在`HBuilderX`下方控制台选择`连接云端云函数`。
+![](https://web-ext-storage.dcloud.net.cn/doc/uni-stat/stat_qa_report_err.png?v=0610)
+
+### 11.为什么在本地调试时，HBuilderX控制台显示“统计上报错误”？
+
+答：同上方常见问题`10`一样，都是因为在本地调试时，未在`HBuilderX`下方控制台选择`连接云端云函数`导致。
 
 ## 参考资料
 ## References

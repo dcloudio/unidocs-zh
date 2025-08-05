@@ -106,4 +106,4 @@ This API is the js API supporting the camera component, which has the same platf
 - 各家小程序平台对API的实现情况可能不一致，比如支付宝小程序调用createCameraContext时需要传参cameraId，使用时请以具体文档为准。
 - Different MiniApp platforms may have different API implementations. For example, Alipay MiniApp needs to pass the parameter cameraId when calling createCameraContext. Please refer to the specific document when using it.
 - 支付宝小程序开发者工具（IDE）暂不支持调试此 API，请使用真机调试功能在真机进行调试。
-- 鸿蒙元服务使用需要提前配置 `entry/src/main/module.json5` 权限，并在运行时调用 `uni.authorize` 申请权限。参考 [scope.camera 文档](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/develop-authorization#section234119171375)
+- 鸿蒙元服务使用需要提前配置 `entry/src/main/module.json5` 权限，并在运行时调用 `uni.authorize` 申请权限。参考 [scope.camera 文档](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/develop-authorization#section234119171375?ha_source=Dcloud&ha_sourceId=89000448)

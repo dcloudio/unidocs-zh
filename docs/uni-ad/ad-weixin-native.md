@@ -11,7 +11,7 @@
       "provider": "wxf72d316417b6767f"
     },
     "coral-adv": {
-      "version": "1.0.27",
+      "version": "1.0.28",
       "provider": "wx0e203209e27b1e66"
     }
   }

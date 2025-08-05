@@ -24,13 +24,6 @@
 
 *注意：支付宝云的备案码，仅限阿里云备案系统使用。*
 
-关于支付宝云的备案码问题，欢迎扫码加入官方钉钉交流群：
-
-<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/unicloud/1699427250281.png" width="300" />
-
-
-
-
 
 ## App备案
 

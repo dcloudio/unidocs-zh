@@ -146,6 +146,8 @@ iOS platform cloud packaging related configuration
 
 在鸿蒙开发中不会读取`app-plus` 下配置的选项，在 `app-harmony` 节点下可以设置鸿蒙参数。
 
+- safearea
+
 ### 完整 manifest.json@full-manifest
 ### full manifest.json@full-manifest
 

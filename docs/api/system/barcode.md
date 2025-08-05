@@ -5,9 +5,9 @@ Call up the code scanning interface of the client, and return the corresponding 
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|√|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|x|√|√|√|√|√|√|√|√|√|
 
 <!-- UNIAPPAPIJSON.scanCode.compatibility -->
 
@@ -56,15 +56,10 @@ Call up the code scanning interface of the client, and return the corresponding 
 |Parameter|Description|Platform Difference Description|
 |:-|:-|:-|
 |result|所扫码的内容||
-| result|The content of the scanned code||
-|scanType|所扫码的类型|App、微信小程序、百度小程序、QQ小程序、京东小程序、支付宝小程序|
-| scanType|Type of scanned code| App, WeChat MiniApp, Baidu MiniApp, QQ MiniApp, JD MiniApp, Alipay MiniApp|
-|charSet|所扫码的字符集|App、微信小程序、百度小程序(所扫码的字符集，仅支持 Android 系统)、QQ小程序、京东小程序|
-| charSet|The character set of the scanned code| App, WeChat MiniApp, Baidu MiniApp(the character set scanned, only supports Android system), QQ MiniApp, Jingdong MiniApp|
-|path|当所扫的码为当前应用的合法二维码时，会返回此字段，内容为二维码携带的 path。|微信小程序、QQ小程序、京东小程序|
-| path|When the scanned code is a legal QR code of the current application, this field will be returned, and the content is the path carried by the QR code. |WeChat MiniApp, QQ MiniApp, Jingdong MiniApp|
-|rawData|原始数据，base64 编码|微信小程序、QQ小程序、京东小程序、支付宝小程序|
-| rawData|raw data, base64 encoding|WeChat MiniApp, QQ MiniApp, JD MiniApp, Alipay MiniApp|
+|scanType|所扫码的类型|App、微信小程序、百度小程序、QQ小程序、京东小程序、支付宝小程序、小红书小程序|
+|charSet|所扫码的字符集|App、微信小程序、百度小程序(所扫码的字符集，仅支持 Android 系统)、QQ小程序、京东小程序、小红书小程序|
+|path|当所扫的码为当前应用的合法二维码时，会返回此字段，内容为二维码携带的 path。|微信小程序、QQ小程序、京东小程序、小红书小程序|
+|rawData|原始数据，base64 编码|微信小程序、QQ小程序、京东小程序、支付宝小程序、小红书小程序|
 |code|扫码所得数据|支付宝小程序|
 | code|Data obtained by scanning the code|Alipay MiniApp|
 |qrCode|扫描二维码时返回二维码数据|支付宝小程序|
@@ -72,7 +67,7 @@ Call up the code scanning interface of the client, and return the corresponding 
 |barCode|扫描条形码时返回条形码数据|支付宝小程序|
 | barCode|Return barcode data when scanning a barcode|Alipay MiniApp|
 |imageChannel|来源|支付宝小程序|
-| imageChannel|Source|Alipay MiniApp|
+|errMsg||小红书小程序|
 
 
 **示例**

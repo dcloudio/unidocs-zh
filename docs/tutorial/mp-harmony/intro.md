@@ -30,7 +30,7 @@
 
 元服务上架需要提前做好备案，强烈建议注册元服务时候立刻开始备案流程，避免临上架才开始备案，耽误上架时间。参考 [App 备案相关注意事项](https://developer.huawei.com/consumer/cn/doc/app/50130-FAQ?ha_source=Dcloud&ha_sourceId=89000448).
 
-如果你的元服务需要使用登录、支付权限，也立即开始着手准备申请相关权限，参考 [华为支付服务开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/payment-preparations-V5?ha_source=Dcloud&ha_sourceId=89000448)。
+如果你的元服务需要使用登录、支付权限，也立即开始着手准备申请相关权限，参考 [华为支付服务开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-preparations?ha_source=Dcloud&ha_sourceId=89000448)。
 
 常见问题：我已经备案、上架了安卓应用，参考 [HarmonyOS 应用/元服务应如何进行备案？](https://developer.huawei.com/consumer/cn/doc/app/50130?ha_source=Dcloud&ha_sourceId=89000448)
 
@@ -46,8 +46,6 @@
 - 面向企业级协作的调试、发行证书。统一管理设备注册、鸿蒙权限管理等，调试证书可以用于开发，发行证书可以用于上架。
 
 接下来文档会面向新手，详细介绍如何使用自动签名证书。发行证书会在文档下方的 **发行与上架** 部分进行介绍。
-
-建议用户动手使用 DevEco Studio 编辑器创建元服务的原生项目（下面称原生工程），完成相关配置，以保证开发环境配置正确。**先保证空模板项目能运行**，再继续进行 uniapp 元服务的开发。
 
 打开 DevEco Studio 编辑器，选择 `新建工程 - 元服务 AtomService - Empty Ability`，下面的截图来自 DevEco Studio：
 
@@ -286,7 +284,7 @@
 
 如果发生在应用运行、发行阶段。可能是构建时候证书缺少或者配置不对。参考 [鸿蒙发布元服务](https://developer.huawei.com/consumer/cn/doc/app/agc-help-harmonyos-releaseservice-0000001946273965?ha_source=Dcloud&ha_sourceId=89000448) 进行证书申请。
 
-### 发行报错 hvigor ERROR: Unable to find the product 'release'.
+### 发行报错 hvigor ERROR: Unable to find the product 'release'
 
 如果是发生应用发行阶段，可能是未填写完整的发布证书，需要调整 `build-profile.json5`。
 
@@ -477,7 +475,12 @@ getphonenumber(e){
 
 ### 元服务如何调试、遇到渲染白屏了怎么看？@how-to-debug
 
-首先建议缩小问题范围，注释页面相关逻辑，锁定出问题的页面、组件、逻辑，从而针对性的调试。如果希望开启远程调试，可以按照下面方法操作。
+元服务启动白屏原因可能有以下常见原因：
+
+- DevEco 相关配置没有配置成功。自查方案：可尝试运行 HBuilderX 内置的空白模板可正常运行，规避环境配置问题
+- 页面中使用了元服务尚未支持的 api、使用了 plus api 导致页面启动报错。可观察控制台是否有相关错误提示。也可尝试缩小问题范围，注释页面相关逻辑，锁定出问题的页面、组件、逻辑。
+
+如果希望开启远程调试，可以按照下面方法操作。
 
 调试分成两个部分，一个是视图层的 WebView 调试，一个是逻辑层 V8 的调试。阅读官方文档 [运行调试元服务](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/debug-ascf-code?ha_source=Dcloud&ha_sourceId=89000448)
 

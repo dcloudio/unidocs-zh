@@ -23,7 +23,7 @@
 如未设置价格，则默认为免费插件，所有用户均可免费下载使用；如果想要设置源码授权版价格，则必须设置普通授权版价格。
 
 
-### 版权保护和试用机制
+### 版权保护和试用机制@copyright-and-try
 
 普通前端插件因其源码开放问题，无法支持计费。
 Ordinary front-end plug-ins cannot support billing due to their open source code.

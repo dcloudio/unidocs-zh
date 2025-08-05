@@ -275,16 +275,13 @@ On the HBuilderX toolbar, click Release, select local packaging, as shown in the
 
 
 **发布为快应用(webview) - 华为：**
-**Published as Quick App (webview) - Huawei:**
-1. 入驻华为快应用，参考：[华为快应用教程](https://developer.huawei.com/consumer/cn/quickApp)。
-1. Enter Huawei Quick App, refer to: [Huawei Quick App Tutorial](https://developer.huawei.com/consumer/cn/quickApp).
+1. 入驻华为快应用，参考：[华为快应用教程](https://developer.huawei.com/consumer/cn/quickApp?ha_source=Dcloud&ha_sourceId=89000448)。
 2. 在HBuilderX中顶部菜单依次点击 "发行" => "快应用-华为"，即可在 ``/unpackage/dist/build/quickapp-webview`` 生成华为快应用项目代码。
 2. On the top menu of HBuilderX, click "Release" => "Quick App-Huawei" to generate Huawei Quick App project code in ``/unpackage/dist/build/quickapp-webview``.
 <div align=center>
-  <img src="![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-run-release-quickapp-webview-huawei.png)g"/>
+  <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-run-release-quickapp-webview-huawei.png"/>
 </div>
-3. 在华为开发者工具中，导入生成的华为快应用项目，测试项目代码运行正常后，点击”构建“打包正式版，在[华为快应用后台](https://developer.huawei.com/consumer/cn/quickApp)上传
-3. In the Huawei Developer Tools, import the generated Huawei Quick App project, and after the test project code runs normally, click "Build" to package the official version, and in the [Huawei Quick App Background](https://developer.huawei.com/ consumer/cn/quickApp) upload
+3. 在华为开发者工具中，导入生成的华为快应用项目，测试项目代码运行正常后，点击”构建“打包正式版，在 [华为快应用后台](https://developer.huawei.com/consumer/cn/quickApp?ha_source=Dcloud&ha_sourceId=89000448)上传
 
 
 **发布为QQ小程序：**
@@ -419,8 +416,7 @@ HBuilderX version 2.7.12+ support
 HBuilderX 2.7.10+ 版支持
 HBuilderX version 2.7.10+ support
 
-华为快应用文档-小程序转快应用 [https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure)
-Huawei Quick App Documentation - Mini Program Quick App [https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure](https://developer.huawei.com/consumer/ cn/doc/development/quickApp-References/quickapp-filestructure)
+华为快应用文档-小程序转快应用 [https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/quickapp-filestructure?ha_source=Dcloud&ha_sourceId=89000448)
 
 
 **其他：**

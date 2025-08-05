@@ -152,6 +152,7 @@ uni.getLocation({
   - The user authorization API can be used to determine whether the user has granted the application location permission, [see details](https://uniapp.dcloud.io/api/other/authorize)
   - 在 `微信小程序` 中，当用户离开应用后，此接口无法调用，需要申请 [后台持续定位权限](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html) ，另外新版本中需要使用 [wx.onLocationChange](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html) 监听位置信息变化；当用户点击“显示在聊天顶部”时，此接口可继续调用。
 - `HarmonyOS Next平台`调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`，需自行在项目中配置权限。具体位置在 `harmony-configs/entry/src/main/module.json5` 中的 requestPermissions 字段。该配置文件在构建产物中原始鸿蒙工程相同目录内。
+- 如果在app模块中勾选了系统定位和其他定位，比如腾讯定位，由配置的type值决定调用规则，type值为wgs84使用系统定位，type值为gcj02则使用腾讯定位。
 
 ## uni.chooseLocation(OBJECT)
 打开地图选择位置。chooseLocation会使用项目配置的地图服务商来展示地图，地图服务商支持情况参考：[map组件](../../component/map.md)。

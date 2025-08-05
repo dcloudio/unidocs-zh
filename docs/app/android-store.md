@@ -175,9 +175,7 @@ Push Kit is a message push platform provided by Huawei, which establishes a mess
 		android.permission.READ_PHONE_STATE
 	</td>
 	<td>设备信息（IMEI、ANDROID_ID、DEVICE_ID、IMSI）、应用已安装列表、网络信息</td>
-	<td>Device Information (IMEI, ANDROID_ID, DEVICE_ID, IMSI), App Installed List, Network Information</td>
-	<td><a href="https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/privacy-statement-0000001050042021" target="_blank">推送隐私声明</a></td>
-	<td><a href="https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/privacy-statement-0000001050042021" target="_blank">Push Privacy Statement</a></td>
+	<td><a href="https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/privacy-statement-0000001050042021?ha_source=Dcloud&ha_sourceId=89000448" target="_blank">推送隐私声明</a></td>
   </tr>
 </table>
 

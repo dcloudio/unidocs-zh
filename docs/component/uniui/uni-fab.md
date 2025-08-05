@@ -63,7 +63,7 @@
 **content配置项：**
 
 |  参数|类型	| 说明|
-| :-:|  :-:| :-:| :-:|
+| :-:|  :-:| :-:|
 | iconPath| String| 图片路径|
 | selectedIconPath| String	| 选中后图片路径|
 | text| String	| 文字|
@@ -222,4 +222,3 @@
 
 
 [完整示例演示](https://hellouniapp.dcloud.net.cn/pages/extUI/fab/fab)
-[Complete example demo](https://hellouniapp.dcloud.net.cn/pages/extUI/fab/fab)

@@ -167,11 +167,43 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 
 **美好买菜：** 鸿蒙应用市场搜索“美好买菜”，[详情](https://appgallery.huawei.com/app/detail?id=com.sc.meihao)；另见[iOS App](https://apps.apple.com/cn/app/%E7%BE%8E%E5%A5%BD%E4%B9%B0%E8%8F%9C/id1567375058)、[Android App](https://appgallery.huawei.com/app/C104333959)
 
+**首都疫苗服务：** 北京市为预防接种服务对象倾心打造的一款移动应用服务平台，鸿蒙应用市场搜索“首都疫苗服务”，[详情](https://appgallery.huawei.com/app/detail?id=com.app.sdymfw)
+
+**厦门人才网：** 厦门市人才服务中心推出的专业求职软件，提供职位查询、简历投递等多种服务，助力求职招聘，鸿蒙应用市场搜索“厦门人才网”，[详情](https://appgallery.huawei.com/app/detail?id=cn.com.xmrc.hm)
+
 **一码游贵州：** 贵州省委宣传部指导，贵州本土智慧文旅产业生态平台，鸿蒙应用市场搜索“一码游贵州”，[详情](https://appgallery.huawei.com/app/detail?id=com.dsy.ymygz)
 
 **黔警通：** 黔西南公安局为市民打造的一站式便民服务，便捷办理公安业务，鸿蒙应用市场搜索“黔警通”，[详情](https://appgallery.huawei.com/app/detail?id=hmos.com.qxnga.qjt)
 
 **地质云：** 中国地质调查局主持研发的一套综合性地质信息服务系统，鸿蒙应用市场搜索“地质云”，[详情](https://appgallery.huawei.com/app/detail?id=com.cgs.gov.geoapp)
+
+**西藏政务：** 一款为办事人提供便捷的办事服务应用，鸿蒙应用市场搜索“西藏政务”，[详情](https://appgallery.huawei.com/app/detail?id=com.xizangzw.govaffairs)
+
+**中国科大：** 中国科学技术大学官方移动门户平台，集成了新闻资讯、办事服务、查询应用和工具能力，鸿蒙应用市场搜索“中国科大”，[详情](https://appgallery.huawei.com/app/detail?id=app.cn.edu.ustc.portal.hm)
+
+**民政通：** 民政一体化政务服务平台移动端，鸿蒙应用市场搜索“民政通”，[详情](https://appgallery.huawei.com/app/detail?id=com.huawei.jmggfw)
+
+**信用中国：** 一款提供信用查询、报告下载核验的信用中国APP，鸿蒙应用市场搜索“信用中国”，[详情](https://appgallery.huawei.com/app/detail?id=com.digitalgd.creditchina)
+
+**中国医促会OA平台：** 一款实现无纸化办公的平台，可提高管理水平与工作效率，鸿蒙应用市场搜索“中国医促会OA平台”，[详情](https://appgallery.huawei.com/app/detail?id=com.ychoa.app)
+
+**广州智慧阅读：** 分析学生阅读行为，个性化匹配阅读图，鸿蒙应用市场搜索“广州智慧阅读”，[详情](https://appgallery.huawei.com/app/detail?id=smart.reading.gz)
+
+**掌上新大：** 一款与“一站式办事大厅”协同，为师生提供优质信息化服务、实现便捷审批的APP，鸿蒙应用市场搜索“掌上新大”，[详情](https://appgallery.huawei.com/app/detail?id=com.uni.UNIBD487D4)
+
+**太原防汛通：** 一款用于汛期应急救援及快速响应联动指挥中心的APP ，鸿蒙应用市场搜索“太原防汛通”，[详情](https://appgallery.huawei.com/app/detail?id=topevery.tyfxt.com)
+
+**地震预警：** 成都高新减灾所，及时预警，ICL，鸿蒙应用市场搜索“地震预警”，[详情](https://appgallery.huawei.com/app/detail?id=com.huania.harmonyearthquake)
+
+**地调安全：** 一款服务于野外地质调查安全保障工作的APP，鸿蒙应用市场搜索“地调安全”，[详情](https://appgallery.huawei.com/app/detail?id=com.cgssafety.ohapp)
+
+**数字减灾：** 一个连接政府、企业与公众的资源协调与信息交互机制，覆盖灾前中后，协调资源信息的工作平台，鸿蒙应用市场搜索“数字减灾”，[详情](https://appgallery.huawei.com/app/detail?id=com.szfzjz.cn.hm)
+
+**川工之家：** 由四川省总工会打造的集思想引领、业务办理、普惠服务、工会活动等于一体的网上职工服务平台，鸿蒙应用市场搜索“川工之家”，[详情](https://appgallery.huawei.com/app/detail?id=com.hmg316522678.jnh)
+
+**农商云办公：** 移动办公，鸿蒙应用市场搜索“农商云办公”，[详情](https://appgallery.huawei.com/app/detail?id=com.cdrcb.oa)
+
+**华西证券益理财：** 一款由华西证券股份有限公司打造的轻量化投资策略交易工具，鸿蒙应用市场搜索“华西证券益理财”，[详情](https://appgallery.huawei.com/app/detail?id=com.hx.mall.hm)
 
 **康强医疗人才网：** 医生护士招聘求职平台，鸿蒙应用市场搜索“康强医疗人才网”，[详情](https://appgallery.huawei.com/app/detail?id=com.kq.kq520.com)
 
@@ -189,11 +221,25 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 
 **MBTI职业性格测试：** MBTI心理测评工具，鸿蒙应用市场搜索“MBTI职业性格测试”，[详情](https://appgallery.huawei.com/app/detail?id=com.mbticeshi.zhiyeceshihms)
 
-**遇见系统：** 一款面向个人的时间管理工具，鸿蒙应用市场搜索“遇见系统”，[详情](https://appgallery.huawei.com/app/detail?id=meet.popsoft.tech)
+**医患服务平台：** 患者端，一个供患者订餐、查就诊记录等的医患服务平台，鸿蒙应用市场搜索“医患服务平台”，[详情](https://appgallery.huawei.com/app/detail?id=com.nethospital.hz)
+
+**医患综合服务平台：** 医生端，一款可查病历、就诊记录，编辑资料订餐的平台。鸿蒙应用市场搜索“医患综合服务平台”，[详情](https://appgallery.huawei.com/app/detail?id=com.nethospital.ys)
+
+**时光助手：** 一款面向个人的时间管理工具，鸿蒙应用市场搜索“时光助手”，[详情](https://appgallery.huawei.com/app/detail?id=meet.popsoft.tech)
 
 **破解数独：** 各类数独的题目、答案、逐步讲解，鸿蒙应用市场搜索“破解数独”，[详情](https://appgallery.huawei.com/app/detail?id=cn.yorry.sudoku)
 
 **新材智猛：** 一款面向搅拌站、施工单位、原材料厂家、运输单位等多方角色参与的管理类App，鸿蒙应用市场搜索“新材智猛”，[详情](https://appgallery.huawei.com/app/detail?id=com.dsbos.bjjgxczmhm)
+
+**白鲸鱼旧衣服回收：** 一站式旧物回收服务系统，鸿蒙应用市场搜索“白鲸鱼旧衣服回收”，[详情](https://appgallery.huawei.com/app/detail?id=com.bjy.app)
+
+**飞蚂蚁旧衣服回收：** 一个旧衣、家电、旧书等综合环保回收、闲置物品处理的平台，鸿蒙应用市场搜索“飞蚂蚁旧衣服回收”，[详情](https://appgallery.huawei.com/app/detail?id=com.app.feimayi.cn)
+
+**凤凰会：** 凤凰会是碧桂园业主官方服务平台，全面升级物业服务，为碧桂园业主提供从购房到入住社区生活一站式服务，鸿蒙应用市场搜索“凤凰会”，[详情](https://appgallery.huawei.com/app/detail?id=com.bgy.fhh)
+
+**常州应急：** 常州市应急保障中心官方学习工作平台，一款综合办公、学习、监管、公示为一体的移动应用软件，鸿蒙应用市场搜索“常州应急”，[详情](https://appgallery.huawei.com/app/detail?id=io.whim.czyjharmony)
+
+**一码贵州：** 贵州省消费券官方指定发放平台，提供全链条产业服务，涵盖消费、旅游、金融等，鸿蒙应用市场搜索“一码贵州”，[详情](https://appgallery.huawei.com/app/detail?id=com.onebuygz.hm)
 
 **i资源：** OA协同办公系统，鸿蒙应用市场搜索“i资源”，[详情](https://appgallery.huawei.com/app/detail?id=com.scnrig.iziyuan.hw)
 
@@ -215,13 +261,13 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 
 **便签记事：** 一款简单实用的桌面便签记事本便利贴，鸿蒙应用市场搜索“便签记事”，[详情](https://appgallery.huawei.com/app/detail?id=com.mvtrail.notepad.zjhw)
 
-**时光助手：** 个人时间管理工具，鸿蒙应用市场搜索“时光助手”，[详情](https://appgallery.huawei.com/app/detail?id=meet.popsoft.tech)
-
 **阿特麦：** 一款聚集手办、周边、潮玩、文创的购物商城，鸿蒙应用市场搜索“阿特麦”，[详情](https://appgallery.huawei.com/app/detail?id=com.atemai.haros.app)
 
 **向阳花守护家长端：** 一款家长管理孩子手机，远程控制的App，鸿蒙应用市场搜索“向阳花守护家长端”，[详情](https://appgallery.huawei.com/app/detail?id=com.shmrt.xyhguard.hmos)
 
 **青蓝家园教师端：** 家长和老师实名认证的互动平台，鸿蒙应用市场搜索“青蓝家园”，[详情](https://appgallery.huawei.com/app/detail?id=com.qinglanjiayuan.teacher.huawei)
+
+**青蓝家园家长端：** 一款供家长和老师实名认证互动，含学生成长档案及学校教学管理系统的平台，鸿蒙应用市场搜索“青蓝家园”，[详情](https://appgallery.huawei.com/app/detail?id=com.qinglanjiayuan.parent.huawei)
 
 **轻糖：** 附件交友通常约会软件，鸿蒙应用市场搜索“轻糖”，[详情](https://appgallery.huawei.com/app/detail?id=com.qingtangapp.huawei)
 
@@ -231,13 +277,9 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 
 **维汉翻译通：** 免费翻译维吾尔语国语，鸿蒙应用市场搜索“维汉翻译通”，[详情](https://appgallery.huawei.com/app/detail?id=com.sjfc.whfyt.harm)
 
-**土星计划：** 一款集合个人日程计划、笔记、记账、便签、代办等多种日程功能的App，鸿蒙应用市场搜索“土星计划”，[详情](https://appgallery.huawei.com/grey/app/detail?id=tothink.scitico.huawei)
+**土星计划：** 一款集合个人日程计划、笔记、记账、便签、代办等多种日程功能的App，鸿蒙应用市场搜索“土星计划”，[详情](https://appgallery.huawei.com/app/detail?id=tothink.scitico.huawei)
 
 **施工眼：** 暖通行业移动关联专家，鸿蒙应用市场搜索“施工眼”，[详情](https://appgallery.huawei.com/app/detail?id=com.sungu.mybts)
-
-**飞蚂蚁旧衣服回收：** 一个旧衣、家电、旧书等综合环保回收、闲置物品处理的平台，鸿蒙应用市场搜索“飞蚂蚁旧衣服回收”，[详情](https://appgallery.huawei.com/app/detail?id=com.app.feimayi.cn)
-
-**指北者动态谱：** 为你提供优质的乐谱资源、在线教学、谱友交流的音乐平台，鸿蒙应用市场搜索“指北者动态谱”，[详情](https://appgallery.huawei.com/app/detail?id=com.xp.xpdynamic)
 
 **企学星：** 提供一站式企业培训解决方案，鸿蒙应用市场搜索“企学星”，[详情](https://appgallery.huawei.com/app/detail?id=qixuexing.learn.huawei)
 
@@ -257,7 +299,7 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 
 **财鸽记账：** 全功能免费多账本记账工具，鸿蒙应用市场搜索“财鸽记账”，[详情](https://appgallery.huawei.com/app/detail?id=com.caigee.app)
 
-**0663批发网：** 揭阳军埔批发市场服装货源展示平台，鸿蒙应用市场搜索“0663批发网”，[详情](https://appgallery.huawei.com/app/detail?id=com.jp0663.m)
+**0663批发网：** 一个专注于服装批发的电子商务平台，鸿蒙应用市场搜索“0663批发网”，[详情](https://appgallery.huawei.com/app/detail?id=com.jp0663.www)
 
 **律图法律咨询：** 律师免费在线咨询，司法案件诉讼委托服务，鸿蒙应用市场搜索“律图法律咨询”，[详情](https://appgallery.huawei.com/app/detail?id=com.lvtu.user.hm)
 
@@ -265,19 +307,15 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 
 **少儿围棋教学合集：** 助4到13岁儿童轻松学围棋，鸿蒙应用市场搜索“少儿围棋教学合集”，[详情](https://appgallery.huawei.com/app/detail?id=com.miracle.weqipack)
 
-**地震预警：** 成都高新减灾所，及时预警，ICL，鸿蒙应用市场搜索“地震预警”，[详情](https://appgallery.huawei.com/app/detail?id=com.huania.harmonyearthquake)
-
 **铝加工安全：** 铝加工企业智慧可信安全生产监管软件，鸿蒙应用市场搜索“铝加工安全”，[详情](https://appgallery.huawei.com/app/detail?id=com.yzzn.harmonyAppDev)
 
 **企业名录：** 高效搜索全国企业联系方式的APP，鸿蒙应用市场搜索“企业名录”，[详情](https://appgallery.huawei.com/app/detail?id=com.douyekeji.qyml.hm)
 
 **美的光伏：** 美的光伏 APP，助力记录光伏业务全程信息，鸿蒙应用市场搜索“美的光伏”，[详情](https://appgallery.huawei.com/app/detail?id=com.mideahk.solar)
 
-**广州智慧阅读：** 分析学生阅读行为，个性化匹配阅读图，鸿蒙应用市场搜索“广州智慧阅读”，[详情](https://appgallery.huawei.com/app/detail?id=smart.reading.gz)
-
 **点点建安：** 智慧消防 APP 集成烟感、主机等多设备报警功能，鸿蒙应用市场搜索“点点建安”，[详情](https://appgallery.huawei.com/app/detail?id=diandian.com.huawei)
 
-**营销宝：** 一款专为企业打造的智能营销工具，鸿蒙应用市场搜索“营销宝”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.example.yingxiaobao)
+**营销宝：** 一款专为企业打造的智能营销工具，鸿蒙应用市场搜索“营销宝”，[详情](https://appgallery.huawei.com/app/detail?id=com.example.yingxiaobao)
 
 **瀚宁易企用车：** 一款助力企业内部车辆管理、规范用车的APP，鸿蒙应用市场搜索“瀚宁易企用车”，[详情](https://appgallery.huawei.com/app/detail?id=hanning.huawei.com)
 
@@ -295,8 +333,6 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 
 **裕空间：** 一款集人事、考勤、行政等模块的裕同集团内部员工App ，鸿蒙应用市场搜索“裕空间”，[详情](https://appgallery.huawei.com/app/detail?id=io.dcloud.UNIB005761)
 
-**地调安全：** 一款服务于野外地质调查安全保障工作的APP，鸿蒙应用市场搜索“地调安全”，[详情](https://appgallery.huawei.com/app/detail?id=com.cgssafety.ohapp)
-
 **触见：** 一款融合B2C与O2O模式、多端一体的极速配送医疗健康APP ，鸿蒙应用市场搜索“触见”，[详情](https://appgallery.huawei.com/app/detail?id=com.touchsee.huawei)
 
 **混沌排盘：** 一款专业精准、使用便捷的八字排盘与分析APP ，鸿蒙应用市场搜索“混沌排盘”，[详情](https://appgallery.huawei.com/app/detail?id=com.hdpp.kxt.hmos)
@@ -305,25 +341,21 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 
 **心灵伙伴云：** 一款融合技术与专业量表，助力学校管理学生心理健康的测评工具，鸿蒙应用市场搜索“心灵伙伴云”，[详情](https://appgallery.huawei.com/app/detail?id=com.xlhb.cloud.app.ho)
 
-**掌上新大：** 一款与“一站式办事大厅”协同，为师生提供优质信息化服务、实现便捷审批的APP，鸿蒙应用市场搜索“掌上新大”，[详情](https://appgallery.huawei.com/app/detail?id=com.uni.UNIBD487D4)
-
 **征信网点导航：** 一款集便捷征信查询、网点导航、信用信息获取及交流分享于一体的实用 APP，鸿蒙应用市场搜索“征信网点导航”，[详情](https://appgallery.huawei.com/app/detail?id=com.caigee.credit)
 
 **风智子：** 一款设备全、信息透、服务优的风电主吊设备租赁一站式APP ，鸿蒙应用市场搜索“风智子”，[详情](https://appgallery.huawei.com/app/detail?id=fzzhm.sdqzu.com)
 
-**网单云：** 一款可同步多平台订单、比价配送、打印、统一回客服消息的APP ，鸿蒙应用市场搜索“瀚宁易企用车”，[详情](https://appgallery.huawei.com/app/detail?id=com.zhuandanbao.wdy)
-
-**太原防汛通：** 一款用于汛期应急救援及快速响应联动指挥中心的APP ，鸿蒙应用市场搜索“太原防汛通”，[详情](https://appgallery.huawei.com/app/detail?id=topevery.tyfxt.com)
+**网单云：** 一款可同步多平台订单、比价配送、打印、统一回客服消息的APP ，鸿蒙应用市场搜索“网单云”，[详情](https://appgallery.huawei.com/app/detail?id=com.zhuandanbao.wdy)
 
 **中标一证通：** 一款在政务、政府采购领域，为企事业单位提供跨地区无介质移动电子认证等服务的 APP，鸿蒙应用市场搜索“中标一证通”，[详情](https://appgallery.huawei.com/app/detail?id=com.xsca.zbyzt)
 
 **中邮智选车物流管理系统：** 一款以全流程数字化赋能仓储，模块化配置助力企业降本增效的智慧管理APP，鸿蒙应用市场搜索“中邮智选车物流管理系统”，[详情](https://appgallery.huawei.com/app/detail?id=ptac.logistics.mobile)
 
+**中邮云物流平台：** 一款集订单、审核等多样功能于一体的云物流平台APP，鸿蒙应用市场搜索“中邮云物流平台”，[详情](https://appgallery.huawei.com/app/detail?id=ptac.oms.mobile)
+
 **破解数织：** 一款能拍照解数织题、带丰富题库的APP，鸿蒙应用市场搜索“破解数织”，[详情](https://appgallery.huawei.com/app/detail?id=cn.yorry.nonogram)
 
 **i一起：** 一款集新闻资讯推送、移动打卡、多样工作审批等功能的高效移动办公APP，鸿蒙应用市场搜索“i一起”，[详情](https://appgallery.huawei.com/app/detail?id=com.isyn.hw)
-
-**民政通：** 民政一体化政务服务平台移动端，鸿蒙应用市场搜索“民政通”，[详情](https://appgallery.huawei.com/app/detail?id=com.huawei.jmggfw)
 
 **巧多棋院：** 涵盖各种棋类的对弈和学习平台，鸿蒙应用市场搜索“巧多棋院”，[详情](https://appgallery.huawei.com/app/detail?id=com.miracle.qdqyhm)
 
@@ -337,32 +369,307 @@ Well-known developers are welcome to [submit cases](https://github.com/dcloudio/
 
 **设备云售后：** 一款集成多功能、覆盖多场景的售后工单协同管理APP，鸿蒙应用市场搜索“设备云售后”，[详情](https://appgallery.huawei.com/app/detail?id=com.gtkj.yunshouhou)
 
-
-**中邮云物流平台：** 一款集订单、审核等多样功能于一体的云物流平台APP，鸿蒙应用市场搜索“中邮云物流平台”，[详情](https://appgallery.huawei.com/app/detail?id=ptac.oms.mobile)
-
 **众行管家：** 一款可远程点火熄火、分享钥匙的智能控车APP，鸿蒙应用市场搜索“众行管家”，[详情](https://appgallery.huawei.com/app/detail?id=com.kdwl.dazhong.hm)
 
-**凤凰会：** 凤凰会是碧桂园业主官方服务平台，全面升级物业服务，为碧桂园业主提供从购房到入住社区生活一站式服务，鸿蒙应用市场搜索“凤凰会”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.bgy.fhh)
+**多问律师端：** 多问-律师端是律师一站式移动办公软件，为律师提供了工具和接案功能，鸿蒙应用市场搜索“多问律师端”，[详情](https://appgallery.huawei.com/app/detail?id=duowen__88.huawei.com)
 
-**多问律师端：** 多问-律师端是律师一站式移动办公软件，为律师提供了工具和接案功能，鸿蒙应用市场搜索“多问律师端”，[详情](https://appgallery.huawei.com/grey/app/detail?id=duowen__88.huawei.com)
+**选豆：** 一款汇聚全球咖啡豆、提供咖啡行业资讯及专业知识库的APP，鸿蒙应用市场搜索“选豆”，[详情](https://appgallery.huawei.com/app/detail?id=com.gbyc.coffeeApp)
 
-**选豆：** 一款汇聚全球咖啡豆、提供咖啡行业资讯及专业知识库的APP，鸿蒙应用市场搜索“选豆”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.gbyc.coffeeApp)
+**智赋城：** 一款融合前沿技术、支持多端操作，为 IoT 智能数码商贸企业提供多业态 ERP/SCRM 管理及多类系统的智赋城云平台 App，鸿蒙应用市场搜索“智赋城”，[详情](https://appgallery.huawei.com/app/detail?id=com.zfucity.r6)
 
-**智赋城：** 一款融合前沿技术、支持多端操作，为 IoT 智能数码商贸企业提供多业态 ERP/SCRM 管理及多类系统的智赋城云平台 App，鸿蒙应用市场搜索“智赋城”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.zfucity.r6)
+**乳链惠：** 伊利产业链金融业务数字化平台，鸿蒙应用市场搜索“乳链惠”，[详情](https://appgallery.huawei.com/app/detail?id=com.yili.rlhapp)
 
-**乳链惠：** 伊利产业链金融业务数字化平台，鸿蒙应用市场搜索“乳链惠”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.yili.rlhapp)
+**小翼智慧：** 小翼专用ERP配套APP，鸿蒙应用市场搜索“小翼智慧”，[详情](https://appgallery.huawei.com/app/detail?id=com.zfucity.xiaoyi)
 
-**小翼智慧：** 小翼专用ERP配套APP，鸿蒙应用市场搜索“小翼智慧”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.zfucity.xiaoyi)
+**顺络家园：** 一款服务于顺络园区生活，提供多端平台，人脸识别等技术的智慧 APP，鸿蒙应用市场搜索“顺络家园”，[详情](https://appgallery.huawei.com/app/detail?id=com.tce.shunluo)
 
-**BALS Pro：** 一款用于控制智慧面膜的硬件设备的APP，鸿蒙应用市场搜索“BALS Pro”，[详情](https://appgallery.huawei.com/grey/app/detail?id=cn.xinzhishengwu.com)
+**美宜佳：** 一款宜佳会员APP，鸿蒙应用市场搜索“美宜佳”，[详情](https://appgallery.huawei.com/app/detail?id=com.myj.memberapp)
 
-**顺络家园：** 一款服务于顺络园区生活，提供多端平台，人脸识别等技术的智慧 APP，鸿蒙应用市场搜索“顺络家园”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.tce.shunluo)
+**柳钢之家：** 一款为职工提供普惠服务、体育赛事、生活保障等网上服务的APP，鸿蒙应用市场搜索“柳钢之家”，[详情](https://appgallery.huawei.com/app/detail?id=com.lg.next)
 
-**美宜佳：** 一款宜佳会员APP，鸿蒙应用市场搜索“美宜佳”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.myj.memberapp)
+**PTE单词：** PTE考试必备智能刷词APP，鸿蒙应用市场搜索“PTE单词”，[详情](https://appgallery.huawei.com/app/detail?id=com.beatpte.alpacapteword)
 
-**柳钢之家：** 一款为职工提供普惠服务、体育赛事、生活保障等网上服务的APP，鸿蒙应用市场搜索“柳钢之家”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.lg.next)
+**环保小智：** 一个「环保专业的云端知识库」的APP，鸿蒙应用市场搜索“环保小智”，[详情](https://appgallery.huawei.com/app/detail?id=com.pdep.huawei)
 
-**PTE单词：** PTE考试必备智能刷词APP，鸿蒙应用市场搜索“PTE单词”，[详情](https://appgallery.huawei.com/grey/app/detail?id=com.beatpte.alpacapteword)
+**玩转线性代数：** 一款矩阵计算器，覆盖线性代数、高等代数、矩阵论的数学问题，鸿蒙应用市场搜索“玩转线性代数”，[详情](https://appgallery.huawei.com/app/detail?id=com.math666.matrix.hm)
+
+**生产线设备档案管理系统：** 一个涵盖生产线设备信息管理、点检管理、润滑管理及维修管理的系统，鸿蒙应用市场搜索“生产线设备档案管理系统”，[详情](https://appgallery.huawei.com/app/detail?id=eqms.jmry.xabyzp)
+
+**万华集团电商：** 一款集多功能于一体的化工商品购物平台，鸿蒙应用市场搜索“万华集团电商”，[详情](https://appgallery.huawei.com/app/detail?id=com.ewhchem.buyer_harmony)
+
+**易软云：** 一款专为物业管理从业者开发的移动办公软件，鸿蒙应用市场搜索“易软云”，[详情](https://appgallery.huawei.com/app/detail?id=com.easysoft.yry)
+
+**金益康：** 一个为临床人员提供沟通、健康管理、数据分析、诊疗及转诊等功能的系统，鸿蒙应用市场搜索“金益康”，[详情](https://appgallery.huawei.com/app/detail?id=com.jinyikang.app)
+
+**甘愿办：** 一款智能办公应用，旨在提升团队协作效率，简化日常管理流程，鸿蒙应用市场搜索“甘愿办”，[详情](https://appgallery.huawei.com/app/detail?id=gqsj.oa.app)
+
+**LOY SPACE：** 一款控制wifi、蓝牙设备屏的创意酷玩的APP产品，鸿蒙应用市场搜索“LOY SPACE”，[详情](https://appgallery.huawei.com/app/detail?id=com.ys.loywf)
+
+**艺考生志愿填报：** 一款专为艺术类考生打造的专业化志愿填报辅助工具，鸿蒙应用市场搜索“艺考生志愿填报”，[详情](https://appgallery.huawei.com/app/detail?id=com.ykszytb.guanghe)
+
+**匠人百科：** 一个聚焦艺术家与手艺人的百科全书平台，鸿蒙应用市场搜索“匠人百科”，[详情](https://appgallery.huawei.com/app/detail?id=www.jiangrenbaike.com)
+
+**家庭记账宝：** 一款专为家庭生活设计的免费多用户同步记账工具，鸿蒙应用市场搜索“家庭记账宝”，[详情](https://appgallery.huawei.com/app/detail?id=cn.qtapp.jzb)
+
+**易消课：** 一款专为培训机构打造的极简课时管理工具，鸿蒙应用市场搜索“易消课”，[详情](https://appgallery.huawei.com/app/detail?id=com.yunhuibai.yixiaokeHM)
+
+**伍道：** 一款聚焦于团队管理工具，鸿蒙应用市场搜索“伍道”，[详情](https://appgallery.huawei.com/app/detail?id=com.wudaoweizhihw.app)
+
+**海聚英才通：** 一个面向全市乃至全球各类人才的人才服务“一件事”网上办理平台，鸿蒙应用市场搜索“海聚英才通”，[详情](https://appgallery.huawei.com/app/detail?id=uni.UNI10AE0F1.har.production)
+
+**一应黔行：** 一款支持手机乘车码便捷过闸的APP，鸿蒙应用市场搜索“一应黔行”，[详情](https://appgallery.huawei.com/app/detail?id=com.gz.hm.subway)
+
+**华威：** 一款涵盖备件物料管理、在船名单统计及休假申请等审批功能的船舶管理软件，鸿蒙应用市场搜索“华威”，[详情](https://appgallery.huawei.com/app/detail?id=io.hw.lsplatform.hm)
+
+**出入库管理：** 一款出库、入库、进销存和库存管理的工具，鸿蒙应用市场搜索“出入库管理”，[详情](https://appgallery.huawei.com/app/detail?id=uni.UNID07E3E0.huawei)
+
+**高考在线：** 一款专为考生提供填报志愿的参考APP，鸿蒙应用市场搜索“高考在线”，[详情](https://appgallery.huawei.com/app/detail?id=com.ksly.gkzxrjhmos)
+
+**泰到位按摩：** 一款提供24小时上门按摩服务，以养生保健为主题的服务型APP，鸿蒙应用市场搜索“泰到位按摩”，[详情](https://appgallery.huawei.com/app/detail?id=com.yuesheng.taidaoweih)
+
+**劳勤劳动力管理：** 一款聚焦 “智慧考勤” 的软件，鸿蒙应用市场搜索“劳勤劳动力管理”，[详情](https://appgallery.huawei.com/app/detail?id=cn.com.coho.wspapp)
+
+**宝塔面板：** 一款服务器管理软件，可以通过App轻松管理服务器，提升运维效率，鸿蒙应用市场搜索“宝塔面板”，[详情](https://appgallery.huawei.com/app/detail?id=cn.bt.btpanel.huawei)
+
+**客户跟进：** 一款为销售团队提供全流程管理的APP，鸿蒙应用市场搜索“客户跟进”，[详情](https://appgallery.huawei.com/app/detail?id=com.inhehm.genjin)
+
+**jnpf-java：** 一个一体化商务沟通、智能移动办公，帮助企业协同管理、融合沟通、提升办公效率，实现电脑手机一体化团队管理、智能数字化管理的APP，鸿蒙应用市场搜索“jnpf-java”，[详情](https://appgallery.huawei.com/app/detail?id=com.jnpf.java)
+
+**天威通：** 一款可在手机端快速申办与管理移动数字证书及电子签章的APP，鸿蒙应用市场搜索“天威通”，[详情](https://appgallery.huawei.com/app/detail?id=com.itrus.cashare)
+
+**智慧运行大数据管理平台：** 一款监测设备运行、远程控制设备的APP，鸿蒙应用市场搜索“智慧运行大数据管理平台”，[详情](https://appgallery.huawei.com/app/detail?id=com.shangshui.zhywhm)
+
+**运营数智仓：** 一个包括医疗业务指标、数据挖掘和数据监控的运营中心系统，鸿蒙应用市场搜索“运营数智仓”，[详情](https://appgallery.huawei.com/app/detail?id=com.hkwj.yyzx)
+
+**中融新大：** 一款助力企业员工高效办公的工具，具备提交日报、审批等实用功能，鸿蒙应用市场搜索“中融新大”，[详情](https://appgallery.huawei.com/app/detail?id=uni.UNIB03D90E.hmos)
+
+**九泽-Scrapbook chat：** 一款专注情绪，记录心情变化 将情绪变化融入日常记录的APP，鸿蒙应用市场搜索“九泽”，[详情](https://appgallery.huawei.com/app/detail?id=com.zhonghuitoukong.liaotian)
+
+**同城婚车：** 一款提供全国当地各种低中高婚庆车队的APP，鸿蒙应用市场搜索“同城婚车”，[详情](https://appgallery.huawei.com/app/detail?id=cn.tchunche.hunchehar)
+
+**菜王网：** 一款涵盖生鲜近千款食材商品的APP，鸿蒙应用市场搜索“菜王网”，[详情](https://appgallery.huawei.com/app/detail?id=com.ld.cww1)
+
+**贸宝云：** 一个基于 S2B2C 模式的新零售数字化新商业服务平台，鸿蒙应用市场搜索“贸宝云”，[详情](https://appgallery.huawei.com/app/detail?id=huawei.maobaoyun.app)
+
+**未来医生工作室：** 一款专为医生打造的 AI 助手应用，鸿蒙应用市场搜索“未来医生工作室”，[详情](https://appgallery.huawei.com/app/detail?id=com.medlinker.doctorstudioharmony)
+
+**民生宝：** 一款为用户提供了线上查询缴费、自助抄表、线下上门安装维修等管道燃气服务的APP，鸿蒙应用市场搜索“民生宝”，[详情](https://appgallery.huawei.com/app/detail?id=com.msht.minshengbao.hw)
+
+**康熙字典专业版：** 一个提供康熙字典在线查字的平台，鸿蒙应用市场搜索“康熙字典专业版”，[详情](https://appgallery.huawei.com/app/detail?id=kangxi.aikangxi.com)
+
+**武高新：** 一款集协同办公、项目管理、统一门户、移动规建于一体的武进高新区综合办公平台 APP，鸿蒙应用市场搜索“武高新”，[详情](https://appgallery.huawei.com/app/detail?id=com.example.wizappharmonyos)
+
+**秒通：** 华强方特集团为满足内部办公需求打造的一款智能办公App，鸿蒙应用市场搜索“秒通”，[详情](https://appgallery.huawei.com/app/detail?id=com.hytch.mutone.hm.company)
+
+**招标采购导航网：** 一个专业的招投标信息综合服务平台，鸿蒙应用市场搜索“招标采购导航网”，[详情](https://appgallery.huawei.com/app/detail?id=hm.okcis.zbcgdhw)
+
+**感控工作间：** 为医疗机构专门提供的医院感染管理移动工作间，鸿蒙应用市场搜索“感控工作间”，[详情](https://appgallery.huawei.com/app/detail?id=com.deya.huawei)
+
+**仁禾中衡：** 一个将特定流程与日常事务关联的公司 OA 系统，鸿蒙应用市场搜索“仁禾中衡”，[详情](https://appgallery.huawei.com/app/detail?id=renhe.demo.test)
+
+**库管大师：** 一个手机就能管的仓库存存管理系统，鸿蒙应用市场搜索“库管大师”，[详情](https://appgallery.huawei.com/app/detail?id=com.jky.kgds)
+
+**旦春：** 一款连接茶艺师与实体门店的APP，鸿蒙应用市场搜索“旦春”，[详情](https://appgallery.huawei.com/app/detail?id=com.danchunchaye.tea.hmos)
+
+**海旅免税会员购：** 海旅免税旗下的大型旅游零售会员店，鸿蒙应用市场搜索“海旅免税会员购”，[详情](https://appgallery.huawei.com/app/detail?id=com.hltmsp.s)
+
+**宏扬网校：** 自考用户首选的自考学历提升学习APP，鸿蒙应用市场搜索“宏扬网校”，[详情](https://appgallery.huawei.com/app/detail?id=com.hongcai.study)
+
+**办案大全：** 一款免费法律大全的APP，鸿蒙应用市场搜索“办案大全”，[详情](https://appgallery.huawei.com/app/detail?id=com.badq.huawei)
+
+**成绩一百：** 一款涵盖成绩记录，成绩图表分析，成绩拍照留档等功能的APP，鸿蒙应用市场搜索“成绩一百”，[详情](https://appgallery.huawei.com/app/detail?id=chengji100.com.www)
+
+**小麦排队通：** 一款通过手机APP取号、叫号机制确保排队公平性的APP，鸿蒙应用市场搜索“小麦排队通”，[详情](https://appgallery.huawei.com/app/detail?id=com.xiaomaicard.pdthm)
+
+**小麦收银宝：** 一个实现快速结算、记录交易的收银管理系统，鸿蒙应用市场搜索“小麦收银宝”，[详情](https://appgallery.huawei.com/app/detail?id=com.xiaomaicard.sybhm)
+
+**小麦库存通：** 一个助管理者查看库存、支持盘点的库存管理系统，鸿蒙应用市场搜索“小麦库存通”，[详情](https://appgallery.huawei.com/app/detail?id=com.xiaomaicard.kcthm)
+
+**买商标：** 一个集商标注册、买卖、查询、转让等服务于一体的专业平台，鸿蒙应用市场搜索“买商标”，[详情](https://appgallery.huawei.com/app/detail?id=com.trademarkbuy.huawei)
+
+**乳链惠渠道版：** 伊利产业链金融业务数字化平台渠道端，鸿蒙应用市场搜索“乳链惠渠道版”，[详情](https://appgallery.huawei.com/app/detail?id=com.yili.rlhqdapp)
+
+**云查车：** 一款集司机端，管理端于一体的应用，随时掌握自身位置与车辆状态，鸿蒙应用市场搜索“云查车”，[详情](https://appgallery.huawei.com/app/detail?id=com.example.cloudCar)
+
+**龙大夫国药堂：** 龙大夫 APP 是国医大师背书的普惠药房，提供一站式中医健康管理与中药调理服务，鸿蒙应用市场搜索“龙大夫国药堂”，[详情](https://appgallery.huawei.com/app/detail?id=com.dst111.drlong)
+
+**银企通：** 一款用于用户核对账户的APP，鸿蒙应用市场搜索“银企通”，[详情](https://appgallery.huawei.com/app/detail?id=io.dcloud.H51D6B84A)
+
+**智慧浩翔：** 一款高效协作的办公系统，鸿蒙应用市场搜索“智慧浩翔”，[详情](https://appgallery.huawei.com/app/detail?id=com.hx.wisdomhaoxiang)
+
+**梅花智能：** 一款通过智能锁互联，支持多方式开锁，守护家门安全便捷的APP，鸿蒙应用市场搜索“梅花智能”，[详情](https://appgallery.huawei.com/app/detail?id=com.meihua.harmonyblossomlock)
+
+**天翼云办公：** 一款面向党政机关、企事业单位等客户提供XC化融合型办公服务的平台，鸿蒙应用市场搜索“天翼云办公”，[详情](https://appgallery.huawei.com/app/detail?id=com.zdww.oayun)
+
+**智能电瓶断电开关：** 一款搭配固定硬件，通过蓝牙来控制电瓶断电开关的APP，鸿蒙应用市场搜索“智能电瓶断电开关”，[详情](https://appgallery.huawei.com/app/detail?id=com.rieiek.carswitch)
+
+**互站：** 知名数字资产交易平台，提供源码等交易及安全保障，可随时管理交易，鸿蒙应用市场搜索“互站”，[详情](https://appgallery.huawei.com/app/detail?id=com.huzhan.app)
+
+**新生代：** 一款高效的业务管理系统，旨在简化业务流程，提高团队协作效率，鸿蒙应用市场搜索“新生代”，[详情](https://appgallery.huawei.com/app/detail?id=com.xsdHarmony.pro)
+
+**智渔投喂管家：** 一款集投喂、检测设备及数字服务于一体的APP，鸿蒙应用市场搜索“智渔投喂管家”，[详情](https://appgallery.huawei.com/app/detail?id=com.sft.tej)
+
+**比分脉冲：** 一个基于ai解析的足球分析平台，鸿蒙应用市场搜索“比分脉冲”，[详情](https://appgallery.huawei.com/app/detail?id=cn.net.zxcc.scorepulse.hos)
+
+**百川超级学霸：** 一款全方位服务考证学习的手机应用，鸿蒙应用市场搜索“百川超级学霸”，[详情](https://appgallery.huawei.com/app/detail?id=com.bc.xueba)
+
+**话机学堂：** 一款融合视频真人检测机制、为3C零售企业提供员工在线训练与测评的APP，鸿蒙应用市场搜索“话机学堂”，[详情](https://appgallery.huawei.com/app/detail?id=com.hjsj.hjsjpos)
+
+**雅方咨询：** 一家专注于研究、指导、咨询、培训家庭教育于一体的专业教育机构，鸿蒙应用市场搜索“雅方咨询”，[详情](https://appgallery.huawei.com/app/detail?id=com.yafangwanhui.hongmeng)
+
+**掌上湘窖：** 一个供业务员移动访销，支持客户管理与订单处理的系统，鸿蒙应用市场搜索“掌上湘窖”，[详情](https://appgallery.huawei.com/app/detail?id=com.vats.zsxj)
+
+**陪玩派对：** 一个专注于游戏社交与情感陪伴的创新陪玩平台，鸿蒙应用市场搜索“陪玩派对”，[详情](https://appgallery.huawei.com/app/detail?id=com.moyin.peiwanpaidui.hmos)
+
+**千年游戏盒子：** 一个集多款精美千年游戏的玩家交流平台，鸿蒙应用市场搜索“千年游戏盒子”，[详情](https://appgallery.huawei.com/app/detail?id=com.box.qiannian)
+
+**交通运输共享平台：** 一个融合多技术的运输管理系统，以全流程数字化实现高效运输管理，鸿蒙应用市场搜索“交通运输共享平台”，[详情](https://appgallery.huawei.com/app/detail?id=com.example.transportZhrj)
+
+**题小小作文批改：** 一个专业作文批改平台，鸿蒙应用市场搜索“题小小作文批改”，[详情](https://appgallery.huawei.com/app/detail?id=com.tixiaoxiao.zuowen.app)
+
+**我的溧阳：** 溧阳市融媒体中心运营的智慧城市创新运用平台，溧阳本地信息惠民的公共服务平台，鸿蒙应用市场搜索“我的溧阳”，[详情](https://appgallery.huawei.com/app/detail?id=com.myliyang.city)
+
+**货运拍档配送版：** 为供应商和经销商提供高效的物流方案，鸿蒙应用市场搜索“货运拍档配送版”，[详情](https://appgallery.huawei.com/app/detail?id=com.hebg3.tms_location)
+
+**PP体育：** 服务全体球迷的互联网体育平台，提供全时段资讯，鸿蒙应用市场搜索“PP体育”，[详情](https://appgallery.huawei.com/app/detail?id=com.pplive.hongmengapp)
+
+**风铃天气3.0：** 一个服务决策用户与专业人员的决策气象平台，鸿蒙应用市场搜索“风铃天气3.0”，[详情](https://appgallery.huawei.com/app/detail?id=com.sqxt.fengling)
+
+**货满满货主端：** 一款用于运输物流、寻找货源、发布车源信息的综合物流服务软件，鸿蒙应用市场搜索“货满满货主端”，[详情](https://appgallery.huawei.com/app/detail?id=uni.app.UNI9D65CFA)
+
+**批菜网：** 一个以生鲜食材配送为主的专业移动应用商城，专业的B2B及B2C模商业模式，鸿蒙应用市场搜索“批菜网”，[详情](https://appgallery.huawei.com/app/detail?id=com.jmlide.ywshop1)
+
+**云医签：** 一款供移动终端，提供数字证书等服务的APP，鸿蒙应用市场搜索“云医签”，[详情](https://appgallery.huawei.com/app/detail?id=com.custle.hmyunyiqian)
+
+**荣装网商户端：** 一个改造家装产业链，实现消费者利益最大化的平台，鸿蒙应用市场搜索“荣装网商户端”，[详情](https://appgallery.huawei.com/app/detail?id=com.rongzw.hmbusiness)
+
+**蓝靛之陆：** 一个售卖蓝靛果饮品及衍生品的自营商城，鸿蒙应用市场搜索“蓝靛之陆”，[详情](https://appgallery.huawei.com/app/detail?id=com.lddl.app)
+
+**伊鸣科技：** 一款专业流量管理，支持支付与客服的工具，鸿蒙应用市场搜索“伊鸣科技”，[详情](https://appgallery.huawei.com/app/detail?id=com.yimingkeji.app)
+
+**111医药馆：** 一个提供24h在线家庭医生与送药的平台，鸿蒙应用市场搜索“111医药馆”，[详情](https://appgallery.huawei.com/app/detail?id=com.harmonys.yiyaoguan111)
+
+**魔方后勤：** 一套集信息化、智能化于一体的后勤管理综合管理平台，鸿蒙应用市场搜索“魔方后勤”，[详情](https://appgallery.huawei.com/app/detail?id=com.forchange.ilogistics)
+
+**创云书园：** 一个综合性的培训管理和移动学习平台，鸿蒙应用市场搜索“创云书园”，[详情](https://appgallery.huawei.com/app/detail?id=com.capitalgroup.learning.hm.pro)
+
+**砼赢家APP：** 一个配合砼鑫ERP PC版的搅拌站人员使用系统，鸿蒙应用市场搜索“砼赢家”，[详情](https://appgallery.huawei.com/app/detail?id=com.hntxrj.spterp)
+
+**知行南网：** 南方电网内部员工专属的交流沟通平台，集资讯、文化、生活等服务为一体，鸿蒙应用市场搜索“知行南网”，[详情](https://appgallery.huawei.com/app/detail?id=com.zxnw.nanwang)
+
+**白话-爱用工：** 一款为企业提供用工合规服务的白话APP。的APP，鸿蒙应用市场搜索“白话-爱用工”，[详情](https://appgallery.huawei.com/app/detail?id=com.ayghos.baihua)
+
+**数智协同办公0A平台：** 一款线上办公，实现各类统计的复用，各类审批的APP，鸿蒙应用市场搜索“数智协同办公0A平台”，[详情](https://appgallery.huawei.com/app/detail?id=uni.app.UNI8D14AB2SZHarmony)
+
+**ToDo目标：** 一款助力目标管理，含番茄计时等功能的ToDo目标APP，鸿蒙应用市场搜索“ToDo目标”，[详情](https://appgallery.huawei.com/app/detail?id=uni.UNIE10F3E5.a)
+
+**联通爱听：** 超海量超好看听书神器，鸿蒙应用市场搜索“联通爱听”，[详情](https://appgallery.huawei.com/app/detail?id=harmonyWoread.huaiwei.com)
+
+**羊驼PTE：** 为用户提供全面的备考练习材料与AI智能测评的一站式练习平台，鸿蒙应用市场搜索“羊驼PTE”，[详情](https://appgallery.huawei.com/app/detail?id=com.beatpte.alpacapte)
+
+**习酒渠道云：** 一款供经销商营销、习酒员工办公的APP，鸿蒙应用市场搜索“习酒渠道云”，[详情](https://appgallery.huawei.com/app/detail?id=com.gzxijiu.qudaoyunhm)
+
+**logo：** 一款助你轻松制作专属水印logo的工具，鸿蒙应用市场搜索“logo”，[详情](https://appgallery.huawei.com/app/detail?id=com.diankamu.logo)
+
+**鹏邦门店APP：** 家居业门店管理数字化平台，鸿蒙应用市场搜索“鹏邦门店APP”，[详情](https://appgallery.huawei.com/app/detail?id=hw.dcloud.H5342BD81)
+
+**妙探云：** 一个提供资讯、监测、发稿及智能图片的云服务平台，鸿蒙应用市场搜索“妙探云”，[详情](https://appgallery.huawei.com/app/detail?id=com.mtnt.cloud.hm)
+
+**新概念英语全四册：** 名师微课伴您学习新概念英语，鸿蒙应用市场搜索“新概念英语全四册”，[详情](https://appgallery.huawei.com/app/detail?id=com.iyuba.newconceptenglish)
+
+**英语四级听力：** 一款真题全面、体验良好、训练科学的听力练习软件，鸿蒙应用市场搜索“英语四级听力”，[详情](https://appgallery.huawei.com/app/detail?id=com.iyuba.hmcet4)
+
+**工控技术平台：** 一个包含丰富型号手册、支持快速报价的工控资料库，鸿蒙应用市场搜索“工控技术平台”，[详情](https://appgallery.huawei.com/app/detail?id=com.v20262972.hw)
+
+**晨曦BIM项目管理平台：** 一款建立云平台+BIM项目全过程总控管理的工具，鸿蒙应用市场搜索“晨曦BIM项目管理平台”，[详情](https://appgallery.huawei.com/app/detail?id=com.test.huawei.javaqz)
+
+**智能云ERP：** ERP、进销存、生产管理一体化平台，鸿蒙应用市场搜索“智能云ERP”，[详情](https://appgallery.huawei.com/app/detail?id=com.loafish.znyerp)
+
+**天马平台：** 一个集一站式工业品采购、冗余库存共享消纳、全球核电供应链平台于一体的工业品在线采购服务平台，鸿蒙应用市场搜索“天马平台”，[详情](https://appgallery.huawei.com/app/detail?id=com.qwharmony.tianma)
+
+**抖素材：** 原创视频剪辑带货素材智能成片神器，鸿蒙应用市场搜索“抖素材”，[详情](https://appgallery.huawei.com/app/detail?id=com.weiq.influencer.hm)
+
+**WeiQ自媒体：** 为自媒体量身打造提供专业大数据服务与分析评估的平台，鸿蒙应用市场搜索“WeiQ自媒体”，[详情](https://appgallery.huawei.com/app/detail?id=com.yddj.dousc.hos)
+
+**鸭题库：** 一款多门类移动智能学习平台，涵盖医护类、建筑类、财经类、专升本、教资类、金融类等数十种职业培训课程，鸿蒙应用市场搜索“鸭题库”，[详情](https://appgallery.huawei.com/app/detail?id=com.youxuedianzi.yatikuHarmonyApp)
+
+**思联三维看图：** 一款轻量化手机看图纸、分享图纸、团队协同办公的轻量化CAD三维模型APP，鸿蒙应用市场搜索“思联三维看图”，[详情](https://appgallery.huawei.com/app/detail?id=com.dgt.wis3d.huawei)
+
+**科学选股：** 一款基于人工智能与大数据的股票投资分析工具，鸿蒙应用市场搜索“科学选股”，[详情](https://appgallery.huawei.com/app/detail?id=com.kexuexuanguprod.stock)
+
+**房产俱乐部：** 一款可查看动态、聊天赠礼的房产俱乐部APP，鸿蒙应用市场搜索“房产俱乐部”，[详情](https://appgallery.huawei.com/app/detail?id=com.huifubao.fangchanclub)
+
+**开发票助手：** 一款保存查看发票信息、支持扫码识别的工具，鸿蒙应用市场搜索“开发票助手”，[详情](https://appgallery.huawei.com/app/detail?id=io.assitant.invoice)
+
+**资证通：** 一款快速精准的企业信息查询工具，鸿蒙应用市场搜索“资证通”，[详情](https://appgallery.huawei.com/app/detail?id=uzztong.huawei.com)
+
+**爱占星：** 一款集星座运势、星盘分析及多样占星功能于一体的软件，鸿蒙应用市场搜索“爱占星”，[详情](https://appgallery.huawei.com/app/detail?id=com.leo.astro.hm)
+
+**顺络家园：** 一款服务顺络园区生活的智慧APP，鸿蒙应用市场搜索“顺络家园”，[详情](https://appgallery.huawei.com/app/detail?id=com.tce.shunluo)
+
+**摩耶上门按摩：** 一个专注于上门服务领域的线上按摩品牌，24小时O2O上门按摩服务平台，鸿蒙应用市场搜索“摩耶上门按摩”，[详情](https://appgallery.huawei.com/app/detail?id=com.moyeuser.hw)
+
+**亿企查：** 全国免费的一站式企业信息查询平台，鸿蒙应用市场搜索“亿企查”，[详情](https://appgallery.huawei.com/app/detail?id=com.yiqicha.hm)
+
+**欧气喵一番赏：** 模玩手办盲盒购物平台，鸿蒙应用市场搜索“欧气喵一番赏”，[详情](https://appgallery.huawei.com/app/detail?id=com.wewezen.ouqimiao)
+
+**工程经济管理信息系统：** 一款助客户查看项目进度，提升协作透明度的应用，鸿蒙应用市场搜索“工程经济管理信息系统”，[详情](https://appgallery.huawei.com/app/detail?id=com.subei.crtg_hm)
+
+**金色年华：** 一款聚合校内服务、方便师生的金色年华APP，鸿蒙应用市场搜索“金色年华”，[详情](https://appgallery.huawei.com/app/detail?id=cn.jhc.goldenAgeh)
+
+**账王业财：** 企业经营账财务管理软件，鸿蒙应用市场搜索“账王业财”，[详情](https://appgallery.huawei.com/app/detail?id=cn.cash360.lionhm)
+
+**舆情秘书专业版：** 提供互联网舆情监测的大数据平台，鸿蒙应用市场搜索“舆情秘书专业版”，[详情](https://appgallery.huawei.com/app/detail?id=com.istarshine.yqms4harmonyos)
+
+**动泳：** 一个整合多模块、保障数据安全的企业办公解决方案APP，鸿蒙应用市场搜索“动泳”，[详情](https://appgallery.huawei.com/app/detail?id=com.shangshuipool.dongyonghm)
+
+**我要查快递：** 一个可查天气、快递和生肖信息的工具，鸿蒙应用市场搜索“我要查快递”，[详情](https://appgallery.huawei.com/app/detail?id=com.youjuda.woyaochakuaidi)
+
+**蘑力色彩：** 一款助力穿衣搭配、提升衣品的配色利器，鸿蒙应用市场搜索“蘑力色彩”，[详情](https://appgallery.huawei.com/app/detail?id=tech.honki.mlsc)
+
+**e万源：** 智慧社区业务的互联网社区综合服务平台，鸿蒙应用市场搜索“e万源”，[详情](https://appgallery.huawei.com/app/detail?id=com.ht.ewy)
+
+**SOULNEST：** 一款提供物品寄存服务的移动应用，鸿蒙应用市场搜索“SOULNEST”，[详情](https://appgallery.huawei.com/app/detail?id=com.soulnest.bd)
+
+**威博士：** 智慧环卫运营管理专家，鸿蒙应用市场搜索“威博士”，[详情](https://appgallery.huawei.com/app/detail?id=com.jwkj.wbs)
+
+**VINI：** 一款融合科技与中式美味的智能餐饮 APP，鸿蒙应用市场搜索“VINI”，[详情](https://appgallery.huawei.com/app/detail?id=com.vini.restaurant.hmos)
+
+**简单进销存库存管理：** 一款简单好用的进销存库存管理软件，鸿蒙应用市场搜索“简单进销存库存管理”，[详情](https://appgallery.huawei.com/app/detail?id=com.uafoo.jxcdisturb)
+
+**康悦到家技师端：** 一款技师接单与订单流水管理 APP，鸿蒙应用市场搜索“康悦到家技师端”，[详情](https://appgallery.huawei.com/app/detail?id=com.technician.kangyue)
+
+**有猿题：** 一款涵盖医考全科目题库的备考 APP，鸿蒙应用市场搜索“有猿题”，[详情](https://appgallery.huawei.com/app/detail?id=com.yyt.app)
+
+**易快运司机：** 一款承运商与司机的协同移动应用，鸿蒙应用市场搜索“易快运司机”，[详情](https://appgallery.huawei.com/app/detail?id=com.atomicservice.6917573650233408080)
+
+**托业听力：** 高品质TOEIC听力软件，鸿蒙应用市场搜索“托业听力”，[详情](https://appgallery.huawei.com/app/detail?id=com.iyuba.hmtoeic)
+
+**联光元和：** 一款集成企业制度与流程审批的管理 APP，鸿蒙应用市场搜索“联光元和”，[详情](https://appgallery.huawei.com/app/detail?id=com.netted.lgyh2)
+
+**美题：** 一款针对各种职业资格考试的软件，鸿蒙应用市场搜索“美题”，[详情](https://appgallery.huawei.com/app/detail?id=com.meitiapp.meitihm)
+
+**费用报销：** 为企业提供了便捷的线上报销流程，鸿蒙应用市场搜索“费用报销”，[详情](https://appgallery.huawei.com/app/detail?id=com.inhehm.baoxiao)
+
+**易绘门窗：** 一款门窗阳光房专用的简易绘图软件，鸿蒙应用市场搜索“易绘门窗”，[详情](https://appgallery.huawei.com/app/detail?id=com.gongshuokeji.ychm)
+
+**智能云仓库存管理：** 一个三屏合一的口袋式仓储管理系统，鸿蒙应用市场搜索“智能云仓库存管理”，[详情](https://appgallery.huawei.com/app/detail?id=com.loafish.ckgl)
+
+**护师刷题宝：** 提供各类职业资格证书考试题库，鸿蒙应用市场搜索“护师刷题宝”，[详情](https://appgallery.huawei.com/app/detail?id=com.weimei168.hushi)
+
+**车辆抢单平台：** 交通运输共享平台车辆抢单，鸿蒙应用市场搜索“车辆抢单平台”，[详情](https://appgallery.huawei.com/app/detail?id=com.example.qiangdanHarmonyOS)
+
+**井唐：** 一站式智能数据管理中心，鸿蒙应用市场搜索“井唐”，[详情](https://appgallery.huawei.com/app/detail?id=uni.app.UNI473102C)
+
+**点Ta：** 一款以游戏陪玩服务为核心的具备社交属性的软件，鸿蒙应用市场搜索“点Ta”，[详情](https://appgallery.huawei.com/app/detail?id=pw.z.dianta.hm)
+
+**微胎心医师版：** 一款孕晚期远程胎心监护与 NST 系统，鸿蒙应用市场搜索“微胎心医师版”，[详情](https://appgallery.huawei.com/app/detail?id=cn.weitaixin.app.doctorhm)
+
+**BALS Pro：** 一款蓝牙连接的智慧面膜控制与报告 APP，鸿蒙应用市场搜索“BALS Pro”，[详情](https://appgallery.huawei.com/app/detail?id=hm.xinzhishengwu.com)
+
+**T+智能称重移动端：** 一款 T + 智能称重移动端记录查看统计 APP，鸿蒙应用市场搜索“T+智能称重移动端”，[详情](https://appgallery.huawei.com/app/detail?id=LX.TLDAPP.HUAWEI)
+
+**考狐狸：** 一款多专业免费医学类高质量题库 APP，鸿蒙应用市场搜索“考狐狸”，[详情](https://appgallery.huawei.com/app/detail?id=com.bc.kaohuli)
 
 **塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
 

@@ -148,3 +148,7 @@ uni-ad的渠道SDK广告，必须在打包时打上对应的sdk才能使用，�
 ### 应用在oppo应用市场上架如何获取应用详情页地址用于渠道SDK广告开通审核提交：
 
 在oppo应用市场上架的应用，https://app.cdo.oppomobile.com/home/detail?app_id=30334505 链接的等号后面加上应用在OPPO应用市场上架时获取的APPid即可。其他应用商店地址获取请参考[获取应用商店地址](https://ask.dcloud.net.cn/article/39198)
+
+---
+### 激励视频如何知道本次观看的收益？
+该功能需联系商务/运营申请开通。激励视频开启服务器回调，在[服务器回调参数](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html#uniadcallbackparameters)里会增加`cpm`字段，表示千次展示收益，单位为分，除以1000则为本次观看收益。

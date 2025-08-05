@@ -118,9 +118,9 @@ try {
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|
-|:-:|:-:|:-:|:-:|:-:|
-|HBuilderX 2.0.3+|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|HBuilderX 2.0.3+|√|√|√|√|√|
 
 <!-- UNIAPPAPIJSON.getStorageInfo.compatibility -->
 
@@ -161,9 +161,9 @@ uni.getStorageInfo({
 
 **平台差异说明**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|
-|:-:|:-:|:-:|:-:|:-:|
-|HBuilderX 2.0.3+|√|√|√|√|
+|App|H5|微信小程序|支付宝小程序|百度小程序|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|HBuilderX 2.0.3+|√|√|√|√|√|
 
 <!-- UNIAPPAPIJSON.getStorageInfoSync.compatibility -->
 

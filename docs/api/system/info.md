@@ -130,25 +130,17 @@ Get system information asynchronously
 |navigationBarHeight|导航栏的高度|百度小程序|
 | navigationBarHeight|The height of the navigation bar|Baidu MiniApp|
 |titleBarHeight|标题栏高度|支付宝小程序|
-| titleBarHeight|Title Bar Height|Alipay MiniApp|
-|albumAuthorized	|	允许微信使用相册的开关（仅 iOS 有效）	|微信小程序|
-| albumAuthorized | Switch to allow WeChat to use albums (only valid for iOS) |WeChat MiniApp|
-|cameraAuthorized	|	允许微信使用摄像头的开关	|微信小程序|
-| cameraAuthorized | Allow WeChat to use the camera switch |WeChat MiniApp|
-|locationAuthorized	|	允许微信使用定位的开关	|微信小程序|
-| locationAuthorized | Allow WeChat to use location switch |WeChat MiniApp|
-|microphoneAuthorized	|	允许微信使用麦克风的开关	|微信小程序|
-| microphoneAuthorized | The switch that allows WeChat to use the microphone |WeChat MiniApp|
-|notificationAuthorized	|	允许微信通知的开关	|微信小程序|
-| notificationAuthorized | Allow WeChat notification switch |WeChat MiniApp|
+|albumAuthorized	|	允许微信使用相册的开关（仅 iOS 有效）	|微信小程序、小红书小程序|
+|cameraAuthorized	|	允许微信使用摄像头的开关	|微信小程序、小红书小程序|
+|locationAuthorized	|	允许微信使用定位的开关	|微信小程序、小红书小程序|
+|microphoneAuthorized	|	允许微信使用麦克风的开关	|微信小程序、小红书小程序|
+|notificationAuthorized	|	允许微信通知的开关	|微信小程序、小红书小程序|
 |notificationAlertAuthorized	|	允许微信通知带有提醒的开关（仅 iOS 有效）	|微信小程序|
-| notificationAlertAuthorized | Allow WeChat notification with reminder switch (only valid for iOS) |WeChat MiniApp|
-|notificationBadgeAuthorized	|	允许微信通知带有标记的开关（仅 iOS 有效）	|微信小程序|
-| notificationBadgeAuthorized | Allow WeChat notifications to be marked with a switch (only valid for iOS) |WeChat MiniApp|
-|notificationSoundAuthorized	|	允许微信通知带有声音的开关（仅 iOS 有效）	|微信小程序|
-|bluetoothEnabled	|	蓝牙的系统开关	|微信小程序、鸿蒙元服务|
-|locationEnabled	|	地理位置的系统开关	|微信小程序、鸿蒙元服务|
-|wifiEnabled	|	Wi-Fi 的系统开关	|微信小程序、鸿蒙元服务|
+|notificationBadgeAuthorized	|	允许微信通知带有标记的开关（仅 iOS 有效）	|微信小程序、小红书小程序|
+|notificationSoundAuthorized	|	允许微信通知带有声音的开关（仅 iOS 有效）	|微信小程序、小红书小程序|
+|bluetoothEnabled	|	蓝牙的系统开关	|微信小程序、鸿蒙元服务、小红书小程序|
+|locationEnabled	|	地理位置的系统开关	|微信小程序、鸿蒙元服务、小红书小程序|
+|wifiEnabled	|	Wi-Fi 的系统开关	|微信小程序、鸿蒙元服务、小红书小程序|
 |cacheLocation|上一次缓存的位置信息|百度小程序(安卓端最低基础库版本 3.40.4 ；iOS 最低支持版本 3.70.2)|
 | cacheLocation|Last cached location information|Baidu MiniApp(minimum base library version 3.40.4 for Android; minimum supported version 3.70.2 for iOS)|
 |storage|设备磁盘容量|支付宝小程序|
@@ -160,7 +152,7 @@ Get system information asynchronously
 |Parameter|Description|Platform Difference Description|
 |:-|:-|:-|
 |pixelRatio			|设备像素比		||
-|brand|设备品牌。uni-app 3.4.10+ 后该字段为全小写，可能要做兼容处理|App、微信小程序、百度小程序、抖音小程序、飞书小程序、QQ小程序|
+|brand|设备品牌。uni-app 3.4.10+ 后该字段为全小写，可能要做兼容处理|App、微信小程序、百度小程序、抖音小程序、飞书小程序、QQ小程序、小红书小程序|
 |model|设备型号|全平台支持。Web 端部分设备无法获取具体型号|
 | model|Device model|All platforms are supported. Specific models cannot be obtained for some devices on the web |
 |system|操作系统名称及版本，如Android 10||
@@ -170,9 +162,7 @@ Get system information asynchronously
 |version|引擎版本号|Web不支持|
 | version|Engine version number| Web does not support|
 |platform|客户端平台，值域为：`ios`、`android`、`mac（3.1.10+）`、`windows（3.1.10+）`、`linux（3.1.10+）`||
-| platform|client platform, the value range is: `ios`, `android`, `mac(3.1.10+)`, `windows(3.1.10+)`, `linux(3.1.10+)`||
-|host|宿主平台|百度小程序|
-| host|hosting platform|Baidu MiniApp|
+|host|宿主平台|百度小程序、小红书小程序|
 |SDKVersion|客户端基础库版本|支付宝小程序和Web不支持|
 | SDKVersion|Client basic library version|Alipay MiniApp and Web do not support|
 |swanNativeVersion|宿主平台版本号|百度小程序|
@@ -180,7 +170,7 @@ Get system information asynchronously
 |app|当前运行的客户端|支付宝小程序|
 | app|Currently running client|Alipay MiniApp|
 |AppPlatform|App平台|QQ小程序|
-|fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序、抖音小程序(2.53.0+)|
+|fontSizeSetting|用户字体大小设置。以“我-设置-通用-字体大小”中的设置为准，单位：px|微信小程序、支付宝小程序、百度小程序、QQ小程序、抖音小程序(2.53.0+)、小红书小程序(Android)|
 
 
 ### uniPlatform 返回值说明 @uniplatform
@@ -405,9 +395,8 @@ Links to the documentation of this API in other MiniApp:
 - [快手小程序](https://mp.kuaishou.com/docs/develop/api-next/basic/system/ks.getSystemInfoSync.html#systeminfo)
 - [Kuaishou MiniApp](https://mp.kuaishou.com/docs/develop/api-next/basic/system/ks.getSystemInfoSync.html#systeminfo)
 - [京东小程序](https://mp-docs.jd.com/api/equipment/system.html)
-- [JD MiniApp](https://mp-docs.jd.com/api/equipment/system.html)
-- [华为快应用](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-systeminfo-0000001126227753)
-- [Huawei QuickApp](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-systeminfo-0000001126227753)
+- [华为快应用](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-systeminfo-0000001126227753?ha_source=Dcloud&ha_sourceId=89000448)
+- [小红书小程序](https://miniapp.xiaohongshu.com/doc/DC243850)
 
 ### 示例 @getsysteminfo-new-fields
 

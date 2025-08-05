@@ -32,6 +32,7 @@ The applet component is not a vue component, and each applet has its own compone
 | Kuaishou applet|Support Kuaishou applet components|kscomponents|
 |京东小程序|支持京东小程序组件|jdcomponents|
 |鸿蒙元服务|支持鸿蒙元服务组件|hascomponents|
+|小红书小程序|支持小红书小程序组件|xhscomponents|
 
 此文档要求开发者对各端小程序的**自定义组件**有一定了解，没接触过小程序**自定义组件**的可以参考：
 This document requires developers to have a certain understanding of the **custom components** of the applet at each end. Those who have not touched the **custom components** of the applet can refer to:
@@ -49,7 +50,8 @@ This document requires developers to have a certain understanding of the **custo
 - [快手小程序自定义组件](https://mp.kuaishou.com/docs/develop/frame/custom_comp/component_temp_style.html)
 - [Custom Component of Kuaishou Mini Program](https://mp.kuaishou.com/docs/develop/frame/custom_comp/component_temp_style.html)
 - [京东小程序自定义组件](https://mp-docs.jd.com/framework/customcomponent/)
-- [鸿蒙元服务自定义组件](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/custom-components)
+- [鸿蒙元服务自定义组件](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/custom-components?ha_source=Dcloud&ha_sourceId=89000448)
+- [小红书小程序自定义组件](https://miniapp.xiaohongshu.com/doc/DC838684)
 
 **目录结构**
 **Directory Structure**
@@ -293,16 +295,14 @@ It is characterized by running in the view layer. When it is necessary to avoid 
 uni-app可以将wxs代码编译到微信小程序、QQ小程序、app-vue、H5上（`uni-app 2.2.5`及以上版本）
 uni-app can compile wxs code to WeChat applet, QQ applet, app-vue, H5 (`uni-app 2.2.5` and above)
 
-与wxs类似，百度小程序提供了Filter、阿里小程序提供了SJS，uni-app也支持使用这些功能，并将它们编译到百度和阿里的小程序端。不过它们的功能还不如wxs强大。此外头条系小程序自身不支持类似功能。
-Similar to wxs, Baidu applet provides Filter, Alibaba applet provides SJS, uni-app also supports these functions, and compiles them into Baidu and Alibaba applet. But they are not as powerful as wxs. In addition, the Toutiao applet itself does not support similar functions.
+与wxs类似，百度小程序提供了Filter，阿里小程序和抖音小程序提供了SJS，uni-app也支持使用这些功能，并将它们编译到百度和阿里的小程序端。不过它们的功能还不如wxs强大。
 
 **平台差异说明**
 **Platform difference description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√(不支持nvue)|√|√|SJS|Filter|x|√|
-|√(nvue not supported)|√|√|SJS|Filter|x|√|
+|√(不支持nvue)|√|√|SJS|Filter|SJS|√|
 
 App端nvue解决此类需求，不应该使用wxs，而是使用bindingx。
 App-side nvue to solve such needs, should not use wxs, but use bindingx.

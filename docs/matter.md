@@ -437,9 +437,7 @@ pages configuration
 - Huawei QuickApp IDE 最低版本 2.5.2 （已知该版本工具有个bug：不支持项目名称中包含空格）
 - The minimum version of Huawei QuickApp IDE is 2.5.2 (it is known that this version of the tool has a bug: it does not support spaces in the project name)
 - 最小平台版本支持需要 1070
-- Minimum platform version support requires 1070
-- 暂不支持 `uni.login(OBJECT)`，暂时使用条件编译，参考文档 [https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwaccount](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwaccount)
-- Does not support `uni.login(OBJECT)` temporarily, use conditional compilation for the time being, refer to the document [https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwaccount]( https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwaccount)
+- 暂不支持 `uni.login(OBJECT)`，暂时使用条件编译，参考文档 [https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwaccount](https://developer.huawei.com/consumer/cn/doc/development/quickApp-References/webview-api-hwaccount?ha_source=Dcloud&ha_sourceId=89000448)
 - 暂不支持 支付，支付依赖`uni.login(OBJECT)`
 - Payment is not supported yet, payment depends on `uni.login(OBJECT)`
 - 页面有滚动条时 canvas 组件不会跟随页面滚动

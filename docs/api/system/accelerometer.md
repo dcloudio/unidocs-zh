@@ -2,9 +2,9 @@
 监听加速度数据，频率：5次/秒，接口调用后会自动开始监听，可使用 ``uni.offAccelerometer`` 取消监听。
 Monitoring acceleration data, frequency: 5 times per second, the monitoring will start automatically after the interface is called, you can use ``uni.offAccelerometer`` to cancel the monitoring.
 
-|元服务|
-|:-:|
-|1.0.4+|
+|元服务|小红书小程序|
+|:-:|:-:|
+|1.0.4+|x|
 
 <!-- UNIAPPAPIJSON.onAccelerometerChange.compatibility -->
 
@@ -58,9 +58,9 @@ Cancel listening to acceleration data.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|√|1.0.4+|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|HBuilderX 2.9.6+|HBuilderX 2.9.6+|基础库 2.9.3+|x|x|x|x|√|√|1.0.4+|x|
 
 <!-- UNIAPPAPIJSON.offAccelerometerChange.compatibility -->
 
@@ -92,9 +92,9 @@ Start monitoring acceleration data.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|x|√|√|√|√|√|1.0.4+|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|√|√|√|x|√|√|√|√|√|1.0.4+|x|
 
 <!-- UNIAPPAPIJSON.startAccelerometer.compatibility -->
 
@@ -141,9 +141,9 @@ uni.startAccelerometer();
 停止监听加速度数据。
 Stop listening to acceleration data.
 
-|元服务|
-|:-:|
-|1.0.4+|
+|元服务|小红书小程序|
+|:-:|:-:|
+|1.0.4+|x|
 
 <!-- UNIAPPAPIJSON.stopAccelerometer.compatibility -->
 

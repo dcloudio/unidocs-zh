@@ -39,9 +39,9 @@ HBuilder 基座的测试广告位 `adpid` 为 `1111111113`
 |loadnext																		|Boolean						|false		|自动加载下一条广告数据																|					|
 |options																		|Object							|					|透传到作用域插槽																			|					|
 |v-slot:default="{loading, error, options}"	|										|					|作用域插槽可以获取组件内部广告加载状态和加载错误信息	|					|
-|@load																			|EventHandle				|		|	加载事件																	|	微信小程序暂不支持				|
-|@close																			|EventHandle				|		|	关闭事件																|	H5和微信小程序暂不支持					|
-|@error																			|EventHandle				|		|	错误事件																|	微信小程序暂不支持					|
+|@load																			|EventHandle				|		|	加载事件																	|					|
+|@close																			|EventHandle				|		|	关闭事件																|	H5暂不支持					|
+|@error																			|EventHandle				|		|	错误事件																|						|
 
 **方法说明**
 

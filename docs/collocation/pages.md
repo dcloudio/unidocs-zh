@@ -22,17 +22,15 @@ It is similar to the **page management** part of `app.json` in the WeChat MiniAp
 |[tabBar](/collocation/pages?id=tabbar)|Object|否|设置底部 tab 的表现||
 |[condition](/collocation/pages?id=condition)|Object|否|启动模式配置||
 |[subPackages](/collocation/pages?id=subPackages)|Object Array|否|分包加载配置|H5 不支持|
-|[preloadRule](/collocation/pages?id=preloadrule)|Object|否|分包预下载规则|微信小程序|
-|[preloadRule](/collocation/pages?id=preloadrule)| Object|No|Subcontract preload rule|WeChat MiniApp|
-|[workers](https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html)|String|否|`Worker` 代码放置的目录|微信小程序|
-|[workers](https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html)|String|No|The directory where `Worker` code is placed|WeChat MiniApp|
+|[preloadRule](/collocation/pages?id=preloadrule)|Object|否|分包预下载规则|微信小程序、支付宝小程序|
+|[workers](https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html)|String|否|`Worker` 代码放置的目录|微信小程序、支付宝小程序|
 |[leftWindow](/collocation/pages?id=leftwindow)|Object|否|大屏左侧窗口|H5|
 |[leftWindow](/collocation/pages?id=leftwindow)| Object|No|The left window of the big screen| H5|
 |[topWindow](/collocation/pages?id=topwindow)|Object|否|大屏顶部窗口|H5|
 |[topWindow](/collocation/pages?id=topwindow)| Object|No|The top window of the large screen| H5|
 |[rightWindow](/collocation/pages?id=rightwindow)|Object|否|大屏右侧窗口|H5|
 |[uniIdRouter](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0||
-|entryPagePath|String|否|默认启动首页，新增于HBuilderX 3.7.0|微信小程序、支付宝小程序|
+|entryPagePath|String|否|默认启动首页，新增于HBuilderX 3.7.0|微信小程序、支付宝小程序、抖音小程序|
 
 以下是一个包含了所有配置选项的 `pages.json` ：
 Here is a `pages.json` with all configuration options:
@@ -152,7 +150,7 @@ Used to set the status bar, navigation bar, title, window background color, etc.
 |Properties|Type|Default Value|Description|Platform Difference Description|
 |:-|:-|:-|:-|:-|
 |navigationBarBackgroundColor|HexColor|#F8F8F8|导航栏背景颜色（同状态栏背景色）|APP与H5为#F8F8F8，小程序平台请参考相应小程序文档|
-|navigationBarTextStyle|String|black|导航栏标题颜色及状态栏前景颜色，仅支持 black/white|支付宝小程序不支持，请使用 [my.setNavigationBar](https://opendocs.alipay.com/mini/api/xwq8e6)|
+|navigationBarTextStyle|String|black|导航栏标题颜色及状态栏前景颜色，仅支持 black/white||
 |navigationBarTitleText|String||导航栏标题文字内容||
 | navigationBarTitleText| String||Navigation bar title text||
 |navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+）|
@@ -186,6 +184,7 @@ Used to set the status bar, navigation bar, title, window background color, etc.
 |mp-kuaishou|Object||设置编译到 mp-kuaishou 平台的特定样式|快手小程序|
 | mp-kuaishou| Object||Set the specific style compiled to mp-kuaishou platform| Kuaishou MiniApp|
 |mp-jd|Object||设置编译到 mp-jd 平台的特定样式|京东小程序|
+|mp-xhs|Object||设置编译到 mp-xhs 平台的特定样式|小红书小程序|
 |usingComponents|Object| |引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.md#小程序自定义组件支持)||
 |renderingMode|String| |同层渲染，webrtc(实时音视频) 无法正常时尝试配置 seperated 强制关掉同层|微信小程序|
 | renderingMode| String| | Same-layer rendering, webrtc (real-time audio and video) cannot work normally, try to configure seperated to forcibly turn off the same layer |WeChat MiniApp|
@@ -1347,7 +1346,7 @@ Providing tabBar configuration in pages.json is not only to facilitate rapid dev
 |selectedColor|HexColor|是||tab 上的文字选中时的颜色||
 | selectedColor| HexColor|Yes || the color when the text on the tab is selected||
 |backgroundColor|HexColor|是||tab 的背景色||
-|borderStyle|String|否|black|tabbar 上边框的颜色，可选值 black/white，black对应颜色rgba(0,0,0,0.33)，white对应颜色rgba(255,255,255,0.33)。|App 2.3.4+ 、H5 3.0.0+|
+|borderStyle|String|否|black|tabbar 上边框的颜色，可选值 black/white，black对应颜色rgba(0,0,0,0.33)，white对应颜色rgba(255,255,255,0.33)。|App 2.3.4+ 、H5 3.0.0+、微信小程序|
 |blurEffect|String|否|none|iOS 高斯模糊效果，可选值 dark/extralight/light/none（参考:[使用说明](https://ask.dcloud.net.cn/article/36617)）|App 2.4.0+ 支持、H5 3.0.0+（只有最新版浏览器才支持）|
 |list|Array|是||tab 的列表，详见 list 属性说明，最少2个、最多5个 tab||
 | list| Array| is a list of || tabs, see the list property description for details, at least 2 and at most 5 tabs||
@@ -1528,12 +1527,16 @@ The startup mode configuration takes effect only during the development period, 
 |path|String|是|启动页面路径|
 |query|String|否|启动参数，可在页面的 [onLoad](/tutorial/page.md#lifecycle) 函数里获得|
 
-**注意：** 在 App 里真机运行可直接打开配置的页面，微信开发者工具里需要手动改变编译模式，如下图：
-**Note:** You can directly open the configuration page when running on the real machine in the app. You need to manually change the compilation mode in the WeChat developer tools, as shown in the figure below:
+**注意：** 
+
+* 在 App 里真机运行可直接打开配置的页面，微信开发者工具里需要手动改变编译模式，如下图：
 
 <div style="text-align:center;">
 	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/condition.png" />
 </div>
+
+* 快手小程序需要在 `project.private.config.json` 文件中配置，参考 [官方文档](https://open.kuaishou.com/docs/develop/developerTools/Localization-project.html#%E6%94%AF%E6%8C%81%E5%AD%97%E6%AE%B5)
+
 
 **代码示例：**
 **Code sample:**

@@ -74,4 +74,4 @@ bgAudioManager.src = 'https://web-ext-storage.dcloud.net.cn/uni-app/ForElise.mp3
 - ios App平台，背景播放需在manifest.json -> app-plus -> distribute -> ios 节点添加 ``"UIBackgroundModes":["audio"]`` 才能保证音乐可以后台播放（打包成ipa生效）
 - 小程序平台，需在manifest.json 对应的小程序节点下，填写"requiredBackgroundModes": ["audio"]。发布小程序时平台会审核
 - Android App端默认不会在通知栏出现音量控制，如需此功能，需要在插件市场单独下载原生插件，[详见](https://ext.dcloud.net.cn/search?q=%E9%80%9A%E7%9F%A5%E6%A0%8F+%E9%9F%B3%E4%B9%90%E6%8E%A7%E5%88%B6)
-- 鸿蒙元服务支持 `uni.playBackgroundAudio` 相关 api，[详见](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/apis-background-audio)
+- 鸿蒙元服务支持 `uni.playBackgroundAudio` 相关 api，[详见](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/apis-background-audio?ha_source=Dcloud&ha_sourceId=89000448)

@@ -146,7 +146,7 @@ export default {
 |mask-background-color **[1.7.4新增]**|rgba|rgba(0,0,0,0.4)|蒙版颜色，建议使用 rgba 颜色值|
 |mask-background-color **[New in 1.7.4]**|rgba|rgba(0,0,0,0.4)|Mask color, it is recommended to use rgba color value|
 |background-color|String|'none'|主窗口背景色|
-|borderRadius|String|无| 设置圆角(左上、右上、右下和左下) 示例:"10px 10px 10px 10px"|
+|borderRadius|String|-| 设置圆角(左上、右上、右下和左下) 示例:"10px 10px 10px 10px"|
 |safe-area|Boolean|true|是否适配底部安全区|
 |safe-area|Boolean|true|Whether it fits the bottom safe area|
 

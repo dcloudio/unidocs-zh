@@ -433,14 +433,14 @@ onPageScroll : function(e) { //nvue暂不支持滚动监听，可用bindingx代�
 - 如果是使用 `defineComponent`，`onPageScroll` 要和 `setup` 同层级才会生效，参考下方示例代码
 
 ```javascript
-<script>  
-    import { defineComponent } from 'vue'  
-    export default defineComponent({  
-        setup() { },  
-        onPageScroll() { 
+<script>
+    import { defineComponent } from 'vue'
+    export default defineComponent({
+        setup() { },
+        onPageScroll() {
 		  // xxx
-		}  
-    })  
+		}
+    })
 </script>
 ```
 
@@ -533,9 +533,7 @@ The `uni-app` component supports the same lifecycle as the vue standard componen
 |created|在实例创建完成后被立即调用。[详见](https://v2.cn.vuejs.org/v2/api/#created)|||
 |created|is called immediately after the instance is created. [See](https://v2.cn.vuejs.org/v2/api/#created)|||
 |beforeMount|在挂载开始之前被调用。[详见](https://v2.cn.vuejs.org/v2/api/#beforeMount)|||
-|beforeMount| is called before the mount starts. [See details](https://v2.cn.vuejs.org/v2/api/#beforeMount)|||
-|mounted|挂载到实例上去之后调用。[详见](https://v2.cn.vuejs.org/v2/api/#mounted) 注意：此处并不能确定子组件被全部挂载，如果需要子组件完全挂载之后在执行操作可以使用```$nextTick```[Vue官方文档](https://v2.cn.vuejs.org/v2/api/#vm-nextTick)|||
-| mounted|Called after the instance is mounted. [See details](https://v2.cn.vuejs.org/v2/api/#mounted) Note: It is not sure that all subcomponents are mounted here, if you need to perform operations after subcomponents are fully mounted Use ```$nextTick```[Vue official document](https://v2.cn.vuejs.org/v2/api/#vm-nextTick)|||
+|mounted|挂载到实例上去之后调用。[详见](https://v2.cn.vuejs.org/v2/api/#mounted) 注意：此处并不能确定子组件被全部挂载，如果需要子组件完全挂载之后在执行操作可以使用`$nextTick`[Vue官方文档](https://v2.cn.vuejs.org/v2/api/#vm-nextTick)|||
 |beforeUpdate|数据更新时调用，发生在虚拟 DOM 打补丁之前。[详见](https://v2.cn.vuejs.org/v2/api/#beforeUpdate)|仅H5平台支持||
 | beforeUpdate| Called when the data is updated, before the virtual DOM is patched. [See details](https://v2.cn.vuejs.org/v2/api/#beforeUpdate)|Only supported by H5 platform||
 |updated|由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。[详见](https://v2.cn.vuejs.org/v2/api/#updated)|仅H5平台支持||
@@ -550,7 +548,7 @@ The `uni-app` component supports the same lifecycle as the vue standard componen
 
 ### getApp()
 
-```getApp()``` 函数用于获取当前应用实例，一般用于获取globalData。也可通过应用实例调用 `App.vue methods` 中定义的方法。
+`getApp()` 函数用于获取当前应用实例，一般用于获取globalData。也可通过应用实例调用 `App.vue methods` 中定义的方法。
 
 **实例**
 **Instance**
@@ -600,8 +598,7 @@ Tips：
 
 ### $getAppWebview() @getappwebview
 
-```uni-app``` 在 ```getCurrentPages()```获得的页面里内置了一个方法 ```$getAppWebview()``` 可以得到当前webview的对象实例，从而实现对 webview 更强大的控制。在 html5Plus 中，plus.webview具有强大的控制能力，可参考：[WebviewObject](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject)。
-```uni-app``` There is a built-in method ```$getAppWebview()``` in the page obtained by ```getCurrentPages()```, which can get the object instance of the current webview, so as to realize the update of the webview. Powerful controls. In html5Plus, plus.webview has powerful control ability, please refer to: [WebviewObject](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject).
+`uni-app` 在 `getCurrentPages()`获得的页面里内置了一个方法 `$getAppWebview()` 可以得到当前webview的对象实例，从而实现对 webview 更强大的控制。在 html5Plus 中，plus.webview具有强大的控制能力，可参考：[WebviewObject](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject)。
 
 但`uni-app`框架有自己的窗口管理机制，请不要自己创建和销毁webview，如有需求覆盖子窗体上去，请使用[原生子窗体subNvue](/api/window/subNVues)。
 But the `uni-app` framework has its own window management mechanism, please do not create and destroy the webview yourself. If you need to cover the sub-form, please use [native sub-form subNvue](/api/window/subNVues).

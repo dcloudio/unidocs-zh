@@ -6,7 +6,7 @@
 - 兼容 微信小程序 JS SDK
 - Compatible with WeChat Mini Program JS SDK
 
-小程序生态内容可直接引入```uni-app```，并且在App侧通用。以前的跨平台开发框架普遍缺少三方SDK，由于大量SDK厂商均原厂维护小程序SDK，使得```uni-app```成为跨平台开发框架里生态最丰富的平台[参考](https://ask.dcloud.net.cn/article/35070)
+小程序生态内容可直接引入`uni-app`，并且在App侧通用。以前的跨平台开发框架普遍缺少三方SDK，由于大量SDK厂商均原厂维护小程序SDK，使得`uni-app`成为跨平台开发框架里生态最丰富的平台[参考](https://ask.dcloud.net.cn/article/35070)
 
 - 兼容 微信小程序自定义组件
 - Compatible with WeChat Mini Program custom components
@@ -53,4 +53,3 @@ The H5 side of `uni-app` supports all browser APIs. But as we all know, because 
 The logic layer of `uni-app` is in independent jscore, and the rendering layer is optional for webview rendering and weex engine rendering.
 1. 使用webview渲染则整个架构与小程序相同，此时页面后缀为vue文件。
 2. 使用weex引擎（经过改造）原生渲染，则整个架构与快应用相同，此时页面后缀为nvue文件。使用webview渲染时，还可以指定由系统webview渲染还是由x5引擎渲染。
-

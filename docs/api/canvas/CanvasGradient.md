@@ -3,7 +3,7 @@
 创建一个颜色的渐变点。
 - 小于最小 stop 的部分会按最小 stop 的 color 来渲染，大于最大 stop 的部分会按最大 stop 的 color 来渲染。
 
-- 需要使用 ```addColorStop()``` 来指定渐变点，至少要两个。
+- 需要使用 `addColorStop()` 来指定渐变点，至少要两个。
 
 ### 参数
 

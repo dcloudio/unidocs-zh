@@ -41,8 +41,7 @@ For vue pages, the introduction of clipboard, storage, stream, deviceInfo and so
 
 
 
-使用方式：可通过```uni.requireNativePlugin```直接使用。
-Usage: It can be used directly through `uni.requireNativePlugin`.
+使用方式：可通过`uni.requireNativePlugin`直接使用。
 
 示例：
 Example:

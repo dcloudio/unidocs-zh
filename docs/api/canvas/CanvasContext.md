@@ -101,8 +101,7 @@ Currently supported operations are
 
 ## CanvasContext.arc
 
-画一条弧线。创建一个圆可以用 ```arc()``` 方法指定起始弧度为0，终止弧度为 ```2 * Math.PI```。用 ```stroke()``` 或者 ```fill()``` 方法来在 ```canvas``` 中画弧线。
-Draw an arc. To create a circle, you can use the ```arc()``` method to specify the starting arc as 0 and the ending arc as ```2 * Math.PI```. Use the ```stroke()``` or ```fill()``` methods to draw arcs in ```canvas```.
+画一条弧线。创建一个圆可以用 `arc()` 方法指定起始弧度为0，终止弧度为 `2 * Math.PI`。用 `stroke()` 或者 `fill()` 方法来在 `canvas` 中画弧线。
 
 **参数**
 **parameter**
@@ -176,8 +175,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/arc.png)
 
-针对 ```arc(100, 75, 50, 0, 1.5 * Math.PI)```的三个关键坐标如下：
-The three key coordinates for ```arc(100, 75, 50, 0, 1.5 * Math.PI)``` are as follows:
+针对 `arc(100, 75, 50, 0, 1.5 * Math.PI)`的三个关键坐标如下：
 * 绿色: 圆心 (100, 75)
 * Green: center of circle (100, 75)
 * 红色: 起始弧度 (0)
@@ -216,8 +214,7 @@ CanvasContext.arcTo(x1, y1, x2, y2, radius)
 开始创建一个路径，需要调用fill或者stroke才会使用路径进行填充或描边。
 Start to create a path, you need to call fill or stroke to use the path to fill or stroke.
 
-**Tip:** 在最开始的时候相当于调用了一次 ```beginPath()```。
-**Tip:** At the beginning, it is equivalent to calling ```beginPath()``` once.
+**Tip:** 在最开始的时候相当于调用了一次 `beginPath()`。
 **Tip:** 同一个路径内的多次`setFillStyle()`、`setStrokeStyle()`、`setLineWidth()`等设置，以最后一次设置为准。
 **Tip:** For multiple `setFillStyle()`, `setStrokeStyle()`, `setLineWidth()` and other settings in the same path, the last setting shall prevail.
 
@@ -326,8 +323,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/bezier-curve.png)
 
-针对 `moveTo(20, 20)` ```bezierCurveTo(20, 100, 200, 100, 200, 20)``` 的三个关键坐标如下：
-The three key coordinates for `moveTo(20, 20)` ```bezierCurveTo(20, 100, 200, 100, 200, 20)``` are as follows:
+针对 `moveTo(20, 20)` `bezierCurveTo(20, 100, 200, 100, 200, 20)` 的三个关键坐标如下：
 
 * 红色：起始点(20, 20)
 * Red: starting point (20, 20)
@@ -416,9 +412,7 @@ context.drawImage(res.tempFilePath, 48, 48)
 Close a path.
 
 **Tip:** 关闭路径会连接起点和终点。
-**Tip:** Closing a path connects the start and end points.
-**Tip:** 如果关闭路径后没有调用 ```fill()``` 或者 ```stroke()``` 并开启了新的路径，那之前的路径将不会被渲染。
-**Tip:** If you close the path without calling ```fill()``` or ```stroke()``` and open a new path, the previous path will not be rendered.
+**Tip:** 如果关闭路径后没有调用 `fill()` 或者 `stroke()` 并开启了新的路径，那之前的路径将不会被渲染。
 
 
 **示例代码**
@@ -462,8 +456,7 @@ ctx.draw()
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/close-path.png)
 
 ## CanvasContext.createCircularGradient
-创建一个从圆心开始的渐变。返回的 [CanvasGradient](/api/canvas/CanvasGradient) 对象，需要使用 ```CanvasGradient.addColorStop()``` 来指定渐变点，至少要两个。
-Creates a gradient starting at the center of the circle. The returned [CanvasGradient](/api/canvas/CanvasGradient) object needs to use ```CanvasGradient.addColorStop()``` to specify gradient points, at least two.
+创建一个从圆心开始的渐变。返回的 [CanvasGradient](/api/canvas/CanvasGradient) 对象，需要使用 `CanvasGradient.addColorStop()` 来指定渐变点，至少要两个。
 
 **参数**
 **parameter**
@@ -498,8 +491,7 @@ ctx.draw()
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/circular-gradient.png)
 
 ## CanvasContext.createLinearGradient
-创建一个线性的渐变颜色。返回的 [CanvasGradient](/api/canvas/CanvasGradient) 对象，需要使用 ```CanvasGradient.addColorStop()``` 来指定渐变点，至少要两个。
-Creates a linear gradient of colors. The returned [CanvasGradient](/api/canvas/CanvasGradient) object needs to use ```CanvasGradient.addColorStop()``` to specify gradient points, at least two.
+创建一个线性的渐变颜色。返回的 [CanvasGradient](/api/canvas/CanvasGradient) 对象，需要使用 `CanvasGradient.addColorStop()` 来指定渐变点，至少要两个。
 
 **参数**
 **parameter**
@@ -637,9 +629,9 @@ Draw the image to the canvas.
 有三个版本的写法：
 There are three versions of writing:
 
-* ```drawImage(dx, dy)```
-* ```drawImage(dx, dy, dWidth, dHeight)```
-* ```drawImage(sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)```
+* `drawImage(dx, dy)`
+* `drawImage(dx, dy, dWidth, dHeight)`
+* `drawImage(sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)`
 
 **示例代码**
 **Example Code**
@@ -661,11 +653,9 @@ uni.chooseImage({
 对当前路径中的内容进行填充。默认的填充色为黑色。
 Fill in the content of the current path. The default fill color is black.
 
-**Tip:** 如果当前路径没有闭合，```fill()``` 方法会将起点和终点进行连接，然后填充，详情见例一。
-**Tip:** If the current path is not closed, the ```fill()``` method will connect the starting point and the ending point, and then fill it. See example 1 for details.
+**Tip:** 如果当前路径没有闭合，`fill()` 方法会将起点和终点进行连接，然后填充，详情见例一。
 
-**Tip:** ```fill()``` 填充的的路径是从 ```beginPath()``` 开始计算，但是不会将 ```fillRect()``` 包含进去，详情见例二。
-**Tip:** ```fill()``` fills the path from ```beginPath()```, but does not include ```fillRect()```, details See example two.
+**Tip:** `fill()` 填充的的路径是从 `beginPath()` 开始计算，但是不会将 `fillRect()` 包含进去，详情见例二。
 
 **示例代码**
 **Example Code**
@@ -710,8 +700,7 @@ ctx.draw()
 填充一个矩形。
 Fills a rectangle.
 
-**Tip:** 用 ```setFillStyle()``` 设置矩形的填充色，如果没设置默认是黑色。
-**Tip:** Use ```setFillStyle()``` to set the fill color of the rectangle, if not set, the default is black.
+**Tip:** 用 `setFillStyle()` 设置矩形的填充色，如果没设置默认是黑色。
 
 **参数**
 **parameter**
@@ -777,8 +766,7 @@ ctx.draw()
 增加一个新点，然后创建一条从上次指定点到目标点的线。
 Adds a new point, then creates a line from the last specified point to the target point.
 
-**Tip:** 用 ```stroke()``` 方法来画线条
-**Tip:** Use the ```stroke()``` method to draw lines
+**Tip:** 用 `stroke()` 方法来画线条
 
 **参数**
 **parameter**
@@ -824,8 +812,7 @@ Measure text size information, currently only returns text width. synchronous in
 **返回**
 **return**
 
-返回 ```TextMetrics``` 对象，结构如下：
-Return ```TextMetrics``` object, the structure is as follows:
+返回 `TextMetrics` 对象，结构如下：
 
 |参数	|类型	|说明		|
 |Parameter |Type |Description |
@@ -844,8 +831,7 @@ console.log(metrics.width)
 ```
 
 ## CanvasContext.moveTo
-把路径移动到画布中的指定点，不创建线条。用 ```stroke()``` 方法来画线条。
-Moves the path to the specified point in the canvas without creating a line. Use the ```stroke()``` method to draw lines.
+把路径移动到画布中的指定点，不创建线条。用 `stroke()` 方法来画线条。
 
 **参数**
 **parameter**
@@ -938,8 +924,7 @@ ctx.draw()
 
 ![uniapp](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/quadratic-curve-to.png)
 
-针对 `moveTo(20, 20)` ```quadraticCurveTo(20, 100, 200, 20)``` 的三个关键坐标如下：
-The three key coordinates for `moveTo(20, 20)` ```quadraticCurveTo(20, 100, 200, 20)``` are as follows:
+针对 `moveTo(20, 20)` `quadraticCurveTo(20, 100, 200, 20)` 的三个关键坐标如下：
 
 * 红色：起始点(20, 20)
 * Red: starting point (20, 20)
@@ -1060,8 +1045,7 @@ ctx.draw()
 ```
 
 ## CanvasContext.scale
-在调用```scale```方法后，之后创建的路径其横纵坐标会被缩放。多次调用```scale```，倍数会相乘。
-After calling the ```scale``` method, the horizontal and vertical coordinates of the created path will be scaled. Calling ```scale``` multiple times, the multiples will be multiplied.
+在调用`scale`方法后，之后创建的路径其横纵坐标会被缩放。多次调用`scale`，倍数会相乘。
 
 **参数**
 **parameter**
@@ -1597,8 +1581,7 @@ canvasContext.setTransform(scaleX, skewX, skewY, scaleY, translateX, translateY)
 画出当前路径的边框。默认颜色为黑色。
 Draws a border around the current path. The default color is black.
 
-**Tip:** ``stroke()`` 描绘的的路径是从 ```beginPath()``` 开始计算，但是不会将 ```strokeRect()``` 包含进去，详情见例二。
-**Tip:** The path drawn by ``stroke()`` is calculated from ```beginPath()```, but will not include ```strokeRect()```, see the example for details two.
+**Tip:** ``stroke()`` 描绘的的路径是从 `beginPath()` 开始计算，但是不会将 `strokeRect()` 包含进去，详情见例二。
 
 **示例代码**
 **Example Code**

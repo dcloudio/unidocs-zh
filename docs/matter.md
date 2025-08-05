@@ -120,8 +120,7 @@ Solve problems like this:
 1. `uni-app` 基于`Vue 2.0`实现，开发者需注意Vue 1.0 -> 2.0 的使用差异，详见[从 Vue 1.x 迁移](https://cn.vuejs.org/v2/guide/migration.html)
 1. `uni-app` is implemented based on `Vue 2.0`. Developers should pay attention to the usage differences of Vue 1.0 -> 2.0. For details, see [Migration from Vue 1.x](https://cn.vuejs.org/v2/ guide/migration.html)
 2. data 属性必须声明为返回一个初始数据对象的函数；否则页面关闭时，数据不会自动销毁，再次打开该页面时，会显示上次数据
-2. The data attribute must be declared as a function that returns an initial data object; otherwise, when the page is closed, the data will not be automatically destroyed, and when the page is opened again, the last data will be displayed
-  	
+
     ```javascript
   	//正确用法，使用函数返回对象
   	//Correct usage, use function to return object
@@ -137,17 +136,16 @@ Solve problems like this:
   	}
   	```
 3. 在微信小程序端，`uni-app` 将数据绑定功能委托给`Vue`，开发者需按`Vue 2.0`的写法实现数据绑定，不支持微信小程序的数据绑定写法，故如下写法不支持：
-3. On the WeChat MiniApp side, `uni-app` entrusts the data binding function to `Vue`, and developers need to implement data binding according to `Vue 2.0`, which does not support the data binding method of WeChat MiniApp. Therefore, the following writing is not supported:
-	
+
 	```vue
-	  <view id="item-{{id}}"></view>	
+	  <view id="item-{{id}}"></view>
 	```
 	需修改为：
 	Need to be changed to:
 	```vue
-	<view v-bind:id="'item-' + id "></view>	
+	<view v-bind:id="'item-' + id "></view>
 	```
- 
+
 ### 区别于传统 web 开发的注意
 ### Differences from traditional web development
 你之前可能习惯自由的web开发，但目前各家小程序都有很多限制。
@@ -193,9 +191,7 @@ If you have done WeChat MiniApp development, you should already be familiar with
 	- 静态资源：如图片，固定放到`static`目录下。这是`webpack`的规则
 	- Static resources: such as pictures, fixedly placed in the `static` directory. Here are the rules for `webpack`
 5. 数据绑定方式的注意
-5. Attention to the data binding method
-	- ```uni-app``` 基于```Vue 2.0```实现，开发者需注意Vue 1.0 -> 2.0 的使用差异，详见[从 Vue 1.x 迁移](https://cn.vuejs.org/v2/guide/migration.html)
-	- ```uni-app``` is implemented based on ```Vue 2.0```, developers should pay attention to the usage differences of Vue 1.0 -> 2.0, see [Migration from Vue 1.x](https://cn .vuejs.org/v2/guide/migration.html)
+	- `uni-app` 基于`Vue 2.0`实现，开发者需注意Vue 1.0 -> 2.0 的使用差异，详见[从 Vue 1.x 迁移](https://cn.vuejs.org/v2/guide/migration.html)
 6. 每个页面支持使用原生title，首页支持使用原生底部tab，这些是要在pages.json里配置，这些并不是vue页面的一部分。当然vue里的js api也可以动态修改原生title
 6. Each page supports the use of native titles, and the home page supports the use of native bottom tabs. These must be configured in pages.json, and these are not part of the vue page. Of course, the js api in vue can also dynamically modify the native title
 7. 虽然使用vue，但在app和小程序里，不是spa而是mpa

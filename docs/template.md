@@ -1,9 +1,7 @@
 
-为方便开发者快速开发，DCloud在```Hello uni-app```示例中包含了部分模板演示，这部分模板源码已开源，详见[Github](https://github.com/dcloudio/uni-app/tree/master/examples/hello-uniapp/pages/template)。
-To facilitate the rapid development of developers, DCloud includes some template demonstrations in the `Hello uni-app` example. The source code of this part of the template has been open source. For details, please refer to [Github](https://github.com/dcloudio/uni-app/tree/master/examples/hello-uniapp/pages/template).
+为方便开发者快速开发，DCloud在`Hello uni-app`示例中包含了部分模板演示，这部分模板源码已开源，详见[Github](https://github.com/dcloudio/uni-app/tree/master/examples/hello-uniapp/pages/template)。
 
-下文列出已集成的模板示例，欢迎开发者分享更多的模板示例，一起完善```uni-app```生态！
-Listed below are the integrated template examples. Developers are welcome to share more template examples and improve the `uni-app` ecology together!
+下文列出已集成的模板示例，欢迎开发者分享更多的模板示例，一起完善`uni-app`生态！
 
 **1.折叠面板**
 **1. Collapsed panel**
@@ -70,4 +68,3 @@ Including inlistation list page and details page
 		<img src="//img.cdn.aliyun.dcloud.net.cn/guide/uniapp/template-12.jpg" width="200"/>
 	</div>
 </div>
-

@@ -1527,7 +1527,7 @@ The startup mode configuration takes effect only during the development period, 
 |path|String|是|启动页面路径|
 |query|String|否|启动参数，可在页面的 [onLoad](/tutorial/page.md#lifecycle) 函数里获得|
 
-**注意：** 
+**注意：**
 
 * 在 App 里真机运行可直接打开配置的页面，微信开发者工具里需要手动改变编译模式，如下图：
 
@@ -1587,8 +1587,7 @@ The subPackages node receives an array, each item in the array is a sub-package 
 **注意：**
 **Notice:**
 
-- ```subPackages``` 里的pages的路径是 ``root`` 下的相对路径，不是全路径。
-- The path of pages in ```subPackages``` is a relative path under ``root``, not a full path.
+- `subPackages` 里的pages的路径是 ``root`` 下的相对路径，不是全路径。
 - 微信小程序每个分包的大小是2M，总体积一共不能超过20M。
 - The size of each subpackage of the WeChat MiniApp is 2M, and the total volume cannot exceed 20M.
 - 百度小程序每个分包的大小是2M，总体积一共不能超过8M。
@@ -1598,8 +1597,7 @@ The subPackages node receives an array, each item in the array is a sub-package 
 - QQ小程序每个分包的大小是2M，总体积一共不能超过24M。
 - 抖音小程序每个分包的大小是2M，总体积一共不能超过16M（抖音小程序基础库 1.88.0 及以上版本开始支持，抖音小程序开发者工具请使用大于等于 2.0.6 且小于 3.0.0 的版本）。
 - 快手小程序每个分包的大小是2M，总体积一共不能超过24M。
--The size of each subpackage of the Kuaishou MiniApp is 2M, and the total volume cannot exceed 24M.
-- 分包下支持独立的 ```static``` 目录，用来对静态资源进行分包。
+- 分包下支持独立的 `static` 目录，用来对静态资源进行分包。
 - `uni-app`内支持对`微信小程序`、`QQ小程序`、`百度小程序`、`支付宝小程序`、`抖音小程序(HBuilderX 3.0.3+)`、`快手小程序`分包优化，即将静态资源或者js文件放入分包内不占用主包大小。详情请参考：[关于分包优化的说明](/collocation/manifest?id=关于分包优化的说明)
 - 针对`vendor.js`过大的情况可以使用运行时压缩代码
 - When `vendor.js` is too large, you can use runtime compression code
@@ -1611,7 +1609,7 @@ The subPackages node receives an array, each item in the array is a sub-package 
 **使用方法：**
 **Instructions:**
 
-假设支持分包的 ```uni-app``` 目录结构如下：
+假设支持分包的 `uni-app` 目录结构如下：
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">

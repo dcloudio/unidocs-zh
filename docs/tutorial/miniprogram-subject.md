@@ -1,7 +1,7 @@
 ## 小程序自定义组件支持
 ## Mini Program Custom Component Support
 
-> 
+>
 
 `uni-app`在支持vue组件之外，也实现了对小程序自定义组件的兼容。
 
@@ -510,9 +510,7 @@ introduction method
 - 目前各个小程序正在完善相关规范，可能会有较大改动，请务必仔细阅读相应平台的文档
 - At present, the relevant specifications of each applet are being improved, and there may be major changes. Please read the documentation of the corresponding platform carefully
 - 支付宝小程序请使用sjs规范，[详见](https://docs.alipay.com/mini/framework/sjs)
-- Please use sjs specification for Alipay applet, [see details](https://docs.alipay.com/mini/framework/sjs)
-- 支付宝小程序sjs只能定义在.sjs 文件中，然后使用```<script>```标签引入
-- Alipay applet sjs can only be defined in the .sjs file, and then imported using the ```<script>``` tag
+- 支付宝小程序sjs只能定义在.sjs 文件中，然后使用`<script>`标签引入
 - 支付宝小程序`script`的标签属性`name`、`from`被统一为了`module`、`src`以便后续实现多平台统一写法
 - The tag attributes `name` and `from` of the Alipay applet `script` have been unified into `module` and `src`, so as to realize the unified writing method on multiple platforms in the future
 - 百度小程序中请使用Filter规范，[详见](https://smartprogram.baidu.com/docs/develop/framework/view_filter/)

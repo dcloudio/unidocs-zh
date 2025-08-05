@@ -49,8 +49,7 @@
 - The newly added `nvueStyleCompiler` configuration supports combined selectors (adjacent brother selector, normal brother selector, child selector, descendant selector). [See details](https://ask.dcloud.net.cn/article/38751)
 
 
-- nvue的```uni-app```编译模式下，App.vue 中的样式，会编译到每个 nvue文件。对于共享样式，如果有不合法属性控制台会给出警告，可以通过[条件编译](https://uniapp.dcloud.io/tutorial/platform#preprocessor)```APP-PLUS-NVUE```屏蔽 App 中的警告。
-- In the ``uni-app`` compilation mode of nvue, the styles in App.vue will be compiled into each nvue file. For shared styles, if there are illegal attributes, the console will give a warning, you can use [conditional compilation](https://uniapp.dcloud.io/tutorial/platform#preprocessor)```APP-PLUS-NVUE``` Suppress warnings in apps.
+- nvue的`uni-app`编译模式下，App.vue 中的样式，会编译到每个 nvue文件。对于共享样式，如果有不合法属性控制台会给出警告，可以通过[条件编译](https://uniapp.dcloud.io/tutorial/platform#preprocessor)`APP-PLUS-NVUE`屏蔽 App 中的警告。
 
 
 ## 盒模型
@@ -118,29 +117,22 @@ padding {length}：内边距，内容和边框之间的距离，默认值 0。�
 
 
 ##### 边框
-##### border
-```border-style``` 设定边框样式，如果四个方向的边框样式不同，可分别设置：
-```border-style``` Set the border style. If the border styles in the four directions are different, you can set them separately:
+`border-style` 设定边框样式，如果四个方向的边框样式不同，可分别设置：
 
 |可选值	|描述					|
 | Property| Describe|
 |--		|--						|
-|border-left-style {string}		|可选值为 ```solid```， ```dashed```， ```dotted```，默认值 ```solid```	|
-| border-left-style {string}| values `solid` / `dashed` / `dotted`, default value `solid`|
-|border-top-style {string}		|可选值为 ```solid```， ```dashed```， ```dotted```，默认值 ```solid```	|
-| border-top-style {string}| values `solid` / `dashed` / `dotted`, default value `solid`|
-|border-right-style {string}	|可选值为 ```solid```， ```dashed```， ```dotted```，默认值 ```solid```	|
-| border-right-style {string}| values `solid` / `dashed` / `dotted`, default value `solid`|
-|border-bottom-style {string}	|可选值为 ```solid```， ```dashed```， ```dotted```，默认值 ```solid```	|
-| border-bottom-style {string}| values `solid` / `dashed` / `dotted`, default value `solid`|
+|border-left-style {string}		|可选值为 `solid`， `dashed`， `dotted`，默认值 `solid`	|
+|border-top-style {string}		|可选值为 `solid`， `dashed`， `dotted`，默认值 `solid`	|
+|border-right-style {string}	|可选值为 `solid`， `dashed`， `dotted`，默认值 `solid`	|
+|border-bottom-style {string}	|可选值为 `solid`， `dashed`， `dotted`，默认值 `solid`	|
 
 
 
 |可选值	|描述					|
 | Property| Describe|
 |--		|--						|
-|solid	|实线边框，默认值 ```solid```	|
-| solid| The default value of the solid border is `solid`|
+|solid	|实线边框，默认值 `solid`	|
 |dashed	|方形虚线边框			|
 | dashed| Square dashed border|
 |dotted	|圆点虚线边框			|
@@ -148,8 +140,7 @@ padding {length}：内边距，内容和边框之间的距离，默认值 0。�
 
 
 ##### border-width
-```border-width```：设定边框宽度，非负值, 默认值 0，如果四个方向的边框宽度不同，可分别设置：
-```border-width```: Set the border width, non-negative value, the default value is 0, if the border widths in the four directions are different, you can set them separately:
+`border-width`：设定边框宽度，非负值, 默认值 0，如果四个方向的边框宽度不同，可分别设置：
 
 |可选值							|描述				|
 | Property| Describe|
@@ -166,27 +157,20 @@ padding {length}：内边距，内容和边框之间的距离，默认值 0。�
 | border-bottom-width {length}| non-negative, default value 0|
 
 ##### border-color
-```border-color```：设定边框颜色，默认值 ```#000000```，如果四个方向的边框颜色不同，可分别设置：
-````border-color```: Set the border color, the default value is ```#000000```, if the border colors in the four directions are different, you can set them separately:
+`border-color`：设定边框颜色，默认值 `#000000`，如果四个方向的边框颜色不同，可分别设置：
 
 
 |可选值						|描述					|
 | Property| Describe|
 |--							|--						|
-|border-color {color}		|默认值 ```#000000```	|
-| border-color {color}| default value #000000|
-|border-left-color {color}	|默认值 ```#000000```	|
-| border-left-color {color}| default value #000000|
-|border-top-color {color}	|默认值 ```#000000```	|
-| border-top-color {color}| default value #000000|
-|border-right-color {color}	|默认值 ```#000000```	|
-| border-right-color {color}| default value #000000|
-|border-bottom-color {color}|默认值 ```#000000```	|
-| border-bottom-color {color}| default value #000000|
+|border-color {color}		|默认值 `#000000`	|
+|border-left-color {color}	|默认值 `#000000`	|
+|border-top-color {color}	|默认值 `#000000`	|
+|border-right-color {color}	|默认值 `#000000`	|
+|border-bottom-color {color}|默认值 `#000000`	|
 
 ##### border-radius
-```border-radius```：设置边框的圆角，默认值 0，如果四个方向的圆角弧度不同，可分别设置：
-```border-radius```: Set the rounded corners of the border, the default value is 0. If the rounded corners in the four directions are different, you can set them separately:
+`border-radius`：设置边框的圆角，默认值 0，如果四个方向的圆角弧度不同，可分别设置：
 
 |可选值								|描述				|
 | Property| Describe|
@@ -202,7 +186,7 @@ padding {length}：内边距，内容和边框之间的距离，默认值 0。�
 |border-top-right-radius {length}	|非负值, 默认值 0	|
 | border-top-right-radius {length}| non-negative, default value 0|
 
-> ```border-radius```和```border-width```定义了圆心角为90度的椭圆弧的长轴和半长轴的大小。如果邻接两边```border-radius``` 或 ```border-width```不一致，nvue绘制的边框曲线可能不够平滑。
+> `border-radius`和`border-width`定义了圆心角为90度的椭圆弧的长轴和半长轴的大小。如果邻接两边`border-radius` 或 `border-width`不一致，nvue绘制的边框曲线可能不够平滑。
 
 
 ##### 外边距
@@ -230,17 +214,13 @@ margin specifies the space around elements which is outside the border. One can 
 ##### Android 兼容性
 ##### Only for Android
 
-尽管 ```overflow: hidden``` 在 Android 上是默认行为，但只有下列条件都满足时，一个父 view 才会去剪切它的子 ```view```。
-Although `overflow:hidden` is default on Android, a view will not clip its children according to `border-radius` unless all the following conditions meet.
+尽管 `overflow: hidden` 在 Android 上是默认行为，但只有下列条件都满足时，一个父 view 才会去剪切它的子 `view`。
 
-- 父view是```view```, ```cell```, ```refresh``` 或 ```loading```。
-- The view type is `div`, `A`, `cell`, `refresh` or `loading`.
+- 父view是`view`, `cell`, `refresh` 或 `loading`。
 - 系统版本是 Android 4.3 或更高。
 - OS version is Android 4.3 or higher.
 - 系统版本不是 Andorid 7.0。
-- OS version is not Android 7.0
-- 父 view 没有 ```background-image``` 属性或系统版本是 Android 5.0 或更高。
-- A view does not have `background-image` property nor OS version is Android 5.0 or higher.
+- 父 view 没有 `background-image` 属性或系统版本是 Android 5.0 或更高。
 
 
 
@@ -256,36 +236,28 @@ Flex is the abbreviation of Flexible Box, meaning "flexible layout", which is us
 nvue布局模型基于 CSS Flexbox，以便所有页面元素的排版能够一致可预测，同时页面布局能适应各种设备或者屏幕尺寸。Flexbox 包含 flex 容器和 flex 成员项。如果一个nvue元素可以容纳其他元素，那么它就成为 flex 容器。
 Weex box style model based on the CSS flexbox, ensures that elements behave predictably and the page layout can accommodates to different screen sizes and different display devices.
 
-> 文档中未说明的 flexbox 属性**均不支持**：如 ```order```、```flex-grow``` 、```flex-shrink``` 、 ```flex-basis```、```align-content```、```align-self``` 等。
-> Only styles listed below is supported, other style like `order` and `flex-flow` are not supported.
+> 文档中未说明的 flexbox 属性**均不支持**：如 `order`、`flex-grow` 、`flex-shrink` 、 `flex-basis`、`align-content`、`align-self` 等。
 
-**在 nvue中，Flexbox 是默认且唯一的布局模型，所以你不需要手动为元素添加 ```display: flex;``` 属性。**
-**Flexbox is the default and only style model in Weex, so you don't have to add display: flex; in a container.**
+**在 nvue中，Flexbox 是默认且唯一的布局模型，所以你不需要手动为元素添加 `display: flex;` 属性。**
 
 
 ### flex-direction
 
-定义了 flex 容器中 flex 成员项的排列方向，默认值为 ```column```
-The flex-direction CSS property sets how flex items are placed in the flex container defining the main axis and the direction (normal or reversed).
+定义了 flex 容器中 flex 成员项的排列方向，默认值为 `column`
 
 |可选值			|描述								|
 | Property| Describe|
 |--				|--									|
 |column			|竖排，从上到下排列					|
-| column| The flex container's main-axis is vertical. The main-start and main-end points is top and bottom.|
-|column-reverse	|反向竖排，排布方向与```flex-direction:column```相反|
-| column-reverse| Behaves the same as column but the main-start and main-end are permuted.|
+|column-reverse	|反向竖排，排布方向与`flex-direction:column`相反|
 |row			|横排，从左到右排布						|
-| row| The flex container's main-axis is horizontal and defined to be the same as direction. The main-start and main-end points are the same as the direction.|
-|row-reverse	|反向横排，排布方向与```flex-direction:row```相反	|
-| row-reverse| Behaves the same as row but the main-start and main-end points are permuted|
+|row-reverse	|反向横排，排布方向与`flex-direction:row`相反	|
 
 
 
 ### flex-wrap
 
-决定了 flex 成员项在一行还是多行分布，默认值为```nowrap```
-The flex-wrap CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. The default value is nowrap
+决定了 flex 成员项在一行还是多行分布，默认值为`nowrap`
 
 |可选值			|描述												|
 | Property| Describe|
@@ -293,16 +265,13 @@ The flex-wrap CSS property sets whether flex items are forced onto one line or c
 |nowrap			| 不换行，flex 成员项在一行排布，排布的开始位置由direction指定	|
 | nowrap| The flex items are laid out in a single line which may cause the flex container to overflow. The cross-start is either equivalent to start or before depending flex-direction value. This is the default value.|
 |wrap			| 换行，第一行在上方，flex 成员项在多行排布，排布的开始位置由direction指定	|
-| wrap| The flex items break into multiple lines. The cross-start is either equivalent to start or before depending flex-direction value and the cross-end is the opposite of the specified cross-start.|
-|wrap-reverse	|换行，第一行在下方，行为类似于```wrap```，排布方向与其相反						|
-| wrap-reverse| Behaves the same as wrap but cross-start and cross-end are permuted.|
+|wrap-reverse	|换行，第一行在下方，行为类似于`wrap`，排布方向与其相反						|
 
 
 
 ### justify-content
 
-定义了 flex 容器中 flex 成员项在主轴方向上如何排列以处理空白部分。默认值为 ```flex-start```
-The CSS justify-content property defines how Weex distributes space between and around content items along the main-axis of a flex container. The default value is `flex-start`.
+定义了 flex 容器中 flex 成员项在主轴方向上如何排列以处理空白部分。默认值为 `flex-start`
 
 |可选值			|描述										|
 | Property| Describe|
@@ -358,8 +327,7 @@ relative to the rest of the flex items inside the same container.
 
 **注意**
 
-**Flex 成员项暂不支持 ```flex-shrink``` 、 ```flex-basis```、```align-content``` 属性**。
-**Flex member item does not support `flex-shrink`, `flex-basis`, `align-content` attributes** temporarily.
+**Flex 成员项暂不支持 `flex-shrink` 、 `flex-basis`、`align-content` 属性**。
 
 **该属性不支持 flex: flex-grow | flex-shrink | flex-basis 的简写。**
 **That attribute does not support flex: Abbreviation for flex-grow | flex-shrink | flex-basis.**
@@ -431,8 +399,7 @@ relative to the rest of the flex items inside the same container.
 ## position 定位
 ## position localization
 
-设置定位类型。默认值为 ```relative```。
-Set the positioning type. The default value is `relative`.
+设置定位类型。默认值为 `relative`。
 
 |可选值		|描述													|
 | Property| Describe|
@@ -484,17 +451,14 @@ Set the positioning type. The default value is `relative`.
 > Android 兼容性
 > Only for Android
 
-如果定位元素超过容器边界，在 Android 下，超出部分将不可见，原因在于 Android 端元素 ```overflow``` 默认值为 ```hidden```，但目前 Android 暂不支持设置 ```overflow: visible```。
-If your component is bigger than its parent, it will be partial invisible as Weex on Android only supports `overflow:hidden`.
+如果定位元素超过容器边界，在 Android 下，超出部分将不可见，原因在于 Android 端元素 `overflow` 默认值为 `hidden`，但目前 Android 暂不支持设置 `overflow: visible`。
 
 
 ## Transition
 
-```transition```允许 CSS 的属性值在一定的时间区间内平滑地过渡。
-```transition``` allows CSS property values to transition smoothly within a certain time interval.
+`transition`允许 CSS 的属性值在一定的时间区间内平滑地过渡。
 #### transition-property
-设置过渡动画的属性名，设置不同样式 ```transition``` 效果的键值对，默认值为空，表示不执行任何过渡效果
-Allows the name of the transitional animation to set the value of the different styles transition effect, the default value is empty, that does not perform any transition, the following table lists all the legitimate parameters of the property:
+设置过渡动画的属性名，设置不同样式 `transition` 效果的键值对，默认值为空，表示不执行任何过渡效果
 
 
 |参数名				|描述				|
@@ -531,8 +495,7 @@ Specifies the duration of the transition (in milliseconds). The default value is
 Specifies the time interval (in milliseconds or seconds) between the request transition and the transition. The default value is 0, indicating that there is no delay, and the transition is performed immediately after the request.
 
 #### transition-timing-function
-描述过渡执行的速度曲线，用于使过渡更为平滑。默认值是 ```ease```。下表列出了所有合法的属性：
-Describes the velocity curve of the transition, which is used to make the transition smoother. The default is ease. The following table lists all the valid attributes:
+描述过渡执行的速度曲线，用于使过渡更为平滑。默认值是 `ease`。下表列出了所有合法的属性：
 
 
 |参数名							|描述																																			|
@@ -618,17 +581,12 @@ Applied in the 2D or 3D transformation of elements. This attribute allows the ro
 |`translateX({<length/percentage>})`	|X 轴方向平移，支持长度单位或百分比。																												|
 | `translateX({<length/percentage>})`| X-axis direction panning, length unit or percentage is supported.|
 |`translateY({<length/percentage>})`	|Y 轴方向平移，支持长度单位或百分比。																	|
-| `translateY({<length/percentage>})`| Y-axis direction panning, length unit or percentage is supported.|
-|`translate({<length/percentage>} {<length/percentage>})`	|X 轴和 Y 轴方向同时平移，```translateX``` + ```translateY``` 简写。									|
-| `translate({<length/percentage>} {<length/percentage>})`| X-axis and y-axis directions are simultaneously translated, `translateX` + `translateY` abbreviation.|
+|`translate({<length/percentage>} {<length/percentage>})`	|X 轴和 Y 轴方向同时平移，`translateX` + `translateY` 简写。									|
 |`scaleX(<number>)`				|X 轴方向缩放，值为数值，表示缩放比例，不支持百分比。							|
 | `scaleX(<number>)`| X-axis direction scaling, in numeric value, indicates scaling ratio. Percentage is supported.|
 |`scaleY(<number>)`						|Y 轴方向缩放，值为数值，表示缩放比例，不支持百分比。																													|
-| `scaleY(<number>)`| Y-axis direction scaling, in numeric value, indicates scaling ratio. Percentage is supported.|
-|`scale(<number>)`|X 轴和 Y 轴方向同时缩放，```scaleX``` + ```scaleY``` 简写。|
-| `scale(<number>)`| X-axis and Y-axis directions are zoomed simultaneously, `scaleX` + `scaleY` abbreviation.|
-|`rotate(<angle/degree>)`|将元素围绕一个定点（由 ```transform-origin``` 属性指定）旋转而不变形的转换。指定的角度定义了旋转的量度。若角度为正，则顺时针方向旋转，否则逆时针方向旋转。|
-| `rotate(<angle/degree>)`| The transformation that rotates the element around a fixed point (specified by the `transform-origin` attribute) without deformation. The specified angle defines the measure of rotation. If the angle is positive, rotate clockwise; Otherwise, rotate counterclockwise.|
+|`scale(<number>)`|X 轴和 Y 轴方向同时缩放，`scaleX` + `scaleY` 简写。|
+|`rotate(<angle/degree>)`|将元素围绕一个定点（由 `transform-origin` 属性指定）旋转而不变形的转换。指定的角度定义了旋转的量度。若角度为正，则顺时针方向旋转，否则逆时针方向旋转。|
 |`rotateX(<angle/degree>)`|X 轴方向的旋转。|
 | `rotateX(<angle/degree>)`| Rotation in the X-axis direction.|
 |`rotateY(<angle/degree>)`|Y 轴方向的旋转。|
@@ -640,8 +598,7 @@ Applied in the 2D or 3D transformation of elements. This attribute allows the ro
 |`transform-origin {length/percentage/关键字(top/left/right/bottom)}:`|设置一个元素变形的原点，仅支持 2D 坐标。|
 | `transform-origin {length/percentage/keyword (top/left/right/bottom)}:`| Set the origin of an element deformation, which only supports 2D coordinates.|
 
-> 除了```perspective```和```transform-origin```，```transition```支持了```transform```的全部能力。 其中transform的```rotate``` 和```rotatez``` 等效.
-> Consider use `transition` instead, which supports all the style that `transform` supports except for `transform-origin` and `perspective` `rotate` is the same as `rotateZ`.
+> 除了`perspective`和`transform-origin`，`transition`支持了`transform`的全部能力。 其中transform的`rotate` 和`rotatez` 等效.
 
 
 
@@ -763,20 +720,14 @@ Applied in the 2D or 3D transformation of elements. This attribute allows the ro
 | Property| Describe|
 |--			|--									|
 |active		|所有组件都支持						|
-| active| All components are supported|
-|focus		|只有 ```input``` 组件和 ```textarea``` 组件支持|
-| focus| Only the `input` component and `textarea` component are supported|
-|disabled	|只有 ```input``` 组件和 ```textarea``` 组件支持|
-| disabled| Only the `input` component and `textarea` component are supported|
-|enabled	|只有 ```input``` 组件和 ```textarea``` 组件支持|
-| enabled| Only the `input` component and `textarea` component are supported|
+|focus		|只有 `input` 组件和 `textarea` 组件支持|
+|disabled	|只有 `input` 组件和 `textarea` 组件支持|
+|enabled	|只有 `input` 组件和 `textarea` 组件支持|
 
 **注意**
 **Notes**
 > 同时生效的时候，优先级高覆盖优先级低。
-> the high priority override low priority when rules take effect at the same time.
-> 例如：```input:active:enabled``` 和 ```input:active``` 同时生效，前者覆盖后者
-> such as: "input:active:enabled" will override "input:active".
+> 例如：`input:active:enabled` 和 `input:active` 同时生效，前者覆盖后者
 
 - 互联规则如下所示
 - the interconnection rule as follow
@@ -788,9 +739,7 @@ Applied in the 2D or 3D transformation of elements. This attribute allows the ro
 ## Linear-gradient
 
 所有组件均支持线性渐变。[CSS3 渐变](https://www.w3cschool.cn/css3/oj26bfli.html)
-Weex support linear-gradient background, You can see [W3C description of the gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients).
-你可以通过  ``` background-image ```属性创建线性渐变。
-You can use linear gradient by `background-image` property.
+你可以通过  ` background-image `属性创建线性渐变。
 ``` javascript
 	background-image:linear-gradient(to bottom right,#AD18F9,#05DFC7);
 ```
@@ -817,9 +766,8 @@ Weex currently supports two color gradients. The direction of the gradient is as
 **注意**
 **Notes**
 
-> ```background-image``` 优先级高于 ```background-color```，这意味着同时设置 ```background-image``` 和 ```background-color```，```background-color``` 被覆盖。
-> ```background-image``` takes precedence over ```background-color```, which means setting both ```background-image``` and ```background-color```, ` ``background-color``` is overridden.
-> ```background``` 不支持简写。
+> `background-image` 优先级高于 `background-color`，这意味着同时设置 `background-image` 和 `background-color`，`background-color` 被覆盖。
+> `background` 不支持简写。
 >
 > **目前暂不支持 radial-gradient（径向渐变）。**
 > **`radial-gradient` is not currently supported, do not use it.**
@@ -831,8 +779,7 @@ Weex currently supports two color gradients. The direction of the gradient is as
 ## 阴影@boxshadow
 ## Box-shadow@boxshadow
 
-### 阴影```box-shadow```@ios-box-shadow
-### Shadow ````box-shadow````@ios-box-shadow
+### 阴影`box-shadow`@ios-box-shadow
 
 
 	{box-shadow:inset offset-x offset-y blur-radius color}
@@ -843,8 +790,7 @@ Weex currently supports two color gradients. The direction of the gradient is as
 |参数			|描述																										|
 | Property| Describe|
 |--				|--																											|
-|inset（可选）	|默认阴影在边框外。使用 ```inset``` 后，阴影在边框内（即使是透明边框），背景之上内容之下。						|
-| inset (optional)| Shadow is outside the border by default. After using `inset`, the shadow is inside the border (even if it is a transparent border), and below the content above the background.|
+|inset（可选）	|默认阴影在边框外。使用 `inset` 后，阴影在边框内（即使是透明边框），背景之上内容之下。						|
 |offset-x		|设置水平偏移量，如果是负值则阴影位于元素左边。																|
 | offset-x| Set the horizontal offset, if it is negative, the shadow is located to the left of the element.|
 |offset-y		|设置垂直偏移量，如果是负值则阴影位于元素上面。																|
@@ -865,18 +811,15 @@ Example
 **注意**
 **Notes**
 - 每个元素只支持设置一个阴影效果，不支持多个阴影同时作用于一个元素。
-- Each element only supports setting one shadow effect, and does not support multiple shadows acting on one element at the same time.
-- Android平台 设置```box-shadow```的组件需要让出阴影渲染位置，否则会出现阴影显示不全的问题。
-- On the Android platform, the component that sets the ``box-shadow``` needs to give up the shadow rendering position, otherwise there will be a problem of incomplete shadow display.
+- Android平台 设置`box-shadow`的组件需要让出阴影渲染位置，否则会出现阴影显示不全的问题。
 
 
 ### Android平台：阴影@android-box-shadow
 ### Android: Shadow @android-box-shadow
 
-#### 阴影```box-shadow```
-#### shadow ```box-shadow````
+#### 阴影`box-shadow`
 
-从HBuilderX3.4.3起，重新支持阴影样式(box-shadow)。修复老版本组件设置```box-shadow```后在不同系统版本出现的显示异常及闪烁问题! 但需要注意设置阴影样式(box-shadow) 的组件需要让出阴影渲染位置，否则会出现阴影显示不全的问题。
+从HBuilderX3.4.3起，重新支持阴影样式(box-shadow)。修复老版本组件设置`box-shadow`后在不同系统版本出现的显示异常及闪烁问题! 但需要注意设置阴影样式(box-shadow) 的组件需要让出阴影渲染位置，否则会出现阴影显示不全的问题。
 
 
 示例
@@ -904,8 +847,7 @@ Example
 
 ```
 
-#### 阴影```elevation```
-#### shadow ```elevation```
+#### 阴影`elevation`
 
 目前Android平台对阴影样式(box-shadow)支持的还不太完善，有设置圆角边框时阴影样式显示不正常、占用组件视图渲染区域等问题。
 At present, the Android platform's support for the shadow style (box-shadow) is not perfect, and there are problems such as abnormal display of the shadow style when setting a rounded border, and occupying the rendering area of the component view.
@@ -923,19 +865,12 @@ Usage
 
 
 #### 注意
-#### Notes
-- 设置```elevation```属性产生的阴影暂时无法修改颜色
-- The color of the shadow created by setting the `elevation` attribute cannot be modified temporarily
-- 设置```elevation```后当前组件的层级会高于其他未设置elevation组件的层级，都设置```elevation```值域越大则层级越高！组件覆盖的场景需要留意
-- After setting `elevation`, the level of the current component will be higher than that of other components without elevation. The larger the value range of `elevation`, the higher the level! Be aware of component coverage scenarios
-- 为了避免```elevation```属性的阴影效果与阴影样式(```box-shadow```)冲突，设置```elevation```属性后```box-shadow```样式失效
-- To avoid conflict between the shadow effect of the `elevation` attribute and the shadow style (`box-shadow`), the `box-shadow` style becomes invalid after setting the `elevation` attribute
-- 使用```elevation```需要阴影元素的父元素大于阴影范围，否则会对阴影进行裁剪
-- To use `elevation`, the parent element of the shadow element needs to be larger than the shadow range, or otherwise the shadow will be clipped
-- IOS不支持```elevation```属性，请使用```box-shadow```设置阴影
-- IOS does not support the `elevation` attribute, please use `box-shadow` to set the shadow
-- 设置```box-shadow```需要当前组件让出阴影位置。否则无法正常看到阴影
-- Setting ````box-shadow```` requires the current component to yield the shadow position. Otherwise, the shadow cannot be seen normally
+- 设置`elevation`属性产生的阴影暂时无法修改颜色
+- 设置`elevation`后当前组件的层级会高于其他未设置elevation组件的层级，都设置`elevation`值域越大则层级越高！组件覆盖的场景需要留意
+- 为了避免`elevation`属性的阴影效果与阴影样式(`box-shadow`)冲突，设置`elevation`属性后`box-shadow`样式失效
+- 使用`elevation`需要阴影元素的父元素大于阴影范围，否则会对阴影进行裁剪
+- IOS不支持`elevation`属性，请使用`box-shadow`设置阴影
+- 设置`box-shadow`需要当前组件让出阴影位置。否则无法正常看到阴影
 
 
 
@@ -953,33 +888,24 @@ color {color}：文字颜色，支持如下字段：
  * 色值关键字（red）
  * Color value keyword (red)
 
-> 只有```text```标签可以设置字体颜色
-> Only `text` tags can set the font color
+> 只有`text`标签可以设置字体颜色
 
 ### font-size
-font-size {number}：文字大小，只有```text```标签可以设置字体大小
-`font-size`: \<length> this property specifies the size of the font.
+font-size {number}：文字大小，只有`text`标签可以设置字体大小
 
 ### font-style
-font-style {string}：字体类别。可选值 ```normal``` | ```italic```，默认为 ```normal```。
-`font-style`: \<enum> `normal` | `italic`. This property lets you select italic or normal faces within a font-family. Default value is `normal`.
+font-style {string}：字体类别。可选值 `normal` | `italic`，默认为 `normal`。
 
 ### font-weight
-font-weight {string}：字体粗细程度。默认值: ```normal```；
-This property indicate the weight of the text.
+font-weight {string}：字体粗细程度。默认值: `normal`；
 
-- 可选值: ```normal```, ```bold```, 100, 200, 300, 400, 500, 600, 700, 800, 900
-- values: `normal`, `bold`, `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900`
-- ```normal``` 等同于 400, ```bold``` 等同于 700；
-- ```normal``` is equivalent to 400, ```bold``` is equivalent to 700;
-- iOS 支持 9 种 ```font-weight```值；Android 仅支持 400 和 700, 其他值会设为 400 或 700
-- ios support showing 9 kind of font-weight.android support showing 2 kind of font-weight:400,700, other value will map to 400 or 700.
-- 类似 ```lighter```, ```bolder``` 这样的值暂时不支持
-- Some standard values like `lighter`, `bolder`, number unit are not supported.
+- 可选值: `normal`, `bold`, 100, 200, 300, 400, 500, 600, 700, 800, 900
+- `normal` 等同于 400, `bold` 等同于 700；
+- iOS 支持 9 种 `font-weight`值；Android 仅支持 400 和 700, 其他值会设为 400 或 700
+- 类似 `lighter`, `bolder` 这样的值暂时不支持
 
 ### text-decoration
-```text-decoration {string}```：字体装饰。默认值为 ```none```。
-```text-decoration {string}```: Font decoration. The default value is ``none``.
+`text-decoration {string}`：字体装饰。默认值为 `none`。
 
 |可选值			|描述						|
 | Property| Describe|
@@ -992,15 +918,13 @@ This property indicate the weight of the text.
 | line-through| Define a line through the text|
 
 
-> 只支持 ```text``` 和 ```richtext```
+> 只支持 `text` 和 `richtext`
 >
-> 不支持 ```text-decoration:overline```
-> `text-decoration:overline` not supported
+> 不支持 `text-decoration:overline`
 
 
 ### text-align
-```text-align {string}```：对齐方式。默认值为 ```left```。
-```text-align {string}```: The alignment. The default value is ```left```.
+`text-align {string}`：对齐方式。默认值为 `left`。
 
 |可选值	|描述				|
 | Property| Describe|
@@ -1012,21 +936,18 @@ This property indicate the weight of the text.
 |right	|把文本排列到右边|
 | right| Align the text to the right|
 
-> 不支持```text-align:justify```
-> `text-align:justify` not supported
+> 不支持`text-align:justify`
 
 
 ### font-family
-```font-family {string}```：设置字体。这个设置不保证在不同平台，设备间的一致性。
-```font-family {string}````: Set the font. This setting does not guarantee consistency between devices on different platforms.
+`font-family {string}`：设置字体。这个设置不保证在不同平台，设备间的一致性。
 如所选设置在平台上不可用，将会降级到平台默认字体。
 If the specified font cannot be found at the device, a typeface fallback will occur and the default typeface will be load. The fallback mechanism may vary in different devices.
 如果需要加载自定义字体，请参考相关[DOM.addRule](/tutorial/nvue-api?id=addrule)
 If you need to load custom fonts, please refer to the relevant [DOM.addRule](/tutorial/nvue-api?id=addrule)
 
 ### text-overflow
-```text-overflow {string}```：设置内容超长时的省略样式。
-```text-overflow {string}````: Set the omission style when the content is too long.
+`text-overflow {string}`：设置内容超长时的省略样式。
 
 |可选值		|描述							|
 | Property| Describe|
@@ -1034,25 +955,18 @@ If you need to load custom fonts, please refer to the relevant [DOM.addRule](/tu
 |clip		|修剪文本						|
 | clip| Trimmed text|
 |ellipsis	|显示省略符号来代表被修剪的文本	|
-| ellipsis| Display ellipsis to represent the trimmed text|
-> 只支持 ```text``` 和 ```richtext```
-> Only ```text``` and ```richtext``` are supported
+> 只支持 `text` 和 `richtext`
 
 ### lines
-```lines {number}```: 正整数，指定最大文本行数，默认```lines```值为0，表示不限制最大行数```lines```。如果文本不够长，实际展示行数会小于指定行数。
-```lines {number}```: A positive integer, specifying the maximum number of text lines, the default ```lines``` value is 0, which means that the maximum number of lines is not limited ```lines```. If the text is not long enough, the actual number of displayed lines will be less than the specified number of lines.
+`lines {number}`: 正整数，指定最大文本行数，默认`lines`值为0，表示不限制最大行数`lines`。如果文本不够长，实际展示行数会小于指定行数。
 
 ### line-height
-line-height {length}: 正整数，每行文字高度。```line-height```是 top 至 bottom的距离。
-`line-height`: \<length> The line height of every line in the text. `line-height` is the space between top and bottom.
-```line-height```与```font-size```没有关系，因为```line-height```被 top 和 bottom 所限制，
-````line-height``` has nothing to do with ````font-size```, because ```line-height``` is limited by top and bottom,
-```font-size``` 被 glyph 所解析。```line-height```和```font-size```相等一般会导致文字被截断。
-```font-size``` is parsed by glyph. Equal ``line-height``` and ```font-size``` will generally cause text to be truncated.
+line-height {length}: 正整数，每行文字高度。`line-height`是 top 至 bottom的距离。
+`line-height`与`font-size`没有关系，因为`line-height`被 top 和 bottom 所限制，
+`font-size` 被 glyph 所解析。`line-height`和`font-size`相等一般会导致文字被截断。
 
 ### word-wrap
-```word-wrap:<string>```  对nvue来说 ```anywhere``` 表示在以字符为最小元素做截断换行，其它值或不指定该属性，都以英文单词为单位进行换行。
-```word-wrap:<string>``` For nvue, ```anywhere``` means that the character is the smallest element to truncate and wrap the line. Other values or not specifying this attribute are performed in English words. newline.
+`word-wrap:<string>`  对nvue来说 `anywhere` 表示在以字符为最小元素做截断换行，其它值或不指定该属性，都以英文单词为单位进行换行。
 
 |可选值		|描述								|
 | Property| Describe|

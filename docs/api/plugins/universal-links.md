@@ -20,7 +20,7 @@ If you do not configure a universal link, using the new version of HX to submit 
 
 ``` javascript
 Error code = -5000
-Error message: 
+Error message:
 Error: not set parameter 'UniversalLinks' @'oauth-weixin'
 ```
 
@@ -95,8 +95,7 @@ Open WeChat [Open Platform](https://open.weixin.qq.com/), and find the applicati
 Open QQ[Open Platform](https://connect.qq.com/index.html), find the application that has been applied under "Mobile Application" on the "Management Center" page (if you have not applied for an application, please click "Create Mobile Application" Create a new application), click "View" to open the application details page.
 在“开发信息”栏后点击修改，在“iOS应用”下的“Universal Links”项中配置应用的通用链接，如下图所示：
 ![](https://img-cdn-aliyun.dcloud.net.cn/client/ulink/QQ.jpeg)
-* 注意：QQ开放平台在填写时 只需要填写到host,后边的path QQ会自动生成,比如 HBuilder中一键生成 ```https://static-fa42aa5f-xxxxxxx-xxxxxxxx.bspapp.com/qq_conn/11111233333/``` 只需要填写 ```https://static-fa42aa5f-xxxxxxx-xxxxxxxx.bspapp.com/```,具体请查看 [QQ 填写及校验universallinks](https://wiki.connect.qq.com/%E5%A1%AB%E5%86%99%E5%8F%8A%E6%A0%A1%E9%AA%8Cuniversallinks)
-* Note: When filling in the QQ open platform, you only need to fill in the host, and the subsequent path QQ will be automatically generated, such as one-click generation in HBuilder```https://static-fa42aa5f-xxxxxxx-xxxxxxxx.bspapp.com/qq_conn/ 11111233333/``` Only need to fill in ```https://static-fa42aa5f-xxxxxxx-xxxxxxxx.bspapp.com/```, for details, please check [QQ filling and verification universallinks](https://wiki.connect .qq.com/%E5%A1%AB%E5%86%99%E5%8F%8A%E6%A0%A1%E9%AA%8Cuniversallinks)
+* 注意：QQ开放平台在填写时 只需要填写到host,后边的path QQ会自动生成,比如 HBuilder中一键生成 `https://static-fa42aa5f-xxxxxxx-xxxxxxxx.bspapp.com/qq_conn/11111233333/` 只需要填写 `https://static-fa42aa5f-xxxxxxx-xxxxxxxx.bspapp.com/`,具体请查看 [QQ 填写及校验universallinks](https://wiki.connect.qq.com/%E5%A1%AB%E5%86%99%E5%8F%8A%E6%A0%A1%E9%AA%8Cuniversallinks)
 
 #### 微博
 #### Weibo
@@ -133,21 +132,18 @@ The public beta version of Alibaba Cloud is about to go offline. Users who need 
 	在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)打开旧的服务空间 -> 前端网页托管 -> 参数配置 -> 域名信息 配置网站域名 -> 点击删除
 	Open the old service space in [uniCloud web console](https://unicloud.dcloud.net.cn/) -> front-end web page hosting -> parameter configuration -> domain name information configure website domain name -> click delete
 
-2. 绑定域名到新服务空间  
-2. Bind the domain name to the new service space
+2. 绑定域名到新服务空间
 
 	在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)打开新服务空间 -> 前端网页托管 -> 参数配置 -> 域名信息 配置网站域名 -> 添加域名(添加后CNAME的值不会马上出现，需要过一会后点击右上角的刷新按钮，直至出现) -> 解析域名
 	Open a new service space in [uniCloud web console](https://unicloud.dcloud.net.cn/) -> front-end web page hosting -> parameter configuration -> domain name information configuration website domain name -> add domain name (CNAME after adding The value will not appear immediately, it takes a while to click the refresh button in the upper right corner until it appears) -> resolve the domain name
 
-3. 指定要生成通用链接的服务空间  
-3. Designate the service space to generate the universal link
+3. 指定要生成通用链接的服务空间
 
 	在HBuilderX中点击项目的 manifest.json -> App模块配置 OAuth（登录鉴权）-> 微信登录（其他模块同理），点击自动生成 -> 选择“新开通的服务空间“ -> 下一步 -> 自定义域名 -> 完成
 	Click the manifest.json of the project in HBuilderX -> App module configuration OAuth (login authentication) -> WeChat login (the same applies to other modules), click Auto Generate -> select "Newly opened service space" -> Next -> Next -> Custom Domain Name -> Done
 
 4. 自动生成与部署
-4. Automatic generation and deployment
-	
+
 	直接提交云打包即可。注意：提交云打包，只是为了触发：“生成新的通用文件并自动部署到新服务空间”，用户的客户端无需更新。
 	Just submit the cloud package directly. Note: Submitting cloud packaging is just to trigger: "generate new common files and automatically deploy to new service space", and the user's client does not need to be updated.
 
@@ -199,9 +195,9 @@ it `s just normal. A universal link does not require a valid path, in other word
 你可以将通用链接输入到iphone自带Safari浏览器中，下拉即可看到通用链接对应到应用名称和一个打开按钮，点击按钮即可直接在浏览器打开对应的APP。详情：[点此查看演示视频](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91.mp4)
 
 
-3.使用微信登录、分享、支付等功能时，用户非首次调起微信，仍然出现二次跳转app  
+3.使用微信登录、分享、支付等功能时，用户非首次调起微信，仍然出现二次跳转app
 
-微信SDK要求通用链接apple-app-site-association文件中 path不能带query参数，且末尾必须添加通配符*号。如下: 
+微信SDK要求通用链接apple-app-site-association文件中 path不能带query参数，且末尾必须添加通配符*号。如下:
 
 ```
 {

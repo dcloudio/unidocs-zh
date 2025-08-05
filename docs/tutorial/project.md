@@ -54,7 +54,7 @@ A uni-app project contains the following directories and files by default:
 
 uni-app编译器根据pages.json扫描需要编译的页面，并根据页面引入的js、css合并打包文件。\
 对于本地的图片、字体、视频、文件等资源，如果可以直接识别，那么也会把这些资源文件打包进去，但如果这些资源以变量的方式引用，
-比如：```<image :src="url"></image>```，甚至可能有更复杂的函数计算，此时编译器无法分析。
+比如：`<image :src="url"></image>`，甚至可能有更复杂的函数计算，此时编译器无法分析。
 
 `static目录` 使用注意
 Note on `static directory`

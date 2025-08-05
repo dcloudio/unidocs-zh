@@ -11,8 +11,7 @@ uni-app code writing, the basic language includes js, vue, css. And css precompi
 DCloud还提供了使用js编写服务器代码的uniCloud云引擎。所以只需掌握js，你可以开发web、Android、iOS、各家小程序以及服务器等全栈应用。
 DCloud also provides the uniCloud cloud engine that uses js to write server code. So as long as you master js, you can develop full-stack applications such as web, Android, iOS, various MiniApp, and servers.
 
-为了实现多端兼容，综合考虑编译速度、运行性能等因素，```uni-app``` 约定了如下开发规范：
-In order to achieve multi-terminal compatibility, considering factors such as compilation speed and running performance, ``uni-app``` stipulates the following development specifications:
+为了实现多端兼容，综合考虑编译速度、运行性能等因素，`uni-app` 约定了如下开发规范：
 
 - 页面文件遵循 [Vue 单文件组件 (SFC) 规范](https://vue-loader.vuejs.org/zh/spec.html)，即每个页面是一个.vue文件
 - The page file follows the [Vue Single File Component (SFC) specification](https://vue-loader.vuejs.org/zh/spec.html), that is, each page is a .vue file

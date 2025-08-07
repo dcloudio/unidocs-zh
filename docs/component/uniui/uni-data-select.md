@@ -95,6 +95,7 @@ export default {
 |     clear     |    Boolean    |     -      |    -     |                  是否可以清空已选项                  |
 |     label     |    String     |            |          |                       左侧标题                       |
 |  placeholder  |    String     |     -      |  请选择  |                   输入框的提示文字                   |
+|  disabled     |    Boolean    |     -      |  false  |                   是否开启禁用                   |
 |   emptyTips   |    String     |     -      | 暂无数据 |         没有数据时显示的文字 ，本地数据无效          |
 |   placement   |    String     | bottom,top |  bottom  |                      弹出时位置                      |
 |   page-size   |    Number     |     -      |    20    | 返回的数据量（云端请求时有效，更多云端属性详见下方） |

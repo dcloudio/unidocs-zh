@@ -142,7 +142,8 @@
     "plugins": {
         "pluginName": {
             "version": "1.0.0",
-            "provider": "wxidxxxxxxxxxxxxxxxx"
+            "provider": "wxidxxxxxxxxxxxxxxxx",
+            "export": "list/index.js"
         }
     }
 }]

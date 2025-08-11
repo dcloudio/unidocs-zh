@@ -139,8 +139,8 @@
 |navigationBarBackgroundColor|HexColor|#F8F8F8|导航栏背景颜色（同状态栏背景色）|APP与H5为#F8F8F8，小程序平台请参考相应小程序文档|
 |navigationBarTextStyle|String|black|导航栏标题颜色及状态栏前景颜色，仅支持 black/white||
 |navigationBarTitleText|String||导航栏标题文字内容||
-|navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+）|
-|backgroundColor|HexColor|#ffffff|下拉显示出来的窗口的背景色|微信小程序|
+|navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+）、小红书小程序|
+|backgroundColor|HexColor|#ffffff|下拉显示出来的窗口的背景色|微信小程序、小红书小程序|
 |backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark / light|微信小程序|
 |enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/tutorial/page.md#lifecycle)。||
 |onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.md#lifecycle)||
@@ -1017,7 +1017,7 @@ h5 平台下拉刷新动画，只有 circle 类型。
 |color|HexColor|是||tab 上的文字默认颜色||
 |selectedColor|HexColor|是||tab 上的文字选中时的颜色||
 |backgroundColor|HexColor|是||tab 的背景色||
-|borderStyle|String|否|black|tabbar 上边框的颜色，可选值 black/white，black对应颜色rgba(0,0,0,0.33)，white对应颜色rgba(255,255,255,0.33)。|App 2.3.4+ 、H5 3.0.0+、微信小程序|
+|borderStyle|String|否|black|tabbar 上边框的颜色，可选值 black/white，black对应颜色rgba(0,0,0,0.33)，white对应颜色rgba(255,255,255,0.33)。|App 2.3.4+ 、H5 3.0.0+、微信小程序、小红书小程序|
 |blurEffect|String|否|none|iOS 高斯模糊效果，可选值 dark/extralight/light/none（参考:[使用说明](https://ask.dcloud.net.cn/article/36617)）|App 2.4.0+ 支持、H5 3.0.0+（只有最新版浏览器才支持）|
 |list|Array|是||tab 的列表，详见 list 属性说明，最少2个、最多5个 tab||
 |position|String|否|bottom|可选值 bottom、top|top 值仅微信小程序支持|

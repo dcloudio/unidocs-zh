@@ -12,9 +12,9 @@
 |canvas-id|String||canvas 组件的唯一标识符||
 |disable-scroll|Boolean|false|当在 canvas 中移动时且有绑定手势事件时，禁止屏幕滚动以及下拉刷新|抖音小程序与飞书小程序不支持|
 |hidpi|Boolean|true|是否启用高清处理|H5 (HBuilder X 3.4.0+)、App-vue (HBuilder X 3.4.0+)|
-|@touchstart|EventHandle||手指触摸动作开始|抖音小程序1.78.0+|
-|@touchmove|EventHandle||手指触摸后移动|抖音小程序1.78.0+|
-|@touchend|EventHandle||手指触摸动作结束|抖音小程序1.78.0+|
+|@touchstart|EventHandle||手指触摸动作开始|抖音小程序1.78.0+、小红书小程序|
+|@touchmove|EventHandle||手指触摸后移动|抖音小程序1.78.0+、小红书小程序|
+|@touchend|EventHandle||手指触摸动作结束|抖音小程序1.78.0+、小红书小程序|
 |@touchcancel|EventHandle||手指触摸动作被打断，如来电提醒，弹窗|抖音小程序1.78.0+|
 |@longtap|EventHandle||手指长按 500ms 之后触发，触发了长按事件后进行移动不会触发屏幕的滚动|抖音小程序与飞书小程序不支持|
 |@error|EventHandle||当发生错误时触发 error 事件，detail = {errMsg: 'something wrong'}|抖音小程序与飞书小程序不支持|
@@ -28,6 +28,7 @@
 * app-vue 中的 canvas 仍然是 webview 的 canvas。app-nvue下如需使用canvas，需下载插件，详见文档底部章节。
 * app-vue的canvas虽然是webview自带的canvas，但却比nvue和微信小程序的原生canvas性能更高。注意并非原生=更快。canvas动画的流畅，关键不在于渲染引擎的速度，而在于减少从逻辑层向视图层频繁通信造成的折损。
 * 小程序、app-nvue，因为通信阻塞，难以绘制非常流畅的canvas动画。h5和app-vue不存在此问题。但注意，app-vue下若想流畅的绘制canvas动画，需要使用[renderjs](https://uniapp.dcloud.io/tutorial/renderjs?id=renderjs)技术，把操作canvas的js逻辑放到视图层运行，避免逻辑层和视图层频繁通信。hello uni-app的canvas示例很典型，在相同手机运行该示例，可以看出在h5端和app端非常流畅，而小程序端由于没有renderjs技术，做不到这么流畅的动画。
+* `小红书小程序`注意 : canvas在基础库3.116.2版本及以后开始支持 , 同一页面中的 canvas-id 不可重复，如果使用一个已经出现过的 canvas-id，该 canvas 标签对应的画布将被隐藏并不再正常工作
 
 **示例：** [查看演示](https://hellouniapp.dcloud.net.cn/pages/component/canvas/canvas)
 

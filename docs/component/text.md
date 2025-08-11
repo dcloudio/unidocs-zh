@@ -13,7 +13,7 @@
 
 |属性名		|类型	|默认值	|说明			|平台差异说明				|
 |:-|:-			|:-		|:-		|:-				|
-|selectable	|Boolean|false	|文本是否可选	|		|
+|selectable	|Boolean|false	|文本是否可选	|小红书小程序不支持|
 |user-select	|Boolean|false	|文本是否可选	| 微信小程序 |
 |space		|String	|		|显示连续空格	|钉钉小程序不支持	|
 |decode		|Boolean|false	|是否解码		|百度、钉钉小程序不支持	|

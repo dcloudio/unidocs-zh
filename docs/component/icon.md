@@ -21,6 +21,7 @@
 |type|String||icon的类型|
 |size|Number|23|icon的大小，单位px|
 |color|Color||icon的颜色，同css的color|
+|view-box|number|1024|小红书小程序|
 
 各平台 type 有效值说明：
 
@@ -29,6 +30,7 @@
 |App、H5、微信小程序、QQ小程序|success, success_no_circle, info, warn, waiting, cancel, download, search, clear|
 |支付宝小程序|info, warn, waiting, cancel, download, search, clear, success, success_no_circle,loading|
 |百度小程序|success, info, warn, waiting, success_no_circle, clear, search, personal, setting, top, close, cancel, download, checkboxSelected, radioSelected, radioUnselect|
+|小红书小程序|success, success_no_circle, info, warn, waiting, cancel, download, search, clear|
 
 
 

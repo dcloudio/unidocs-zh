@@ -34,6 +34,8 @@
 |data-goods-id|String||商品的id，仅支持泛知识课程库和生活服务商品库中的商品|open-type="im"|抖音小程序2.80.0版本+|
 |data-order-id|String||订单的id，仅支持交易2.0订单|open-type="im"|抖音小程序2.80.0版本+|
 |data-biz-line|String||商品类型，“1”代表生活服务，“2”代表泛知识。|open-type="im"|抖音小程序2.80.0版本+|
+|contact-type|String| |客服类型，默认值 seller| |小红书小程序|
+|contact-id|String| |contact-type 对应的key。contact-type 为 seller 时非必传；goods 时第三方商品 id；order时第三方订单 id。open-type=contact时有效| |小红书小程序|
 |@getphonenumber|Handler||获取用户手机号回调|open-type="getPhoneNumber"|微信、支付宝、百度、抖音、快手、京东小程序、小红书小程序|
 |@getuserinfo|Handler||用户点击该按钮时，会返回获取到的用户信息，从返回参数的detail中获取到的值同uni.getUserInfo|open-type="getUserInfo"|微信、QQ、百度、快手、京东小程序、小红书小程序|
 |@error|Handler||当使用开放能力时，发生错误的回调|open-type="launchApp"|微信、QQ、快手、京东小程序|
@@ -79,14 +81,22 @@ button组件也支持style中通过css定义颜色。[见下](#style)
 |值|说明|
 |:-|:-|
 |submit|提交表单|
-|reset|重置表单|
+|goods|重置表单|
+
+## contact-type有效值
+
+|值|说明|
+|:-|:-|
+|seller|等于 seller 时，contact-id 非必传|
+|reset|等于 goods 时，contact-id 是第三方商品 id|
+|order|等于 order 时，contact-id 是第三方订单 id|
 
 ## open-type 有效值
 
 |值|说明|平台差异说明|
 |:-|:-|:-|
 |feedback|打开“意见反馈”页面，用户可提交反馈内容并上传日志|App、微信小程序、QQ小程序|
-|share|触发用户转发|微信小程序、百度小程序、支付宝小程序、抖音小程序、飞书小程序、QQ小程序、快手小程序、京东小程序、360小程序	|
+|share|触发用户转发|微信小程序、百度小程序、支付宝小程序、抖音小程序、飞书小程序、QQ小程序、快手小程序、京东小程序、360小程序、小红书小程序|
 |getUserInfo|获取用户信息，可以从@getuserinfo回调中获取到用户信息|微信小程序、百度小程序、QQ小程序、快手小程序、京东小程序、360小程序、小红书小程序	|
 |contact | 打开客服会话，如果用户在会话中点击消息卡片后返回应用，可以从 @contact 回调中获得具体信息 |微信小程序、百度小程序、快手小程序、抖音小程序、小红书小程序 |
 |getPhoneNumber | 获取用户手机号，可以从@getphonenumber回调中获取到用户信息|微信小程序、百度小程序、抖音小程序、支付宝小程序、快手小程序、京东小程序、小红书小程序。App平台另见[一键登陆](https://uniapp.dcloud.net.cn/univerify) |

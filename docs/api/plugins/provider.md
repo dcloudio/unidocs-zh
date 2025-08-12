@@ -31,10 +31,6 @@
 |payment|支付|
 |push|推送|
 
-
-
-
-
 **success 返回参数说明**
 
 |参数名|类型|说明|
@@ -48,7 +44,7 @@
 
 |service|provider|说明|备注|
 |:-|:-|:-|:-|
-|oauth|weixin|微信登录||
+|oauth|weixin|微信登录|`HarmonyOS 4.77`|
 ||qq|QQ登录||
 ||sinaweibo|新浪微博登录||
 ||xiaomi|小米登录||
@@ -59,7 +55,7 @@
 ||huawei|HarmonyOS Next [华为账号服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-introduction-V5?ha_source=Dcloud&ha_sourceId=89000448)|HBuilderX 4.31+|
 |share|sinaweibo|新浪微博分享||
 ||qq|分享到QQ好友||
-||weixin|分享微信消息、朋友圈及微信小程序||
+||weixin|分享微信消息、朋友圈及微信小程序|HarmonyOS 4.77|
 |payment|alipay|支付宝支付||
 ||wxpay|微信支付||
 ||baidu|百度收银台||

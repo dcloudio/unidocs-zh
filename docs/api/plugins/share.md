@@ -24,14 +24,14 @@ uni-app的App引擎已经封装了微信、QQ、微博的分享SDK，开发者�
 
 |App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|x|x|x|x|x|x|x|x|x|x|
+|√|4.77|x|x|x|x|x|x|x|x|x|x|
 
 
 **OBJECT 参数说明**
 
 |参数名|类型|必填|说明|
 |:-|:-|:-|:-|
-|provider|String|是|分享服务提供商（即weixin&#124;qq&#124;sinaweibo），通过 [uni.getProvider](/api/plugins/provider) 获取可用的分享服务商，可用是指在manifest.json的sdk配置中配的分享sdk厂商，与本机安装了什么社交App无关|
+|provider|String|是|分享服务提供商（即weixin&#124;qq&#124;sinaweibo），通过 [uni.getProvider](provider.md) 获取可用的分享服务商，可用是指在manifest.json的sdk配置中配的分享sdk厂商，与本机安装了什么社交App无关|
 |type|Number|否|分享形式，如图文、纯文字、纯图片、音乐、视频、小程序等。默认图文 0。不同分享服务商支持的形式不同，具体参考下面type值说明。|
 |title|String|否|分享内容的标题|
 |scene|String|provider 为 weixin 时必选|场景，可取值参考下面说明。|

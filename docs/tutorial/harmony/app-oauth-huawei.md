@@ -12,9 +12,9 @@
 
 ## HBuilder X 配置 @hbuilderx-config
 
-打开项目的manifest.json文件，在“App模块配置”项的“OAuth(登录鉴权)”下，勾选“华为登录”：
+打开项目的manifest.json文件，在“App模块配置”项的“OAuth(登录鉴权)”下，勾选“华为登录”，并配置 `client_id`：
 
-![](https://web-ext-storage.dcloud.net.cn/doc/app/oauth/manifest-oauto-huawei.jpg)
+![](https://web-ext-storage.dcloud.net.cn/doc/harmony-os-next/harmony-hw-login-config.png)
 
 ### uni-app 中使用示例 @example
 

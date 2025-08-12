@@ -65,7 +65,6 @@
         * [新浪微博登录](app-oauth-weibo.md)
         * [Google登录](app-oauth-google.md)
         * [Facebook登录](app-oauth-facebook.md)
-        * [HarmonyOS Next 华为账号登录](app-oauth-huawei.md)
       * [Payment(支付)](app-payment.md)
         * [Apple应用内支付](app-payment-aip.md)
         * [支付宝支付](app-payment-alipay.md)
@@ -127,6 +126,11 @@
   * [调用鸿蒙原生API](harmony/native-api.md)
   * [嵌入鸿蒙原生组件](harmony/native-component.md)
   * [内置模块说明](harmony/built-in-module.md)
+  * App 打包配置
+    * 功能模块
+      * OAuth(登录鉴权)
+        * [微信登录](app-oauth-weixin.md)
+        * [HarmonyOS Next 华为账号登录](harmony/app-oauth-huawei.md)
   * [鸿蒙案例](https://uniapp.dcloud.net.cn/case.html#鸿蒙next)
   * [历史变更](harmony/history.md)
 	* 其它配置

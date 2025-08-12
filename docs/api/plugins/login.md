@@ -18,11 +18,12 @@ uni.login是一个客户端API，统一封装了各个平台的各种常见的�
 ### App平台支持的登录方式
 - [手机号一键登录（univerify）](/univerify.md)
 - [苹果登录（Sign in with Apple）](/tutorial/app-oauth-apple.md)
-- [微信登录](/tutorial/app-oauth-weixin.md)
+- [微信登录](/tutorial/app-oauth-weixin.md)：HarmonyOS Next (4.77)
 - [QQ登录](/tutorial/app-oauth-qq.md)
 - [新浪微博登录](/tutorial/app-oauth-weibo.md)
 - [Google登录](/tutorial/app-oauth-google.md)
 - [Facebook登录](/tutorial/app-oauth-facebook.md)
+- [华为登录](/tutorial/harmony/app-oauth-huawei.md)
 
 ### 小程序平台支持的登录方式
 * [微信小程序登录](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)

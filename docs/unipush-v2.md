@@ -133,6 +133,11 @@ DCloud与个推（A股上市公司每日互动）深度合作，为uni-app的开
 ##### h5端
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20220525105914.jpg)
 
+**注意**
+
+- 信息收不到？H5 发送通知选择透传消息，不选择通知消息。平台选择默认即可，可以自行通过 CID 单独测试
+- 配置管理 - 故障排查 - 状态查询，查询 h5 用户 Device Token 始终为 `-`
+
 ##### 微信小程序端
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/87accaa0-e6a4-4916-9a74-87719142abaa.jpg)
 

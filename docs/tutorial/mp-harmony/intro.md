@@ -28,7 +28,7 @@
 
 ### 元服务上架备案（上架重要）
 
-元服务上架需要提前做好备案，强烈建议注册元服务时候立刻开始备案流程，避免临上架才开始备案，耽误上架时间。参考 [App 备案相关注意事项](https://developer.huawei.com/consumer/cn/doc/app/50130-FAQ?ha_source=Dcloud&ha_sourceId=89000448).
+元服务上架需要提前做好备案，强烈建议注册元服务时候立刻开始备案流程，避免临上架才开始备案，耽误上架时间。参考 [App 备案相关注意事项](https://developer.huawei.com/consumer/cn/doc/atomic-guides/atomic-service-filing?ha_source=Dcloud&ha_sourceId=89000448).
 
 如果你的元服务需要使用登录、支付权限，也立即开始着手准备申请相关权限，参考 [华为支付服务开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-preparations?ha_source=Dcloud&ha_sourceId=89000448)。
 

@@ -133,7 +133,7 @@ export default defineConfig({
 
 ```js
 // 读取 manifest.json ，修改后重新写入
-const fs = require('fs');
+import fs from 'fs';
 
 const manifestPath = './src/manifest.json';
 let Manifest = fs.readFileSync(manifestPath, { encoding: 'utf-8' });

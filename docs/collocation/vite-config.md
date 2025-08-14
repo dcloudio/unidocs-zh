@@ -42,7 +42,7 @@ export default defineConfig({
 
 ```js
 import path from 'path';
-import fs from 'fs-extra';
+import fs from 'fs-extra'; // fs-extra 为三方库，需安装依赖
 import { defineConfig } from 'vite';
 import uni from '@dcloudio/vite-plugin-uni';
 

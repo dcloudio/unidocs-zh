@@ -18,7 +18,7 @@
   * 使用发行为混合分包的功能
     + 在 HBuilderX 3.1.0+ 中点击发行小程序的菜单，勾选发行混合分包，填写分包目录名称，打包后，将对应目录文件拷贝至已有小程序中，需要自己补充原小程序app.json中的页面或分包配置
       ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/mp-weixin-hybrid.jpg)
-    + 在 cli 中，执行命令：`npm run build:mp-weixin -- --subpackage=sub1` 或 `yarn build:mp-weixin --subpackage=sub1`
+    + 在 cli 中，执行命令：`npm run build:mp-weixin --subpackage=sub1` 或 `yarn build:mp-weixin --subpackage=sub1`
     
     注意：
   

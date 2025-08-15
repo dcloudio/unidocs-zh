@@ -61,7 +61,7 @@ const app = createApp({})
 |resolveDirective|如果在当前应用实例中可用，则允许通过其名称解析一个 `directive`。返回一个 `Directive`。[详情](https://v3.cn.vuejs.org/api/global-api.html#resolvedirective)	|√	|x	| x	|
 |withDirectives|允许将指令应用于 `VNode`。返回一个包含应用指令的 `VNode`。[详情](https://v3.cn.vuejs.org/api/global-api.html#withdirectives)	|√	|x	| x	|
 |createRenderer|createRenderer 函数接受两个泛型参数： `HostNode` 和 `HostElement`，对应于宿主环境中的 `Node` 和 `Element` 类型。[详情](https://v3.cn.vuejs.org/api/global-api.html#createrenderer)	|√	|x| x	|
-|nextTick|将回调推迟到下一个 `DOM` 更新周期之后执行。在更改了一些数据以等待 `DOM` 更新后立即使用它。[详情](https://v3.cn.vuejs.org/api/global-api.html#nexttick)	|√	| x	| x	|
+|nextTick|将回调推迟到下一个 `DOM` 更新周期之后执行。在更改了一些数据以等待 `DOM` 更新后立即使用它。[详情](https://v3.cn.vuejs.org/api/global-api.html#nexttick)	|√	| √	| √	|
 
 
 

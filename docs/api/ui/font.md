@@ -58,7 +58,7 @@ uni.loadFontFace({
 })
 ```
 
-uni-app x 中加载字体图标，详见 hello uni-app x 的 [loadFontFace](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/API/load-font-face/load-font-face.uvue)
+uni-app x 中加载字体图标，详见 hello uni-app x 的 [loadFontFace](https://gitcode.com/dcloud/hello-uni-app-x/blob/master/pages/API/load-font-face/load-font-face.uvue)
 
 ### Tips
 

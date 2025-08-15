@@ -53,7 +53,7 @@ const config = {
     nextLinks: false,
     prevLinks: false,
     repo: 'dcloudio/uni-app',
-    docsRepo: 'https://gitcode.net/dcloud/unidocs-zh',
+    docsRepo: 'https://gitcode.com/dcloud/unidocs-zh',
     docsBranch: 'master',
     docsDir: 'docs',
     editLinks: true,

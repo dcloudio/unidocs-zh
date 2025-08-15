@@ -102,7 +102,7 @@ uni-app的runtime不适合内置很多waiting样式和资源，而使用三方�
 - uts在Android上涉及arr、jar、so库等三方sdk的时候，也需打包自定义基座才能真机运行。
 - wgt升级只对js、css生效，uts代码无法热更新。但这不意味着使用uts的项目就失去热更新能力，只是uts部分不能热更。js、vue、css、图片仍然可以打包成wgt热更。
 
-4. `ext api`在入口文件`export`的API，必须在`package.json`中编写注册声明 
+4. `ext api`在入口文件`export`的API，必须在`package.json`中编写注册声明
 
 ## 如何开发uni ext api
 
@@ -212,7 +212,7 @@ uni-app的runtime不适合内置很多waiting样式和资源，而使用三方�
 }
 ```
 
-**注意：** 
+**注意：**
 
 - 所有 uni ext api 均需要提供 utssdk/interface.uts 文件
 - 所有对外暴露的方法，类型均需要在 interface.uts 中定义
@@ -226,7 +226,7 @@ uni-app的runtime不适合内置很多waiting样式和资源，而使用三方�
     * 事件API 回调结果类型命名为`API名称首字母大写 + 'CallbackResult'`
      > 如 uni.onUserCaptureScreen 的 callback 回调结果类型为：`type OnUserCaptureScreenCallbackResult = {}`
 
-- [示例(获取电量)参考](https://gitcode.net/dcloud/uni-api/-/tree/dev/uni_modules/uni-getbatteryinfo)
+- [示例(获取电量)参考](https://gitcode.com/dcloud/uni-api/tree/dev/uni_modules/uni-getbatteryinfo)
 - HBuilderX3.96及以下使用uni ext api后，云打包同时勾选android和iOS会导致打出来的包不能正确包含uni ext api插件，解决方案：升级至3.97+或android和iOS单独打包
 
 ## 如何使用uni ext api
@@ -235,5 +235,3 @@ uni-app的runtime不适合内置很多waiting样式和资源，而使用三方�
 
 
 如：[uni-getbatteryinfo](https://ext.dcloud.net.cn/plugin?name=uni-getbatteryinfo)，导入后，即可直接使用`uni.getBatteryInfo`
-
-

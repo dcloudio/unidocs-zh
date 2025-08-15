@@ -59,7 +59,7 @@
 |:-																|:-									|:-			|:-																														|:-			|
 |adpid														|String&#124;Number	|				|广告位id，到[uni-ad后台](https://uniad.dcloud.net.cn/)后台申请。	|				|
 |preload													|Boolean						|true		|页面就绪后加载广告数据																						|				|
-|loadnext													|Boolean						|false	|自动加载下一条广告数据																						|				|
+|loadnext													|Boolean						|false	|自动加载下一条广告数据																						|微信默认为true，不支持修改				|
 |disabled													|Boolean						|false	|禁用默认点击行为																								|				|
 |url-callback											|Object							|				|服务器回调透传数据																							|				|
 |v-slot:default="{loading, error}"|										|				|作用域插槽可以获取组件内部广告加载状态和加载错误信息									|				|

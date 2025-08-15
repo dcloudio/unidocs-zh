@@ -414,8 +414,6 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **jnpf-java：** 一个一体化商务沟通、智能移动办公，帮助企业协同管理、融合沟通、提升办公效率，实现电脑手机一体化团队管理、智能数字化管理的APP，鸿蒙应用市场搜索“jnpf-java”，[详情](https://appgallery.huawei.com/app/detail?id=com.jnpf.java)
 
-**天威通：** 一款可在手机端快速申办与管理移动数字证书及电子签章的APP，鸿蒙应用市场搜索“天威通”，[详情](https://appgallery.huawei.com/app/detail?id=com.itrus.cashare)
-
 **智慧运行大数据管理平台：** 一款监测设备运行、远程控制设备的APP，鸿蒙应用市场搜索“智慧运行大数据管理平台”，[详情](https://appgallery.huawei.com/app/detail?id=com.shangshui.zhywhm)
 
 **运营数智仓：** 一个包括医疗业务指标、数据挖掘和数据监控的运营中心系统，鸿蒙应用市场搜索“运营数智仓”，[详情](https://appgallery.huawei.com/app/detail?id=com.hkwj.yyzx)

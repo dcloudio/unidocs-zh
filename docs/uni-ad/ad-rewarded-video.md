@@ -587,6 +587,8 @@ export default {
 |  extra		  | String	 |    自定义数据			    |           调用SDK传入并透传，如无需要则为空            |
 |   cpm		   |  int	   | 千次曝光收益，单位：分			 | cpm/1000则为本次观看收益，默认没有该参数，需通过[uni-im](https://im.dcloud.net.cn/#/?joinGroup=65d85fc09847e92db03ff81a)联系商务/运营申请开通 |
 
+**cpm** 仅App平台支持
+
 #### 签名生成方式@sign
 
 ```

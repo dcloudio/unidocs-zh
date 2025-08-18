@@ -340,7 +340,7 @@ uni.authorize({
 易错点：
 
 1. 签名证书不能是自动签名，设置的是 agc 上下载的调试证书
-2. `mp-configs/entry/src/main/modueljson5` 里有个 metadata client_id 确保值正确。
+2. `harmony-mp-configs/entry/src/main/modueljson5` 里有个 metadata client_id 确保值正确。
 3. 访问 [AGC 开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject?ha_source=Dcloud&ha_sourceId=89000448) - 我的项目，选择对应的项目和应用，打开 常规 - 应用，配置指纹，确保添加了调试证书。
 
 通过 `uni.login` 可以得到 `code`，流程和其他小程序登录流程相似。参考 [解析凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-get-token-info-V5?ha_source=Dcloud&ha_sourceId=89000448) 得到用户的 UnionID，开发者在这一步骤自行判断是已绑定华为 UnionID，如果未绑定，引导用户绑定现有账号体系。如果你没有 code 返回值，观察接口错误提示，一般是 client_id 设置错误。
@@ -637,26 +637,31 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 ```json
 {
-    "pages": [{
-    "path": "pages/index/index",
-    "style": {
-      "navigationBarTitleText": "Index",
-      "componentPlaceholder": {
-        "custom-button": "view"
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "Index",
+        "componentPlaceholder": {
+          "custom-button": "view"
+        }
       }
     }
-  }],
-  "subPackages": [{
+  ],
+  "subPackages": [
+    {
       "root": "packageA",
-      "pages": [{
-        "path": "index/index",
-        "style": {
-          "navigationBarTitleText": "分包页面",
-          "componentPlaceholder": {
-            "custom-button": "view"
+      "pages": [
+        {
+          "path": "index/index",
+          "style": {
+            "navigationBarTitleText": "分包页面",
+            "componentPlaceholder": {
+              "custom-button": "view"
+            }
           }
         }
-      }]
+      ]
     },
     {
       "root": "packageB",

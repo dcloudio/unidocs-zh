@@ -36,7 +36,7 @@
 
 |属性|类型|默认值|必填|说明|平台说明|
 |---|---|---|---|---|---|
-|interval|string|normal|否|监听陀螺仪数据回调函数的执行频率：game（20ms/次）、ui（60ms/次）、normal（200ms/次）|微信小程序|
+|interval|string|normal|否|监听陀螺仪数据回调函数的执行频率：game（20ms/次）、ui（60ms/次）、normal（200ms/次）|微信小程序、支付宝小程序|
 |success|function||否|接口调用成功的回调函数||
 |fail|function||否|接口调用失败的回调函数||
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|

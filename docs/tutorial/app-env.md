@@ -11,6 +11,7 @@
 - Android 构建工具（buildToolsVersion）：35.0.0  
 - Gradle：8.11.1  
 - Android Gradle 插件（com.android.tools.build:gradle）：8.7.3  
+- Kotlin Android 插件（org.jetbrains.kotlin:kotlin-gradle-plugin）：1.8.10  
 - JDK：17 （[Amazon corretto 17.0.12.7.1](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/what-is-corretto-17.html)）  
 
 ### HBuilder4.25及以上版本云端打包环境（不推荐使用）
@@ -18,6 +19,7 @@
 - Android 构建工具（buildToolsVersion）：34.0.0  
 - Gradle：8.5  
 - Android Gradle 插件（com.android.tools.build:gradle）：8.2.2  
+- Kotlin Android 插件（org.jetbrains.kotlin:kotlin-gradle-plugin）：1.8.10  
 - JDK：17 （[Amazon corretto 17.0.12.7.1](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/what-is-corretto-17.html)）  
 
 ### HBuilder4.24及以下版本云端打包环境（不推荐使用）
@@ -25,6 +27,7 @@
 - Android 构建工具（buildToolsVersion） ：30.0.3  
 - Gradle：7.6.3  
 - Android Gradle 插件（com.android.tools.build:gradle）：4.2.0  
+- Kotlin Android 插件（org.jetbrains.kotlin:kotlin-gradle-plugin）：1.8.10  
 - JDK：11 （[Amazon corretto 11.0.24.8.1](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/what-is-corretto-11.html)）  
 
 **注意**  

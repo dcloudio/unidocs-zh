@@ -331,11 +331,6 @@ export default {
 
 `uni.createRewardedVideoAd(options)`
 
-> **微信小程序广告接入，注意两种接入方式的差异与限制**
-> * 用 API（uni.createRewardedVideoAd）接入时，若要支持微信小程序，需开通微信原生广告并配置 adUnitId
-> * 用组件 `<ad-rewarded-video>` 接入时，只能使用 uni-ad 广告位（adpid）
-
-
 **参数说明**
 
 options 为 object 类型，属性如下：
@@ -345,6 +340,9 @@ options 为 object 类型，属性如下：
 |adpid			|string	|是		|广告位 id					|App 2.5.11+																	|
 |adUnitId		|string	|是		|广告位 id					|微信小程序2.6.0+, QQ0.1.26+， 抖音1.57.0+|
 |urlCallback|object	|否		|服务器回调透传参数	|App 2.5.11+																	|
+
+uni-ad 不支持在微信小程序上使用API接入，**仅支持组件**方式`<ad-rewarded-video>`，组件支持跨平台
+
 
 **urlCallback说明**
 

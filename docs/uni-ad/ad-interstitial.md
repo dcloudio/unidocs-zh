@@ -156,7 +156,7 @@ export default {
 |adpid		|string	|是		|广告位 id	|App 3.1.10+								|App			|
 |adUnitId	|string	|是		|广告位 id	|微信小程序2.6.0+, QQ0.1.26+	|微信小程序	|
 
-uni-ad 不支持在微信上使用API接入，仅支持组件方式`<ad-interstitial>`, 组件支持跨平台
+uni-ad 不支持在微信小程序上使用API接入，**仅支持组件**方式`<ad-interstitial>`，组件支持跨平台
 
 #### 广告创建
 

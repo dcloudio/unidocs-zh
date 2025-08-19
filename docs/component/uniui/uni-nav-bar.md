@@ -119,6 +119,7 @@ Tips:
 |leftWidth|Number/String|120rpx|导航栏左侧插槽宽度|
 |rightWidth|Number/String|120rpx|导航栏右侧插槽宽度|
 |stat|Boolean||是否开启统计标题功能。**注意：只有使用title 属性 ，且开启了统计功能才生效**|
+|showMenuButtonWidth|Boolean|false|微信小程序是否开启胶囊避让功能，fixed:true 下生效。**注意：开启后会导致标题不在页面水平居中，如需使用右插槽请开启，不开启下，右侧插槽或者内容会被胶囊按钮覆盖**|
 
 **Tips**
 - `leftWidth` 和 `rightWidth` 如无必要不需要设置

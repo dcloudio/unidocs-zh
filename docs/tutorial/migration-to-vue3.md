@@ -601,7 +601,7 @@ const messages = {
 
 ```html
 <template>
-  {{$t('index', {num: 123})}}
+  <view>{{ $t('greeting', { name: 'uniapp' }) }}</view>
 </template>
 ```
 

@@ -21,12 +21,12 @@
 
 - 注册鸿蒙开发者账号，[地址](https://developer.huawei.com/consumer/cn/?ha_source=Dcloud&ha_sourceId=89000448)
 - HBuilderX 4.24+ [下载地址](https://www.dcloud.io/hbuilderx.html)
-- DevEco Studio [下载地址](https://developer.huawei.com/consumer/cn/download/?ha_source=Dcloud&ha_sourceId=89000448)
+- DevEco Studio [下载地址](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448)
   - HBuilderX 4.24+ 要求 DevEco Studio 5.0.3.400+
   - HBuilderX 4.31+ 要求 DevEco Studio 5.0.3.800+。
   - HBuilderX 4.61+ 针对 uni-app x 项目要求 DevEco Studio 5.0.7.100+。
   - uni-app 项目要求鸿蒙系统版本 API 12 以上，uni-app x 项目要求鸿蒙系统版本 API 14 以上（DevEco Studio 有内置鸿蒙模拟器）
-- [点击下载](https://developer.huawei.com/consumer/cn/download/?ha_source=Dcloud&ha_sourceId=89000448) DevEco5.1.1Beta 版本，下载 API19 模拟器即可运行 uni-app 鸿蒙项目和元服务，除此之外的模拟器暂不支持。
+- [点击下载](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448) DevEco5.1.1Beta 版本，下载 API19 模拟器即可运行 uni-app 鸿蒙项目和元服务，除此之外的模拟器暂不支持。
 
 ### 项目根目录与鸿蒙工程目录@project-path
 
@@ -602,7 +602,7 @@ HBuilderX 4.31 起支持 uniPush 推送，具体配置请参考[文档](https://
 
 ### Windows 系统中如何使用模拟器@q14
 
-目前下载 API19 模拟器即可运行 uni-app 鸿蒙项目和元服务，[点击下载](https://developer.huawei.com/consumer/cn/download/?ha_source=Dcloud&ha_sourceId=89000448) DevEco5.1.1Beta 版本，低于低版本的模拟器不支持在 Wndows 平台运行模拟器。
+目前下载 API19 模拟器即可运行 uni-app 鸿蒙项目和元服务，[点击下载](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448) DevEco5.1.1Beta 版本，低于低版本的模拟器不支持在 Wndows 平台运行模拟器。
 
 **在满足兼容性要求的前提下，如果要在 Windows 系统如使用模拟器则需要开启以下功能**
 

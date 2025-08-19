@@ -12,7 +12,7 @@
 
 ## 开发环境要求@env
 
-- DevEco-Studio 5.0.3.400 以上 [下载地址](https://developer.huawei.com/consumer/cn/download/?ha_source=Dcloud&ha_sourceId=89000448)
+- DevEco-Studio 5.0.3.400 以上 [下载地址](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448)
 - 鸿蒙系统版本 API 12 以上 （DevEco-Studio有内置鸿蒙模拟器）
 - HBuilderX-4.24+ [下载地址](https://www.dcloud.io/hbuilderx.html)
 

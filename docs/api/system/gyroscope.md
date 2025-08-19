@@ -14,7 +14,7 @@
 
 |属性|类型|说明
 |--|--|--|
-|res|Object|res = {x,y,x}|
+|res|Object|res = {x,y,z}|
 
 **res 的结构**
 

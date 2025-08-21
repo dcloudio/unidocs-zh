@@ -159,7 +159,7 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
 ### 应用可支持横竖屏列表配置@orientation  
 应用默认可支持的横竖列表：  
 - uni-app 项目由 manifest.json 中的 [screenOrientation](https://uniapp.dcloud.net.cn/collocation/manifest.html#app-plus) 字段配置决定  
-- uni-app x 项目默认可支持横竖屏列表为横屏和竖屏，但运行期在 iPhone 设备默认为竖屏，在 iPad 设备根据系统设置自动感应适配横竖屏，HBuilderX4.25版本iPhone设备支持[screenOrientation](https://uniapp.dcloud.net.cn/collocation/manifest.html#app-plus) 字段配置  
+- uni-app x 项目此配置项仅决定启动界面方向，更多信息参考 [uni-app x 启动界面方向](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-ios.html#orientation)  
 
 如果希望自定义配置应用可支持的横竖屏列表，可根据需求在`Info.plist`文件中添加`UISupportedInterfaceOrientations`数据，如下示例：
 ```xml
@@ -185,7 +185,6 @@ uni-app x项目manifest.json中没有提供iOS隐私信息访问许可描述的�
 ```
 
 > uni-app 项目同时也支持在 manifest.json 中配置  [screenOrientation](https://uniapp.dcloud.net.cn/collocation/manifest.html#app-plus)，云端打包会与 Info.plist 中配置的值合并  
-> uni-app x 项目仅支持 Info.plist 中配置，需 HBuilderX4.22+ 版本，提交云端打包后才能生效  
 
 **注意**  
 - `UISupportedInterfaceOrientations~iphone` 字段下配置的是 iPhone 设备可支持的横竖屏  
@@ -226,7 +225,7 @@ HBuilderX中对项目右键菜单 "新建" -> "目录"
 </plist>
 ```
 
-uni-app/uni-app x 项目可以通过编辑`UniApp.entitlements`文件配置`Capabilities`，需确保此entitlements文件格式正确，可以在 XCode 中编辑验证此文件。  
+uni-app/uni-app x 项目都可以通过编辑`UniApp.entitlements`文件配置`Capabilities`，需确保此entitlements文件格式正确，可以在 XCode 中编辑验证此文件。  
 
 **注意**
 - plist文件必须符合标准的xml格式  
@@ -255,8 +254,9 @@ uni-app/uni-app x 项目可以通过编辑`UniApp.entitlements`文件配置`Capa
 
 **注意**  
 - `com.apple.developer.associated-domains`字段值类型必须是字符串数组  
-- 上面示例中`applinks:demo.dcloud.net.cn`配置的是通用链接域名，其中`applinks:`表示此域名用于通用链接，`demo.dcloud.net.cn`是域名，请修改为应用自己使用的域名
-- `array`节点下可添加多个关联域名    
+- 上面示例中`applinks:demo.dcloud.net.cn`配置的是通用链接域名，其中`applinks:`表示此域名用于通用链接，`demo.dcloud.net.cn`是域名，请修改为应用自己使用的域名  
+- `array`节点下可添加多个关联域名  
+- 关联域信息也可以通过 manifest.json 的可视化界面配置，任选一种方式配置即可，如果同时配置则会合并  
 - iOS平台完整配置通用链接参考文档：[配置通用链接（Universal Link）](https://uniapp.dcloud.net.cn/tutorial/app-ios-capabilities.html#%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5-universal-link)
 
 **相关参考**  
@@ -279,7 +279,7 @@ PrivacyInfo.xcprivacy用于配置应用隐私清单文件，详情参考[uni-app
 **注意**
 - ios目录下不支持放Object-C/Swift源码文件，需要开发源码建议使用[UTS插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)或[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)  
 - resources目录中的资源文件不能通过uni API使用，需通过 iOS 原生 API 访问，参考[Accessing a Bundle's Contents](https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFBundles/Introduction/Introduction.html#//apple_ref/doc/uid/10000123i-CH1-SW1)。也就是在uni-app/uni-app x项目中这些资源需要通过uts代码访问，uni-app项目也可编写[uni原生语言插件](https://nativesupport.dcloud.net.cn/NativePlugin/README)访问  
-- resources目录中已经保留使用以下文件，需注意避免冲突
+- resources目录中已经保留使用以下文件，需注意避免冲突  
   + uni-app/5+ App 项目  
   <pre v-pre="" data-lang="">
     <code class="lang-" style="padding:0">
@@ -298,6 +298,7 @@ PrivacyInfo.xcprivacy用于配置应用隐私清单文件，详情参考[uni-app
   └─userPosition@2x.png          //地图模块当前位置图标
     </code>
   </pre>
+
   + uni-app x 项目  
   <pre v-pre="" data-lang="">
     <code class="lang-" style="padding:0">
@@ -307,6 +308,7 @@ PrivacyInfo.xcprivacy用于配置应用隐私清单文件，详情参考[uni-app
   └─uni_uts_toast_success.png    //uni.showToast 使用的图标
     </code>
   </pre>
+
 - 应用资源目录配置需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 
 

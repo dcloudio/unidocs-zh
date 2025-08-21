@@ -32,6 +32,8 @@ export declare function defineNativeEmbed<
 
 ### 示例代码
 
+编辑或创建 `app-harmony/button.ets` 填写下面内容：
+
 ```ts
 import { NativeEmbedBuilderOptions, defineNativeEmbed } from "@dcloudio/uni-app-runtime"
 
@@ -81,7 +83,17 @@ defineNativeEmbed('button', {
 })
 ```
 
+**注意：**
+
+- `defineNativeEmbed` 第一个参数为原生组件名称，小写，暂不支持驼峰写法
+
 以上代码在 ets 文件内向 uni-app 注册了一个原生组件 ButtonComponent，标签名为 `button`，在 uts 插件内导入此 ets 文件即可生效。
+
+编辑或者新建 `app-harmony/index.uts` 文件引入定义的 ets 文件
+
+```ts
+import './button.ets'
+```
 
 ## 调用鸿蒙原生组件
 
@@ -134,3 +146,5 @@ defineNativeEmbed('button', {
     }
 </style>
 ```
+
+插件使用有用原生组件渲染的华为花瓣地图，用来演示原生组件用法。插件也提供了示例项目，可对比测试 [UTS 组件鸿蒙花瓣地图](https://ext.dcloud.net.cn/plugin?id=23082)。

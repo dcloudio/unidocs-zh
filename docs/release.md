@@ -1,3 +1,47 @@
+#### 4.76.2025082103
+* 【uni-app】
+  + Web平台 修复 ssr 模式下未安装 vuex 发行报错的 Bug [详情](https://ask.dcloud.net.cn/question/209401)
+  + Web平台 新增 API previewImage 支持点击 esc 关闭预览 [详情](https://ask.dcloud.net.cn/question/209551)
+  + Web平台 修复 API showModal 设置 editable 为 true 时输入单行中文内容会出现滚动条的 Bug [详情](https://uniapp.dcloud.net.cn/api/ui/prompt.html#showmodal)
+  + 小程序平台 修复 父组件只有空白template节点时子组件插槽默认内容不生效的 Bug [详情](https://ask.dcloud.net.cn/question/210538)
+  + 小程序平台 修复 v-bind:hidden 动态绑定失效的 Bug [详情](https://ask.dcloud.net.cn/question/204902)
+  + 小程序平台 修复 子组件 slot 有默认内容和 props 时父组件默认插槽不生效的 Bug [详情](https://ask.dcloud.net.cn/question/199966)
+  + 小程序平台 修复 多个子包引用相同图片时 Vite 默认优化导致路径被合并的 Bug [详情](https://ask.dcloud.net.cn/question/194903)
+  + 微信小程序平台 修复 设置 mergeVirtualHostAttributes: true 时 virtualHostHidden 为 undefined 导致根节点 v-show 或 hidden 失效的 Bug [详情](https://uniapp.dcloud.net.cn/collocation/manifest.html#mp-weixin)
+  + 微信小程序平台 修复 manifest.json 中 watchOptions 配置未同步到 project.config.json 的 Bug [详情](https://ask.dcloud.net.cn/question/210856)
+  + 微信小程序平台 修复 设置 mergeVirtualHostAttributes: true 时 virtualHostStyle 为 undefined 导致 style 属性异常的 Bug [详情](https://ask.dcloud.net.cn/question/197718)
+  + 支付宝小程序平台 修复 manifest.json 设置 axmlStrictCheck、enableParallelLoader 等参数不生效的 Bug [详情](https://uniapp.dcloud.net.cn/collocation/manifest.html#mp-alipay)
+  + 支付宝小程序平台 修复 捕获事件修饰符 .capture 编译不生效的 Bug [详情](https://ask.dcloud.net.cn/question/209386)
+  + 支付宝小程序平台 新增 manifest.json 支持配置 format、pluginResolution、developOptions、compileOptions、uploadExclude和assetsInclude [详情](https://uniapp.dcloud.net.cn/collocation/manifest.html#mp-alipay)
+  + 支付宝小程序平台 修复 mpaas-component组件 编译后属性丢失的bug [详情](https://ask.dcloud.net.cn/question/209649)
+  + 支付宝小程序平台 新增 支持原生 root-portal 和 share-element 组件 [详情](https://opendocs.alipay.com/mini/04y2ya?pathHash=a4fa18ca)
+  + 支付宝小程序平台 新增 API pageScrollTo 支持 duration 参数 [详情](https://ask.dcloud.net.cn/question/211717)
+  + 小红书小程序平台 修复 group-chat-card组件 编译属性丢失的 Bug [详情](https://ask.dcloud.net.cn/question/209459)
+  + 抖音小程序平台 移除 对 swiper 组件 disable-touch 属性的转化处理 [详情](https://ask.dcloud.net.cn/question/187024)
+  + 抖音小程序平台 修复 shop-follow-card组件 编译属性丢失的 Bug [详情](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/industry-plugin/e-commerce-plugin/components/shopfollowcard)
+  + 抖音小程序平台 新增 支持自定义私有配置 project.private.config.json 文件 [详情](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/dev-tools/developer-instrument/development-assistance/private-config)
+  + 快手小程序平台 新增 支持自定义私有配置 project.private.config.json 文件 [详情](https://open.kuaishou.com/docs/develop/developerTools/Localization-project.html)
+  + 京东小程序平台 修复 使用插件时，控制台报错的 Bug [详情](https://ask.dcloud.net.cn/question/212442)
+  + App平台 修复 API createIntersectionObserver 无法监听组件根节点的 Bug [详情](https://ask.dcloud.net.cn/question/209795)
+  + App平台 修复 API createInnerAudioContext 设置 sessionCategory 不生效的 Bug [详情](https://ask.dcloud.net.cn/question/209800)
+  + Android平台 修复 部分设备网络请求报 TLSv1 协议不支持的Bug [详情](https://ask.dcloud.net.cn/question/210922)
+  + 鸿蒙平台 修复 组件或页面内无法调用 uts 插件内类的静态方法的 Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19044)
+* 【uni-app x】
+  + iOS平台 更新 API uni.requestPayment 微信支付 使用的微信 SDK 为 2.0.5 版 [文档](https://doc.dcloud.net.cn/uni-app-x/api/request-payment.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=19870>
+  + iOS平台 修复 pages.json tabBar 设置 text 内容为泰语显示异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16947)
+  + iOS平台 修复 组件 input 通过 v-model 绑定变量更新 value 不触发 @change 事件 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19615)
+  + iOS平台 修复 组件 textarea 添加 value 属性后 textAlign 不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19706)
+  + iOS平台 修复 API uni.chooseImage 选择照片时弹出系统提示  是否选择更多照片 或者 保留当前所选内容 时，选择 保留当前所选内容 后再次点击+号添加更多图片引发崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19763)
+  + iOS平台 修复 API uni.chooseMedia 点击“取消”按钮关闭正常触发 fail 回调，下拉手势关闭没有触发 fail 回调 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19026)
+  + iOS平台 修复 API uni.getBackgroundAudioManager 背景音频播放结束事件 onEnded 回调中播放下一曲无效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17691)
+  + iOS平台 修复 4.71版本引发的 CSS 某些情况可能不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19746)
+* 【App插件(含5+App和uni-app的App端)】
+  + iOS平台 更新 微信SDK 为 2.0.5 版
+* 【uniCloud】
+  + 新增 扩展数据库事务支持批量更新和删除 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19497)
+  + 新增 阿里云服务空间 getTempFileURL 支持获取私有文件URL [文档](https://doc.dcloud.net.cn/uniCloud/storage/dev.html#cloudgettempfileurl)
+  + 修复 阿里云服务空间 JQL权限控制使用get方法报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19395&ask_id=210972)
+
 #### 4.75.2025071105
 * 【uni-app】
   + App平台 修复 vue2 上使用 uni.addInterceptor 拦截切换 tabbar 异常 的 Bug [详情](https://ask.dcloud.net.cn/question/147649)

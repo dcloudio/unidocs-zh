@@ -18,6 +18,7 @@
 |uniStatistics|Object||[是否开启 uni 统计，全局配置](/collocation/manifest?id=uniStatistics)|2.2.3+|
 |sassImplementationName|dart-sass或node-sass||[使用的scss预编译库，仅限vue2项目，默认值：dart-sass，HBuilderX Mac Arm版始终为dart-sass](/tutorial/syntax-css.html#css-preprocessor)|4.56+|
 |app-plus|Object||[App 特有配置](/collocation/manifest?id=app-plus)||
+|app-harmony|Object||[鸿蒙应用特有配置](/collocation/manifest.md#app-harmony)|4.27|
 |h5|Object||[H5 特有配置](/collocation/manifest?id=h5)||
 |quickapp|Object||快应用特有配置，即将支持||
 |mp-weixin|Object||[微信小程序特有配置](/collocation/manifest?id=mp-weixin)||
@@ -27,6 +28,7 @@
 |mp-lark|Object||[飞书小程序特有配置](/collocation/manifest?id=mp-lark)|3.2.12|
 |mp-qq|Object||[qq 小程序特有配置](/collocation/manifest?id=mp-qq)|2.1.0|
 |mp-kuaishou|Object||[快手小程序特有配置](/collocation/manifest.md#mp-kuaishou)|3.2.2|
+|mp-harmony|Object||[鸿蒙元服务特有配置](/collocation/manifest.md#mp-harmony)|4.34|
 
 **Tips**
 
@@ -234,6 +236,60 @@ webview示例
 ```
 
 提示：vue3 vue页面 要求 Android 系统 webview 最低版本为 `64.0.3282.116`
+
+### app-harmony
+
+鸿蒙应用项目设置，目前只支持一个 `distribute` 属性，其值为一个 `Object` 对象：
+
+|属性|类型|说明|
+|:-|:-|:-|
+|bundleName|String|应用包名|
+|signingConfigs|Object|证书签名配置|
+|icons|Object|应用图标|
+|splashScreens|Object|启动界面配置|
+|modules|Object|模块配置|
+
+#### signingConfigs 证书签名配置@app-harmony-signingConfigs
+
+此配置对象用于配置鸿蒙打包时使用的数字签名证书信息，可分别配置调试证书和发布证书两组信息。
+
+可以通过可视化方式进行设置，支持自动获取调试证书。
+
+调试证书的键名为 `"default"`，发布证书的键名为 `"release"`，其值为一个 `Object`：
+
+|属性|类型|说明|
+|:-|:-|:-|
+|storeFile|String|私钥库文件|
+|storePassword|String|私钥库访问密码|
+|keyAlias|String|私钥库里面的私钥别名|
+|keyPassword|String|私钥访问密码|
+|signAlg|String|签名算法，固定为 `"SHA256withECDSA"`|
+|certpath|String|证书文件|
+|profile|String|签名描述文件|
+
+#### icons 应用图标@app-harmony-icons
+
+|属性|类型|说明|
+|:-|:-|:-|
+|foreground|String|前景图，以相对路径指向一个图片文件|
+|background|String|背景图，以相对路径指向一个图片文件|
+
+#### splashScreens 启动界面配置@app-harmony-splashScreens
+
+|属性|类型|说明|
+|:-|:-|:-|
+|startWindowBackground|String|启动界面背景色，格式为 `#RRGGBB`|
+|startWindowIcon|String|启动界面中部图标，以相对路径指向一个图片文件|
+
+#### modules 模块配置@app-harmony-modules
+
+|属性|类型|说明|
+|:-|:-|:-|
+|uni-location|Object|设置定位模块相关参数|
+|uni-map|Object|设置地图模块相关参数|
+|uni-oauth|Object|设置登录鉴权模块相关参数|
+|uni-payment|Object|设置支付模块相关参数|
+|uni-share|Object|设置分享模块相关参数|
 
 ### h5
 
@@ -630,18 +686,32 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |:-|:-|:-|
 |subPackages|Boolean|是否开启分包优化|
 
-### 鸿蒙元服务项目设置@mp-harmony
+### mp-harmony
 
-|属性|类型|说明|
-|:-|:-|:-|
-|distribute|Object|分发配置|
-
-#### distribute 选项
+鸿蒙元服务项目设置，目前只支持一个 `distribute` 属性，其值为一个 `Object` 对象：
 
 |属性|类型|说明|
 |:-|:-|:-|
 |bundleName|String|元服务包名(固定格式为 `com.atomicservice.[纯数字 appId]`)|
+|signingConfigs|Object|证书签名配置|
 
+#### signingConfigs 证书签名配置@mp-harmony-signingConfigs
+
+此配置对象用于配置鸿蒙打包时使用的数字签名证书信息，可分别配置调试证书和发布证书两组信息。
+
+可以通过可视化方式进行设置，支持自动获取调试证书。
+
+调试证书的键名为 `"default"`，发布证书的键名为 `"release"`，其值为一个 `Object`：
+
+|属性|类型|说明|
+|:-|:-|:-|
+|storeFile|String|私钥库文件|
+|storePassword|String|私钥库访问密码|
+|keyAlias|String|私钥库里面的私钥别名|
+|keyPassword|String|私钥访问密码|
+|signAlg|String|签名算法，固定为 `"SHA256withECDSA"`|
+|certpath|String|证书文件|
+|profile|String|签名描述文件|
 
 ### 自定义小程序项目配置
 

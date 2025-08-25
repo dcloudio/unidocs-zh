@@ -382,6 +382,14 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 2. [基础权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5?ha_source=Dcloud&ha_sourceId=89000448)
 3. [受限权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/restricted-permissions-V5?ha_source=Dcloud&ha_sourceId=89000448)
 
+### 通过 uts 插件配置鸿蒙权限
+
+在鸿蒙工程中，子模块中申请的权限无需在主项目中重复添加，权限将在整个应用中生效，而 UTS 插件在打包进入鸿蒙工程后，就是作为了一个子模块存在，可以在 UTS 插件中即可实现应用的权限配置
+
+通过此插件可以方便的配置权限，而无需在uniapp工程中通过替换文件的方式配置权限
+
+可以参考示例：[鸿蒙权限配置 UTS 插件](https://ext.dcloud.net.cn/plugin?name=harmony-permissions)
+
 ## 更多配置指南@configs
 
 HBuilderX 支持把 `manifest.json` 里面的一些配置项传递给鸿蒙工程，打开这个文件，下面这些配置项与鸿蒙相关：

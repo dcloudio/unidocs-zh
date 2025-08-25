@@ -518,7 +518,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |embeddedAppIdList|Array|要半屏跳转的小程序appid。[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html)|
 |requiredPrivateInfos|Array|地理位置相关接口。[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#requiredPrivateInfos)|
 |lazyCodeLoading|String| 目前仅支持值 requiredComponents，代表开启小程序[按需注入](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|
-|nativeTags|Array| 微信小程序平台的原生组件，仅 Vue3 支持 (4.81+)|
+|nativeTags|Array| 微信小程序平台的原生组件 (4.81+)|
 
 #### setting
 
@@ -585,7 +585,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
 |lazyCodeLoading|String|是否开启代码按需执行。|
 |styleIsolation|String|组件样式隔离方式，默认值为 `apply-shared`，具体配置 [详见](https://opendocs.alipay.com/mini/framework/page-acss)。 uni-app 3.99+ 开始支持|
-|nativeTags|Array| 支付宝小程序平台的原生组件，仅 Vue3 支持 (4.81+)|
+|nativeTags|Array| 支付宝小程序平台的原生组件 (4.81+)|
 
 ### mp-baidu
 
@@ -599,7 +599,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
 |slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
 |dynamicLib|Object|引入动态库，详情请参考[使用动态库](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)|
-|nativeTags|Array| 百度小程序平台的原生组件，仅 Vue3 支持 (4.81+)|
+|nativeTags|Array| 百度小程序平台的原生组件 (4.81+)|
 
 #### optimization
 
@@ -619,7 +619,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |uniStatistics|Object|[抖音小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
 |slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
-|nativeTags|Array| 抖音小程序平台的原生组件，仅 Vue3 支持 (4.81+)|
+|nativeTags|Array| 抖音小程序平台的原生组件 (4.81+)|
 
 #### 抖音小程序项目设置@mp-toutiao-setting
 
@@ -639,7 +639,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |uniStatistics|Object|[飞书小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
 |slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
-|nativeTags|Array| 飞书小程序平台的原生组件，仅 Vue3 支持 (4.81+)|
+|nativeTags|Array| 飞书小程序平台的原生组件 (4.81+)|
 
 #### 飞书小程序项目设置@mp-lark-setting
 
@@ -664,7 +664,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |uniStatistics|Object|[QQ小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
 |slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
-|nativeTags|Array| QQ小程序平台的原生组件，仅 Vue3 支持 (4.81+)|
+|nativeTags|Array| QQ小程序平台的原生组件 (4.81+)|
 
 #### optimization
 
@@ -683,7 +683,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |uniStatistics|Object|[快手小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：augmented|
 |slotMultipleInstance|Boolean|模拟单个作用域插槽渲染为多个实例，此配置仅限 Vue2 环境 3.7.12+，Vue3 环境已默认支持|
-|nativeTags|Array| 快手小程序平台的原生组件，仅 Vue3 支持 (4.81+)|
+|nativeTags|Array| 快手小程序平台的原生组件 (4.81+)|
 
 #### optimization
 
@@ -701,7 +701,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |:-|:-|:-|
 |bundleName|String|元服务包名(固定格式为 `com.atomicservice.[纯数字 appId]`)|
 |signingConfigs|Object|证书签名配置|
-|nativeTags|Array| 鸿蒙元服务平台的原生组件，仅 Vue3 支持 (4.81+)|
+|nativeTags|Array| 鸿蒙元服务平台的原生组件 (4.81+)|
 
 #### signingConfigs 证书签名配置@mp-harmony-signingConfigs
 

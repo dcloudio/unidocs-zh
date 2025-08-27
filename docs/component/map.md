@@ -74,13 +74,17 @@
 
 **申请及使用key**
 
-App平台（包含iOS、安卓、鸿蒙）腾讯地图使用web方案，在申请key时注意将页面域名白名单设置为空，如下图
+App平台（包含iOS、安卓、鸿蒙）腾讯地图使用web方案，在 [申请腾讯位置服务Key](https://lbs.qq.com/dev/console/application/mine) 时注意将页面域名白名单设置为空，如下图
 
 ![](https://web-ext-storage.dcloud.net.cn/doc/uniapp/component/app-tencent-map-web-service-key.jpg)
 
 出于安全考虑，安卓、iOS端manifest.json内配置的key仅用来展示地图，uni.chooseLocation所依赖的地点搜索、逆地址解析功能需要通过uniCloud云对象[uni-map-co](https://ext.dcloud.net.cn/plugin?id=13872)来调用，开发者可以通过安全网络来保障服务端api不被他人盗用，详情参考[uni.chooseLocation](../api/location/location.md#chooselocation)文档。开发者可以将manifest.json内配置的key的所有api额度设置为0，避免key泄露产生额外的资源消耗。
 
 鸿蒙平台由于暂不支持安全网络，所以chooseLocation依然使用manifest.json内配置的key来调用地点搜索、逆地址解析。
+
+注意：
+
+- 腾讯地图展示 **鉴权失败，请传入正确的 Key**，确保 mainfest.json - uni-map - 腾讯地图填写了 key 并保存。在 [腾讯位置服务-我的应用](https://lbs.qq.com/dev/console/application/mine) 再次复制填写 Key，确保 Key 完整有效。
 
 ### 高德地图审图号
 

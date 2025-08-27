@@ -376,6 +376,8 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/bfb249bd-30c0-4be4-b50e-e2695860507d.png)#{.zooming style="max-height:200px"}
 
+建议阅读 [鸿蒙 uni.getLocation 的权限配置](../../api/location/location.md#harmony-set-location) 描述了解每一个步骤如何操作。
+
 具体请查看以下文档
 
 1. [声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/declare-permissions-V5?ha_source=Dcloud&ha_sourceId=89000448)
@@ -839,3 +841,17 @@ HBuilderX 4.81+ 在这种情况下会自动删除鸿蒙工程目录内的所有�
 这个操作会额外消耗一些性能，如果想避免的话，最好的办法还是尽量避免使用非 Mac 的文件系统。
 
 此问题也已经反馈给华为方面，未来 DevEco Studio 也应该能正确处理这种情况而不再报错了。
+
+### 如何配置位置权限、获取当前位置？如何使用地图服务？
+
+地图相关
+
+【腾讯地图】HBuilderX 内置集成了鸿蒙版本腾讯地图，可在 manifest.json 文件鸿蒙 App 配置 - uni-map 地图，勾选腾讯地图。详情可见 [uni-app 组件 map](../../component/map.md)
+
+【高德地图】，可使用 [uniapp 嵌入鸿蒙原生组件](./native-component.md) 提供的能力自行接入高德地图，在插件市场搜索 [高德 鸿蒙](https://ext.dcloud.net.cn/search?q=%E9%AB%98%E5%BE%B7&harmony_next=1) 查阅社区提供的封装能力。
+
+【华为地图】，华为地图目前可免费使用，目前 uniapp 提供了同层渲染的 [华为花瓣地图](https://ext.dcloud.net.cn/plugin?id=23082) 示例可供参考使用。访问 [华为 AGC 开发者后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择 开发与服务 - 项目设置 - 开放能力管理 - 选择应用 - 勾选开启地图服务。具体使用方案可见插件文档。
+
+位置相关
+
+鸿蒙中目前支持系统定位，细节配置可参考 [API uni.getLocation 鸿蒙配置说明](../../api/location/location.md#harmony-set-location)

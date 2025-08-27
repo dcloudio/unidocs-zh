@@ -96,7 +96,7 @@ uni.getLocation({
   - 如果使用 `web-view` 加载地图，无需在manifest里配地图的sdk配置。
   - 持续定位方案：iOS端可以申请持续定位权限，[参考](https://ask.dcloud.net.cn/article/12569)。Android如果进程被杀，代码无法执行，可以在插件市场搜索[保活](https://ext.dcloud.net.cn/search?q=%E4%BF%9D%E6%B4%BB&cat1=5)相关原生语言插件避免App被系统杀死。即使使用了原生语言插件保活，也很容易被杀，此时可以使用[unipush](https://uniapp.dcloud.net.cn/unipush-v2.html) ，通过推送消息提示用户激活App
   - `3.3.0 版本以上` 优化系统定位模块，可不使用三方定位SDK的进行高精度定位，具体参考：[系统定位](/app/geolocation)。
-  - 鸿蒙系统 不支持系统定位，需要配置三方sdk，比如高德，同时设置坐标系参数为 `type: 'gcj02'`
+    - 鸿蒙系统 4（不是鸿蒙 5、纯血鸿蒙）不支持系统定位，需要配置三方sdk，比如高德，同时设置坐标系参数为 `type: 'gcj02'`
   - Android/iOS平台使用腾讯定位SDK需到 [腾讯位置服务](https://lbs.qq.com/) 官网申请应用Key并配置：  
     + `4.31 版本及以上` HBuilderX内置支持腾讯定位，在manifest.json勾选配置，详情参考[Geolocation定位](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html)  
     + `4.31 版本之前` 可下载[腾讯定位插件](https://ext.dcloud.net.cn/plugin?id=14569)，在插件中配置key打包后生效，腾讯定位是[ext api插件](../../api/extapi.md)引用到工程后，会覆盖uni.getLocation的实现，替换掉系统定位。
@@ -104,10 +104,54 @@ uni.getLocation({
   - api默认不返回详细地址中文描述。需要中文地址有2种方式：1、使用高德地图小程序sdk，在app和微信上都可以获得中文地址，[参考](http://ask.dcloud.net.cn/article/35070)。2、只考虑app，使用``plus.geolocation``也可以获取中文地址。manifest里的App SDK配置仅用于app，小程序无需在这里配置。
   - 可以通过用户授权API来判断用户是否给应用授予定位权限，[详见](https://uniapp.dcloud.io/api/other/authorize)
   - 在 `微信小程序` 中，当用户离开应用后，此接口无法调用，需要申请 [后台持续定位权限](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html) ，另外新版本中需要使用 [wx.onLocationChange](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html) 监听位置信息变化；当用户点击“显示在聊天顶部”时，此接口可继续调用。
-- `HarmonyOS Next平台`调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`，需自行在项目中配置权限。具体位置在 `harmony-configs/entry/src/main/module.json5` 中的 requestPermissions 字段。该配置文件在构建产物中原始鸿蒙工程相同目录内。
 - 如果在app模块中勾选了系统定位和其他定位，比如腾讯定位，由配置的type值决定调用规则，type值为wgs84使用系统定位，type值为gcj02则使用腾讯定位。
 
+**HarmonyOS 5平台** 注意事项：
+
+- 鸿蒙 4.x 版本参考上方 App 要求限制，这里指代鸿蒙 5版本。
+- 使用位置权限使用鸿蒙系统定位，不依赖三方服务。调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`，具体操作步骤见下方描述。
+
+### 鸿蒙位置设置指南@harmony-set-location
+
+这里介绍鸿蒙位置权限如何配置。将鸿蒙应用正常运行启动。在 HBuilderX 工程中找到
+
+1. 把 `unpackages/dist/dev/app-harmony/entry/src/main/module.json5` 文件复制放到 `[HBuilderX 工程目录]/harmony-configs/entry/src/main/module.json5`
+2. 把 `unpackages/dist/dev/app-harmony/entry/src/main/resources/base/element/string.json` 将其复制到 `[HBuilderX 工程目录]/harmony-configs/entry/src/main/resources/base/element/string.json`
+
+编辑 `module.json5`，在 `requestPermissions` 中添加下面代码
+
+```json
+{
+  "name": "ohos.permission.APPROXIMATELY_LOCATION",
+  "reason": "$string:location_reason",
+  "usedScene": {
+    "when": "inuse"
+  }
+},
+{
+  "name": "ohos.permission.LOCATION",
+  "reason": "$string:location_reason",
+  "usedScene": {
+    "when": "inuse"
+  }
+}
+```
+
+这里的定位和模糊定位务必同时存在，否则会被上架驳回。在 api 可在 isHighAccuracy 属性中切换。
+
+这里的 reason 值为 `$string:` 开头，不可直接中文字符，需要使用资源引用。编辑刚才复制的 harmony-config 目录中的 `string.json`，添加下面代码并改写 value。
+
+```json
+ {
+  "name": "location_reason",
+  "value": "用于提供 xx 服务"
+}
+```
+
+这里使用也可以放入 zh_CN 目录中，zh_CN > base 目录，细节可参考《[鸿蒙 资源分类与访问](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access)》
+
 ## uni.chooseLocation(OBJECT)
+
 打开地图选择位置。chooseLocation会使用项目配置的地图服务商来展示地图，地图服务商支持情况参考：[map组件](../../component/map.md)。
 
 ::: warning 注意
@@ -151,7 +195,7 @@ Web平台和App平台，本API之前调用了腾讯地图的gcj02坐标免费，
 
 **腾讯地图服务商说明**
 
-出于安全考虑，安卓、iOS端manifest.json内配置的key仅用来展示地图，uni.chooseLocation所依赖的地点搜索、逆地址解析功能需要通过uniCloud云对象[uni-map-co](https://ext.dcloud.net.cn/plugin?id=13872)来调用，开发者可以通过安全网络来保障服务端api不被他人盗用。
+出于安全考虑，安卓、iOS端manifest.json内配置的 [腾讯位置服务 Key](https://lbs.qq.com/dev/console/application/mine) 仅用来展示地图，uni.chooseLocation所依赖的地点搜索、逆地址解析功能需要通过uniCloud云对象[uni-map-co](https://ext.dcloud.net.cn/plugin?id=13872)来调用，开发者可以通过安全网络来保障服务端api不被他人盗用。
 
 鸿蒙平台由于暂不支持安全网络，所以chooseLocation依然使用manifest.json内配置的key来调用地点搜索、逆地址解析。
 

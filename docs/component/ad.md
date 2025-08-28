@@ -23,7 +23,7 @@ Banner或信息流广告展现场景非常灵活，常见的展现场景为：�
 
 **开通配置广告**
 
-[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad/ad-open.html)
 
 
 文档已迁移至 [信息流(Banner)广告](https://uniapp.dcloud.net.cn/uni-ad/ad-component.html)

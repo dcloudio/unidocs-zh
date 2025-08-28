@@ -579,6 +579,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |axmlStrictCheck			|Boolean| 是否启用 `axml` 严格语法检查，默认为false	|
 |enableParallelLoader	|Boolean| 是否启用多进程编译，默认为false	|
 |enableDistFileMinify	|Boolean| 是否压缩编译产物（仅在真机预览/真机调试时生效），默认为false	|
+|enableNodeModuleBabelTransform|Boolean| `appx 2.0` 特性，对 `node_modules` 中的模块做 `babel` 编译，默认值：true|
 |uniStatistics				|Object	|[支付宝小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
 |mergeVirtualHostAttributes|Boolean|合并由 Vue 组件编译而成的小程序组件[虚拟节点](/tutorial/vue-api.md#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)外层属性，目前仅支持 id（v4.42+）、style（v3.5.1+）、class（v3.5.1+）以及 v-show 指令生成的 hidden（v4.41+） 属性|
@@ -586,6 +587,10 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |lazyCodeLoading|String|是否开启代码按需执行。|
 |styleIsolation|String|组件样式隔离方式，默认值为 `apply-shared`，具体配置 [详见](https://opendocs.alipay.com/mini/framework/page-acss)。 uni-app 3.99+ 开始支持|
 |nativeTags|Array| 支付宝小程序平台的原生组件 (4.81+)|
+
+**Tips**
+
+小程序开发者工具 IDE `3.0.1+` 版本开始支持新版配置，[查看详情](https://opendocs.alipay.com/mini/03dbc3?pathHash=e876dc50)
 
 ### mp-baidu
 

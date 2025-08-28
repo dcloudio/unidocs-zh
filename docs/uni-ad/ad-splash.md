@@ -15,7 +15,7 @@
 
 **开通配置广告**
 
-1. 登录 uni-ad web 控制台开通广告功能，[详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+1. 登录 uni-ad web 控制台开通广告功能，[详情](https://uniapp.dcloud.net.cn/uni-ad/ad-open.html)
 2. 在打包界面勾选对应渠道
 
 <img src="https://mp-a90b5f95-90ba-4d30-a6a7-cd4d057327db.cdn.bspapp.com/ad-splash-step.png" style="max-width: 500px; max-height: 80vh; margin-left: 0;" />

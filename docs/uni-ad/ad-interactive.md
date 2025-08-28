@@ -14,7 +14,7 @@
 
 **开通配置广告**
 
-[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad/ad-open.html)
 
 注意
 - 3.6.11+ 支持Web平台。开通方式不是单独开通，而是需要开启 App DCloud快捷广告，收益报表在快捷广告里看。如未在[uniad后台](https://uniad.dcloud.net.cn/)开通，又在界面上使用了本组件，会显示DCloud公益广告。
@@ -128,7 +128,7 @@ export default {
 
 ## 接入步骤
 
-1. 开通并[申请](https://uniapp.dcloud.net.cn/uni-ad.html#start)广告位
+1. 开通并[申请](https://uniapp.dcloud.net.cn/uni-ad/ad-open.html)广告位
 3. 在需要展示广告的地方放入 `<ad-interactive></ad-interactive>` 组件代码，此广告可作为悬浮红包使用，设置组件样式 fixed 定位即可
 4. 在项目中新增 [ad-interactive-webview](#openpagepath) 页面
 

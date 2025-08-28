@@ -21,7 +21,7 @@
 
 **开通配置广告**
 
-[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad/ad-open.html)
 
 
 HBuilder 基座的测试广告位 `adpid` 为 `1111111113`

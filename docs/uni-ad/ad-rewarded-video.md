@@ -34,7 +34,7 @@
 ### 流程概述
 
 1. **开通配置广告**
-  使用激励视频，需首先申请开通。开通步骤详见 [https://uniapp.dcloud.net.cn/uni-ad.html#start](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+  使用激励视频，需首先申请开通。开通步骤详见 [https://uniapp.dcloud.net.cn/uni-ad/ad-open.html](https://uniapp.dcloud.net.cn/uni-ad/ad-open.html)
 2. 在页面合适位置引入`<ad-rewarded-video></ad-rewarded-video>`组件
 3. 点击组件后自动开始播放全屏的激励视频，有倒计时。倒计时结束前关闭视频，则无法获得奖励。
 4. 在客户端和云端可以监听用户是否观看完毕。注意客户端监听不可信赖，不能根据客户端通知来给用户发激励。需云端监听，也就是开通激励视频服务器回调。

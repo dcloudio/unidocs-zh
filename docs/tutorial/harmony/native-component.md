@@ -147,4 +147,9 @@ import './button.ets'
 </style>
 ```
 
-插件使用有用原生组件渲染的华为花瓣地图，用来演示原生组件用法。插件也提供了示例项目，可对比测试 [UTS 组件鸿蒙花瓣地图](https://ext.dcloud.net.cn/plugin?id=23082)。
+## 插件市场案例
+
+使用鸿蒙原生组件渲染的案例：
+
+- [UTS 组件鸿蒙花瓣地图](https://ext.dcloud.net.cn/plugin?id=23082)，用来演示原生组件用法，并提供了示例项目。
+- [鸿蒙粘贴控件-点击获取、无需权限](https://ext.dcloud.net.cn/plugin?id=24925) 演示了如何使用粘贴板控件，安全访问用户剪切板内容。

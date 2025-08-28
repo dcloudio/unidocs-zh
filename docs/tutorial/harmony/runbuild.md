@@ -372,11 +372,15 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 ## 权限配置指南@permission
 
+如何配置权限？
+
 部分 API 需要在配置文件显示声明权限才能调用，权限的配置文件路径为：`/harmony-configs/entry/src/main/module.json5`，配置节点为：`requestPermissions`，如下图所示
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/bfb249bd-30c0-4be4-b50e-e2695860507d.png)#{.zooming style="max-height:200px"}
 
 这里举例鸿蒙位置定位的权限和如何设置，阅读 [鸿蒙 uni.getLocation 的权限配置](../../api/location/location.md#harmony-set-location)，这里详细描述了解每一个步骤如何操作。
+
+鸿蒙都有哪些权限清单，如何查询？
 
 鸿蒙的权限可以分成三类：
 
@@ -384,15 +388,21 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 - 用户授权：user_grant，弹窗询问用户是否允许位置定位、发送通知等。具体可见 [开放权限（用户授权）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-user?ha_source=Dcloud&ha_sourceId=89000448)
 - 敏感权限：需要在华为后台单独填写表格申请获得，比如修改用户公共目录文件、API 读取剪切板等。具体可见 [受限开放权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions?ha_source=Dcloud&ha_sourceId=89000448)
 
-还有一些针对特定企业管理的权限，这里不做进一步描述。
+还有一些针对特定企业管理的权限，场景比较特殊，这里不做进一步描述。
 
 补充高频权限问题：
 
 Q: 鸿蒙如何申请位置定位权限？
-A: 可参考 uni.getLocation 描述，鸿蒙位置权限，精准定位和模糊定位务必成对出现，否则会被驳回
+A: 可参考 [uni.getLocation 描述](../../api/location/location.md)，鸿蒙位置权限，精准定位和模糊定位务必成对出现，否则会被驳回
 
 Q: 鸿蒙如何申请读取用户图库、文件？
-A: 鸿蒙曾开放读取用户存储的权限 READ_MEDIA/WRITE_MEDIA，但已废弃。读取图片、视频的方案是使用 uni.chooseImage，背后封装了鸿蒙官方提供的 Picker 选择器，无需申请权限，直接使用即可。
+A: 鸿蒙曾开放读取用户存储的权限 [READ_MEDIA/WRITE_MEDIA，但已废弃](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-permission-group-list#%E6%96%87%E4%BB%B6deprecated?ha_source=Dcloud&ha_sourceId=89000448)。因此鸿蒙中不能直接读取和操作用户目录。官方提供了绕过方案，一般场景下，读取媒体和文件方案是使用 `uni.chooseImage/uni.chooseFile`，背后封装了鸿蒙官方提供的 Picker 选择器，无需申请权限，直接使用即可。
+
+鸿蒙针对应用克隆、备份图片文件场景提供了 `ohos.permission.READ_IMAGEVIDEO/ohos.permission.WRITE_IMAGEVIDEO` 两个受控开放权限，需要 [鸿蒙单独申请](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permissions-in-acl?ha_source=Dcloud&ha_sourceId=89000448)，审批通过之后方可使用。
+
+存储文件，图片可直接调用 `uni.saveImageToPhotosAlbum` 存储到系统相册。存储文件可用 `uni.saveFile`，
+
+编辑文件，可参考 [uni.getFileSystemManager](https://uniapp.dcloud.net.cn/api/file/getFileSystemManager.html#getfileinfo) 文档。
 
 ### 通过 uts 插件配置鸿蒙权限
 

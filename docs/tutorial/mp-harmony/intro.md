@@ -237,17 +237,17 @@
 
 ### 如何修改元服务默认标题、图标、启动图等信息？@how-to-change-icon
 
-如果你开发过鸿蒙应用，会发现元服务工程和鸿蒙应用开发设置一致，配置文件同样遵循 module.json5 效果优先于 app.json5 ，参考 [鸿蒙应用组件配置文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-component-configuration-stage-V5?ha_source=Dcloud&ha_sourceId=89000448)。推荐在组件级别进行配置。
+如何修改元服务的标题、图标、启动图？需要把文字和图标先定义，然后在资源文件中引用。下载文档中推荐的 module.json5 文件，下载放置到 `harmony-mp-configs/entry/src/main/module.json5` ，定位到 `module.abilities[0]` 会找到下面几个字段：
 
-打开 `entry/src/main/module.json5` ，定位到 `module.abilities[0]` 会找到下面几个字段：
+- `description` 对应应用描述
+- `icon` 对应应用图标
+- `label` 对应应用标题
+- `startWindowIcon` 对应应用启动图标，Splashscreen
+- `startWindowBackground` 对应应用启动时候屏幕颜色
 
-- `description` 应用描述
-- `icon` 应用图标
-- `label` 应用标题
-- `startWindowIcon` 应用启动图标，Splashscreen
-- `startWindowBackground` 应用启动时候屏幕颜色
+通过设置 `$media:xxx` 关联图片，`$string:xxx` `$color:xxx` 对应配置文件的值。
 
-这里的取值一般是 `$media:xxx` 对应图片索引，`$string:xxx` `$color:xxx` 对应配置文件的值。通过文件配置，在项目 `harmony-mp-configs` 目录创建 `entry/src/main/resources/` 目录，并将原生工程相关配置复制过来。注意，`zh_CN` 大于 `base` 配置，优先修改 zh_CN 配置。
+在项目 `harmony-mp-configs` 目录创建 `entry/src/main/resources/` 目录。注意，`zh_CN` 大于 `base` 配置，优先修改 zh_CN 配置。
 
 举例，下面是 `zh-CN/element/string.json` 中的内容，可以修改 `EntryAbility_label` 字段。
 

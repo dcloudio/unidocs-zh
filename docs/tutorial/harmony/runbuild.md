@@ -376,13 +376,23 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/bfb249bd-30c0-4be4-b50e-e2695860507d.png)#{.zooming style="max-height:200px"}
 
-建议阅读 [鸿蒙 uni.getLocation 的权限配置](../../api/location/location.md#harmony-set-location) 描述了解每一个步骤如何操作。
+这里举例鸿蒙位置定位的权限和如何设置，阅读 [鸿蒙 uni.getLocation 的权限配置](../../api/location/location.md#harmony-set-location)，这里详细描述了解每一个步骤如何操作。
 
-具体请查看以下文档
+鸿蒙的权限可以分成三类：
 
-1. [声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/declare-permissions-V5?ha_source=Dcloud&ha_sourceId=89000448)
-2. [基础权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5?ha_source=Dcloud&ha_sourceId=89000448)
-3. [受限权限列表](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/restricted-permissions-V5?ha_source=Dcloud&ha_sourceId=89000448)
+- 开放权限： system_grant， 比如 INTERNET网络权限、VIBRATE 手机震动权限等。，无需用户同意。具体可见 [开放权限（系统授权）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all?ha_source=Dcloud&ha_sourceId=89000448)
+- 用户授权：user_grant，弹窗询问用户是否允许位置定位、发送通知等。具体可见 [开放权限（用户授权）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-user?ha_source=Dcloud&ha_sourceId=89000448)
+- 敏感权限：需要在华为后台单独填写表格申请获得，比如修改用户公共目录文件、API 读取剪切板等。具体可见 [受限开放权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions?ha_source=Dcloud&ha_sourceId=89000448)
+
+还有一些针对特定企业管理的权限，这里不做进一步描述。
+
+补充高频权限问题：
+
+Q: 鸿蒙如何申请位置定位权限？
+A: 可参考 uni.getLocation 描述，鸿蒙位置权限，精准定位和模糊定位务必成对出现，否则会被驳回
+
+Q: 鸿蒙如何申请读取用户图库、文件？
+A: 鸿蒙曾开放读取用户存储的权限 READ_MEDIA/WRITE_MEDIA，但已废弃。读取图片、视频的方案是使用 uni.chooseImage，背后封装了鸿蒙官方提供的 Picker 选择器，无需申请权限，直接使用即可。
 
 ### 通过 uts 插件配置鸿蒙权限
 

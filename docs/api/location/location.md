@@ -96,7 +96,7 @@ uni.getLocation({
   - 如果使用 `web-view` 加载地图，无需在manifest里配地图的sdk配置。
   - 持续定位方案：iOS端可以申请持续定位权限，[参考](https://ask.dcloud.net.cn/article/12569)。Android如果进程被杀，代码无法执行，可以在插件市场搜索[保活](https://ext.dcloud.net.cn/search?q=%E4%BF%9D%E6%B4%BB&cat1=5)相关原生语言插件避免App被系统杀死。即使使用了原生语言插件保活，也很容易被杀，此时可以使用[unipush](https://uniapp.dcloud.net.cn/unipush-v2.html) ，通过推送消息提示用户激活App
   - `3.3.0 版本以上` 优化系统定位模块，可不使用三方定位SDK的进行高精度定位，具体参考：[系统定位](/app/geolocation)。
-    - 鸿蒙系统 4（不是鸿蒙 5、纯血鸿蒙）不支持系统定位，需要配置三方sdk，比如高德，同时设置坐标系参数为 `type: 'gcj02'`
+  - 鸿蒙系统 4（不是鸿蒙 5、纯血鸿蒙）不支持系统定位，需要配置三方sdk，比如高德，同时设置坐标系参数为 `type: 'gcj02'`
   - Android/iOS平台使用腾讯定位SDK需到 [腾讯位置服务](https://lbs.qq.com/) 官网申请应用Key并配置：  
     + `4.31 版本及以上` HBuilderX内置支持腾讯定位，在manifest.json勾选配置，详情参考[Geolocation定位](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html)  
     + `4.31 版本之前` 可下载[腾讯定位插件](https://ext.dcloud.net.cn/plugin?id=14569)，在插件中配置key打包后生效，腾讯定位是[ext api插件](../../api/extapi.md)引用到工程后，会覆盖uni.getLocation的实现，替换掉系统定位。

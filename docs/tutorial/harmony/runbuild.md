@@ -384,7 +384,7 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 鸿蒙的权限可以分成三类：
 
-- 开放权限： system_grant， 比如 INTERNET网络权限、VIBRATE 手机震动权限等。，无需用户同意。具体可见 [开放权限（系统授权）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all?ha_source=Dcloud&ha_sourceId=89000448)
+- 开放权限： system_grant， 比如 INTERNET网络权限、VIBRATE 手机震动权限等。无需用户同意。具体可见 [开放权限（系统授权）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all?ha_source=Dcloud&ha_sourceId=89000448)
 - 用户授权：user_grant，弹窗询问用户是否允许位置定位、发送通知等。具体可见 [开放权限（用户授权）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-user?ha_source=Dcloud&ha_sourceId=89000448)
 - 敏感权限：需要在华为后台单独填写表格申请获得，比如修改用户公共目录文件、API 读取剪切板等。具体可见 [受限开放权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions?ha_source=Dcloud&ha_sourceId=89000448)
 

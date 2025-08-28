@@ -31,7 +31,7 @@ pageClass: custom-page-class
       </a>
       <a href="//m3w.cn/uniapp" target="_blank" class="clear-style barcode-view" style="pointer-events: none;">
         <div class="barcode-img-box">
-          <img src="https://web-ext-storage.dcloud.net.cn/uni-app/harmony/1_1055470076_171_85_3_1033935502_6cc6e43d2159946ebc93737e80ce0643.png" width="160" />
+          <img src="https://web-ext-storage.dcloud.net.cn/uni-app/harmony/1_1055470076_171_85_3_1038256146_28392af7f5b270a6f411980181f91902.png" width="160" />
         </div>
         <b>鸿蒙元服务</b>
         <b style="font-size: 14px;">需使用已升级到鸿蒙Next</b>

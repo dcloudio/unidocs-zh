@@ -702,7 +702,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 
 |属性|类型|说明|
 |:-|:-|:-|
-|appid|String|小项目的 appId |
+|appid|String|项目的 appId |
 |projectname|String|项目名字|
 |nativeTags|Array| 小红书小程序平台的原生组件 (4.81+)|
 

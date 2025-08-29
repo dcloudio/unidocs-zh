@@ -501,6 +501,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |属性|类型|说明|
 |:-|:-|:-|
 |appid|String|微信小程序的AppID，登录 [https://mp.weixin.qq.com](https://mp.weixin.qq.com) 申请|
+|projectname|String|项目名称|
 |setting|Object|微信小程序项目设置，参考[setting](/collocation/manifest?id=setting)|
 |functionalPages|Boolean|微信小程序是否启用插件功能页，默认关闭|
 |requiredBackgroundModes|Array|微信小程序需要在后台使用的能力,[详见](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#requiredbackgroundmodes)|
@@ -597,6 +598,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |属性|类型|说明|
 |:-|:-|:-|
 |appid|String|百度小程序的 AppID，登录 [https://smartprogram.baidu.com/docs/introduction/enter_application/](https://smartprogram.baidu.com/docs/introduction/enter_application/) 申请|
+|projectname|String|项目名称|
 |requiredBackgroundModes|Array|小程序需要在后台使用的能力，目前支持背景音频播放，"requiredBackgroundModes": ["audio"]，[详见](https://smartprogram.baidu.com/docs/develop/tutorial/process/#requiredBackgroundModes)	|
 |prefetches|Array|预请求的所有url的列表，[详见](https://smartprogram.baidu.com/docs/develop/tutorial/process/#prefetches)																|
 |optimization|Object| 对百度小程序的优化配置 |
@@ -619,6 +621,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |属性|类型|说明|
 |:-|:-|:-|
 |appid|String|抖音小程序的 AppID，登录 [https://microapp.bytedance.com/](https://microapp.bytedance.com/) 申请|
+|projectname|String|项目名称|
 |setting|Object|抖音小程序项目设置，参考[抖音小程序项目设置](/collocation/manifest?id=mp-toutiao-setting)|
 |navigateToMiniProgramAppIdList	|Array|需要跳转的小程序列表，[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/framework/basic-reference/general-configuration/)	|
 |uniStatistics|Object|[抖音小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
@@ -640,6 +643,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |属性|类型|说明|
 |:-|:-|:-|
 |appid|String|飞书小程序的 AppID，登录 [https://open.feishu.cn](https://open.feishu.cn) 申请|
+|projectname|String|项目名称|
 |setting|Object|飞书小程序项目设置，参考[飞书小程序项目设置](/collocation/manifest?id=mp-lark-setting)|
 |uniStatistics|Object|[飞书小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：auto|
@@ -660,6 +664,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |属性							|类型			|说明																																												|
 |:-								|:-				|:-																																													|
 |appid							|String			|qq 小程序的 AppID，登录 [https://q.qq.com](https://q.qq.com) 申请																													|
+|projectname|String|项目名称|
 |requiredBackgroundModes		|Array			|小程序需要在后台使用的能力，目前支持背景音频播放，"requiredBackgroundModes": ["audio"]，[详见](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#requiredbackgroundmodes)	|
 |navigateToMiniProgramAppIdList	|Array			|需要跳转的小程序列表，[详见](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#navigatetominiprogramappidlist)																|
 |permission						|Object			|小程序接口权限相关设置，比如申请位置权限必须填此处[详见](https://q.qq.com/wiki/develop/miniprogram/frame/dispose.html#permission)														|
@@ -684,6 +689,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |属性|类型|说明|
 |:-|:-|:-|
 |appid|String|快手小程序的 AppID，登录 [https://mp.kuaishou.com](https://mp.kuaishou.com) 申请|
+|projectname|String|项目名称|
 |optimization|Object| 对快手小程序的优化配置 |
 |uniStatistics|Object|[快手小程序是否开启 uni 统计，配置方法同全局配置](/collocation/manifest?id=uniStatistics)|
 |scopedSlotsCompiler|String|Vue2 作用域插槽编译模式，uni-app 3.1.19+ 开始支持，可选：legacy、auto、augmented，默认：augmented|
@@ -703,7 +709,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |属性|类型|说明|
 |:-|:-|:-|
 |appid|String|项目的 appId |
-|projectname|String|项目名字|
+|projectname|String|项目名称|
 |nativeTags|Array| 小红书小程序平台的原生组件 (4.81+)|
 
 ### mp-harmony

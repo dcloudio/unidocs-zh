@@ -710,6 +710,12 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |:-|:-|:-|
 |appid|String|项目的 appId |
 |projectname|String|项目名称|
+|description|String|项目描述|
+|compileType|String|项目的编译模式|
+|libVersion|String|基础库版本|
+|condition|Object|启用条件编译|
+|setting|Object|项目设置，详见：[setting配置说明](https://miniapp.xiaohongshu.com/doc/DC977105#anchorId-setting)|
+|packOptions|Object|打包配置选项|
 |nativeTags|Array| 小红书小程序平台的原生组件 (4.81+)|
 
 ### mp-harmony

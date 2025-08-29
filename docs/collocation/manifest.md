@@ -698,6 +698,14 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |:-|:-|:-|
 |subPackages|Boolean|是否开启分包优化|
 
+### mp-xhs
+
+|属性|类型|说明|
+|:-|:-|:-|
+|appid|String|小项目的 appId |
+|projectname|String|项目名字|
+|nativeTags|Array| 小红书小程序平台的原生组件 (4.81+)|
+
 ### mp-harmony
 
 鸿蒙元服务项目设置，目前只支持一个 `distribute` 属性，其值为一个 `Object` 对象：

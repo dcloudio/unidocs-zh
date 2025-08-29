@@ -384,7 +384,7 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 鸿蒙的权限可以分成三类：
 
-- 开放权限： system_grant， 比如 INTERNET网络权限、VIBRATE 手机震动权限等。无需用户同意。具体可见 [开放权限（系统授权）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all?ha_source=Dcloud&ha_sourceId=89000448)
+- 开放权限：system_grant， 比如 INTERNET网络权限、VIBRATE 手机震动权限等。无需用户同意。具体可见 [开放权限（系统授权）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all?ha_source=Dcloud&ha_sourceId=89000448)
 - 用户授权：user_grant，弹窗询问用户是否允许位置定位、发送通知等。具体可见 [开放权限（用户授权）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-user?ha_source=Dcloud&ha_sourceId=89000448)
 - 敏感权限：需要在华为后台单独填写表格申请获得，比如修改用户公共目录文件、API 读取剪切板等。具体可见 [受限开放权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions?ha_source=Dcloud&ha_sourceId=89000448)
 
@@ -798,6 +798,12 @@ kill -9 进程号
 ```
 
 在 Windows 系统下可以打开任务管理器找到 hdc 进程（一般显示名为 `POSIX WinThreads for Windows`）杀掉即可。
+
+### 报错 `entry/src/main/ets/entrybackupability/EntryBackupAbility.ets does not exist.`
+
+这个模块 HBuilderX 目前不需要，说明你的 build-profile.json5 没有从 HBuilderX 工程的 unpackages 目录中读取，而是从 DevEco 新建工程里读取的，两者产生了差异。
+
+解决方法：移除 harmony-configs 目录里的 build-profile.json5 ，重新启动并选择清除缓存重新操作，从 unpackages 目录中获取 build-profile.json5 文件放置到 harmony-configs 目录内。
 
 ### 鸿蒙应用如何开发服务卡片 Widget？@widget
 

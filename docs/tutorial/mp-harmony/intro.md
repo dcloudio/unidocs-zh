@@ -11,7 +11,7 @@
 - 目前已支持 Vue2/Vue3 使用 HBuilderX/CLI 方式运行到元服务。cli 参考 [如何使用 cli 创建元服务？](#using-by-cli)
 - 元服务的开发支持鸿蒙真机，现已支持使用模拟器开发，不区分 Mac/Windows，需要下载 [5.1.1 beta 版本的 DevEco](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448)，提供的 API 19 Beta 模拟器。如果遇到 hsp 报错，[查看解决方法](#failed-to-install-the-hap-or-hsp)
 - 目前支持鸿蒙 5.0，低于此版本（比如鸿蒙 4.x）不视为鸿蒙 Next。鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/?ha_source=Dcloud&ha_sourceId=89000448)
-  :::
+:::
 
 ## 前置准备
 
@@ -47,25 +47,14 @@
 
 接下来文档会面向新手，详细介绍如何使用自动签名证书。发行证书会在文档下方的 **发行与上架** 部分进行介绍。
 
-打开 DevEco Studio 编辑器，选择 `新建工程 - 元服务 AtomService - Empty Ability`，下面的截图来自 DevEco Studio：
-
-![选择元服务 AtomService](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/6cf884be-d067-4fed-b3df-23ad74dcbc39.png)
-
-选择 [已注册好的 AppID](#register-app-id)，创建鸿蒙元服务示例（下面称原生工程）。
-
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/2e011c35-932c-48bf-9d06-0a93a1885259.png)
-
-在编辑器的右上角点击`Project Structure...` 图标，勾选自动签名 Automatically generate signature。
-
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/7eeda96c-4fc1-45d3-816b-2e23806d2e36.png)
+目前元服务可在 HBuilderX manifest.json 中进行可视化操作，完成证书的自动签名。
 
 **注意**：
 
-- 也可以通过 `File - Project Structure...` 打开。
 - 这种自动签名的方式只能用于运行与调试，需要发行上架时候请参考 **发行与上架** 章节修改签名文件。
 - 签名操作需要连接鸿蒙设备。
 
-这个时候点击 `Run - Run 'entry'` 或者编辑器顶部的小三角选择运行。如果可以运行成功官方的 Hello World 示例，说明相关环境、证书配置完成。后续用到登录、支付、定位等权限时候需要使用调试证书，到时候替换正确的手动签名证书即可，本部分目的是配置元服务环境，减少上手阻碍。
+如果可以运行成功官方的 Hello World 示例，说明相关环境、证书配置完成。后续用到登录、支付、定位等权限时候需要使用调试证书，到时候替换正确的手动签名证书即可，本部分目的是配置元服务环境，减少上手阻碍。
 
 到这里前置工作就准备完成了。因为元服务还在开发迭代，下面补充相关注意事项。
 
@@ -613,13 +602,9 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 元服务开发还在不断迭代，建议通过 HBuilderX alpha 版本进行开发。
 
-在 HBuilderX 4.63 alpha 版本之前，元服务的 log 日志规则发生了调整，如果低于此版本需要临时使用下面方案查看日志：
+如果无法在 HBuilderX 中看到鸿蒙日志，请确保开启鸿蒙网络豁免，打开手机设置 - 系统 - 开发者选项 -  开发中元服务豁免管控。
 
-- 打开 DevEco 任意项目，不需要启动应用，在底部找到 Log 面板
-- 打开 Log 面板，筛选你正在开发的应用，过滤 Warn 级别，观察此时 log 是否有告警、错误爆红。
-- 用户侧打印的 log 建议临时通过固定前缀，在 Info 级别进行过滤，或者临时使用 `console.warn` 进行数据打印
-
-如果报错中包含 xxx is not defined，可能是对应的 api 在元服务中还未实现，比如 uni.createAnimation、获取胶囊位置、获取激励视频等。此类问题需要使用条件编译进行规避。
+可在 HBuilderX 中开启原生日志，观察完整日志，如果报错中包含 xxx is not defined，可能是对应的 api 在元服务中还未实现，比如 uni.createAnimation、获取胶囊位置、获取激励视频等。此类问题需要使用条件编译进行规避。
 
 如果报错中包含 vendor.js 中有报错，可能是三方组件库不兼容元服务，可以参考 debug 文档进行错误定位。
 

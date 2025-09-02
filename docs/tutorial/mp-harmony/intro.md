@@ -45,9 +45,19 @@
 - 自动签名证书。签名过程比较简单，可用于调试，不能用于上架，熟悉上手后再迁移成手动签名
 - 面向企业级协作的调试、发行证书。统一管理设备注册、鸿蒙权限管理等，调试证书可以用于开发，发行证书可以用于上架。
 
-接下来文档会面向新手，详细介绍如何使用自动签名证书。发行证书会在文档下方的 **发行与上架** 部分进行介绍。
-
 目前元服务可在 HBuilderX manifest.json 中进行可视化操作，完成证书的自动签名。
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0f7ab0c1-0e3f-4791-bcd3-7363b96c7cd0.png)
+
+填入已经注册的元服务包名（com.atomicservice.xxx），点击运行设备检测，在保证模拟器、真机运行。然后选择 **自动申请调试证书**，授权并完成自动签名后，会自动填写签名信息，选择保存即可。
+
+在华为开发者后台会自动生成对应的文件，后续如果需要更新设备、开通地图功能、申请 ACL 权限时候，需要更新 p7b，请选择编辑设备，重新下载，替换 **签名描述文件** 一栏的文件路径。
+
+具体操作步骤是，访问 [华为开发者后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.htm) - 证书、APP ID和 Profile - 对应证书 - 编辑设备，勾选设备后重新下载，得到 p7b 文件，替换原始文件。
+
+并在手机设置-应用与元服务列表中，移除正在开发的元服务，并选择重新运行元服务并清空缓存，确保立即生效。
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/24cf2353-f36d-4eaa-8470-1a2c99b9726f.png)
 
 **注意**：
 
@@ -58,21 +68,13 @@
 
 到这里前置工作就准备完成了。因为元服务还在开发迭代，下面补充相关注意事项。
 
-### 签名文件、权限配置文件位置
-
-请留意原生工程的两个文件比较特殊，后续 HBuilderX 编译运行需要这些文件：
-
-1. 根目录 `build-profile.json5` - 证书签名参数等。后续元服务的开发运行、发布上架依赖此文件。
-2. `entry/src/main/module.json5` - 项目权限配置、metadata 信息配置，元服务设置权限，比如访问网络、位置定位、手机震动等功能依赖此文件。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5?ha_source=Dcloud&ha_sourceId=89000448)。
-
 ## 运行与调试
 
-在 HBuilderX 运行 uni-app 项目到元服务分成四个步骤：
+在 HBuilderX 运行 uni-app 项目到元服务需要执行下面步骤：
 
 1. 配置 `manifest.json` 文件
-2. 配置 `build-profile.json5`
-3. 配置 `module.json5`
-4. 项目启动
+2. 配置 `module.json5`
+3. 项目启动
 
 下面进行详细说明。
 
@@ -82,25 +84,23 @@
 
 ![配置 manifest.json 文件](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/f7a94969-59d3-42ad-84be-adf5bcadcd54.png)
 
-### 2. 配置 `build-profile.json5`
+### 2. 配置 `module.json5`
 
-需要配置签名证书，这里依赖 [准备签名证书](#准备签名证书) 部分。项目根目录创建 `harmony-mp-configs/build-profile.json5` 文件。
+首次运行可选。
 
-考虑到新手用户不熟悉配置，建议下载 [这个模版](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/build-profile.json5) 修改，只替换签名 `signingConfigs`部分，其他配置项不要修改。
+鸿蒙元服务需要获取使用特定的能力，比如元服务登录、震动、获取网络状态等权限、配置应用名称和图标时候需要配置权限模版。
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dac3b26f-7db8-415b-9df6-43e5964043ab.png)
+**重要：** 下载 [module.json5](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/module.json5) 文件。
 
-### 3. 配置 `module.json5`
-
-鸿蒙元服务需要获取使用特定的能力，比如元服务登录、震动、获取网络状态等原生提供的能力，需要配置权限模版。
-
-项目根目录创建 `harmony-mp-configs/entry/src/main/module.json5` 文件。下载 [module.json5](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/module.json5) 文件进行替换操作。
+项目根目录创建 `harmony-mp-configs/entry/src/main/module.json5` 文件。进行替换操作。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/62fbd174-5276-4a76-9ef7-26562e611533.png)
 
-访问 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject?ha_source=Dcloud&ha_sourceId=89000448)，选择你的项目，在 **项目设置 - 常规** 页面中搜索 Client ID，匹配到的结果是下面需要到 `client_id`，这个参数会关联当前应用的相关权限，比如位置服务等。
+访问 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject?ha_source=Dcloud&ha_sourceId=89000448)，选择你的项目，在 **项目设置 - 常规** 页面中搜索 Client ID，匹配到的结果是下面需要到 `client_id`，这个参数会关联当前应用的相关权限，比如位置服务、登录功能等。
 
 ![](https://web-ext-storage.dcloud.net.cn/unicloud/0a447b30-645c-4325-99c8-8d68274f0f2d.png)
+
+注意点击添加公钥指纹，添加调试证书，否则登录等鉴权功能会失败。
 
 ### 4. 运行鸿蒙元服务
 
@@ -130,11 +130,12 @@
 
 ### 5. 运行过程中的热更新@ascf-serve
 
-从 `HBuilderX 4.81` 开始，运行鸿蒙元服务的时候支持热更新，当修改了源代码并保存后，修改的内容会很快反映到应用里，不需要重启应用。
+从 `HBuilderX 4.81` 开始，运行鸿蒙元服务的时候支持热更新，当修改了源代码并保存后，修改的内容会很快反映到应用里，不需要重启应用。注意：目前仅真机生效，现网模拟器暂不支持。
 
 启用这个热更新特性需要运行元服务应用的设备满足一定条件，即已经安装了所必需的达到一定版本的基础依赖包。如果不满足启用条件，则仍会使用原本的全量打包模式。
 
 验证设备是否满足条件的方法是：在命令行环境执行下面的命令，并检查输出结果中的 `versionName` 是否达到 `1.0.13.310` 版本。
+
 ```sh
 hdc shell bm dump-shared -n com.huawei.hms.ascfruntime
 ```
@@ -241,6 +242,8 @@ hdc shell bm dump-shared -n com.huawei.hms.ascfruntime
 
 在 `harmony-mp-configs/entry/src/main/module.json5`，可以设置权限、metadata、隐私协议托管等功能，完整配置文档可以参考 [module.json5 配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file?ha_source=Dcloud&ha_sourceId=89000448)
 
+可看 uni.getLocation [鸿蒙位置设置指南](https://uniapp.dcloud.net.cn/api/location/location.html#harmony-set-location) 具体看详细介绍。
+
 ### 如何修改元服务默认标题、图标、启动图等信息？@how-to-change-icon
 
 如何修改元服务的标题、图标、启动图？需要把文字和图标先定义，然后在资源文件中引用。下载文档中推荐的 module.json5 文件，下载放置到 `harmony-mp-configs/entry/src/main/module.json5` ，定位到 `module.abilities[0]` 会找到下面几个字段：
@@ -309,9 +312,9 @@ hdc shell bm dump-shared -n com.huawei.hms.ascfruntime
 
 ### 组件 打开 map 地图无法展示、API 位置相关使用报错
 
-Map 和相关定位需要 [华为 AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/?ha_source=Dcloud&ha_sourceId=89000448) 进行权限申请。具体可以参考 [鸿蒙 Map Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/map-config-agc-V5?ha_source=Dcloud&ha_sourceId=89000448)，在 项目设置 - API 管理开启定位服务、位置服务、地图服务。
+页面中使用地图需要 [华为 AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/?ha_source=Dcloud&ha_sourceId=89000448) 进行权限申请。具体可以参考 [鸿蒙 Map Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-config-agc?ha_source=Dcloud&ha_sourceId=89000448)，在 项目设置 - API 管理开启地图服务。
 
-在 `harmony-mp-configs/entry/src/main/module.json5` 在 `requestPermissions` 字段里添加 `ohos.permission.LOCATION` 和 `ohos.permission.APPROXIMATELY_LOCATION` 两条记录。
+在 `harmony-mp-configs/entry/src/main/module.json5` 在 `requestPermissions` 字段里添加 `ohos.permission.LOCATION` 和 `ohos.permission.APPROXIMATELY_LOCATION` 两条记录。操作步骤可参阅 [API getLocation 鸿蒙位置设置指南](https://uniapp.dcloud.net.cn/api/location/location.html#harmony-set-location)
 
 元服务不允许未经用户同意发起定位。在请求位置之前需要获取用户授权。伪代码如下：
 

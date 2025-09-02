@@ -114,6 +114,7 @@ const routerMap = {
 	'/tutorial/harmony/dev#publish': '/tutorial/harmony/runbuild.html#publish',
 	'/tutorial/harmony/dev#harmonyos特性说明': '/tutorial/harmony/built-in-module.html',
 	'/tutorial/harmony/dev': '/tutorial/harmony/intro.html',
+  '/tutorial/app-oauth-huawei': '/tutorial/harmony/app-oauth-huawei.html',
 
 	'/tutorial/run/run-app-harmony.': '/tutorial/harmony/runbuild.',
 }

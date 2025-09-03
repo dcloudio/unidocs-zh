@@ -751,8 +751,8 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 HBuilderX 3.6.16+ 支持项目根目录(cli 项目为 src 目录)下创建配置文件自定义小程序项目配置。平台对应文件名如下：
 |小程序平台|文件名|
 |:-|:-|
-|微信|project.config.json|
-|QQ|project.config.json|
+|微信|project.wx.json、project.config.json|
+|QQ|project.qq.json、project.config.json|
 |百度|project.swan.json|
 |支付宝|mini.project.json|
 |抖音|project.tt.json|

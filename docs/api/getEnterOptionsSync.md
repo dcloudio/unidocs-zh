@@ -25,6 +25,8 @@
 |path|String|启动的路径(代码包路径)||
 |scene|Number|启动时的场景值，具体值含义请查看各平台文档说明。App、web端恒为 1001。||
 |query|Object|启动时的 query 参数||
+|appScheme|string|本次启动时的Scheme。返回值与App.onShow的回调参数一致|仅 `HarmonyOS 4.81+` 支持|
+|appLink|string|本次启动时的appLink。返回值与App.onShow的回调参数一致|仅 `HarmonyOS 4.81+` 支持|
 |referrerInfo|Object|来源信息。如果没有则返回 `{}`||
 |channel|String|如果应用没有设置渠道标识，则返回空字符串。取值如下|`仅 App 支持`|
 |launcher|String|应用启动来源。取值如下|`仅 App 支持`|

@@ -414,7 +414,7 @@ Tips：`uni-app` 中 `manifest.json->h5->devServer`，`vue2` 实际上对应 `we
 
 **注意**
 
-- 打包部署后，在服务器上开启 gzip 可以进一步压缩文件。具体的配置，可以参考网上的分享：https://juejin.im/post/5af003286fb9a07aac24611b
+- 打包部署后，在服务器上开启 gzip 可以进一步压缩文件。具体的配置，可以参考网上的分享：[服务器端开启GZIP压缩](https://juejin.im/post/5af003286fb9a07aac24611b)
 
 #### sdkconfig@h5sdkconfig
 

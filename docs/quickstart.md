@@ -152,7 +152,7 @@ HBuilderX 还提供了快捷运行菜单，可以按数字快速选择要运行�
 
 **注意**
 - `history` 模式发行需要后台配置支持，详见：[history 模式的后端配置](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
-- 打包部署后，在服务器上开启 gzip 可以进一步压缩文件。具体的配置，可以参考网上的分享：https://juejin.im/post/5af003286fb9a07aac24611b
+- 打包部署后，在服务器上开启 gzip 可以进一步压缩文件。具体的配置，可以参考网上的分享：[服务器端开启GZIP压缩](https://juejin.im/post/5af003286fb9a07aac24611b)
 
 ### 发布为小程序
 

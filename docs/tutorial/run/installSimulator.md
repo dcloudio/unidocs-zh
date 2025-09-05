@@ -4,8 +4,9 @@
 
 - [安装iOS模拟器](#ios)
 - [安装Android模拟器](#android)
+- [安装鸿蒙模拟器](#harmony)
 
-## ios模拟器@ios
+## iOS模拟器@ios
 
 MacOSX，安装ios模拟器，需要先安装[xcode](https://developer.apple.com/xcode/)；或在App store中搜索xcode完成安装。
 
@@ -17,7 +18,7 @@ xcode安装打开，按下快捷键`command+,`，打开`Preferences`窗口，如
 
 <img src="https://hx.dcloud.net.cn/static/snapshots/tutorial/macosx/xcodeCommandLineTools.jpg" style="zoom: 50%" />
 
-## 运行App到iOS模拟器@run-app-ios-simulator
+### 运行App到iOS模拟器@run-app-ios-simulator
 
 项目管理器，选中要运行的项目，点击工具栏 运行图标，如下图：
 
@@ -27,7 +28,7 @@ xcode安装打开，按下快捷键`command+,`，打开`Preferences`窗口，如
 
 <img src="https://hx.dcloud.net.cn/static/snapshots/app/app_ios_simulator_run.jpg" style="zoom: 50%" />
 
-### 运行到iOS模拟器功能限制@ios-simulator-limit
+### 运行App到iOS模拟器功能限制@ios-simulator-limit
 iOS模拟器和真机使用不同的CPU架构，部分模块依赖的三方SDK没有包含模拟器或者对模拟器兼容不好，导致无法在模拟器上正常运行，目前已知无法在模拟上使用以下功能：
 
 - 讯飞语音识别  
@@ -39,7 +40,7 @@ iOS模拟器和真机使用不同的CPU架构，部分模块依赖的三方SDK�
 
 ## Android模拟器@android
 
-市场上有很多成熟的Android模拟器，这里就不推荐了。自行搜索安装。
+市场上有很多成熟的Android模拟器，这里就不推荐了，自行搜索安装。
 
 当然，Google官方也有自己的模拟器，您可以在[Android Studio](https://developer.android.com/studio/install)中安装不同版本的模拟器。
 
@@ -47,7 +48,7 @@ android studio模拟器如下图所示：
 
 <img src="https://hx.dcloud.net.cn/static/snapshots/tutorial/macosx/androidSimulator.jpg" style="zoom: 50%" />
 
-## 运行App到Android模拟器@run-app-android-emulator
+### 运行App到Android模拟器@run-app-android-emulator
 
 Android模拟器启动后，HBuilderX会将其识别为名称为`emulator-xxxx`的Android手机，其中的xxxx为模拟器的id如下图：
 
@@ -56,6 +57,20 @@ Android模拟器启动后，HBuilderX会将其识别为名称为`emulator-xxxx`�
 运行app项目到android模拟器效果如下：
 
 <img src="https://hx.dcloud.net.cn/static/snapshots/app/Android-emulator-start.jpg" style="zoom: 50%" />
+
+### 常见模拟器端口说明
+
+HBuilderX是通过adb发现设备的，如果端口为5555到5585的模拟器启动后会自动出现在设备列表。其他端口模拟器需要在“设置-运行配置-Android运行配置-Android模拟器端口”配置你使用模拟器的端口，HBuilderX会自动连接。或通过命令行`adb connect 127.0.0.1:port`手动连接设备。
+以下是对市面一些模拟器默认端口的汇总（经供参考，以实际端口为准）
+| 模拟器						| 默认初始端口	|
+|-------------------------	|--------------	|
+| Android Studio AVD		| 5554			|
+| BlueStacks 5 (5.22.51)	| 5555			|
+| 雷电模拟器（9.1.41）			| 5554			|
+| MuMu模拟器（4.1.24）		| 7555			|
+| 夜神模拟器（7.0.6）			| 62001			|
+| 逍遥模拟器（9.2.1）			| 21503			|
+| 腾讯手游助手（6.0.13）		| 5554			|
 
 ## 鸿蒙模拟器@harmony
 

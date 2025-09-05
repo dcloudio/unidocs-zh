@@ -16,6 +16,7 @@
 - [支付宝小程序插件](https://opendocs.alipay.com/mini/plugin/plugin-usage)
 - [百度小程序动态库](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)
 - [QQ小程序插件](https://q.qq.com/wiki/develop/miniprogram/frame/plugins/)
+- [京东小程序插件](https://mp-docs.jd.com/doc/miniapp/introduction/plugin/2785#heading-0)
 
 #### 在uni-app中引入插件代码包 @import-mp-plugin
 

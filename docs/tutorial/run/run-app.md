@@ -45,37 +45,38 @@ HBuilderX 4.71+版本，Android设备支持[无线连接设备](https://uniapp.d
 <img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/select-android.png" style="zoom: 50%;" />
 
 **注意事项**
-- 如果电脑里安装有模拟器（Android模拟器需要先启动），HBuilder会直接检测到设备并显示在候选列表中。可以参考[如何安装模拟器](installSimulator.md)
+- 如果电脑里安装有模拟器（Android模拟器需要先启动），HBuilder会直接检测到设备并显示在候选列表中。可以参考[如何安装模拟器](installSimulator.md#android)
 - 确认Android手机设置中`USB调试`模式已开启。通常在手机的【设置】【开发者选项】里，有的手机在插上数据线后在系统通知栏里也可以设置，注意不能设置为u盘模式，如果是充电模式则必须同时设置充电时`允许usb调试`。
 
 
-### iOS设备选择 @ios-device
+### iOS设备选择
 
 > HBuilderX中自带的标准真机运行基座使用DCloud向苹果申请的企业开发者证书签名，根据[苹果开发者企业计划许可协议](https://developer.apple.com/support/downloads/terms/apple-developer-enterprise-program/Apple-Developer-Enterprise-Program-License-Agreement-20220606-Chinese-Simplified.pdf)要求，使用企业开发者证书签名的App只允许企业员工内部使用，不允许企业外部人员安装使用。
+
 > 因收到苹果公司警告，自2022年9月14日起iOS真机设备不再支持使用标准真机运行基座，详情见论坛公告：[https://ask.dcloud.net.cn/article/40041](https://ask.dcloud.net.cn/article/40041)
+
 > 在iOS真机设备上运行请向苹果申请证书制作[自定义基座](#customplayground)或者在Mac电脑使用[iOS模拟器](#ios-simulator)
 
-<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/select-ios.jpeg" style="zoom: 50%;" />
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/ios-run-4.png" style="zoom: 50%;" />
 
 **注意事项**
 - 确保usb线的连接通畅（有些数据线质量不佳，需使用高电压usb端口，如果无法识别时候请尝试更换数据线）
 - 如果windows电脑连接iOS设备需电脑安装iTunes软件，并确保apple的mobile device服务开启、iTunes可找到手机
 - 手机连接电脑后，确保在手机上弹出的“要信任此电脑吗？”提示框中点了“信任”按钮
 
-#### iOS模拟器设备选择 @ios-simulator
 
-如果是Mac电脑安装XCode后，“标准运行基座”支持使用iOS模拟器
+### iOS模拟器设备选择
 
-![](https://native-res.dcloud.net.cn/images/hx/run/ios-sim.png)
+> 如果是Mac电脑安装XCode后，“标准运行基座”支持使用iOS模拟器，此功能仅Mac电脑支持
 
-点击后进入iOS模拟器选择界面
+> 如果未安模拟器可以参考[如何安装模拟器](installSimulator.md#ios)
 
-![](https://native-res.dcloud.net.cn/images/hx/run/ios-sim-select.png)
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/ios-sim-run.png" style="zoom: 50%;" />
 
 上面的界面会额外显示搜索框，因XCode的iOS模拟器非常多，可通过搜索框过滤快速选择需要使用的模拟器。
 
 
-## 运行
+## 运行到设备
 
 初次运行时会提示安装“真机运行插件”。
 
@@ -93,11 +94,7 @@ HBuilderX 4.71+版本，Android设备支持[无线连接设备](https://uniapp.d
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/run-app-console.jpg" style="zoom: 50%;" />
 
-### 运行项目到iOS真机App自启动@ios-app-automatically-open
-
-> 目前仅支持MacOSX，不支持Windows
-
-HBuilderX 3.7.0+版本，新增 运行App项目到iOS真机，运行成功后，手机上的App会自动打开。
+HBuilderX 3.7.0+版本，新增 运行App项目到iOS真机，运行成功后，手机上的App会自动打开（目前仅支持MacOSX，不支持Windows）。
 
 **如下图所示：**
 
@@ -194,7 +191,15 @@ Android通过离线SDK打包生成的自定义基座后，如果基座已通过A
 
 <img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/android-installedBase.png" style="zoom: 50%;" />
 
-如果配置关联项目后，还可以在HBuilderX中[原生联调（仅uni-app x）](https://doc.dcloud.net.cn/uni-app-x/native/debug/android.html#installedapk)
+配置关联项目后，可以在HBuilderX中调试原生代码。关联项目为打包离线SDK的原生工程项目，详细使用请参考[原生联调（仅uni-app x）](https://doc.dcloud.net.cn/uni-app-x/native/debug/android.html#installedapk)
+
+> HBuilderX 4.81+
+
+iOS通过离线SDK打包生成的自定义基座后，选择自定义基座-原生工程基座。如下图所示：
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/ios-run-1.png" style="zoom: 50%;" />
+
+配置基座位置后，可以在HBuilderX中调试原生代码。基座位置为打包离线SDK的原生工程项目的产物，详细使用请参考[原生联调（仅uni-app x）](https://doc.dcloud.net.cn/uni-app-x/native/debug/ios.html)
 
 ## 基座闪退获取日志
 

@@ -167,7 +167,15 @@ HBuilderX 4.81+ 开始支持 uni-app x 项目启用热重载能力。
 
 ## 调试的方式@debug-mode
 
-HBuilderX 4.61+ 开始支持针对 uni-app x 项目的调试功能，支持断点调试，可以在控制台里面点击调试按钮开启。
+### uni-app 鸿蒙调试
+
+参考鸿蒙文档 [使用 DevTools 工具调试前端页面](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-debugging-with-devtools?ha_source=Dcloud&ha_sourceId=89000448) 进行处理。在 uni-app 的开发模式 `setWebDebuggingAccess` 会自动开启，此步骤可以跳过。
+
+业务逻辑 debug 可参考 [JSVM-API调试&定位](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-debugger-cpuprofiler-heapsnapshot?ha_source=Dcloud&ha_sourceId=89000448)
+
+### uni-app x 鸿蒙调试
+
+HBuilderX 4.61+ 开始支持 uts、uvue、ets 的调试[文档地址](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-harmony.html)，支持断点调试，可以在控制台里面点击调试按钮开启。
 
 ![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/b7c69c0e-0447-41f1-b974-35eb8d076cc8.png)#{.zooming style="max-height:60px;border:1px solid silver"}
 
@@ -635,11 +643,8 @@ HBuilderX 4.31 起支持 uniPush 推送，具体配置请参考[文档](https://
 
 ### harmony 应用怎样调试？@q13
 
-> HBuilderX 4.61+ 开始支持 uts、uvue、ets 的调试[文档地址](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-harmony.html)
+uni-app/uni-app x 用户可参考 [uni-app 调试方案](#debug-mode) 进行调试。
 
-参考鸿蒙文档 [使用 DevTools 工具调试前端页面](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-debugging-with-devtools?ha_source=Dcloud&ha_sourceId=89000448) 进行处理。在 uni-app 的开发模式 `setWebDebuggingAccess` 会自动开启，此步骤可以跳过。
-
-业务逻辑 debug 可参考 [JSVM-API调试&定位](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-debugger-cpuprofiler-heapsnapshot?ha_source=Dcloud&ha_sourceId=89000448)
 
 ### Windows 系统中如何使用模拟器@q14
 

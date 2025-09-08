@@ -33,7 +33,7 @@
 </uni-section>
 ```
 
-## 属性/方法
+## API
 
 ### Section Props
 
@@ -54,7 +54,13 @@
 |:-:|:-:|:-:|
 |@click	|点击 Section 触发事件| -|
 
+### Section Slots
 
+|插槽名称|说明|
+|:-:|:-:|
+|default|内容插槽|
+|right|右插槽|
+|decoration|装饰器插槽（未设置 `type` 时生效）|
 
 ## 示例
 ::: warning 注意
@@ -66,66 +72,65 @@
 
 ```html
 <template>
-	<view class="uni-wrap">
-			<view class="example-info">
-				<text class="example-info-text"> uni-section 组件主要用于文章、列表详情等标题展示 </text>
-			</view>
-			<uni-section class="mb-10" title="基础用法" sub-title="副标题"></uni-section>
-			<uni-section class="mb-10" title="竖线装饰" sub-title="副标题" type="line"></uni-section>
-			<uni-section class="mb-10" title="装饰器插槽" sub-title="副标题">
-        <template v-slot:decoration>
-          <view class="decoration"></view>
-        </template>
-      </uni-section>
-			<uni-section class="mb-10" title="默认插槽" sub-title="副标题" padding="0 0 5px 10px">默认插槽内容</uni-section>
-			<uni-section class="mb-10" title="主标题">
-				<template v-slot:right>
-					right slot
-				</template>
-			</uni-section>
-	</view>
+    <view class="uni-wrap">
+        <view class="example-info">
+            <text class="example-info-text"> uni-section 组件主要用于文章、列表详情等标题展示 </text>
+        </view>
+        <uni-section class="mb-10" title="基础用法" sub-title="副标题"></uni-section>
+        <uni-section class="mb-10" title="竖线装饰" sub-title="副标题" type="line"></uni-section>
+        <uni-section class="mb-10" title="装饰器插槽" sub-title="副标题">
+            <template v-slot:decoration>
+                <view class="decoration"></view>
+            </template>
+        </uni-section>
+        <uni-section class="mb-10" title="默认插槽" sub-title="副标题" padding="0 0 5px 10px">默认插槽内容</uni-section>
+        <uni-section class="mb-10" title="主标题">
+            <template v-slot:right>
+                right slot
+            </template>
+        </uni-section>
+    </view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-			}
-		},
-		onReady() {
+    export default {
+        data() {
+            return {}
+        },
+        onReady() {
 
-		},
-		methods: {
+        },
+        methods: {
 
-		}
-	}
+        }
+    }
 </script>
 
 <style lang="scss">
-  $uni-success: #18bc37 !default;
+    $uni-success: #18bc37 !default;
 
-	.uni-wrap {
-		flex-direction: column;
-		/* #ifdef H5 */
-		height: calc(100vh - 44px);
-		/* #endif */
-		/* #ifndef H5 */
-		height: 100vh;
-		/* #endif */
-		flex: 1;
-	}
+    .uni-wrap {
+        flex-direction: column;
+        /* #ifdef H5 */
+        height: calc(100vh - 44px);
+        /* #endif */
+        /* #ifndef H5 */
+        height: 100vh;
+        /* #endif */
+        flex: 1;
+    }
 
-	.mb-10 {
-		margin-bottom: 10px;
-	}
+    .mb-10 {
+        margin-bottom: 10px;
+    }
 
-  .decoration{
-    width: 6px;
-    height: 6px;
-		margin-right: 4px;
-    border-radius: 50%;
-		background-color: $uni-success;
-  }
+    .decoration {
+        width: 6px;
+        height: 6px;
+        margin-right: 4px;
+        border-radius: 50%;
+        background-color: $uni-success;
+    }
 </style>
 
 :::

@@ -754,7 +754,7 @@ HBuilderX 3.6.16+ 支持项目根目录(cli 项目为 src 目录)下创建配置
 |微信|project.wx.json、project.config.json|
 |QQ|project.qq.json、project.config.json|
 |百度|project.swan.json|
-|支付宝|mini.project.json|
+|支付宝|mini.project.json、project.my.json|
 |抖音|project.tt.json|
 |飞书|project.lark.json|
 |快手|project.ks.json|

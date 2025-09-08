@@ -380,6 +380,14 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 4. 最后还需参考鸿蒙官方文档发布鸿蒙应用到应用市场，详见[文档](https://developer.huawei.com/consumer/cn/doc/app/agc-help-releaseharmony-0000001933963166?ha_source=Dcloud&ha_sourceId=89000448)
 
+## 企业应用的内部分发@internal-test
+
+在应用内测和企业应用场景，有时候需要绕过华为应用商店，直接向部分特定的手机设备分发安装包。
+此时可以从 AppGallery Connect 申请**内部测试**证书，并通过 HBuilderX 的调试运行操作得到 .hap 运行包，
+然后再编写相关的分发描述文件上传到自己的服务器供手机用户下载安装。
+
+具体操作过程可以参考 ASK 社区文章 [鸿蒙企业应用内部分发打包教程](https://ask.dcloud.net.cn/article/42052)
+
 ## 权限配置指南@permission
 
 如何配置权限？

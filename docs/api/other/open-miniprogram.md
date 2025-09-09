@@ -4,7 +4,7 @@
 
 **平台差异说明**
 
-|App|H5|[微信小程序](https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html)|[支付宝小程序](https://docs.alipay.com/mini/api/open-miniprogram)|[百度小程序](https://smartprogram.baidu.com/docs/develop/api/open_smartprogram/#swan-navigateToSmartProgram/)|[抖音小程序](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/mini-app-forward/tt-navigate-to-mini-program/)|[QQ小程序](https://q.qq.com/wiki/develop/miniprogram/API/open_port/port_change.html#qq-navigatetominiprogram)|京东小程序|元服务|小红书小程序|
+|App|H5|[微信小程序](https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html)|[支付宝小程序](https://docs.alipay.com/mini/api/open-miniprogram)|[百度小程序](https://smartprogram.baidu.com/docs/develop/api/open_smartprogram/#swan-navigateToSmartProgram/)|[抖音小程序](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/mini-app-forward/tt-navigate-to-mini-program/)|[QQ小程序](https://q.qq.com/wiki/develop/miniprogram/API/open_port/port_change.html#qq-navigatetominiprogram)|[京东小程序](https://mp-docs.jd.com/doc/miniapp/dev/api/2940#heading-0)|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |x(见下)|x|√|√|√|√(1.15.0+)|√|√|x|x|
 

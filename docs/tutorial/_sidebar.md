@@ -135,9 +135,11 @@
   - [历史变更](harmony/history.md)
   - 其它配置
     - [鸿蒙配置 URL Scheme](harmony/url-scheme.md)
+    - [鸿蒙唤起鸿蒙应用、元服务](harmony/open-app.md)
 - 鸿蒙元服务专题
   - [运行和发行](mp-harmony/intro.md)
   - [鸿蒙元服务登录](mp-harmony/login.md)
+  - [鸿蒙元服务唤起鸿蒙应用](mp-harmony/open-app.md)
 - 小程序专题
   - [组件与 WXS](miniprogram-subject.md)
   - [使用小程序插件](mp-weixin-plugin.md)

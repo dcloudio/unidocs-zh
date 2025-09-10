@@ -11,7 +11,7 @@
 - 目前已支持 Vue2/Vue3 使用 HBuilderX/CLI 方式运行到元服务。cli 参考 [如何使用 cli 创建元服务？](#using-by-cli)
 - 元服务的开发支持鸿蒙真机，现已支持使用模拟器开发，不区分 Mac/Windows，需要下载 [5.1.1 beta 版本的 DevEco](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448)，提供的 API 19 Beta 模拟器。如果遇到 hsp 报错，[查看解决方法](#failed-to-install-the-hap-or-hsp)
 - 目前支持鸿蒙 5.0，低于此版本（比如鸿蒙 4.x）不视为鸿蒙 Next。鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/?ha_source=Dcloud&ha_sourceId=89000448)
-:::
+  :::
 
 ## 前置准备
 
@@ -38,22 +38,22 @@
 
 初次运行元服务，需要配置好证书签名、权限设置等信息，第一次参与鸿蒙开发的新手请仔细阅读下面相关建议，否则可能会影响开发元服务。
 
-如果你已有鸿蒙 App 开发经验，元服务的证书签名、权限配置和鸿蒙 App 的相关操作基本一致，参考 [证书签名配置指南](../harmony/runbuild#connectmobile) 。
+在 HBuilderX 4.81+ （即将发布）可在 HBuilderX manifest.json 中进行可视化操作，完成证书的自动签名。
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0f7ab0c1-0e3f-4791-bcd3-7363b96c7cd0.png)
+
+此版本之前，元服务的证书签名、权限配置和鸿蒙 App 的相关操作基本一致，需要使用启动 DevEco 启动模拟器，参考 [证书签名配置指南](../harmony/runbuild#signing) 。
 
 签名证书分成两类：
 
 - 自动签名证书。签名过程比较简单，可用于调试，不能用于上架，熟悉上手后再迁移成手动签名
 - 面向企业级协作的调试、发行证书。统一管理设备注册、鸿蒙权限管理等，调试证书可以用于开发，发行证书可以用于上架。
 
-目前元服务可在 HBuilderX manifest.json 中进行可视化操作，完成证书的自动签名。
-
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0f7ab0c1-0e3f-4791-bcd3-7363b96c7cd0.png)
-
 填入已经注册的元服务包名（com.atomicservice.xxx），点击运行设备检测，在保证模拟器、真机运行。然后选择 **自动申请调试证书**，授权并完成自动签名后，会自动填写签名信息，选择保存即可。
 
 在华为开发者后台会自动生成对应的文件，后续如果需要更新设备、开通地图功能、申请 ACL 权限时候，需要更新 p7b，请选择编辑设备，重新下载，替换 **签名描述文件** 一栏的文件路径。
 
-具体操作步骤是，访问 [华为开发者后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.htm) - 证书、APP ID和 Profile - 对应证书 - 编辑设备，勾选设备后重新下载，得到 p7b 文件，替换原始文件。
+具体操作步骤是，访问 [华为开发者后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.htm) - 证书、APP ID 和 Profile - 对应证书 - 编辑设备，勾选设备后重新下载，得到 p7b 文件，替换原始文件。
 
 并在手机设置-应用与元服务列表中，移除正在开发的元服务，并选择重新运行元服务并清空缓存，确保立即生效。
 
@@ -302,9 +302,7 @@ hdc shell bm dump-shared -n com.huawei.hms.ascfruntime
 需要在配置网络访问白名单：
 
 - 临时方案。进入手机 - 设置 - 系统 - 开发者选项（如果未开启 关于手机 - 软件版本连续点击开启） - 开发中元服务豁免管控，选择开启后，可以自由调试。
-- 稳定方案。整理 web-view 需要用到的相关域名，进入[华为 AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/?ha_source=Dcloud&ha_sourceId=89000448) - 我的项目 - 开发管理 - 域名设置 - 服务器域名 - httpRequest 合法域名。按照提示进行填写。填写完成后打开 手机设置 - 应用与元服务，删掉正在开发的元服务，重新启动应用。
-
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/49323643-31f5-4f95-80b2-87157c9a06d5.png)
+- 稳定方案。整理 web-view 需要用到的相关域名，进入[华为 AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/?ha_source=Dcloud&ha_sourceId=89000448) - 我的项目 - 开发管理 - 元服务域名管理 - httpRequest 合法域名。按照提示进行填写。填写完成后打开 手机设置 - 应用与元服务，删掉正在开发的元服务，重新启动应用。
 
 ### 组件 web-view 渲染空白，不能展示网页
 
@@ -622,7 +620,7 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 元服务开发还在不断迭代，建议通过 HBuilderX alpha 版本进行开发。
 
-如果无法在 HBuilderX 中看到鸿蒙日志，请确保开启鸿蒙网络豁免，打开手机设置 - 系统 - 开发者选项 -  开发中元服务豁免管控。
+如果无法在 HBuilderX 中看到鸿蒙日志，请确保开启鸿蒙网络豁免，打开手机设置 - 系统 - 开发者选项 - 开发中元服务豁免管控。
 
 可在 HBuilderX 中开启原生日志，观察完整日志，如果报错中包含 xxx is not defined，可能是对应的 api 在元服务中还未实现，比如 uni.createAnimation、获取胶囊位置、获取激励视频等。此类问题需要使用条件编译进行规避。
 

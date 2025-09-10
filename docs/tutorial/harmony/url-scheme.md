@@ -31,7 +31,7 @@
 
 可参考鸿蒙文档 [鸿蒙应用间跳转](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inter-app-redirection?ha_source=Dcloud&ha_sourceId=89000448)
 
-### Deep Linking 方案
+### Deep Linking 方案@deeplinking
 
 官方文档地址《[使用 Deep Linking 实现应用间跳转](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/deep-linking-startup?ha_source=Dcloud&ha_sourceId=89000448)》
 
@@ -80,7 +80,7 @@
 
 参数获取可滚动到 [参数解析](#argument-parse) 继续查看。
 
-### App Linking 方案
+### App Linking 方案@applinking
 
 官方文档 [使用 App Linking 实现应用间跳转](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-linking-startup?ha_source=Dcloud&ha_sourceId=89000448)
 

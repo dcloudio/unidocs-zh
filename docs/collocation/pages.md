@@ -16,7 +16,7 @@
 | [tabBar](/collocation/pages?id=tabbar)                                              | Object       | 否   | 设置底部 tab 的表现                      |                                      |
 | [condition](/collocation/pages?id=condition)                                        | Object       | 否   | 启动模式配置                             |                                      |
 | [subPackages](/collocation/pages?id=subPackages)                                    | Object Array | 否   | 分包加载配置                             | H5 不支持                            |
-| [preloadRule](/collocation/pages?id=preloadrule)                                    | Object       | 否   | 分包预下载规则                           | 微信小程序、抖音小程序、支付宝小程序、京东小程序 |
+| [preloadRule](/collocation/pages?id=preloadrule)                                    | Object       | 否   | 分包预下载规则                           | 微信小程序、QQ小程序、抖音小程序、支付宝小程序、京东小程序 |
 | [leftWindow](/collocation/pages?id=leftwindow)                                      | Object       | 否   | 大屏左侧窗口                             | H5                                   |
 | [topWindow](/collocation/pages?id=topwindow)                                        | Object       | 否   | 大屏顶部窗口                             | H5                                   |
 | [rightWindow](/collocation/pages?id=rightwindow)                                    | Object       | 否   | 大屏右侧窗口                             | H5                                   |

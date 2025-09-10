@@ -1,108 +1,121 @@
 # pages.json 页面路由
-`pages.json` 文件用来对 uni-app 进行全局配置，决定页面文件的路径、窗口样式、原生的导航栏、底部的原生tabbar 等。
+
+`pages.json` 文件用来对 uni-app 进行全局配置，决定页面文件的路径、窗口样式、原生的导航栏、底部的原生 tabbar 等。
 
 导航栏高度为 44px (不含状态栏)，tabBar 高度为 50px (不含安全区)。
 
-它类似微信小程序中`app.json`的**页面管理**部分。注意定位权限申请等原属于`app.json`的内容，在uni-app中是在manifest中配置。
+它类似微信小程序中`app.json`的**页面管理**部分。注意定位权限申请等原属于`app.json`的内容，在 uni-app 中是在 manifest 中配置。
 
 # 配置项列表
 
-|属性|类型|必填|描述|平台兼容|
-|:-|:-|:-|:-|:-|
-|[globalStyle](/collocation/pages?id=globalstyle)|Object|否|设置默认页面的窗口表现||
-|[pages](/collocation/pages?id=pages)|Object Array|是|设置页面路径及窗口表现||
-|[easycom](/collocation/pages?id=easycom)|Object|否|组件自动引入规则|2.5.5+|
-|[tabBar](/collocation/pages?id=tabbar)|Object|否|设置底部 tab 的表现||
-|[condition](/collocation/pages?id=condition)|Object|否|启动模式配置||
-|[subPackages](/collocation/pages?id=subPackages)|Object Array|否|分包加载配置|H5 不支持|
-|[preloadRule](/collocation/pages?id=preloadrule)|Object|否|分包预下载规则|微信小程序、支付宝小程序|
-|[leftWindow](/collocation/pages?id=leftwindow)|Object|否|大屏左侧窗口|H5|
-|[topWindow](/collocation/pages?id=topwindow)|Object|否|大屏顶部窗口|H5|
-|[rightWindow](/collocation/pages?id=rightwindow)|Object|否|大屏右侧窗口|H5|
-|[uniIdRouter](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0||
-|entryPagePath|String|否|默认启动首页，新增于HBuilderX 3.7.0|微信小程序、支付宝小程序、抖音小程序|
+| 属性                                                                                | 类型         | 必填 | 描述                                     | 平台兼容                             |
+| :---------------------------------------------------------------------------------- | :----------- | :--- | :--------------------------------------- | :----------------------------------- |
+| [globalStyle](/collocation/pages?id=globalstyle)                                    | Object       | 否   | 设置默认页面的窗口表现                   |                                      |
+| [pages](/collocation/pages?id=pages)                                                | Object Array | 是   | 设置页面路径及窗口表现                   |                                      |
+| [easycom](/collocation/pages?id=easycom)                                            | Object       | 否   | 组件自动引入规则                         | 2.5.5+                               |
+| [tabBar](/collocation/pages?id=tabbar)                                              | Object       | 否   | 设置底部 tab 的表现                      |                                      |
+| [condition](/collocation/pages?id=condition)                                        | Object       | 否   | 启动模式配置                             |                                      |
+| [subPackages](/collocation/pages?id=subPackages)                                    | Object Array | 否   | 分包加载配置                             | H5 不支持                            |
+| [preloadRule](/collocation/pages?id=preloadrule)                                    | Object       | 否   | 分包预下载规则                           | 微信小程序、支付宝小程序、京东小程序 |
+| [leftWindow](/collocation/pages?id=leftwindow)                                      | Object       | 否   | 大屏左侧窗口                             | H5                                   |
+| [topWindow](/collocation/pages?id=topwindow)                                        | Object       | 否   | 大屏顶部窗口                             | H5                                   |
+| [rightWindow](/collocation/pages?id=rightwindow)                                    | Object       | 否   | 大屏右侧窗口                             | H5                                   |
+| [uniIdRouter](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router) | Object       | 否   | 自动跳转相关配置，新增于 HBuilderX 3.5.0 |                                      |
+| entryPagePath                                                                       | String       | 否   | 默认启动首页，新增于 HBuilderX 3.7.0     | 微信小程序、支付宝小程序、抖音小程序 |
 
 以下是一个包含了所有配置选项的 `pages.json` ：
 
 ```json
 {
-	"pages": [{
-		"path": "pages/component/index",
-		"style": {
-			"navigationBarTitleText": "组件"
-		}
-	}, {
-		"path": "pages/API/index",
-		"style": {
-			"navigationBarTitleText": "接口"
-		}
-	}, {
-		"path": "pages/component/view/index",
-		"style": {
-			"navigationBarTitleText": "view"
-		}
-	}],
-	"condition": { //模式配置，仅开发期间生效
-		"current": 0, //当前激活的模式（list 的索引项）
-		"list": [{
-			"name": "test", //模式名称
-			"path": "pages/component/view/index" //启动页面，必选
-		}]
-	},
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "演示",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8",
-		"usingComponents":{
-			"collapse-tree-item":"/components/collapse-tree-item"
-		},
-		"renderingMode": "seperated", // 仅微信小程序，webrtc 无法正常时尝试强制关闭同层渲染
-		"pageOrientation": "portrait", //横屏配置，全局屏幕旋转设置(仅 APP/微信/QQ小程序)，支持 auto / portrait / landscape
-		"rpxCalcMaxDeviceWidth": 960,
-		"rpxCalcBaseDeviceWidth": 375,
-		"rpxCalcIncludeWidth": 750
-	},
-	"tabBar": {
-		"color": "#7A7E83",
-		"selectedColor": "#3cc51f",
-		"borderStyle": "black",
-		"backgroundColor": "#ffffff",
-		"height": "50px",
-		"fontSize": "10px",
-		"iconWidth": "24px",
-		"spacing": "3px",
-    	"iconfontSrc":"static/iconfont.ttf", // app tabbar 字体.ttf文件路径 app 3.4.4+
-		"list": [{
-			"pagePath": "pages/component/index",
-			"iconPath": "static/image/icon_component.png",
-			"selectedIconPath": "static/image/icon_component_HL.png",
-			"text": "组件",
-      		"iconfont": { // 优先级高于 iconPath，该属性依赖 tabbar 根节点的 iconfontSrc
-       			"text": "\ue102",
-        		"selectedText": "\ue103",
-        		"fontSize": "17px",
-        		"color": "#000000",
-        		"selectedColor": "#0000ff"
-      		}
-		}, {
-			"pagePath": "pages/API/index",
-			"iconPath": "static/image/icon_API.png",
-			"selectedIconPath": "static/image/icon_API_HL.png",
-			"text": "接口"
-		}],
-		"midButton": {
-			"width": "80px",
-			"height": "50px",
-			"text": "文字",
-			"iconPath": "static/image/midButton_iconPath.png",
-			"iconWidth": "24px",
-			"backgroundImage": "static/image/midButton_backgroundImage.png"
-		}
-	},
+  "pages": [
+    {
+      "path": "pages/component/index",
+      "style": {
+        "navigationBarTitleText": "组件"
+      }
+    },
+    {
+      "path": "pages/API/index",
+      "style": {
+        "navigationBarTitleText": "接口"
+      }
+    },
+    {
+      "path": "pages/component/view/index",
+      "style": {
+        "navigationBarTitleText": "view"
+      }
+    }
+  ],
+  "condition": {
+    //模式配置，仅开发期间生效
+    "current": 0, //当前激活的模式（list 的索引项）
+    "list": [
+      {
+        "name": "test", //模式名称
+        "path": "pages/component/view/index" //启动页面，必选
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "演示",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "usingComponents": {
+      "collapse-tree-item": "/components/collapse-tree-item"
+    },
+    "renderingMode": "seperated", // 仅微信小程序，webrtc 无法正常时尝试强制关闭同层渲染
+    "pageOrientation": "portrait", //横屏配置，全局屏幕旋转设置(仅 APP/微信/QQ小程序)，支持 auto / portrait / landscape
+    "rpxCalcMaxDeviceWidth": 960,
+    "rpxCalcBaseDeviceWidth": 375,
+    "rpxCalcIncludeWidth": 750
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "height": "50px",
+    "fontSize": "10px",
+    "iconWidth": "24px",
+    "spacing": "3px",
+    "iconfontSrc": "static/iconfont.ttf", // app tabbar 字体.ttf文件路径 app 3.4.4+
+    "list": [
+      {
+        "pagePath": "pages/component/index",
+        "iconPath": "static/image/icon_component.png",
+        "selectedIconPath": "static/image/icon_component_HL.png",
+        "text": "组件",
+        "iconfont": {
+          // 优先级高于 iconPath，该属性依赖 tabbar 根节点的 iconfontSrc
+          "text": "\ue102",
+          "selectedText": "\ue103",
+          "fontSize": "17px",
+          "color": "#000000",
+          "selectedColor": "#0000ff"
+        }
+      },
+      {
+        "pagePath": "pages/API/index",
+        "iconPath": "static/image/icon_API.png",
+        "selectedIconPath": "static/image/icon_API_HL.png",
+        "text": "接口"
+      }
+    ],
+    "midButton": {
+      "width": "80px",
+      "height": "50px",
+      "text": "文字",
+      "iconPath": "static/image/midButton_iconPath.png",
+      "iconWidth": "24px",
+      "backgroundImage": "static/image/midButton_backgroundImage.png"
+    }
+  },
   "easycom": {
     "autoscan": true, //是否自动扫描组件
-    "custom": {//自定义扫描规则
+    "custom": {
+      //自定义扫描规则
       "^uni-(.*)": "@/components/uni-$1.vue"
     }
   },
@@ -134,99 +147,107 @@
 
 用于设置应用的状态栏、导航条、标题、窗口背景色等。
 
-|属性|类型|默认值|描述|平台差异说明|
-|:-|:-|:-|:-|:-|
-|navigationBarBackgroundColor|HexColor|#F8F8F8|导航栏背景颜色（同状态栏背景色）|APP与H5为#F8F8F8，小程序平台请参考相应小程序文档|
-|navigationBarTextStyle|String|black|导航栏标题颜色及状态栏前景颜色，仅支持 black/white||
-|navigationBarTitleText|String||导航栏标题文字内容||
-|navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+）、小红书小程序|
-|backgroundColor|HexColor|#ffffff|下拉显示出来的窗口的背景色|微信小程序、小红书小程序|
-|backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark / light|微信小程序|
-|enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/tutorial/page.md#lifecycle)。||
-|onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.md#lifecycle)||
-|backgroundColorTop|HexColor|#ffffff|顶部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
-|backgroundColorBottom|HexColor|#ffffff|底部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
-|titleImage|String||导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用https的图片链接地址|支付宝小程序、H5、APP|
-|transparentTitle|String|none|导航栏整体（前景、背景）透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP|
-|titlePenetrate|String|NO|导航栏点击穿透|支付宝小程序、H5|
-|pageOrientation|String|portrait|横屏配置，屏幕旋转设置，仅支持 auto / portrait / landscape 详见 [响应显示区域变化](https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html)|App 2.4.7+、微信小程序、QQ小程序|
-|animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)|App|
-|animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms|App|
-|app-plus|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)|App|
-|app-harmony|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-harmony](/collocation/pages?id=app-harmony)|App|
-|h5|Object||设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)|H5|
-|mp-alipay|Object||设置编译到 mp-alipay 平台的特定样式，配置项参考下方 [MP-ALIPAY](/collocation/pages?id=mp-alipay)|支付宝小程序|
-|mp-weixin|Object||设置编译到 mp-weixin 平台的特定样式，配置项参考下方 [MP-WEIXIN](/collocation/pages?id=mp-weixin)|微信小程序|
-|mp-baidu|Object||设置编译到 mp-baidu 平台的特定样式，配置项参考下方 [MP-BAIDU](/collocation/pages?id=mp-baidu)|百度小程序|
-|mp-toutiao|Object||设置编译到 mp-toutiao 平台的特定样式|抖音小程序|
-|mp-lark|Object||设置编译到 mp-lark 平台的特定样式|飞书小程序|
-|mp-qq|Object||设置编译到 mp-qq 平台的特定样式|QQ小程序|
-|mp-kuaishou|Object||设置编译到 mp-kuaishou 平台的特定样式|快手小程序|
-|mp-jd|Object||设置编译到 mp-jd 平台的特定样式|京东小程序|
-|mp-xhs|Object||设置编译到 mp-xhs 平台的特定样式|小红书小程序|
-|usingComponents|Object| |引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.md#小程序自定义组件支持)||
-|renderingMode|String| |同层渲染，webrtc(实时音视频) 无法正常时尝试配置 seperated 强制关掉同层|微信小程序|
-|leftWindow|Boolean|true|当存在 leftWindow 时，默认是否显示 leftWindow|H5|
-|topWindow|Boolean|true|当存在 topWindow 时，默认是否显示 topWindow|H5|
-|rightWindow|Boolean|true|当存在 rightWindow 时，默认是否显示 rightWindow|H5|
-|rpxCalcMaxDeviceWidth|Number|960|rpx 计算所支持的最大设备宽度，单位 px|App（vue2 且不含 nvue）、H5（2.8.12+）|
-|rpxCalcBaseDeviceWidth|Number|375|rpx 计算使用的基准设备宽度，设备实际宽度超出 rpx 计算所支持的最大设备宽度时将按基准宽度计算，单位 px|App（vue2 且不含 nvue）、H5（2.8.12+）|
-|rpxCalcIncludeWidth|Number|750|rpx 计算特殊处理的值，始终按实际的设备宽度计算，单位 rpx|App（vue2 且不含 nvue）、H5（2.8.12+）|
-|dynamicRpx|Boolean|false|动态 rpx，屏幕大小变化会重新渲染 rpx|App-nvue（vue3 固定值为 true） 3.2.13+|
-|maxWidth|Number||单位px，当浏览器可见区域宽度大于maxWidth时，两侧留白，当小于等于maxWidth时，页面铺满；不同页面支持配置不同的maxWidth；maxWidth = leftWindow(可选)+page(页面主体)+rightWindow(可选)|H5（2.9.9+）|
+| 属性                         | 类型     | 默认值   | 描述                                                                                                                                                                                     | 平台差异说明                                                 |
+| :--------------------------- | :------- | :------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------- |
+| navigationBarBackgroundColor | HexColor | #F8F8F8  | 导航栏背景颜色（同状态栏背景色）                                                                                                                                                         | APP 与 H5 为#F8F8F8，小程序平台请参考相应小程序文档          |
+| navigationBarTextStyle       | String   | black    | 导航栏标题颜色及状态栏前景颜色，仅支持 black/white                                                                                                                                       |                                                              |
+| navigationBarTitleText       | String   |          | 导航栏标题文字内容                                                                                                                                                                       |                                                              |
+| navigationStyle              | String   | default  | 导航栏样式，仅支持 default/custom。custom 即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)                                                                        | 微信小程序 7.0+、百度小程序、H5、App（2.0.3+）、小红书小程序 |
+| backgroundColor              | HexColor | #ffffff  | 下拉显示出来的窗口的背景色                                                                                                                                                               | 微信小程序、小红书小程序                                     |
+| backgroundTextStyle          | String   | dark     | 下拉 loading 的样式，仅支持 dark / light                                                                                                                                                 | 微信小程序                                                   |
+| enablePullDownRefresh        | Boolean  | false    | 是否开启下拉刷新，详见[页面生命周期](/tutorial/page.md#lifecycle)。                                                                                                                      |                                                              |
+| onReachBottomDistance        | Number   | 50       | 页面上拉触底事件触发时距页面底部距离，单位只支持 px，详见[页面生命周期](/tutorial/page.md#lifecycle)                                                                                     |                                                              |
+| backgroundColorTop           | HexColor | #ffffff  | 顶部窗口的背景色（bounce 回弹区域）                                                                                                                                                      | 仅 iOS 平台                                                  |
+| backgroundColorBottom        | HexColor | #ffffff  | 底部窗口的背景色（bounce 回弹区域）                                                                                                                                                      | 仅 iOS 平台                                                  |
+| titleImage                   | String   |          | 导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用 https 的图片链接地址                                                                                                          | 支付宝小程序、H5、APP                                        |
+| transparentTitle             | String   | none     | 导航栏整体（前景、背景）透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明                                                                                                   | 支付宝小程序、H5、APP                                        |
+| titlePenetrate               | String   | NO       | 导航栏点击穿透                                                                                                                                                                           | 支付宝小程序、H5                                             |
+| pageOrientation              | String   | portrait | 横屏配置，屏幕旋转设置，仅支持 auto / portrait / landscape 详见 [响应显示区域变化](https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html)                       | App 2.4.7+、微信小程序、QQ 小程序                            |
+| animationType                | String   | pop-in   | 窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)                                                                                                                           | App                                                          |
+| animationDuration            | Number   | 300      | 窗口显示动画的持续时间，单位为 ms                                                                                                                                                        | App                                                          |
+| app-plus                     | Object   |          | 设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)                                                                                                 | App                                                          |
+| app-harmony                  | Object   |          | 设置编译到 App 平台的特定样式，配置项参考下方 [app-harmony](/collocation/pages?id=app-harmony)                                                                                           | App                                                          |
+| h5                           | Object   |          | 设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)                                                                                                              | H5                                                           |
+| mp-alipay                    | Object   |          | 设置编译到 mp-alipay 平台的特定样式，配置项参考下方 [MP-ALIPAY](/collocation/pages?id=mp-alipay)                                                                                         | 支付宝小程序                                                 |
+| mp-weixin                    | Object   |          | 设置编译到 mp-weixin 平台的特定样式，配置项参考下方 [MP-WEIXIN](/collocation/pages?id=mp-weixin)                                                                                         | 微信小程序                                                   |
+| mp-baidu                     | Object   |          | 设置编译到 mp-baidu 平台的特定样式，配置项参考下方 [MP-BAIDU](/collocation/pages?id=mp-baidu)                                                                                            | 百度小程序                                                   |
+| mp-toutiao                   | Object   |          | 设置编译到 mp-toutiao 平台的特定样式                                                                                                                                                     | 抖音小程序                                                   |
+| mp-lark                      | Object   |          | 设置编译到 mp-lark 平台的特定样式                                                                                                                                                        | 飞书小程序                                                   |
+| mp-qq                        | Object   |          | 设置编译到 mp-qq 平台的特定样式                                                                                                                                                          | QQ 小程序                                                    |
+| mp-kuaishou                  | Object   |          | 设置编译到 mp-kuaishou 平台的特定样式                                                                                                                                                    | 快手小程序                                                   |
+| mp-jd                        | Object   |          | 设置编译到 mp-jd 平台的特定样式                                                                                                                                                          | 京东小程序                                                   |
+| mp-xhs                       | Object   |          | 设置编译到 mp-xhs 平台的特定样式                                                                                                                                                         | 小红书小程序                                                 |
+| usingComponents              | Object   |          | 引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.md#小程序自定义组件支持)                                                                                                 |                                                              |
+| renderingMode                | String   |          | 同层渲染，webrtc(实时音视频) 无法正常时尝试配置 seperated 强制关掉同层                                                                                                                   | 微信小程序                                                   |
+| leftWindow                   | Boolean  | true     | 当存在 leftWindow 时，默认是否显示 leftWindow                                                                                                                                            | H5                                                           |
+| topWindow                    | Boolean  | true     | 当存在 topWindow 时，默认是否显示 topWindow                                                                                                                                              | H5                                                           |
+| rightWindow                  | Boolean  | true     | 当存在 rightWindow 时，默认是否显示 rightWindow                                                                                                                                          | H5                                                           |
+| rpxCalcMaxDeviceWidth        | Number   | 960      | rpx 计算所支持的最大设备宽度，单位 px                                                                                                                                                    | App（vue2 且不含 nvue）、H5（2.8.12+）                       |
+| rpxCalcBaseDeviceWidth       | Number   | 375      | rpx 计算使用的基准设备宽度，设备实际宽度超出 rpx 计算所支持的最大设备宽度时将按基准宽度计算，单位 px                                                                                     | App（vue2 且不含 nvue）、H5（2.8.12+）                       |
+| rpxCalcIncludeWidth          | Number   | 750      | rpx 计算特殊处理的值，始终按实际的设备宽度计算，单位 rpx                                                                                                                                 | App（vue2 且不含 nvue）、H5（2.8.12+）                       |
+| dynamicRpx                   | Boolean  | false    | 动态 rpx，屏幕大小变化会重新渲染 rpx                                                                                                                                                     | App-nvue（vue3 固定值为 true） 3.2.13+                       |
+| maxWidth                     | Number   |          | 单位 px，当浏览器可见区域宽度大于 maxWidth 时，两侧留白，当小于等于 maxWidth 时，页面铺满；不同页面支持配置不同的 maxWidth；maxWidth = leftWindow(可选)+page(页面主体)+rightWindow(可选) | H5（2.9.9+）                                                 |
 
 **注意**
 
 - 支付宝小程序使用`titleImage`时必须使用`https`的图片链接地址，需要真机调试才能看到效果，支付宝开发者工具内无效果
 - `globalStyle`中设置的`titleImage`也会覆盖掉`pages`->`style`内的设置文字标题
-- 使用 `maxWidth` 时，页面内fixed元素需要使用--window-left,--window-right来保证布局位置正确
-- `dynamicRpx` vue3 nvue页面已移除此配置，升级为横竖屏切换自动rpx，如果不需要可以使用 px
+- 使用 `maxWidth` 时，页面内 fixed 元素需要使用--window-left,--window-right 来保证布局位置正确
+- `dynamicRpx` vue3 nvue 页面已移除此配置，升级为横竖屏切换自动 rpx，如果不需要可以使用 px
 
 ## topWindow@topwindow
 
 uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽屏适配问题。
 
-以现有的手机应用为mainWindow，在左、上、右，可以追加新的页面显示窗体。
+以现有的手机应用为 mainWindow，在左、上、右，可以追加新的页面显示窗体。
 
 整体的宽屏适配思路，参考单独的[宽屏适配指南](https://uniapp.dcloud.net.cn/tutorial/adapt)
 
-|属性|类型|默认值|描述|
-|:-|:-|:-|:-|
-|path|String||配置页面路径|
-|style|Object||配置页面窗口表现，配置项参考下方 [pageStyle](/collocation/pages?id=style)|
-|matchMedia|Object||配置显示该窗口的规则，配置项参考下方 [matchMedia](/collocation/pages?id=matchmedia)|
+| 属性       | 类型   | 默认值 | 描述                                                                                |
+| :--------- | :----- | :----- | :---------------------------------------------------------------------------------- |
+| path       | String |        | 配置页面路径                                                                        |
+| style      | Object |        | 配置页面窗口表现，配置项参考下方 [pageStyle](/collocation/pages?id=style)           |
+| matchMedia | Object |        | 配置显示该窗口的规则，配置项参考下方 [matchMedia](/collocation/pages?id=matchmedia) |
 
 **注意**
+
 - 目前 style 节点仅支持配置 width，height 等 css 样式相关属性
 - 如果需求当存在 topwindow 时，自动隐藏页面的 navigationBar，根据需求不同在`App.vue`中配置如下 css：
+
   - 只需要隐藏某个的页面 navigationBar
-	```css
-	/* 隐藏路径为 pages/component/view/view 页面的 navigationBar */
-	.uni-app--showtopwindow [data-page="pages/component/view/view"] uni-page-head {
-		display: none;
-	}
-	```
+
+  ```css
+  /* 隐藏路径为 pages/component/view/view 页面的 navigationBar */
+  .uni-app--showtopwindow
+    [data-page="pages/component/view/view"]
+    uni-page-head {
+    display: none;
+  }
+  ```
+
   - 需要隐藏大部分页面的 navigationBar，显示某个页面的 navigationBar
-	```css
-	/* 隐藏所有页面的 navigationBar */
-	.uni-app--showtopwindow uni-page-head {
-		display: none;
-	}
 
-	/* 显示路径为 pages/component/view/view 页面的 navigationBar */
-	.uni-app--showtopwindow [data-page="pages/component/view/view"] uni-page-head {
-		display: block;
-	}
-	```
+  ```css
+  /* 隐藏所有页面的 navigationBar */
+  .uni-app--showtopwindow uni-page-head {
+    display: none;
+  }
 
+  /* 显示路径为 pages/component/view/view 页面的 navigationBar */
+  .uni-app--showtopwindow
+    [data-page="pages/component/view/view"]
+    uni-page-head {
+    display: block;
+  }
+  ```
 
 #### matchMedia
 
-|属性|类型|默认值|描述|
-|:-|:-|:-|:-|
-|minWidth|Number|768|当设备可见区域宽度 >= minWidth 时，显示该 window|
+| 属性     | 类型   | 默认值 | 描述                                             |
+| :------- | :----- | :----- | :----------------------------------------------- |
+| minWidth | Number | 768    | 当设备可见区域宽度 >= minWidth 时，显示该 window |
 
-通过matchMedia的调节，可以自适应在不同屏幕上显示指定的window。
+通过 matchMedia 的调节，可以自适应在不同屏幕上显示指定的 window。
 
 ```json
 {
@@ -264,7 +285,7 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 }
 ```
 
-案例演示：HBuilderX 2.9.9+，新建项目选择hello uni-app或新闻模板，或直接浏览：[https://hellouniapp.dcloud.net.cn/](https://hellouniapp.dcloud.net.cn/)
+案例演示：HBuilderX 2.9.9+，新建项目选择 hello uni-app 或新闻模板，或直接浏览：[https://hellouniapp.dcloud.net.cn/](https://hellouniapp.dcloud.net.cn/)
 
 ## leftWindow
 
@@ -276,20 +297,19 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 
 窗口通信参考：[https://uniapp.dcloud.net.cn/api/window/communication](https://uniapp.dcloud.net.cn/api/window/communication)
 
-
 ## pages
 
 `uni-app` 通过 pages 节点配置应用由哪些页面组成，pages 节点接收一个数组，数组每个项都是一个对象，其属性值如下：
 
-|属性|类型|默认值|描述|
-|:-|:-|:-|:-|
-|path|String||配置页面路径|
-|style|Object||配置页面窗口表现，配置项参考下方 [pageStyle](/collocation/pages?id=style)|
-|needLogin|Boolean|false|是否需要登录才可访问|
+| 属性      | 类型    | 默认值 | 描述                                                                      |
+| :-------- | :------ | :----- | :------------------------------------------------------------------------ |
+| path      | String  |        | 配置页面路径                                                              |
+| style     | Object  |        | 配置页面窗口表现，配置项参考下方 [pageStyle](/collocation/pages?id=style) |
+| needLogin | Boolean | false  | 是否需要登录才可访问                                                      |
 
 **Tips：**
 
-- pages节点的第一项为应用入口页（即首页）
+- pages 节点的第一项为应用入口页（即首页）
 - **应用中新增/减少页面**，都需要对 pages 数组进行修改
 - 文件名**不需要写后缀**，框架会自动寻找路径下的页面资源
 
@@ -334,44 +354,44 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 
 页面中配置项会覆盖 [globalStyle](/collocation/pages?id=globalstyle) 中相同的配置项
 
-|属性|类型|默认值|描述|平台差异说明|
-|:-|:-|:-|:-|:-|
-|navigationBarBackgroundColor|HexColor|#F8F8F8|导航栏背景颜色（同状态栏背景色）|APP与H5为#F8F8F8，小程序平台请参考相应小程序文档|
-|navigationBarTextStyle|String|black|导航栏标题颜色及状态栏前景颜色，仅支持 black/white||
-|navigationBarTitleText|String||导航栏标题文字内容||
-|navigationBarShadow|Object||导航栏阴影，配置参考下方 [导航栏阴影](/collocation/pages?id=navigationBarShadow)||
-|navigationStyle|String|default|导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)|微信小程序 7.0+、百度小程序、H5、App（2.0.3+）|
-|disableScroll|Boolean|false|设置为 true 则页面整体不能上下滚动（bounce效果），只在页面配置中有效，在globalStyle中设置无效|微信小程序（iOS）、百度小程序（iOS）|
-|backgroundColor|HexColor|#ffffff|窗口的背景色|微信小程序、百度小程序、抖音小程序、飞书小程序、京东小程序|
-|backgroundTextStyle|String|dark|下拉 loading 的样式，仅支持 dark/light||
-|enablePullDownRefresh|Boolean|false|是否开启下拉刷新，详见[页面生命周期](/tutorial/page.md#lifecycle)。||
-|onReachBottomDistance|Number|50|页面上拉触底事件触发时距页面底部距离，单位只支持px，详见[页面生命周期](/tutorial/page.md#lifecycle)||
-|backgroundColorTop|HexColor|#ffffff|顶部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
-|backgroundColorBottom|HexColor|#ffffff|底部窗口的背景色（bounce回弹区域）|仅 iOS 平台|
-|disableSwipeBack|Boolean|false|是否禁用滑动返回|App-iOS（3.4.0+）|
-|titleImage|String||导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用https的图片链接地址|支付宝小程序、H5、App|
-|transparentTitle|String|none|导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|支付宝小程序、H5、APP|
-|titlePenetrate|String|NO|导航栏点击穿透|支付宝小程序、H5|
-|app-plus|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)|App|
-|app-harmony|Object||设置编译到 App 平台的特定样式，配置项参考下方 [app-harmony](/collocation/pages?id=app-harmony)|App|
-|h5|Object||设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)|H5|
-|mp-alipay|Object||设置编译到 mp-alipay 平台的特定样式，配置项参考下方 [MP-ALIPAY](/collocation/pages?id=mp-alipay)|支付宝小程序|
-|mp-weixin|Object||设置编译到 mp-weixin 平台的特定样式|微信小程序|
-|mp-baidu|Object||设置编译到 mp-baidu 平台的特定样式|百度小程序|
-|mp-toutiao|Object||设置编译到 mp-toutiao 平台的特定样式|抖音小程序|
-|mp-lark|Object||设置编译到 mp-lark 平台的特定样式|飞书小程序|
-|mp-qq|Object||设置编译到 mp-qq 平台的特定样式|QQ小程序|
-|mp-kuaishou|Object||设置编译到 mp-kuaishou 平台的特定样式|快手小程序|
-|mp-jd|Object||设置编译到 mp-jd 平台的特定样式|京东小程序|
-|usingComponents|Object||引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.md#小程序自定义组件支持)|App、微信小程序、支付宝小程序、百度小程序、京东小程序|
-|leftWindow|Boolean|true|当存在 leftWindow时，当前页面是否显示 leftWindow|H5|
-|topWindow|Boolean|true|当存在 topWindow 时，当前页面是否显示 topWindow|H5|
-|rightWindow|Boolean|true|当存在 rightWindow时，当前页面是否显示 rightWindow|H5|
-|maxWidth|Number||单位px，当浏览器可见区域宽度大于maxWidth时，两侧留白，当小于等于maxWidth时，页面铺满；不同页面支持配置不同的maxWidth；maxWidth = leftWindow(可选)+page(页面主体)+rightWindow(可选)|H5（2.9.9+）|
+| 属性                         | 类型     | 默认值  | 描述                                                                                                                                                                                     | 平台差异说明                                               |
+| :--------------------------- | :------- | :------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------- |
+| navigationBarBackgroundColor | HexColor | #F8F8F8 | 导航栏背景颜色（同状态栏背景色）                                                                                                                                                         | APP 与 H5 为#F8F8F8，小程序平台请参考相应小程序文档        |
+| navigationBarTextStyle       | String   | black   | 导航栏标题颜色及状态栏前景颜色，仅支持 black/white                                                                                                                                       |                                                            |
+| navigationBarTitleText       | String   |         | 导航栏标题文字内容                                                                                                                                                                       |                                                            |
+| navigationBarShadow          | Object   |         | 导航栏阴影，配置参考下方 [导航栏阴影](/collocation/pages?id=navigationBarShadow)                                                                                                         |                                                            |
+| navigationStyle              | String   | default | 导航栏样式，仅支持 default/custom。custom 即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)                                                                        | 微信小程序 7.0+、百度小程序、H5、App（2.0.3+）             |
+| disableScroll                | Boolean  | false   | 设置为 true 则页面整体不能上下滚动（bounce 效果），只在页面配置中有效，在 globalStyle 中设置无效                                                                                         | 微信小程序（iOS）、百度小程序（iOS）                       |
+| backgroundColor              | HexColor | #ffffff | 窗口的背景色                                                                                                                                                                             | 微信小程序、百度小程序、抖音小程序、飞书小程序、京东小程序 |
+| backgroundTextStyle          | String   | dark    | 下拉 loading 的样式，仅支持 dark/light                                                                                                                                                   |                                                            |
+| enablePullDownRefresh        | Boolean  | false   | 是否开启下拉刷新，详见[页面生命周期](/tutorial/page.md#lifecycle)。                                                                                                                      |                                                            |
+| onReachBottomDistance        | Number   | 50      | 页面上拉触底事件触发时距页面底部距离，单位只支持 px，详见[页面生命周期](/tutorial/page.md#lifecycle)                                                                                     |                                                            |
+| backgroundColorTop           | HexColor | #ffffff | 顶部窗口的背景色（bounce 回弹区域）                                                                                                                                                      | 仅 iOS 平台                                                |
+| backgroundColorBottom        | HexColor | #ffffff | 底部窗口的背景色（bounce 回弹区域）                                                                                                                                                      | 仅 iOS 平台                                                |
+| disableSwipeBack             | Boolean  | false   | 是否禁用滑动返回                                                                                                                                                                         | App-iOS（3.4.0+）                                          |
+| titleImage                   | String   |         | 导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用 https 的图片链接地址                                                                                                          | 支付宝小程序、H5、App                                      |
+| transparentTitle             | String   | none    | 导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明                                                                                                                     | 支付宝小程序、H5、APP                                      |
+| titlePenetrate               | String   | NO      | 导航栏点击穿透                                                                                                                                                                           | 支付宝小程序、H5                                           |
+| app-plus                     | Object   |         | 设置编译到 App 平台的特定样式，配置项参考下方 [app-plus](/collocation/pages?id=app-plus)                                                                                                 | App                                                        |
+| app-harmony                  | Object   |         | 设置编译到 App 平台的特定样式，配置项参考下方 [app-harmony](/collocation/pages?id=app-harmony)                                                                                           | App                                                        |
+| h5                           | Object   |         | 设置编译到 H5 平台的特定样式，配置项参考下方 [H5](/collocation/pages?id=h5)                                                                                                              | H5                                                         |
+| mp-alipay                    | Object   |         | 设置编译到 mp-alipay 平台的特定样式，配置项参考下方 [MP-ALIPAY](/collocation/pages?id=mp-alipay)                                                                                         | 支付宝小程序                                               |
+| mp-weixin                    | Object   |         | 设置编译到 mp-weixin 平台的特定样式                                                                                                                                                      | 微信小程序                                                 |
+| mp-baidu                     | Object   |         | 设置编译到 mp-baidu 平台的特定样式                                                                                                                                                       | 百度小程序                                                 |
+| mp-toutiao                   | Object   |         | 设置编译到 mp-toutiao 平台的特定样式                                                                                                                                                     | 抖音小程序                                                 |
+| mp-lark                      | Object   |         | 设置编译到 mp-lark 平台的特定样式                                                                                                                                                        | 飞书小程序                                                 |
+| mp-qq                        | Object   |         | 设置编译到 mp-qq 平台的特定样式                                                                                                                                                          | QQ 小程序                                                  |
+| mp-kuaishou                  | Object   |         | 设置编译到 mp-kuaishou 平台的特定样式                                                                                                                                                    | 快手小程序                                                 |
+| mp-jd                        | Object   |         | 设置编译到 mp-jd 平台的特定样式                                                                                                                                                          | 京东小程序                                                 |
+| usingComponents              | Object   |         | 引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.md#小程序自定义组件支持)                                                                                                 | App、微信小程序、支付宝小程序、百度小程序、京东小程序      |
+| leftWindow                   | Boolean  | true    | 当存在 leftWindow 时，当前页面是否显示 leftWindow                                                                                                                                        | H5                                                         |
+| topWindow                    | Boolean  | true    | 当存在 topWindow 时，当前页面是否显示 topWindow                                                                                                                                          | H5                                                         |
+| rightWindow                  | Boolean  | true    | 当存在 rightWindow 时，当前页面是否显示 rightWindow                                                                                                                                      | H5                                                         |
+| maxWidth                     | Number   |         | 单位 px，当浏览器可见区域宽度大于 maxWidth 时，两侧留白，当小于等于 maxWidth 时，页面铺满；不同页面支持配置不同的 maxWidth；maxWidth = leftWindow(可选)+page(页面主体)+rightWindow(可选) | H5（2.9.9+）                                               |
 
 **注意**
 
-- 使用 `maxWidth` 时，页面内fixed元素需要使用--window-left,--window-right来保证布局位置正确
+- 使用 `maxWidth` 时，页面内 fixed 元素需要使用--window-left,--window-right 来保证布局位置正确
 - 鸿蒙中使用 `backgroundColor` 时不支持设置为透明 transparent
 
 **代码示例：**
@@ -390,183 +410,188 @@ uni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽�
 }
 ```
 
-
 **注意**
 
 - 支付宝小程序使用`titleImage`时必须使用`https`的图片链接地址，需要真机调试才能看到效果，支付宝开发者工具内无效果
 
 ### 自定义导航栏使用注意@customnav
-当navigationStyle设为custom或titleNView设为false时，原生导航栏不显示，此时要注意几个问题：
-- 非H5端，手机顶部状态栏区域会被页面内容覆盖。这是因为窗体是沉浸式的原因，即全屏可写内容。uni-app提供了状态栏高度的css变量[--status-bar-height](/tutorial/syntax-css.md#css-变量)，如果需要把状态栏的位置从前景部分让出来，可写一个占位div，高度设为css变量。
+
+当 navigationStyle 设为 custom 或 titleNView 设为 false 时，原生导航栏不显示，此时要注意几个问题：
+
+- 非 H5 端，手机顶部状态栏区域会被页面内容覆盖。这是因为窗体是沉浸式的原因，即全屏可写内容。uni-app 提供了状态栏高度的 css 变量[--status-bar-height](/tutorial/syntax-css.md#css-变量)，如果需要把状态栏的位置从前景部分让出来，可写一个占位 div，高度设为 css 变量。
+
 ```html
 <template>
-    <view>
-        <view class="status_bar">
-            <!-- 这里是状态栏 -->
-        </view>
-        <view> 状态栏下的文字 </view>
+  <view>
+    <view class="status_bar">
+      <!-- 这里是状态栏 -->
     </view>
+    <view> 状态栏下的文字 </view>
+  </view>
 </template>
 <style>
-    .status_bar {
-        height: var(--status-bar-height);
-        width: 100%;
-    }
+  .status_bar {
+    height: var(--status-bar-height);
+    width: 100%;
+  }
 </style>
 ```
-- 如果原生导航栏不能满足需求，推荐使用uni ui的[自定义导航栏NavBar](https://ext.dcloud.net.cn/plugin?id=52)。这个前端导航栏自动处理了状态栏高度占位问题。
-- 前端导航栏搭配原生下拉刷新时，会有问题，包括
-	* 微信小程序下iOS需要拉更长才能看到下拉刷新的三个点，而Android是从屏幕顶部下拉，无法从导航栏下方下拉。如果一定要从前端导航栏下拉，小程序下只能放弃原生下拉刷新，纯前端模拟，参考[mescroll插件](https://ext.dcloud.net.cn/plugin?id=343)，但这样很容易产生性能问题。目前小程序平台自身没有提供更好的方案
-	* App和H5下，原生下拉刷新提供了[circle样式](/collocation/pages?id=app-pullToRefresh)，可以指定offset偏移量（pages.json的app-plus下配置），自定义下拉圈出现的位置。在hello uni-app的扩展组件中有示例。
-- 非H5端，前端导航盖不住原生组件。如果页面有video、map、textarea(仅小程序)等[原生组件](/component/native-component)，滚动时会覆盖住导航栏
-	* 如果是小程序下，可以使用cover-view来做导航栏，避免覆盖问题
-	* 如果是App下，建议使用[titleNView](/collocation/pages?id=app-titleNView)或[subNVue](/collocation/pages?id=app-subNVues)，体验更好
-- 前端组件在渲染速度上不如原生导航栏，原生导航可以在动画期间渲染，保证动画期间不白屏，但使用前端导航栏，在新窗体进入的动画期间可能会整页白屏，越低端的手机越明显。
-- 以上讨论的是前端自定义导航栏，但在App侧，原生导航栏也提供了比小程序导航更丰富的自定义性
-	* titleNView：给原生导航栏提供更多配置，包括自定义按钮、滚动渐变效果、搜索框等，详见[titleNView](/collocation/pages?id=app-titleNView)
-	* subNVue：使用nvue原生渲染，所有布局自己开发，具备一切自定义灵活度。详见[subNVue](/collocation/pages?id=app-subNVues)
-- 页面禁用原生导航栏后，想要改变状态栏的前景字体样式，仍可设置页面的 navigationBarTextStyle 属性（只能设置为 black或white）。如果想单独设置状态栏颜色，App端可使用[plus.navigator.setStatusBarStyle](http://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.setStatusBarStyle)设置。注意部分低端Android手机（4.4）自身不支持设置状态栏前景色。
 
-鉴于以上问题，在原生导航能解决业务需求的情况下，尽量使用原生导航。甚至有时需要牺牲一些不是很重要的需求。在App和H5下，uni-app提供了灵活的处理方案：[titleNView](/collocation/pages?id=app-titleNView)、[subNVue](/collocation/pages?id=app-subNVues)、或整页使用nvue。但在小程序下，因为其自身的限制，没有太好的方案。有必要的话，也可以用条件编译分端处理。
+- 如果原生导航栏不能满足需求，推荐使用 uni ui 的[自定义导航栏 NavBar](https://ext.dcloud.net.cn/plugin?id=52)。这个前端导航栏自动处理了状态栏高度占位问题。
+- 前端导航栏搭配原生下拉刷新时，会有问题，包括
+  - 微信小程序下 iOS 需要拉更长才能看到下拉刷新的三个点，而 Android 是从屏幕顶部下拉，无法从导航栏下方下拉。如果一定要从前端导航栏下拉，小程序下只能放弃原生下拉刷新，纯前端模拟，参考[mescroll 插件](https://ext.dcloud.net.cn/plugin?id=343)，但这样很容易产生性能问题。目前小程序平台自身没有提供更好的方案
+  - App 和 H5 下，原生下拉刷新提供了[circle 样式](/collocation/pages?id=app-pullToRefresh)，可以指定 offset 偏移量（pages.json 的 app-plus 下配置），自定义下拉圈出现的位置。在 hello uni-app 的扩展组件中有示例。
+- 非 H5 端，前端导航盖不住原生组件。如果页面有 video、map、textarea(仅小程序)等[原生组件](/component/native-component)，滚动时会覆盖住导航栏
+  - 如果是小程序下，可以使用 cover-view 来做导航栏，避免覆盖问题
+  - 如果是 App 下，建议使用[titleNView](/collocation/pages?id=app-titleNView)或[subNVue](/collocation/pages?id=app-subNVues)，体验更好
+- 前端组件在渲染速度上不如原生导航栏，原生导航可以在动画期间渲染，保证动画期间不白屏，但使用前端导航栏，在新窗体进入的动画期间可能会整页白屏，越低端的手机越明显。
+- 以上讨论的是前端自定义导航栏，但在 App 侧，原生导航栏也提供了比小程序导航更丰富的自定义性
+  - titleNView：给原生导航栏提供更多配置，包括自定义按钮、滚动渐变效果、搜索框等，详见[titleNView](/collocation/pages?id=app-titleNView)
+  - subNVue：使用 nvue 原生渲染，所有布局自己开发，具备一切自定义灵活度。详见[subNVue](/collocation/pages?id=app-subNVues)
+- 页面禁用原生导航栏后，想要改变状态栏的前景字体样式，仍可设置页面的 navigationBarTextStyle 属性（只能设置为 black 或 white）。如果想单独设置状态栏颜色，App 端可使用[plus.navigator.setStatusBarStyle](http://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.setStatusBarStyle)设置。注意部分低端 Android 手机（4.4）自身不支持设置状态栏前景色。
+
+鉴于以上问题，在原生导航能解决业务需求的情况下，尽量使用原生导航。甚至有时需要牺牲一些不是很重要的需求。在 App 和 H5 下，uni-app 提供了灵活的处理方案：[titleNView](/collocation/pages?id=app-titleNView)、[subNVue](/collocation/pages?id=app-subNVues)、或整页使用 nvue。但在小程序下，因为其自身的限制，没有太好的方案。有必要的话，也可以用条件编译分端处理。
 
 ### app-plus
 
 配置编译到 App（安卓、iOS） 平台时的特定样式，部分常用配置 H5 平台也支持。以下仅列出常用，更多配置项参考 [WebviewStyles](http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewStyles)。
 
-|属性|类型|默认值|描述|平台兼容|
-|:-|:-|:-|:-|:-|
-|background|HexColor|#FFFFFF|窗体背景色。无论vue页面还是nvue页面，在App上都有一个父级原生窗体，该窗体的背景色生效时间快于页面里的css生效时间|App (vue 页面需要将 body 背景色设为透明)|
-|titleNView|Object||导航栏 ，详见:[导航栏](/collocation/pages?id=app-titleNView)|App、H5|
-|subNVues|Array||原生子窗体，详见:[原生子窗体](/collocation/pages?id=app-subNVues)|App 1.9.10+|
-|bounce|String||页面回弹效果，设置为 "none" 时关闭效果。|App-vue（nvue Android无页面级bounce效果，仅list、recycle-list、waterfall等滚动组件有bounce效果）|
-|popGesture|String|close|侧滑返回功能，可选值："close"（启用侧滑返回）、"none"（禁用侧滑返回）|App-iOS|
-|softinputNavBar|String|auto|iOS软键盘上完成工具栏的显示模式，设置为 "none" 时关闭工具栏。|App-iOS|
-|softinputMode|String|adjustPan|软键盘弹出模式，支持 adjustResize、adjustPan 两种模式|App|
-|pullToRefresh|Object||下拉刷新|App|
-|scrollIndicator|String||滚动条显示策略，设置为 "none" 时不显示滚动条。|App|
-|animationType|String|pop-in|窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)。|App|
-|animationDuration|Number|300|窗口显示动画的持续时间，单位为 ms。|App|
+| 属性              | 类型     | 默认值    | 描述                                                                                                                    | 平台兼容                                                                                                |
+| :---------------- | :------- | :-------- | :---------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------ |
+| background        | HexColor | #FFFFFF   | 窗体背景色。无论 vue 页面还是 nvue 页面，在 App 上都有一个父级原生窗体，该窗体的背景色生效时间快于页面里的 css 生效时间 | App (vue 页面需要将 body 背景色设为透明)                                                                |
+| titleNView        | Object   |           | 导航栏 ，详见:[导航栏](/collocation/pages?id=app-titleNView)                                                            | App、H5                                                                                                 |
+| subNVues          | Array    |           | 原生子窗体，详见:[原生子窗体](/collocation/pages?id=app-subNVues)                                                       | App 1.9.10+                                                                                             |
+| bounce            | String   |           | 页面回弹效果，设置为 "none" 时关闭效果。                                                                                | App-vue（nvue Android 无页面级 bounce 效果，仅 list、recycle-list、waterfall 等滚动组件有 bounce 效果） |
+| popGesture        | String   | close     | 侧滑返回功能，可选值："close"（启用侧滑返回）、"none"（禁用侧滑返回）                                                   | App-iOS                                                                                                 |
+| softinputNavBar   | String   | auto      | iOS 软键盘上完成工具栏的显示模式，设置为 "none" 时关闭工具栏。                                                          | App-iOS                                                                                                 |
+| softinputMode     | String   | adjustPan | 软键盘弹出模式，支持 adjustResize、adjustPan 两种模式                                                                   | App                                                                                                     |
+| pullToRefresh     | Object   |           | 下拉刷新                                                                                                                | App                                                                                                     |
+| scrollIndicator   | String   |           | 滚动条显示策略，设置为 "none" 时不显示滚动条。                                                                          | App                                                                                                     |
+| animationType     | String   | pop-in    | 窗口显示的动画效果，详见：[窗口动画](/api/router?id=animation)。                                                        | App                                                                                                     |
+| animationDuration | Number   | 300       | 窗口显示动画的持续时间，单位为 ms。                                                                                     | App                                                                                                     |
 
 **Tips**
+
 - `.nvue` 页面仅支持 `titleNView、pullToRefresh、scrollIndicator` 配置，其它配置项暂不支持
 
 #### 导航栏@app-titleNView
-|属性|类型|默认值|描述|版本兼容性|
-|:-|:-|:-|:-|:-|
-|backgroundColor|String|#F7F7F7|背景颜色，支持16进制颜色或RGBA颜色。|App端仅悬浮导航栏支持RGBA颜色|
-|buttons|Array||自定义按钮，详见 [buttons](/collocation/pages?id=app-titlenview-buttons)|纯nvue即render:native时暂不支持|
-|titleColor|String|#000000|标题文字颜色||
-|titleOverflow|String|ellipsis|标题文字超出显示区域时处理方式。"clip"-超出显示区域时内容裁剪；"ellipsis"-超出显示区域时尾部显示省略标记（...）。||
-|titleText|String||标题文字内容||
-|titleSize|String||标题文字字体大小||
-|type|String|default|导航栏样式。"default"-默认样式；"transparent"-滚动透明渐变；"float"-悬浮导航栏。|App-nvue 2.4.4+ 支持、App-vue、H5|
-|tags|Array||原生 View 增强，详见：[5+ View 控件](http://www.html5plus.org/doc/zh_cn/nativeobj.html#plus.nativeObj.ViewDrawTagStyles)||
-|searchInput|Object||原生导航栏上的搜索框配置，详见：[searchInput](/collocation/pages?id=app-titlenview-searchinput)|1.6.0|
-|homeButton|Boolean|false|标题栏控件是否显示Home按钮||
-|autoBackButton|Boolean|true|标题栏控件是否显示左侧返回按钮|App 2.6.3+|
-|backButton|Object||返回按钮的样式，详见：[backButton](/collocation/pages?id=app-titleNView-backButtonStyles)|App 2.6.3|
-|backgroundImage|String||支持以下类型： 背景图片路径 - 如"/static/img.png"，仅支持本地文件绝对路径，根据实际标题栏宽高拉伸绘制； 渐变色 - 仅支持线性渐变，两种颜色的渐变，如“linear-gradient(to top, #a80077, #66ff00)”， 其中第一个参数为渐变方向，可取值： "to right"表示从左向右渐变， “to left"表示从右向左渐变， “to bottom"表示从上到下渐变， “to top"表示从下到上渐变， “to bottom right"表示从左上角到右下角， “to top left"表示从右下角到左上角|2.6.3|
-|backgroundRepeat|String||仅在backgroundImage设置为图片路径时有效。 可取值： "repeat" - 背景图片在垂直方向和水平方向平铺； "repeat-x" - 背景图片在水平方向平铺，垂直方向拉伸； “repeat-y” - 背景图片在垂直方向平铺，水平方向拉伸； “no-repeat” - 背景图片在垂直方向和水平方向都拉伸。 默认使用 “no-repeat"|2.6.3|
-|titleAlign|String|"auto"|可取值： "center"-居中对齐； "left"-居左对齐； "auto"-根据平台自动选择（Android平台居左对齐，iOS平台居中对齐）|2.6.3|
-|blurEffect|String|"none"|此效果将会高斯模糊显示标题栏后的内容，仅在type为"transparent"或"float"时有效。 可取值： "dark" - 暗风格模糊，对应iOS原生UIBlurEffectStyleDark效果； "extralight" - 高亮风格模糊，对应iOS原生UIBlurEffectStyleExtraLight效果； "light" - 亮风格模糊，对应iOS原生UIBlurEffectStyleLight效果； "none" - 无模糊效果。 注意：使用模糊效果时应避免设置背景颜色，设置背景颜色可能覆盖模糊效果。|2.4.3|
-|coverage|String|"132px"|标题栏控件变化作用范围，仅在type值为transparent时有效，页面滚动时标题栏背景透明度将发生变化。 当页面滚动到指定偏移量时标题栏背景变为完全不透明。 支持百分比、像素值||
-|splitLine|Boolean |false|标题栏的底部分割线([SplitLineStyles](/collocation/pages?id=app-titleNView-splitLineStyles))，设置此属性则在标题栏控件的底部显示分割线，可配置颜色值及高度。 设置此属性值为undefined或null则隐藏分割线。 默认不显示底部分割线|2.6.6|
-|subtitleColor|String||副标题文字颜色，颜色值格式为"#RRGGBB"和"rgba(R,G,B,A)"，如"#FF0000"表示标题文字颜色为红色。 默认值与主标题文字颜色一致|2.6.6|
-|subtitleSize|String|"auto"|副标题文字字体大小，字体大小单位为像素，如"14px"表示字体大小为14像素，auto表示自动计算，约为12像素。|2.6.6|
-|subtitleOverflow|String|"ellipsis"|标题文字超出显示区域时处理方式，可取值： "clip" - 超出显示区域时内容裁剪； "ellipsis" - 超出显示区域时尾部显示省略标记（...）。|2.6.6|
-|subtitleText|String||副标题文字内容，设置副标后将显示两行标题，副标显示在主标题（titleText）下方。 注意：设置副标题后将居左显示|2.6.6|
-|titleIcon|String||标题图标，图标路径如"./img/t.png"，仅支持本地文件路径， 相对路径，相对于当前页面的host位置，固定宽高为逻辑像素值"34px"。 要求图片的宽高相同。 注意：设置标题图标后标题将居左显示。|2.6.6|
-|titleIconRadius|String|无圆角|标题图标圆角，取值格式为"XXpx"，其中XX为像素值（逻辑像素），如"10px"表示10像素半径圆角。|2.6.6|
+
+| 属性             | 类型    | 默认值     | 描述                                                                                                                                                                                                                                                                                                                                                                                                                            | 版本兼容性                          |
+| :--------------- | :------ | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :---------------------------------- |
+| backgroundColor  | String  | #F7F7F7    | 背景颜色，支持 16 进制颜色或 RGBA 颜色。                                                                                                                                                                                                                                                                                                                                                                                        | App 端仅悬浮导航栏支持 RGBA 颜色    |
+| buttons          | Array   |            | 自定义按钮，详见 [buttons](/collocation/pages?id=app-titlenview-buttons)                                                                                                                                                                                                                                                                                                                                                        | 纯 nvue 即 render:native 时暂不支持 |
+| titleColor       | String  | #000000    | 标题文字颜色                                                                                                                                                                                                                                                                                                                                                                                                                    |                                     |
+| titleOverflow    | String  | ellipsis   | 标题文字超出显示区域时处理方式。"clip"-超出显示区域时内容裁剪；"ellipsis"-超出显示区域时尾部显示省略标记（...）。                                                                                                                                                                                                                                                                                                               |                                     |
+| titleText        | String  |            | 标题文字内容                                                                                                                                                                                                                                                                                                                                                                                                                    |                                     |
+| titleSize        | String  |            | 标题文字字体大小                                                                                                                                                                                                                                                                                                                                                                                                                |                                     |
+| type             | String  | default    | 导航栏样式。"default"-默认样式；"transparent"-滚动透明渐变；"float"-悬浮导航栏。                                                                                                                                                                                                                                                                                                                                                | App-nvue 2.4.4+ 支持、App-vue、H5   |
+| tags             | Array   |            | 原生 View 增强，详见：[5+ View 控件](http://www.html5plus.org/doc/zh_cn/nativeobj.html#plus.nativeObj.ViewDrawTagStyles)                                                                                                                                                                                                                                                                                                        |                                     |
+| searchInput      | Object  |            | 原生导航栏上的搜索框配置，详见：[searchInput](/collocation/pages?id=app-titlenview-searchinput)                                                                                                                                                                                                                                                                                                                                 | 1.6.0                               |
+| homeButton       | Boolean | false      | 标题栏控件是否显示 Home 按钮                                                                                                                                                                                                                                                                                                                                                                                                    |                                     |
+| autoBackButton   | Boolean | true       | 标题栏控件是否显示左侧返回按钮                                                                                                                                                                                                                                                                                                                                                                                                  | App 2.6.3+                          |
+| backButton       | Object  |            | 返回按钮的样式，详见：[backButton](/collocation/pages?id=app-titleNView-backButtonStyles)                                                                                                                                                                                                                                                                                                                                       | App 2.6.3                           |
+| backgroundImage  | String  |            | 支持以下类型： 背景图片路径 - 如"/static/img.png"，仅支持本地文件绝对路径，根据实际标题栏宽高拉伸绘制； 渐变色 - 仅支持线性渐变，两种颜色的渐变，如“linear-gradient(to top, #a80077, #66ff00)”， 其中第一个参数为渐变方向，可取值： "to right"表示从左向右渐变， “to left"表示从右向左渐变， “to bottom"表示从上到下渐变， “to top"表示从下到上渐变， “to bottom right"表示从左上角到右下角， “to top left"表示从右下角到左上角 | 2.6.3                               |
+| backgroundRepeat | String  |            | 仅在 backgroundImage 设置为图片路径时有效。 可取值： "repeat" - 背景图片在垂直方向和水平方向平铺； "repeat-x" - 背景图片在水平方向平铺，垂直方向拉伸； “repeat-y” - 背景图片在垂直方向平铺，水平方向拉伸； “no-repeat” - 背景图片在垂直方向和水平方向都拉伸。 默认使用 “no-repeat"                                                                                                                                              | 2.6.3                               |
+| titleAlign       | String  | "auto"     | 可取值： "center"-居中对齐； "left"-居左对齐； "auto"-根据平台自动选择（Android 平台居左对齐，iOS 平台居中对齐）                                                                                                                                                                                                                                                                                                                | 2.6.3                               |
+| blurEffect       | String  | "none"     | 此效果将会高斯模糊显示标题栏后的内容，仅在 type 为"transparent"或"float"时有效。 可取值： "dark" - 暗风格模糊，对应 iOS 原生 UIBlurEffectStyleDark 效果； "extralight" - 高亮风格模糊，对应 iOS 原生 UIBlurEffectStyleExtraLight 效果； "light" - 亮风格模糊，对应 iOS 原生 UIBlurEffectStyleLight 效果； "none" - 无模糊效果。 注意：使用模糊效果时应避免设置背景颜色，设置背景颜色可能覆盖模糊效果。                          | 2.4.3                               |
+| coverage         | String  | "132px"    | 标题栏控件变化作用范围，仅在 type 值为 transparent 时有效，页面滚动时标题栏背景透明度将发生变化。 当页面滚动到指定偏移量时标题栏背景变为完全不透明。 支持百分比、像素值                                                                                                                                                                                                                                                         |                                     |
+| splitLine        | Boolean | false      | 标题栏的底部分割线([SplitLineStyles](/collocation/pages?id=app-titleNView-splitLineStyles))，设置此属性则在标题栏控件的底部显示分割线，可配置颜色值及高度。 设置此属性值为 undefined 或 null 则隐藏分割线。 默认不显示底部分割线                                                                                                                                                                                                | 2.6.6                               |
+| subtitleColor    | String  |            | 副标题文字颜色，颜色值格式为"#RRGGBB"和"rgba(R,G,B,A)"，如"#FF0000"表示标题文字颜色为红色。 默认值与主标题文字颜色一致                                                                                                                                                                                                                                                                                                          | 2.6.6                               |
+| subtitleSize     | String  | "auto"     | 副标题文字字体大小，字体大小单位为像素，如"14px"表示字体大小为 14 像素，auto 表示自动计算，约为 12 像素。                                                                                                                                                                                                                                                                                                                       | 2.6.6                               |
+| subtitleOverflow | String  | "ellipsis" | 标题文字超出显示区域时处理方式，可取值： "clip" - 超出显示区域时内容裁剪； "ellipsis" - 超出显示区域时尾部显示省略标记（...）。                                                                                                                                                                                                                                                                                                 | 2.6.6                               |
+| subtitleText     | String  |            | 副标题文字内容，设置副标后将显示两行标题，副标显示在主标题（titleText）下方。 注意：设置副标题后将居左显示                                                                                                                                                                                                                                                                                                                      | 2.6.6                               |
+| titleIcon        | String  |            | 标题图标，图标路径如"./img/t.png"，仅支持本地文件路径， 相对路径，相对于当前页面的 host 位置，固定宽高为逻辑像素值"34px"。 要求图片的宽高相同。 注意：设置标题图标后标题将居左显示。                                                                                                                                                                                                                                            | 2.6.6                               |
+| titleIconRadius  | String  | 无圆角     | 标题图标圆角，取值格式为"XXpx"，其中 XX 为像素值（逻辑像素），如"10px"表示 10 像素半径圆角。                                                                                                                                                                                                                                                                                                                                    | 2.6.6                               |
 
 #### SplitLineStyles@app-titleNView-splitLineStyles
-|属性|类型|默认值|描述|版本兼容性|
-|:-|:-|:-|:-|:-|
-|color|String|#CCCCCC|底部分割线颜色，可取值： "#RRGGBB"格式字符串，如"#FF0000"表示绘制红色分割线； "rgba(R,G,B,A)"，其中R/G/B分别代表红色值/绿色值/蓝色值，正整数类型，取值范围为0-255，A为透明度，浮点数类型，取值范围为0-1（0为全透明，1为不透明），如"rgba(255,0,0,0.5)"，表示红色半透明| |
-|height|String|"1px"|可取值：像素值（逻辑像素），支持小数点，如"1px"表示1像素高；百分比，如"1%"，相对于标题栏控件的高度。| |
 
+| 属性   | 类型   | 默认值  | 描述                                                                                                                                                                                                                                                                          | 版本兼容性 |
+| :----- | :----- | :------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------- |
+| color  | String | #CCCCCC | 底部分割线颜色，可取值： "#RRGGBB"格式字符串，如"#FF0000"表示绘制红色分割线； "rgba(R,G,B,A)"，其中 R/G/B 分别代表红色值/绿色值/蓝色值，正整数类型，取值范围为 0-255，A 为透明度，浮点数类型，取值范围为 0-1（0 为全透明，1 为不透明），如"rgba(255,0,0,0.5)"，表示红色半透明 |            |
+| height | String | "1px"   | 可取值：像素值（逻辑像素），支持小数点，如"1px"表示 1 像素高；百分比，如"1%"，相对于标题栏控件的高度。                                                                                                                                                                        |            |
 
 **Tips**
 
-- 页面支持通过配置 navigationStyle为custom，或titleNView为false，来禁用原生导航栏。一旦禁用原生导航，请注意阅读[自定义导航注意事项](/collocation/pages?id=customnav)。
-- `titleNView` 的 `type` 值为 `transparent` 时，导航栏为滚动透明渐变导航栏，默认只有button，滚动后标题栏底色和title文字会渐变出现，不支持自定义按钮设置color属性； `type` 为 `float` 时，导航栏为悬浮标题栏，此时页面内容上顶到了屏幕顶部，包括状态栏，但导航栏悬浮盖在页面上方，一般这种场景会同时设置导航栏的背景色为rgba半透明颜色。
+- 页面支持通过配置 navigationStyle 为 custom，或 titleNView 为 false，来禁用原生导航栏。一旦禁用原生导航，请注意阅读[自定义导航注意事项](/collocation/pages?id=customnav)。
+- `titleNView` 的 `type` 值为 `transparent` 时，导航栏为滚动透明渐变导航栏，默认只有 button，滚动后标题栏底色和 title 文字会渐变出现，不支持自定义按钮设置 color 属性； `type` 为 `float` 时，导航栏为悬浮标题栏，此时页面内容上顶到了屏幕顶部，包括状态栏，但导航栏悬浮盖在页面上方，一般这种场景会同时设置导航栏的背景色为 rgba 半透明颜色。
 - `titleNView` 的 `type` 值为 `transparent` 时，App-nvue 2.4.4+ 支持
-- 在 `titleNView` 配置 `buttons` 后，监听按钮的点击事件，vue 页面及 nvue 的weex编译模式参考：[uni.onNavigationBarButtonTap](/tutorial/nvue-outline?id=onnavigationbarbuttontap)
+- 在 `titleNView` 配置 `buttons` 后，监听按钮的点击事件，vue 页面及 nvue 的 weex 编译模式参考：[uni.onNavigationBarButtonTap](/tutorial/nvue-outline?id=onnavigationbarbuttontap)
 - 在 `titleNView` 配置 `searchInput` 后，相关的事件监听参考：[onNavigationBarSearchInputChanged 等](/tutorial/page.md#lifecycle)
 - 可通过 `[<navigation-bar>(/component/navigation-bar)]` 配置
-- App下原生导航栏的按钮如果使用字体图标，注意检查字体库的名字（font-family）是否使用了默认的 iconfont，这个名字是保留字，不能作为外部引入的字体库的名字，需要调整为自定义的名称，否则无法显示。
+- App 下原生导航栏的按钮如果使用字体图标，注意检查字体库的名字（font-family）是否使用了默认的 iconfont，这个名字是保留字，不能作为外部引入的字体库的名字，需要调整为自定义的名称，否则无法显示。
 - 想了解各种导航栏的开发方法，请详读[导航栏开发指南](https://ask.dcloud.net.cn/article/34921)
 
 ##### 自定义按钮@app-titleNView-buttons
 
-|属性|类型|默认值|描述|
-|:-|:-|:-|:-|
-|type|String|none|按钮样式，可取值见：[buttons 样式](/collocation/pages?id=app-titlenview-buttons-type)|
-|color|String|默认与标题文字颜色一致|按钮上文字颜色|
-|background|String|默认值为灰色半透明|按钮的背景颜色，仅在标题栏type=transparent时生效|
-|colorPressed|String|默认值为 color 属性值自动调整透明度为 0.3|按下状态按钮文字颜色|
-|float|String|right|按钮在标题栏上的显示位置，可取值"left"、"right"|
-|fontWeight|String|normal|按钮上文字的粗细。可取值"normal"-标准字体、"bold"-加粗字体。|
-|fontSize|String||按钮上文字大小|
-|fontSrc|String||按钮上文字使用的字体文件路径。不支持网络地址，请统一使用本地地址。|
-|select|Boolean|false|是否显示选择指示图标（向下箭头），常用于城市选择|
-|text|String||按钮上显示的文字。使用字体图标时 unicode 字符表示必须 '\u' 开头，如 "\ue123"（注意不能写成"\e123"）。|
-|width|String|44px|按钮的宽度，可取值： "*px" - 逻辑像素值，如"10px"表示10逻辑像素值，不支持rpx。按钮的内容居中显示； "auto" - 自定计算宽度，根据内容自动调整按钮宽度|
+| 属性         | 类型    | 默认值                                    | 描述                                                                                                                                                   |
+| :----------- | :------ | :---------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type         | String  | none                                      | 按钮样式，可取值见：[buttons 样式](/collocation/pages?id=app-titlenview-buttons-type)                                                                  |
+| color        | String  | 默认与标题文字颜色一致                    | 按钮上文字颜色                                                                                                                                         |
+| background   | String  | 默认值为灰色半透明                        | 按钮的背景颜色，仅在标题栏 type=transparent 时生效                                                                                                     |
+| colorPressed | String  | 默认值为 color 属性值自动调整透明度为 0.3 | 按下状态按钮文字颜色                                                                                                                                   |
+| float        | String  | right                                     | 按钮在标题栏上的显示位置，可取值"left"、"right"                                                                                                        |
+| fontWeight   | String  | normal                                    | 按钮上文字的粗细。可取值"normal"-标准字体、"bold"-加粗字体。                                                                                           |
+| fontSize     | String  |                                           | 按钮上文字大小                                                                                                                                         |
+| fontSrc      | String  |                                           | 按钮上文字使用的字体文件路径。不支持网络地址，请统一使用本地地址。                                                                                     |
+| select       | Boolean | false                                     | 是否显示选择指示图标（向下箭头），常用于城市选择                                                                                                       |
+| text         | String  |                                           | 按钮上显示的文字。使用字体图标时 unicode 字符表示必须 '\u' 开头，如 "\ue123"（注意不能写成"\e123"）。                                                  |
+| width        | String  | 44px                                      | 按钮的宽度，可取值： "\*px" - 逻辑像素值，如"10px"表示 10 逻辑像素值，不支持 rpx。按钮的内容居中显示； "auto" - 自定计算宽度，根据内容自动调整按钮宽度 |
 
 ##### 自定义返回按钮的样式@app-titleNView-backButtonStyles
 
-当autoBackButton设置为true时生效。 通过此属性可自定义返回按钮样式，如图标大小、红点、角标、标题等。
+当 autoBackButton 设置为 true 时生效。 通过此属性可自定义返回按钮样式，如图标大小、红点、角标、标题等。
 
 HBuilderX 2.6.3+ 支持
 
-|属性|类型|默认值|描述|
-|:-|:-|:-|:-|
-|background|String|none|背景颜色，仅在标题栏type=transparent时生效，当标题栏透明时按钮显示的背景颜色。 可取值#RRGGBB和rgba格式颜色字符串，默认值为灰色半透明。|
-|badgeText|String||角标文本，最多显示3个字符，超过则显示为...|
-|color|String|窗口标题栏控件的标题文字颜色。|图标和标题颜色，可取值： "#RRGGBB"格式字符串，如"#FF0000"表示红色； "rgba(R,G,B,A)"，其中R/G/B分别代表红色值/绿色值/蓝色值，正整数类型，取值范围为0-255，A为透明度，浮点数类型，取值范围为0-1（0为全透明，1为不透明），如"rgba(255,0,0,0.5)"，表示红色半透明。|
-|colorPressed|String||按下状态按钮文字颜色，可取值： "#RRGGBB"格式字符串，如"#FF0000"表示红色； "rgba(R,G,B,A)"，其中R/G/B分别代表红色值/绿色值/蓝色值，正整数类型，取值范围为0-255，A为透明度，浮点数类型，取值范围为0-1（0为全透明，1为不透明），如"rgba(255,0,0,0.5)"，表示红色半透明。 默认值为color属性值自动调整透明度为0.3。|
-|fontWeight|String|"normal"|返回图标的粗细，可取值： "normal" - 标准字体； "bold" - 加粗字体。|
-|fontSize|String||返回图标文字大小，可取值：字体高度像素值，数字加"px"格式字符串，如"22px"。 窗口标题栏为透明样式（type="transparent"）时，默认值为"22px"； 窗口标题栏为默认样式（type="default"）时，默认值为"27px"。|
-|redDot|Boolean|false|是否显示红点，设置为true则显示红点，false则不显示红点。默认值为false。 注意：当设置了角标文本时红点不显示。|
-|title|String||返回按钮上的标题，显示在返回图标（字体图标）后，默认为空字符串。|
-|titleWeight|String|"normal"|返回按钮上标题的粗细，可取值： "normal" - 标准字体； "bold" - 加粗字体。|
-
+| 属性         | 类型    | 默认值                         | 描述                                                                                                                                                                                                                                                                                                                    |
+| :----------- | :------ | :----------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| background   | String  | none                           | 背景颜色，仅在标题栏 type=transparent 时生效，当标题栏透明时按钮显示的背景颜色。 可取值#RRGGBB 和 rgba 格式颜色字符串，默认值为灰色半透明。                                                                                                                                                                             |
+| badgeText    | String  |                                | 角标文本，最多显示 3 个字符，超过则显示为...                                                                                                                                                                                                                                                                            |
+| color        | String  | 窗口标题栏控件的标题文字颜色。 | 图标和标题颜色，可取值： "#RRGGBB"格式字符串，如"#FF0000"表示红色； "rgba(R,G,B,A)"，其中 R/G/B 分别代表红色值/绿色值/蓝色值，正整数类型，取值范围为 0-255，A 为透明度，浮点数类型，取值范围为 0-1（0 为全透明，1 为不透明），如"rgba(255,0,0,0.5)"，表示红色半透明。                                                   |
+| colorPressed | String  |                                | 按下状态按钮文字颜色，可取值： "#RRGGBB"格式字符串，如"#FF0000"表示红色； "rgba(R,G,B,A)"，其中 R/G/B 分别代表红色值/绿色值/蓝色值，正整数类型，取值范围为 0-255，A 为透明度，浮点数类型，取值范围为 0-1（0 为全透明，1 为不透明），如"rgba(255,0,0,0.5)"，表示红色半透明。 默认值为 color 属性值自动调整透明度为 0.3。 |
+| fontWeight   | String  | "normal"                       | 返回图标的粗细，可取值： "normal" - 标准字体； "bold" - 加粗字体。                                                                                                                                                                                                                                                      |
+| fontSize     | String  |                                | 返回图标文字大小，可取值：字体高度像素值，数字加"px"格式字符串，如"22px"。 窗口标题栏为透明样式（type="transparent"）时，默认值为"22px"； 窗口标题栏为默认样式（type="default"）时，默认值为"27px"。                                                                                                                    |
+| redDot       | Boolean | false                          | 是否显示红点，设置为 true 则显示红点，false 则不显示红点。默认值为 false。 注意：当设置了角标文本时红点不显示。                                                                                                                                                                                                         |
+| title        | String  |                                | 返回按钮上的标题，显示在返回图标（字体图标）后，默认为空字符串。                                                                                                                                                                                                                                                        |
+| titleWeight  | String  | "normal"                       | 返回按钮上标题的粗细，可取值： "normal" - 标准字体； "bold" - 加粗字体。                                                                                                                                                                                                                                                |
 
 ##### 按钮样式@app-titleNView-buttons-type
 
 使用 type 值设置按钮的样式时，会忽略 fontSrc 和 text 属性。
 
-|值|说明|
-|:-|:-|
-|forward|前进按钮|
-|back|后退按钮|
-|share|分享按钮|
-|favorite|收藏按钮|
-|home|主页按钮|
-|menu|菜单按钮|
-|close|关闭按钮|
-|none|无样式，需通过 text 属性设置按钮上显示的内容、通过 fontSrc 属性设置使用的字体库。|
+| 值       | 说明                                                                              |
+| :------- | :-------------------------------------------------------------------------------- |
+| forward  | 前进按钮                                                                          |
+| back     | 后退按钮                                                                          |
+| share    | 分享按钮                                                                          |
+| favorite | 收藏按钮                                                                          |
+| home     | 主页按钮                                                                          |
+| menu     | 菜单按钮                                                                          |
+| close    | 关闭按钮                                                                          |
+| none     | 无样式，需通过 text 属性设置按钮上显示的内容、通过 fontSrc 属性设置使用的字体库。 |
 
 ##### 搜索框配置@app-titleNView-searchInput
 
-searchInput可以在titleNView的原生导航栏上放置搜索框。其宽度根据周围元素自适应。
+searchInput 可以在 titleNView 的原生导航栏上放置搜索框。其宽度根据周围元素自适应。
 
-|属性|类型|默认值|描述|
-|:-|:-|:-|:-|
-|autoFocus|Boolean|false|是否自动获取焦点|
-|align|String|center|非输入状态下文本的对齐方式。可取值： "left" - 居左对齐； "right" - 居右对齐； "center" - 居中对齐。|
-|backgroundColor|String|rgba(255,255,255,0.5)|背景颜色|
-|borderRadius|String|0px|输入框的圆角半径，取值格式为"XXpx"，其中XX为像素值（逻辑像素），不支持rpx。|
-|placeholder|String||提示文本。|
-|placeholderColor|String|#CCCCCC|提示文本颜色|
-|disabled|Boolean|false|是否可输入|
+| 属性             | 类型    | 默认值                | 描述                                                                                                |
+| :--------------- | :------ | :-------------------- | :-------------------------------------------------------------------------------------------------- |
+| autoFocus        | Boolean | false                 | 是否自动获取焦点                                                                                    |
+| align            | String  | center                | 非输入状态下文本的对齐方式。可取值： "left" - 居左对齐； "right" - 居右对齐； "center" - 居中对齐。 |
+| backgroundColor  | String  | rgba(255,255,255,0.5) | 背景颜色                                                                                            |
+| borderRadius     | String  | 0px                   | 输入框的圆角半径，取值格式为"XXpx"，其中 XX 为像素值（逻辑像素），不支持 rpx。                      |
+| placeholder      | String  |                       | 提示文本。                                                                                          |
+| placeholderColor | String  | #CCCCCC               | 提示文本颜色                                                                                        |
+| disabled         | Boolean | false                 | 是否可输入                                                                                          |
 
 **searchInput Tips**
 
-searchInput的点击输入框onNavigationBarSearchInputClicked、文本变化onNavigationBarSearchInputChanged、点击搜索按钮onNavigationBarSearchInputConfirmed等生命周期，见文档[页面生命周期](/tutorial/page.md#lifecycle)。
-- 在生命周期里通过参数e.text，可获取输入框内容。具体见hello uni-app中模板-顶部导航栏中的示例
-- 如需动态修改searchInput，或者获取searchInput的placehold，参考[uni-app动态修改App端导航栏](https://ask.dcloud.net.cn/article/35374)
+searchInput 的点击输入框 onNavigationBarSearchInputClicked、文本变化 onNavigationBarSearchInputChanged、点击搜索按钮 onNavigationBarSearchInputConfirmed 等生命周期，见文档[页面生命周期](/tutorial/page.md#lifecycle)。
 
-**常见titleNView配置代码示例**
+- 在生命周期里通过参数 e.text，可获取输入框内容。具体见 hello uni-app 中模板-顶部导航栏中的示例
+- 如需动态修改 searchInput，或者获取 searchInput 的 placehold，参考[uni-app 动态修改 App 端导航栏](https://ask.dcloud.net.cn/article/35374)
+
+**常见 titleNView 配置代码示例**
 
 以下列出部分配置。关于全面的导航栏配置，这里有一个完善的演示工程，演示了导航栏的各种效果，详见：[https://ext.dcloud.net.cn/plugin?id=1765](https://ext.dcloud.net.cn/plugin?id=1765)
 
@@ -630,47 +655,48 @@ searchInput的点击输入框onNavigationBarSearchInputClicked、文本变化onN
 **Tips**
 
 - buttons 的 text 推荐使用字体图标。如果使用了汉字或英文，推荐把字体改小一点，否则文字长度增加后，距离屏幕右边距太近。
-- App平台，buttons动态修改，[详见](https://ask.dcloud.net.cn/article/35374)
-- App平台，buttons角标动态修改，见 hello uni-app 中模板-顶部导航标题栏-导航栏带红点和角标
-- App平台，设置searchInput的文字动态修改，API见[文档](https://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject.setTitleNViewSearchInputText)。注意disable状态无法设置文字、placehold暂不支持动态设置
-- H5平台，如需实现上述动态修改，需在条件编译通过dom操作修改
-
+- App 平台，buttons 动态修改，[详见](https://ask.dcloud.net.cn/article/35374)
+- App 平台，buttons 角标动态修改，见 hello uni-app 中模板-顶部导航标题栏-导航栏带红点和角标
+- App 平台，设置 searchInput 的文字动态修改，API 见[文档](https://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewObject.setTitleNViewSearchInputText)。注意 disable 状态无法设置文字、placehold 暂不支持动态设置
+- H5 平台，如需实现上述动态修改，需在条件编译通过 dom 操作修改
 
 #### 原生子窗体@app-subNVues
 
-`subNVues` 是 vue 页面的原生子窗体。用于解决App中 vue 页面中的层级覆盖和原生界面灵活自定义用的。
+`subNVues` 是 vue 页面的原生子窗体。用于解决 App 中 vue 页面中的层级覆盖和原生界面灵活自定义用的。
 
 它不是全屏页面，也不是组件，就是一个原生子窗体。它是一个 nvue 页面，使用 weex 引擎渲染，提供了比 cover-view、plus.nativeObj.view 更强大的原生排版能力，方便自定义原生导航或覆盖原生地图、视频等。请详读[subNVues 开发指南](http://ask.dcloud.net.cn/article/35948)
 
-`subNVue` 也可以在 nvue 页面中使用。但目前在纯nvue下（render为native）还不支持。
+`subNVue` 也可以在 nvue 页面中使用。但目前在纯 nvue 下（render 为 native）还不支持。
 
-|属性|类型|描述|
-|:- |:-  |:-|
-|id|String| subNVue 原生子窗体的标识 |
-|path|String|配置 nvue 文件路径，nvue 文件需放置到使用 subNvue 的页面文件目录下，cli项目需要去掉.nvue后缀，只保留文件名|
-|type|String|原生子窗口内置样式，可取值：'popup',弹出层；"navigationBar",导航栏|
-|style|Object|subNVue 原生子窗体的样式，配置项参考下方 [subNVuesStyle](/collocation/pages?id=app-subNVuesStyle)|
+| 属性  | 类型   | 描述                                                                                                         |
+| :---- | :----- | :----------------------------------------------------------------------------------------------------------- |
+| id    | String | subNVue 原生子窗体的标识                                                                                     |
+| path  | String | 配置 nvue 文件路径，nvue 文件需放置到使用 subNvue 的页面文件目录下，cli 项目需要去掉.nvue 后缀，只保留文件名 |
+| type  | String | 原生子窗口内置样式，可取值：'popup',弹出层；"navigationBar",导航栏                                           |
+| style | Object | subNVue 原生子窗体的样式，配置项参考下方 [subNVuesStyle](/collocation/pages?id=app-subNVuesStyle)            |
 
 **Tips**
+
 - `subNVues` 的 `id` 是全局唯一的，不能重复
 - 可以通过 [uni.getSubNVueById('id')](/api/window/subNVues?id=app-getsubnvuebyid) 获取 `subNVues` 的实例
 - `subNVues` 的 `path` 属性只能是 `nvue` 文件路径
 
 ##### 原生子窗体样式@app-subNVuesStyle
-|属性|类型|默认值|描述|
-|:-|:-|:-|:-|
-|position|String|absolute|原生子窗体的排版位置，排版位置决定原生子窗体在父窗口中的定位方式。 可取值："static"，原生子窗体在页面中正常定位，如果页面存在滚动条则随窗口内容滚动；"absolute"，原生子窗体在页面中绝对定位，如果页面存在滚动条不随窗口内容滚动；"dock"，原生子窗体在页面中停靠，停靠的位置由dock属性值决定。 默认值为"absolute"。|
-|dock|String|bottom|原生子窗体的停靠方式,仅当原生子窗体 "position" 属性值设置为 "dock" 时才生效，可取值："top"，原生子窗体停靠则页面顶部；"bottom"，原生子窗体停靠在页面底部；"right"，原生子窗体停靠在页面右侧；"left"，原生子窗体停靠在页面左侧。 默认值为"bottom"。|
-|mask|HexColor|rgba(0,0,0,0.5)|原生子窗体的遮罩层,仅当原生子窗体 "type" 属性值设置为 "popup" 时才生效，可取值： rgba格式字符串，定义纯色遮罩层样式，如"rgba(0,0,0,0.5)"，表示黑色半透明；|
-|width|String|100%|原生子窗体的宽度,支持百分比、像素值，默认为100%。未设置width属性值时，可同时设置left和right属性值改变窗口的默认宽度。|
-|height|String|100%|原生子窗体的高度,支持百分比、像素值，默认为100%。 当未设置height属性值时，优先通过top和bottom属性值来计算原生子窗体的高度。|
-|top|String|0px|原生子窗体垂直向下的偏移量，支持百分比、像素值，默认值为0px。 未设置top属性值时，优先通过bottom和height属性值来计算原生子窗体的top位置。|
-|bottom|String||原生子窗体垂直向上偏移量,支持百分比、像素值，默认值无值（根据top和height属性值来自动计算）。 当同时设置了top和height值时，忽略此属性值； 当未设置height值时，可通过top和bottom属性值来确定原生子窗体的高度。|
-|left|String|0px|原生子窗体水平向左的偏移量，支持百分比、像素值，默认值为0px。 未设置left属性值时，优先通过right和width属性值来计算原生子窗体的left位置。|
-|right|String||原生子窗体水平向右的偏移量，支持百分比、像素值，默认无值（根据left和width属性值来自动计算）。 当设置了left和width值时，忽略此属性值； 当未设置width值时，可通过left和bottom属性值来确定原生子窗体的宽度。|
-|margin|String||原生子窗体的边距，用于定位原生子窗体的位置，支持auto，auto表示居中。若设置了left、right、top、bottom则对应的边距值失效。|
-|zindex|Number||原生子窗体的窗口的堆叠顺序值，拥有更高堆叠顺序的窗口总是会处于堆叠顺序较低的窗口的前面，拥有相同堆叠顺序的窗口后调用show方法则在前面。|
-|background|String|#FFFFFF|窗口的背景颜色,Android平台4.0以上系统才支持“transparent”背景透明样式。比如subnvue为圆角时需要设置为transparent才能看到正确的效果|
+
+| 属性       | 类型     | 默认值          | 描述                                                                                                                                                                                                                                                                                                                 |
+| :--------- | :------- | :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| position   | String   | absolute        | 原生子窗体的排版位置，排版位置决定原生子窗体在父窗口中的定位方式。 可取值："static"，原生子窗体在页面中正常定位，如果页面存在滚动条则随窗口内容滚动；"absolute"，原生子窗体在页面中绝对定位，如果页面存在滚动条不随窗口内容滚动；"dock"，原生子窗体在页面中停靠，停靠的位置由 dock 属性值决定。 默认值为"absolute"。 |
+| dock       | String   | bottom          | 原生子窗体的停靠方式,仅当原生子窗体 "position" 属性值设置为 "dock" 时才生效，可取值："top"，原生子窗体停靠则页面顶部；"bottom"，原生子窗体停靠在页面底部；"right"，原生子窗体停靠在页面右侧；"left"，原生子窗体停靠在页面左侧。 默认值为"bottom"。                                                                   |
+| mask       | HexColor | rgba(0,0,0,0.5) | 原生子窗体的遮罩层,仅当原生子窗体 "type" 属性值设置为 "popup" 时才生效，可取值： rgba 格式字符串，定义纯色遮罩层样式，如"rgba(0,0,0,0.5)"，表示黑色半透明；                                                                                                                                                          |
+| width      | String   | 100%            | 原生子窗体的宽度,支持百分比、像素值，默认为 100%。未设置 width 属性值时，可同时设置 left 和 right 属性值改变窗口的默认宽度。                                                                                                                                                                                         |
+| height     | String   | 100%            | 原生子窗体的高度,支持百分比、像素值，默认为 100%。 当未设置 height 属性值时，优先通过 top 和 bottom 属性值来计算原生子窗体的高度。                                                                                                                                                                                   |
+| top        | String   | 0px             | 原生子窗体垂直向下的偏移量，支持百分比、像素值，默认值为 0px。 未设置 top 属性值时，优先通过 bottom 和 height 属性值来计算原生子窗体的 top 位置。                                                                                                                                                                    |
+| bottom     | String   |                 | 原生子窗体垂直向上偏移量,支持百分比、像素值，默认值无值（根据 top 和 height 属性值来自动计算）。 当同时设置了 top 和 height 值时，忽略此属性值； 当未设置 height 值时，可通过 top 和 bottom 属性值来确定原生子窗体的高度。                                                                                           |
+| left       | String   | 0px             | 原生子窗体水平向左的偏移量，支持百分比、像素值，默认值为 0px。 未设置 left 属性值时，优先通过 right 和 width 属性值来计算原生子窗体的 left 位置。                                                                                                                                                                    |
+| right      | String   |                 | 原生子窗体水平向右的偏移量，支持百分比、像素值，默认无值（根据 left 和 width 属性值来自动计算）。 当设置了 left 和 width 值时，忽略此属性值； 当未设置 width 值时，可通过 left 和 bottom 属性值来确定原生子窗体的宽度。                                                                                              |
+| margin     | String   |                 | 原生子窗体的边距，用于定位原生子窗体的位置，支持 auto，auto 表示居中。若设置了 left、right、top、bottom 则对应的边距值失效。                                                                                                                                                                                         |
+| zindex     | Number   |                 | 原生子窗体的窗口的堆叠顺序值，拥有更高堆叠顺序的窗口总是会处于堆叠顺序较低的窗口的前面，拥有相同堆叠顺序的窗口后调用 show 方法则在前面。                                                                                                                                                                             |
+| background | String   | #FFFFFF         | 窗口的背景颜色,Android 平台 4.0 以上系统才支持“transparent”背景透明样式。比如 subnvue 为圆角时需要设置为 transparent 才能看到正确的效果                                                                                                                                                                              |
 
 **代码示例**
 
@@ -714,34 +740,35 @@ searchInput的点击输入框onNavigationBarSearchInputClicked、文本变化onN
 }
 ```
 
-
 #### 下拉刷新@app-pullToRefresh
+
 在 App 平台下可以自定义部分下拉刷新的配置 `page->style->app-plus->pullToRefresh`。
 
-|属性|类型|默认值|描述|
-|:-|:-|:-|:-|
-|support|Boolean|false|是否开启窗口的下拉刷新功能|
-|color|String|#2BD009|颜色值格式为"#RRGGBB"，仅"circle"样式下拉刷新支持此属性。|
-|style|String|Android 平台为 circle；iOS 平台为 default。|可取值："default"——经典下拉刷新样式（下拉拖动时页面内容跟随）；"circle"——圆圈样式下拉刷新控件样式（下拉拖动时仅刷新控件跟随）。|
-|height|String||窗口的下拉刷新控件进入刷新状态的拉拽高度。支持百分比，如"10%"；像素值，如"50px"，不支持rpx。|
-|range |String||窗口可下拉拖拽的范围。支持百分比，如"10%"；像素值，如"50px"，不支持rpx。|
-|offset|String|0px|下拉刷新控件的起始位置。仅对"circle"样式下拉刷新控件有效，用于定义刷新控件下拉时的起始位置。支持百分比，如"10%"；像素值，如"50px"，不支持rpx。如使用了非原生title且需要原生下拉刷新，一般都使用circle方式并将offset调至自定义title的高度|
-|contentdown|Object||目前支持一个属性：caption——在下拉可刷新状态时下拉刷新控件上显示的标题内容。仅对"default"样式下拉刷新控件有效。|
-|contentover|Object||目前支持一个属性：caption——在释放可刷新状态时下拉刷新控件上显示的标题内容。仅对"default"样式下拉刷新控件有效。|
-|contentrefresh|Object||目前支持一个属性：caption——在正在刷新状态时下拉刷新控件上显示的标题内容。仅对"default"样式下拉刷新控件有效。|
+| 属性           | 类型    | 默认值                                      | 描述                                                                                                                                                                                                                                              |
+| :------------- | :------ | :------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| support        | Boolean | false                                       | 是否开启窗口的下拉刷新功能                                                                                                                                                                                                                        |
+| color          | String  | #2BD009                                     | 颜色值格式为"#RRGGBB"，仅"circle"样式下拉刷新支持此属性。                                                                                                                                                                                         |
+| style          | String  | Android 平台为 circle；iOS 平台为 default。 | 可取值："default"——经典下拉刷新样式（下拉拖动时页面内容跟随）；"circle"——圆圈样式下拉刷新控件样式（下拉拖动时仅刷新控件跟随）。                                                                                                                   |
+| height         | String  |                                             | 窗口的下拉刷新控件进入刷新状态的拉拽高度。支持百分比，如"10%"；像素值，如"50px"，不支持 rpx。                                                                                                                                                     |
+| range          | String  |                                             | 窗口可下拉拖拽的范围。支持百分比，如"10%"；像素值，如"50px"，不支持 rpx。                                                                                                                                                                         |
+| offset         | String  | 0px                                         | 下拉刷新控件的起始位置。仅对"circle"样式下拉刷新控件有效，用于定义刷新控件下拉时的起始位置。支持百分比，如"10%"；像素值，如"50px"，不支持 rpx。如使用了非原生 title 且需要原生下拉刷新，一般都使用 circle 方式并将 offset 调至自定义 title 的高度 |
+| contentdown    | Object  |                                             | 目前支持一个属性：caption——在下拉可刷新状态时下拉刷新控件上显示的标题内容。仅对"default"样式下拉刷新控件有效。                                                                                                                                    |
+| contentover    | Object  |                                             | 目前支持一个属性：caption——在释放可刷新状态时下拉刷新控件上显示的标题内容。仅对"default"样式下拉刷新控件有效。                                                                                                                                    |
+| contentrefresh | Object  |                                             | 目前支持一个属性：caption——在正在刷新状态时下拉刷新控件上显示的标题内容。仅对"default"样式下拉刷新控件有效。                                                                                                                                      |
 
 **下拉刷新使用注意**
 
 - `enablePullDownRefresh` 与 `pullToRefresh->support` 同时设置时，后者优先级较高。
 - 如果期望在 App 和小程序上均开启下拉刷新的话，请配置页面的 `enablePullDownRefresh` 属性为 true。
 - 若仅期望在 App 上开启下拉刷新，则不要配置页面的 `enablePullDownRefresh` 属性，而是配置 `pullToRefresh->support` 为 true。
-- 开启原生下拉刷新时，页面里不应该使用全屏高的scroll-view，向下拖动内容时，会优先触发下拉刷新而不是scroll-view滚动
-- 原生下拉刷新的起始位置在原生导航栏的下方，如果取消原生导航栏，使用自定义导航栏，原生下拉刷新的位置会在屏幕顶部。如果希望在自定义导航栏下方拉动，只能使用circle方式的下拉刷新，并设置offset参数，将circle圈的起始位置调整到自定义导航栏下方。hello uni-app的扩展组件中有示例。
-- 如果想在app端实现更多复杂的下拉刷新，比如美团、京东App那种拉下一个特殊图形，可以使用nvue的`<refresh>`组件。HBuilderX 2.0.3+起，新建项目选择新闻模板可以体验
-- 如果想在vue页面通过web前端技术实现下拉刷新，插件市场有例子，但前端下拉刷新的性能不如原生，复杂长列表会很卡
-- iOS上，default模式的下拉刷新和bounce回弹是绑定的，如果设置了bounce:none，会导致无法使用default下拉刷新
+- 开启原生下拉刷新时，页面里不应该使用全屏高的 scroll-view，向下拖动内容时，会优先触发下拉刷新而不是 scroll-view 滚动
+- 原生下拉刷新的起始位置在原生导航栏的下方，如果取消原生导航栏，使用自定义导航栏，原生下拉刷新的位置会在屏幕顶部。如果希望在自定义导航栏下方拉动，只能使用 circle 方式的下拉刷新，并设置 offset 参数，将 circle 圈的起始位置调整到自定义导航栏下方。hello uni-app 的扩展组件中有示例。
+- 如果想在 app 端实现更多复杂的下拉刷新，比如美团、京东 App 那种拉下一个特殊图形，可以使用 nvue 的`<refresh>`组件。HBuilderX 2.0.3+起，新建项目选择新闻模板可以体验
+- 如果想在 vue 页面通过 web 前端技术实现下拉刷新，插件市场有例子，但前端下拉刷新的性能不如原生，复杂长列表会很卡
+- iOS 上，default 模式的下拉刷新和 bounce 回弹是绑定的，如果设置了 bounce:none，会导致无法使用 default 下拉刷新
 
 **代码示例**
+
 ```javascript
 {
     "pages": [
@@ -770,84 +797,87 @@ searchInput的点击输入框onNavigationBarSearchInputClicked、文本变化onN
 }
 ```
 
-
 ### app-harmony
 
 配置编译到 app-harmony 平台时的特定样式。
 
-|属性|类型|默认值|描述|平台兼容|
-|:-|:-|:-|:-|:-|
-|softinputMode|String|adjustPan|软键盘弹出模式，支持 adjustResize、adjustPan 两种模式|App-Harmony|
+| 属性          | 类型   | 默认值    | 描述                                                  | 平台兼容    |
+| :------------ | :----- | :-------- | :---------------------------------------------------- | :---------- |
+| softinputMode | String | adjustPan | 软键盘弹出模式，支持 adjustResize、adjustPan 两种模式 | App-Harmony |
 
 ### h5
+
 配置编译到 H5 平台时的特定样式
 
-|属性|类型|描述|
-|:-|:-|:-|
-|titleNView|Object|导航栏|
-|pullToRefresh|Object|下拉刷新|
+| 属性          | 类型   | 描述     |
+| :------------ | :----- | :------- |
+| titleNView    | Object | 导航栏   |
+| pullToRefresh | Object | 下拉刷新 |
 
 #### 导航栏@h5-titleNView
-|属性|类型|默认值|描述|最低版本|
-|:-|:-|:-|:-|:-|
-|backgroundColor|String|#F7F7F7|背景颜色，颜色值格式为"#RRGGBB"。||
-|buttons|Array||自定义按钮，参考 [buttons](#h5-titlenview-buttons)||
-|titleColor|String|#000000|标题文字颜色||
-|titleText|String||标题文字内容||
-|titleSize|String||标题文字字体大小||
-|type|String|default|导航栏样式。"default"-默认样式；"transparent"-透明渐变。||
-|searchInput|Object||导航栏上的搜索框样式，详见：[searchInput](#h5-searchinput)|1.6.5|
+
+| 属性            | 类型   | 默认值  | 描述                                                       | 最低版本 |
+| :-------------- | :----- | :------ | :--------------------------------------------------------- | :------- |
+| backgroundColor | String | #F7F7F7 | 背景颜色，颜色值格式为"#RRGGBB"。                          |          |
+| buttons         | Array  |         | 自定义按钮，参考 [buttons](#h5-titlenview-buttons)         |          |
+| titleColor      | String | #000000 | 标题文字颜色                                               |          |
+| titleText       | String |         | 标题文字内容                                               |          |
+| titleSize       | String |         | 标题文字字体大小                                           |          |
+| type            | String | default | 导航栏样式。"default"-默认样式；"transparent"-透明渐变。   |          |
+| searchInput     | Object |         | 导航栏上的搜索框样式，详见：[searchInput](#h5-searchinput) | 1.6.5    |
 
 ##### 自定义按钮@h5-titleNView-buttons
-|属性|类型|默认值|描述|
-|:-|:-|:-|:-|
-|type|String|none|按钮样式，可取值见：[buttons 样式](#app-titlenview-buttons-type)|
-|color|String|默认与标题文字颜色一致|按钮上文字颜色|
-|background|String|默认值为灰色半透明|按钮的背景颜色，仅在标题栏type=transparent时生效|
-|badgeText|String||按钮上显示的角标文本，最多显示3个字符，超过则显示为...|
-|colorPressed（暂不支持）|String|默认值为 color 属性值自动调整透明度为 0.3|按下状态按钮文字颜色|
-|float|String|right|按钮在标题栏上的显示位置，可取值"left"、"right"|
-|fontWeight|String|normal|按钮上文字的粗细。可取值"normal"-标准字体、"bold"-加粗字体。|
-|fontSize|String||按钮上文字大小|
-|fontSrc|String||按钮上文字使用的字体文件路径。|
-|select|String|false|是否显示选择指示图标（向下箭头）|
-|text|String||按钮上显示的文字。使用字体图标时 unicode 字符表示必须 '\u' 开头，如 "\ue123"（注意不能写成"\e123"）。|
-|width|String|44px|按钮的宽度，可取值： "*px" - 逻辑像素值，如"10px"表示10逻辑像素值，不支持rpx，按钮的内容居中显示； "auto" - 自定计算宽度，根据内容自动调整按钮宽度|
+
+| 属性                     | 类型   | 默认值                                    | 描述                                                                                                                                                   |
+| :----------------------- | :----- | :---------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type                     | String | none                                      | 按钮样式，可取值见：[buttons 样式](#app-titlenview-buttons-type)                                                                                       |
+| color                    | String | 默认与标题文字颜色一致                    | 按钮上文字颜色                                                                                                                                         |
+| background               | String | 默认值为灰色半透明                        | 按钮的背景颜色，仅在标题栏 type=transparent 时生效                                                                                                     |
+| badgeText                | String |                                           | 按钮上显示的角标文本，最多显示 3 个字符，超过则显示为...                                                                                               |
+| colorPressed（暂不支持） | String | 默认值为 color 属性值自动调整透明度为 0.3 | 按下状态按钮文字颜色                                                                                                                                   |
+| float                    | String | right                                     | 按钮在标题栏上的显示位置，可取值"left"、"right"                                                                                                        |
+| fontWeight               | String | normal                                    | 按钮上文字的粗细。可取值"normal"-标准字体、"bold"-加粗字体。                                                                                           |
+| fontSize                 | String |                                           | 按钮上文字大小                                                                                                                                         |
+| fontSrc                  | String |                                           | 按钮上文字使用的字体文件路径。                                                                                                                         |
+| select                   | String | false                                     | 是否显示选择指示图标（向下箭头）                                                                                                                       |
+| text                     | String |                                           | 按钮上显示的文字。使用字体图标时 unicode 字符表示必须 '\u' 开头，如 "\ue123"（注意不能写成"\e123"）。                                                  |
+| width                    | String | 44px                                      | 按钮的宽度，可取值： "\*px" - 逻辑像素值，如"10px"表示 10 逻辑像素值，不支持 rpx，按钮的内容居中显示； "auto" - 自定计算宽度，根据内容自动调整按钮宽度 |
 
 ##### 按钮样式@h5-titleNView-buttons-type
 
 使用 type 值设置按钮的样式时，会忽略 fontSrc 和 text 属性。
 
-|值|说明|
-|:-|:-|
-|forward|前进按钮|
-|back|后退按钮|
-|share|分享按钮|
-|favorite|收藏按钮|
-|home|主页按钮|
-|menu|菜单按钮|
-|close|关闭按钮|
-|none|无样式，需通过 text 属性设置按钮上显示的内容、通过 fontSrc 属性设置使用的字体库。|
+| 值       | 说明                                                                              |
+| :------- | :-------------------------------------------------------------------------------- |
+| forward  | 前进按钮                                                                          |
+| back     | 后退按钮                                                                          |
+| share    | 分享按钮                                                                          |
+| favorite | 收藏按钮                                                                          |
+| home     | 主页按钮                                                                          |
+| menu     | 菜单按钮                                                                          |
+| close    | 关闭按钮                                                                          |
+| none     | 无样式，需通过 text 属性设置按钮上显示的内容、通过 fontSrc 属性设置使用的字体库。 |
 
 #### 下拉刷新@h5-pullToRefresh
+
 h5 平台下拉刷新动画，只有 circle 类型。
 
-|属性|类型|默认值|描述|
-|:-|:-|:-|:-|
-|color|String|#2BD009|颜色值格式为"#RRGGBB"|
-|offset|String|0px|下拉刷新控件的起始位置。支持百分比，如"10%"；像素值，如"50px"，不支持rpx。|
+| 属性   | 类型   | 默认值  | 描述                                                                        |
+| :----- | :----- | :------ | :-------------------------------------------------------------------------- |
+| color  | String | #2BD009 | 颜色值格式为"#RRGGBB"                                                       |
+| offset | String | 0px     | 下拉刷新控件的起始位置。支持百分比，如"10%"；像素值，如"50px"，不支持 rpx。 |
 
 ##### 搜索框样式@h5-searchInput
 
-|属性|类型|默认值|描述|
-|:-|:-|:-|:-|
-|autoFocus|Boolean|false|是否自动获取焦点|
-|align|String|center|非输入状态下文本的对齐方式。可取值： "left" - 居左对齐； "right" - 居右对齐； "center" - 居中对齐。|
-|backgroundColor|String|rgba(255,255,255,0.5)|背景颜色|
-|borderRadius|String|0px|输入框的圆角半径，取值格式为"XXpx"，其中XX为像素值（逻辑像素），不支持rpx。|
-|placeholder|String||提示文本|
-|placeholderColor|String|#CCCCCC|提示文本颜色|
-|disabled|Boolean|false|是否可输入|
+| 属性             | 类型    | 默认值                | 描述                                                                                                |
+| :--------------- | :------ | :-------------------- | :-------------------------------------------------------------------------------------------------- |
+| autoFocus        | Boolean | false                 | 是否自动获取焦点                                                                                    |
+| align            | String  | center                | 非输入状态下文本的对齐方式。可取值： "left" - 居左对齐； "right" - 居右对齐； "center" - 居中对齐。 |
+| backgroundColor  | String  | rgba(255,255,255,0.5) | 背景颜色                                                                                            |
+| borderRadius     | String  | 0px                   | 输入框的圆角半径，取值格式为"XXpx"，其中 XX 为像素值（逻辑像素），不支持 rpx。                      |
+| placeholder      | String  |                       | 提示文本                                                                                            |
+| placeholderColor | String  | #CCCCCC               | 提示文本颜色                                                                                        |
+| disabled         | Boolean | false                 | 是否可输入                                                                                          |
 
 **注意事项：**
 
@@ -856,56 +886,61 @@ h5 平台下拉刷新动画，只有 circle 类型。
 
 #### navigationBarShadow
 
-|属性|类型|描述|
-|:-|:-|:-|
-|colorType|String|阴影的颜色，支持：grey、blue、green、orange、red、yellow|
+| 属性      | 类型   | 描述                                                     |
+| :-------- | :----- | :------------------------------------------------------- |
+| colorType | String | 阴影的颜色，支持：grey、blue、green、orange、red、yellow |
 
 **注意事项：**
+
 - 微信/百度/头条 需要配置: "disableScroll": true
 - 支付宝 "mp-alipay": { "allowsBounceVertical": "NO" }
 
 ### mp-alipay
+
 配置编译到 MP-ALIPAY 平台时的特定样式
 
-|属性|类型|默认值|描述|
-|:-|:-|:-|:-|
-|allowsBounceVertical|String|YES|是否允许向下拉拽。支持 YES / NO|
-|titleImage|String||导航栏图片地址（替换当前文字标题），必须使用https的图片链接地址|
-|transparentTitle|String|none|导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明|
-|titlePenetrate|String|NO|导航栏点击穿透|
-|showTitleLoading|String|NO|是否进入时显示导航栏的 loading。支持 YES / NO|
-|backgroundImageUrl|String||下拉露出显示的背景图链接|
-|backgroundImageColor|HexColor||下拉露出显示的背景图底色|
-|gestureBack|String|NO|iOS 用，是否支持手势返回。支持 YES / NO|
-|enableScrollBar|String|YES|Android 用，是否显示 WebView 滚动条。支持 YES / NO|
+| 属性                 | 类型     | 默认值 | 描述                                                                 |
+| :------------------- | :------- | :----- | :------------------------------------------------------------------- |
+| allowsBounceVertical | String   | YES    | 是否允许向下拉拽。支持 YES / NO                                      |
+| titleImage           | String   |        | 导航栏图片地址（替换当前文字标题），必须使用 https 的图片链接地址    |
+| transparentTitle     | String   | none   | 导航栏透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明 |
+| titlePenetrate       | String   | NO     | 导航栏点击穿透                                                       |
+| showTitleLoading     | String   | NO     | 是否进入时显示导航栏的 loading。支持 YES / NO                        |
+| backgroundImageUrl   | String   |        | 下拉露出显示的背景图链接                                             |
+| backgroundImageColor | HexColor |        | 下拉露出显示的背景图底色                                             |
+| gestureBack          | String   | NO     | iOS 用，是否支持手势返回。支持 YES / NO                              |
+| enableScrollBar      | String   | YES    | Android 用，是否显示 WebView 滚动条。支持 YES / NO                   |
 
 **注意事项**
 
-- `titleImage`仅支持https地址，设置了`titleImage`会替换页面文字标题
+- `titleImage`仅支持 https 地址，设置了`titleImage`会替换页面文字标题
 - `backgroundImageUrl`支持网络地址和本地地址，尽量使用绝对地址
 - 部分配置可能会只在真机运行的时候生效，支付宝未来应该会改善
 
 ### mp-weixin
+
 配置编译到 MP-WEIXIN 平台时的特定样式
 
-|属性|类型|默认值|描述|
-|:-|:-|:-|:-|
-|homeButton|Boolean|false|在非首页、非页面栈最底层页面或非tabbar内页面中的导航栏展示home键|
-|backgroundColorTop|HexColor|#ffffff|顶部窗口的背景色，仅 iOS 支持|
-|backgroundColorBottom|HexColor|#ffffff|底部窗口的背景色，仅 iOS 支持|
-|restartStrategy|String|homePage|重新启动策略配置。支持 homePage / homePageAndLatestPage|
-|initialRenderingCache|String||页面初始渲染缓存配置。支持 static / dynamic|
-|visualEffectInBackground|String|none|切入系统后台时，隐藏页面内容，保护用户隐私。支持 hidden / none|
-|handleWebviewPreload|String|static|控制预加载下个页面的时机。支持 static / manual / auto|
+| 属性                     | 类型     | 默认值   | 描述                                                                 |
+| :----------------------- | :------- | :------- | :------------------------------------------------------------------- |
+| homeButton               | Boolean  | false    | 在非首页、非页面栈最底层页面或非 tabbar 内页面中的导航栏展示 home 键 |
+| backgroundColorTop       | HexColor | #ffffff  | 顶部窗口的背景色，仅 iOS 支持                                        |
+| backgroundColorBottom    | HexColor | #ffffff  | 底部窗口的背景色，仅 iOS 支持                                        |
+| restartStrategy          | String   | homePage | 重新启动策略配置。支持 homePage / homePageAndLatestPage              |
+| initialRenderingCache    | String   |          | 页面初始渲染缓存配置。支持 static / dynamic                          |
+| visualEffectInBackground | String   | none     | 切入系统后台时，隐藏页面内容，保护用户隐私。支持 hidden / none       |
+| handleWebviewPreload     | String   | static   | 控制预加载下个页面的时机。支持 static / manual / auto                |
 
 ### mp-baidu
+
 配置编译到 MP-BAIDU 平台时的特定样式
 
-|属性|类型|默认值|描述|
-|:-|:-|:-|:-|
-|textSizeAdjust|String|auto|小程序页面是否禁止响应字体大小的设。支持 auto 默认响应 / none 不响应|
+| 属性           | 类型   | 默认值 | 描述                                                                 |
+| :------------- | :----- | :----- | :------------------------------------------------------------------- |
+| textSizeAdjust | String | auto   | 小程序页面是否禁止响应字体大小的设。支持 auto 默认响应 / none 不响应 |
 
 ## FAQ
+
 - Q：如何取消原生导航栏？或自定义导航
 - A：参考[导航栏开发指南](http://ask.dcloud.net.cn/article/34921)
 
@@ -913,31 +948,31 @@ h5 平台下拉刷新动画，只有 circle 类型。
 
 > `HBuilderX 2.5.5`起支持`easycom`组件模式。
 
-传统vue组件，需要安装、引用、注册，三个步骤后才能使用组件。`easycom`将其精简为一步。
+传统 vue 组件，需要安装、引用、注册，三个步骤后才能使用组件。`easycom`将其精简为一步。
 
 只要组件路径符合规范（具体见下），就可以不用引用、注册，直接在页面中使用。如下：
 
 ```html
 <template>
-	<view class="container">
-		<comp-a></comp-a>
-		<uni-list>
-		</uni-list>
-	</view>
+  <view class="container">
+    <comp-a></comp-a>
+    <uni-list> </uni-list>
+  </view>
 </template>
 <script>
-	// 这里不用import引入，也不需要在components内注册uni-list组件。template里就可以直接用
-	export default {
-		data() {
-			return {}
-		}
-	}
+  // 这里不用import引入，也不需要在components内注册uni-list组件。template里就可以直接用
+  export default {
+    data() {
+      return {};
+    },
+  };
 </script>
 ```
 
 `路径规范`指：
-1. 安装在项目根目录的components目录下，并符合`components/组件名称/组件名称.vue`
-2. 安装在uni_modules下，路径为`uni_modules/插件ID/components/组件名称/组件名称.vue`
+
+1. 安装在项目根目录的 components 目录下，并符合`components/组件名称/组件名称.vue`
+2. 安装在 uni_modules 下，路径为`uni_modules/插件ID/components/组件名称/组件名称.vue`
 
 工程目录：
 
@@ -955,24 +990,24 @@ h5 平台下拉刷新动画，只有 circle 类型。
 	</code>
 </pre>
 
-不管components目录下安装了多少组件，`easycom`打包会自动剔除没有使用的组件，对组件库的使用尤为友好。
+不管 components 目录下安装了多少组件，`easycom`打包会自动剔除没有使用的组件，对组件库的使用尤为友好。
 
-组件库批量安装，随意使用，自动按需打包。以官方的`uni-ui`为例，在HBuilderX新建项目界面选择`uni-ui`项目模板，只需在页面中敲u，拉出大量组件代码块，直接选择，即可使用。大幅提升开发效率，降低使用门槛。
+组件库批量安装，随意使用，自动按需打包。以官方的`uni-ui`为例，在 HBuilderX 新建项目界面选择`uni-ui`项目模板，只需在页面中敲 u，拉出大量组件代码块，直接选择，即可使用。大幅提升开发效率，降低使用门槛。
 
-在[uni-app插件市场](https://ext.dcloud.net.cn/)下载符合`components/组件名称/组件名称.vue`目录结构的组件，均可直接使用。
+在[uni-app 插件市场](https://ext.dcloud.net.cn/)下载符合`components/组件名称/组件名称.vue`目录结构的组件，均可直接使用。
 
-**自定义easycom配置的示例**
+**自定义 easycom 配置的示例**
 
 `easycom`是自动开启的，不需要手动开启，有需求时可以在`pages.json`的`easycom`节点进行个性化设置，如关闭自动扫描，或自定义扫描匹配组件的策略。设置参数如下：
 
-|属性			|类型		|默认值	|描述																																											|
-|:-				|:-			|:-			|:-																																												|
-|autoscan	|Boolean|true		|是否开启自动扫描，开启后将会自动扫描符合`components/组件名称/组件名称.vue`目录结构的组件	|
-|custom		|Object	|-			|以正则方式自定义组件匹配规则。如果`autoscan`不能满足需求，可以使用`custom`自定义匹配规则	|
+| 属性     | 类型    | 默认值 | 描述                                                                                     |
+| :------- | :------ | :----- | :--------------------------------------------------------------------------------------- |
+| autoscan | Boolean | true   | 是否开启自动扫描，开启后将会自动扫描符合`components/组件名称/组件名称.vue`目录结构的组件 |
+| custom   | Object  | -      | 以正则方式自定义组件匹配规则。如果`autoscan`不能满足需求，可以使用`custom`自定义匹配规则 |
 
-如果你的组件，不符合easycom前述的`路径规范`。可以在pages.json的easycom节点中自行定义路径规范。
+如果你的组件，不符合 easycom 前述的`路径规范`。可以在 pages.json 的 easycom 节点中自行定义路径规范。
 
-如果需要匹配node_modules内的vue文件，需要使用`packageName/path/to/vue-file-$1.vue`形式的匹配规则，其中`packageName`为安装的包名，`/path/to/vue-file-$1.vue`为vue文件在包内的路径。
+如果需要匹配 node_modules 内的 vue 文件，需要使用`packageName/path/to/vue-file-$1.vue`形式的匹配规则，其中`packageName`为安装的包名，`/path/to/vue-file-$1.vue`为 vue 文件在包内的路径。
 
 ```json
 "easycom": {
@@ -985,110 +1020,110 @@ h5 平台下拉刷新动画，只有 circle 类型。
 ```
 
 **说明**
+
 - `easycom`方式引入的组件无需在页面内`import`，也不需要在`components`内声明，即可在任意页面使用。
-- `easycom`方式引入组件不是全局引入，而是局部引入。例如在H5端只有加载相应页面才会加载使用的组件。
+- `easycom`方式引入组件不是全局引入，而是局部引入。例如在 H5 端只有加载相应页面才会加载使用的组件。
 - 在组件名完全一致的情况下，`easycom`引入的优先级低于手动引入（区分连字符形式与驼峰形式）。
 - 考虑到编译速度，直接在`pages.json`内修改`easycom`不会触发重新编译，需要改动页面内容触发。
-- `easycom`只处理vue组件，不处理小程序专用组件（如微信的wxml格式组件）。不处理后缀为.nvue的组件。因为nvue页面引入的组件也是.vue组件。可以参考uni ui，使用vue后缀，同时兼容nvue页面。
-- `nvue`页面里引用`.vue`后缀的组件，会按照nvue方式使用原生渲染，其中不支持的css会被忽略掉。这种情况同样支持`easycom`。
+- `easycom`只处理 vue 组件，不处理小程序专用组件（如微信的 wxml 格式组件）。不处理后缀为.nvue 的组件。因为 nvue 页面引入的组件也是.vue 组件。可以参考 uni ui，使用 vue 后缀，同时兼容 nvue 页面。
+- `nvue`页面里引用`.vue`后缀的组件，会按照 nvue 方式使用原生渲染，其中不支持的 css 会被忽略掉。这种情况同样支持`easycom`。
 - `vue` 与 `uvue` 组件优先级，[详见](https://doc.dcloud.net.cn/uni-app-x/component/#priority)。
 
 ### Bug & Tips@easycom_tips
-+ HBuilderX 3.96 版本以下`uni-app x`项目，当页面文件名与`easycom`的组件名一样时，会渲染异常，可以通过调整页面文件名规避该Bug。
+
+- HBuilderX 3.96 版本以下`uni-app x`项目，当页面文件名与`easycom`的组件名一样时，会渲染异常，可以通过调整页面文件名规避该 Bug。
 
 ## tabBar
 
 如果应用是一个多 tab 应用，可以通过 tabBar 配置项指定一级导航栏，以及 tab 切换时显示的对应页。
 
-在 pages.json 中提供 tabBar 配置，不仅仅是为了方便快速开发导航，更重要的是在App和小程序端提升性能。在这两个平台，底层原生引擎在启动时无需等待js引擎初始化，即可直接读取 pages.json 中配置的 tabBar 信息，渲染原生tab。
+在 pages.json 中提供 tabBar 配置，不仅仅是为了方便快速开发导航，更重要的是在 App 和小程序端提升性能。在这两个平台，底层原生引擎在启动时无需等待 js 引擎初始化，即可直接读取 pages.json 中配置的 tabBar 信息，渲染原生 tab。
 
 **Tips**
 
 - 当设置 position 为 top 时，将不会显示 icon
-- tabBar 中的 list 是一个数组，只能配置最少2个、最多5个 tab，tab 按数组的顺序排序。
-- tabbar 切换第一次加载时可能渲染不及时，可以在每个tabbar页面的onLoad生命周期里先弹出一个等待雪花（hello uni-app使用了此方式）
-- tabbar 的页面展现过一次后就保留在内存中，再次切换 tabbar 页面，只会触发每个页面的onShow，不会再触发onLoad。
+- tabBar 中的 list 是一个数组，只能配置最少 2 个、最多 5 个 tab，tab 按数组的顺序排序。
+- tabbar 切换第一次加载时可能渲染不及时，可以在每个 tabbar 页面的 onLoad 生命周期里先弹出一个等待雪花（hello uni-app 使用了此方式）
+- tabbar 的页面展现过一次后就保留在内存中，再次切换 tabbar 页面，只会触发每个页面的 onShow，不会再触发 onLoad。
 - 顶部的 tabbar 目前仅微信小程序上支持。需要用到顶部选项卡的话，建议不使用 tabbar 的顶部设置，而是自己做顶部选项卡，可参考 hello uni-app->模板->顶部选项卡。
 
 **属性说明：**
 
-|属性|类型|必填|默认值|描述|平台差异说明|
-|:-|:-|:-|:-|:-|:-|
-|color|HexColor|是||tab 上的文字默认颜色||
-|selectedColor|HexColor|是||tab 上的文字选中时的颜色||
-|backgroundColor|HexColor|是||tab 的背景色||
-|borderStyle|String|否|black|tabbar 上边框的颜色，可选值 black/white，black对应颜色rgba(0,0,0,0.33)，white对应颜色rgba(255,255,255,0.33)。|App 2.3.4+ 、H5 3.0.0+、微信小程序、小红书小程序|
-|blurEffect|String|否|none|iOS 高斯模糊效果，可选值 dark/extralight/light/none（参考:[使用说明](https://ask.dcloud.net.cn/article/36617)）|App 2.4.0+ 支持、H5 3.0.0+（只有最新版浏览器才支持）|
-|list|Array|是||tab 的列表，详见 list 属性说明，最少2个、最多5个 tab||
-|position|String|否|bottom|可选值 bottom、top|top 值仅微信小程序支持|
-|fontSize|String|否|10px|文字默认大小|App 2.3.4+、H5 3.0.0+|
-|iconWidth|String|否|24px|图标默认宽度（高度等比例缩放）|App 2.3.4+、H5 3.0.0+|
-|spacing|String|否|3px|图标和文字的间距|App 2.3.4+、H5 3.0.0+|
-|height|String|否|50px|tabBar 默认高度|App 2.3.4+、H5 3.0.0+|
-|midButton|Object|否||中间按钮 仅在 list 项为偶数时有效|App 2.3.4+、H5 3.0.0+|
-|iconfontSrc|String|否||list设置 iconfont 属性时，需要指定字体文件路径 |App 3.4.4+、H5 3.5.3+|
-|backgroundImage|String|否||设置背景图片,优先级高于 backgroundColor |App|
-|backgroundRepeat|String|否||设置标题栏的背景图平铺方式，可取值："repeat" - 背景图片在垂直方向和水平方向平铺；"repeat-x" - 背景图片在水平方向平铺，垂直方向拉伸；"repeat-y" - 背景图片在垂直方向平铺，水平方向拉伸；"no-repeat" - 背景图片在垂直方向和水平方向都拉伸。 默认使用 "no-repeat"|App|
-|redDotColor|String|否||tabbar上红点颜色|App|
+| 属性             | 类型     | 必填 | 默认值 | 描述                                                                                                                                                                                                                                                           | 平台差异说明                                         |
+| :--------------- | :------- | :--- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------- |
+| color            | HexColor | 是   |        | tab 上的文字默认颜色                                                                                                                                                                                                                                           |                                                      |
+| selectedColor    | HexColor | 是   |        | tab 上的文字选中时的颜色                                                                                                                                                                                                                                       |                                                      |
+| backgroundColor  | HexColor | 是   |        | tab 的背景色                                                                                                                                                                                                                                                   |                                                      |
+| borderStyle      | String   | 否   | black  | tabbar 上边框的颜色，可选值 black/white，black 对应颜色 rgba(0,0,0,0.33)，white 对应颜色 rgba(255,255,255,0.33)。                                                                                                                                              | App 2.3.4+ 、H5 3.0.0+、微信小程序、小红书小程序     |
+| blurEffect       | String   | 否   | none   | iOS 高斯模糊效果，可选值 dark/extralight/light/none（参考:[使用说明](https://ask.dcloud.net.cn/article/36617)）                                                                                                                                                | App 2.4.0+ 支持、H5 3.0.0+（只有最新版浏览器才支持） |
+| list             | Array    | 是   |        | tab 的列表，详见 list 属性说明，最少 2 个、最多 5 个 tab                                                                                                                                                                                                       |                                                      |
+| position         | String   | 否   | bottom | 可选值 bottom、top                                                                                                                                                                                                                                             | top 值仅微信小程序支持                               |
+| fontSize         | String   | 否   | 10px   | 文字默认大小                                                                                                                                                                                                                                                   | App 2.3.4+、H5 3.0.0+                                |
+| iconWidth        | String   | 否   | 24px   | 图标默认宽度（高度等比例缩放）                                                                                                                                                                                                                                 | App 2.3.4+、H5 3.0.0+                                |
+| spacing          | String   | 否   | 3px    | 图标和文字的间距                                                                                                                                                                                                                                               | App 2.3.4+、H5 3.0.0+                                |
+| height           | String   | 否   | 50px   | tabBar 默认高度                                                                                                                                                                                                                                                | App 2.3.4+、H5 3.0.0+                                |
+| midButton        | Object   | 否   |        | 中间按钮 仅在 list 项为偶数时有效                                                                                                                                                                                                                              | App 2.3.4+、H5 3.0.0+                                |
+| iconfontSrc      | String   | 否   |        | list 设置 iconfont 属性时，需要指定字体文件路径                                                                                                                                                                                                                | App 3.4.4+、H5 3.5.3+                                |
+| backgroundImage  | String   | 否   |        | 设置背景图片,优先级高于 backgroundColor                                                                                                                                                                                                                        | App                                                  |
+| backgroundRepeat | String   | 否   |        | 设置标题栏的背景图平铺方式，可取值："repeat" - 背景图片在垂直方向和水平方向平铺；"repeat-x" - 背景图片在水平方向平铺，垂直方向拉伸；"repeat-y" - 背景图片在垂直方向平铺，水平方向拉伸；"no-repeat" - 背景图片在垂直方向和水平方向都拉伸。 默认使用 "no-repeat" | App                                                  |
+| redDotColor      | String   | 否   |        | tabbar 上红点颜色                                                                                                                                                                                                                                              | App                                                  |
 
 其中 list 接收一个数组，数组中的每个项都是一个对象，其属性值如下：
 
-|属性|类型|必填|说明|平台差异|
-|:-|:-|:-|:-|:-|
-|pagePath|String|是|页面路径，必须在 pages 中先定义||
-|text|String|是|tab 上按钮文字，在 App 和 H5 平台为非必填。例如中间可放一个没有文字的+号图标||
-|iconPath|String|否|图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px，当 position 为 top 时，此参数无效，不支持网络图片，不支持字体图标||
-|selectedIconPath|String|否|选中时的图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px ，当 position 为 top 时，此参数无效||
-|visible|Boolean|否|该项是否显示，默认显示|App (3.2.10+)、H5 (3.2.10+)|
-|iconfont|Object|否|字体图标，优先级高于 iconPath|App（3.4.4+）、H5 (3.5.3+)|
-
+| 属性             | 类型    | 必填 | 说明                                                                                                                       | 平台差异                    |
+| :--------------- | :------ | :--- | :------------------------------------------------------------------------------------------------------------------------- | :-------------------------- |
+| pagePath         | String  | 是   | 页面路径，必须在 pages 中先定义                                                                                            |                             |
+| text             | String  | 是   | tab 上按钮文字，在 App 和 H5 平台为非必填。例如中间可放一个没有文字的+号图标                                               |                             |
+| iconPath         | String  | 否   | 图片路径，icon 大小限制为 40kb，建议尺寸为 81px \* 81px，当 position 为 top 时，此参数无效，不支持网络图片，不支持字体图标 |                             |
+| selectedIconPath | String  | 否   | 选中时的图片路径，icon 大小限制为 40kb，建议尺寸为 81px \* 81px ，当 position 为 top 时，此参数无效                        |                             |
+| visible          | Boolean | 否   | 该项是否显示，默认显示                                                                                                     | App (3.2.10+)、H5 (3.2.10+) |
+| iconfont         | Object  | 否   | 字体图标，优先级高于 iconPath                                                                                              | App（3.4.4+）、H5 (3.5.3+)  |
 
 **midButton 属性说明**
 
-|属性|类型|必填|默认值|描述|
-|:-|:-|:-|:-|:-|
-|width|String|否|80px|中间按钮的宽度，tabBar 其它项为减去此宽度后平分，默认值为与其它项平分宽度|
-|height|String|否|50px|中间按钮的高度，可以大于 tabBar 高度，达到中间凸起的效果|
-|text|String|否||中间按钮的文字|
-|iconPath|String|否||中间按钮的图片路径|
-|iconWidth|String|否|24px|图片宽度（高度等比例缩放）|
-|backgroundImage|String|否||中间按钮的背景图片路径|
-|iconfont|Object|否||字体图标，优先级高于 iconPath|App（3.4.4+）|
+| 属性            | 类型   | 必填 | 默认值 | 描述                                                                      |
+| :-------------- | :----- | :--- | :----- | :------------------------------------------------------------------------ | ------------- |
+| width           | String | 否   | 80px   | 中间按钮的宽度，tabBar 其它项为减去此宽度后平分，默认值为与其它项平分宽度 |
+| height          | String | 否   | 50px   | 中间按钮的高度，可以大于 tabBar 高度，达到中间凸起的效果                  |
+| text            | String | 否   |        | 中间按钮的文字                                                            |
+| iconPath        | String | 否   |        | 中间按钮的图片路径                                                        |
+| iconWidth       | String | 否   | 24px   | 图片宽度（高度等比例缩放）                                                |
+| backgroundImage | String | 否   |        | 中间按钮的背景图片路径                                                    |
+| iconfont        | Object | 否   |        | 字体图标，优先级高于 iconPath                                             | App（3.4.4+） |
 
-midButton没有pagePath，需监听点击事件，自行处理点击后的行为逻辑。监听点击事件为调用API：uni.onTabBarMidButtonTap，详见[https://uniapp.dcloud.io/api/ui/tabbar?id=ontabbarmidbuttontap](https://uniapp.dcloud.io/api/ui/tabbar?id=ontabbarmidbuttontap)
+midButton 没有 pagePath，需监听点击事件，自行处理点击后的行为逻辑。监听点击事件为调用 API：uni.onTabBarMidButtonTap，详见[https://uniapp.dcloud.io/api/ui/tabbar?id=ontabbarmidbuttontap](https://uniapp.dcloud.io/api/ui/tabbar?id=ontabbarmidbuttontap)
 
-**iconfont参数说明：**
+**iconfont 参数说明：**
 
-|属性|类型|说明|
-|:-|:-|:-|
-|text|String|字库 Unicode 码|
-|selectedText|String|选中后字库 Unicode 码|
-|fontSize|String|字体图标字号(px)|
-|color|String|字体图标颜色|
-|selectedColor|String|字体图标选中颜色|
+| 属性          | 类型   | 说明                  |
+| :------------ | :----- | :-------------------- |
+| text          | String | 字库 Unicode 码       |
+| selectedText  | String | 选中后字库 Unicode 码 |
+| fontSize      | String | 字体图标字号(px)      |
+| color         | String | 字体图标颜色          |
+| selectedColor | String | 字体图标选中颜色      |
 
+#### **tabbar 常见问题** @tips-tabbar
 
-#### **tabbar常见问题** @tips-tabbar
-- tabbar 的 js api 见[接口-界面-tabbar](https://uniapp.dcloud.io/api/ui/tabbar)，可实现动态显示隐藏（如弹出层无法覆盖tabbar）、内容修改（如国际化）、item加角标等功能。hello uni-app中也有示例。
-- tabbar 的 item 点击事件见[页面生命周期的onTabItemTap](https://uniapp.dcloud.io/tutorial/page.html#lifecycle)。
-- 代码跳转到 tabbar 页面，api只能使用[uni.switchTab](https://uniapp.dcloud.io/api/router?id=switchtab)，不能使用uni.navigateTo、uni.redirectTo；使用navigator组件跳转时必须设置[open-type="switchTab"](https://uniapp.dcloud.io/component/navigator)
-- tabbar 的默认高度，在不同平台不一样。App端的默认高度在HBuilderX 2.3.4起从56px调整为50px，与H5端统一。开发者也可以自行设定高度，调回56px。[详见](https://uniapp.dcloud.io/tutorial/syntax-css.html#固定值)
-- tabbar 在H5端是div模拟的，属于前端屏幕窗口的一部分，如果要使用bottom居底定位方式，应该使用css变量`--window-bottom`，比如悬浮在tabbar上方10px的按钮，样式如下`bottom: calc(var(--window-bottom) + 10px)`
-- 中间带+号的tabbar模板例子，[参考](https://ext.dcloud.net.cn/plugin?id=98)。可跨端，但+号不凸起。如需中间凸起，配置tabbar的midButton。
-- 如果是需要先登录、后进入tab页面，不需要把登录页设为首页，首页仍然是tabbar页，可参考[云端一体登录模板](https://ext.dcloud.net.cn/plugin?id=13)
-- 前端弹出遮罩层挡不住tabbar的问题，跨端处理方式时动态隐藏tabbar。App端可以使用plus.nativeObj.view或subNVue做弹出和遮罩，可参考这个[底部原生图标分享菜单例子](https://ext.dcloud.net.cn/plugin?id=69)
-- 微信小程序模拟器1.02.1904090版有bug，在缩放模拟器页面百分比后，tabbar点击多次后就会卡死。真机无碍，使用时注意。[详见](https://developers.weixin.qq.com/community/develop/doc/0002e6e6bf0d602d8c783e10756400)
-- PC宽屏上，当页面存在topWindow或leftWindow或rightWindow等多窗体结构时，若想改变 tabbar 显示的位置，请使用 [custom-tab-bar组件](https://uniapp.dcloud.io/component/custom-tab-bar) 配置，若想隐藏 tabbar，可以使用如下 css（好处是可以和 leftwindow 等窗体联动）：
+- tabbar 的 js api 见[接口-界面-tabbar](https://uniapp.dcloud.io/api/ui/tabbar)，可实现动态显示隐藏（如弹出层无法覆盖 tabbar）、内容修改（如国际化）、item 加角标等功能。hello uni-app 中也有示例。
+- tabbar 的 item 点击事件见[页面生命周期的 onTabItemTap](https://uniapp.dcloud.io/tutorial/page.html#lifecycle)。
+- 代码跳转到 tabbar 页面，api 只能使用[uni.switchTab](https://uniapp.dcloud.io/api/router?id=switchtab)，不能使用 uni.navigateTo、uni.redirectTo；使用 navigator 组件跳转时必须设置[open-type="switchTab"](https://uniapp.dcloud.io/component/navigator)
+- tabbar 的默认高度，在不同平台不一样。App 端的默认高度在 HBuilderX 2.3.4 起从 56px 调整为 50px，与 H5 端统一。开发者也可以自行设定高度，调回 56px。[详见](https://uniapp.dcloud.io/tutorial/syntax-css.html#固定值)
+- tabbar 在 H5 端是 div 模拟的，属于前端屏幕窗口的一部分，如果要使用 bottom 居底定位方式，应该使用 css 变量`--window-bottom`，比如悬浮在 tabbar 上方 10px 的按钮，样式如下`bottom: calc(var(--window-bottom) + 10px)`
+- 中间带+号的 tabbar 模板例子，[参考](https://ext.dcloud.net.cn/plugin?id=98)。可跨端，但+号不凸起。如需中间凸起，配置 tabbar 的 midButton。
+- 如果是需要先登录、后进入 tab 页面，不需要把登录页设为首页，首页仍然是 tabbar 页，可参考[云端一体登录模板](https://ext.dcloud.net.cn/plugin?id=13)
+- 前端弹出遮罩层挡不住 tabbar 的问题，跨端处理方式时动态隐藏 tabbar。App 端可以使用 plus.nativeObj.view 或 subNVue 做弹出和遮罩，可参考这个[底部原生图标分享菜单例子](https://ext.dcloud.net.cn/plugin?id=69)
+- 微信小程序模拟器 1.02.1904090 版有 bug，在缩放模拟器页面百分比后，tabbar 点击多次后就会卡死。真机无碍，使用时注意。[详见](https://developers.weixin.qq.com/community/develop/doc/0002e6e6bf0d602d8c783e10756400)
+- PC 宽屏上，当页面存在 topWindow 或 leftWindow 或 rightWindow 等多窗体结构时，若想改变 tabbar 显示的位置，请使用 [custom-tab-bar 组件](https://uniapp.dcloud.io/component/custom-tab-bar) 配置，若想隐藏 tabbar，可以使用如下 css（好处是可以和 leftwindow 等窗体联动）：
 
-    ```css
-      .uni-app--showleftwindow + .uni-tabbar-bottom {
-      	display: none;
-      }
-    ```
-
-
+  ```css
+  .uni-app--showleftwindow + .uni-tabbar-bottom {
+    display: none;
+  }
+  ```
 
 **代码示例**
+
 ```json
 "tabBar": {
 	"color": "#7A7E83",
@@ -1109,46 +1144,45 @@ midButton没有pagePath，需监听点击事件，自行处理点击后的行为
 }
 ```
 
-#### 自定义tabbar @custom-tab-bar
+#### 自定义 tabbar @custom-tab-bar
 
-原生tabBar是相对固定的配置方式，可能无法满足所有场景，这就涉及到自定义tabBar。
+原生 tabBar 是相对固定的配置方式，可能无法满足所有场景，这就涉及到自定义 tabBar。
 
-但注意除了H5端，自定义tabBar的性能体验会低于原生tabBar。App和小程序端非必要不要自定义。
+但注意除了 H5 端，自定义 tabBar 的性能体验会低于原生 tabBar。App 和小程序端非必要不要自定义。
 
-- H5端的自定义tabBar组件：H5端不存在原生tabBar性能更高的概念，并且宽屏下常见的tabBar在顶部而不是底部，此时可以使用 [custom-tab-bar组件](https://uniapp.dcloud.io/component/custom-tab-bar) 来自定义
-- 普通自定义tabBar：使用view自行绘制tabBar。如果页面是多页方式，切换tabBar将无法保持底部tabBar一直显示。所以这种情况建议使用单页方式。单页方式，如果是复杂页面，应用性能会下降明显，需减少页面复杂度。如果是App端，nvue单页的性能会显著高于vue页面
-- 微信小程序自定义tabbar：微信提供一直基于webview自定义tabBar的方案。该功能体验不佳，不太推荐使用。如果要使用，参考[微信文档](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html)，项目根创建 custom-tab-bar 目录，注意里边的代码是 wxml,wxss，不是 vue，uni-app编译器会直接拷贝该目录到微信小程序中
-- 原生的tabbar有且只有一个且在首页。二级页如需的tab，需自行编写view来实现。一般二级页面更适合的导航是 [segement组件](https://ext.dcloud.net.cn/plugin?id=54)
-
+- H5 端的自定义 tabBar 组件：H5 端不存在原生 tabBar 性能更高的概念，并且宽屏下常见的 tabBar 在顶部而不是底部，此时可以使用 [custom-tab-bar 组件](https://uniapp.dcloud.io/component/custom-tab-bar) 来自定义
+- 普通自定义 tabBar：使用 view 自行绘制 tabBar。如果页面是多页方式，切换 tabBar 将无法保持底部 tabBar 一直显示。所以这种情况建议使用单页方式。单页方式，如果是复杂页面，应用性能会下降明显，需减少页面复杂度。如果是 App 端，nvue 单页的性能会显著高于 vue 页面
+- 微信小程序自定义 tabbar：微信提供一直基于 webview 自定义 tabBar 的方案。该功能体验不佳，不太推荐使用。如果要使用，参考[微信文档](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html)，项目根创建 custom-tab-bar 目录，注意里边的代码是 wxml,wxss，不是 vue，uni-app 编译器会直接拷贝该目录到微信小程序中
+- 原生的 tabbar 有且只有一个且在首页。二级页如需的 tab，需自行编写 view 来实现。一般二级页面更适合的导航是 [segement 组件](https://ext.dcloud.net.cn/plugin?id=54)
 
 ## condition
+
 启动模式配置，仅开发期间生效，用于模拟直达页面的场景，如：小程序转发后，用户点击所打开的页面。
 
 **属性说明：**
 
-|属性|类型|是否必填|描述|
-|:-|:-|:-|:-|
-|current|Number|是|当前激活的模式，list节点的索引值|
-|list|Array|是|启动模式列表|
+| 属性    | 类型   | 是否必填 | 描述                              |
+| :------ | :----- | :------- | :-------------------------------- |
+| current | Number | 是       | 当前激活的模式，list 节点的索引值 |
+| list    | Array  | 是       | 启动模式列表                      |
 
-**list说明：**
+**list 说明：**
 
-|属性|类型|是否必填|描述|
-|:-|:-|:-|:-|
-|name|String|是|启动模式名称|
-|path|String|是|启动页面路径|
-|query|String|否|启动参数，可在页面的 [onLoad](/tutorial/page.md#lifecycle) 函数里获得|
+| 属性  | 类型   | 是否必填 | 描述                                                                  |
+| :---- | :----- | :------- | :-------------------------------------------------------------------- |
+| name  | String | 是       | 启动模式名称                                                          |
+| path  | String | 是       | 启动页面路径                                                          |
+| query | String | 否       | 启动参数，可在页面的 [onLoad](/tutorial/page.md#lifecycle) 函数里获得 |
 
 **注意：**
 
-* 在 App 里真机运行可直接打开配置的页面，微信开发者工具里需要手动改变编译模式，如下图：
+- 在 App 里真机运行可直接打开配置的页面，微信开发者工具里需要手动改变编译模式，如下图：
 
 <div style="text-align:center;">
 	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/condition.png" />
 </div>
 
-* 快手小程序需要在 `project.private.config.json` 文件中配置，参考 [官方文档](https://open.kuaishou.com/docs/develop/developerTools/Localization-project.html#%E6%94%AF%E6%8C%81%E5%AD%97%E6%AE%B5)
-
+- 快手小程序需要在 `project.private.config.json` 文件中配置，参考 [官方文档](https://open.kuaishou.com/docs/develop/developerTools/Localization-project.html#%E6%94%AF%E6%8C%81%E5%AD%97%E6%AE%B5)
 
 **代码示例：**
 
@@ -1174,34 +1208,34 @@ midButton没有pagePath，需监听点击事件，自行处理点击后的行为
 
 因小程序有体积和资源加载限制，各家小程序平台提供了分包方式，优化小程序的下载和启动速度。
 
-所谓的主包，即放置默认启动页面/TabBar 页面，以及一些所有分包都需用到公共资源/JS 脚本；而分包则是根据pages.json的配置进行划分。
+所谓的主包，即放置默认启动页面/TabBar 页面，以及一些所有分包都需用到公共资源/JS 脚本；而分包则是根据 pages.json 的配置进行划分。
 
 在小程序启动时，默认会下载主包并启动主包内页面，当用户进入分包内某个页面时，会把对应分包自动下载下来，下载完成后再进行展示。此时终端界面会有等待提示。
 
-App默认为整包。从uni-app 2.7.12+ 开始，vue2模式也兼容了小程序的分包配置。其目的不用于下载提速，而用于首页是vue时的启动提速。App下开启分包，除在pages.json中配置分包规则外，还需要在manifest中设置在app端开启分包设置，详见：[https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization](https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization)
+App 默认为整包。从 uni-app 2.7.12+ 开始，vue2 模式也兼容了小程序的分包配置。其目的不用于下载提速，而用于首页是 vue 时的启动提速。App 下开启分包，除在 pages.json 中配置分包规则外，还需要在 manifest 中设置在 app 端开启分包设置，详见：[https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization](https://uniapp.dcloud.io/collocation/manifest?id=app-vue-optimization)
 
 subPackages 节点接收一个数组，数组每一项都是应用的子包，其属性值如下：
 
-|属性|类型|是否必填|描述|
-|:-|:-|:-|:-|
-|root|String|是|子包的根目录|
-|pages|Array|是|子包由哪些页面组成，参数同 [pages](#pages)|
-|plugins|Object|否|子包的插件 |
+| 属性    | 类型   | 是否必填 | 描述                                       |
+| :------ | :----- | :------- | :----------------------------------------- |
+| root    | String | 是       | 子包的根目录                               |
+| pages   | Array  | 是       | 子包由哪些页面组成，参数同 [pages](#pages) |
+| plugins | Object | 否       | 子包的插件                                 |
 
 **注意：**
 
-- `subPackages` 里的pages的路径是 ``root`` 下的相对路径，不是全路径。
-- 微信小程序每个分包的大小是2M，总体积一共不能超过20M。
-- 百度小程序每个分包的大小是2M，总体积一共不能超过8M。
-- 支付宝小程序每个分包的大小是2M，总体积一共不能超过8M。
-- QQ小程序每个分包的大小是2M，总体积一共不能超过24M。
-- 抖音小程序每个分包的大小是2M，总体积一共不能超过16M（抖音小程序基础库 1.88.0 及以上版本开始支持，抖音小程序开发者工具请使用大于等于 2.0.6 且小于 3.0.0 的版本）。
-- 快手小程序每个分包的大小是2M，总体积一共不能超过24M。
+- `subPackages` 里的 pages 的路径是 `root` 下的相对路径，不是全路径。
+- 微信小程序每个分包的大小是 2M，总体积一共不能超过 20M。
+- 百度小程序每个分包的大小是 2M，总体积一共不能超过 8M。
+- 支付宝小程序每个分包的大小是 2M，总体积一共不能超过 8M。
+- QQ 小程序每个分包的大小是 2M，总体积一共不能超过 24M。
+- 抖音小程序每个分包的大小是 2M，总体积一共不能超过 16M（抖音小程序基础库 1.88.0 及以上版本开始支持，抖音小程序开发者工具请使用大于等于 2.0.6 且小于 3.0.0 的版本）。
+- 快手小程序每个分包的大小是 2M，总体积一共不能超过 24M。
 - 分包下支持独立的 `static` 目录，用来对静态资源进行分包。
-- `uni-app`内支持对`微信小程序`、`QQ小程序`、`百度小程序`、`支付宝小程序`、`抖音小程序(HBuilderX 3.0.3+)`、`快手小程序`分包优化，即将静态资源或者js文件放入分包内不占用主包大小。详情请参考：[关于分包优化的说明](/collocation/manifest?id=关于分包优化的说明)
+- `uni-app`内支持对`微信小程序`、`QQ小程序`、`百度小程序`、`支付宝小程序`、`抖音小程序(HBuilderX 3.0.3+)`、`快手小程序`分包优化，即将静态资源或者 js 文件放入分包内不占用主包大小。详情请参考：[关于分包优化的说明](/collocation/manifest?id=关于分包优化的说明)
 - 针对`vendor.js`过大的情况可以使用运行时压缩代码
-  + `HBuilderX`创建的项目勾选`运行-->运行到小程序模拟器-->运行时是否压缩代码`
-  + `cli`创建的项目可以在`package.json`中添加参数`--minimize`，示例：`"dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch --minimize"`
+  - `HBuilderX`创建的项目勾选`运行-->运行到小程序模拟器-->运行时是否压缩代码`
+  - `cli`创建的项目可以在`package.json`中添加参数`--minimize`，示例：`"dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch --minimize"`
 
 **使用方法：**
 
@@ -1271,17 +1305,18 @@ subPackages 节点接收一个数组，数组每一项都是应用的子包，�
 
 分包预载配置。
 
-配置preloadRule后，在进入小程序某个页面时，由框架自动预下载可能需要的分包，提升进入后续分包页面时的启动速度
+配置 preloadRule 后，在进入小程序某个页面时，由框架自动预下载可能需要的分包，提升进入后续分包页面时的启动速度
 
 `preloadRule` 中，`key` 是页面路径，`value` 是进入此页面的预下载配置，每个配置有以下几项：
 
-|字段|类型|必填|默认值|说明|
-|---|---|---|---|---|
-|packages|StringArray	|是|无|进入页面后预下载分包的 `root` 或 `name`。`__APP__` 表示主包。|
-|network|String|否	|wifi|在指定网络下预下载，可选值为：all（不限网络）、wifi（仅wifi下预下载）|
+| 字段     | 类型        | 必填 | 默认值 | 说明                                                                    |
+| -------- | ----------- | ---- | ------ | ----------------------------------------------------------------------- |
+| packages | StringArray | 是   | 无     | 进入页面后预下载分包的 `root` 或 `name`。`__APP__` 表示主包。           |
+| network  | String      | 否   | wifi   | 在指定网络下预下载，可选值为：all（不限网络）、wifi（仅 wifi 下预下载） |
 
-app的分包，同样支持preloadRule，但网络规则无效。
+app 的分包，同样支持 preloadRule，但网络规则无效。
 
 ## FAQ
-- Q：为什么在pages.json里配置小程序定位权限描述，无法编译到小程序端，运行后一直提示getLocation需要在app.json中声明
-- A：微信小程序的权限描述配置在manifest中，不在pages.json中，具体参考文档：[https://uniapp.dcloud.io/collocation/manifest?id=mp-weixin](https://uniapp.dcloud.io/collocation/manifest?id=mp-weixin)
+
+- Q：为什么在 pages.json 里配置小程序定位权限描述，无法编译到小程序端，运行后一直提示 getLocation 需要在 app.json 中声明
+- A：微信小程序的权限描述配置在 manifest 中，不在 pages.json 中，具体参考文档：[https://uniapp.dcloud.io/collocation/manifest?id=mp-weixin](https://uniapp.dcloud.io/collocation/manifest?id=mp-weixin)

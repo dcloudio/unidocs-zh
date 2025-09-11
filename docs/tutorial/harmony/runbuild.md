@@ -896,3 +896,7 @@ HBuilderX 4.81+ 在这种情况下会自动删除鸿蒙工程目录内的所有�
 位置相关
 
 鸿蒙中目前支持系统定位，细节配置可参考 [API uni.getLocation 鸿蒙配置说明](../../api/location/location.md#harmony-set-location)
+
+### 如何申请、使用华为支付
+
+可参考 [华为支付指南](../mp-harmony/payment.md)

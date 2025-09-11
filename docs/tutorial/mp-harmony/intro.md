@@ -705,3 +705,7 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 #### 提交审核按钮为灰色无法提交
 
 观察按钮右侧有个联系方式，可以和 uniapp 发起沟通，看是否有更好的激励政策。如果仍有问题，可以在 [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)沟通。
+
+### 如何申请、使用华为支付
+
+可参考 [华为支付指南](../mp-harmony/payment.md)

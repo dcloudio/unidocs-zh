@@ -674,6 +674,10 @@ export {
 }
 ```
 
+## 华为支付
+
+鸿蒙应用、鸿蒙元服务使用华为支付可参考 [华为支付接入方式](../../tutorial/mp-harmony/payment.md)
+
 ## PayPal支付 [参考](https://uniapp.dcloud.io/app-payment-paypal)
 
 ## Stripe支付 [参考](https://uniapp.dcloud.io/app-payment-stripe)

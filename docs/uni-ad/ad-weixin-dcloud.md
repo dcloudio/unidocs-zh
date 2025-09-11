@@ -106,10 +106,6 @@ DCloud是微信官方核准的广告代运营服务商，代运营是微信给�
 
 如果您之前未开通微信流量主，通过本流程授权代运营后，uni-ad也会帮您开通微信流量主，然后和uni-ad的其他广告进行整体聚合比价。
 
-### 开通条件
-1. 首先需要开通[uni-ad](https://uniad.dcloud.net.cn)，
-
-2. 开通uni-ad的微信小程序广告，开通指南[点击这里](#uni-ad微信小程序广告)
 
 ### 开通流程
 1. 登录[uni-ad](https://uniad.dcloud.net.cn/)，点击左侧导航栏 **广告设置->点击应用进入应用详情->点击微信小程序广告->点击授权微信小程序流量主代运营**
@@ -139,8 +135,8 @@ DCloud是微信官方核准的广告代运营服务商，代运营是微信给�
 4. 开发者通过`HBuilder X 4.75+ (Alpha版本)` 重新发布微信小程序
 
 ### 广告位说明
-- 开发者在开通uni-ad微信小程序广告时，uni-ad已经会自动创建5个小程序广告位，列表如下:
-  ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/adp_list.png)
+- 开发者在开通uni-ad微信小程序广告时，uni-ad已经会自动创建6个小程序广告位，列表如下:
+  ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/applet_adp_list.png)
 
 然后授权uni-ad流量主代运营后，uni-ad会针对以上广告位创建流量主广告位，名称为：`uni-ad-[广告位名称]`，开发者如已使用以上广告位adpid，则不需要修改对应代码，重新发布小程序即可。
 

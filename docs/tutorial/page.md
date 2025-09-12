@@ -283,6 +283,7 @@ style的写法与web的css基本相同。
 |onNavigationBarSearchInputClicked|监听原生标题栏搜索输入框点击事件（pages.json 中的 searchInput 配置 disabled 为 true 时才会触发）|App、H5|1.6.0|
 |onShareTimeline|监听用户点击右上角转发到朋友圈|微信小程序|2.8.1+|
 |onAddToFavorites|监听用户点击右上角收藏|微信小程序、QQ小程序|2.8.1+|
+|onShareChat| 监听右上角菜单“分享到微信群组”按钮的行为 | 小红书小程序| |
 
 ## Vue2 页面及组件生命周期流程图@vue2-lifecycle-flow
 

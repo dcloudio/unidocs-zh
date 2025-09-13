@@ -48,7 +48,7 @@
 云端打包界面时在 “渠道包” 下勾选 “Google Play(AAB)”，使用的是高德地图 SDK 版本为 `6.9.3`，没有使用so库，不涉及16KB 内存页面大小问题。  
 
 
-使用腾讯地图SDK的API：
+使用高德地图SDK的API：
 - [uni.createMapContext](../api/location/map.md#createmapcontext)
 - [uni.chooseLocation](../api/location/location.md#chooselocation)
 

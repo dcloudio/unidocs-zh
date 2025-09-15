@@ -42,6 +42,8 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0f7ab0c1-0e3f-4791-bcd3-7363b96c7cd0.png)
 
+在 HBuilderX 4.81 版本之前，需要手动配置鸿蒙签名，可参考 [鸿蒙元服务配置签名证书](./manual-signature.md)。
+
 此版本之前，元服务的证书签名、权限配置和鸿蒙 App 的相关操作基本一致，需要使用启动 DevEco 启动模拟器，参考 [证书签名配置指南](../harmony/runbuild#signing) 。
 
 签名证书分成两类：

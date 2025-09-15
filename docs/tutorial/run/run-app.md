@@ -157,7 +157,7 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 
 > 打包App的入口在HBuilder顶部发行菜单，或快捷键【Ctrl+u】
 
-打包自定义运行基座后，HBuilder会自动将生成后的apk和ipa包存放在 项目目录/unpackage/debug目录下，文件名分别为`android_debug.apk`和`iOS_debug.ipa`。
+打包自定义运行基座后，HBuilder会自动将生成后的apk或ipa或app包存放在 项目目录/unpackage/debug目录下，文件名分别为`android_debug.apk`或`iOS_debug.ipa`或`Pandora_simulator_debug.app`。
 
 一个项目只能生成一个自定义基座，多次生成只保留最后一次结果。
 

@@ -178,7 +178,7 @@ MacOSX，如果无法自动启动App，请排查以下原因：
 
 > HBuilderX 4.71之前
 
-使用离线SDK打包生成自定义运行基座(不支持cli方式,将src拖拽到编辑器中，并重新识别项目类型)，生成后将apk和ipa包存放在项目目录/unpackage/debug目录下，文件名分别为android_debug.apk和iOS_debug.ipa。
+使用离线SDK打包生成自定义运行基座(不支持cli方式,将src拖拽到编辑器中，并重新识别项目类型)，生成后将apk或ipa或app包存放在项目目录/unpackage/debug目录下，文件名分别为android_debug.apk、iOS_debug.ipa、Pandora_simulator_debug.app。
 
 可以在设备选择窗口，选择自定义基座-本地基座，如下图所示：
 

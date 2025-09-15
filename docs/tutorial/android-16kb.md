@@ -5,6 +5,13 @@
 
 > HBuilderX4.81版本已适配支持 16KB 内存页面大小
 
+::: warning 注意事项
+
+uni-app 核心功能模块为了适配支持 16KB 内存页面大小，更新了部分依赖库（如Fresco3.4.0），最低支持的版本由 Android4.4（API 等级19） 调整为 Android5（API 等级21）。  
+也就是说升级HBuilderX4.81及以上版本后，生成的安装包将无法安装到 Android5 以下的设备，如果还需兼容 Android4.4 版本请继续使用 HBuilderX4.76 版本。  
+
+:::
+
 ## 不支持 16KB 的模块  
 虽然 uni-app 核心功能模块已适配支持 16KB 内存页面大小，但部分涉及三方 SDK 的模块仍未完全适配支持。  
 
@@ -35,7 +42,7 @@
 - libfacedevice.so  
 
 ### 友盟统计
-友盟统计模块使用的SDK 版本为 `1.9.5`，目前无计划更新此 SDK 版本，建议应用用于提交 Google Play 时不要使用此功能。  
+友盟统计模块使用的SDK 版本为 `9.4.4`，目前无计划更新此 SDK 版本，建议应用用于提交 Google Play 时不要使用此功能。  
 如确实需要使用，请开发[uni原生语言插件](../plugin/native-plugin.md)或[uts插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)接入支持。  
 
 涉及的so库文件列表：

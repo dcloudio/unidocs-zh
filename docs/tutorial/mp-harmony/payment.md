@@ -1,6 +1,6 @@
 # 鸿蒙应用、鸿蒙元服务支付
 
-目前鸿蒙元服务鼓励通过华为支付完成支付，本文介绍华为支付流程。
+目前鸿蒙应用、元服务鼓励通过华为支付完成支付，本文介绍华为支付流程。
 
 ## 整体流程
 
@@ -56,7 +56,7 @@ console.info('生成的私钥：');
 console.info(privateKey);
 ```
 
-执行 `node generateKeyPair.js`得到泛互指，返回结构如下：
+执行 `node generateKeyPair.js`得到返回值，返回结构如下：
 
 ```text
 -----BEGIN PUBLIC KEY-----

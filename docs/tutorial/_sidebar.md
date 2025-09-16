@@ -136,6 +136,7 @@
   - 其它配置
     - [鸿蒙配置 URL Scheme](harmony/url-scheme.md)
     - [鸿蒙唤起鸿蒙应用、元服务](harmony/open-app.md)
+    - [鸿蒙使用华为支付](./mp-harmony/payment.md)
 - 鸿蒙元服务专题
   - [运行和发行](mp-harmony/intro.md)
   - [鸿蒙元服务登录](mp-harmony/login.md)

@@ -6,6 +6,14 @@
 
 > 使用 gradle 脚本编译  
 
+### HBulder4.81及以上版本升级云端打包环境  
+- Android 编译 SDK（compileSdk）： 35  
+- Android 构建工具（buildToolsVersion）：35.0.0  
+- Gradle：8.14.3  
+- Android Gradle 插件（com.android.tools.build:gradle）：8.12.0  
+- Kotlin Android 插件（org.jetbrains.kotlin:kotlin-gradle-plugin）：2.2.0  
+- JDK：17 （[Amazon corretto 17.0.12.7.1](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/what-is-corretto-17.html)）  
+
 ### HBulder4.41及以上版本升级云端打包环境  
 - Android 编译 SDK（compileSdk）： 35  
 - Android 构建工具（buildToolsVersion）：35.0.0  

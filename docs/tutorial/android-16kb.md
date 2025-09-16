@@ -24,6 +24,16 @@ uni-app 核心功能模块为了适配支持 16KB 内存页面大小，更新了
 - libti-monitor.so
 
 
+国外广告 `applovin`、`pangle(海外穿山甲)` 广告渠道SDK 未适配支持 16KB 内存页面大小，需等待官方升级相关SDK版本解决。  
+如果应用用于提交 Google Play 时不要包含这些SDK。  
+
+涉及的so库文件列表：
+- libapplovin-native-crash-report.so
+- libnms.so
+- libpglarmor.so
+- libtobEmbedPageEncrypt.so
+
+
 ### [uni-push](../api/plugins/push.md)
 `uni-push`是由 DCloud 与合作伙伴个推共同推出的统一推送服务，在国内环境下，该服务依赖`卓信ID SDK`，但该 SDK 目前未适配支持 16KB 内存页面大小。  
 为满足 Google Play 的要求，应用在提交至 Google Play 时需避免使用`卓信ID SDK`。按以下方式配置，使用`uni-push`时将不会包含`卓信ID SDK`：  

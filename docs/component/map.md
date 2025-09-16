@@ -395,10 +395,6 @@ DCloud为开发者争取了福利，可优惠获取商业授权。如有需求�
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/3707/408.png)
 
-### 【福利】高德拉新
-
-一键注册高德企业开发者，最高可获取210元奖励金，详见[https://ask.dcloud.net.cn/article/41279](https://ask.dcloud.net.cn/article/41279)
-
 ### 鸿蒙应用使用华为花瓣地图
 
 鸿蒙应用可免费使用鸿蒙系统提供的地图服务。开通方式如下：

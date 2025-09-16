@@ -279,6 +279,3 @@ DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授�
 
 > 文档地址：[https://doc.dcloud.net.cn/uniCloud/unicloud-city-select.html](https://doc.dcloud.net.cn/uniCloud/unicloud-city-select.html)
 
-## 【福利】高德拉新活动
-
-一键注册高德企业开发者，最高可获取210元奖励金，详见[https://ask.dcloud.net.cn/article/41279](https://ask.dcloud.net.cn/article/41279)

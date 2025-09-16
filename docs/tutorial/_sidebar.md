@@ -140,6 +140,8 @@
   - [运行和发行](mp-harmony/intro.md)
   - [鸿蒙元服务登录](mp-harmony/login.md)
   - [鸿蒙元服务唤起鸿蒙应用](mp-harmony/open-app.md)
+  - [鸿蒙元服务配置链接直达](./mp-harmony/applinking.md)
+  - [鸿蒙元服务使用华为支付](./mp-harmony/payment.md)
 - 小程序专题
   - [组件与 WXS](miniprogram-subject.md)
   - [使用小程序插件](mp-weixin-plugin.md)

@@ -13,8 +13,7 @@
 - 开发者账号是企业开发者账号。
 - 元服务已上架
 
-在满足上述两个条件，可以开通 App Linking 服务。文档可参考 《[使用 App Linking 实现元服务跳转
-](https://developer.huawei.com/consumer/cn/doc/atomic-guides/atomic-applinking#section10497195541515)》。
+在满足上述两个条件，可以开通 App Linking 服务。文档可参考 《[使用 App Linking 实现元服务跳转](https://developer.huawei.com/consumer/cn/doc/atomic-guides/atomic-applinking#section10497195541515)》。
 
 ### 配置 .well-knows 路径
 
@@ -44,6 +43,8 @@
 
 后续可扫码唤起应用
 
+### 链接直达、参数传递
+
 打开特定的页面是通过传递 encodeURIComponent 之后的
 
 ```js
@@ -53,3 +54,7 @@ const value = `ascfPara=${encodeURIComponent(
 ```
 
 把这个路径填入自定义参数中，最终会得到一个类似 `https://hoas.drcn.agconnect.link/AlXKm` 的 URL，将此 URL 转成二维码可实现扫码打开 **hellouniapp** 的 API 页面，而非默认首页。
+
+### 后续支持
+
+如果操作过程有疑问，可点此进入 [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)

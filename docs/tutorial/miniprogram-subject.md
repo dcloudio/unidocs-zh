@@ -463,6 +463,7 @@ export default {
 - 支付宝小程序`script`的标签属性`name`、`from`被统一为了`module`、`src`以便后续实现多平台统一写法
 - 百度小程序中请使用 Filter 规范，[详见](https://smartprogram.baidu.com/docs/develop/framework/view_filter/)
 - 百度小程序 Filter 只能导出`function`函数
+- 小红书小程序 `src` 不能为空，必须设置 静态资源地址
 - 暂不支持在 wxs、sjs、filter.js 中调用其他同类型文件
 - wxs、filter.js 既能内联使用又可以外部引入，sjs 只能外部引入
 - QQ 小程序目前对内联的 wxs 支持不好，部分写法可能会导致编译出错，尽量使用外部引入的方式

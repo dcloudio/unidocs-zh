@@ -6,9 +6,9 @@
   * [注销账号](account/deletion.md)
 
 ## 应用相关
-  * [DCloud appid 用途/作用/使用说明](app/introduction.md)
-  * [如何授权应用（设置项目成员/协作者）](app/add-member.md)
-  * [转让应用](app/transfer.md)
+  * [DCloud appid 用途/作用/使用说明](./app/introduction.md)
+  * [如何授权应用（设置项目成员/协作者）](./app/add-member.md)
+  * [转让应用](./app/transfer.md)
 
 ## 财务相关
   * [如何开具发票](finance/invoice.md)

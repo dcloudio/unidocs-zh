@@ -851,15 +851,13 @@ kill -9 进程号
 
 [鸿蒙平台文档要求](https://developer.huawei.com/consumer/cn/doc/architecture-guides/user_agreement_and_privacy_policy-0000002331953689) 用户首次打开应用，需要同意用户协议与隐私政策，才可进入应用。
 
-也请开发者注意 “App不得因用户不同意提供非必要个人信息，而拒绝用户使用其基本功能服务” 这一条规则，根据自己实际情况，开放符合自己业务规范的基本服务。具体请参考 [《未同意隐私政策模式运行》](/tutorial/app-disagreemode)
+目前鸿蒙隐私弹窗可自行实现，也可使用系统提供的隐私协议弹窗。《[管理隐私声明 概述](https://developer.huawei.com/consumer/cn/doc/app/agc-help-privacy-policy-overview-0000002316881805)》 提供了相关说明。技术实现可参考《[隐私管理服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-privacy)》。
 
-在具体技术实现时候，在应用首页引用相关自定义组件进行弹窗，并持久化用户的选择。目前隐私弹窗不需要额外的配置，在 UI 层自行实现即可。
+核心步骤：
 
-其他平台鸿蒙用户可访问：
-
-- 鸿蒙元服务用户，可参考 [元服务如何配置权限](/tutorial/mp-harmony/intro#permission)
-- uni-app x 用户，可参考 组件[dialogPage](https://doc.dcloud.net.cn/uni-app-x/api/dialog-page)
-- 其他平台用户，可参考 [App 完整 manifest.json](/collocation/manifest-app#privacyregistermode) 相关说明。
+1. 【可选】AGC 后台开启隐私协议、用户协议托管，这个步骤目的是通过模板生成相关协议，得到对应 URL
+2. 鸿蒙工程设置 `entry/src/main/module.json5`，参考《[未上架应用接入隐私管理服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-privacy#section133476117117)》，补充 `appgallery_privacy_hosted` 和 `appgallery_privacy_link_privacy_statement` 参数。配置成功后即可自动弹窗。
+3. 【可选】封装 UTS 插件，通过 [API](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-privacy#section6348454124618) 查询隐私协议签署状态、停止隐私协议、拉起隐私弹窗、监听变化等信息。
 
 ### 鸿蒙提审报应用使用了 HarmonyOS beta 版本的 API
 

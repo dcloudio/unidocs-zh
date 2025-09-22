@@ -10,7 +10,7 @@
 根据文档指引，填写所需参数并点击保存。
 
 `考虑到不同项目可能对应不同的应用商店账号，建议配置名称使用项目名或公司名以便区分。`
-![](https://web-ext-storage.dcloud.net.cn/appstore/addconfig.png)
+![](https://web-ext-storage.dcloud.net.cn/appstore/2025-09-22_200937_594.png)
 
 3. 进入应用发布页面，填写发布信息
 - 选择要发布的应用
@@ -58,11 +58,12 @@
 
 5. 发布设置
 
-选择 定时发布 或 立即发布，点击完成。
-![](https://web-ext-storage.dcloud.net.cn/appstore/publishfour.png)
+选择 定时发布 或 立即发布，点击确认提交。
+![](https://web-ext-storage.dcloud.net.cn/appstore/2025-09-22_201437_278.png)
+![](https://web-ext-storage.dcloud.net.cn/appstore/2025-09-22_201604_526.png)
+
 
 6. 查看发布记录
 
- 在「应用发布记录」列表中，可查看应用在各商店的上架状态，并可点击 「刷新」 按钮更新最新审核结果。
-
+ 在「应用发布记录」列表中，可查看各商店的上架状态，并通过点击「刷新」获取最新审核结果。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/review-result.png)

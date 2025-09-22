@@ -190,7 +190,7 @@ uni.showModal({
 - 钉钉小程序真机与模拟器表现有差异，真机title，content均为必填项
 - 各家小程序平台对于 `confirm`、`cancel` 字段返回规则可能不尽相同，包含两种情况：`{ confirm: true, cancel: false }` 或 `{ confirm: true }`，但并不影响使用 if 去做判断
 - 钉钉小程序本身不支持设置 `cancelColor` 和 `confirmColor` 属性
-- 从 `4.76` 起，钉钉小程序会优先使用原生的 [showMoal](https://open.dingtalk.com/document/isvapp/jsapi-show-modal)，而不是使用 [confirm](https://open.dingtalk.com/document/isvapp/jsapi-confirm) 或 [alert](https://open.dingtalk.com/document/isvapp/jsapi-alert) 模拟
+- 从 `4.76` 起，钉钉小程序会优先使用原生的 [showModal](https://open.dingtalk.com/document/isvapp/jsapi-show-modal)，而不是使用 [confirm](https://open.dingtalk.com/document/isvapp/jsapi-confirm) 或 [alert](https://open.dingtalk.com/document/isvapp/jsapi-alert) 模拟
 
 ## uni.showActionSheet(OBJECT)
 

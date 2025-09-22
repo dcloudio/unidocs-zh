@@ -1,17 +1,6 @@
-## uni一键发布
 
-
-一键上传Apk到多个应用市场
-
-
-## 功能介绍
-1. 一键发布到多家应用商店：目前仅支持华为、小米、VIVO、OPPO、应用宝、荣耀
-2. 仅支持更新已上架的APP，不支持新增APP
-
-## 使用指南
-
-1. Api传包相关参数的获取@getKey
-#### 小米
+## Api传包相关参数的获取@getKey
+### 小米@xiaomi
 1.前往小米[开放平台](https://dev.mi.com/xiaomihyperos)，点击管理中心。如未登录，则会先跳转至登录页面。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/mi_2025-09-01_155214_780.png)
 2.点击“自动发布接口”。
@@ -19,7 +8,7 @@
 3.下载公钥文件，并获取密钥。
 
 
-#### OPPO
+### OPPO@oppo
 1.前往OPPO[开放平台](https://open.oppomobile.com)，点击管理中心。如未登录，则会先跳转至登录页面。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/oppo_2025-09-01_163233_036.png)
 2.点击顶部的“产品” ，然后点击“我的API”。
@@ -33,7 +22,7 @@
 注:同一个秘钥可以支持多个APP使用。[API传包FAQ](https://web-ext-storage.dcloud.net.cn/appstore/oppo_2025-09-01_164836_649.png)
 
 
-#### VIVO
+### VIVO@vivo
 1.前往VIVO[开放平台](https://dev.vivo.com.cn/contacts/details)，如未登录，则先登录。
 2.点击账号 - 账号管理 - API管理，进入以下页面。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/vivo_20240415150637181831.png)
@@ -43,7 +32,7 @@
 
 
 
-#### 荣耀	
+### 荣耀@honor
 1.前往荣耀[开放平台](https://developer.honor.com/cn)，点击管理中心。如未登录，则会先跳转至登录页面。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/honor_2025-09-01_175654_723.png)
 2.点击凭证。
@@ -52,15 +41,21 @@
 ![](https://web-ext-storage.dcloud.net.cn/appstore/honor_2025-09-01_180712_089.png)
 
 
-#### 应用宝	
+### 应用宝@yyb
 1.前往腾讯应用[开放平台](https://app.open.qq.com/p/home)，如未登录，则先登录。
 2.点击账号 - 账号管理 - API发布接口，进入以下页面。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/qq_2025-09-01_175038_522.png)
 ![](https://web-ext-storage.dcloud.net.cn/appstore/qq_2025-09-01_174814_738.png)
 3.点击申请开通，开通成功后，平台将分配access_secret。
 
-
-
-
-
+### 华为@huawei
+1.前往[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，如未登录，则先登录。
+2.选择“用户与访问” 。
+![](https://web-ext-storage.dcloud.net.cn/appstore/huawei0001.png)
+3.选择左侧导航栏的“API密钥 > Connect API”，点击“创建”。
+![](https://web-ext-storage.dcloud.net.cn/appstore/huawei002.png)
+4.在“名称”列输入自定义的客户端名称，“项目”保持默认值“N/A”，“角色”选择APP管理员，点击“确认”。
+![](https://web-ext-storage.dcloud.net.cn/appstore/huawei007.png)
+5.创建成功，平台将分配client_id和密钥。
+![](https://web-ext-storage.dcloud.net.cn/appstore/huawei004.png)
 

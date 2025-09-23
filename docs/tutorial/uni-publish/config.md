@@ -1,5 +1,7 @@
 
 ## Api传包相关参数的获取@getKey
+`请使用应用市场的主账号获取Api传包相关操作，不要使用子账号，否则可能权限不足，或没有操作入口`
+
 ### 小米@xiaomi
 1.前往小米[开放平台](https://dev.mi.com/xiaomihyperos)，点击管理中心。如未登录，则会先跳转至登录页面。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/mi_2025-09-01_155214_780.png)

@@ -7,7 +7,9 @@
 ![](https://web-ext-storage.dcloud.net.cn/appstore/mi_2025-09-01_155214_780.png)
 2.点击“自动发布接口”。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/mi_2025-09-01_155659_112.png)
-3.下载公钥文件，并获取密钥。
+3.下载公钥文件，并获取私钥。
+
+4.小米账号：登录小米开放平台的小米账号邮箱
 
 
 ### OPPO@oppo

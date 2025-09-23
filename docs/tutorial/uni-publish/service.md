@@ -70,4 +70,4 @@
 6. 查看发布记录
 
  在「应用发布记录」列表中，可查看各商店的上架状态，并通过点击「刷新」获取最新审核结果。
-![](https://web-ext-storage.dcloud.net.cn/appstore/review-result.png)
+![](https://web-ext-storage.dcloud.net.cn/appstore/2025-09-23_175540_858.png)

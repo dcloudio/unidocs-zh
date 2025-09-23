@@ -24,6 +24,7 @@
 
 ### VIVO@vivo
 1.前往VIVO[开放平台](https://dev.vivo.com.cn/contacts/details)，如未登录，则先登录。
+
 2.点击账号 - 账号管理 - API管理，进入以下页面。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/vivo_20240415150637181831.png)
 ![](https://web-ext-storage.dcloud.net.cn/appstore/vivo_20221008102105709868.png)
@@ -43,10 +44,17 @@
 
 ### 应用宝@yyb
 1.前往腾讯应用[开放平台](https://app.open.qq.com/p/home)，如未登录，则先登录。
+
 2.点击账号 - 账号管理 - API发布接口，进入以下页面。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/qq_2025-09-01_175038_522.png)
 ![](https://web-ext-storage.dcloud.net.cn/appstore/qq_2025-09-01_174814_738.png)
-3.点击申请开通，开通成功后，平台将分配access_secret。
+3.点击申请开通，开通成功后，平台将分配access_secret。 
+
+4.UserID获取，如下图。
+![](https://web-ext-storage.dcloud.net.cn/appstore/2025-09-23_110024_975.png)
+
+5.开发者可在开放平台的安卓应用管理首页查看 app_id（如下图所示）。在应用发布页面中，如果勾选了应用宝渠道，则需要填写对应的app_id；而在渠道配置页面，仅需填写用户ID和访问密钥。
+![](https://web-ext-storage.dcloud.net.cn/appstore/09231106.png)
 
 ### 华为@huawei
 1.前往[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，如未登录，则先登录。

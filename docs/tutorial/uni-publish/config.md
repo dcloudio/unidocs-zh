@@ -69,3 +69,24 @@
 5.创建成功，平台将分配client_id和密钥。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/huawei004.png)
 
+
+### 苹果@apple
+1.前往[Apple 账户](https://account.apple.com/account/manage)，如未登录，则先登录。
+
+2.选择“登录和安全”。
+
+![](https://web-ext-storage.dcloud.net.cn/appstore/apple10001.png)
+
+3.点击 “App 专用密码” 在弹窗中 “密码” 右侧的 “+” 号按钮，输入备注名称后，点击 “创建” ，复制出生成的 App 专用密码。
+
+4.登录[App Store Connect](https://appstoreconnect.apple.com/)，如未登录，则先登录。
+
+5.在 “用户和访问” - “集成” - “[App Store Connect API](https://appstoreconnect.apple.com/access/integrations/api)” 中可以看到 “Issuer ID”。
+
+![](https://web-ext-storage.dcloud.net.cn/appstore/apple10002.png)
+
+![](https://web-ext-storage.dcloud.net.cn/appstore/apple10003.png)
+
+6.创建密钥，点击“有效”旁边的“+”号按钮，访问选择 “管理” 或 “App 管理”权限，点击创建。
+
+7.创建成功后，将 “密钥ID” 和 “密钥文件” 下载保存。

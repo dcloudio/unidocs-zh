@@ -114,6 +114,7 @@
   - App 应用市场上架
     - [概述](store.md)
     - [国内应用市场上架](android-store.md)
+    - [Android 16KB页面大小适配](android-16kb.md)
     - [Android 平台隐私与政策提示框](app-privacy-android.md)
     - [未同意隐私政策模式运行](app-disagreemode.md)
     - [Google Play 上架](android-gp.md)

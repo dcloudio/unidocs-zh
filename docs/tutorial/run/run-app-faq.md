@@ -201,10 +201,10 @@ iTunes无法检测到手机，iTunes弹窗提示：`iTunes 在您的电脑上检
 #### 4.2.3 Mac上连接iOS模拟器@mac-iOS-Simulator
 
 1. Xcode必须安装在应用程序（Application）中
-2. 首先确认Xcode（版本必须是6.0及以上版本）已安装并能正常启动模拟器
-3. 如果仍然无法检测到，则打开Xcode，然后打开Xcode的 `Preferences --> Locations`，设置该界面中的 `Command Line Tools` 项，选择正确的`Xcode`版本即可
+2. 首先确认Xcode（版本必须是16.0及以上版本）已安装并能正常启动模拟器
+3. 如果仍然无法检测到，则打开Xcode，然后打开Xcode的 `Settings --> Locations`，设置该界面中的 `Command Line Tools` 项，选择正确的`Xcode`版本即可
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/xcode_ios_simulator.png)
+![](https://web-ext-storage.dcloud.net.cn/doc/uniapp/xcode_ios_simulator.png)
 
 ## 第5步 运行启动
 HBuilderX的运行界面检测到手机后，可以点击运行。此后会继续进行：编译、安装基座到手机、同步应用代码和资源到基座、启动基座并运行应用。这些步骤仍然可能出错。

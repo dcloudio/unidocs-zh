@@ -58,6 +58,16 @@ uni-app 核心功能模块为了适配支持 16KB 内存页面大小，更新了
 涉及的so库文件列表：
 - libcrashsdk.so  
 
+### OAID
+
+OAID目前使用的 SDK 版本为 `1.0.25`或`1.0.13`，更高版本需要申请证书，暂时无计划更新。此功能在生成 Google Play 渠道包时默认不包含。
+
+离线打包时默认包含此SDK，如果需要上架 Google Play，可以直接删除库`msa_mdid_1.0.13.aar`和`oaid_sdk_1.0.25.aar`。
+
+涉及的so库文件列表：
+- libsecsdk.so
+- lib39285EFA.so
+
 
 ## Google Play渠道包专属模块  
 

@@ -898,3 +898,13 @@ HBuilderX 4.81+ 在这种情况下会自动删除鸿蒙工程目录内的所有�
 ### 如何申请、使用华为支付
 
 可参考 [华为支付指南](../mp-harmony/payment.md)
+
+### 鸿蒙应用必须上架才能安装使用吗？
+
+鸿蒙和 iOS 一样不支持侧载，打包得到的 app 无法安装到任意用户的手机上。
+
+如果是内部需要测试，可以使用调试模式安装到指定的手机上进行测试。本地调试。把对应手机的 UUID 录入 AGC 证书中，然后手机开启开发者模式并链接电脑，在 HBuilderX 中选择运行。
+
+鸿蒙提供的类似 testFilight 白名单测试服务，访问 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) 找到 **APP - 应用测试 - 版本列表**，这里可以生成邀请链接，在白名单内的用户可以下载安装，这个过程也需要提交给华为做审核，对软件的完善程度有一定的要求，适合开发中后期内部测试。
+
+完整测试方案，可参考鸿蒙文档 《[AGC 内部测试](https://developer.huawei.com/consumer/cn/doc/app/agc-help-internal-test-overview-0000002253054942)》。

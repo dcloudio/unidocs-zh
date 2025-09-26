@@ -23,7 +23,7 @@ uts在iOS上的调试HBuilderX版本支持如下
 
 - 点击【开启uts调试(swift)】，uts调试(swift)显示连接成功后可能需要等待十几秒后方可使用。
 - 调试进程`codelldb`会占用较大的内存。
-- 调试模式下，uts插件修改导致后重装App可能安装失败。
+- 调试模式下，uts插件修改导致重装App可能安装失败。
 - 基座重装后如果需要再次调试需重新开启uts调试(swift)
 
 ## uni-app x jscore调试

@@ -38,7 +38,7 @@
 
 初次运行元服务，需要配置好证书签名、权限设置等信息，第一次参与鸿蒙开发的新手请仔细阅读下面相关建议，否则可能会影响开发元服务。
 
-在 HBuilderX 4.81+ （即将发布）可在 HBuilderX manifest.json 中进行可视化操作，完成证书的自动签名。
+在 HBuilderX 4.81+ 可在 HBuilderX manifest.json 中进行可视化操作，完成证书的自动签名。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0f7ab0c1-0e3f-4791-bcd3-7363b96c7cd0.png)
 
@@ -84,7 +84,7 @@
 
 项目运行需要配置元服务包名，打开项目根目录的 `mainefest.json` 填写 `鸿蒙元服务 - 应用包名`，结构类似 `com.atomicservice.[你的AppID]`。
 
-![配置 manifest.json 文件](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/f7a94969-59d3-42ad-84be-adf5bcadcd54.png)
+![配置 manifest.json 文件](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/Snipaste_2025-09-30_19-25-24.png)
 
 ### 2. 配置 `module.json5`
 

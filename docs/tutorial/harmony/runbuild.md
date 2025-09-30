@@ -89,7 +89,8 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 ### 启动鸿蒙模拟器@connectvirtually
 
-鸿蒙模拟器只能在 DevEco Studio 中启动。
+鸿蒙模拟器只能在 DevEco Studio 中启动。DevEco5.1.1 release 开始提供 API19 模拟器，低于 API19 版本的模拟器不支持 windows x86 平台用户开发 uniapp 鸿蒙，此处系统镜像需要选择 API >= 19 的系统版本。
+
 在 DevEco Studio 中打开任意一个项目（也可以新建一个空项目），然后在下图的位置进入设备管理器：
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720085379828ap3pkhhfmig.png)#{.zooming style="max-height:200px"}
@@ -127,9 +128,9 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 ![](https://web-ext-storage.dcloud.net.cn/unicloud/ext-storage/52a7f8f1-ea77-4733-b5f2-d92d20ff87cf.png)#{.zooming style="max-height:200px"}
 
-3. 【首次运行】第一次运行本项目时会在项目根目录下生成 `harmony-configs` 目录用于存放鸿蒙配置文件
+3. 【首次运行】第一次运行本项目时会在项目根目录下生成 `harmony-configs` 目录用于存放鸿蒙配置文件。
 
-参考：[更多配置指南](#configs)
+提示：目录默认是空的，用户自定义的配置需要放置在此处才能生效。请参考：[更多配置指南](#configs)
 
 4. 选择运行设备
 
@@ -144,7 +145,7 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 如果是运行到真机设备上，需要配置签名证书资料。
 HBuilderX 4.61+ 开始支持直接配置证书资料，点击对话框中的【配置调试证书】按钮打开配置对话框，支持自动申请调试证书。
-对于更早版本的 HBuilderX，需要在首次运行之后，在 `unpackage` 目录下找到自动生成的鸿蒙工程目录，在 DevEco Studio 里面打开它再去申请证书。
+对于更早版本的 HBuilderX，建议升级最新 HBuilderX 版本获得更好开发体验。证书配置可在 DevEco Studio 里面申请证书。
 参考：[证书签名配置指南](#signing)
 
 5. 构建、安装运行包
@@ -171,7 +172,7 @@ HBuilderX 4.81+ 开始支持 uni-app x 项目启用热重载能力。
 
 参考鸿蒙文档 [使用 DevTools 工具调试前端页面](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-debugging-with-devtools?ha_source=Dcloud&ha_sourceId=89000448) 进行处理。在 uni-app 的开发模式 `setWebDebuggingAccess` 会自动开启，此步骤可以跳过。
 
-业务逻辑 debug 可参考 [JSVM-API调试&定位](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-debugger-cpuprofiler-heapsnapshot?ha_source=Dcloud&ha_sourceId=89000448)
+业务逻辑 debug 可参考 [JSVM-API 调试&定位](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-debugger-cpuprofiler-heapsnapshot?ha_source=Dcloud&ha_sourceId=89000448)
 
 ### uni-app x 鸿蒙调试
 
@@ -192,6 +193,7 @@ HBuilderX 4.61+ 开始支持 uts、uvue、ets 的调试[文档地址](https://un
 对于 HBuilderX 4.61 以前的版本，需要手动配置 `harmony-configs/build-profile.json5` 文件，该文件在构建阶段会覆盖到自动生成的鸿蒙工程的 `build-profile.json5` 文件中。
 
 从 HBuilderX 4.61+ 开始支持以交互方式配置相关信息（且支持自动申请调试证书），这些信息在构建阶段会被覆盖填写到鸿蒙工程的 `build-profile.json5` 文件中。
+
 为了兼容以前的版本，如果没有以交互方式配置签名证书，则在 `harmony-configs/build-profile.json5` 中配置的相关信息仍会有效。
 
 ### 在 HBuilderX 里面直接配置证书签名@signing-configs
@@ -402,7 +404,7 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 鸿蒙的权限可以分成三类：
 
-- 开放权限：system_grant， 比如 INTERNET网络权限、VIBRATE 手机震动权限等。无需用户同意。具体可见 [开放权限（系统授权）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all?ha_source=Dcloud&ha_sourceId=89000448)
+- 开放权限：system_grant， 比如 INTERNET 网络权限、VIBRATE 手机震动权限等。无需用户同意。具体可见 [开放权限（系统授权）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all?ha_source=Dcloud&ha_sourceId=89000448)
 - 用户授权：user_grant，弹窗询问用户是否允许位置定位、发送通知等。具体可见 [开放权限（用户授权）](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-user?ha_source=Dcloud&ha_sourceId=89000448)
 - 敏感权限：需要在华为后台单独填写表格申请获得，比如修改用户公共目录文件、API 读取剪切板等。具体可见 [受限开放权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions?ha_source=Dcloud&ha_sourceId=89000448)
 
@@ -426,7 +428,7 @@ A: 鸿蒙曾开放读取用户存储的权限 [READ_MEDIA/WRITE_MEDIA，但已�
 
 在鸿蒙工程中，子模块中申请的权限无需在主项目中重复添加，权限将在整个应用中生效，而 UTS 插件在打包进入鸿蒙工程后，就是作为了一个子模块存在，可以在 UTS 插件中即可实现应用的权限配置
 
-通过此插件可以方便的配置权限，而无需在uniapp工程中通过替换文件的方式配置权限
+通过此插件可以方便的配置权限，而无需在 uniapp 工程中通过替换文件的方式配置权限
 
 可以参考示例：[鸿蒙权限配置 UTS 插件](https://ext.dcloud.net.cn/plugin?name=harmony-permissions)
 
@@ -459,10 +461,12 @@ HBuilderX 早期版本所创建目录初始会存在几个常用的配置文件�
 所以，`harmony-configs` 目录中的所有文件最终都会原样进入鸿蒙工程目录参与项目构建，所有需要对鸿蒙工程的定制化配置都可以写在这个目录下。
 
 ::: warning 注意
+
 - 在 `manifest.json` 支持的鸿蒙相关的配置项将具有更高的优先级。
 - `harmony-configs` 目录下应该**仅放置必要的文件**，多余的文件有可能对鸿蒙工具链的执行产生意外的干扰，导致项目无法正常编译打包。
 - 当升级 HBuilderX 到新版本之后，由于其内置的鸿蒙工程模板有可能调整，导致与旧版本的配置文件产生不兼容的情况，所以如果以前正常的项目在升级后出现打包错误的话，
-建议清空 `harmony-configs` 目录的原有内容（注意做好备份），再删除 `unpackage` 目录，重新运行之后再按需要逐步恢复 `harmony-configs` 里面应有的配置。
+  建议清空 `harmony-configs` 目录的原有内容（注意做好备份），再删除 `unpackage` 目录，重新运行之后再按需要逐步恢复 `harmony-configs` 里面应有的配置。
+
 :::
 
 关于 `harmony-configs` 目录的使用要遵守鸿蒙的技术规范，具体可参考 [鸿蒙官方文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-configuration-file-stage-V5?ha_source=Dcloud&ha_sourceId=89000448)
@@ -525,27 +529,27 @@ manifest.json 里面已经支持一些应用配置项，未直接支持的可以
 
 ```js
 // #ifdef APP-HARMONY
-console.log('仅鸿蒙会编译');
+console.log("仅鸿蒙会编译");
 // #endif
 
 // #ifndef APP-HARMONY
-console.log('仅非鸿蒙会编译');
+console.log("仅非鸿蒙会编译");
 // #endif
 
 // #ifdef APP
-console.log('安卓、苹果、鸿蒙会编译，小程序和Web不会编译');
+console.log("安卓、苹果、鸿蒙会编译，小程序和Web不会编译");
 // #endif
 
 // #ifndef APP
-console.log('安卓、苹果、鸿蒙不会编译，小程序和Web会编译');
+console.log("安卓、苹果、鸿蒙不会编译，小程序和Web会编译");
 // #endif
 
 // #ifdef APP-PLUS
-console.log('安卓、苹果会编译，鸿蒙不会编译，小程序和Web也不会编译');
+console.log("安卓、苹果会编译，鸿蒙不会编译，小程序和Web也不会编译");
 // #endif
 
 // #ifndef APP-PLUS
-console.log('安卓、苹果不会编译，鸿蒙会编译，小程序和Web也会编译');
+console.log("安卓、苹果不会编译，鸿蒙会编译，小程序和Web也会编译");
 // #endif
 ```
 
@@ -578,15 +582,15 @@ HBuilderX 4.41+ 在真机运行时需要连接到与主机电脑相同的局域�
 
 ### 运行出现白屏或闪退怎么解决?@q6
 
-如果你的项目能安装到模拟器上，但是打开闪退，如果你是 Windows系统，你可能使用了低于 API19beta 的模拟器，阅读 [开发环境要求](#env) 进行下载安装。
+如果你的项目能安装到模拟器上，但是打开闪退，如果你是 Windows 系统，你可能使用了低于 API19beta 的模拟器，阅读 [开发环境要求](#env) 进行下载安装。
 
 如果配置了 `harmony-configs/build-profile.json5` 文件，请确认里面的 `app.products`设置了 `"useNormalizedOHMUrl": true`。
 
-如果不是上述的原因，最常见的情况就是使用了不支持的组件或者 API，请逐个排查所使用的组件和 API 是否已经兼容了鸿蒙平台，先保证空白工程能运行，排除你的环境、配置问题。`pages.json` 只保留一个页面，先自行验证，每个人的问题不一样，需要先自查，可能的问题比如用到了 plus api，用到了条件编译忽略了 app-android 导致逻辑命中失败。
+如果不是上述的原因，最常见的情况就是使用了不支持的组件或者 API，请逐个排查所使用的组件和 API 是否已经兼容了鸿蒙平台，先保证空白工程能运行，排除你的环境、配置问题。`pages.json` 只保留一个页面，先自行验证，每个人的问题不一样，需要先自查，可能的问题比如用到了 plus api，用到了条件编译忽略了 app-android 导致逻辑命中失败。
 
 二分排查速度最快，可以尝试对 `pages.json` 进行代码二分法排查（删除一半页面如果正常了代表被删除的那一半页面中有造成白屏或闪退的页面）。
 
-也可以查阅HBuilderX 的原生日志、DevEco 的 log 面板日志，筛选 Warn 级别的日志，观察是否有错误。
+也可以查阅 HBuilderX 的原生日志、DevEco 的 log 面板日志，筛选 Warn 级别的日志，观察是否有错误。
 
 ### 模拟器已启动，但无法连接?@q7
 
@@ -652,7 +656,6 @@ HBuilderX 4.31 起支持 uniPush 推送，具体配置请参考[文档](https://
 ### harmony 应用怎样调试？@q13
 
 uni-app/uni-app x 用户可参考 [uni-app 调试方案](#debug-mode) 进行调试。
-
 
 ### Windows 系统中如何使用模拟器@q14
 
@@ -745,9 +748,11 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 
 ### 报错 `签名验证失败`@signature-verification-failed
 
-当运行到鸿蒙时，在把打包后的 `.hap` 安装到设备上时，可能会遇到这个报错。
-一个常见的原因是当前使用的设备没有添加到签名用的 profile 文件中，要解决这个问题，
-首先要 [注册调试设备](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-device-0000001946142249?ha_source=Dcloud&ha_sourceId=89000448)，
+当运行到鸿蒙时，在把打包后的 `.hap` 安装到设备上时可能会遇到这个报错。常见的原因是当前使用的设备 UUID 没有添加到签名用的 profile 文件中。
+
+推荐使用 nanifest.json 提供的 **自动申请调试证书** 进行一键更新。
+
+如果你是手动维护的证书，首先要 [注册调试设备](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-device-0000001946142249?ha_source=Dcloud&ha_sourceId=89000448)，
 然后 [申请调试 Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102?ha_source=Dcloud&ha_sourceId=89000448)
 或修改已有的 profile 文件并重新下载。
 
@@ -788,6 +793,8 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 ### HBuilder X 升级至 `4.51` 后报错 `owns a higher api version or a higher sdkReleaseType compared to current compilation process.`
 
 需要在工程级的 `build-profile.json5` 的 `products` 字段（如果有多项都要配置）中配置 `compatibleSdkVersionStage: "beta6"` 后重新运行 [鸿蒙文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hvigor-build-profile-V5?ha_source=Dcloud&ha_sourceId=89000448)
+
+如果是发行阶段报错，可能底层依赖有较高版本的基础要求，可修改 `harmony-configs/build-profile.json5` 中的 products[1]， 修改 `compatibleSdkVersion:"5.0.5(17)"` 提高应用兼容版本。
 
 ### 报错 `没有连接到正在运行的应用，热更新失败，请尝试重新运行以建立连接`@hmr-failed
 
@@ -863,8 +870,8 @@ kill -9 进程号
 
 鸿蒙应用提审时候提示：
 
-经检测发现，您的应用使用了HarmonyOS beta版本的API。
-修改建议：为提升消费者使用体验，请使用HarmonyOS release版本的API开发应用，申请上架。请参考版本说明集成release版本API
+经检测发现，您的应用使用了 HarmonyOS beta 版本的 API。
+修改建议：为提升消费者使用体验，请使用 HarmonyOS release 版本的 API 开发应用，申请上架。请参考版本说明集成 release 版本 API
 
 解决方案：重新下载 release 版本的 DevEco。代码不变，重新发行打包，之后上传提审即可。
 

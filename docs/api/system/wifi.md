@@ -64,7 +64,7 @@
 
 |元服务|
 |:-:|
-|1.0.4+|
+|√|
 
 <!-- UNIAPPAPIJSON.getConnectedWifi.compatibility -->
 
@@ -91,7 +91,7 @@
 
 |元服务|
 |:-:|
-|1.0.4+|
+|√|
 
 请求获取 Wi-Fi 列表。wifiList 数据会在 onGetWifiList 注册的回调中返回。
 
@@ -118,7 +118,7 @@
 
 |元服务|
 |:-:|
-|1.0.4+|
+|√|
 
 <!-- UNIAPPAPIJSON.onGetWifiList.compatibility -->
 
@@ -145,7 +145,7 @@
 
 |元服务|
 |:-:|
-|1.0.4+|
+|√|
 
 **CALLBACK 参数说明**
 
@@ -165,7 +165,7 @@ onGetWifiList 传入的监听函数。不传此参数则移除所有监听函数
 
 |元服务|
 |:-:|
-|1.0.4+|
+|√|
 
 **OBJECT 参数说明**
 
@@ -194,7 +194,7 @@ onGetWifiList 传入的监听函数。不传此参数则移除所有监听函数
 
 |元服务|
 |:-:|
-|1.0.4+|
+|√|
 
 **CALLBACK 参数说明**
 
@@ -226,7 +226,7 @@ onWifiConnected 传入的监听函数。不传此参数则移除所有监听函�
 
 |App-Android|App-iOS|元服务|
 |:-:|:-:|:-:|
-|√|x|1.0.4+|
+|√|x|√|
 
 <!-- UNIAPPAPIJSON.offWifiConnected.compatibility -->
 

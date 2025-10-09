@@ -57,19 +57,23 @@
 4.UserID获取，如下图。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/2025-09-23_110024_975.png)
 
-5.开发者可在开放平台的安卓应用管理首页查看 app_id（如下图所示）。在应用发布页面中，如果勾选了应用宝渠道，则需要填写对应的app_id；而在渠道配置页面，仅需填写用户ID和访问密钥。
+5.当在应用发布页面中勾选 更新发布，且渠道中包含 **应用宝**时，需要填写对应的 app_id，app_id 获取方式如下图所示。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/09231106.png)
 
 ### 华为@huawei
 1.前往[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，如未登录，则先登录。
+
 2.选择“用户与访问” 。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/huawei0001.png)
 3.选择左侧导航栏的“API密钥 > Connect API”，点击“创建”。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/huawei002.png)
 4.在“名称”列输入自定义的客户端名称，“项目”保持默认值“N/A”，“角色”选择APP管理员，点击“确认”。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/huawei007.png)
+
 5.创建成功，平台将分配client_id和密钥。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/huawei004.png)
+
+6.当在应用发布页面中勾选 首次发布，且渠道中包含**华为**时，同样需要填写对应的 app_id，可[参考](https://developer.huawei.com/consumer/cn/doc/app/agc-help-appinfo-0000001100014694)
 
 
 ### 苹果@apple

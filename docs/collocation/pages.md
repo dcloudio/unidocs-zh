@@ -89,8 +89,8 @@
         "text": "组件",
         "iconfont": {
           // 优先级高于 iconPath，该属性依赖 tabbar 根节点的 iconfontSrc
-          "text": "\ue102",
-          "selectedText": "\ue103",
+          "text": "\ue642", // 已实际字体编码为准
+          "selectedText": "\ue776",
           "fontSize": "17px",
           "color": "#000000",
           "selectedColor": "#0000ff"

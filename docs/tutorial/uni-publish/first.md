@@ -21,6 +21,7 @@
 - [荣耀开放平台](https://developer.honor.com/cn/doc/guides/100272?source=Search_SearchResultsPage)
 - [OPPO开放平台](https://open.oppomobile.com/documentation/page/info?id=10446)
 - [VIVO开放平台](https://dev.vivo.com.cn/documentCenter/doc/2)
+- [App Store Connect](https://developer.apple.com/cn/help/app-store-connect/)
 
 3. **创建应用** 
    - 由于小米、华为、荣耀的传包 API 暂不提供创建应用接口，需在各家**开放平台**提前手动创建应用（**VIVO** 渠道除外)。  
@@ -96,7 +97,18 @@
 **暂不支持通过传包 API 进行首次发布。**  请前往 **开放平台** 手动完成新应用的创建与发布，详见：[创建应用](https://wikinew.open.qq.com/index.html#/iwiki/4007776088)
 
 #### 苹果@apple
+1.前往[App Store Connect](https://appstoreconnect.apple.com/apps)，点击App旁边的"+"号，添加 App。如您还没有添加 Bundle ID 请点击“证书、标识符和描述文件”链接进行添加。
+![](https://web-ext-storage.dcloud.net.cn/appstore/apple-create-1001.png)
 
+2.uni发布暂只支持“简体中文”，如您的应用需要其它语言介绍请在 App Store Connect 中添加介绍等内容。
+
+3.点击左侧 “App 信息” 菜单在“综合信息”中完成“内容版权”“年龄分级”信息填写。
+![](https://web-ext-storage.dcloud.net.cn/appstore/apple-create-1002.png)
+
+4.点击左侧 “App 隐私”菜单填写“数据收集”。
+![](https://web-ext-storage.dcloud.net.cn/appstore/apple-create-1003.png)
+
+5.其余信息可使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni发布”-“应用发布”页面完善。
 
 
 

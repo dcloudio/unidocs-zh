@@ -1,12 +1,12 @@
 
 ## 首次发布@first
-> 首次发布仅支持 **小米、华为、荣耀、VIVO** 四家应用市场；  
-> **OPPO** 和 **应用宝** 暂不支持通过传包 API 首次发布。
+> 首次发布仅支持 **小米、华为、荣耀、VIVO** 四家应用市场
+> **OPPO** 和 **应用宝** 渠道暂不支持新应用的首次发布。
 
 ### 整体流程
 1. **前置准备**  
    - 提前完成 **APP备案** [点此前往](https://wikinew.open.qq.com/index.html#/iwiki/4008550787)了解备案政策及接入指引。  
-   - 申请并取得 **软件著作权登记证书（软著）**[点此前往](https://wikinew.open.qq.com/index.html#/iwiki/4008550787)加急办理软著登记。  
+   - 申请并取得 **软件著作权登记证书（软著）**[点此前往](https://market.aliyun.com/common/agents/yscdcloud?userCode=yp4pevgx#4)加急办理软著登记。  
 
 2. **注册开发者账号并实名认证**  
    - 前往各家**开放平台**注册开发者账号并完成实名认证。
@@ -17,8 +17,8 @@
 - [OPPO开放平台](https://open.oppomobile.com/documentation/page/info?id=10446)
 - [VIVO开放平台](https://dev.vivo.com.cn/documentCenter/doc/2)
 
-3. **创建应用**  
-   - 由于小米、华为、荣耀的传包 API 暂不支持创建应用接口，需在各家**开放平台**提前手动创建应用（VIVO除外)。  
+3. **创建应用** 
+   - 由于小米、华为、荣耀的传包 API 暂不提供创建应用接口，需在各家**开放平台**提前手动创建应用（**VIVO** 渠道除外)。  
 
 4. **开发应用**  
    - 在本地开发环境中完成应用开发并进行打包。  
@@ -29,7 +29,7 @@
 
 
 ### 创建应用
-`小米、华为、荣耀由于传包API不提供创建应用接口，需要在各家开放平台提前手动创建应用（VIVO除外)`  
+`由于小米、华为、荣耀的传包 API 暂不提供创建应用接口，需在各家**开放平台**提前手动创建应用（**VIVO** 渠道除外)`  
 
 #### 小米@xiaomi
 1.前往小米[开放平台](https://dev.mi.com/xiaomihyperos)，点击管理中心。如未登录，则会先跳转至登录页面。
@@ -40,7 +40,7 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/appstore/2025-09-24_143731_545.png)
 
-3.应用创建成功后，会自动跳转至完善资料页面，由于小米传包 API不支持补充 **备案信息、资质信息、联系人信息**，需在小米开放平台手动补充。其余信息可在DCloud[开发者中心]发布应用时完善。
+3.应用创建成功后，会自动跳转至完善资料页面，由于小米传包 API不支持补充 **备案信息、资质信息、联系人信息**，需先在小米开放平台手动填写。
 
 ![](https://web-ext-storage.dcloud.net.cn/appstore/2025-09-24_143913_480.png)
 ![](https://web-ext-storage.dcloud.net.cn/appstore/2025-09-24_143933_631.png)
@@ -48,6 +48,8 @@
 ![](https://web-ext-storage.dcloud.net.cn/appstore/2025-09-24_144008_171.png)
 
 4.点击“保存草稿”按钮。
+
+5.其余信息可使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni发布”-“应用发布”页面完善。
 
 #### 华为@huawei
 1.前往[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，如未登录，则先登录。
@@ -60,10 +62,12 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/appstore/2025-09-26_150724_079.png)
 
-4.应用的内容分级信息当前无法通过传包 API完成，您必须在AppGallery Connect网站中手动配置，参见[修改内容分级](https://developer.huawei.com/consumer/cn/doc/AppGallery-connect-Guides/agcapi-add_appinfo-0000001111845350#section116mcpsimp),其余信息可在DCloud[开发者中心]发布应用时完善。
+4.应用的内容分级信息当前无法通过传包 API完成，您必须在AppGallery Connect网站中手动配置，参见[修改内容分级](https://developer.huawei.com/consumer/cn/doc/AppGallery-connect-Guides/agcapi-add_appinfo-0000001111845350#section116mcpsimp)。
 
+5.点击“保存草稿”按钮。
 
-5.点击“保存草稿”按钮
+6.其余信息可使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni发布”-“应用发布”页面完善。
+
 
 #### 荣耀@honor
 1.前往荣耀[开放平台](https://developer.honor.com/cn)，点击管理中心。如未登录，则会先跳转至登录页面。
@@ -74,19 +78,18 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/appstore/2025-09-24_153026_5512.png)
 
-4.其余信息可在DCloud[开发者中心]发布应用时完善。
+4.其余信息可使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni发布”-“应用发布”页面完善。
 
-5.点击“保存草稿”按钮。
 
 
 #### VIVO@vivo
-**无需手动操作，后续可在DCloud[开发者中心](https://dev.dcloud.net.cn)直接发布应用。**
+**无需提前创建应用**，后续使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni发布”-“应用发布”，直接完成新应用的首次发布。
 
 #### OPPO@oppo
-**暂不支持通过传包 API 首次发布。**
+**暂不支持通过传包 API 进行首次发布。**  请前往 **开放平台** 手动完成新应用的创建与发布，详见：[创建应用](https://open.oppomobile.com/documentation/page/info?id=10035)
 
 #### 应用宝@yyb
-**暂不支持通过传包 API 首次发布。**
+**暂不支持通过传包 API 进行首次发布。**  请前往 **开放平台** 手动完成新应用的创建与发布，详见：[创建应用](https://wikinew.open.qq.com/index.html#/iwiki/4007776088)
 
 #### 苹果@apple
 
@@ -96,13 +99,13 @@
 ### 发布应用
 
 #### 创建渠道配置
-1. 使用开发者账号登录[开发者中心](https://dev.dcloud.net.cn/) ，选择`uni发布`栏目。首次使用时需创建渠道配置。
+1. 使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn/) ，选择`uni发布`栏目。首次使用时需创建渠道配置。
 
 ![](https://web-ext-storage.dcloud.net.cn/appstore/config.png)
 
 2. 创建渠道配置
 
-根据文档指引，填写所需参数并点击保存。
+请参考 [API 传包相关参数获取说明](https://uniapp.dcloud.net.cn/tutorial/uni-publish/config.html)，获取相关参数，然后填写所需参数并点击“保存”。
 
 `考虑到不同项目可能对应不同的应用市场账号，建议配置名称使用项目名或公司名以便区分。`
 ![](https://web-ext-storage.dcloud.net.cn/appstore/2025-09-23_154817_464.png)

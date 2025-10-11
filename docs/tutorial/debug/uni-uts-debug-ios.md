@@ -11,7 +11,7 @@ uts在iOS上的调试HBuilderX版本支持如下
 
 #### 功能入口
 
-运行uni-app项目运行到iOS，项目包含uts插件，运行成功后，HBuilder控制台点击`红色虫子`图标，下拉菜单选择【开启uts调试(swift)】，即可开启uts调试(swift)功能。
+uni-app（x）项目运行到iOS，项目包含uts插件或使用原生工程基座，运行成功后，HBuilder控制台点击`红色虫子`图标，下拉菜单选择【开启uts调试(swift)】，即可开启uts调试(swift)功能。此功能仅Mac电脑支持。
 
 <img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/ios-debug-jscore.png" style="zoom: 50%;" />
 
@@ -32,7 +32,7 @@ uts在iOS上的调试HBuilderX版本支持如下
 
 #### 功能入口
 
-运行uni-app x项目运行到iOS，如果项目包含uts插件，运行成功后，HBuilder控制台点击`红色虫子`图标，下拉菜单选择【开启uts调试(jscore)】，即可开启uts调试(jscore)功能。
+uni-app x项目运行到iOS，运行成功后，HBuilder控制台点击`红色虫子`图标，下拉菜单选择【开启uts调试(jscore)】，即可开启uts调试(jscore)功能。
 
 <img src="https://web-ext-storage.dcloud.net.cn/doc/tutorial/app/ios-debug-swift.png" style="zoom: 50%;" />
 

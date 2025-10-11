@@ -10,7 +10,7 @@
 
 **uni-app 中使用微信小程序第三方 SDK 及资源汇总：**[https://ask.dcloud.net.cn/article/35070](https://ask.dcloud.net.cn/article/35070)
 
-**uni-app/uni-app-x 小程序项目配置 占位组件（Component placeholder）：**[https://ask.dcloud.net.cn/article/42114](https://ask.dcloud.net.cn/article/42114)
+**uni-app/uni-app-x 小程序项目配置 `占位组件(componentPlaceholder)`：**[https://ask.dcloud.net.cn/article/42114](https://ask.dcloud.net.cn/article/42114)
 
 **原生控件层级过高无法覆盖的解决方案：**[https://uniapp.dcloud.io/component/native-component](https://uniapp.dcloud.io/component/native-component)
 

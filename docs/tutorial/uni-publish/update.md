@@ -27,7 +27,7 @@
 2.上传包
 
 Android支持单个APK上传多个市场或多个APK(渠道包)上传多个市场。
-`仅支持上传64位安装包和32/64位兼容包`
+
 
 单APK上传：
 
@@ -40,7 +40,12 @@ Android支持单个APK上传多个市场或多个APK(渠道包)上传多个市�
 IPA上传：
 ![](https://web-ext-storage.dcloud.net.cn/appstore/SCR-20251008-kdjc.png)
 
+
+- 上传完成后，系统会自动解析安装包内的相关信息。若包体较大，请耐心等待解析完成。
+- 请确保安装包中的 应用名称 与 包名 与页面中填写的信息保持一致，否则可能导致上传失败或信息校验错误。
+
 3. 完善应用发布信息
+
 
 ![](https://web-ext-storage.dcloud.net.cn/appstore/SCR-20251007-pjaw.png)
 
@@ -48,9 +53,14 @@ IPA上传：
 ![](https://web-ext-storage.dcloud.net.cn/appstore/SCR-20251007-pjch.png)
 
 
+
+
 4. 发布设置
 
 选择 定时发布 或 立即发布，点击确认提交
 
 ![](https://web-ext-storage.dcloud.net.cn/appstore/SCR-20251007-pdky.png)
+
+- 审核通过后立即发布：在人工审核通过后，此应用会在应用商店立即上架供用户搜索&下载
+- 定时发布：您可以指定希望的上线时间点，若实际审核通过时间晚于设定时间，则会在审核通过后立即上线
 

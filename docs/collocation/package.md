@@ -61,18 +61,19 @@ Tips：
 
 ```json
 {
-    "uni-app": {
-        "scripts": {
-            "mp-dingtalk": {
-            "title":"钉钉小程序",
-                "env": {
-                    "UNI_PLATFORM": "mp-alipay"
-                },
-                "define": {
-                    "MP-DINGTALK": true
-            }
+  "uni-app": {
+    "scripts": {
+      "mp-dingtalk": {
+        "title": "钉钉小程序",
+        "env": {
+          "UNI_PLATFORM": "mp-alipay"
+        },
+        "define": {
+          "MP-DINGTALK": true
         }
-	}
+      }
+    }
+  }
 }
 ```
 

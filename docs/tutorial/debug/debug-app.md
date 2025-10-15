@@ -59,3 +59,4 @@
 - 常用的开发模式就是`pc`上使用内置浏览器预览调 dom，运行到真机上看`console.log`。如果是很复杂的问题才使用`debug`。
 - uni-app 的 App 端的 webkit remote debug，只能调试视图层，不能调试逻辑层。因为 uni-app 的 js 不是运行在 webview 里，而是独立的 jscore 里。
 - 部分 manifest 配置，如三方 sdk 配置，需要打包后生效的，可以打包一个自定义运行基座。打包自定义基座后运行这个自定义基座，同样可以真机运行和 debug。打包正式包将无法真机运行和 debug。
+- 调试依赖 chrome 安装位置，找不到可能会导致调试报错。社区反馈中有用户主动修改了 chrome 的安装位置，导致内置的 puppeteer 查找 chrome失败，如果你修改了 chrome 的安装位置，请参考 《[HBuilderX APP端 uni/nvue 调试报错问题](https://ask.dcloud.net.cn/article/41558)》

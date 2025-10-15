@@ -636,6 +636,18 @@ Mac 系统快速复制路径方法
 
 HBuilderX 4.31 起支持 uniPush 推送，具体配置请参考[文档](https://uniapp.dcloud.net.cn/unipush-v2.html)
 
+uniPush 初始化时候需要读取 OAID，这对应 `ohos.permission.APP_TRACKING_CONSENT` 权限，可参考 [权限配置指南](#permission) 定义为下面方案，并再 string.json5 中补充自定义 `Reason_TRACKING` 文案。
+
+```json
+  {
+  "name": "ohos.permission.APP_TRACKING_CONSENT",
+    "reason": "$string:Reason_TRACKING",
+    "usedScene": {
+      "when": "inuse"
+    }
+  }
+  ```
+
 ### release 模式进入使用了组合式 api 的页面报错`Cannot read property route of undefined`@q11
 
 此问题由于 arkTs 的混淆 Bug 引发，即使进入到一个空的组合式 api 页面也会出现这个报错，已反馈给鸿蒙团队处理。
@@ -783,8 +795,9 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 
 ### 报错 `无法删除旧的鸿蒙工程目录`@remove-harmony-project-failed
 
-为了能够重建完整的鸿蒙工程目录，HBuilderX 需要先删除旧的鸿蒙工程目录，但是由于某些原因（比如其中有文件被其它程序占用）导致删除失败。
+为了能够重建完整的鸿蒙工程目录，HBuilderX 需要先删除旧的鸿蒙工程目录，但是由于某些原因（比如其中有文件被其它程序占用，比如源码在 MacOS 文稿中并开启了 iCloud 云同步）导致删除失败。
 为确保正确执行后续的操作，请先设法手工删除该目录，然后再重新开始操作。
+
 
 ### 报错 `未正确配置鸿蒙应用的包名`@bundlename-incorrect
 

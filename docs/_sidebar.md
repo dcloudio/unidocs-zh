@@ -11,7 +11,10 @@
 * [老项目引入uni-app](hybrid.md)
 * 运营服务
   * [统一发行页面](https://doc.dcloud.net.cn/uniCloud/uni-portal.html)
-  * [uni一键发布](https://uniapp.dcloud.net.cn/tutorial/uni-publish/intro.html)
+  * uni一键发布
+	* [简介](/tutorial/uni-publish/intro.md)
+    * [首次发布](/tutorial/uni-publish/first.md)
+    * [更新发布](/tutorial/uni-publish/update.md)
   * [前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting.html)
   * [App升级中心](https://doc.dcloud.net.cn/uniCloud/upgrade-center.html)
   * [uni一键登录](https://doc.dcloud.net.cn/uniCloud/uni-login/summary.html)

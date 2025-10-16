@@ -135,7 +135,7 @@ uni-app项目，pages页面，右键菜单，创建测试用例
 - **describe** 表示一组用例, decribe会形成一个作用域
 - **it** 测试函数
 - **test** 测试函数，类似it
-- **expect** 匹配器。 [使用文档](https://jestjs.io/zh-Hans/docs/expect)
+- **expect** 匹配器。 [使用文档](https://jestjs.io/docs/expect)
 
 ```js
 # 求和测试

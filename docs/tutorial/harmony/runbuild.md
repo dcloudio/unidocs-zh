@@ -632,7 +632,7 @@ Mac 系统快速复制路径方法
 
 当前导航栏未支持，可以尝试关闭原生导航栏，使用自己的自定义导航栏组件实现。
 
-### 鸿蒙支持 uniPush 推送吗?@q10
+### 鸿蒙支持 uniPush 推送吗，如何配置?@q10
 
 HBuilderX 4.31 起支持 uniPush 推送，具体配置请参考[文档](https://uniapp.dcloud.net.cn/unipush-v2.html)
 

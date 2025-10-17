@@ -294,8 +294,6 @@ export default {
 **激励视频广告**
 文档地址：[https://uniapp.dcloud.io/uni-ad/ad-rewarded-video](https://uniapp.dcloud.io/uni-ad/ad-rewarded-video)
 
-**全屏视频广告**
-文档地址：[https://uniapp.dcloud.io/uni-ad/ad-fullscreen-video](https://uniapp.dcloud.io/uni-ad/ad-fullscreen-video)
 
 **插屏广告**
 文档地址：[https://uniapp.dcloud.io/uni-ad/ad-interstitial](https://uniapp.dcloud.io/uni-ad/ad-interstitial)

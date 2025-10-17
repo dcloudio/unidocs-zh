@@ -27,6 +27,8 @@ Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHT
 - concatenate  
 boolean类型， true表示在默认User Agent基础上添加额外字段，false表示替换默认User Agent  
 
+在鸿蒙中，设置为 `app-harmony.useragent`参数相同，具体可参考 [鸿蒙 userAgent 配置](../collocation/manifest.md#app-harmony-useragent)。
+
 注意：
 - 如需单独定义Android平台的User Agent，可设置"useragent_android"，在Android平台存在"useragent_android"时会覆盖"useragent"配置  
 - 如需单独定义iOS平台的User Agent，可设置"useragent_ios"，在iOS平台存在"useragent_ios"时会覆盖"useragent"配置  

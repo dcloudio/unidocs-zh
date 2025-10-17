@@ -928,3 +928,9 @@ HBuilderX 4.81+ 在这种情况下会自动删除鸿蒙工程目录内的所有�
 鸿蒙提供的类似 testFilight 白名单测试服务，访问 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) 找到 **APP - 应用测试 - 版本列表**，这里可以生成邀请链接，在白名单内的用户可以下载安装，这个过程也需要提交给华为做审核，对软件的完善程度有一定的要求，适合开发中后期内部测试。
 
 完整测试方案，可参考鸿蒙文档 《[AGC 内部测试](https://developer.huawei.com/consumer/cn/doc/app/agc-help-internal-test-overview-0000002253054942)》。
+
+### 鸿蒙如何设置 userAgent? 某些页面只针对 iOS/Android 做了兼容如何处理？
+
+在鸿蒙中，设置 userAgent 和 app-plus 配置相似，再 manifest.json 中设置 `app-harmony.useragent`，具体可参考 [鸿蒙 userAgent 配置](../collocation/manifest.md#app-harmony-useragent)。
+
+有些移动端网页是检测的 userAgent 来判断是否为 mobile 机型，进而展示移动端适配页面，判断规则中可能缺少判断，这种情况下可参考这个帖子进行兼容。[经验分享 鸿蒙通过 WebView 打开页面渲染成桌面 pc 模式怎么办？](https://ask.dcloud.net.cn/article/42109)

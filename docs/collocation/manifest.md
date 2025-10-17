@@ -248,6 +248,7 @@ webview示例
 |icons|Object|应用图标|
 |splashScreens|Object|启动界面配置|
 |modules|Object|模块配置|
+|useragent|Object|配置 UserAgent|
 
 #### signingConfigs 证书签名配置@app-harmony-signingConfigs
 
@@ -290,6 +291,13 @@ webview示例
 |uni-oauth|Object|设置登录鉴权模块相关参数|
 |uni-payment|Object|设置支付模块相关参数|
 |uni-share|Object|设置分享模块相关参数|
+
+#### useragent@app-harmony-useragent
+
+|属性|类型|说明|
+|:-|:-|:-|
+|value|String|可选，JSON对象，应用UserAgent相关配置，默认值为系统UserAgent|
+|concatenate|Boolean|可选，Boolean类型，是否将value值作为追加值连接到系统默认userAgent值之后|
 
 ### h5
 

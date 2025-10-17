@@ -306,6 +306,8 @@ hdc shell bm dump-shared -n com.huawei.hms.ascfruntime
 - 临时方案。进入手机 - 设置 - 系统 - 开发者选项（如果未开启 关于手机 - 软件版本连续点击开启） - 开发中元服务豁免管控，选择开启后，可以自由调试。
 - 稳定方案。整理 web-view 需要用到的相关域名，进入[华为 AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/?ha_source=Dcloud&ha_sourceId=89000448) - 我的项目 - 开发管理 - 元服务域名管理 - httpRequest 合法域名。按照提示进行填写。填写完成后打开 手机设置 - 应用与元服务，删掉正在开发的元服务，重新启动应用。
 
+如果你手动配置过 module.json5 文件，需要确保 `requestPermissions` 下存在 `{"name":"ohos.permission.INTERNET"}` 权限。
+
 ### 组件 web-view 渲染空白，不能展示网页
 
 同上，发送网络请求报错的解决方案。

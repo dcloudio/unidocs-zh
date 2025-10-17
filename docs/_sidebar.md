@@ -12,7 +12,7 @@
 * 运营服务
   * [统一发行页面](https://doc.dcloud.net.cn/uniCloud/uni-portal.html)
   * uni一键发布
-	* [简介](https://uniapp.dcloud.net.cn/tutorial/uni-publish/intro.html)
+    * [简介](https://uniapp.dcloud.net.cn/tutorial/uni-publish/intro.html)
     * [首次发布](https://uniapp.dcloud.net.cn/tutorial/uni-publish/first.html)
     * [更新发布](https://uniapp.dcloud.net.cn/tutorial/uni-publish/update.html)
   * [前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting.html)
@@ -35,7 +35,7 @@
   * [uni统计](uni-stat.md)
     * [uni统计2.0](uni-stat-v2.md)
     * [uni统计1.0](uni-stat-v1.md)
-		* [uni-app x下的uni统计使用教程](uni-stat-uniappx.md)
+    * [uni-app x下的uni统计使用教程](uni-stat-uniappx.md)
   * [uni加固](/tutorial/app-security.md)
   * [uni隐私合规检测](/tutorial/app-privacy-detect.md)
   * [地图商业授权](/tutorial/app-geolocation.md?id=lic)

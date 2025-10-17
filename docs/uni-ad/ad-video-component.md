@@ -8,7 +8,7 @@
 
 视频贴片广告展现场景非常灵活，可以当做普通信息流使用，也可以搭配`video`标签，做贴片广告使用。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ad-feed.png)
+![](https://web-ext-storage.dcloud.net.cn/uniad/ad-preVideo-com.jpg)
 
 
 - App端的广告源由腾讯优量汇、头条穿山甲、快手广告联盟等主流广告渠道组成，在DCloud的uni-ad后台注册：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)

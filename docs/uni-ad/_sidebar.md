@@ -6,6 +6,7 @@
 * [激励视频广告](ad-rewarded-video.md)
 * [插屏广告](ad-interstitial.md)
 * [Draw视频信息流广告](ad-draw.md)
+* [视频贴片广告](ad-video-component.md)
 * [短视频内容联盟广告](ad-content-page.md)
 * [微信小程序业务介绍](ad-weixin.md)
 * [微信小程序广告开通指南](ad-weixin-dcloud.md)

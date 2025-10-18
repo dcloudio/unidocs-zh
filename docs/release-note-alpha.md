@@ -1,3 +1,19 @@
+#### 4.83.2025101713-alpha
+* 【uni-app x】
+  + Android平台、iOS平台 更新 uni-ad 腾讯优量汇SDK Android为 4.660.1530 版；快手广告和快手内容联盟SDK Android为 4.9.20.1 版，iOS为 4.9.20.1 版；穿山甲&GroMore SDK Android为 7.1.3.2 版，iOS为 7.2.0.0 版；Sigmob广告联盟SDK Android为 4.24.7 版，iOS为 4.20.3 版；百度百青藤广告SDK iOS为 10.02 版；章鱼广告SDK Android为 2.5.10.5 版，iOS为 2.5.10.10 版；泛连广告SDK Android为 2.8.8 版，iOS为 2.8.8.0.0 版；华夏乐游SDK Android为 3.14.9 版，iOS为 2.16.0 版；AdScope倍孜广告SDK Android为 5.2.2.0 版；Google AdMob SDK Android 为 24.6.0 版；Mintegral SDK Android为 16.9.91.1 版；Pangle SDK Android为 7.6.0.3 版；Unity SDK Android为 4.16.1 版；Liftoff SDK Android为 7.5.1.0 版；InMobi SDK Android为 10.8.7.1 版；IronSource SDK Android为 9.0.0.0 版；Applovin SDK Android为 13.4.0.0 版本；支持双十一预算 [文档](https://doc.dcloud.net.cn/uni-app-x/api/create-rewarded-video-ad.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=22382>
+  + Android平台 修复 4.81版本引发的 组件 input 部分情况下键盘遮挡异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=22088)
+  + iOS平台 新增 API uni.getDeviceInfo 返回的 deviceModel 支持 iPhone 17、iPhone 17 Pro、iPhone17ProMax、iPhoneAir 等设备型号 [文档](https://doc.dcloud.net.cn/uni-app-x/api/get-device-info.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=22381>
+  + 鸿蒙平台 修复 页面上存在多个 scroll-view 导致点击失效的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19008)
+* 【uni-app】
+  + web平台 修复 4.81 引发的 vue2 项目在运行模式下自动引入实人认证 SDK 导致控制台 log 被清空的Bug [详情](https://ask.dcloud.net.cn/question/214288)
+  + App平台 修复 4.81 引发的 vue3 项目在纯 nvue 模式下运行报错的Bug
+  + App-iOS平台 适配 uni.getDeticeInfo 返回的 deviceModel 支持 iPhone 17、iPhone 17 Pro、iPhone17ProMax、iPhoneAir 等设备型号
+  + 鸿蒙平台 修复 在首页有 web-view 组件且可返回时，侧滑返回会直接退出应用的Bug [详情](https://ask.dcloud.net.cn/question/212712)
+  + 鸿蒙平台 修复 getFileSystemManager 处理相册图片异常的Bug [详情](https://ask.dcloud.net.cn/question/210544)
+* 【App插件(含5+App和uni-app的App端)】
+  + 更新 uni-ad 腾讯优量汇SDK Android为 4.660.1530 版；快手广告和快手内容联盟SDK Android为 4.9.20.1 版，iOS为 4.9.20.1 版；穿山甲&GroMore SDK Android为 7.1.3.2 版，iOS为 7.2.0.0 版；Sigmob广告联盟SDK Android为 4.24.7 版，iOS为 4.20.3 版；百度百青藤广告SDK iOS为 10.02 版；章鱼广告SDK Android为 2.5.10.5 版，iOS为 2.5.10.10 版；泛连广告SDK Android为 2.8.8 版，iOS为 2.8.8.0.0 版；华夏乐游SDK Android为 3.14.9 版，iOS为 2.16.0 版；AdScope倍孜广告SDK Android为 5.2.2.0 版；Google AdMob SDK Android 为 24.6.0 版；Mintegral SDK Android为 16.9.91.1 版；Pangle SDK Android为 7.6.0.3 版；Unity SDK Android为 4.16.1 版；Liftoff SDK Android为 7.5.1.0 版；InMobi SDK Android为 10.8.7.1 版；IronSource SDK Android为 9.0.0.0 版；Applovin SDK Android为 13.4.0.0 版本；支持双十一预算
+  + iOS平台 修复 4.81 引发的 video 组件 在 nvue 页面使用后返回可能引发崩溃的Bug [详情](https://ask.dcloud.net.cn/question/214338)
+
 #### 4.82.2025093004-alpha
 * 【uni-app x】
   + Android平台 修复 4.81版本引发的 组件 image svg 格式图片不会跟随组件尺寸变化 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=21790)

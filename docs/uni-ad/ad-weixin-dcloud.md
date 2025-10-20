@@ -71,9 +71,13 @@ uni-ad微信小程序广告的优势在于：
 
 **注意：**  
 
-1.**在使用到广告位的页面路径后缀加上广告位，例如：`pages/test-ad/test-ad_1013000002`，其中`1013000002`是广告位id（实际换成你自己申请下来的广告位），如果一个页面使用到多种类型的广告位，任选一个加上**  
+1. **在使用到广告位的页面路径后缀加上广告位，例如：`pages/test-ad/test-ad_1013000002`，其中`1013000002`是广告位id（实际换成你自己申请下来的广告位），如果一个页面使用到多种类型的广告位，任选一个加上**  
 
-2.开发者通过`HBuilder X 4.82+ (Alpha版本)` 重新发布微信小程序
+	![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_dcloud/path_adpid.png)
+
+2. 在微信开发者工具中添加插件adcore，如果已添加过则忽略
+	![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_dcloud/add_plugin.png)
+3. 开发者通过`HBuilder X 4.82+ (Alpha版本)` 重新发布微信小程序
 
 ### 广告报表查看
 微信小程序广告的数据报表请登录uni-ad后台，左侧菜单栏的【数据收益】进行查看，微信小程序广告数据放在小程序广告数据Tab页面，可单独查看。

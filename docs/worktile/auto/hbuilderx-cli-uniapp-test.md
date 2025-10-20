@@ -8,12 +8,27 @@
 
 > 特别注意事项：运行HBuilderX `cli uniapp.test`前，请先确保[HBuilderX uni-app自动化测试](https://ext.dcloud.net.cn/plugin?id=5708)插件可以在HBuilderX内正常使用。
 
-## 使用方法
+## 插件安装
+
+[插件安装地址](https://ext.dcloud.net.cn/plugin?id=5708) 在插件市场，点击【导入插件】，会自动拉起本地安装的HBuilderX。
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/uni-test/plugins_install_1.jpeg" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
+
+## cli使用方法
+
+> 注意事项：在windows电脑，HBuilderX安装目录下调用cli命令要输入完整，具体为.\cli.exe
 
 以下是该工具的基本用法：
 
 ```
+// 查看帮助
+cli uniapp.test --help
+
+// 基本使用方法
 cli uniapp.test <platform> --project <ProjectPath>
+
+// windows电脑基本使用方法
+.\cli.exe uniapp.test <platform> --project <ProjectPath>
 ```
 
 ### 支持的平台
@@ -44,11 +59,17 @@ cli uniapp.test <platform> --project <ProjectPath>
 
 ## 示例
 
+> 注意事项：在windows电脑，HBuilderX安装目录下调用cli命令要输入完整，具体为.\cli.exe
+
 1. 运行测试到chrome
 
-   ```bash
-   cli uniapp.test web-chrome --project /path/to/your/project
-   ```
+```bash
+// Mac电脑
+cli uniapp.test web-chrome --project /path/to/your/project
+
+// windows电脑
+.\cli.exe uniapp.test web-chrome --project /path/to/your/project
+```
 
 2. 运行测试到微信开发者工具
 

@@ -45,13 +45,12 @@ uni-ad微信小程序广告的优势在于：
 ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_dcloud/open_ad.png)
 
 
-打开页面后，进入到微信小程序广告Tab页面，点击“开通微信小程序广告”
+打开页面后，进入到微信小程序广告Tab页面，点击“申请微信小程序广告”
 ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_dcloud/open_wx_ad.png)
 
-**注意：如果微信小程序尚未发布，您无法审核通过。请确认申请广告前微信小程序已经发布，并且页面展示正常无误。**
-其他的信息按照实际情况正常填写，最后点击“确认开通”。
+输入微信小程序APPID、微信小程序名称，最后点击“确认开通”。
 
-![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_dcloud/open_wx_ad1.png)
+![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_dcloud/dcloud_wx_open.png)
 
 
 

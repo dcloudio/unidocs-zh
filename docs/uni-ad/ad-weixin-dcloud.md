@@ -53,40 +53,28 @@ uni-ad微信小程序广告的优势在于：
 
 ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_dcloud/open_wx_ad1.png)
 
-::: warning FAQ
-
-- **Q：插件截图如何获取？**
-- A：广告插件申请需开发者登录微信微信公众平台 [https://mp.weixin.qq.com/](https://mp.weixin.qq.com/)进行提交（需添加2个插件：uniAD 和 珊瑚运营平台。添加广告插件成功后请严格按照页面提示样式进行截图，具体截图样式如下。上传广告插件截图成功后，点击页面下方的“完成”按钮。
-![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_dcloud/wx-plugin.png)
-
-- **Q：如何添加插件？**
-- A：登陆微信公众平台 [https://mp.weixin.qq.com/](https://mp.weixin.qq.com/)，点击左侧栏最底部【你的小程序名称】出现弹框，点击【账号设置】，然后找到顶部页签【第三方设置】，向下滚动屏幕到【插件管理】，点击【添加插件】按钮，搜索【uniAD】和【珊瑚运营平台】插件并添加。
-
-如您无法在微信公众平台搜索到插件，请采用如下方式进行添加：
-把含有广告插件的小程序在 HBuilderX 运行到微信开发者工具，在微信的开发者工具调试控制台会输出申请插件的链接，点击后弹出申请确认框，然后点击 `确定` 按钮。
-
-【注意】：安装插件后“珊瑚运营平台”会显示【待确认】状态，属于正常现象，此插件是与广告位一起审核，直接提交广告开通申请，待广告位开通后会显示【已通过】。
-
-- **Q：微信小程序资质审核多久？**
-- A：一般1-3个工作日后会有审核结果，请注意查收邮件或站内通知。**注意：在微信小程序资质审核通过后，您会收到相关的代码位信息以及广告代码部署文档，请查看邮件或站内通知。**
-:::
-
 
 
 ### 广告代码集成
-当您的微信小程序资质以及广告插件都是审核通过状态，广告才可正常展示。届时您可以开始根据广告的开发文档进行调试。
+当您的微信小程序是审核通过状态，广告才可正常展示。届时您可以开始根据广告的开发文档进行调试。
 
-[信息流广告/原生广告](https://uniapp.dcloud.net.cn/uni-ad/ad-component.html)
+[横幅广告(banner)](https://uniapp.dcloud.net.cn/uni-ad/ad-component.html)
 
-[视频广告](https://uniapp.dcloud.net.cn/uni-ad/ad-video.html)
-
-[激励视频广告](https://uniapp.dcloud.io/uni-ad/ad-rewarded-video.html)
+[横版卡片广告](https://uniapp.dcloud.net.cn/uni-ad/ad-video.html)
 
 [插屏广告](https://uniapp.dcloud.io/uni-ad/ad-interstitial.html)
+
+[全屏广告](https://uniapp.dcloud.net.cn/uni-ad/ad-fullscreen-video.html)
 
 [激励视频广告](https://uniapp.dcloud.io/uni-ad/ad-rewarded-video.html)
 
 [格子广告](https://uniapp.dcloud.io/uni-ad/ad-grid.html)
+
+**注意：**  
+
+1.**在使用到广告位的页面路径后缀加上广告位，例如：`pages/test-ad/test-ad_1013000002`，其中`1013000002`是广告位id（实际换成你自己申请下来的广告位），如果一个页面使用到多种类型的广告位，任选一个加上**  
+
+2.开发者通过`HBuilder X 4.82+ (Alpha版本)` 重新发布微信小程序
 
 ### 广告报表查看
 微信小程序广告的数据报表请登录uni-ad后台，左侧菜单栏的【数据收益】进行查看，微信小程序广告数据放在小程序广告数据Tab页面，可单独查看。

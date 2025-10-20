@@ -57,6 +57,16 @@ cli uniapp.test <platform> --project <ProjectPath>
   - `--help`：显示命令帮助信息。
   - `--version`：查看插件版本号。
 
+## uni-app 自动化测试依赖说明
+
+如果您没有安装自动化测试依赖，调用HBuilderX CLI测试时，会出现如下提示，请根据提示语进行操作。
+
+注意：playwright，依赖包体积很大（约1G左右），安装受限于网络、操作系统等环境，可能安装较慢。
+
+如果playwright安装遇到问题，请参考: [https://playwright.dev/docs/intro](https://playwright.dev/docs/intro)
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/uni-test/uniapp_test_lib.jpg" style="zoom: 50%;border: 1px solid #eee;border-radius: 5px;"/>
+
 ## 示例
 
 > 注意事项：在windows电脑，HBuilderX安装目录下调用cli命令要输入完整，具体为.\cli.exe

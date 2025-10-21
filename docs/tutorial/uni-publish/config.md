@@ -7,9 +7,11 @@
 ![](https://web-ext-storage.dcloud.net.cn/appstore/mi_2025-09-01_155214_780.png)
 2.点击“自动发布接口”。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/mi_2025-09-01_155659_112.png)
-3.下载公钥文件，并获取私钥。
+3.获取公钥：下载公钥文件后，使用记事本等文本编辑器打开文件，复制其中的公钥内容。
 
-4.小米账号：登录小米开放平台的小米账号邮箱
+4.获取私钥：点击“获取私钥”按钮，平台将分配私钥。
+
+5.小米账号：登录小米开放平台的小米账号邮箱
 
 
 ### OPPO@oppo
@@ -24,6 +26,8 @@
 5.在新建应用的对话框中，按照截图所示填写/选择。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/oppo_2025-09-01_164836_649.png)
 注:同一个秘钥可以支持多个APP使用。[API传包FAQ](https://web-ext-storage.dcloud.net.cn/appstore/oppo_2025-09-01_164836_649.png)
+
+6.创建应用成功后，平台将分配client_id和client_secret。
 
 
 ### VIVO@vivo

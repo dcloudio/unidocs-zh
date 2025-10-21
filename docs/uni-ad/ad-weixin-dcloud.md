@@ -14,7 +14,6 @@ uni-ad的微信小程序广告目前支持uni-app，以及原生开发的小程�
 
 [格子广告](https://uniapp.dcloud.io/uni-ad/ad-grid.html)（HBX3.5.1+版本）
 
-[互动红包](https://uniapp.dcloud.net.cn/uni-ad/ad-interactive.html)（HBX3.6.7+版本） **广告创意可自定义，用户打开页面后进入抽奖环节**
 
 注：微信小程序开屏广告uni-ad暂不支持。因为小程序开屏时间短，广告效果没有其他广告形式好。
 

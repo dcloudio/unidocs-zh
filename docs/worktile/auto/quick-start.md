@@ -6,7 +6,7 @@ uni-app提供了一批[API](./api.md)，这些API可以操控uni-app应用，包
 
 推荐使用方式：研发提交源码到版本库后，持续集成系统自动拉取源码，自动运行自动化测试。
 
-### 特性@features
+## 特性@features
 开发者可以利用[API](./api.md)做以下事情：
 
 * 控制跳转到指定页面
@@ -21,11 +21,14 @@ uni-app提供了一批[API](./api.md)，这些API可以操控uni-app应用，包
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |√(ios仅支持模拟器)|√|√|x|x|x|x|x|x|x|
 
-### CLI
+## CLI
 
-如果您想在`终端命令行`进行自动化测试、或使用持续集成进行测试，请使用uni-app [CLI](https://uniapp.dcloud.net.cn/quickstart?id=_2-通过vue-cli命令行) 工程，[CLI项目自动化测试教程](uniapp-cli-project.md)
+如果您想在`终端命令行`进行自动化测试、或使用持续集成进行测试。
 
-### 测试插件@descriptions
+- 请使用uni-app [CLI](https://uniapp.dcloud.net.cn/quickstart?id=_2-通过vue-cli命令行) 工程，[CLI项目自动化测试教程](uniapp-cli-project.md)
+- 使用HBuilderX cli调用uni-app自动化测试插件。[文档](https://uniapp.dcloud.net.cn/worktile/auto/hbuilderx-cli-uniapp-test.html)
+
+## 测试插件@descriptions
 
 为了方便大家在`HBuilderX`内，进行uni-app自动化测试，开发了 [HBuilderX uni-app自动化测试插件](https://ext.dcloud.net.cn/plugin?id=5708)。
 
@@ -33,10 +36,61 @@ uni-app提供了一批[API](./api.md)，这些API可以操控uni-app应用，包
 
 插件简化了测试环境安装、测试用例创建、测试运行、测试设备选择等步骤。[插件使用文档](./hbuilderx-extension/index)
 
+## 测试工程目录说明
 
-### jest.config.js@jestconfigjs
+如下所示，是一个标准的uni-app x项目测试工程目录介绍。
 
-jest.config.js文件，为测试配置文件，详细内容如下：
+```shell
+.
+├── App.uvue
+├── env.js        // 此文件主要用于配置uni-app项目测试设备、测试基座路径等。当然你也可以把此文件的内容放置到jest.config.js testEnvironmentOptions节点下
+├── index.html
+├── jest.config.js  // 此文件允许你自定义和控制 Jest 的行为，比如指定测试文件的位置、配置测试环境、忽略某些目录等
+├── main.uts
+├── manifest.json
+├── pages
+│   └── index
+│       ├── index.test.js  // 测试用例文件。通常跟页面在同一级目录
+│       └── index.uvue
+├── pages.json
+├── static
+│   └── logo.png
+└── uni.scss
+```
+
+#### 测试用例文件规范
+
+- 文件名通常为 *.test.js，便于 Jest 自动识别
+- *.test.js 测试文件一般放在被测试文件同级，强烈建议放置到跟页面同一级目录
+- 每个测试用例应相互独立，避免依赖其他测试的执行结果
+- 遵守 Jest 语法规范，用法如：`test('描述', () => { ... }) 或 it('描述', () => { ... })`
+- [uni测试框架API文档](/worktile/auto/api.html)
+
+#### 测试用例文件编写示例
+
+以下代码是一个简单的uni-app页面测试用例，使用`page.$`获取`.title`选择器的文本，然后进行断言。
+
+```js
+describe('test title', () => {
+    let page;
+    beforeAll(async () => {
+        page = await program.currentPage();
+        await page.waitFor(3000);
+    });
+
+    it('check page title', async () => {
+        const el = await page.$('.title');   // page.$(selector: string) 选择器(id、class、元素选择器)
+        const titleText = await el.text();
+        expect(titleText).toEqual('Hello');
+    });
+});
+```
+
+## 测试配置文件
+
+#### jest.config.js@jestconfigjs
+
+一个完整的jest.config.js文件，为测试配置文件，详细内容如下：
 
 ```js
 module.exports = {
@@ -57,8 +111,7 @@ module.exports = {
 				executablePath: "HBuilderX/plugins/launcher/base/android_base.apk" // apk 目录或自定义调试基座包路径
 			},
 			ios: {
-				// uuid 必须配置，目前仅支持模拟器，可以（xcrun simctl list）查看要使用的模拟器 uuid
-				id: "",
+				id: "", // uuid 必须配置，目前仅支持模拟器，可以（xcrun simctl list）查看要使用的模拟器 uuid
 				executablePath: "HBuilderX/plugins/launcher/base/Pandora_simulator.app" // ipa 目录
 			}
 		},
@@ -73,13 +126,8 @@ module.exports = {
 			executablePath: "", // 开发者工具cli路径，默认会自动查找,  windows: C:/Program Files (x86)/Tencent/微信web开发者工具/cli.bat", mac: /Applications/wechatwebdevtools.app/Contents/MacOS/cli
 		},
 		"mp-baidu": {
-			port: 9430, // 默认 9430
-			args: "", // 指定开发者工具参数
-			cwd: "", // 指定开发者工具工作目录
-			launch: true, // 是否主动拉起开发者工具
-			teardown: "disconnect", // 可选值 "disconnect"|"close" 运行测试结束后，断开开发者工具或关闭开发者工具
-			remote: false, // 是否真机自动化测试
-			executablePath: "", // 开发者工具cli路径，默认会自动查找
+			port: 9430, // 默认9420
+            // 其它配置项跟mp-weixin一样
 		}
 	},
 	testTimeout: 15000,
@@ -95,9 +143,7 @@ module.exports = {
 
 ```
 
-
-
-**注意事项**
+## 注意事项
 
 1. 如果页面涉及到分包加载问题，`reLaunch` 获取的页面路径可能会出现问题 ，解决方案如下 ：
 ```javascript

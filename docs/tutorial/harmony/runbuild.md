@@ -934,3 +934,29 @@ HBuilderX 4.81+ 在这种情况下会自动删除鸿蒙工程目录内的所有�
 在鸿蒙中，设置 userAgent 和 app-plus 配置相似，再 manifest.json 中设置 `app-harmony.useragent`，具体可参考 [鸿蒙 userAgent 配置](../collocation/manifest.md#app-harmony-useragent)。
 
 有些移动端网页是检测的 userAgent 来判断是否为 mobile 机型，进而展示移动端适配页面，判断规则中可能缺少判断，这种情况下可参考这个帖子进行兼容。[经验分享 鸿蒙通过 WebView 打开页面渲染成桌面 pc 模式怎么办？](https://ask.dcloud.net.cn/article/42109)
+
+### 在 HBuilderX 中无法设置 DevEco 的安装目录
+
+这个问题出现在 MacOS 中，你可直接粘贴下面值，此问题后续会修复。 `/Applications/DevEco-Studio.app`
+
+### 鸿蒙如何主动请求某一项请求，提前完成功能授权。
+
+可参考 [UTS 插件介绍](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)，新建 uts api 插件，填写下面代码放入 `app-harmony/index.uts`
+
+```ts
+import { abilityAccessCtrl, Permissions } from '@kit.AbilityKit';
+
+
+export const requestSystemPermission = () => {
+
+  const permissionList : Array<Permissions> = ['ohos.permission.APPROXIMATELY_LOCATION']
+  UTSHarmony.requestSystemPermission(permissionList, (allRight : boolean, grantedList : Array<string>) => {
+    console.log('res', allRight, grantedList);
+  }, (doNotAskAgain : boolean, grantedList : Array<string>) => {
+    console.log('fail', doNotAskAgain, grantedList);
+  })
+}
+
+```
+
+上述代码会主动请求相关模糊位置权限。

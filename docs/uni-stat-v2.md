@@ -372,7 +372,7 @@ uni统计新增的文件主要包括：
 为了让用户端App采集到的数据，可以被`uni-admin`中的云函数正确接收并统计，需保证用户端项目和admin项目，关联同样的服务空间。
 
 1. 选择用户端项目（需采集用户数据的项目）
-2. 若该项目之前未启用`uniCloud`，右键并选择 `创建uniCloud云开发环境 -> 支付宝云|阿里云|腾讯云`（数据量大推荐使用`支付宝云`）；否则，进入第3步；
+2. 若该项目之前未启用`uniCloud`，右键并选择 `创建uniCloud云开发环境 -> 支付宝云|阿里云|腾讯云`（数据量大推荐使用`支付宝云` + [扩展数据库](https://doc.dcloud.net.cn/uniCloud/ext-mongodb/intro.html)）；否则，进入第3步；
 
 ![关联前后台数据](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/iShot2022-04-01%2015.11.18.png)
 

@@ -239,7 +239,7 @@ webview示例
 
 ### app-harmony
 
-鸿蒙应用项目设置，目前只支持一个 `distribute` 属性，其值为一个 `Object` 对象：
+鸿蒙应用项目设置，支持 `distribute` 属性，其值为一个 `Object` 对象：
 
 |属性|类型|说明|
 |:-|:-|:-|
@@ -298,6 +298,10 @@ webview示例
 |:-|:-|:-|
 |value|String|可选，JSON对象，应用UserAgent相关配置，默认值为系统UserAgent|
 |concatenate|Boolean|可选，Boolean类型，是否将value值作为追加值连接到系统默认userAgent值之后|
+
+#### 其它支持的属性
+
+- safearea
 
 ### h5
 

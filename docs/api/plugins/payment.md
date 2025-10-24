@@ -13,13 +13,11 @@ uni.requestPayment是一个统一各平台的客户端支付API，不管是在�
 
 前端统一的`uni.requestPayment`和云端统一的`uniPay`搭配，可以极大提升支付业务的开发效率，强烈推荐给开发者使用。`uniPay`的文档另见：[https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)
 
-`小红书小程序`需要使用 `xhs.requestGuaranteeOrderPayment` 担保支付方法，[详情](https://miniapp.xiaohongshu.com/doc/DC034783)
-
 **平台差异说明**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|[说明](/api/plugins/payment?id=h5-payment)|√|√|√|√|x|√|√|x|√|√|
+|√|[说明](/api/plugins/payment?id=h5-payment)|√|√|√|√|x|√|√|x|√|HX 4.81+|
 
 
 <!-- UNIAPPAPIJSON.requestPayment.compatibility -->

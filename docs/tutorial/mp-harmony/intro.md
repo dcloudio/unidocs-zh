@@ -632,6 +632,8 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 ### 如何使用分包异步化能力？
 
+#### 跨分包自定义组件引用
+
 [分包异步化](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/asynchronous-subcontracting) 能力默认是支持的。开发者使用不生效一般是下面错误原因：
 
 `pages.json` 配置错误
@@ -680,6 +682,89 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 ```
 
 在页面中正常使用： `import CustomButton from "@/packageB/components/component1/index.vue";`
+
+#### 跨分包 JS 代码引用
+
+小程序端默认支持跨分包 JS 代码引用，需要写小程序原生支持的语法，不能使用静态引入或者动态引入。示例如下：
+
+`sub分包` 定义 `utils.js` 文件
+
+```javascript
+// sub/utils.js
+export function add(a, b) {
+    return a + b
+}
+```
+
+`sub分包` 正常使用 `utils.js` 文件
+
+```vue
+// sub/index.vue
+<template>
+    <view>
+        {{ count }}
+        <button @tap="handleClick">add one</button>
+    </view>
+</template>
+
+<script>
+    import {
+        add
+    } from "./utils.js";
+
+    export default {
+        data() {
+            return {
+                count: 1
+            }
+        },
+        methods: {
+            handleClick() {
+                this.count = add(this.count, 1)
+            }
+        }
+    }
+</script>
+```
+
+其他分包使用 `sub分包` 的 `utils.js` 文件
+
+```vue
+// sub2/index.vue
+<template>
+    <view>
+       {{ count }}
+        <button @tap="handleClick">add two</button>
+    </view>
+</template>
+
+<script>
+    export default {
+        data() {
+            return {
+                count: 1
+            }
+        },
+        methods: {
+            handleClick() {
+                require('../sub/utils.js', sub_utils => {
+                    this.count = sub_utils.add(this.count, 2);
+                }, ({
+                    mod,
+                    errMsg
+                }) => {
+                    console.error(`path: ${mod}, ${errMsg}`)
+                })
+            }
+        }
+    }
+</script>
+```
+
+**注意：**
+
+- 引用的文件必须存在
+- 使用小程序支持的原生语法
 
 ### 元服务提交审核常见报错
 

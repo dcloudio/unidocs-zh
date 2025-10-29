@@ -476,6 +476,12 @@ export default {
 
 ## 分包异步化
 
+### 跨分包自定义组件引用
+
+此特性依赖配置 `componentPlaceholder`，目前仅支持在 `pages.json` 中添加页面级别的配置，如果需要在某个组件中配置，可以使用 [插件](https://github.com/uni-toolkit/uni-toolkit)
+
+[详见ask社区帖子](https://ask.dcloud.net.cn/article/42114)
+
 ### 跨分包 JS 代码引用
 
 小程序端默认支持跨分包 JS 代码引用，需要写小程序原生支持的语法，不能使用静态引入或者动态引入。示例如下：

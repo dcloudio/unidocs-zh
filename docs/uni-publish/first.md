@@ -121,7 +121,7 @@
 
 2. 创建渠道配置
 
-请参考 [API 传包相关参数获取说明](https://uniapp.dcloud.net.cn/tutorial/uni-publish/config.html)，获取相关参数，然后填写所需参数并点击“保存”。
+请参考 [API 传包相关参数获取说明](https://uniapp.dcloud.net.cn/uni-publish/config.html)，获取相关参数，然后填写所需参数并点击“保存”。
 
 `考虑到不同项目可能对应不同的应用市场账号，建议配置名称使用项目名或公司名以便区分。`
 ![](https://web-ext-storage.dcloud.net.cn/appstore/2025-09-23_154817_464.png)

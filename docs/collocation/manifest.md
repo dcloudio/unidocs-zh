@@ -555,6 +555,10 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |:-|:-|:-|
 |subPackages|Boolean|是否开启分包优化|
 
+**注意：**
+
+- 配置项为 `subPackages`，写成 `subpackages` 无效
+
 #### cloudfunctionRoot
 
 如果需要使用微信小程序的云开发，需要在 mp-weixin 配置云开发目录

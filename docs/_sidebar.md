@@ -24,7 +24,7 @@
     * [如何开通](/uni-push/open.md)
     * [uni-push 1.0](unipush-v1.md)
     * [uni-push 2.0](unipush-v2.md)
-      * [业务文档](unipush-v2.md)
+      * [入门文档](unipush-v2.md)
       * 开发文档
         * [uni-app客户端api](https://uniapp.dcloud.net.cn/api/plugins/push.html)
         * [uni-app x客户端api](https://doc.dcloud.net.cn/uni-app-x/api/push.html)

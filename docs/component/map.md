@@ -369,8 +369,6 @@ A: App 3.4+ 已支持 Google 地图， App 3.4 以下版本使用下面的方案
 
 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 
-DCloud为开发者争取了福利，可优惠获取商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以通过`uni-im`发起在线咨询，地址：[地图商业授权咨询](https://ask.dcloud.net.cn/explore/map/)。
-
 详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)
 
 ### unicloud-map 云端一体组件

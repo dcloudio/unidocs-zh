@@ -31,7 +31,7 @@ export default defineConfig({
   plugins: [
     uni(),
     vueJsx({
-      // options are passed on to @vue/babel-plugin-jsx
+      // options are passed on to @vitejs/plugin-vue-jsx
     })
   ],
 });
@@ -51,7 +51,7 @@ export default defineConfig({
   plugins: [
     uni(),
     vueJsx({
-      // options are passed on to @vue/babel-plugin-jsx
+      // options are passed on to @vitejs/plugin-vue-jsx
     }),
   ],
 }

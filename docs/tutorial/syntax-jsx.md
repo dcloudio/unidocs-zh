@@ -13,7 +13,7 @@ uniapp 支持 [JSX](https://facebook.github.io/jsx) 开发，可参考 [Vue.js J
 ### 安装插件
 
 ```shell
-npm install @vitejs/plugin-vue-jsx --save-dev
+npm install @vitejs/plugin-vue-jsx@3.1.0 --save-dev
 ```
 
 ### 配置 vite.config.js
@@ -56,3 +56,7 @@ export default defineConfig({
   ],
 }
 ```
+
+**注意**
+
+- `@vitejs/plugin-vue-jsx` 的版本最好和 uni-app 内部使用的版本保持一致，否则可能会出现兼容性问题

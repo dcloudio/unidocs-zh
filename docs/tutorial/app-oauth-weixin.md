@@ -21,6 +21,9 @@ iOS平台通用链接，必须与微信开放平台配置的一致，推荐使�
 **注意**
 - HBuilderX中标准真机运行基座使用的是DCloud申请HBuilder应用的AppID等信息，仅用于体验微信登录功能
 - 配置参数需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
+- HarmonyOS 平台需要额外的配置，详见[HarmonyOS平台接入微信登录](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/Access_Guide/ohos.html)
+  - 配置 queryScheme： `"queryScheme": ["weixin", "wxopensdk"]`
+  - 配置 actions: `"actions": [ "action.system.home", "wxentity.action.open" ]`
 
 
 ### 使用微信登录
@@ -58,6 +61,8 @@ uni.login({
 > 相关API文档： [uni.login](https://uniapp.dcloud.io/api/plugins/login.html#login)，[uni.request](https://uniapp.dcloud.io/api/request/request.html)
 
 - 5+ App项目
+
+> HarmonyOS 不支持
 
 ``` js
 var weixinOauth = null;

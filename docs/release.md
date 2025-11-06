@@ -1,3 +1,7 @@
+#### 4.85.2025110510
+* 【uni-app x】
+  + iOS平台 修复 4.84版本引发的 组件 list-view 频繁拖动加载更多数据可能引起崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=22861)
+
 #### 4.84.2025110307
 * 【uni-app】
   + 修复 text 组件会将 `&nbsp;、&ensp;` 等去除的Bug [详情](https://ask.dcloud.net.cn/question/111406)

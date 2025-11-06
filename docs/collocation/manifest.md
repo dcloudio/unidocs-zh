@@ -733,6 +733,15 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |setting|Object|项目设置，详见：[setting配置说明](https://miniapp.xiaohongshu.com/doc/DC977105#anchorId-setting)|
 |packOptions|Object|打包配置选项|
 |nativeTags|Array| 小红书小程序平台的原生组件 (4.81+)|
+|optimization|Object| 对小红书小程序的优化配置 |
+
+#### optimization
+
+对快手小程序的优化配置
+
+|属性|类型|说明|
+|:-|:-|:-|
+|subPackages|Boolean|是否开启分包优化|
 
 ### mp-harmony
 

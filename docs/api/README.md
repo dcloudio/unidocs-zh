@@ -689,7 +689,6 @@ uni.addInterceptor({
 | [全屏视频广告](a-d/full-screen-video.md) | 全屏视频广告                                                     |
 | [内容联盟广告](a-d/content-page.md)      | 内容联盟广告                                                     |
 | [插屏广告](a-d/interstitial.md)          | 插屏广告                                                         |
-| [互动游戏](a-d/interactive.md)           | 互动游戏是 DCloud 联合三方服务商为开发者提供新的广告场景增值服务 |
 
 ### 第三方服务
 

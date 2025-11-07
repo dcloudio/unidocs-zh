@@ -73,7 +73,5 @@ HBuilder 3.6.7+ 或原生广告 SDK 5.0.0+版本 uni-ad 开屏、信息流、激
 - [插屏广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)
 - [沉浸视频流广告](https://uniapp.dcloud.net.cn/uni-ad/ad-draw.html)
 - [短视频内容联盟组件](https://uniapp.dcloud.net.cn/uni-ad/ad-content-page.html)
-- [互动广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interactive.html)
-- [互动游戏](https://uniapp.dcloud.net.cn/uni-ad/interactive.html)
 
 更多信息参考 [uni-ad 广告联盟](https://uniad.dcloud.net.cn)

@@ -571,7 +571,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 }
 ```
 
-配置目录之后，需要在项目根目录新建 `vue.config.js` 配置对应的文件编译规则
+配置目录之后，`vue2 项目` 需要在项目根目录新建 `vue.config.js` 配置对应的文件编译规则
 
 ```javascript
 {
@@ -584,6 +584,33 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
      ]),
    ],
 }
+```
+
+`vue3 项目` 需要在项目根目录新建 `vite.config.js` 配置对应的文件编译规则
+
+```javascript
+import { defineConfig } from "vite";
+import uni from "@dcloudio/vite-plugin-uni";
+import fs from "fs-extra"; // fs-extra 为第三方依赖，需要安装
+import path from "path";
+
+export default defineConfig({
+    plugins: [
+        uni(),
+        {
+            name: "copy-cloudfunctions",
+            buildStart() {
+                fs.copySync(
+                    path.join(process.env.UNI_INPUT_DIR, "cloudfunctions"),
+                    path.join(
+                        process.env.UNI_OUTPUT_DIR,
+                        "cloudfunctions"
+                    )
+                );
+            },
+        },
+    ],
+});
 ```
 
 ### mp-alipay

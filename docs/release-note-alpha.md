@@ -1,3 +1,11 @@
+#### 4.86.2025110715-alpha
+* 【uni-app x】
+  + Web平台 修复 4.81版本引发的 API dialogPage 中使用 mapContext 异常的 Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=23233)
+  + iOS平台 修复 4.81版本引发的 组件 list-view 频繁拖动加载更多数据可能引起崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=22861)
+  + iOS平台 修复 API uni.request 访问某些 url 地址可能引起崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=21823)
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 修复 4.81版本引发的 云端打包勾选`对配置的js/nvue文件进行原生混淆`，安装后启动白屏的Bug [详情](https://ask.dcloud.net.cn/question/214978)
+
 #### 4.84.2025102304-alpha
 * 【uni-app x】
   + iOS平台 新增 组件 web-view 支持 disable-user-select-menu 设置是否禁用文本选择时弹出系统菜单 [文档](https://doc.dcloud.net.cn/uni-app-x/component/web-view.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=21728>

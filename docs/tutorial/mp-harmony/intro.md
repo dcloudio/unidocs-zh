@@ -681,6 +681,8 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 在页面中正常使用： `import CustomButton from "@/packageB/components/component1/index.vue";`
 
+如果你需要组件中使用占位组件，可参考阅读 [小程序专题-分包异步化](https://uniapp.dcloud.net.cn/tutorial/miniprogram-subcontract-asynchrony.html)
+
 ### 元服务提交审核常见报错
 
 #### 请检查华为后台隐私政策中 “设备权限调用” 是否填写完整

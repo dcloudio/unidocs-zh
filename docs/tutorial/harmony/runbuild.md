@@ -960,3 +960,9 @@ export const requestSystemPermission = () => {
 ```
 
 上述代码会主动请求相关模糊位置权限。
+
+### 哪些手机可以用于开发纯血鸿蒙？
+
+目前可升级鸿蒙 5/鸿蒙 6 的真机列表在这里：[HarmonyOS 6 支持机型](https://consumer.huawei.com/cn/support/harmonyos/models-6/)
+
+这里特别补充鸿蒙真机不一定都是旗舰机，有一些中端机、旧机可供参考，价格在一千到两千元，比如 Nova14/畅享 70X（2025年发布的新机），比如 nova12pro （旧机），这两款机器价格较低，可升级鸿蒙5/6 系统。

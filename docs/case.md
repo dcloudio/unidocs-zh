@@ -648,6 +648,16 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **考狐狸：** 一款多专业免费医学类高质量题库 APP，鸿蒙应用市场搜索“考狐狸”，[详情](https://appgallery.huawei.com/app/detail?id=com.bc.kaohuli)
 
+**习字帖​：** 一款帮助您轻松生成和练习字帖的应用，鸿蒙应用市场搜索“习字帖”，[详情](https://appgallery.huawei.com/app/detail?id=cn.authbox.copybook)
+
+**每日60秒读懂世界​：**  每天早上更新15条全球热点新闻，鸿蒙应用市场搜索“每日60秒读懂世界”，[详情](https://appgallery.huawei.com/app/detail?id=cn.authbox.zaobao)
+
+**泰有趣​：** 一款帮助您轻松学泰语，泰语翻译的应用，鸿蒙应用市场搜索“泰有趣”，[详情](https://appgallery.huawei.com/app/detail?id=cn.authbox.thai)
+
+**智趣证照​：** 标准证件照，30秒免费快速生成，鸿蒙应用市场搜索“智趣证照”，[详情](https://appgallery.huawei.com/app/detail?id=cn.authbox.photo)
+
+**ALAPI​：** API接口服务平台，提供数百款API接口，鸿蒙应用市场搜索“ALAPI”，[详情](https://appgallery.huawei.com/app/detail?id=cn.alapi.app)
+
 **塔罗牌占卜师：** 鸿蒙元服务，鸿蒙应用市场搜索“塔罗牌占卜师”
 
 **多点计算器：** 一款功能强大的计算器，支持科学计算、BMI指数计算、体脂率计算等，鸿蒙元服务，鸿蒙应用市场搜索“多点计算器”

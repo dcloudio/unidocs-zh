@@ -9753,6 +9753,11 @@ vuepress-plugin-named-chunks@^1.1.4:
   resolved "https://registry.npmmirror.com/vuepress-plugin-named-chunks/-/vuepress-plugin-named-chunks-1.1.4.tgz#c65e121a8d0bbb4201766ec06816a2aa67dae3b7"
   integrity sha512-zCRVmbf10VAf8NcrVLlm1b6eGU3vkc/iLVNvpIL3sBvtCCVaZheT2OlaV0CMPE6OjjTYbMrYXjugu4vcpiXrNQ==
 
+vuepress-plugin-noscript-code@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-noscript-code/-/vuepress-plugin-noscript-code-1.0.2.tgz#a3bac0fad38d0f08b8d19f62ced767a616cec98c"
+  integrity sha512-bK7xWxYjghm8oVECnIeppSkRxcC7FMmtJ8/9H4ssx3hVf3LcHXwjk69IWemlvHYZ2++HIe8Kr8FzRocrqECVow==
+
 vuepress-plugin-smooth-scroll@^0.0.3:
   version "0.0.3"
   resolved "https://registry.npmmirror.com/vuepress-plugin-smooth-scroll/-/vuepress-plugin-smooth-scroll-0.0.3.tgz#6eff2d4c186cca917cc9f7df2b0af7de7c8c6438"
@@ -9767,10 +9772,10 @@ vuepress-plugin-zooming@^1.1.8:
   dependencies:
     zooming "^2.1.1"
 
-vuepress-theme-uniapp-official@^1.4.39:
-  version "1.4.39"
-  resolved "https://registry.npmmirror.com/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.4.39.tgz#f4477d75dce88cb430ced6c4346119d050ea4c30"
-  integrity sha512-p/JdlCbfNT2deTXisDCoEHAbIqgdKi7THHdNozyGEOlcCtSapmsSUbcLSQNsP5IHZfIdTrrLYLDLC6wiGsuIGw==
+vuepress-theme-uniapp-official@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.5.1.tgz#48e6e581b9345dfc6661f02bbd57ff338e1ea08f"
+  integrity sha512-+Be+8uNXks9nD3WKnBBVnKcSBx/PKURz0Ha6g/ZhBQqQWQG3v/tM0muTaV8lvMzgysM7Aa05S4ddjmIlJCNG7w==
   dependencies:
     "@docsearch/css" "^3.6.0"
     "@vuepress/plugin-back-to-top" "^1.9.5"
@@ -9785,6 +9790,7 @@ vuepress-theme-uniapp-official@^1.4.39:
     vuepress-plugin-juejin-style-copy "^1.0.4"
     vuepress-plugin-mermaidjs "1.9.1"
     vuepress-plugin-named-chunks "^1.1.4"
+    vuepress-plugin-noscript-code "^1.0.2"
     vuepress-plugin-zooming "^1.1.8"
 
 vuepress@1.9.9:

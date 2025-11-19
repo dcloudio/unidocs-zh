@@ -88,7 +88,7 @@
 
 ### 2. 配置 `module.json5`
 
-首次运行可选。
+首次运行可选，后续
 
 鸿蒙元服务需要获取使用特定的能力，比如元服务登录、震动、获取网络状态等权限、配置应用名称和图标时候需要配置权限模版。
 
@@ -248,17 +248,19 @@ hdc shell bm dump-shared -n com.huawei.hms.ascfruntime
 
 ### 如何修改元服务默认标题、图标、启动图等信息？@how-to-change-icon
 
+元服务图标必须在华为提供的标准图标底板上设计，否则会上架审核不通过。参考 [生成元服务图标](https://developer.huawei.com/consumer/cn/doc/atomic-guides-V5/atomic-service-icon-generation-V5?ha_source=Dcloud&ha_sourceId=89000448) 生成图标，最终得到两个图片，一个是 216x216 用于在 uniapp 开发者后台上传图片，一个是 512x512 的图标放置代码里，具体是 `harmony-mp-configs/AppScope/resources/base/media/my_app_icon.png` 路径上，后续可通过 `$media:my_app_icon` 访问。
+
 如何修改元服务的标题、图标、启动图？需要把文字和图标先定义，然后在资源文件中引用。下载文档中推荐的 module.json5 文件，下载放置到 `harmony-mp-configs/entry/src/main/module.json5` ，定位到 `module.abilities[0]` 会找到下面几个字段：
 
 - `description` 对应应用描述
-- `icon` 对应应用图标
+- `icon` 对应应用图标，值使用 `$media:my_app_icon`
 - `label` 对应应用标题
 - `startWindowIcon` 对应应用启动图标，Splashscreen
 - `startWindowBackground` 对应应用启动时候屏幕颜色
 
 通过设置 `$media:xxx` 关联图片，`$string:xxx` `$color:xxx` 对应配置文件的值。
 
-在项目 `harmony-mp-configs` 目录创建 `entry/src/main/resources/` 目录。注意，`zh_CN` 大于 `base` 配置，优先修改 zh_CN 配置。
+在项目 `harmony-mp-configs` 目录创建 `entry/src/main/resources/` 目录。注意， `zh_CN` 大于 `base` 配置，最终会在 `AppScope` 查找配置，优先修改 zh_CN 配置。
 
 举例，下面是 `zh-CN/element/string.json` 中的内容，可以修改 `EntryAbility_label` 字段。
 
@@ -280,10 +282,6 @@ hdc shell bm dump-shared -n com.huawei.hms.ascfruntime
   ]
 }
 ```
-
-元服务图标必须在华为提供的标准图标底板上设计，参考 [生成元服务图标](https://developer.huawei.com/consumer/cn/doc/atomic-guides-V5/atomic-service-icon-generation-V5?ha_source=Dcloud&ha_sourceId=89000448) 生成图标，否则会上架审核不通过。最终得到 512x512 的图标放置在 `harmony-mp-configs/entry/src/main/resources/base/media/app_icon.png` 路径内。
-
-上架时候，这个图标文件也需要在 DCloud 管理后台进行配置。
 
 ### 如何查询 ClientID ClientSecet?@how-to-get-clientid
 

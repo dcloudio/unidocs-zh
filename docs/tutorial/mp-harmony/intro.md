@@ -344,7 +344,7 @@ uni.authorize({
 
 ### API 登录 uni.login 获取 code 报错、如何绑定现有用户体系？@how-to-login
 
-参考[鸿蒙 Account Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-config-permissions-V5#section132012717318?ha_source=Dcloud&ha_sourceId=89000448) 设置相关权限，添加 scope 权限。
+参考[鸿蒙 Account Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-config-permissions-V5#section132012717318?ha_source=Dcloud&ha_sourceId=89000448) 设置相关权限，添加 scope 权限。
 
 易错点：
 
@@ -410,7 +410,7 @@ getphonenumber(e){
 
 ### API 获取网络类型失败、手机震动不等效
 
-新版模版已内置，如果你自定义过权限，需要存在 `GET_NETWORK_INFO` 和 `vibrate` 权限。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5?ha_source=Dcloud&ha_sourceId=89000448) 进行查询。按照 **配置权限模版** 章节进行配置。
+新版模版已内置，如果你自定义过权限，需要存在 `GET_NETWORK_INFO` 和 `vibrate` 权限。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-V5?ha_source=Dcloud&ha_sourceId=89000448) 进行查询。按照 **配置权限模版** 章节进行配置。
 
 ### 运行报错 `failed to install bundle. code:9568296 error: install failed due to error bundle type`
 
@@ -428,7 +428,7 @@ getphonenumber(e){
 
 ### 配置的 module.json5 注意事项
 
-文件 `harmony-mp-configs/entry/src/main/module.json5` 会用来配置应用的一些应为，你可以参考 [鸿蒙 module.json5 配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/module-configuration-file-V5?ha_source=Dcloud&ha_sourceId=89000448) 进行学习和参考。
+文件 `harmony-mp-configs/entry/src/main/module.json5` 会用来配置应用的一些应为，你可以参考 [鸿蒙 module.json5 配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file-V5?ha_source=Dcloud&ha_sourceId=89000448) 进行学习和参考。
 
 如果你已经在开发鸿蒙 App ，见到 module.json5 会感觉比较熟悉，有几个属性需要特别注意：
 

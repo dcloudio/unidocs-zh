@@ -8,13 +8,13 @@
 
 升级至 uni-app 4.51 版本后，由于 SDK 调整，影响如下：
 
-- 需要在工程级的 `build-profile.json5` 的 `products` 字段（如果有多项都要配置）中配置 `compatibleSdkVersionStage: "beta6"` [鸿蒙文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hvigor-build-profile-V5?ha_source=Dcloud&ha_sourceId=89000448)
+- 需要在工程级的 `build-profile.json5` 的 `products` 字段（如果有多项都要配置）中配置 `compatibleSdkVersionStage: "beta6"` [鸿蒙文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-build-profile-V5?ha_source=Dcloud&ha_sourceId=89000448)
 
 将鸿蒙模拟器更新到 `HarmonyOS 5.1.1(19) Beta1（2025-06-12）` 对应 `DevEco Studio 5.1.1 Beta`。由 4.31 架构改动引发的 uniapp 项目无法运行到 windows 的 x86_64 模拟器的问题得到了修复，开发者可以通过升级鸿蒙模拟器的版本之后，点击运行不兼容的对话框中的 `强制继续运行` 按钮。
 
 ### uni-app 4.31
 
-自 uni-app 4.31 版本开始，鸿蒙运行时架构进行了较大的变更。逻辑层从 ArkTS 环境加载改为使用 [JSVM](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/jsvm-introduction-V5?ha_source=Dcloud&ha_sourceId=89000448) 加载。uts插件仍然是ArkTS环境，仅开发者编写的普通代码和vue框架运行在 JSVM 中。
+自 uni-app 4.31 版本开始，鸿蒙运行时架构进行了较大的变更。逻辑层从 ArkTS 环境加载改为使用 [JSVM](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-introduction-V5?ha_source=Dcloud&ha_sourceId=89000448) 加载。uts插件仍然是ArkTS环境，仅开发者编写的普通代码和vue框架运行在 JSVM 中。
 
 **其影响如下：**
 

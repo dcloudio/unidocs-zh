@@ -289,7 +289,7 @@ HBuilderX 会尝试自动把当前运行设备的标识注册到 AGC 中，如�
 登录 AGC 之后，进入【证书、APP ID 和 Profile】中的【设备】页面，把当前设备的 UDID 添加到设备列表中。
 
 可以在前面提到的 [运行设备](#signing-configs-devices) 得到鸿蒙设备的 UDID 标识，
-也可以通过如下的命令行来获取，具体请参考 [华为的官方文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/bm-tool-V5#%E8%8E%B7%E5%8F%96udid%E5%91%BD%E4%BB%A4get?ha_source=Dcloud&ha_sourceId=89000448)：
+也可以通过如下的命令行来获取，具体请参考 [华为的官方文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bm-tool-V5#%E8%8E%B7%E5%8F%96udid%E5%91%BD%E4%BB%A4get?ha_source=Dcloud&ha_sourceId=89000448)：
 
 ```
 hdc shell bm get -u
@@ -338,7 +338,7 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200873385940vk5oj9ihk.png)#{.zooming style="max-height:200px"}
 
-参考 [自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-signing-V5#section18815157237?ha_source=Dcloud&ha_sourceId=89000448)
+参考 [自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-V5#section18815157237?ha_source=Dcloud&ha_sourceId=89000448)
 
 通过 DevEco Studio 自动申请得到的证书，缺省会保存到电脑的用户目录下，在 Windows 系统中一般是 `%USERPROFILE%\.ohos\config`，在 Mac 系统中一般是 `~/.ohos/config`。
 配置信息中包含的三个文件缺省都是采用绝对路径来表示，也可以把这些文件移到 `harmony-configs` 目录下，这样就可以使用相对路径来表示，相对于 `harmony-configs` 目录。

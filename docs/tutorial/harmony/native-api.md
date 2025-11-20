@@ -197,6 +197,7 @@ export function openAppProduct(options : OpenAppProductOptions) {
 </template>
 
 <script lang="uts">
+	// import "@/uni_modules/xxx-openAppProduct" //需要在任意页面中引入 1 次，不然会被摇掉
 	export default {
 		data() {
 			return {

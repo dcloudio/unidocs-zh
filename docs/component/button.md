@@ -100,8 +100,8 @@ button组件也支持style中通过css定义颜色。[见下](#style)
 |getUserInfo|获取用户信息，可以从@getuserinfo回调中获取到用户信息|微信小程序、百度小程序、QQ小程序、快手小程序、京东小程序、360小程序、小红书小程序	|
 |contact | 打开客服会话，如果用户在会话中点击消息卡片后返回应用，可以从 @contact 回调中获得具体信息 |微信小程序、百度小程序、快手小程序、抖音小程序、小红书小程序 |
 |getPhoneNumber | 获取用户手机号，可以从@getphonenumber回调中获取到用户信息|微信小程序、百度小程序、抖音小程序、支付宝小程序、快手小程序、京东小程序、小红书小程序。App平台另见[一键登陆](https://uniapp.dcloud.net.cn/univerify) |
-|launchApp | 小程序中打开APP，可以通过app-parameter属性设定向APP传的参数|[微信小程序](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html)、[QQ小程序](https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open_app.html)、快手小程序、京东小程序 |
-|openSetting | 打开授权设置页 |微信小程序、QQ小程序、百度小程序、快手小程序、京东小程序、360小程序、小红书小程序 |
+|launchApp | 小程序中打开APP，可以通过app-parameter属性设定向APP传的参数|[微信小程序](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html)、[QQ小程序](https://q.qq.com/wiki/develop/miniprogram/frame/open_ability/open_app.html)、快手小程序、京东小程序、[鸿蒙元服务](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/components-button)|
+|openSetting | 打开授权设置页 |微信小程序、QQ小程序、百度小程序、快手小程序、京东小程序、360小程序、小红书小程序、鸿蒙元服务 |
 |chooseAvatar|获取用户头像，可以从@chooseavatar回调中获取到头像信息|微信小程序2.21.2版本+ |
 |agreePrivacyAuthorization|用户同意隐私协议按钮。用户点击一次此按钮后，所有隐私接口可以正常调用。可通过 @agreeprivacyauthorization 监听用户同意隐私协议事件。隐私合规开发指南详情可见[《小程序隐私协议开发指南》](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/PrivacyAuthorize.html)|微信小程序2.32.3版本+ |
 |uploadDouyinVideo|发布抖音视频|抖音小程序2.65.0版本+ |
@@ -136,6 +136,10 @@ open-type 为 feedback时：
 **注意**
 
 - button组件支持style中通过css定义文字大小、颜色
+
+### launchApp
+
+- 鸿蒙元服务可查询 [鸿蒙元服务唤起鸿蒙应用](../tutorial/mp-harmony/open-app.md)
 
 ## button样式修改@style
 

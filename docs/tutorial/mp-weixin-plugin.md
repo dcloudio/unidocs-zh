@@ -16,6 +16,7 @@
 - [支付宝小程序插件](https://opendocs.alipay.com/mini/plugin/plugin-usage)
 - [百度小程序动态库](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)
 - [QQ小程序插件](https://q.qq.com/wiki/develop/miniprogram/frame/plugins/)
+- [京东小程序插件](https://mp-docs.jd.com/doc/miniapp/introduction/plugin/2785#heading-0)
 
 #### 在uni-app中引入插件代码包 @import-mp-plugin
 
@@ -58,7 +59,7 @@
 
 **注意**
 
-- `HBuilder X 3.2.13+` 支持 `export` 字段，即小程序导出到插件。目前仅 微信小程序 和 支付宝小程序 支持
+- `HBuilder X 3.2.13+` 支持 `export` 字段，即使用插件的小程序可以导出一些内容，供插件获取。目前仅 `微信小程序` 和 `支付宝小程序` 支持
 
 #### 在页面中使用插件 @page-import-mp-plugin
 

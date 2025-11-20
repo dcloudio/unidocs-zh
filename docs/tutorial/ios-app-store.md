@@ -8,6 +8,6 @@
 - 应用功能不能过于简单
 - 应用功能不能跟已经上架的应用相似，就是不能做马甲包
 
-**使用广告标识（IDFA）相关说明：**[https://ask.dcloud.net.cn/article/36107](https://ask.dcloud.net.cn/article/36107)
+**使用广告标识（IDFA）相关说明：**[https://uniapp.dcloud.net.cn/tutorial/app-ios-idfa.html](https://uniapp.dcloud.net.cn/tutorial/app-ios-idfa.html)
 
 **UIWebview API 已废弃：**[https://ask.dcloud.net.cn/article/36348](https://ask.dcloud.net.cn/article/36348)

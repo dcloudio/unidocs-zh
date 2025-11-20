@@ -31,7 +31,7 @@
 
 可参考鸿蒙文档 [鸿蒙应用间跳转](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inter-app-redirection?ha_source=Dcloud&ha_sourceId=89000448)
 
-### Deep Linking 方案
+### Deep Linking 方案@deeplinking
 
 官方文档地址《[使用 Deep Linking 实现应用间跳转](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/deep-linking-startup?ha_source=Dcloud&ha_sourceId=89000448)》
 
@@ -80,7 +80,7 @@
 
 参数获取可滚动到 [参数解析](#argument-parse) 继续查看。
 
-### App Linking 方案
+### App Linking 方案@applinking
 
 官方文档 [使用 App Linking 实现应用间跳转](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-linking-startup?ha_source=Dcloud&ha_sourceId=89000448)
 
@@ -145,6 +145,9 @@
 
 ## HBuilderX 中监听参数
 
+
+更新：可直接使用 `uni.getLaunchOptionsSync` 直接获取相关参数。下面方案解释了背后的实现。
+
 HBuilderX 可以封装一个简单的 UTS 插件完成参数获取。
 
 在项目中新建 `uni_modules` 文件夹，选择新建 `UTS插件 - API 插件`，创建之后创建并打开 `utssdk/app-harmony/index.uts`，如果不存在就手动创建该文件。
@@ -166,3 +169,5 @@ UTSHarmony.onAppAbilityNewWant((want: Want) => {
 ```
 
 在页面中引入此插件变量，在 onLaunch 和 onShow 读取 params 后续可根据实际需求完善逻辑。比如通过参数判断如何跳转。
+
+实际中可讲参数变量进行返回，在 Vue 页面中访问和读取。

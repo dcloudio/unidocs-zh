@@ -50,10 +50,9 @@ uni.getNetworkType({
 
 ## uni.onNetworkStatusChange(CALLBACK)
 监听网络状态变化。可使用`uni.offNetworkStatusChange`取消监听。
-
 |元服务|
 |:-:|
-|1.0.4+|
+|√|
 
 <!-- UNIAPPAPIJSON.onNetworkStatusChange.compatibility -->
 
@@ -82,7 +81,7 @@ uni.onNetworkStatusChange(function (res) {
 
 |元服务|
 |:-:|
-|1.0.4+|
+|√|
 
 <!-- UNIAPPAPIJSON.offNetworkStatusChange.compatibility -->
 

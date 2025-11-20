@@ -43,6 +43,9 @@ const routerMap = {
   '/frame#typescript-支持': '/tutorial/typescript-subject.html#typescript-支持',
   '/frame#全局样式与局部样式': '/tutorial/syntax-css.html#全局样式与局部样式',
   '/frame#注意事项-1': '/tutorial/renderjs.html#注意事项',
+  '/frame#分包异步化': '/tutorial/miniprogram-subcontract-asynchrony.html',
+  '/frame#跨分包自定义组件引用': '/tutorial/miniprogram-subcontract-asynchrony.html#跨分包自定义组件引用',
+  '/frame#跨分包js代码引用': '/tutorial/miniprogram-subcontract-asynchrony.html#跨分包js代码引用',
 
   '/api/ui/language': '/api/ui/locale.html',
   '/api/ad/rewarded-video-ad': '/api/a-d/rewarded-video.html',

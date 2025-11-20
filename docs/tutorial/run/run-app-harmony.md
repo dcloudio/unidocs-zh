@@ -79,10 +79,12 @@ HX 里面有两个专门与鸿蒙相关的功能入口：
 
 ### 报错 `签名验证失败`@signature-verification-failed
 
-当运行到鸿蒙时，在把打包后的 `.hap` 安装到设备上时，可能会遇到这个报错。
-一个常见的原因是当前使用的设备没有添加到签名用的 profile 文件中，要解决这个问题，
-首先要 [注册调试设备](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-device-0000001946142249?ha_source=Dcloud&ha_sourceId=89000448)，
-然后 [申请调试Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102?ha_source=Dcloud&ha_sourceId=89000448)
+当运行到鸿蒙时，在把打包后的 `.hap` 安装到设备上时可能会遇到这个报错。常见的原因是当前使用的设备 UUID 没有添加到签名用的 profile 文件中。
+
+推荐使用 nanifest.json 提供的 **自动申请调试证书** 进行一键更新。
+
+如果你是手动维护的证书，首先要 [注册调试设备](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-device-0000001946142249?ha_source=Dcloud&ha_sourceId=89000448)，
+然后 [申请调试 Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102?ha_source=Dcloud&ha_sourceId=89000448)
 或修改已有的 profile 文件并重新下载。
 
 ### 报错 `没有签名无法安装`@no-signature-file

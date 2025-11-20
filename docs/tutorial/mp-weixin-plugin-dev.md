@@ -1,4 +1,4 @@
-> 本文档意在介绍如何把uni-app项目编译为小程序插件，如果想了解如何在uni-app中引用和使用小程序插件，另见文档：[使用小程序插件](mp-weixin-plugin.md)
+> 本文档意在介绍如何把 uni-app 项目编译为小程序插件，如果想了解如何在 uni-app 中引用和使用小程序插件，另见文档：[使用小程序插件](mp-weixin-plugin.md)
 
 小程序插件规范由小程序厂商定义，插件是对一组 js 接口、自定义组件或页面的封装，用于嵌入到小程序中使用。
 
@@ -6,14 +6,14 @@ uni-app 不仅仅可以开发完整的小程序，也可以编译为小程序插
 
 **平台差异说明**
 
-| 微信小程序 | 支付宝小程序 | 百度小程序 | 抖音小程序、飞书小程序 | QQ 小程序 | 快手小程序 |京东小程序|
-| :--------: | :----------: | :--------: | :------------: | :-------: | :--------: | :--------: |
-|     √      |       √ ( `3.2.9+` )      |     x      |       x        |     x     |     x      |x|
+| 微信小程序 |  支付宝小程序  | 百度小程序 | 抖音小程序、飞书小程序 | QQ 小程序 | 快手小程序 | 京东小程序 | 小红书小程序 |
+| :--------: | :------------: | :--------: | :--------------------: | :-------: | :--------: | :--------: | :----------: |
+|     √      | √ ( `3.2.9+` ) |     x      |           x            |     x     |     x      |     x      |      x       |
 
 **注意**
 
 1. 开发 `微信小程序插件` 时，基础库版本 `1.9.6` 开始支持。（如果插件包含页面，则需要基础库版本 `2.1.0` 。）
-2. 开发 `支付宝小程序插件` 时，支付宝 IDE 版本要求在 0.60 及以上
+2. 开发 `支付宝小程序插件` 时，支付宝 IDE 版本要求在 `0.60` 及以上
 
 #### 插件目录结构
 
@@ -43,13 +43,13 @@ plugin
 
   ```json
   {
-  	"publicComponents": {
-  		"hello-component": "components/hello-component"
-  	},
-  	"pages": {
-  		"hello-page": "pages/hello-page"
-  	},
-  	"main": "index.js"
+    "publicComponents": {
+      "hello-component": "components/hello-component"
+    },
+    "pages": {
+      "hello-page": "pages/hello-page"
+    },
+    "main": "index.js"
   }
   ```
 
@@ -63,17 +63,14 @@ plugin
 
   ```json
   {
-     "publicComponents": {
-       "hello-component": "components/hello-component"
-     },
-     "publicPages": {
-       "hello-pages": "pages/hello-page"
-     },
-     "pages": [
-       "pages/hello-page",
-       "pages/index"
-     ],
-     "main": "index.js"
+    "publicComponents": {
+      "hello-component": "components/hello-component"
+    },
+    "publicPages": {
+      "hello-pages": "pages/hello-page"
+    },
+    "pages": ["pages/hello-page", "pages/index"],
+    "main": "index.js"
   }
   ```
 
@@ -146,8 +143,8 @@ plugin
 3. 编译时执行命令：`yarn dev:custom mp-wx-plugin --plugin test-plugin` 即可，可将脚本写入`script`中，每次执行更加简化。
    ```json
    {
-   	"dev:mp-wx-plugin": "yarn dev:custom mp-wx-plugin --plugin",
-   	"dev:mp-ali-plugin": "yarn dev:custom mp-ali-plugin --plugin"
+     "dev:mp-wx-plugin": "yarn dev:custom mp-wx-plugin --plugin",
+     "dev:mp-ali-plugin": "yarn dev:custom mp-ali-plugin --plugin"
    }
    ```
 

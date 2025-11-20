@@ -153,3 +153,20 @@ import './button.ets'
 
 - [UTS 组件鸿蒙花瓣地图](https://ext.dcloud.net.cn/plugin?id=23082)，用来演示原生组件用法，并提供了示例项目。
 - [鸿蒙粘贴控件-点击获取、无需权限](https://ext.dcloud.net.cn/plugin?id=24925) 演示了如何使用粘贴板控件，安全访问用户剪切板内容。
+
+## WebView 组件之上展示原生组件
+
+目前 WebView 组件是使用嵌入原生组件进行的封装，如果你希望在 WebView 之上展示内容，可参考下面方案解决。
+
+页面之上展示内容需要嵌入原生组件方案来解决，并设置 `nodeRenderType= NodeRenderType.RENDER_TYPE_DISPLAY`
+
+```js
+import { NodeRenderType } from '@kit.ArkUI'
+
+defineNativeEmbed('button', {
+  builder: ButtonBuilder,
+	nodeRenderType: NodeRenderType.RENDER_TYPE_DISPLAY
+})
+```
+
+通过设置 nodeRenderType，可在 WebView 组件之下引入该组件，实现内容覆盖在 WebView 组件上。

@@ -102,15 +102,17 @@ iOS平台云端打包相关配置
 |privacyRegisterMode|String|设置为manual表示同意隐私政策后再获取相关隐私信息，设置为其它值表示应用启动时自动获取[详见](/collocation/manifest?id=privacyRegisterMode)|
 
 
-#### privacyRegisterMode@privacyRegisterMode
-为了统计应用的崩溃信息，应用在启动时需要获取idfv，虽然不影响苹果审核但是可能被部分合规检测机构判定为不合规。需要通过隐私合规检测的应用可以将字段配置为manual，并且在用户点击同意隐私政策的方法里执行`plus.runtime.argeePrivacy()`即可。  
-注意：配置后如未调用`plus.runtime.argeePrivacy()`会导致崩溃统计失效。
+#### privacyRegisterMode @privacyRegisterMode
+为了统计应用的崩溃信息，应用在启动时需要获取IDFA/IDFV，虽然不影响苹果审核但是可能被部分合规检测机构判定为不合规。  
+需要通过隐私合规检测的应用可以将字段配置为manual，并且在用户点击同意隐私政策的方法里执行`plus.runtime.argeePrivacy()`，详情参考[如何配置在用户同意隐私政策后使用IDFA](../tutorial/app-ios-idfa.md#privacyRegisterMode)。  
+
 
 ###  App Harmony@harmony
 
 在鸿蒙开发中不会读取`app-plus` 下配置的选项，在 `app-harmony` 节点下可以设置鸿蒙参数。
 
 - safearea
+- useragent
 
 ### 完整 manifest.json@full-manifest
 

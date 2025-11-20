@@ -25,7 +25,8 @@
    		"themeLocation" : "theme.json" // 如果 theme.json 在根目录可省略
     }
    ```
-#### iOS 安全区域适配
+
+#### iOS 底部安全区域及安全区域外适配
 
 - 开启安全区域占位
 
@@ -37,7 +38,7 @@
 			"background": "#ffffff",
 			"backgroundDark": "#2f0508", // HX 3.1.19+支持
 			"bottom": {
-				"offset": "auto"
+				"offset": "none" // 在没有 tabBar 时，底部区域是否需要占位
 			}
 		}
 	}
@@ -55,8 +56,46 @@
 	```
 
 **注意：**
-- `iOS 13+`、`Android 10+`设备上才支持
+- `iOS 13+`、`Android 10+` 设备上才支持
 - 需要云端打包生效
+
+### app-harmony
+
+> HBuilder X 4.85+ 支持
+
+在 `manifest.json -> app-harmony` 中配置：
+
+1. 配置 `darkmode:true`
+2. 配置 `themeLocation`，指定变量配置文件 `theme.json` 路径，例如：在根目录下新增 `theme.json`，需要配置 `"themeLocation":"theme.json"`
+3. 在 `theme.json` 中定义相关变量
+4. 在 `pages.json` 中以@开头引用变量
+5. 整体配置
+   ```json
+    "app-harmony" : {
+   		"darkmode" : true,
+   		"themeLocation" : "theme.json" // 如果 theme.json 在根目录可省略
+    }
+   ```
+
+#### 底部安全区域及安全区域外适配
+
+> 如果在关闭页面时，在页面即将关闭时闪过一条白色，可以通过配置 backgroundDark 解决
+
+- 安全区域配置
+
+  > 在 manifest.json 文件的 "app-harmony" 节点下添加 "safearea" 适配 HarmonyOS 的安全区域，"background" 对应正常模式下安全区域外的背景颜色，"backgroundDark"对应暗黑模式下安全区域外的背景颜色
+
+	```json
+	"app-harmony" : {
+		"safearea": { //iOS平台的安全区域
+			"background": "#ffffff",
+			"backgroundDark": "#2f0508", // HX 3.1.19+支持
+			"bottom": {
+				"offset": "none" // 在没有 tabBar 时，底部区域是否需要占位
+			}
+		}
+	}
+	```
 
 ### h5
 

@@ -149,6 +149,7 @@ requestTask.abort();
 - 使用一些比较小众的证书机构（如：CFCA OV OCA）签发的 ssl 证书在安卓设备请求会失败，因为这些机构的根证书不在系统内置根证书库，可以更换其他常见机构签发的证书（如：Let's Encrypt），或者配置 sslVerify 为 false 关闭 ssl 证书验证（不推荐）。
 - 离线打包不支持 `sslVerify` 配置
 - 单次网络请求数据量建议控制在50K以下（仅指json数据，不含图片），过多数据应分页获取，以提升应用体验。
+- `harmonyOs` 平台 request 请求一个较大的 json 文件存在问题，需要设置 dataType 不为 json，接收字符串，可以在 success 中进行 parse 操作
 
 <!-- UNIAPPAPIJSON.request.tutorial -->
 

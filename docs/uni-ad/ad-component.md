@@ -85,7 +85,7 @@ uni-ad 也支持信息流(Banner)广告组件 `<ad adpid=""></ad>`，由uni-ad�
 
 `uniad`是`uni-app`框架的内置的组件，`uniad`组件同时支持`uni-ad`广告和微信原生广告，先请求`uni-ad`，如果已开通直接使用否则切换为微信的广告，这个过程会有3秒的延时
 
-`uniad`组件依赖uni-ad提供的微信小程序插件和腾讯提供的珊瑚广告插件
+`uniad`组件依赖uni-ad提供的微信小程序插件
 
 如果想在微信上仅使用微信的广告，App 或 Web 使用 uni-ad 可使用条件编译
 
@@ -294,8 +294,6 @@ export default {
 **激励视频广告**
 文档地址：[https://uniapp.dcloud.io/uni-ad/ad-rewarded-video](https://uniapp.dcloud.io/uni-ad/ad-rewarded-video)
 
-**全屏视频广告**
-文档地址：[https://uniapp.dcloud.io/uni-ad/ad-fullscreen-video](https://uniapp.dcloud.io/uni-ad/ad-fullscreen-video)
 
 **插屏广告**
 文档地址：[https://uniapp.dcloud.io/uni-ad/ad-interstitial](https://uniapp.dcloud.io/uni-ad/ad-interstitial)

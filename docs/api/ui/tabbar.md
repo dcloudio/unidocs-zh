@@ -60,8 +60,8 @@ uni.setTabBarItem({
         "pagePath": "pages/index/index",
         "text": "Tab1",
         "iconfont": {
-          "text": "\ue102",
-          "selectedText": "\ue103",
+          "text": "\ue642", // 已实际字体编码为准
+          "selectedText": "\ue776",
           "fontSize": "17px",
           "color": "#000000",
           "selectedColor": "#0000ff"

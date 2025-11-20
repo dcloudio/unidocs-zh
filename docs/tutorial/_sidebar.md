@@ -114,6 +114,7 @@
   - App 应用市场上架
     - [概述](store.md)
     - [国内应用市场上架](android-store.md)
+    - [Android 16KB页面大小适配](android-16kb.md)
     - [Android 平台隐私与政策提示框](app-privacy-android.md)
     - [未同意隐私政策模式运行](app-disagreemode.md)
     - [Google Play 上架](android-gp.md)
@@ -135,11 +136,17 @@
   - [历史变更](harmony/history.md)
   - 其它配置
     - [鸿蒙配置 URL Scheme](harmony/url-scheme.md)
+    - [鸿蒙唤起鸿蒙应用、元服务](harmony/open-app.md)
+    - [鸿蒙使用华为支付](./mp-harmony/payment.md)
 - 鸿蒙元服务专题
   - [运行和发行](mp-harmony/intro.md)
   - [鸿蒙元服务登录](mp-harmony/login.md)
+  - [鸿蒙元服务唤起鸿蒙应用](mp-harmony/open-app.md)
+  - [鸿蒙元服务配置链接直达](./mp-harmony/applinking.md)
+  - [鸿蒙元服务使用华为支付](./mp-harmony/payment.md)
 - 小程序专题
   - [组件与 WXS](miniprogram-subject.md)
+  - [分包异步化](miniprogram-subcontract-asynchrony.md)
   - [使用小程序插件](mp-weixin-plugin.md)
   - [开发小程序插件](mp-weixin-plugin-dev.md)
   - [一键上传微信平台](build/publish-mp-weixin-cli.md)
@@ -148,14 +155,14 @@
 - 运行和调试
   - [概述](run-and-debug.md)
   - [web 平台：内置浏览器运行调试](debug/debug-web-via-hx.md)
-  - [web 平台：debug](debug/debug-web-via-chrome.md)
+  - [web 平台：web 调试](debug/debug-web-via-chrome.md)
   - [App 平台：真机运行](run/run-app.md)
   - [App 平台：WIFI 连接 Android 真机](run/run-app-android-wifi.md)
   - [App 平台：设备连接失败常见原因](run/run-app-faq.md)
   - [App 平台：模拟器安装指南](run/installSimulator.md)
   - [App 平台：Android uts 插件运行编译配置](run/uts-development-android.md)
   - [App 平台：iOS uts 插件运行编译配置](run/uts-development-ios.md)
-  - [App 平台：uni-app debug](debug/debug-app.md)
+  - [App 平台：uni-app 调试](debug/debug-app.md)
   - [App 平台：Android uts 调试](debug/uni-uts-debug.md)
   - [App 平台：iOS uts 调试](debug/uni-uts-debug-ios.md)
   - [App 平台：Harmony uts 调试](debug/uni-uts-debug-harmony.md)

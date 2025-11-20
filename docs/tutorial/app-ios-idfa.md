@@ -1,5 +1,6 @@
 2012年9月份iOS6发布，IDFA面世，主要用于给开发者跟踪应用中广告的投放效果，但很多应用（或三方SDK）会获取IDFA作为设备唯一标识使用。
 iOS14.5 发布之后，苹果要求应用获取 IDFA 时，需弹出用户许可收集跟踪数据的授权框，如果没有弹出授权框则可能会被App Store审核拒绝，提示违反5.1.2规则：
+
 ```txt
 Guideline 5.1.2 - Legal - Privacy - Data Use and Sharing
 
@@ -36,14 +37,41 @@ Resources
 > uni-ad中的基础广告无需访问IDFA，没有勾选三方增强广告SDK时可以不开启广告标识（IDFA）
 > 对于非广告类的三方SDK，我们会密切关注其官方的版本更新，待官方出了不包含IDFA的版本我们会尽快适配升级
 
+### 如何配置在用户同意隐私政策后使用IDFA @privacyRegisterMode  
+应用需要开启广告标识，默认会在应用启动时自动获取IDFA，从而触发`跟踪App活动`授权提示框，这样可能导致被部分合规检测机构判定为不合规。  
+如需避免此问题，可在manifest.json中配置 privacyRegisterMode 为 manual 避免应用启动时自动获取IDFA，如下：  
+```json
+{
+  //...
+  "app-plus": {
+    "distribute": {
+      "ios": {
+        "privacyRegisterMode": "manual"
+      }
+    }
+  },
+  //...
+}
+```
+
+并且在用户点击同意隐私政策时调用 `plus.runtime.argeePrivacy()` 方法，这会触发自动获取IDFA操作，弹出`跟踪App活动`授权提示框。
+
+注意：
+- 需更新到HBuilderX4.81及以上版本  
+- 配置后需提交云端打包才能生效  
+- 在同意隐私政策前不要调用使用广告标识（IDFA）的功能（如`uni-ad`），或调用获取IDFA标识的API  
+- 配置后如未调用 `plus.runtime.argeePrivacy()` 会导致崩溃统计失效  
+
 
 ### 设置开启广告标识（IDFA）
 打开项目的manifest.json文件，在 “App常用其它设置” -> “iOS设置” 中勾选“使用广告标识（IDFA）”：
+
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-manifest.png)
 
 #### 设置 NSUserTrackingUsageDescription 隐私描述
 开启广告标识（IDFA）后，云端打包默认隐私描述为“请放心，开启权限不会获取您在其他站点的隐私信息，该权限仅用于标识设备并保障服务安全与提示浏览体验”。
 如需自定义隐私描述，打开项目的 manifest.json 文件，在 “App权限配置” -> “iOS隐私信息访问的许可描述” 下配置“跟踪用户的活动(NSUserTrackingUsageDescription)”：
+
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-privacy.png)
 
 隐私描述是为了告诉用户，应用为什么要跟踪用户及访问设备的IDFA，配置的描述内容会展示在授权框上，参考以下建议描述说明：
@@ -53,31 +81,37 @@ Resources
 “请放心，开启权限不会获取您在其他站点的隐私信息，该权限仅用于标识设备并保障服务安全与提示浏览体验”
 
 配置后需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)，运行时弹出授权提示框显示效果如下：
+
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-tips.png)
 
 离线打包配置参考文档：[iOS配置IDFA](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios?id=%e5%a6%82%e4%bd%95%e9%85%8d%e7%bd%aeidfa)
 
 ### 配置 App 隐私
 开启广告标识（IDFA）后，提交App Store审核之前，需登录[App Store Connect](https://appstoreconnect.apple.com/)，进入App详情页面，打开 “App 隐私” -> “数据类型”，点击“编辑”，勾选 “是，我们会从此App收集数据”：
+
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-appstoreconnect-1.png)
 
 点击“下一步”，在标识符项中勾选“设备ID”，在诊断数据向中勾选“崩溃数据”，如果使用了`uni-ad`则需在使用数据项中勾选“广告数据”：
+
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-appstoreconnect-2.png)
 
 保存后，分别编辑收集的数据用途：
 
 #### 设备 ID
 点击“设备 ID”旁的“编辑”，勾选“其它用途”：
+
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-appstoreconnect-id.png)
 
 > 如果使用了`uni-ad`，需同时勾选“第三方广告”
 
 #### 广告数据
 点击“广告数据”旁的“编辑”，勾选“第三方广告”：
+
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-appstoreconnect-ad.png)
 
 #### 崩溃数据
 点击“崩溃数据”旁的“编辑”，勾选“App 功能”：
+
 ![](https://native-res.dcloud.net.cn/images/uniapp/others/idfa-appstoreconnect-app.png)
 
 > 如果使用了`uni-ad`，需同时勾选“第三方广告”

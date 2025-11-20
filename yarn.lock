@@ -5537,6 +5537,11 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.npmmirror.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
+highlight.js@^11.11.1:
+  version "11.11.1"
+  resolved "https://registry.npmmirror.com/highlight.js/-/highlight.js-11.11.1.tgz#fca06fa0e5aeecf6c4d437239135fabc15213585"
+  integrity sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==
+
 highlight.js@^9.7.0:
   version "9.18.5"
   resolved "https://registry.npmmirror.com/highlight.js/-/highlight.js-9.18.5.tgz#d18a359867f378c138d6819edfc2a8acd5f29825"
@@ -6659,6 +6664,16 @@ markdown-it-task-lists@^2.1.1:
     linkify-it "^4.0.1"
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
+
+marked-highlight@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.npmmirror.com/marked-highlight/-/marked-highlight-2.2.3.tgz#e7e5e7ccfb1699356c3a45d851db8fe983689172"
+  integrity sha512-FCfZRxW/msZAiasCML4isYpxyQWKEEx44vOgdn5Kloae+Qc3q4XR7WjpKKf8oMLk7JP9ZCRd2vhtclJFdwxlWQ==
+
+marked@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.npmmirror.com/marked/-/marked-5.1.2.tgz#62b5ccfc75adf72ca3b64b2879b551d89e77677f"
+  integrity sha512-ahRPGXJpjMjwSOlBoTMZAK7ATXkli5qCPxZ21TG44rx1KEo44bii4ekgTDQPNRQ4Kh7JMb9Ub1PVk1NxRSsorg==
 
 md5.js@^1.3.4:
   version "1.3.5"
@@ -9772,18 +9787,21 @@ vuepress-plugin-zooming@^1.1.8:
   dependencies:
     zooming "^2.1.1"
 
-vuepress-theme-uniapp-official@^1.5.3:
-  version "1.5.3"
-  resolved "https://registry.npmmirror.com/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.5.3.tgz#83cb92b7aee224ad8665c1e7226a6e5ad92fd83b"
-  integrity sha512-ocYt3+JTBG6qp3p4c2TlR2Tfnjz/x2GrZyrrR6dPU27IKuHGPnntYbIwlwD6NMJXyCd0zslwQfFKU4O0k0qU7g==
+vuepress-theme-uniapp-official@1.6.1:
+  version "1.6.1"
+  resolved "https://registry.npmmirror.com/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.6.1.tgz#77585aef411b6d556de2a3440e5af0b5dc008166"
+  integrity sha512-K0pnuVG6b9gNsR5wiCd29r+nZ0/7VnKpZqeZsexVp5Yn/hnE6cQHz19sjtnUmTOkoytn38yJainaS4NXATX0dw==
   dependencies:
     "@docsearch/css" "^3.6.0"
     "@vuepress/plugin-back-to-top" "^1.9.5"
     algoliasearch "^4.13.1"
     clipboard "^2.0.11"
+    highlight.js "^11.11.1"
     markdown-it-attrs "^4.1.6"
     markdown-it-raw-table "^1.0.0"
     markdown-it-task-lists "^2.1.1"
+    marked "^5.1.2"
+    marked-highlight "^2.2.3"
     qr-code-with-logo "^1.1.0"
     vuepress-plugin-check-md2 "^1.0.5"
     vuepress-plugin-expandable-row "^1.0.10"

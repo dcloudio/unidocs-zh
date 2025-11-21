@@ -872,11 +872,16 @@ kill -9 进程号
 
 ### 鸿蒙如何设置隐私协议弹窗？
 
-[鸿蒙平台文档要求](https://developer.huawei.com/consumer/cn/doc/architecture-guides/user_agreement_and_privacy_policy-0000002331953689) 用户首次打开应用，需要同意用户协议与隐私政策，才可进入应用。
+[鸿蒙平台文档要求](https://developer.huawei.com/consumer/cn/doc/architecture-guides/user_agreement_and_privacy_policy-0000002331953689) 用户首次打开应用，需要同意用户协议与隐私政策，才可进入应用，目前有两个方案实现隐私协议弹窗：
 
-自己实现。目前鸿蒙隐私弹窗可自行实现，正常在应用启动时候弹窗即可，自己存储用户同意状态。
+1. 自行绘制。目前鸿蒙隐私弹窗可自行实现，正常在应用启动时候弹窗即可，自己存储用户同意状态。可参考 hellouniapp 线上应用。容易定制效果，自行处理用户同意状态。
 
-托管实现。华为开发者平台提供了隐私协议托管的服务，通过填写表格，完成合规的隐私协议，最终得到托管网页网址。技术实现可参考《[隐私管理服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-privacy)》。
+2. 托管+ UTS 插件实现。华为开发者平台提供了隐私协议托管的服务，通过填写表格，完成合规的隐私协议，最终得到托管网页网址。技术实现可参考《[隐私管理服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-privacy)》。
+
+注意：
+
+- 托管隐私协议过程中，在开发阶段是读取不到线上协议的。参考《[未上架应用接入隐私管理服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-privacy#section133476117117)，手动添加三个 debug 参数来模拟线上行为 `appgallery_privacy_hosted/appgallery_privacy_link_privacy_statement/appgallery_privacy_link_user_agreement`。这个方案只是为了模拟线上环境，用户需要通过 api 来检查状态，生产环境并不会弹窗
+- 如果隐私协议使用自定义的网址，不能使用 privacyManager api，只能自行绘制弹窗
 
 ### 鸿蒙提审报应用使用了 HarmonyOS beta 版本的 API
 

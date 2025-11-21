@@ -27,7 +27,7 @@
   - HBuilderX 4.31+ 要求 DevEco Studio 5.0.3.800+。
   - HBuilderX 4.61+ 针对 uni-app x 项目要求 DevEco Studio 5.0.7.100+。
   - uni-app 项目要求鸿蒙系统版本 API 12 以上，uni-app x 项目要求鸿蒙系统版本 API 14 以上（DevEco Studio 有内置鸿蒙模拟器）
-- [点击下载](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448) DevEco5.1.1Beta 版本，下载 API19 模拟器即可运行 uni-app 鸿蒙项目和元服务，除此之外的模拟器暂不支持。
+- [点击下载](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448) DevEco5.1.1Beta 版本，下载 API19 以上版本的模拟器，建议下载使用 API20，通过模拟器即可运行 uni-app 鸿蒙项目和元服务，不支持低于 api19 的模拟器。鸿蒙真机无此要求。
 
 ### 项目根目录与鸿蒙工程目录@project-path
 
@@ -89,7 +89,7 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 ### 启动鸿蒙模拟器@connectvirtually
 
-鸿蒙模拟器只能在 DevEco Studio 中启动。DevEco5.1.1 release 开始提供 API19 模拟器，低于 API19 版本的模拟器不支持 windows x86 平台用户开发 uniapp 鸿蒙，此处系统镜像需要选择 API >= 19 的系统版本。
+鸿蒙模拟器只能在 DevEco Studio 中启动。DevEco5.1.1 release 开始提供 API20 模拟器，低于 API19 版本的模拟器不支持 windows x86 平台用户开发 uniapp 鸿蒙，此处系统镜像需要选择 API >= 19 的系统版本。
 
 在 DevEco Studio 中打开任意一个项目（也可以新建一个空项目），然后在下图的位置进入设备管理器：
 

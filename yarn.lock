@@ -9782,10 +9782,10 @@ vuepress-plugin-zooming@^1.1.8:
   dependencies:
     zooming "^2.1.1"
 
-vuepress-theme-uniapp-official@1.6.6:
-  version "1.6.6"
-  resolved "https://registry.npmmirror.com/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.6.6.tgz#83d6b91984dada38f12028b2cf3ce82eae316926"
-  integrity sha512-HP4vlhQMOgJHaASiU1WA3EU0Sz1ctkE3c58pm6NigdfPzjmgmTTR/JeOPAPXFkbE4PClUrMxibK28eIKPe1xaw==
+vuepress-theme-uniapp-official@1.6.7:
+  version "1.6.7"
+  resolved "https://registry.npmmirror.com/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.6.7.tgz#82030b799f7dade4706591f7e6ceb608acf2a08c"
+  integrity sha512-KRvenrJoEoDkm1ehTLu3bn6f5AQoD/wSP9CPDYPd9ItFUkH3gyK99/7HLmGT+3IrWDfOmfek8q3tSMd3Qb2JSg==
   dependencies:
     "@docsearch/css" "^3.6.0"
     "@vuepress/plugin-back-to-top" "^1.9.5"

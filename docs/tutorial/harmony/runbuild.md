@@ -876,7 +876,7 @@ kill -9 进程号
 
 1. 自行绘制。目前鸿蒙隐私弹窗可自行实现，正常在应用启动时候弹窗即可，自己存储用户同意状态。可参考 hellouniapp 线上应用。容易定制效果，自行处理用户同意状态。
 
-2. 托管+ UTS 插件实现。华为开发者平台提供了隐私协议托管的服务，通过填写表格，完成合规的隐私协议，最终得到托管网页网址。技术实现可参考《[隐私管理服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-privacy)》。
+2. 托管隐私协议。华为开发者平台提供了隐私协议托管的服务，通过填写表格，完成合规的隐私协议，经过审核之后，最终得到托管网页网址。上架时候选择隐私托管协议即可，正式上线之后，应用会自动提示隐私协议。可参考《[隐私管理服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-privacy)》。
 
 注意：
 

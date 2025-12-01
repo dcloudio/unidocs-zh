@@ -524,6 +524,16 @@ V8 引擎调试可以这样操作
 
 ### 发行应用时候提示上传失败
 
+元服务在 HBuilderX 中执行发布操作，发布成功后登录 uni-app 后台，软件的状态显示失败。
+
+![软件包显示失败]()https://web-ext-storage.dcloud.net.cn/uni-app/harmony/2025-12-01_15-01-28.png
+
+一般来说是机器解析发行包时候遇到了问题，需要访问 [华为AGC 开发者后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) ，访问 APP与元服务 - 应用上架 - 软件包管理，这里会有具体错误代码，点击错误原因即可看到详细解释
+
+![软件包管理](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/8dac59ed-c0c9-4792-a344-3fbcdfcdcd89.png)
+
+常见的错误提示和解决方案如下：
+
 - 场景一 `[AppGalleryConnectPublishServicelapp state can not be modified!` 当前应用可能已经在审核中
 - 场景二 `submit version for review failed, additional msg is [[5]]` 这表示代码和上传时候设备勾选的不统一，代码中搜索 `tablet` 配置项删掉并重新发布，在 uniapp 后台改为仅手机，不勾选平板。
 - 场景三 `请检查华为后台隐私政策中 xxx 是否填写完整`，这表示 AGC 的隐私协议表单缺少对应项。你可以在 AGC 后台 - 用户与访问 - 授权管理 -应用授权，临时取消服务商绑定。操作好之后点击保存，重新走服务商绑定。
@@ -683,6 +693,8 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 如果你需要组件中使用占位组件，可参考阅读 [小程序专题-分包异步化](https://uniapp.dcloud.net.cn/tutorial/miniprogram-subcontract-asynchrony.html)
 
 ### 元服务提交审核常见报错
+
+
 
 #### 请检查华为后台隐私政策中 “设备权限调用” 是否填写完整
 

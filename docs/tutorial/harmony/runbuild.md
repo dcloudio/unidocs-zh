@@ -970,3 +970,19 @@ export const requestSystemPermission = () => {
 目前可升级鸿蒙 5/鸿蒙 6 的真机列表在这里：[HarmonyOS 6 支持机型](https://consumer.huawei.com/cn/support/harmonyos/models-6/)
 
 这里特别补充鸿蒙真机不一定都是旗舰机，有一些中端机、旧机可供参考，价格在一千到两千元，比如 Nova14/畅享 70X（2025年发布的新机），比如 nova12pro （旧机），这两款机器价格较低，可升级鸿蒙5/6 系统。
+
+### 应用/元服务中的走焦事件能够响应tab键或方向键切换
+
+近期有用户反馈，应用无法响应键盘 tab 按键
+
+> 应用/元服务中的走焦事件能够响应tab键或方向键切换。https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-compatible
+
+在电脑、平台、折叠电脑上属于规则级别，也就是强制要求。
+
+临时规避方案1，自行明确当前是否需要支持平板，如果目前不需要可在代码中搜索 devicetype，保持为 phone ，在 uniapp 后台、agc 后台表格里只勾选手机，也就是避免支持平板。
+
+解决方案2：你可在指定的组件中，添加 tabindex，从而让功能区支持 tab 切换。目前规则中未明确要求支持回车按键，可忽略处理，也可在组件中，使用 renderjs ，在 renderjs 的 mounted/unmounted 里监听、取消监听 addEventListener keydown 相关事件，主动触发 click
+
+可参考来自社区热心用户的方案，请参考 https://ask.dcloud.net.cn/question/215693 评论区。
+
+后续会针对性优化。

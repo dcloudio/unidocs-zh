@@ -63,7 +63,7 @@
 
 ### app-harmony
 
-> HBuilder X 4.85+ 支持
+> HBuilder X 4.89+ 支持
 
 在 `manifest.json -> app-harmony` 中配置：
 

@@ -719,9 +719,15 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 在 AGC 后台或者 uni-app 提审后台，也有适配设备选项，确保和代码中保持一致，通常勾选 手机 Phone 值，表示兼容手机
 
-#### 提交审核按钮为灰色无法提交
+#### uniapp 后台提交审核按钮为灰色无法提交审核
 
 观察按钮右侧有个联系方式，可以和 uniapp 发起沟通，看是否有更好的激励政策。如果仍有问题，可以在 [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)沟通。
+
+#### 华为agc后台无法提交审核，按钮为灰色
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/17648171696674e20df20-d004-11e7-b01f-f578f9f5f6ab.png)
+
+这说明你已经绑定了 DCloud 为服务商，绑定服务商可以简化提交审核的流程，统一处理不同平台的应用发布。你需要在 uniapp 后台来完成操作，访问应用管理-我的应用-具体项目-各平台信息-鸿蒙元服务发布，在这里进行发布。
 
 ### 如何申请、使用华为支付
 

@@ -53,5 +53,5 @@ export default {
     'uni-app x',
     'uniCloud'
   ],
-  aiChatForDocSearch: 'https://ai-assist-api.dcloud.net.cn/tbox/chatForDocSearch'
+  aiChatForDocSearch: 'https://ai-assist-api-p.dcloud.net.cn/http/tbox/chatForDocSearch'
 }

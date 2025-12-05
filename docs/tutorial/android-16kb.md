@@ -57,6 +57,7 @@ uni-app 核心功能模块为了适配支持 16KB 内存页面大小，更新了
 
 涉及的so库文件列表：
 - libcrashsdk.so  
+- libucrash-core.so  
 
 ### OAID
 
@@ -64,9 +65,15 @@ OAID目前使用的 SDK 版本为 `1.0.25`或`1.0.13`，更高版本需要申请
 
 离线打包时默认包含此SDK，如果需要上架 Google Play，可以直接删除库`msa_mdid_1.0.13.aar`和`oaid_sdk_1.0.25.aar`。
 
-涉及的so库文件列表：
+涉及的so库文件列表：  
 - libsecsdk.so
 - lib39285EFA.so
+
+## 高德地图  
+高德地图模块在国内渠道使用的SDK 版本为 `10.0.700`，Google Play 渠道使用单独版本，详情参考下面章节说明
+
+涉及的so库文件列表：  
+- libAMapSDK_MAP_v10_0_700.so  
 
 
 ## Google Play渠道包专属模块  

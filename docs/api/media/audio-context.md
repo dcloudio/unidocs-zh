@@ -96,7 +96,7 @@ errCode 说明
 ```javascript
 const innerAudioContext = uni.createInnerAudioContext();
 innerAudioContext.autoplay = true;
-innerAudioContext.src = 'https://web-ext-storage.dcloud.net.cn/uni-app/ForElise.mp3';
+innerAudioContext.src = 'https://web-ext-storage.dcloud.net.cn/doc/uniapp/ForElise.mp3';
 innerAudioContext.onPlay(() => {
   console.log('开始播放');
 });

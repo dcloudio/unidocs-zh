@@ -986,3 +986,16 @@ export const requestSystemPermission = () => {
 可参考来自社区热心用户的方案，请参考 https://ask.dcloud.net.cn/question/215693 评论区。
 
 后续会针对性优化。
+
+### 自动申请调试证书是总是检测不到设备怎么办？@device-not-found
+
+自动申请调试证书是总是检测不到设备怎么办？设备已经加到AGC中了。 25年 12 月开始，华为调整了查询设备信息的接口，影响了现有代码处理逻辑。两个处理方案：使用手动签名或者调整代码做兼容。
+
+在 HBuilderX 安装目录找到 `plugins/launcher/out/main.js` 文件，查找和替换下面文件
+
+```js
+//在其中查找：
+i=t.shift(),r=t.pop()
+// 替换成：
+i=t.shift(),r=t.pop()||i
+```

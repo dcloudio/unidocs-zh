@@ -999,3 +999,7 @@ i=t.shift(),r=t.pop()
 // 替换成：
 i=t.shift(),r=t.pop()||i
 ```
+
+### 鸿蒙付费插件云打包说明
+
+目前 uni-app x 已支持付费鸿蒙 uts 插件，用户可通过 uts 插件试用功能进行体验。云打包相关版本参数目前为 `ommandline-tools-linux-x64-5.0.13.220`。

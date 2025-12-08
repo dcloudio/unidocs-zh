@@ -16,7 +16,9 @@
 
 ## cli使用方法
 
-> 注意事项：在windows电脑，HBuilderX安装目录下调用cli命令要输入完整，具体为.\cli.exe
+> 注意事项：
+>   1. 使用CLI需要进入HBuilderX安装目录；
+>   2. 在windows电脑，HBuilderX安装目录下调用cli命令要输入完整，具体为.\cli.exe
 
 以下是该工具的基本用法：
 
@@ -69,38 +71,74 @@ cli uniapp.test <platform> --project <ProjectPath>
 
 ## 示例
 
-> 注意事项：在windows电脑，HBuilderX安装目录下调用cli命令要输入完整，具体为.\cli.exe
+> 注意事项：请先在终端切换到HBuilderX安装目录，再运行以下命令。
 
 1. 运行测试到chrome
 
 ```bash
 // Mac电脑
-cli uniapp.test web-chrome --project /path/to/your/project
+/Applications/HBuilderX.app/Contents/MacOS/cli uniapp.test web-chrome --project /path/to/your/project
 
 // windows电脑
-.\cli.exe uniapp.test web-chrome --project /path/to/your/project
+D:\ide\HBuilderX\cli.exe uniapp.test web-chrome --project /path/to/your/project
 ```
 
 2. 运行测试到微信开发者工具
 
-   ```bash
-   cli uniapp.test mp-weixin --project /path/to/your/project
-   ```
+```bash
+cli uniapp.test mp-weixin --project /path/to/your/project
+```
 
 3. 运行测试到Android
 
-   ```bash
-   cli uniapp.test app-android --project /path/to/your/project
-   ```
+```bash
+cli uniapp.test app-android --project /path/to/your/project
+```
    
 4. 指定设备ID
 
-   ```bash
-   cli uniapp.test app-android --project /path/to/your/project --device_id feyh2342343uos8ai89jr4p
-   ```
+```bash
+cli uniapp.test app-android --project /path/to/your/project --device_id feyh2342343uos8ai89jr4p
+```
    
 5. 运行特定的测试用例文件
 
-   ```bash
-   cli uniapp.test app-android --project /path/to/your/project --testcaseFile pages/index/index.test.js
-   ```
+```bash
+cli uniapp.test app-android --project /path/to/your/project --testcaseFile pages/index/index.test.js
+```
+
+## 通过npm scripts使用CLI@npm
+
+我们需要在项目中安装 [@dcloudio/hbuilderx-cli](https://www.npmjs.com/package/@dcloudio/hbuilderx-cli),它是一个桥梁，让我们可以通过命令行来调用 HBuilderX 的强大功能（如启动测试流程）。
+
+#### 添加 npm 脚本支持
+
+```shell
+# 首先，请确保你的项目根目录下有 package.json 文件。如果没有，可以通过以下命令快速生成：
+npm init -y
+
+# 然后，安装 hbuilderx-cli 作为开发依赖：
+npm install @dcloudio/hbuilderx-cli --save-dev
+```
+
+#### 使用npm命令查看日志
+
+```shell
+# 在 Chrome 中测试
+npm run test:web -- --browser Chrome
+
+# 在 Safari 中测试
+npm run test:web -- --browser Safari
+
+# 在连接的 Android 设备上测试 (默认会使用第一个android设备进行测试)
+npm run test:app-android
+
+# 在 iOS 模拟器上测试 (默认会使用第一个iOS模拟器设备进行测试)
+npm run test:app-ios
+
+# 在连接的 Harmony 设备上测试 (默认会使用第一个Harmony设备进行测试)
+npm run test:app-harmony
+
+# 在指定的 Android 设备上测试 (需替换为你的设备ID)
+npm run test:app-android -- --udid your_device_id
+```

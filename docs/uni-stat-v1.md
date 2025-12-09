@@ -48,10 +48,10 @@ web控制台地址：[https://tongji.dcloud.net.cn](https://tongji.dcloud.net.cn
 
 应用在运行、调试时不会上报统计数据，仅在发行后，并启动新版的App、h5、小程序，才会上报数据。
 
-## 第四步、登陆统计后台看数据
+## 第四步、登录统计后台看数据
 uni统计报表网址：[https://tongji.dcloud.net.cn](https://tongji.dcloud.net.cn)
 
-请使用正确的DCloud账户登陆后台，每个DCloud账户登陆后可看到自己名下创建的应用。如果看不到期待的应用，那说明这个账户不是某个应用的所有者。
+请使用正确的DCloud账户登录后台，每个DCloud账户登录后可看到自己名下创建的应用。如果看不到期待的应用，那说明这个账户不是某个应用的所有者。
 
 如果appid对应的项目的所有者发生变更，请参考[如何转让应用](http://ask.dcloud.net.cn/article/12861)
 

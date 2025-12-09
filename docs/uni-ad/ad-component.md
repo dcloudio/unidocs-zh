@@ -106,6 +106,7 @@ uni-ad 也支持信息流(Banner)广告组件 `<ad adpid=""></ad>`，由uni-ad�
 - `<ad>` 组件是原生组件，在webview页面会有层级问题，同时无法在`<swiper>` 、`<scroll-view>` 组件中使用。但app-nvue、微信小程序新版和头条小程序新版支持同层渲染，所以没有层级问题。而app-vue、QQ小程序等平台则有层级问题。详见：[原生组件](https://uniapp.dcloud.io/component/native-component)
 - 无广告时没有高度，关闭广告时释放高度，宽度由父容器决定
 - App 平台，因广告组件内部获得广告数据计算后设置组件大小，会出现界面抖动问题，可以提前通过 plus.ad.getAds 获得广告数据，设置 data 后 adpid 将无效
+- 微信小程序 `<ad>` 组件不允许直接设置宽高，可以在外层包一个view，Banner的默认宽度是100%，最小宽度限制是300px
 - 微信小程序 `<ad>` 组件不支持触发 tap 等触摸相关事件
 - Android 平台 nvue的 `<list>` 组件中使用 `<ad>` 时，必须指定宽度属性`<ad width="750rpx" />`，因为 `<list>` 有自动的内存回收机制，不在屏幕范围的组件不被创建，组件内部无法获取大小
 - app-nvue 的 `<recycle-list>` 组件内不支持嵌套 `<ad>`

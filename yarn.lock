@@ -5537,6 +5537,11 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.npmmirror.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
+highlight.js@^11.11.1:
+  version "11.11.1"
+  resolved "https://registry.npmmirror.com/highlight.js/-/highlight.js-11.11.1.tgz#fca06fa0e5aeecf6c4d437239135fabc15213585"
+  integrity sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==
+
 highlight.js@^9.7.0:
   version "9.18.5"
   resolved "https://registry.npmmirror.com/highlight.js/-/highlight.js-9.18.5.tgz#d18a359867f378c138d6819edfc2a8acd5f29825"
@@ -6659,6 +6664,11 @@ markdown-it-task-lists@^2.1.1:
     linkify-it "^4.0.1"
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
+
+marked@^3.0.8:
+  version "3.0.8"
+  resolved "https://registry.npmmirror.com/marked/-/marked-3.0.8.tgz#2785f0dc79cbdc6034be4bb4f0f0a396bd3f8aeb"
+  integrity sha512-0gVrAjo5m0VZSJb4rpL59K1unJAMb/hm8HRXqasD8VeC8m91ytDPMritgFSlKonfdt+rRYYpP/JfLxgIX8yoSw==
 
 md5.js@^1.3.4:
   version "1.3.5"
@@ -9772,18 +9782,20 @@ vuepress-plugin-zooming@^1.1.8:
   dependencies:
     zooming "^2.1.1"
 
-vuepress-theme-uniapp-official@^1.5.3:
-  version "1.5.3"
-  resolved "https://registry.npmmirror.com/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.5.3.tgz#83cb92b7aee224ad8665c1e7226a6e5ad92fd83b"
-  integrity sha512-ocYt3+JTBG6qp3p4c2TlR2Tfnjz/x2GrZyrrR6dPU27IKuHGPnntYbIwlwD6NMJXyCd0zslwQfFKU4O0k0qU7g==
+vuepress-theme-uniapp-official@1.6.12:
+  version "1.6.12"
+  resolved "https://registry.npmjs.org/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.6.12.tgz#3dd238a0354ccbdacc4ca8108eec7e31c9a33e22"
+  integrity sha512-LTTEWUZQpmyLDTCglBR64AT0bf110WYBJBLrsX2GpwsMmUDYYUeousMbW/lroER8NcJV94DbG18SzkNCgZ8hBQ==
   dependencies:
     "@docsearch/css" "^3.6.0"
     "@vuepress/plugin-back-to-top" "^1.9.5"
     algoliasearch "^4.13.1"
     clipboard "^2.0.11"
+    highlight.js "^11.11.1"
     markdown-it-attrs "^4.1.6"
     markdown-it-raw-table "^1.0.0"
     markdown-it-task-lists "^2.1.1"
+    marked "^3.0.8"
     qr-code-with-logo "^1.1.0"
     vuepress-plugin-check-md2 "^1.0.5"
     vuepress-plugin-expandable-row "^1.0.10"

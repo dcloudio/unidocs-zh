@@ -1,3 +1,12 @@
+#### 4.87.2025112602-alpha
+* 【uni-app x】
+  + iOS平台 修复 4.76版本引发的 CSS 某些情况下部分属性可能不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=23230)
+* 【uni-app】
+  + Android平台 修复 4.81版本引发的 uni.chooseImage 设置 crop 属性之后图片裁剪可能不生效的Bug [详情](https://ask.dcloud.net.cn/question/215441)
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 修复 录音功能在某些启用16KB模式的设备无法正常使用的Bug
+  + iOS平台 更新 高德地图 SDK 为 10.1.600 版，解决与其它插件一起打包可能编译失败的问题 [详情](https://ask.dcloud.net.cn/question/214993)
+
 #### 4.86.2025110715-alpha
 * 【uni-app x】
   + Web平台 修复 4.81版本引发的 API dialogPage 中使用 mapContext 异常的 Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=23233)

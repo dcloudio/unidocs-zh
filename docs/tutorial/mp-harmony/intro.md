@@ -9,16 +9,17 @@
 ::: warning 注意
 
 - 目前已支持 Vue2/Vue3 使用 HBuilderX/CLI 方式运行到元服务。cli 参考 [如何使用 cli 创建元服务？](#using-by-cli)
-- 元服务的开发支持鸿蒙真机，现已支持使用模拟器开发，不区分 Mac/Windows，需要下载 [5.1.1 beta 版本的 DevEco](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448)，提供的 API 19 Beta 模拟器。如果遇到 hsp 报错，[查看解决方法](#failed-to-install-the-hap-or-hsp)
+- 元服务的开发支持鸿蒙真机，现已支持使用模拟器开发，不区分 Mac/Windows，需要下载 [DevEco 5.1.1 以上](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448)，提供的 API20 模拟器。如果遇到 hsp 报错，[查看解决方法](#failed-to-install-the-hap-or-hsp)
 - 目前支持鸿蒙 5.0，低于此版本（比如鸿蒙 4.x）不视为鸿蒙 Next。鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/?ha_source=Dcloud&ha_sourceId=89000448)
-  :::
+
+:::
 
 ## 前置准备
 
 ### 开发环境准备
 
 - HBuilderX 4.51+ [下载地址](https://www.dcloud.io/hbuilderx.html)
-- DevEco-Studio 5.0.5.200+ 最新的 release 版本 [下载地址](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448)
+- DevEco-Studio 5.1.1 以上 release 版本 [下载地址](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448)
 
 ### 元服务 appid 注册@register-app-id
 
@@ -344,7 +345,7 @@ uni.authorize({
 
 ### API 登录 uni.login 获取 code 报错、如何绑定现有用户体系？@how-to-login
 
-参考[鸿蒙 Account Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-config-permissions-V5#section132012717318?ha_source=Dcloud&ha_sourceId=89000448) 设置相关权限，添加 scope 权限。
+参考[鸿蒙 Account Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-config-permissions-V5#section132012717318?ha_source=Dcloud&ha_sourceId=89000448) 设置相关权限，添加 scope 权限。
 
 易错点：
 
@@ -410,7 +411,7 @@ getphonenumber(e){
 
 ### API 获取网络类型失败、手机震动不等效
 
-新版模版已内置，如果你自定义过权限，需要存在 `GET_NETWORK_INFO` 和 `vibrate` 权限。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5?ha_source=Dcloud&ha_sourceId=89000448) 进行查询。按照 **配置权限模版** 章节进行配置。
+新版模版已内置，如果你自定义过权限，需要存在 `GET_NETWORK_INFO` 和 `vibrate` 权限。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-V5?ha_source=Dcloud&ha_sourceId=89000448) 进行查询。按照 **配置权限模版** 章节进行配置。
 
 ### 运行报错 `failed to install bundle. code:9568296 error: install failed due to error bundle type`
 
@@ -428,7 +429,7 @@ getphonenumber(e){
 
 ### 配置的 module.json5 注意事项
 
-文件 `harmony-mp-configs/entry/src/main/module.json5` 会用来配置应用的一些应为，你可以参考 [鸿蒙 module.json5 配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/module-configuration-file-V5?ha_source=Dcloud&ha_sourceId=89000448) 进行学习和参考。
+文件 `harmony-mp-configs/entry/src/main/module.json5` 会用来配置应用的一些应为，你可以参考 [鸿蒙 module.json5 配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file-V5?ha_source=Dcloud&ha_sourceId=89000448) 进行学习和参考。
 
 如果你已经在开发鸿蒙 App ，见到 module.json5 会感觉比较熟悉，有几个属性需要特别注意：
 
@@ -522,6 +523,16 @@ V8 引擎调试可以这样操作
 目前没有好的方案解决，建议始终信任 DevEco 的操作，或者临时退出安全软件。有相关经验也欢迎交流反馈。
 
 ### 发行应用时候提示上传失败
+
+元服务在 HBuilderX 中执行发布操作，发布成功后登录 uni-app 后台，软件的状态显示失败。
+
+![软件包显示失败]()https://web-ext-storage.dcloud.net.cn/uni-app/harmony/2025-12-01_15-01-28.png
+
+一般来说是机器解析发行包时候遇到了问题，需要访问 [华为AGC 开发者后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) ，访问 APP与元服务 - 应用上架 - 软件包管理，这里会有具体错误代码，点击错误原因即可看到详细解释
+
+![软件包管理](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/8dac59ed-c0c9-4792-a344-3fbcdfcdcd89.png)
+
+常见的错误提示和解决方案如下：
 
 - 场景一 `[AppGalleryConnectPublishServicelapp state can not be modified!` 当前应用可能已经在审核中
 - 场景二 `submit version for review failed, additional msg is [[5]]` 这表示代码和上传时候设备勾选的不统一，代码中搜索 `tablet` 配置项删掉并重新发布，在 uniapp 后台改为仅手机，不勾选平板。
@@ -683,6 +694,8 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 ### 元服务提交审核常见报错
 
+
+
 #### 请检查华为后台隐私政策中 “设备权限调用” 是否填写完整
 
 检查代码中 `module.json5` 中的 requestPermissions 和 AGC 后台的隐私协议权限第二条 设备权限调用要严格一致。
@@ -706,10 +719,37 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 在 AGC 后台或者 uni-app 提审后台，也有适配设备选项，确保和代码中保持一致，通常勾选 手机 Phone 值，表示兼容手机
 
-#### 提交审核按钮为灰色无法提交
+#### uniapp 后台提交审核按钮为灰色无法提交审核
 
 观察按钮右侧有个联系方式，可以和 uniapp 发起沟通，看是否有更好的激励政策。如果仍有问题，可以在 [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)沟通。
+
+#### 华为agc后台无法提交审核，按钮为灰色
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/17648171696674e20df20-d004-11e7-b01f-f578f9f5f6ab.png)
+
+这说明你已经绑定了 DCloud 为服务商，绑定服务商可以简化提交审核的流程，统一处理不同平台的应用发布。你需要在 uniapp 后台来完成操作，访问应用管理-我的应用-具体项目-各平台信息-鸿蒙元服务发布，在这里进行发布。
 
 ### 如何申请、使用华为支付
 
 可参考 [华为支付指南](../mp-harmony/payment.md)
+
+### 自动申请调试证书是总是检测不到设备怎么办？@device-not-found
+
+自动申请调试证书是总是检测不到设备怎么办？设备已经加到AGC中了。 25年 12 月开始，华为调整了查询设备信息的接口，影响了现有代码处理逻辑。两个处理方案：使用手动签名或者调整代码做兼容。
+
+在 HBuilderX 安装目录找到 `plugins/launcher/out/main.js` 文件，查找和替换下面文件
+
+```js
+//在其中查找：
+i=t.shift(),r=t.pop()
+// 替换成：
+i=t.shift(),r=t.pop()||i
+```
+
+### 新版本 HBuilderX 运行元服务运行页面闪烁
+
+HBuilderX 4.76 运行元服务 tabbar 页面切换页面不会闪烁，HBuilderX 4.85+ 运行元服务快速切换 tab 页面会有闪烁重新加载的现象。这是目前技术实现的限制，实际发行不会卡顿。
+
+技术方案解释：4.76 版本中元服务编译时间比较长，后续修改代码生效时间比较长，加载比较慢。华为底层的 ascf 针对这种情况提出了改进方案，改为启动本地服务网页，元服务通过访问本地服务器来展示内容，加载速度快，逻辑简单，性能优势明显，称之为热重载方案。
+
+HBuilderX 4.85+ 采用了这个方案，用户切换页面时候会访问本地服务，会产生轻微的闪烁，页面生命周期也会重新触发。本地调试可忽略此问题，实际发布后不会有此问题。

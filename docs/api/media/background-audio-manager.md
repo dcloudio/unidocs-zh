@@ -65,7 +65,7 @@ const bgAudioManager = uni.getBackgroundAudioManager();
 bgAudioManager.title = '致爱丽丝';
 bgAudioManager.singer = '暂无';
 bgAudioManager.coverImgUrl = 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/music-a.png';
-bgAudioManager.src = 'https://web-ext-storage.dcloud.net.cn/uni-app/ForElise.mp3';
+bgAudioManager.src = 'https://web-ext-storage.dcloud.net.cn/doc/uniapp/ForElise.mp3';
 ```
 
 

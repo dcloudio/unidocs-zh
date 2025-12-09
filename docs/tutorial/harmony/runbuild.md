@@ -27,7 +27,7 @@
   - HBuilderX 4.31+ 要求 DevEco Studio 5.0.3.800+。
   - HBuilderX 4.61+ 针对 uni-app x 项目要求 DevEco Studio 5.0.7.100+。
   - uni-app 项目要求鸿蒙系统版本 API 12 以上，uni-app x 项目要求鸿蒙系统版本 API 14 以上（DevEco Studio 有内置鸿蒙模拟器）
-- [点击下载](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448) DevEco5.1.1Beta 版本，下载 API19 模拟器即可运行 uni-app 鸿蒙项目和元服务，除此之外的模拟器暂不支持。
+- [点击下载](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448) DevEco5.1.1Beta 版本，下载 API19 以上版本的模拟器，建议下载使用 API20，通过模拟器即可运行 uni-app 鸿蒙项目和元服务，不支持低于 api19 的模拟器。鸿蒙真机无此要求。
 
 ### 项目根目录与鸿蒙工程目录@project-path
 
@@ -89,7 +89,7 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 ### 启动鸿蒙模拟器@connectvirtually
 
-鸿蒙模拟器只能在 DevEco Studio 中启动。DevEco5.1.1 release 开始提供 API19 模拟器，低于 API19 版本的模拟器不支持 windows x86 平台用户开发 uniapp 鸿蒙，此处系统镜像需要选择 API >= 19 的系统版本。
+鸿蒙模拟器只能在 DevEco Studio 中启动。DevEco5.1.1 release 开始提供 API20 模拟器，低于 API19 版本的模拟器不支持 windows x86 平台用户开发 uniapp 鸿蒙，此处系统镜像需要选择 API >= 19 的系统版本。
 
 在 DevEco Studio 中打开任意一个项目（也可以新建一个空项目），然后在下图的位置进入设备管理器：
 
@@ -289,7 +289,7 @@ HBuilderX 会尝试自动把当前运行设备的标识注册到 AGC 中，如�
 登录 AGC 之后，进入【证书、APP ID 和 Profile】中的【设备】页面，把当前设备的 UDID 添加到设备列表中。
 
 可以在前面提到的 [运行设备](#signing-configs-devices) 得到鸿蒙设备的 UDID 标识，
-也可以通过如下的命令行来获取，具体请参考 [华为的官方文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/bm-tool-V5#%E8%8E%B7%E5%8F%96udid%E5%91%BD%E4%BB%A4get?ha_source=Dcloud&ha_sourceId=89000448)：
+也可以通过如下的命令行来获取，具体请参考 [华为的官方文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bm-tool-V5#%E8%8E%B7%E5%8F%96udid%E5%91%BD%E4%BB%A4get?ha_source=Dcloud&ha_sourceId=89000448)：
 
 ```
 hdc shell bm get -u
@@ -338,7 +338,7 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/17200873385940vk5oj9ihk.png)#{.zooming style="max-height:200px"}
 
-参考 [自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-signing-V5#section18815157237?ha_source=Dcloud&ha_sourceId=89000448)
+参考 [自动签名](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-V5#section18815157237?ha_source=Dcloud&ha_sourceId=89000448)
 
 通过 DevEco Studio 自动申请得到的证书，缺省会保存到电脑的用户目录下，在 Windows 系统中一般是 `%USERPROFILE%\.ohos\config`，在 Mac 系统中一般是 `~/.ohos/config`。
 配置信息中包含的三个文件缺省都是采用绝对路径来表示，也可以把这些文件移到 `harmony-configs` 目录下，这样就可以使用相对路径来表示，相对于 `harmony-configs` 目录。
@@ -872,11 +872,16 @@ kill -9 进程号
 
 ### 鸿蒙如何设置隐私协议弹窗？
 
-[鸿蒙平台文档要求](https://developer.huawei.com/consumer/cn/doc/architecture-guides/user_agreement_and_privacy_policy-0000002331953689) 用户首次打开应用，需要同意用户协议与隐私政策，才可进入应用。
+[鸿蒙平台文档要求](https://developer.huawei.com/consumer/cn/doc/architecture-guides/user_agreement_and_privacy_policy-0000002331953689) 用户首次打开应用，需要同意用户协议与隐私政策，才可进入应用，目前有两个方案实现隐私协议弹窗：
 
-自己实现。目前鸿蒙隐私弹窗可自行实现，正常在应用启动时候弹窗即可，自己存储用户同意状态。
+1. 自行绘制。目前鸿蒙隐私弹窗可自行实现，正常在应用启动时候弹窗即可，自己存储用户同意状态。可参考 hellouniapp 线上应用。容易定制效果，自行处理用户同意状态。
 
-托管实现。华为开发者平台提供了隐私协议托管的服务，通过填写表格，完成合规的隐私协议，最终得到托管网页网址。技术实现可参考《[隐私管理服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-privacy)》。
+2. 托管隐私协议。华为开发者平台提供了隐私协议托管的服务，通过填写表格，完成合规的隐私协议，经过审核之后，最终得到托管网页网址。上架时候选择隐私托管协议即可，正式上线之后，应用会自动提示隐私协议。可参考《[隐私管理服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-privacy)》。
+
+注意：
+
+- 托管隐私协议过程中，在开发阶段是读取不到线上协议的。参考《[未上架应用接入隐私管理服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-privacy#section133476117117)，手动添加三个 debug 参数来模拟线上行为 `appgallery_privacy_hosted/appgallery_privacy_link_privacy_statement/appgallery_privacy_link_user_agreement`。这个方案只是为了模拟线上环境，用户需要通过 api 来检查状态，生产环境并不会弹窗
+- 如果隐私协议使用自定义的网址，不能使用 privacyManager api，只能自行绘制弹窗
 
 ### 鸿蒙提审报应用使用了 HarmonyOS beta 版本的 API
 
@@ -965,3 +970,36 @@ export const requestSystemPermission = () => {
 目前可升级鸿蒙 5/鸿蒙 6 的真机列表在这里：[HarmonyOS 6 支持机型](https://consumer.huawei.com/cn/support/harmonyos/models-6/)
 
 这里特别补充鸿蒙真机不一定都是旗舰机，有一些中端机、旧机可供参考，价格在一千到两千元，比如 Nova14/畅享 70X（2025年发布的新机），比如 nova12pro （旧机），这两款机器价格较低，可升级鸿蒙5/6 系统。
+
+### 应用/元服务中的走焦事件能够响应tab键或方向键切换
+
+近期有用户反馈，应用无法响应键盘 tab 按键
+
+> 应用/元服务中的走焦事件能够响应tab键或方向键切换。https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-compatible
+
+在电脑、平台、折叠电脑上属于规则级别，也就是强制要求。
+
+临时规避方案1，自行明确当前是否需要支持平板，如果目前不需要可在代码中搜索 devicetype，保持为 phone ，在 uniapp 后台、agc 后台表格里只勾选手机，也就是避免支持平板。
+
+解决方案2：你可在指定的组件中，添加 tabindex，从而让功能区支持 tab 切换。目前规则中未明确要求支持回车按键，可忽略处理，也可在组件中，使用 renderjs ，在 renderjs 的 mounted/unmounted 里监听、取消监听 addEventListener keydown 相关事件，主动触发 click
+
+可参考来自社区热心用户的方案，请参考 https://ask.dcloud.net.cn/question/215693 评论区。
+
+后续会针对性优化。
+
+### 自动申请调试证书是总是检测不到设备怎么办？@device-not-found
+
+自动申请调试证书是总是检测不到设备怎么办？设备已经加到AGC中了。 25年 12 月开始，华为调整了查询设备信息的接口，影响了现有代码处理逻辑。两个处理方案：使用手动签名或者调整代码做兼容。
+
+在 HBuilderX 安装目录找到 `plugins/launcher/out/main.js` 文件，查找和替换下面文件
+
+```js
+//在其中查找：
+i=t.shift(),r=t.pop()
+// 替换成：
+i=t.shift(),r=t.pop()||i
+```
+
+### 鸿蒙付费插件云打包说明
+
+目前 uni-app x 已支持付费鸿蒙 uts 插件，用户可通过 uts 插件试用功能进行体验。云打包相关版本参数目前为 `ommandline-tools-linux-x64-5.0.13.220`。

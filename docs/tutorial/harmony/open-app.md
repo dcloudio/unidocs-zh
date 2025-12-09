@@ -13,7 +13,7 @@
 - 定义 querySchemes
 - 页面调用 openLink
 
-### 定义 querySchemes
+### 定义 querySchemes@define-queryschemes
 
 鸿蒙应用在 HBuilderX 工程启动之后，在 `unpackage/dist/dev/app-harmony` 文件夹找到鸿蒙产物工程，找到 `entry/src/main/module.json5` 文件，将其复制，放到 HBuilderX 工程中的 `harmony-configs/entry/src/main/module.json5` 位置，HBuilderX 编译时候会将该配置文件放入最终产物中，实现配置覆盖。
 
@@ -85,3 +85,15 @@ export const openAtomicService = () => {
   })
 }
 ```
+
+## 常见问题
+
+### canOpenLink fail by err: BusinessError 17700056: The scheme of the specified link is not in the querySchemes.
+
+可在华为文档搜索关键词 17700056，可搜到具体解释 [17700056 指定link的scheme未在querySchemes字段下配置](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-bundle#section17700056-%E6%8C%87%E5%AE%9Alink%E7%9A%84scheme%E6%9C%AA%E5%9C%A8queryschemes%E5%AD%97%E6%AE%B5%E4%B8%8B%E9%85%8D%E7%BD%AE)
+
+如何添加 querySschemes？阅读上方文档 [定义 querySchemes](#define-queryschemes)
+
+### 我如何知道用户是否安装了微信、高德等三方程序？
+
+唤起应用可使用 uts 使用鸿蒙开放的 canOpenLink 方法。参考 [使用canOpenLink判断应用是否可访问](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/canopenlink),注意这个方法不支持 App Linking 协议。

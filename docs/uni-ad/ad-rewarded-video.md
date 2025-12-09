@@ -524,10 +524,10 @@ uni-ad的服务器回调，是无法被黑产模拟的。该安全机制被整�
 客户端播放激励视频广告完毕后，广告平台服务器会通知uni-ad，进入uniCloud中。开发者只有在拿到uniCloud确认的视频真的播放完毕后，才应该给用户发送激励。
 
 - 业务代码在uniCloud，流程图如下：
-![激励视频回调](https://web-ext-storage.dcloud.net.cn/doc/ad/uniCloud-uniAdCallback-20240726.png)
+![激励视频回调](https://web-ext-storage.dcloud.net.cn/doc/ad/uniCloud-uniAdCallback-20251201.png)
 
 - 业务代码在开发者传统服务器，流程图如下：
-![激励视频回调](https://web-ext-storage.dcloud.net.cn/doc/ad/tr-servers-uniAdCallback-20240726.png)
+![激励视频回调](https://web-ext-storage.dcloud.net.cn/doc/ad/tr-servers-uniAdCallback-20251201.png)
 
 如何使用
 1. 申请激励视频广告位时开启服务器回调

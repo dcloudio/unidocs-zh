@@ -53,7 +53,7 @@ uni-ad微信小程序广告的优势在于：
 
 
 
-### 广告代码集成
+### 广告代码集成 @code
 当您的微信小程序是审核通过状态，广告才可正常展示。届时您可以开始根据广告的开发文档进行调试。
 
 [横幅广告(banner)](https://uniapp.dcloud.net.cn/uni-ad/ad-component.html)

@@ -1,13 +1,13 @@
 # HarmonyOS Next 华为账号登录 @harmonyos-next-huawei-login <Badge text="HBuilderX 4.31+" />
 
-根据华为应用市场上架审核要求，如果应用支持用户使用第三方账号登录，则该应用需提供华为账号登录选项 [文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-detailedrules-V5?ha_source=Dcloud&ha_sourceId=89000448)
+根据华为应用市场上架审核要求，如果应用支持用户使用第三方账号登录，则该应用需提供华为账号登录选项 [文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-detailedrules-V5?ha_source=Dcloud&ha_sourceId=89000448)
 
 ## 开发准备 @dev-prepare
 
 > 调试时可不配置 Scope 权限，上架时需配置
 
-- 添加公钥指纹（与你的包名绑定） [如何添加公钥指纹](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-dev-overview-V5#section1726913517284?ha_source=Dcloud&ha_sourceId=89000448)
-- 配置 Client ID（配置在 `HBuilder X 项目根目录/harmony-configs/entry/src/main/module.json5` 中） [如何获取 Client ID](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-client-id-V5?ha_source=Dcloud&ha_sourceId=89000448)
+- 添加公钥指纹（与你的包名绑定） [如何添加公钥指纹](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-dev-overview-V5#section1726913517284?ha_source=Dcloud&ha_sourceId=89000448)
+- 配置 Client ID（配置在 `HBuilder X 项目根目录/harmony-configs/entry/src/main/module.json5` 中） [如何获取 Client ID](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-client-id-V5?ha_source=Dcloud&ha_sourceId=89000448)
 - 配置 Scope 权限 [如何申请 Scope 权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-config-permissions-V5?ha_source=Dcloud&ha_sourceId=89000448)
 
 ## HBuilder X 配置 @hbuilderx-config

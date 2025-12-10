@@ -8,20 +8,20 @@
 
 # 配置项列表
 
-| 属性                                                                                | 类型         | 必填 | 描述                                     | 平台兼容                             |
-| :---------------------------------------------------------------------------------- | :----------- | :--- | :--------------------------------------- | :----------------------------------- |
-| [globalStyle](/collocation/pages?id=globalstyle)                                    | Object       | 否   | 设置默认页面的窗口表现                   |                                      |
-| [pages](/collocation/pages?id=pages)                                                | Object Array | 是   | 设置页面路径及窗口表现                   |                                      |
-| [easycom](/collocation/pages?id=easycom)                                            | Object       | 否   | 组件自动引入规则                         | 2.5.5+                               |
-| [tabBar](/collocation/pages?id=tabbar)                                              | Object       | 否   | 设置底部 tab 的表现                      |                                      |
-| [condition](/collocation/pages?id=condition)                                        | Object       | 否   | 启动模式配置                             |                                      |
-| [subPackages](/collocation/pages?id=subPackages)                                    | Object Array | 否   | 分包加载配置                             | H5 不支持                            |
-| [preloadRule](/collocation/pages?id=preloadrule)                                    | Object       | 否   | 分包预下载规则                           | 微信小程序、QQ小程序、抖音小程序、支付宝小程序、京东小程序 |
-| [leftWindow](/collocation/pages?id=leftwindow)                                      | Object       | 否   | 大屏左侧窗口                             | H5                                   |
-| [topWindow](/collocation/pages?id=topwindow)                                        | Object       | 否   | 大屏顶部窗口                             | H5                                   |
-| [rightWindow](/collocation/pages?id=rightwindow)                                    | Object       | 否   | 大屏右侧窗口                             | H5                                   |
-| [uniIdRouter](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router) | Object       | 否   | 自动跳转相关配置，新增于 HBuilderX 3.5.0 |                                      |
-| entryPagePath                                                                       | String       | 否   | 默认启动首页，新增于 HBuilderX 3.7.0     | 微信小程序、支付宝小程序、抖音小程序、鸿蒙元服务 |
+| 属性                                                                                | 类型         | 必填 | 描述                                     | 平台兼容                                                    |
+| :---------------------------------------------------------------------------------- | :----------- | :--- | :--------------------------------------- | :---------------------------------------------------------- |
+| [globalStyle](/collocation/pages?id=globalstyle)                                    | Object       | 否   | 设置默认页面的窗口表现                   |                                                             |
+| [pages](/collocation/pages?id=pages)                                                | Object Array | 是   | 设置页面路径及窗口表现                   |                                                             |
+| [easycom](/collocation/pages?id=easycom)                                            | Object       | 否   | 组件自动引入规则                         | 2.5.5+                                                      |
+| [tabBar](/collocation/pages?id=tabbar)                                              | Object       | 否   | 设置底部 tab 的表现                      |                                                             |
+| [condition](/collocation/pages?id=condition)                                        | Object       | 否   | 启动模式配置                             |                                                             |
+| [subPackages](/collocation/pages?id=subPackages)                                    | Object Array | 否   | 分包加载配置                             | H5 不支持                                                   |
+| [preloadRule](/collocation/pages?id=preloadrule)                                    | Object       | 否   | 分包预下载规则                           | 微信小程序、QQ 小程序、抖音小程序、支付宝小程序、京东小程序 |
+| [leftWindow](/collocation/pages?id=leftwindow)                                      | Object       | 否   | 大屏左侧窗口                             | H5                                                          |
+| [topWindow](/collocation/pages?id=topwindow)                                        | Object       | 否   | 大屏顶部窗口                             | H5                                                          |
+| [rightWindow](/collocation/pages?id=rightwindow)                                    | Object       | 否   | 大屏右侧窗口                             | H5                                                          |
+| [uniIdRouter](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router) | Object       | 否   | 自动跳转相关配置，新增于 HBuilderX 3.5.0 |                                                             |
+| entryPagePath                                                                       | String       | 否   | 默认启动首页，新增于 HBuilderX 3.7.0     | 微信小程序、支付宝小程序、抖音小程序、鸿蒙元服务            |
 
 以下是一个包含了所有配置选项的 `pages.json` ：
 
@@ -177,7 +177,7 @@
 | mp-kuaishou                  | Object   |          | 设置编译到 mp-kuaishou 平台的特定样式                                                                                                                                                    | 快手小程序                                                   |
 | mp-jd                        | Object   |          | 设置编译到 mp-jd 平台的特定样式                                                                                                                                                          | 京东小程序                                                   |
 | mp-xhs                       | Object   |          | 设置编译到 mp-xhs 平台的特定样式                                                                                                                                                         | 小红书小程序                                                 |
-| mp-harmony                       | Object   |          | 设置编译到 mp-harmony 平台的特定样式                                                                                                                                                         | 鸿蒙元服务                                                 |
+| mp-harmony                   | Object   |          | 设置编译到 mp-harmony 平台的特定样式                                                                                                                                                     | 鸿蒙元服务                                                   |
 | usingComponents              | Object   |          | 引用小程序组件，参考 [小程序组件](/tutorial/miniprogram-subject.md#小程序自定义组件支持)                                                                                                 |                                                              |
 | renderingMode                | String   |          | 同层渲染，webrtc(实时音视频) 无法正常时尝试配置 seperated 强制关掉同层                                                                                                                   | 微信小程序                                                   |
 | leftWindow                   | Boolean  | true     | 当存在 leftWindow 时，默认是否显示 leftWindow                                                                                                                                            | H5                                                           |
@@ -1068,6 +1068,9 @@ h5 平台下拉刷新动画，只有 circle 类型。
 | backgroundImage  | String   | 否   |        | 设置背景图片,优先级高于 backgroundColor                                                                                                                                                                                                                        | App                                                  |
 | backgroundRepeat | String   | 否   |        | 设置标题栏的背景图平铺方式，可取值："repeat" - 背景图片在垂直方向和水平方向平铺；"repeat-x" - 背景图片在水平方向平铺，垂直方向拉伸；"repeat-y" - 背景图片在垂直方向平铺，水平方向拉伸；"no-repeat" - 背景图片在垂直方向和水平方向都拉伸。 默认使用 "no-repeat" | App                                                  |
 | redDotColor      | String   | 否   |        | tabbar 上红点颜色                                                                                                                                                                                                                                              | App                                                  |
+| custom           | Boolean  | 否   |        | 是否启用自定义 tabBar                                                                                                                                                                                                                                          | 微信小程序、抖音小程序                               |
+| customize        | Boolean  | 否   |        | 是否启用自定义 tabBar                                                                                                                                                                                                                                          | 支付宝小程序                                         |
+| overlay          | Boolean  | 否   |        | 是否将自定义 tabBar 渲染为 Native 模式                                                                                                                                                                                                                         | 支付宝小程序                                         |
 
 其中 list 接收一个数组，数组中的每个项都是一个对象，其属性值如下：
 
@@ -1082,7 +1085,7 @@ h5 平台下拉刷新动画，只有 circle 类型。
 
 **midButton 属性说明**
 
-| 属性            | 类型   | 必填 | 默认值 | 描述                                                                      | 	|
+| 属性            | 类型   | 必填 | 默认值 | 描述                                                                      |               |
 | :-------------- | :----- | :--- | :----- | :------------------------------------------------------------------------ | ------------- |
 | width           | String | 否   | 80px   | 中间按钮的宽度，tabBar 其它项为减去此宽度后平分，默认值为与其它项平分宽度 |
 | height          | String | 否   | 50px   | 中间按钮的高度，可以大于 tabBar 高度，达到中间凸起的效果                  |

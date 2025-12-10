@@ -1,3 +1,16 @@
+#### 4.87.2025121004
+* 【uni-app x】
+  + Web平台 修复 4.81版本引发的 API dialogPage 中使用 mapContext 异常的 Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=23233)
+  + iOS平台 修复 API uni.request 访问某些 url 地址可能引起崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=21823)
+  + iOS平台 修复 4.76版本引发的 CSS 某些情况下部分属性可能不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=23230)
+* 【uni-app】
+  + Android平台 修复 4.81版本引发的 uni.chooseImage 设置 crop 属性之后图片裁剪可能不生效的Bug [详情](https://ask.dcloud.net.cn/question/215441)
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 修复 录音功能在某些启用16KB模式的设备无法正常使用的Bug
+  + Android平台 修复 4.81版本引发的 云端打包勾选`对配置的js/nvue文件进行原生混淆`，安装后启动白屏的Bug [详情](https://ask.dcloud.net.cn/question/214978)
+  + iOS平台 更新 高德地图 SDK 为 10.1.600 版，解决与其它插件一起打包可能编译失败的问题 [详情](https://ask.dcloud.net.cn/question/214993)
+  + iOS平台 更新 一键登录 依赖的个验 SDK 为 3.1.3.0 版，解决联通隐私协议链接地址失效的问题
+
 #### 4.85.2025110510
 * 【uni-app x】
   + iOS平台 修复 4.84版本引发的 组件 list-view 频繁拖动加载更多数据可能引起崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=22861)

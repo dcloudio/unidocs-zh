@@ -1158,6 +1158,7 @@ midButton 没有 pagePath，需监听点击事件，自行处理点击后的行�
 - 普通自定义 tabBar：使用 view 自行绘制 tabBar。如果页面是多页方式，切换 tabBar 将无法保持底部 tabBar 一直显示。所以这种情况建议使用单页方式。单页方式，如果是复杂页面，应用性能会下降明显，需减少页面复杂度。如果是 App 端，nvue 单页的性能会显著高于 vue 页面
 - 微信小程序自定义 tabbar：微信提供一直基于 webview 自定义 tabBar 的方案。该功能体验不佳，不太推荐使用。如果要使用，参考[微信文档](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html)，项目根创建 custom-tab-bar 目录，注意里边的代码是 wxml,wxss，不是 vue，uni-app 编译器会直接拷贝该目录到微信小程序中
 - 原生的 tabbar 有且只有一个且在首页。二级页如需的 tab，需自行编写 view 来实现。一般二级页面更适合的导航是 [segement 组件](https://ext.dcloud.net.cn/plugin?id=54)
+- 支付宝小程序 [参考文档](https://opendocs.alipay.com/mini/03jry7)
 
 ## condition
 

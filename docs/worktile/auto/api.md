@@ -160,7 +160,8 @@ program 是uni-automator自动注入的全局对象
 
 ##### program.screenshot
 
-对当前页面截图，目前只有开发者工具模拟器支持，客户端无法使用。
+对当前页面截图。\
+微信小程序只有开发者工具模拟器支持，客户端无法使用。
 
 `program.screenshot(options?: Object): Promise<string | void>`
 

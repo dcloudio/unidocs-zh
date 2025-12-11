@@ -143,6 +143,7 @@ uni.login({
 - 微信小程序端，在用户未授权过的情况下调用此接口，不会出现授权弹窗，会直接进入 fail 回调（详见[《微信小程序公告》](https://developers.weixin.qq.com/community/develop/doc/0000a26e1aca6012e896a517556c01)）。在用户已授权的情况下调用此接口，可成功获取用户信息。
 - 京东小程序端，在用户未授权，调用该接口将直接报错。用户已经授权过，可使用该接口直接获取用户信息，不会弹二次授权框
 - 抖音小程序此接口将逐步废弃，请切换使用[uni.getUserProfile](#getuserprofile)。[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-info)
+- 元服务使用 getUserProfile 接口
 
 **OBJECT 参数说明**
 
@@ -239,7 +240,7 @@ uni.login({
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√（基础库2.10.4）|x|x|√（基础库2.30.0）|x|x|x|x|√|
+|x|x|√（基础库2.10.4）|x|x|√（基础库2.30.0）|x|x|x|√|√|
 
 **注意：**
 
@@ -247,6 +248,8 @@ uni.login({
 - 该API仅支持微信小程序端（基础库2.10.4-2.27.0版本），微信小程序调整了相关接口（详见[《小程序登录、用户信息相关接口调整说明》](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801?highLine=getUserProfile%253Afail)）。每次触发 uni.getUserProfile 均会弹出授权窗口，用户授权后可成功获取用户信息。该API暂不支持在事件中使用异步操作，否则会触发错误：{errMsg: "getUserProfile:fail can only be invoked by user TAP gesture."}
 
 抖音从基础库 2.30.0 开始支持本方法，低版本需做兼容处理。[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-profile/)
+
+元服务 ASCF 1.0.17 运行时（2025-11-27 ）、用户侧系统要求为鸿蒙6+ 开始支持本接口，点击后自动拉起弹窗授权，用户授权后返回 nickName 和 avatarUrl 参数
 
 **OBJECT 参数说明**
 

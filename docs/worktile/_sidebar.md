@@ -5,5 +5,6 @@
   * [快速开始](auto/quick-start.md)
   * [API](auto/api.md)
   * [HBuilderX自动化测试插件](auto/hbuilderx-extension/index.md)
-  * [CLI项目自动化测试](auto/uniapp-cli-project.md)
+  * [使用 CLI 运行uniapp自动化测试](auto/hbuilderx-cli-uniapp-test.md)
+  * [CLI项目运行自动化测试](auto/uniapp-cli-project.md)
 * [持续集成](CI.md)

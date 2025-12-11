@@ -63,7 +63,7 @@
 
 ### app-harmony
 
-> HBuilder X 4.89+ 支持
+> HBuilder X 5.0+ 支持
 
 在 `manifest.json -> app-harmony` 中配置：
 
@@ -89,9 +89,9 @@
 
   ```json
   "app-harmony" : {
-  	"safearea": { //iOS平台的安全区域
+  	"safearea": { // HarmonyOS 平台的安全区域
   		"background": "#ffffff",
-  		"backgroundDark": "#2f0508", // HX 3.1.19+支持
+  		"backgroundDark": "#2f0508",
   		"bottom": {
   			"offset": "none" // 在没有 tabBar 时，底部区域是否需要占位
   		}

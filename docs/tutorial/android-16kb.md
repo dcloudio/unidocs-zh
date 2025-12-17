@@ -70,22 +70,10 @@ OAID目前使用的 SDK 版本为 `1.0.25`或`1.0.13`，更高版本需要申请
 - lib39285EFA.so
 
 ## 高德地图  
-高德地图模块在国内渠道使用的SDK 版本为 `10.0.700`，Google Play 渠道使用单独版本，详情参考下面章节说明
+高德地图模块在国内渠道使用的SDK 版本为 `10.0.700`，高德地图官方暂时未适配支持 16KB 页面大小（后续会持续跟进处理）。如果要上架 Google Play 将以切换使用 Google 地图。  
 
 涉及的so库文件列表：  
 - libAMapSDK_MAP_v10_0_700.so  
-
-
-## Google Play渠道包专属模块  
-
-### [高德地图](../component/map.md)  
-云端打包界面时在 “渠道包” 下勾选 “Google Play(AAB)”，使用的是高德地图 SDK 版本为 `6.9.3`，没有使用so库，不涉及16KB 内存页面大小问题。  
-
-
-使用高德地图SDK的API：
-- [uni.createMapContext](../api/location/map.md#createmapcontext)
-- [uni.chooseLocation](../api/location/location.md#chooselocation)
-
 
 
 

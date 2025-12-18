@@ -708,14 +708,14 @@ sign = sha256(secret:trans_id)
 ##### 第五步：测试并发布上线
 
 1. 在微信小程序管理后台配置 request 域名白名单，[详情](https://doc.dcloud.net.cn/uniCloud/publish.html)
-2. 测试广告回调，完整看完一个广告并**关闭**，在[uniCloud 的 web控制台](https://unicloud.dcloud.net.cn) 
+2. 测试广告回调，完整看完一个广告并**关闭**
 3. 检查自己的服务器或云函数是否收到广告回调结果
 4. 在HBuilderX中发行微信小程序并上传提交版本
 
 > 异常排查
 ```
 Q: 没有收到服务器回调
-A: 服务空间查看uniAdCallback云函数日志
+A: 在[uniCloud 的 web控制台](https://unicloud.dcloud.net.cn) 服务空间，[云函数/云对象]列表，找到uniAdCallback云函数 查看日志
 ```
 
 ```

@@ -529,9 +529,26 @@ uni-ad的服务器回调，是无法被黑产模拟的。该安全机制被整�
 - 业务代码在开发者传统服务器，流程图如下：
 ![激励视频回调](https://web-ext-storage.dcloud.net.cn/doc/ad/tr-servers-uniAdCallback-20251201.png)
 
-如何使用
-1. 申请激励视频广告位时开启服务器回调
-2. 创建激励视频广告时传入回调参数
+
+#### 服务器回调基于 [uniCloud](https://doc.dcloud.net.cn/uniCloud/)
+
+1. 由于多家广告商的回调和签名验证逻辑不同，开发者需要写很多逻辑，`uniCloud` 中的云函数 `uniAdCallback` 已抹平了差异，开发者按照统一的参数处理即可
+2. 开发者的服务器有可能响应慢或失去响应造成回调数据丢失, 使用 `uniCloud` 可以帮助开发者保存一份来自广告商服务器的回调数据到开发者的云数据中，以便开发者主动查询
+3. `uniCloud` 可以承载大并发、防DDoS攻击，无需运营人员维护
+
+#### 详细流程如下:@process
+
+1. 登录 uni-ad [Web控制台](https://uniad.dcloud.net.cn/)
+2. 在应用的广告位项上配置激励视频回调，开启回调，选择服务空间（如果没有，则创建服务空间），服务空间选择后不可变更
+3. 根据项目情况选择回调类型，可选择云函数或传统服务器
+- 选择【业务在uniCloud】，选择云函数或云对象。如果还没有则创建云函数或云对象，在HBuilderX中打开uni-app项目右键[创建uniCloud云开发环境]，在uniCloud目录右键关联步骤2的服务空间，在uniCloud/cloudfunctions目录右键，[新建云函数/云对象]（注意：新建的云函数名称不能使用 `uniAdCallback`）
+- 选择【业务在传统服务器】，配置回调url
+![](https://web-ext-storage.dcloud.net.cn/doc/ad/ad-callback.png)
+4. 获取secret，修改完成。开通后，将在选择的服务空间下自动部署一个加密云函数 `uniAdCallback`
+5. `uniAdCallback` 接收广告商服务器回调验证签名并抹平穿山甲/优量汇/快手参数差异，然后以以下方式回调：
+- 业务在uniCloud：通过[callFunction](https://doc.dcloud.net.cn/uniCloud/cf-functions?id=callbyfunction) 方式调用用户云函数
+- 业务在传统服务器：以HTTP(GET)方式请求开发者配置的回调URL
+6. 在项目中接入激励视频广告代码，并传入回调参数
 
 urlCallback示例
 
@@ -559,22 +576,6 @@ export default {
 </script>
 ```
 
-#### 服务器回调基于 [uniCloud](https://doc.dcloud.net.cn/uniCloud/)
-
-1. 由于多家广告商的回调和签名验证逻辑不同，开发者需要写很多逻辑，`uniCloud` 中的云函数 `uniAdCallback` 已抹平了差异，开发者按照统一的参数处理即可
-2. 开发者的服务器有可能响应慢或失去响应造成回调数据丢失, 使用 `uniCloud` 可以帮助开发者保存一份来自广告商服务器的回调数据到开发者的云数据中，以便开发者主动查询
-3. `uniCloud` 可以承载大并发、防DDoS攻击，无需运营人员维护
-
-#### 详细流程如下:
-
-1. 登陆 uni-ad [Web控制台](https://uniad.dcloud.net.cn/)
-2. 在应用的广告位项上配置激励视频回调，可选择云函数或传统服务器
-3. 开通后将在选择的服务空间下自动部署一个加密云函数 `uniAdCallback`
-4. `uniAdCallback` 接收广告商服务器回调验证签名并抹平穿山甲/优量汇/快手参数差异，然后以以下方式回调
-- 业务在uniCloud：通过[callFunction](https://doc.dcloud.net.cn/uniCloud/cf-functions?id=callbyfunction) 方式调用用户云函数
-- 业务在传统服务器：以HTTP(GET)方式请求开发者配置的回调URL
-
-**提示**：2023/01/29 起，uni-ad Web控制台支持配置传统服务器地址，简化开通流程
 
 注意：
 1. 新建的云函数名称不能使用 `uniAdCallback`
@@ -583,9 +584,7 @@ export default {
 4. 看一次广告收到2次回调结果，且 `trans_id` 相同，产生2次的可能原因有
   - 没有正确响应JSON格式数据 `{"isValid": true}`
   - 服务器响应过慢，广告商服务器重试
-
-提示：
-- 多个uni-app项目支持关联一个服务空间，都会调用同一个云函数uniAdCallbck，通过接收回调参数中的属性广告位adpid区分
+5. 多个uni-app项目支持关联一个服务空间，都会调用同一个云函数uniAdCallbck，通过接收回调参数中的属性广告位adpid区分
 
 
 #### 服务器回调参数@uniAdCallbackParameters
@@ -651,41 +650,82 @@ sign = sha256(secret:trans_id)
 
 由于上面三个值之间存在时效和依赖关系，比较复杂，所以需要使用 [uni-open-bridge](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html) 来接管
 
-注意：
-1. 需要发行模式
-2. 需要配置 request 域名白名单，[详情](https://doc.dcloud.net.cn/uniCloud/publish.html)
+接入流程：
 
-#### 接入流程(uni-id用户体系)
+##### 第一步：开通并关联服务空间
 
-1. 项目使用了 [uni-id-co](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#save-user-token) 并更新到 1.0.8+
-2. 使用 [uni-open-bridge](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html) 托管三方开放平台数据
-3. 配置 [安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
+1. 开通微信小程序激励视频回调，参考上方[详细流程](#process)
+2. 开通uniCloud（如果您的后台业务没有使用uniCloud，那么也需要在uni-app项目中创建uniCloud环境），在 [uniCloud web控制台](https://unicloud.dcloud.net.cn)创建服务空间
+3. 关联服务空间：在HBuilderX中打开你的uni-app项目，在项目根目录右键，选择创建uniCloud云服务空间，选择第一步中已创建的服务空间，[参考文档：uni-app项目使用uniCloud](https://doc.dcloud.net.cn/uniCloud/quickstart.html#uni-app%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8unicloud)
 
-#### 接入流程(传统用户系统)
 
-1. 配置 [uni-open-bridge](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html) 托管三方开放平台数据，详情如下:
-- 1.1 参考文档[uni-open-bridge的使用流程](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html#uni-open-bridge%E7%9A%84%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B) ，下载插件uni-open-bridge，完成配置并上传服务空间。
-- 1.2 云函数URL化配置：在[uniCloud 的 web控制台](https://unicloud.dcloud.net.cn) 服务空间--》云函数/云对象--》uni-open-bridge--》详情--》云函数URL化--》编辑配置`/uni-open-bridge`保存。
-- 1.3 由 传统服务器从微信获取到相关凭据通过 http 的方式主动将微信小程序的 `access_token` `session_key` 通过[setAccessToken](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html#setaccesstoken)，[setSessionKey](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html#setsessionkey) ，同步到 uni-open-bridge，`encrypt_key` 由 uni-open-bridge 自动向微信服务器获取。
 
-2. 配置 [安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
-3. 在微信小程序客户端初始化安全网络并传递 openid，通过 uni.checkSession() 检查登录是否过期，过期后需要重新登录并由开发者服务器将 `session_key` 同步到 uni-open-bridge
+##### 第二步：导入uni-open-bridge插件
 
-```html
-<script>
-  export default {
-    onLaunch: async function() {
-      // #ifdef MP-WEIXIN
-      // 调用自有服务、云函数进行微信登录或以其他方式获取 openid
-      // 通过调用 uni.login(), 获取 code，然后在服务器上请求微信服务器换取 openid, 获取的 code 只能使用一次
-      const openid = ''
-      await uniCloud.initSecureNetworkByWeixin({
-        openid: openid
-      })
-      // #endif
-    }
-  }
-</script>
+- uni-open-bridge 统一接管微信等三方平台认证凭据（包括但不限于access_token、session_key、encrypt_key、ticket），导入uni-open-bridge插件到项目中，参考文档[uni-open-bridge的使用流程](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html#uni-open-bridge%E7%9A%84%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B) ，下载插件uni-open-bridge，完成配置并上传服务空间。
+
+> 注意： config.json不支持注释。在HBuilderX中可用多选//来批量移除注释
+
+##### 第三步：根据项目情况选择用户体系(uni-id用户体系或传统用户系统 **选择其一完成接入**)
+
+
+- uni-id用户体系
+	- 项目使用了 [uni-id-co](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#save-user-token) 并更新 uni-id-pages 到 1.0.8+ 版本 [https://ext.dcloud.net.cn/plugin?id=8577](https://ext.dcloud.net.cn/plugin?id=8577)
+	
+
+- 传统用户系统（服务器）
+	- 在uni-open-bridge/config.json里配置ipWhiteList：用于 URL化后 http 调用的服务器IP白名单，即指定ip的服务器才可以访问URL化后的`uni-open-bridge`云对象![](https://web-ext-storage.dcloud.net.cn/doc/ad/ad-open-bridge-ip.png)
+	- 配置 [uni-open-bridge](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html) 托管三方开放平台数据
+		- 云函数URL化配置：在[uniCloud 的 web控制台](https://unicloud.dcloud.net.cn) 服务空间--》云函数/云对象--》uni-open-bridge--》详情--》云函数URL化--》编辑配置`/uni-open-bridge`保存，并复制云函数URL化路径，下一步需要用到。![](https://web-ext-storage.dcloud.net.cn/doc/ad/ad-open-bridge.png)
+		- 由 传统服务器从微信获取到相关凭据通过 http 的方式主动将微信小程序的 `access_token` `session_key` 通过[setAccessToken](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html#setaccesstoken)，[setSessionKey](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html#setsessionkey) ，同步到 uni-open-bridge，`encrypt_key` 由 uni-open-bridge 自动向微信服务器获取。
+
+##### 第四步：安全网络（客户端）
+
+- 开通并配置 [安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html) 然后在HBuilderX中项目根目录manifest.json文件内为微信小程序平台开启云端一体安全网络模块
+
+  > 注意：传统用户系统
+	- 在微信小程序客户端初始化安全网络并传递 openid，通过 uni.checkSession() 检查登录是否过期，过期后需要重新登录并由开发者服务器将 `session_key` 同步到 uni-open-bridge
+  
+		```html
+		<script>
+			export default {
+				onLaunch: async function() {
+					// #ifdef MP-WEIXIN
+					// 在用户登录成功后或检查登录是否有效后
+					// 调用自有服务、云函数进行微信登录或以其他方式获取 openid
+					// 通过调用 uni.login(), 获取 code，然后在服务器上请求微信服务器换取 openid, 获取的 code 只能使用一次
+					const openid = ''
+					await uniCloud.initSecureNetworkByWeixin({
+						openid: openid
+					})
+					// #endif
+				}
+			}
+		</script>
+		```
+
+
+##### 第五步：测试并发布上线
+
+1. 在微信小程序管理后台配置 request 域名白名单，[详情](https://doc.dcloud.net.cn/uniCloud/publish.html)
+2. 测试广告回调，完整看完一个广告并**关闭**，在[uniCloud 的 web控制台](https://unicloud.dcloud.net.cn) 
+3. 检查自己的服务器或云函数是否收到广告回调结果
+4. 在HBuilderX中发行微信小程序并上传提交版本
+
+> 异常排查
+```
+Q: 没有收到服务器回调
+A: 服务空间查看uniAdCallback云函数日志
+```
+
+```
+Q: 如果没有日志
+A: 则检查前步骤二至步骤四，是否有漏掉配置
+```
+
+```
+Q: 如果有日志，且有错误
+A: 根据错误信息自行排查
 ```
 
 ### 安全注意

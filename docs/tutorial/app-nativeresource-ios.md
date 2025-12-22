@@ -357,6 +357,50 @@ uni-app/uni-app x 中要添加的 Watch App 可执行文件。
 - profile  
   打包时使用的 Provisioning Profile，相对于ios-watch.json文件所在目录的路径  
 
+### ios-uts.json @uts
+
+> HBuilderX 5.0 及以上版本新增支持配置 ios-uts.json  
+
+在部分情况下，如果项目使用的 [uts插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html) 无法修改源码（如从插件市场购买的非源码授权的插件），可通过 `ios-uts.json` 文件修改配置。  
+在 uni-app/uni-app x 项目原生资源目录 “nativeResources” 的 “ios” 目录下创建 “ios-uts.json”文件，结构如下：  
+
+<pre v-pre="" data-lang="">
+  <code class="lang-" style="padding:0">
+├─nativeResources   // App原生资源目录
+│  └─ios                // iOS平台目录
+│    ├─Resources            //资源文件存放目录，可选
+│    ├─ios-uts.json         //uts插件配置文件，可选
+│    └─info.plist           //应用主 info.plist 配置文件，可选
+└─manifest.json     // uni-app/uni-appx 项目清单文件  
+</code>
+</pre>
+
+`ios-uts.json` 文件格式如下：  
+```json
+{
+  "uts-myutsplugin": {
+    "identifier": "com.my.custom"
+  }
+}
+```
+
+每个uts插件配置项以插件标识（uts插件目录名称）为 key，值为 json 格式数据。  
+
+#### 配置uts插件的 Bundle Identifier  
+可通过 json 格式中的 `identifier` 字段配置 uts插件 云端打包使用的 Bundle Identifier。  
+如下示例配置uts-myutsplugin插件的 Bundle Identifier 为 com.my.custom：  
+```json
+{
+  "uts-myutsplugin": {
+    "identifier": "com.my.custom"
+  }
+}
+```
+
+如果没有配置则根据插件标识自动生成，默认值为 "io.dcloud.uts.unimodule" + 插件标识首字母大写。  
+如插件标识为 uts-myutsplugin，默认的 Bundle Identifier 为 io.dcloud.uts.unimoduleUtsMyutsplugin。  
+
+
 ## 离线打包  
 离线打包时应用清单文件和资源需要开发者手动合并到XCode原生工程中。
 

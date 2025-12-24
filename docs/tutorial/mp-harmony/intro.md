@@ -528,7 +528,7 @@ V8 引擎调试可以这样操作
 
 ![软件包显示失败]()https://web-ext-storage.dcloud.net.cn/uni-app/harmony/2025-12-01_15-01-28.png
 
-一般来说是机器解析发行包时候遇到了问题，需要访问 [华为AGC 开发者后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) ，访问 APP与元服务 - 应用上架 - 软件包管理，这里会有具体错误代码，点击错误原因即可看到详细解释
+一般来说是机器解析发行包时候遇到了问题，需要访问 [华为 AGC 开发者后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) ，访问 APP 与元服务 - 应用上架 - 软件包管理，这里会有具体错误代码，点击错误原因即可看到详细解释
 
 ![软件包管理](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/8dac59ed-c0c9-4792-a344-3fbcdfcdcd89.png)
 
@@ -694,8 +694,6 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 ### 元服务提交审核常见报错
 
-
-
 #### 请检查华为后台隐私政策中 “设备权限调用” 是否填写完整
 
 检查代码中 `module.json5` 中的 requestPermissions 和 AGC 后台的隐私协议权限第二条 设备权限调用要严格一致。
@@ -723,7 +721,7 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 观察按钮右侧有个联系方式，可以和 uniapp 发起沟通，看是否有更好的激励政策。如果仍有问题，可以在 [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)沟通。
 
-#### 华为agc后台无法提交审核，按钮为灰色
+#### 华为 agc 后台无法提交审核，按钮为灰色
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/17648171696674e20df20-d004-11e7-b01f-f578f9f5f6ab.png)
 
@@ -735,11 +733,11 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 ### 自动申请调试证书是总是检测不到设备怎么办？@device-not-found
 
-自动申请调试证书是总是检测不到设备怎么办？设备已经加到AGC中了。 25年 12 月开始，华为调整了查询设备信息的接口，影响了现有代码处理逻辑。两个处理方案：使用手动签名或者调整代码做兼容。
+自动申请调试证书是总是检测不到设备怎么办？设备已经加到 AGC 中了。 25 年 12 月开始，华为调整了查询设备信息的接口，影响了现有代码处理逻辑。两个处理方案：使用手动签名或者调整代码做兼容。
 
 在 HBuilderX 安装目录找到 `plugins/launcher/out/main.js` 文件，查找和替换下面文件
 
-```js
+```
 //在其中查找：
 i=t.shift(),r=t.pop()
 // 替换成：
@@ -753,3 +751,7 @@ HBuilderX 4.76 运行元服务 tabbar 页面切换页面不会闪烁，HBuilderX
 技术方案解释：4.76 版本中元服务编译时间比较长，后续修改代码生效时间比较长，加载比较慢。华为底层的 ascf 针对这种情况提出了改进方案，改为启动本地服务网页，元服务通过访问本地服务器来展示内容，加载速度快，逻辑简单，性能优势明显，称之为热重载方案。
 
 HBuilderX 4.85+ 采用了这个方案，用户切换页面时候会访问本地服务，会产生轻微的闪烁，页面生命周期也会重新触发。本地调试可忽略此问题，实际发布后不会有此问题。
+
+### 元服务在平板、折叠屏上不能满屏展示，有黑边
+
+目前华为的 ASCF 团队是这样规划的，不可修改，这个表现不会影响应用运行，不会影响审核上架

@@ -639,14 +639,14 @@ HBuilderX 4.31 起支持 uniPush 推送，具体配置请参考[文档](https://
 uniPush 初始化时候需要读取 OAID，这对应 `ohos.permission.APP_TRACKING_CONSENT` 权限，可参考 [权限配置指南](#permission) 定义为下面方案，并再 string.json5 中补充自定义 `Reason_TRACKING` 文案。
 
 ```json
-  {
+{
   "name": "ohos.permission.APP_TRACKING_CONSENT",
-    "reason": "$string:Reason_TRACKING",
-    "usedScene": {
-      "when": "inuse"
-    }
+  "reason": "$string:Reason_TRACKING",
+  "usedScene": {
+    "when": "inuse"
   }
-  ```
+}
+```
 
 这里举例鸿蒙位置定位的权限和如何设置，阅读 [鸿蒙 uni.getLocation 的权限配置](../../api/location/location.md#harmony-set-location)，这里详细描述了解每一个步骤如何操作。
 
@@ -752,7 +752,6 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 如果确实需要这里的某些权限，那就需要申请一个调试证书，并配置到 `harmony-configs/build-profile.json5` 文件的 `app.signingConfigs` 中。
 具体请参考 [调试用的数字签名证书](#signing-debug)
 
-
 ### 报错 `配置的 bundleName 与签名证书不符`@bundle-name-mismatch
 
 如果配置了签名证书，打包之后会进行签名，但如果项目中配置的 `bundleName` 与签名证书申请时所填报的 `bundleName` 不符，就会报这个错。
@@ -800,7 +799,6 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 
 为了能够重建完整的鸿蒙工程目录，HBuilderX 需要先删除旧的鸿蒙工程目录，但是由于某些原因（比如其中有文件被其它程序占用，比如源码在 MacOS 文稿中并开启了 iCloud 云同步）导致删除失败。
 为确保正确执行后续的操作，请先设法手工删除该目录，然后再重新开始操作。
-
 
 ### 报错 `未正确配置鸿蒙应用的包名`@bundlename-incorrect
 
@@ -948,19 +946,22 @@ HBuilderX 4.81+ 在这种情况下会自动删除鸿蒙工程目录内的所有�
 可参考 [UTS 插件介绍](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)，新建 uts api 插件，填写下面代码放入 `app-harmony/index.uts`
 
 ```ts
-import { abilityAccessCtrl, Permissions } from '@kit.AbilityKit';
-
+import { abilityAccessCtrl, Permissions } from "@kit.AbilityKit";
 
 export const requestSystemPermission = () => {
-
-  const permissionList : Array<Permissions> = ['ohos.permission.APPROXIMATELY_LOCATION']
-  UTSHarmony.requestSystemPermission(permissionList, (allRight : boolean, grantedList : Array<string>) => {
-    console.log('res', allRight, grantedList);
-  }, (doNotAskAgain : boolean, grantedList : Array<string>) => {
-    console.log('fail', doNotAskAgain, grantedList);
-  })
-}
-
+  const permissionList: Array<Permissions> = [
+    "ohos.permission.APPROXIMATELY_LOCATION",
+  ];
+  UTSHarmony.requestSystemPermission(
+    permissionList,
+    (allRight: boolean, grantedList: Array<string>) => {
+      console.log("res", allRight, grantedList);
+    },
+    (doNotAskAgain: boolean, grantedList: Array<string>) => {
+      console.log("fail", doNotAskAgain, grantedList);
+    }
+  );
+};
 ```
 
 上述代码会主动请求相关模糊位置权限。
@@ -969,19 +970,19 @@ export const requestSystemPermission = () => {
 
 目前可升级鸿蒙 5/鸿蒙 6 的真机列表在这里：[HarmonyOS 6 支持机型](https://consumer.huawei.com/cn/support/harmonyos/models-6/)
 
-这里特别补充鸿蒙真机不一定都是旗舰机，有一些中端机、旧机可供参考，价格在一千到两千元，比如 Nova14/畅享 70X（2025年发布的新机），比如 nova12pro （旧机），这两款机器价格较低，可升级鸿蒙5/6 系统。
+这里特别补充鸿蒙真机不一定都是旗舰机，有一些中端机、旧机可供参考，价格在一千到两千元，比如 Nova14/畅享 70X（2025 年发布的新机），比如 nova12pro （旧机），这两款机器价格较低，可升级鸿蒙 5/6 系统。
 
-### 应用/元服务中的走焦事件能够响应tab键或方向键切换
+### 应用/元服务中的走焦事件能够响应 tab 键或方向键切换
 
 近期有用户反馈，应用无法响应键盘 tab 按键
 
-> 应用/元服务中的走焦事件能够响应tab键或方向键切换。https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-compatible
+> 应用/元服务中的走焦事件能够响应 tab 键或方向键切换。https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-compatible
 
 在电脑、平台、折叠电脑上属于规则级别，也就是强制要求。
 
-临时规避方案1，自行明确当前是否需要支持平板，如果目前不需要可在代码中搜索 devicetype，保持为 phone ，在 uniapp 后台、agc 后台表格里只勾选手机，也就是避免支持平板。
+临时规避方案 1，自行明确当前是否需要支持平板，如果目前不需要可在代码中搜索 devicetype，保持为 phone ，在 uniapp 后台、agc 后台表格里只勾选手机，也就是避免支持平板。
 
-解决方案2：你可在指定的组件中，添加 tabindex，从而让功能区支持 tab 切换。目前规则中未明确要求支持回车按键，可忽略处理，也可在组件中，使用 renderjs ，在 renderjs 的 mounted/unmounted 里监听、取消监听 addEventListener keydown 相关事件，主动触发 click
+解决方案 2：你可在指定的组件中，添加 tabindex，从而让功能区支持 tab 切换。目前规则中未明确要求支持回车按键，可忽略处理，也可在组件中，使用 renderjs ，在 renderjs 的 mounted/unmounted 里监听、取消监听 addEventListener keydown 相关事件，主动触发 click
 
 可参考来自社区热心用户的方案，请参考 https://ask.dcloud.net.cn/question/215693 评论区。
 
@@ -989,11 +990,11 @@ export const requestSystemPermission = () => {
 
 ### 自动申请调试证书是总是检测不到设备怎么办？@device-not-found
 
-自动申请调试证书是总是检测不到设备怎么办？设备已经加到AGC中了。 25年 12 月开始，华为调整了查询设备信息的接口，影响了现有代码处理逻辑。两个处理方案：使用手动签名或者调整代码做兼容。
+自动申请调试证书是总是检测不到设备怎么办？设备已经加到 AGC 中了。 25 年 12 月开始，华为调整了查询设备信息的接口，影响了现有代码处理逻辑。两个处理方案：使用手动签名或者调整代码做兼容。
 
 在 HBuilderX 安装目录找到 `plugins/launcher/out/main.js` 文件，查找和替换下面文件
 
-```js
+```text
 //在其中查找：
 i=t.shift(),r=t.pop()
 // 替换成：
@@ -1003,3 +1004,9 @@ i=t.shift(),r=t.pop()||i
 ### 鸿蒙付费插件云打包说明
 
 目前 uni-app x 已支持付费鸿蒙 uts 插件，用户可通过 uts 插件试用功能进行体验。云打包相关版本参数目前为 `ommandline-tools-linux-x64-5.0.13.220`。
+
+### 我可以使用最新版本 API21 的 API 吗，有多大比例用户升级到鸿蒙 6 了？
+
+uts 中使用鸿蒙 API 如果有兼容性顾虑，可参考这个指导方案，判断来 DeviceInfo 返回信息。《[应用使用 API 兼容性保护判断的指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compatibility-api-compatibility?ha_source=Dcloud&ha_sourceId=89000448)》。
+
+HarmonyOS 设备各 API 版本使用量占比如下，开发者可根据占比来为应用合理定义需要兼容的 API 版本，参考 《[存量设备 API 版本使用数量参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/sdk-version-percentage?ha_source=Dcloud&ha_sourceId=89000448)》。

@@ -1,11 +1,11 @@
-# uni一键发布
+# uni多商店上传
 
 ## 介绍@intro
 
 一键发布到多家应用商店，高效助力App发版。
 当前支持的应用商店：**App Store、华为、荣耀、小米、VIVO、OPPO、应用宝**。  
 
-> 欢迎进入[uni一键发布技术交流群](https://im.dcloud.net.cn/#/?joinGroup=68d10a5f46d4d0b06752ddfb)
+> 欢迎进入[uni多商店上传技术交流群](https://im.dcloud.net.cn/#/?joinGroup=68d10a5f46d4d0b06752ddfb)
 
 
 
@@ -31,6 +31,6 @@ App 提交成功后，可实时查看在各大应用商店的审核状态。
 
 ## 相关文档@docs
 
-- [首次发布使用教程](./first.md)
-- [更新发布使用教程](./update.md)
+- [应用首次上架使用教程](./first.md)
+- [应用更新发布使用教程](./update.md)
 - [Api传包相关参数获取说明](./config.md)

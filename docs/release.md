@@ -1792,15 +1792,15 @@
   + 修复 使用 uni ext api，且云打包同时勾选Android和iOS，发行后的安装包未能正确包含uni ext api插件的Bug [详情](https://ask.dcloud.net.cn/question/181295)
   + uni统计2 修复 支付宝小程序云报错 spaceAppId required 的bug [详情](https://ask.dcloud.net.cn/question/181491)
 * 【uni-app x插件】
-  + 新增 组件 form 表单 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/form.html)
-  + 新增 组件 sticky-section 分段吸顶 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/sticky.html#sticky-section)
-  + 新增 uni-push [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/push.html)
-  + 新增 uni.addInterceptor 拦截器，可拦截部分API [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/interceptor.html)
-  + 新增 uni.setNavigationBarTitle [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/set-navigation-bar-title.html)
+  + 新增 组件 form 表单 [详情](https://doc.dcloud.net.cn/uni-app-x/component/form.html)
+  + 新增 组件 sticky-section 分段吸顶 [详情](https://doc.dcloud.net.cn/uni-app-x/component/sticky.html#sticky-section)
+  + 新增 uni-push [详情](https://doc.dcloud.net.cn/uni-app-x/api/push.html)
+  + 新增 uni.addInterceptor 拦截器，可拦截部分API [详情](https://doc.dcloud.net.cn/uni-app-x/api/interceptor.html)
+  + 新增 uni.setNavigationBarTitle [详情](https://doc.dcloud.net.cn/uni-app-x/api/set-navigation-bar-title.html)
   + 调整 uni.downloadFile 下载默认目录调整为app的cache目录下的uniDownloads目录，方便被rom的清理工具清理 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=201)
-  + 补充 uni.getAppBaseInfo 获取获取包名、签名信息 [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/get-app-base-info.html)
-  + 补充 组件 scroll-view 支持 nested-scroll-child，可将嵌套滚动的父滚动视图滚动余量传递给子视图 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/scroll-view.html)
-  + 补充 组件 web-view 支持 download 事件，以及 loading、loaded 事件回调参数支持 url 属性 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/web-view.html)
+  + 补充 uni.getAppBaseInfo 获取获取包名、签名信息 [详情](https://doc.dcloud.net.cn/uni-app-x/api/get-app-base-info.html)
+  + 补充 组件 scroll-view 支持 nested-scroll-child，可将嵌套滚动的父滚动视图滚动余量传递给子视图 [详情](https://doc.dcloud.net.cn/uni-app-x/component/scroll-view.html)
+  + 补充 组件 web-view 支持 download 事件，以及 loading、loaded 事件回调参数支持 url 属性 [详情](https://doc.dcloud.net.cn/uni-app-x/component/web-view.html)
   + 补充 组件 image、video 的 src 属性及 css 中，支持非 static 目录的静态资源
   + 修复 组件 text 固定宽高时，设置 padding-left 和 padding-right 可能导致文本不居中的Bug
   + 修复 组件 text 设置 space 属性时，换行符 \n 有时无法正常显示的Bug
@@ -1860,7 +1860,7 @@
 
 #### 3.95.2023102806
 * 【uni-app x插件】
-  + 新增 ext api `uni.installApk` 安装apk [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/install-apk.html)
+  + 新增 ext api `uni.installApk` 安装apk [详情](https://doc.dcloud.net.cn/uni-app-x/api/install-apk.html)
   + App-Android平台 新增 真机运行标准基座支持安装apk权限
   + App-Android平台 修复 使用云对象提交云端打包后可能运行报错的Bug [详情](https://ask.dcloud.net.cn/question/180404)
 
@@ -1888,7 +1888,7 @@
   + 新增 Regexp 正则表达式支持 flags 属性 [详情](https://uniapp.dcloud.net.cn/uts/buildin-object-api/regexp.html#flags)
   + 新增 支持 encodeURI、decodeURI、encodeURIComponent、decodeURIComponent 等全局方法 [详情](https://uniapp.dcloud.net.cn/uts/buildin-object-api/global.html#encodeuri)
   + 新增 支持使用数值字面量和字符串字面量用作类型注解 [详情](https://uniapp.dcloud.net.cn/uts/literal.html)
-  + 新增 uni.request 请求的 method 支持 OPTIONS [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/request.html)
+  + 新增 uni.request 请求的 method 支持 OPTIONS [详情](https://doc.dcloud.net.cn/uni-app-x/api/request.html)
   + 新增 await 支持与 Promise 一同使用 [详情](https://uniapp.dcloud.net.cn/uts/operator.html#await)
   + 修复 parseInt 解析超过整型数据范围返回值为 NaN 的Bug
   + 修复 for 循环中包含复杂continue、break时，执行不正确的Bug
@@ -1920,7 +1920,7 @@
   + iOS平台 修复 3.7.12版更新个验SDK引出的 一键登录弹窗模式下点击关闭不会触发 fail 回调的Bug [详情](https://ask.dcloud.net.cn/question/177253)
 * 【uniCloud】
   + 优化 阿里云 callFunction、url化方式调用云函数最大超时时间由60秒调整为120秒
-  + 新增 uni-app x 项目支持 [详情](https://uniapp.dcloud.net.cn/uni-app-x/unicloud/)
+  + 新增 uni-app x 项目支持 [详情](https://doc.dcloud.net.cn/uni-app-x/unicloud/)
 
 #### 已归档的历史版本
 

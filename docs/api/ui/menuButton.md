@@ -29,4 +29,4 @@
 
 **注意**
 
-- 支付宝小程序：其逻辑与微信小程序不同，它提供了菜单点击后按钮的自定义功能，可以选择显示那些系统按钮，[规范详情](https://docs.alipay.com/mini/api/optionmenuitem)
+- 支付宝小程序：其逻辑与微信小程序不同，它提供了菜单点击后按钮的自定义功能，可以选择显示哪些系统按钮，[规范详情](https://docs.alipay.com/mini/api/optionmenuitem)

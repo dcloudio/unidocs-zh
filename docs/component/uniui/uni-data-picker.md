@@ -155,7 +155,7 @@
 |parent-field|String|-|-|分步查询时父字段名称|
 |collection|String|-|-|表名。支持输入多个表名，用 `,` 分割|
 |field|String|-|-|查询字段，多个字段用 `,` 分割|
-|where|String|-|-|查询条件，内容较多，另见jql文档：[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-clientDB?id=jsquery)|
+|where|String|-|-|查询条件，内容较多，另见jql文档：[详情](https://doc.dcloud.net.cn/uniCloud/uni-clientDB?id=jsquery)|
 |orderby|String|-|-|排序字段及正序倒叙设置|
 |popup-title|String|||弹出层标题|
 |map|Object|-|{text:'text',value:'value'}|字段映射，将text/value映射到数据中的其他字段|

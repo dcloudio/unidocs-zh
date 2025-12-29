@@ -5973,8 +5973,8 @@
   + iOS平台 修复 iPhone 15 设备无法获取手机型号的Bug [详情](https://ask.dcloud.net.cn/question/182298)
   + iOS平台 修复 iOS17系统视频播放控件 video 竖屏状态下进入全屏后退出全屏无法正常显示的Bug
 * 【uniCloud】
-  + 【重要】新增 七牛云扩展存储 价格更优、权限更灵活 [详情](https://uniapp.dcloud.net.cn/uniCloud/ext-storage/intro.html)
-  + 新增 uni-app-x 项目支持 uniIdRouter [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router)
+  + 【重要】新增 七牛云扩展存储 价格更优、权限更灵活 [详情](https://doc.dcloud.net.cn/uniCloud/ext-storage/intro.html)
+  + 新增 uni-app-x 项目支持 uniIdRouter [详情](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router)
   + 新增 支付宝小程序云 支持云函数URL化
   + 补齐 支付宝小程序云 支持ide中运行JQL文件
   + 修复 支付宝小程序云 doc get 未兼容返回值为 null 的Bug [详情](https://ask.dcloud.net.cn/question/182457)
@@ -6012,7 +6012,7 @@
   + 修复 css 代码中引用非 static 目录的静态资源失败的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=231)
   + 调整 各项目模板的 index.html （web平台专有文件）中引入入口文件从 main.js 改为 main（即main.uts，后缀可省略）
   + 新增 模板 App升级中心兼容uni-app x [详见](https://ext.dcloud.net.cn/plugin?id=4542)
-  + 新增 模板 uni-id-pages-x [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/app-x.html)
+  + 新增 模板 uni-id-pages-x [详情](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)
 * 【uts插件】
   + 优化 异步函数在 uni-app x 中使用时默认与框架运行在同一线程
   + 修复 部分位运算组合使用时优先级不正确的Bug
@@ -6183,10 +6183,10 @@
   + App-iOS平台 修复 uni.setTabBarItem 动态设置 gif 后再设置普通图片可能不生效的Bug
 * 【uniCloud】
   + 调整 uni-ai 非uni-ai计费网关调用百度接口由内测接口调整为[文心千帆大模型接口](https://cloud.baidu.com/doc/WENXINWORKSHOP/s/jlil56u11)
-  + 新增 uni-map-common 聚合多家地图供应商的云能力的公共模块 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-map-common.html)
-  + 新增 unicloud-map 云端一体组件，主要用于显示数据库里的自定义POI，渲染在地图上。 [详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-map.html)
-  + 新增 unicloud-map 地图管理端插件，提供了POI管理，可以在管理端可视化的标记POI。 [详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-map-admin.html)
-  + 新增 unicloud-city-select 城市选择组件，方便用户在应用中快速选择目标城市的组件。 [详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-city-select.html)
+  + 新增 uni-map-common 聚合多家地图供应商的云能力的公共模块 [详情](https://doc.dcloud.net.cn/uniCloud/uni-map-common.html)
+  + 新增 unicloud-map 云端一体组件，主要用于显示数据库里的自定义POI，渲染在地图上。 [详情](https://doc.dcloud.net.cn/uniCloud/unicloud-map.html)
+  + 新增 unicloud-map 地图管理端插件，提供了POI管理，可以在管理端可视化的标记POI。 [详情](https://doc.dcloud.net.cn/uniCloud/unicloud-map-admin.html)
+  + 新增 unicloud-city-select 城市选择组件，方便用户在应用中快速选择目标城市的组件。 [详情](https://doc.dcloud.net.cn/uniCloud/unicloud-city-select.html)
 * 【App插件(含5+App和uni-app的App端)】
   + 【重要】Android平台 适配 支持 Android14 系统
   + Android平台 更新 云端打包环境 compileSdkVersion 为 33
@@ -6206,11 +6206,11 @@
   + uts插件 App-iOS平台 新增 CocoaPods 依赖支持配置git地址 [详情](https://uniapp.dcloud.net.cn/plugin/uts-ios-cocoapods.html#usecocoapods)
   + uts插件 App-iOS平台 修复 调用方法参数中有多个自定义类型时会导致应用崩溃的Bug
 * 【uniCloud】
-  + 新增 阿里云定时触发时云函数入参对齐腾讯云 [详情](https://uniapp.dcloud.net.cn/uniCloud/trigger.html#trigger-param)
-  + 新增 云对象定时触发方法_timing增加入参 [详情](https://uniapp.dcloud.net.cn/uniCloud/trigger.html#cloudobject)
-  + 新增 uni-ai支持通过开发者自己的key调用讯飞星火大模型 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#get-llm-manager)
-  + 新增 类似uni.request的http请求接口uniCloud.request [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#unicloud-request)
-  + 新增 类似uni.connectSocket的websocket客户端接口uniCloud.connectSocket [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#websocket-client)
+  + 新增 阿里云定时触发时云函数入参对齐腾讯云 [详情](https://doc.dcloud.net.cn/uniCloud/trigger.html#trigger-param)
+  + 新增 云对象定时触发方法_timing增加入参 [详情](https://doc.dcloud.net.cn/uniCloud/trigger.html#cloudobject)
+  + 新增 uni-ai支持通过开发者自己的key调用讯飞星火大模型 [详情](https://doc.dcloud.net.cn/uniCloud/uni-ai.html#get-llm-manager)
+  + 新增 类似uni.request的http请求接口uniCloud.request [详情](https://doc.dcloud.net.cn/uniCloud/cf-functions.html#unicloud-request)
+  + 新增 类似uni.connectSocket的websocket客户端接口uniCloud.connectSocket [详情](https://doc.dcloud.net.cn/uniCloud/cf-functions.html#websocket-client)
 * 【App插件(含5+App和uni-app的App端)】
   + Android平台 修复 隐私政策提示框在部分设备横屏状态下按钮显示不全的Bug [详情](https://ask.dcloud.net.cn/question/173749)
   + Android平台 修复 扫码界面拒绝权限提示文字默认语言不正确的Bug [详情](https://ask.dcloud.net.cn/question/174032)

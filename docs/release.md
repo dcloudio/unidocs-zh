@@ -1768,8 +1768,8 @@
   + iOS平台 修复 iPhone 15 设备无法获取手机型号的Bug [详情](https://ask.dcloud.net.cn/question/182298)
   + iOS平台 修复 iOS17系统视频播放控件 video 竖屏状态下进入全屏后退出全屏无法正常显示的Bug
 * 【uniCloud】
-  + 【重要】新增 七牛云扩展存储 价格更优、权限更灵活 [详情](https://uniapp.dcloud.net.cn/uniCloud/ext-storage/intro.html)
-  + 新增 uni-app-x 项目支持 uniIdRouter [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router)
+  + 【重要】新增 七牛云扩展存储 价格更优、权限更灵活 [详情](https://doc.dcloud.net.cn/uniCloud/ext-storage/intro.html)
+  + 新增 uni-app-x 项目支持 uniIdRouter [详情](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router)
   + 新增 支付宝小程序云 支持云函数URL化
   + 补齐 支付宝小程序云 支持ide中运行JQL文件
   + 修复 支付宝小程序云 doc get 未兼容返回值为 null 的Bug [详情](https://ask.dcloud.net.cn/question/182457)
@@ -1829,7 +1829,7 @@
   + 补充 css position 属性设置为 absolute 时，margin 支持取值 auto
   + 补充 真机运行标准基座内置所有常用权限。减少因权限造成的打包自定义基座的频率
   + 新增 模板 App升级中心兼容uni-app x [详见](https://ext.dcloud.net.cn/plugin?id=4542)
-  + 新增 模板 uni-id-pages-x 方便开发账户系统 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/app-x.html)
+  + 新增 模板 uni-id-pages-x 方便开发账户系统 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)
   + 修复 部分情况下真机运行 appid 为空导致应用异常崩溃的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=162)
   + 修复 使用 v-if 显示组件的 background 样式设置为线性渐变可能引起崩溃的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=164)
 * 【uts插件】
@@ -1855,7 +1855,7 @@
   + Android平台 更新 uni实人认证使用的阿里云金融级实人认证SDK为 2.3.7 版
 * 【uniCloud】
   + 【重要】新增 uniCloud支付宝小程序云版，全端可用、uni-app和uni-app x均可用。价格更优，限制更少，支持域名备案
-  + 【重要】调整 废弃 `db_init.json`，每个collection由schema.json、index.json、init_data.json、schema.ext.js 4个文件描述 [详情](https://uniapp.dcloud.net.cn/uniCloud/hellodb.html#init-db)
+  + 【重要】调整 废弃 `db_init.json`，每个collection由schema.json、index.json、init_data.json、schema.ext.js 4个文件描述 [详情](https://doc.dcloud.net.cn/uniCloud/hellodb.html#init-db)
   + 优化 基于模板新建schema/新建schemajs时，如模板是由多个文件组成的，允许用户选择创建具体的文件
 
 #### 3.95.2023102806

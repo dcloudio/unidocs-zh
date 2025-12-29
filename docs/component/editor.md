@@ -115,7 +115,7 @@ window.Quill = quill;
 * 粘贴时仅纯文本内容会被拷贝进编辑器
 * 插入 html 到编辑器内时，编辑器会删除一些不必要的标签，以保证内容的统一。例如`<p><span>xxx</span></p>`会改写为`<p>xxx</p>`
 * 编辑器聚焦时页面会被上推，系统行为以保证编辑区可见
-* H5 端需要动态引入 [quill.min.js](https://unpkg.com/quill@1.3.7/dist/quill.min.js)、[image-resize.min.js](https://unpkg.com/quill-image-resize-mp@3.0.1/image-resize.min.js) 依赖，默认情况下浏览器会从 [unpkg.com](https://unpkg.com) 加载。如果依赖加载较慢或失败，uni-app 建议使用通过测试的 js 依赖保证效果一致，访问 [github.com](https://github.com/dcloudio/uni-app/tree/dev/src/core/view/components/editor/quill) 或者 [gitee.com](https://gitee.com/dcloud/uni-app/tree/dev/src/core/view/components/editor/quill) 选择下载。可以放入 `static` 目录进行托管，或者使用 CDN 服务商。为了保证服务的稳定性，推荐开发者将所有前端资源使用 [uniCloud 前端网页托管](https://uniapp.dcloud.net.cn/uniCloud/hosting.html) 服务进行托管，然后在 [自定义模板](../collocation/manifest?id=h5-template) 的 `head` 标签内引入相关 js 依赖。
+* H5 端需要动态引入 [quill.min.js](https://unpkg.com/quill@1.3.7/dist/quill.min.js)、[image-resize.min.js](https://unpkg.com/quill-image-resize-mp@3.0.1/image-resize.min.js) 依赖，默认情况下浏览器会从 [unpkg.com](https://unpkg.com) 加载。如果依赖加载较慢或失败，uni-app 建议使用通过测试的 js 依赖保证效果一致，访问 [github.com](https://github.com/dcloudio/uni-app/tree/dev/src/core/view/components/editor/quill) 或者 [gitee.com](https://gitee.com/dcloud/uni-app/tree/dev/src/core/view/components/editor/quill) 选择下载。可以放入 `static` 目录进行托管，或者使用 CDN 服务商。为了保证服务的稳定性，推荐开发者将所有前端资源使用 [uniCloud 前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting.html) 服务进行托管，然后在 [自定义模板](../collocation/manifest?id=h5-template) 的 `head` 标签内引入相关 js 依赖。
 * 不能直接插入视频或者其他文件，编辑时可以采用视频封面或者文件缩略图占位，并在图片属性中保存视频信息，预览时读取附加信息再还原为视频或者其他文件操作。
 
 
@@ -360,6 +360,6 @@ window.Quill = quill;
 ```
 :::
 
-一个完整的内容管理系统 `Content Management System` 比较复杂，DCloud已提供好了现成的 `uni-cms`，开源、免费、全端可用、功能完善，包括管理端和用户端。还内置了 AI 生成文章和广告变现功能。详见：[https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)
+一个完整的内容管理系统 `Content Management System` 比较复杂，DCloud已提供好了现成的 `uni-cms`，开源、免费、全端可用、功能完善，包括管理端和用户端。还内置了 AI 生成文章和广告变现功能。详见：[https://doc.dcloud.net.cn/uniCloud/uni-cms.html](https://doc.dcloud.net.cn/uniCloud/uni-cms.html)
 
 <!-- UNIAPPCOMJSON.editor.reference -->

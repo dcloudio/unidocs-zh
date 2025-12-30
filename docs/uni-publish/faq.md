@@ -6,4 +6,12 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/appstore/publish_country_1230.png)
 
+
+### 2、OPPO 应用发布失败，提示：icon_url（应用图标）图片宽度不符合要求
+
+出现此提示，请为 OPPO 渠道单独发布应用并更新符合要求的应用图标。
+
+
+![](https://web-ext-storage.dcloud.net.cn/appstore/oppo_icon_1230.png)
+
 ---

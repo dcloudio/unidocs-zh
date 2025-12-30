@@ -109,8 +109,6 @@ DCloud是微信官方核准的广告代运营服务商，代运营是微信给�
 - **Q：微信小程序绑定的管理员在哪查看？**
 - A：登录[微信公众平台](https://mp.weixin.qq.com/)，点击左侧导航栏 **成员管理** 查看管理员账户
 - ![](https://web-ext-storage.dcloud.net.cn/doc/ad/wx_agency/mp_admin.png)
-- **Q：授权代运营的管理费**
-- A：uni-ad默认收取开发者流量主广告收益的1%作为服务费。同时uni-ad承诺给开发者提供比单纯的流量主广告变现更高的收益提升，如未达到此目标，开发者可以申请退还服务费。
 - **Q：结款流程**
 - A：授权代运营后，微信流量主的广告收益，由DCloud给开发者结算，在[uni-ad](https://uniad.dcloud.net.cn/)后台查看。结算相关问题[点击查看](https://uniapp.dcloud.net.cn/uni-ad/faq/payment-faq.html)
 - **Q：授权后是否可以再取消代运营**

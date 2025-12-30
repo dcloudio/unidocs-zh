@@ -15,6 +15,7 @@
     * [简介](/uni-publish/intro.md)
     * [应用首次上架](/uni-publish/first.md)
     * [应用更新发布](/uni-publish/update.md)
+    * [常见问题](/uni-publish/faq.md)
   * [前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting.html)
   * [App升级中心](https://doc.dcloud.net.cn/uniCloud/upgrade-center.html)
   * [uni一键登录](https://doc.dcloud.net.cn/uniCloud/uni-login/summary.html)

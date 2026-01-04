@@ -1012,3 +1012,24 @@ i=t.shift(),r=t.pop()||i
 uts 中使用鸿蒙 API 如果有兼容性顾虑，可参考这个指导方案，判断来 DeviceInfo 返回信息。《[应用使用 API 兼容性保护判断的指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compatibility-api-compatibility?ha_source=Dcloud&ha_sourceId=89000448)》。
 
 HarmonyOS 设备各 API 版本使用量占比如下，开发者可根据占比来为应用合理定义需要兼容的 API 版本，参考 《[存量设备 API 版本使用数量参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/sdk-version-percentage?ha_source=Dcloud&ha_sourceId=89000448)》。
+
+### 鸿蒙 UA 检测
+
+自 5.0 alpha 开始，hx 支持对项目代码进行鸿蒙兼容性检测。开发者如果有兼容鸿蒙的需求，可以根据控制台的提示，做出相应的修改。
+
+比如下面的代码
+
+```js
+const res = uni.getSystemInfoSync();
+const isAndroid = res.platform.toLocaleLowerCase() == "android"
+```
+
+hx 检测到此处代码只判断了安卓端，会以黄字提示开发者未适配鸿蒙，可能造成鸿蒙版微信下异常；开发者可以根据自己的需求修改代码或者点击近期不再提示，以使 hx 不再检测相关内容。
+
+更多问题代码示例:
+
+```js
+const userAgentInfo = navigator.userAgent;
+const Agents = ['Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod'];
+```
+

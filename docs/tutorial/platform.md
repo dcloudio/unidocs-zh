@@ -26,13 +26,44 @@ uni-app 已将常用的组件、API 封装到框架中，开发者按照 uni-app
 - `#ifndef`：if not defined 除了某平台均存在
 - `%PLATFORM%`：平台名称
 
-<table><thead><tr><th>条件编译写法</th><th>说明</th></tr></thead><tbody><tr><td><div class="code"><span class="token comment"><span style="color:#859900;"> #ifdef</span><b style="color:#268BD2"> APP-PLUS</b></span><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td><td>仅出现在 App 平台下的代码</td></tr><tr><td><div class="code"><span class="token comment"> <span style="color:#859900;"> #ifndef</span><b style="color:#268BD2"> H5</b></span><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td><td>除了 H5 平台，其它平台均存在的代码（注意if后面有个n）</td></tr><tr><td><div class="code"><span class="token comment"> <span style="color:#859900;"> #ifdef</span><b style="color:#268BD2"> H5</b></span><span style="color:#859900;"> || </span><b style="color:#268BD2">MP-WEIXIN</b><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td><td>在 H5 平台或微信小程序平台存在的代码（这里只有||，不可能出现&&，因为没有交集）</td></tr></tbody></table>
+<table>
+<thead>
+    <tr>
+        <th>条件编译写法</th>
+        <th>说明</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td><div class="code"><span class="token comment"><span style="color:#859900;"> #ifdef</span><b style="color:#268BD2"> APP-PLUS</b></span><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td>
+        <td>仅出现在 App 平台下的代码</td>
+    </tr>
+    <tr>
+        <td><div class="code"><span class="token comment"> <span style="color:#859900;"> #ifndef</span><b style="color:#268BD2"> H5</b></span><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td>
+        <td>除了 H5 平台，其它平台均存在的代码（注意if后面有个n）</td>
+    </tr>
+    <tr>
+        <td><div class="code"><span class="token comment"> <span style="color:#859900;"> #ifdef</span><b style="color:#268BD2"> H5</b></span><span style="color:#859900;"> || </span><b style="color:#268BD2">MP-WEIXIN</b><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td>
+        <td>在 H5 平台或微信小程序平台存在的代码</td>
+    </tr>
+    <tr>
+        <td><div class="code"><span class="token comment"> <span style="color:#859900;"> #ifdef</span><b style="color:#268BD2"> APP</b></span><span style="color:#859900;"> && </span><b style="color:#268BD2">VUE3-VAPOR</b><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td>
+        <td>在 APP 平台且蒸汽模式下存在的代码</td>
+    </tr>
+    <tr>
+        <td><div class="code"><span class="token comment"> <span style="color:#859900;"> #ifdef</span><b style="color:#268BD2"> APP</b></span><span style="color:#859900;"> && </span><b style="color:#268BD2">!VUE3-VAPOR</b><br>需条件编译的代码<br><span class="token comment"> <span style="color:#859900;"> #endif</span></span></div></td>
+        <td>在 APP 平台且非蒸汽模式下存在的代码（注意VUE3-VAPOR前面有个!）</td>
+    </tr>
+</tbody>
+</table>
+
 
 **`%PLATFORM%`** 可取值：
 
 | 值                        | 生效条件                                                                                                                    | 版本支持         |
 | :------------------------ | :-------------------------------------------------------------------------------------------------------------------------- | :--------------- |
 | VUE3                      | uni-app js 引擎版用于区分 vue2 和 3，[详情](https://ask.dcloud.net.cn/article/37834)                                        | HBuilderX 3.2.0+ |
+| VUE3-VAPOR          | 用于区分是否是 uni-app x 项目 vue3 蒸汽模式，[详情](https://doc.dcloud.net.cn/uni-app-x/app-harmony/harmony-vapor.html#%E8%92%B8%E6%B1%BD%E6%A8%A1%E5%BC%8F)                                        | HBuilderX 5.0+ |
 | VUE2                      | uni-app js 引擎版用于区分 vue2 和 3，[详情](https://ask.dcloud.net.cn/article/37834)                                        |                  |
 | UNI-APP-X                 | 用于区分是否是 uni-app x 项目 [详情](#uni-app-x)                                                                            | HBuilderX 3.9.0+ |
 | uniVersion                | 用于区分编译器的版本 [详情](#universion)                                                                                    | HBuilderX 3.9.0+ |

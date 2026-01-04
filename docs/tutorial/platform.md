@@ -63,7 +63,7 @@ uni-app 已将常用的组件、API 封装到框架中，开发者按照 uni-app
 | 值                        | 生效条件                                                                                                                    | 版本支持         |
 | :------------------------ | :-------------------------------------------------------------------------------------------------------------------------- | :--------------- |
 | VUE3                      | uni-app js 引擎版用于区分 vue2 和 3，[详情](https://ask.dcloud.net.cn/article/37834)                                        | HBuilderX 3.2.0+ |
-| VUE3-VAPOR          | 用于区分是否是 uni-app x 项目 vue3 蒸汽模式，[详情](https://doc.dcloud.net.cn/uni-app-x/app-harmony/harmony-vapor.html#%E8%92%B8%E6%B1%BD%E6%A8%A1%E5%BC%8F)                                        | HBuilderX 5.0+ |
+| VUE3-VAPOR          | 用于区分是否是 vue3 蒸汽模式，[详情](https://doc.dcloud.net.cn/uni-app-x/app-harmony/harmony-vapor.html#%E8%92%B8%E6%B1%BD%E6%A8%A1%E5%BC%8F)                                        | HBuilderX 5.0+ |
 | VUE2                      | uni-app js 引擎版用于区分 vue2 和 3，[详情](https://ask.dcloud.net.cn/article/37834)                                        |                  |
 | UNI-APP-X                 | 用于区分是否是 uni-app x 项目 [详情](#uni-app-x)                                                                            | HBuilderX 3.9.0+ |
 | uniVersion                | 用于区分编译器的版本 [详情](#universion)                                                                                    | HBuilderX 3.9.0+ |

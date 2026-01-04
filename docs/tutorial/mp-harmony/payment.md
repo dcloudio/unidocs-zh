@@ -149,7 +149,7 @@ xxx
 
 ### HBuilderX 代码开启
 
-修改 mainifest.json 找到 **鸿蒙 App 配置 - uni-payment - 勾选华为支付**。
+修改 manifest.json 找到 **鸿蒙 App 配置 - uni-payment - 勾选华为支付**。
 
 配置签名，运行鸿蒙配置。鸿蒙元服务可直接唤起支付，鸿蒙应用如果看不到华为支付，可先添加
 

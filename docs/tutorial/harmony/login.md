@@ -14,9 +14,8 @@
 
 - 在 manifest.json 里找到 **鸿蒙 App 配置** -开启 **uni-oauth** 勾选华为登录，并填写 client_id
 - uni.login 返回 code
-- 返回
 
-client_id 可在 AGC 后台获取，注意是应用 client_id 不是页面中间的项目是 client_id 参数。
+client_id 可在 AGC 后台获取，注意是应用 Client ID 不是项目 Client ID 参数。
 
 ```json
 {
@@ -31,7 +30,7 @@ client_id 可在 AGC 后台获取，注意是应用 client_id 不是页面中间
 }
 ```
 
-getUserFile
+getUserInfo
 
 ```json
 {

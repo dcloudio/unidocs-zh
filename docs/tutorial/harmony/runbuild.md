@@ -16,7 +16,7 @@
 - HBuilderX 4.61+ 开始支持配置签名证书，且支持自动申请调试证书
 - HBuilderX 4.71+ 开始支持 uni-app x 项目运行到 x86_64 平台的鸿蒙模拟器
 - HBuilderX 4.81+ 开始支持 uni-app x 项目启用热重载能力
-- x86_64 平台的鸿蒙模拟器升级到 HarmonyOs 5.1.1(19) Beta1 开始支持运行 uniapp 项目
+- x86_64 平台的鸿蒙模拟器升级到 HarmonyOS 5.1.1(19) Beta1 开始支持运行 uni-app 项目
 
 ## 开发环境要求@env
 
@@ -89,7 +89,7 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 ### 启动鸿蒙模拟器@connectvirtually
 
-鸿蒙模拟器只能在 DevEco Studio 中启动。DevEco5.1.1 release 开始提供 API20 模拟器，低于 API19 版本的模拟器不支持 windows x86 平台用户开发 uniapp 鸿蒙，此处系统镜像需要选择 API >= 19 的系统版本。
+鸿蒙模拟器只能在 DevEco Studio 中启动。DevEco 5.1.1 release 开始提供 API20 模拟器，低于 API19 版本的模拟器不支持 Windows x86 平台用户开发 uni-app 鸿蒙，此处系统镜像需要选择 API >= 19 的系统版本。
 
 在 DevEco Studio 中打开任意一个项目（也可以新建一个空项目），然后在下图的位置进入设备管理器：
 
@@ -162,7 +162,7 @@ HBuilderX 4.81+ 开始支持 uni-app x 项目启用热重载能力。
 
 把应用运行到鸿蒙设备之后，如果修改了源代码，在 uni 编译器进行差量编译之后，HBuilderX 会尝试以热重载的模式调用鸿蒙构建工具，以节省构建时间。
 
-启用热重载模式要求 DevEco Studio 版本为 5.1.1.823+，如果条件不满足，将自动回落的原来的全量构建模式。
+启用热重载模式要求 DevEco Studio 版本为 5.1.1.823+，如果条件不满足，将自动回落到原来的全量构建模式。
 
 本功能实际是调用 DevEco 新版提供的 arkts 热重载能力，热重载速度由 DevEco 决定。
 
@@ -430,7 +430,7 @@ A: 鸿蒙曾开放读取用户存储的权限 [READ_MEDIA/WRITE_MEDIA，但已�
 
 在鸿蒙工程中，子模块中申请的权限无需在主项目中重复添加，权限将在整个应用中生效，而 UTS 插件在打包进入鸿蒙工程后，就是作为一个子模块存在，可以在 UTS 插件中即可实现应用的权限配置
 
-通过此插件可以方便的配置权限，而无需在 uniapp 工程中通过替换文件的方式配置权限
+通过此插件可以方便的配置权限，而无需在 uni-app 工程中通过替换文件的方式配置权限
 
 可以参考示例：[鸿蒙权限配置 UTS 插件](https://ext.dcloud.net.cn/plugin?name=harmony-permissions)
 
@@ -485,7 +485,7 @@ HBuilderX 早期版本所创建目录初始会存在几个常用的配置文件�
 
   修改其中的 `module.requestPermissions` 来设置运行权限，参见 [权限配置指南](#permission)
 
-- `harmony-configs/AppScrope/app.json5`
+- `harmony-configs/AppScope/app.json5`
 
   其中的 `app.bundleName` 用于设置应用包名。
   HX 4.31+ 已经支持在项目的 `manifest.json` 里面以图形界面修改应用包名，如果在那里做了设置，将优先于这里的设置。
@@ -493,7 +493,7 @@ HBuilderX 早期版本所创建目录初始会存在几个常用的配置文件�
   其中的 `app.versionName` 和 `app.versionCode` 用于设置应用版本名称和版本号。
   HX 4.43+ 已经支持使用项目的 `manifest.json` 里面的应用版本名称和版本号，将优先于这里的设置。
 
-  一般而言，新版本已经不再需要 `harmony-configs/AppScrope/app.json5` 文件了。
+  一般而言，新版本已经不再需要 `harmony-configs/AppScope/app.json5` 文件了。
 
 ## 注意事项@tips
 
@@ -710,7 +710,7 @@ HBuilderX  在打包的时候会调用鸿蒙的工具链，其中用到了  
 HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不会是这个原因了。
 
 检查电脑上安装的 java 版本，可能是版本过低。建议卸载 java 或者在 PATH 环境变量里去掉 java 的路径。
-新版本（4.31+）已调整为优先使用鸿蒙工具链自带的  java  就不会受这个影响了。
+新版本（4.31+）已调整为优先使用鸿蒙工具链自带的 java 就不会受这个影响了。
 
 ### 报错如 `Unexpected token (Note that you need plugins to import files that are not JavaScript)` 或 `Please make sure that the splash page has one and only one '@Entry' decorator`@long-path
 
@@ -757,7 +757,7 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 ### 报错 `配置的 bundleName 与签名证书不符`@bundle-name-mismatch
 
 如果配置了签名证书，打包之后会进行签名，但如果项目中配置的 `bundleName` 与签名证书申请时所填报的 `bundleName` 不符，就会报这个错。
-可以修改 `harmony-configs/AppScrope/app.json5` 文件中 `app.bundleName` 为签名证书申请时所填的应用包名，
+可以修改 `harmony-configs/AppScope/app.json5` 文件中 `app.bundleName` 为签名证书申请时所填的应用包名，
 也可以根据配置的 `bundleName` 重新申请证书。
 
 **注：从 HX 4.31+ 开始应该在项目的 manifest.json 文件的【鸿蒙 App 配置】中设置【包名】。**
@@ -821,7 +821,7 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 在某些电脑环境下，存在一种偶发的情况也会导致出现此种报错，原因尚不完全清楚，重启 hdc server 可以解决问题。
 hdc 是安装 DevEco Studio 时自带的鸿蒙工具链中的一个重要工具，正常情况下它的安装位置在：
 
-- Windows 环境下为 `<DevEco Studio安装目录>\sdk\default\openharmony\toolchains\hdc.exe`
+- Windows 环境下为 `<DevEco Studio 安装目录>\sdk\default\openharmony\toolchains\hdc.exe`
 - Mac 环境下为 `<DevEco Studio安装目录>/Contents/sdk/default/openharmony/toolchains/hdc`
 
 在命令行中执行 `hdc kill -r` 命令以重启 hdc server，然后在 HBuilderX 里面重新运行到鸿蒙即可。
@@ -980,7 +980,7 @@ export const requestSystemPermission = () => {
 
 > 应用/元服务中的走焦事件能够响应 tab 键或方向键切换。https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-compatible
 
-在电脑、平台、折叠电脑上属于规则级别，也就是强制要求。
+在电脑、平板、折叠电脑上属于规则级别，也就是强制要求。
 
 临时规避方案 1，自行明确当前是否需要支持平板，如果目前不需要可在代码中搜索 devicetype，保持为 phone ，在 uniapp 后台、agc 后台表格里只勾选手机，也就是避免支持平板。
 

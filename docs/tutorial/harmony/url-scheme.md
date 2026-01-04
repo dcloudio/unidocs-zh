@@ -14,7 +14,7 @@
 
 优点：简单，常规。
 
-缺点：使用 URL Scheme 这种方式打开应用，系统一般会弹窗提示用户是否打开，，用户打开引用每多一个步骤就会流失的风险。Scheme 方案可能有重复注册 Scheme 的方式，用户需要正确选择才能打开应用，容易困惑、错误选择。
+缺点：使用 URL Scheme 这种方式打开应用，系统一般会弹窗提示用户是否打开，，用户打开应用每多一个步骤就有流失的风险。Scheme 方案可能有重复注册 Scheme 的方式，用户需要正确选择才能打开应用，容易困惑、错误选择。
 
 ### Universal Links
 
@@ -39,9 +39,9 @@
 
 - 配置 module.json5 ，注册 Scheme
 
-在 HBuilderX 工程中，打开 `harmony-configs/entry/src/main/module.json5`。如果没有找到这个文件，可以在 `unpackages/dist/app-harmony` 产物文件里获取，放置到对应位置，HBuilderX 构建过程会自动合并。
+在 HBuilderX 工程中，打开 `harmony-configs/entry/src/main/module.json5`。如果没有找到这个文件，可以在 `unpackage/dist/app-harmony` 产物文件里获取，放置到对应位置，HBuilderX 构建过程会自动合并。
 
-重点是添加 `skill[1]`，找到 `module.abilities[0].skills` 追加下面内容，保证 skill 数组长度增加。
+重点是添加 `skills[1]`，找到 `module.abilities[0].skills` 追加下面内容，保证 skills 数组长度增加。
 
 ```json
 {
@@ -59,7 +59,7 @@
 
 - actions 字段必填，为固定写法，不要修改
 - uris[0].scheme 必填，定义自己的 Scheme，鸿蒙市场中的**统一应用软件**，使用了提供的 Scheme
-- urils[0].host 必填，为路径，不可为空，不要设置 `*`
+- uris[0].host 必填，为路径，不可为空，不要设置 `*`
 
 在线网页中添加 a 链接，填写 Scheme
 
@@ -69,7 +69,7 @@
 
 这种情况下，点击链接应该就可以正常唤起应用了。如果不能请自查
 
-- 观察鸿蒙产物文档是否有两个 skills ，原来的 `skill[0]` 不需要动，维持不变，只添加内容
+- 观察鸿蒙产物文档是否有两个 skills ，原来的 skills[0] 不需要动，维持不变，只添加内容
 - 网页要通过网络访问，检查 Scheme 是否完全一样，可以使用 localhost 在本地验证
 
 ![唤起截图](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/8b2c5df3-01a4-407c-9b42-25e7a651efbf.png)
@@ -100,9 +100,9 @@
 
 4. 修改 `module.json5` 添加 Scheme 参数。
 
-在 HBuilderX 工程中，打开 `harmony-configs/entry/src/main/module.json5`。如果没有找到这个文件，可以在 `unpackages/dist/app-harmony` 产物文件里获取，放置到对应位置，HBuilderX 构建过程会自动合并。
+在 HBuilderX 工程中，打开 `harmony-configs/entry/src/main/module.json5`。如果没有找到这个文件，可以在 `unpackage/dist/app-harmony` 产物文件里获取，放置到对应位置，HBuilderX 构建过程会自动合并。
 
-重点是添加 `skill[1]`，找到 `module.abilities[0].skills` 追加下面内容，保证 skill 数组长度增加。
+重点是添加 `skills[1]`，找到 `module.abilities[0].skills` 追加下面内容，保证 skills 数组长度增加。
 
 ```json
 {
@@ -124,7 +124,7 @@
 - `entities`/ `actions`/ `domainVerify` 字段为固定写法，必填，不可更改
 - uris 追加新字段，注意此处的 `Scheme:https` 为固定写法，不可更改
 - host 字段为 applinking.json 所在的域名，必须和后台一致
-- patStartWith 字段为指定路径，可选的还有 path 字段，可进一步参考 [uris 标签说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-uri-config#uris%E6%A0%87%E7%AD%BE%E8%AF%B4%E6%98%8E?ha_source=Dcloud&ha_sourceId=89000448)
+- pathStartWith 字段为指定路径，可选的还有 path 字段，可进一步参考 [uris 标签说明](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-uri-config#uris%E6%A0%87%E7%AD%BE%E8%AF%B4%E6%98%8E?ha_source=Dcloud&ha_sourceId=89000448)
 
 通过上面设置，当用户直接访问对应的 url 时候会直接唤起应用。如果用户未安装会停留在当前页面。如果用户已经在访问相同 host 的网页，应用不会主动唤起不会干扰用户的正常访问。
 
@@ -170,4 +170,4 @@ UTSHarmony.onAppAbilityNewWant((want: Want) => {
 
 在页面中引入此插件变量，在 onLaunch 和 onShow 读取 params 后续可根据实际需求完善逻辑。比如通过参数判断如何跳转。
 
-实际中可讲参数变量进行返回，在 Vue 页面中访问和读取。
+实际中可将参数变量进行返回，在 Vue 页面中访问和读取。

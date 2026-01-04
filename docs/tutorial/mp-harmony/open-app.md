@@ -1,6 +1,6 @@
 # 鸿蒙元服务唤起鸿蒙应用
 
-目前鸿蒙元服务可通过 **button 组件** 可唤起系统应用、相同开发者名下的鸿蒙应用。
+目前鸿蒙元服务可以通过 **button 组件** 唤起系统应用、相同开发者名下的鸿蒙应用。
 
 ## 唤起系统应用
 
@@ -54,14 +54,14 @@
 import { Want } from '@kit.AbilityKit';
 
 export const params = {
-  paramsOnCrate: '',
+  paramsOnCreate: '',
   paramsOnNewWant: '',
 };
 
 UTSHarmony.onAppAbilityCreate((want: Want) => {
   let uri = want?.uri;
 
-  params.paramsOnCrate = uri ?? '';
+  params.paramsOnCreate = uri ?? '';
   // 实际上立即执行了，但是通信通道还没有建立，延迟一秒打印可以看到数据
   // 延迟是为了看到打印，业务逻辑不需要延迟
   setTimeout(() => {

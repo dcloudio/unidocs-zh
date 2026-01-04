@@ -1,6 +1,6 @@
 # 鸿蒙元服务登录
 
-本文介绍使用 uni-app 接入鸿蒙元服务登录具体操作步骤。
+本文介绍使用 uni-app 接入鸿蒙元服务登录的具体操作步骤。
 
 ## 概要
 
@@ -186,7 +186,7 @@ login(){
 
 元服务的登录要求可以参考阅读 《[使用华为账号登录 静默登录](https://developer.huawei.com/consumer/cn/doc/design-guides/accounts-0000001967444380?ha_source=Dcloud&ha_sourceId=89000448)》、《[开发者可以使用自行设计的登录界面吗？](https://developer.huawei.com/consumer/cn/doc/atomic-faqs-V5/faqs-common-account-5-V5?ha_source=Dcloud&ha_sourceId=89000448)》。
 
-如果需要账号登录，必须使用 `uni.login` 登录，不得绕过自行使用账号密码登录。建议申请获取用户手机号权限，然后关联自己的账号系统。在应用在应用合适的时机调用登录接口换取 UnionID，先标识用户为华为用户，操作关键步骤时候接入现有账号，比如获取手机号关联现有账号。同时务必提供注销用户功能入口，用户自行取消注册，否则会被驳回。
+如果需要账号登录，必须使用 `uni.login` 登录，不得绕过自行使用账号密码登录。建议申请获取用户手机号权限，然后关联自己的账号系统。在应用合适时机调用登录接口换取 UnionID，先标识用户为华为用户，操作关键步骤时候接入现有账号，比如获取手机号关联现有账号。同时务必提供注销用户功能入口，用户自行取消注册，否则会被驳回。
 
 实践中，某些分类下的应用无法申请一键获取手机号，申请会被驳回，这种情况下，建议在业务中完成静默登录，然后在某些操作时候关联其他平台用户，此时通过手机号和验证码完成相关关联平台账号逻辑。
 
@@ -227,7 +227,7 @@ login(){
 
 ```js
 getphonenumber(e){
-  // 获取 code 数值：e.detai.code
+  // 获取 code 数值：e.detail.code
   console.log(e.detail.code);
 }
 ```
@@ -237,7 +237,7 @@ getphonenumber(e){
 1. 签名证书不能是自动签名，设置的是 agc 上下载的调试证书
 2. 确保你联调的元服务已经申请得到了获取手机号权限，如果你在开发多个元服务可能会错误配置
 3. 访问 [AGC 开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject?ha_source=Dcloud&ha_sourceId=89000448) - 我的项目，选择对应的项目和应用，打开 常规 - 应用，配置指纹，确保添加了调试证书。
-4. `mp-configs/entry/src/main/modueljson5` 里有个 metadata client_id 确保值正确，是应用的 ClientID，页面下方。
+4. `mp-configs/entry/src/main/module.json5` 里有个 metadata client_id 确保值正确，是应用的 ClientID，页面下方。
 5. 如果修改过配置参数没有立刻生效，真机打开设置 - 应用与元服务，找到正在开发的应用选择移除，重新运行
 
 用户侧第一次使用会有系统控件弹窗申请，同意之后，后续会自动同意。如果撤回同意，或者测试控件效果，需要手机打开 设置-华为账号-账号安全-使用华为账号的应用-删除授权。
@@ -246,7 +246,7 @@ getphonenumber(e){
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/153e4b27-07bb-4fb1-aaaf-1685d555abf5.png)
 
-最终解析 token 得到最终结果，最终结果数据是下面的结构，供 mock 参考，包含了 unionID/mobileNunber 字段，后面执行用户关联操作。
+最终解析 token 得到最终结果，最终结果数据是下面的结构，供 mock 参考，包含了 unionID/mobileNumber 字段，后面执行用户关联操作。
 
 ```json
 {

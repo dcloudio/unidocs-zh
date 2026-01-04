@@ -786,7 +786,7 @@ uni统计的sourceMap功能可以解决这一问题，在统计后台可以清�
 ├── admin.config.js
 ├── App.vue
 ├── main.js
-├── mainfest.json
+├── manifest.json
 ├── pages.json
 ├── postcss.config.js
 └── uni.scss

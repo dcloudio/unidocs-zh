@@ -11,7 +11,7 @@
 <!-- - HBuilderX 4.31+ 构建的鸿蒙运行包不支持 x86_64 平台，会影响到 Windows 系统和部分 Mac 系统的鸿蒙模拟器无法使用，需使用真机调试 -->
 - HBuilderX 4.41+ 开始运行到鸿蒙设备时支持修改代码后热刷更新
 - HBuilderX 4.41+ 开始运行到鸿蒙设备时控制台显示的应用日志支持回源代码
-- HBuilderX 4.43+ 开始支持将 `mainfest.json` 里面配置的应用版本名称/应用版本号（`versionName`/`versionCode`）应用于鸿蒙平台，且优先于 `harmony-configs/AppScope/app.json5` 中的设置
+- HBuilderX 4.43+ 开始支持将 `manifest.json` 里面配置的应用版本名称/应用版本号（`versionName`/`versionCode`）应用于鸿蒙平台，且优先于 `harmony-configs/AppScope/app.json5` 中的设置
 - HBuilderX 4.61+ 开始支持 uni-app x 项目，且支持开启调试功能
 - HBuilderX 4.61+ 开始支持配置签名证书，且支持自动申请调试证书
 - HBuilderX 4.71+ 开始支持 uni-app x 项目运行到 x86_64 平台的鸿蒙模拟器
@@ -31,7 +31,7 @@
 
 ### 项目根目录与鸿蒙工程目录@project-path
 
-默认情况下，HBuilderX 会在项目内的 `unpackage` 目录下游创建鸿蒙工程目录，用于构建鸿蒙的运行包和发行包：
+默认情况下，HBuilderX 会在项目内的 `unpackage` 目录下创建鸿蒙工程目录，用于构建鸿蒙的运行包和发行包：
 
 - 调试运行的时候默认使用的鸿蒙工程目录位于 `unpackage/dist/dev/app-harmony`
 - 发行打包的时候默认使用的鸿蒙工程目录位于 `unpackage/dist/build/app-harmony`
@@ -170,7 +170,7 @@ HBuilderX 4.81+ 开始支持 uni-app x 项目启用热重载能力。
 
 ### uni-app 鸿蒙调试
 
-参考鸿蒙文档 [使用 DevTools 工具调试前端页面](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-debugging-with-devtools?ha_source=Dcloud&ha_sourceId=89000448) 进行处理。在 uni-app 的开发模式 `setWebDebuggingAccess` 会自动开启，此步骤可以跳过。
+参考鸿蒙文档 [使用 DevTools 工具调试前端页面](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-debugging-with-devtools?ha_source=Dcloud&ha_sourceId=89000448) 进行处理。在 uni-app 的开发模式下 `setWebDebuggingAccess` 会自动开启，此步骤可以跳过。
 
 业务逻辑 debug 可参考 [JSVM-API 调试&定位](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/jsvm-debugger-cpuprofiler-heapsnapshot?ha_source=Dcloud&ha_sourceId=89000448)
 
@@ -224,6 +224,8 @@ HBuilderX 4.61+ 开始支持 uts、uvue、ets 的调试[文档地址](https://un
 
 如果是通过 DevEco Studio 自动申请的调试证书，在 `build-profile.json5` 文件里能找到完整的证书配置信息。
 需注意的是，在保存那三个文件的目录里还应该有一个 `material` 子目录，它跟私钥库文件（`.p12`）和两个密码是配合使用的，如果想把私钥库文件移到别的地方去，这个 `material` 目录也要复制过去（否则密码将失效）。
+
+也可以在对话框中填写手动申请到的证书，填写的时候注意三个文件要在同一个目录。
 
 #### 应用包名@signing-configs-bundle-name
 
@@ -394,11 +396,11 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 如何配置权限？
 
-部分 API 需要在配置文件显示声明权限才能调用，权限的配置文件路径为：`/harmony-configs/entry/src/main/module.json5`，配置节点为：`requestPermissions`，如下图所示
+部分 API 需要在配置文件显式声明权限才能调用，权限的配置文件路径为：`/harmony-configs/entry/src/main/module.json5`，配置节点为：`requestPermissions`，如下图所示
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/bfb249bd-30c0-4be4-b50e-e2695860507d.png)#{.zooming style="max-height:200px"}
 
-这里举例鸿蒙位置定位的权限和如何设置，阅读 [鸿蒙 uni.getLocation 的权限配置](../../api/location/location.md#harmony-set-location)，这里详细描述了解每一个步骤如何操作。
+这里举例鸿蒙位置定位的权限和如何设置，阅读 [鸿蒙 uni.getLocation 的权限配置](../../api/location/location.md#harmony-set-location)，这里详细描述了每一个步骤如何操作。
 
 鸿蒙都有哪些权限清单，如何查询？
 
@@ -426,7 +428,7 @@ A: 鸿蒙曾开放读取用户存储的权限 [READ_MEDIA/WRITE_MEDIA，但已�
 
 ### 通过 uts 插件配置鸿蒙权限
 
-在鸿蒙工程中，子模块中申请的权限无需在主项目中重复添加，权限将在整个应用中生效，而 UTS 插件在打包进入鸿蒙工程后，就是作为了一个子模块存在，可以在 UTS 插件中即可实现应用的权限配置
+在鸿蒙工程中，子模块中申请的权限无需在主项目中重复添加，权限将在整个应用中生效，而 UTS 插件在打包进入鸿蒙工程后，就是作为一个子模块存在，可以在 UTS 插件中即可实现应用的权限配置
 
 通过此插件可以方便的配置权限，而无需在 uniapp 工程中通过替换文件的方式配置权限
 
@@ -455,7 +457,7 @@ HBuilderX 支持把 `manifest.json` 里面的一些配置项传递给鸿蒙工�
 项目的根目录下有一个 `harmony-configs` 目录，每当执行跟鸿蒙相关的操作时，HBuilderX 都会检查这个目录，如果目录不存在则会自动创建。
 HBuilderX 早期版本所创建目录初始会存在几个常用的配置文件，4.36+ 版本该目录初始为空。
 
-在执行运行或者发行到鸿蒙的操作过程中，HBuilderX 会根据内置模板生成一个鸿蒙工程目录（一般在 `unpackage` 目录下游），然后把 `harmony-configs` 目录下的所有内容都原样覆盖过去，
+在执行运行或者发行到鸿蒙的操作过程中，HBuilderX 会根据内置模板生成一个鸿蒙工程目录（一般在 `unpackage` 目录下），然后把 `harmony-configs` 目录下的所有内容都原样覆盖过去，
 然后再调用鸿蒙的工具链进行编译打包等操作。
 
 所以，`harmony-configs` 目录中的所有文件最终都会原样进入鸿蒙工程目录参与项目构建，所有需要对鸿蒙工程的定制化配置都可以写在这个目录下。
@@ -525,7 +527,7 @@ manifest.json 里面已经支持一些应用配置项，未直接支持的可以
 
 ### 如何进行条件编译@ifndef
 
-仅 APP-HARMONY 和 APP 可以条件编译命中鸿蒙平台，APP-PLUS 不能命中中鸿蒙平台
+仅 APP-HARMONY 和 APP 可以条件编译命中鸿蒙平台，APP-PLUS 不能命中鸿蒙平台
 
 ```js
 // #ifdef APP-HARMONY
@@ -636,7 +638,7 @@ Mac 系统快速复制路径方法
 
 HBuilderX 4.31 起支持 uniPush 推送，具体配置请参考[文档](https://uniapp.dcloud.net.cn/unipush-v2.html)
 
-uniPush 初始化时候需要读取 OAID，这对应 `ohos.permission.APP_TRACKING_CONSENT` 权限，可参考 [权限配置指南](#permission) 定义为下面方案，并再 string.json5 中补充自定义 `Reason_TRACKING` 文案。
+uniPush 初始化时候需要读取 OAID，这对应 `ohos.permission.APP_TRACKING_CONSENT` 权限，可参考 [权限配置指南](#permission) 定义为下面方案，并在 string.json5 中补充自定义 `Reason_TRACKING` 文案。
 
 ```json
 {
@@ -648,7 +650,7 @@ uniPush 初始化时候需要读取 OAID，这对应 `ohos.permission.APP_TRACKI
 }
 ```
 
-这里举例鸿蒙位置定位的权限和如何设置，阅读 [鸿蒙 uni.getLocation 的权限配置](../../api/location/location.md#harmony-set-location)，这里详细描述了解每一个步骤如何操作。
+这里举例鸿蒙位置定位的权限和如何设置，阅读 [鸿蒙 uni.getLocation 的权限配置](../../api/location/location.md#harmony-set-location)，这里详细描述了每一个步骤如何操作。
 
 ### release 模式进入使用了组合式 api 的页面报错`Cannot read property route of undefined`@q11
 
@@ -673,7 +675,7 @@ uni-app/uni-app x 用户可参考 [uni-app 调试方案](#debug-mode) 进行调�
 
 ### Windows 系统中如何使用模拟器@q14
 
-目前下载 API19 模拟器即可运行 uni-app 鸿蒙项目和元服务，[点击下载](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448) DevEco5.1.1Beta 版本，低于低版本的模拟器不支持在 Wndows 平台运行模拟器。
+目前下载 API19 模拟器即可运行 uni-app 鸿蒙项目和元服务，[点击下载](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448) DevEco5.1.1Beta 版本，低于此版本的模拟器不支持在 Windows 平台运行模拟器。
 
 **在满足兼容性要求的前提下，如果要在 Windows 系统如使用模拟器则需要开启以下功能**
 
@@ -764,7 +766,7 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 
 当运行到鸿蒙时，在把打包后的 `.hap` 安装到设备上时可能会遇到这个报错。常见的原因是当前使用的设备 UUID 没有添加到签名用的 profile 文件中。
 
-推荐使用 nanifest.json 提供的 **自动申请调试证书** 进行一键更新。
+推荐使用 manifest.json 提供的 **自动申请调试证书** 进行一键更新。
 
 如果你是手动维护的证书，首先要 [注册调试设备](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-device-0000001946142249?ha_source=Dcloud&ha_sourceId=89000448)，
 然后 [申请调试 Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102?ha_source=Dcloud&ha_sourceId=89000448)
@@ -804,7 +806,7 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 
 应该在 `manifest.json` 的【鸿蒙配置】中设置正确的包名，具体要求请参考 [配置应用包名](https://developer.huawei.com/consumer/cn/doc/app/agc-help-createharmonyapp-0000001945392297?ha_source=Dcloud&ha_sourceId=89000448)
 
-### HBuilder X 升级至 `4.51` 后报错 `owns a higher api version or a higher sdkReleaseType compared to current compilation process.`
+### HBuilderX 升级至 `4.51` 后报错 `owns a higher api version or a higher sdkReleaseType compared to current compilation process.`
 
 需要在工程级的 `build-profile.json5` 的 `products` 字段（如果有多项都要配置）中配置 `compatibleSdkVersionStage: "beta6"` 后重新运行 [鸿蒙文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hvigor-build-profile-V5?ha_source=Dcloud&ha_sourceId=89000448)
 
@@ -837,9 +839,9 @@ kill -9 进程号
 
 ### 报错 `entry/src/main/ets/entrybackupability/EntryBackupAbility.ets does not exist.`
 
-这个模块 HBuilderX 目前不需要，说明你的 build-profile.json5 没有从 HBuilderX 工程的 unpackages 目录中读取，而是从 DevEco 新建工程里读取的，两者产生了差异。
+这个模块 HBuilderX 目前不需要，说明你的 build-profile.json5 没有从 HBuilderX 工程的 unpackage 目录中读取，而是从 DevEco 新建工程里读取的，两者产生了差异。
 
-解决方法：移除 harmony-configs 目录里的 build-profile.json5 ，重新启动并选择清除缓存重新操作，从 unpackages 目录中获取 build-profile.json5 文件放置到 harmony-configs 目录内。
+解决方法：移除 harmony-configs 目录里的 build-profile.json5 ，重新启动并选择清除缓存重新操作，从 unpackage 目录中获取 build-profile.json5 文件放置到 harmony-configs 目录内。
 
 ### 鸿蒙应用如何开发服务卡片 Widget？@widget
 
@@ -851,12 +853,12 @@ kill -9 进程号
 下面介绍如何开发基于 UI 的卡片，思路和原生开发一致，推荐在 DevEco 中完成卡片开发。
 
 - 打开 entry/src/build-profile.json5 文件
-- 选择 DevEco 的菜单 File - New - Service Widget - Dynamic Widget。如果没有找个选项，说明没有打开上面的文件
+- 选择 DevEco 的菜单 File - New - Service Widget - Dynamic Widget。如果没有这个选项，说明没有打开上面的文件
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/1f6ddb67-ef68-4d06-a9a4-5e75acd56180.png)
 
-- 选择 Hello World 模版
-- 在打开的 Configure Your Service Widget 选择 JS。如果没有请注意是不是选择的动态模版，元服务不支持开发 JS 范式卡片
+- 选择 Hello World 模板
+- 在打开的 Configure Your Service Widget 选择 JS。如果没有请注意是不是选择的动态模板，元服务不支持开发 JS 范式卡片
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/5016a987-a6a1-4630-bcb7-2c17f5130c66.png)
 
@@ -925,15 +927,15 @@ HBuilderX 4.81+ 在这种情况下会自动删除鸿蒙工程目录内的所有�
 
 鸿蒙和 iOS 一样不支持侧载，打包得到的 app 无法安装到任意用户的手机上。
 
-如果是内部需要测试，可以使用调试模式安装到指定的手机上进行测试。本地调试。把对应手机的 UUID 录入 AGC 证书中，然后手机开启开发者模式并链接电脑，在 HBuilderX 中选择运行。
+如果是内部需要测试，可以使用调试模式安装到指定的手机上进行测试。本地调试。把对应手机的 UUID 录入 AGC 证书中，然后手机开启开发者模式并连接电脑，在 HBuilderX 中选择运行。
 
-鸿蒙提供的类似 testFilight 白名单测试服务，访问 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) 找到 **APP - 应用测试 - 版本列表**，这里可以生成邀请链接，在白名单内的用户可以下载安装，这个过程也需要提交给华为做审核，对软件的完善程度有一定的要求，适合开发中后期内部测试。
+鸿蒙提供的类似 TestFlight 白名单测试服务，访问 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) 找到 **APP - 应用测试 - 版本列表**，这里可以生成邀请链接，在白名单内的用户可以下载安装，这个过程也需要提交给华为做审核，对软件的完善程度有一定的要求，适合开发中后期内部测试。
 
 完整测试方案，可参考鸿蒙文档 《[AGC 内部测试](https://developer.huawei.com/consumer/cn/doc/app/agc-help-internal-test-overview-0000002253054942)》。
 
 ### 鸿蒙如何设置 userAgent? 某些页面只针对 iOS/Android 做了兼容如何处理？
 
-在鸿蒙中，设置 userAgent 和 app-plus 配置相似，再 manifest.json 中设置 `app-harmony.useragent`，具体可参考 [鸿蒙 userAgent 配置](../collocation/manifest.md#app-harmony-useragent)。
+在鸿蒙中，设置 userAgent 和 app-plus 配置相似，在 manifest.json 中设置 `app-harmony.useragent`，具体可参考 [鸿蒙 userAgent 配置](../../collocation/manifest.md#app-harmony-useragent)。
 
 有些移动端网页是检测的 userAgent 来判断是否为 mobile 机型，进而展示移动端适配页面，判断规则中可能缺少判断，这种情况下可参考这个帖子进行兼容。[经验分享 鸿蒙通过 WebView 打开页面渲染成桌面 pc 模式怎么办？](https://ask.dcloud.net.cn/article/42109)
 
@@ -988,9 +990,9 @@ export const requestSystemPermission = () => {
 
 后续会针对性优化。
 
-### 自动申请调试证书是总是检测不到设备怎么办？@device-not-found
+### 自动申请调试证书时总是检测不到设备怎么办？@device-not-found
 
-自动申请调试证书是总是检测不到设备怎么办？设备已经加到 AGC 中了。 25 年 12 月开始，华为调整了查询设备信息的接口，影响了现有代码处理逻辑。两个处理方案：使用手动签名或者调整代码做兼容。
+自动申请调试证书时总是检测不到设备怎么办？设备已经加到 AGC 中了。 25 年 12 月开始，华为调整了查询设备信息的接口，影响了现有代码处理逻辑。两个处理方案：使用手动签名或者调整代码做兼容。
 
 在 HBuilderX 安装目录找到 `plugins/launcher/out/main.js` 文件，查找和替换下面文件
 
@@ -1003,7 +1005,7 @@ i=t.shift(),r=t.pop()||i
 
 ### 鸿蒙付费插件云打包说明
 
-目前 uni-app x 已支持付费鸿蒙 uts 插件，用户可通过 uts 插件试用功能进行体验。云打包相关版本参数目前为 `ommandline-tools-linux-x64-5.0.13.220`。
+目前 uni-app x 已支持付费鸿蒙 uts 插件，用户可通过 uts 插件试用功能进行体验。云打包相关版本参数目前为 `commandline-tools-linux-x64-5.0.13.220`。
 
 ### 我可以使用最新版本 API21 的 API 吗，有多大比例用户升级到鸿蒙 6 了？
 

@@ -7,7 +7,7 @@ App平台提供了更多通讯录相关API，包括读取联系人，详见：[h
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|x|x|√|x|1.0.4+|x|
+|√|x|√|√|√|x|x|√|x|√|x|
 
 <!-- UNIAPPAPIJSON.addPhoneContact.compatibility -->
 
@@ -81,5 +81,5 @@ uni.addPhoneContact({
 ::: warning 注意
 - 手机OS对通讯录访问有严格的权限限制和要求。在小程序中使用时，需注意微信等小程序载体本身已经获得了手机端的授权许可。App端获取通讯录相关权限，参考[https://ext.dcloud.net.cn/plugin?id=594](https://ext.dcloud.net.cn/plugin?id=594)
 - 打包App时，云打包则需要在manifest中配置权限和模块，离线打包需自行在原生工程中配置。
-- `HarmonyOS Next` 平台使用时需要添加受限开放权限 [ohos.permission.WRITE_CONTACTS](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/restricted-permissions-V5#section31629267196?ha_source=Dcloud&ha_sourceId=89000448)
+- `HarmonyOS Next` 平台使用时需要添加受限开放权限 [ohos.permission.WRITE_CONTACTS](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/restricted-permissions?ha_source=Dcloud&ha_sourceId=89000448)
 :::

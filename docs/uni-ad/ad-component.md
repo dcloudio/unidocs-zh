@@ -14,6 +14,7 @@ Banner或信息流广告展现场景非常灵活，常见的展现场景为：�
 - App端的广告源由腾讯优量汇、头条穿山甲、快手广告联盟等主流广告渠道以及部分DCloud直投广告组成，在DCloud的uni-ad后台注册：[https://uniad.dcloud.net.cn/](https://uniad.dcloud.net.cn/)
 - H5端、微信小程序端的广告由DCloud直接提供
 - 其他小程序端由小程序平台提供
+- 鸿蒙平台已经集成了鸿鲸广告，不过因鸿蒙填充率较低，线上版本暂不支持。可使用条件编译临时规避，使用 `#ifndef APP-HARMONY` 进行规避。如果需要可以单独对接，可在 [uni-ad](https://uniad.dcloud.net.cn/home) 找到 uni-im 交流群沟通。
 
 **平台差异说明**
 
@@ -85,7 +86,7 @@ uni-ad 也支持信息流(Banner)广告组件 `<ad adpid=""></ad>`，由uni-ad�
 
 `uniad`是`uni-app`框架的内置的组件，`uniad`组件同时支持`uni-ad`广告和微信原生广告，先请求`uni-ad`，如果已开通直接使用否则切换为微信的广告，这个过程会有3秒的延时
 
-`uniad`组件依赖uni-ad提供的微信小程序插件和腾讯提供的珊瑚广告插件
+`uniad`组件依赖uni-ad提供的微信小程序插件
 
 如果想在微信上仅使用微信的广告，App 或 Web 使用 uni-ad 可使用条件编译
 
@@ -105,6 +106,7 @@ uni-ad 也支持信息流(Banner)广告组件 `<ad adpid=""></ad>`，由uni-ad�
 - `<ad>` 组件是原生组件，在webview页面会有层级问题，同时无法在`<swiper>` 、`<scroll-view>` 组件中使用。但app-nvue、微信小程序新版和头条小程序新版支持同层渲染，所以没有层级问题。而app-vue、QQ小程序等平台则有层级问题。详见：[原生组件](https://uniapp.dcloud.io/component/native-component)
 - 无广告时没有高度，关闭广告时释放高度，宽度由父容器决定
 - App 平台，因广告组件内部获得广告数据计算后设置组件大小，会出现界面抖动问题，可以提前通过 plus.ad.getAds 获得广告数据，设置 data 后 adpid 将无效
+- 微信小程序 `<ad>` 组件不允许直接设置宽高，可以在外层包一个view，Banner的默认宽度是100%，最小宽度限制是300px
 - 微信小程序 `<ad>` 组件不支持触发 tap 等触摸相关事件
 - Android 平台 nvue的 `<list>` 组件中使用 `<ad>` 时，必须指定宽度属性`<ad width="750rpx" />`，因为 `<list>` 有自动的内存回收机制，不在屏幕范围的组件不被创建，组件内部无法获取大小
 - app-nvue 的 `<recycle-list>` 组件内不支持嵌套 `<ad>`
@@ -294,8 +296,6 @@ export default {
 **激励视频广告**
 文档地址：[https://uniapp.dcloud.io/uni-ad/ad-rewarded-video](https://uniapp.dcloud.io/uni-ad/ad-rewarded-video)
 
-**全屏视频广告**
-文档地址：[https://uniapp.dcloud.io/uni-ad/ad-fullscreen-video](https://uniapp.dcloud.io/uni-ad/ad-fullscreen-video)
 
 **插屏广告**
 文档地址：[https://uniapp.dcloud.io/uni-ad/ad-interstitial](https://uniapp.dcloud.io/uni-ad/ad-interstitial)

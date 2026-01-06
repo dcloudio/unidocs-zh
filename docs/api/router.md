@@ -73,6 +73,7 @@ onLoad: function(option) {
   eventChannel.emit('acceptDataFromOpenedPage', {data: 'data from test page'});
   eventChannel.emit('someEvent', {data: 'data from test page for someEvent'});
   // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
+  // 注意在 onUnload 取消监听，避免监听常驻内存
   eventChannel.on('acceptDataFromOpenerPage', function(data) {
     console.log(data)
   })
@@ -100,12 +101,14 @@ vue3 `script setup` 语法糖中调用 `getOpenerEventChannel` 示例：
       data: 'data from test page for someEvent'
     });
 
+    // 在 onUnmounted 取消监听
     eventChannel.on('acceptDataFromOpenerPage', function(data) {
       console.log('acceptDataFromOpenerPage', data)
     })
   })
 </script>
 ```
+
 
 url有长度限制，太长的字符串会传递失败，可改用[窗体通信](https://uniapp.dcloud.io/collocation/frame/communication)、[全局变量](https://ask.dcloud.net.cn/article/35021)，另外参数中出现空格等特殊字符时需要对参数进行编码，如下为使用`encodeURIComponent`对参数进行编码的示例。
 ```html

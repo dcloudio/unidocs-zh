@@ -21,7 +21,7 @@ uni-app在Android和iOS平台，支持uts插件和App原生语言插件。目前
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/1720150080112op9li2g0i1o.png)
 
-2. 插件名称为 `uni-openAppProduct`（注意，开发者自己创建时，不可以使用 `uni-` 开头，应以自己名字或昵称的缩写命令，如：`wq-openAppProduct`
+2. 插件名称为 `uni-openAppProduct`（注意，开发者自己创建时，不可以使用 `uni-` 开头，应以自己名字或昵称的缩写命名，如：`wq-openAppProduct`
 3. 修改插件根目录的 `package.json` 中的 `uni_modules` 节点，新增如下配置，`arkts` 为 true 代表支持鸿蒙
 
 **注意：下方的属性名中包含的 `uni` 请勿更改成自己的名字或昵称缩写，只能用 `uni`**
@@ -304,7 +304,7 @@ export function openAppProduct(options : OpenAppProductOptions) {
 
 > 新增于HBuilderX 4.25
 
-鸿蒙的包用法和npm包差不多，在鸿蒙项目里面用ohpm安装三方库后，在 `/uni_modules/uts插件名/utssdk/app-harmony/index.uts` 内即可直接 import
+鸿蒙的包用法和 npm 包差不多，在鸿蒙项目里面用ohpm安装三方库后，在 `/uni_modules/uts插件名/utssdk/app-harmony/index.uts` 内即可直接 import
 
 注意：只能在满足uts插件 `/uni_modules/*/utssdk/app-harmony/*.uts` 的文件下使用，无法直接在项目的pages中使用
 

@@ -2,7 +2,7 @@
 
 > HBuilder X 3.6.9+ 支持
 
-暗黑模式（Dark Mode），也被称为夜间模式或深色模式，是一种高对比度，或者反色模式的显示模式。是一种有利于在黑暗环境下观看手机的高对比度的模式。uni-app的暗黑模式，是帮助开发者完成自己应用的暗黑模式的一批配置和API。开发者可以参考本文实现自己应用的暗黑模式。
+暗黑模式（Dark Mode），也被称为夜间模式或深色模式，是一种高对比度，或者反色模式的显示模式。是一种有利于在黑暗环境下观看手机的高对比度的模式。uni-app 的暗黑模式，是帮助开发者完成自己应用的暗黑模式的一批配置和 API。开发者可以参考本文实现自己应用的暗黑模式。
 
 > 插件市场示例项目：[https://ext.dcloud.net.cn/plugin?name=hello-darkmode](https://ext.dcloud.net.cn/plugin?name=hello-darkmode)
 
@@ -25,38 +25,79 @@
    		"themeLocation" : "theme.json" // 如果 theme.json 在根目录可省略
     }
    ```
-#### iOS 安全区域适配
+
+#### iOS 底部安全区域及安全区域外适配
 
 - 开启安全区域占位
 
   > 在 manifest.json 文件的 "app-plus" 节点下添加 "safearea" 适配 iOS 的安全区域，"background" 对应正常模式下安全区域外的背景颜色，"backgroundDark"对应暗黑模式下安全区域外的背景颜色
 
-	```json
-	"app-plus" : {
-		"safearea": { //iOS平台的安全区域
-			"background": "#ffffff",
-			"backgroundDark": "#2f0508", // HX 3.1.19+支持
-			"bottom": {
-				"offset": "auto"
-			}
-		}
-	}
-	```
+  ```json
+  "app-plus" : {
+  	"safearea": { //iOS平台的安全区域
+  		"background": "#ffffff",
+  		"backgroundDark": "#2f0508", // HX 3.1.19+支持
+  		"bottom": {
+  			"offset": "none" // 在没有 tabBar 时，底部区域是否需要占位
+  		}
+  	}
+  }
+  ```
 
 - 关闭安全区域占位
+
   > 将 "offset" 置为 “none” 关闭安全区域的占位，注：关闭安全区域占位在刘海屏页面内容可能会被 “homeBar” 挡住，需要自行适配，具体请参考文档 [iOS 刘海屏适配](https://ask.dcloud.net.cn/article/35564)
 
-	```json
-	"safearea": {
-			"bottom": {
-					"offset": "none"
-			}
-	}
-	```
+  ```json
+  "safearea": {
+  		"bottom": {
+  				"offset": "none"
+  		}
+  }
+  ```
 
 **注意：**
-- `iOS 13+`、`Android 10+`设备上才支持
+
+- `iOS 13+`、`Android 10+` 设备上才支持
 - 需要云端打包生效
+
+### app-harmony
+
+> HBuilder X 5.0+ 支持
+
+在 `manifest.json -> app-harmony` 中配置：
+
+1. 配置 `darkmode:true`
+2. 配置 `themeLocation`，指定变量配置文件 `theme.json` 路径，例如：在根目录下新增 `theme.json`，需要配置 `"themeLocation":"theme.json"`
+3. 在 `theme.json` 中定义相关变量
+4. 在 `pages.json` 中以@开头引用变量
+5. 整体配置
+   ```json
+    "app-harmony" : {
+   		"darkmode" : true,
+   		"themeLocation" : "theme.json" // 如果 theme.json 在根目录可省略
+    }
+   ```
+
+#### 底部安全区域及安全区域外适配
+
+> 如果在关闭页面时，在页面即将关闭时闪过一条白色，可以通过配置 backgroundDark 解决
+
+- 安全区域配置
+
+  > 在 manifest.json 文件的 "app-harmony" 节点下添加 "safearea" 适配 HarmonyOS 的安全区域，"background" 对应正常模式下安全区域外的背景颜色，"backgroundDark"对应暗黑模式下安全区域外的背景颜色
+
+  ```json
+  "app-harmony" : {
+  	"safearea": { // HarmonyOS 平台的安全区域
+  		"background": "#ffffff",
+  		"backgroundDark": "#2f0508",
+  		"bottom": {
+  			"offset": "none" // 在没有 tabBar 时，底部区域是否需要占位
+  		}
+  	}
+  }
+  ```
 
 ### h5
 
@@ -123,14 +164,14 @@
 
 ```json
 {
-	"light": {
-		"navBgColor": "#f8f8f8",
-		"navTxtStyle": "black"
-	},
-	"dark": {
-		"navBgColor": "#292929",
-		"navTxtStyle": "white"
-	}
+  "light": {
+    "navBgColor": "#f8f8f8",
+    "navTxtStyle": "black"
+  },
+  "dark": {
+    "navBgColor": "#292929",
+    "navTxtStyle": "white"
+  }
 }
 ```
 
@@ -162,69 +203,73 @@ pages.json（示例省略了主题相关以外的配置项）
 
 ```json
 {
-	"globalStyle": {
-		"navigationBarBackgroundColor": "@navBgColor",
-		"navigationBarTextStyle": "@navTxtStyle",
-		"backgroundColor": "@bgColor",
-		"backgroundTextStyle": "@bgTxtStyle",
-		"backgroundColorTop": "@bgColorTop",
-		"backgroundColorBottom": "@bgColorBottom"
-	},
-	"tabBar": {
-		"color": "@tabFontColor",
-		"selectedColor": "@tabSelectedColor",
-		"backgroundColor": "@tabBgColor",
-		"borderStyle": "@tabBorderStyle",
-		"list": [
-			{
-				"iconPath": "@iconPath1",
-				"selectedIconPath": "@selectedIconPath1"
-			},
-			{
-				"iconPath": "@iconPath2",
-				"selectedIconPath": "@selectedIconPath2"
-			}
-		]
-	}
+  "globalStyle": {
+    "navigationBarBackgroundColor": "@navBgColor",
+    "navigationBarTextStyle": "@navTxtStyle",
+    "backgroundColor": "@bgColor",
+    "backgroundTextStyle": "@bgTxtStyle",
+    "backgroundColorTop": "@bgColorTop",
+    "backgroundColorBottom": "@bgColorBottom"
+  },
+  "tabBar": {
+    "color": "@tabFontColor",
+    "selectedColor": "@tabSelectedColor",
+    "backgroundColor": "@tabBgColor",
+    "borderStyle": "@tabBorderStyle",
+    "list": [
+      {
+        "iconPath": "@iconPath1",
+        "selectedIconPath": "@selectedIconPath1"
+      },
+      {
+        "iconPath": "@iconPath2",
+        "selectedIconPath": "@selectedIconPath2"
+      }
+    ]
+  }
 }
 ```
+
+**Tips**
+
+* 如果你的目标平台不只有微信小程序，需要先确认其他小程序是否支持暗黑模式，如果不支持，`globalStyle` 和 `tabBar` 的相关配置要写条件编译
 
 theme.json
 
 ```json
 {
-	"light": {
-		"navBgColor": "#f8f8f8",
-		"navTxtStyle": "black",
-		"bgColor": "#ffffff",
-		"bgTxtStyle": "light",
-		"bgColorTop": "#eeeeee",
-		"bgColorBottom": "#efefef",
-		"tabFontColor": "#000000",
-		"tabSelectedColor": "#3cc51f",
-		"tabBgColor": "#ffffff",
-		"tabBorderStyle": "black",
-		"iconPath1": "/static/icon1_light.png",
-		"selectedIconPath1": "/static/selected_icon1_light.png",
-		"iconPath2": "/static/icon2_light.png",
-		"selectedIconPath2": "/static/selected_icon2_light.png"
-	},
-	"dark": {
-		"navBgColor": "#292929",
-		"navTxtStyle": "white",
-		"bgColor": "#1f1f1f",
-		"bgTxtStyle": "dark",
-		"bgColorTop": "#292929",
-		"bgColorBottom": "#1f1f1f",
-		"tabFontColor": "#ffffff",
-		"tabSelectedColor": "#51a937",
-		"tabBgColor": "#292929",
-		"tabBorderStyle": "white",
-		"iconPath1": "/static/icon1_dark.png",
-		"selectedIconPath1": "/static/selected_icon1_dark.png",
-		"iconPath2": "/static/icon2_dark.png",
-		"selectedIconPath2": "/static/selected_icon2_dark.png"
-	}
+  "light": {
+    "navBgColor": "#f8f8f8",
+    "navTxtStyle": "black",
+    "bgColor": "#ffffff",
+    "bgTxtStyle": "light",
+    "bgColorTop": "#eeeeee",
+    "bgColorBottom": "#efefef",
+    "tabFontColor": "#000000",
+    "tabSelectedColor": "#3cc51f",
+    "tabBgColor": "#ffffff",
+    "tabBorderStyle": "black",
+    "iconPath1": "/static/icon1_light.png",
+    "selectedIconPath1": "/static/selected_icon1_light.png",
+    "iconPath2": "/static/icon2_light.png",
+    "selectedIconPath2": "/static/selected_icon2_light.png"
+  },
+  "dark": {
+    "navBgColor": "#292929",
+    "navTxtStyle": "white",
+    "bgColor": "#1f1f1f",
+    "bgTxtStyle": "dark",
+    "bgColorTop": "#292929",
+    "bgColorBottom": "#1f1f1f",
+    "tabFontColor": "#ffffff",
+    "tabSelectedColor": "#51a937",
+    "tabBgColor": "#292929",
+    "tabBorderStyle": "white",
+    "iconPath1": "/static/icon1_dark.png",
+    "selectedIconPath1": "/static/selected_icon1_dark.png",
+    "iconPath2": "/static/icon2_dark.png",
+    "selectedIconPath2": "/static/selected_icon2_dark.png"
+  }
 }
 ```
 
@@ -250,21 +295,21 @@ theme.json
 ```css
 /* 一般情况下的样式 start */
 .some-background {
-	background: white;
+  background: white;
 }
 .some-text {
-	color: black;
+  color: black;
 }
 /* 一般情况下的样式 end */
 
 @media (prefers-color-scheme: dark) {
-	/* DarkMode 下的样式 start */
-	.some-background {
-		background: #1b1b1b;
-	}
-	.some-text {
-		color: #ffffff;
-	}
-	/* DarkMode 下的样式 end */
+  /* DarkMode 下的样式 start */
+  .some-background {
+    background: #1b1b1b;
+  }
+  .some-text {
+    color: #ffffff;
+  }
+  /* DarkMode 下的样式 end */
 }
 ```

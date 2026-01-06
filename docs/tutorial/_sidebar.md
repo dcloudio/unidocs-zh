@@ -114,6 +114,7 @@
   - App 应用市场上架
     - [概述](store.md)
     - [国内应用市场上架](android-store.md)
+    - [Android 16KB页面大小适配](android-16kb.md)
     - [Android 平台隐私与政策提示框](app-privacy-android.md)
     - [未同意隐私政策模式运行](app-disagreemode.md)
     - [Google Play 上架](android-gp.md)
@@ -145,6 +146,7 @@
   - [鸿蒙元服务使用华为支付](./mp-harmony/payment.md)
 - 小程序专题
   - [组件与 WXS](miniprogram-subject.md)
+  - [分包异步化](miniprogram-subcontract-asynchrony.md)
   - [使用小程序插件](mp-weixin-plugin.md)
   - [开发小程序插件](mp-weixin-plugin-dev.md)
   - [一键上传微信平台](build/publish-mp-weixin-cli.md)

@@ -82,4 +82,4 @@ uni.vibrateShort({
 **注意**
 - iOS上只有长震动，没有短震动
 - iOS上需要手机设置“打开响铃时震动”或“静音时震动”，否则无法震动
-- vibrate只适用于钉钉小程序、支付宝小程序
+- vibrate只适用于钉钉小程序、支付宝小程序，参考[官方文档](https://opendocs.alipay.com/mini-game/354018c8_my.vibrate?pathHash=8a718fa1)

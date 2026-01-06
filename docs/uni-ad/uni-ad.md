@@ -15,6 +15,7 @@
 - H5 端的广告源由百度、DCloud 直投广告聚合组成
 - 微信小程序端的广告源由 DCloud 代理腾讯广告和部分 DCloud 直投广告聚合组成。同时微信小程序端也支持微信自带的广告。uni-ad 自营广告有更低的开通门槛
 - 其他小程序端由小程序平台提供，不在 uni-ad 后台注册，而在这些小程序自身的平台注册
+- 鸿蒙平台已经集成了鸿鲸广告，不过因鸿蒙填充率较低，线上版本暂不支持。可使用条件编译临时规避，使用 `#ifndef APP-HARMONY` 进行规避。如果需要可以单独对接，可在 [uni-ad](https://uniad.dcloud.net.cn/home) 找到 uni-im 交流群沟通。
 
 ## 微信小程序广告专题
 
@@ -73,7 +74,5 @@ HBuilder 3.6.7+ 或原生广告 SDK 5.0.0+版本 uni-ad 开屏、信息流、激
 - [插屏广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)
 - [沉浸视频流广告](https://uniapp.dcloud.net.cn/uni-ad/ad-draw.html)
 - [短视频内容联盟组件](https://uniapp.dcloud.net.cn/uni-ad/ad-content-page.html)
-- [互动广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interactive.html)
-- [互动游戏](https://uniapp.dcloud.net.cn/uni-ad/interactive.html)
 
 更多信息参考 [uni-ad 广告联盟](https://uniad.dcloud.net.cn)

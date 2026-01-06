@@ -1,19 +1,19 @@
 # 内置模块说明
 
-> [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)
+> [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)
 
-## harmonyOS特性说明
+## HarmonyOS 特性说明
 
-### map组件及定位等api
+### map 组件及定位等 API
 
-> 新增于HBuilderX 4.26，仅4.31之前的版本使用下面的配置方式，4.31及之后的版本请在manifest.json可视化界面配置。
+> 新增于 HBuilderX 4.26，仅 4.31 之前的版本使用下面的配置方式，4.31 及之后的版本请在 manifest.json 可视化界面配置。
 
-map组件、getLocation、openLocation、chooseLocation依赖于地图厂商。目前仅支持腾讯地图，且此界面上显示的地图是通过webview加载的。由于目前页面使用的并非http协议，因此在申请腾讯地图key时需要将域名白名单留空以便地图能正确加载出来。后续在harmonyOS上页面会调整成以http方式加载，到时可以在腾讯地图控制台配置域名白名单。
+map 组件、getLocation、openLocation、chooseLocation 依赖于地图厂商。目前仅支持腾讯地图，且此界面上显示的地图是通过 WebView 加载的。由于目前页面使用的并非 http 协议，因此在申请腾讯地图 key 时需要将域名白名单留空以便地图能正确加载出来。后续在 HarmonyOS 上页面会调整成以 http 方式加载，到时可以在腾讯地图控制台配置域名白名单。
 
-在uni-app项目内配置腾讯地图key：
+在 uni-app 项目内配置腾讯地图 key：
 
-1. 以源码方式打开项目manifest.json
-2. 在manifest.json内放入如下内容：
+1. 以源码方式打开项目 manifest.json
+2. 在 manifest.json 内放入如下内容：
 
 ```json5
 {
@@ -36,14 +36,14 @@ map组件、getLocation、openLocation、chooseLocation依赖于地图厂商。�
 }
 ```
 
-### webview组件通讯
+### WebView 组件通讯
 
-在编译到鸿蒙时，plus对象不可用。如果要向webview发送消息，可以使用[WebviewContext的evalJs](https://doc.dcloud.net.cn/uni-app-x/api/create-webview-context.html)，注意此方案来源于uni-app-x，非uni-app-x仅鸿蒙支持。
+在编译到鸿蒙时，plus 对象不可用。如果要向 WebView 发送消息，可以使用 [WebviewContext 的 evalJs](https://doc.dcloud.net.cn/uni-app-x/api/create-webview-context.html)，注意此方案来源于 uni-app-x，仅鸿蒙支持。
 
 示例如下：
 
 ```js
-// uni-app页面
+// uni-app 页面
 <template>
   <view class="content">
     <web-view id="web" @message="onMessage" src="/static/index.html"></web-view>
@@ -109,7 +109,7 @@ map组件、getLocation、openLocation、chooseLocation依赖于地图厂商。�
 ```
 
 ```html
-<!-- webview内的html -->
+<!-- webview 内的 html -->
 <!DOCTYPE html>
 <html lang="zh">
   <head>

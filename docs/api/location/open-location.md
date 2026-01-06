@@ -54,6 +54,7 @@ uni.getLocation({
 - H5 端使用地图和定位相关，需要在 [manifest.json](/collocation/manifest?id=h5sdkconfig) 内配置腾讯或谷歌等三方地图服务商申请的秘钥（key）。
 - iOS端 如需使用第三方地图进行导航，需要在 manifest.json 文件内增加 ``urlschemewhitelist`` 节点，在线打包即可
 - 不同平台打开的地图不一样，App端是高德地图（不支持百度地图）、H5端是腾讯地图或谷歌地图、微信小程序端是腾讯地图、百度小程序是百度地图、阿里小程序是高德地图、抖音小程序是高德地图。
+- App 端点击导航会弹出导航选项，如果当前用户手机没有安装高德、百度、腾讯、谷歌等地图时候，会兜底展示网页版地图导航，保证功能可用。展示选项和用户手机安装情况有关，和开发者 mianfest.json 无关
 
 ```json
 {
@@ -76,7 +77,5 @@ uni.getLocation({
 ## 三方定位和地图服务收费说明
 
 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
-
-DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用介绍、HBuilder账户）；你也可以直接通过`uni-im`发起在线咨询，在线咨询地址：[DCloud地图服务专员](https://im.dcloud.net.cn/#/?user_id=b9839630-a479-11ea-b772-0f6ad6cf835c)。
 
 详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)

@@ -2,7 +2,8 @@
 
 插屏广告组件是由客户端原生的图片、文本、视频控件组成的；插屏广告与信息流或横幅广告相比展现尺寸更大，同样能够满足您对大量曝光和用户转化的需求。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/interstitial-ad.png)
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/interstitial-ad.png" style="max-width: 300px; max-height: 50vh;" />
+
 ### 各广告渠道差异说明
 | 广告铺开大小 |   优量汇    |    快手     | 穿山甲 | 百度 | sigmob | 华为 | 章鱼 | 泛连  | 华夏乐游 |
 |:------:|:--------:|:---------:|:---:|:--:|:------:|:--:|:--:|:---:|:---:|

@@ -682,7 +682,7 @@ map组件、getLocation、openLocation、chooseLocation依赖于地图厂商。�
 
 ### 鸿蒙DevEco Studio如何开启热重载@q4
 
-虽然鸿蒙官方文档提供了如何开启热重载，详见[文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-hot-reload-0000001527628941-V5?ha_source=Dcloud&ha_sourceId=89000448)，但目前只能针对ets文件的修改进行热更，还无法针对uniapp打包的js文件进行热更。
+虽然鸿蒙官方文档提供了如何开启热重载，详见[文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hot-reload-0000001527628941-V5?ha_source=Dcloud&ha_sourceId=89000448)，但目前只能针对ets文件的修改进行热更，还无法针对uniapp打包的js文件进行热更。
 
 ### 如何查看console打印的日志@q5
 

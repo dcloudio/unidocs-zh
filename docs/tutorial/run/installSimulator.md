@@ -38,6 +38,42 @@ iOS模拟器和真机使用不同的CPU架构，部分模块依赖的三方SDK�
 - 直播推流（live-pusher）  
 直播推流功能是基于又拍云的推流SDK实现，又拍云的SDK不支持iOS模拟器，标准基座模拟器版本无法运行直播推流相关功能，请使用真机运行体验此功能。
 
+### 运行App到iOS26模拟器，应用安装失败@ios-app-install-failed
+在部分 `M系列芯片` 的MAC上，如果macos系统升级到了macos26及以上，xcode升到到了xcode26及以上时，运行App到iOS26模拟器时可能会出现应用安装失败的问题
+
+- 表现：模拟器被拉起，但是应用安装失败，系统弹窗提示：‘HBuilder’需要更新，此App需要开发者更新以在此iOS版本上运行。
+- 原因：自xcode26 和 iOS26起，xcode默认下载的模拟器包是 `arm64Only` 版本的，也就是仅支持arm64架构的应用，而 uni-app 以及 uni-app-x 的模拟器安装包 `仅支持 x86_64 架构`，架构不匹配导致安装失败。
+
+解决方案：
+1、删除现有安装的 iOS26 模拟器
+
+- 删除方式：xcode -> Settings -> Components -> 选中iOS26模拟器右侧的按钮，点击删除
+
+<img src="https://web-ext-storage.dcloud.net.cn/doc/uniapp/xcode_delete_simulator.png" style="zoom: 50%" />
+
+删除后可以在终端执行命令 `xcrun simctl list runtimes` 查看是否还有 iOS26 模拟器，如果结果列有 Shutdown 等不可用的模拟器，则可以在终端执行命令 `xcrun simctl delete unavailable` 删除它们。
+
+
+```js
+== Devices ==
+-- iOS 18.0 --
+    iPhone 15 Pro Max (F4E8DFAE-...) (Shutdown)
+-- Unavailable: com.apple.CoreSimulator.SimRuntime.iOS-18-0 (arm64Only) --
+    iPhone 14 (ABC12345-...) (Shutdown) (unavailable, runtime profile not found)
+```
+
+
+
+2、安装新的 `universal` 格式的 iOS26 模拟器
+
+- 安装方式： 在终端执行命令 `xcodebuild -downloadPlatform iOS -architectureVariant universal` 
+- 命令执行后将在终端下载模拟器，该文件较大（10G），注意不要关闭终端。
+- 执行上述安装命令后，如果终端提示 `No needed downloadables found for universal` 说明 `arm64Only` 格式的模拟器没有被删除成功，请先确保旧模拟器被成功删除。
+
+新的模拟器下载成功后，重启 xcode 应用 和模拟器应用，重启 HX，将应用重新运行到模拟器，注意点击重新运行前请先点击更新模拟器列表。新的模拟器被拉起后，可以看到，应用能够被正常安装了。
+
+
+
 ## Android模拟器@android
 
 市场上有很多成熟的Android模拟器，这里就不推荐了，自行搜索安装。

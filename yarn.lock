@@ -5537,6 +5537,11 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.npmmirror.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
+highlight.js@^11.11.1:
+  version "11.11.1"
+  resolved "https://registry.npmmirror.com/highlight.js/-/highlight.js-11.11.1.tgz#fca06fa0e5aeecf6c4d437239135fabc15213585"
+  integrity sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==
+
 highlight.js@^9.7.0:
   version "9.18.5"
   resolved "https://registry.npmmirror.com/highlight.js/-/highlight.js-9.18.5.tgz#d18a359867f378c138d6819edfc2a8acd5f29825"
@@ -6659,6 +6664,11 @@ markdown-it-task-lists@^2.1.1:
     linkify-it "^4.0.1"
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
+
+marked@^3.0.8:
+  version "3.0.8"
+  resolved "https://registry.npmmirror.com/marked/-/marked-3.0.8.tgz#2785f0dc79cbdc6034be4bb4f0f0a396bd3f8aeb"
+  integrity sha512-0gVrAjo5m0VZSJb4rpL59K1unJAMb/hm8HRXqasD8VeC8m91ytDPMritgFSlKonfdt+rRYYpP/JfLxgIX8yoSw==
 
 md5.js@^1.3.4:
   version "1.3.5"
@@ -9753,6 +9763,11 @@ vuepress-plugin-named-chunks@^1.1.4:
   resolved "https://registry.npmmirror.com/vuepress-plugin-named-chunks/-/vuepress-plugin-named-chunks-1.1.4.tgz#c65e121a8d0bbb4201766ec06816a2aa67dae3b7"
   integrity sha512-zCRVmbf10VAf8NcrVLlm1b6eGU3vkc/iLVNvpIL3sBvtCCVaZheT2OlaV0CMPE6OjjTYbMrYXjugu4vcpiXrNQ==
 
+vuepress-plugin-noscript-code@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-noscript-code/-/vuepress-plugin-noscript-code-1.0.2.tgz#a3bac0fad38d0f08b8d19f62ced767a616cec98c"
+  integrity sha512-bK7xWxYjghm8oVECnIeppSkRxcC7FMmtJ8/9H4ssx3hVf3LcHXwjk69IWemlvHYZ2++HIe8Kr8FzRocrqECVow==
+
 vuepress-plugin-smooth-scroll@^0.0.3:
   version "0.0.3"
   resolved "https://registry.npmmirror.com/vuepress-plugin-smooth-scroll/-/vuepress-plugin-smooth-scroll-0.0.3.tgz#6eff2d4c186cca917cc9f7df2b0af7de7c8c6438"
@@ -9767,24 +9782,27 @@ vuepress-plugin-zooming@^1.1.8:
   dependencies:
     zooming "^2.1.1"
 
-vuepress-theme-uniapp-official@^1.4.39:
-  version "1.4.39"
-  resolved "https://registry.npmmirror.com/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.4.39.tgz#f4477d75dce88cb430ced6c4346119d050ea4c30"
-  integrity sha512-p/JdlCbfNT2deTXisDCoEHAbIqgdKi7THHdNozyGEOlcCtSapmsSUbcLSQNsP5IHZfIdTrrLYLDLC6wiGsuIGw==
+vuepress-theme-uniapp-official@1.6.15:
+  version "1.6.15"
+  resolved "https://registry.npmjs.org/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.6.15.tgz#e8beb7158cac89be97e0785177f606299e081ff5"
+  integrity sha512-EHIVt4jufJ8m/3BwSDHHSvCjEtDsaxT2Y2hboqin5GWiIZIDBuH5tlrlsm56f7zGRq6zq6ENOIJ0WotOet2R/Q==
   dependencies:
     "@docsearch/css" "^3.6.0"
     "@vuepress/plugin-back-to-top" "^1.9.5"
     algoliasearch "^4.13.1"
     clipboard "^2.0.11"
+    highlight.js "^11.11.1"
     markdown-it-attrs "^4.1.6"
     markdown-it-raw-table "^1.0.0"
     markdown-it-task-lists "^2.1.1"
+    marked "^3.0.8"
     qr-code-with-logo "^1.1.0"
     vuepress-plugin-check-md2 "^1.0.5"
     vuepress-plugin-expandable-row "^1.0.10"
     vuepress-plugin-juejin-style-copy "^1.0.4"
     vuepress-plugin-mermaidjs "1.9.1"
     vuepress-plugin-named-chunks "^1.1.4"
+    vuepress-plugin-noscript-code "^1.0.2"
     vuepress-plugin-zooming "^1.1.8"
 
 vuepress@1.9.9:

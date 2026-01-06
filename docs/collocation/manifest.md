@@ -239,7 +239,7 @@ webview示例
 
 ### app-harmony
 
-鸿蒙应用项目设置，目前只支持一个 `distribute` 属性，其值为一个 `Object` 对象：
+鸿蒙应用项目设置，支持 `distribute` 属性，其值为一个 `Object` 对象：
 
 |属性|类型|说明|
 |:-|:-|:-|
@@ -248,6 +248,7 @@ webview示例
 |icons|Object|应用图标|
 |splashScreens|Object|启动界面配置|
 |modules|Object|模块配置|
+|useragent|Object|配置 UserAgent|
 
 #### signingConfigs 证书签名配置@app-harmony-signingConfigs
 
@@ -290,6 +291,17 @@ webview示例
 |uni-oauth|Object|设置登录鉴权模块相关参数|
 |uni-payment|Object|设置支付模块相关参数|
 |uni-share|Object|设置分享模块相关参数|
+
+#### useragent@app-harmony-useragent
+
+|属性|类型|说明|
+|:-|:-|:-|
+|value|String|可选，JSON对象，应用UserAgent相关配置，默认值为系统UserAgent|
+|concatenate|Boolean|可选，Boolean类型，是否将value值作为追加值连接到系统默认userAgent值之后|
+
+#### 其它支持的属性
+
+- safearea
 
 ### h5
 
@@ -521,6 +533,10 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |lazyCodeLoading|String| 目前仅支持值 requiredComponents，代表开启小程序[按需注入](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|
 |nativeTags|Array| 微信小程序平台的原生组件 (4.81+)|
 
+**Tips**
+
+微信小程序项目配置，[查看详情](https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html)
+
 #### setting
 
 编译到微信小程序平台下的项目设置。
@@ -543,6 +559,10 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |:-|:-|:-|
 |subPackages|Boolean|是否开启分包优化|
 
+**注意：**
+
+- 配置项为 `subPackages`，写成 `subpackages` 无效
+
 #### cloudfunctionRoot
 
 如果需要使用微信小程序的云开发，需要在 mp-weixin 配置云开发目录
@@ -555,7 +575,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 }
 ```
 
-配置目录之后，需要在项目根目录新建 `vue.config.js` 配置对应的文件编译规则
+配置目录之后，`vue2 项目` 需要在项目根目录新建 `vue.config.js` 配置对应的文件编译规则
 
 ```javascript
 {
@@ -568,6 +588,34 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
      ]),
    ],
 }
+```
+
+`vue3 项目` 需要在项目根目录新建 `vite.config.js` 配置对应的文件编译规则
+
+```javascript
+import { defineConfig } from 'vite'
+import uni from '@dcloudio/vite-plugin-uni'
+import fs from 'fs-extra' // fs-extra 为第三方依赖，需要安装
+import path from 'path'
+
+const plugins = [uni()]
+
+// 仅微信小程序生效
+if (process.env.UNI_PLATFORM === 'mp-weixin') {
+  plugins.push({
+    name: 'copy-cloudfunctions',
+    buildStart() {
+      fs.copySync(
+        path.join(process.env.UNI_INPUT_DIR, 'cloudfunctions'),
+        path.join(process.env.UNI_OUTPUT_DIR, 'cloudfunctions')
+      )
+    },
+  })
+}
+
+export default defineConfig({
+  plugins,
+})
 ```
 
 ### mp-alipay
@@ -717,6 +765,15 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |setting|Object|项目设置，详见：[setting配置说明](https://miniapp.xiaohongshu.com/doc/DC977105#anchorId-setting)|
 |packOptions|Object|打包配置选项|
 |nativeTags|Array| 小红书小程序平台的原生组件 (4.81+)|
+|optimization|Object| 对小红书小程序的优化配置 |
+
+#### optimization
+
+对小红书小程序的优化配置
+
+|属性|类型|说明|
+|:-|:-|:-|
+|subPackages|Boolean|是否开启分包优化|
 
 ### mp-harmony
 

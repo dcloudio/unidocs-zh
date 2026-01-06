@@ -1,5 +1,7 @@
 ## live-pusher
 
+> 推荐`uni直播`，官方内置，使用简单，且价格便宜，更具高性价比！[详情](https://doc.dcloud.net.cn/uniCloud/uni-live/intro.html)。
+
 实时音视频录制，也称直播推流。
 
 **平台差异说明**

@@ -58,6 +58,8 @@ uni.offThemeChange(callback); // 此时不再触发 callback 方法
 
 <!-- UNIAPPAPIJSON.offThemeChange.tutorial -->
 
-**注意**
-- 自定义基座生效
+##
+
+- iOS 平台自定义基座生效
 - App 端需要开启暗黑模式。[5+ App](https://ask.dcloud.net.cn/article/36995) [uni-app 暗黑模式](https://uniapp.dcloud.net.cn/tutorial/darkmode.html#open-darkmode)
+- HarmonyOS 平台在 `4.81-alpha` 修复了运行期间 onThemeChange 不触发的问题

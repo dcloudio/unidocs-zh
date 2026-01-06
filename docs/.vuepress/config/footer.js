@@ -57,11 +57,11 @@ export default {
 				},
 				{
 					subTitle: 'uni实人认证',
-					url: 'https://uniapp.dcloud.net.cn/uniCloud/frv/intro.html',
+					url: 'https://doc.dcloud.net.cn/uniCloud/frv/intro.html',
 				},
 				{
 					subTitle: 'sms',
-					url: 'https://uniapp.dcloud.net.cn/uniCloud/send-sms',
+					url: 'https://doc.dcloud.net.cn/uniCloud/send-sms',
 				},
 				{
 					subTitle: 'uni-starter',
@@ -69,7 +69,7 @@ export default {
 				},
 				{
 					subTitle: 'uni-admin',
-					url: 'https://uniapp.dcloud.net.cn/uniCloud/admin',
+					url: 'https://doc.dcloud.net.cn/uniCloud/admin',
 				},
 				{
 					subTitle: 'uni-upgrade-center',
@@ -77,15 +77,15 @@ export default {
 				},
 				{
 					subTitle: 'uni-im',
-					url: 'https://uniapp.dcloud.net.cn/uniCloud/uni-im',
+					url: 'https://doc.dcloud.net.cn/uniCloud/uni-im',
 				},
 				{
 					subTitle: 'uni-ai',
-					url: 'https://uniapp.dcloud.net.cn/uniCloud/uni-ai',
+					url: 'https://doc.dcloud.net.cn/uniCloud/uni-ai',
 				},
 				{
 					subTitle: 'uni-cms',
-					url: 'https://uniapp.dcloud.net.cn/uniCloud/uni-cms',
+					url: 'https://doc.dcloud.net.cn/uniCloud/uni-cms',
 				},
 				{
 					subTitle: 'uniCloud-map',

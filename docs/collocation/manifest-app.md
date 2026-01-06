@@ -112,6 +112,7 @@ iOS平台云端打包相关配置
 在鸿蒙开发中不会读取`app-plus` 下配置的选项，在 `app-harmony` 节点下可以设置鸿蒙参数。
 
 - safearea
+- useragent
 
 ### 完整 manifest.json@full-manifest
 

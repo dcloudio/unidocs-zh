@@ -15,9 +15,9 @@
 
 在满足上述两个条件，可以开通 App Linking 服务。文档可参考 《[使用 App Linking 实现元服务跳转](https://developer.huawei.com/consumer/cn/doc/atomic-guides/atomic-applinking#section10497195541515)》。
 
-### 配置 .well-knows 路径
+### 配置 .well-known 路径
 
-- 文档里提到的 `.well-knows` 文件夹需要服务端开放访问，这个路径是用来公开访问的，如果你部署了对应 json 但是无法访问，可能是服务器禁止访问，可根据具体情况搜索解决方案，比如 nginx 如何开放 .well-known 路径。
+- 文档里提到的 `.well-known` 文件夹需要服务端开放访问，这个路径是用来公开访问的，如果你部署了对应 json 但是无法访问，可能是服务器禁止访问，可根据具体情况搜索解决方案，比如 nginx 如何开放 .well-known 路径。
 
 配置文件要可访问 `.well-known/applinking.json` 路径。
 

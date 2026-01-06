@@ -155,6 +155,7 @@ Tips：
 - uts加密插件只支持云端传统打包，不支持离线打包、也不支持安心打包。打包最低需要HBuilderX 3.7.2+
 - 一般提交的uts插件仅包含uts源码，不建议包含三方sdk，如jar，这些应该配成仓储。
 - 从 HBuilderX 4.81 起uts付费插件支持鸿蒙平台。
+- 如果发行平台为web、小程序或鸿蒙，uts加密插件需要提交云端编译，目前仅支持`uni-app x`项目，不支持`uni-app`项目。
 
 ### uts插件和App原生语言插件的区别@utsdiff
 uts插件和App原生插件在功能上是重叠的，都是原生扩展uni-app的能力。
@@ -199,7 +200,7 @@ HBuilderX插件是安装在HBuilderX工具里的。是编辑器的插件，不�
 云函数模板对文件命名没有特殊要求，但制作插件压缩包时，需要注意以下几点：
 - 当模板中包含一个或多个云函数时，不能只在插件中放入云函数目录，而需要完整的从项目根目录开始。如uniCloud/cloudfunctions/cf123。uniCloud可以接受-aliyun或-tcb 后缀（阿里云和腾讯云这两个目录也可以同时存在）；
 - 云函数有效的入口文件为 index.js，插件包中必须包含至少一个以此命名的文件。
-- 涉及账户管理的话，请使用[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)
+- 涉及账户管理的话，请使用[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id)
 
 如果上传付费云函数插件，则必须选择要加密的云函数，否则插件试用者可以通过试用流程无限期使用你的插件而不需要付费。
 

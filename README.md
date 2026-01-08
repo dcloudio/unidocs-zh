@@ -7,6 +7,7 @@
 1. 使用命令行工具打开文档根目录
 2. 在命令行中执行 `yarn` 安装依赖，如果没有 `yarn`，则先执行 `npm i -g yarn`
 3. 在命令行中执行 `yarn dev --no-cache`，命令运行完毕后，会显示本地可查看链接，点击或复制到浏览器查看即可
+4. 公共文档同步请查看：https://gitcode.com/dcloud/docs-common
 
 ## 文档编写注意事项
 

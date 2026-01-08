@@ -7,10 +7,14 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs --no-cache",
+    "dev": "npm run sync && vuepress dev docs",
+    "build": "npm run sync && node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs --no-cache",
     "build-lite": "cross-env DOCS_LITE=true node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs-lite --no-cache",
-    "check-md": "vuepress check-md2 docs"
+    "check-md": "vuepress check-md2 docs",
+    "sync": "docs-sync sync",
+    "sync:dry-run": "docs-sync sync --dry-run",
+    "sync:dev:dry-run": "cross-env NODE_ENV=development docs-sync sync --dry-run",
+    "sync:debug": "docs-sync sync --debug"
   },
   "repository": {
     "type": "git",
@@ -32,6 +36,7 @@
   },
   "dependencies": {
     "@dcloudio/docs-utils": "^1.0.8",
+    "docs-sync-cli": "^1.0.2",
     "vuepress": "1.9.9",
     "vuepress-theme-uniapp-official": "1.6.15"
   },

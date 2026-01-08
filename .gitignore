@@ -7,3 +7,4 @@ dist
 docs/.vuepress/.cache
 docs/.vuepress/.temp
 **/llms.txt
+.docs-sync-cache

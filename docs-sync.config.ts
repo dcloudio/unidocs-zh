@@ -77,5 +77,94 @@ export default defineConfig({
       from: 'common:worktile/auto/hbuilderx-extension/index.md',
       to: 'docs/worktile/auto/hbuilderx-extension/index.md',
     },
+    // plugin
+    {
+      from: 'common:plugin/_sidebar.md',
+      to: 'docs/plugin/_sidebar.md',
+    },
+    {
+      from: 'common:plugin/README.md',
+      to: 'docs/plugin/README.md',
+    },
+    {
+      from: 'common:plugin/language.md',
+      to: 'docs/plugin/language.md',
+    },
+    {
+      from: 'common:plugin/native-covert-uts.md',
+      to: 'docs/plugin/native-covert-uts.md',
+    },
+    {
+      from: 'common:plugin/native-plugin.md',
+      to: 'docs/plugin/native-plugin.md',
+    },
+    {
+      from: 'common:plugin/oath.md',
+      to: 'docs/plugin/oath.md',
+    },
+    {
+      from: 'common:plugin/plugin-ext-introduction.md',
+      to: 'docs/plugin/plugin-ext-introduction.md',
+    },
+    {
+      from: 'common:plugin/publish.md',
+      to: 'docs/plugin/publish.md',
+    },
+    {
+      from: 'common:plugin/sell.md',
+      to: 'docs/plugin/sell.md',
+    },
+    {
+      from: 'common:plugin/uni_modules.md',
+      to: 'docs/plugin/uni_modules.md',
+    },
+    {
+      from: 'common:plugin/uts-component-compatible.md',
+      to: 'docs/plugin/uts-component-compatible.md',
+    },
+    {
+      from: 'common:plugin/uts-component-vue.md',
+      to: 'docs/plugin/uts-component-vue.md',
+    },
+    {
+      from: 'common:plugin/uts-component.md',
+      to: 'docs/plugin/uts-component.md',
+    },
+    {
+      from: 'common:plugin/uts-for-android.md',
+      to: 'docs/plugin/uts-for-android.md',
+    },
+    {
+      from: 'common:plugin/uts-for-harmony.md',
+      to: 'docs/plugin/uts-for-harmony.md',
+    },
+    {
+      from: 'common:plugin/uts-for-ios.md',
+      to: 'docs/plugin/uts-for-ios.md',
+    },
+    {
+      from: 'common:plugin/uts-ios-cocoapods.md',
+      to: 'docs/plugin/uts-ios-cocoapods.md',
+    },
+    {
+      from: 'common:plugin/uts-ios-spms.md',
+      to: 'docs/plugin/uts-ios-spms.md',
+    },
+    {
+      from: 'common:plugin/uts-plugin-hybrid.md',
+      to: 'docs/plugin/uts-plugin-hybrid.md',
+    },
+    {
+      from: 'common:plugin/uts-plugin.md',
+      to: 'docs/plugin/uts-plugin.md',
+    },
+    {
+      from: 'common:plugin/uts-uni-api.md',
+      to: 'docs/plugin/uts-uni-api.md',
+    },
+    {
+      from: 'common:plugin/faq/faq.md',
+      to: 'docs/plugin/faq/faq.md',
+    },
   ],
 });

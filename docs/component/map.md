@@ -84,7 +84,7 @@ App平台（包含iOS、安卓、鸿蒙）腾讯地图使用web方案，在 [申
 
 注意：
 
-- 腾讯地图展示 **鉴权失败，请传入正确的 Key**，确保 mainfest.json - uni-map - 腾讯地图填写了 key 并保存。在 [腾讯位置服务-我的应用](https://lbs.qq.com/dev/console/application/mine) 再次复制填写 Key，确保 Key 完整有效。
+- 腾讯地图展示 **鉴权失败，请传入正确的 Key**，确保 manifest.json - uni-map - 腾讯地图填写了 key 并保存。在 [腾讯位置服务-我的应用](https://lbs.qq.com/dev/console/application/mine) 再次复制填写 Key，确保 Key 完整有效。
 
 ### 高德地图审图号
 

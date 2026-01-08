@@ -7,11 +7,30 @@
 ![](https://web-ext-storage.dcloud.net.cn/appstore/publish_country_1230.png)
 
 
-### 2、OPPO 应用发布失败，提示：icon_url（应用图标）图片宽度不符合要求
+### 2、OPPO 应用发布失败，提示：icon_url（应用图标）图片宽度不符合要求、pic_url(竖版截图) 文件大小超过限制 (错误码: 800002)
 
-出现此提示，请为 OPPO 渠道单独发布应用并更新符合要求的应用图标。
+#### 原因说明
 
+OPPO 发布接口要求 `icon_url`（应用图标）和 `pic_url`（竖版截图）为必填参数。  
+如果在 DCloud 开发者中心未上传图标或竖版截图，系统会使用 OPPO 开发平台已有的图标或截图。  
+当这些文件不符合接口规范时，就会导致发布失败。
+
+#### 文件规范
+
+- **应用图标（icon_url）**  
+  - 尺寸：512×512 px  
+  - 格式：PNG  
+  - 文件大小：小于 1 MB  
+
+- **竖版截图（pic_url）**  
+  - 上传 3–5 张截图  
+  - 格式：JPG 或 PNG  
+  - 尺寸：1080×1920 px  
+  - 单张文件大小：≤ 1 MB  
+
+请根据以上规范更新图标和截图后，再重新为 OPPO 渠道发布应用。
 
 ![](https://web-ext-storage.dcloud.net.cn/appstore/oppo_icon_1230.png)
+
 
 ---

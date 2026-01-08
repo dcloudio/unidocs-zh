@@ -32,6 +32,10 @@ export default defineConfig({
       from: 'common:ai/README.md',
       to: 'docs/ai/README.md',
     },
+    {
+      from: 'common:ai/hbuilderx-ai-chat.md',
+      to: 'docs/ai/hbuilderx-ai-chat.md',
+    },
     // worktile
     {
       from: 'common:worktile/_sidebar.md',

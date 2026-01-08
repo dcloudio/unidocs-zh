@@ -1,8 +1,10 @@
 # pages.json 页面路由
+# pages.json Page routing
 `pages.json` 文件用来对 uni-app 进行全局配置，决定页面文件的路径、窗口样式、原生的导航栏、底部的原生tabbar 等。
 The `pages.json` file is used to configure uni-app globally, to determine the path of the page file, window style, native navigation bar, native tabbar at the bottom, etc.
 
 导航栏高度为 44px (不含状态栏)，tabBar 高度为 50px (不含安全区)。
+The height of the navigation bar is 44px (excluding the status bar), and the height of the tabBar is 50px (excluding the safe area).
 
 它类似微信小程序中`app.json`的**页面管理**部分。注意定位权限申请等原属于`app.json`的内容，在uni-app中是在manifest中配置。
 It is similar to the **page management** part of `app.json` in the WeChat MiniApp. Note that the application for location permissions and other content that originally belonged to `app.json` are configured in the manifest in uni-app.
@@ -20,17 +22,25 @@ It is similar to the **page management** part of `app.json` in the WeChat MiniAp
 |[easycom](/collocation/pages?id=easycom)|Object|否|组件自动引入规则|2.5.5+|
 |[easycom](/collocation/pages?id=easycom)| Object|No|Component automatic import rules|2.5.5+|
 |[tabBar](/collocation/pages?id=tabbar)|Object|否|设置底部 tab 的表现||
+|[tabBar](/collocation/pages?id=tabbar)| Object|No|Set the performance of the bottom tab||
 |[condition](/collocation/pages?id=condition)|Object|否|启动模式配置||
+|[condition](/collocation/pages?id=condition)| Object|No|Startup mode configuration||
 |[subPackages](/collocation/pages?id=subPackages)|Object Array|否|分包加载配置|H5 不支持|
+|[subPackages](/collocation/pages?id=subpackages)| Object Array|No|Subpackage loading configuration|H5 not supported|
 |[preloadRule](/collocation/pages?id=preloadrule)|Object|否|分包预下载规则|微信小程序、支付宝小程序|
+|[preloadRule](/collocation/pages?id=preloadrule)| Object|No|Subpackage pre-download rules|WeChat MiniApp, Alipay MiniApp|
 |[workers](https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html)|String|否|`Worker` 代码放置的目录|微信小程序、支付宝小程序|
+|[workers](https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html)| String| No| Directory for placing `Worker` code| WeChat MiniApp, Alipay MiniApp|
 |[leftWindow](/collocation/pages?id=leftwindow)|Object|否|大屏左侧窗口|H5|
 |[leftWindow](/collocation/pages?id=leftwindow)| Object|No|The left window of the big screen| H5|
 |[topWindow](/collocation/pages?id=topwindow)|Object|否|大屏顶部窗口|H5|
 |[topWindow](/collocation/pages?id=topwindow)| Object|No|The top window of the large screen| H5|
 |[rightWindow](/collocation/pages?id=rightwindow)|Object|否|大屏右侧窗口|H5|
+|[rightWindow](/collocation/pages?id=rightwindow)| Object|No|The right window of the large screen| H5|
 |[uniIdRouter](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router)|Object|否|自动跳转相关配置，新增于HBuilderX 3.5.0||
+|[uniIdRouter](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#uni-id-router)| Object| No| Automatic jump related configuration, added in HBuilderX 3.5.0||
 |entryPagePath|String|否|默认启动首页，新增于HBuilderX 3.7.0|微信小程序、支付宝小程序、抖音小程序|
+|entryPagePath| String| No| Default startup homepage, added in HBuilderX 3.7.0| WeChat MiniApp, Alipay MiniApp, Douyin MiniApp|
 
 以下是一个包含了所有配置选项的 `pages.json` ：
 Here is a `pages.json` with all configuration options:

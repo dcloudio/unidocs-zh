@@ -3,8 +3,10 @@ pageClass: custom-page-class
 ---
 
 `uni-app` 是一个使用 [Vue.js](https://vuejs.org/) 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、鸿蒙Next、Web（响应式）、以及各种小程序（微信/支付宝/百度/抖音/飞书/QQ/快手/钉钉/淘宝/京东/小红书）、快应用、鸿蒙元服务等多个平台。
+`uni-app` is a framework for developing all front-end applications using [Vue.js](https://vuejs.org/). Developers write a set of codes that can be published to iOS, Android, HarmonyOS Next, Web (responsive) and various MiniApp (weixin/alipay/baidu/douyin/lark).
 
 `DCloud`公司拥有900万开发者、数百万应用、12亿手机端月活用户、数千款uni-app插件、70+微信/qq群，开发者可以放心选择。
+DCloud has 9 million developers, millions of applications, 1.2 billion monthly mobile users, thousands of uni-app plug-ins and 70+ WeChat/qq groups, so developers can choose with confidence.
 
 `uni-app`在手，做啥都不愁。即使不跨端，`uni-app`也是更好的小程序开发框架（[详见](https://ask.dcloud.net.cn/article/35947)）、更好的App跨平台框架、更方便的H5开发框架。不管领导安排什么样的项目，你都可以快速交付，不需要转换开发思维、不需要更改开发习惯。
 
@@ -146,13 +148,16 @@ pageClass: custom-page-class
     </div>
     <p>注：<br/>
         <em>- 某些平台不能提交简单demo，故补充了一些其他功能；hello uni-app示例代码可从 <a href="https://github.com/dcloudio/hello-uniapp">github</a> 获取</em></br>
+        <em>- Some platforms cannot submit simple demos, so some other functions have been added; the hello uni-app sample code can be obtained from <a href="https://github.com/dcloudio/hello-uniapp">github</a> </em></br>
         <em>- 快应用仅支持 vivo 、oppo、华为</em></br>
         <em>-Quick QuickApp only supports vivo, oppo, Huawei</em></br>
         <em>- 360小程序仅 windows平台支持，需要在360浏览器中打开</em></br>
+        <em>- 360 applet is only supported by windows platform and needs to be opened in 360 browser.</em></br>
         <em>- uni-app 已支持纯血鸿蒙开发，详见 <a href="https://uniapp.dcloud.net.cn/tutorial/harmony/dev.html">鸿蒙开发专题</a>。</em></br>
+        <em>- Uni-app has supported the development of pure blood HarmonyOS. See for details <a href="https://uniapp.dcloud.net.cn/tutorial/harmony/dev.html">Special topics on HarmonyOS development</a>。</em></br>
     </p>
 </div>
-
+<!-- @ifdef ZH -->
 ## 看视频，10分钟了解uni-app
 ## Watch the video and learn about uni-app in 10 minutes
 
@@ -165,7 +170,7 @@ We carefully prepared a simple ten-minute introduction video, so that you can qu
 
 
 <video id="video" preload="none" controls="controls" width="100%" poster="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/dcloudPoster.jpg" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-video-courses.mp4"></video>
-
+<!-- @endif -->
 
 
 ## 为什么要选择uni-app？
@@ -271,6 +276,7 @@ We carefully prepared a simple ten-minute introduction video, so that you can qu
 - 对于技术人员而言：不用学那么多的平台开发技术、研究那么多前端框架，学会基于vue的`uni-app`就够了。
 - 对于公司而言：更低成本，覆盖更多用户，`uni-app`是高效利器。 -->
 
+<!-- @ifdef ZH -->
 ## 功能框架图
 ## Functional frame diagram
 
@@ -286,7 +292,6 @@ We carefully prepared a simple ten-minute introduction video, so that you can qu
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/dev1x8.jpg)
 
-<!-- @ifndef EN -->
 实际运行效果如下（点击图片可放大）：
 
 ![](https://web-ext-storage.dcloud.net.cn/doc/uni-app-multiport-202478.png)#{.zooming}

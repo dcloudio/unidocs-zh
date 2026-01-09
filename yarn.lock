@@ -8588,6 +8588,11 @@ schema-utils@^2.6.5:
     ajv "^6.12.4"
     ajv-keywords "^3.5.2"
 
+search-insights@^2.17.3:
+  version "2.17.3"
+  resolved "https://registry.npmjs.org/search-insights/-/search-insights-2.17.3.tgz#8faea5d20507bf348caba0724e5386862847b661"
+  integrity sha512-RQPdCYTa8A68uM2jwxoY842xDhvx3E5LFL1LxvxCNMev4o5mLuokczhzjAgGwUZBAmOKZknArSxLKmXtIi2AxQ==
+
 section-matter@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmmirror.com/section-matter/-/section-matter-1.0.0.tgz#e9041953506780ec01d59f292a19c7b850b84167"
@@ -9966,10 +9971,10 @@ vuepress-plugin-zooming@^1.1.8:
   dependencies:
     zooming "^2.1.1"
 
-vuepress-theme-uniapp-official@1.6.15:
-  version "1.6.15"
-  resolved "https://registry.npmjs.org/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.6.15.tgz#e8beb7158cac89be97e0785177f606299e081ff5"
-  integrity sha512-EHIVt4jufJ8m/3BwSDHHSvCjEtDsaxT2Y2hboqin5GWiIZIDBuH5tlrlsm56f7zGRq6zq6ENOIJ0WotOet2R/Q==
+vuepress-theme-uniapp-official@1.6.17:
+  version "1.6.17"
+  resolved "https://registry.npmjs.org/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.6.17.tgz#0455baaf72902c19c6cfa4699fdebcea7893dd67"
+  integrity sha512-bKHLc+vxkUe4qJr4/mkDMoPx+A0V3j2zw1A+3dl94uuKXAZi6OUUS7lihcRbvxU8RWQhhk0cRSYOdm8G4uEfAA==
   dependencies:
     "@docsearch/css" "^3.6.0"
     "@vuepress/plugin-back-to-top" "^1.9.5"
@@ -9981,6 +9986,7 @@ vuepress-theme-uniapp-official@1.6.15:
     markdown-it-task-lists "^2.1.1"
     marked "^3.0.8"
     qr-code-with-logo "^1.1.0"
+    search-insights "^2.17.3"
     vuepress-plugin-check-md2 "^1.0.5"
     vuepress-plugin-expandable-row "^1.0.10"
     vuepress-plugin-juejin-style-copy "^1.0.4"

@@ -5,6 +5,7 @@
   * [实名认证变更](account/modify-real-name-verification.md)
   * 安全设置
     * [操作保护](account/security-operation-protection.md)
+  * [找回账号](account/retrieve.md)
   * [注销账号](account/deletion.md)
 * 应用相关
   * [DCloud appid 用途/作用/使用说明](app/introduction.md)

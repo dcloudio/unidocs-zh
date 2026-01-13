@@ -149,9 +149,17 @@
 |:-|:-|:-|
 |plus|Boolean|App|
 |nvue|Boolean|App-nvue, uni.webview.1.5.4.js+ 支持|
-|miniprogram|Boolean|微信小程序|
+|miniprogram|Boolean|微信小程序、支付宝小程序、抖音小程序|
 |smartprogram|Boolean|百度小程序|
-|miniprogram|Boolean|支付宝小程序|
+
+**在小程序 web-view 中调用 getEnv**
+
+需要根据各家小程序文档引入 js
+
+- [微信小程序](https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html#%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3%201)
+- [百度小程序](https://smartprogram.baidu.com/docs/develop/component/open_web-view/#%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3%E4%BB%8B%E7%BB%8D)
+- [支付宝小程序](https://opendocs.alipay.com/mini/component/mg7rvg)
+- [抖音小程序](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/open-capacity/web-view)
 
 **示例**
 

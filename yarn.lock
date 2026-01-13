@@ -4331,10 +4331,10 @@ dns-txt@^2.0.2:
   dependencies:
     buffer-indexof "^1.0.0"
 
-docs-sync-cli@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmmirror.com/docs-sync-cli/-/docs-sync-cli-1.0.2.tgz#91d4cc5db006c29e870f6c9801faf13f89cf018b"
-  integrity sha512-eIRy4QCZ0C1Q7sUeoTjTW/ak2ywTxHA1Q22TaYy0za7JXadajh5mIKPD2sBHasw/++IB9CT4gs/8W+6PtC/bTQ==
+docs-sync-cli@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npmmirror.com/docs-sync-cli/-/docs-sync-cli-1.0.3.tgz#3f288a2021508aa2e5711e44066a623222c128df"
+  integrity sha512-qmjoZSZxXnjQD1VNIeFuFvQmufvhhBna/x769Z9HqUUG+TieLxaP7xE3LuJEms2OAJnb3tIYmedICJYKQtLbYg==
   dependencies:
     chokidar "^3.6.0"
     fast-glob "^3.3.2"

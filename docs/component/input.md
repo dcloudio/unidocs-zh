@@ -78,6 +78,7 @@ html规范中input不仅是输入框，还有radio、checkbox、时间、日期�
 - 小程序端input在置焦时，会表现为原生控件，此时会层级变高。如需前端组件遮盖input，需让input失焦，或使用cover-view等覆盖原生控件的方案，[参考](https://uniapp.dcloud.io/component/native-component)。具体来讲，阿里小程序的input为text且置焦为原生控件；微信、头条、QQ所有input置焦均为原生控件；百度小程序置焦时仍然是非原生的。也可以参考[原生控件](https://uniapp.dcloud.io/component/native-component)文档
 - input组件若不想弹出软键盘，可设置为disabled
 - placeholder-style指定样式类font-size单位为rpx时，抖音小程序、飞书小程序、快手小程序不支持，可使用uni.upx2px()将rpx单位值转换成px。
+- iOS 存在苹果智能标点功能：safari（webview） 上连续输入两次 `.` 后，在第三次输入 `.` 时，会触发两次 deleteContentBackward（删除） 的输入外加一次 insertText 为 …（三个点） 的输入
 :::
 
 #### text-content-type 有效值 @text-content-type

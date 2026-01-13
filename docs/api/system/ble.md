@@ -358,7 +358,7 @@ uni.getBLEDeviceServices({
 **success 返回参数说明：**
 
 |属性|类型|说明|
-|---|---|---|---|
+|---|---|---|
 |characteristics|Array&lt;Object&gt;|设备服务列表|
 
 **res.characteristics 的结构**

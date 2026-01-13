@@ -186,7 +186,7 @@
 | rpxCalcMaxDeviceWidth        | Number   | 960      | rpx 计算所支持的最大设备宽度，单位 px                                                                                                                                                    | App（vue2 且不含 nvue）、H5（2.8.12+）                       |
 | rpxCalcBaseDeviceWidth       | Number   | 375      | rpx 计算使用的基准设备宽度，设备实际宽度超出 rpx 计算所支持的最大设备宽度时将按基准宽度计算，单位 px                                                                                     | App（vue2 且不含 nvue）、H5（2.8.12+）                       |
 | rpxCalcIncludeWidth          | Number   | 750      | rpx 计算特殊处理的值，始终按实际的设备宽度计算，单位 rpx                                                                                                                                 | App（vue2 且不含 nvue）、H5（2.8.12+）                       |
-| dynamicRpx                   | Boolean  | false    | 动态 rpx，屏幕大小变化会重新渲染 rpx                                                                                                                                                     | App-nvue（vue3 固定值为 true） 3.2.13+                       |
+| dynamicRpx                   | Boolean  | false    | 动态 rpx，屏幕大小变化会重新渲染 rpx                                                                                                                                                     | App-nvue（vue3 固定值为 true） 3.2.13+、App 5.0+                       |
 | maxWidth                     | Number   |          | 单位 px，当浏览器可见区域宽度大于 maxWidth 时，两侧留白，当小于等于 maxWidth 时，页面铺满；不同页面支持配置不同的 maxWidth；maxWidth = leftWindow(可选)+page(页面主体)+rightWindow(可选) | H5（2.9.9+）                                                 |
 
 **注意**

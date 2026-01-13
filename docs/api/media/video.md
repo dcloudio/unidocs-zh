@@ -144,7 +144,7 @@ export default {
 |参数名						|类型		|说明												|
 |:-								|:-			|:-													|
 |tempFilePath			|String	|本地临时文件路径 (本地路径)|
-|size							|Number	|本地临时文件大小，单位 B		|
+|size							|Number	|本地临时文件大小，单位 KB		|
 |duration					|Number	|视频的时间长度							|
 |height						|Number	|视频的高度									|
 |width						|Number	|视频的宽度									|

@@ -81,6 +81,9 @@ uni.login({
 - 百度小程序平台需要在button组件的@login事件后再调用 uni.login ，[详见](https://smartprogram.baidu.com/docs/develop/function/login/),否则会返回“请登录”的错误信息，建议在@login事件中调用。
 - uni.login 已针对百度小程序[兼容性升级](https://smartprogram.baidu.com/forum/topic/show/125547)转为 getLoginCode 调用，但某些情况下，百度小程序发布时兼容性诊断依然提示swan.login非兼容性改造，[详见](https://github.com/dcloudio/uni-app/issues/2443)，可使用 [uni.getLoginCode](#getlogincode) 替代 uni.login 解决。
 - 京东小程序IDE 暂时不支持此uni.login()，请用真机查看；IDE调用，只能返回模拟数据 code为200。
+- HarmonyOS 平台需要额外的配置，详见[HarmonyOS平台接入微信SDK](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/Access_Guide/ohos.html)
+  - 配置 queryScheme： `"queryScheme": ["weixin"]` **请勿配置 `wxopensdk`。已在 @tencent/wechat_open_sdk@1.0.15 实测配置 `wxopensdk` 后登录无法回调**
+  - 配置 actions: `"actions": [ "action.system.home", "wxentity.action.open" ]`
 
 ## uni.getLoginCode(OBJECT)@getLoginCode
 获取宿主 App 登录凭证（Authorization Code）

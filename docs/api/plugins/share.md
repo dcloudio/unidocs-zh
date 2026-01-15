@@ -268,6 +268,11 @@ uni.share({
 - Q：弹出分享菜单，是否有已经写好的插件？
 - A：插件市场有很多封装好的分享菜单插件，[底部图标菜单](https://ext.dcloud.net.cn/search?q=%E5%BA%95%E9%83%A8%E5%9B%BE%E6%A0%87%E8%8F%9C%E5%8D%95)，可直接弹出菜单，并且没有遮挡层级问题，推荐使用。
 
+### Bug&Tips
+
+- 鸿蒙平台，HBuilderX 4.87 及以下版本，分享时有图片大于 20 KB 会出现分享失败的问题
+  - 下载 [har包](https://web-ext-storage.dcloud.net.cn/temp/uni_modules__uni_share_weixin.har)，放到 `项目根目录/harmony-configs/libs/` 目录下重新编译运行到手机
+
 ## uni.shareWithSystem(OBJECT)
 
 调用系统分享组件发送分享消息，不需要配置分享SDK

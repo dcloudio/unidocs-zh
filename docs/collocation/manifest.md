@@ -104,7 +104,7 @@ alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关�
 - 相关改动，云打包生效，真机运行不生效。本地打包需自行在原生工程中配置
 - App启动图中iOS的MAX等大屏设备的splash图若不配，会导致iOS认为此App没有为MAX优化，App将无法全屏，四周会有黑边
 - Android的splash（启动界面）自定义启动图支持.9.png，[详见](../tutorial/app-splashscreen.md#_9png)
-- Android平台配置自定义启动图后再部分设备可能出现底部系统导航栏闪白的问题，可通过配置`androidNavigationBarColor`与启动图背景颜色相近来避免，如下：  
+- Android平台配置自定义启动图后在部分设备可能出现系统导航栏启动时闪白的问题，可通过配置`androidNavigationBarColor`与启动图背景颜色相近来避免，如下：  
   ```json
   "app-plus" : {
     "distribute" : {

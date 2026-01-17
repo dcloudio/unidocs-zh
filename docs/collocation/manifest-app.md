@@ -159,8 +159,7 @@ iOS平台云端打包相关配置
             "ads": {                            //可选，JSON对象，开屏广告配置
                 "backaground": "#RRGGBB",               //可选，字符串类型，格式为#RRGGBB，开屏广告背景颜色
                 "image": ""                             //可选，字符串类型，底部图片地址，相对应用资源目录路径
-            },
-            "androidTranslucent": false         //可选，Boolean类型，使用“自定义启动图”启动界面时是否显示透明过渡界面，可解决点击桌面图标延时启动应用的效果
+            }
         },
         "modules": {                    //可选，JSON对象，使用的模块
             "Bluetooth": {                      //可选，JSON对象，Bluetooth(低功耗蓝牙)
@@ -602,7 +601,9 @@ iOS平台云端打包相关配置
                    "hdpi": "",                          //可选，字符串类型，分辨率480x762，高密度屏幕启动图片路径
                    "xhdpi": "",                         //可选，字符串类型，分辨率720x1242，720P高密度屏幕启动图片路径
                    "xxhdpi": ""                         //可选，字符串类型，分辨率1080x1882，1080P高密度屏幕启动图片路径
-                }  
+                },
+                "androidTranslucent": false,         //可选，Boolean类型，使用“自定义启动图”启动界面时是否显示透明过渡界面，可解决点击桌面图标延时启动应用的效果
+                "androidNavigationBarColor": ""      //可选，字符串类型，#RRGGBB格式颜色，配置启动界面系统导航栏背景颜色，解决配置splash图片后启动系统导航栏区域闪白的问题
             },
             "orientation": [            //可选，字符串数组类型，应用支持的横竖屏，**已废弃，使用screenOrientation配置** 
                 "portrait-primary",

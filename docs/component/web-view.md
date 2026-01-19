@@ -26,6 +26,7 @@
 **注意**
 - `update-title` 仅支持 `App-vue` 。`小程序` 恒为 `true`，`H5、nvue` 恒为 `false`
 - `H5` 平台仅支持 `load` 事件，即使加载失败，也会触发 `load`，[参考文档](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Reference/Elements/iframe#error_%E5%92%8C_load_%E4%BA%8B%E4%BB%B6%E8%A1%8C%E4%B8%BA)
+- `HarmonyOS` 请使用 @message 接收来自 web-view 的消息
 
 **src**
 

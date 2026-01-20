@@ -206,6 +206,8 @@ iTunes无法检测到手机，iTunes弹窗提示：`iTunes 在您的电脑上检
 
 ![](https://web-ext-storage.dcloud.net.cn/doc/uniapp/xcode_ios_simulator.png)
 
+可在 Mac 终端执行 `xcrun simctl list devices` 是否有返回值，并且包含 Booted 状态的设备。如果提示 `xcrun: error: unable to find utility "simctl", not a developer tool or in PATH` 可重新使用命令行修复，指向正确的工具路径 `sudo xcode-select -s /Applications/Xcode.app/Contents/Developer`，启动模拟器后重新验证即可。
+
 ## 第5步 运行启动
 HBuilderX的运行界面检测到手机后，可以点击运行。此后会继续进行：编译、安装基座到手机、同步应用代码和资源到基座、启动基座并运行应用。这些步骤仍然可能出错。
 1. 编译

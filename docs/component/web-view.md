@@ -152,6 +152,10 @@
 |nvue|Boolean|App-nvue, uni.webview.1.5.4.js+ 支持|
 |miniprogram|Boolean|微信小程序、支付宝小程序、抖音小程序|
 |smartprogram|Boolean|百度小程序|
+|harmony|Boolean|uni.webview.1.5.7.js+ 支持|
+
+- uni.webview.1.5.7.js 之前，uniapp 鸿蒙平台返回 `uvue`
+- uni.webview.1.5.7.js+，uniapp 鸿蒙平台返回 `harmony`
 
 **在小程序 web-view 中调用 getEnv**
 

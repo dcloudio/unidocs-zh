@@ -27,7 +27,7 @@
   - HBuilderX 4.31+ 要求 DevEco Studio 5.0.3.800+。
   - HBuilderX 4.61+ 针对 uni-app x 项目要求 DevEco Studio 5.0.7.100+。
   - uni-app 项目要求鸿蒙系统版本 API 12 以上，uni-app x 项目要求鸿蒙系统版本 API 14 以上（DevEco Studio 有内置鸿蒙模拟器）
-- [点击下载](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448) DevEco5.1.1Beta 版本，下载 API19 以上版本的模拟器，建议下载使用 API20，通过模拟器即可运行 uni-app 鸿蒙项目和元服务，不支持低于 api19 的模拟器。鸿蒙真机无此要求。
+- [点击下载](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448) DevEco Studio 最新版本，下载 API19 以上版本的模拟器，建议下载使用 API20+，通过模拟器即可运行 uni-app 鸿蒙项目和元服务，不支持低于 api19 的模拟器。鸿蒙真机无此要求。
 
 ### 项目根目录与鸿蒙工程目录@project-path
 
@@ -220,7 +220,7 @@ HBuilderX 4.61+ 开始支持 uts、uvue、ets 的调试[文档地址](https://un
 
 #### 证书资料文件@signing-configs-files
 
-需要设置的文件总共有三个：
+需要设置的文件总共有三个（关于相关证书资料文件的详细说明，请参考 [鸿蒙文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing#section297715173233)）：
 
 - 私钥库文件（`.p12`）：里面保存着数字签名用的私钥，由开发者自己手动生成或者 DevEco Studio 自动申请调试证书时自动生成。有两层密码保护（私钥库密码和私钥密码），须妥善保管，尤其是发布证书的私钥一定不能泄露。
 - 证书文件（`.cer`）：由华为签署颁发，用于证明开发者的身份。在 AppGallery Connect 手动申请并下载获得，或者在自动生成调试证书时自动下载。
@@ -298,7 +298,7 @@ HBuilderX 会尝试自动把当前运行设备的标识注册到 AGC 中，如�
 登录 AGC 之后，进入【证书、APP ID 和 Profile】中的【设备】页面，把当前设备的 UDID 添加到设备列表中。
 
 可以在前面提到的 [运行设备](#signing-configs-devices) 得到鸿蒙设备的 UDID 标识，
-也可以通过如下的命令行来获取，具体请参考 [华为的官方文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bm-tool-V5#%E8%8E%B7%E5%8F%96udid%E5%91%BD%E4%BB%A4get?ha_source=Dcloud&ha_sourceId=89000448)：
+也可以通过如下的命令行来获取，具体请参考 [华为的官方文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/bm-tool-V5)：
 
 ```
 hdc shell bm get -u
@@ -341,7 +341,7 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 在使用模拟器进行调试运行的时候，一般是不需要做数字签名的，但如果是用真机进行调试运行，或者业务代码用到了 ACL 权限，那么就需要申请并配置一个**调试证书**用于数字签名。
 
-参考 [申请调试证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugcert-0000001914263178?ha_source=Dcloud&ha_sourceId=89000448)
+参考 [申请调试证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-debug-cert-0000002283256797)
 
 在对话框中选择 Project - Signing Configs，并勾选 Automatically generate signature，即可自动生成签名证书资料
 
@@ -363,7 +363,7 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 发布证书只能手动申请，申请完成后把拿到的相关资料文件填写到 DevEco Studio 里面，填写的时候注意三个文件要在同一个目录。
 
-参考 [申请发布证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-releasecert-0000001946273961?ha_source=Dcloud&ha_sourceId=89000448)
+参考 [申请发布证书](https://developer.huawei.com/consumer/cn/doc/app/agc-help-release-cert-0000002283336729)
 
 在对话框中选择 Project - Signing Configs，不要勾选 Automatically generate signature，创建一个名为 `release` 的配置项。
 
@@ -775,8 +775,8 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 
 推荐使用 manifest.json 提供的 **自动申请调试证书** 进行一键更新。
 
-如果你是手动维护的证书，首先要 [注册调试设备](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-device-0000001946142249?ha_source=Dcloud&ha_sourceId=89000448)，
-然后 [申请调试 Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-debugprofile-0000001914423102?ha_source=Dcloud&ha_sourceId=89000448)
+如果你是手动维护的证书，首先要 [注册调试设备](https://developer.huawei.com/consumer/cn/doc/app/agc-help-add-device-0000002283189937)，
+然后 [申请调试 Profile](https://developer.huawei.com/consumer/cn/doc/app/agc-help-debug-profile-0000002248181278)
 或修改已有的 profile 文件并重新下载。
 
 ### 报错 `没有签名无法安装`@no-signature-file
@@ -811,7 +811,7 @@ HBuilderX 4.31+ 会优先使用鸿蒙工具链自带的 java 程序，就不�
 
 ### 报错 `未正确配置鸿蒙应用的包名`@bundlename-incorrect
 
-应该在 `manifest.json` 的【鸿蒙配置】中设置正确的包名，具体要求请参考 [配置应用包名](https://developer.huawei.com/consumer/cn/doc/app/agc-help-createharmonyapp-0000001945392297?ha_source=Dcloud&ha_sourceId=89000448)
+应该在 `manifest.json` 的【鸿蒙配置】中设置正确的包名，具体要求请参考 [配置应用包名](https://developer.huawei.com/consumer/cn/doc/app/agc-help-create-app-0000002247955506)
 
 ### HBuilderX 升级至 `4.51` 后报错 `owns a higher api version or a higher sdkReleaseType compared to current compilation process.`
 

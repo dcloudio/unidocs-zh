@@ -134,14 +134,16 @@ HBuilderX 4.27+ 开始已经把鸿蒙工程模板内置到 HBuilderX 中，【�
 
 4. 选择运行设备
 
-![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/b28d3e2d-fd5d-4600-8626-2faa5acce823.png)#{.zooming style="max-height:200px"}
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/9538f0bc-5f68-49cb-a7fa-e04b2ac35d9a.png)#{.zooming style="max-height:200px"}
 
-在编译代码构建运行包的时候，有三个缓存使用策略可供选择：
+在编译代码构建运行包的时候，有三种缓存使用策略可供选择：
 
 - **根据变化差量更新缓存**：正常使用缓存来避免重复操作，提高构建效率。
 - **强制使用缓存，跳过编译**：如果没有修改代码，只想重新运行起来，则可以使用这种方式，此时若 HBuilderX 检查到已经有构建好的运行包存在，则直接安装运行，否则按正常方式构建再运行。
 - **清空缓存**：每次升级 HBuilderX 之后，新旧版本的鸿蒙工程目录可能不完全兼容，为避免旧版本的干扰，首次运行的时候可以选择这个选项。
   另外，如果运行时出现结果不符合预期的奇怪情况，可以尝试使用这种方式重新构建运行，以消除缓存错乱带来的干扰。
+
+还有[两种打包模式](#build-type)可供选择。
 
 如果是运行到真机设备上，需要配置签名证书资料。
 HBuilderX 4.61+ 开始支持直接配置证书资料，点击对话框中的【配置调试证书】按钮打开配置对话框，支持自动申请调试证书。
@@ -156,6 +158,11 @@ HBuilderX 会对当前项目进行编译，然后把编译产物和配置文件�
 HBuilderX 4.61+ 开始不再先尝试卸载，而会进行覆盖安装，只有在安装失败的时候才会尝试卸载并重新安装一次。
 如果需要从全新安装开始调试运行的话，需自行手动卸载。
 
+### 打包模式@build-type
+
+- **debug 模式**：支持断点调试，但是打包体积较大，运行性能略低。适合日常开发。
+- **release 模式**：运行性能接近发行，但不支持断点调试和 ArkTS 热更。适合进行性能测试和评估。
+
 ### 热重载@hot-reload
 
 HBuilderX 4.81+ 开始支持 uni-app x 项目启用热重载能力。
@@ -164,7 +171,7 @@ HBuilderX 4.81+ 开始支持 uni-app x 项目启用热重载能力。
 
 启用热重载模式要求 DevEco Studio 版本为 5.1.1.823+，如果条件不满足，将自动回落到原来的全量构建模式。
 
-本功能实际是调用 DevEco 新版提供的 arkts 热重载能力，热重载速度由 DevEco 决定。
+本功能实际是调用 DevEco 新版提供的 ArkTS 热重载能力，热重载速度由 DevEco 决定。
 
 ## 调试的方式@debug-mode
 
@@ -200,7 +207,7 @@ HBuilderX 4.61+ 开始支持 uts、uvue、ets 的调试[文档地址](https://un
 
 从 HBuilderX 4.61+ 开始支持这种配置方式。在【运行到鸿蒙】操作的【选择运行设备】对话框中，点击【配置调试证书】按钮，打开配置对话框：
 
-![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/809e96c5-0a38-4453-bfd6-b2b13c8fb763.png)#{.zooming style="max-height:200px"}
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/2cf4b63c-c98e-4705-951d-0a2f8ccb8903.png)#{.zooming style="max-height:200px"}
 
 在 `manifest.json` 的编辑页面中，【鸿蒙 App 配置】里面也有打开配置对话框的按钮，分别用于配置调试证书和发布证书：
 

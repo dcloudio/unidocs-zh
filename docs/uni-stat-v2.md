@@ -869,7 +869,7 @@ uni统计配置项存放于uniCloud配置中心（`uni-config-center`）下的 `
 |  redis			|  false	|开启redis缓存，开启后可以降低数据库查询压力，提升uni统计性能，可按需决定是否开启。[开启方法](#开启redis缓存)																										|
 |  cachetime		|  604800	|redis缓存有效期，单位秒。																																													|
 |  sessionExpireTime|  1800		|会话过期时间，该配置用来判断当前会话是否已过期，一般情况下无需修改此项。																																			|
-|  realtimeStat		|  true		|开启实时统计，true: 开启，false:关闭，开启后会每小时统计一次，数据库读写次数会增多，可按需决定是否开启。																											|
+|  realtimeStat		|  true		|开启实时统计，true: 开启，false:关闭，开启后会每小时统计一次设备基础数据，数据库读写次数会增多，可按需决定是否开启。																											|
 |  cronMin			|  false	|开启分钟级定时任务，true: 开启，false:关闭。开启后定时任务将细分到分钟级执行，分摊数据计算压力，适合应用日活较大或有特殊需求的用户群体。具体的开启方法见[设置定时任务云函数的触发周期](#设置定时任务云函数的触发周期)。	|
 |  cron				|  -		|用于配置定时任务触发时间，详情见下方[定时任务配置说明](#定时任务配置说明)。																																		|
 |  pageDetailStat	|  false	|开启页面内容统计 true: 开启，false:关闭，开启后会产生大量日志，请按需开启。uni-admin	2.4.0起支持配置此项。																										|
@@ -1568,7 +1568,7 @@ exports.main = async (event, context) => {
 
 答：在统计逻辑中，总设备数 = 原设备数 + 新设备数，而判断设备是否为新设备的依据是客户端 SDK 中是否存储了该设备上次访问应用的时间（未存储时 lvts=0 视为新设备，已存储时 lvts>0 视为老设备）。若应用之前已接入过 uni 统计 1.0 或 2.0，即使清空后台数据，由于该设备在客户端 SDK 中仍保留上次访问时间（lvts>0），该设备仍被识别为老设备，不会被重新计入新设备数，因此不会增加总设备数，但其后续访问仍计入活跃设备数，从而可能出现总设备数小于活跃设备数的情况。
 
-### 6. uni-stat-cron运行日志显示 Not Found the config file
+### 6. uni-stat-receiver / uni-stat-cron 云函数运行日志中报错 “Not Found the config file” 的解决方法 @miss-config
 
 业务App 和 admin 是2个工程。业务App是采集端，admin是报表端；这两个项目均包含`uni-config-center`；如果这两个项目关联（复用）相同的服务空间时，很容易出现`uni-config-center`的互相覆盖问题；此时建议单点维护，方案有2种：
 - 以业务App为主：将`uni-admin`项目中`uni-config-center` 下面的`uni-stat`文件夹，复制到业务App项目下的`uni-config-center`目录下，然后重新上传业务App项目下的`uni-config-center`公共模块即可。

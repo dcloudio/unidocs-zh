@@ -249,19 +249,23 @@ hdc shell bm dump-shared -n com.huawei.hms.ascfruntime
 
 元服务图标必须在华为提供的标准图标底板上设计，否则会上架审核不通过。参考 [生成元服务图标](https://developer.huawei.com/consumer/cn/doc/atomic-guides-V5/atomic-service-icon-generation-V5?ha_source=Dcloud&ha_sourceId=89000448) 生成图标，最终得到两个图片，一个是 216x216 用于在 uniapp 开发者后台上传图片，一个是 512x512 的图标放置代码里，具体是 `harmony-mp-configs/AppScope/resources/base/media/my_app_icon.png` 路径上，后续可通过 `$media:my_app_icon` 访问。
 
-如何修改元服务的标题、图标、启动图？需要把文字和图标先定义，然后在资源文件中引用。下载文档中推荐的 module.json5 文件，下载放置到 `harmony-mp-configs/entry/src/main/module.json5` ，定位到 `module.abilities[0]` 会找到下面几个字段：
+如何修改元服务的标题、图标、启动图？需要把文字和图标先定义，然后在资源文件中引用。下载 [module.json5](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/module.json5) 文件，下载放置到 `harmony-mp-configs/entry/src/main/module.json5` ，如果你不熟悉鸿蒙工程，没有提到的字段不需要修改。
 
-- `description` 对应应用描述
-- `icon` 对应应用图标，值使用 `$media:my_app_icon`
-- `label` 对应应用标题
-- `startWindowIcon` 对应应用启动图标，Splashscreen
-- `startWindowBackground` 对应应用启动时候屏幕颜色
+定位到 `module.abilities[0]` 会找到下面几个字段：
 
-通过设置 `$media:xxx` 关联图片，`$string:xxx` `$color:xxx` 对应配置文件的值。
+- `description` 对应应用描述，值默认 `$string:EntryAbility_desc`
+- `icon` 对应应用图标，值默认 `$media:app_icon`，
+- `label` 对应应用标题，值默认 `$string:EntryAbility_label`
+- `startWindowIcon` 对应应用启动图 Splashscreen，值默认 `$media:startIcon`
+- `startWindowBackground` 值默认 `$color:start_window_background`
 
-在项目 `harmony-mp-configs` 目录创建 `entry/src/main/resources/` 目录。注意， `zh_CN` 大于 `base` 配置，最终会在 `AppScope` 查找配置，优先修改 zh_CN 配置。
+解释：鸿蒙通过前缀来区分资源 `$media:app_icon` 关联 app_icon 命名的图片，`$string:xxx` `$color:xxx` 对应配置文件的值。
 
-举例，下面是 `zh-CN/element/string.json` 中的内容，可以修改 `EntryAbility_label` 字段。
+进行下面操作：
+
+1. 修改 icon 的值手动修改为 `$media:my_app_icon`。对应元服务图标的位置，默认会从 base 目录中查找
+2. 修改 label 的值手动修改为 `$string:my_app_label`。对应元服务标题的位置，默认会从 base 目录中查找。
+3. 创建 `harmony-mp-configs/entry/src/main/resources/base/element/string.json` 文件，复制内容并修改 my_app_label 字段
 
 ```json
 {
@@ -272,15 +276,24 @@ hdc shell bm dump-shared -n com.huawei.hms.ascfruntime
     },
     {
       "name": "EntryAbility_desc",
-      "value": "description"
+      "value": "EntryAbility description"
     },
     {
       "name": "EntryAbility_label",
-      "value": "label"
+      "value": "DCloud"
+    },
+    {
+      "name": "my_app_label",
+      "value": "你的应用名称"
     }
   ]
 }
 ```
+
+常见错误说明：
+
+1. 本地真机测试需要进入手机设置 - 应用与元服务，移除所有的元服务，确保清空缓存，然后重新确认是否生效
+2. 如果仍有问题可进入鸿蒙 IM 群、ask 社区发帖沟通。
 
 ### 如何查询 ClientID ClientSecret?@how-to-get-clientid
 
@@ -775,3 +788,15 @@ HBuilderX 4.85+ 采用了这个方案，用户切换页面时候会访问本地�
 ### 修改了代码不生效、修改代码过程中 HBuilderX 提示报错
 
 有用户反馈元服务构建过程中出现不可理解的报错，可以尝试执行 运行 - 在选择设备这里执行清空缓存
+
+### 发行提交审核元服务，为什么 AGC 后台按钮为禁用状态无法提审？
+
+发行元服务默认会绑定 DCloud 为服务商，你可在 HBuilderX 中发起发行，在 uniapp 后台完成应用提审，如果这个过程中遇到问题可在 [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流。
+
+### 元服务卡片直达链接如何设置，应该填写什么值？
+
+在 AGC 后台有直达链接，要求传递 json 格式，用来唤起元服务的特定页面。`{"ascfPara": {"path": "pages/bbqm/form?type=scqm"}}`
+
+### 发行鸿蒙元服务，打开 uniapp 后台提示 未找到应用信息，您还没有授权，这是为什么？
+
+一般是 HBuilderX 登录账号和当前 uniapp 开发者后台登录的账号不一致导致的。可以尝试在 AGC 后台尝试进行解绑，重新绑定。解绑后重新绑定会有一定时间的缓存。如果等待半小时后仍然失败，可在 [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流。

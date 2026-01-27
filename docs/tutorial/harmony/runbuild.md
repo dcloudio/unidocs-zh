@@ -399,7 +399,7 @@ DevEco Studio 须先打开一个鸿蒙工程才可进行证书相关的操作，
 
 具体操作过程可以参考 ASK 社区文章 [鸿蒙企业应用内部分发打包教程](https://ask.dcloud.net.cn/article/42052)
 
-## 权限配置指南@permission
+## 鸿蒙权限配置指南@permission
 
 如何配置权限？
 
@@ -432,6 +432,48 @@ A: 鸿蒙曾开放读取用户存储的权限 [READ_MEDIA/WRITE_MEDIA，但已�
 存储文件，图片可直接调用 `uni.saveImageToPhotosAlbum` 存储到系统相册。存储文件可用 `uni.saveFile`，
 
 编辑文件，可参考 [uni.getFileSystemManager](https://uniapp.dcloud.net.cn/api/file/getFileSystemManager.html#getfileinfo) 文档。
+
+### 如何检查某个权限是否已经授权？已经拒绝的权限如何再次申请？
+
+鸿蒙中提供了 `abilityAccessCtrl` [程序访问控制管理模块](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-abilityaccessctrl#abilityaccessctrlcreateatmanager) 来管理鸿蒙权限。对于开发者来说需要在代码程序中先声明权限需要用户授权，需要使用相关权限时候调用方法来唤起用户按需授权。
+
+举例应用希望读写蓝牙状态 `ohos.permission.ACCESS_BLUETOOTH`，需要使用下面步骤：
+
+1. 在 `harmony-configs/entry/src/main/module.json5` 中添加权限 requestPermissions，并添加相关说明，参考 [鸿蒙权限配置指南](#permission)
+2. 使用 `uni.getAppAuthorizeSetting` 方法查询当前授权状态
+3. 如果未授权，编写 UTS API 插件，使用鸿蒙提供的方案申请授权
+
+如果用户第一次拒绝了权限，但相关操作仍然需要权限授权。可参考下面代码
+
+如果用户拒绝授权，将无法再次拉起弹框，需要用户在系统应用“设置”的界面中，手动授予权限，或是调用 [requestPermissionOnSetting](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-abilityaccessctrl#abilityaccessctrlcreateatmanager)，拉起权限设置弹框，引导用户授权。
+
+```ts
+export const requestPermission = async () => {
+  const permissions: Permissions[] = ["ohos.permission.ACCESS_BLUETOOTH"];
+  let atManager: abilityAccessCtrl.AtManager =
+    abilityAccessCtrl.createAtManager();
+  const context = UTSHarmony.getUIAbilityContext();
+
+  // 首次授权弹窗
+  UTSHarmony.requestSystemPermission(
+    permissions,
+    (allRight, grantedList) => {
+      console.log(1, allRight, grantedList);
+    },
+    async (doNotAskAgain: boolean, grantedList: Array<string>) => {
+      console.log(2, doNotAskAgain, grantedList);
+      if (doNotAskAgain) {
+        // 如果拒绝了授权，拉起权限设置弹框
+        const res = await atManager.requestPermissionOnSetting(
+          context,
+          permissions
+        );
+        console.log("再次授权弹窗", res);
+      }
+    }
+  );
+};
+```
 
 ### 通过 uts 插件配置鸿蒙权限
 
@@ -1028,7 +1070,7 @@ HarmonyOS 设备各 API 版本使用量占比如下，开发者可根据占比�
 
 ```js
 const res = uni.getSystemInfoSync();
-const isAndroid = res.platform.toLocaleLowerCase() == "android"
+const isAndroid = res.platform.toLocaleLowerCase() == "android";
 ```
 
 hx 检测到此处代码只判断了安卓端，会以黄字提示开发者未适配鸿蒙，可能造成鸿蒙版微信下异常；开发者可以根据自己的需求修改代码或者点击近期不再提示，以使 hx 不再检测相关内容。
@@ -1037,6 +1079,12 @@ hx 检测到此处代码只判断了安卓端，会以黄字提示开发者未�
 
 ```js
 const userAgentInfo = navigator.userAgent;
-const Agents = ['Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod'];
+const Agents = [
+  "Android",
+  "iPhone",
+  "SymbianOS",
+  "Windows Phone",
+  "iPad",
+  "iPod",
+];
 ```
-

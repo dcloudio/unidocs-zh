@@ -54,13 +54,13 @@ Resources
 }
 ```
 
-并且在用户点击同意隐私政策时调用 `plus.runtime.argeePrivacy()` 方法，这会触发自动获取IDFA操作，弹出`跟踪App活动`授权提示框。
+并且在用户点击同意隐私政策时调用 `plus.runtime.agreePrivacy()` 方法，这会触发自动获取IDFA操作，弹出`跟踪App活动`授权提示框。
 
 注意：
 - 需更新到HBuilderX4.81及以上版本  
 - 配置后需提交云端打包才能生效  
 - 在同意隐私政策前不要调用使用广告标识（IDFA）的功能（如`uni-ad`），或调用获取IDFA标识的API  
-- 配置后如未调用 `plus.runtime.argeePrivacy()` 会导致崩溃统计失效  
+- 配置后如未调用 `plus.runtime.agreePrivacy()` 会导致崩溃统计失效  
 
 
 ### 设置开启广告标识（IDFA）

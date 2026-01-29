@@ -1,11 +1,11 @@
 
-## 首次发布@first
+## 首次上架@first
 
 | 渠道名称 | 是否支持新应用发布？ | 备注说明 | 
 | :--- | :---: | :--- | 
 | **App Store、小米、华为、荣耀** | **是** | 先在**各自开放平台**创建应用，再回 **DCloud 开发者中心** 进行后续的新应用发布 |
 | **VIVO** | **是** | 无需提前创建应用，可直接在 **DCloud 开发者中心** 完成新应用发布 |
-| **OPPO、应用宝** | **否** | **各自开放平台** 创建和发布应用  |
+| **OPPO、应用宝、Google Play** | **否** | **各自开放平台** 创建和发布应用  |
 ---
 
 ### 整体流程
@@ -22,6 +22,7 @@
 - [OPPO开放平台](https://open.oppomobile.com/documentation/page/info?id=10446)
 - [VIVO开放平台](https://dev.vivo.com.cn/documentCenter/doc/2)
 - [App Store Connect](https://developer.apple.com/cn/help/app-store-connect/)
+- [App Store Connect](https://play.google.com/console/u/0/accept-terms)
 
 3. **创建应用** 
    - 由于小米、华为、荣耀的传包 API 暂不提供创建应用接口，需在各家**开放平台**提前手动创建应用（**VIVO** 渠道除外)。  
@@ -30,7 +31,7 @@
    - 在本地开发环境中完成应用开发并进行打包。  
 
 5. **发布应用**  
-   - 使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni发布”-“应用发布”页面。  
+   - 使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni多商店上传”-“应用发布”页面。  
    - 上传应用安装包，完善发布信息后，点击“提交审核“。  
 
 
@@ -54,7 +55,7 @@
 
 4.点击“保存草稿”按钮。
 
-5.其余信息可使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni发布”-“应用发布”页面完善。
+5.其余信息可使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni多商店上传”-“应用发布”页面完善。
 
 #### 华为@huawei
 1.前往[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，如未登录，则先登录。
@@ -69,9 +70,13 @@
 
 4.应用的内容分级信息当前无法通过传包 API完成，您必须在AppGallery Connect网站中手动配置，参见[修改内容分级](https://developer.huawei.com/consumer/cn/doc/AppGallery-connect-Guides/agcapi-add_appinfo-0000001111845350#section116mcpsimp)。
 
-5.点击“保存草稿”按钮。
+5.在已发布版本的国家或地区配置中，请确保未勾选“新国家或地区”选项。
 
-6.其余信息可使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni发布”-“应用发布”页面完善。
+![](https://web-ext-storage.dcloud.net.cn/appstore/huawei_account_1.png)
+
+6.点击“保存草稿”按钮。
+
+7.其余信息可使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni多商店上传”-“应用发布”页面完善。
 
 
 #### 荣耀@honor
@@ -83,12 +88,12 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/appstore/2025-09-24_153026_5512.png)
 
-4.其余信息可使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni发布”-“应用发布”页面完善。
+4.其余信息可使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni多商店上传”-“应用发布”页面完善。
 
 
 
 #### VIVO@vivo
-**无需提前创建应用**，后续使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni发布”-“应用发布”，直接完成新应用的首次发布。
+**无需提前创建应用**，后续使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni多商店上传”-“应用发布”，直接完成新应用的首次发布。
 
 #### OPPO@oppo
 **暂不支持通过传包 API 进行首次发布。**  请前往 **开放平台** 手动完成新应用的创建与发布，详见：[创建应用](https://open.oppomobile.com/documentation/page/info?id=10035)
@@ -100,7 +105,7 @@
 1.前往[App Store Connect](https://appstoreconnect.apple.com/apps)，点击App旁边的"+"号，添加 App。如您还没有添加 Bundle ID 请点击“证书、标识符和描述文件”链接进行添加。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/apple-create-1001.png)
 
-2.uni发布暂只支持“简体中文”，如您的应用需要其它语言介绍请在 App Store Connect 中添加介绍等内容。
+2.uni多商店上传暂只支持“简体中文”，如您的应用需要其它语言介绍请在 App Store Connect 中添加介绍等内容。
 
 3.点击左侧 “App 信息” 菜单在“综合信息”中完成“内容版权”“年龄分级”信息填写。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/apple-create-1002.png)
@@ -108,14 +113,14 @@
 4.点击左侧 “App 隐私”菜单填写“数据收集”。
 ![](https://web-ext-storage.dcloud.net.cn/appstore/apple-create-1003.png)
 
-5.其余信息可使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni发布”-“应用发布”页面完善。
+5.其余信息可使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn)，进入“uni多商店上传”-“应用发布”页面完善。
 
 
 
 ### 发布应用
 
 #### 创建渠道配置
-1. 使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn/) ，选择`uni发布`栏目。首次使用时需创建渠道配置。
+1. 使用 **DCloud 开发者账号** 登录 [开发者中心](https://dev.dcloud.net.cn/) ，选择`uni多商店上传`栏目。首次使用时需创建渠道配置。
 
 ![](https://web-ext-storage.dcloud.net.cn/appstore/config.png)
 
@@ -126,16 +131,9 @@
 `考虑到不同项目可能对应不同的应用市场账号，建议配置名称使用项目名或公司名以便区分。`
 ![](https://web-ext-storage.dcloud.net.cn/appstore/2025-09-23_154817_464.png)
 
-#### 首次发布
+#### 应用首次上架
 
-1. 进入应用发布页面，选择要发布的应用，发布类型选择“首次发布”。
-
-![](https://web-ext-storage.dcloud.net.cn/appstore/SCR-20251007-pcas.png)
-
-- 勾选本次上架的平台
-- 应用名称、包名需与安装包中的应用名称、包名一致
-- 关联渠道配置
-
+1. 进入应用发布页面，选择要发布的应用，发布类型选择“应用首次上架”。
 
 2.上传包
 

@@ -81,6 +81,8 @@
 6.当在应用发布页面中勾选 首次发布，且渠道中包含**华为**时，同样需要填写对应的 app_id，可[参考](https://developer.huawei.com/consumer/cn/doc/app/agc-help-appinfo-0000001100014694)
 
 
+
+
 ### 苹果@apple
 1.前往[Apple 账户](https://account.apple.com/account/manage)，如未登录，则先登录。
 
@@ -101,3 +103,31 @@
 6.创建密钥，点击“有效”旁边的“+”号按钮，访问选择 “管理” 或 “App 管理”权限，点击创建。
 
 7.创建成功后，将 “密钥ID” 和 “密钥文件” 下载保存。
+
+
+### Google Play@google
+1. 使用用于管理 Google Play 的 **开发者账号** 登录 [Google Cloud 控制台](https://console.cloud.google.com/)，选择现有项目或创建一个新项目。
+
+2. 在顶部搜索栏中输入“API和服务”，进入后点击左侧的“库”，再搜索并启用 **Google Play Android Developer API**。
+
+![](https://web-ext-storage.dcloud.net.cn/appstore/google_account_step1.png)
+
+
+3. 进入 **“API 和服务”** 下的 **“凭据”** 页面，点击“+ 创建凭据”按钮，选择 **“服务账号”**。在“创建服务账号”页面，填写服务账号的名称、服务账号ID及描述，完成新服务账号的创建。
+
+![](https://web-ext-storage.dcloud.net.cn/appstore/google_account_step2.png)
+
+![](https://web-ext-storage.dcloud.net.cn/appstore/google_account_step3.png)
+
+4. 服务账号创建完成后，在服务账号列表中找到该账号，在服务账号详情页切换到“密钥”标签页。
+
+5. 在“密钥”标签页中，点击 **“添加密钥”** 按钮，选择“创建新密钥”，在密钥类型中选择 **JSON**，然后点击“创建”。系统将自动下载 JSON 格式的密钥文件，请妥善保存。该文件中的 client_email 和 private_key，正是后续在 DCloud 开发者中心填写的信息。
+
+6. 使用拥有 Google Play 控制台管理权限的账号，登录 [Google Play 管理中心](https://play.google.com/console)，打开 **“用户和权限”** 页面。
+
+7. 点击 **“邀请新用户”**，在邮箱输入框中输入 **服务账号邮箱**，在权限配置中勾选应用发布所需的相关权限（通常至少需要“发布管理”等与应用上传、审核相关的权限，可根据团队实际需求选择更细粒度权限）。
+
+8. 权限配置确认无误后，点击 **“邀请用户”**，完成邀请。服务账号被成功添加到开发者账号后，即可通过 `uni多商店上传` 使用此服务账号的 JSON 密钥调用 Google Play API 进行自动化发布。
+
+
+

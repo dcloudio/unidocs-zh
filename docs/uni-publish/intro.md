@@ -3,7 +3,7 @@
 ## 介绍@intro
 
 一键发布到多家应用商店，高效助力App发版。
-当前支持的应用商店：**App Store、华为、荣耀、小米、VIVO、OPPO、应用宝**。  
+当前支持的应用商店：**App Store、Google Play、华为、荣耀、小米、VIVO、OPPO、应用宝**。  
 
 > 欢迎进入[uni多商店上传技术交流群](https://im.dcloud.net.cn/#/?joinGroup=68d10a5f46d4d0b06752ddfb)
 

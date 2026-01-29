@@ -2,7 +2,7 @@
 ## 更新发布
 
 ### 创建渠道配置
-1. 使用开发者账号登录[开发者中心](https://dev.dcloud.net.cn/) ，选择`uni发布`栏目。首次使用时需创建渠道配置。
+1. 使用开发者账号登录[开发者中心](https://dev.dcloud.net.cn/) ，选择`uni多商店上传`栏目。首次使用时需创建渠道配置。
 
 ![](https://web-ext-storage.dcloud.net.cn/appstore/config.png)
 
@@ -16,13 +16,6 @@
 ### 更新发布
 
 1. 进入应用发布页面，选择要发布的应用，发布类型选择“更新发布”。
-
-![](https://web-ext-storage.dcloud.net.cn/appstore/SCR-20251007-pcas.png)
-
-- 勾选本次上架的平台
-- 应用名称、包名需与安装包中的应用名称、包名一致
-- 关联渠道配置
-
 
 2.上传包
 
@@ -51,7 +44,6 @@ IPA上传：
 
 
 ![](https://web-ext-storage.dcloud.net.cn/appstore/SCR-20251007-pjch.png)
-
 
 
 

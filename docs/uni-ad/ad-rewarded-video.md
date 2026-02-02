@@ -635,7 +635,7 @@ sign = sha256(secret:trans_id)
   "isValid": true
 }
 ```
-
+::: warning FAQ
 **Q：服务器接收到回调请求后，应该如何处理？**
 
 A：建议的处理流程如下：
@@ -647,6 +647,7 @@ A：建议的处理流程如下：
    - 将回调参数（如 `trans_id`、`user_id` 等）入库记录。
    - 执行给用户发放奖励的业务逻辑。
 4. **返回结果**：奖励发放完成后，返回 JSON 数据 `{"isValid": true}` 告知 uniCloud服务器 处理成功。
+:::
 
 #### 老用户升级@upgrade
 

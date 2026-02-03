@@ -1056,6 +1056,9 @@ i=t.shift(),r=t.pop()||i
 
 目前 uni-app x 已支持付费鸿蒙 uts 插件，用户可通过 uts 插件试用功能进行体验。云打包相关版本参数目前为 `commandline-tools-linux-x64-5.0.13.220`。
 
+- 目前暂不支持在 uni-app 中试用鸿蒙付费插件，直接使用会提示报错。后续会开放，目前可购买 uniapp x 源码版本进行开发。
+- 如果 uts 插件中包含 component 参与 uni-app x 鸿蒙编译时候，组件会报错，目前可临时把 UTS 插件中的 components 文件夹内容复制到项目根目录的 components 中使用，来规避此限制，本问题后续会修复。
+
 ### 我可以使用最新版本 API21 的 API 吗，有多大比例用户升级到鸿蒙 6 了？
 
 uts 中使用鸿蒙 API 如果有兼容性顾虑，可参考这个指导方案，判断来 DeviceInfo 返回信息。《[应用使用 API 兼容性保护判断的指导](https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compatibility-api-compatibility?ha_source=Dcloud&ha_sourceId=89000448)》。

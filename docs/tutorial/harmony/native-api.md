@@ -2,6 +2,9 @@
 
 > [uni-app鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)
 
+如需使用鸿蒙系统提供的原生 API，可在插件市场搜索 `鸿蒙+对应能力` 查看是否已经存在了 UTS API 插件，加速业务开发落地。
+
+鸿蒙 UTS API 插件开发可见 [UTS插件介绍](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)。
 
 ## 使用uts调用鸿蒙原生API@nativeapi
 

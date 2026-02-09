@@ -26,6 +26,7 @@
   - HBuilderX 4.24+ 要求 DevEco Studio 5.0.3.400+
   - HBuilderX 4.31+ 要求 DevEco Studio 5.0.3.800+。
   - HBuilderX 4.61+ 针对 uni-app x 项目要求 DevEco Studio 5.0.7.100+。
+  - HBuilderX 4.81+ 要求 DevEco Studio 5.1.0.849+。
   - uni-app 项目要求鸿蒙系统版本 API 12 以上，uni-app x 项目要求鸿蒙系统版本 API 14 以上（DevEco Studio 有内置鸿蒙模拟器）
 - [点击下载](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448) DevEco Studio 最新版本，下载 API19 以上版本的模拟器，建议下载使用 API20+，通过模拟器即可运行 uni-app 鸿蒙项目和元服务，不支持低于 api19 的模拟器。鸿蒙真机无此要求。
 

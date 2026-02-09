@@ -131,3 +131,10 @@
 
 
 
+### 魅族@meizu
+1.前往魅族[开放平台](http://developer.meizu.com/console/apps/app/list)，点击API凭证管理。如未登录，则会先跳转至登录页面。
+
+2.点击API凭证管理。
+
+3.点击获取凭证，申请成功后，平台将分配Access Key和Access Secret。
+![](https://web-ext-storage.dcloud.net.cn/appstore/meizu_0207.png)

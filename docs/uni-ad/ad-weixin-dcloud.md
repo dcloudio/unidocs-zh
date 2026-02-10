@@ -4,6 +4,8 @@
 uni-ad的微信小程序广告目前支持uni-app，以及原生开发的小程序进行变现。广告形式有：Banner，视频广告，插屏，激励视频，格子广告，互动红包（仅支持企业用户）。
 各广告形式的代码开发文档如下：
 
+封面广告(开屏广告) **该类型广告开发者可以在微信流量主后台自行开通或联系运营开启**
+
 [信息流广告/原生广告](https://uniapp.dcloud.net.cn/uni-ad/ad-component.html)
 
 [插屏广告](https://uniapp.dcloud.io/uni-ad/ad-interstitial.html)
@@ -53,6 +55,8 @@ uni-ad微信小程序广告的优势在于：
 
 ### 广告代码集成 @code
 当您的微信小程序是审核通过状态，广告才可正常展示。届时您可以开始根据广告的开发文档进行调试。
+
+封面广告(开屏广告) **该类型广告开发者可以在微信流量主后台自行开通或联系运营开启**
 
 [横幅广告(banner)](https://uniapp.dcloud.net.cn/uni-ad/ad-component.html)
 

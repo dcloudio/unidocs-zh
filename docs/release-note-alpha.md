@@ -1,3 +1,29 @@
+#### 5.01.2026021122-alpha
+* 【uni-app x】
+  + Android平台、iOS平台、鸿蒙平台 修复 API uni.previewImage 设置过多图片时显示速度变慢 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=26383)
+  + Android平台、iOS平台、鸿蒙平台 修复 5.0版本引发的 CSS hover-class部分场景表现和之前版本不一致 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=26281)
+  + Android平台 修复 5.0版本引发的 组件 rich-text 使用 webview 渲染模式云打包后无法使用 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=26115)
+  + Android平台 修复 5.0版本引发的 API uni.request 传递泛型请求时返回类型不正确 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=26131)
+  + Android平台 修复 5.0版本引发的 uts插件中使用 `com.github.bumptech.glide:glide` 依赖库版本大于 4.9.0，云端打包后可能导致应用崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=26133)
+  + iOS平台 修复 API uni.chooseFile 当文件名称中包含`%`字符时选择文件不成功 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=26085)
+  + 【重要】鸿蒙平台 蒸汽模式 新增 CSS var 支持自定义变量 [文档](https://doc.dcloud.net.cn/uni-app-x/css/common/function.html#customvar) <https://issues.dcloud.net.cn/pages/issues/detail?id=26416>
+  + 鸿蒙平台 蒸汽模式 修复 组件 Touch 事件 双指捏合touchend事件次数不正确 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=26225)
+  + 鸿蒙平台 蒸汽模式 修复 组件 text 不支持动态 text 节点嵌套 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=26134)
+  + 鸿蒙平台 蒸汽模式 修复 组件 input 某些情况 value 文本偏下 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=26170)
+  + 鸿蒙平台 蒸汽模式 修复 CSS transform-origin 设置百分比值大于`100%`不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=26410)
+  + 鸿蒙平台 蒸汽模式 修复 CSS class 分组选择器可能不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=26302)
+  + 鸿蒙平台 修复 组件 input 设置 font-size 无法影响 placeholder [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=25710)
+  + 鸿蒙平台 修复 组件 video 同时存在两个及以上时图片显示异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=25960)
+  + 鸿蒙平台 修复 API uni.request 鸿蒙系统下RequestFail返回的信息不正确 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=25935)
+  + 微信小程序平台 修复 4.81版本引发的 前端付费组件云编译报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=24434)
+* 【uts插件】
+  + Android平台 回退 JSON.parse / UTSJSONObject 性能优化 [文档](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/json.html#json) <https://issues.dcloud.net.cn/pages/issues/detail?id=18524>
+* 【uni-app】
+  + Web平台 修复 5.0 版本引发的 vue2 项目配置 leftWindow、topWindow 运行报错的Bug
+  + iOS平台 修复 4.81版本引发的 一键登录未勾选隐私协议时点击登录按钮无提示的Bug
+  + 鸿蒙平台 修复 uni.scanCode无法使用的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=25577)
+  + 鸿蒙平台 修复 5.0 版本引发的 部分接口拦截器失效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=26158)
+
 #### 5.0.2026013113-alpha
 * 【uni-app x】
   + 【重要】新增 鸿蒙平台 蒸汽模式，渲染性能大幅提升 [详情](https://doc.dcloud.net.cn/uni-app-x/app-harmony/harmony-vapor.html)

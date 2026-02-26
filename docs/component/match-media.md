@@ -28,6 +28,10 @@ media query 匹配检测节点。
 |height|number||否|页面高度（ px 为单位）|
 |orientation|string||否|屏幕方向（ landscape 或 portrait ）|
 
+**注意**
+
+- 抖音小程序 `orientation` 属性的可选值为 `portrait`、 `portraitupsidedown`、 `landscapeleft` 和 `landscaperight`
+
 **match-media 示例**
 
 以下示例代码，推荐使用HBuilderX，新建uni-app项目，可直接体验完整示例。

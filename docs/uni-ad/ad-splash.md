@@ -19,3 +19,9 @@
 2. 在打包界面勾选对应渠道
 
 <img src="https://mp-a90b5f95-90ba-4d30-a6a7-cd4d057327db.cdn.bspapp.com/ad-splash-step.png" style="max-width: 500px; max-height: 80vh; margin-left: 0;" />
+
+### 常见问题
+
+**如何配置启动页logo？**
+
+参考文档：[启动界面设置](https://uniapp.dcloud.net.cn/tutorial/app-splashscreen.html#%E5%90%AF%E5%8A%A8%E7%95%8C%E9%9D%A2%E8%AE%BE%E7%BD%AE)

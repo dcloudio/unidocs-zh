@@ -59,6 +59,10 @@ const getUserInfo = () => {
 
 ```
 
+- 验证 `getProviderSync` 返回值 `providerIds` 中包含 `huawei`，如果不包含，请确认 HBuilderX 为最新版，在 `mainfest.json - 鸿蒙App配置` 中勾选了 `OAuth(登录鉴权)` 且配置了 `client_id`。
+- 验证 `uni.login` 返回值包含 `code` 值
+- 验证 `uni.getUserInfo` 返回值包含 `userInfo` 值，包含 avatarUrl/nickName/openId 内容。
+
 ## Tips
 
 - [OpenID和UnionID的长度限制要求](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-faq-1-V5?ha_source=Dcloud&ha_sourceId=89000448)

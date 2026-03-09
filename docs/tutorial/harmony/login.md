@@ -4,7 +4,7 @@
 
 ## 概要
 
-在鸿蒙 App 中提供华为登录是鸿蒙提审的要求。HBuilderX 中已经提供了接入方案，uniCloud 已经封装好了鉴权解析相关操作。
+在鸿蒙 App 中提供华为登录是鸿蒙提审的要求。HBuilderX 中打开 manifest.json 可实现图形页面勾选。已经提供了接入方案，uniCloud 已经封装好了鉴权解析相关操作。
 
 ## uni.login
 

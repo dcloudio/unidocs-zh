@@ -128,6 +128,7 @@
 **Tips**
 - 微信小程序端，滚动时在iOS自带振动反馈，可在系统设置 -> 声音与触感 -> 系统触感反馈中关闭
 - 在2.6.3版本以前，如果需要在PC端使用`picker-view`，需配置[H5模版](https://uniapp.dcloud.io/collocation/manifest?id=h5-template)，并引入[touch-emulator.js](https://github.com/dcloudio/touchemulator)
+- 快手小程序中，在 `uni-popup` 动画中展示 `picker-view` 时，需要设置 `v-if` ，确保动画结束再展示组件，否则动态插入的 picker-view [没有高度无法撑开空间](https://ask.dcloud.net.cn/question/205842)。
 
 **扩展**
 - uni ui提供了增强版`<uni-data-picker>`组件，详见：[https://ext.dcloud.net.cn/plugin?id=3796](https://ext.dcloud.net.cn/plugin?id=3796)

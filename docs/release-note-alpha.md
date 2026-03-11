@@ -1,3 +1,11 @@
+#### 5.03.2026031009-alpha
+* 【uni-app x】
+  + Web平台 修复 API uni.showModal 显示输入框时样式异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=26895)
+  + Android平台 修复 5.0版本引发的 CSS overflow 设置为 visible 时，在滚动视图中点击事件可能触发多次 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=26426)
+  + 鸿蒙平台 蒸汽模式 修复 5.02版本引发的 组件 textarea placeholder 文本非预期纵向排列 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=26903)
+* 【uts插件】
+  + Android平台 修复 5.0版本引发的 uni-app项目导出带泛型的回调函数可能编译报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=26943)
+
 #### 5.02.2026030616-alpha
 * 【uni-app x】
   + Web平台、App平台 新增 组件 page-container 组件 [文档](https://doc.dcloud.net.cn/uni-app-x/component/page-container.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=26320>

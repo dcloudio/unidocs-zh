@@ -36,6 +36,14 @@ export default defineConfig({
       from: 'common:ai/hbuilderx-ai-chat.md',
       to: 'docs/ai/hbuilderx-ai-chat.md',
     },
+    {
+      from: 'common:ai/uni-agent.md',
+      to: 'docs/ai/uni-agent.md',
+    },
+    {
+      from: 'common:ai/vibe-partner.md',
+      to: 'docs/ai/vibe-partner.md',
+    },
     // worktile
     {
       from: 'common:worktile/_sidebar.md',

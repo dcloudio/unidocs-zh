@@ -147,12 +147,21 @@ The above two solutions have their own advantages and disadvantages, and the fir
   
   接下来即可使用 uni-push 相关客户端 api
 
+鸿蒙平台需要主动添加 `APP_TRACKING_CONSENT` 权限配置详见 [鸿蒙支持 uniPush 推送吗，如何配置?](./tutorial/harmony/runbuild.md#q10)。
+
 ##### uni-app 框架App端@enable-app  
 操作步骤打开`manifest.json` - `App模块配置` - 中勾选`uni-push 2.0` - `重新编译项目`
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20220525105852.jpg)
 
+鸿蒙平台需要主动添加 `APP_TRACKING_CONSENT` 权限配置详见 [鸿蒙支持 uniPush 推送吗，如何配置?](./tutorial/harmony/runbuild.md#q10)。
+
 ##### h5端
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/20220525105914.jpg)
+
+**注意**
+
+- 信息收不到？H5 发送通知选择透传消息，不选择通知消息。平台选择默认即可，可以自行通过 CID 单独测试
+- 配置管理 - 故障排查 - 状态查询，查询 h5 用户 Device Token 始终为 `-`
 
 ##### 微信小程序端
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/87accaa0-e6a4-4916-9a74-87719142abaa.jpg)

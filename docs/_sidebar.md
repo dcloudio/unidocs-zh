@@ -25,7 +25,11 @@
 * 运营服务
 * Operation Services
   * [统一发行页面](https://doc.dcloud.net.cn/uniCloud/uni-portal.html)
-  * [uni-portal](https://doc.dcloud.net.cn/uniCloud/uni-portal.html)
+  * uni多商店上传
+    * [简介](/uni-publish/intro.md)
+    * [应用首次上架](/uni-publish/first.md)
+    * [应用更新发布](/uni-publish/update.md)
+    * [常见问题](/uni-publish/faq.md)
   * [前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting.html)
   * [Frontend Web Hosting](https://doc.dcloud.net.cn/uniCloud/hosting.html)
   * [App升级中心](https://doc.dcloud.net.cn/uniCloud/upgrade-center.html)
@@ -43,9 +47,7 @@
     * [uni-push 1.0](unipush-v1.md)
     * [uni-push 1.0](unipush-v1.md)
     * [uni-push 2.0](unipush-v2.md)
-    * [uni-push 2.0](unipush-v2.md)
-      * [业务文档](unipush-v2.md)
-      * [Business Documentation](unipush-v2.md)
+      * [入门文档](unipush-v2.md)
       * 开发文档
       * Development Documentation
         * [uni-app客户端api](https://uniapp.dcloud.net.cn/api/plugins/push.html)
@@ -55,9 +57,7 @@
         * [服务端api](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/api.html)
         * [Server-side API](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/api.html)
       * [uni-push2.0、uni-id、uni统计的组合](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/mate.html)
-      * [Combination of uni-push2.0, uni-id, and uni-stat](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/mate.html)
-    * [安卓厂商推送配置](unipush_vendor_config.md)
-    * [Android Vendor Push Configuration](unipush_vendor_config.md)
+    * [安卓、鸿蒙厂商推送配置](unipush_vendor_config.md)
     * [谷歌FCM配置](uni-push/google-fcm.md)
     * [Google FCM Configuration](uni-push/google-fcm.md)
   * [uni统计](uni-stat.md)
@@ -65,9 +65,7 @@
     * [uni统计2.0](uni-stat-v2.md)
     * [uni-stat 2.0](uni-stat-v2.md)
     * [uni统计1.0](uni-stat-v1.md)
-    * [uni-stat 1.0](uni-stat-v1.md)
-		* [uni-app x下的uni统计使用教程](uni-stat-uniappx.md)
-		* [uni-stat Tutorial for uni-app x](uni-stat-uniappx.md)
+    * [uni-app x下的uni统计使用教程](uni-stat-uniappx.md)
   * [uni加固](/tutorial/app-security.md)
   * [uni App Hardening](/tutorial/app-security.md)
   * [uni隐私合规检测](/tutorial/app-privacy-detect.md)

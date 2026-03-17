@@ -294,7 +294,7 @@ style的写法与web的css基本相同。
 |onShareTimeline|监听用户点击右上角转发到朋友圈|微信小程序|2.8.1+|
 | onShareTimeline|Monitor users click on the upper right corner to forward to Moments|WeChat MiniApp| 2.8.1+|
 |onAddToFavorites|监听用户点击右上角收藏|微信小程序、QQ小程序|2.8.1+|
-| onAddToFavorites|Monitor users click on the upper right corner to save|WeChat MiniApp, QQ MiniApp| 2.8.1+|
+|onShareChat| 监听右上角菜单“分享到微信群组”按钮的行为 | 小红书小程序| |
 
 ## Vue2 页面及组件生命周期流程图@vue2-lifecycle-flow
 

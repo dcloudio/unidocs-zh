@@ -6,9 +6,9 @@ It is used to display the open data of the platform.
 **平台差异说明**
 **Platform Difference Description**
 
-|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|x|√|√|x|√|x|x|x|x|
+|App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快应用|360小程序|快手小程序|京东小程序|小红书小程序|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|x|x|√|x|√|√|x|√|x|x|x|x|x|
 
 **Tips**
 
@@ -24,9 +24,7 @@ This function provides open capabilities for each Mini Program platform. The App
 |property name|type|default value|description|platform difference description|
 |:-:|:-:|:-:|:-:|:-:|
 |type|String||开放数据类型||
-|type|String||Open Data Type||
-|open-gid|String||当 type="groupName" 时生效, 群id|微信小程序、QQ小程序|
-|open-gid|String||It takes effect when type="groupName", group id|WeChat applet, QQ applet|
+|open-gid|String||当 type="groupName" 时生效, 群id|微信小程序|
 |lang|String|en|当 type="user*" 时生效，以哪种语言展示 userInfo，有效值有：en, zh_CN, zh_TW|微信小程序、QQ小程序|
 |lang|String|en|It takes effect when type="user*", in which language to display userInfo, valid values are: en, zh_CN, zh_TW|WeChat applet, QQ applet|
 

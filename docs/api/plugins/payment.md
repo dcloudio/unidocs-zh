@@ -18,14 +18,12 @@ For example, WeChat has different application entrances and usage processes such
 
 前端统一的`uni.requestPayment`和云端统一的`uniPay`搭配，可以极大提升支付业务的开发效率，强烈推荐给开发者使用。`uniPay`的文档另见：[https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)
 
-`小红书小程序`需要使用 `xhs.requestGuaranteeOrderPayment` 担保支付方法，[详情](https://miniapp.xiaohongshu.com/doc/DC034783)
-
 **平台差异说明**
 **Platform Difference Description**
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|[说明](/api/plugins/payment?id=h5-payment)|√|√|√|√|x|√|√|x|√|x|
+|√|[说明](/api/plugins/payment?id=h5-payment)|√|√|√|√|x|√|√|x|√|HX 4.81+|
 
 
 <!-- UNIAPPAPIJSON.requestPayment.compatibility -->
@@ -36,7 +34,7 @@ For example, WeChat has different application entrances and usage processes such
 |参数名|类型|必填#{width=120px}|说明|平台差异说明|
 |:-|:-|:-|:-|:-|
 |provider|String|是|服务提供商，通过 [uni.getProvider](/api/plugins/provider) 获取。||
-|orderInfo|String/Object|是|订单数据，[注意事项](/api/plugins/payment?id=orderinfo)|App、支付宝小程序、百度小程序、抖音小程序|
+|orderInfo|String/Object|是|订单数据，[注意事项](/api/plugins/payment?id=orderinfo)|App、支付宝小程序、百度小程序、抖音小程序、小红书小程序(4.81+)|
 |timeStamp|String|微信小程序必填|时间戳从1970年1月1日至今的秒数，即当前的时间。|微信小程序|
 |timeStamp|String|Required for WeChat MiniApp|Timestamp seconds from January 1, 1970 to the present, that is, the current time. |WeChat MiniApp|
 |nonceStr|String|微信小程序必填|随机字符串，长度为32个字符以下。|微信小程序|
@@ -78,20 +76,19 @@ WeChat MiniApp`signType` description
 - 抖音小程序支付接口调整使用时请注意[发起头条支付](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/pay/tt-pay)
 
 ### orderInfo 注意事项@orderInfo
-### orderInfo Notes @orderInfo
-1. 百度小程序的 orderInfo 为 Object 类型，详细的数据结构，参考：[百度收银台支付](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/)。
-1. The orderInfo of Baidu MiniApp is of Object type. For detailed data structure, please refer to: [Baidu Cashier Payment](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/).
-2. 支付宝小程序的 orderInfo(支付宝的规范为 tradeNO) 为 String 类型，表示支付宝交易号。
+1. 百度小程序的 orderInfo 为 Object 类型，详细的数据结构，详见：[百度收银台支付](https://smartprogram.baidu.com/docs/develop/api/open_payment/#requestPolymerPayment/)
+2. 支付宝小程序的 orderInfo(支付宝的规范为 tradeNO) 为 String 类型，表示支付宝交易号，详见：[支付宝发起支付](https://opendocs.alipay.com/mini/064jhf)
 3. 抖音小程序的 orderInfo 为 Object 类型，详见：[发起头条支付](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/pay/tt-pay/)
-4. App端，支付宝支付 orderInfo 为 String 类型。
-5. App端，Android和iOS系统，微信支付 orderInfo 为 Object 类型。
-6. App端，鸿蒙系统（HarmonyOS Next），微信支付 orderInfo 为 String 类型，即需要执行 `JSON.stringify(orderInfo)`
-7. App端，苹果应用内支付 orderInfo 为Object 类型，{productid: 'productid'}。
+4. 小红书小程序的 orderInfo 为 Object 类型，详见：[小红书担保支付](https://miniapp.xiaohongshu.com/doc/DC034783)
+5. App端，支付宝支付 orderInfo 为 String 类型
+6. App端，Android和iOS系统，微信支付 orderInfo 为 Object 类型
+7. App端，鸿蒙系统（HarmonyOS Next），微信支付 orderInfo 为 String 类型，即需要执行 `JSON.stringify(orderInfo)`
+8. App端，苹果应用内支付 orderInfo 为 Object 类型，`{productid: 'productid'}`
 
 ## H5 平台@h5-payment
-- 普通浏览器平台的支付，仍然是常规web做法。uni-app未封装。但DCloud提供了`uni-pay`插件，已封装了web支付，[详见](https://doc.dcloud.net.cn/uniCloud/uni-pay.html)
+- 普通浏览器平台的支付，仍然是常规web做法。uni-app未封装。但DCloud提供了`uni-pay`插件，已封装了web支付，[详见](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)
 - 在普通浏览器里也可以调起微信进行支付，这个在微信叫做H5支付，此功能未开放给普通开发者，需向微信单独申请，[详见](https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=15_1)
-- 微信内嵌浏览器运行H5版时，可通过js sdk实现微信支付，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)，也可以直接使用[uni-pay](https://doc.dcloud.net.cn/uniCloud/uni-pay.html)，无需再单独引入其他js
+- 微信内嵌浏览器运行H5版时，可通过js sdk实现微信支付，需要引入一个单独的js，[详见](https://ask.dcloud.net.cn/article/35380)，也可以直接使用[uni-pay](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)，无需再单独引入其他js
 
 **各平台支持的支付情况说明**
 **Description of payment conditions supported by each platform**
@@ -793,6 +790,10 @@ export {
   IapTransactionState
 }
 ```
+
+## 华为支付
+
+鸿蒙应用、鸿蒙元服务使用华为支付可参考 [华为支付接入方式](../../tutorial/mp-harmony/payment.md)
 
 ## PayPal支付 [参考](https://uniapp.dcloud.io/app-payment-paypal)
 ## PayPal Payment [Reference](https://uniapp.dcloud.io/app-payment-paypal)

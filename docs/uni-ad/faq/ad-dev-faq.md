@@ -31,12 +31,38 @@
 如重复收到回调请求，请检查回调参数trans_id是否一致，如一致则表明广告渠道商未收到正确返回值触发广告回调重试机制。[回调约定返回值](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html#%E5%BC%80%E5%8F%91%E8%80%85%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE%E7%BA%A6%E5%AE%9A)
 
 ---
+### 服务器在激励视频没有看完时就收到了服务器回调？
+
+不同广告素材的奖励下发节点不同。部分广告只要达到奖励条件（如完成点击或互动），无需看完视频即可触发服务器回调。服务器收到激励视频回调即可给用户发放奖励。
+
+---
 
 ### 广告展示时报错，错误码-5002，无效的广告位标识adpid，请使用正确的adpid？
 1. 打包时基座和广告位不匹配，使用正式广告位需要[自定义基座调试](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)进行打包
 2. 检查打包时appid是否和[uni-ad](https://uniad.dcloud.net.cn/)申请的appid一致
 
 ---
+
+### 微信小程序广告常见问题
+#### vue3 setup写法报错
+vue3组合式写法，注意：页面名称不能和组件重名，ref名称不能和组件重名
+
+#### 错误码-1002
+广告单元（unit-id）不正确，广告单元长度异常。出现此错误可能是由于拼写错误，或误用了 API 语法（uni.createRewardedVideoAd）导致。
+
+关于激励视频广告的正确接入方式：
+* 若使用 API（uni.createRewardedVideoAd）且需支持微信小程序，需先开通微信原生广告并配置对应的 adUnitId；
+* 若使用 uni-ad 广告位（adpid），则只能通过`<ad-rewarded-video>`组件方式接入。参考[文档](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html#%E7%BB%84%E4%BB%B6%E8%AF%AD%E6%B3%95)
+
+#### 错误码-1004
+无合适的广告，广告不是每一次都会出现，这次没有出现可能是由于该用户不适合浏览广告，属于正常情况，且开发者需要针对这种情况做形态上的兼容。
+
+#### 激励视频没有回调
+1. 确保已参考[文档](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html#callbackweixin)完成所有接入步骤和相关配置
+2. HBuilderX项目是否开启安全网络
+3. 是否使用了真机，如果是，在没有开启调试面板时需要配置域名白名单[详情](https://doc.dcloud.net.cn/uniCloud/publish.html)
+4. 是否在客户端代码中初始化了安全网络
+5. 组件的 url-callback  是否有值
 
 ### Android平台引导用户授权获取设备信息（IMEI、IMSI）权限？
 设备信息对于广告投放平台非常重要，可以通过设备标识信息对用户及设备进行画像，分析用户的属性、行为等，从而大幅提升广告投放的精准度。

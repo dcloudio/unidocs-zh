@@ -2,7 +2,8 @@
 
 插屏广告组件是由客户端原生的图片、文本、视频控件组成的；插屏广告与信息流或横幅广告相比展现尺寸更大，同样能够满足您对大量曝光和用户转化的需求。
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/interstitial-ad.png)
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/interstitial-ad.png" style="max-width: 300px; max-height: 50vh;" />
+
 ### 各广告渠道差异说明
 | 广告铺开大小 |   优量汇    |    快手     | 穿山甲 | 百度 | sigmob | 华为 | 章鱼 | 泛连  | 华夏乐游 |
 |:------:|:--------:|:---------:|:---:|:--:|:------:|:--:|:--:|:---:|:---:|
@@ -21,7 +22,7 @@
 
 **开通配置广告**
 
-[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad/ad-open.html)
 
 
 HBuilder 基座的测试广告位 `adpid` 为 `1111111113`
@@ -156,7 +157,7 @@ export default {
 |adpid		|string	|是		|广告位 id	|App 3.1.10+								|App			|
 |adUnitId	|string	|是		|广告位 id	|微信小程序2.6.0+, QQ0.1.26+	|微信小程序	|
 
-uni-ad 不支持在微信上使用API接入，仅支持组件方式`<ad-interstitial>`, 组件支持跨平台
+uni-ad 不支持在微信小程序上使用API接入，**仅支持组件**方式`<ad-interstitial>`，组件支持跨平台
 
 #### 广告创建
 

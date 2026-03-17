@@ -63,7 +63,7 @@ export default defineConfig({
 
 ```js
 import path from 'path';
-import fs from 'fs-extra';
+import fs from 'fs-extra'; // fs-extra 为三方库，需安装依赖
 import { defineConfig } from 'vite';
 import uni from '@dcloudio/vite-plugin-uni';
 
@@ -159,8 +159,7 @@ export default defineConfig({
 
 ```js
 // 读取 manifest.json ，修改后重新写入
-// Read manifest.json , rewrite after modification
-const fs = require('fs');
+import fs from 'fs';
 
 const manifestPath = './src/manifest.json';
 let Manifest = fs.readFileSync(manifestPath, { encoding: 'utf-8' });

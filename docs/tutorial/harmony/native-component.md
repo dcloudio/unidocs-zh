@@ -32,6 +32,8 @@ export declare function defineNativeEmbed<
 
 ### 示例代码
 
+编辑或创建 `app-harmony/button.ets` 填写下面内容：
+
 ```ts
 import { NativeEmbedBuilderOptions, defineNativeEmbed } from "@dcloudio/uni-app-runtime"
 
@@ -81,7 +83,17 @@ defineNativeEmbed('button', {
 })
 ```
 
+**注意：**
+
+- `defineNativeEmbed` 第一个参数为原生组件名称，小写，暂不支持驼峰写法
+
 以上代码在 ets 文件内向 uni-app 注册了一个原生组件 ButtonComponent，标签名为 `button`，在 uts 插件内导入此 ets 文件即可生效。
+
+编辑或者新建 `app-harmony/index.uts` 文件引入定义的 ets 文件
+
+```ts
+import './button.ets'
+```
 
 ## 调用鸿蒙原生组件
 
@@ -134,3 +146,27 @@ defineNativeEmbed('button', {
     }
 </style>
 ```
+
+## 插件市场案例
+
+使用鸿蒙原生组件渲染的案例：
+
+- [UTS 组件鸿蒙花瓣地图](https://ext.dcloud.net.cn/plugin?id=23082)，用来演示原生组件用法，并提供了示例项目。
+- [鸿蒙粘贴控件-点击获取、无需权限](https://ext.dcloud.net.cn/plugin?id=24925) 演示了如何使用粘贴板控件，安全访问用户剪切板内容。
+
+## WebView 组件之上展示原生组件
+
+目前 WebView 组件是使用嵌入原生组件进行的封装，如果你希望在 WebView 之上展示内容，可参考下面方案解决。
+
+页面之上展示内容需要嵌入原生组件方案来解决，并设置 `nodeRenderType= NodeRenderType.RENDER_TYPE_DISPLAY`
+
+```js
+import { NodeRenderType } from '@kit.ArkUI'
+
+defineNativeEmbed('button', {
+  builder: ButtonBuilder,
+	nodeRenderType: NodeRenderType.RENDER_TYPE_DISPLAY
+})
+```
+
+通过设置 nodeRenderType，可在 WebView 组件之下引入该组件，实现内容覆盖在 WebView 组件上。

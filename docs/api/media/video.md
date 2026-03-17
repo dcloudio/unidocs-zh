@@ -12,7 +12,7 @@ If you select and upload non-image and video files, please refer to: [https://un
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|√|√|√|√|√|√|x|√|
+|√|√|√|√|√|√|√|√|√|√|√|
 
 <!-- UNIAPPAPIJSON.chooseVideo.compatibility -->
 
@@ -199,9 +199,7 @@ If you select and upload non-image and video files, please refer to: [https://un
 |parameter name |type |description |
 |:-								|:-			|:-													|
 |tempFilePath			|String	|本地临时文件路径 (本地路径)|
-|tempFilePath |String |Local temp file path (local path)|
-|size							|Number	|本地临时文件大小，单位 B		|
-|size |Number |The size of the local temporary file, unit B |
+|size							|Number	|本地临时文件大小，单位 KB		|
 |duration					|Number	|视频的时间长度							|
 |duration |Number |The duration of the video |
 |height						|Number	|视频的高度									|

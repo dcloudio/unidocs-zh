@@ -130,7 +130,7 @@ The possible values of `%PLATFORM%` are as follows:
 |mp-jd|京东小程序|
 |mp-jd|JD Mini Program|
 |mp-xhs|小红书小程序|
-|mp-xhs|Xiaohongshu Mini Program|
+|mp-harmony|鸿蒙元服务|
 |quickapp-webview|快应用(webview)|
 |quickapp-webview|Quick App(webview)|
 |quickapp-webview-union|快应用联盟|

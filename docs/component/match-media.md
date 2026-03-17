@@ -12,9 +12,9 @@ For example, if a sidebar is placed in the match-media component, and the media 
 **平台兼容性**
 **Platform compatibility**
 
-|app|h5|微信小程序|支付宝小程序|qq小程序|百度小程序|抖音小程序|飞书小程序|360小程序|快应用|京东小程序|元服务|小红书小程序|
-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-:|
-|2.8.12+，app-vue|√|基础库 2.11.1+|√|√|√|√|×|√|×|×|x|x|
+|app|h5|微信小程序|支付宝小程序|qq小程序|百度小程序|抖音小程序|飞书小程序|360小程序|快应用|京东小程序|元服务|小红书小程序|快手小程序|
+|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-|:-:|
+|2.8.12+，app-vue|√|基础库 2.11.1+|基础库 2.7.14+|√|√|√|×|√|×|基础库 1.12.15+|x|x|x|
 
 <!-- UNIAPPCOMJSON.match-media.compatibility -->
 
@@ -41,20 +41,23 @@ For example, if a sidebar is placed in the match-media component, and the media 
 |orientation|string||否|屏幕方向（ landscape 或 portrait ）|
 | orientation| string| | No| Screen direction (landscape or portrait)|
 
+**注意**
+
+- 抖音小程序 `orientation` 属性的可选值为 `portrait`、 `portraitupsidedown`、 `landscapeleft` 和 `landscaperight`
+
 **match-media 示例**
 **Example of match-media**
 
 以下示例代码，推荐使用HBuilderX，新建uni-app项目，可直接体验完整示例。
 For the following sample code, it is recommended to use HBuilderX to create a new uni-app project, able to directly experience the complete example.
 ```html
-
 <template>
     <view>
         <match-media :min-width="375" :max-width="800" >
             <view>当页面最小宽度 375px， 页面宽度最大 800px 时显示</view>
         </match-media>
 
-        <match-media :min-height="400" :orientation="landscape">
+        <match-media :min-height="400" orientation="landscape">
             <view>当页面高度不小于 400px 且屏幕方向为横向时展示这里</view>
         </match-media>
     </view>

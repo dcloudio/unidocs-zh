@@ -14,8 +14,11 @@ code|message|
 -5008|广告已过期，请重新加载数据
 -5100|其他错误，聚合广告商内部错误
 
-### -5002详细说明@-5002
--5002 当前的基座和广告位不匹配，使用正式广告位需要[自定义基座调试](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
+### -5002错误可能的原因@-5002
+1. 广告位在uni-ad创建20分钟后再尝试使用
+2. 当前的基座和广告位不匹配，使用正式广告位需要[自定义基座调试](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
+3. 广告位对应的appid和uni-ad对应的appid要一致
+4. 广告位id填写错误
 
 ### -5005详细说明@-5005
 

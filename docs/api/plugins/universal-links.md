@@ -66,13 +66,11 @@ Open the manifest.json file of the project, in the "iOS Platform Universal Links
 点击如图所示【自动生成】
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E7%94%9F%E6%88%90%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5%E6%95%99%E7%A8%8B1.jpg)
 
-* 注意您必须先开通"uniCloud(阿里云版)云服务空间和开通前端网页托管"[点此查看开通教程](https://ask.dcloud.net.cn/article/38951),按提示完成操作即可。
-* Note that you must first open "uniCloud (Aliyun version) cloud service space and open front-end web page hosting" [click here to view the opening tutorial](https://ask.dcloud.net.cn/article/38951), follow the prompts to complete Just operate.
+* 注意您必须先开通"uniCloud云服务空间和开通前端网页托管"[点此查看开通教程](https://ask.dcloud.net.cn/article/38951),按提示完成操作即可。
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/%E7%94%9F%E6%88%90%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5%E6%95%99%E7%A8%8B2.jpg)
 
-* 注意：通用链接默认域名仅供测试使用，访问频次限制60次/分钟，请勿在正式发行的项目中使用。正式项目，务必绑定自己的域名（顶级域名，二级域名均可）
-* Note: The default domain name of the universal link is only for testing use, and the access frequency is limited to 60 times per minute. Please do not use it in officially released projects. For formal projects, be sure to bind your own domain name (top-level domain name and second-level domain name are acceptable)
+* 注意：**通用链接默认域名仅供测试使用，阿里云访问频次限制60次/分钟，且每天仅允许10个IP访问，请勿在正式发行的项目中使用**。正式项目，务必绑定自己的域名（顶级域名，二级域名均可）
 * 如何绑定自己的域名详情：[https://uniapp.dcloud.io/uniCloud/hosting?id=domain](https://uniapp.dcloud.io/uniCloud/hosting?id=domain)
 * How to bind your own domain name details: [https://uniapp.dcloud.io/uniCloud/hosting?id=domain](https://uniapp.dcloud.io/uniCloud/hosting?id=domain)
 

@@ -1,4 +1,7 @@
 ## uni.createLivePlayerContext(livePlayerId, componentInstance)
+
+> 推荐`uni直播`，官方内置，使用简单，且价格便宜，更具高性价比！[详情](https://doc.dcloud.net.cn/uniCloud/uni-live/intro.html)。
+
 创建 live-player 上下文 livePlayerContext 对象。注意是直播的播放而不是推流。
 
 **平台差异说明**

@@ -4,8 +4,7 @@
 `uni-scss` is a set of global styles provided by `uni-ui`, through some simple class names and `sass` variables, to achieve simple page layout operations, such as color, margins, rounded corners, etc.
 
 ## 使用scss变量
-## Using scss variables
-安装插件后，需要在项目的根目录的`uni.scss`文件引入变量文件，即可使用或修改对应的`scss`变量，变量主要定义的是主题色，后续后加入更多内容。
+安装插件后，需要在项目的根目录的`uni.scss`文件引入变量文件，即可使用或修改对应的`scss`变量，变量主要定义的是主题色，后续会加入更多内容。
 
 ```css
 /* 需要放到文件最上面 */

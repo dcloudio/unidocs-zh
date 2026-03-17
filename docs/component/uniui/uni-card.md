@@ -149,8 +149,7 @@ Use the `actions` slot to set the content of the card action bar, the example st
 
 ### Card Slots
 
-|插槽称名|说明|
-|Slot Name|Description|
+|插槽名称|说明|
 |:-:|:-:|
 |cover|封面图插槽|
 |cover|Cover Image Slot|

@@ -116,17 +116,19 @@ Only latitude and longitude information can be obtained, and address information
 - 配置后需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 
 
-
 <a id="business"/>
 
 ### 商业授权相关说明@lic
 
 #### 国内用户
+
 2021年起，高德、腾讯、百度等地图服务商开始商业授权。
 
 授权费用：5万元/年。
 
 例外：如果是公益类应用，可以申请豁免商业授权。只要不是公益应用，不管你有多少用户，都需要获取商业授权。
+
+如需购买地图的商业授权，请点击 [获取优惠](https://ask.dcloud.net.cn/explore/map/)。
 
 **未授权面临的问题和风险：**
 1. 法律问题：违反产品使用许可，也就是侵权了
@@ -145,9 +147,6 @@ Only latitude and longitude information can be obtained, and address information
     + 微信浏览器、QQ浏览器的定位之所以可以使用，也是因为这些浏览器厂商向地图厂商购买了授权。如果你的web应用跑在这些浏览器里，调用定位api是没问题的。
   - 系统定位只能拿到坐标，无法获取地址信息，比如城市、街道。如需要根据坐标获取街道信息，需使用地图厂商的逆地址解析，这属于商业授权范围。
 2. 使用地图时，在你的app里通过schema调用，打开地图厂商的app，比如直接交给高德地图来导航，这种情况无需在地图厂商注册账户和获取应用key，也就不需要付费。
-3. 联系DCloud申请折扣优惠。
-
-DCloud为开发者争取了福利，可优惠获取高德、腾讯的商业授权。如有需求请发邮件到`bd@dcloud.io`（注明你的公司名称、应用名称/介绍、HBuilder账户）；你也可以通过`uni-im`发起在线咨询，地址：[地图商业授权咨询](https://ask.dcloud.net.cn/explore/map/)。
 
 **注意骗局**
 

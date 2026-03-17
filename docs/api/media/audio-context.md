@@ -5,7 +5,7 @@
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|√|√|1.23.4+|√|√|√|√|√|x|x|
+|√|√|√|1.23.4+|√|√|√|√|√|√|x|
 
 <!-- UNIAPPAPIJSON.createInnerAudioContext.compatibility -->
 
@@ -47,16 +47,16 @@
 |onWaiting|callback|音频加载中事件，当音频因为数据不足，需要停下来加载时会触发||
 |onSeeking|callback|音频进行 seek 操作事件||
 |onSeeked|callback|音频完成 seek 操作事件||
-|offCanplay|callback|取消监听 onCanplay 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
-|offPlay|callback|取消监听 onPlay 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
-|offPause|callback|取消监听 onPause 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
-|offStop|callback|取消监听 onStop 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
-|offEnded|callback|取消监听 onEnded 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
-|offTimeUpdate|callback|取消监听 onTimeUpdate 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
-|offError|callback|取消监听 onError 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
-|offWaiting|callback|取消监听 onWaiting 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
-|offSeeking|callback|取消监听 onSeeking 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
-|offSeeked|callback|取消监听 onSeeked 事件|微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offCanplay|callback|取消监听 onCanplay 事件|app，微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offPlay|callback|取消监听 onPlay 事件|app，微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offPause|callback|取消监听 onPause 事件|app，微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offStop|callback|取消监听 onStop 事件|app，微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offEnded|callback|取消监听 onEnded 事件|app，微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offTimeUpdate|callback|取消监听 onTimeUpdate 事件|app，微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offError|callback|取消监听 onError 事件|app，微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offWaiting|callback|取消监听 onWaiting 事件|app，微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offSeeking|callback|取消监听 onSeeking 事件|app，微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
+|offSeeked|callback|取消监听 onSeeked 事件|app，微信小程序1.9.0+，支付宝小程序，抖音小程序、百度小程序|
 
 errCode 说明
 
@@ -96,7 +96,7 @@ errCode 说明
 ```javascript
 const innerAudioContext = uni.createInnerAudioContext();
 innerAudioContext.autoplay = true;
-innerAudioContext.src = 'https://web-ext-storage.dcloud.net.cn/uni-app/ForElise.mp3';
+innerAudioContext.src = 'https://web-ext-storage.dcloud.net.cn/doc/uniapp/ForElise.mp3';
 innerAudioContext.onPlay(() => {
   console.log('开始播放');
 });
@@ -104,7 +104,7 @@ innerAudioContext.onError((res) => {
   console.log(res.errMsg);
   console.log(res.errCode);
 });
-
+```
 
 **当出现-99错误时** 可以按照下面思路进行排查：
 

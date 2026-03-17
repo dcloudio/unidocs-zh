@@ -22,16 +22,15 @@ There are differences in the support of different Vue versions of the web platfo
 |参数名|类型|说明|平台差异说明|
 |Parameter Name|Type|Description|Platform Difference Description|
 |:-|:-|:-|:-|
-|path|String|启动的路径(代码包路径，注意：App 端开发过程中热更新会直达当前页面，此时启动路径为当前页面路径)||
-|scene|Number|启动时的场景值，具体值含义请查看各平台文档说明。App、web端恒为 1001。钉钉小程序在 IDE 恒为0000，真机不支持。||
-|query|Object|启动时的 query 参数||
-|referrerInfo|Object|来源信息。如果没有则返回 `{}`|`飞书`和`钉钉`小程序不支持|
-|channel|String|如果应用没有设置渠道标识，则返回空字符串。取值如下|`仅 App 支持`|
-|channel|String| Returns an empty string if the app does not set a channel ID. The values are as follows |`Only App supports`|
-|launcher|String|应用启动来源。取值如下|`仅 App 支持`|
-|launcher|String|Application launcher source. The values are as follows |`Only App supports`|
-|forwardMaterials|Array\<Object\>|打开的文件信息数组，只有从聊天素材场景打开（scene为1173）才会携带该参数|`微信小程序`、`QQ小程序`|
-|forwardMaterials|Array\<Object\> |The opened file information array, this parameter is only carried when opened from the chat material scene (scene is 1173)|`WeChat applet`, `QQ applet`|
+|path|string|启动的路径(代码包路径，注意：App 端开发过程中热更新会直达当前页面，此时启动路径为当前页面路径)||
+|scene|number|启动时的场景值，具体值含义请查看各平台文档说明。App、web端恒为 1001。钉钉小程序在 IDE 恒为0000，真机不支持。||
+|query|object|启动时的 query 参数||
+|appScheme|string|首次启动时的Scheme。返回值与App.onLaunch的回调参数一致|仅 `HarmonyOS 4.81+` 支持|
+|appLink|string|首次启动时的appLink。返回值与App.onLaunch的回调参数一致|仅 `HarmonyOS 4.81+` 支持|
+|referrerInfo|object|来源信息。如果没有则返回 `{}`|`飞书`和`钉钉`小程序不支持|
+|channel|string|如果应用没有设置渠道标识，则返回空字符串。取值如下|`仅 App 支持`|
+|launcher|string|应用启动来源。取值如下|`仅 App 支持`|
+|forwardMaterials|Array\<object\>|打开的文件信息数组，只有从聊天素材场景打开（scene为1173）才会携带该参数|`微信小程序`、`QQ小程序`|
 |entryDataHash|string|群入口信息，通过群应用商店打开、群分享卡片打开的小程序可获得|`仅QQ小程序`|
 |entryDataHash|string|Group entry information, which can be obtained through the applet opened in the group app store and group sharing card|`Only QQ applet`|
 |chatType|number|打开的文件信息数组，只有从聊天素材场景打开（scene为1173）才会携带该参数|`仅微信小程序`|
@@ -43,13 +42,13 @@ There are differences in the support of different Vue versions of the web platfo
 |subScene|string|子场景值(定义待补充)|`仅飞书小程序`|
 |subScene|string|Sub scene value (definition to be added)|`Only Feishu applet`|
 
-**Object referrerInfo**
+**object referrerInfo**
 
 |属性|类型|说明|平台差异说明|
 |Properties|Type|Description|Platform Difference Description|
 |:-|:-|:-|:-|
-|appId|String|来源小程序 appId |其他平台均支持，`抖音小程序(1.15.0+)`|
-|extraData|Object|来源小程序传过来的数据|其他平台均支持，`抖音小程序(1.15.0+)`|
+|appId|string|来源小程序 appId |其他平台均支持，`抖音小程序(1.15.0+)`|
+|extraData|object|来源小程序传过来的数据|其他平台均支持，`抖音小程序(1.15.0+)`|
 
 **channel 取值**
 **channel value**

@@ -7,7 +7,7 @@ Get the **globally unique** recording manager ``recorderManager``.
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|√|√|√|√|√|√|√|x|x|
+|√|x|√|√|√|√|√|√|√|√|x|
 
 <!-- UNIAPPAPIJSON.getRecorderManager.compatibility -->
 
@@ -47,9 +47,7 @@ Get the **globally unique** recording manager ``recorderManager``.
 |Attribute|Type|Required|Description|Platform Difference Description|
 |:-|:-|:-|:-|:-|
 |duration|Number|否|指定录音的时长，单位 ms ，如果传入了合法的 duration ，在到达指定的 duration 后会自动停止录音，最大值 600000（10 分钟）,默认值 60000（1 分钟）|App、小程序支持|
-|duration|Number|No|Specify the duration of the recording, the unit is ms. If a valid duration is passed in, the recording will stop automatically after reaching the specified duration. The maximum value is 600000 (10 minutes), and the default value is 60000 (1 minute)| App, MiniApp support|
-|sampleRate|Number|否|采样率，有效值 8000/16000/44100|App、小程序支持|
-| sampleRate| Number|No|Sampling rate, effective value 8000/16000/44100| App, MiniApp support|
+|sampleRate|Number|否|采样率，有效值 8000/16000/44100|App、小程序支持,平台限制见下方备注|
 |numberOfChannels|Number|否|录音通道数，有效值 1/2|仅小程序支持|
 | numberOfChannels| Number|No|Number of recording channels, valid value 1/2|Only supported by MiniApp|
 |encodeBitRate|Number|否|编码码率，有效值见下表格|仅小程序支持|
@@ -63,7 +61,7 @@ Get the **globally unique** recording manager ``recorderManager``.
 
 ::: tip 编码格式与采样率、码率的关系
 
-`Android、iOS、微信小程序`
+`Android、iOS、微信小程序` 平台
 
 |采样率|编码码率|
 |Sampling rate|Coding rate|
@@ -78,14 +76,18 @@ Get the **globally unique** recording manager ``recorderManager``.
 |44100|64000 - 320000|
 |48000|64000 - 320000|
 
-`HarmonyOS`
+`HarmonyOS` 平台
 
-- aac 编码格式支持码率范围[32000 - 500000]
-- mp 编码格式支持码率范围[8000, 16000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000, 224000, 256000, 320000]
-  - 采样率使用16K以下时，对应码率范围为[8000 - 64000]
-  - 采样率使用16K~32K时对应的码率范围为[8000 - 160000]
-  - 采样率使用32K以上时对应的码率范围为[32000 - 320000]
-- wav 编码格式时，补丁码率 8000，采样率 64000，通道数 1
+鸿蒙平台音频参数可使用的封装格式、采样率可参考 [鸿蒙文档 音频参数配置对照表](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-apis-media-i#%E9%9F%B3%E9%A2%91%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E5%AF%B9%E7%85%A7%E8%A1%A8?ha_source=Dcloud&ha_sourceId=89000448)
+
+常见的编码格式、采样率、比特率限制如下：
+
+- aac 编码格式支持比特率范围[32000 - 500000]
+- mp 编码格式支持比特率范围[8000, 16000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000, 224000, 256000, 320000]
+  - 采样率使用16K以下时，对应比特率范围为[8000 - 64000]
+  - 采样率使用16K~32K时对应的比特率范围为[8000 - 160000]
+  - 采样率使用32K以上时对应的比特率范围为[32000 - 320000]
+- wav 编码格式时，固定采样率 8000，比特率 64000，通道数 1
 :::
 
 ## onStop(callback)

@@ -23,15 +23,13 @@ For most login methods, you need to apply for the activation of related services
 - [手机号一键登录（univerify）](/univerify.md)
 - [One-key login with mobile phone number (univerify)](/univerify.md)
 - [苹果登录（Sign in with Apple）](/tutorial/app-oauth-apple.md)
-- [Sign in with Apple](/tutorial/app-oauth-apple.md)
-- [微信登录](/tutorial/app-oauth-weixin.md)
-- [WeChat Login](/tutorial/app-oauth-weixin.md)
+- [微信登录](/tutorial/app-oauth-weixin.md)：HarmonyOS Next (4.81)
 - [QQ登录](/tutorial/app-oauth-qq.md)
 - [新浪微博登录](/tutorial/app-oauth-weibo.md)
 - [Google登录](/tutorial/app-oauth-google.md)
 - [Google Login](/tutorial/app-oauth-google.md)
 - [Facebook登录](/tutorial/app-oauth-facebook.md)
-- [Facebook Login](/tutorial/app-oauth-facebook.md)
+- [华为登录](/tutorial/harmony/app-oauth-huawei.md)
 
 ### 小程序平台支持的登录方式
 * [微信小程序登录](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)
@@ -106,7 +104,9 @@ uni.login({
 - 百度小程序平台需要在button组件的@login事件后再调用 uni.login ，[详见](https://smartprogram.baidu.com/docs/develop/function/login/),否则会返回“请登录”的错误信息，建议在@login事件中调用。
 - uni.login 已针对百度小程序[兼容性升级](https://smartprogram.baidu.com/forum/topic/show/125547)转为 getLoginCode 调用，但某些情况下，百度小程序发布时兼容性诊断依然提示swan.login非兼容性改造，[详见](https://github.com/dcloudio/uni-app/issues/2443)，可使用 [uni.getLoginCode](#getlogincode) 替代 uni.login 解决。
 - 京东小程序IDE 暂时不支持此uni.login()，请用真机查看；IDE调用，只能返回模拟数据 code为200。
-- The JD MiniApp IDE does not support this uni.login() for the time being, please check it with a real device; the IDE call can only return the simulated data with a code of 200.
+- HarmonyOS 平台需要额外的配置，详见[HarmonyOS平台接入微信SDK](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/Access_Guide/ohos.html)
+  - 配置 queryScheme： `"queryScheme": ["weixin"]` **请勿配置 `wxopensdk`。已在 @tencent/wechat_open_sdk@1.0.15 实测配置 `wxopensdk` 后登录无法回调**
+  - 配置 actions: `"actions": [ "action.system.home", "wxentity.action.open" ]`
 
 ## uni.getLoginCode(OBJECT)@getLoginCode
 获取宿主 App 登录凭证（Authorization Code）
@@ -191,6 +191,7 @@ Get user information.
 - On the WeChat MiniApp side, if the user calls this interface without authorization, the authorization pop-up window will not appear, and it will directly enter the fail callback (see ["WeChat MiniApp announcement"](https://developers.weixin.qq.com/community/develop/doc/0000a26e1aca6012e896a517556c01)). Calling this interface when the user is authorized can successfully obtain user information.
 - 京东小程序端，在用户未授权，调用该接口将直接报错。用户已经授权过，可使用该接口直接获取用户信息，不会弹二次授权框
 - 抖音小程序此接口将逐步废弃，请切换使用[uni.getUserProfile](#getuserprofile)。[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-info)
+- 元服务使用 getUserProfile 接口
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -328,7 +329,7 @@ Get user information. An authorization window will pop up for each request, and 
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序、飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√（基础库2.10.4）|x|x|√（基础库2.30.0）|x|x|x|x|√|
+|x|x|√（基础库2.10.4）|x|x|√（基础库2.30.0）|x|x|x|√|√|
 
 **注意：**
 
@@ -338,6 +339,8 @@ Get user information. An authorization window will pop up for each request, and 
 - This API only supports the WeChat MiniApp(basic library version 2.10.4-2.27.0), and the WeChat MiniApp adjusted the relevant interface (see ["MiniApp Login, User Information Related Interface Adjustment Instructions"](https://developers.weixin.qq.com/community/develop/doc/000cacfa20ce88df04cb468bc52801?highLine=getUserProfile%253Afail)). Every time uni.getUserProfile is triggered, an authorization window will pop up, and user information can be successfully obtained after user authorization. The API does not currently support asynchronous operations in events, otherwise an error will be triggered: {errMsg: "getUserProfile:fail can only be invoked by user TAP gesture."}
 
 抖音从基础库 2.30.0 开始支持本方法，低版本需做兼容处理。[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/user-information/tt-get-user-profile/)
+
+元服务 ASCF 1.0.17 运行时（2025-11-27 ）、用户侧系统要求为鸿蒙6+ 开始支持本接口，点击后自动拉起弹窗授权，用户授权后返回 nickName 和 avatarUrl 参数
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -646,7 +649,7 @@ univerifyManager.offButtonsClick(callback)
           "EntryAbility"
         ]
       },
-      "reason": "$string:gy_oaid_tracking" // 此项需要在 `harmony-config/AppScope/resources/base/element/string.json` 中配置，[配置文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/resource-categories-and-access-V5#%E8%B5%84%E6%BA%90%E7%BB%84%E7%9B%AE%E5%BD%95?ha_source=Dcloud&ha_sourceId=89000448)
+      "reason": "$string:gy_oaid_tracking" // 此项需要在 `harmony-config/AppScope/resources/base/element/string.json` 中配置，[配置文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access-V5#%E8%B5%84%E6%BA%90%E7%BB%84%E7%9B%AE%E5%BD%95?ha_source=Dcloud&ha_sourceId=89000448)
     }
   ]
   ```

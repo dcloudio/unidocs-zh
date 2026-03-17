@@ -14,8 +14,7 @@
 **开通配置广告**
 **Activate configuration advertisement**
 
-[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
-[Details of the steps to activate advertising](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad/ad-open.html)
 
 
 文档已迁移至 [插屏视频](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)

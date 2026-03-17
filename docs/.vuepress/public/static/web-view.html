@@ -69,13 +69,18 @@
 			} else if (/quickapp/i.test(userAgent)) {
 				// quickapp
 				document.write('<script type="text/javascript" src="https://quickapp/jssdk.webview.min.js"><\/script>');
+			} else if (/ASCF/i.test(userAgent)) {
+				// 这个 ascf 是从 npm package.json 里获取 @atomicservice/ascf-web-sdk
+				document.write(
+					'<script type="text/javascript" src="https://hellouniapp.dcloud.net.cn/html/ascf-web-sdk.umd.js"><\/script>'
+				);
 			}
 			if (!/toutiaomicroapp/i.test(userAgent)) {
 				document.querySelector('.post-message-section').style.visibility = 'visible';
 			}
 		</script>
 		<!-- uni 的 SDK -->
-		<script type="text/javascript" src="https://doc.dcloud.net.cn/uni.webview.1.5.6.js"></script>
+		<script type="text/javascript" src="https://doc.dcloud.net.cn/uni.webview.1.5.7.js"></script>
 		<script type="text/javascript">
 			document.addEventListener('UniAppJSBridgeReady', function() {
 				document.querySelector('.btn-list').addEventListener('click', function(evt) {

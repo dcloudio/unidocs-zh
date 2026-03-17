@@ -9,16 +9,17 @@
 ::: warning 注意
 
 - 目前已支持 Vue2/Vue3 使用 HBuilderX/CLI 方式运行到元服务。cli 参考 [如何使用 cli 创建元服务？](#using-by-cli)
-- 元服务的开发支持鸿蒙真机，现已支持使用模拟器开发，不区分 Mac/Windows，需要下载 [5.1.1 beta 版本的 DevEco](https://developer.huawei.com/consumer/cn/download/?ha_source=Dcloud&ha_sourceId=89000448)，提供的 API 19 Beta 模拟器。如果遇到 hsp 报错，[查看解决方法](#failed-to-install-the-hap-or-hsp)
+- 元服务的开发支持鸿蒙真机，现已支持使用模拟器开发，不区分 Mac/Windows，需要下载 [DevEco 5.1.1 以上](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448)，提供的 API20 模拟器。如果遇到 hsp 报错，[查看解决方法](#failed-to-install-the-hap-or-hsp)
 - 目前支持鸿蒙 5.0，低于此版本（比如鸿蒙 4.x）不视为鸿蒙 Next。鸿蒙 Next 的机型清单如下，查看 [支持清单](https://consumer.huawei.com/cn/support/harmonyos/models-next/?ha_source=Dcloud&ha_sourceId=89000448)
-  :::
+
+:::
 
 ## 前置准备
 
 ### 开发环境准备
 
 - HBuilderX 4.51+ [下载地址](https://www.dcloud.io/hbuilderx.html)
-- DevEco-Studio 5.0.5.200+ 最新的 release 版本 [下载地址](https://developer.huawei.com/consumer/cn/download/?ha_source=Dcloud&ha_sourceId=89000448)
+- DevEco-Studio 5.1.1 以上 release 版本 [下载地址](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448)
 
 ### 元服务 appid 注册@register-app-id
 
@@ -28,7 +29,7 @@
 
 ### 元服务上架备案（上架重要）
 
-元服务上架需要提前做好备案，强烈建议注册元服务时候立刻开始备案流程，避免临上架才开始备案，耽误上架时间。参考 [App 备案相关注意事项](https://developer.huawei.com/consumer/cn/doc/app/50130-FAQ?ha_source=Dcloud&ha_sourceId=89000448).
+元服务上架需要提前做好备案，强烈建议注册元服务时候立刻开始备案流程，避免临上架才开始备案，耽误上架时间。参考 [App 备案相关注意事项](https://developer.huawei.com/consumer/cn/doc/atomic-guides/atomic-service-filing?ha_source=Dcloud&ha_sourceId=89000448).
 
 如果你的元服务需要使用登录、支付权限，也立即开始着手准备申请相关权限，参考 [华为支付服务开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-preparations?ha_source=Dcloud&ha_sourceId=89000448)。
 
@@ -38,80 +39,69 @@
 
 初次运行元服务，需要配置好证书签名、权限设置等信息，第一次参与鸿蒙开发的新手请仔细阅读下面相关建议，否则可能会影响开发元服务。
 
-如果你已有鸿蒙 App 开发经验，元服务的证书签名、权限配置和鸿蒙 App 的相关操作基本一致，参考 [证书签名配置指南](../harmony/runbuild#connectmobile) 。
+在 HBuilderX 4.81+ 可在 HBuilderX manifest.json 中进行可视化操作，完成证书的自动签名。
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/0f7ab0c1-0e3f-4791-bcd3-7363b96c7cd0.png)
+
+在 HBuilderX 4.81 版本之前，需要手动配置鸿蒙签名，可参考 [鸿蒙元服务配置签名证书](./manual-signature.md)。
+
+此版本之前，元服务的证书签名、权限配置和鸿蒙 App 的相关操作基本一致，需要使用启动 DevEco 启动模拟器，参考 [证书签名配置指南](../harmony/runbuild#signing) 。
 
 签名证书分成两类：
 
 - 自动签名证书。签名过程比较简单，可用于调试，不能用于上架，熟悉上手后再迁移成手动签名
 - 面向企业级协作的调试、发行证书。统一管理设备注册、鸿蒙权限管理等，调试证书可以用于开发，发行证书可以用于上架。
 
-接下来文档会面向新手，详细介绍如何使用自动签名证书。发行证书会在文档下方的 **发行与上架** 部分进行介绍。
+填入已经注册的元服务包名（com.atomicservice.xxx），点击运行设备检测，在保证模拟器、真机运行。然后选择 **自动申请调试证书**，授权并完成自动签名后，会自动填写签名信息，选择保存即可。
 
-打开 DevEco Studio 编辑器，选择 `新建工程 - 元服务 AtomService - Empty Ability`，下面的截图来自 DevEco Studio：
+在华为开发者后台会自动生成对应的文件，后续如果需要更新设备、开通地图功能、申请 ACL 权限时候，需要更新 p7b，请选择编辑设备，重新下载，替换 **签名描述文件** 一栏的文件路径。
 
-![选择元服务 AtomService](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/6cf884be-d067-4fed-b3df-23ad74dcbc39.png)
+具体操作步骤是，访问 [华为开发者后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.htm) - 证书、APP ID 和 Profile - 对应证书 - 编辑设备，勾选设备后重新下载，得到 p7b 文件，替换原始文件。
 
-选择 [已注册好的 AppID](#register-app-id)，创建鸿蒙元服务示例（下面称原生工程）。
+并在手机设置-应用与元服务列表中，移除正在开发的元服务，并选择重新运行元服务并清空缓存，确保立即生效。
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/2e011c35-932c-48bf-9d06-0a93a1885259.png)
-
-在编辑器的右上角点击`Project Structure...` 图标，勾选自动签名 Automatically generate signature。
-
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/7eeda96c-4fc1-45d3-816b-2e23806d2e36.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/24cf2353-f36d-4eaa-8470-1a2c99b9726f.png)
 
 **注意**：
 
-- 也可以通过 `File - Project Structure...` 打开。
 - 这种自动签名的方式只能用于运行与调试，需要发行上架时候请参考 **发行与上架** 章节修改签名文件。
 - 签名操作需要连接鸿蒙设备。
 
-这个时候点击 `Run - Run 'entry'` 或者编辑器顶部的小三角选择运行。如果可以运行成功官方的 Hello World 示例，说明相关环境、证书配置完成。后续用到登录、支付、定位等权限时候需要使用调试证书，到时候替换正确的手动签名证书即可，本部分目的是配置元服务环境，减少上手阻碍。
+如果可以运行成功官方的 Hello World 示例，说明相关环境、证书配置完成。后续用到登录、支付、定位等权限时候需要使用调试证书，到时候替换正确的手动签名证书即可，本部分目的是配置元服务环境，减少上手阻碍。
 
 到这里前置工作就准备完成了。因为元服务还在开发迭代，下面补充相关注意事项。
 
-### 签名文件、权限配置文件位置
-
-请留意原生工程的两个文件比较特殊，后续 HBuilderX 编译运行需要这些文件：
-
-1. 根目录 `build-profile.json5` - 证书签名参数等。后续元服务的开发运行、发布上架依赖此文件。
-2. `entry/src/main/module.json5` - 项目权限配置、metadata 信息配置，元服务设置权限，比如访问网络、位置定位、手机震动等功能依赖此文件。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5?ha_source=Dcloud&ha_sourceId=89000448)。
-
 ## 运行与调试
 
-在 HBuilderX 运行 uni-app 项目到元服务分成四个步骤：
+在 HBuilderX 运行 uni-app 项目到元服务需要执行下面步骤：
 
 1. 配置 `manifest.json` 文件
-2. 配置 `build-profile.json5`
-3. 配置 `module.json5`
-4. 项目启动
+2. 配置 `module.json5`
+3. 项目启动
 
 下面进行详细说明。
 
 ### 1. 配置 manifest.json 文件
 
-项目运行需要配置元服务包名，打开项目根目录的 `mainefest.json` 填写 `鸿蒙元服务 - 应用包名`，结构类似 `com.atomicservice.[你的AppID]`。
+项目运行需要配置元服务包名，打开项目根目录的 `manifest.json` 填写 `鸿蒙元服务 - 应用包名`，结构类似 `com.atomicservice.[你的AppID]`。
 
-![配置 manifest.json 文件](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/f7a94969-59d3-42ad-84be-adf5bcadcd54.png)
+![配置 manifest.json 文件](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/Snipaste_2025-09-30_19-25-24.png)
 
-### 2. 配置 `build-profile.json5`
+### 2. 配置 `module.json5`
 
-需要配置签名证书，这里依赖 [准备签名证书](#准备签名证书) 部分。项目根目录创建 `harmony-mp-configs/build-profile.json5` 文件。
+鸿蒙元服务需要获取使用特定的能力，比如元服务登录、震动、获取网络状态等权限、配置应用名称和图标时候需要配置权限模版。
 
-考虑到新手用户不熟悉配置，建议下载 [这个模版](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/build-profile.json5) 修改，只替换签名 `signingConfigs`部分，其他配置项不要修改。
+**重要：** 下载 [module.json5](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/module.json5) 文件。
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dac3b26f-7db8-415b-9df6-43e5964043ab.png)
-
-### 3. 配置 `module.json5`
-
-鸿蒙元服务需要获取使用特定的能力，比如元服务登录、震动、获取网络状态等原生提供的能力，需要配置权限模版。
-
-项目根目录创建 `harmony-mp-configs/entry/src/main/module.json5` 文件。下载 [module.json5](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/module.json5) 文件进行替换操作。
+项目根目录创建 `harmony-mp-configs/entry/src/main/module.json5` 文件。进行替换操作。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/62fbd174-5276-4a76-9ef7-26562e611533.png)
 
-访问 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject?ha_source=Dcloud&ha_sourceId=89000448)，选择你的项目，在 **项目设置 - 常规** 页面中搜索 Client ID，匹配到的结果是下面需要到 `client_id`，这个参数会关联当前应用的相关权限，比如位置服务等。
+访问 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject?ha_source=Dcloud&ha_sourceId=89000448)，选择你的项目，在 **项目设置 - 常规** 页面中搜索 Client ID，匹配到的结果是下面需要到 `client_id`，这个参数会关联当前应用的相关权限，比如位置服务、登录功能等。
 
 ![](https://web-ext-storage.dcloud.net.cn/unicloud/0a447b30-645c-4325-99c8-8d68274f0f2d.png)
+
+注意点击添加公钥指纹，添加调试证书，否则登录等鉴权功能会失败。
 
 ### 4. 运行鸿蒙元服务
 
@@ -138,6 +128,24 @@
 如果遇到需要 debug 或者白屏问题可以下面方案 [进行调试](#how-to-debug)。
 
 构建鸿蒙工程的过程中可能需要访问 npm 公共仓库，如果遇到网络问题可以通过设置环境变量 `NPM_CONFIG_REGISTRY` 来指向特定的 npm 公共仓库。
+
+### 5. 运行过程中的热更新@ascf-serve
+
+从 `HBuilderX 4.81` 开始，运行鸿蒙元服务的时候支持热更新，当修改了源代码并保存后，修改的内容会很快反映到应用里，不需要重启应用。注意：目前仅真机生效，现网模拟器暂不支持。
+
+启用这个热更新特性需要运行元服务应用的设备满足一定条件，即已经安装了所必需的达到一定版本的基础依赖包。如果不满足启用条件，则仍会使用原本的全量打包模式。
+
+验证设备是否满足条件的方法是：在命令行环境执行下面的命令，并检查输出结果中的 `versionName` 是否达到 `1.0.13.310` 版本。
+
+```sh
+hdc shell bm dump-shared -n com.huawei.hms.ascfruntime
+```
+
+如果设备中没有安装这个基础依赖包，或者版本没有达到要求，则需要通过一定的操作来安装这个包的最新版本。
+
+对于模拟器来说，因为这个包是以固件方式安装在虚拟设备里面的，无法更新，所以只能等待新发布的模拟器镜像来解决这个问题。
+
+对于真机来说，进入【设置>应用和元服务>元服务】界面，如果看到 `helloUniApp` 则卸载它，然后进入负一屏的搜索界面，搜索 `helloUniApp`，找到这个元服务之后打开一次即可。
 
 ## 发行与上架
 
@@ -212,7 +220,7 @@
 
 下面是用户上架遇到的问题，请 **注意**：
 
-- 务必配置应用图标位元服务图标，页面中有 元服务图标生成工具 链接，否则会审核失败
+- 务必配置应用图标为元服务图标，页面中有 元服务图标生成工具 链接，否则会审核失败
 - 发布版本 - 版本选取，选择创建时间最新的版本，勾选选择
 
 上架过程中遇到的问题，欢迎加入 [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流，有官方人员进行答疑和指导。
@@ -226,7 +234,7 @@
 新用户面对鸿蒙签名相关文件会不确定怎么调整。这里对概念做进一步解释：签名文件总共需要四个配置文件（p12/csr/cer/p7b），和两个配置选项（alias/password）。
 
 - p12/csr 是本地生成的配置文件，这两个文件和鸿蒙应用、鸿蒙元服务无关，可兼容使用。
-- cer 文件区分调试证书、发行证书，这个文件和和鸿蒙应用、鸿蒙元服务无关，可兼容使用。
+- cer 文件区分调试证书、发行证书，这个文件和鸿蒙应用、鸿蒙元服务无关，可兼容使用。
 - p7b 文件和具体应用、绑定设备、ACL 权限有关，新增的设备必须重新下载，
 
 访问 [AGC 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html?ha_source=Dcloud&ha_sourceId=89000448) 的 证书/APPID/Profile 页面中可以下载。
@@ -235,21 +243,29 @@
 
 在 `harmony-mp-configs/entry/src/main/module.json5`，可以设置权限、metadata、隐私协议托管等功能，完整配置文档可以参考 [module.json5 配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file?ha_source=Dcloud&ha_sourceId=89000448)
 
+可看 uni.getLocation [鸿蒙位置设置指南](https://uniapp.dcloud.net.cn/api/location/location.html#harmony-set-location) 具体看详细介绍。
+
 ### 如何修改元服务默认标题、图标、启动图等信息？@how-to-change-icon
 
-如果你开发过鸿蒙应用，会发现元服务工程和鸿蒙应用开发设置一致，配置文件同样遵循 module.json5 效果优先于 app.json5 ，参考 [鸿蒙应用组件配置文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/application-component-configuration-stage-V5?ha_source=Dcloud&ha_sourceId=89000448)。推荐在组件级别进行配置。
+元服务图标必须在华为提供的标准图标底板上设计，否则会上架审核不通过。参考 [生成元服务图标](https://developer.huawei.com/consumer/cn/doc/atomic-guides-V5/atomic-service-icon-generation-V5?ha_source=Dcloud&ha_sourceId=89000448) 生成图标，最终得到两个图片，一个是 216x216 用于在 uniapp 开发者后台上传图片，一个是 512x512 的图标放置代码里，具体是 `harmony-mp-configs/AppScope/resources/base/media/my_app_icon.png` 路径上，后续可通过 `$media:my_app_icon` 访问。
 
-打开 `entry/src/main/module.json5` ，定位到 `module.abilities[0]` 会找到下面几个字段：
+如何修改元服务的标题、图标、启动图？需要把文字和图标先定义，然后在资源文件中引用。下载 [module.json5](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/module.json5) 文件，下载放置到 `harmony-mp-configs/entry/src/main/module.json5` ，如果你不熟悉鸿蒙工程，没有提到的字段不需要修改。
 
-- `description` 应用描述
-- `icon` 应用图标
-- `label` 应用标题
-- `startWindowIcon` 应用启动图标，Splashscreen
-- `startWindowBackground` 应用启动时候屏幕颜色
+定位到 `module.abilities[0]` 会找到下面几个字段：
 
-这里的取值一般是 `$media:xxx` 对应图片索引，`$string:xxx` `$color:xxx` 对应配置文件的值。通过文件配置，在项目 `harmony-mp-configs` 目录创建 `entry/src/main/resources/` 目录，并将原生工程相关配置复制过来。注意，`zh_CN` 大于 `base` 配置，优先修改 zh_CN 配置。
+- `description` 对应应用描述，值默认 `$string:EntryAbility_desc`
+- `icon` 对应应用图标，值默认 `$media:app_icon`，
+- `label` 对应应用标题，值默认 `$string:EntryAbility_label`
+- `startWindowIcon` 对应应用启动图 Splashscreen，值默认 `$media:startIcon`
+- `startWindowBackground` 值默认 `$color:start_window_background`
 
-举例，下面是 `zh-CN/element/string.json` 中的内容，可以修改 `EntryAbility_label` 字段。
+解释：鸿蒙通过前缀来区分资源 `$media:app_icon` 关联 app_icon 命名的图片，`$string:xxx` `$color:xxx` 对应配置文件的值。
+
+进行下面操作：
+
+1. 修改 icon 的值手动修改为 `$media:my_app_icon`。对应元服务图标的位置，默认会从 base 目录中查找
+2. 修改 label 的值手动修改为 `$string:my_app_label`。对应元服务标题的位置，默认会从 base 目录中查找。
+3. 创建 `harmony-mp-configs/entry/src/main/resources/base/element/string.json` 文件，复制内容并修改 my_app_label 字段
 
 ```json
 {
@@ -260,21 +276,26 @@
     },
     {
       "name": "EntryAbility_desc",
-      "value": "description"
+      "value": "EntryAbility description"
     },
     {
       "name": "EntryAbility_label",
-      "value": "label"
+      "value": "DCloud"
+    },
+    {
+      "name": "my_app_label",
+      "value": "你的应用名称"
     }
   ]
 }
 ```
 
-元服务图标必须在华为提供的标准图标底板上设计，参考 [生成元服务图标](https://developer.huawei.com/consumer/cn/doc/atomic-guides-V5/atomic-service-icon-generation-V5?ha_source=Dcloud&ha_sourceId=89000448) 生成图标，否则会上架审核不通过。最终得到 512x512 的图标放置在 `harmony-mp-configs/entry/src/main/resources/base/media/app_icon.png` 路径内。
+常见错误说明：
 
-上架时候，这个图标文件也需要在 DCloud 管理后台进行配置。
+1. 本地真机测试需要进入手机设置 - 应用与元服务，移除所有的元服务，确保清空缓存，然后重新确认是否生效
+2. 如果仍有问题可进入鸿蒙 IM 群、ask 社区发帖沟通。
 
-### 如何查询 ClientID ClientSecet?@how-to-get-clientid
+### 如何查询 ClientID ClientSecret?@how-to-get-clientid
 
 访问 [开发者后台 - 凭证](https://developer.huawei.com/consumer/cn/console/api/credentials/dev99442608245310190/0?ha_source=Dcloud&ha_sourceId=89000448) - 项目级凭证，查询到当前项目的相关信息。
 
@@ -293,9 +314,10 @@
 需要在配置网络访问白名单：
 
 - 临时方案。进入手机 - 设置 - 系统 - 开发者选项（如果未开启 关于手机 - 软件版本连续点击开启） - 开发中元服务豁免管控，选择开启后，可以自由调试。
-- 稳定方案。整理 web-view 需要用到的相关域名，进入[华为 AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/?ha_source=Dcloud&ha_sourceId=89000448) - 我的项目 - 开发管理 - 域名设置 - 服务器域名 - httpRequest 合法域名。按照提示进行填写。填写完成后打开 手机设置 - 应用与元服务，删掉正在开发的元服务，重新启动应用。
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/49323643-31f5-4f95-80b2-87157c9a06d5.png)
+- 稳定方案。整理 web-view 需要用到的相关域名，进入[华为 AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/?ha_source=Dcloud&ha_sourceId=89000448) - 我的项目 - 开发管理 - 元服务域名管理 - httpRequest 合法域名。按照提示进行填写。填写完成后打开 手机设置 - 应用与元服务，删掉正在开发的元服务，重新启动应用。
+
+如果你手动配置过 module.json5 文件，需要确保 `requestPermissions` 下存在 `{"name":"ohos.permission.INTERNET"}` 权限。
 
 ### 组件 web-view 渲染空白，不能展示网页
 
@@ -303,9 +325,9 @@
 
 ### 组件 打开 map 地图无法展示、API 位置相关使用报错
 
-Map 和相关定位需要 [华为 AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/?ha_source=Dcloud&ha_sourceId=89000448) 进行权限申请。具体可以参考 [鸿蒙 Map Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/map-config-agc-V5?ha_source=Dcloud&ha_sourceId=89000448)，在 项目设置 - API 管理开启定位服务、位置服务、地图服务。
+页面中使用地图需要 [华为 AppGallery Connect 后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/?ha_source=Dcloud&ha_sourceId=89000448) 进行权限申请。具体可以参考 [鸿蒙 Map Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-config-agc?ha_source=Dcloud&ha_sourceId=89000448)，在 项目设置 - API 管理开启地图服务。
 
-在 `harmony-mp-configs/entry/src/main/module.json5` 在 `requestPermissions` 字段里添加 `ohos.permission.LOCATION` 和 `ohos.permission.APPROXIMATELY_LOCATION` 两条记录。
+在 `harmony-mp-configs/entry/src/main/module.json5` 在 `requestPermissions` 字段里添加 `ohos.permission.LOCATION` 和 `ohos.permission.APPROXIMATELY_LOCATION` 两条记录。操作步骤可参阅 [API getLocation 鸿蒙位置设置指南](https://uniapp.dcloud.net.cn/api/location/location.html#harmony-set-location)
 
 元服务不允许未经用户同意发起定位。在请求位置之前需要获取用户授权。伪代码如下：
 
@@ -327,7 +349,7 @@ uni.authorize({
 
 元服务的登录要求可以参考阅读 《[使用华为账号登录 静默登录](https://developer.huawei.com/consumer/cn/doc/design-guides/accounts-0000001967444380?ha_source=Dcloud&ha_sourceId=89000448)》、《[开发者可以使用自行设计的登录界面吗？](https://developer.huawei.com/consumer/cn/doc/atomic-faqs-V5/faqs-common-account-5-V5?ha_source=Dcloud&ha_sourceId=89000448)》。
 
-如果需要账号登录，必须使用 `uni.login` 登录，不得绕过自行使用账号密码登录。建议申请获取用户手机号权限，然后关联自己的账号系统。在应用在应用合适的时机调用登录接口换取 UnionID，先标识用户为华为用户，操作关键步骤时候接入现有账号，比如获取手机号关联现有账号。同时务必提供注销用户功能入口，用户自行取消注册，否则会被驳回。
+如果需要账号登录，必须使用 `uni.login` 登录，不得绕过自行使用账号密码登录。建议申请获取用户手机号权限，然后关联自己的账号系统。在应用合适时机调用登录接口换取 UnionID，先标识用户为华为用户，操作关键步骤时候接入现有账号，比如获取手机号关联现有账号。同时务必提供注销用户功能入口，用户自行取消注册，否则会被驳回。
 
 实践中，某些分类下的应用无法申请一键获取手机号，申请会被驳回，这种情况下，建议在业务中完成静默登录，然后在某些操作时候关联其他平台用户，此时通过手机号和验证码完成相关关联平台账号逻辑。
 
@@ -335,12 +357,12 @@ uni.authorize({
 
 ### API 登录 uni.login 获取 code 报错、如何绑定现有用户体系？@how-to-login
 
-参考[鸿蒙 Account Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-config-permissions-V5#section132012717318?ha_source=Dcloud&ha_sourceId=89000448) 设置相关权限，添加 scope 权限。
+参考[鸿蒙 Account Kit 开发准备](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-config-permissions-V5#section132012717318?ha_source=Dcloud&ha_sourceId=89000448) 设置相关权限，添加 scope 权限。
 
 易错点：
 
 1. 签名证书不能是自动签名，设置的是 agc 上下载的调试证书
-2. `mp-configs/entry/src/main/modueljson5` 里有个 metadata client_id 确保值正确。
+2. `harmony-mp-configs/entry/src/main/module.json5` 里有个 metadata client_id 确保值正确。
 3. 访问 [AGC 开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject?ha_source=Dcloud&ha_sourceId=89000448) - 我的项目，选择对应的项目和应用，打开 常规 - 应用，配置指纹，确保添加了调试证书。
 
 通过 `uni.login` 可以得到 `code`，流程和其他小程序登录流程相似。参考 [解析凭证](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/account-api-get-token-info-V5?ha_source=Dcloud&ha_sourceId=89000448) 得到用户的 UnionID，开发者在这一步骤自行判断是已绑定华为 UnionID，如果未绑定，引导用户绑定现有账号体系。如果你没有 code 返回值，观察接口错误提示，一般是 client_id 设置错误。
@@ -368,17 +390,17 @@ uni.authorize({
 
 ```js
 getphonenumber(e){
-  // 获取 code 数值：e.detai.code
+  // 获取 code 数值：e.detail.code
   console.log(e.detail.code);
 }
 ```
 
-如果有返回值，说明配置项正确。可以让服务端解析数据。如果点击无反应，在 HBuilderX 中打开展示原生日志，观察是否有类似 `Failed to check the fringerprint` 的告警，排查错误方案如下：
+如果有返回值，说明配置项正确。可以让服务端解析数据。如果点击无反应，在 HBuilderX 中打开展示原生日志，观察是否有类似 `Failed to check the fingerprint` 的告警，排查错误方案如下：
 
 1. 签名证书不能是自动签名，设置的是 agc 上下载的调试证书
 2. 确保你联调的元服务已经申请得到了获取手机号权限，如果你在开发多个元服务可能会错误配置
-3. 访问 [AGC 开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject?ha_source=Dcloud&ha_sourceId=89000448) - 我的项目，选择对应的项目和应用，打开 常规 - 应用，配置指纹，确保添加了调试证书。
-4. `mp-configs/entry/src/main/modueljson5` 里有个 metadata client_id 确保值正确，是应用的 ClientID，不是项目的 ClinetID
+3. 访问 [AGC 开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject?ha_source=Dcloud&ha_sourceId=89000448) - 我的项目，选择对应的项目 and 应用，打开 常规 - 应用，配置指纹，确保添加了调试证书。
+4. `mp-configs/entry/src/main/module.json5` 里有个 metadata client_id 确保值正确，是应用的 ClientID，不是项目的 ClientID
 5. 如果修改过配置参数没有立刻生效，真机打开设置 - 应用与元服务，找到正在开发的应用选择移除，重新运行
 
 用户侧第一次使用会有系统控件弹窗申请，同意之后，后续会自动同意。如果撤回同意，或者测试控件效果，需要手机打开 设置-华为账号-账号安全-使用华为账号的应用-删除授权。
@@ -387,7 +409,7 @@ getphonenumber(e){
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/153e4b27-07bb-4fb1-aaaf-1685d555abf5.png)
 
-最终解析 token 得到最终结果，最终结果数据是下面的结构，供 mock 参考，包含了 unionID/mobileNunber 字段，后面执行用户关联操作。
+最终解析 token 得到最终结果，最终结果数据是下面的结构，供 mock 参考，包含了 unionID/mobileNumber 字段，后面执行用户关联操作。
 
 ```json
 {
@@ -401,7 +423,7 @@ getphonenumber(e){
 
 ### API 获取网络类型失败、手机震动不等效
 
-新版模版已内置，如果你自定义过权限，需要存在 `GET_NETWORK_INFO` 和 `vibrate` 权限。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/permissions-for-all-V5?ha_source=Dcloud&ha_sourceId=89000448) 进行查询。按照 **配置权限模版** 章节进行配置。
+新版模版已内置，如果你自定义过权限，需要存在 `GET_NETWORK_INFO` 和 `vibrate` 权限。具体的鸿蒙元服务权限列表可以参考 [鸿蒙对所有应用开放的权限清单](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-for-all-V5?ha_source=Dcloud&ha_sourceId=89000448) 进行查询。按照 **配置权限模版** 章节进行配置。
 
 ### 运行报错 `failed to install bundle. code:9568296 error: install failed due to error bundle type`
 
@@ -419,7 +441,7 @@ getphonenumber(e){
 
 ### 配置的 module.json5 注意事项
 
-文件 `harmony-mp-configs/entry/src/main/module.json5` 会用来配置应用的一些应为，你可以参考 [鸿蒙 module.json5 配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/module-configuration-file-V5?ha_source=Dcloud&ha_sourceId=89000448) 进行学习和参考。
+文件 `harmony-mp-configs/entry/src/main/module.json5` 会用来配置应用的一些行为，你可以参考 [鸿蒙 module.json5 配置文件](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-configuration-file-V5?ha_source=Dcloud&ha_sourceId=89000448) 进行学习和参考。
 
 如果你已经在开发鸿蒙 App ，见到 module.json5 会感觉比较熟悉，有几个属性需要特别注意：
 
@@ -439,7 +461,7 @@ getphonenumber(e){
 在终端中运行 `hdc shell bm dump-shared -a`，观察返回值是否包含 `com.huawei.hms.ascfruntime`，如果不包含运行元服务会出现此错误。
 
 1. 如果使用真机，需要使用鸿蒙 Next 真机，确保系统版本是鸿蒙 5.0+，其他版本不支持。应用市场搜索 “helloUniapp”，随后直接运行以自动安装 ASCF 引擎。
-2. 如果使用模拟器开发，需要下载 [5.1.1 beta 版本的 DevEco](https://developer.huawei.com/consumer/cn/download/?ha_source=Dcloud&ha_sourceId=89000448)，下载 API 19 Beta 模拟器，其他版本模拟器无法运行元服务。
+2. 如果使用模拟器开发，需要下载 [5.1.1 beta 版本的 DevEco](https://developer.huawei.com/consumer/cn/download/deveco-studio?ha_source=Dcloud&ha_sourceId=89000448)，下载 API 19 Beta 模拟器，其他版本模拟器无法运行元服务。
 
 注意：如果使用模拟器仍然报错上述错误，临时方案需要新建 `harmony-mp-configs/entry/oh-package.json5`，填充下面内容。使用真机时候不需要执行这个操作。此为鸿蒙 Bug，后续鸿蒙会优化处理。
 
@@ -488,7 +510,7 @@ WebView 调试按照文档操作，简单来说可以分成三个步骤：
 
 1. 确认插入了设备执行 `hdc shell "cat /proc/net/unix | grep devtools"` 记录返回数据尾部的数字部分
 2. 转发端口 `hdc fport tcp:9222 localabstract:webview_devtools_remote_[刚才的数字部分]` 返回 OK
-3. 打开浏览器 `chrome://inspect/#devices` 观察 Remoet Target 进行调试。
+3. 打开浏览器 `chrome://inspect/#devices` 观察 Remote Target 进行调试。
 
 V8 引擎调试可以这样操作
 
@@ -508,13 +530,23 @@ V8 引擎调试可以这样操作
 
 ### 元服务构建在 Windows 系统下卡死
 
-有用户反馈在 Windows 平台下运行 DevEco 原生元服务正常，使用 HBuilderX 运行空白工程会卡主无法完成。发现是个别系统安全工具会默认拦截，拦截发生在 DevEco 调用内置的 node 处理编译时候。提示文案：“有程序正在进行可疑操作，建议阻止”。
+有用户反馈在 Windows 平台下运行 DevEco 原生元服务正常，使用 HBuilderX 运行空白工程会卡住无法完成。发现是个别系统安全工具会默认拦截，拦截发生在 DevEco 调用内置取得 node 处理编译时候。提示文案：“有程序正在进行可疑操作，建议阻止”。
 
 目前没有好的方案解决，建议始终信任 DevEco 的操作，或者临时退出安全软件。有相关经验也欢迎交流反馈。
 
 ### 发行应用时候提示上传失败
 
-- 场景一 `[AppGalleryConnectPublishServicelapp state can not be modified!` 当前应用可能已经在审核中
+元服务在 HBuilderX 中执行发布操作，发布成功后登录 uni-app 后台，软件的状态显示失败。
+
+![软件包显示失败](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/2025-12-01_15-01-28.png)
+
+一般来说是机器解析发行包时候遇到了问题，需要访问 [华为 AGC 开发者后台](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) ，访问 APP 与元服务 - 应用上架 - 软件包管理，这里会有具体错误代码，点击错误原因即可看到详细解释
+
+![软件包管理](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/8dac59ed-c0c9-4792-a344-3fbcdfcdcd89.png)
+
+常见的错误提示和解决方案如下：
+
+- 场景一 `[AppGalleryConnectPublishService] app state can not be modified!` 当前应用可能已经在审核中
 - 场景二 `submit version for review failed, additional msg is [[5]]` 这表示代码和上传时候设备勾选的不统一，代码中搜索 `tablet` 配置项删掉并重新发布，在 uniapp 后台改为仅手机，不勾选平板。
 - 场景三 `请检查华为后台隐私政策中 xxx 是否填写完整`，这表示 AGC 的隐私协议表单缺少对应项。你可以在 AGC 后台 - 用户与访问 - 授权管理 -应用授权，临时取消服务商绑定。操作好之后点击保存，重新走服务商绑定。
 
@@ -538,7 +570,7 @@ V8 引擎调试可以这样操作
 
 - 元服务图标（最近任务列表图标）未使用平台提供的元服务图标生成工具生成，图标使用不规范。处理方案：参考 [如何修改元服务默认标题、图标、启动图等信息？](#how-to-change-icon)
 - 您的元服务提交的图标为系统图标（安装后/最近任务列表）。修改建议：元服务图标不得为系统图标。处理方案：参考 [如何修改元服务默认标题、图标、启动图等信息？](#how-to-change-icon)
-- 元服务存在自定构造的登录页面，不符合华为应用市场审核标准。处理方案：参考 [API 登录 uni.login 获取 code 报错、如何绑定现有用户体系？](#how-to-design-user-login)
+- 元服务存在自行构造的登录页面，不符合华为应用市场审核标准。处理方案：参考 [API 登录 uni.login 获取 code 报错、如何绑定现有用户体系？](#how-to-design-user-login)
 - 您提交的元服务（名称/图标与最近任务列表的元服务名称/元服务图标不一致）处理方案：参考 [如何修改元服务默认标题、图标、启动图等信息？](#how-to-change-icon)
 - 您元服务内的隐私政策/在 AppGallery Connect 上提交的隐私政策网址内元服务名称与开发者提交的元服务名称信息不一致。处理方案：隐私协议是在华为后台自己填写表格构建的，观察表格里顶部的名称是否和 appid 对应的名称是否一致。
 - 您元服务内用户协议展示的元服务名称与在 AppGallery Connect 上提交的元服务名称不一致。处理方案：用户协议网址一般是在华为后台自己添加的，观察填写的 URL 内容和当前的元服务名称是否一样，元服务名称华为后台 appid 对应的名称一致。
@@ -590,7 +622,7 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 下面介绍如何开发基于 UI 的卡片，思路和原生开发一致，推荐在 DevEco 中完成卡片开发验证，之后再迁移到 HBuilderX 工程中。首先在 DevEco 中先创建一个 ascf 工程。
 
 - 打开 entry/src/build-profile.json5 文件
-- 选择 DevEco 的菜单 File - New - Service Widget - Dynamic Widget。如果没有找个选项，说明没有打开上面的文件
+- 选择 DevEco 的菜单 File - New - Service Widget - Dynamic Widget。如果没有这个选项，说明没有打开上面的文件
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/1f6ddb67-ef68-4d06-a9a4-5e75acd56180.png)
 
@@ -613,13 +645,9 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 元服务开发还在不断迭代，建议通过 HBuilderX alpha 版本进行开发。
 
-在 HBuilderX 4.63 alpha 版本之前，元服务的 log 日志规则发生了调整，如果低于此版本需要临时使用下面方案查看日志：
+如果无法在 HBuilderX 中看到鸿蒙日志，请确保开启鸿蒙网络豁免，打开手机设置 - 系统 - 开发者选项 - 开发中元服务豁免管控。
 
-- 打开 DevEco 任意项目，不需要启动应用，在底部找到 Log 面板
-- 打开 Log 面板，筛选你正在开发的应用，过滤 Warn 级别，观察此时 log 是否有告警、错误爆红。
-- 用户侧打印的 log 建议临时通过固定前缀，在 Info 级别进行过滤，或者临时使用 `console.warn` 进行数据打印
-
-如果报错中包含 xxx is not defined，可能是对应的 api 在元服务中还未实现，比如 uni.createAnimation、获取胶囊位置、获取激励视频等。此类问题需要使用条件编译进行规避。
+可在 HBuilderX 中开启原生日志，观察完整日志，如果报错中包含 xxx is not defined，可能是对应的 api 在元服务中还未实现，比如 uni.createAnimation、获取胶囊位置、获取激励视频等。此类问题需要使用条件编译进行规避。
 
 如果报错中包含 vendor.js 中有报错，可能是三方组件库不兼容元服务，可以参考 debug 文档进行错误定位。
 
@@ -637,26 +665,31 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 ```json
 {
-    "pages": [{
-    "path": "pages/index/index",
-    "style": {
-      "navigationBarTitleText": "Index",
-      "componentPlaceholder": {
-        "custom-button": "view"
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "Index",
+        "componentPlaceholder": {
+          "custom-button": "view"
+        }
       }
     }
-  }],
-  "subPackages": [{
+  ],
+  "subPackages": [
+    {
       "root": "packageA",
-      "pages": [{
-        "path": "index/index",
-        "style": {
-          "navigationBarTitleText": "分包页面",
-          "componentPlaceholder": {
-            "custom-button": "view"
+      "pages": [
+        {
+          "path": "index/index",
+          "style": {
+            "navigationBarTitleText": "分包页面",
+            "componentPlaceholder": {
+              "custom-button": "view"
+            }
           }
         }
-      }]
+      ]
     },
     {
       "root": "packageB",
@@ -668,6 +701,8 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 ```
 
 在页面中正常使用： `import CustomButton from "@/packageB/components/component1/index.vue";`
+
+如果你需要组件中使用占位组件，可参考阅读 [小程序专题-分包异步化](https://uniapp.dcloud.net.cn/tutorial/miniprogram-subcontract-asynchrony.html)
 
 ### 元服务提交审核常见报错
 
@@ -681,12 +716,12 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 - 不要勾选 `ohos.permission.WRITE_IMAGEVIDEO` 和 `ohos.permission.READ_IMAGEVIDEO` 读取和写入，这是敏感权限，一般情况下使用 uni.chooseMedia 和 uni.saveFile 就可以
 - 不要勾选剪切板 `ohos.permission.READ_PASTEBOARD` 权限，这是敏感权限需要华为申请下来才能使用，一般场景无法申请，设置剪切板功能 `uni.setClipboardData` 可正常使用。
 
-#### sumit version for review failed, additional msg is xxx
+#### submit version for review failed, additional msg is xxx
 
 - xxx 为 `[[5]]` ，报错一般是代码中 deviceType 和 uniapp 后台里选择的不一致。元服务建议值勾选 Phone 手机。保持一致即可。
 - xxx 为 AppGalleryConnectAppMetaInfoService version's privacyAgreementId is empty。这个一般是一些协议没有选择，错误通过了校验审核
 
-#### [amis] submit version for review faied, additional msg is [appAdapters devices can not own entry main packages]
+#### [amis] submit version for review failed, additional msg is [appAdapters devices can not own entry main packages]
 
 代码内应用适配平台和鸿蒙后台勾选的设备不匹配，也就是代码中设备清单和线上资料不一样。
 
@@ -694,6 +729,74 @@ yarn add @dcloudio/webpack-uni-pages-loader@2.0.2-alpha-4050720250316001 -D
 
 在 AGC 后台或者 uni-app 提审后台，也有适配设备选项，确保和代码中保持一致，通常勾选 手机 Phone 值，表示兼容手机
 
-#### 提交审核按钮为灰色无法提交
+#### uniapp 后台提交审核按钮为灰色无法提交审核
 
 观察按钮右侧有个联系方式，可以和 uniapp 发起沟通，看是否有更好的激励政策。如果仍有问题，可以在 [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e)沟通。
+
+#### 华为 agc 后台无法提交审核，按钮为灰色
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/17648171696674e20df20-d004-11e7-b01f-f578f9f5f6ab.png)
+
+这说明你已经绑定了 DCloud 为服务商，绑定服务商可以简化提交审核的流程，统一处理不同平台的应用发布。你需要在 uniapp 后台来完成操作，访问应用管理-我的应用-具体项目-各平台信息-鸿蒙元服务发布，在这里进行发布。
+
+### 如何申请、使用华为支付
+
+可参考 [华为支付指南](../mp-harmony/payment.md)
+
+### 自动申请调试证书是总是检测不到设备怎么办？@device-not-found
+
+自动申请调试证书是总是检测不到设备怎么办？设备已经加到 AGC 中了。 25 年 12 月开始，华为调整了查询设备信息的接口，影响了现有代码处理逻辑。两个处理方案：使用手动签名或者调整代码做兼容。
+
+在 HBuilderX 安装目录找到 `plugins/launcher/out/main.js` 文件，查找和替换下面文件
+
+```
+//在其中查找：
+i=t.shift(),r=t.pop()
+// 替换成：
+i=t.shift(),r=t.pop()||i
+```
+
+### 新版本 HBuilderX 运行元服务运行页面闪烁
+
+HBuilderX 4.76 运行元服务 tabbar 页面切换页面不会闪烁，HBuilderX 4.85+ 运行元服务快速切换 tab 页面会有闪烁重新加载的现象。这是目前技术实现的限制，实际发行不会卡顿。
+
+技术方案解释：4.76 版本中元服务编译时间比较长，后续修改代码生效时间比较长，加载比较慢。华为底层的 ascf 针对这种情况提出了改进方案，改为启动本地服务网页，元服务通过访问本地服务器来展示内容，加载速度快，逻辑简单，性能优势明显，称之为热重载方案。
+
+HBuilderX 4.85+ 采用了这个方案，用户切换页面时候会访问本地服务，会产生轻微的闪烁，页面生命周期也会重新触发。本地调试可忽略此问题，实际发布后不会有此问题。
+
+### 元服务在平板、折叠屏上不能满屏展示，有黑边
+
+目前华为的 ASCF 团队是这样规划的，不可修改，这个表现不会影响应用运行，不会影响审核上架
+
+### uni-app 开发鸿蒙元服务如何开发 uts 插件？
+
+不支持使用 uts 引用原生鸿蒙代码，不支持开发 uts 插件。uni-app 元服务使用了 ascf 技术方案，不支持 ArkTS 原生写法。
+
+### 元服务支持哪些地图？
+
+元服务和微信小程序相似，都是宿主环境提供地图服务，用户可免费使用地图授权，不支持替换。
+
+### 元服务里的 harmony-mp-configs 目录怎么是空的，要怎么使用？
+
+鸿蒙元服务还在不断迭代，目前部分配置高阶参数没有开放为可视化配置，仍需要修改原始工程代码。目前设计了 `harmony-mp-configs` 目录，目录里的内容在构建过程中会同步到最终产物工程中，实现配置文件的替换。常见的文件是 `module.json5` 文件，需要放置到 `harmony-mp-configs/entry/src/main.module.json5` 路径下。
+
+目前有两个方式来获得 `module.json5` 文件：
+
+- 方式一，下载本文档提供的 module.json5 文件
+- 方式二，自行创建鸿蒙 ASCF 工程，从 ASCF 工程中复制 `module.json5` 文件
+
+### 修改了代码不生效、修改代码过程中 HBuilderX 提示报错
+
+有用户反馈元服务构建过程中出现不可理解的报错，可以尝试执行 运行 - 在选择设备这里执行清空缓存
+
+### 发行提交审核元服务，为什么 AGC 后台按钮为禁用状态无法提审？
+
+发行元服务默认会绑定 DCloud 为服务商，你可在 HBuilderX 中发起发行，在 uniapp 后台完成应用提审，如果这个过程中遇到问题可在 [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流。
+
+### 元服务卡片直达链接如何设置，应该填写什么值？
+
+在 AGC 后台有直达链接，要求传递 json 格式，用来唤起元服务的特定页面。`{"ascfPara": {"path": "pages/bbqm/form?type=scqm"}}`
+
+### 发行鸿蒙元服务，打开 uniapp 后台提示 未找到应用信息，您还没有授权，这是为什么？
+
+一般是 HBuilderX 登录账号和当前 uniapp 开发者后台登录的账号不一致导致的。可以尝试在 AGC 后台尝试进行解绑，重新绑定。解绑后重新绑定会有一定时间的缓存。如果等待半小时后仍然失败，可在 [uni-app 鸿蒙化技术交流群](https://im.dcloud.net.cn/#/?joinGroup=668685db8185e1e6e7b7b15e) 进行交流。

@@ -43,6 +43,9 @@ const routerMap = {
   '/frame#typescript-支持': '/tutorial/typescript-subject.html#typescript-支持',
   '/frame#全局样式与局部样式': '/tutorial/syntax-css.html#全局样式与局部样式',
   '/frame#注意事项-1': '/tutorial/renderjs.html#注意事项',
+  '/frame#分包异步化': '/tutorial/miniprogram-subcontract-asynchrony.html',
+  '/frame#跨分包自定义组件引用': '/tutorial/miniprogram-subcontract-asynchrony.html#跨分包自定义组件引用',
+  '/frame#跨分包js代码引用': '/tutorial/miniprogram-subcontract-asynchrony.html#跨分包js代码引用',
 
   '/api/ui/language': '/api/ui/locale.html',
   '/api/ad/rewarded-video-ad': '/api/a-d/rewarded-video.html',
@@ -101,7 +104,6 @@ const routerMap = {
   '/uniCloud/uni-id-pages': '/uniCloud/uni-id/redirect.html',
   '/uniCloud/uni-id-common': '/uniCloud/uni-id/cloud-common.html',
   '/uniCloud/uni-id': '/uniCloud/uni-id/old.html',
-  '/uts/': '/uni-app-x/uts/',
   '/uni-app-x/ext': '/uni-app-x/api/ext.html',
   '/uni-app-x/pagesjson': '/uni-app-x/collocation/pagesjson.html',
   '/uni-app-x/manifest': '/uni-app-x/collocation/manifest.html',
@@ -114,6 +116,7 @@ const routerMap = {
 	'/tutorial/harmony/dev#publish': '/tutorial/harmony/runbuild.html#publish',
 	'/tutorial/harmony/dev#harmonyos特性说明': '/tutorial/harmony/built-in-module.html',
 	'/tutorial/harmony/dev': '/tutorial/harmony/intro.html',
+  '/tutorial/app-oauth-huawei': '/tutorial/harmony/app-oauth-huawei.html',
 
 	'/tutorial/run/run-app-harmony.': '/tutorial/harmony/runbuild.',
 }
@@ -149,16 +152,6 @@ export default ({ fullPath, path, hash }) => {
   if (path.indexOf('/app-') === 0 || path.indexOf('/android-') === 0 || path.indexOf('/ios-') === 0) {
     return {
       path: `/tutorial${fileNameToLowerCase(path)}`,
-      hash,
-      replace: true
-    }
-  }
-
-  const matchUTSPlugin = path.match(/\/(plugin\/uts-\S+(\.html)*\S*)/)
-  if (matchUTSPlugin) {
-    const utsPluginPath = matchUTSPlugin[1]
-    return {
-      path: routerMap['/uni-app-x/'] + utsPluginPath,
       hash,
       replace: true
     }

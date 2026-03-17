@@ -508,7 +508,7 @@ Before enabling the redis cache, you need to confirm whether the redis service h
 In order for the data collected by the client app to be correctly received and counted by the cloud function in `uni-admin`, it is necessary to ensure that the client project and the admin project are associated with the same service space.
 
 1. 选择用户端项目（需采集用户数据的项目）
-2. 若该项目之前未启用`uniCloud`，右键并选择 `创建uniCloud云开发环境 -> 支付宝云|阿里云|腾讯云`（数据量大推荐使用`支付宝云`）；否则，进入第3步；
+2. 若该项目之前未启用`uniCloud`，右键并选择 `创建uniCloud云开发环境 -> 支付宝云|阿里云|腾讯云`（数据量大推荐使用`支付宝云` + [扩展数据库](https://doc.dcloud.net.cn/uniCloud/ext-mongodb/intro.html)）；否则，进入第3步；
 
 ![关联前后台数据](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/iShot2022-04-01%2015.11.18.png)
 
@@ -1095,7 +1095,7 @@ In order to highlight the goal, only the folders and files related to uni statis
 ├── admin.config.js
 ├── App.vue
 ├── main.js
-├── mainfest.json
+├── manifest.json
 ├── pages.json
 ├── postcss.config.js
 └── uni.scss
@@ -1192,7 +1192,7 @@ Note: After modifying the uni statistics configuration items, you need to re-upl
 |  redis			|  false	|开启redis缓存，开启后可以降低数据库查询压力，提升uni统计性能，可按需决定是否开启。[开启方法](#开启redis缓存)																										|
 |  cachetime		|  604800	|redis缓存有效期，单位秒。																																													|
 |  sessionExpireTime|  1800		|会话过期时间，该配置用来判断当前会话是否已过期，一般情况下无需修改此项。																																			|
-|  realtimeStat		|  true		|开启实时统计，true: 开启，false:关闭，开启后会每小时统计一次，数据库读写次数会增多，可按需决定是否开启。																											|
+|  realtimeStat		|  true		|开启实时统计，true: 开启，false:关闭，开启后会每小时统计一次设备基础数据，数据库读写次数会增多，可按需决定是否开启。																											|
 |  cronMin			|  false	|开启分钟级定时任务，true: 开启，false:关闭。开启后定时任务将细分到分钟级执行，分摊数据计算压力，适合应用日活较大或有特殊需求的用户群体。具体的开启方法见[设置定时任务云函数的触发周期](#设置定时任务云函数的触发周期)。	|
 |  cron				|  -		|用于配置定时任务触发时间，详情见下方[定时任务配置说明](#定时任务配置说明)。																																		|
 |  pageDetailStat	|  false	|开启页面内容统计 true: 开启，false:关闭，开启后会产生大量日志，请按需开启。uni-admin	2.4.0起支持配置此项。																										|
@@ -2056,8 +2056,7 @@ exports.main = async (event, context) => {
 
 ### 1. 启动uni统计后，何时可以查看报表数据？
 
-答：与定时任务配置配置有关，默认`统计首页`、`今日概况`等数据为1小时后可见，其余数据为次日可见。要想详细了解各类型数据统计时间请参考[定时任务配置说明](#定时任务配置说明)。
-A: It is related to the configuration of timed tasks. By default, data such as `Statistics Home` and `Today's Overview` are visible after 1 hour, and the rest of the data are visible the next day. To learn more about the statistical time of various types of data, please refer to [Scheduled Task Configuration Instructions](#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E9%85%8D% E7%BD%AE%E8%AF%B4%E6%98%8E).
+答：与定时任务配置配置有关，默认`统计首页`、`今日概况`等数据为1小时后可见，其余数据为次日可见，测试期间可通过上方[在开发阶段快速生成统计数据](#在开发阶段快速生成统计数据)栏目中所述方法，手动触发统计任务，提前生成统计数据。想要详细了解各类型数据统计时间请参考[定时任务配置说明](#定时任务配置说明)。
 
 ### 2. 已经开启统计，定时任务配置也正常，但是后台还是看不到数据
 
@@ -2070,7 +2069,8 @@ answer:
 - 确保重新发行过业务App（在HBuilder里发行即可，不需要上架应用商店或小程序商店），数据上报只发生在项目发行后或者运行项目开启了调试模式，其他情况不会上报数据。[详情](#report-time)
 - Make sure that the business app has been re-issued (you can issue it in HBuilder, you don't need to put it on the App Store or MiniApp Store). Data reporting only occurs after the project is released or the debug mode is enabled for running the project. In other cases, data will not be reported. [Details](#report-time)
 - 确保`uni-admin`项目的`uniCloud`目录下的云函数都上传到了与App相同的uniCloud服务空间
-- Make sure that the cloud functions in the `uniCloud` directory of the `uni-admin` project are uploaded to the same uniCloud service space as the App
+- 如果在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)服务空间详情页面的前端网页托管模块，为`uni-admin`项目的前端页面配置了自定义域名，需要在`跨域配置`模块添加此域名
+- 如果应用需要发布到小程序平台，需要在小程序平台，添加[小程序域名白名单](#小程序域名白名单)
 - 在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的云函数日志中，可以看到`uni-stat-receiver`云函数有正确的请求日志
 - In the cloud function log of [uniCloud web console](https://unicloud.dcloud.net.cn/), you can see that the `uni-stat-receiver` cloud function has the correct request log
 - 在[uniCloud web控制台](https://unicloud.dcloud.net.cn/)的云函数日志中，可以看到`uni-stat-cron`云函数有定时执行日志，且日志显示执行成功；如日志中显示`Not Found the cofnig file`，则查看下方第6个问题；
@@ -2080,8 +2080,12 @@ answer:
 
 ### 3. 如何判断是否需要配置分钟级定时任务？
 
-答：一般情况下是不需要自行配置的，但如果`定时任务云函数（uni-stat-cron）`出现运行超时的情况时，就要考虑去开启分钟级定时任务了。
-Answer: Generally, you do not need to configure it yourself, but if the time-out occurs in the `Scheduled Task Cloud Function (uni-stat-cron)`, you should consider enabling the minute-level scheduled task.
+答：通常无需手动配置分钟级定时任务。但在以下情况下建议开启：
+- 定时任务云函数（`uni-stat-cron`）运行超时：若该函数运行日志中出现超时，可考虑启用分钟级定时任务来缓解。
+
+::: warning 注意
+- 启用分钟级定时任务不会生成分钟维度的统计数据，其主要作用是将原本每小时集中执行的多个统计任务，分散到指定的分钟时间点依次执行，从而降低单次任务负载，减少云函数超时的概率。
+:::
 
 ### 4. 如何创建或授权`uni统计`运营管理员账号
 
@@ -2089,10 +2093,9 @@ Answer: Generally, you do not need to configure it yourself, but if the time-out
 
 ### 5. 为什么总设备数比活跃设备数少？
 
-答：总设备数计算公式为：总设备数 = 原设备数 + 新设备数，而判断一个设备是否为新设备的依据是在客户端SDK中是否已储存该设备上次访问某一应用的时间，未存储则认为是该应用的新设备(即lvts=0时为新设备，lvts>0时为老设备)。 因此如果之前某一设备已经访问过某一应用，就算此时清除数据库中的数据，由于已经在客户端SDK中储存该设备上次访问应用的时间（即此时lvts > 0），所以该设备也不会再被认为是该应用的新设备从而不会再被计算进该应用的总设备数中而只会计算进活跃设备数中，此时可能就会出现总设备数小于活跃设备数的情况。
-Answer: The formula for calculating the total number of devices is: total number of devices = number of original devices + number of new devices, and the basis for judging whether a device is a new device is whether the time when the device last accessed an application has been stored in the client SDK If it is not stored, it is considered as a new device of the application (that is, when lvts=0, it is a new device, and when lvts>0, it is an old device). Therefore, if a device has accessed an application before, even if the data in the database is cleared at this time, since the time when the device accessed the application last time has been stored in the client SDK (that is, lvts > 0 at this time), the device It will no longer be considered as a new device of the application, so it will no longer be counted into the total number of devices of the application, but will only be counted into the number of active devices. At this time, the total number of devices may be less than the number of active devices. Condition.
+答：在统计逻辑中，总设备数 = 原设备数 + 新设备数，而判断设备是否为新设备的依据是客户端 SDK 中是否存储了该设备上次访问应用的时间（未存储时 lvts=0 视为新设备，已存储时 lvts>0 视为老设备）。若应用之前已接入过 uni 统计 1.0 或 2.0，即使清空后台数据，由于该设备在客户端 SDK 中仍保留上次访问时间（lvts>0），该设备仍被识别为老设备，不会被重新计入新设备数，因此不会增加总设备数，但其后续访问仍计入活跃设备数，从而可能出现总设备数小于活跃设备数的情况。
 
-### 6. uni-stat-cron运行日志显示 Not Found the config file
+### 6. uni-stat-receiver / uni-stat-cron 云函数运行日志中报错 “Not Found the config file” 的解决方法 @miss-config
 
 业务App 和 admin 是2个工程。业务App是采集端，admin是报表端；这两个项目均包含`uni-config-center`；如果这两个项目关联（复用）相同的服务空间时，很容易出现`uni-config-center`的互相覆盖问题；此时建议单点维护，方案有2种：
 Business App and admin are 2 projects. The business app is the collection end, and the admin is the report end; both projects contain `uni-config-center`; if these two projects are associated (multiplexed) with the same service space, it is easy to appear `uni-config-center` `The mutual coverage problem; at this time, it is recommended to maintain a single point, there are 2 solutions:
@@ -2139,7 +2142,10 @@ Business App and admin are 2 projects. The business app is the collection end, a
 
 ### 8. 某统计项突然没有数据怎么办？
 
-答：首先登录[uniCloud控制台](https://unicloud.dcloud.net.cn/)，检查在出现问题的统计项配置的时间点(参考：[定时任务配置说明](#定时任务配置说明))，`uni-stat-cron`云函数的运行日志，如果运行日志前面的状态标识是灰色的，代表云函数运行超时了，此时在云函数详情中将`uni-stat-cron`云函数的超时时间设置到最大值即可。如果运行日志的状态标识是绿色的，则需要检查日志内容是否有报错，然后根据报错内容做出调整。
+答：此问题通常与数据收集任务 (uni-stat-cron 云函数) 执行失败有关。请按以下步骤进行排查：
+1. 检查运行状态：登录 [uniCloud控制台](https://unicloud.dcloud.net.cn/)，检查问题统计项对应时间点的 uni-stat-cron 云函数运行日志。
+2. 处理超时问题：若日志前的状态标识为 灰色，表示云函数执行超时。请进入云函数详情，将其超时时间调整至允许的最大值。
+3. 分析运行错误：若状态标识为 绿色，请仔细查看日志内容是否有错误信息。若日志提示“数据库查询超时”，这通常是由于数据量过大所致，建议通过接入 [扩展数据库](https://doc.dcloud.net.cn/uniCloud/ext-mongodb/intro.html) 来提升数据库性能，从而解决问题。
 
 
 ### 9. 为什么注册用户统计没有数据？
@@ -2153,7 +2159,7 @@ Business App and admin are 2 projects. The business app is the collection end, a
 
 ### 11.为什么在本地调试时，HBuilderX控制台显示“统计上报错误”？
 
-答：同上方常见问题`10`一样，都是因为在本地调试时，未在`HBuilderX`下方控制台选择`连接云端云函数`导致。
+答：同上方常见问题`10`一样，一般都是因为在本地调试时，未在`HBuilderX`下方控制台选择`连接云端云函数`导致。
 
 ## 参考资料
 ## References

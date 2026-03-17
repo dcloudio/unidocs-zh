@@ -26,7 +26,7 @@ It may be called slightly differently in different Mini Programs. WeChat applet 
 - [百度小程序动态库](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)
 - [Baidu Mini Program Dynamic Library](https://smartprogram.baidu.com/docs/develop/framework/dynamiclib_use/)
 - [QQ小程序插件](https://q.qq.com/wiki/develop/miniprogram/frame/plugins/)
-- [QQ Mini Program Plugin](https://q.qq.com/wiki/develop/miniprogram/frame/plugins/)
+- [京东小程序插件](https://mp-docs.jd.com/doc/miniapp/introduction/plugin/2785#heading-0)
 
 #### 在uni-app中引入插件代码包 @import-mp-plugin
 #### Import plugin code package in uni-app @import-mp-plugin
@@ -76,8 +76,7 @@ Declare the plug-ins used in the fields corresponding to each platform in `manif
 **注意**
 **Notice**
 
-- `HBuilder X 3.2.13+` 支持 `export` 字段，即小程序导出到插件。目前仅 微信小程序 和 支付宝小程序 支持
-- `HBuilder X 3.2.13+` supports the `export` field, that is, the applet is exported to the plugin. Currently only WeChat applet and Alipay applet are supported
+- `HBuilder X 3.2.13+` 支持 `export` 字段，即使用插件的小程序可以导出一些内容，供插件获取。目前仅 `微信小程序` 和 `支付宝小程序` 支持
 
 #### 在页面中使用插件 @page-import-mp-plugin
 #### Using plugins in pages @page-import-mp-plugin
@@ -177,7 +176,8 @@ If the plugin is only used in one sub-package (the same plugin cannot be referen
     "plugins": {
         "pluginName": {
             "version": "1.0.0",
-            "provider": "wxidxxxxxxxxxxxxxxxx"
+            "provider": "wxidxxxxxxxxxxxxxxxx",
+            "export": "list/index.js"
         }
     }
 }]

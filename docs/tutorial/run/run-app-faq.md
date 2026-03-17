@@ -219,10 +219,12 @@ Please disable or update some bluetooth drivers. Or refer to [Apple forum soluti
 #### 4.2.3 Mac上连接iOS模拟器@mac-iOS-Simulator
 
 1. Xcode必须安装在应用程序（Application）中
-2. 首先确认Xcode（版本必须是6.0及以上版本）已安装并能正常启动模拟器
-3. 如果仍然无法检测到，则打开Xcode，然后打开Xcode的 `Preferences --> Locations`，设置该界面中的 `Command Line Tools` 项，选择正确的`Xcode`版本即可
+2. 首先确认Xcode（版本必须是16.0及以上版本）已安装并能正常启动模拟器
+3. 如果仍然无法检测到，则打开Xcode，然后打开Xcode的 `Settings --> Locations`，设置该界面中的 `Command Line Tools` 项，选择正确的`Xcode`版本即可
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/xcode_ios_simulator.png)
+![](https://web-ext-storage.dcloud.net.cn/doc/uniapp/xcode_ios_simulator.png)
+
+可在 Mac 终端执行 `xcrun simctl list devices` 是否有返回值，并且包含 Booted 状态的设备。如果提示 `xcrun: error: unable to find utility "simctl", not a developer tool or in PATH` 可重新使用命令行修复，指向正确的工具路径 `sudo xcode-select -s /Applications/Xcode.app/Contents/Developer`，启动模拟器后重新验证即可。
 
 ## 第5步 运行启动
 HBuilderX的运行界面检测到手机后，可以点击运行。此后会继续进行：编译、安装基座到手机、同步应用代码和资源到基座、启动基座并运行应用。这些步骤仍然可能出错。

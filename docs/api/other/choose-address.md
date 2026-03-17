@@ -7,7 +7,7 @@
 
 |App|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|小红书小程序|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|x|x|√|√|√|√|x|x|x|x|√|√|
+|x|x|√|√|√|√|x|x|x|√|√|√|
 
 **OBJECT参数说明**
 **OBJECT parameter description**
@@ -39,7 +39,7 @@
 | countyName | string | 国标收货地址第三级地址 ||
 | streetName | string | 国标收货地址第四级地址 |微信小程序、小红书小程序|
 | detailInfo | string | 详细收货地址信息 ||
-| detailInfoNew | string | 新选择器详细收货地址信息 |微信小程序、小红书小程序|
+| detailInfoNew | string | 新选择器详细收货地址信息 |微信小程序|
 | nationalCode | string | 收货地址国家码 ||
 | nationalCode | string | Shipping address country code ||
 | telNumber | string | 收货人手机号码 ||

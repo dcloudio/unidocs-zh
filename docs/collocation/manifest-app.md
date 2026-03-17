@@ -138,15 +138,17 @@ iOS platform cloud packaging related configuration
 |privacyRegisterMode|String|设置为manual表示同意隐私政策后再获取相关隐私信息，设置为其它值表示应用启动时自动获取[详见](/collocation/manifest?id=privacyRegisterMode)|
 
 
-#### privacyRegisterMode@privacyRegisterMode
-为了统计应用的崩溃信息，应用在启动时需要获取idfv，虽然不影响苹果审核但是可能被部分合规检测机构判定为不合规。需要通过隐私合规检测的应用可以将字段配置为manual，并且在用户点击同意隐私政策的方法里执行`plus.runtime.argeePrivacy()`即可。  
-注意：配置后如未调用`plus.runtime.argeePrivacy()`会导致崩溃统计失效。
+#### privacyRegisterMode @privacyRegisterMode
+为了统计应用的崩溃信息，应用在启动时需要获取IDFA/IDFV，虽然不影响苹果审核但是可能被部分合规检测机构判定为不合规。  
+需要通过隐私合规检测的应用可以将字段配置为manual，并且在用户点击同意隐私政策的方法里执行`plus.runtime.argeePrivacy()`，详情参考[如何配置在用户同意隐私政策后使用IDFA](../tutorial/app-ios-idfa.md#privacyRegisterMode)。  
+
 
 ###  App Harmony@harmony
 
 在鸿蒙开发中不会读取`app-plus` 下配置的选项，在 `app-harmony` 节点下可以设置鸿蒙参数。
 
 - safearea
+- useragent
 
 ### 完整 manifest.json@full-manifest
 ### full manifest.json@full-manifest
@@ -164,6 +166,7 @@ iOS platform cloud packaging related configuration
     "app-plus": {
         "allowsInlineMediaPlayback": true,  //可选，Boolean类型, 是否允许 h5 中视频非全屏播放，3.8.5版本开始默认值为 true （仅iOS生效）  
         "mediaPlaybackRequiresUserAction": false, //可选，Boolean类型,可通过此属性配置 h5中的音视频是否可通过API自动播放，注意当设置为 false 时允许API控制自动播放，3.8.5版本开始默认值为 false（仅iOS生效 3.0.1 + 版本支持）
+        "allowFileAccessFromFileURLs": true, //选，Boolean类型, 是否允许本地文件跨域访问其他本地文件（仅iOS生效）  
         "nvueCompiler": "weex",         //可选，字符串类型，nvue页面编译模式，可取值uni-app、weex，参考：https://ask.dcloud.net.cn/article/36074
         "nvueStyleCompiler": "weex",    //可选，字符串类型，nvue页面样式编译模式，可取值uni-app、weex，参考：https://ask.dcloud.net.cn/article/38751
         "renderer": "native",           //可选，字符串类型，可不加载基于 webview 的运行框架，可取值native
@@ -194,8 +197,7 @@ iOS platform cloud packaging related configuration
             "ads": {                            //可选，JSON对象，开屏广告配置
                 "backaground": "#RRGGBB",               //可选，字符串类型，格式为#RRGGBB，开屏广告背景颜色
                 "image": ""                             //可选，字符串类型，底部图片地址，相对应用资源目录路径
-            },
-            "androidTranslucent": false         //可选，Boolean类型，使用“自定义启动图”启动界面时是否显示透明过渡界面，可解决点击桌面图标延时启动应用的效果
+            }
         },
         "modules": {                    //可选，JSON对象，使用的模块
             "Bluetooth": {                      //可选，JSON对象，Bluetooth(低功耗蓝牙)
@@ -637,7 +639,9 @@ iOS platform cloud packaging related configuration
                    "hdpi": "",                          //可选，字符串类型，分辨率480x762，高密度屏幕启动图片路径
                    "xhdpi": "",                         //可选，字符串类型，分辨率720x1242，720P高密度屏幕启动图片路径
                    "xxhdpi": ""                         //可选，字符串类型，分辨率1080x1882，1080P高密度屏幕启动图片路径
-                }  
+                },
+                "androidTranslucent": false,         //可选，Boolean类型，使用“自定义启动图”启动界面时是否显示透明过渡界面，可解决点击桌面图标延时启动应用的效果
+                "androidNavigationBarColor": ""      //可选，字符串类型，#RRGGBB格式颜色，配置启动界面系统导航栏背景颜色，解决配置splash图片后启动系统导航栏区域闪白的问题
             },
             "orientation": [            //可选，字符串数组类型，应用支持的横竖屏，**已废弃，使用screenOrientation配置** 
                 "portrait-primary",

@@ -83,7 +83,7 @@ Get connected Wi-Fi information
 
 |元服务|
 |:-:|
-|1.0.4+|
+|√|
 
 <!-- UNIAPPAPIJSON.getConnectedWifi.compatibility -->
 
@@ -119,7 +119,7 @@ Get connected Wi-Fi information
 
 |元服务|
 |:-:|
-|1.0.4+|
+|√|
 
 请求获取 Wi-Fi 列表。wifiList 数据会在 onGetWifiList 注册的回调中返回。
 Request a Wi-Fi list. The wifiList data will be returned in the callback registered by onGetWifiList.
@@ -154,7 +154,7 @@ Listen to the event of getting Wi-Fi list data.
 
 |元服务|
 |:-:|
-|1.0.4+|
+|√|
 
 <!-- UNIAPPAPIJSON.onGetWifiList.compatibility -->
 
@@ -187,7 +187,7 @@ Remove the listener function for getting the Wi-Fi list data event.
 
 |元服务|
 |:-:|
-|1.0.4+|
+|√|
 
 **CALLBACK 参数说明**
 **CALLBACK parameter description**
@@ -211,7 +211,7 @@ Connect to Wi-Fi. If the Wi-Fi information is known, you can directly use this i
 
 |元服务|
 |:-:|
-|1.0.4+|
+|√|
 
 **OBJECT 参数说明**
 **OBJECT parameter description**
@@ -252,7 +252,7 @@ Listen for Wi-Fi connected events.
 
 |元服务|
 |:-:|
-|1.0.4+|
+|√|
 
 **CALLBACK 参数说明**
 **CALLBACK parameter description**
@@ -293,7 +293,7 @@ onWifiConnected incoming listener function. If this parameter is not passed, all
 
 |App-Android|App-iOS|元服务|
 |:-:|:-:|:-:|
-|√|x|1.0.4+|
+|√|x|√|
 
 <!-- UNIAPPAPIJSON.offWifiConnected.compatibility -->
 

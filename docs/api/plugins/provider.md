@@ -47,10 +47,6 @@ Cloud packaging configures related modules and SDK information in the manifest, 
 |push|推送|
 |push|Push|
 
-
-
-
-
 **success 返回参数说明**
 **success return parameter description**
 
@@ -71,8 +67,7 @@ Cloud packaging configures related modules and SDK information in the manifest, 
 |service|provider|说明|备注|
 |service|provider|Description|Remarks|
 |:-|:-|:-|:-|
-|oauth|weixin|微信登录||
-|oauth|weixin|WeChat Login||
+|oauth|weixin|微信登录|`HarmonyOS 4.77`|
 ||qq|QQ登录||
 ||qq|QQ login||
 ||sinaweibo|新浪微博登录||
@@ -82,13 +77,11 @@ Cloud packaging configures related modules and SDK information in the manifest, 
 ||apple|[Apple登录](https://ask.dcloud.net.cn/article/36651)| iOS13+支持，App 2.4.7+|
 ||google|[谷歌登录](/tutorial/app-oauth-facebook)|App 3.4.0+|
 ||facebook|[Facebook登录](/tutorial/app-oauth-google)|App 3.4.0+|
-||huawei|HarmonyOS Next [华为账号服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/account-introduction-V5?ha_source=Dcloud&ha_sourceId=89000448)|HBuilderX 4.31+|
+||huawei|HarmonyOS Next [华为账号服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-introduction-V5?ha_source=Dcloud&ha_sourceId=89000448)|HBuilderX 4.31+|
 |share|sinaweibo|新浪微博分享||
 |share|sinaweibo|Share on Sina Weibo||
 ||qq|分享到QQ好友||
-||qq|Share to QQ friends||
-||weixin|分享微信消息、朋友圈及微信小程序||
-||weixin|Share WeChat news, Moments and WeChat Mini Programs||
+||weixin|分享微信消息、朋友圈及微信小程序|HarmonyOS 4.77|
 |payment|alipay|支付宝支付||
 |payment|alipay|Alipay payment||
 ||wxpay|微信支付||

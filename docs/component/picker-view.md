@@ -19,8 +19,8 @@
 |mask-class|String|设置蒙层的类名|app-nvue与抖音小程序与飞书小程序不支持|
 |immediate-change|Boolean|是否在手指松开时立即触发 change 事件。若不开启则会在滚动动画结束后触发 change 事件。|微信小程序 2.21.1|
 |@change|EventHandle|当滚动选择，value 改变时触发 change 事件，event.detail = {value: value}；value为数组，表示 picker-view 内的 picker-view-column 当前选择的是第几项（下标从 0 开始）|&nbsp;|
-|@pickstart|eventhandle|当滚动选择开始时候触发事件|微信小程序2.3.1、快手小程序|
-|@pickend|eventhandle|当滚动选择结束时候触发事件|微信小程序2.3.1、快手小程序|
+|@pickstart|eventhandle|当滚动选择开始时候触发事件|微信小程序2.3.1、快手小程序、小红书小程序|
+|@pickend|eventhandle|当滚动选择结束时候触发事件|微信小程序2.3.1、快手小程序、小红书小程序|
 
 
 
@@ -128,6 +128,7 @@
 **Tips**
 - 微信小程序端，滚动时在iOS自带振动反馈，可在系统设置 -> 声音与触感 -> 系统触感反馈中关闭
 - 在2.6.3版本以前，如果需要在PC端使用`picker-view`，需配置[H5模版](https://uniapp.dcloud.io/collocation/manifest?id=h5-template)，并引入[touch-emulator.js](https://github.com/dcloudio/touchemulator)
+- 快手小程序中，在 `uni-popup` 动画中展示 `picker-view` 时，需要设置 `v-if` ，确保动画结束再展示组件，否则动态插入的 picker-view [没有高度无法撑开空间](https://ask.dcloud.net.cn/question/205842)。
 
 **扩展**
 - uni ui提供了增强版`<uni-data-picker>`组件，详见：[https://ext.dcloud.net.cn/plugin?id=3796](https://ext.dcloud.net.cn/plugin?id=3796)

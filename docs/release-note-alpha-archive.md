@@ -7,7 +7,7 @@
   + uts插件 App-iOS平台 修复 Hello UTS 中腾讯定位插件没有网络时调用 getLocation 导致应用闪退的Bug [详情](https://ask.dcloud.net.cn/question/172744)
 * 【uniCloud】
   + 修复 jql语法 geoNear方法不传query参数时返回结果不正确的Bug [详情](https://ask.dcloud.net.cn/question/172404)
-  + 新增 uni-ai chatCompletion 接口流式响应支持 optimizedMessage 事件，优化 message 触发频率，减少客户端卡顿 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#chat-completion-stream)
+  + 新增 uni-ai chatCompletion 接口流式响应支持 optimizedMessage 事件，优化 message 触发频率，减少客户端卡顿 [详情](https://doc.dcloud.net.cn/uniCloud/uni-ai.html#chat-completion-stream)
 * 【App插件(含5+App和uni-app的App端)】
   + Android平台 优化 plus.runtime.install 安装apk功能剥离为独立模块，云端打包勾选 google play 渠道时不包含此模块，解决上架 google play 审核报 DCloud SDK 包含从未知来源下载或安装应用的问题 [详情](https://ask.dcloud.net.cn/question/172533)
   + Android平台 更新 AndroidX依赖库为 1.1.0 版，解决上架 google play 报 androidx.fragment:fragment:1.0.0 SDK 版本已老的问题
@@ -48,8 +48,8 @@
   + uts插件 App-iOS平台 新增 CocoaPods 依赖 [文档](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#config-json-2)
   + uts插件 App-iOS平台 修复 uts页面组件调用 $emit 方法无响应的Bug
 * 【uniCloud】
-  + 【重要】新增 uni-ai 计费网关，可低门槛的采购ai能力 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai-buy.html)
-  + 新增 阿里云 云存储支持目录 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage.html#storage-dir)
+  + 【重要】新增 uni-ai 计费网关，可低门槛的采购ai能力 [详情](https://doc.dcloud.net.cn/uniCloud/uni-ai-buy.html)
+  + 新增 阿里云 云存储支持目录 [详情](https://doc.dcloud.net.cn/uniCloud/storage.html#storage-dir)
   + 优化 阿里云 云函数调用云函数超时时间由10秒调整为60秒
   + 新增 本地调试支持使用push扩展库
   + 修复 本地调试调用redis服务的multi方法时未正确返回结果的Bug [详情](https://ask.dcloud.net.cn/question/171188)
@@ -78,7 +78,7 @@
   + uni-ad 管理后台页面调整，调整App的基础广告、增强广告的分类概念 [详见](https://uniapp.dcloud.net.cn/uni-ad/release.html)
   + App平台、Web平台 优化 navigationBarBackgroundColor、navigationBarTextStyle 默认值 [详情](https://uniapp.dcloud.net.cn/collocation/pages.html#globalstyle)
 * 【uniCloud】
-  + 新增 uni-ai 微软azure openai chatCompletion接口 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#get-llm-manager)
+  + 新增 uni-ai 微软azure openai chatCompletion接口 [详情](https://doc.dcloud.net.cn/uniCloud/uni-ai.html#get-llm-manager)
   + 修复 jql语法 部分请求执行缓慢的Bug [详情](https://ask.dcloud.net.cn/question/170035)
 * 【App插件(含5+App和uni-app的App端)】
   + 更新 uni-AD SDK，对接618预算，其中优量汇SDK Android为 4.530.1400 版；iOS为 4.14.30 版；穿山甲SDK iOS为 5.4.0.0 版；穿山甲GroMore广告SDK iOS为 5.1.7.0 版；快手广告SDK iOS为 3.3.44 版；Sigmob广告联盟SDK Android为 4.12.1 版，iOS为 4.9.0 版；百度百青藤广告SDK Android为 9.29 版，iOS为 5.14 版
@@ -93,7 +93,7 @@
   + uts插件 App-Android平台 修复 Math.random() 返回数据精度不足的Bug
   + uts插件 App-Android平台 修复 UTSAndroid.offAppActivityRequestPermissionsResult 传入参数不生效的Bug
 * 【uniCloud】
-  + 新增 uni-ai 新增文字生成图片接口 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#ai-media)
+  + 新增 uni-ai 新增文字生成图片接口 [详情](https://doc.dcloud.net.cn/uniCloud/uni-ai.html#ai-media)
 * 【App插件(含5+App和uni-app的App端)】
   + Android平台 更新 UniPush 使用的个推核心组件SDK为 3.2.4.0 版；个推SDK为 3.2.17.0 版；适配华为应用市场审核政策调整
   + Android平台 修复 部分场景下真机运行同步文件失败的Bug [详情](https://ask.dcloud.net.cn/question/169374)
@@ -116,9 +116,9 @@
   + 【重要】新增 uts插件内可支持部分 uni 的 api，如`uni.showModel` [详情](https://uniapp.dcloud.net.cn/plugin/uts-uni-api.html)
   + uts插件 App-Android平台 修复 函数参数不支持 boolean 类型的Bug
 * 【uniCloud】
-  + 新增 基于uni-push构建sse通道，在云函数 return 前也可以给客户端发消息 [详情](https://uniapp.dcloud.net.cn/uniCloud/sse-channel.html)
-  + 新增 uni-ai 聊天接口支持steam流式响应 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html#chat-completion-stream)
-  + 新增 uni-ai-chat云端一体页面模板，开源的ai聊天示例。比uni-im更简单 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai-chat.html)
+  + 新增 基于uni-push构建sse通道，在云函数 return 前也可以给客户端发消息 [详情](https://doc.dcloud.net.cn/uniCloud/sse-channel.html)
+  + 新增 uni-ai 聊天接口支持steam流式响应 [详情](https://doc.dcloud.net.cn/uniCloud/uni-ai.html#chat-completion-stream)
+  + 新增 uni-ai-chat云端一体页面模板，开源的ai聊天示例。比uni-im更简单 [详情](https://doc.dcloud.net.cn/uniCloud/uni-ai-chat.html)
   + 新增 HBuilder新建opendb表时，如该表含有schema扩展js，会同时自动创建schema扩展js
 * 【App插件(含5+App和uni-app的App端)】
   + Android平台 修复 安全检测可能报`存在数据库注入漏洞`的问题 [详情](https://ask.dcloud.net.cn/question/152576)
@@ -134,10 +134,10 @@
   + Web平台 修复 Vue3 项目 longpress 事件对象缺少 touches 字段的Bug [详情](https://ask.dcloud.net.cn/question/166956)
   + 小程序平台 修复 Vue2 项目使用高版本 CopyWebpackPlugin 时 static 目录条件编译无效的Bug [详情](https://github.com/dcloudio/uni-app/issues/4181)
 * 【uniCloud】
-  + 【重要】新增 uni-ai 聚合多家ai引擎，帮助开发者快速将AI能力应用到自己的应用中 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-ai.html)
+  + 【重要】新增 uni-ai 聚合多家ai引擎，帮助开发者快速将AI能力应用到自己的应用中 [详情](https://doc.dcloud.net.cn/uniCloud/uni-ai.html)
   + 新增 JQL语法 触发器内副表读取事件增加 primaryCollection 参数，值为本次联表查询的主表表名
   + 调整 JQL语法 schema 内配置的动态 enum 校验数据时移除仅枚举500条的限制
-  + 【重要】新增 uni-cms，全端的、云端一体的开源CMS内容管理系统，内置ai生成内容和广告解锁变现 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-cms.html)
+  + 【重要】新增 uni-cms，全端的、云端一体的开源CMS内容管理系统，内置ai生成内容和广告解锁变现 [详情](https://doc.dcloud.net.cn/uniCloud/uni-cms.html)
 * 【App插件(含5+App和uni-app的App端)】
   + 【重要】新增 uni-AD 支持 uniMP激励视频广告，提升CPM、提升填充率 [详情](https://uniapp.dcloud.net.cn/uni-ad.html#unimp)
   + 新增 一键登录支持 isCenterHint 参数设置未勾选服务条款时点击登录按钮的提示信息是否垂直居中显示 [详情](https://uniapp.dcloud.net.cn/univerify.html#%E5%AE%A2%E6%88%B7%E7%AB%AF-%E8%AF%B7%E6%B1%82%E7%99%BB%E5%BD%95%E6%8E%88%E6%9D%83)
@@ -176,7 +176,7 @@
   + uni统计2 新增 uniStatPageLog 参数，是否开启页面数据采集，默认为开启
   + uts插件 App-Android平台 修复 console.log 无法输出对象中包含的 any 类型字段的Bug
 * 【uniCloud】
-  + 新增 jql支持in语法，查询某字段和另一个表指定字段匹配的记录 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql.html#enhanced-in)
+  + 新增 jql支持in语法，查询某字段和另一个表指定字段匹配的记录 [详情](https://doc.dcloud.net.cn/uniCloud/jql.html#enhanced-in)
 * 【App插件(含5+App和uni-app的App端)】
   + 更新 uni-AD 腾讯优量汇SDK Android为 4.514.1384 版；iOS为 4.14.12 版；快手广告SDK Android为 3.3.40 版，iOS为 3.3.40 版；Sigmob广告联盟SDK Android为 4.10.1 版；百度百青藤广告SDK Android为 9.271 版
   + Android平台 修复 某些情况下可能出现软键盘弹出后立即收起的Bug [详情](https://ask.dcloud.net.cn/question/161957)
@@ -197,8 +197,8 @@
   + App-iOS平台 修复 nvue 页面组件设置 border 样式偶现崩溃的Bug [详情](https://ask.dcloud.net.cn/question/164236)
   + App-iOS平台 修复 nvue 页面 loading 组件事件触发异常的Bug [详情](https://ask.dcloud.net.cn/question/163143)
 * 【uniCloud】
-  + 新增 uni-cloud-s2s公共模块 用于解决uniCloud服务空间与传统服务器通讯时互相信任的问题 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-cloud-s2s.html)
-  + 优化 安全网络 微信小程序端支持非uni-id的应用 [详情](https://uniapp.dcloud.net.cn/uniCloud/secure-network.html#mp-weixin-without-uni-id-pages)
+  + 新增 uni-cloud-s2s公共模块 用于解决uniCloud服务空间与传统服务器通讯时互相信任的问题 [详情](https://doc.dcloud.net.cn/uniCloud/uni-cloud-s2s.html)
+  + 优化 安全网络 微信小程序端支持非uni-id的应用 [详情](https://doc.dcloud.net.cn/uniCloud/secure-network.html#mp-weixin-without-uni-id-pages)
   + 升级 阿里云 客户端连接云函数最大超时时间由20秒调整为40秒
   + 升级 阿里云 云函数URL化的默认域名访问QPS限制由100调整为1000
   + 升级 uniCloud控制台 阿里云 前端网页托管 cdn刷新次数限制由每小时3次调整为每小时10次
@@ -215,7 +215,7 @@
 
 #### 3.7.6.20230227-alpha
 * 【uni-app】
-  + 【重要】App平台 新增 uni实人认证，uni.startFacialRecognitionVerify，姓名身份证和人脸活体比对，金融级安全保障 [详情](https://uniapp.dcloud.net.cn/uniCloud/frv/intro)
+  + 【重要】App平台 新增 uni实人认证，uni.startFacialRecognitionVerify，姓名身份证和人脸活体比对，金融级安全保障 [详情](https://doc.dcloud.net.cn/uniCloud/frv/intro)
   + Web、App平台 修复 NodesRef 无法获取 properties 的Bug [详情](https://ask.dcloud.net.cn/question/163535)
   + Web平台 修复 高德地图缩放时会触发 markertap 事件的Bug [详情](https://ask.dcloud.net.cn/question/162763)
   + App平台 优化 video 组件支持 isLive 属性
@@ -226,9 +226,9 @@
   + 京东小程序平台 新增 支持编译 Vue3 项目 [详情](https://github.com/dcloudio/uni-app/pull/4023)
   + 微信小程序平台 新增 支持 Skyline gesture [详情](https://ask.dcloud.net.cn/question/162700)
 * 【uniCloud】
-  + 新增 uni实人认证，云端一体，金融级安全保障，包括云函数扩展库、web控制台 [详情](https://uniapp.dcloud.net.cn/uniCloud/frv/intro)
-  + 【重要】uni-id-pages 新增实名认证功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#frv)
-  + 【重要】新增 uni-frv-external 云端一体模板，用于非uniCloud业务使用实名认证功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/frv/dev.html#uni-frv-external)
+  + 新增 uni实人认证，云端一体，金融级安全保障，包括云函数扩展库、web控制台 [详情](https://doc.dcloud.net.cn/uniCloud/frv/intro)
+  + 【重要】uni-id-pages 新增实名认证功能 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#frv)
+  + 【重要】新增 uni-frv-external 云端一体模板，用于非uniCloud业务使用实名认证功能 [详情](https://doc.dcloud.net.cn/uniCloud/frv/dev.html#uni-frv-external)
   + 调整 客户端sdk开发调试时连本地网络的时机由应用启动时连接调整为访问本地云函数时才会连接
   + 修复 客户端sdk uniCloud.init、uniCloud.database 方法在关联正式版阿里云服务空间时仍默认使用公测版 endpoint 的Bug
 * 【App插件(含5+App和uni-app的App端)】
@@ -268,8 +268,8 @@
   + uts插件 App-iOS平台 修复 调用方法时参数大于实际数量时功能可能异常的Bug
   + uts插件 App-iOS平台 修复 组件热刷新后属性初始值不生效的Bug
 * 【uniCloud】
-  + 新增 JQL触发器 支持联表查询时副表的读取触发器，beforeReadAsSecondaryCollection 和 afterReadAsSecondaryCollection [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#trigger-timing)
-  + 调整 JQL触发器 参数内的 subCollection 改为 secondaryCollection。老参数仍可访问但会给出警告 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#trigger-param)
+  + 新增 JQL触发器 支持联表查询时副表的读取触发器，beforeReadAsSecondaryCollection 和 afterReadAsSecondaryCollection [详情](https://doc.dcloud.net.cn/uniCloud/jql-schema-ext.html#trigger-timing)
+  + 调整 JQL触发器 参数内的 subCollection 改为 secondaryCollection。老参数仍可访问但会给出警告 [详情](https://doc.dcloud.net.cn/uniCloud/jql-schema-ext.html#trigger-param)
   + 修复 JQL语法字符串格式查询语句内使用数组且其中包含负数时报错的Bug [详情](https://ask.dcloud.net.cn/question/161852)
   + 修复 云对象未返回值时客户端报错的Bug [详情](https://ask.dcloud.net.cn/question/161852)
   + 修复 阿里云正式版删除文件出错未返回错误信息的Bug
@@ -302,8 +302,8 @@
   + 支付宝小程序平台 修复 uni.getSystemInfo 返回的 platform 属性在模拟器中不正确的Bug
   + QQ小程序平台 修复 Vue3 项目 video 组件 ended 事件在真机不触发的Bug [详情](https://ask.dcloud.net.cn/question/155602)
 * 【uniCloud】
-  + 新增 schema扩展js支持引入公共模块及扩展库 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql.html#deps-of-jql)
-  + 新增 JQL触发器方法新增一些参数 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#trigger-param)
+  + 新增 schema扩展js支持引入公共模块及扩展库 [详情](https://doc.dcloud.net.cn/uniCloud/jql.html#deps-of-jql)
+  + 新增 JQL触发器方法新增一些参数 [详情](https://doc.dcloud.net.cn/uniCloud/jql-schema-ext.html#trigger-param)
 * 【App插件(含5+App和uni-app的App端)】
   + Android平台 新增 隐私政策提示框支持 backToExit 配置是否响应点击系统返回键退出应用，解决部分应用市场上架审核可能提示`系统返回键失灵`的问题 [详情](https://uniapp.dcloud.net.cn/tutorial/app-privacy-android.html)
   + Android平台 更新 uni-AD 腾讯优量汇广告SDK 为 4.500.1370 版；Sigmob广告联盟SDK 为 4.9.0 版
@@ -349,7 +349,7 @@
 * 【uniCloud】
   + JQL语法 修复 使用 setUser 方法未传 permission 参数且使用触发器时报错的Bug
   + JQL语法 修复 add 方法传递的字段值为对象且其中包含null值时报错的Bug
-  + JQL语法 新增 数据库触发器增加 triggerContext 参数，用于在 before 和 after 内共享数据 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#trigger-context)
+  + JQL语法 新增 数据库触发器增加 triggerContext 参数，用于在 before 和 after 内共享数据 [详情](https://doc.dcloud.net.cn/uniCloud/jql-schema-ext.html#trigger-context)
   + 阿里云 调整 正式版云存储单文件100MB限制调整为5GB
 * 【App插件(含5+App和uni-app的App端)】
   + Android平台 更新 fastjson SDK为 1.2.83 版，解决安全检测可能报`Fastjson反序列化远程代码执行漏洞`的问题
@@ -371,8 +371,8 @@
   + App-iOS平台 修复 UniPush 2.0 在vue2项目中 启用离线推送后，调用 uni.getPushClientId 某些情况下获取不到cid的Bug [详情](https://ask.dcloud.net.cn/question/158921)
   + 小程序平台 修复 3.6.13版引出的 使用 async/await 发布后运行报错的Bug [详情](https://ask.dcloud.net.cn/question/159413)
 * 【uniCloud】
-  + JQL语法 新增 触发器内可以获取用户信息和本次数据库操作结果 [用户信息](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#user-info)、[执行结果](https://uniapp.dcloud.net.cn/uniCloud/  +ql-schema-ext.html#result)
-  + JQL语法 新增 触发器内可以判断当前执行的语句是否和指定语句相同 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#is-equal-to-jql)
+  + JQL语法 新增 触发器内可以获取用户信息和本次数据库操作结果 [用户信息](https://doc.dcloud.net.cn/uniCloud/jql-schema-ext.html#user-info)、[执行结果](https://doc.dcloud.net.cn/uniCloud/  +ql-schema-ext.html#result)
+  + JQL语法 新增 触发器内可以判断当前执行的语句是否和指定语句相同 [详情](https://doc.dcloud.net.cn/uniCloud/jql-schema-ext.html#is-equal-to-jql)
   + JQL语法 调整 对于 schema 内定义的复杂类型数据（file、array、object）类型的字段，忽略赋给此字段的 null 值
   + 本地调试插件 修复 在部分旧系统运行时本地调试服务启动失败的Bug [详情](https://ask.dcloud.net.cn/question/159343)
   + 本地调试插件 修复 3.6.12版引出的 云函数 调试运行 无法进行Debug断点调试的Bug
@@ -400,7 +400,7 @@
   + 小程序平台 优化 vue3 项目使用 import 导入非 static 目录的资源生成后名称默认补充 hash [详情](https://github.com/dcloudio/uni-app/issues/4011)
   + 微信小程序平台 修复 Vue3 项目 v-for 循环事件可能错乱的Bug [详情](https://github.com/dcloudio/uni-app/issues/4015)
   + 微信小程序平台 修复 Vue3 项目 wxs 热更新失效的Bug [详情](https://ask.dcloud.net.cn/question/158252)
-  + uni-im 全端支持Vue3 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)
+  + uni-im 全端支持Vue3 [详情](https://doc.dcloud.net.cn/uniCloud/uni-im.html)
   + uni-im 新增多媒体消息（含：语音、图片、视频、任意文件）和代码发送
   + uts插件 新增 在uts文件中可使用条件编译 //#ifdef APP-ANDROID 和 //#ifdef APP-IOS [详情](https://uniapp.dcloud.net.cn/tutorial/platform.html#uts-%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91)
   + uts插件 App-Android平台 调整 内置库包名为`io.dcloud.uts`，类名为`UTSAndroid` [详情](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#iodcloudutsandroid)
@@ -415,18 +415,18 @@
   + hello uts 新增 系统API Alert 弹窗示例 [详情](https://ext.dcloud.net.cn/plugin?id=9892)
   + hello uts 补齐 iOS平台 三方SDK toast 消息提示框，监听设备位置变化示例 [详情](https://ext.dcloud.net.cn/plugin?id=9892)
 * 【uniCloud】
-  + 【重要】新增 数据库扩展js，{表名}.schema.ext.js，可实现数据库触发器。推荐用触发器替代action，更安全 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-schema-ext.html#trigger)
-  + 【重要】uni-pay 2.0，从公共模块升级为包含前端页面、uni-pay-co云对象，让支付更加简单省心 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-pay.html)
+  + 【重要】新增 数据库扩展js，{表名}.schema.ext.js，可实现数据库触发器。推荐用触发器替代action，更安全 [详情](https://doc.dcloud.net.cn/uniCloud/jql-schema-ext.html#trigger)
+  + 【重要】uni-pay 2.0，从公共模块升级为包含前端页面、uni-pay-co云对象，让支付更加简单省心 [详情](https://doc.dcloud.net.cn/uniCloud/uni-pay.html)
   + JQL语法 修复 where 和 permission 内使用负数常量时报错的Bug [详情](https://ask.dcloud.net.cn/question/157993)
   + 本地调试插件 修复 调用 clientDB、jql扩展 时报找不到 action 的Bug [详情](https://ask.dcloud.net.cn/question/157997)
   + uniIdRouter 修复 vue3项目跳转时报错的Bug [详情](https://ask.dcloud.net.cn/question/158015)
-  + 【重要】uni-id-co 新增 外部系统联登接口，可为外部系统创建与uni-id相对应的账号，使该账号可以使用依赖uniId的系统及功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#external)
-  + uni-id-co 新增 设置密码接口 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#set-pwd)
-  + uni-id-co 新增 URL化请求时鉴权签名验证 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#http-reqeust-auth)
-  + uni-id-co 新增匹配到的用户不可在当前应用登录时的错误码 `uni-id-account-not-exists-in-current-app` [错误码说明](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#errcode)
+  + 【重要】uni-id-co 新增 外部系统联登接口，可为外部系统创建与uni-id相对应的账号，使该账号可以使用依赖uniId的系统及功能 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id-pages.html#external)
+  + uni-id-co 新增 设置密码接口 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id-pages.html#set-pwd)
+  + uni-id-co 新增 URL化请求时鉴权签名验证 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id-pages.html#http-reqeust-auth)
+  + uni-id-co 新增匹配到的用户不可在当前应用登录时的错误码 `uni-id-account-not-exists-in-current-app` [错误码说明](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#errcode)
   + uni-id-co 修复 微信登录时用户未设置头像的报错问题
   + uni-id-co 修复 无法从 clientInfo 中获取 uniIdToken
-  + uni-id-pages 新增 登录后跳转设置密码页面配置项`setPasswordAfterLogin` [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#set-pwd-after-login)
+  + uni-id-pages 新增 登录后跳转设置密码页面配置项`setPasswordAfterLogin` [详情](https://doc.dcloud.net.cn/uniCloud/uni-id-pages.html#set-pwd-after-login)
   + uni-id-pages 新增 设置密码页面
   + uni-id-pages 优化 toast 错误提示时间为3秒
   + uni-admin 调整 群发短信功能的 schema 文件命名规范，将`batch-sms-template` `batch-sms-task` `batch-sms-result` 更改为 `opendb-sms-temlate` `opendb-sms-task` `opendb-sms-log` 以符合opendb规范
@@ -453,10 +453,10 @@
   + Web平台 修复 Vue3 项目 --window-top 计算错误的Bug [详情](https://ask.dcloud.net.cn/question/157164)
   + Web平台 修复 Vue3 项目配置全局 loading、error 组件无效的Bug [详情](https://ask.dcloud.net.cn/question/157122)
   + 支付宝小程序平台 修复 page-meta 组件 root-font-size 属性无效的Bug [详情](https://ask.dcloud.net.cn/question/157168)
-  + uni-im 支持 非uniCloud 或 不基于uni-id-pages 开发的项目 接入 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)
+  + uni-im 支持 非uniCloud 或 不基于uni-id-pages 开发的项目 接入 [详情](https://doc.dcloud.net.cn/uniCloud/uni-im.html)
 * 【uniCloud】
   + 【重要】阿里云商用版正式上线 [详情](https://ask.dcloud.net.cn/article/40144)
-  + JQL语法 新增 支持 geoNear 以实现地理位置查询 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql.html#geo-near)
+  + JQL语法 新增 支持 geoNear 以实现地理位置查询 [详情](https://doc.dcloud.net.cn/uniCloud/jql.html#geo-near)
   + JQL语法 修复 部分有权限进行的查询被误报权限校验未通过的Bug
 * 【App插件(含5+App和uni-app的App端)】
   + Android平台 新增 隐私政策提示框支持 showAlways 配置是否每次启动都弹窗提示 [详情](https://uniapp.dcloud.net.cn/tutorial/app-privacy-android.html)
@@ -490,17 +490,17 @@
   + 抖音小程序平台 优化 默认启用 component2 [详情](https://ask.dcloud.net.cn/question/156550)
   + hello uts 新增 Android平台获取用户输入、播放asset音频、调用系统拍照示例 [详情](https://ext.dcloud.net.cn/plugin?id=9892)
 * 【uniCloud】
-  + 【重要】新增 uni-im 云端一体的、全平台的、免费的、开源即时通讯系统 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-im.html)
+  + 【重要】新增 uni-im 云端一体的、全平台的、免费的、开源即时通讯系统 [详情](https://doc.dcloud.net.cn/uniCloud/uni-im.html)
   + jql语法 修复 使用 add 数据库运算方法报错的Bug [详情](https://ask.dcloud.net.cn/question/156261)
   + jql语法 修复 使用部分 js 关键字导致查询条件或 field 报错的Bug
   + jql语法 修复 使用 getTemp 联表查询时，如果主表关联字段在 schema 内为数组类型但实际数据无此字段时报错的Bug
-  + 云对象 新增 url 化支持通过多段 path 路径调用方法，以第一段作为云对象方法名 [详情](https://uniapp.dcloud.net.cn/uniCloud/http.html#request-co-url)
+  + 云对象 新增 url 化支持通过多段 path 路径调用方法，以第一段作为云对象方法名 [详情](https://doc.dcloud.net.cn/uniCloud/http.html#request-co-url)
   + 本地调试插件 修复 HBuilderX 3.6.7 引出的断点进入nodejs内置模块的Bug
-  + 安全网络 调整 统一错误码规范 [详情](https://uniapp.dcloud.net.cn/uniCloud/secure-network.html#err-code)
-  + uni-id 升级密码加密算法，支持hmac-sha256加密 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#password-safe)
-  + uni-id 新增 开发者可以自定义密码加密规则 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#custom-password-encrypt)
-  + uni-id 新增 支持将其他系统用户迁移至uni-id [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#move-users-to-uni-id)
-  + uni-id 支持URL化方式请求 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#adapter-http)
+  + 安全网络 调整 统一错误码规范 [详情](https://doc.dcloud.net.cn/uniCloud/secure-network.html#err-code)
+  + uni-id 升级密码加密算法，支持hmac-sha256加密 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#password-safe)
+  + uni-id 新增 开发者可以自定义密码加密规则 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#custom-password-encrypt)
+  + uni-id 新增 支持将其他系统用户迁移至uni-id [详情](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#move-users-to-uni-id)
+  + uni-id 支持URL化方式请求 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id-pages.html#adapter-http)
 * 【App插件(含5+App和uni-app的App端)】
   + 新增 Stripe支付支持设置账单信息 [详情](https://uniapp.dcloud.net.cn/tutorial/app-payment-stripe.html)
   + Android平台 新增 支持暗黑模式 [详情](https://ask.dcloud.net.cn/article/36995)
@@ -533,7 +533,7 @@
   + 支付宝小程序 新增 uni.onKeyboardHeightChange 监听键盘高度变化 [详情](https://uniapp.dcloud.net.cn/api/key.html#onkeyboardheightchange)
   + 支付宝小程序 修复 小程序组件中的事件触发时机较早时在 Vue 组件中无法监听的Bug
 * 【uniCloud】
-  + 【重要】新增 安全网络 客户端校验功能，防止伪造的客户端请求服务器 [详情](https://uniapp.dcloud.net.cn/uniCloud/secure-network.html#verify-client)
+  + 【重要】新增 安全网络 客户端校验功能，防止伪造的客户端请求服务器 [详情](https://doc.dcloud.net.cn/uniCloud/secure-network.html#verify-client)
   + 新增 `uni-clear-temp-data` 插件，用于自动清理数据库中的过期数据 [详情](https://ext.dcloud.net.cn/plugin?id=9826)
   + 修复 HBuilderX插件 `uni-`开头的 schema 文件 右键菜单缺少【opendb检查更新】的Bug
   + 修复 HBuilderX插件 本地云函数调用 redis 接口传较大的数据时报错的Bug [详情](https://ask.dcloud.net.cn/question/155804)
@@ -598,13 +598,13 @@
   + 快手小程序平台 优化 uni.requestPayment 实现改用 ks.pay [详情](https://ask.dcloud.net.cn/question/152948)
   + uni统计 修复 3.4.9版本引出的 deviceId 获取方式变化，导致 uni统计2.0 App-Android 平台部分统计数据不准确的Bug [详情](https://ask.dcloud.net.cn/article/40097)
 * 【uniCloud】
-  + 【重要】新增 `安全网络` uni-app客户端和unicloud实现安全通讯，验证客户端身份和加密数据，防刷利器 [详情](https://uniapp.dcloud.net.cn/uniCloud/secure-network.html)
-  + 新增 客户端sdk 新增 uniCloud.databaseForJQL 接口，拉齐在云函数中的写法。相比之前 database，返回值移除了多一层的 result [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb.html#jssdk)
-  + 新增 客户端sdk uniCloud.importObject增加 parseSystemError 选项，用于处理云对象未捕获的错误或客户端网络错误，以便给用户展示友好的错误信息 [详情](https://uniapp.dcloud.net.cn/uniCloud/cloud-obj.html#auto-ui)
+  + 【重要】新增 `安全网络` uni-app客户端和unicloud实现安全通讯，验证客户端身份和加密数据，防刷利器 [详情](https://doc.dcloud.net.cn/uniCloud/secure-network.html)
+  + 新增 客户端sdk 新增 uniCloud.databaseForJQL 接口，拉齐在云函数中的写法。相比之前 database，返回值移除了多一层的 result [详情](https://doc.dcloud.net.cn/uniCloud/clientdb.html#jssdk)
+  + 新增 客户端sdk uniCloud.importObject增加 parseSystemError 选项，用于处理云对象未捕获的错误或客户端网络错误，以便给用户展示友好的错误信息 [详情](https://doc.dcloud.net.cn/uniCloud/cloud-obj.html#auto-ui)
   + 修复 本地调试插件 连接本地云函数 require 出错时仅第一次报出错误的Bug
-  + uni-id-co 新增 支持微信授权手机号登录方式 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-weixin-mobile)
-  + uni-id-co 新增 解绑第三方平台账号 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#unbind-third-account)
-  + uni-id-co 新增 微信绑定手机号支持通过`getPhoneNumber`事件回调的`code`绑定 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#bind-mobile-by-mp-weixin)
+  + uni-id-co 新增 支持微信授权手机号登录方式 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-weixin-mobile)
+  + uni-id-co 新增 解绑第三方平台账号 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id-pages.html#unbind-third-account)
+  + uni-id-co 新增 微信绑定手机号支持通过`getPhoneNumber`事件回调的`code`绑定 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id-pages.html#bind-mobile-by-mp-weixin)
   + uni-admin 新增 群发短信功能 [详情](https://uniapp.dcloud.net.cn//uniCloud/admin.html#群发短信)
   + uni-admin 修复 uni统计 App-Android 平台部分统计数据不准确的Bug [详情](https://ask.dcloud.net.cn/article/40097)
   + uni-admin 修复 uni统计 周/月数据不准确的Bug
@@ -670,7 +670,7 @@
   + 支付宝小程序平台 修复 启用小程序基础库2.0配置后访问 $slots 报错的Bug [详情](https://github.com/dcloudio/uni-app/issues/3529)
   + 抖音小程序平台 新增 vue2 项目支持 onUploadDouyinVideo 生命周期 [详情](https://ask.dcloud.net.cn/question/151113)
 * 【uniCloud】
-  + 调整 本地调试插件 云对象运行参数配置文件改为 ${objectName}.param.js [详情](https://uniapp.dcloud.net.cn/uniCloud/rundebug.html#run-obj-param)
+  + 调整 本地调试插件 云对象运行参数配置文件改为 ${objectName}.param.js [详情](https://doc.dcloud.net.cn/uniCloud/rundebug.html#run-obj-param)
   + 修复 本地调试插件 HBuilderX 3.5.5 版本引出的使用 push 扩展库导致其他云函数不能正常运行的Bug
   + 修复 本地调试插件 HBuilderX 3.5.5 版本引出的连接本地云函数时偶发 `SIGN_PARAM_INVALID` 错误
 * 【App插件(含5+App和uni-app的App端)】
@@ -703,26 +703,26 @@
   + 抖音小程序平台 修复 vue2 项目 反复快速创建销毁页面时组件无法渲染的Bug
 * 【uniCloud】
   + 优化 阿里云 数据库超时时间由3秒调整为5秒
-  + 新增 阿里云 通过代理解决微信服务器需要固定IP的问题 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#http-proxy-client)
+  + 新增 阿里云 通过代理解决微信服务器需要固定IP的问题 [详情](https://doc.dcloud.net.cn/uniCloud/cf-functions.html#http-proxy-client)
   + 新增 提供了一批新API，更优雅的处理同实例多并发请求
-    - 新增 uniCloud.getRequestList 用于获取当前云函数实例内正在处理的请求的 requestId 列表 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#get-request-list)
-    - 云函数 新增 context.requestId 用于获取当前请求id [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#context)
-    - 云对象 新增 this.getUniCloudRequestId() 用于获取当前请求id [详情](https://uniapp.dcloud.net.cn/uniCloud/cloud-obj.html#get-request-id)
-  + 新增 云函数 uniCloud.getCloudInfos 获取云端信息。同时兼容有无并发请求的情况 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#get-cloud-infos)
-  + 新增 云函数 uniCloud.getClientInfos 获取客户端信息。同时兼容有无并发请求的情况 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#get-client-infos)
+    - 新增 uniCloud.getRequestList 用于获取当前云函数实例内正在处理的请求的 requestId 列表 [详情](https://doc.dcloud.net.cn/uniCloud/cf-functions.html#get-request-list)
+    - 云函数 新增 context.requestId 用于获取当前请求id [详情](https://doc.dcloud.net.cn/uniCloud/cf-functions.html#context)
+    - 云对象 新增 this.getUniCloudRequestId() 用于获取当前请求id [详情](https://doc.dcloud.net.cn/uniCloud/cloud-obj.html#get-request-id)
+  + 新增 云函数 uniCloud.getCloudInfos 获取云端信息。同时兼容有无并发请求的情况 [详情](https://doc.dcloud.net.cn/uniCloud/cf-functions.html#get-cloud-infos)
+  + 新增 云函数 uniCloud.getClientInfos 获取客户端信息。同时兼容有无并发请求的情况 [详情](https://doc.dcloud.net.cn/uniCloud/cf-functions.html#get-client-infos)
   + 修复 客户端sdk 未关联 uniCloud 服务空间时使用 uniCloud 对象导致报错的Bug [详情](https://github.com/dcloudio/uni-app/issues/3758)
   + 修复 JQL 一个表内多个包含 parentKey 字段时树查询报错的Bug [详情](https://ask.dcloud.net.cn/question/151834)
   + 修复 本地调试插件 部分情况下全局对象复用导致的扩展库提示不正确的Bug [详情](https://ask.dcloud.net.cn/question/150357)
   + 优化 本地调试插件 持续调试会导致内存占用过高并且响应缓慢的Bug
   + 优化 uniIdRouter 支持对首页、直达页面进行拦截并跳转到登录页面
-  + 优化 uni-id-co 密码规则调整，废除之前的简单校验，允许配置密码强度 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#password-strength)
-  + 调整 uni-id-co 存储用户 openid（`wx_openid.${mp|h5|app|web}`）时同时在`wx_openid.${mp|h5|app|web}_${DCloudAppId}`存储了一份副本，参考：[微信登录](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-weixin)、[QQ登录](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-qq)
-  + 调整 uni-id-co 依赖 uni-open-bridge-common 存储用户 `session_key`、`access_token` 等凭据 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#save-user-token)
-  + 新增 uni-id-co 增加 beforeRegister 钩子用户在注册前向用户记录内添加一些数据 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/summary.html#before-register)
-  + 【重要】新增 uni-id-pages Web端支持微信登录（包括微信公众号内H5登录 和 普通浏览器内手机微信扫码登录）[详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#weixinlogin)
-  + 新增 uni-id-pages 支持密码强度（是否必须包含大小写字母、数字和特殊符号以及长度）配置 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#config)
-  + 新增 uni-id-pages 登录成功（全局）回调事件：`uni-id-pages-login-success`，支持通过[uni.$on](https://uniapp.dcloud.net.cn/api/window/communication.html#on)监听 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html)
-  + 新增 uni-open-bridge 开源库，统一管理微信等三方开放平台的凭据 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-open-bridge.html)
+  + 优化 uni-id-co 密码规则调整，废除之前的简单校验，允许配置密码强度 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#password-strength)
+  + 调整 uni-id-co 存储用户 openid（`wx_openid.${mp|h5|app|web}`）时同时在`wx_openid.${mp|h5|app|web}_${DCloudAppId}`存储了一份副本，参考：[微信登录](https://doc.dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-weixin)、[QQ登录](https://doc.dcloud.net.cn/uniCloud/uni-id-pages.html#login-by-qq)
+  + 调整 uni-id-co 依赖 uni-open-bridge-common 存储用户 `session_key`、`access_token` 等凭据 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#save-user-token)
+  + 新增 uni-id-co 增加 beforeRegister 钩子用户在注册前向用户记录内添加一些数据 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id/summary.html#before-register)
+  + 【重要】新增 uni-id-pages Web端支持微信登录（包括微信公众号内H5登录 和 普通浏览器内手机微信扫码登录）[详情](https://doc.dcloud.net.cn/uniCloud/uni-id-pages.html#weixinlogin)
+  + 新增 uni-id-pages 支持密码强度（是否必须包含大小写字母、数字和特殊符号以及长度）配置 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id-pages.html#config)
+  + 新增 uni-id-pages 登录成功（全局）回调事件：`uni-id-pages-login-success`，支持通过[uni.$on](https://uniapp.dcloud.net.cn/api/window/communication.html#on)监听 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id-pages.html)
+  + 新增 uni-open-bridge 开源库，统一管理微信等三方开放平台的凭据 [详情](https://doc.dcloud.net.cn/uniCloud/uni-open-bridge.html)
 * 【App插件(含5+App和uni-app的App端)】
   + Android平台 更新 QQ 登录、分享SDK版本为 3.5.12 版；百度定位SDK为 9.3.5 版，百度地图SDK为 7.5.3 版
   + Android平台 修复 UniPush 2.0 厂商推送通道不支持 payload 字段为非 json 字符串的Bug
@@ -750,7 +750,7 @@
   + Web平台 修复 vue3 项目 canvas 组件 touch 事件 stop、prevent 修饰符无效的Bug [详情](https://ask.dcloud.net.cn/question/148195)
   + 支付宝小程序平台 修复 vue3 项目 访问 $slots 不生效的Bug [详情](https://ask.dcloud.net.cn/question/150373)
 * 【uniCloud】
-  + 【重要】新增云函数ip防刷功能，避免大量无效请求导致云函数、数据库响应变慢 [详情](https://uniapp.dcloud.net.cn/uniCloud/ip-filter.html)
+  + 【重要】新增云函数ip防刷功能，避免大量无效请求导致云函数、数据库响应变慢 [详情](https://doc.dcloud.net.cn/uniCloud/ip-filter.html)
   + 修复 部分场景下在 main.js 内使用 uniCloud 报错的Bug
   + 修复 uni-admin 在 vue3 项目中使用 uni.showLeftWindow 后组件上 showLeftWindow 值并没有更新的Bug [详情](https://ask.dcloud.net.cn/question/149618)
   + uni统计2 新增 前端数据上报周期配置项 [详情](https://uniapp.dcloud.net.cn/uni-stat-v2.html#report-time)
@@ -791,9 +791,9 @@
   + App-iOS平台 修复 nvue 组件动态修改 border-radius 样式可能不生效的Bug [详情](https://ask.dcloud.net.cn/question/144709)
   + 百度小程序平台 修复 vue3 项目 uni.login 失效的Bug [详情](https://ask.dcloud.net.cn/question/117304)
 * 【uniCloud】
-  + 【重要】新增 JQL Cache Redis。将 MongoDB 查询结果缓存到 Redis [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-cache-redis.html)
-  + 新增 云对象支持URL化 [详情](https://uniapp.dcloud.net.cn/uniCloud/http.html#cloudobject)
-  + 新增 云对象支持定时触发 [详情](https://uniapp.dcloud.net.cn/uniCloud/trigger.html#cloudobject)
+  + 【重要】新增 JQL Cache Redis。将 MongoDB 查询结果缓存到 Redis [详情](https://doc.dcloud.net.cn/uniCloud/jql-cache-redis.html)
+  + 新增 云对象支持URL化 [详情](https://doc.dcloud.net.cn/uniCloud/http.html#cloudobject)
+  + 新增 云对象支持定时触发 [详情](https://doc.dcloud.net.cn/uniCloud/trigger.html#cloudobject)
   + 新增 uniCloud web控制台支持对服务空间进行成员管理 [详情](https://uniapp.dcloud.io/uniCloud/concepts/space.html#collaboration)
   + 修复 JQL操作成功时新增返回`errCode: 0`，兼容uniCloud响应体规范
   + 调整 uni-id-common 仍将token存储在用户表的token字段内，与旧版本uni-id保持一致
@@ -801,7 +801,7 @@
   + 优化 uni-admin 应用管理模块可管理App下载地址、小程序二维码等更多应用信息 [详情](https://uniapp.dcloud.io/uniCloud/admin.html#app-manager)
   + 调整 uni-admin 内置 统一发布页（uni-portal）插件 [详情](https://uniapp.dcloud.io/uniCloud/admin.html#uni-portal)
   + 调整 uni-admin 内置 App升级中心（uni-upgrade-center）插件，并支持多应用商店更新 [详情](https://uniapp.dcloud.io/uniCloud/admin.html#uni-upgrade-center)
-  + 新增 uni-id-pages 允许覆盖uni-id-co内置校验规则 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html#custom-validator)
+  + 新增 uni-id-pages 允许覆盖uni-id-co内置校验规则 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id-pages.html#custom-validator)
   + 修复 uni-id-pages uni-id-co的logout接口时没有删除token的Bug
   + 修复 uni-id-pages app端 clientInfo.appVersionCode 为数字导致 uni-id-co 校验无法通过的Bug
   + 修复 uni-id-pages 微信小程序调用uni-id-co接口报错的Bug [详情](https://ask.dcloud.net.cn/question/148877)
@@ -854,17 +854,17 @@
   + 抖音小程序平台 修复 vue3 项目 部分情况下，组件未更新的Bug [详情](https://github.com/dcloudio/uni-app/issues/3625)
 * 【uniCloud】
   + 新增 uni-push2.0 全端支持（App、小程序、web）的云端一体的统一推送服务 [详情](https://uniapp.dcloud.io/unipush-v2.html)
-  + 新增 腾讯云平台 数据万象，对云存储文件进行图片缩放、增加水印等计算功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage.html#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86)
-  + 新增 keepRunningAfterReturn 配置云函数是否能在 return 后继续运行，仅腾讯云 nodejs12 生效 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#keep-running)
-  + 新增 Redis扩展库 增加 quit 接口用于断开 redis 连接 [详情](https://uniapp.dcloud.net.cn/uniCloud/redis.html#quit)
-  + 新增 JQL数据库管理 支持使用更新操作符 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql.html#update-command)
+  + 新增 腾讯云平台 数据万象，对云存储文件进行图片缩放、增加水印等计算功能 [详情](https://doc.dcloud.net.cn/uniCloud/storage.html#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86)
+  + 新增 keepRunningAfterReturn 配置云函数是否能在 return 后继续运行，仅腾讯云 nodejs12 生效 [详情](https://doc.dcloud.net.cn/uniCloud/cf-functions.html#keep-running)
+  + 新增 Redis扩展库 增加 quit 接口用于断开 redis 连接 [详情](https://doc.dcloud.net.cn/uniCloud/redis.html#quit)
+  + 新增 JQL数据库管理 支持使用更新操作符 [详情](https://doc.dcloud.net.cn/uniCloud/jql.html#update-command)
   + 修复 uniIdRouter 在 loginPage 为 tabbar 页面时无法自动跳转的Bug
-  + 调整 云函数 context 内增加 `uniIdToken`、`FUNCTION_TYPE` [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-callfunction.html#context)
-  + 调整 云对象 cloudInfo 内增加 functionName、functionType [详情](https://uniapp.dcloud.net.cn/uniCloud/cloud-obj.html#get-cloud-info)
-  + 调整 云对象 clientInfo 内增加 source [详情](https://uniapp.dcloud.net.cn/uniCloud/cloud-obj.html#get-client-info)
+  + 调整 云函数 context 内增加 `uniIdToken`、`FUNCTION_TYPE` [详情](https://doc.dcloud.net.cn/uniCloud/cf-callfunction.html#context)
+  + 调整 云对象 cloudInfo 内增加 functionName、functionType [详情](https://doc.dcloud.net.cn/uniCloud/cloud-obj.html#get-cloud-info)
+  + 调整 云对象 clientInfo 内增加 source [详情](https://doc.dcloud.net.cn/uniCloud/cloud-obj.html#get-client-info)
   + 修复 本地调试插件 使用运行菜单运行云函数时可能出现日志顺序错误的Bug
   + 修复 本地调试插件 项目AppId由无权使用调整为有权使用时（重新获取AppId或获得所有者授权）重启项目不生效的Bug
-  + 调整 本地调试插件 云函数本地运行时配置的运行参数clientInfo内字段调整 [详情](https://uniapp.dcloud.net.cn/uniCloud/rundebug.html#mock-client-info)
+  + 调整 本地调试插件 云函数本地运行时配置的运行参数clientInfo内字段调整 [详情](https://doc.dcloud.net.cn/uniCloud/rundebug.html#mock-client-info)
   + 新增 HBuilderX opendb schema文件 右键菜单增加【opendb检查更新】，支持从云端更新 opendb schema文件，并生成 JQL 升级迁移文件用于数据迁移
   + 修复 HBuilderX 打开云对象子目录下的文件时按 Ctrl+r 运行菜单无运行云对象选项的Bug
   + 【重要】调整 uni统计2 版本记录复用 uni升级中心 的 opendb-app-versions表，废弃 uni-stat-app-versions表 [详情](https://uniapp.dcloud.net.cn/uni-stat-v2.html#upgrade)
@@ -903,7 +903,7 @@
 * 【uniCloud】
   + 【重要】uni-id重构。uni-id公共模块 + uni-id-cf云函数 的组合不再更新，取而代之的是 uni-id-common公共模块 + uni-id-pages云端一体模板
     - 新增 uni-id-common公共模块。更小巧的公共模块，负责 uni-id 的 token 管理和权限校验 [详情](https://uniapp.dcloud.io/uniCloud/uni-id-common.html)
-    - 新增 uni-id-pages云端一体页面模板。包括一组前端页面 + uni-id-co云对象。包括用户注册、登录、忘记密码、个人中心等功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id-pages.html)
+    - 新增 uni-id-pages云端一体页面模板。包括一组前端页面 + uni-id-co云对象。包括用户注册、登录、忘记密码、个人中心等功能 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id-pages.html)
   + 新增 uniIdRouter路由管理。在 pages.json 里直接定义哪些页面需要登录后才能访问 [详情](https://uniapp.dcloud.io/uniCloud/uni-id/summary.html#uni-id-router)
   + 新增 uniCloud.onNeedLogin/offNeedLogin 用于监听/移除监听需要登录事件，需搭配 `uniIdRouter` 使用 [详情](https://uniapp.dcloud.io/uniCloud/client-sdk.html#on-need-login)
   + 新增 uniCloud.onRefreshToken/offRefreshToken 用于监听/移除监听 token 更新事件 [详情](https://uniapp.dcloud.io/uniCloud/client-sdk.html#on-refresh-token)
@@ -967,8 +967,8 @@
   + H5平台 修复 3.4.10 版本引发的 vue3 项目在 left/top/right window 页面使用 match-media 报错的Bug [详情](https://ask.dcloud.net.cn/question/146126)
   + 微信小程序平台 修复 vue3 项目 ad-custom 组件无法使用的Bug [详情](https://ask.dcloud.net.cn/question/145883)
 * 【uniCloud】
-  + 新增 uniCloud.onResponse/offResponse 接口用于监听云函数、云对象及clientDB的响应结果 [详情](https://uniapp.dcloud.net.cn/uniCloud/client-sdk.html#on-response)
-  + 新增 uniCloud响应体规范 添加 newToken 字段，用于token续期。云对象会自动将token持久化存储 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#resformat)
+  + 新增 uniCloud.onResponse/offResponse 接口用于监听云函数、云对象及clientDB的响应结果 [详情](https://doc.dcloud.net.cn/uniCloud/client-sdk.html#on-response)
+  + 新增 uniCloud响应体规范 添加 newToken 字段，用于token续期。云对象会自动将token持久化存储 [详情](https://doc.dcloud.net.cn/uniCloud/cf-functions.html#resformat)
   + 修复 uniCloud虚拟目录、以及uni_modules下的云对象目录，右键菜单，没有运行-本地云对象、调试运行-本地云对象的菜单的Bug
   + uniCloud控制台 新增 腾讯云云存储支持上传文件夹
   + uni-admin 新增 uni统计 可通过选择「应用版本」查询数据
@@ -996,7 +996,7 @@
   + App平台 修复 nvue 页面 switch 组件切换状态无限闪动的Bug [详情](https://ask.dcloud.net.cn/question/145272)
   + App平台 修复 纯 nvue 编译模式 uni_modules 内静态资源未拷贝的Bug
   + App-iOS平台 修复 vue3 项目 nvue 页面 swiper 组件面板指示点无法隐藏的Bug [详情](https://ask.dcloud.net.cn/question/145097)
-  + H5平台 新增 vue3 项目 unicloud-db 组件属性 ssr-key [详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db.html#ssrkey)
+  + H5平台 新增 vue3 项目 unicloud-db 组件属性 ssr-key [详情](https://doc.dcloud.net.cn/uniCloud/unicloud-db.html#ssrkey)
   + H5平台 修复 vue3 项目 unicloud-db 组件 使用 ssr 时 页面存在2个以上组件时数据显示错乱的Bug [详情](https://ask.dcloud.net.cn/question/139537)
   + H5平台 修复 3.4.10 版本引出的 vue2 项目启用摇树优化缺失 view 组件的Bug [详情](https://ask.dcloud.net.cn/question/145286)
   + 小程序平台 修复 vue3 项目 在模板中使用 wxs、sjs 插值表达式不生效的Bug [详情](https://github.com/dcloudio/uni-app/issues/3527)
@@ -1037,8 +1037,8 @@
   + 小程序平台 修复 vue3 项目 部分情况下代码分割错误的Bug [详情](https://github.com/dcloudio/uni-app/issues/3491)
   + 微信小程序平台 调整 ad 广告组件 [详情](https://uniapp.dcloud.net.cn/component/ad.html#weixin)
 * 【uniCloud】
-  + 新增 本地云函数调用云端redis，方便开发调试 [详情](https://uniapp.dcloud.net.cn/uniCloud/redis.html#lcoal-function)
-  + 新增 uni-cloud-jql 扩展库 databaseForJQL 方法支持传递 clientInfo，以便于在云对象中使用 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-cloud.html#use-in-object)
+  + 新增 本地云函数调用云端redis，方便开发调试 [详情](https://doc.dcloud.net.cn/uniCloud/redis.html#lcoal-function)
+  + 新增 uni-cloud-jql 扩展库 databaseForJQL 方法支持传递 clientInfo，以便于在云对象中使用 [详情](https://doc.dcloud.net.cn/uniCloud/jql-cloud.html#use-in-object)
   + 修复 本地运行插件 HBuilderX 3.4.8 引发的运行云函数时如未绑定服务空间会导致运行进程卡住的Bug
   + 修复 云对象 _before 内抛出错误后 _after 不执行的Bug [详情](https://ask.dcloud.net.cn/question/145046)
   + uni-id 调整 绑定、解绑邮箱手机号接口，只要传递 code 参数就进行验证码校验即使传递的值为undefined
@@ -1062,13 +1062,13 @@
   + Android平台 修复 uni-AD 开屏广告开通腾讯优量汇可能引起应用启动白屏的Bug
   + iOS平台 修复 登录鉴权、分享的 authorize 方法传入认证参数 options 不生效的Bug
 * 【uniCloud】
-  + 【重要】调整 vue2版本客户端App平台对应的`context.PLATFORM`值由 `app-plus` 改为 `app`。此调整对 uni-id 有影响，详情请参考文档：[uni-id preferedAppPlatform](https://uniapp.dcloud.net.cn/uniCloud/uni-id.html#prefered-app-platform)
+  + 【重要】调整 vue2版本客户端App平台对应的`context.PLATFORM`值由 `app-plus` 改为 `app`。此调整对 uni-id 有影响，详情请参考文档：[uni-id preferedAppPlatform](https://doc.dcloud.net.cn/uniCloud/uni-id.html#prefered-app-platform)
   + 修复 云对象 自动展示交互界面时未能显示 loading 标题的Bug [详情](https://ask.dcloud.net.cn/question/144526)
-  + 调整 客户端将上报所有`getSystemInfoSync`返回的内容供云端使用，参考文档：[云函数内获取客户端信息](https://uniapp.dcloud.net.cn/uniCloud/cf-functions.html#client-info)，[云对象内获取客户端信息](https://uniapp.dcloud.net.cn/uniCloud/cloud-obj.html#get-client-info)
-  + uni-id 新增 getWeixinUserInfo 用于获取app平台微信登录用户的用户信息 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id.html#get-weixin-user-info)
-  + uni-id 新增 addUser 用于手动添加用户 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id.html#add-user)
-  + uni-id 新增 resetPwdBySms 用于使用短信验证码重置密码 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id.html#reset-pwd-by-sms)
-  + uni-id 调整 用户注册时记录用户注册环境到 register_env 字段 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id.html#user-table)
+  + 调整 客户端将上报所有`getSystemInfoSync`返回的内容供云端使用，参考文档：[云函数内获取客户端信息](https://doc.dcloud.net.cn/uniCloud/cf-functions.html#client-info)，[云对象内获取客户端信息](https://doc.dcloud.net.cn/uniCloud/cloud-obj.html#get-client-info)
+  + uni-id 新增 getWeixinUserInfo 用于获取app平台微信登录用户的用户信息 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id.html#get-weixin-user-info)
+  + uni-id 新增 addUser 用于手动添加用户 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id.html#add-user)
+  + uni-id 新增 resetPwdBySms 用于使用短信验证码重置密码 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id.html#reset-pwd-by-sms)
+  + uni-id 调整 用户注册时记录用户注册环境到 register_env 字段 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id.html#user-table)
   + uni-id 调整 用户注册时将注册 ip 移至 register_env 内
 
 #### 3.4.8.20220428-alpha
@@ -1102,7 +1102,7 @@
   + uni-ui 新增 uni-tooltip 组件 [详情](https://ext.dcloud.net.cn/plugin?id=8020)
 * 【uniCloud】
   + 修复 云对象 自动展示错误提示界面时 toast 图标错误的Bug [详情](https://ask.dcloud.net.cn/question/142246)
-  + 新增 uniCloud 支持云对象本地运行和调试 [详情](https://uniapp.dcloud.net.cn/uniCloud/cloud-obj.html#run-local)
+  + 新增 uniCloud 支持云对象本地运行和调试 [详情](https://doc.dcloud.net.cn/uniCloud/cloud-obj.html#run-local)
 * 【App插件(含5+App和uni-app的App端)】
   + 更新 uni-AD 腾讯优量汇SDK Android为 4.462.1332 版，iOS为 4.13.63 版；今日头条穿山甲SDK iOS为 4.4.0.5 版；快手广告SDK Android为 3.3.23 版，iOS为 3.3.23 版；快手内容联盟SDK iOS为 3.3.28 版；百度百青藤广告SDK iOS为 4.861 版；Sigmob广告联盟SDK iOS为 4.1.0 版
   + Android平台 更新 高德地图SDK为 9.2.0 版， 解决在部分设备使用地图引起应用崩溃的Bug [详情](https://ask.dcloud.net.cn/question/143573)
@@ -1133,7 +1133,7 @@
   + 微信小程序平台 修复 vue3 项目发行为混合分包运行报错的Bug [详情](https://github.com/dcloudio/uni-app/issues/3416)
 * 【uniCloud】
   + 【重要】阿里云 调整 单次数据库查询最大超时时间由1秒调整为3秒，需要重新上传云函数触发更新
-  + 【重要】云对象 调整 默认自动显示请求相关ui（等待loading，错误弹框） [详情](https://uniapp.dcloud.net.cn/uniCloud/cloud-obj.html#auto-ui)
+  + 【重要】云对象 调整 默认自动显示请求相关ui（等待loading，错误弹框） [详情](https://doc.dcloud.net.cn/uniCloud/cloud-obj.html#auto-ui)
   + JQL 修复 部分情况下过度限制了权限的Bug [详情](https://ask.dcloud.net.cn/question/142457)
   + 本地调试插件 修复 HBuilderX 2.4.5 版本引出的部分场景下访问本地云函数误报公共模块冲突的Bug
 * 【App插件(含5+App和uni-app的App端)】
@@ -1312,11 +1312,11 @@
   + 支付宝小程序平台 修复 vue2 项目小程序插件中组件事件监听失效的Bug [详情](https://github.com/dcloudio/uni-app/issues/2410)
   + 【重要】hello uniCloud 新增云对象基础使用示例[详情](https://ext.dcloud.net.cn/plugin?id=4082)
 * 【uniCloud】
-  + 【重要】新增`云对象`。将callfunction函数调用升级为模块化方式，网络不再传递json，前端对象化使用云API [详情](https://uniapp.dcloud.net.cn/uniCloud/cloud-obj)
-  + 【调整】发送短信API 从内置库剥离为扩展库 uni-cloud-sms [详情](https://uniapp.dcloud.net.cn/uniCloud/send-sms?id=extension)
-  + 【调整】一键登录API 从内置库剥离为扩展库 uni-cloud-verify [详情](https://uniapp.dcloud.net.cn/uniCloud/univerify?id=extension)
+  + 【重要】新增`云对象`。将callfunction函数调用升级为模块化方式，网络不再传递json，前端对象化使用云API [详情](https://doc.dcloud.net.cn/uniCloud/cloud-obj)
+  + 【调整】发送短信API 从内置库剥离为扩展库 uni-cloud-sms [详情](https://doc.dcloud.net.cn/uniCloud/send-sms?id=extension)
+  + 【调整】一键登录API 从内置库剥离为扩展库 uni-cloud-verify [详情](https://doc.dcloud.net.cn/uniCloud/univerify?id=extension)
   + 【调整】uniCloud本地调试插件 云函数右键本地运行时，此云函数内的callFunction由调用云端云函数改为调用本地云函数
-  + 新增 jql语法 允许在 getTemp 联表查询的虚拟联表内使用 groupBy distinct [详情](https://uniapp.dcloud.net.cn/uniCloud/jql?  id=lookup-with-temp)
+  + 新增 jql语法 允许在 getTemp 联表查询的虚拟联表内使用 groupBy distinct [详情](https://doc.dcloud.net.cn/uniCloud/jql?  id=lookup-with-temp)
   + 优化 HBuilderX新建云函数的界面支持选择模板和依赖
   + 修复 阿里云 云函数删除文件接口返回数据格式不正确的Bug
   + 修复 uni-cloud-jql扩展库 权限校验失败等场景未抛出错误的Bug
@@ -1393,10 +1393,10 @@
   + 小程序平台 修复 模板中包含转义引号时在小程序开发工具中编译报错或显示异常的Bug
   + 微信小程序平台 修复 多页面，组件内使用插槽数据时，差量编译丢失插槽信息的Bug [详情](https://ask.dcloud.net.cn/question/136258)
 * 【uniCloud】
-  + 新增 JQL语法 使用 getTemp 进行联表查询时，支持在临时表内使用 as 或其他运算操作 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql?id=lookup-with-temp)
-  + 新增 JQL语法 使用 getTemp 进行联表查询时，支持在虚拟联表内使用 foreignKey 方法指定要使用的 foreignKey 的归属的字段 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql?id=lookup-with-temp)
-  + 新增 web控制台 阿里云 前端网页托管支持为指定路径开启 uni-app history 路由跳转模式支持 [详情](https://uniapp.dcloud.net.cn/uniCloud/hosting?id=routing)
-  + 新增 uni-id 支持自定义国际化语言支持 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=custom-i8n)
+  + 新增 JQL语法 使用 getTemp 进行联表查询时，支持在临时表内使用 as 或其他运算操作 [详情](https://doc.dcloud.net.cn/uniCloud/jql?id=lookup-with-temp)
+  + 新增 JQL语法 使用 getTemp 进行联表查询时，支持在虚拟联表内使用 foreignKey 方法指定要使用的 foreignKey 的归属的字段 [详情](https://doc.dcloud.net.cn/uniCloud/jql?id=lookup-with-temp)
+  + 新增 web控制台 阿里云 前端网页托管支持为指定路径开启 uni-app history 路由跳转模式支持 [详情](https://doc.dcloud.net.cn/uniCloud/hosting?id=routing)
+  + 新增 uni-id 支持自定义国际化语言支持 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id?id=custom-i8n)
   + 修复 uni-id 一键登录时未校验重复手机号是否已验证的Bug
   + 修复 uni-id Apple 登录时用户邮箱为空时报错的Bug
   + 修复 uni-id 用户名密码登录时多个应用出现重复用户名登录报错的Bug
@@ -1507,7 +1507,7 @@
   + 支付宝小程序 修复 vue3 项目 组件自定义事件触发报错的Bug [详情](https://github.com/dcloudio/uni-app/issues/3053)
   + 抖音小程序 修复 vue3 项目 page-meta 组件 报错的Bug [详情](https://ask.dcloud.net.cn/question/135769)
 * 【uniCloud】
-  + 新增 支持云函数内使用 JQL 语法操作数据库的扩展库 [详情](https://uniapp.dcloud.net.cn/uniCloud/jql-cloud)
+  + 新增 支持云函数内使用 JQL 语法操作数据库的扩展库 [详情](https://doc.dcloud.net.cn/uniCloud/jql-cloud)
   + 修复 腾讯云 geoNear 聚合阶段 maxDistance、minDistance 参数无法正常生效的Bug
   + 修复 app 端 nvue 页面无法连接本地云函数的Bug [详情](https://ask.dcloud.net.cn/question/135703)
 * 【App插件(含5+App和uni-app的App端)】
@@ -1538,7 +1538,7 @@
   + H5平台 新增 vue3 版本 page-meta 标签下支持浏览器原生head，方便进行 seo 优化 [详情](https://uniapp.dcloud.net.cn/component/page-meta?id=head)
   + 小程序平台 修复 百度小程序 login 组件 @getphonenumber 无参数的问题 [详情](https://ask.dcloud.net.cn/question/130022)
 * 【uniCloud】
-  + 新增 批量短信 发送功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/send-sms)
+  + 新增 批量短信 发送功能 [详情](https://doc.dcloud.net.cn/uniCloud/send-sms)
   + 新增 uniCloud DB Schema 支持国际化 [详情](https://uniapp.dcloud.net.cn/collocation/i18n?id=schema)
   + 新增 腾讯云redis
 * 【App插件(含5+App和uni-app的App端)】
@@ -1563,7 +1563,7 @@
 * 【uni-app】
   + App-Android平台 修复 showTabBarRedDot 设置红点可能不生效的Bug [详情](https://ask.dcloud.net.cn/question/134420)
   + App-Android平台 修复 nvue waterfall 中 cell 组件横竖屏切换后可能出现排版不正常的Bug [详情](https://ask.dcloud.net.cn/question/133738)
-  + 调整 uniCloud admin 改名为 uni-admin [详情](https://uniapp.dcloud.net.cn/uniCloud/admin)
+  + 调整 uniCloud admin 改名为 uni-admin [详情](https://doc.dcloud.net.cn/uniCloud/admin)
 * 【App插件(含5+App和uni-app的App端)】
   + Android平台 修复 上架某些应用市场审核检测可能检测到收集已安装应用列表行为的Bug
   + Android平台 修复 3.2.13 版本引出的 webview页面作为子窗口时 WebviewStyles 的 top 属性不生效的Bug
@@ -1606,7 +1606,7 @@
   + 微信小程序平台、支付宝小程序平台 新增 小程序导出到插件 [详情](https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/using.html#%E5%AF%BC%E5%87%BA%E5%88%B0%E6%8F%92%E4%BB%B6)
 * 【uniCloud】
   + 客户端sdk 修复 使用callback形式调用接口时 success 回调内抛出错误会触发 fail 回调的Bug
-  + uni-pay 新增 苹果应用内购凭证校验接口 [详情](https://uniapp.dcloud.net.cn/uniCloud/unipay?id=verifyreceipt)
+  + uni-pay 新增 苹果应用内购凭证校验接口 [详情](https://doc.dcloud.net.cn/uniCloud/unipay?id=verifyreceipt)
   + JQL数据库管理 修复 multiSend 接口报错的Bug
 * 【App插件(含5+App和uni-app的App端)】
   + 新增 一键登录 服务协议项样式支持 checkBoxSize 属性设置复选框大小 [详情](https://uniapp.dcloud.io/univerify)
@@ -1639,9 +1639,9 @@
   + 小程序平台 修复 3.2.10 版本引出的 vue3 项目运行报错的Bug [详情](https://ask.dcloud.net.cn/question/132368)
   + 新增 Hello i18n 国际化示例项目 [详情](https://ext.dcloud.net.cn/plugin?id=6462)
 * 【uniCloud】
-  + clientDB 新增 调用 uniCloud.database 时传入其他服务空间配置，获取其他服务空间的数据库实例 [详情](https://uniapp.dcloud.net.cn/uniCloud/init?id=init-db)
-  + clientDB 调整 自动保存 uni-id 刷新用户token返回的token及过期时间到storage内  [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=refreshtoken)
-  + unicloud-db组件 新增 spaceInfo 参数，用于指定要使用的服务空间信息 [详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db?id=props)
+  + clientDB 新增 调用 uniCloud.database 时传入其他服务空间配置，获取其他服务空间的数据库实例 [详情](https://doc.dcloud.net.cn/uniCloud/init?id=init-db)
+  + clientDB 调整 自动保存 uni-id 刷新用户token返回的token及过期时间到storage内  [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=refreshtoken)
+  + unicloud-db组件 新增 spaceInfo 参数，用于指定要使用的服务空间信息 [详情](https://doc.dcloud.net.cn/uniCloud/unicloud-db?id=props)
   + mixinDatacom 新增 spaceInfo 参数，用于指定要使用的服务空间信息 [详情](https://uniapp.dcloud.net.cn/component/datacom?id=mixindatacom)
 * 【App插件(含5+App和uni-app的App端)】
   + 更新 uni-AD Sigmob广告联盟SDK Android为3.4.1版，iOS为3.4.2版
@@ -1700,9 +1700,9 @@
   + 支付宝小程序平台 新增 支持在 App.vue 文件内监听 onShareAppMessage 事件 [#2844](https://github.com/dcloudio/uni-app/pull/2844)
   + 抖音小程序平台 修复 差量编译失效的Bug
 * 【uniCloud】
-  + 本地调试插件 新增 设置启动调试参数（.hbuilderx/launch.json）关闭系统日志 [详情](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=calllocalfunction)
+  + 本地调试插件 新增 设置启动调试参数（.hbuilderx/launch.json）关闭系统日志 [详情](https://doc.dcloud.net.cn/uniCloud/quickstart?id=calllocalfunction)
   + 本地调试插件 优化 公共模块查找逻辑，减少调试错误
-  + clientDB 新增 action 依赖公共模块的功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=common-for-action)
+  + clientDB 新增 action 依赖公共模块的功能 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=common-for-action)
 * 【App插件(含5+App和uni-app的App端)】
   + 新增 登录鉴权 支持Google登录和Facebook登录 [详情](http://ask.dcloud.net.cn/article/192)
   + 新增 微信分享 支持打开微信客服功能 [规范](https://www.html5plus.org/doc/zh_cn/share.html#plus.share.ShareService.openCustomerServiceChat)
@@ -1727,7 +1727,7 @@
   + Android平台 修复 图片选择界面设置 filter 为 video 时仍然显示`原图`按钮的Bug
   + iOS平台 修复 二维码扫码在应用横屏模式时预览画面被旋转了的Bug [详情](https://ask.dcloud.net.cn/question/116187)
 * 【uniCloud】
-  + 【重要】clientDB 新增 支持使用 getTemp 对主表、副表过滤后再联表查询，大幅提升联表查询性能 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=lookup-with-temp)
+  + 【重要】clientDB 新增 支持使用 getTemp 对主表、副表过滤后再联表查询，大幅提升联表查询性能 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=lookup-with-temp)
 
 #### 3.2.5.20210827-alpha
 * 【uni-app】
@@ -1829,12 +1829,12 @@
   + uniCloud admin 修复 修改密码失败的 bug
   + 新增 插件市场 支持前端文件加密 限付费的云端一体项目类型的前端文件 [详情](https://ask.dcloud.net.cn/article/35408)
 * 【uniCloud】
-  + 云数据库 新增 updateAndReturn 方法，可以更新并返回更新后的值（仅可在云函数中使用） [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-database?id=update-and-return)
+  + 云数据库 新增 updateAndReturn 方法，可以更新并返回更新后的值（仅可在云函数中使用） [详情](https://doc.dcloud.net.cn/uniCloud/cf-database?id=update-and-return)
   + uniCloud本地调试插件 修复 部分情况下项目启动时报 npm 安装失败的Bug
-  + uni-id 新增 多系统（如管理端、用户端）的配置隔离 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=isolate-config)
-  + uni-id 新增 多系统用户管理，如某账户只能登录管理端，不能登录用户端 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=isolate-user)
-    - 此版本升级需要开发者处理历史用户数据，请参考 [补齐用户dcloud_appid字段](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=makeup-dcloud-appid)
-  + uni-id 新增 QQ登录、注册相关功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=qq)
+  + uni-id 新增 多系统（如管理端、用户端）的配置隔离 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id?id=isolate-config)
+  + uni-id 新增 多系统用户管理，如某账户只能登录管理端，不能登录用户端 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id?id=isolate-user)
+    - 此版本升级需要开发者处理历史用户数据，请参考 [补齐用户dcloud_appid字段](https://doc.dcloud.net.cn/uniCloud/uni-id?id=makeup-dcloud-appid)
+  + uni-id 新增 QQ登录、注册相关功能 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id?id=qq)
   + uni-id 调整 不再支持绑定手机、邮箱时不填验证码直接绑定
 * 【App插件(含5+App和uni-app的App端)】
   + 新增 一键登录 服务协议项样式支持设置复选框图标 [详情](https://uniapp.dcloud.io/univerify)
@@ -1871,11 +1871,11 @@
   + 小程序平台 修复 新版作用域插槽编译模式嵌套自定义组件不显示的Bug [详情](https://ask.dcloud.net.cn/question/126058)
   + 抖音小程序平台 修复 新版开发者工具中 uni.request 发送请求失败的Bug
 * 【uniCloud】
-  + 【重要】云函数支持创建时选择 nodejs 版本 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=runtime)
+  + 【重要】云函数支持创建时选择 nodejs 版本 [详情](https://doc.dcloud.net.cn/uniCloud/cf-functions?id=runtime)
   + 新增 内容安全公共模块，包含图片鉴黄、文字内容违规检测，免费且全端可用 [详情](https://ext.dcloud.net.cn/plugin?id=5460)
-  + clientDB 新增 multiSend 接口，用于多个clientDB联网请求合并为一次联网 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=multi-send)
-  + unicloud-db组件和API 新增 getTemp 接口，用于在 multiSend 内使用 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=multi-send)
-  + uni-id 调整 3.1.1版本发布，使用兼容 uniCloud 响应体规范的新错误码格式 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=errcode)
+  + clientDB 新增 multiSend 接口，用于多个clientDB联网请求合并为一次联网 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=multi-send)
+  + unicloud-db组件和API 新增 getTemp 接口，用于在 multiSend 内使用 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=multi-send)
+  + uni-id 调整 3.1.1版本发布，使用兼容 uniCloud 响应体规范的新错误码格式 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id?id=errcode)
   + uniCloud本地调试插件 修复 部分情况下出现 MaxListenersExceededWarning 警告的Bug
   + uniCloud本地调试插件 修复 项目内存在项目外文件的软链时，修改无法实时生效的Bug
   + JQL数据库管理 修复 部分情况下执行数据库操作无响应的Bug
@@ -1904,8 +1904,8 @@
   + 百度小程序平台 修复 部分 class 写法编译后失效的Bug
   + QQ小程序平台 修复 默认启用 nodeModules 导致作用域插槽编译后运行报错的Bug
 * 【uniCloud】
-  + 新增 uniCloud响应体规范，方便前端拦截器统一处理、方便国际化 [详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-response-format)
-  + 客户端 新增 添加拦截器、移除拦截器API [详情](https://uniapp.dcloud.net.cn/uniCloud/client-sdk?id=add-interceptor)
+  + 新增 uniCloud响应体规范，方便前端拦截器统一处理、方便国际化 [详情](https://doc.dcloud.net.cn/uniCloud/unicloud-response-format)
+  + 客户端 新增 添加拦截器、移除拦截器API [详情](https://doc.dcloud.net.cn/uniCloud/client-sdk?id=add-interceptor)
   + 客户端 修复 HBuilderX 3.1.17-alpha 引出的 db.on("error") 回调不执行的Bug
   + 客户端 修复 leftWindow、topWindow 中使用 uniCloud 腾讯云报错的Bug [详情](https://ask.dcloud.net.cn/question/125039)
   + DB Schema 调整 enum 属性最大可枚举500条数据
@@ -1987,7 +1987,7 @@
   + 补充 addInterceptor 拦截器文档 [详情](https://uniapp.dcloud.io/api/interceptor)
   + App-Android平台 修复 nvue swiper 组件动态加载数据时会跳到第一个 swiper-item 的bug [详情](https://ask.dcloud.net.cn/question/121687)
 * 【uniCloud】
-  + clientDB 新增 使用副表 foreignKey 进行联表查询时增加 _value 用于存储主表关联字段原始值 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=st-foreign-key)
+  + clientDB 新增 使用副表 foreignKey 进行联表查询时增加 _value 用于存储主表关联字段原始值 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=st-foreign-key)
   + clientDB 修复 部分情况下 action.after 会重复执行一次的bug
   + JQL数据管理 修复 使用云端 schema 时找不到 schema 的Bug [详情](https://ask.dcloud.net.cn/question/123285)
 * 【App插件(含5+App和uni-app的App端)】
@@ -2084,7 +2084,7 @@
   + uni-ui 优化 uni-transition 文档示例
 * 【uniCloud】
   + 【重要】clientDB联表查询策略调整，请参考此文档进行进行排查并调整：[clientDB联表查询策略调整](https://ask.dcloud.net.cn/article/38966)
-  + clientDB 新增 联表查询支持副表foreignKey联查，即副表字段的foreignKey指向主表，把副表数据挂在主表下面 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=st-foreign-key)
+  + clientDB 新增 联表查询支持副表foreignKey联查，即副表字段的foreignKey指向主表，把副表数据挂在主表下面 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=st-foreign-key)
   + uniCloud本地调试插件 修复 阿里云偶发启动时多请求并发报错的Bug
 * 【App插件(含5+App和uni-app的App端)】
   + 新增 一键登录 全屏模式支持在登录界面添加自定义登录按钮 [详情](https://uniapp.dcloud.io/univerify)
@@ -2140,11 +2140,11 @@
   + uni升级中心 App端 新增 call-check-version.js，可用于单独检测是否有更新 [详情](https://ext.dcloud.net.cn/plugin?id=4542)
 * 【uniCloud】
   + 【重要】clientDB联表查询策略调整，请参考此文档进行进行排查并调整：[clientDB联表查询策略调整](https://ask.dcloud.net.cn/article/38966)
-  + unicloud-db组件 新增 loadtime 属性，替代 manual 属性 [详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db?id=props)
-  + unicloud-db组件 新增 foreignKey 属性，用于存在多个foreignKey关系时指定要使用的foreignKey [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=lookup-foreign-key)
-  + uniCloud.mixinDataCom 新增 foreignKey 属性，用途同上 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=lookup-foreign-key)
+  + unicloud-db组件 新增 loadtime 属性，替代 manual 属性 [详情](https://doc.dcloud.net.cn/uniCloud/unicloud-db?id=props)
+  + unicloud-db组件 新增 foreignKey 属性，用于存在多个foreignKey关系时指定要使用的foreignKey [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=lookup-foreign-key)
+  + uniCloud.mixinDataCom 新增 foreignKey 属性，用途同上 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=lookup-foreign-key)
   + uni-id 修复 3.0.7 版本引出的多个用户访问时可能出现30201报错的Bug
-  + uni-id 新增 bindMobile 接口支持通过一键登录的方式绑定 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=bind-mobile)
+  + uni-id 新增 bindMobile 接口支持通过一键登录的方式绑定 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id?id=bind-mobile)
   + uni-id 调整 bindTokenToDevice 选项默认值改为 false，即默认不再与设备绑定，方便多设备登录
   + 修复 uniCloud.chooseAndUploadFile 在iOS微信小程序真机无法唤起选择文件的Bug
   + uniCloud admin 优化错误提示、键盘响应等众多细节，更新uni-id等众多依赖 [详情](https://ext.dcloud.net.cn/plugin?id=3268)
@@ -2184,8 +2184,8 @@
 * 【uniCloud】
   + 新增 [uni-upgrade-center](https://uniapp.dcloud.io/uniCloud/upgrade-center)，提供了简单、易用、统一的App管理、App版本管理、安装包发布管理，升级检测更新管理。
   + uniCloud本地调试插件 修复 3.1.5 版本引出的腾讯云连接本地云函数运行一段时间后报错的Bug [详情](https://ask.dcloud.net.cn/question/119089)
-  + 阿里云 新增 支持对云函数设置单实例并发度 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=concurrency)
-  + 阿里云 新增 支持TTL索引 [详情](https://uniapp.dcloud.net.cn/uniCloud/db-index?ttl)
+  + 阿里云 新增 支持对云函数设置单实例并发度 [详情](https://doc.dcloud.net.cn/uniCloud/cf-functions?id=concurrency)
+  + 阿里云 新增 支持TTL索引 [详情](https://doc.dcloud.net.cn/uniCloud/db-index?ttl)
 
 #### 3.1.6.20210318-alpha
 * 【uni-app】
@@ -2229,8 +2229,8 @@
   + App-iOS平台 修复 subNVue input 组件获取焦点后隐藏页面时软键盘不会关闭的Bug [详情](https://ask.dcloud.net.cn/question/117872)
   + H5平台 优化 picker、video 组件内置国际化支持 [详情](https://uniapp.dcloud.io/collocation/i18n)
 * 【uniCloud】
-  + unicloud-db组件 add、update、remove方法新增可选参数needConfirm、needLoading、loadingTitle [详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db?id=add)
-  + unicloud-db组件 新增 load 事件支持 pagination [详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db?id=loadevent)
+  + unicloud-db组件 add、update、remove方法新增可选参数needConfirm、needLoading、loadingTitle [详情](https://doc.dcloud.net.cn/uniCloud/unicloud-db?id=add)
+  + unicloud-db组件 新增 load 事件支持 pagination [详情](https://doc.dcloud.net.cn/uniCloud/unicloud-db?id=loadevent)
   + DB Schema 修复 exclusiveMinimum|exclusiveMaximum 默认验证提示语不准确的问题
   + uniCloud本地调试插件 修复 公共模块修改之后无法立即生效的Bug
   + schema2code 新增 导出 uni_modules
@@ -2365,28 +2365,28 @@
   + 云端一体登录模板 新增 用户名密码连续登录失败时要求输入图形验证码
 * 【uniCloud】
   + 【重要】客户端 新增 uniCloud.mixinDatacom 混入，方便快速开发datacom组件，无需自行处理云数据绑定 [详情](https://uniapp.dcloud.net.cn/component/datacom?id=mixindatacom)
-  + 客户端 新增 uniCloud.chooseAndUploadFile API，选文件后直接上传到uniCloud云存储 [详情](https://uniapp.dcloud.net.cn/uniCloud/storage?id=chooseanduploadfile)
-  + 【重要】uni-id 新增 在token内默认缓存角色权限，云端获取角色权限不再查库，提升clientDB性能 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=cachepermissionintoken)
-  + uni-id 新增 支持苹果登录 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=loginbyapple)
-  + uni-id 新增 客户端获取用户信息接口，包括权限角色 [详情](https://uniapp.dcloud.net.cn/uniCloud/client-sdk?id=client-getcurrentuserinfo)
-  + 云函数 新增 获取客户端标识 deviceId [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=intro)
-  + 阿里云 新增 云函数支持 uploadFile 接口（本地调试暂不支持）[详情](https://uniapp.dcloud.net.cn/uniCloud/storage?id=clouduploadfile)
+  + 客户端 新增 uniCloud.chooseAndUploadFile API，选文件后直接上传到uniCloud云存储 [详情](https://doc.dcloud.net.cn/uniCloud/storage?id=chooseanduploadfile)
+  + 【重要】uni-id 新增 在token内默认缓存角色权限，云端获取角色权限不再查库，提升clientDB性能 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id?id=cachepermissionintoken)
+  + uni-id 新增 支持苹果登录 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id?id=loginbyapple)
+  + uni-id 新增 客户端获取用户信息接口，包括权限角色 [详情](https://doc.dcloud.net.cn/uniCloud/client-sdk?id=client-getcurrentuserinfo)
+  + 云函数 新增 获取客户端标识 deviceId [详情](https://doc.dcloud.net.cn/uniCloud/cf-functions?id=intro)
+  + 阿里云 新增 云函数支持 uploadFile 接口（本地调试暂不支持）[详情](https://doc.dcloud.net.cn/uniCloud/storage?id=clouduploadfile)
   + 阿里云 新增 云数据库 add update 可以传入日期对象
-  + 阿里云 新增 getTempFileURL 接口（仅为抹平和腾讯云的接口差异）[详情](https://uniapp.dcloud.net.cn/uniCloud/storage?id=cloudgettempfileurl)
+  + 阿里云 新增 getTempFileURL 接口（仅为抹平和腾讯云的接口差异）[详情](https://doc.dcloud.net.cn/uniCloud/storage?id=cloudgettempfileurl)
   + web控制台 阿里云 新增 慢查询日志，有助于分析数据库设计缺陷
   + uniCloud本地调试插件 新增 支持 uni_modules
   + uniCloud本地调试插件 修复 cli 项目无法使用 uniCloud 本地调试的Bug
   + uniCloud本地调试插件 修复 客户端连接本地云函数时云函数内 callFunction 返回格式不正确的Bug
   + DB Schema 字段类型bsonType 新增 file、date类型 [详情](https://uniapp.dcloud.io/uniCloud/schema?id=bsontype)
   + DB Schema 字段类型bsonType 为 array 时，新增 arrayType 子类型，描述数组里项目的类型。比如 arrayType 设为 file，表示一组文件 [详见](https://uniapp.dcloud.io/uniCloud/schema?id=arraytype)
-  + DB Schema 新增 fieldRules 用于描述字段之间的关系，如字段“开始时间”需小于字段“结束时间” [详情](https://uniapp.dcloud.net.cn/uniCloud/schema?id=field-rules)
-  + DB Schema 新增 count 权限 [详情](https://uniapp.dcloud.net.cn/uniCloud/schema?id=col-permission)
-  + DB Schema 新增 validateFunction 配置是否在客户端生效 [详情](https://uniapp.dcloud.net.cn/uniCloud/schema?id=validatefunction)
-  + clientDB 新增 数据库运算符，可在 where、field、groupBy、groupField 以及 DB Schema 的 fieldRules 内使用 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=where)
-  + clientDB 新增 支持 groupBy 对数据进行分组统计 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=groupby)
-  + clientDB 新增 支持 distinct 对数据进行去重 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=distinct)
+  + DB Schema 新增 fieldRules 用于描述字段之间的关系，如字段“开始时间”需小于字段“结束时间” [详情](https://doc.dcloud.net.cn/uniCloud/schema?id=field-rules)
+  + DB Schema 新增 count 权限 [详情](https://doc.dcloud.net.cn/uniCloud/schema?id=col-permission)
+  + DB Schema 新增 validateFunction 配置是否在客户端生效 [详情](https://doc.dcloud.net.cn/uniCloud/schema?id=validatefunction)
+  + clientDB 新增 数据库运算符，可在 where、field、groupBy、groupField 以及 DB Schema 的 fieldRules 内使用 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=where)
+  + clientDB 新增 支持 groupBy 对数据进行分组统计 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=groupby)
+  + clientDB 新增 支持 distinct 对数据进行去重 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=distinct)
   + clientDB 修复 JQL 写法内使用下标访问数组内的元素报错的Bug
-  + unicloud-db组件 add、update 方法支持调用 action云函数 [详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db?id=add)
+  + unicloud-db组件 add、update 方法支持调用 action云函数 [详情](https://doc.dcloud.net.cn/uniCloud/unicloud-db?id=add)
   + schema2code 新增 生成前端页面时补充list.vue、detail.vue页面
   + schema2code 调整 之前的 component 改名为 componentForEdit，并新增 componentForShow 。一个字段可以分别控制它在表单页面（add、edit）和展示页面（list、detail）所使用的组件
   + schema2code 新增 展示页面可直接显示bool值为√或×，显示DB Schema里enum的text内容。
@@ -2421,14 +2421,14 @@
   + App-iOS平台 修复 nvue refresh 组件处于刷新状态时显示位置向下偏移0.5像素的Bug
   + 快应用 修复 华为快应用IDE V3.0.2无法识别项目类型的Bug
 * 【uniCloud】
-  + DB Schema 新增 支持对 string 类型数据配置 trim ，可自动对字符串去除前后空白字符 [详情](https://uniapp.dcloud.net.cn/uniCloud/schema?id=trim)
+  + DB Schema 新增 支持对 string 类型数据配置 trim ，可自动对字符串去除前后空白字符 [详情](https://doc.dcloud.net.cn/uniCloud/schema?id=trim)
   + DB Schema 修复 部分情况下使用 enum 报错的Bug
   + DB Schema 修复 exclusiveMinimum、exclusiveMaximum 无效的bug
   + clientDB 修复 查询树形结构时使用 startWith 某些写法导致报错的Bug
   + clientDB 修复 field 内使用JQL联表查询语法时多个右花括号连续出现导致报错的Bug
   + clientDB 修复 field 中包含`-`时报错的Bug
   + uniCloud本地调试插件 修复 部分日志导致本地调试服务崩溃的Bug
-  + unicloud-db组件 支持tree查询，新增属性 gettree、startwith、limitlevel [详情](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db?id=props)
+  + unicloud-db组件 支持tree查询，新增属性 gettree、startwith、limitlevel [详情](https://doc.dcloud.net.cn/uniCloud/unicloud-db?id=props)
 * 【App插件(含5+App和uni-app的App端)】
   + 一键登录 优化 错误回调返回数据格式，添加 appid、metadata、uid 属性，便于排查错误 [规范](https://www.html5plus.org/doc/zh_cn/oauth.html#plus.oauth.ErrorCallback)
   + Android平台 更新 uni-AD 快手联盟SDK为3.3.6版，腾讯优量汇SDK为4.310.1180版，今日头条穿山甲SDK为3.4.1.0版
@@ -2466,7 +2466,7 @@
   + 微信小程序平台 修复 unicloud-db 组件某些情况下无效的Bug
   + 抖音小程序平台 新增 支持分包加载 [详情](https://uniapp.dcloud.io/collocation/pages?id=subpackages)
 * 【uniCloud】
-  + clientDB API 新增 树形数据查询 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=gettree)
+  + clientDB API 新增 树形数据查询 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=gettree)
 * 【App插件(含5+App和uni-app的App端)】
   + iOS平台 修复 保存路径中包含特殊字符的图片到系统相册失败的Bug [详情](https://ask.dcloud.net.cn/question/113990)
   + iOS平台 修复 一键登录 设置多个自定义服务协议时中文语法不正确的Bug
@@ -2475,8 +2475,8 @@
 * 【uni-app】
   + App平台 修复 一键登录 univerifyStyle 属性不生效的Bug [详情](https://ask.dcloud.net.cn/question/113997)
 * 【uniCloud】
-  + clientDB 新增 数据库错误 error 事件 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=error)
-  + clientDB 调整 refreshToken 事件由 db.auth 移至 db ，旧写法仍兼容 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=refreshtoken)
+  + clientDB 新增 数据库错误 error 事件 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=error)
+  + clientDB 调整 refreshToken 事件由 db.auth 移至 db ，旧写法仍兼容 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=refreshtoken)
   + uniCloud本地调试插件 修复 本地运行云函数运行结果显示不全的Bug
 * 【App插件(含5+App和uni-app的App端)】
   + Android平台 更新 支付宝SDK为15.8.00，解决提交 GooglePlay 审核报存在不安全的加密模式的Bug [详情](https://ask.dcloud.net.cn/question/114053)
@@ -2535,8 +2535,8 @@
   + hello uni-app 新增 App端一键登录示例（API分类login示例中）
   + 前后一体登录项目模板 新增 App端一键登录、修改密码
 * 【uniCloud】
-  + 【重要】调整 前端内置了`<unicloud-db>`组件，无需再人工引入插件市场的[clientDB组件插件](https://ext.dcloud.net.cn/plugin?id=3256) [规范](https://uniapp.dcloud.net.cn/uniCloud/unicloud-db)
-  + 【重要】新增 uniCloud 本地服务。支持前端项目在控制台切换连接云环境还是本地服务。本地修改直接生效，不用上传即可联调 [详情](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=calllocalfunction)
+  + 【重要】调整 前端内置了`<unicloud-db>`组件，无需再人工引入插件市场的[clientDB组件插件](https://ext.dcloud.net.cn/plugin?id=3256) [规范](https://doc.dcloud.net.cn/uniCloud/unicloud-db)
+  + 【重要】新增 uniCloud 本地服务。支持前端项目在控制台切换连接云环境还是本地服务。本地修改直接生效，不用上传即可联调 [详情](https://doc.dcloud.net.cn/uniCloud/quickstart?id=calllocalfunction)
   + 【重要】调整 uniCloud 项目目录结构调整。根目录下为uniCloud目录，其下有二级目录 cloudfunctions 和 database。database目录存放数据表schema和扩展验证函数。并提供了目录结构迁移向导 [详情](https://ask.dcloud.net.cn/article/38028)
   + 【重要】新增 HBuilderX 本地编写 DB Schema，即数据表的表结构。支持新建、上传、下载表结构，支持代码提示。
   + 【重要】新增 `<unicloud-db>`组件（即之前的clientDB组件）支持代码提示。可提示JQL语法，在本地有schema的情况下可提示数据库表名字段。大幅提升开发效率
@@ -2546,7 +2546,7 @@
   + HBuilderX 优化 上传uni-id公共模块时，增加校验，对比配置密钥是否一致
   + HBuilderX 修复 云函数本地运行 控制台日志打印`null`和`undefined`值错误的Bug
   + HBuilderX 修复 前端网页托管 某些情况下，上传网站到服务器，控制台显示(0 MB)大于上传限制(0 MB)的Bug [详情](https://ask.dcloud.net.cn/question/111228)
-  + uni-id 新增 App端一键登录 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=univerify)
+  + uni-id 新增 App端一键登录 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id?id=univerify)
   + 其他云端更新日志另见：[https://uniapp.dcloud.io/uniCloud/release](https://uniapp.dcloud.io/uniCloud/release)
 * 【App插件(含5+App和uni-app的App端)】
   + 【重要】新增 一键登录，运营商网关认证，免短信验证获取手机号、一键免密登录 [详情](https://uniapp.dcloud.net.cn/univerify)
@@ -2586,10 +2586,10 @@
 
 #### 2.9.11.20201121-alpha
 * 【uniCloud】
-  + clientDB 新增 jql写法支持在field内写别名 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=alias)
-  + clientDB 新增 schema内enum支持使用云端数据 [详情](https://uniapp.dcloud.net.cn/uniCloud/schema?id=enum)
+  + clientDB 新增 jql写法支持在field内写别名 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=alias)
+  + clientDB 新增 schema内enum支持使用云端数据 [详情](https://doc.dcloud.net.cn/uniCloud/schema?id=enum)
   + clientDB 新增 schema内bsonType支持password，设置后所有用户均不可读取此字段
-  + clientDB 优化 索引冲突时返回更友好的提示及错误码 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=returnvalue)
+  + clientDB 优化 索引冲突时返回更友好的提示及错误码 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=returnvalue)
 
 #### 2.9.10.20201117-alpha
 * 【uni-app】
@@ -2633,7 +2633,7 @@
   + 微信小程序平台 优化 跳转页面路径中不再自动增加 __id__ 参数
   + hello uni-app 优化 适配PC宽屏，参考：[https://hellouniapp.dcloud.net.cn/](https://hellouniapp.dcloud.net.cn/)
 * 【uniCloud】
-  + 阿里云支持事务（startTransaction方式，暂不支持runTransaction）[详情](https://uniapp.dcloud.net.cn/uniCloud/cf-database?id=starttransaction)
+  + 阿里云支持事务（startTransaction方式，暂不支持runTransaction）[详情](https://doc.dcloud.net.cn/uniCloud/cf-database?id=starttransaction)
 * 【App插件(含5+App和uni-app的App端)】
   + 新增 QQ分享支持 type 为 web 类型分享网页链接
   + 修复 打开新页面后，手机无障碍功能的屏幕阅读器可浏览到底层页面元素的Bug [详情](https://ask.dcloud.net.cn/question/109916)
@@ -2690,14 +2690,14 @@
   + uni-ui 新增 uni-table 组件 [详情](https://ext.dcloud.net.cn/plugin?id=3270)
   + uni-ui 新增 uni-dateformat 组件，支持各种日期格式化，以及1分钟前、刚刚等形式 [详情](https://ext.dcloud.net.cn/plugin?id=3279)
 * 【uniCloud】
-  + 【重要】新增 clientDB 支持 `jql` 查询语法，大幅降低数据库操作难度 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=jsquery)、大幅简化联表查询 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=lookup)
-  + 【重要】新增 uni-clientDB 组件，在前端通过组件直接获得云数据库内容，并直接绑定到界面上，大幅提升开发效率 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-clientdb-component)
-  + 【重要】调整 clientDB内置，云端不再需要单独的clientDB云函数，前端无需引用clientDB的js sdk，直接在前端写`const db = uniCloud.database()`即可 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb)
-  + 【重要】调整 uni-clientDB-actions 目录调整到 cloudfunctions 根目录 [详情](https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=action)
+  + 【重要】新增 clientDB 支持 `jql` 查询语法，大幅降低数据库操作难度 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=jsquery)、大幅简化联表查询 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=lookup)
+  + 【重要】新增 uni-clientDB 组件，在前端通过组件直接获得云数据库内容，并直接绑定到界面上，大幅提升开发效率 [详情](https://doc.dcloud.net.cn/uniCloud/uni-clientdb-component)
+  + 【重要】调整 clientDB内置，云端不再需要单独的clientDB云函数，前端无需引用clientDB的js sdk，直接在前端写`const db = uniCloud.database()`即可 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb)
+  + 【重要】调整 uni-clientDB-actions 目录调整到 cloudfunctions 根目录 [详情](https://doc.dcloud.net.cn/uniCloud/clientdb?id=action)
   + 【重要】调整 clientDB云函数的permission和validator子目录废除，只需在 DB Schema 中书写permission和validator内容，保存即可直接生效，无需再次导出
-  + 【重要】新增 `uniCloud Admin 基础框架`（HBuilderX新建项目可选择该模板） [详情](https://uniapp.dcloud.net.cn/uniCloud/admin)
+  + 【重要】新增 `uniCloud Admin 基础框架`（HBuilderX新建项目可选择该模板） [详情](https://doc.dcloud.net.cn/uniCloud/admin)
   + 【重要】新增 web控制台 云数据库配置 DB Schema 后，可直接生成前端工程，含数据表单新增、修改页面，以及校验规则。大幅提升开发效率
-  + 【重要】腾讯云 正式商用 [详见](https://uniapp.dcloud.net.cn/uniCloud/price)
+  + 【重要】腾讯云 正式商用 [详见](https://doc.dcloud.net.cn/uniCloud/price)
   + 新增 web控制台 云数据库支持导出db_init.json
   + 新增 web控制台 服务空间改名
   + 新增 web控制台 云数据库支持`扩展校验函数`，可自主编程实现更复杂的数据校验逻辑，同时在 DB Schema 中引用这些`扩展校验函数`
@@ -2800,10 +2800,10 @@
   + 小程序平台 新增 cli版本支持 vue3 [详情](https://ask.dcloud.net.cn/article/37834)
   + 小程序平台 修复 部分事件使用箭头函数表达式执行报错的Bug [#2132](https://github.com/dcloudio/uni-app/issues/2132)
 * 【uniCloud】
-  + 【重要】新增 腾讯云 云函数固定出口IP，可用于微信公众号开发等要求配置ip的场景 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=eip)
-  + 【重要】uni-clientDB 2.0 重大更新，可完整方便的控制权限和数据验证。大多数场景不再需要编写云函数 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-clientDB)
-  + 【重要】uni-id 新增 角色权限相关功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id?id=rbac)
-  + 【重要】云数据库支持JSON Schema规范，可在Web控制台数据库管理界面对数据进行格式描述 [详情](https://uniapp.dcloud.net.cn/uniCloud/schema)
+  + 【重要】新增 腾讯云 云函数固定出口IP，可用于微信公众号开发等要求配置ip的场景 [详情](https://doc.dcloud.net.cn/uniCloud/cf-functions?id=eip)
+  + 【重要】uni-clientDB 2.0 重大更新，可完整方便的控制权限和数据验证。大多数场景不再需要编写云函数 [详情](https://doc.dcloud.net.cn/uniCloud/uni-clientDB)
+  + 【重要】uni-id 新增 角色权限相关功能 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id?id=rbac)
+  + 【重要】云数据库支持JSON Schema规范，可在Web控制台数据库管理界面对数据进行格式描述 [详情](https://doc.dcloud.net.cn/uniCloud/schema)
   + 阿里云 去除客户端上传文件类型限制
 * 【App插件(含5+App和uni-app的App端)】
   + 新增 uni-AD 支持应用从后台切换到前台显示开屏广告，并默认启用 [详情](https://ask.dcloud.net.cn/article/36718#splash_fr)
@@ -2887,9 +2887,9 @@
   + 微信小程序平台 修复 属性使用复杂的对象表达式小程序开发工具编译报错的Bug [详情](https://ask.dcloud.net.cn/question/103944)
 * 【uniCloud】
   + 优化 云函数插件支持写入components、js_sdk、static目录
-  + web控制台 阿里云 新增 数据库集合导入导出功能 [详情](https://uniapp.dcloud.net.cn/uniCloud/cf-database?id=export)
+  + web控制台 阿里云 新增 数据库集合导入导出功能 [详情](https://doc.dcloud.net.cn/uniCloud/cf-database?id=export)
   + web控制台 腾讯云 新增 资源概况页面
-  + 短信发送 新增 3个通知类短信模板 [详情](https://uniapp.dcloud.net.cn/uniCloud/send-sms)
+  + 短信发送 新增 3个通知类短信模板 [详情](https://doc.dcloud.net.cn/uniCloud/send-sms)
 * 【App插件(含5+App和uni-app的App端)】
   + uni-AD 新增 信息流和激励视频的多广告源在App同次启动时随机穿插，可提升广告收益
   + uni-AD 新增 设置开屏全屏显示
@@ -3000,9 +3000,9 @@
   + 支付宝小程序平台 修复 作用域插槽不显示的Bug [#1253](https://github.com/dcloudio/uni-app/issues/1253)
   + 新建uni-app项目模板，新增来自插件市场腾讯云提供的discus!Q模板 [详情](https://ext.dcloud.net.cn/plugin?id=2336)
 * 【uniCloud】
-  + 【重要】新增 本地运行云函数，可连接远程数据库和云存储，大幅提升开发效率，同时方便数据导入导出 [详情](https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=runlocal)
+  + 【重要】新增 本地运行云函数，可连接远程数据库和云存储，大幅提升开发效率，同时方便数据导入导出 [详情](https://doc.dcloud.net.cn/uniCloud/quickstart?id=runlocal)
   + 【重要】新增 插件市场支持云函数付费销售，欢迎插件作者们提交高质量可售卖插件
-  + 【重要】新增 uniCloud.sendSms 短信发送能力，可方便、便宜的发送验证码短信 [详情](https://uniapp.dcloud.net.cn/uniCloud/send-sms)
+  + 【重要】新增 uniCloud.sendSms 短信发送能力，可方便、便宜的发送验证码短信 [详情](https://doc.dcloud.net.cn/uniCloud/send-sms)
   + 修复 2.7.12版本引出的支付宝小程序、百度小程序下使用 uniCloud 报错的Bug
   + 修复 2.7.12版本引出的H5端 main.js 内使用 uniCloud 导致 uniCloud 不可使用的Bug
 * 【App插件(含5+App和uni-app的App端)】
@@ -3049,7 +3049,7 @@
   + 微信小程序 修复 多个 v-for 嵌套时部分情况下绑定事件报错的Bug [详情](https://gitee.com/dcloud/uni-app/issues/I1KNYW)
   + 登录模版 升级 集成 uni-id 补充云函数，实现前后一体、功能完整的登录注册模板 [详情](https://github.com/dcloudio/uni-template-login)
 * 【uniCloud】
-  + 【重要】新增[uni-id](https://uniapp.dcloud.net.cn/uniCloud/uni-id)，实现简单、统一、可扩展的用户中心，推荐每个 uniCloud 开发者使用
+  + 【重要】新增[uni-id](https://doc.dcloud.net.cn/uniCloud/uni-id)，实现简单、统一、可扩展的用户中心，推荐每个 uniCloud 开发者使用
   + 新增 callfunction时自动携带`uni-id`的token，无需自行开发token管理方案
   + 新增 web控制台 腾讯云 云数据库备份和恢复功能 [详情](https://uniapp.dcloud.io/uniCloud/cf-database?id=backup)
   + 新增 web控制台 腾讯云 云数据库集合名称修改功能

@@ -21,8 +21,7 @@
 **开通配置广告**
 **Activate configuration advertisement**
 
-[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
-[Details of the steps to activate advertising](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad/ad-open.html)
 
 
 激励视频广告组件是原生组件，层级最高，会覆盖在普通前端组件上。

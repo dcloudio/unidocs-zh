@@ -14,8 +14,7 @@
 |属性名		|类型	|默认值	|说明			|平台差异说明				|
 |Property Name |Type |Default Value |Description |Platform Difference Description |
 |:-|:-			|:-		|:-		|:-				|
-|selectable	|Boolean|false	|文本是否可选	|		|
-| selectable | Boolean | false | Whether the text is selectable | |
+|selectable	|Boolean|false	|文本是否可选	|小红书小程序不支持|
 |user-select	|Boolean|false	|文本是否可选	| 微信小程序 |
 | user-select | Boolean| false |Whether the text is optional | WeChat MiniApp |
 |space		|String	|		|显示连续空格	|钉钉小程序不支持	|

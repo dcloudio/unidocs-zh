@@ -190,9 +190,7 @@ On the HBuilderX toolbar, click Release, select local packaging, as shown in the
 **注意**
 **Notice**
 - `history` 模式发行需要后台配置支持，详见：[history 模式的后端配置](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90%8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
-- `history` mode release requires background configuration support, see: [Backend configuration of history mode](https://router.vuejs.org/zh/guide/essentials/history-mode.html#%E5%90% 8E%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BE%8B%E5%AD%90)
-- 打包部署后，在服务器上开启 gzip 可以进一步压缩文件。具体的配置，可以参考网上的分享：https://juejin.im/post/5af003286fb9a07aac24611b
-- After packaging and deployment, enable gzip on the server to further compress files. For specific configuration, please refer to the online sharing: https://juejin.im/post/5af003286fb9a07aac24611b
+- 打包部署后，在服务器上开启 gzip 可以进一步压缩文件。具体的配置，可以参考网上的分享：[服务器端开启GZIP压缩](https://juejin.im/post/5af003286fb9a07aac24611b)
 
 ### 发布为小程序
 ### Publish as applet
@@ -384,7 +382,8 @@ npm run build:%PLATFORM%
 |mp-kuaishou|快手小程序|
 |mp-kuaishou|Kaishou Mini Program|
 |mp-jd|京东小程序|
-|mp-jd|JD Mini Program|
+|mp-xhs|小红书小程序|
+|mp-harmony|鸿蒙元服务|
 |quickapp-webview|快应用(webview)|
 |quickapp-webview|Quick App(webview)|
 |quickapp-webview-union|快应用联盟|

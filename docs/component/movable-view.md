@@ -38,8 +38,8 @@
 
 |类型|触发条件|平台差异说明|
 |:-|:-|:-|
-|htouchmove|初次手指触摸后移动为横向的移动，如果catch此事件，则意味着touchmove事件也被catch|微信小程序、百度小程序、QQ小程序、快手小程序、快应用|
-|vtouchmove|初次手指触摸后移动为纵向的移动，如果catch此事件，则意味着touchmove事件也被catch|微信小程序、百度小程序、QQ小程序、快手小程序、快应用|
+|htouchmove|初次手指触摸后移动为横向的移动，如果catch此事件，则意味着touchmove事件也被catch|微信小程序、百度小程序、QQ小程序、快手小程序、快应用、小红书小程序|
+|vtouchmove|初次手指触摸后移动为纵向的移动，如果catch此事件，则意味着touchmove事件也被catch|微信小程序、百度小程序、QQ小程序、快手小程序、快应用、小红书小程序|
 
 > movable-view 必须设置width和height属性，不设置默认为10px
 >

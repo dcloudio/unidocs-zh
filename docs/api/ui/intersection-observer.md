@@ -5,7 +5,7 @@
 
 |元服务|
 |:-:|
-|1.0.4+|
+|√|
 
 <!-- UNIAPPAPIJSON.createIntersectionObserver.compatibility -->
 

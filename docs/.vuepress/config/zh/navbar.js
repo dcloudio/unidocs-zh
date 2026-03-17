@@ -42,6 +42,11 @@ export const navbar = [
         type: 'link',
         link: '/plugin/'
       },
+			{
+			  text: 'AI专题',
+			  type: 'link',
+			  link: '/ai/'
+			},
       {
         text: '工程化',
         type: 'link',

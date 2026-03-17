@@ -64,7 +64,7 @@ export default {
 				poster: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/music-a.png',
 				name: '致爱丽丝',
 				author: '暂无',
-				src: 'https://web-ext-storage.dcloud.net.cn/uni-app/ForElise.mp3',
+				src: 'https://web-ext-storage.dcloud.net.cn/doc/uniapp/ForElise.mp3',
 			},
 			audioAction: {
 				method: 'pause'

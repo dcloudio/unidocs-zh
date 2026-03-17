@@ -33,8 +33,7 @@ Douyin-like vertical video stream, full-screen video such as call show, live roo
 **开通配置广告**
 **Activate configuration advertisement**
 
-[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
-[Details of the steps to activate advertising](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad/ad-open.html)
 
 
 文档已迁移至 [Draw视频信息流广告](https://uniapp.dcloud.net.cn/uni-ad/ad-draw.html)

@@ -136,8 +136,7 @@ uni.chooseFile({
 
 ## wx.chooseMessageFile(OBJECT)
 
-从微信聊天会话中选择文件。
-Select a file from a WeChat chat session.
+从微信聊天会话中选择文件，[详见](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseMessageFile.html)
 
 **平台差异说明**
 **Platform difference description**

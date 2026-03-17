@@ -17,8 +17,7 @@ Developers can use the ad component to create a Grid ad component. After the Gri
 **开通配置广告**
 **Activate configuration advertisement**
 
-[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
-[Details of the steps to activate advertising](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad/ad-weixin-dcloud.html)
 
 
 文档已迁移至 [Grid 广告](https://uniapp.dcloud.net.cn/uni-ad/ad-grid.html)

@@ -47,18 +47,19 @@ In the iOS standard base signature window, enter `Bundle ID`, `Certificate Priva
 Windows系统，HBuilderX 3.6.20以下版本，没有内置重签功能，开发者可以使用三方工具（如爱思助手）对标准基座签名。
 For Windows systems, versions below HBuilderX 3.6.20 do not have a built-in re-sign function. Developers can use third-party tools (such as Aisi Assistant) to sign the standard base.
 
-Windows, iOS标准基座路径：`HBuilderX安装目录\plugins\launcher\base\iPhone_base.ipa`，如下所示：
-Windows, iOS standard base path: `HBuilderX installation directory\plugins\launcher\base\iPhone_base.ipa`, as follows:
+uni-app X 项目的 iOS 标准基座路径为 `HBuilderX安装目录\plugins\uniappx-launcher\base\iPhone_base.ipa`，其他项目类型 iOS 标准基座路径为 `HBuilderX安装目录\plugins\launcher\base\iPhone_base.ipa`。
+
+如下所示：
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/windows_ios%E6%A0%87%E5%87%86%E5%9F%BA%E5%BA%A7%E7%AD%BE%E5%90%8D_1.jpg" style="zoom: 50%" />
+
 
 下面讲描述如何使用爱思助手对iOS标准基座签名。
 The following describes how to use Aisi Assistant to sign the iOS standard base.
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/windows_ios%E6%A0%87%E5%87%86%E5%9F%BA%E5%BA%A7%E7%AD%BE%E5%90%8D_2.jpg" style="zoom: 50%" />
 
-如果签名成功，爱思助手会提示签名成功。签名成功后，找到签名后的ipa文件，并命名为`iPhone_base_signed.ipa`，然后将其拷贝到`HBuilderX安装目录\plugins\launcher\base`。
-If the signature is successful, Aisi Assistant will prompt that the signature is successful. After the signature is successful, find the signed ipa file and name it `iPhone_base_signed.ipa`, and then copy it to `HBuilderX installation directory\plugins\launcher\base`.
+如果签名成功，爱思助手会提示签名成功。签名成功后，找到签名后的ipa文件，并命名为`iPhone_base_signed.ipa`，然后将其拷贝到对应的项目目录中：uni-app X 项目为 `HBuilderX安装目录\plugins\uniappx-launcher\base`，其他项目类型为 `HBuilderX安装目录\plugins\launcher\base`。
 
 <img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/windows_ios%E6%A0%87%E5%87%86%E5%9F%BA%E5%BA%A7%E7%AD%BE%E5%90%8D_3.jpg" style="zoom: 50%" />
 

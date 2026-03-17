@@ -29,7 +29,6 @@
 - [插屏广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)
 - [沉浸视频流广告](https://uniapp.dcloud.net.cn/uni-ad/ad-draw.html)
 - [短视频内容联盟](https://uniapp.dcloud.net.cn/uni-ad/ad-content-page.html)
-- [互动广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interactive.html)
 
 #### 微信小程序
 
@@ -39,7 +38,6 @@
 - [激励视频广告](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html)
 - [插屏广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)
 - [视频广告](https://uniapp.dcloud.net.cn/uni-ad/ad-video.html)
-- [互动广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interactive.html)
 
 #### Web/H5
 
@@ -88,7 +86,6 @@ HBuilder 3.6.7+ 或原生广告 SDK 5.0.0+版本 uni-ad 开屏、信息流、激
 - [插屏广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interstitial.html)
 - [沉浸视频流广告](https://uniapp.dcloud.net.cn/uni-ad/ad-draw.html)
 - [短视频内容联盟组件](https://uniapp.dcloud.net.cn/uni-ad/ad-content-page.html)
-- [互动广告](https://uniapp.dcloud.net.cn/uni-ad/ad-interactive.html)
 
 **错误码**
 

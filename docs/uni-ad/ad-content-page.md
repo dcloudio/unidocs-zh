@@ -2,9 +2,11 @@
 
 ### 简介
 
-⼀个视频内容频道，支持上下滑动切换视频内容
+一个视频内容频道，支持上下滑动切换视频内容
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ad-content-page.png)
+
+<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ad-content-page.png" style="max-width: 300px; max-height: 50vh;" />
+
 
 **平台差异说明**
 
@@ -15,7 +17,7 @@
 
 **开通配置广告**
 
-[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad/ad-open.html)
 
 注意：打包时必须选择快手内容联盟。
 

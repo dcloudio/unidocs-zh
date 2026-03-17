@@ -95,12 +95,12 @@ Open the manifest.json file of the project, switch to the "Source View" item, an
 After saving, submit the cloud package to take effect.
 
 #### uni-app x项目  
-uni-app x项目不再支持maniest.json中配置，需在项目下创建 "nativeResources" -> "ios" 目录，添加`UniApp.entitlements`文件配置。  
-详情参考：[https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#domains](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#domains)
+HBuilderX4.71 及以上版本支持 manifest.json 可视化配置，详情参考：[uni-app x 关联域 配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-ios.html#associateddomains)。  
+
+HBuilderX4.71 以下版本未提供 maniest.json 可视化配置，需在项目下创建 "nativeResources" -> "ios" 目录，添加`UniApp.entitlements`文件配置，详情参考：[https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#domains](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#domains)。  
 
 
-**本地离线打包配置**  
-**Local offline packaging configuration**
+#### 本地离线打包  
 在原生XCode工程中配置通用链接域名（使用HBuilderX云端打包跳过）  
 ![](https://native-res.dcloud.net.cn/images/uniapp/ios/xcode-ass-domains1.png)  
 

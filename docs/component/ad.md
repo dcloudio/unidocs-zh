@@ -20,7 +20,7 @@ Banner or information flow advertisement display scenarios are very flexible. Co
 - H5端、微信小程序端的广告由DCloud直接提供
 - The advertisements on the H5 terminal and WeChat applet are directly provided by DCloud
 - 其他小程序端由小程序平台提供
-- Other applet terminals are provided by the applet platform
+- 鸿蒙平台已经集成了鸿鲸广告，不过因鸿蒙填充率较低，线上版本暂不支持。可使用条件编译临时规避，使用 `#ifndef APP-HARMONY` 进行规避。如果需要可以单独对接，可在 [uni-ad](https://uniad.dcloud.net.cn/home) 找到 uni-im 交流群沟通。
 
 **平台差异说明**
 **Platform Difference Description**
@@ -32,8 +32,7 @@ Banner or information flow advertisement display scenarios are very flexible. Co
 **开通配置广告**
 **Activate configuration advertisement**
 
-[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad.html#start)
-[Details of the steps to activate advertising](https://uniapp.dcloud.net.cn/uni-ad.html#start)
+[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad/ad-open.html)
 
 
 文档已迁移至 [信息流(Banner)广告](https://uniapp.dcloud.net.cn/uni-ad/ad-component.html)

@@ -3,7 +3,7 @@
 
 |App|HarmonyOS Next|H5|微信小程序|支付宝小程序|百度小程序|抖音小程序|飞书小程序|QQ小程序|快手小程序|京东小程序|元服务|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|√|x|x|√|√|x|x|√|x|x|√|1.0.4+|
+|√|x|x|√|√|x|x|√|x|x|√|√|
 
 ## uni.setBLEMTU(OBJECT)
 
@@ -530,8 +530,7 @@ Obtain all characteristic values of a certain service of that Bluetooth device.
 **Success return parameter description:**
 
 |属性|类型|说明|
-| Attribute| Type| Instruction|
-|---|---|---|---|
+|---|---|---|
 |characteristics|Array&lt;Object&gt;|设备服务列表|
 | characteristics| Array\<Object>| Equipment service list|
 

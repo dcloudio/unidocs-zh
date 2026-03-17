@@ -20,19 +20,19 @@
 |scroll-with-animation	|Boolean	|false	|在设置滚动条位置时使用动画过渡																	|			|
 |enable-back-to-top		|Boolean	|false	|iOS点击顶部状态栏、安卓双击标题栏时，滚动条返回顶部，只支持竖向								|app-nvue，微信小程序	|
 |show-scrollbar         |Boolean	|true	|控制是否出现滚动条| App-nvue 2.1.5+ |
-|refresher-enabled		|Boolean	|false	|开启自定义下拉刷新|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
-|refresher-threshold	|Number		|45		|设置自定义下拉刷新阈值|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
-|refresher-default-style|String		|"black"|设置自定义下拉刷新默认样式，支持设置 black，white，none，none 表示不使用默认样式|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
-|refresher-background	|String		|"#FFF" |设置自定义下拉刷新区域背景颜色|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
-|refresher-triggered	|Boolean	|false	|设置当前下拉刷新状态，true 表示下拉刷新已经被触发，false 表示下拉刷新未被触发|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
-|enable-flex|Boolean|false|启用 flexbox 布局。开启后，当前节点声明了 display: flex 就会成为 flex container，并作用于其孩子节点。|微信小程序 2.7.3|
+|refresher-enabled		|Boolean	|false	|开启自定义下拉刷新|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+、小红书小程序|
+|refresher-threshold	|Number		|45		|设置自定义下拉刷新阈值|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+、小红书小程序|
+|refresher-default-style|String		|"black"|设置自定义下拉刷新默认样式，支持设置 black，white，none，none 表示不使用默认样式|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+、小红书小程序|
+|refresher-background	|String		|"#FFF" |设置自定义下拉刷新区域背景颜色|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+、小红书小程序|
+|refresher-triggered	|Boolean	|false	|设置当前下拉刷新状态，true 表示下拉刷新已经被触发，false 表示下拉刷新未被触发|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+、小红书小程序|
+|enable-flex|Boolean|false|启用 flexbox 布局。开启后，当前节点声明了 display: flex 就会成为 flex container，并作用于其孩子节点。|微信小程序 2.7.3、小红书小程序|
 |scroll-anchoring|Boolean|false|开启 scroll anchoring 特性，即控制滚动位置不随内容变化而抖动，仅在 iOS 下生效，安卓下可参考 CSS overflow-anchor 属性。|微信小程序 2.8.2|
 |@scrolltoupper			|EventHandle|		|滚动到顶部/左边，会触发 scrolltoupper 事件														|			|
 |@scrolltolower			|EventHandle|		|滚动到底部/右边，会触发 scrolltolower 事件														|			|
 |@scroll				|EventHandle|		|滚动时触发，event.detail = {scrollLeft, scrollTop, scrollHeight, scrollWidth, deltaX, deltaY}	|&nbsp;|
-|@refresherpulling		|EventHandle|		|自定义下拉刷新控件被下拉|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
-|@refresherrefresh		|EventHandle|		|自定义下拉刷新被触发|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
-|@refresherrestore		|EventHandle|		|自定义下拉刷新被复位|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
+|@refresherpulling		|EventHandle|		|自定义下拉刷新控件被下拉|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+、小红书小程序|
+|@refresherrefresh		|EventHandle|		|自定义下拉刷新被触发|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+、小红书小程序|
+|@refresherrestore		|EventHandle|		|自定义下拉刷新被复位|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+、小红书小程序|
 |@refresherabort		|EventHandle|		|自定义下拉刷新被中止|H5、app-vue 2.5.12+,微信小程序基础库2.10.1+|
 
 
@@ -220,6 +220,7 @@
 	* webview渲染时，建议使用页面级的原生下拉刷新，性能更好。如一定要在webview中自定义下拉刷新，建议插件市场搜索[虚拟列表](https://ext.dcloud.net.cn/search?q=%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0)，这些专业组件使用wxs、renderjs等技术避免通信阻塞。
 - scroll-view是区域滚动，不会触发页面滚动，无法触发pages.json配置的下拉刷新、页面触底onReachBottomDistance、titleNView的transparent透明渐变。但在app-uvue下，scroll-view如果是页面顶级节点，则等同于页面滚动。[详见](https://doc.dcloud.net.cn/uni-app-x/css/#pagescroll)
 - webview渲染时，scroll-view的滚动条设置，可通过css的-webkit-scrollbar自定义，包括隐藏滚动条。但 `::-webkit-scrollbar` 仅在基于 Blink 或 WebKit 的浏览器（例如，Chrome、Edge、Opera、Safari、iOS 上所有的浏览器，以及其他基于 WebKit 的浏览器）上可用。滚动条样式的标准方法可在firefox直接使用 `scrollbar-color` 和 `scrollbar-width` 属性。
+- uni-popup 和 scroll-view 组合使用，在 app-ios 中有 css 兼容性问题，可参考 [Ask相关问题](https://ask.dcloud.net.cn/question/213749) 添加 css 规则或者，将 popup 移到组件之外。
 
 在app-uvue中，其实没有页面级滚动，scroll-view也不存在原生组件层级、下拉刷新性能问题。但app-uvue里使用长列表，请务必使用list-view组件，这个组件内置了recycle-view机制，不管列表多长，都可以通过回收不显示的列表来保证高性能。[详见](list.md)
 

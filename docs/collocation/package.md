@@ -2,15 +2,14 @@
 
 ## uni-app 属性
 
-- 在开发web时，有时需要一套代码编译发布到不同的站点，比如主站和微信h5站。（注意不是一套代码内部自适应不同浏览器，是真的分离部署了不同的网站）
-- When developing the web, sometimes it is necessary to compile and publish a set of codes to different sites, such as the main site and WeChat h5 site. (Note that it is not a set of code that adapts to different browsers internally, it is really separate and deployed different websites)
+- 在开发 web 时，有时需要一套代码编译发布到不同的站点，比如主站和微信 h5 站。（注意不是一套代码内部自适应不同浏览器，是真的分离部署了不同的网站）
 - 在开发小程序时，经常有扩展小程序平台，比如基于阿里小程序的钉钉小程序、淘宝小程序。
 - When developing Mini Programs, there are often extended Mini Program platforms, such as Dingding Mini Programs and Taobao Mini Programs based on Ali Mini Programs.
 
 uni-app 通过在`package.json`文件中增加`uni-app`扩展节点，可实现自定义条件编译平台。
 uni-app A custom conditional compilation platform can be implemented by adding a `uni-app` extension node to the `package.json` file.
 
-扩展新的平台后，有3点影响：
+扩展新的平台后，有 3 点影响：
 
 1. 可以在代码里编写自定义的条件编译，为这个新平台编写专用代码
 1. You can write custom conditional compilation in the code to write special code for this new platform
@@ -19,35 +18,37 @@ uni-app A custom conditional compilation platform can be implemented by adding a
 3. 发行时可以执行面向新平台的编译发行
 3. Compilation and distribution for new platforms can be performed at the time of release
 
-注意只能扩展web和小程序平台，不能扩展app打包。并且扩展小程序平台时只能基于指定的基准平台扩展子平台，不能扩展基准平台。基准平台详见下文。
-Note that only the web and applet platforms can be extended, and app packaging cannot be extended. In addition, when extending the Mini Program platform, only the sub-platform can be extended based on the specified benchmark platform, and the benchmark platform cannot be expanded. Benchmark platforms are detailed below.
+注意只能扩展 web 和小程序平台，不能扩展 app 打包。并且扩展小程序平台时只能基于指定的基准平台扩展子平台，不能扩展基准平台。基准平台详见下文。
 
 ### 用法
 
-package.json扩展配置用法：
-package.json extension configuration usage:
+package.json 扩展配置用法：
 
 ```json
 {
-    /**
-     * package.json其它原有配置 
-     * 拷贝代码后请去掉注释！
-     */
-    "uni-app": {// 扩展配置
-        "scripts": {
-            "custom-platform": { //自定义编译平台配置，可通过cli方式调用
-                "title":"自定义扩展名称", // 在HBuilderX中会显示在 运行/发行 菜单中
-                "browser":"",  //运行到的目标浏览器，仅当UNI_PLATFORM为h5时有效
-                "env": {//环境变量
-                    "UNI_PLATFORM": "",  //基准平台
-                    "MY_TEST": "", // ... 其他自定义环境变量
-                 },
-                "define": { //自定义条件编译
-                    "CUSTOM-CONST": true //自定义条件编译常量，建议为大写
-                }
-            }
-        }    
+  /**
+   * package.json其它原有配置
+   * 拷贝代码后请去掉注释！
+   */
+  "uni-app": {
+    // 扩展配置
+    "scripts": {
+      "custom-platform": {
+        //自定义编译平台配置，可通过cli方式调用
+        "title": "自定义扩展名称", // 在HBuilderX中会显示在 运行/发行 菜单中
+        "browser": "", //运行到的目标浏览器，仅当UNI_PLATFORM为h5时有效
+        "env": {
+          //环境变量
+          "UNI_PLATFORM": "", //基准平台
+          "MY_TEST": "" // ... 其他自定义环境变量
+        },
+        "define": {
+          //自定义条件编译
+          "CUSTOM-CONST": true //自定义条件编译常量，建议为大写
+        }
+      }
     }
+  }
 }
 ```
 
@@ -56,27 +57,28 @@ Tips：
 - `UNI_PLATFORM` 仅支持填写 `uni-app` 默认支持的基准平台，目前仅限如下枚举值：`h5`、`mp-weixin`、`mp-alipay`、`mp-baidu`、`mp-toutiao`、`mp-qq`
 - `browser` 仅在 `UNI_PLATFORM` 为 `h5` 时有效,目前仅限如下枚举值：`chrome`、`firefox`、`ie`、`edge`、`safari`、`hbuilderx`
 - `package.json` 文件中不允许出现注释，否则扩展配置无效
-- `vue-cli` 需更新到最新版，HBuilderX需升级到 2.1.6+ 版本
+- `vue-cli` 需更新到最新版，HBuilderX 需升级到 2.1.6+ 版本
 - `vue2` 可以通过 `process.UNI_SCRIPT_ENV` 获取对应平台配置的 `env`，`vue3` 可以通过 `process.env.UNI_CUSTOM_DEFINE` 获取
 
 ### 示例：钉钉小程序
 
-如下是一个自定义钉钉小程序（MP-DINGTALK）的package.json示例配置（拷贝代码记得去掉注释）：
-The following is an example package.json configuration of a custom DingTalk applet (MP-DINGTALK) (remember to remove the comments when copying the code):
+如下是一个自定义钉钉小程序（MP-DINGTALK）的 package.json 示例配置（拷贝代码记得去掉注释）：
 
 ```json
-"uni-app": {
-	"scripts": {
-		"mp-dingtalk": { 
-		"title":"钉钉小程序", 
-			"env": { 
-				"UNI_PLATFORM": "mp-alipay" 
-			},
-			"define": { 
-				"MP-DINGTALK": true 
-			}
-		}
-	}
+{
+  "uni-app": {
+    "scripts": {
+      "mp-dingtalk": {
+        "title": "钉钉小程序",
+        "env": {
+          "UNI_PLATFORM": "mp-alipay"
+        },
+        "define": {
+          "MP-DINGTALK": true
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -84,7 +86,7 @@ The following is an example package.json configuration of a custom DingTalk appl
 **Use a custom platform in code**
 
 开发者可在代码中使用`MP-DINGTALK`进行条件编译，如下：
-Developers can use `MP-DINGTALK` for conditional compilation in the code, as follows:
+
 ```javascript
 // #ifdef MP
 小程序平台通用代码（含钉钉）
@@ -103,7 +105,7 @@ Developers can use `MP-DINGTALK` for conditional compilation in the code, as fol
 `vue-cli`开发者可通过如下命令，启动钉钉小程序平台的编译：
 
 ```bash
-npm run dev:custom mp-dingtalk 
+npm run dev:custom mp-dingtalk
 npm run build:custom mp-dingtalk
 ```
 
@@ -122,17 +124,17 @@ Tips: The DingTalk applet compilation directory is still `mp-alipay`, you need t
 ```json
 "uni-app": {
     "scripts": {
-        "h5-weixin": { 
+        "h5-weixin": {
             "title":"微信服务号",
-            "browser":"chrome",  
+            "browser":"chrome",
             "env": {
-                "UNI_PLATFORM": "h5"  
+                "UNI_PLATFORM": "h5"
              },
-            "define": { 
-                "H5-WEIXIN": true 
+            "define": {
+                "H5-WEIXIN": true
             }
         }
-    }    
+    }
 }
 ```
 
@@ -151,7 +153,7 @@ H5平台通用代码（含微信服务号）
 `vue-cli`开发者可通过如下命令，启动微信服务号平台（H5-WEIXIN）平台的编译：
 
 ```bash
-npm run dev:custom h5-weixin 
+npm run dev:custom h5-weixin
 npm run build:custom h5-weixin
 ```
 

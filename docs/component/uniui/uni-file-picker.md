@@ -205,6 +205,7 @@
 |image-styles|Object| -| -| `mode:grid` 时的样式	|
 |sizeType|Array| ['original', 'compressed']| 'original', 'compressed'| original 原图，compressed 压缩图，默认二者都有	|
 |sourceType|Array| ['album', 'camera']| 'album', 'camera'| album 从相册选图，camera 使用相机，默认二者都有。如需直接开相机或直接选相册，请只使用一个选项	|
+|dir|String| "/"| -| 需要上传到的文件夹，默认为 "/" ,即上传到根目录	|
 
 
 ### value 格式 

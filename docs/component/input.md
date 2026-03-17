@@ -30,18 +30,14 @@ The input in the html specification is not only an input box, but also radio, ch
 | maxlength| Number| 140|Maximum input length, when set to -1, there is no limit to the maximum length||
 |cursor-spacing|Number|0|指定光标与键盘的距离，单位 px 。取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离|App、微信小程序、百度小程序、QQ小程序、京东小程序|
 |focus|Boolean|false|获取焦点。|H5、App需要点击按钮获取焦点的，必须使用@touchend.prevent="onTap"阻止键盘收起默认事件才能获取焦点[关于软键盘弹出的逻辑说明](#关于软键盘弹出的逻辑说明)，小程序、nvue需使用组件的 focus()、blur() 方法控制焦点|
-|confirm-type|String|done|设置键盘右下角按钮的文字，仅在 type="text" 时生效。[有效值](#confirm-type)|微信小程序、App、H5、快手小程序、京东小程序|
-| confirm-type| String| done|Set the text of the button in the lower right corner of the keyboard, only valid when type="text". [Valid value](#confirm-type)|WeChat MiniApp, App, H5, Kuaishou MiniApp, Jingdong MiniApp|
-|confirm-hold|Boolean|false|点击键盘右下角按钮时是否保持键盘不收起|App(3.3.7+)、H5 (3.3.7+)、微信小程序、支付宝小程序、百度小程序、QQ小程序、京东小程序|
-| confirm-hold| Boolean| false|Whether to keep the keyboard closed when the button in the lower right corner of the keyboard is clicked| App (3.3.7+), H5 (3.3.7+), WeChat MiniApp, Alipay MiniApp, Baidu MiniApp, QQ MiniApp, Jingdong MiniApp|
+|confirm-type|String|done|设置键盘右下角按钮的文字，仅在 type="text" 时生效。[有效值](#confirm-type)|微信小程序、App、H5、快手小程序、京东小程序、小红书小程序|
+|confirm-hold|Boolean|false|点击键盘右下角按钮时是否保持键盘不收起|App(3.3.7+)、H5 (3.3.7+)、微信小程序、支付宝小程序、百度小程序、QQ小程序、京东小程序、小红书小程序|
 |cursor|Number||指定focus时的光标位置||
 |cursor-color|String||光标颜色|微信小程序 3.1.0+、H5(4.0+)、App-Vue(4.0+)|
 |selection-start|Number|-1|光标起始位置，自动聚集时有效，需与selection-end搭配使用||
 | selection-start| Number|-1|Cursor starting position, valid when auto-gathering, need to be used together with selection-end||
 |selection-end|Number|-1|光标结束位置，自动聚集时有效，需与selection-start搭配使用||
-| selection-end| Number|-1|Cursor end position, valid when auto-gathering, must be used together with selection-start||
-|adjust-position|Boolean|true|键盘弹起时，是否自动上推页面|App-Android（vue 页面 softinputMode 为 adjustResize 时无效，使用 x5 内核时无效）、微信小程序、百度小程序、QQ小程序、京东小程序|
-| adjust-position| Boolean| true|Whether to automatically push up the page when the keyboard pops up| App-Android (invalid when the vue page softinputMode is adjustResize, invalid when using the x5 kernel), WeChat MiniApp, Baidu MiniApp, QQ MiniApp, Jingdong MiniApp|
+|adjust-position|Boolean|true|键盘弹起时，是否自动上推页面|App-Android（vue 页面 softinputMode 为 adjustResize 时无效，使用 x5 内核时无效）、微信小程序、百度小程序、QQ小程序、京东小程序、小红书小程序|
 |auto-blur|Boolean|false|键盘收起时，是否自动失去焦点|App-Vue 3.0.0+|
 | auto-blur| Boolean| false|Whether to automatically lose focus when the keyboard is closed|App-Vue 3.0.0+|
 |ignoreCompositionEvent|Boolean|true|是否忽略组件内对文本合成系统事件的处理。为 `false` 时将触发 `compositionstart、compositionend、compositionupdate` 事件，且在文本合成期间会触发 `input` 事件|App-vue (3.4.4+)、H5 (3.4.4+)、App-nvue不支持|
@@ -71,7 +67,7 @@ The input in the html specification is not only an input box, but also radio, ch
 |inputmode|String|"text"|是一个枚举属性，它提供了用户在编辑元素或其内容时可能输入的数据类型的提示。[有效值](#inputmode)|H5（3.6.16+）、App-vue（3.6.16+）|
 |inputmode| String|"text"| is an enumerated property that provides hints about the type of data the user may enter when editing the element or its contents. [valid value](#inputmode)| H5 (3.6.16+), App-vue (3.6.16+)|
 |@input|EventHandle||当键盘输入时，触发input事件，event.detail = {value}|差异见下方 Tips|
-|@focus|EventHandle||输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度|仅微信小程序、京东小程序、App（2.2.3+） 、QQ小程序、快手小程序支持 height|
+|@focus|EventHandle||输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度|仅微信小程序、京东小程序、App（2.2.3+） 、QQ小程序、快手小程序支持 height、小红书小程序|
 |@blur|EventHandle||输入框失去焦点时触发，event.detail = {value: value}||
 |@confirm|EventHandle||点击完成按钮时触发，event.detail = {value: value}||
 |@keyboardheightchange|eventhandle||键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration}|微信小程序基础库2.7.0+、App 3.1.0+|
@@ -102,11 +98,16 @@ The input in the html specification is not only an input box, but also radio, ch
 |idcard|身份证输入键盘|微信、支付宝、百度、QQ小程序、快手小程序、京东小程序|
 | idcard|ID card input keyboard|WeChat, Alipay, Baidu, QQ MiniApp, Kuaishou MiniApp, Jingdong MiniApp|
 |digit|带小数点的数字键盘|均支持，App平台、H5平台 vue 页面在 iOS 平台显示的键盘包含负数（原生键盘不支持负号）。|
-|tel|电话输入键盘||
+|tel|电话输入键盘|小红书小程序不支持|
 |safe-password|密码安全输入键盘|微信小程序|
 | safe-password|Password safe input keyboard|WeChat MiniApp|
 |nickname|昵称输入键盘|微信小程序|
-| nickname|nickname input keyboard|WeChat MiniApp|
+|none|无虚拟键盘。在应用程序或者站点需要实现自己的键盘输入控件时很有用。|H5 (5.0+)、App (5.0+)|
+|decimal|小数输入键盘，包含数字和分隔符（通常是“ . ”或者“ , ”），设备可能也可能不显示减号键|H5 (5.0+)、App (5.0+)|
+|numeric|数字输入键盘，所需要的就是 0 到 9 的数字，设备可能也可能不显示减号键。|H5 (5.0+)、App (5.0+)|
+|search|为搜索输入优化的虚拟键盘，比如，返回键可能被重新标记为“搜索”，也可能还有其他的优化。|H5 (5.0+)、App (5.0+)|
+|email|为邮件地址输入优化的虚拟键盘，通常包含""符号和其他优化。表单里面的邮件地址输入应该使用 <input type="email"> 。|H5 (5.0+)、App (5.0+)|
+|url|为网址输入优化的虚拟键盘，比如，“/”键会更加明显、历史记录访问等。表单里面的网址输入通常应该使用 <input type="url"> 。|H5 (5.0+)、App (5.0+)|
 
 ::: warning 注意事项
 - 小程序平台，`number` 类型只支持输入整型数字。微信开发者工具上体现不出效果，请使用真机预览。
@@ -115,6 +116,7 @@ The input in the html specification is not only an input box, but also radio, ch
 -When the input on the MiniApp terminal is focused, it will behave as a native control, and the level will become higher at this time. If you need front-end components to cover the input, you need to make the input out of focus, or use cover-view and other solutions to cover native controls, [reference](https://uniapp.dcloud.io/component/native-component).Specifically, the input of the Ali MiniApp is text and the focus is a native control; all the input focus of WeChat, Toutiao, and QQ are native controls; the focus of the Baidu MiniApp is still non-native. You can also refer to [Native Control](https://uniapp.dcloud.io/component/native-component) document
 - input组件若不想弹出软键盘，可设置为disabled
 - placeholder-style指定样式类font-size单位为rpx时，抖音小程序、飞书小程序、快手小程序不支持，可使用uni.upx2px()将rpx单位值转换成px。
+- iOS 存在苹果智能标点功能：safari（webview） 上连续输入两次 `.` 后，在第三次输入 `.` 时，会触发两次 deleteContentBackward（删除） 的输入外加一次 insertText 为 …（三个点） 的输入
 :::
 
 #### text-content-type 有效值 @text-content-type
@@ -138,16 +140,11 @@ The text of the button in the lower right corner of the popup soft keyboard.
 |值|说明|平台差异说明|
 |Value|Description|Platform Difference Description|
 |:-|:-|:-|
-|send|右下角按钮为“发送”|微信、支付宝、百度小程序、快手小程序、京东小程序、app-nvue、app-vue和h5(2.9.9+，且要求设备webview内核Chrome81+、Safari13.7+)|
-| send|The button in the lower right corner is "Send"|WeChat, Alipay, Baidu MiniApp, Kuaishou MiniApp, Jingdong MiniApp, app-nvue, app-vue and h5 (2.9.9+, and require the device webview kernel Chrome81+, Safari13 .7+)|
+|send|右下角按钮为“发送”|微信、支付宝、百度小程序、快手小程序、京东小程序、app-nvue、app-vue和h5(2.9.9+，且要求设备webview内核Chrome81+、Safari13.7+)、小红书小程序|
 |search|右下角按钮为“搜索”||
-| search|The button in the lower right corner is "Search"||
-|next|右下角按钮为“下一个”|微信、支付宝、百度小程序、快手小程序、京东小程序、app-nvue、app-vue和h5(2.9.9+，且要求设备webview内核Chrome81+、Safari13.7+)|
-| next|The button in the lower right corner is "Next"|WeChat, Alipay, Baidu MiniApp, Kuaishou MiniApp, Jingdong MiniApp, app-nvue, app-vue and h5 (2.9.9+, and requires the device webview kernel Chrome81+, Safari13.7+)|
+|next|右下角按钮为“下一个”|微信、支付宝、百度小程序、快手小程序、京东小程序、app-nvue、app-vue和h5(2.9.9+，且要求设备webview内核Chrome81+、Safari13.7+)、小红书小程序|
 |go|右下角按钮为“前往”||
-| go|The button in the lower right corner is "Go"||
-|done|右下角按钮为“完成”|微信、支付宝、百度小程序、快手小程序、京东小程序、app-nvue、app-vue和h5(2.9.9+，且要求设备webview内核Chrome81+、Safari13.7+)|
-| done|The button in the lower right corner is "Done"|WeChat, Alipay, Baidu MiniApp, Kuaishou MiniApp, Jingdong MiniApp, app-nvue, app-vue and h5 (2.9.9+, and require the device webview kernel Chrome81+, Safari13 .7+)|
+|done|右下角按钮为“完成”|微信、支付宝、百度小程序、快手小程序、京东小程序、app-nvue、app-vue和h5(2.9.9+，且要求设备webview内核Chrome81+、Safari13.7+)、小红书小程序|
 
 - App平台的vue页面及 H5平台 的弹出键盘使用的是浏览器控制的键盘，在Chrome81+、Safari13.7+之前，键盘右下角文字只能设置完成和搜索，从Chrome81+、Safari13.7+起支持设置发送、下一个。
 - The vue page of the App platform and the pop-up keyboard of the H5 platform use a browser-controlled keyboard. Before Chrome81+ and Safari13.7+, the text in the lower right corner of the keyboard can only be set and searched. It is supported from Chrome81+ and Safari13.7+ Set send, next.

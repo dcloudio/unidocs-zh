@@ -1,3 +1,13 @@
+#### 5.04.2026031801
+* 【uni-app x】
+  + iOS平台 修复 组件 native-view 动态创建并销毁时可能引起崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=27240)
+  + 微信小程序平台 修复 CSS 样式隔离策略和externalClass 部分情况下父组件传入的全局class不能在子组件根节点生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=27180)
+* 【uni-app】
+  + 小程序平台 修复 hx 项目分包未包含 node_modules 时错误将主包依赖打包到分包的问题 [详情](https://ask.dcloud.net.cn/question/218618)
+  + 微信小程序平台 修复 部分情况下父组件传入的全局class不能在子组件根节点生效 [详情](https://ask.dcloud.net.cn/question/218527)
+* 【uts插件】
+  + Android平台 修复 5.03版本引发的 回退 JSON.parse / UTSJSONObject的处理来修复import json文件之后可能导致编译报错的问题 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=27264)
+
 #### 5.03.2026031210
 * 【uni-app x】
   + 【重要】新增 鸿蒙平台 蒸汽模式，渲染性能大幅提升 [详情](https://doc.dcloud.net.cn/uni-app-x/app-harmony/harmony-vapor.html)

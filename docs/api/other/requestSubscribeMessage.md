@@ -5,7 +5,7 @@
 
 |App|H5	|微信小程序				|支付宝小程序	|百度小程序	|抖音小程序、飞书小程序	|QQ小程序	|元服务|小红书小程序|
 |:-:	|:-:|:-:							|:-:					|:-:				|:-:				|:-:			|:-:|:-:|
-|x		|x	|基础库版本>=2.8.2|x						|x					|x					|x				|√|x|
+|x		|x	|基础库版本>=2.8.2|基础库版本>=2.7.10						|x					|x					|x				|√|x|
 
 **object参数说明**
 
@@ -24,6 +24,7 @@
 **平台说明**
 
 - [微信小程序订阅消息参考文档](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/subscribe-message.html)
+- [支付宝小程序订阅消息参考文档](https://opendocs.alipay.com/mini/api/requestSubscribeMessage)
 
 
 **object.success 返回值**

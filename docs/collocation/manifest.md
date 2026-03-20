@@ -545,7 +545,8 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 
 **Tips**
 
-微信小程序项目配置，[查看详情](https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html)
+- 微信小程序项目配置，[查看详情](https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html)
+- `nativeTags` 用于配置小程序平台支持的原生组件，比如小程序支持组件 A，在 uniapp 使用此组件编译运行不生效，即可把 A 配置到此选项中，vue2 和 vue3 均支持此配置
 
 #### setting
 

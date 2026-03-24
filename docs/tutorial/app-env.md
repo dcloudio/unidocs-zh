@@ -46,7 +46,8 @@
 
 > 使用 XCode 的 xcodebuild 命令编译  
 
-**从2026年3月12号开始HBuilderX4.41及以上alpha版本云端打包环境已升级为XCode26**  
+**从2026年3月12号开始HBuilderX4.76及以上alpha版本云端打包环境已升级为XCode26**  
+**从2026年3月22号开始HBuilderX4.66及以上release版本云端部分打包机环境升级为XCode26**
 - XCode: 26.3  
 - iOS SDK: 26.2  
 - pod仓库：https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git  

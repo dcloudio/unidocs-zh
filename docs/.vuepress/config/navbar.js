@@ -138,12 +138,6 @@ export const navbar = [
             link: "https://miniapp.xiaohongshu.com/docsV2/doc/DC026595",
           },
         ]
-      },
-      {
-        link: "https://github.com/dcloudio/uni-app",
-        target: "_blank",
-        text: "GitHub",
-        type: "link"
       }
     ]
   },
@@ -187,6 +181,12 @@ export const navbar = [
     type: "link",
     needOutbound: false
   },
+  {
+    link: "https://github.com/dcloudio/uni-app/tree/uni-app-vue2-release",
+    target: "_blank",
+    text: "GitHub",
+    type: "link"
+  }
   /* {
     text: '问答社区',
     link: 'https://ask.dcloud.net.cn/explore/',

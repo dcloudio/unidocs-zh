@@ -119,7 +119,7 @@ const config = {
   patterns: ['**/!(_sidebar).md', '**/*.vue'],
   plugins: [
     ["vuepress-plugin-juejin-style-copy", copyOptions],
-    [createLLMSText]
+    [createLLMSText, {domain: 'https://gitcode.com/dcloud/unidocs-zh/tree/master/docs'}]
   ],
   /**
    *

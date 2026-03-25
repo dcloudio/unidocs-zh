@@ -1,3 +1,15 @@
+#### 5.05.2026032417
+* 【uni-app x】
+  + App-iOS平台 更新 云端打包环境 XCode 为 16.1 版、iOS SDK 为 18.1 版，支持iOS13及以上系统 [详情](https://doc.dcloud.net.cn/uni-app-x/tutorial/app-env.html)
+* 【uni-app】
+  + Android平台 修复 5.0版本引发的 自定义 useragent 后获取返回值异常的Bug [详情](https://ask.dcloud.net.cn/question/218717)
+  + Android平台 修复 5.0版本引发的 云端打包后在部分设备底部可能出现黑条的Bug [详情](https://ask.dcloud.net.cn/question/218801)
+  + Web平台 修复 5.03版本引发的 uni-app Vue3 项目加载 uni-app x 内置同名组件（如loading组件）异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=27513)
+* 【App插件(含5+App和uni-app的App端)】
+  + iOS平台 更新 云端打包环境 XCode 为 26.3 版、iOS SDK 为 26.2 版，支持iOS13及以上系统 [详情](https://uniapp.dcloud.net.cn/tutorial/app-env.html)
+* 【uni小程序SDK】
+  + Android平台 修复 uni小程序 uni.sendHostEvent 回调参数为空的Bug
+
 #### 5.04.2026031801
 * 【uni-app x】
   + iOS平台 修复 组件 native-view 动态创建并销毁时可能引起崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=27240)

@@ -4,7 +4,7 @@
 **注意：uni.createMapContext(mapId, this)**
 - app-nvue 平台 2.2.5+ 支持 uni.createMapContext(mapId, this)
 - app-nvue 平台 2.2.5- 需要同时设置组件属性id和ref ``<map id="map1" ref="map1"></map>``，或者直接使用 ref，例如 ``this.$refs.map1``
-
+- `支付宝小程序` 不需要传入组件实例 this, [详见](https://opendocs.alipay.com/mini/api/ui-map)
 
 **平台差异说明**
 

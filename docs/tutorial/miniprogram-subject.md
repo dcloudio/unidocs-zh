@@ -117,7 +117,7 @@
 **代码示例**
 
 下面以微信小程序官方自定义组件示例 [miniprogram-slide-view](https://github.com/wechat-miniprogram/slide-view) 为例演示小程序自定义组件的使用方式。
-其他组件使用示例见 GitHub：[wxcomponents-template](https://github.com/dcloudio/uni-app/tree/master/examples/wxcomponents-template)。
+其他组件使用示例见 GitHub：[wxcomponents-template](https://github.com/dcloudio/uni-app/tree/uni-app-vue2-release/examples/wxcomponents-template)。
 插件市场有一个完整的`vant weapp` 引用好的示例工程，详见[https://ext.dcloud.net.cn/plugin?id=302](https://ext.dcloud.net.cn/plugin?id=302)。
 
 目录结构

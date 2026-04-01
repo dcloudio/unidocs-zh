@@ -1,5 +1,5 @@
 
-为方便开发者快速开发，DCloud在`Hello uni-app`示例中包含了部分模板演示，这部分模板源码已开源，详见[Github](https://github.com/dcloudio/uni-app/tree/master/examples/hello-uniapp/pages/template)。
+为方便开发者快速开发，DCloud在`Hello uni-app`示例中包含了部分模板演示，这部分模板源码已开源，详见[Github](https://github.com/dcloudio/uni-app/tree/uni-app-vue2-release/examples/hello-uniapp/pages/template)。
 
 下文列出已集成的模板示例，欢迎开发者分享更多的模板示例，一起完善`uni-app`生态！
 

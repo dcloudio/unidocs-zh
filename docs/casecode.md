@@ -6,7 +6,7 @@
 
 - [登录模板](https://github.com/dcloudio/uni-template-login)：登录/注册模板，包含微博、微信、QQ第三方登录示例  -- by DCloud
 
-- [wxcomponents-template](https://github.com/dcloudio/uni-app/tree/master/examples/wxcomponents-template)：小程序原生组件使用示例 -- by DCloud
+- [wxcomponents-template](https://github.com/dcloudio/uni-app/tree/uni-app-vue2-release/examples/wxcomponents-template)：小程序原生组件使用示例 -- by DCloud
 
 - [uni-template-news](https://github.com/dcloudio/uni-template-news)：基于uni-app开发的新闻/资讯类App模板 -- by DCloud
 

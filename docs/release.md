@@ -1,3 +1,7 @@
+#### 5.06.2026033105
+* 【uni-app】
+  + 修复 5.04版本引发的 vue3 web 项目打包后报错 process is not defined [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=27696)
+
 #### 5.05.2026032417
 * 【uni-app x】
   + App-iOS平台 更新 云端打包环境 XCode 为 16.1 版、iOS SDK 为 18.1 版，支持iOS13及以上系统 [详情](https://doc.dcloud.net.cn/uni-app-x/tutorial/app-env.html)

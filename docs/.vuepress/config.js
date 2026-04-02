@@ -52,7 +52,7 @@ const config = {
     sidebarDepth: 0,
     nextLinks: false,
     prevLinks: false,
-    repo: 'dcloudio/uni-app',
+    repo: 'https://github.com/dcloudio/uni-app/tree/uni-app-vue2-release',
     docsRepo: 'https://gitcode.com/dcloud/unidocs-zh',
     docsBranch: 'master',
     docsDir: 'docs',

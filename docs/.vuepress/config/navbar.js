@@ -180,12 +180,6 @@ export const navbar = [
     link: '/dev/',
     type: "link",
     needOutbound: false
-  },
-  {
-    link: "https://github.com/dcloudio/uni-app/tree/uni-app-vue2-release",
-    target: "_blank",
-    text: "GitHub",
-    type: "link"
   }
   /* {
     text: '问答社区',

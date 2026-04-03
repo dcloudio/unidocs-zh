@@ -37,7 +37,7 @@
 | `@click`			| EventHandle					| 可选			| 广告点击时触发。																													|
 | `@close`			| EventHandle					| 可选			| 广告页关闭时触发。`isEnded` 为 `Boolean`，表示关闭前是否已经收到奖励完成回调。	|
 
-## `url-callback` 对象结构
+**`url-callback` 对象结构**
 
 | 字段名		| 类型			| 说明															|
 | ---			| ---			| ---															|
@@ -52,12 +52,12 @@
 
 文件下载之后重命名为：`gm_SDK_Setting.json`，然后将文件放到项目根目录的`nativeResources->android->assets`目录下。
 
-## 基本示例
+### 示例
 
 ```vue
 <template>
   <ad-drama
-    adpid="1612625051"
+    adpid="广告位"
     :lock="2"
     :free="2"
     :url-callback="urlCallback"

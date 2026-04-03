@@ -18,7 +18,9 @@
 
 [开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad/ad-open.html)
 
-注意：标准基座不支持测试短剧功能。
+**Tips**
+- 标准基座不支持测试短剧功能。
+- 使用短剧组件需要先开通穿山甲广告。开通问题请咨询：[uni-ad交流群](https://im.dcloud.net.cn/#/?joinGroup=65d85fc09847e92db03ff81a)。
 
 ### 组件
 

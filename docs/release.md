@@ -1,3 +1,9 @@
+#### 5.07.2026041006
+* 【uni-app x】
+  + Android平台 修复 5.0版本引发的 API uni.showLoading 未显示时调用 hideLoading 隐藏可能引起应用崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=27821)
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 修复 5.0版本引发的 5+App项目默认 User Agent 不正确可能导致 mui 无法正常跳转页面的Bug [详情](https://ask.dcloud.net.cn/question/218685)
+
 #### 5.06.2026033105
 * 【uni-app】
   + 修复 5.04版本引发的 vue3 web 项目打包后报错 process is not defined [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=27696)

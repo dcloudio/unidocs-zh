@@ -650,7 +650,8 @@ export default defineConfig({
 
 **Tips**
 
-小程序开发者工具 IDE `3.0.1+` 版本开始支持新版配置，[查看详情](https://opendocs.alipay.com/mini/03dbc3?pathHash=e876dc50)
+- 小程序开发者工具 IDE `3.0.1+` 版本开始支持新版配置，[查看详情](https://opendocs.alipay.com/mini/03dbc3?pathHash=e876dc50)
+- `component2` 配置需要开启，否则可能会影响现有功能
 
 ### mp-baidu
 

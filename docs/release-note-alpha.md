@@ -1,3 +1,9 @@
+#### 5.07.2026041610-alpha
+* 【uni-app x】
+  + Android平台 修复 5.0版本引发的 API uni.showLoading 未显示时调用 hideLoading 隐藏可能引起应用崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=27821)
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 修复 5.0版本引发的 5+App项目默认 User Agent 不正确可能导致 mui 无法正常跳转页面的Bug [详情](https://ask.dcloud.net.cn/question/218685)
+
 #### 5.04.2026031906-alpha
 * 【uni-app x】
   + iOS平台 修复 组件 native-view 动态创建并销毁时可能引起崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=27240)

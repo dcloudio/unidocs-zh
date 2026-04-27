@@ -44,6 +44,10 @@ export default defineConfig({
       from: 'common:ai/vibe-partner.md',
       to: 'docs/ai/vibe-partner.md',
     },
+    {
+      from: 'common:ai/use-ui-mcp.md',
+      to: 'docs/ai/use-ui-mcp.md',
+    },
     // worktile
     {
       from: 'common:worktile/_sidebar.md',

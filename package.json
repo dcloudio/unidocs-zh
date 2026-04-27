@@ -36,9 +36,9 @@
   },
   "dependencies": {
     "@dcloudio/docs-utils": "^1.0.8",
-    "docs-sync-cli": "^1.0.3",
+    "docs-sync-cli": "^1.0.4",
     "vuepress": "1.9.9",
-    "vuepress-theme-uniapp-official": "1.6.23"
+    "vuepress-theme-uniapp-official": "1.6.24"
   },
   "resolutions": {
     "terser-webpack-plugin": "1.4.6",

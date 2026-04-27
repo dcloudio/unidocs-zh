@@ -4331,10 +4331,10 @@ dns-txt@^2.0.2:
   dependencies:
     buffer-indexof "^1.0.0"
 
-docs-sync-cli@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.npmmirror.com/docs-sync-cli/-/docs-sync-cli-1.0.3.tgz#3f288a2021508aa2e5711e44066a623222c128df"
-  integrity sha512-qmjoZSZxXnjQD1VNIeFuFvQmufvhhBna/x769Z9HqUUG+TieLxaP7xE3LuJEms2OAJnb3tIYmedICJYKQtLbYg==
+docs-sync-cli@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npmmirror.com/docs-sync-cli/-/docs-sync-cli-1.0.4.tgz#16a6a0403cf195a86b7424f9a0652548866dcbd1"
+  integrity sha512-2mAaNc9jFjuuGw5GTGoTybTa1vkrJnxeYKq/y4GZYRzXuKpRmCVZgdeWkNsViwlVonvgYtZUNTHAj6FYRP0bsQ==
   dependencies:
     chokidar "^3.6.0"
     fast-glob "^3.3.2"
@@ -9971,10 +9971,10 @@ vuepress-plugin-zooming@^1.1.8:
   dependencies:
     zooming "^2.1.1"
 
-vuepress-theme-uniapp-official@1.6.23:
-  version "1.6.23"
-  resolved "https://registry.npmjs.org/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.6.23.tgz#c6b32d2a6690ced48c18fb5c8e5f393b64a2c87a"
-  integrity sha512-Xi/spl7OmwsHSiKT6LIkZbdFkLUxR5JZK+NCxzIv2oVLtHFbMgGn4hUa8M+rMLMBFRmuJfeZ/kKA+nVzg+8v0g==
+vuepress-theme-uniapp-official@1.6.24:
+  version "1.6.24"
+  resolved "https://registry.npmjs.org/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.6.24.tgz#55f8cf11c20ffd11059bb2ee86cfc31416c989b8"
+  integrity sha512-rkr/+JbJqzqM6nugJvDfy+Fx7r+FOskh8+L38aIWpdohYSFhVmGaL+gUeG3pxLkgqPj9RHuuWceA4ZQle3l/zw==
   dependencies:
     "@docsearch/css" "^3.6.0"
     "@vuepress/plugin-back-to-top" "^1.9.5"

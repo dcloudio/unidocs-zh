@@ -338,4 +338,4 @@ uni.compressImage({
 
 ## 注意
 
-- HarmonyOS Next 设备需要添加 `ohos.permission.READ_IMAGEVIDEO` 权限并且自助签名方
+- HarmonyOS Next 采用安全相册与安全相机安全机制：应用仅可访问用户自主选择的照片资源，调用相机时也仅能获取最终成像结果。相较于 Android、iOS 需单独申请相册、摄像头权限的模式，开发者无需额外申请相关权限，可直接调用此API 完成开发。

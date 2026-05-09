@@ -14,6 +14,8 @@
 |![](https://web-ext-storage.dcloud.net.cn/uniad/logo/zy.png)#{height=35}| 章鱼     | 否 | -       | 应用商店填写三方服务器下载地址即可    |
 |![](https://web-ext-storage.dcloud.net.cn/uniad/logo/fl.png)#{height=35}| 泛连     | 否 | -       | 应用商店填写三方服务器下载地址即可    |
 |![](https://web-ext-storage.dcloud.net.cn/uniad/logo/hxly.png)#{height=35}| 华夏乐游   | 否 | -       | 应用商店填写三方服务器下载地址即可    |
+|![](https://web-ext-storage.dcloud.net.cn/uniad/logo/jt.jpg)#{height=35}| 佳投   | 否 | -       | 应用商店填写三方服务器下载地址即可    |
+|![](https://web-ext-storage.dcloud.net.cn/uniad/logo/wa.png)#{height=35}| 旺脉   | 否 | -       | 应用商店填写三方服务器下载地址即可    |
 
 > 注意：如应用未上架可以开通快手、章鱼、泛连、华夏乐游渠道，但广告可能会因为填充率不高而无法显示广告。
 

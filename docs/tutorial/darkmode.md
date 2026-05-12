@@ -61,7 +61,7 @@
 - `iOS 13+`、`Android 10+` 设备上才支持
 - 需要云端打包生效
 
-### app-harmony
+### app-harmony@app-harmony
 
 > HBuilder X 5.0+ 支持
 
@@ -79,7 +79,7 @@
     }
    ```
 
-#### 底部安全区域及安全区域外适配
+#### 底部安全区域及安全区域外适配@app-harmony-safearea-bottom
 
 > 如果在关闭页面时，在页面即将关闭时闪过一条白色，可以通过配置 backgroundDark 解决
 

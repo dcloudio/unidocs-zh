@@ -249,18 +249,26 @@ webview示例
 
 ### app-harmony
 
-鸿蒙应用项目设置，支持 `distribute` 属性，其值为一个 `Object` 对象：
+|属性|类型|说明|最低版本|
+|:-|:-|:-|:-|
+|distribute|Object|鸿蒙应用项目设置，[详见](#app-harmony-distribute)||
+|useragent|Object|配置 UserAgent，[详见](#app-harmony-useragent)||
+|darkmode|Boolean|可选，是否开启暗黑模式，默认值为`false`，详见[DarkMode适配指南 app-harmony](/tutorial/darkmode?id=app-harmony)||
+|themeLocation|String|可选，主题配置文件路径，默认值为`theme.json`，详见[DarkMode适配指南 app-harmony](/tutorial/darkmode?id=app-harmony)||
+|safearea|Object|可选，底部安全区域配置，详见[DarkMode适配指南 app-harmony](/tutorial/darkmode?id=app-harmony)||
+
+#### distribute@app-harmony-distribute
 
 |属性|类型|说明|
 |:-|:-|:-|
 |bundleName|String|应用包名|
-|signingConfigs|Object|证书签名配置|
-|icons|Object|应用图标|
-|splashScreens|Object|启动界面配置|
-|modules|Object|模块配置|
-|useragent|Object|配置 UserAgent|
+|signingConfigs|Object|证书签名配置，[详见](#app-harmony-signingconfigs)|
+|icons|Object|应用图标，[详见](#app-harmony-icons)|
+|splashScreens|Object|启动界面配置，[详见](#app-harmony-splashscreens)|
+|modules|Object|模块配置，[详见](#app-harmony-modules)|
 
-#### signingConfigs 证书签名配置@app-harmony-signingConfigs
+<!-- 经测试任何字母id在vuepress编译后都会被转换为小写，因此下方id使用小写app-harmony-signingconfigs属于兼容处理而非笔误 -->
+#### distribute>signingConfigs 证书签名配置@app-harmony-signingconfigs
 
 此配置对象用于配置鸿蒙打包时使用的数字签名证书信息，可分别配置调试证书和发布证书两组信息。
 
@@ -278,21 +286,22 @@ webview示例
 |certpath|String|证书文件|
 |profile|String|签名描述文件|
 
-#### icons 应用图标@app-harmony-icons
+#### distribute>icons 应用图标@app-harmony-icons
 
 |属性|类型|说明|
 |:-|:-|:-|
 |foreground|String|前景图，以相对路径指向一个图片文件|
 |background|String|背景图，以相对路径指向一个图片文件|
 
-#### splashScreens 启动界面配置@app-harmony-splashScreens
+<!-- 经测试任何字母id在vuepress编译后都会被转换为小写，因此下方id使用小写app-harmony-splashscreens属于兼容处理而非笔误 -->
+#### distribute>splashScreens 启动界面配置@app-harmony-splashscreens
 
 |属性|类型|说明|
 |:-|:-|:-|
 |startWindowBackground|String|启动界面背景色，格式为 `#RRGGBB`|
 |startWindowIcon|String|启动界面中部图标，以相对路径指向一个图片文件|
 
-#### modules 模块配置@app-harmony-modules
+#### distribute>modules 模块配置@app-harmony-modules
 
 |属性|类型|说明|
 |:-|:-|:-|
@@ -308,10 +317,6 @@ webview示例
 |:-|:-|:-|
 |value|String|可选，JSON对象，应用UserAgent相关配置，默认值为系统UserAgent|
 |concatenate|Boolean|可选，Boolean类型，是否将value值作为追加值连接到系统默认userAgent值之后|
-
-#### 其它支持的属性
-
-- safearea
 
 ### h5
 

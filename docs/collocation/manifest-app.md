@@ -109,8 +109,10 @@ iOS平台云端打包相关配置
 
 ###  App Harmony@harmony
 
-在鸿蒙开发中不会读取`app-plus` 下配置的选项，在 `app-harmony` 节点下可以设置鸿蒙参数。
+在鸿蒙开发中不会读取`app-plus` 下配置的选项，在 `app-harmony` 节点下可以设置鸿蒙参数，详见[manifest.json 应用配置 app-harmony](/collocation/manifest?id=app-harmony)。
 
+- darkmode
+- distribute
 - safearea
 - useragent
 

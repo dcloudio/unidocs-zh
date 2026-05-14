@@ -24,6 +24,10 @@
 |y|number|y轴方向角速度|
 |z|number|z轴方向角速度|
 
+**注意**
+
+<md-hperm :permissions="[{ name: 'ohos.permission.GYROSCOPE', desc: '注册监听时如果当前未启动，会自动调用 startGyroscope()，因此间接触发权限申请和传感器启动。' }]" />
+
 ## uni.startGyroscope(OBJECT)
 
 开始监听陀螺仪数据。
@@ -40,6 +44,10 @@
 |success|function||否|接口调用成功的回调函数||
 |fail|function||否|接口调用失败的回调函数||
 |complete|function||否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+
+**注意**
+
+<md-hperm permissions="ohos.permission.GYROSCOPE" />
 
 ## uni.stopGyroscope(OBJECT)
 

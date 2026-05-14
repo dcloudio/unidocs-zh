@@ -102,7 +102,8 @@
 
 ::: warning 注意
 - 可以通过用户授权API来判断用户是否给应用授予麦克风的访问权限[https://uniapp.dcloud.io/api/other/authorize](https://uniapp.dcloud.io/api/other/authorize)
-- `HarmonyOS Next` 平台使用时需要添加权限 `ohos.permission.MICROPHONE`
+
+<md-hperm permissions="ohos.permission.MICROPHONE" />
 :::
 
 

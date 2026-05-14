@@ -108,10 +108,7 @@ uni.getLocation({
   - 在 `微信小程序` 中，当用户离开应用后，此接口无法调用，需要申请 [后台持续定位权限](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html) ，另外新版本中需要使用 [wx.onLocationChange](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.onLocationChange.html) 监听位置信息变化；当用户点击“显示在聊天顶部”时，此接口可继续调用。
 - 如果在app模块中勾选了系统定位和其他定位，比如腾讯定位，由配置的type值决定调用规则，type值为wgs84使用系统定位，type值为gcj02则使用腾讯定位。
 
-**HarmonyOS 5平台** 注意事项：
-
-- 鸿蒙 4.x 版本参考上方 App 要求限制，这里指代鸿蒙 5版本。
-- 使用位置权限使用鸿蒙系统定位，不依赖三方服务。调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`，具体操作步骤见下方描述。
+<md-hperm :permissions="['ohos.permission.APPROXIMATELY_LOCATION', { name: 'ohos.permission.LOCATION', desc: '仅当 isHighAccuracy 为 true 时申请该权限。' }]" />
 
 ### 鸿蒙位置设置指南@harmony-set-location
 

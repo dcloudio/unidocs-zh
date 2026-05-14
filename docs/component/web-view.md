@@ -406,6 +406,8 @@ web-view组件在App和小程序中层级较高，如需要在vue页面中写代
 - 小程序平台，个人类型与海外类型的小程序使用 `web-view` 组件，提交审核时注意微信等平台是否允许使用
 - 小程序平台， `src` 指向的链接需登录小程序管理后台配置域名白名单。`App`和`H5` 无此限制。
 
+<md-hperm :permissions="[{ name: 'ohos.permission.APPROXIMATELY_LOCATION', desc: '网页触发地理位置授权时请求该权限。' }, { name: 'ohos.permission.LOCATION', desc: '网页触发地理位置授权时请求该权限。' }, { name: 'ohos.permission.CAMERA', desc: 'Web 内容请求相关受保护资源时涉及该权限。' }, { name: 'ohos.permission.MICROPHONE', desc: 'Web 内容请求 ProtectedResourceType.AUDIO_CAPTURE 时，会请求该权限。' }]" />
+
 ### UniAppJSBridgeReady 的使用
 uni.webView.navigateTo 示例，注意uni sdk放到body下面
 ```html

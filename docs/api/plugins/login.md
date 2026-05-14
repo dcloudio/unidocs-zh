@@ -452,37 +452,6 @@ univerifyManager.offButtonsClick(callback)
   - `logoPath` 一键登录弹框顶部 logo 图片路径
   - `loginBtnText` 一键登录按钮文案
 - 运行到鸿蒙手机调试，必须在 [开通一键登录](https://uniapp.dcloud.net.cn/univerify.html#%E5%BC%80%E9%80%9A) 后，在 uniCloud `一键登录 -> 应用管理` 添加应用，并将所添加应用的包名配置在 `manifest` 中才可以调试运行，否则运行报错
-- 需要在 `modules.json5` 中配置以下权限：
-  ```json
-  "requestPermissions": [
-    {
-      //允许应用程序联网，用于访问网关和认证服务器
-      "name": "ohos.permission.INTERNET",
-    },
-    {
-      //获取网络状态，判断是否数据、wifi等
-      "name": "ohos.permission.GET_NETWORK_INFO"
-    },
-    {
-      //允许获取wifi信息
-      "name": "ohos.permission.GET_WIFI_INFO"
-    },
-    {
-      //允许应用配置数据网络
-      "name": "ohos.permission.SET_NETWORK_INFO"
-    },
-    {
-      //用于创建唯一的gyuid标识
-      "name": "ohos.permission.APP_TRACKING_CONSENT",
-      "usedScene": {
-        "abilities": [
-          "EntryAbility"
-        ]
-      },
-      "reason": "$string:gy_oaid_tracking" // 此项需要在 `harmony-config/AppScope/resources/base/element/string.json` 中配置，[配置文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-categories-and-access-V5#%E8%B5%84%E6%BA%90%E7%BB%84%E7%9B%AE%E5%BD%95?ha_source=Dcloud&ha_sourceId=89000448)
-    }
-  ]
-  ```
 - 配置CHANNEL(非必选)，项目的module.json5文件中配置 GT_INSTALL_CHANNEL:
   ```json
   "metadata": [
@@ -492,3 +461,5 @@ univerifyManager.offButtonsClick(callback)
     }
   ]
   ```
+
+<md-hperm permissions="ohos.permission.APP_TRACKING_CONSENT" />

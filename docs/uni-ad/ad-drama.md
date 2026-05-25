@@ -34,7 +34,7 @@
 | `lock`				| `String` / `Number`	| 可选			| 单次激励视频可解锁的剧集数。仅在值大于 `0` 时生效；默认值为 `1`，最大值为 `10`。	|
 | `free`				| `String` / `Number`	| 可选			| 初始可免费观看的剧集数。仅在值大于 `0` 时生效；默认值为 `1`，最大值为 `20`。			|
 | `url-callback`| `Object`						| 可选			| 服务端回调透传参数。当前实现仅识别 `userId`、`extra` 两个字段。								|
-| `@load`				| EventHandle					| 可选			| 短剧广告页加载完成。																											|
+| `@load`				| EventHandle					| 可选			| 短剧加载完成。																											|
 | `@error`			| EventHandle					| 可选			| 加载失败或展示失败时触发。																									|
 | `@click`			| EventHandle					| 可选			| 广告点击时触发。																													|
 | `@close`			| EventHandle					| 可选			| 广告页关闭时触发。`isEnded` 为 `Boolean`，表示关闭前是否已经收到奖励完成回调。	|

@@ -1,3 +1,54 @@
+#### 5.11.2026052520-alpha
+* 【uni-app x】
+  + 【重要】新增 iOS平台 蒸汽模式，大幅提升渲染性能 [详情](https://doc.dcloud.net.cn/uni-app-x/app-vapor.html)
+  + 【重要】鸿蒙平台 蒸汽模式 新增 编译为字节码，大幅提升编译速度 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29492)
+  + 修复 编译器 同一个页面或组件内包含多个match-media时提示存在重复导入 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29050)
+  + Web平台、微信小程序平台 修复 API uni.getSystemInfo osName、platform、deviceType 信息不完整和多端不一致 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29495)
+  + Web平台、微信小程序平台 修复 API uni.getDeviceInfo osName、platform、deviceType 信息不完整和多端不一致 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29494)
+  + Web平台 修复 CSS scroll-view等容器组件flex-wrap样式不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29282)
+  + App平台 调整 API uni.openLocation 调整为内置 API [文档](https://uniapp.dcloud.net.cn/api/location/open-location.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=28556>
+  + App平台 修复 组件 editor 内存泄露 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29527)
+  + Android平台 更新 云端打包环境 compileSdk为36 [文档](https://doc.dcloud.net.cn/uni-app-x/tutorial/app-env.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=29259>
+  + Android平台 修复 5.08版本引发的 组件 video 视频没有响应视频宽高的变化 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29216)
+  + Android平台 修复 组件 canvas x86_64类型CPU的so库未适配支持 16KB 内存页面大小 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29311)
+  + Android平台 修复 CSS overflow view多层嵌套时 overflow 属性可能不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=28606)
+  + Android平台 修复 发行 云端打包无法强制移除INTERNET、WRITE_EXTERNAL_STORAG权限 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29426)
+  + 鸿蒙平台 修复 API uni.getLocation highAccuracyExpireTime 参数默认值不正确 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=27752)
+  + 鸿蒙平台 VDOM模式 修复 组件 rich-text 的链接转译问题 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=28962)
+  + 鸿蒙平台 蒸汽模式 新增 pages.json中的tabBar [文档](https://doc.dcloud.net.cn/uni-app-x/collocation/pagesjson.html#pages-tabbar) <https://issues.dcloud.net.cn/pages/issues/detail?id=28670>
+  + 鸿蒙平台 蒸汽模式 修复 vue v-if 内部嵌套 v-for 时反复切换条件后应用崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29086)
+  + 鸿蒙平台 蒸汽模式 修复 vue 组件动态根节点切换后更新样式应用崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29102)
+  + 鸿蒙平台 蒸汽模式 修复 vue 在自定义组件中同时使用动态命名插槽和隐式默认插槽时编译报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=27543)
+  + 鸿蒙平台 蒸汽模式 修复 组件 view hover-class在hover状态未恢复时又更新style，hover恢复不对 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29478)
+  + 鸿蒙平台 蒸汽模式 修复 组件 scroll-view 嵌套时子scroll-view组件的下拉刷新无法触发 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29458)
+  + 鸿蒙平台 蒸汽模式 修复 组件 swiper 移除 swiper-item 后指示器数量不正确 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29465)
+  + 鸿蒙平台 蒸汽模式 修复 组件 sticky-section 某些情况下可能会导致 sticky-section 不随滚动更新 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29412)
+  + 鸿蒙平台 蒸汽模式 修复 组件 text 嵌套时子 text 组件的 click 事件不触发 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29263)
+  + 鸿蒙平台 蒸汽模式 修复 组件 rich-text 组件设置 line-height 属性值不带单位时无效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29089)
+  + 鸿蒙平台 蒸汽模式 修复 5.2版本引发的 组件 button 组件开启 plain 后设置 type 背景色异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29289)
+  + 鸿蒙平台 蒸汽模式 修复 组件 input 组件点击闪退 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29264)
+  + 鸿蒙平台 蒸汽模式 修复 组件 editor insertMention 不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29514)
+  + 鸿蒙平台 蒸汽模式 修复 组件 textarea 设置 padding 样式后高度不符合预期 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29078)
+  + 鸿蒙平台 蒸汽模式 修复 CSS z-index 属性值设置为 -1 时无效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29084)
+  + 鸿蒙平台 蒸汽模式 修复 CSS text-align 文本内容渲染位置不正确 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29164)
+  + 鸿蒙平台 蒸汽模式 修复 CSS transform 部分transform组合效果和web不一致 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=28205)
+  + 鸿蒙平台 蒸汽模式 修复 CSS env环境变量 进入和退出全屏安全区相关CSS变量更新异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29079)
+  + 微信小程序平台 修复 组件 scroll-view 组合表达式修改direction属性不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29448)
+  + 微信小程序平台 修复 API uni.request 请求一个不存在的api url返回的参数和文档不符 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=28815)
+* 【uni-app】
+  + Web平台 修复 Vue3 项目通过 setLeftWindowStyle 修改 width 不会更新 --window-left 的问题 [详情](https://ask.dcloud.net.cn/question/219950)
+  + Android平台、iOS平台 修复 生物认证模块无法使用的Bug [详情](https://ask.dcloud.net.cn/question/219834)
+* 【uts插件】
+  + Android平台、鸿蒙平台 VDOM模式 修复 type中key如果被引号包裹时编译报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29058)
+  + iOS平台 修复 函数入参为type对象类型且包含UTSJSONObject数组时运行闪退 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29085)
+* 【App插件(含5+App和uni-app的App端)】
+  + 新增 uni-AD模块 支持 旺脉 渠道
+  + 更新 uni-ad 腾讯优量汇SDK Android为 4.690.1560 版，iOS为 4.15.90 版；快手广告 SDK Android为 5.4.10.2 版，iOS为 5.4.10.1 版；快手内容联盟SDK Android为 5.4.10.1 版，iOS为 5.3.20.1 版；穿山甲&GroMore SDK Android为 7.6.1.1 版，iOS为 7.6.0.4 版；Sigmob广告联盟SDK Android为 4.25.21 版，iOS为 4.20.22 版；百度百青藤广告SDK iOS为 10.050 版；章鱼广告SDK Android为 2.6.5.18 版，iOS为 2.6.5.15 版；泛连广告SDK 为 2.9.0 版；华夏乐游SDK Android为 4.7.6 版，iOS为 2.20.3 版；AdScope倍孜广告SDK Android为 5.5.0.3 版；佳投广告SDK Android为 5.5.0.3 版；支持618预算
+  + 修复 5.08版本引发的 调用生物认证模块报`打包时未添加uni-authentication模块`错误的Bug [详情](https://ask.dcloud.net.cn/question/219834)
+  + Android平台 新增 uni-AD模块 支持 佳投 渠道
+  + Android平台 更新 云端打包环境 compileSdk为36 [详情](https://uniapp.dcloud.net.cn/tutorial/app-env.html)
+  + Android平台 修复 Android8.0以下设备可能无法调用uts插件的问题
+
 #### 5.08.2026050815-alpha
 * 【uni-app x】
   + 【重要】 新增 uni-ui x 组件库 [文档](https://doc.dcloud.net.cn/uni-app-x/component/uni-ui-x/)

@@ -48,6 +48,10 @@ export default defineConfig({
       from: 'common:ai/use-ui-mcp.md',
       to: 'docs/ai/use-ui-mcp.md',
     },
+    {
+      from: 'common:ai/personal-subscription.md',
+      to: 'docs/ai/personal-subscription.md',
+    },
     // worktile
     {
       from: 'common:worktile/_sidebar.md',

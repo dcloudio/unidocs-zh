@@ -259,7 +259,7 @@ uni-app 3.5.1+ 版本规范了 deviceModel 返回值，例如之前返回 `iPhon
 - App端，windowTop等于透明状态NavigationBar高度，windowBottom等于透明状态TabBar高度
 - 高度相关信息，要放在 onReady 里获取。太早取不到。
 - 自 5.11 起：
-  - web 平台在 macOS 上 osName 正确的返回 `mac` 值
+  - web 平台在 macOS 上 platform 正确的返回 `mac` 值
   - web 平台在 macOS 上获取到的 osVersion 固定为 `10.15.7`，这和系统版本不一致，这不是 bug，是浏览器 ua 的限制（从 macOS 11 开始，Apple 和 Google、Mozilla 等浏览器厂商达成共识，减少通过 UA 暴露精确的系统版本）
   - web 平台运行在鸿蒙 PC 上时 osName 仅返回 `harmonyos`（不会返回 `ohos_pc`），可通过 deviceType 为 `pc` 区分
   - 小程序平台统一标准：鸿蒙系统 osName、platform 为 `harmonyos`，手机、Tablet 和 PC 通过 deviceType 区分

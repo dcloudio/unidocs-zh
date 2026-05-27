@@ -33,6 +33,7 @@ export default defineConfig({
       'ai/vibe-partner.md',
       'ai/use-ui-mcp.md',
       'ai/personal-subscription.md',
+	  'ai/enterprise-subscription.md',
     ]),
     // worktile
     ...createSyncMapping([

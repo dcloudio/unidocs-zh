@@ -33,7 +33,7 @@ export default defineConfig({
       'ai/vibe-partner.md',
       'ai/use-ui-mcp.md',
       'ai/personal-subscription.md',
-	  'ai/enterprise-subscription.md',
+      'ai/enterprise-subscription.md',
     ]),
     // worktile
     ...createSyncMapping([
@@ -69,7 +69,8 @@ export default defineConfig({
       'plugin/uts-plugin-hybrid.md',
       'plugin/uts-plugin.md',
       'plugin/uts-uni-api.md',
-      'plugin/faq/faq.md'
+      'plugin/faq/faq.md',
+      'plugin/native-plugin.md'
     ])
   ],
 });

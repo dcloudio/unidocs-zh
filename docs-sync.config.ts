@@ -46,6 +46,8 @@ export default defineConfig({
       'worktile/auto/quick-start.md',
       'worktile/auto/uniapp-cli-project.md',
       'worktile/auto/hbuilderx-extension/index.md',
+      'worktile/CLI.md',
+      'worktile/CI.md'
     ]),
     // plugin
     ...createSyncMapping([

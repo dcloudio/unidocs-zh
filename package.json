@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "local:dev": "cross-env NODE_ENV=development npm run dev  --no-cache",
     "dev": "npm run sync && vuepress dev docs",
     "build": "npm run sync && node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs --no-cache",
     "build-lite": "cross-env DOCS_LITE=true node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs-lite --no-cache",

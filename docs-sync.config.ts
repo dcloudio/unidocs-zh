@@ -79,7 +79,14 @@ export default defineConfig({
       'tutorial/err-spec.md',
       'tutorial/platform.md',
       'tutorial/env.md',
-      'tutorial/page-static-assets.md'
+      'tutorial/page-static-assets.md',
+      'tutorial/run/run-app.md',
+      'tutorial/run/uts-development-android.md',
+      'tutorial/debug/uni-uts-debug.md',
+      'tutorial/run/uts-development-ios.md',
+      'tutorial/debug/uni-uts-debug-ios.md',
+      'tutorial/harmony/runbuild.md',
+      'tutorial/debug/uni-uts-debug-harmony.md',
     ])
   ],
 });

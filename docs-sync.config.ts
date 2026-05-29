@@ -73,6 +73,13 @@ export default defineConfig({
       'plugin/uts-uni-api.md',
       'plugin/faq/faq.md',
       'plugin/native-plugin.md'
+    ]),
+    // tutorial
+    ...createSyncMapping([
+      'tutorial/err-spec.md',
+      'tutorial/platform.md',
+      'tutorial/env.md',
+      'tutorial/page-static-assets.md'
     ])
   ],
 });

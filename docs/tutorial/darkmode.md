@@ -281,7 +281,8 @@ theme.json
 
 ## 监听主题切换事件@on-theme-change
 
-通过 `uni.onThemeChange` 监听主题变化，`uni.offThemeChange` 取消监听。微信小程序(2.11.0+)支持在 `App.vue` 中写上 `onThemeChange` 生命周期，主题切换时会触发
+- 在 App 上需要先调用 `plus.nativeUI.setUIStyle('auto')` 开启跟随系统主题切换的功能，才能监听到主题切换事件
+- 通过 `uni.onThemeChange` 监听主题变化，`uni.offThemeChange` 取消监听。微信小程序(2.11.0+)支持在 `App.vue` 中写上 `onThemeChange` 生命周期，主题切换时会触发
 
 ## 页面 css 适配@perfers-color-scheme
 

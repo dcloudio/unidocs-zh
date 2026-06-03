@@ -50,8 +50,8 @@
 ||xiaomi|小米登录||
 ||univerify|[一键登录](/univerify)|App 3.0.0+、`HarmonyOS` 不支持，使用 [getUniverifyManager](./login.md#getuniverifymanager)|
 ||apple|[Apple登录](https://ask.dcloud.net.cn/article/36651)| iOS13+支持，App 2.4.7+|
-||google|[谷歌登录](/tutorial/app-oauth-facebook)|App 3.4.0+|
-||facebook|[Facebook登录](/tutorial/app-oauth-google)|App 3.4.0+|
+||google|[谷歌登录](/tutorial/app-oauth-google)|App 3.4.0+|
+||facebook|[Facebook登录](/tutorial/app-oauth-facebook)|App 3.4.0+|
 ||huawei|HarmonyOS Next [华为账号服务](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-introduction-V5?ha_source=Dcloud&ha_sourceId=89000448)|HBuilderX 4.31+|
 |share|sinaweibo|新浪微博分享||
 ||qq|分享到QQ好友||

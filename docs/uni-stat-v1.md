@@ -75,7 +75,7 @@ uni统计报表网址：[https://tongji.dcloud.net.cn](https://tongji.dcloud.net
 
 ![获取appid](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/appid.png)
 
-**方式2. 登录DCoud开发者中心获取(即将支持)**
+**方式2. 登录DCloud开发者中心获取(即将支持)**
 
 登录[DCloud开发者中心](https://dev.dcloud.net.cn)，在线创建应用，然后将新应用的appid填写到manifest.json中
 

@@ -624,13 +624,13 @@ uni.addInterceptor({
 @| API |说明|
 @| :-- | :-- |
 @| [uni.createSelectorQuery](ui/nodes-info?id=createselectorquery)                    | 创建查询请求           |
-@| [selectorQuery.select](ui/nodes-info?id=selectorquery-对象的方法列表)         | 根据选择器选择单个节点 |
-@| [selectorQuery.selectAll](ui/nodes-info?id=selectorquery-对象的方法列表)      | 根据选择器选择全部节点 |
-@| [selectorQuery.selectViewport](ui/nodes-info?id=selectorquery-对象的方法列表) | 选择显示区域           |
-@| [selectorQuery.exec](ui/nodes-info?id=selectorquery-对象的方法列表)           | 执行查询请求           |
-@| [nodesRef.boundingClientRect](ui/nodes-info?id=nodesref-对象的方法列表)       | 获取布局位置和尺寸     |
-@| [nodesRef.scrollOffset](ui/nodes-info?id=nodesref-对象的方法列表)             | 获取滚动位置           |
-@| [nodesRef.fields](ui/nodes-info?id=nodesref-对象的方法列表)                   | 获取任意字段           |
+@| [selectorQuery.select](ui/nodes-info?id=selectorquery-select)         | 根据选择器选择单个节点 |
+@| [selectorQuery.selectAll](ui/nodes-info?id=selectorquery-selectall)      | 根据选择器选择全部节点 |
+@| [selectorQuery.selectViewport](ui/nodes-info?id=selectorquery-selectviewport) | 选择显示区域           |
+@| [selectorQuery.exec](ui/nodes-info?id=selectorquery-exec)           | 执行查询请求           |
+@| [nodesRef.boundingClientRect](ui/nodes-info?id=nodesref-boundingclientrect)       | 获取布局位置和尺寸     |
+@| [nodesRef.scrollOffset](ui/nodes-info?id=nodesref-scrolloffset)             | 获取滚动位置           |
+@| [nodesRef.fields](ui/nodes-info?id=nodesref-fields)                   | 获取任意字段           |
 | 节点布局相交状态 |-|
 @| API |说明|
 @| :-- | :-- |

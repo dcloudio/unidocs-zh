@@ -22,7 +22,7 @@ uni-app 支持使用 ts 开发，可参考 [Vue.js TypeScript 支持](https://cn
 
 - cli创建的项目
 
-需要在创建项目时就指定ts，具体请另行参考[文档](https://uniapp.dcloud.io/quickstart-cli.html#install-vue-cli)
+需要在创建项目时就指定ts，具体请另行参考[文档](https://uniapp.dcloud.io/quickstart-cli.html)
 
 ### 修改 Typescript 配置
 

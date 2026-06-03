@@ -196,7 +196,7 @@ uni.login({
 
 univerifyStyle 数据结构：
 
-> `HamronyOS` 仅支持 `fullScreen（是否全屏显示）`、`logoPath（自定义 logo 地址）`、`backgroundColor（背景颜色）`、`loginBtnText（登录按钮文本）`
+> `HarmonyOS` 仅支持 `fullScreen（是否全屏显示）`、`logoPath（自定义 logo 地址）`、`backgroundColor（背景颜色）`、`loginBtnText（登录按钮文本）`
 
 ```json
 {

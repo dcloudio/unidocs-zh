@@ -528,8 +528,8 @@ uni.addInterceptor({
 @| [uni.onBeaconServiceChange](system/ibeacon?id=onbeaconservicechange) | 监听 iBeacon 服务状态变化事件   |
 @| [uni.onBeaconUpdate](system/ibeacon?id=onbeaconupdate)               | 监听 iBeacon 设备更新事件       |
 @| [uni.getBeacons](system/ibeacon?id=getbeacons)                       | 获取所有已搜索到的 iBeacon 设备 |
-@| [uni.startBeaconDiscovery](system/ibeacon?id=startbeacondiscovery)   | 停止搜索附近的 iBeacon 设备     |
-@| [uni.stopBeaconDiscovery](system/ibeacon?id=stopbeacondiscovery)     | 开始搜索附近的 iBeacon 设备     |
+@| [uni.startBeaconDiscovery](system/ibeacon?id=startbeacondiscovery)   | 开始搜索附近的 iBeacon 设备     |
+@| [uni.stopBeaconDiscovery](system/ibeacon?id=stopbeacondiscovery)     | 停止搜索附近的 iBeacon 设备     |
 |[Wi-Fi](system/wifi.md)| WiFi |
 |[电量](system/batteryInfo.md)| 电量 |
 |[NFC](system/nfc.md)| NFC |

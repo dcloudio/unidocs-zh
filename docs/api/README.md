@@ -274,12 +274,12 @@ uni.addInterceptor({
 |SocketTask|-|
 @| API | 说明 |
 @| :-- | :-- |
-@| [SocketTask.send](request/socket-task?id=sockettasksend)           | 通过 WebSocket 连接发送数据           |
-@| [SocketTask.close](request/socket-task?id=sockettaskclose)         | 关闭 WebSocket 连接                   |
-@| [SocketTask.onOpen](request/socket-task?id=sockettaskonopen)       | 监听 WebSocket 连接打开事件           |
-@| [SocketTask.onClose](request/socket-task?id=sockettaskonclose)     | 监听 WebSocket 连接关闭事件           |
-@| [SocketTask.onError](request/socket-task?id=sockettaskonerror)     | 监听 WebSocket 错误事件               |
-@| [SocketTask.onMessage](request/socket-task?id=sockettaskonmessage) | 监听 WebSocket 接受到服务器的消息事件 |
+@| [SocketTask.send](request/socket-task?id=sockettask-send)           | 通过 WebSocket 连接发送数据           |
+@| [SocketTask.close](request/socket-task?id=sockettask-close)         | 关闭 WebSocket 连接                   |
+@| [SocketTask.onOpen](request/socket-task?id=sockettask-onopen)       | 监听 WebSocket 连接打开事件           |
+@| [SocketTask.onClose](request/socket-task?id=sockettask-onclose)     | 监听 WebSocket 连接关闭事件           |
+@| [SocketTask.onError](request/socket-task?id=sockettask-onerror)     | 监听 WebSocket 错误事件               |
+@| [SocketTask.onMessage](request/socket-task?id=sockettask-onmessage) | 监听 WebSocket 接受到服务器的消息事件 |
 |[mDNS](request/mDNS)|mDNS 服务|
 |[UDP 通信](request/UDP)|UDP 通信|
 

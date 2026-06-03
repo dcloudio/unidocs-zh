@@ -69,27 +69,27 @@ App平台的直播播放，不使用此API，而直接使用video的API。
 
 |属性|类型|必填|说明|
 |:--|:--|:--|:--|
-|success|Function|否|接口调用成功的回调函数||
-|fail|Function|否|接口调用失败的回调函数||
-|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+|success|Function|否|接口调用成功的回调函数|
+|fail|Function|否|接口调用失败的回调函数|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 ### pause(OBJECT)
 > 暂停推流
 
 |属性|类型|必填|说明|
 |:--|:--|:--|:--|
-|success|Function|否|接口调用成功的回调函数||
-|fail|Function|否|接口调用失败的回调函数||
-|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+|success|Function|否|接口调用成功的回调函数|
+|fail|Function|否|接口调用失败的回调函数|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 ### resume(OBJECT)
 > 恢复推流
 
 |属性|类型|必填|说明|
 |:--|:--|:--|:--|
-|success|Function|否|接口调用成功的回调函数||
-|fail|Function|否|接口调用失败的回调函数||
-|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+|success|Function|否|接口调用成功的回调函数|
+|fail|Function|否|接口调用失败的回调函数|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 
 ### stop(OBJECT)
@@ -97,42 +97,42 @@ App平台的直播播放，不使用此API，而直接使用video的API。
 
 |属性|类型|必填|说明|
 |:--|:--|:--|:--|
-|success|Function|否|接口调用成功的回调函数||
-|fail|Function|否|接口调用失败的回调函数||
-|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+|success|Function|否|接口调用成功的回调函数|
+|fail|Function|否|接口调用失败的回调函数|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 ### switchCamera(OBJECT)
 > 切换前后摄像头
 
 |属性|类型|必填|说明|
 |:--|:--|:--|:--|
-|success|Function|否|接口调用成功的回调函数||
-|fail|Function|否|接口调用失败的回调函数||
-|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+|success|Function|否|接口调用成功的回调函数|
+|fail|Function|否|接口调用失败的回调函数|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 ### snapshot(OBJECT)
 > 快照
 
 |属性|类型|必填|说明|
 |:--|:--|:--|:--|
-|success|Function|否|接口调用成功的回调函数||
-|fail|Function|否|接口调用失败的回调函数||
-|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+|success|Function|否|接口调用成功的回调函数|
+|fail|Function|否|接口调用失败的回调函数|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 ### startPreview(OBJECT)
 > 开启摄像头预览
 
 |属性|类型|必填|说明|
 |:--|:--|:--|:--|
-|success|Function|否|接口调用成功的回调函数||
-|fail|Function|否|接口调用失败的回调函数||
-|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+|success|Function|否|接口调用成功的回调函数|
+|fail|Function|否|接口调用失败的回调函数|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|
 
 ### stopPreview(OBJECT)
 > 关闭摄像头预览
 
 |属性|类型|必填|说明|
 |:--|:--|:--|:--|
-|success|Function|否|接口调用成功的回调函数||
-|fail|Function|否|接口调用失败的回调函数||
-|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|&nbsp;|
+|success|Function|否|接口调用成功的回调函数|
+|fail|Function|否|接口调用失败的回调函数|
+|complete|Function|否|接口调用结束的回调函数（调用成功、失败都会执行）|

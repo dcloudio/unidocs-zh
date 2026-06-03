@@ -178,7 +178,7 @@ onGetWifiList 传入的监听函数。不传此参数则移除所有监听函数
 |partialInfo	|boolean	|false		|否		|是否需要返回部分 Wi-Fi 信息，仅安卓生效|2.22.0												|
 |success	|function	|			|否		|接口调用成功的回调函数|													|
 |fail	|function	|			|否		|接口调用失败的回调函数|													|
-|complete	|function	|		|否		|接口调用结束的回调函数（调用成功、失败都会执行）	|
+|complete	|function	|		|否		|接口调用结束的回调函数（调用成功、失败都会执行）	| |
 
 **平台差异说明**
 

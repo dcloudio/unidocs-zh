@@ -17,7 +17,7 @@ App-Android平台云端打包相关配置
 |targetSdkVersion|String|Android平台目标版本，详情参考：[Android平台设置targetSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion)|
 |enableResourceOptimizations|Boolean|是否开启Android原生res资源文件优化|
 |aaptOptions|Array|Android平台云端打包时build.gradle的aaptOptions配置项，示例："aaptOptions": ["noCompress 'png', 'jpg', 'jpeg'"]|
-|buildFeatures|Object|Android平台云端打包时build.gradle的buildFeatures配置项，[详见](/collocation/manifest?id=buildFeatures)|
+|buildFeatures|Object|Android平台云端打包时build.gradle的buildFeatures配置项，[详见](/collocation/manifest-app?id=buildfeatures)|
 |packagingOptions|Array|Android平台云端打包时build.gradle的packagingOptions配置项，示例："packagingOptions": ["doNotStrip '*/armeabi-v7a/*.so'","merge '**/LICENSE.txt'"]|
 |jsEngine|String|uni-app使用的JS引擎，可取值v8、jsc，**将废弃，后续不再支持jsc引擎**|
 |debuggable|Boolean|是否开启Android调试开关|
@@ -99,7 +99,7 @@ iOS平台云端打包相关配置
 |CFBundleName|String|应用的CFBundleName名称，默认值为HBuilder|
 |validArchitectures|Array|编译时支持的CPU指令，可取值arm64、arm64e、armv7、armv7s、x86_64|
 |pushRegisterMode|String|使用“Push(消息推送)”模块时申请系统推送权限模式，设置为manual表示调用push相关API时申请，设置为其它值表示应用启动时自动申请|
-|privacyRegisterMode|String|设置为manual表示同意隐私政策后再获取相关隐私信息，设置为其它值表示应用启动时自动获取[详见](/collocation/manifest?id=privacyRegisterMode)|
+|privacyRegisterMode|String|设置为manual表示同意隐私政策后再获取相关隐私信息，设置为其它值表示应用启动时自动获取[详见](/collocation/manifest-app?id=privacyregistermode)|
 
 
 #### privacyRegisterMode @privacyRegisterMode

@@ -160,7 +160,7 @@ margin {length}：外边距，元素和元素之间的空白距离，默认值 0
 
 - 父view是`view`, `cell`, `refresh` 或 `loading`。
 - 系统版本是 Android 4.3 或更高。
-- 系统版本不是 Andorid 7.0。
+- 系统版本不是 Android 7.0。
 - 父 view 没有 `background-image` 属性或系统版本是 Android 5.0 或更高。
 
 

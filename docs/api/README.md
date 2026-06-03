@@ -442,7 +442,7 @@ uni.addInterceptor({
 |系统主题 | - |
 @| API |说明|
 @| :-- | :-- |
-@| [uni.onThemeChange](system/accelerometer?id=onaccelerometerchange)   | 监听系统主题状态变化     |
+@| [uni.onThemeChange](system/theme.html#onthemechange)   | 监听系统主题状态变化     |
 @| [uni.offThemeChange](system/theme.html#offthemechange) | 取消监听系统主题状态变化 |
 |罗盘|-|
 |加速度计| - |

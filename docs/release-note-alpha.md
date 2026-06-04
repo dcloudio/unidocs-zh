@@ -1,3 +1,24 @@
+#### 5.12.2026060409-alpha
+* 【uni-app x】
+  + Android平台 修复 5.11版本引发的 组件 rich-text mode为web时无法渲染 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29742)
+  + 【重要】App平台 蒸汽模式 调整 页面默认可滚动，与web、小程序拉齐。除非在pages.json里配置disableScroll:true。[文档](https://doc.dcloud.net.cn/uni-app-x/page.html#disablescroll) <https://issues.dcloud.net.cn/pages/issues/detail?id=29551>
+  + App平台 蒸汽模式 修复 编译器 不支持编译加密插件 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29733)
+  + App平台 蒸汽模式 修复 vue 字节码模式 render effect 缺少脏标记守卫导致更新全量重跑 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29710)
+  + App平台 蒸汽模式 修复 vue 字节码模式下自定义组件绑定 :key 后切换 key 未触发组件重新渲染 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29673)
+  + iOS平台 蒸汽模式 修复 组件 textarea 设置 max-height 导致 auto-height 失效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29694)
+  + iOS平台 蒸汽模式 修复 组件 image base64 图片部分情况可能无法显示 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29713)
+  + iOS平台 蒸汽模式 修复 5.11版本引发的 CSS overflow 值为 visible 时动态设置 transition-propert: background-color 失效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29702)
+  + iOS平台 蒸汽模式 修复 CSS border-radius 圆角半径超过元素尺寸时显示不正常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29778)
+  + iOS平台 蒸汽模式 修复 CSS border-radius 四边相同时圆角显示不正常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29824)
+  + iOS平台 蒸汽模式 修复 5.11版本引发的 CSS transform rotate 旋转动画角度不正常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29711)
+  + iOS平台 蒸汽模式 修复 5.11版本引发的 同步修改后的文件可能会引起白屏 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29855)
+  + iOS平台 更新 API facialRecognitionMetaInfo 使用的 金融级实人认证 SDK 为 2.3.45 版 [文档](https://doc.dcloud.net.cn/uni-app-x/api/facial-recognition-meta-info.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=29622>
+  + 鸿蒙平台 修复 UniPage API $getPageStyle 获取到的 `backgroundColor` 值不随主题变化 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29642)
+  + 鸿蒙平台 VDOM模式 修复 组件 input type 设置为 number 且 password 为 false 时弹不出数字键盘 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29769)
+  + 鸿蒙平台 VDOM模式 修复 5.11版本引发的 组件 textarea 设置 auto-height 为 true 且 font-size 大于默认大小时高度可能异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29898)
+  + 鸿蒙平台 蒸汽模式 修复 组件 rich-text mode 从 native 切换为 web 时无法正常显示 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29728)
+  + 鸿蒙平台 蒸汽模式 修复 DOM API UniElement Element元素异步清理监听事件时出现闪退 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29831)
+
 #### 5.11.2026052520-alpha
 * 【uni-app x】
   + 【重要】新增 iOS平台 蒸汽模式，大幅提升渲染性能 [详情](https://doc.dcloud.net.cn/uni-app-x/app-vapor.html)

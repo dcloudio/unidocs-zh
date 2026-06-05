@@ -33,9 +33,9 @@
       * [uni-push2.0、uni-id、uni统计的组合](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/mate.html)
     * [安卓、鸿蒙厂商推送配置](unipush_vendor_config.md)
     * [谷歌FCM配置](uni-push/google-fcm.md)
-  * [uni统计2.0](uni-stat.md)
+  * uni统计2.0
     * [公有版](uni-stat-public.md)
-    * [私有版](uni-stat-v2.md)
+    * [私有版](uni-stat-private.md)
     * [uni-app x下的uni统计使用教程](uni-stat-uniappx.md)
   * [uni加固](/tutorial/app-security.md)
   * [uni隐私合规检测](/tutorial/app-privacy-detect.md)

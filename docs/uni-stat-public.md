@@ -126,7 +126,7 @@
 
 |字段|类型|默认值|可选值|说明|
 |:-:|:-:|:-:|:-:|:-:|
-|enable|Boolean|false|true，false|全局开启或关闭统计；分平台 `enable` 覆盖本项|
+|enable|Boolean|true|true，false|全局开启或关闭统计；分平台 `enable` 覆盖本项|
 |type|String|"public"|"public"，"private"|`public`：公有版（SaaS）；`private`：私有版。未填写时默认为公有版|
 |debug|Boolean|false|true，false|调试模式，会产生大量日志，应用发布请关闭|
 |reportInterval|Number|10|-|前端数据上报周期，单位：秒（与公有版 SDK 默认一致）|

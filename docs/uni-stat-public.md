@@ -23,7 +23,7 @@
 
 **内容统计**
 
-支持新闻、商品、帖子等内容详情页的访问统计，了解用户真正关注的内容（详见 [内容统计说明](https://ask.dcloud.net.cn/article/36299)）。
+支持新闻、商品、帖子等内容详情页的访问统计，了解用户真正关注的内容（详见 [内容统计](uni-stat-content.md)）。
 
 **实时统计**
 
@@ -299,11 +299,11 @@
 
 ### 自定义事件怎么用
 
-使用 [`uni.report()`](https://uniapp.dcloud.net.cn/api/other/report.html) 上报自定义事件，详见 [自定义事件说明](https://ask.dcloud.net.cn/article/36304)。
+使用 [`uni.report()`](api/other/report.md) 上报自定义事件，详见 [自定义事件说明](api/other/report.md)。
 
 ### 内容统计是什么 / 页面规则怎么配置
 
-内容统计用于内容详情页（新闻、商品等）的访问分析，详见 [内容统计说明](https://ask.dcloud.net.cn/article/36299)。
+内容统计用于内容详情页（新闻、商品等）的访问分析，需配置页面规则并按需采集标题，详见 [内容统计](uni-stat-content.md)。
 
 ### 是否支持导入历史数据
 

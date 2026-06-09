@@ -49,7 +49,7 @@
 无论公有版或私有版，客户端均面向 **uni-app** 全端统计，主要能力包括：
 
 - **全端一张报表**：无需各端分别接 SDK、分别看报表
-- **设备 / 页面 / 内容 / 渠道**：新增、活跃、留存、跳出率等
+- **设备 / 页面 / 内容 / 渠道**：新增、活跃、留存、跳出率等（内容详情页统计见 [内容统计](uni-stat-content.md)）
 - **错误与崩溃**：JS 错误、App 原生崩溃（私有版支持 [sourceMap 解析](uni-stat-v2.md#sourcemap-parse-error)）
 - **自定义事件**：通过 [`uni.report()`](https://uniapp.dcloud.net.cn/api/other/report.html) 扩展打点
 - **注册用户统计**（私有版 + uni-id）：基于账户的新增、活跃、留存（需业务与 admin 关联同一服务空间）

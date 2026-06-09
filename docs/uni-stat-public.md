@@ -74,15 +74,14 @@
 
 > 开启 `uni统计2.0 公有版` 时，根节点 `uniStatistics.enable` 须为 `true`；设为 `false` 则全局关闭统计。分平台下的 `enable` 会覆盖全局配置。
 
-
-#### 小程序 request 合法域名
+### 小程序 request 合法域名
 
 - **微信小程序**：公有版**无需**配置 request 合法域名。
 - **其他小程序**（支付宝、百度、抖音等）：须将 `tongji-collector.dcloud.net.cn` 加入 **request 合法域名** 白名单，否则无法联网上报。
 
 配置步骤详见：[小程序统计域名白名单配置](https://ask.dcloud.net.cn/article/36298)
 
-#### App 隐私合规
+### App 隐私合规
 
 `uni统计2.0`会在应用运行期间采集设备标识、应用启动及页面访问等信息用于统计分析，完整说明见 [uni统计隐私政策](https://dcloud.net.cn/license/uni-stat.html)。
 

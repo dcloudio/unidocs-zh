@@ -18,6 +18,8 @@
 
 - [uView UI](https://ext.dcloud.net.cn/plugin?id=1593)：完善的组件、sdk工具链及文档 -- by 易瑞文
 
+- [TDesign UI](https://ext.dcloud.net.cn/plugin?id=25431)：TDesign 适配 uniapp 的组件库 -- by novlan1
+
 - [仿抖音短视频示例](https://ext.dcloud.net.cn/plugin?id=860)：基于uni-app的nvue编译的高性能原生项目 -- by 林举
 
 - [直播模板](https://ext.dcloud.net.cn/plugin?id=226)：直播推流、拉流、镜头切换、美颜等常用功能 -- by 1262880469

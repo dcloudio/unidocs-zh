@@ -74,6 +74,7 @@ uni ui有如下优势：
 - [mypUI](https://ext.dcloud.net.cn/plugin?id=2190)：全端支持的组件库，侧重nvue
 - [ThorUI组件库](https://ext.dcloud.net.cn/plugin?id=556)
 - [graceUI商业库](http://grace.hcoder.net/)
+- [TDesign UI](https://ext.dcloud.net.cn/plugin?id=25431)
 
 
 

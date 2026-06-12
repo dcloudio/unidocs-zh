@@ -1,7 +1,3 @@
-::: warning 注意
-本文档入口已迁移至 [uni统计2.0 私有版](uni-stat-private.md)，请优先阅读新文档。下方内容保留供历史链接访问。
-:::
-
 # uni统计2.0 私有版
 
 `uni统计2.0 私有版` 是开源、全端、云端一体的 uni-app 统计方案：前端采集内置于框架，统计报表与跑批逻辑通过 [uni-admin](https://doc.dcloud.net.cn/uniCloud/admin) 部署在**开发者自有的 uniCloud 服务空间**，数据完全自控。

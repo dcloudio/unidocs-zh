@@ -72,7 +72,7 @@
 
 > 开启 `uni统计2.0 公有版` 时，根节点 `uniStatistics.enable` 须为 `true`；设为 `false` 则全局关闭统计。分平台下的 `enable` 会覆盖全局配置。
 
-### 小程序 request 合法域名
+### 小程序 request 合法域名@mp-request-domain
 
 各家小程序对网络请求有域名白名单限制。uni统计2.0 公有版上报域名为 **`tongji-collector.dcloud.net.cn`**（与早期文档中的 `tongji.dcloud.io` 不同，请勿混用）。
 
@@ -109,7 +109,7 @@
 
   > 本产品集成了 DCloud uni统计服务，用于统计分析应用运营数据，采集范围包括应用启动、页面访问等行为数据及 DCloud引擎生成的虚拟统计标识（不含真实设备硬件信息）。详情见《[uni统计隐私政策](https://dcloud.net.cn/license/uni-stat.html)》。
 
-### 发行与调试
+### 发行与调试@release-debug
 
 使用 `HBuilderX 5.13` 及以上版本，或对应版本的 `CLI` 发行应用。
 

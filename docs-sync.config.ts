@@ -90,6 +90,10 @@ export default defineConfig({
       'tutorial/debug/uni-uts-debug-ios.md',
       'tutorial/debug/uni-uts-debug-harmony.md',
       'tutorial/harmony/runbuild.md',
+    ]),
+    // collocation
+    ...createSyncMapping([
+      'collocation/main.md',
     ])
   ],
 });

@@ -94,6 +94,7 @@ export default defineConfig({
     // collocation
     ...createSyncMapping([
       'collocation/main.md',
+      'collocation/uni-scss.md',
     ])
   ],
 });

@@ -82,13 +82,14 @@ export default defineConfig({
       'tutorial/CORS.md',
       'tutorial/adapt.md',
       'tutorial/page-static-assets.md',
+      'tutorial/app-nativeresource-android.md',
       'tutorial/run/run-app.md',
       'tutorial/run/uts-development-android.md',
-      'tutorial/debug/uni-uts-debug.md',
       'tutorial/run/uts-development-ios.md',
+      'tutorial/debug/uni-uts-debug.md',
       'tutorial/debug/uni-uts-debug-ios.md',
-      'tutorial/harmony/runbuild.md',
       'tutorial/debug/uni-uts-debug-harmony.md',
+      'tutorial/harmony/runbuild.md',
     ])
   ],
 });

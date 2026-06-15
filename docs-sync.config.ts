@@ -83,6 +83,7 @@ export default defineConfig({
       'tutorial/adapt.md',
       'tutorial/page-static-assets.md',
       'tutorial/app-nativeresource-android.md',
+      'tutorial/app-nativeresource-ios.md',
       'tutorial/run/run-app.md',
       'tutorial/run/uts-development-android.md',
       'tutorial/run/uts-development-ios.md',

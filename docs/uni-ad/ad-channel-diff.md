@@ -8,7 +8,7 @@
 |![](https://web-ext-storage.dcloud.net.cn/uniad/logo/ks.png)#{height=35}| 快手     | 否 | 1-3个工作日 | 联系运营特批申请，无需上架       |
 |![](https://web-ext-storage.dcloud.net.cn/uniad/logo/csj.png)#{height=35}| 穿山甲    | 是 | 1-3个工作日 | 需软著和应用商店上架           |
 |![](https://web-ext-storage.dcloud.net.cn/uniad/logo/bd.png)#{height=35}| 百度     | 是 | 1-3个工作日 | 需软著和应用商店上架           |
-|![](https://web-ext-storage.dcloud.net.cn/uniad/logo/sigmob.png)#{height=35}| Sigmob | 否 | -       | 开通快手后数据达到广告渠道要求后自动开启 |
+|![](https://web-ext-storage.dcloud.net.cn/uniad/logo/sigmob.png)#{height=35}| Sigmob | 否 | -       | 应用商店填写三方服务器下载地址即可 |
 |-| 华为     | 是 | 1-3个工作日 | 需联系运营申请开通            |
 |![](https://web-ext-storage.dcloud.net.cn/uniad/logo/bz.png)#{height=35}| 倍孜     | 否 | 1-3个工作日 | 需联系运营申请开通            |
 |![](https://web-ext-storage.dcloud.net.cn/uniad/logo/zy.png)#{height=35}| 章鱼     | 否 | -       | 应用商店填写三方服务器下载地址即可    |

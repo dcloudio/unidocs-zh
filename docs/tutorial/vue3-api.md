@@ -211,11 +211,12 @@ const app = createApp({})
 |transition-group	| 作为多个元素/组件的过渡效果。 [详情](https://v3.cn.vuejs.org/api/built-in-components.html#transition-group) 	|√	| x	| x		|		|
 |keep-alive	| 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们，主要用于保留组件状态或避免重新渲染。 [详情](https://v3.cn.vuejs.org/api/built-in-components.html#keep-alive) 	|√	|x	| x		|		|	
 |slot	| 作为组件模板之中的内容分发插槽。`slot` 元素自身将被替换。 [详情](https://v3.cn.vuejs.org/api/built-in-components.html#slot) 	|√	| √	| √		|		|
-|teleport	| 将模板的一部分移动到 `DOM` 中 `Vue app` 之外的其他位置。 [详情](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) 	|√	| x	| x		|	-	|
+|teleport	| 将模板的一部分移动到 `DOM` 中 `Vue app` 之外的其他位置。 [详情](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) 	|√	| x	| 5.14		|	-	|
 
 
+**注意**
 
-
+- 目前只有微信、支付宝和京东小程序支持 `teleport` 组件，其他小程序暂不支持。
 
 
 ## 响应性 API

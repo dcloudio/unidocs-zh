@@ -2,17 +2,9 @@
 
 **概述**
 
-微信规定上架**短剧**类目的小程序必须使用微信小程序虚拟支付，不可以使用原先的微信支付
+微信规定上架**短剧**类目的小程序必须使用微信小程序虚拟支付，不可以使用原先的微信支付。
 
-**注意**
-
-1. 微信小程序虚拟支付只有短剧类目的小程序才能开通
-2. 微信小程序虚拟支付不支持ios系统
-3. 微信小程序虚拟支付有较高的手续费（已知目前为10% ~ 20%），由微信官方收取，非uni-app收取（手续费多少跟使用uni-app无关）
-
-**如何开户?**
-
-- [微信虚拟支付官方文档](https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_1-%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D)
+微信的虚拟支付有很多要求，需参考 [微信虚拟支付官方文档](https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/virtual-payment.html)
 
 如果服务端使用[uniCloud](https://uniapp.dcloud.io/uniCloud/README)，那么官方提供了[uniPay](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)云端统一支付服务，把App、微信小程序、支付宝小程序里的服务端支付开发进行了统一的封装。
 

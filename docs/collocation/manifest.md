@@ -547,6 +547,7 @@ Tips：关于摇树优化（treeShaking）原理及优化结果，参考：[http
 |requiredPrivateInfos|Array|地理位置相关接口。[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#requiredPrivateInfos)|
 |lazyCodeLoading|String| 目前仅支持值 requiredComponents，代表开启小程序[按需注入](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload.html#%E6%8C%89%E9%9C%80%E6%B3%A8%E5%85%A5)特性，[详见](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#lazyCodeLoading)|
 |nativeTags|Array| 微信小程序平台的原生组件 (4.81+)|
+|independent|Boolean| vue2 微信小程序是否开启独立分包 |
 
 **Tips**
 

@@ -668,7 +668,7 @@ ctx.draw()
 |参数	|类型	|说明			|
 |---	|---	|---			|
 |text	|String	|要测量的文本	|
-|callback	|({metricsWidth: number} => void)	|测量回调 `仅 HarmonyOS Next 支持`	|
+|callback	|({width: number} => void)	|测量回调 `仅 HarmonyOS Next 支持`	|
 
 **返回**
 

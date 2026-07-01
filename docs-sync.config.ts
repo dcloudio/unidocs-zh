@@ -91,6 +91,13 @@ export default defineConfig({
       'tutorial/debug/uni-uts-debug-ios.md',
       'tutorial/debug/uni-uts-debug-harmony.md',
       'tutorial/harmony/runbuild.md',
+      'tutorial/app-privacy-detect.md',
+      'tutorial/app-sec-android.md',
+      'tutorial/app-sec-api.md',
+      'tutorial/app-sec-confusion.md',
+      'tutorial/app-security.md',
+      'tutorial/djbh.md',
+      'tutorial/safe.md',
     ]),
     // collocation
     ...createSyncMapping([

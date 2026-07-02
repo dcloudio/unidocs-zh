@@ -2,11 +2,25 @@ import { defineConfig } from 'docs-sync-cli';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-function createSyncMapping(files: string[]) {
-  return files.map(file => ({
-    from: `common:${file}`,
-    to: `docs/${file}`,
-  }));
+interface FileMapping {
+  from: string;
+  to: string;
+}
+
+function createSyncMapping(files: (string | FileMapping)[]) {
+  return files.map(file => {
+    if (typeof file === 'string') {
+      return {
+        from: `common:${file}`,
+        to: `docs/${file}`,
+      }
+    } else {
+      return {
+        from: `common:${file.from}`,
+        to: `docs/${file.to}`,
+      }
+    }
+  });
 }
 
 export default defineConfig({
@@ -103,6 +117,31 @@ export default defineConfig({
     ...createSyncMapping([
       'collocation/main.md',
       'collocation/uni-scss.md',
+    ]),
+    // uni-publish
+    ...createSyncMapping([
+      'uni-publish/faq.md',
+      'uni-publish/first.md',
+      'uni-publish/intro.md',
+      'uni-publish/update.md',
+      'uni-publish/config.md',
+    ]),
+    // uni-push
+    ...createSyncMapping([
+      {
+        from: 'uni-push/intro.md',
+        to: 'unipush.md',
+      },
+      {
+        from: 'uni-push/v2.md',
+        to: 'unipush-v2.md',
+      },
+      {
+        from: 'uni-push/vendor_config.md',
+        to: 'unipush_vendor_config.md',
+      },
+      'uni-push/open.md',
+      'uni-push/google-fcm.md',
     ])
   ],
 });

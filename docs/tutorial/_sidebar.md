@@ -146,6 +146,7 @@
   - [鸿蒙元服务使用华为支付](./mp-harmony/payment.md)
 - 小程序专题
   - [AI 开发模式接入指南](mp-weixin-ai-develop.md)
+  - [独立分包](independent-subpackage.md)
   - [组件与 WXS](miniprogram-subject.md)
   - [分包异步化](miniprogram-subcontract-asynchrony.md)
   - [使用小程序插件](mp-weixin-plugin.md)

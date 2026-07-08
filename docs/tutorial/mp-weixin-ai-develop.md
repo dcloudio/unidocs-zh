@@ -14,10 +14,10 @@
 
 小程序 AI 开发模式提供了一套智能化的运行环境和开发框架，开发者可根据自身业务要求，将小程序的功能抽象为原子接口和原子组件，并封装成 SKILL，供小程序 AI 调用。
 
-可以者需要在 `manifest.json` 中配置 `mp-weixin` 的相关信息，例如：
+开发者需要在 `manifest.json` 中配置 `mp-weixin` 的相关信息，例如：
 
 ```json
-// mainfest.json
+// manifest.json
 {
   "mp-weixin": {
     "appid": "your appid",

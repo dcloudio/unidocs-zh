@@ -41,6 +41,24 @@
 
 详细的接入方式和使用方法，请参考 [小程序 AI 开发模式接入方式](https://developers.weixin.qq.com/miniprogram/dev/ai/integration.html)
 
+## 注意事项
+
+- `instruction`、`pageMetadata`、`skills` 等文件的位置是相对于 `manifest.json` 的路径。比如 cli 项目中 `manifest.json` 通常位于 `src` 目录，按上面的配置，`AGENTS.md`、`page-meta.json` 以及 `ai-packages/learn/ai-interaction-skill` 都需要放在 `src` 目录下，例如：
+
+```
+src
+├─manifest.json
+├─AGENTS.md
+├─page-meta.json
+└─ai-packages
+  └─learn
+    └─ai-interaction-skill
+      ├─skill.json
+      └─...
+```
+
+- HBuilderX 项目中，`manifest.json` 位于项目根目录，上述文件和目录也需要按同样的相对关系放在项目根目录下。
+
 ## 相关文档
 
 想要了解有关 skills 最佳编写指南、运行机制等更多信息，可参考 [小程序 AI 开发模式文档](https://developers.weixin.qq.com/miniprogram/dev/ai/guide.html#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5)

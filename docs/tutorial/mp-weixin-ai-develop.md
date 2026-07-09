@@ -53,11 +53,15 @@ src
 └─ai-packages
   └─learn
     └─ai-interaction-skill
-      ├─skill.json
+      ├─mcp.json
+      ├─index.js
+      ├─SKILL.md
+      ├─components
       └─...
 ```
 
 - HBuilderX 项目中，`manifest.json` 位于项目根目录，上述文件和目录也需要按同样的相对关系放在项目根目录下。
+- skills 目录下的 components 只能写原生微信小程序代码，不支持 vue。
 
 ## 相关文档
 

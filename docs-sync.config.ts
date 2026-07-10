@@ -112,6 +112,8 @@ export default defineConfig({
       'tutorial/app-security.md',
       'tutorial/djbh.md',
       'tutorial/safe.md',
+      'tutorial/mp-weixin-ai-develop.md',
+      'tutorial/independent-subpackage.md',
     ]),
     // collocation
     ...createSyncMapping([

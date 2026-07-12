@@ -1,4 +1,5 @@
 * [什么是 uni-app](README.md)
+* [uni-app 升级 uni-app x指南](https://doc.dcloud.net.cn/uni-app-x/uniapptox.html)
 * 快速上手
   * [1. 通过 HBuilderX 可视化界面](quickstart-hx.md)
   * [2. 通过vue-cli命令行](quickstart-cli.md)

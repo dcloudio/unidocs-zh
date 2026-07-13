@@ -23,6 +23,8 @@ uni-app 核心功能模块为了适配支持 16KB 内存页面大小，更新了
 - libsgcore.so
 - libti-monitor.so
 
+`uni-ad`国际广告从HBuilderX4.83版本起已适配16KB。
+
 ### [uni-push](../api/plugins/push.md)
 `uni-push`是由 DCloud 与合作伙伴个推共同推出的统一推送服务，在国内环境下，该服务依赖`卓信ID SDK`，但该 SDK 目前未适配支持 16KB 内存页面大小。  
 为满足 Google Play 的要求，应用在提交至 Google Play 时需避免使用`卓信ID SDK`。按以下方式配置，使用`uni-push`时将不会包含`卓信ID SDK`：  

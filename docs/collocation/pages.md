@@ -62,6 +62,7 @@
     "navigationBarTitleText": "演示",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8",
+    "backgroundColorContent": "#008000",
     "usingComponents": {
       "collapse-tree-item": "/components/collapse-tree-item"
     },
@@ -154,6 +155,7 @@
 | navigationBarTitleText       | String   |          | 导航栏标题文字内容                                                                                                                                                                       |                                                              |
 | navigationStyle              | String   | default  | 导航栏样式，仅支持 default/custom。custom 即取消默认的原生导航栏，需看[使用注意](/collocation/pages?id=customnav)                                                                        | 微信小程序 7.0+、百度小程序、H5、App（2.0.3+）、小红书小程序 |
 | backgroundColor              | HexColor | #ffffff  | 下拉显示出来的窗口的背景色                                                                                                                                                               | 微信小程序、小红书小程序                                     |
+| backgroundColorContent       | HexColor | 	  | 页面容器背景色色                                                                                                                                                               | App、H5、小程序                                                     |
 | backgroundTextStyle          | String   | dark     | 下拉 loading 的样式，仅支持 dark / light                                                                                                                                                 | 微信小程序                                                   |
 | enablePullDownRefresh        | Boolean  | false    | 是否开启下拉刷新，详见[页面生命周期](/tutorial/page.md#lifecycle)。                                                                                                                      |                                                              |
 | onReachBottomDistance        | Number   | 50       | 页面上拉触底事件触发时距页面底部距离，单位只支持 px，详见[页面生命周期](/tutorial/page.md#lifecycle)                                                                                     |                                                              |
@@ -196,6 +198,7 @@
 - `globalStyle`中设置的`titleImage`也会覆盖掉`pages`->`style`内的设置文字标题
 - 使用 `maxWidth` 时，页面内 fixed 元素需要使用--window-left,--window-right 来保证布局位置正确
 - `dynamicRpx` vue3 nvue 页面已移除此配置，升级为横竖屏切换自动 rpx，如果不需要可以使用 px
+- 微信小程序平台下，`backgroundColorContent` 在模拟器中不生效，建议使用真机调试验证
 
 ## topWindow@topwindow
 

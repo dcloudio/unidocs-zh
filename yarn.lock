@@ -9926,10 +9926,10 @@ vuepress-plugin-container@^2.0.2:
     "@vuepress/shared-utils" "^1.2.0"
     markdown-it-container "^2.0.0"
 
-vuepress-plugin-expandable-row@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.npmmirror.com/vuepress-plugin-expandable-row/-/vuepress-plugin-expandable-row-1.0.10.tgz#7152250d937edd4df321718c07c94e0121e3f608"
-  integrity sha512-Dt/9lcPtGyK27NM8pKrMQPxTxGaXhGgv6lXCnYGCGV6LRmi71mkTuvRJmYVg0B95Jr6edebqhhp3Y9t50um6LQ==
+vuepress-plugin-expandable-row@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.npmjs.org/vuepress-plugin-expandable-row/-/vuepress-plugin-expandable-row-1.0.11.tgz#87a0b8ea3d61b622fd2ca1037af135c1aeebdbf0"
+  integrity sha512-NRCXgt0rA6yKQrv8CaOM+1Qr4lgOop1FIdW9he67bSnihFUTqcFdhPVey8g+0n4opoPW4jeWjGjmTvz8Ede3Ug==
   dependencies:
     markdown-it-raw-table "^1.0.0"
 
@@ -9971,10 +9971,10 @@ vuepress-plugin-zooming@^1.1.8:
   dependencies:
     zooming "^2.1.1"
 
-vuepress-theme-uniapp-official@1.6.38:
-  version "1.6.38"
-  resolved "https://registry.npmjs.org/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.6.38.tgz#fbca5f82bb30f1d2cf0194777b9b4e382cfa5ec4"
-  integrity sha512-zEoXnObxciOVE/etsXK2rr6Z7rZLsxL3PlbPPvdshIb6bTWCzvJbiZUeSJ85XBTnz8ZxG2JD83VGN6M9CipAtg==
+vuepress-theme-uniapp-official@1.6.39:
+  version "1.6.39"
+  resolved "https://registry.npmjs.org/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.6.39.tgz#ae2b2c5acd1664725cbb7a89c5ec30a1ab2c85d0"
+  integrity sha512-NY7Gcrje5TjLDL+QPkp8c/YQ74jNAscG/R78w/XHiGPNkP1jwpI6lNwbLUQKbrkhLepY58v+2nBssV+UGJmPXA==
   dependencies:
     "@docsearch/css" "^3.6.0"
     "@vuepress/plugin-back-to-top" "^1.9.5"
@@ -9988,7 +9988,7 @@ vuepress-theme-uniapp-official@1.6.38:
     qr-code-with-logo "^1.1.0"
     search-insights "^2.17.3"
     vuepress-plugin-check-md2 "^1.0.5"
-    vuepress-plugin-expandable-row "^1.0.10"
+    vuepress-plugin-expandable-row "^1.0.11"
     vuepress-plugin-juejin-style-copy "^1.0.4"
     vuepress-plugin-mermaidjs "1.9.1"
     vuepress-plugin-named-chunks "^1.1.4"

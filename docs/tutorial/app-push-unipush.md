@@ -29,7 +29,7 @@
 
 #### 关闭自动申请通知权限
 
-为避免应用启动时自动申请通知权限，开发者可以在 `AndroidManifest.xml` 中关闭 Push 模块的自动申请功能。[配置AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E6%B8%85%E5%8D%95%E6%96%87%E4%BB%B6-androidmanifest-xml)
+为避免应用启动时自动申请通知权限，开发者可以在 `AndroidManifest.xml` 中关闭 Push 模块的自动申请功能(HBuilderX5.22支持)。[配置AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E6%B8%85%E5%8D%95%E6%96%87%E4%BB%B6-androidmanifest-xml)
 
 在 `<application>` 节点内添加：
 

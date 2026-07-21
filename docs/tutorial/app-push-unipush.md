@@ -24,6 +24,36 @@
 - UniPush推送功能需要提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://ask.dcloud.net.cn/article/35115)
 - 本地离线打包参考[Android平台UniPush模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/androidModuleConfig/push)、[iOS平台UniPush模块配置](https://nativesupport.dcloud.net.cn/AppDocs/usemodule/iOSModuleConfig/push)
 
+
+### 审核
+
+#### 关闭自动申请通知权限
+
+为避免应用启动时自动申请通知权限，开发者可以在 `AndroidManifest.xml` 中关闭 Push 模块的自动申请功能。[配置AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E6%B8%85%E5%8D%95%E6%96%87%E4%BB%B6-androidmanifest-xml)
+
+在 `<application>` 节点内添加：
+
+```xml
+<application>
+    <meta-data
+        android:name="dcloud_push_auto_request_permission"
+        android:value="false" />
+</application>
+```
+
+配置后：
+
+- 框架不再主动申请 `POST_NOTIFICATIONS` 权限。
+- 通知权限的申请时机和业务逻辑由开发者自行管理。
+- Push SDK 初始化、获取 `clientId` 等功能不受影响。
+- 未获得通知权限时，系统通知可能无法展示。
+
+未配置该项或配置为 `true` 时，框架保持原有行为，自动申请通知权限。
+
+> Android 13（API 33）及以上系统需要申请通知权限。开发者接管权限申请后，应避免在用户拒绝授权时，每次启动应用都重复申请。
+    
+
+
 #### FCM配置@unipush-gp-fcm
 
 ##### 概述

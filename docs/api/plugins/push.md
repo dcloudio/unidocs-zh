@@ -213,6 +213,7 @@ manager.setPushChannel({
 - 开启关闭推送服务：[https://ext.dcloud.net.cn/plugin?id=727](https://ext.dcloud.net.cn/plugin?id=727)
 - 自定义App推送铃声：[https://ext.dcloud.net.cn/plugin?id=7482](https://ext.dcloud.net.cn/plugin?id=7482)
 - 如何自定义推送通知的图标：[https://ask.dcloud.net.cn/article/35537](https://ask.dcloud.net.cn/article/35537)
+- 如何关闭自动申请通知权限: [https://uniapp.dcloud.net.cn/tutorial/app-push-unipush.html](https://uniapp.dcloud.net.cn/tutorial/app-push-unipush.html)
 
 ## uni.setAppBadgeNumber(num)@setAppBadgeNumber
 设置应用图标上显示的角标数字    

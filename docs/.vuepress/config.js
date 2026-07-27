@@ -67,7 +67,8 @@ const config = {
       appId: 'PQIR5NL8CZ',
       searchParameters: { hitsPerPage: 50 }
     },
-    isDevelopment: process.env.NODE_ENV === 'development'
+    isDevelopment: process.env.NODE_ENV === 'development',
+    versionCheck: false
   },
   markdown: {
     // toc: { includeLevel: [1, 2, 3, 4] },

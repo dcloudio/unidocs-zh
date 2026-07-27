@@ -126,7 +126,6 @@ DCloud 提供免费打包服务器，但随着 Android、iOS 系统升级，编�
 
 3、企业打包不支持退款，请根据使用情况开通。
 
-4、企业打包暂不支持 HBuilder alpha 版 和 CLI alpha 版。
 
 **启用方式：**
 

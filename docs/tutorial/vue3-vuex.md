@@ -16,7 +16,7 @@ Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用�
 
 uni-app 内置了 [Vuex](https://vuex.vuejs.org/zh/) 。
 
-从 HBuilderX 5.23 起，uni-app Vue3 项目内置 `vuex@4.1.0`。如希望使用其他版本，可在项目根目录自行安装指定版本。
+从 HBuilderX 5.25 起，uni-app Vue3 项目内置 `vuex@4.1.0`。如希望使用其他版本，可在项目根目录自行安装指定版本。
 
 
 

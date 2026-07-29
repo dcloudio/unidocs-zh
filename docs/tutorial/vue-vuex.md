@@ -10,9 +10,7 @@ Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用�
 
 uni-app 内置了 [Vuex](https://vuex.vuejs.org/zh/) 。
 
-从 HBuilderX 5.25 起，uni-app Vue2 项目内置的 `vuex` 升级到 `3.6.2`。
-
-
+uni-app Vue2 项目内置的 `vuex` 版本为 `3.6.2`。
 
 ### 什么是“状态管理模式”？
 

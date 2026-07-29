@@ -4,7 +4,7 @@
 
 > uni-app 内置了 [Pinia](https://pinia.vuejs.org/zh/index.html) 。Vue 2 项目暂不支持
 >
-> 从 HBuilderX 5.25 起，uni-app Vue3 项目内置 `pinia@2.1.7`。如希望使用其他版本，可在项目根目录自行安装指定版本。
+> 从 HBuilderX 5.25 起，uni-app Vue3 项目内置的 `pinia` 升级到 `2.1.7`。
 
 ::: warning 注意事项
 - 使用 `HBuilder X`

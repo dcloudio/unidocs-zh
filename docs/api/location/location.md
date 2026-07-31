@@ -263,6 +263,7 @@ uni.chooseLocation({
 使用三方定位或者地图服务，需向服务提供商（如：高德地图、百度地图、腾讯地图、谷歌地图）申请商业授权和缴纳费用（5万/年）。
 
 详见：[https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)
+- 注意：uni-app标准基座不包含腾讯定位模块，需要配置并且提交云端打包后才能生效，详见[腾讯定位配置](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#tencent)
 
 ## unicloud-city-select 城市选择组件
 

@@ -823,23 +823,23 @@ export default defineConfig({
 
 ### 自定义小程序项目配置
 
-HBuilderX 3.6.16+ 支持项目根目录(cli 项目为 src 目录)下创建配置文件自定义小程序项目配置。平台对应文件名如下：
+HBuilderX 3.6.16+ 支持项目根目录(cli 项目为 src 目录)下创建配置文件自定义小程序项目配置。vue2 和 vue3 项目支持的文件名如下：
 
-| 小程序平台 | 文件名 |
-| :- | :- |
-| 微信 | project.wx.json、project.config.json |
-| QQ | project.qq.json、project.config.json |
-| 百度 | project.swan.json |
-| 支付宝 | mini.project.json、project.my.json |
-| 抖音 | project.tt.json |
-| 飞书 | project.lark.json |
-| 快手 | project.ks.json |
-| 京东 | project.jd.json |
-| 小红书 | project.xhs.json |
+| 小程序平台 | vue3 项目文件名 | vue2 项目文件名 |
+| :- | :- | :- |
+| 微信 | project.wx.json、project.config.json | project.config.json |
+| QQ | project.qq.json、project.config.json | project.config.json |
+| 百度 | project.swan.json | project.swan.json |
+| 支付宝 | mini.project.json、project.my.json | mini.project.json |
+| 抖音 | project.tt.json | project.tt.json |
+| 飞书 | project.lark.json | project.lark.json |
+| 快手 | project.ks.json | project.ks.json |
+| 京东 | project.jd.json | project.config.json |
+| 小红书 | project.xhs.json | project.config.json |
 
 **Tips**
 
-- 推荐使用 `project.平台.json` 作为配置文件名，例如 `project.wx.json`、`project.qq.json`，避免多平台项目中多个平台共用 `project.config.json` 导致配置难以区分。
+- vue3 项目推荐使用 `project.平台.json` 作为配置文件名，例如 `project.wx.json`、`project.qq.json`，避免多平台项目中多个平台共用 `project.config.json` 导致配置难以区分。
 
 ### 关于分包优化的说明
 

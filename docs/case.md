@@ -1431,6 +1431,8 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **各地税务：** 北京、上海、广东、深圳、江苏、河南、湖北、四川、安徽、山东、山西、陕西、浙江、河北、云南、新疆、青岛、福建、甘肃、湖南、贵州的App均使用uni-app开发。可在应用商店搜索 如“江苏税务”
 
+**北京交警：** [iOS App](https://apps.apple.com/cn/app/%E5%8C%97%E4%BA%AC%E4%BA%A4%E8%AD%A6/id1102665570)、[Android App](https://sj.qq.com/appdetail/com.zcbl.bjjj_driving)
+
 **北京共青团：** [H5网站](https://m.bjyouth.net)
 
 **北京进京证：** [H5](https://jjz.jtgl.beijing.gov.cn/)
@@ -1523,7 +1525,7 @@ DCloud有**900万**开发者，[uni统计](https://tongji.dcloud.net.cn/)手机�
 
 **云南移动微店系统：** [H5](http://wx.10086.cn/yunnan/qrcodeyn/uniapph5/h5/index.html)
 
-**中国电信：** App中大量小程序基于uni-app开发，内嵌uni小程序SDK
+**中国电信：** [iOS App](https://apps.apple.com/cn/app/%E4%B8%AD%E5%9B%BD%E7%94%B5%E4%BF%A1-%E5%85%A8%E5%9B%BD%E7%BB%9F%E4%B8%80%E5%AE%98%E6%96%B9%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0/id513836029)、[Android App](https://sj.qq.com/appdetail/com.ct.client)
 
 **中国电信189福利站：** [App内福利站页面](https://www.189.cn/client/actcenter/signActivityH5/welfare2/index1.html#/)
 

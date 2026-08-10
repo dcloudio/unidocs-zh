@@ -285,8 +285,6 @@ uni.navigateBack({
 ## EventChannel@event-channel
 
 > 2.8.9+ 支持
->
-> HarmonyOS Next 不支持
 
 页面间事件通信通道
 

@@ -113,6 +113,7 @@ export default defineConfig({
       'tutorial/djbh.md',
       'tutorial/safe.md',
       'tutorial/mp-weixin-ai-develop.md',
+      'tutorial/mp-weixin-glass-easel.md',
       'tutorial/independent-subpackage.md',
     ]),
     // collocation

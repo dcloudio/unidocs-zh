@@ -149,6 +149,7 @@
   - [独立分包](independent-subpackage.md)
   - [组件与 WXS](miniprogram-subject.md)
   - [分包异步化](miniprogram-subcontract-asynchrony.md)
+  - [适配 glass-easel](mp-weixin-glass-easel.md)
   - [使用小程序插件](mp-weixin-plugin.md)
   - [开发小程序插件](mp-weixin-plugin-dev.md)
   - [一键上传微信平台](build/publish-mp-weixin-cli.md)

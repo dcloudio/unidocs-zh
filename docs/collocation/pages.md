@@ -1186,7 +1186,7 @@ midButton 没有 pagePath，需监听点击事件，自行处理点击后的行�
 
 **注意：**
 
-- 在 App 里真机运行可直接打开配置的页面，微信开发者工具里需要手动改变编译模式，如下图：
+- 在 App 里真机运行可直接打开配置的页面，微信开发者工具和支付宝小程序开发者工具里需要手动改变编译模式，如下图：
 
 <div style="text-align:center;">
 	<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/condition.png" />

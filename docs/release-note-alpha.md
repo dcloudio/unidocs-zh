@@ -1,3 +1,30 @@
+#### 5.26.2026091402-alpha
+* 【uni-app x】
+  + Web平台 修复 5.25版本引发的 仅包含一个页面的项目运行告警injection "Symbol(route location)" not found [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32808)
+  + App平台 蒸汽模式 修复 组件 scroll-view 容器或内容变化引发的滚动不会触发scrollend事件 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32611)
+  + App平台 蒸汽模式 修复 组件 list-view list-item高度变成0时未重排后续item位置 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32592)
+  + App平台 蒸汽模式 修复 组件 list-view initial-scroll-bottom属性部分情况下未将初始位置滚动到底部 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32614)
+  + App平台 蒸汽模式 修复 组件 list-view 滚动期间及滚动结束瞬间概率出现闪烁 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32910)
+  + App平台 蒸汽模式 修复 组件 list-view 开启 scroll-anchoring 后追加消息可能出现白屏 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32913)
+  + Android平台 蒸汽模式 修复 组件 text 嵌套 text 上使用 v-if 或 v-for 时可能无法显示 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32539)
+  + Android平台 蒸汽模式 修复 组件 rich-text 设置 translateY 后可能内容显示不完整 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32820)
+  + Android平台 蒸汽模式 修复 5.25版本引发的 组件 rich-text 页面滚动到页面上边缘偶现闪白 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32911)
+  + Android平台 蒸汽模式 修复 组件 image 没有设置 fade-show 加载网络图片首次显示会有渐变动画效果 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32762)
+  + Android平台 蒸汽模式 修复 5.25版本引发的 组件 画布 2D 绘制指令全部执行成功但画布始终空白不上屏 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32730)
+  + Android平台 蒸汽模式 修复 API uni.exit 执行 redirectTo 后可能无法正常退出显示白屏 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32768)
+  + Android平台 蒸汽模式 修复 5.25版本引发的 API uni.getUniVerifyManager 调用报 `parameters length error` 错误 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32757)
+  + iOS平台 蒸汽模式 修复 组件 list-view sticky-section顺序发生变化时渲染区域错误 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32548)
+  + 鸿蒙平台 蒸汽模式 修复 5.25版本引发的 API uni.setAppTheme 在二级页面切换主题后已打开的 tabbar 页面不响应变化 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32807)
+  + 鸿蒙平台 蒸汽模式 修复 UniPage API onLoad 生命周期调用 UniPage.getPageStyle 报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32712)
+* 【uts插件】
+  + Android平台 蒸汽模式 修复 字面量.toFloat方式声明的变量被编译为了Number类型 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32906)
+  + Android平台 蒸汽模式 修复 5.25版本引发的 uts插件导出的常量不能被页面组件引用 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32903)
+  + Android平台 蒸汽模式 修复 5.25版本引发的 暴露给页面组件调用的class上含可为空的function类型属性时编译报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32624)
+* 【uniCloud】
+  + 修复 uniCloud 客户端编译产物暴露 clientSecret 等敏感信息 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=32732)
+* 【App插件(含5+App和uni-app的App端)】
+  + Android平台 更新 uni-AD 穿山甲内容联盟 SDK 为 3.0.0.2 版
+
 #### 5.25.2026082902-alpha
 * 【uni-app x】
   + 【重要】Android平台 蒸汽模式 优化 uts插件通道通信性能 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=31458)

@@ -36,22 +36,13 @@ export function add(a, b) {
     </view>
 </template>
 
-<script>
-    import {
-        add
-    } from "./utils.js";
+<script setup lang="ts">
+    import { ref } from "vue";
+    import { add } from "./utils.js";
 
-    export default {
-        data() {
-            return {
-                count: 1
-            }
-        },
-        methods: {
-            handleClick() {
-                this.count = add(this.count, 1)
-            }
-        }
+    const count = ref(1);
+    function handleClick() {
+        count.value = add(count.value, 1);
     }
 </script>
 ```
@@ -67,25 +58,19 @@ export function add(a, b) {
     </view>
 </template>
 
-<script>
-    export default {
-        data() {
-            return {
-                count: 1
-            }
-        },
-        methods: {
-            handleClick() {
-                require('../sub/utils.js', sub_utils => {
-                    this.count = sub_utils.add(this.count, 2);
-                }, ({
-                    mod,
-                    errMsg
-                }) => {
-                    console.error(`path: ${mod}, ${errMsg}`)
-                })
-            }
-        }
+<script setup lang="ts">
+    import { ref } from "vue";
+
+    const count = ref(1);
+    function handleClick() {
+        require('../sub/utils.js', sub_utils => {
+            count.value = sub_utils.add(count.value, 2);
+        }, ({
+            mod,
+            errMsg
+        }) => {
+            console.error(`path: ${mod}, ${errMsg}`)
+        })
     }
 </script>
 ```

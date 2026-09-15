@@ -182,8 +182,7 @@ slide-view.vue
     </slide-view>
   </view>
 </template>
-<script>
-  export default {};
+<script setup lang="ts">
 </script>
 <style>
   .slide {
@@ -322,13 +321,7 @@ App 端 nvue 解决此类需求，不应该使用 wxs，而是使用 bindingx。
   }
 </script>
 
-<script>
-  export default {
-    data() {
-      return {};
-    },
-    methods: {},
-  };
+<script setup lang="ts">
 </script>
 
 <style>
@@ -365,19 +358,9 @@ App 端 nvue 解决此类需求，不应该使用 wxs，而是使用 bindingx。
 <script module="utils" lang="filter" src="./utils.filter.js"></script>
 <script module="utils" lang="sjs" src="./utils.sjs"></script>
 
-<script>
-  export default {
-    data() {
-      return {
-        timestr: "2019/08/22 10:10:10",
-        timestamp: 0,
-      };
-    },
-    created() {
-      this.timestamp = new Date(this.timestr).getTime();
-    },
-    methods: {},
-  };
+<script setup lang="ts">
+  const timestr = "2019/08/22 10:10:10";
+  const timestamp = new Date(timestr).getTime();
 </script>
 ```
 

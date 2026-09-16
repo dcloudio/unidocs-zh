@@ -118,6 +118,7 @@ export default defineConfig({
       'tutorial/mp-weixin-ai-develop.md',
       'tutorial/mp-weixin-glass-easel.md',
       'tutorial/independent-subpackage.md',
+      'tutorial/miniprogram-subcontract-asynchrony.md',
     ]),
     // collocation
     ...createSyncMapping([

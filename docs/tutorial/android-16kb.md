@@ -12,8 +12,11 @@ uni-app 核心功能模块为了适配支持 16KB 内存页面大小，更新了
 
 :::
 
+
+
 ## 不支持 16KB 的模块  
 虽然 uni-app 核心功能模块已适配支持 16KB 内存页面大小，但部分涉及三方 SDK 的模块仍未完全适配支持。  
+
 
 ### [uni-ad](https://uniapp.dcloud.net.cn/uni-ad/)
 `uni-ad`使用国内广告渠道SDK 仅支持国内环境，建议应用用于提交 Google Play 时不要使用国内渠道 SDK。  
@@ -23,6 +26,7 @@ uni-app 核心功能模块为了适配支持 16KB 内存页面大小，更新了
 - libwmAliAgainstId.so（旺脉）
 
 `uni-ad`国际广告从HBuilderX4.83版本起已适配16KB。
+
 
 ### [uni-push](../api/plugins/push.md)
 `uni-push`是由 DCloud 与合作伙伴个推共同推出的统一推送服务，在国内环境下，该服务依赖`卓信ID SDK`，但该 SDK 目前未适配支持 16KB 内存页面大小。  
@@ -41,6 +45,7 @@ uni-app 核心功能模块为了适配支持 16KB 内存页面大小，更新了
 - libaliyunaf.so  
 - libfacedevice.so  
 
+
 ### 友盟统计
 友盟统计模块使用的SDK 版本为 `9.4.4`，目前无计划更新此 SDK 版本，建议应用用于提交 Google Play 时不要使用此功能。  
 如确实需要使用，请开发[uni原生语言插件](../plugin/native-plugin.md)或[uts插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)接入支持。  
@@ -49,15 +54,19 @@ uni-app 核心功能模块为了适配支持 16KB 内存页面大小，更新了
 - libcrashsdk.so  
 - libucrash-core.so  
 
+
 ### OAID
 
-OAID目前使用的 SDK 版本为 `1.0.25`或`1.0.13`，更高版本需要申请证书，暂时无计划更新。此功能在生成 Google Play 渠道包时默认不包含。
+OAID目前使用的 SDK 版本为 `1.0.25`或`1.0.13`，更高版本需要申请证书，暂时无计划更新。云端打包时选择 `GooglePlay(AAB)` 渠道包时不包含 OAID SDK。
 
-离线打包时默认包含此SDK，如果需要上架 Google Play，可以直接删除库`msa_mdid_1.0.13.aar`和`oaid_sdk_1.0.25.aar`。
+其它渠道提交云端打包默认会包含 OAID SDK，可以在 `manifest.json` 的 "app-plus"->"distribute"->"android" 下配置 "enableOAID" 为 false 强制不包含。
+
+离线打包时默认包含此SDK，如果需要上架 Google Play，可以直接删除库`base_oaid_sdk.aar`和`base_old_oaid_13.aar`。
 
 涉及的so库文件列表：  
-- libsecsdk.so
 - lib39285EFA.so
+- libsecsdk.so
+
 
 ## 高德地图  
 HBuilderX5.0及以上版本更新 GooglePlay 渠道使用的高德地图 SDK 版本为 `11.1.060`，解决适配支持 16KB 页面大小。  

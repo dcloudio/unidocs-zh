@@ -19,9 +19,8 @@ uni-app 核心功能模块为了适配支持 16KB 内存页面大小，更新了
 `uni-ad`使用国内广告渠道SDK 仅支持国内环境，建议应用用于提交 Google Play 时不要使用国内渠道 SDK。  
 
 涉及的so库文件列表：
-- libplt-base.so
-- libsgcore.so
-- libti-monitor.so
+- libadvista.so（佳投）
+- libwmAliAgainstId.so（旺脉）
 
 `uni-ad`国际广告从HBuilderX4.83版本起已适配16KB。
 

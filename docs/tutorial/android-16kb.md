@@ -1,9 +1,16 @@
 ## 概述  
+
+16K，是指C语言等可操作内存的语言使用内存的规范，对齐16K可以提升C代码的运行性能。只有so库涉及。如果使用js、java，不涉及16K问题。
+
 随着设备制造商为设备配备更多 RAM 以优化性能，许多制造商将采用更大的页面大小（例如 16 KB）。为了迎接这些即将推出的设备，Google Play 推出了一项新的兼容性要求：  
 自 2025 年 11 月 1 日起，提交到 Google Play 且以 Android15（API 级别 35）及更高版本的设备为目标平台的所有新应用和现有应用更新都必须支持 16KB 的页面大小。  
 如需详细了解此兼容性要求，请参阅[Google官方博文](https://android-developers.googleblog.com/2025/05/prepare-play-apps-for-devices-with-16kb-page-size.html)。
 
-> HBuilderX4.81版本已适配支持 16KB 内存页面大小
+> HBuilderX4.81版本，uni-app官方库已适配支持 16KB 内存页面大小
+
+**注意**  ：
+Android17+，默认会开启16KB兼容性检测，如果应用中包含未适配支持 16KB 的 so 库，在启动时会弹出 `Android 应用兼容性` 提示框。  
+提示内容为：“此应用不符合 16KB 对齐要求。ELF文件对齐检查失败。”虽然这个列表中也会出现 DCloud的自有so库，但其实是因为三方sdk不支持16KB导致打包时被降级了。如去掉不支持16KB的三方sdk再打包，可以正常通过16K校验。切勿在这个弹框中看到有DCloud字样的so库，就误以为uni-app未适配16K。
 
 ::: warning 注意事项
 
@@ -13,10 +20,10 @@ uni-app 核心功能模块为了适配支持 16KB 内存页面大小，更新了
 :::
 
 
-
 ## 不支持 16KB 的模块  
 虽然 uni-app 核心功能模块已适配支持 16KB 内存页面大小，但部分涉及三方 SDK 的模块仍未完全适配支持。  
 
+以下列出三方sdk清单，开发者可根据需要，去除这些sdk再打包。有些三方sdk已经不再维护，开发者可在插件市场寻求替代方案或自行使用uni-agent开发相关插件。
 
 ### [uni-ad](https://uniapp.dcloud.net.cn/uni-ad/)
 `uni-ad`使用国内广告渠道SDK 仅支持国内环境，建议应用用于提交 Google Play 时不要使用国内渠道 SDK。  

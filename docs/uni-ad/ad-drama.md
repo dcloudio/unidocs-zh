@@ -26,7 +26,8 @@
 
 ### 组件
 
-**`仅nvue支持`（Android、iOS；HBuilderX 5.08+）**
+**`仅uni-app  nvue支持`（Android、iOS；HBuilderX 5.08+）
+`uni-app-x 支持`（Android；HBuilderX 5.31+）**
 
 **属性列表**
 
@@ -100,7 +101,7 @@ export default {
 
 `uni.createDramaAd` 用于短剧自建聚合页场景。开发者可以自行获取短剧列表、推荐列表、收藏列表、观看记录和搜索结果，渲染聚合页 UI，并在用户点击短剧后打开短剧播放页。
 
-**平台支持**：仅 App（Android、iOS；HBuilderX 5.21+）。标准基座不支持测试短剧功能。
+**平台支持**：仅 App支持 uni-app-x （Android；HBuilderX 5.31+） uni-app（Android、iOS；HBuilderX 5.21+）。标准基座不支持测试短剧功能。
 
 #### uni.createDramaAd(options)
 
@@ -290,6 +291,7 @@ function handleError(err) {
 dramaAd.onError(handleError)
 dramaAd.offError(handleError)
 ```
+
 
 #### 返回数据
 

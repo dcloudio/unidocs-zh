@@ -51,6 +51,10 @@ iOS模拟器和真机使用不同的CPU架构，部分模块依赖的三方SDK�
 - 直播推流（live-pusher）  
 推流组件由七牛云提供推流服务，不支持运行到iOS模拟器，需使用真机设备运行此功能。
 
+- uni实人认证  
+uni实人认证是DCloud与合作伙伴共同推出的金融级实人认证服务，依赖的SDK不支持iOS模拟器，运行到iOS模拟器会报错  
+
+
 > 由于部分第三方 SDK 暂未支持 arm64 模拟器，当编译并运行至 arm64 架构模拟器时部分功能无法使用，详情参考[iOS平台arm64模拟器受限功能](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#uni-app-x-%E9%A1%B9%E7%9B%AE)。
 
 

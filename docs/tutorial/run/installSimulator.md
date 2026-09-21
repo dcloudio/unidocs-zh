@@ -31,6 +31,11 @@ xcode安装打开，按下快捷键`command+,`，打开`Preferences`窗口，如
 ### 运行App到iOS模拟器功能限制@ios-simulator-limit
 iOS模拟器和真机使用不同的CPU架构，部分模块依赖的三方SDK没有包含模拟器或者对模拟器兼容不好，导致无法在模拟器上正常运行，目前已知无法在模拟上使用以下功能：
 
+#### uni-app / 5+ App 项目
+
+- uni-ad 广告  
+模拟器不支持广告功能，广告相关功能会加载失败。  
+
 - 讯飞语音识别  
 由于讯飞语音识别在新版本XCode编译后无法兼容iOS8.x模拟器，HBuilderX1.5及以上版本标准基座模拟器版本不再支持讯飞语音识别功能  
 > 注意：2024年3月21日审计云端打包环境为XCode15.2，不再支持讯飞语音识别，推荐使用百度语音识别模块。
@@ -38,17 +43,29 @@ iOS模拟器和真机使用不同的CPU架构，部分模块依赖的三方SDK�
 - 直播推流（live-pusher）  
 直播推流功能是基于又拍云的推流SDK实现，又拍云的SDK不支持iOS模拟器，标准基座模拟器版本无法运行直播推流相关功能，请使用真机运行体验此功能。
 
+#### uni-app x 项目
+
+- uni-ad 广告  
+模拟器不支持广告功能，广告相关功能会加载失败。  
+
+- 直播推流（live-pusher）  
+推流组件由七牛云提供推流服务，不支持运行到iOS模拟器，需使用真机设备运行此功能。
+
+> 由于部分第三方 SDK 暂未支持 arm64 模拟器，当编译并运行至 arm64 架构模拟器时部分功能无法使用，详情参考[iOS平台arm64模拟器受限功能](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#uni-app-x-%E9%A1%B9%E7%9B%AE)。
+
+
 ### 运行App到iOS26模拟器，应用安装失败@ios-app-install-failed
 由于部分模块使用的 三方SDK 仅提供 x86_64（Intel）架构的iOS模拟器库，在 Apple Silicon（M 系列芯片）Mac 上开发时，必须开启并安装支持 Rosetta（Universal）架构的 iOS 模拟器。  
 
 在 `M系列芯片` 的MAC上，XCode26 及后续版本默认下载 iOS 模拟器不再包含 Rosetta，在 HBuilderX 中运行 App 到iOS26模拟器时可能会出现应用安装失败的问题：
 
 - 表现：模拟器被拉起，但是应用安装失败，系统弹窗提示：‘HBuilder’需要更新，此App需要开发者更新以在此iOS版本上运行。
-- 原因：自xcode26 和 iOS26起，xcode默认下载的模拟器包是 `arm64Only` 版本的，也就是仅支持arm64架构的应用，而 uni-app 以及 uni-app-x 中的标准基座模拟器安装包 `仅支持 x86_64 架构`，架构不匹配导致安装失败。
+- 原因：自xcode26 和 iOS26起，xcode默认下载的模拟器包是 `arm64Only` 版本的，也就是仅支持arm64架构的应用，而 uni-app 及 uni-app x 中的标准基座模拟器安装包 `仅支持 x86_64 架构`，架构不匹配导致安装失败。
 
 包括以下解决方案：
 - 安装支持 Rosetta 架构的 iOS 模拟器
-- 云端打包支持 arm 架构的自定义基座（仅uni-app x项目支持）  
+- uni-app x项目还可提交云端打包自定义基座勾选“模拟器(arm64)” 生成 arm64 架构的自定义基座来解决  
+- 更新HBuilderX到5.27及以上版本，uni-app x项目标准基座已支持 arm64 架构
 
 
 #### 安装支持 Rosetta 架构的 iOS 模拟器  
@@ -90,32 +107,6 @@ iOS模拟器和真机使用不同的CPU架构，部分模块依赖的三方SDK�
 2. 重新真机运行，选择 `自定义基座`  
 
 ![](https://web-ext-storage.dcloud.net.cn/doc/uniapp/armsimulator-run.png)
-
-
-** 注意 **  
-uni-app x 项目以下模块使用的 三方SDK 仅提供 x86_64（Intel）架构的iOS模拟器库，打包 arm 架构模拟器时不会包含。  
-- uni-ad（广告联盟）  
-  + 腾讯优量汇  
-  + 百度百青藤广告联盟
-  + 旺脉
-- uni-barcode-scanning（相机组件扫码功能）
-- uni-facialVerify（实人认证）
-- uni-live-player（[live-player](../../component/live-player.md)组件）
-- uni-live-pusher（[live-pusher](../../component/live-pusher.md)组件）
-- uni-loacation（定位）
-  + 腾讯定位
-- uni-map（地图）
-  + 腾讯地图
-- uni-oauth（登录）
-  + 微信登录
-- uni-payment（支付）
-  + 微信支付
-- uni-push（消息推送）
-- uni-requestMerchantTransfer（转账确认收款）
-- uni-share（分享）
-  + 微信分享
-- uni-verify（一键登录）
-
 
 
 ## Android模拟器@android

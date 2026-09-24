@@ -26,14 +26,18 @@ uni-app 核心功能模块为了适配支持 16KB 内存页面大小，更新了
 以下列出三方sdk清单，开发者可根据需要，去除这些sdk再打包。有些三方sdk已经不再维护，开发者可在插件市场寻求替代方案或自行使用uni-agent开发相关插件。
 
 ### [uni-ad](https://uniapp.dcloud.net.cn/uni-ad/)  
-`uni-ad`使用国内广告渠道SDK 仅支持国内环境，建议应用用于提交 Google Play 时不要使用国内渠道 SDK。  
+`uni-ad`国内广告渠道SDK 仅支持国内环境，建议应用用于提交 Google Play 时不要使用国内广告渠道 SDK。  
 
-涉及的so库文件列表：
-- libwmAliAgainstId.so（旺脉）
-- libsgcore.so（快手）
-- libttmplayer_lite.so、libavmdl_lite.so（穿山甲）
+以下为未适配支持 16KB 内存页面大小的广告渠道，及其so库文件列表：
+- 穿山甲GroMore
+  + `libttmplayer_lite.so`
+  + `libavmdl_lite.so`
+- 快手广告联盟  
+  + `libsgcore.so`
+- 旺脉
+  + `libwmAliAgainstId.so`
 
-`uni-ad`国际广告从HBuilderX4.83版本起已适配16KB。
+> HBuilder4.83及以上版本 国外广告 `applovin`、`pangle(海外穿山甲)` 广告渠道 SDK 已适配支持 16KB 内存页面大小。  
 
 
 ### OAID  
@@ -41,11 +45,11 @@ OAID目前使用的 SDK 版本为 `1.0.25`或`1.0.13`，更高版本需要申请
 
 其它渠道提交云端打包默认会包含 OAID SDK，可以在 `manifest.json` 的 "app-plus"->"distribute"->"android" 下配置 "enableOAID" 为 false 强制不包含。
 
-离线打包时默认包含此SDK，如果需要上架 Google Play，可以直接删除库`base_oaid_sdk.aar`和`base_old_oaid_13.aar`。
-
 涉及的so库文件列表：  
 - lib39285EFA.so
 - libsecsdk.so
+
+>离线打包时默认包含此SDK，如果需要上架 Google Play，可以直接删除库`base_oaid_sdk.aar`和`base_old_oaid_13.aar`。
 
 
 ### 友盟统计  
@@ -53,30 +57,34 @@ OAID目前使用的 SDK 版本为 `1.0.25`或`1.0.13`，更高版本需要申请
 如确实需要使用，请开发[uni原生语言插件](../plugin/native-plugin.md)或[uts插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)接入支持。  
 
 涉及的so库文件列表：
-- libcrashsdk.so  
-- libucrash-core.so  
+- `libcrashsdk.so`
+- `libucrash-core.so`
 
 
 ### [uni-push](../api/plugins/push.md)  
 `uni-push`是由 DCloud 与合作伙伴个推共同推出的统一推送服务。
 
-**HBuilderX5.31及以上版本更新 uni-push使用个推 SDK 为 `3.3.15` 版，解决适配支持 16KB 页面大小。**
+**HBuilder X 5.31 及以上版本**  
+已更新`uni-push`使用的个推 SDK 为 `3.3.15` 版，适配支持 16KB 内存页面大小。
 
-HBuilderX5.31以下版本，uni-push服务依赖`卓信ID SDK`，但该 SDK 目前未适配支持 16KB 内存页面大小。  
+**HBuilder X 5.31 以下版本**  
+`uni-push`使用的个推 SDK 依赖`卓信ID SDK`，但该 SDK 目前未适配支持 16KB 内存页面大小。  
 为满足 Google Play 的要求，应用在提交至 Google Play 时需避免使用`卓信ID SDK`。按以下方式配置，使用`uni-push`时将不会包含`卓信ID SDK`：  
-1. 项目manifest.json可视化界面，在 “安卓/iOS模块配置” 下的 “Push（消息推送）” -> “离线推送” 中只勾选 “Google FCM推送SDK”  
-2. 云端打包界面，在 “渠道包” 下勾选 “Google Play(AAB)”  
+1. 项目manifest.json可视化界面，在 “安卓/iOS模块配置” 下的 “Push（消息推送）” -> “离线推送” 中只勾选 “Google FCM推送SDK”
+2. 云端打包界面，在 “渠道包” 下勾选 “Google Play(AAB)”
 
 涉及的so库文件列表：
 - libzxprotect.so
 
 
 ### [uni实人认证](../api/plugins/facialRecognitionVerify.md)  
+`uni实人认证`是 DCloud 与合作伙伴共同推出的金融级实人认证服务，通过对比人脸、活体检测、姓名和身份证号码，来确认用户身份的有效性。
 
-**HBuilderX5.31及以上版本更新 uni-push使用个推 SDK 为 `3.3.15` 版，解决适配支持 16KB 页面大小。**  
+**HBuilder X 5.31 及以上版本**  
+已更新`uni实人认证`使用的使用的阿里云金融级实人认证 SDK 为 `2.3.16.1` 版，适配支持 16KB 内存页面大小。
 
-
-HBuilderX5.31以下版本，`uni实人认证`功能仅支持国内环境，建议应用用于提交 Google Play 时不要勾选此功能。
+**HBuilder X 5.31 以下版本**  
+`uni实人认证`功能仅支持国内环境，建议应用提交 Google Play 时不要勾选此模块，或更新到最新版本HBuilder X解决。
 
 涉及的so库文件列表：
 - libaliyunaf.so  
@@ -85,9 +93,11 @@ HBuilderX5.31以下版本，`uni实人认证`功能仅支持国内环境，建�
 
 ## 高德地图  
 
-**HBuilderX5.0及以上版本更新 GooglePlay 渠道使用的高德地图 SDK 版本为 `11.1.060`，解决适配支持 16KB 页面大小。**  
+**HBuilder X 5.0 及以上版本**  
+已更新`高德地图`模块使用的高德地图 SDK 为 `11.1.060` 版，适配支持 16KB 内存页面大小。
 
-HBuilderX5.0以下版本高德地图模块在国内渠道使用的SDK 版本为 `10.0.700`，请更新HBuilderX到最新版本解决。  
+**HBuilder X 5.0 以下版本**  
+高德地图模块在国内渠道使用的SDK 版本为 `10.0.700`，未适配支持 16KB 内存页面大小，请更新到最新版本HBuilder X解决。
 
 涉及的so库文件列表：  
 - libAMapSDK_MAP_v10_0_700.so  

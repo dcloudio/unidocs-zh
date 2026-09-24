@@ -48,3 +48,7 @@ Appstore在机审时，有对三方sdk的白名单机制，uni-app (x)，以及r
 **使用广告标识（IDFA）相关说明：**[https://uniapp.dcloud.net.cn/tutorial/app-ios-idfa.html](https://uniapp.dcloud.net.cn/tutorial/app-ios-idfa.html)
 
 **UIWebview API 已废弃：**[https://ask.dcloud.net.cn/article/36348](https://ask.dcloud.net.cn/article/36348)
+
+- 提交 AppStore 注意事项
+
+提交 AppStore 的 ipa 应使用 发行-App云打包，自定义基座不可作为正式包上传 AppStore，否则可能会出现应用资源不更新的情况。

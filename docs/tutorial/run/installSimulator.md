@@ -69,7 +69,7 @@ uni实人认证是DCloud与合作伙伴共同推出的金融级实人认证服�
 包括以下解决方案：
 - 安装支持 Rosetta 架构的 iOS 模拟器
 - uni-app x项目还可提交云端打包自定义基座勾选“模拟器(arm64)” 生成 arm64 架构的自定义基座来解决  
-- 更新HBuilderX到5.27及以上版本，uni-app x项目标准基座已支持 arm64 架构
+- 更新HBuilderX到5.31及以上版本，uni-app x项目标准基座已支持 arm64 架构
 
 
 #### 安装支持 Rosetta 架构的 iOS 模拟器  

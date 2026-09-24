@@ -122,6 +122,8 @@ export default defineConfig({
       'tutorial/mp-weixin-glass-easel.md',
       'tutorial/independent-subpackage.md',
       'tutorial/miniprogram-subcontract-asynchrony.md',
+      'tutorial/app-ios-privacyinfo.md',
+      'tutorial/ios-app-store.md',
     ]),
     // collocation
     ...createSyncMapping([

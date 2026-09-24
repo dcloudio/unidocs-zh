@@ -89,7 +89,10 @@ export default defineConfig({
       'plugin/uts-plugin.md',
       'plugin/uts-uni-api.md',
       'plugin/faq/faq.md',
-      'plugin/native-plugin.md'
+      'plugin/native-plugin.md',
+      'plugin/uasm-plugin.md',
+      'plugin/uni-gyp.md',
+      'plugin/uasm-node-api.md'
     ]),
     // tutorial
     ...createSyncMapping([

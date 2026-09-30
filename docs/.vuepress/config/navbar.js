@@ -156,6 +156,13 @@ export const navbar = [
     needOutbound: false
   },
   {
+    text: 'HBuilder V',
+    link: 'https://doc.dcloud.net.cn/hbuilderv/',
+    type: "link",
+    target: '_blank',
+    needOutbound: false
+  },
+  {
     text: 'HBuilder X',
     link: 'https://hx.dcloud.net.cn/',
     type: "link",

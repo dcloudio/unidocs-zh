@@ -153,7 +153,11 @@ export default {
 					url: 'https://nativesupport.dcloud.net.cn/',
 				},
 				{
-					subTitle: 'HBuilder文档',
+					subTitle: 'HBuilder V文档',
+					url: 'https://doc.dcloud.net.cn/hbuilderv/',
+				},
+				{
+					subTitle: 'HBuilder X文档',
 					url: 'https://hx.dcloud.net.cn/',
 				},
 			],

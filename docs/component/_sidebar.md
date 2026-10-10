@@ -51,7 +51,6 @@
       * [全屏视频广告](ad-fullscreen-video.md)
       * [插屏广告](ad-interstitial.md)
       * [Draw视频信息流广告](ad-draw.md)
-      * [短视频内容联盟广告](ad-content-page.md)
       * [互动广告](ad-interactive.md)
       * [微信小程序](ad-weixin.md)
       * [微信小程序格子广告](ad-grid.md)

@@ -12,7 +12,7 @@
 |-| 华为     | 是 | 1-3个工作日 | 需联系运营申请开通            |
 |![](https://web-ext-storage.dcloud.net.cn/uniad/logo/bz.png)#{height=35}| 倍孜     | 否 | - | 应用商店填写三方服务器下载地址即可            |
 |![](https://web-ext-storage.dcloud.net.cn/uniad/logo/zy.png)#{height=35}| 章鱼     | 否 | -       | 应用商店填写三方服务器下载地址即可    |
-|![](https://web-ext-storage.dcloud.net.cn/uniad/logo/fl.png)#{height=35}| 泛连     | 否 | -       | 应用商店填写三方服务器下载地址即可    |
+|![](https://web-ext-storage.dcloud.net.cn/uniad/logo/fl.png)#{height=35}![](https://web-ext-storage.dcloud.net.cn/uniad/logo/fl-new.png)#{height=35}| 泛连     | 否 | -       | 应用商店填写三方服务器下载地址即可    |
 |![](https://web-ext-storage.dcloud.net.cn/uniad/logo/hxly.png)#{height=35}| 华夏乐游   | 否 | -       | 应用商店填写三方服务器下载地址即可    |
 |![](https://web-ext-storage.dcloud.net.cn/uniad/logo/jt.jpg)#{height=35}| 佳投   | 否 | -       | 应用商店填写三方服务器下载地址即可    |
 |![](https://web-ext-storage.dcloud.net.cn/uniad/logo/wa.png)#{height=35}| 旺脉   | 否 | -       | 应用商店填写三方服务器下载地址即可    |

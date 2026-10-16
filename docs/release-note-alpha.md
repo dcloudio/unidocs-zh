@@ -1,3 +1,37 @@
+#### 5.32.2026101609-alpha
+* 【uni-app x】
+  + Web平台 新增 API toast 允许设置是否与页面绑定 [文档](https://doc.dcloud.net.cn/uni-app-x/api/toast.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=33641>
+  + Web平台 修复 5.31版本引发的 API setTabBar darkmode 模式时调用无效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33706)
+  + Android平台 新增 组件 ad-drama 短剧组件 [文档](https://doc.dcloud.net.cn/uni-app-x/api/create-drama-ad.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=32816>
+  + Android平台 修复 组件 camera 部分情况可能引起内存泄漏 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=22660)
+  + App平台 蒸汽模式 新增 组件 uniCloud 支持组合式定义datacom [文档](https://doc.dcloud.net.cn/uni-app-x/api/unicloud/) <https://issues.dcloud.net.cn/pages/issues/detail?id=33522>
+  + App平台 蒸汽模式 新增 API uni.convert2AbsFullPath 将相对路径转换为平台的绝对路径地址 [文档](https://doc.dcloud.net.cn/uni-app-x/api/convert2-abs-full-path.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=33471>
+  + App平台 蒸汽模式 修复 组件 waterflow 超高flow-item部分情况不显示 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33511)
+  + App平台 蒸汽模式 修复 CSS animation 使用 calc() 设置的长度值无动画效果 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33455)
+  + App平台 蒸汽模式 修复 DOM API UniElement animate 方法在同一元素创建多个动画无法并行运行，创建新动画会中断正在执行的其他动画 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33577)
+  + Android平台 蒸汽模式、iOS平台 蒸汽模式 修复 API uni.installWgt 安装合法 wgt 报 103610 错误 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33639)
+  + Android平台 蒸汽模式 修复 API uni.getFileSystemManager fstat、stat回调内的Stat实例无法调用isFile、isDirectory方法 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33568)
+  + iOS平台 蒸汽模式、鸿蒙平台 蒸汽模式 修复 组件 rich-text native模式 显示不完整 切割内容导致文字无故换行 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33655&ask_id=221751)
+  + iOS平台 蒸汽模式 修复 CSS animation 取消动画未恢复原有样式 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33391)
+  + iOS平台 蒸汽模式 修复 手势返回页面遮罩效果无效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33597)
+  + 修复 编译器 Harmony Vapor bytecode 发行中 es2abc 拒绝合法模板字符串插值表达式 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33278)
+  + 鸿蒙平台 修复 API uni.exit 回调不触发 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33510)
+  + 鸿蒙平台 修复 5.31版本引发的 API themeChange 首次启动时未显式设置导致 AbilityContext colorMode 不符合预期 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33663)
+  + 鸿蒙平台 修复 API uni.request 跨域重定向时不会携带目标url对应的cookie [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33604)
+  + 鸿蒙平台 蒸汽模式 修复 pages.json 开启 glassEffect 后 TabBar 切换逻辑与系统不一致 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33693)
+  + 鸿蒙平台 蒸汽模式 修复 组件 image 显示 SVG 图片在 mode=widthFix/heightFix 时放大显示模糊 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33688)
+  + 鸿蒙平台 蒸汽模式 修复 API uni.getBoundingClientRectAsync 错把祖先元素的transform当成元素自身导致结果错误 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33463)
+  + 鸿蒙平台 蒸汽模式 修复 5.31版本引发的 API uni.getSystemInfoSync 鸿蒙获取主题颜色错误 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33550)
+  + 鸿蒙平台 蒸汽模式 修复 DOM API UniElement 动画取消后重播，再次取消不还原样式，且重播过程没有生命周期 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33518)
+  + 鸿蒙平台 蒸汽模式 修复 DOM API UniElement fullscreenerror 事件没有触发 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33783)
+  + 鸿蒙平台 蒸汽模式 修复 运行调试 过早时机获取根节点元素时导致崩溃问题 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33418)
+* 【uniCloud】
+  + 修复 uni-app x 5.31版本引发的 uniIdRouter无法自动跳转登录页面 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33643)
+  + 修复 5.26版本引发的 升级 uniCloud 插件后一直提示修复，并且无法修复成功 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33066)
+  + 修复 本地调试不支持Headers、Request等Nodejs 18+的全局对象 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33593)
+* 【App插件(含5+App和uni-app的App端)】
+  + 更新 uni-AD 腾讯优量汇SDK Android为 4.710.1580 版，iOS为 4.16.11 版；快手广告 SDK Android为 5.9.10.1 版，iOS为 5.3.20.1 版；穿山甲&GroMore SDK Android为 7.8.1.4 版；Sigmob广告联盟SDK Android为 4.25.86 版，iOS为 5.2.0 版；百度百青藤广告SDK iOS为 10.061 版；章鱼广告SDK Android为 2.6.10.10 版，iOS为 2.6.10.7 版；泛连广告SDK Android 为 29012 版；华夏乐游SDK Android为 4.9.5.8 版，iOS为 2.22.0 版；佳投广告SDK Android为 1.9.8 版；美数广告SDK Android为 2.5.16.7 版， iOS为 2.7.25.0 版；支持双11预算
+
 #### 5.31.2026093020-alpha
 * 【HBuilder V】
   + 新增 HBuilder V 基于 vscode 内核二开的新一代IDE，更好的支持uni-app x蒸汽跨端开发 [文档](https://doc.dcloud.net.cn/hbuilderv/)

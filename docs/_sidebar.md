@@ -1,4 +1,5 @@
 * [什么是 uni-app](README.md)
+* [uni-app x 相比 uni-app 的优势](https://doc.dcloud.net.cn/uni-app-x/uniappvsuniappx.html)
 * [uni-app 升级 uni-app x指南](https://doc.dcloud.net.cn/uni-app-x/uniapptox.html)
 * 快速上手
   * [1. 通过 HBuilderX 可视化界面](quickstart-hx.md)

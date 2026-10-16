@@ -104,7 +104,7 @@ DCloud联合业内主流隐私合规检测厂商推出了`uni隐私合规检测`
 + 请使用HX3.6.1+重新云打包
 + 对apk进行加固。推荐使用腾讯云
 
-[安全漏洞参考文档](https://ask.dcloud.net.cn/article/39020)
+[安全漏洞参考文档](https://uniapp.dcloud.net.cn/tutorial/app-sec-android.html)
 
 #### 12、您的应用存在获取用户的软件安装列表敏感信息行为
 

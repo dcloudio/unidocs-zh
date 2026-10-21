@@ -1,3 +1,11 @@
+#### 5.33.2026102115-alpha
+* 【uni-app x】
+  + Web平台 修复 5.31版本引发的 API uni.request 在uts文件内调用参数 enableChunked 不为 true 时没有返回 UTSJSONObject 类型数据 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33862)
+  + Android平台 蒸汽模式 修复 运行调试 云端打包运行可能报`cannot locate symbol _ZNSt6__ndk127__from_chars_floating_pointIfEENS`异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33821)
+  + 鸿蒙平台 修复 5.25版本引发的 API uni.setNavigationBarColor 在原生 SDK 中调用状态栏不变化 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33986)
+  + 修复 编译器 v-if else多根节点实际渲染为单根节点时未透传部分属性及样式 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33948)
+  + 小程序平台 修复 CSS page选择器设置padding时效果不符合预期 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33939)
+
 #### 5.32.2026101609-alpha
 * 【uni-app x】
   + Web平台 新增 API toast 允许设置是否与页面绑定 [文档](https://doc.dcloud.net.cn/uni-app-x/api/toast.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=33641>

@@ -50,7 +50,8 @@ export default defineConfig({
       'ai/personal-subscription.md',
       'ai/enterprise-subscription.md',
       'ai/cli-for-aimodel.md',
-	  'ai/ai-coding-tools.md',
+      'ai/ai-coding-tools.md',
+      'ai/uni-agent-inline-completion.md',
     ]),
     // worktile
     ...createSyncMapping([

@@ -38,14 +38,6 @@
 - Kotlin Android 插件（org.jetbrains.kotlin:kotlin-gradle-plugin）：1.8.10  
 - JDK：17 （[Amazon corretto 17.0.12.7.1](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/what-is-corretto-17.html)）  
 
-### HBuilder4.24及以下版本云端打包环境（不推荐使用）
-- Android 编译 SDK（compileSdk）： 33  
-- Android 构建工具（buildToolsVersion） ：30.0.3  
-- Gradle：7.6.3  
-- Android Gradle 插件（com.android.tools.build:gradle）：4.2.0  
-- Kotlin Android 插件（org.jetbrains.kotlin:kotlin-gradle-plugin）：1.8.10  
-- JDK：11 （[Amazon corretto 11.0.24.8.1](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/what-is-corretto-11.html)）  
-
 **注意**  
 云端打包环境升级后可能导致某些 uni原生语言插件 无法兼容，如碰到无法兼容的问题请联系插件作者尽快升级支持，同时将在 [ask社区](https://ask.dcloud.net.cn/explore/) 反馈，我们也会跟进协助插件作者适配支持。
 
@@ -58,18 +50,16 @@
 - **从2026年9月19号开始HBuilderX4.75及以上release版本云端部分打包机环境升级为XCode26.6**
 
 
-### HBuilderX5.25及以上版本云端打包环境
+### 正式版云端打包环境
 - XCode: 26.6  
 - iOS SDK: 26.5  
 - pod仓库：https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git  
 
 **更新XCode26.6后最低支持iOS15系统**
 
-
-### HBuilderX5.05及以上版本云端打包环境
-- XCode: 26.3  
-- iOS SDK: 26.2  
+### Alpha版云端打包环境
+- XCode: 26.6  
+- iOS SDK: 26.5  
 - pod仓库：https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git  
 
-**更新XCode26.3后最低支持iOS13系统**
-
+**更新XCode26.6后最低支持iOS15系统**

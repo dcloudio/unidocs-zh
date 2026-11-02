@@ -13,8 +13,8 @@ App-Android平台云端打包相关配置
 |custompermissions|Boolean|是否自定义Android权限配置|
 |permissionExternalStorage|Object|Android平台应用启动时申请读写手机存储权限策略配置，详情参考：[Android平台应用启动时读写手机存储权限策略](https://ask.dcloud.net.cn/article/36549)，支持request、prompt属性|
 |permissionPhoneState|Object|Android平台应用启动时申请读取设备信息权限配置，详情参考：[Android平台应用启动时访问设备信息(如IMEI)权限策略](https://ask.dcloud.net.cn/article/36549)，支持request、prompt属性|
-|minSdkVersion|String|Android平台最低支持版本，详情参考：[Android平台设置minSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-minsdkversion)|
-|targetSdkVersion|String|Android平台目标版本，详情参考：[Android平台设置targetSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion)|
+|minSdkVersion|Number|Android平台最低支持版本，详情参考：[Android平台设置minSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-minsdkversion)|
+|targetSdkVersion|Number|Android平台目标版本，详情参考：[Android平台设置targetSdkVersion](https://uniapp.dcloud.io/tutorial/app-android-targetsdkversion)|
 |enableResourceOptimizations|Boolean|是否开启Android原生res资源文件优化|
 |aaptOptions|Array|Android平台云端打包时build.gradle的aaptOptions配置项，示例："aaptOptions": ["noCompress 'png', 'jpg', 'jpeg'"]|
 |buildFeatures|Object|Android平台云端打包时build.gradle的buildFeatures配置项，[详见](/collocation/manifest-app?id=buildfeatures)|

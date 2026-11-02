@@ -47,7 +47,8 @@ HBuilderX (3.2.0 版本起) 新增QQ互联和新浪微博开放平台的通用�
 
 * 注意您必须先开通"uniCloud云服务空间和开通前端网页托管"[点此查看开通教程](https://ask.dcloud.net.cn/article/38951),按提示完成操作即可。
 
-![](https://web-ext-storage.dcloud.net.cn/doc/uniapp/20261102141411591.png)
+![](https://web-ext-storage.dcloud.net.cn/doc/uniapp/20261102141644280.png)
+
 * 注意：**通用链接默认域名仅供测试使用，阿里云访问频次限制60次/分钟，且每天仅允许10个IP访问，请勿在正式发行的项目中使用**。正式项目，务必绑定自己的域名（顶级域名，二级域名均可）
 * 如何绑定自己的域名详情：[https://uniapp.dcloud.io/uniCloud/hosting?id=domain](https://uniapp.dcloud.io/uniCloud/hosting?id=domain)
 

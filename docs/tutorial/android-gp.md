@@ -11,13 +11,13 @@ Google Play上架审核要求比较严格，应用中不能存在以下行为：
 
 uni-app中部分功能模块不符合Google Play审核要求，请仔细阅读下面章节。
 
-### 必须适配Android11
+### 必须适配Android16
 
-“App常用其它设置”中需要将targetSdkVersion设置值大于等于30
+“App常用其它设置”中，普通移动端新应用及更新需要将targetSdkVersion设置值大于等于36（自2026-08-31起，[Google Play官方要求](https://support.google.com/googleplay/android-developer/answer/11926878?hl=en)）。
 
 ![](https://img-cdn-aliyun.dcloud.net.cn/uni-app/doc/app/android/googleplay/targetsdkversion.png)
 
-**注意：务必在Android11设备上进行测试，确保应用所有功能可以正常运行**
+**注意：务必在Android16设备上进行测试，确保应用所有功能可以正常运行**
 
 
 ### 不能包含安装应用权限

@@ -1,6 +1,8 @@
 targetSdkVersion用于指定应用的目标Android版本（API等级），默认值为28（即Android9）。
 > - HBuilderX3.2.13云端打包调整targetSdkVersion默认值为28（Android9），GooglePlay渠道默认值为29（Android10）  
 
+Google Play上架时，普通移动端新应用及更新需显式设置targetSdkVersion大于等于36（Android16），上述构建默认值不满足该要求。
+
 设置targetSdkVersion值表示App适配的Android版本（API等级），设置低版本的targetSdkVersion会使APP兼容模式运行，也就可能无法用到新系统的特性，甚至在兼容模式下运行可能存在安全漏洞等问题。
 随着Android系统的升级，一些应用市场会要求设置较高的targetSdkVersion才可以提交，HBuilderX中可在项目的manifest.json中进行配置。
 
@@ -25,7 +27,7 @@ targetSdkVersion值为Number类型，且必须为正整数，取值范围参考`
   "app-plus": {
     "distribute": {
       "android":{
-        "targetSdkVersion": 30
+        "targetSdkVersion": 36
       }
     }
   }
@@ -37,7 +39,7 @@ targetSdkVersion值为Number类型，且必须为正整数，取值范围参考`
   "plus": {
     "distribute": {
       "google":{
-        "targetSdkVersion": 30
+        "targetSdkVersion": 36
       }
     }
   }

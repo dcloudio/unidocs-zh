@@ -78,7 +78,7 @@ Google Play上架审核要求比较严格，需要注意以下问题：
   + uni-ad 增强广告SDK：广告中存在下载安装其它三方应用的行为。**uni-ad 广告基础功能不受影响**
 - 应用中不能使用动态加载代码，因此无法配置使用X5内核，详情：[https://ask.dcloud.net.cn/article/36806](https://ask.dcloud.net.cn/article/36806)
 
-**应用必须适配Android11，设置targetSdkVersion大于等于30：**[https://ask.dcloud.net.cn/article/193](https://ask.dcloud.net.cn/article/193#targetsdkversion)
+**普通移动端新应用及更新必须适配Android16，设置targetSdkVersion大于等于36：**[Google Play官方要求](https://support.google.com/googleplay/android-developer/answer/11926878?hl=en)
 
 **上传安装包使用Android App Bundle（AAB）格式：**[https://ask.dcloud.net.cn/article/39052](https://ask.dcloud.net.cn/article/39052)
 

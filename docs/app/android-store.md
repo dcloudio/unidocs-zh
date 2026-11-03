@@ -471,7 +471,7 @@ uni-ad广告模块集成的三方SDK说明
 	android.permission.QUERY_ALL_PACKAGES
     </td>
     <td>广告投放、广告主归因、反作弊 </td>
-    <td><a href="https://support.sigmob.com/#/%E9%9A%90%E7%A7%81%E6%9D%A1%E6%AC%BE/">Sigmob隐私协议</a></td>
+    <td><a href="https://doc.sigmob.com/sigmob/140/">Sigmob隐私协议</a></td>
   </tr>
 </table>
 

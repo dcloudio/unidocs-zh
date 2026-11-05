@@ -1,4 +1,4 @@
-minSdkVersion用于指定应用兼容的最低Android版本（API等级），默认值为19（即最低支持Android4.4）。
+minSdkVersion用于指定应用兼容的最低Android版本（API等级），默认值为21（即最低支持Android5.0）。
 如果APP某些功能无法支持低版本Android系统的设备，可以配置minSdkVersion确保APP只能安装到指定Android版本及以上的设备。HBuilderX中可在manifest.json中进行配置minSdkVersion。
 
 **️注意: App升级时 minSdkVersion 只能增加不能降低，也就是说 minSdkVersion 高的App无法被 minSdkVersion 低的App覆盖安装，开发者需要注意！**

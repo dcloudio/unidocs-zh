@@ -53,9 +53,9 @@
 3. 更快结算
   - 默认每月4日、19日两次结算。扫描联系商务申请更短结算周期
 
-<figure style="margin: 50px 0;">
-  <img src="https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/uni-ad-wx-1.png">
-  <img style="margin-left: 100px" src="https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/uni-ad-wx-2.png">
+<figure style="margin: 50px 0;width: 280px; height: 280px;">
+  <img src="https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/uni-ad-wx-3.png">
+  <!-- <img style="margin-left: 100px" src="https://web-ext-storage.dcloud.net.cn/doc/ad/wx_qrcode/uni-ad-wx-2.png"> -->
 </figure>
 
 ### 开通配置广告步骤@start

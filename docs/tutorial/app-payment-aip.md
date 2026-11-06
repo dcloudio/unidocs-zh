@@ -229,6 +229,6 @@ iapChannel.restoreComplateRequest({
 - 提前绑定支付方式可以有效避免丢单情况，示例:
 `plus.runtime.openURL("https://apps.apple.com/account/billing"); //跳转AppStore绑定支付方式`
 - 建议在每个接口调用前后添加打点日志收集，以便快速定位问题
-- [推介促销优惠参考](https://developer.apple.com/cn/documentation/storekit/in-app_purchase/subscriptions_and_offers/implementing_introductory_offers_in_your_app/)
-- [订阅促销优惠参考](https://developer.apple.com/cn/documentation/storekit/in-app_purchase/subscriptions_and_offers/implementing_subscription_offers_in_your_app/)
+- [推介促销优惠参考](https://developer.apple.com/documentation/storekit/implementing-introductory-offers-in-your-app)
+- [订阅促销优惠参考](https://developer.apple.com/documentation/storekit/implementing-promotional-offers-in-your-app)
 

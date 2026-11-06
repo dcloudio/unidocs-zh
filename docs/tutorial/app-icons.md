@@ -47,7 +47,7 @@ HBuilderX中打开项目的manifest.json文件，在“App图标配置”中可�
 - 打包提交appstore时，必须配置1024*1024分辨率的AppStore图标，云端打包机默认使用纯白色图标
 - 所有图标不要包含透明信息（alpha通道），否则提交AppStore会报以下错误[ITMS-90717](#itms90717)错误
 
-更多应用图标相关信息，参考苹果官方说明：[https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/app-icon/](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/app-icon/)
+更多应用图标相关信息，参考苹果官方说明：[https://developer.apple.com/design/human-interface-guidelines/app-icons](https://developer.apple.com/design/human-interface-guidelines/app-icons)
 
 #### 云端打包
 **可视化界面配置**

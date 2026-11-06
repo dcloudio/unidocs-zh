@@ -2,12 +2,12 @@ App端统计模块封装了市场上主流的三方移动App统计SDK，提供JS
 
 |项目类型|API|
 |:-|:-|
-|uni-app|uni-app暂时没有封装统计API，建议使用[uni统计](https://tongji.dcloud.io/)|
+|uni-app|uni-app未将上述三方统计SDK封装为uni API，建议使用[uni统计](../uni-stat.md)，其自定义事件可通过[uni.report](../api/other/report.md)上报|
 |5+ App|[plus.statistic.*](https://www.html5plus.org/doc/zh_cn/statistic.html)
 
 注意：打包时勾选三方统计模块后会自动统计应用日活、启动次数等数据，统计API是为了扩展自定义统计数据时使用。
 
-**uni-app自带uni统计，无需使用三方统计。三方统计增加包体积且无法做到自带的免埋点采集行为数据。详见：[https://tongji.dcloud.io/](https://tongji.dcloud.io/)**
+**uni-app自带uni统计，无需使用三方统计。三方统计增加包体积且无法做到自带的免埋点采集行为数据。详见：[uni统计文档](../uni-stat.md)**
 
 使用统计功能需在项目manifest.json的“App模块配置”中勾选“Statistic(统计)”，并根据项目实际情况勾选使用的三方统计平台：
 ![](https://native-res.dcloud.net.cn/images/uniapp/statistic/moudules.png)

@@ -304,7 +304,7 @@ uni.closeAuthView()
 
 > HarmonyOS 不支持
 
-`univerifyStyle`中如果配置了`"fullScreen": "true"`和`buttons`选项并且`buttons`数组不为空时，在全屏的时候会渲染出自定义按钮。
+`univerifyStyle`中如果配置了`"fullScreen": true`和`buttons`选项并且`buttons`数组不为空时，在全屏的时候会渲染出自定义按钮。
 
 当用户点击`自定义按钮`时，会触发`uni.login`的`fail`回调，返回数据如下：
 

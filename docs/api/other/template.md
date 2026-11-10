@@ -22,7 +22,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/templateadd?access_tok
 
 | 属性 | 类型  | 必填 | 说明 |
 | --- | ----- | --- | --- |
-| access_token | string | 是 | 接口调用凭证，微信小程序参考 [getAccessToken](https://developers.weixin.qq.com/miniprogram/dev/api/getAccessToken.html)，百度小程序参考[verify](https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#verify/)|
+| access_token | string | 是 | 接口调用凭证，微信小程序参考 [getAccessToken](https://developers.weixin.qq.com/miniprogram/dev/server/API/mp-access-token/api_getaccesstoken.html)，百度小程序参考[verify](https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#verify/)|
 | id | string | 是 | 模板标题id |
 | keyword_id_list | Array.&lt;number&gt; | 是 | 开发者自行组合好的模板关键词列表，关键词顺序可以自由搭配（例如[3,5,4]或[4,5,3]），最多支持10个关键词组合 |
 
@@ -83,7 +83,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/templatedel?access_tok
 
 | 属性 | 类型 |必填 | 说明 |
 | --- | --- | --- | --- |
-| access_token | string| 是 |接口调用凭证，微信小程序参考 [getAccessToken](https://developers.weixin.qq.com/miniprogram/dev/api/getAccessToken.html)，百度小程序参考[verify](https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#verify/)|
+| access_token | string| 是 |接口调用凭证，微信小程序参考 [getAccessToken](https://developers.weixin.qq.com/miniprogram/dev/server/API/mp-access-token/api_getaccesstoken.html)，百度小程序参考[verify](https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#verify/)|
 | template_id | string | 是 | 要删除的模板id |
 
 **返回值（Object）**
@@ -138,7 +138,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/libraryget?access_toke
 
 | 属性 | 类型  | 必填 | 说明 |
 | --- | ----- | --- | --- |
-| access_token | string | 是 | 接口调用凭证，微信小程序参考 [getAccessToken](https://developers.weixin.qq.com/miniprogram/dev/api/getAccessToken.html)，百度小程序参考[verify](https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#verify/)|
+| access_token | string | 是 | 接口调用凭证，微信小程序参考 [getAccessToken](https://developers.weixin.qq.com/miniprogram/dev/server/API/mp-access-token/api_getaccesstoken.html)，百度小程序参考[verify](https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#verify/)|
 | id | string | 是 | 模板标题id |
 
 **返回值(Object)**
@@ -247,7 +247,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/librarylist?access_tok
 
 | 属性 | 类型  | 必填 | 说明 |
 | --- | ----- | --- | --- |
-| access_token | string | 是 | 接口调用凭证，微信小程序参考 [getAccessToken](https://developers.weixin.qq.com/miniprogram/dev/api/getAccessToken.html)，百度小程序参考[verify](https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#verify/)|
+| access_token | string | 是 | 接口调用凭证，微信小程序参考 [getAccessToken](https://developers.weixin.qq.com/miniprogram/dev/server/API/mp-access-token/api_getaccesstoken.html)，百度小程序参考[verify](https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#verify/)|
 | offset | number | 是 | 用于分页，表示从offset开始。从 0 开始计数。 |
 | count | number | 是 | 用于分页，表示拉取count条记录。最大为 20。 |
 
@@ -336,7 +336,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/templatelist?access_to
 
 | 属性 | 类型  | 必填 | 说明 |
 | --- | ----- | --- | --- |
-| access_token | string | 是 | 接口调用凭证，微信小程序参考 [getAccessToken](https://developers.weixin.qq.com/miniprogram/dev/api/getAccessToken.html)，百度小程序参考[verify](https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#verify/)|
+| access_token | string | 是 | 接口调用凭证，微信小程序参考 [getAccessToken](https://developers.weixin.qq.com/miniprogram/dev/server/API/mp-access-token/api_getaccesstoken.html)，百度小程序参考[verify](https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#verify/)|
 | offset | number | 是 | 用于分页，表示从offset开始。从 0 开始计数。 |
 | count | number | 是 | 用于分页，表示拉取count条记录。最大为 20。 |
 
@@ -435,7 +435,7 @@ POST https://openapi.baidu.com/rest/2.0/smartapp/template/templatedel?access_tok
 
 | 属性 | 类型  | 必填 | 说明 |支持平台|
 | --- | ----- | --- | --- |---|
-| access_token | string | 是 | 接口调用凭证，微信小程序参考 [getAccessToken](https://developers.weixin.qq.com/miniprogram/dev/api/getAccessToken.html)，百度小程序参考[verify](https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#verify/)||
+| access_token | string | 是 | 接口调用凭证，微信小程序参考 [getAccessToken](https://developers.weixin.qq.com/miniprogram/dev/server/API/mp-access-token/api_getaccesstoken.html)，百度小程序参考[verify](https://smartprogram.baidu.com/docs/develop/api/open_userinfo/#verify/)||
 | touser | string |是 | 接收者（用户）的 openid/swan_id ||
 | template_id | string |是 | 所需下发的模板消息的id ||
 | page | string |否 | 点击模板卡片后的跳转页面，仅限本APP内的页面。支持带参数,（示例index?foo=bar）。该字段不填则模板无跳转。 ||

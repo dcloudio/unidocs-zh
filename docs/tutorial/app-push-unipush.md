@@ -52,7 +52,7 @@
 
 关闭自动申请后，uni-app 开发者可以在合适的业务时机调用 [plus.android.requestPermissions](https://www.html5plus.org/doc/zh_cn/android.html#plus.android.requestPermissions)，申请 `android.permission.POST_NOTIFICATIONS` 通知权限，并根据回调结果处理授权成功、拒绝等情况。该方式仅适用于 uni-app 的 Android App，不适用于 uni-app x。
 
-开发者也可以自行编写 UTS 插件，在 Android 平台通过 [UTSAndroid.requestSystemPermission](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#requestsystempermission) 申请通知权限，该方式适用于 uni-app 和 uni-app x。
+开发者也可以自行编写 UTS 插件，在 Android 平台申请 `android.permission.POST_NOTIFICATIONS` 通知权限，并将授权结果返回给业务层处理。
 
 > Android 13（API 33）及以上系统需要申请通知权限。开发者接管权限申请后，应避免在用户拒绝授权时，每次启动应用都重复申请。
 

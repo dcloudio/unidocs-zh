@@ -11,7 +11,7 @@
 
 **注意：saveFile 会把临时文件移动，因此调用成功后传入的 tempFilePath 将不可用**
 
-> _微信小程序已停止维护[wx.saveFile(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.saveFile.html)接口，建议使用[FileSystemManager](https://uniapp.dcloud.io/api/file/getFileSystemManager.html)对象中的方法。_
+> _微信小程序已停止维护 wx.saveFile(Object object) 接口，建议使用 [FileSystemManager.saveFile](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.saveFile.html) 对象中的方法。_
 
 **OBJECT 参数说明：**
 
@@ -55,7 +55,7 @@ uni.chooseImage({
 
 <!-- UNIAPPAPIJSON.getSavedFileList.compatibility -->
 
-> _微信小程序已停止维护[wx.getSavedFileList(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.getSavedFileList.html)接口，建议使用[FileSystemManager](https://uniapp.dcloud.io/api/file/getFileSystemManager.html)对象中的方法。_
+> _微信小程序已停止维护 wx.getSavedFileList(Object object) 接口，建议使用 [FileSystemManager.getSavedFileList](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.getSavedFileList.html) 对象中的方法。_
 
 **OBJECT 参数说明：**
 
@@ -101,7 +101,7 @@ uni.getSavedFileList({
 
 <!-- UNIAPPAPIJSON.getSavedFileInfo.compatibility -->
 
-> _微信小程序已停止维护[wx.getSavedFileInfo(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.getSavedFileInfo.html)接口，建议使用[FileSystemManager](https://uniapp.dcloud.io/api/file/getFileSystemManager.html)对象中的方法。_
+> _微信小程序已停止维护 wx.getSavedFileInfo(Object object) 接口，建议使用 [FileSystemManager](https://uniapp.dcloud.io/api/file/getFileSystemManager.html) 对象中的方法。_
 
 
 **OBJECT 参数说明：**
@@ -144,7 +144,7 @@ uni.getSavedFileInfo({
 
 <!-- UNIAPPAPIJSON.removeSavedFile.compatibility -->
 
-> _微信小程序已停止维护[wx.removeSavedFile(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.removeSavedFile.html)接口，建议使用[FileSystemManager](https://uniapp.dcloud.io/api/file/getFileSystemManager.html)对象中的方法。_
+> _微信小程序已停止维护 wx.removeSavedFile(Object object) 接口，建议使用 [FileSystemManager.removeSavedFile](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.removeSavedFile.html) 对象中的方法。_
 
 **OBJECT 参数说明：**
 
@@ -183,7 +183,7 @@ uni.getSavedFileList({
 
 <!-- UNIAPPAPIJSON.getFileInfo.compatibility -->
 
-> _微信小程序已停止维护[wx.getFileInfo(Object object)](https://developers.weixin.qq.com/miniprogram/dev/api/file/wx.getFileInfo.html)接口，建议使用[FileSystemManager](https://uniapp.dcloud.io/api/file/getFileSystemManager.html)对象中的方法。_
+> _微信小程序已停止维护 wx.getFileInfo(Object object) 接口，建议使用 [FileSystemManager.getFileInfo](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.getFileInfo.html) 对象中的方法。_
 
 **OBJECT 参数说明：**
 

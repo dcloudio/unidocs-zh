@@ -32,7 +32,7 @@ uni.login是一个客户端API，统一封装了各个平台的各种常见的�
 * [抖音小程序登录](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/open-interface/log-in/tt-login/)
 * [QQ小程序登录](https://q.qq.com/wiki/develop/miniprogram/API/open_port/port_login.html)
 * [快手小程序登录](https://mp.kuaishou.com/docs/develop/api-next/open/login/ks.login.html)
-* [京东小程序登录](https://mp-docs.jd.com/api/openInterface/login.html)
+* [京东小程序登录](https://mp-docs.jd.com/doc/miniapp/dev/api/2936)
 * [小红书小程序登录](https://miniapp.xiaohongshu.com/doc/DC473950)
 
 ### web平台支持的登录方式

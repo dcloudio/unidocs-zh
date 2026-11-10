@@ -35,7 +35,7 @@
 - [飞书小程序自定义组件](https://open.feishu.cn/document/uYjL24iN/ugTOugTOugTO)
 - [QQ 小程序自定义组件](https://q.qq.com/wiki/develop/miniprogram/frame/diy_components/)
 - [快手小程序自定义组件](https://mp.kuaishou.com/docs/develop/frame/custom_comp/component_temp_style.html)
-- [京东小程序自定义组件](https://mp-docs.jd.com/framework/customcomponent/)
+- [京东小程序自定义组件](https://mp-docs.jd.com/doc/miniapp/dev/reference/3112)
 - [鸿蒙元服务自定义组件](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/custom-components?ha_source=Dcloud&ha_sourceId=89000448)
 - [小红书小程序自定义组件](https://miniapp.xiaohongshu.com/doc/DC838684)
 

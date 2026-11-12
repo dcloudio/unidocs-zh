@@ -113,7 +113,7 @@ export default {
 
 | 参数名 | 类型 | 必填 | 说明 | 最低支持版本 | 平台 |
 | --- | --- | --- | --- | --- | --- |
-| `adpid` | `String` | 是 | 激励视频广告位 ID | HBuilderX 5.21+ | App（Android、iOS） |
+| `adpid` | `String` | 是 | 短剧广告位 ID | HBuilderX 5.21+ | App（Android、iOS） |
 
 ```ts
 interface CreateDramaAdOptions {
@@ -123,7 +123,7 @@ interface CreateDramaAdOptions {
 
 ```js
 const dramaAd = uni.createDramaAd({
-  adpid: '你的激励视频广告位 ID'
+  adpid: '你的短剧广告位 ID'
 })
 ```
 
@@ -362,7 +362,7 @@ export default {
     return { dramas: [] }
   },
   onLoad() {
-    dramaAd = uni.createDramaAd({ adpid: '你的激励视频广告位 ID' })
+    dramaAd = uni.createDramaAd({ adpid: '你的短剧广告位 ID' })
     dramaAd.getRecommendedList({ page: 1, pageSize: 20 }, (res) => {
       this.dramas = res.dramas || []
     }, (err) => {

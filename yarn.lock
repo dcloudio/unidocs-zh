@@ -10049,10 +10049,10 @@ vuepress-plugin-container@^2.0.2:
     "@vuepress/shared-utils" "^1.2.0"
     markdown-it-container "^2.0.0"
 
-vuepress-plugin-expandable-row@^1.0.11:
-  version "1.0.11"
-  resolved "https://registry.npmjs.org/vuepress-plugin-expandable-row/-/vuepress-plugin-expandable-row-1.0.11.tgz#87a0b8ea3d61b622fd2ca1037af135c1aeebdbf0"
-  integrity sha512-NRCXgt0rA6yKQrv8CaOM+1Qr4lgOop1FIdW9he67bSnihFUTqcFdhPVey8g+0n4opoPW4jeWjGjmTvz8Ede3Ug==
+vuepress-plugin-expandable-row@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.npmmirror.com/vuepress-plugin-expandable-row/-/vuepress-plugin-expandable-row-1.0.12.tgz#d3d896ddf666c18546086c34944fc17411d9cdab"
+  integrity sha512-MH96tpdbHynE69rNwe1fGHHleZgPiPnqIQk5unO7rybJYCs+kbchmF8zTzpKhzec4hW0T3GgrD3+6FG0Al88Yg==
   dependencies:
     markdown-it-raw-table "^1.0.0"
 
@@ -10099,10 +10099,10 @@ vuepress-plugin-zooming@^1.1.8:
   dependencies:
     zooming "^2.1.1"
 
-vuepress-theme-uniapp-official@1.6.48:
-  version "1.6.48"
-  resolved "https://registry.npmmirror.com/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.6.48.tgz#8f4d65c93cd2ceb264c9338dcec14ddae28223f0"
-  integrity sha512-671n9niL7YNu7KPKY0XNs7s44WlQp0CgwOTVPcLukWDDwu+Rxn7sYuVCzXcfdxYhTeN5QipkH1vj03z4IWY60A==
+vuepress-theme-uniapp-official@1.6.51:
+  version "1.6.51"
+  resolved "https://registry.npmmirror.com/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.6.51.tgz#06fee9fff1e7e967589004304ec3dc7502e6ff73"
+  integrity sha512-ZWTC+YTe5PKe+8tKpawvM4ecvwHHLymDuYCdL7WpbBrstWUG8IlbDCD3ScGkjZtmgqi3zcKJCirKPOoyRoGCPA==
   dependencies:
     "@docsearch/css" "^3.6.0"
     "@vuepress/plugin-back-to-top" "^1.9.5"
@@ -10116,7 +10116,7 @@ vuepress-theme-uniapp-official@1.6.48:
     qr-code-with-logo "^1.1.0"
     search-insights "^2.17.3"
     vuepress-plugin-check-md2 "^1.0.5"
-    vuepress-plugin-expandable-row "^1.0.11"
+    vuepress-plugin-expandable-row "^1.0.12"
     vuepress-plugin-juejin-style-copy "^1.0.4"
     vuepress-plugin-mermaidjs "1.9.1"
     vuepress-plugin-named-chunks "^1.1.4"

@@ -4,6 +4,8 @@
 
 ## 目录结构
 
+### 概览 @overview
+
 一个uni-app工程，默认包含如下目录及文件：
 
 <pre v-pre="" data-lang="">
@@ -71,7 +73,7 @@ static目录下的文件，在app第一次启动时，解压到了app的外部�
 
 所以注意控制static目录的大小，太大的static目录和太多文件，会造成App安装后第一次启动变慢。
 
-### unpackage 目录 @unpackage
+### unpackage @unpackage
 
 以下说明适用于通过 HBuilderX 运行、发行 uni-app（Vue2/Vue3）项目时生成的目录。
 
@@ -79,11 +81,11 @@ static目录下的文件，在app第一次启动时，解压到了app的外部�
 
 本节中的 CLI 项目指**通过 HBuilderX 运行、采用 `src/dist` 结构的 uni-app CLI 项目**。这类项目的编译输出通常位于项目根目录的 `dist/dev/<平台>`、`dist/build/<平台>`，缓存、基座和本地诊断日志分别使用 `dist/cache`、`dist/debug`、`dist/logs`。资源导出和云打包下载流程仍可能使用项目根目录的 `unpackage/resources`、`unpackage/release`，具体以导出配置及控制台提示为准；不能把下方整棵目录树中的 `unpackage` 直接替换成 `dist`。
 
-#### 目录结构
+#### 目录结构 @unpackage-tree
 
 以下列出主要目录及典型文件。平台目录的对应关系见下方表格，隐藏目录和 UTS 插件编译产物缓存并非每个项目都会生成。`<平台>`、`<模块>`、`<AppID>`、`<HX版本>` 是占位符；切换配置后可能保留历史产物。
 
-```text
+```
 <项目根目录>/unpackage/
 ├─ dist/
 │  ├─ dev/                        # 运行阶段的编译产物
@@ -139,7 +141,7 @@ static目录下的文件，在app第一次启动时，解压到了app的外部�
    └─ harmony/
 ```
 
-#### 主要目录说明
+#### 目录说明 @unpackage-directories
 
 ##### dist（编译输出）
 
@@ -183,7 +185,7 @@ HBuilderX 的普通 uni-app Vue3 编译流程使用 `dist/dev/cache/.<平台>` �
 
 UTS 插件编译产物缓存按目标平台和基座类型区分；`standard`、`custom`、`custom_sdk` 分别对应标准、自定义、自定义离线 SDK 基座。典型结构如下：
 
-```text
+```
 <UTS 插件编译产物缓存目录>/
 ├─ app-android/uts/uni_modules/<模块>/ # Android 插件产物，如 index.kt、config.json
 ├─ app-ios/uts/uni_modules/<模块>/     # iOS 插件产物，如 index.swift、config.json
@@ -222,7 +224,7 @@ Android、iOS 子目录分别位于对应平台的缓存中：Android 可包含 
 - 导出 wgt 时，默认输出为 `release/<AppID>.wgt`，可在导出操作中指定其他位置。wgt 是资源包，不是 APK/IPA 安装包。
 - 云打包发行包满足自动下载条件时，保存到 `release/<云端返回的包名>`。当前插件对未指定渠道、渠道为“无”（含“无-aab”）或 iOS App Store 包提供下载地址，不自动保存到此目录；关闭产物下载时也不会生成本地文件。实际结果以下载操作或控制台提示为准。
 
-#### 各平台编译产物
+#### 平台产物 @unpackage-platforms
 
 下方产物表的路径相对于对应平台的编译输出目录，按常规应用编译说明。文件是否生成取决于 Vue2/Vue3、页面类型、项目内容及编译选项；分块名称、哈希和辅助文件以实际输出为准。
 
@@ -323,7 +325,7 @@ HBuilderX 使用 `unpackage/dist/dev/mp-harmony` 或 `unpackage/dist/build/mp-ha
 
 ##### Web（web）
 
-当前 HBuilderX 将 H5/Web 输出目录命名为 `web`，编译平台标识仍为 `h5`；旧版本可能保留 `h5` 目录。默认发行目录为 `dist/build/web`，CLI 项目按“unpackage 目录”章节开头的路径规则定位。
+当前 HBuilderX 将 H5/Web 输出目录命名为 `web`，编译平台标识仍为 `h5`；旧版本可能保留 `h5` 目录。默认发行目录为 `dist/build/web`，CLI 项目按“unpackage”章节开头的路径规则定位。
 
 运行阶段由开发服务器提供 HTML、脚本和样式，不在 `dist/dev/web` 生成可部署站点。部署时使用发行构建生成的完整输出目录，并按部署路径和路由模式配置服务器。
 
@@ -335,11 +337,11 @@ HBuilderX 使用 `unpackage/dist/dev/mp-harmony` 或 `unpackage/dist/build/mp-ha
 | `static/`、`uni_modules/<模块>/static/`（项目资源） | 两种编译器均按平台规则复制项目中的静态资源，保留相对路径；Vue2 的 `static/` 也包含上方打包资源       |
 | `*.map`                                             | 开启 sourcemap 时生成的源码映射文件，位置随构建配置变化                                              |
 
-#### 使用编译产物排查问题
+#### 产物排错 @unpackage-troubleshooting
 
 不直接编辑自动生成的编译产物，修改可能在重新构建时被覆盖；应修改项目源码后重新编译验证。
 
-使用编译产物排查问题时，先确认本次 HBuilderX 运行或发行的目标平台、项目使用的 Vue2／Vue3，并根据控制台提示定位实际输出路径。以下路径相对于普通项目的 `unpackage`，`<阶段>` 为 `dev` 或 `build`；通过 HBuilderX 运行的 CLI 项目按“unpackage 目录”章节开头的路径规则定位。
+使用编译产物排查问题时，先确认本次 HBuilderX 运行或发行的目标平台、项目使用的 Vue2／Vue3，并根据控制台提示定位实际输出路径。以下路径相对于普通项目的 `unpackage`，`<阶段>` 为 `dev` 或 `build`；通过 HBuilderX 运行的 CLI 项目按“unpackage”章节开头的路径规则定位。
 
 ##### 页面与应用逻辑
 
@@ -369,7 +371,7 @@ HBuilderX 使用 `unpackage/dist/dev/mp-harmony` 或 `unpackage/dist/build/mp-ha
 
 有 sourcemap 时结合生成的 `.map` 文件定位原始源码，位置及是否生成取决于编译选项。编译失败可能留下旧文件或部分产物；修改应落在项目源码，重新构建并核对本次日志与运行结果，不能只凭缓存文件存在判定修改已生效。
 
-#### 清理编译缓存
+#### 清理缓存 @unpackage-clean-cache
 
 排查修改未生效、增量编译结果异常等问题时，可通过 HBuilderX 界面的“清除缓存后重新运行”清理缓存后运行，Android、iOS 和鸿蒙 App 均支持此操作。先保留错误日志，并保持平台、设备、基座等运行配置一致，便于对比清理前后的结果。
 

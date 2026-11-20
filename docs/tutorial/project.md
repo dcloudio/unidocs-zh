@@ -92,8 +92,8 @@ static目录下的文件，在app第一次启动时，解压到了app的外部�
 │  │  ├─ app-plus/                # Android/iOS 共用的 App 编译产物
 │  │  ├─ web/                     # Web 开发模式路径，站点由开发服务器提供
 │  │  ├─ mp-weixin/               # 微信小程序，其他小程序目录见下表
-│  │  ├─ app-harmony/             # 组装后的鸿蒙原生工程
-│  │  ├─ .app-harmony/            # 鸿蒙编译产物
+│  │  ├─ app-harmony/             # 调试运行时组装的原生鸿蒙工程（DevEco 工程）
+│  │  ├─ .app-harmony/            # uni-app 鸿蒙运行编译产物
 │  │  ├─ .nvue/                   # nvue 编译中间产物
 │  │  ├─ .sourcemap/              # sourcemap
 │  │  ├─ .automator/              # 自动化测试信息
@@ -102,8 +102,8 @@ static目录下的文件，在app第一次启动时，解压到了app的外部�
 │  │  ├─ app-plus/
 │  │  ├─ web/
 │  │  ├─ mp-weixin/
-│  │  ├─ app-harmony/             # 发行时组装的鸿蒙原生工程
-│  │  └─ .app-harmony/            # 鸿蒙发行产物
+│  │  ├─ app-harmony/             # 本地打包发行时组装的原生鸿蒙工程（DevEco 工程）
+│  │  └─ .app-harmony/            # uni-app 鸿蒙发行编译产物
 │  └─ cache/
 │     └─ .vite/                   # Vite 编译缓存
 ├─ resources/                     # 本地打包资源
@@ -119,7 +119,7 @@ static目录下的文件，在app第一次启动时，解压到了app的外部�
 │  ├─ iOS_debug_<HX版本>.ipa       # iOS 标准基座的项目内副本（按 HBuilderX 版本命名）
 │  ├─ Pandora_simulator_debug.app # iOS 模拟器自定义基座
 │  ├─ Pandora_simulator_debug_<HX版本>.app # iOS 模拟器标准基座的项目内副本（按 HBuilderX 版本命名）
-│  └─ app-harmony/                # 本地打包/导出场景下的鸿蒙工程
+│  └─ app-harmony/                # 自动化测试时组装的原生鸿蒙工程（DevEco 工程）
 ├─ cache/
 │  ├─ uts_standard_android/       # UTS 插件编译产物缓存（Android 标准基座）
 │  ├─ uts_custom_android/         # UTS 插件编译产物缓存（Android 自定义基座）
@@ -272,9 +272,9 @@ nvue 的 `.nvue` 目录是中间输出，最终页面脚本写入 `app-plus`；V
 - `.app-harmony` 保存供组装原生工程使用的代码、配置和资源，主要内容见下表。
 - `app-harmony` 是据此组装的原生鸿蒙工程，可使用 DevEco Studio 打开。
 - `.hap` 是模块安装包，`.app` 是用于发布分发的 App Pack；具体构建输出路径和签名状态以构建结果为准。
-- 默认运行工程为 `dist/dev/app-harmony`，发行工程为 `dist/build/app-harmony`。
+- 默认运行工程为 `dist/dev/app-harmony`，发行工程为 `dist/build/app-harmony`，自动化测试工程位于 `debug/app-harmony`。
 - `.hbuilderx/launch.json` 的 `distPathDev`、`distPathBuild` 可以指定工程目录；运行时开启 `debugWithNativeHarmony` 并配置 `nativeHarmonyProjectPath` 后，优先使用指定的联编工程。
-- 本地打包/导出场景下，工程还可能位于 `debug/app-harmony`。日志位于 `logs/harmony`。
+- 崩溃日志保存在 `logs/harmony`。
 
 鸿蒙的初始化文件由编译器生成在实际编译输出目录的 `uni_modules/index.generated.ets`。排查组装后的原生工程时，应核对工程中实际使用的插件及初始化文件，工程内的副本位置以本次组装结果为准。
 
@@ -297,9 +297,8 @@ nvue 的 `.nvue` 目录是中间输出，最终页面脚本写入 `app-plus`；V
 
 ##### 鸿蒙元服务（mp-harmony）
 
-HBuilderX 使用 `unpackage/dist/dev/mp-harmony` 或 `unpackage/dist/build/mp-harmony` 的路径与时间生成指纹，在系统临时目录创建原生鸿蒙工程。CLI 项目使用项目根目录下的 `dist/dev/mp-harmony` 或 `dist/build/mp-harmony` 参与计算。
-
-运行工程按 UTC 日期区分，发行工程按 UTC 分钟区分。因此，不能只在 `unpackage` 中查找完整的元服务原生工程，应以控制台提示的位置为准。诊断日志仍保存在 `logs/harmony`。
+HBuilderX 根据运行的场景与时间生成指纹，在系统临时目录创建原生鸿蒙工程，运行工程按日期区分，发行工程按分钟区分。
+如需要找到原生鸿蒙工程目录的话需在系统临时目录里按此特征查找。
 
 ##### 微信小程序（mp-weixin）
 

@@ -1,3 +1,13 @@
+#### 5.37.2026112003-alpha
+* 【uni-app x】
+  + 【重要】Web平台、App平台 蒸汽模式、支付宝小程序平台 组件 input、textarea 还原背景色为透明，取消5.36版本的默认暗黑适配背景色逻辑；统一placeholder颜色light下#808080、dark下#5f5f5f [文档](https://doc.dcloud.net.cn/uni-app-x/component/input.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=34802>
+  + Web平台 修复 5.36版本引发的 透明标题栏滚动时返回箭头变成实心三角 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=34882)
+  + Android平台 蒸汽模式、iOS平台 蒸汽模式 修复 组件 ad 在 list-view 复用时可能出现广告显示错乱 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=34446)
+  + Android平台 蒸汽模式 修复 组件 ad 部分素材高度渲染异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=34797)
+  + iOS平台 蒸汽模式、鸿蒙平台 蒸汽模式 修复 组件 text 嵌套时 v-if 切换内层 text 引发异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=34735)
+  + 鸿蒙平台 蒸汽模式 修复 API getSystemInfo uniRuntimeVersion、uniRuntimeVersionCode错误 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=34915)
+  + 鸿蒙平台 蒸汽模式 修复 API uni.closeDialogPage 关闭自身时概率崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=34729)
+
 #### 5.36.2026111207-alpha
 * 【uni-app x】
   + 修复 编译器 Windows 下开发运行时，部分场景中目录被占用导致重命名等操作失败 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=34424)

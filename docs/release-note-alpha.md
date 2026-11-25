@@ -1,3 +1,16 @@
+#### 5.38.2026112503-alpha
+* 【uni-app x】
+  + 修复 5.36版本引发的 编译器 Windows 下开发运行时，文件轮询导致部分项目空闲 CPU 占用过高 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=35068)
+  + Android平台 蒸汽模式 新增 API uni.installWgt 支持 armeabi-v7a [文档](https://doc.dcloud.net.cn/uni-app-x/api/install-wgt.html#installwgt)
+  + Android平台 蒸汽模式 修复 组件 input 软键盘弹出时应用切换到后台，重新回到前台可能导致页面显示不正常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=34750)
+  + Android平台 蒸汽模式 修复 组件 input 从最近任务切换应用到后台，重新切换到前台可能导致软键盘遮挡已聚焦的输入框 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=35134)
+  + Android平台 蒸汽模式 修复 组件 input 设置较大的 cursor-spacing 后获取焦点弹出软键盘可能导致页面显示不正常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=35186)
+  + Android平台 蒸汽模式 修复 组件 textarea 设置 auto-height 后输入内容自动增高可能导致被软键盘遮挡 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=34821)
+  + Android平台 蒸汽模式 修复 组件 textarea page-container 内textarea键盘遮挡 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=34871)
+  + Android平台 蒸汽模式 修复 5.37版本引发的 组件 web-view 进页面会报 `null cannot be cast to non-null type kotlin.Boolean` 错误 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=35063)
+  + 鸿蒙平台 修复 UTSHarmony.convert2AbsFullPath 转换相对路径失败 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=33500)
+  + 鸿蒙平台 修复 API uni.saveImageToPhotosAlbum 保存 uni.env.CACHE_PATH 路径失败 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=34232)
+
 #### 5.37.2026112003-alpha
 * 【uni-app x】
   + 【重要】Web平台、App平台 蒸汽模式、支付宝小程序平台 组件 input、textarea 还原背景色为透明，取消5.36版本的默认暗黑适配背景色逻辑；统一placeholder颜色light下#808080、dark下#5f5f5f [文档](https://doc.dcloud.net.cn/uni-app-x/component/input.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=34802>

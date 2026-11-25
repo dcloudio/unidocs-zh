@@ -18,11 +18,15 @@
 
 **开通配置广告**
 
-[开通广告步骤详情](https://uniapp.dcloud.net.cn/uni-ad/ad-open.html)
+使用短剧功能前，请按以下顺序完成开通和配置：
+
+1. 登录 [uni-ad 后台](https://uniad.dcloud.net.cn/)，先申请开通穿山甲广告，并等待审核通过。开通方式详见[开通广告步骤](https://uniapp.dcloud.net.cn/uni-ad/ad-open.html)。
+2. 穿山甲广告审核通过后，在 uni-ad 的穿山甲申请处申请开通对应平台（Android 或 iOS）的穿山甲短剧。
+3. 穿山甲短剧审核通过后，在同一申请处下载对应平台的短剧 SDK 配置文件，并按照下方“配置文件”章节的说明放置到项目中。
 
 **Tips**
 - 标准基座不支持测试短剧功能。
-- 使用短剧组件需要先开通穿山甲广告。开通问题请咨询：[uni-ad交流群](https://im.dcloud.net.cn/#/?joinGroup=65d85fc09847e92db03ff81a)。
+- 开通或审核问题请咨询：[uni-ad交流群](https://im.dcloud.net.cn/#/?joinGroup=65d85fc09847e92db03ff81a)。
 
 ### 组件
 
@@ -51,9 +55,14 @@
 
 ### 配置文件
 
-配置文件需要联系运营处理或者加群咨询：[uni-ad交流群](https://im.dcloud.net.cn/#/?joinGroup=65d85fc09847e92db03ff81a)。
+穿山甲短剧审核通过后，在 uni-ad 的穿山甲申请处下载对应平台的 SDK 配置文件。下载后的文件名为 `gm_SDK_Setting.json`。
 
-文件下载之后重命名为：`gm_SDK_Setting.json`，然后将文件放到项目根目录的`nativeResources->android->assets`、`nativeResources->ios->Resources`目录下。
+请根据平台将配置文件放到项目根目录的对应位置：
+
+| 平台 | 配置文件目录 |
+| --- | --- |
+| Android | `nativeResources/android/assets` |
+| iOS | `nativeResources/ios/Resources` |
 
 ### 示例
 

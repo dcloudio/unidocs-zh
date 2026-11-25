@@ -23,6 +23,7 @@
 1. 登录 [uni-ad 后台](https://uniad.dcloud.net.cn/)，先申请开通穿山甲广告，并等待审核通过。开通方式详见[开通广告步骤](https://uniapp.dcloud.net.cn/uni-ad/ad-open.html)。
 2. 穿山甲广告审核通过后，在 uni-ad 的穿山甲申请处申请开通对应平台（Android 或 iOS）的穿山甲短剧。
 3. 穿山甲短剧审核通过后，在同一申请处下载对应平台的短剧 SDK 配置文件，并按照下方“配置文件”章节的说明放置到项目中。
+4. 点击【新增广告位】，创建【穿山甲短剧广告】广告位类型的广告位
 
 **Tips**
 - 标准基座不支持测试短剧功能。
@@ -37,7 +38,7 @@
 
 | 属性名					| 类型									| 是否必填	| 说明																																		|
 | ---						| ---									| ---			| ---																																		|
-| `adpid`				| `String`						| 必填			| 短剧广告位标识。																														|
+| `adpid`				| `String`						| 必填			| 穿山甲短剧广告位ID。																														|
 | `lock`				| `String` / `Number`	| 可选			| 单次激励视频可解锁的剧集数。仅在值大于 `0` 时生效；默认值为 `1`，最大值为 `10`。	|
 | `free`				| `String` / `Number`	| 可选			| 初始可免费观看的剧集数。仅在值大于 `0` 时生效；默认值为 `1`，最大值为 `20`。			|
 | `url-callback`| `Object`						| 可选			| 服务端回调透传参数。当前实现仅识别 `userId`、`extra` 两个字段。								|
@@ -122,7 +123,7 @@ export default {
 
 | 参数名 | 类型 | 必填 | 说明 | 最低支持版本 | 平台 |
 | --- | --- | --- | --- | --- | --- |
-| `adpid` | `String` | 是 | 短剧广告位 ID | HBuilderX 5.21+ | App（Android、iOS） |
+| `adpid` | `String` | 是 | 穿山甲短剧广告位ID | HBuilderX 5.21+ | App（Android、iOS） |
 
 ```ts
 interface CreateDramaAdOptions {
@@ -132,7 +133,7 @@ interface CreateDramaAdOptions {
 
 ```js
 const dramaAd = uni.createDramaAd({
-  adpid: '你的短剧广告位 ID'
+  adpid: '你的穿山甲短剧广告位ID'
 })
 ```
 
